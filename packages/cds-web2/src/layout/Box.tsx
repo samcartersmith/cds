@@ -59,6 +59,7 @@ export type BoxBaseProps = StyleProps &
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   > & {
     style?: React.CSSProperties;
+    // TO DO: consider removing unstyled and baseClassName
     unstyled?: boolean;
     baseClassName?: string;
     /** Add a border around all sides of the box. */
@@ -110,6 +111,13 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
       unstyled,
       baseClassName,
       testID,
+      bordered,
+      borderedTop,
+      borderedBottom,
+      borderedStart,
+      borderedEnd,
+      borderedHorizontal,
+      borderedVertical,
       dangerouslySetBackground,
       // Begin className style props
       display = 'flex',
@@ -128,13 +136,6 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
       color,
       background,
       borderColor,
-      bordered,
-      borderedTop,
-      borderedBottom,
-      borderedStart,
-      borderedEnd,
-      borderedHorizontal,
-      borderedVertical,
       borderTopLeftRadius,
       borderTopRightRadius,
       borderBottomLeftRadius,
@@ -216,7 +217,7 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
 
     const inlineStyle = useMemo(
       () => ({
-        ...(dangerouslySetBackground ? { backgroundColor: dangerouslySetBackground } : {}),
+        backgroundColor: dangerouslySetBackground,
         ...style,
       }),
       [dangerouslySetBackground, style],

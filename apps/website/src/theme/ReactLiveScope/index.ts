@@ -1,5 +1,4 @@
 import React from 'react';
-import { LiveProviderProps } from 'react-live';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useColorMode } from '@docusaurus/theme-common';
 import ExampleWithThemeToggles from '@theme/ExampleWithThemeToggles';
@@ -154,7 +153,7 @@ const mocks = {
 };
 
 // Add react-live imports you need here
-const ReactLiveScope: LiveProviderProps['scope'] = {
+const ReactLiveScope: Record<string, unknown> = {
   React,
   ...React,
   // Docusaurus

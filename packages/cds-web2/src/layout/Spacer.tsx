@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 
 import type { Polymorphic } from '../core/polymorphism';
-import type { StaticStyleProps } from '../styles/styleProps';
 
 import { type BoxBaseProps, Box } from './Box';
 
@@ -13,17 +13,17 @@ export type SpacerBaseProps = Polymorphic.ExtendableProps<
   BoxBaseProps,
   {
     /** Space in the horizontal direction */
-    horizontal?: StaticStyleProps['padding'];
+    horizontal?: ThemeVars.Space;
     /** Space in the vertical direction */
-    vertical?: StaticStyleProps['padding'];
+    vertical?: ThemeVars.Space;
     /** Max space in the horizontal direction */
-    maxHorizontal?: StaticStyleProps['padding'];
+    maxHorizontal?: ThemeVars.Space;
     /** Max space in the vertical direction */
-    maxVertical?: StaticStyleProps['padding'];
+    maxVertical?: ThemeVars.Space;
     /** Min space in the horizontal direction */
-    minHorizontal?: StaticStyleProps['padding'];
+    minHorizontal?: ThemeVars.Space;
     /** Min space in the vertical direction */
-    minVertical?: StaticStyleProps['padding'];
+    minVertical?: ThemeVars.Space;
   }
 >;
 

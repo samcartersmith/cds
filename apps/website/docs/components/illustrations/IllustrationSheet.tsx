@@ -256,6 +256,7 @@ export const IllustrationSheet = function IllustrationSheet({
               <Grid columnMin={`${width}px`} gap={2} maxHeight={700} overflow="scroll">
                 {filteredNames.map((filteredName, idx) => (
                   <IllustrationTile
+                    key={filteredName}
                     dimension={dim}
                     idx={idx}
                     name={filteredName}

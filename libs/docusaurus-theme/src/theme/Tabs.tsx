@@ -6,14 +6,10 @@ import React, {
   useCallback,
   useMemo,
   useRef,
-  useState,
 } from 'react';
 import { useHistory, useLocation } from '@docusaurus/router';
-import {
-  duplicates,
-  useScrollPositionBlocker,
-  useTabGroupChoice,
-} from '@docusaurus/theme-common/lib';
+import { duplicates } from '@docusaurus/theme-common';
+import { useScrollPositionBlocker, useTabs } from '@docusaurus/theme-common/internal';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import type { Props } from '@theme/Tabs';
 import { SpacingScale, TabNavigationProps } from '@cbhq/cds-common';
@@ -22,12 +18,14 @@ import { TabNavigation } from '@cbhq/cds-web/tabs';
 
 import type { TabItemProps } from './TabItem';
 
-export type TabProps = Omit<Props, 'groupId'> & {
-  gap?: SpacingScale;
-  groupId: string;
-  variant?: TabNavigationProps['variant'];
-  spacerHeight?: SpacingScale;
-};
+export type TabProps = Omit<Props, 'groupId'> &
+  ReturnType<typeof useTabs> & {
+    defaultValue?: string | null;
+    gap?: SpacingScale;
+    groupId?: string;
+    variant?: TabNavigationProps['variant'];
+    spacerHeight?: SpacingScale;
+  };
 
 // A very rough duck type, but good enough to guard against mistakes while allowing customization
 function isTabItem(comp: ReactElement): comp is ReactElement<TabItemProps> {
@@ -36,8 +34,10 @@ function isTabItem(comp: ReactElement): comp is ReactElement<TabItemProps> {
 
 const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element {
   const {
+    selectedValue,
+    selectValue,
+    tabValues,
     defaultValue: defaultValueProp,
-    values: valuesProp,
     variant = 'primary',
     gap = 3,
     groupId,
@@ -61,7 +61,7 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
       );
     }) ?? [];
   const values =
-    valuesProp ??
+    tabValues ??
     // Only pick keys that we recognize. MDX would inject some keys by default
     children.map(({ props: { value, label, attributes } }) => ({
       value,
@@ -91,8 +91,6 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
     );
   }
 
-  const { tabGroupChoices, setTabGroupChoices } = useTabGroupChoice();
-  const [selectedValue, setSelectedValue] = useState(defaultValue);
   const { blockElementScrollPositionUntilNextRender } = useScrollPositionBlocker();
   const wrapperRef = useRef<HTMLDivElement>(null);
   const history = useHistory();
@@ -101,26 +99,6 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
     () => (groupId === 'page' ? new URLSearchParams(history.location.search) : null),
     [groupId, history.location.search],
   );
-
-  if (groupId != null) {
-    const urlValue = urlParams?.get(groupId);
-    const shouldUpdateUrlParams = urlValue && selectedValue !== urlValue;
-    const relevantTabGroupChoice = tabGroupChoices[groupId];
-    if (shouldUpdateUrlParams) {
-      setSelectedValue(urlValue);
-    } else if (
-      relevantTabGroupChoice != null &&
-      relevantTabGroupChoice !== selectedValue &&
-      values.some((item) => item.value === relevantTabGroupChoice)
-    ) {
-      if (urlParams) {
-        urlParams.set(groupId, relevantTabGroupChoice);
-        history.replace({ ...location, hash: urlParams.toString() });
-      } else {
-        setSelectedValue(relevantTabGroupChoice);
-      }
-    }
-  }
 
   const handleTabChange = useCallback(
     (newTabValue: string) => {
@@ -131,9 +109,8 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
       if (wrapperRef.current) {
         blockElementScrollPositionUntilNextRender(wrapperRef.current);
       }
-      setSelectedValue(newTabValue);
+      selectValue(newTabValue);
       if (groupId != null) {
-        setTabGroupChoices(groupId, newTabValue);
         if (urlParams) {
           urlParams.set(groupId, newTabValue);
           // remove url hash (anchor links) from previous toc clicks when switching tabs
@@ -141,14 +118,7 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
         }
       }
     },
-    [
-      blockElementScrollPositionUntilNextRender,
-      location,
-      groupId,
-      history,
-      setTabGroupChoices,
-      urlParams,
-    ],
+    [selectValue, blockElementScrollPositionUntilNextRender, location, groupId, history, urlParams],
   );
 
   return (
@@ -177,10 +147,15 @@ const TabsComponent = memo(function TabsComponent(props: TabProps): JSX.Element 
   );
 });
 
+function TabsWrapperComponent(props: Props): JSX.Element {
+  const tabs = useTabs(props);
+  return <TabsComponent {...tabs} {...props} />;
+}
+
 export default function Tabs(props: TabProps): JSX.Element {
   const isBrowser = useIsBrowser();
   return (
-    <TabsComponent
+    <TabsWrapperComponent
       // Remount tabs after hydration
       // Temporary fix for https://github.com/facebook/docusaurus/issues/5653
       key={String(isBrowser)}

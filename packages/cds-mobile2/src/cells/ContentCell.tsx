@@ -1,0 +1,99 @@
+import React, { memo } from 'react';
+import { ContentCellBaseProps } from '@cbhq/cds-common2';
+import { isProduction } from '@cbhq/cds-utils';
+
+import { Box, HStack, VStack } from '../layout';
+import { TextBody, TextHeadline, TextLabel2 } from '../typography';
+
+import { Cell, CellSharedProps } from './Cell';
+import { CellAccessory } from './CellAccessory';
+
+export type ContentCellProps = ContentCellBaseProps & CellSharedProps;
+
+function generateAccessibilityLabels(
+  userLabel?: string,
+  title?: React.ReactNode,
+  subtitle?: React.ReactNode,
+) {
+  let computedLabel = userLabel ?? '';
+  if (computedLabel === '') {
+    // title has higher priority
+    if (typeof title === 'string') {
+      computedLabel = title;
+    } else if (typeof subtitle === 'string') {
+      computedLabel = subtitle;
+    }
+  }
+
+  return computedLabel;
+}
+
+export const ContentCell = memo(function ContentCell({
+  accessory,
+  title,
+  description,
+  disabled,
+  media,
+  meta,
+  selected,
+  subtitle,
+  accessibilityLabel,
+  accessibilityHint,
+  ...props
+}: ContentCellProps) {
+  if (!isProduction()) {
+    if (meta && !title && !subtitle) {
+      // eslint-disable-next-line no-console
+      console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
+    }
+  }
+
+  const hasTitles = Boolean(title || subtitle);
+  const accessoryType = selected ? 'selected' : accessory;
+
+  const computedAccessibilityLabel = generateAccessibilityLabels(
+    accessibilityLabel,
+    title,
+    subtitle,
+  );
+  const computedAccessibilityHint = generateAccessibilityLabels(accessibilityHint, title, subtitle);
+
+  return (
+    <Cell
+      {...props}
+      accessibilityHint={computedAccessibilityHint}
+      accessibilityLabel={computedAccessibilityLabel}
+      accessory={
+        accessoryType ? <CellAccessory paddingTop={0.5} type={accessoryType} /> : undefined
+      }
+      alignItems="flex-start"
+      disabled={disabled}
+      media={media}
+      selected={selected}
+    >
+      <VStack>
+        {hasTitles && (
+          <HStack alignItems="flex-start" justifyContent="space-between">
+            <Box flexShrink={1}>
+              {!!title && <TextHeadline>{title}</TextHeadline>}
+
+              {!!subtitle && (
+                <TextLabel2 paddingBottom={description ? 0.5 : 0} paddingTop={title ? 0.5 : 0}>
+                  {subtitle}
+                </TextLabel2>
+              )}
+            </Box>
+
+            {!!meta && (
+              <Box justifyContent="flex-end" paddingLeft={1} paddingTop={0.5}>
+                <TextLabel2 color="textForegroundMuted">{meta}</TextLabel2>
+              </Box>
+            )}
+          </HStack>
+        )}
+
+        {!!description && <TextBody color="textForegroundMuted">{description}</TextBody>}
+      </VStack>
+    </Cell>
+  );
+});

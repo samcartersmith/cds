@@ -1,17 +1,18 @@
 import React, { forwardRef, memo, useContext } from 'react';
+import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
 import { type IconButtonVariant, IconButton, IconButtonProps } from '../buttons/IconButton';
 import { Box } from '../layout/Box';
 
-import { type InputVariant, TextInputFocusVariantContext } from './context';
+import { TextInputFocusVariantContext } from './context';
 
 const variantTransformMap: Record<InputVariant, IconButtonVariant> = {
-  textPositive: 'primary',
-  textNegative: 'primary',
-  textForeground: 'primary',
-  textPrimary: 'primary',
-  textForegroundMuted: 'foregroundMuted',
-  backgroundSecondary: 'secondary',
+  positive: 'primary',
+  negative: 'primary',
+  foreground: 'primary',
+  primary: 'primary',
+  foregroundMuted: 'foregroundMuted',
+  secondary: 'secondary',
 };
 
 export type InputIconButtonProps = {

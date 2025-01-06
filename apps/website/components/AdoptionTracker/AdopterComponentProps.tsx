@@ -1,4 +1,5 @@
-import React, { memo, useCallback, useContext, useState } from 'react';
+/* eslint-disable react/no-array-index-key */
+import React, { Fragment, memo, useCallback, useContext, useState } from 'react';
 import orderBy from 'lodash/orderBy';
 import sumBy from 'lodash/sumBy';
 import toPairs from 'lodash/toPairs';
@@ -62,8 +63,9 @@ export const AdopterComponentProps = memo(
         const sortedCallSites = orderBy(callSites, ([, callSiteCount]) => callSiteCount, ['desc']);
         return (
           <VStack>
-            {sortedCallSites.map(([callSite, callSiteCount]) => (
+            {sortedCallSites.map(([callSite, callSiteCount], index) => (
               <BetaCell
+                key={`${callSite}-${callSiteCount}-${index}`}
                 end={<TextLabel2 align="end" as="p">{`${callSiteCount}x`}</TextLabel2>}
                 endAccessory={<Icon color="foregroundMuted" name="externalLink" size="s" />}
                 offsetHorizontal={1}
@@ -88,13 +90,13 @@ export const AdopterComponentProps = memo(
         <TextHeadline as="h4" spacingBottom={1}>
           Props
         </TextHeadline>
-        {sortedProps.map(([prop, callSites]) => {
+        {sortedProps.map(([prop, callSites], index) => {
           const callSitePairs = toPairs(callSites);
           const propCount = sumBy(callSitePairs, (item) => item[1]);
           const selected = activeProp === prop;
           const instancesText = propCount === 1 ? 'instance' : 'instances';
           return (
-            <>
+            <Fragment key={`${prop}-${index}`}>
               <BetaCell
                 key={prop}
                 end={<TextLabel2 as="p">{`${propCount} ${instancesText}`}</TextLabel2>}
@@ -112,7 +114,7 @@ export const AdopterComponentProps = memo(
                 start={<TextLabel2 as="p">{prop}</TextLabel2>}
               />
               {selected && selectedContent(callSitePairs)}
-            </>
+            </Fragment>
           );
         })}
       </VStack>

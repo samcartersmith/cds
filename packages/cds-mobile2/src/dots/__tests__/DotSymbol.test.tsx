@@ -1,0 +1,80 @@
+import { fireEvent, render, screen } from '@testing-library/react-native';
+import { normalScaleMap } from '@cbhq/cds-common2/hooks/useIconSize';
+
+import { Icon } from '../../icons/Icon';
+import { DotSymbol } from '../DotSymbol';
+
+const DOTSYMBOL_TESTID = 'dot-symbol-test';
+
+const src = 'https://images.coinbase.com/avatar?s=56';
+
+describe('DotSymbol', () => {
+  it('passes a11y', () => {
+    render(<DotSymbol source={{ uri: src }} testID={DOTSYMBOL_TESTID} />);
+    expect(screen.getByTestId(DOTSYMBOL_TESTID)).toBeAccessible();
+  });
+
+  it('renders a DotSymbol', () => {
+    render(<DotSymbol source={{ uri: src }} testID={DOTSYMBOL_TESTID} />);
+
+    expect(screen.getByTestId(DOTSYMBOL_TESTID)).toBeTruthy();
+  });
+
+  it('renders an image', () => {
+    render(<DotSymbol source={{ uri: src }} testID={DOTSYMBOL_TESTID} />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTSYMBOL_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
+
+    expect(screen.getByTestId('dotsymbol-remote-image').props.source).toEqual({ uri: src });
+  });
+  it('renders an image when source is a string', () => {
+    render(<DotSymbol source={src} testID={DOTSYMBOL_TESTID} />);
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTSYMBOL_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+    });
+
+    expect(screen.getByTestId('dotsymbol-remote-image').props.source).toEqual({ uri: src });
+  });
+
+  it('passes a11y for DotSymbol that have a children', () => {
+    render(
+      <DotSymbol pin="bottom-start" source={src} testID={DOTSYMBOL_TESTID}>
+        <Icon name="airdrop" size="l" />
+      </DotSymbol>,
+    );
+    expect(screen.getByTestId(DOTSYMBOL_TESTID)).toBeAccessible();
+  });
+
+  it('Placed in the correct position relative to its children', () => {
+    const iconSize = normalScaleMap.l;
+    const dotSize = 16;
+
+    render(
+      <DotSymbol pin="bottom-start" source={src} testID={DOTSYMBOL_TESTID}>
+        <Icon name="airdrop" size="l" />
+      </DotSymbol>,
+    );
+
+    // Trigger onLayout for the icon
+    fireEvent(screen.getByTestId(`${DOTSYMBOL_TESTID}-children`), 'layout', {
+      nativeEvent: { layout: { height: iconSize, width: iconSize } },
+    });
+
+    expect(screen.getByTestId('dotsymbol-inner-container')).toHaveStyle({
+      position: 'absolute',
+      transform: [
+        {
+          translateX: -(dotSize / 2),
+        },
+        {
+          translateY: iconSize - dotSize / 2,
+        },
+      ],
+    });
+  });
+});

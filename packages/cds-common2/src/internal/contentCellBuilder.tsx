@@ -42,7 +42,7 @@ export function contentCellBuilder(
     </>
   );
 
-  const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+  const innerSpacingConfig: CellSpacing = { paddingX: 1 };
 
   const PressableContent = () => (
     <>
@@ -148,7 +148,7 @@ export function contentCellBuilder(
 
       <ContentCell
         description="Description"
-        media={<CellMedia color="primary" name="phone" type="icon" />}
+        media={<CellMedia color="iconPrimary" name="phone" type="icon" />}
         title="Icon (With Primary Color)"
       />
 

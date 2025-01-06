@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useRef } from 'react';
-import { LiveEditor, LiveError, LivePreview, LiveProvider, LiveProviderProps } from 'react-live';
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { usePrismTheme } from '@docusaurus/theme-common';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
@@ -12,7 +12,8 @@ import { Pressable } from '@cbhq/cds-web/system/Pressable';
 import { spacing } from '@cbhq/cds-web/tokens';
 import { TextCaption } from '@cbhq/cds-web/typography/TextCaption';
 
-type PlaygroundProps = LiveProviderProps & {
+type PlaygroundProps = Omit<React.ComponentProps<typeof LiveProvider>, 'transformCode'> & {
+  transformCode?: (val: string) => string;
   children: string;
   borderless?: boolean;
   hideControls?: boolean;
@@ -66,7 +67,6 @@ const Playground = memo(function Playground({
 
   return (
     <VStack className="code-playground" gap={1} spacingBottom={3}>
-      {/* @ts-expect-error - issue with LiveProvider props */}
       <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
         {!hidePreview && (
           <VStack

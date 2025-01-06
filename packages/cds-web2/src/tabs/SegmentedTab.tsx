@@ -1,12 +1,12 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { motion } from 'framer-motion';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { type TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { Box } from '../layout/Box';
-import type { StaticStyleProps } from '../styles/styleProps';
 import { Text } from '../text/Text';
 
 import { type TabComponent } from './Tabs';
@@ -46,12 +46,12 @@ export type SegmentedTabProps = {
    * Text color when the SegmentedTab is active.
    * @default negativeForeground
    */
-  activeColor?: StaticStyleProps['color'];
+  activeColor?: ThemeVars.Color;
   /**
    * Text color when the SegmentedTab is inactive.
    * @default foreground
    */
-  color?: StaticStyleProps['color'];
+  color?: ThemeVars.Color;
   /** Callback that is fired when the SegmentedTab is pressed. */
   onPress?: (id: string, event: React.MouseEvent) => void;
 } & TabValue &

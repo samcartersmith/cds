@@ -1,4 +1,4 @@
-import { entries } from 'lodash';
+import entries from 'lodash/entries';
 
 /**
  * Works like linaria's css tagged template function.

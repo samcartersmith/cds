@@ -1,28 +1,28 @@
-import { SpacingProps } from '../types';
+import { PaddingProps } from '../types';
 
 export const getCardBodySpacingProps = ({
-  spacingStart,
-  spacingEnd,
-  spacingTop,
-  spacingBottom,
-  spacing,
-  spacingHorizontal,
-  spacingVertical,
+  padding,
+  paddingX,
+  paddingY,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
   compact,
 }: {
   compact?: boolean;
-} & SpacingProps) => {
+} & PaddingProps) => {
   if (compact)
     return {
-      spacingBottom: spacingBottom ?? spacingVertical ?? spacing ?? 1,
-      spacingTop: spacingTop ?? spacingVertical ?? spacing ?? 2,
-      spacingStart: spacingStart ?? spacingHorizontal ?? spacing ?? 2,
-      spacingEnd: spacingEnd ?? spacingHorizontal ?? spacing ?? 2,
+      paddingBottom: paddingBottom ?? paddingY ?? padding ?? 1,
+      paddingTop: paddingTop ?? paddingY ?? padding ?? 2,
+      paddingLeft: paddingLeft ?? paddingX ?? padding ?? 2,
+      paddingRight: paddingRight ?? paddingX ?? padding ?? 2,
     };
   return {
-    spacingBottom: spacingBottom ?? spacingVertical ?? spacing ?? 3,
-    spacingTop: spacingTop ?? spacingVertical ?? spacing ?? 3,
-    spacingStart: spacingStart ?? spacingHorizontal ?? spacing ?? 3,
-    spacingEnd: spacingEnd ?? spacingHorizontal ?? spacing ?? 3,
+    paddingBottom: paddingBottom ?? paddingY ?? padding ?? 3,
+    paddingTop: paddingTop ?? paddingY ?? padding ?? 3,
+    paddingLeft: paddingLeft ?? paddingX ?? padding ?? 3,
+    paddingRight: paddingRight ?? paddingX ?? padding ?? 3,
   };
 };

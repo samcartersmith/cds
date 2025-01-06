@@ -1,19 +1,18 @@
-import { BorderRadius } from './BorderRadius';
-import { BorderWidth } from './BorderWidth';
+import { ThemeVars } from '../new/vars';
+
 import { ElevationLevels } from './ElevationLevels';
-import { PaletteAlias, PaletteBorder } from './Palette';
 
 export type InteractableBaseProps = {
   /** Background color of the overlay (element being interacted with). */
-  background: PaletteAlias | 'transparent';
+  background: ThemeVars.Color;
   /** Set element to block and expand to 100% width. */
   block?: boolean;
   /** Border color of the element being interacted with. */
-  borderColor?: PaletteBorder | 'transparent';
+  borderColor?: ThemeVars.Color;
   /** Border radius of the element being interacted with. Number should only be used if value comes from useButtonBorderRadius. */
-  borderRadius?: BorderRadius | number;
+  borderRadius?: ThemeVars.BorderRadius | number;
   /** Width of the border. */
-  borderWidth?: BorderWidth;
+  borderWidth?: ThemeVars.BorderWidth;
   /** Is the element currently disabled. */
   disabled?: boolean;
   /** Is the element elevated. */

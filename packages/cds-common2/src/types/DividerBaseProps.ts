@@ -1,11 +1,11 @@
-import { PaletteBorder } from './Palette';
+import { ThemeVars } from '../new/vars';
 
 export type DividerBaseProps = {
   /**
    * Color of the divider line.
    * @default line
    */
-  color?: Extract<PaletteBorder, 'line' | 'lineHeavy'>;
+  color?: ThemeVars.Color;
   /**
    * The direction to render the divider line.
    * @default horizontal

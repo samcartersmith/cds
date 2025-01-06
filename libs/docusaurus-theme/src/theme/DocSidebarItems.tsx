@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { DocSidebarItemsExpandedStateProvider } from '@docusaurus/theme-common/lib';
+import { DocSidebarItemsExpandedStateProvider } from '@docusaurus/plugin-content-docs/client';
 import DocSidebarItem from '@theme/DocSidebarItem';
 import type { SpacingScale } from '@cbhq/cds-common';
 import { Divider, Group, RenderGroupItem } from '@cbhq/cds-web/layout';

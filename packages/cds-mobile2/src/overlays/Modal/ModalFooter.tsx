@@ -1,0 +1,45 @@
+import React, { Fragment } from 'react';
+import { PressableProps } from 'react-native';
+import { ButtonBaseProps, SharedProps } from '@cbhq/cds-common2';
+import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
+
+import { ButtonGroup, ButtonGroupProps } from '../../buttons';
+import { Box } from '../../layout';
+
+export type ModalFooterProps = {
+  /** Primary action button */
+  primaryAction: NonNullable<
+    React.ReactElement<ButtonBaseProps & { onPress?: PressableProps['onPress'] }>
+  >;
+  /** Secondary action button */
+  secondaryAction?: React.ReactElement<ButtonBaseProps & { onPress?: PressableProps['onPress'] }>;
+} & Pick<ButtonGroupProps, 'direction'> &
+  SharedProps;
+
+export const ModalFooter = ({
+  primaryAction,
+  secondaryAction,
+  direction = 'horizontal',
+  testID,
+}: ModalFooterProps) => {
+  const { hideDividers = false } = useModalParent();
+  const actions = [secondaryAction, primaryAction].filter(Boolean);
+  const isVertical = direction === 'vertical';
+
+  // reverse actions order when stacked
+  if (isVertical) {
+    actions.reverse();
+  }
+
+  return (
+    <Box borderedTop={!hideDividers} paddingX={3} paddingY={2} testID={testID}>
+      <ButtonGroup block={!isVertical} direction={direction}>
+        {actions.map((action, i) => (
+          // actions are stable so should be fine to use index as key
+          // eslint-disable-next-line react/no-array-index-key
+          <Fragment key={i}>{action}</Fragment>
+        ))}
+      </ButtonGroup>
+    </Box>
+  );
+};

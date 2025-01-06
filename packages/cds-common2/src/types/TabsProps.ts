@@ -1,9 +1,9 @@
+import { ThemeVars } from '../new/vars';
+
 import { type BoxBaseProps } from './BoxBaseProps';
 import { type DotCountBaseProps } from './DotCountBaseProps';
-import { type PaletteBackground } from './Palette';
 import { type SetState } from './React';
 import { type SharedProps } from './SharedProps';
-import { type SpacingScale } from './SpacingScale';
 
 type OnChange<T extends string | undefined = string> = ((tabId: T) => void) | SetState<T>;
 
@@ -59,7 +59,7 @@ export type TabIndicatorProps = {
   /** This should always match the background color of the parent container
    * @default: 'background'
    */
-  background?: PaletteBackground;
+  background?: ThemeVars.Color;
 } & SharedProps;
 
 export type CustomTabProps = {
@@ -82,12 +82,12 @@ export type TabNavigationProps<T extends string | undefined = string> = {
   /** This should always match the background color of the parent container
    * @default: 'background'
    */
-  background?: PaletteBackground;
+  background?: ThemeVars.Color;
   /**
    * The spacing between Tabs
    * @default 4
    */
-  gap?: SpacingScale;
+  gap?: ThemeVars.Space;
   /**
    * Used to generate a11y attributes for the Tabs
    * If TabNavigation is used to display options that will filter data, use `radiogroup`

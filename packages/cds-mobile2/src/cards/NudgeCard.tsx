@@ -1,0 +1,123 @@
+import React, { isValidElement, memo } from 'react';
+import { PressableProps } from 'react-native';
+import { getCardBodySpacingProps } from '@cbhq/cds-common2/cards/getCardBodySpacingProps';
+import { NudgeCardBaseProps } from '@cbhq/cds-common2/types';
+
+import { IconButton } from '../buttons';
+import { Pictogram } from '../illustrations/Pictogram';
+import { Box, HStack, VStack } from '../layout';
+import { PressableOpacity } from '../system';
+import { TextHeadline, TextLabel2 } from '../typography';
+
+export type NudgeCardProps = NudgeCardBaseProps & {
+  onDismissPress?: PressableProps['onPress'];
+  onActionPress?: PressableProps['onPress'];
+} & Pick<PressableProps, 'onPress'>;
+
+export const NudgeCard = memo(
+  ({
+    title,
+    description,
+    pictogram,
+    media,
+    mediaPosition = 'right',
+    action,
+    onActionPress,
+    numberOfLines = 3,
+    onDismissPress,
+    width = '100%',
+    testID = 'nudge-card',
+    accessibilityLabel,
+    background = 'backgroundAlternate',
+    onPress,
+    maxWidth,
+    ...props
+  }: NudgeCardProps) => {
+    const hasMedia = pictogram || media;
+    const paddingBottom = action ? 1 : 2;
+    const spacingProps = getCardBodySpacingProps({ paddingBottom, compact: true });
+
+    const renderAction = isValidElement(action) ? (
+      action
+    ) : (
+      <PressableOpacity onPress={onActionPress}>
+        <TextHeadline color="textPrimary" numberOfLines={1} paddingY={1}>
+          {action}
+        </TextHeadline>
+      </PressableOpacity>
+    );
+
+    const renderMedia = pictogram ? (
+      <Pictogram
+        dimension={action ? '64x64' : '48x48'}
+        name={pictogram}
+        testID={`${testID}-pictogram`}
+      />
+    ) : (
+      media
+    );
+
+    const content = (
+      <Box
+        background={background}
+        borderColor="transparent"
+        borderRadius={500}
+        maxWidth={maxWidth}
+        paddingRight={onDismissPress ? 3 : 0}
+        position="relative"
+        testID={testID}
+        width={width}
+      >
+        {onDismissPress ? (
+          // zIndex is required otherwise CardBody sits on top of it
+          <Box padding={0.5} position="absolute" right={0} top={0} zIndex="navigation">
+            <IconButton
+              transparent
+              accessibilityLabel={
+                accessibilityLabel ?? `Dismiss the ${typeof title === 'string' ? title : ''} card`
+              }
+              name="close"
+              onPress={onDismissPress}
+              testID={`${testID}-dismiss-button`}
+              variant="secondary"
+            />
+          </Box>
+        ) : null}
+        {/* ported over from CardBody */}
+        <HStack
+          alignItems="center"
+          flexGrow={1}
+          gap={2}
+          justifyContent={mediaPosition === 'right' ? 'space-between' : 'flex-start'}
+          {...spacingProps}
+          {...props}
+        >
+          {hasMedia && mediaPosition === 'left' ? renderMedia : null}
+          <VStack alignItems="flex-start" flexGrow={1} flexShrink={1} gap={2} maxWidth={maxWidth}>
+            <VStack gap={0.5} maxWidth="100%" paddingTop={hasMedia ? 0 : 2}>
+              <TextHeadline
+                ellipsize="tail"
+                numberOfLines={numberOfLines}
+                testID={`${testID}-title`}
+                transform="none"
+              >
+                {title}
+              </TextHeadline>
+              <TextLabel2
+                ellipsize="tail"
+                numberOfLines={numberOfLines}
+                testID={`${testID}-description`}
+                transform="none"
+              >
+                {description}
+              </TextLabel2>
+            </VStack>
+            {action ? renderAction : null}
+          </VStack>
+          {hasMedia && mediaPosition === 'right' ? renderMedia : null}
+        </HStack>
+      </Box>
+    );
+    return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;
+  },
+);

@@ -1,5 +1,6 @@
+import { ThemeVars } from '../new/vars';
+
 import { DimensionStyles } from './DimensionStyles';
-import { PaletteBackground } from './Palette';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
@@ -16,9 +17,9 @@ export type UpsellCardBaseProps = {
   media?: React.ReactNode;
   /**
    * Background color for the card.
-   * @default 'primaryWash'
+   * @default 'backgroundPrimaryWash'
    */
-  background?: PaletteBackground;
+  background?: ThemeVars.Color;
   /**
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */

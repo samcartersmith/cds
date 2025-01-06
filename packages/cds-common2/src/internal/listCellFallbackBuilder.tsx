@@ -3,12 +3,12 @@ import React from 'react';
 import type { CellSpacing, ListCellFallbackProps } from '../types';
 
 const innerSpacing: CellSpacing = {
-  spacingHorizontal: 2,
-  spacingVertical: 4,
+  paddingX: 2,
+  paddingY: 4,
 };
 const outerSpacing: CellSpacing = {
-  spacingHorizontal: 10,
-  spacingVertical: 8,
+  paddingX: 10,
+  paddingY: 8,
 };
 export function listCellFallbackBuilder(
   ListCellFallback: React.ComponentType<React.PropsWithChildren<ListCellFallbackProps>>,

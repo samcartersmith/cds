@@ -1,24 +1,15 @@
-import { FallbackColor, PaletteValue, Spectrum } from '../types';
+import { ThemeVars } from '../new/vars';
+import { FallbackColor } from '../types';
 
-type FallbackColorMap = Record<Spectrum, Record<FallbackColor, PaletteValue>>;
+type FallbackColorMap = Record<FallbackColor, ThemeVars.SpectrumColor>;
 
 export const colorSchemeMap: FallbackColorMap = {
-  light: {
-    blue: 'blue60',
-    teal: 'teal60',
-    purple: 'purple60',
-    pink: 'pink60',
-    green: 'green60',
-    gray: 'gray100',
-  },
-  dark: {
-    blue: 'blue60',
-    teal: 'teal60',
-    purple: 'purple60',
-    pink: 'pink60',
-    green: 'green60',
-    gray: 'gray60',
-  },
+  blue: 'blue60',
+  teal: 'teal60',
+  purple: 'purple60',
+  pink: 'pink60',
+  green: 'green60',
+  gray: 'gray60',
 };
 
 export const avatarDefaultFontColor = '#ffffff';

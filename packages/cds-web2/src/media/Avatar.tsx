@@ -1,12 +1,11 @@
 import React, { memo, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
-import type { AvatarBaseProps, AvatarShape } from '@cbhq/cds-common/types/AvatarBaseProps';
 import type { AvatarSize } from '@cbhq/cds-common2';
 import { useAvatarSrc } from '@cbhq/cds-common2/media/useAvatarSrc';
-import type * as vars from '@cbhq/cds-web2/styles/vars';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import type { AvatarBaseProps, AvatarShape } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
 import { Box } from '../layout/Box';
-import type { SpectrumHueName } from '../styles/spectrum';
 import { Text } from '../text/Text';
 
 import { hexagonAvatarClipId, HexagonBorder } from './Hexagon';
@@ -35,7 +34,7 @@ const wrapperStyles = css`
   }
 
   &[data-colorScheme='gray'] {
-    // in the original implementation the light and dark themes used different values for gray
+    // TO DO: in the original implementation the light and dark themes used different values for gray
     // we will need to find a value that works for both themes until we can detect/change themes in v8
     color: rgb(var(--gray60));
   }
@@ -72,10 +71,8 @@ const borderRadiusStyles: Record<AvatarShape, LinariaClassName> = {
   `,
 };
 
-// TODO after v8 release switch back to common/shared types for avatar color schemes
-// right now, the shared types in cds-common are using old color tokens
 export type FallbackColor = Extract<
-  SpectrumHueName,
+  ThemeVars.SpectrumHue,
   'blue' | 'purple' | 'green' | 'teal' | 'pink' | 'gray'
 >;
 
@@ -92,7 +89,7 @@ export type AvatarWebProps = {
    */
   colorScheme?: FallbackColor;
   /** Adds a border to the Avatar */
-  borderColor?: keyof typeof vars.color; // TODO if a user themes their own colors, the props won't be accurately strongly typed
+  borderColor?: ThemeVars.Color;
   // override the dangerous style prop to mark it as deprecated in the updated cds web package
   /**
    * @deprecated Use the style prop instead to set the width/height properties

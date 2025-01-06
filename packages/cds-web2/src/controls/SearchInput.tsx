@@ -131,7 +131,7 @@ export const SearchInput = memo(
         testID={testID}
         type="search"
         value={value}
-        variant="backgroundAlternate"
+        variant="secondary"
         {...props}
       />
     );

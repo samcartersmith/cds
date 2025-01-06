@@ -1,7 +1,12 @@
-import { TOCItem } from '@docusaurus/types';
 import slugify from '@cbhq/docusaurus-theme/utils/slugify';
 
 import type { ComponentPageFields, ComponentPageProps } from './pages/ComponentPage';
+
+type TOCItem = {
+  id: string;
+  level: number;
+  value: string;
+};
 
 export function populateGuidelinesToc(fields: ComponentPageFields) {
   const toc = [];

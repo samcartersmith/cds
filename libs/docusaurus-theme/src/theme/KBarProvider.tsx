@@ -9,7 +9,6 @@ const KBarProvider = memo(function KBarProvider({ children }: KBarProviderProps)
   const { actions: pluginActions } = useKBarPluginData();
   const themeActions = useKBarThemeActions();
   const actions = useMemo(() => [...pluginActions, ...themeActions], [pluginActions, themeActions]);
-
   return (
     <OriginalKBarProvider actions={actions}>
       <KBarModal />

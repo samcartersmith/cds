@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { memo, useCallback } from 'react';
 import orderBy from 'lodash/orderBy';
 import toPairs from 'lodash/toPairs';
@@ -26,10 +27,11 @@ export const AdopterComponentCallSites = memo(
     return (
       <VStack>
         <TextHeadline as="h4">Call Sites</TextHeadline>
-        {sortedCallSites.map(([callSite, callSiteCount]) => {
+        {sortedCallSites.map(([callSite, callSiteCount], index) => {
           const callSiteText = callSiteCount === 1 ? 'instance' : 'instances';
           return (
             <BetaCell
+              key={`${callSite}-${index}`}
               end={<TextLabel2 align="end" as="p">{`${callSiteCount} ${callSiteText}`}</TextLabel2>}
               endAccessory={<Icon color="foregroundMuted" name="externalLink" size="s" />}
               offsetHorizontal={1}

@@ -1,27 +1,21 @@
-import { CellSpacingConfig, InputVariant, ScaleDensity } from '../types';
+import { CellSpacingConfig, InputVariant } from '../types';
 
 import { gutter } from './sizing';
 
 export const labelTextColor: InputVariant = 'foreground';
 
-export const selectTriggerMinHeight: Record<ScaleDensity, number> = {
-  normal: 56,
-  dense: 44,
-};
+export const selectTriggerMinHeight = 56;
 
-export const selectTriggerCompactMinHeight: Record<ScaleDensity, number> = {
-  normal: 40,
-  dense: 36,
-};
+export const selectTriggerCompactMinHeight = 40;
 
 /** Spacing config for Select Option (web) */
 export const selectCellSpacingConfig: CellSpacingConfig = {
-  outerSpacing: { spacingHorizontal: 0, spacingVertical: 0 },
-  innerSpacing: { offsetHorizontal: 0, spacingHorizontal: 2 },
+  outerSpacing: { paddingX: 0, paddingY: 0 },
+  innerSpacing: { marginX: 0, paddingX: 2 },
 };
 
 /** Spacing config for Select Option (mobile) */
 export const selectCellMobileSpacingConfig: CellSpacingConfig = {
-  outerSpacing: { spacingHorizontal: 0, spacingVertical: 0 },
-  innerSpacing: { offsetHorizontal: 0, spacingHorizontal: gutter },
+  outerSpacing: { paddingX: 0, paddingY: 0 },
+  innerSpacing: { marginX: 0, paddingX: gutter },
 };

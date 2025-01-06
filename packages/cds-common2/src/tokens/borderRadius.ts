@@ -3,11 +3,15 @@
  * Generated from scripts/codegen/main.ts
  */
 export const borderRadius = {
-  roundedNone: 0,
-  roundedSmall: 4,
-  rounded: 8,
-  roundedMedium: 12,
-  roundedLarge: 16,
-  roundedXLarge: 24,
-  roundedFull: 1000,
+  '0': 0,
+  '100': 4,
+  '200': 8,
+  '300': 12,
+  '400': 16,
+  '500': 24,
+  '600': 32,
+  '700': 40,
+  '800': 48,
+  '900': 56,
+  '1000': 1e5,
 } as const;

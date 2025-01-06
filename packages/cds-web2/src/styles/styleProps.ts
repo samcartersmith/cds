@@ -2,15 +2,13 @@
 import * as styles from './styles';
 import * as minTabletStyles from './minTabletStyles';
 import * as minDesktopStyles from './minDesktopStyles';
-
-/** Returns number if the type T extends number, e.g. if T is a number or a number string like '2' or '5.5'. Allows for converting object keys that are numbers (such as the `space` scale vars) from string type to number type. */
-export type TypeOrNumber<T> = T extends `${infer N extends number}` ? N : T;
+import type { TypeOrNumber } from '@cbhq/cds-common2/types/TypeOrNumber';
 
 /**
  * Style props that set classnames but not inline style CSS Variables.
  */
 export type StaticStyleProps = {
-  [key in keyof Omit<typeof styles, 'dynamic'>]: TypeOrNumber<keyof (typeof styles)[key]>;
+  [key in keyof Omit<typeof styles, 'dynamic'>]?: TypeOrNumber<keyof (typeof styles)[key]>;
 };
 
 /**

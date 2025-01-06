@@ -10,18 +10,13 @@ type CreateCardFooterParams = {
 export function createCardFooter({ HStack }: CreateCardFooterParams) {
   const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = memo(function CardFooter({
     children,
-    spacingBottom = 2,
-    spacingHorizontal = gutter,
+    paddingBottom = 2,
+    paddingX = gutter,
     testID,
     ...otherProps
   }) {
     return (
-      <HStack
-        spacingBottom={spacingBottom}
-        spacingHorizontal={spacingHorizontal}
-        testID={testID}
-        {...otherProps}
-      >
+      <HStack paddingBottom={paddingBottom} paddingX={paddingX} testID={testID} {...otherProps}>
         {children}
       </HStack>
     );

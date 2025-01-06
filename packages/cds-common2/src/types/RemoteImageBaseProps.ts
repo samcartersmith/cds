@@ -1,6 +1,7 @@
+import { ThemeVars } from '../new/vars';
+
 import { AvatarSize } from './AvatarSize';
 import { FixedValue } from './DimensionStyles';
-import { PaletteBorder } from './Palette';
 import { AspectRatio, Shape } from './Shape';
 
 export type RemoteImageBaseProps = {
@@ -22,6 +23,6 @@ export type RemoteImageBaseProps = {
    * @default m
    * */
   size?: AvatarSize;
-  /** Adds a custom border color from the border palette */
-  borderColor?: PaletteBorder;
+  /** Adds a custom border color */
+  borderColor?: ThemeVars.Color;
 };

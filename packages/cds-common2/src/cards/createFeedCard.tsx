@@ -52,7 +52,7 @@ export function createFeedCard<OnPressFn>({
     comment,
     share,
     cta,
-    borderRadius = 'roundedNone',
+    borderRadius = 0,
     elevation = 0,
     ...cardProps
   }: FeedCardBaseProps<OnPressFn>) {
@@ -115,8 +115,8 @@ export function createFeedCard<OnPressFn>({
           description={description}
           image={image}
           mediaPlacement={mediaPlacement}
+          paddingY={footer === null ? undefined : 0} // Only override default CardBody spacing if footer is present
           pictogram={pictogram}
-          spacingVertical={footer === null ? undefined : 0} // Only override default CardBody spacing if footer is present
           spotSquare={spotSquare}
           testID={`${testID}-body`}
           title={title}

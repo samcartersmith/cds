@@ -1,10 +1,10 @@
-import { AvatarDensePixelSize, AvatarPixelSize, AvatarSize, FixedValue } from '../types';
+import { AvatarPixelSize, AvatarSize, FixedValue } from '../types';
 
 type GetRemoteImageWidthAndHeightType = {
   size?: AvatarSize;
   width?: FixedValue;
   height?: FixedValue;
-  avatarSize?: AvatarPixelSize | AvatarDensePixelSize;
+  avatarSize?: AvatarPixelSize;
 };
 
 /**

@@ -1,6 +1,6 @@
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
-import { SpacingProps } from './SpacingProps';
+import { PaddingProps } from './SpacingProps';
 
 export type StickyFooterProps = {
   /**
@@ -17,5 +17,5 @@ export type StickyFooterProps = {
    */
   role?: React.AriaRole;
 } & SharedProps &
-  SpacingProps &
+  PaddingProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'>;

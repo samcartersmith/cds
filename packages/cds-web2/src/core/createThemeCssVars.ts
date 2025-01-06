@@ -1,14 +1,18 @@
 /* eslint-disable */
 import { type CSSProperties } from '@linaria/core';
-import { type Theme, type ThemeConfig, varNames, styleVarPrefixes } from './theme';
+import { type Theme, type ThemeConfig, styleVarPrefixes } from './theme';
 import { createCssVars } from './createCssVars';
 
-export const createThemeCssVars = (theme: ThemeConfig) => {
+export const createThemeCssVars = (theme: Partial<ThemeConfig>) => {
   const themeCss: Record<string, CSSProperties> = {};
   for (const key in theme) {
-    // If the key is a VarType / Theme key, create CSS Variables for it
-    if (key in varNames) {
-      const themeKey = key as keyof typeof varNames;
+    if (key === 'metadata') continue;
+    // It's a media query, so recurse
+    if (key.charAt(0) === '@')
+      themeCss[key] = createThemeCssVars(theme[key as `@media ${string}`] as Partial<Theme>);
+    // Otherwise the key is a VarType / Theme key, create CSS Variables for it
+    else {
+      const themeKey = key as keyof Theme;
       const cssVars = createCssVars(
         (theme as Theme)[themeKey],
         styleVarPrefixes[themeKey as keyof typeof styleVarPrefixes] || '',
@@ -19,8 +23,6 @@ export const createThemeCssVars = (theme: ThemeConfig) => {
         themeCss[escapedVarName] = cssVars[cssVarName as keyof typeof cssVars];
       }
     }
-    // Otherwise it must be a media query, so recurse
-    else themeCss[key] = createThemeCssVars(theme[key as `@media ${string}`]);
   }
   return themeCss;
 };

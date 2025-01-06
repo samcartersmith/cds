@@ -2,9 +2,7 @@
   "extends": "../../tsconfig.project.json",
   "compilerOptions": {
     "declarationDir": "dts",
-    "rootDir": "src",
-
-    "moduleResolution": "node"
+    "rootDir": "src"
   },
   "include": [
     "src/**/*"

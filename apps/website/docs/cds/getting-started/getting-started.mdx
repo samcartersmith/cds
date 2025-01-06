@@ -4,8 +4,8 @@ title: Getting started
 ---
 
 import Figma, { toc as figmaToc } from './_figma.mdx';
-import Web, { tocOverride as webToc } from './_web.mdx';
-import Mobile, { toc as mobileToc } from './_mobile.mdx';
+import Web, { toc as webToc, extraToc as webExtraToc } from './_web.mdx';
+import Mobile, { toc as mobileToc, extraToc as mobileExtraToc } from './_mobile.mdx';
 import Faq, { toc as faqToc } from './_faq.mdx';
 
 <Figma />
@@ -13,10 +13,10 @@ import Faq, { toc as faqToc } from './_faq.mdx';
 ## Packages
 
 <Tabs groupId="getting-started">
-  <TabItem value="@cbhq/cds-web" toc={[...figmaToc, ...webToc, ...faqToc]}>
+  <TabItem value="@cbhq/cds-web" toc={[...figmaToc, ...webToc, ...webExtraToc, ...faqToc]}>
     <Web />
   </TabItem>
-  <TabItem value="@cbhq/cds-mobile" toc={[...figmaToc, ...mobileToc, ...faqToc]}>
+  <TabItem value="@cbhq/cds-mobile" toc={[...figmaToc, ...mobileToc, ...mobileExtraToc, ...faqToc]}>
     <Mobile />
   </TabItem>
 </Tabs>

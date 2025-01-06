@@ -1,5 +1,6 @@
 import React, { memo, useMemo } from 'react';
 
+import { ThemeVars } from '../new/vars';
 import { defaultMediaSize } from '../tokens/card';
 import { gutter } from '../tokens/sizing';
 import type {
@@ -7,7 +8,6 @@ import type {
   CardBodyBaseProps,
   CardBoxProps,
   DataCardBaseProps,
-  PaletteForeground,
   ProgressBaseProps,
   ProgressCircleBaseProps,
   TextBaseProps,
@@ -20,11 +20,11 @@ type CreateFeatureEntryCardParams<OnPressFn> = {
   ProgressCircle: React.ComponentType<ProgressCircleBaseProps>;
   ProgressBar: React.ComponentType<ProgressBaseProps>;
   TextBody: React.ComponentType<
-    React.PropsWithChildren<TextBaseProps & { color?: PaletteForeground }>
+    React.PropsWithChildren<TextBaseProps & { color?: ThemeVars.Color }>
   >;
   TextHeadline: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
   TextLabel2: React.ComponentType<
-    React.PropsWithChildren<TextBaseProps & { color?: PaletteForeground }>
+    React.PropsWithChildren<TextBaseProps & { color?: ThemeVars.Color }>
   >;
 };
 
@@ -48,7 +48,7 @@ export function createDataCard<OnPressFn>({
     startLabel: startLabelProp,
     endLabel: endLabelProp,
     testID = 'data-card',
-    borderRadius = 'roundedNone',
+    borderRadius = 0,
     elevation = 0,
     ...cardProps
   }: DataCardBaseProps & { onPress?: OnPressFn }) {
@@ -60,7 +60,7 @@ export function createDataCard<OnPressFn>({
             <TextHeadline testID={`${testID}-start-label`}>{startLabelProp}</TextHeadline>
           )}
           {!!endLabelProp && (
-            <TextEndLabel color="foregroundMuted" testID={`${testID}-end-label`}>
+            <TextEndLabel color="textForegroundMuted" testID={`${testID}-end-label`}>
               {endLabelProp}
             </TextEndLabel>
           )}
@@ -74,7 +74,7 @@ export function createDataCard<OnPressFn>({
         elevation={elevation}
         gap={2}
         onPress={onPress}
-        spacing={gutter}
+        padding={gutter}
         testID={testID}
         {...cardProps}
       >
@@ -90,7 +90,7 @@ export function createDataCard<OnPressFn>({
               />
             )
           }
-          spacing={0}
+          padding={0}
           testID={`${testID}-body`}
           title={title}
         />

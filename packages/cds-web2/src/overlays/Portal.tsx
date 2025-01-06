@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { createPortal } from 'react-dom';
 
 import { type ThemeConfig } from '../core/theme';
-import { ThemeProvider } from '../providers/ThemeProvider';
+import { ThemeProvider } from '../system/ThemeProvider';
 import { isSSR } from '../utils/browser';
 
 export type PortalProps = {

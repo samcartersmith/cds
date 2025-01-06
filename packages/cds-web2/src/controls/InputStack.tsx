@@ -2,20 +2,20 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { inputStackGap } from '@cbhq/cds-common2/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 import type { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
+import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { ColorSurge } from '../motion/ColorSurge';
-import type { StaticStyleProps } from '../styles/styleProps';
 import { Interactable } from '../system/Interactable';
 
-import type { InputVariant } from './context';
 import { InputLabel } from './InputLabel';
 
 const baseStyle = css`
@@ -54,11 +54,20 @@ const persistedFocusStyle = css`
   box-shadow: 0 0 0 var(--border-width-focused) var(--border-color-focused);
 `;
 
+const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
+  primary: 'backgroundPrimary',
+  positive: 'backgroundPositive',
+  negative: 'backgroundNegative',
+  foreground: 'textForeground',
+  foregroundMuted: 'textForegroundMuted',
+  secondary: 'backgroundSecondary',
+};
+
 export type InputStackBaseProps = {
   /** Width of the border.
    * @default rounded
    */
-  borderWidth?: StaticStyleProps['borderWidth'];
+  borderWidth?: ThemeVars.BorderWidth;
   /**
    * Determines the sentiment of the input. Because
    * we allow startContent and endContent to be custom ReactNode,
@@ -102,7 +111,7 @@ export type InputStackBaseProps = {
    * Leverage one of the borderRadius styles we offer to round the corners of the input.
    * @default rounded
    */
-  borderRadius?: StaticStyleProps['borderRadius'];
+  borderRadius?: ThemeVars.BorderRadius;
   /**
    * Disable default focus styles
    * @default false
@@ -130,7 +139,7 @@ export const InputStack = memo(
         inputNode,
         helperTextNode,
         borderWidth = 100,
-        variant = 'textForegroundMuted',
+        variant = 'foregroundMuted',
         labelNode,
         testID = '',
         focused = false,
@@ -143,10 +152,7 @@ export const InputStack = memo(
       ref: ForwardedRef<HTMLElement>,
     ) => {
       const focusedVariant = useMemo(
-        () =>
-          focused && variant !== 'textPositive' && variant !== 'textNegative'
-            ? 'backgroundPrimary'
-            : variant,
+        () => (focused && variant !== 'positive' && variant !== 'negative' ? 'primary' : variant),
         [focused, variant],
       );
 
@@ -172,7 +178,7 @@ export const InputStack = memo(
           return 'transparent';
         }
 
-        if (variant !== 'textPositive' && variant !== 'textNegative') {
+        if (variant !== 'positive' && variant !== 'negative') {
           return 'var(--color-textPrimary)';
         }
 
@@ -182,9 +188,9 @@ export const InputStack = memo(
       const defaultBorderStyle = useMemo(() => {
         return {
           '--border-color-unfocused':
-            variant === 'backgroundAlternate'
+            variant === 'secondary'
               ? 'transparent'
-              : variant === 'textForegroundMuted' || !variant
+              : variant === 'foregroundMuted' || !variant
               ? 'var(--color-lineHeavy)'
               : `var(--color-${variant})`,
           '--border-color-focused': borderColorFocused,
@@ -210,9 +216,7 @@ export const InputStack = memo(
               <Interactable
                 ref={ref}
                 as="span"
-                background={
-                  variant === 'backgroundAlternate' ? 'backgroundAlternate' : 'background'
-                }
+                background={variant === 'secondary' ? 'backgroundSecondary' : 'background'}
                 borderRadius={borderRadius}
                 borderWidth={borderWidth}
                 className={cx(baseStyle, focused && persistedFocusStyle)}
@@ -221,7 +225,9 @@ export const InputStack = memo(
                 style={defaultBorderStyle}
                 testID="input-interactable-area"
               >
-                {!!focused && !!enableColorSurge && <ColorSurge background={focusedVariant} />}
+                {!!focused && !!enableColorSurge && (
+                  <ColorSurge background={variantColorMap[focusedVariant]} />
+                )}
                 {!!startNode && <>{startNode}</>}
                 {inputNode}
                 {!!endNode && <>{endNode}</>}

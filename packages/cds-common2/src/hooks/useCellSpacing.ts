@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { emptyObject } from '@cbhq/cds-utils';
 
 import { defaultSpacingConfig } from '../tokens/cell';
 import { CellBaseProps } from '../types';
@@ -14,20 +13,20 @@ export type UseCellSpacingParams = Pick<CellBaseProps, 'innerSpacing' | 'outerSp
 export function useCellSpacing({
   innerSpacing,
   outerSpacing,
-}: UseCellSpacingParams | undefined = emptyObject) {
+}: UseCellSpacingParams | undefined = {}) {
   return useMemo(
     () =>
       ({
         inner: {
           ...innerDefaults,
-          spacingHorizontal: innerSpacing?.spacing ?? innerDefaults.spacingHorizontal,
-          spacingVertical: innerSpacing?.spacing ?? innerDefaults.spacingVertical,
+          paddingX: innerSpacing?.padding ?? innerDefaults.paddingX,
+          paddingY: innerSpacing?.padding ?? innerDefaults.paddingY,
           ...innerSpacing,
         },
         outer: {
           ...outerDefaults,
-          spacingHorizontal: outerSpacing?.spacing ?? outerDefaults.spacingHorizontal,
-          spacingVertical: outerSpacing?.spacing ?? outerDefaults.spacingVertical,
+          paddingX: outerSpacing?.padding ?? outerDefaults.paddingX,
+          paddingY: outerSpacing?.padding ?? outerDefaults.paddingY,
           ...outerSpacing,
         },
       } as const),

@@ -26,7 +26,7 @@ export const dotOuterContainerStyles = {
   alignItems: 'center',
   justifyContent: 'center',
   display: 'flex',
-  borderWidth: borderWidth.button,
+  borderWidth: borderWidth[100],
 } as const;
 
 export const dotCountSize = 24;
@@ -34,7 +34,7 @@ export const dotCountSize = 24;
 export const dotCountContent = {
   minWidth: dotCountSize,
   height: dotCountSize,
-  borderRadius: borderRadius.roundedLarge,
+  borderRadius: borderRadius[400],
 } as const;
 
 export const dotCountPadding = {

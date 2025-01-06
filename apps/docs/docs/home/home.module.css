@@ -1,0 +1,50 @@
+.homePageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sectionHeader {
+  font-family: var(--font-style-display);
+  font-size: var(--font-size-display-2);
+  font-weight: 400;
+  line-height: var(--font-line-height-display-2);
+}
+
+@media screen and (max-width: 1280px) {
+  .sectionHeader {
+    font-size: var(--font-size-title-2);
+    line-height: var(--font-line-height-title-2);
+  }
+}
+
+.quickStartCardsWrapper {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .quickStartCardsWrapper {
+    flex-direction: column;
+  }
+}
+
+.componentCardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .componentCardsWrapper {
+    flex-direction: column;
+  }
+}

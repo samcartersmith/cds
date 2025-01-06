@@ -1,0 +1,10 @@
+import type { HeroSquareProps as HeroSquareCommonProps } from '@cbhq/cds-common2/types/IllustrationProps';
+import heroSquareIllustrations from '@cbhq/cds-illustrations/__generated__/heroSquare/data/svgJsMap';
+
+import { createIllustration, IllustrationA11yProps } from './createIllustration';
+
+export type HeroSquareProps = HeroSquareCommonProps & IllustrationA11yProps;
+
+export const HeroSquare = createIllustration('heroSquare', heroSquareIllustrations);
+
+export type { HeroSquareName } from '@cbhq/cds-illustrations';

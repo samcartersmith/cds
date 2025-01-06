@@ -1,0 +1,187 @@
+import React, { useCallback, useRef, useState } from 'react';
+import { FlatList } from 'react-native';
+import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
+import { assets } from '@cbhq/cds-common2/internal/data/assets';
+import { DrawerRefBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
+
+import { Button } from '../../buttons/Button';
+import { ListCell, ListCellProps } from '../../cells';
+import { CellMedia } from '../../cells/CellMedia';
+import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { SectionHeader } from '../../section-header/SectionHeader';
+import { StickyFooter } from '../../sticky-footer/StickyFooter';
+import { Link, TextBody } from '../../typography';
+import { Tray, TrayStickyFooter } from '../Tray/Tray';
+
+type Option = {
+  title: string;
+  detail: string;
+  media: string;
+  selected: boolean;
+};
+
+const defaultOptions: Option[] = [
+  {
+    title: 'Ethereum',
+    detail: '$0.00',
+    media: assets.eth.imageUrl,
+    selected: false,
+  },
+  {
+    title: 'Title',
+    detail: '$0.00',
+    media: assets.polygon.imageUrl,
+    selected: true,
+  },
+];
+
+const exampleOptions: ListCellProps[] = Array.from({ length: 10 }).map((_, idx) => ({
+  title: `Title ${idx + 1}`,
+  description: 'Description',
+  detail: 'Detail',
+  subdetail: 'SubDetail',
+  selected: false,
+}));
+
+export const Default = (props: Partial<TrayBaseProps>) => {
+  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
+    useToggler(false);
+  const [items, setItems] = useState<Option[]>(defaultOptions);
+  const trayRef = useRef<DrawerRefBaseProps>(null);
+
+  const handleOptionPress = useCallback((index: number) => {
+    setItems((prev) => {
+      const newItems = prev.map((item, i) => {
+        if (i === index) {
+          return { ...item, selected: !item.selected };
+        }
+        return { ...item, selected: false };
+      });
+      return newItems;
+    });
+    trayRef.current?.handleClose();
+  }, []);
+
+  const handleTrayVisibilityChange = useCallback((e: 'visible' | 'hidden') => {
+    console.log('Tray visibility changed:', e);
+  }, []);
+
+  const description = (
+    <TextBody>
+      <TextBody color="textForegroundMuted">
+        Select the network you want your swapped asset to be stored on.{' '}
+      </TextBody>
+      <Link to="https://www.coinbase.com/" variant="body">
+        Learn more
+      </Link>
+    </TextBody>
+  );
+
+  return (
+    <>
+      <Button onPress={handleOpenTray}>Open</Button>
+      {isTrayVisible && (
+        <Tray
+          ref={trayRef}
+          handleBarAccessibilityLabel="Dismiss"
+          onCloseComplete={handleCloseTray}
+          onVisibilityChange={handleTrayVisibilityChange}
+          title={<SectionHeader description={description} paddingX={3} title="Change network" />}
+          {...props}
+        >
+          {items?.map(({ media, ...item }, index) => (
+            <ListCell
+              key={item.title}
+              media={<CellMedia source={media} type="avatar" />}
+              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+              onPress={() => handleOptionPress(index)}
+              {...item}
+            />
+          ))}
+        </Tray>
+      )}
+    </>
+  );
+};
+
+export const WithStickyFooter = () => {
+  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
+    useToggler(false);
+  const trayRef = useRef<DrawerRefBaseProps>(null);
+  const [items, setItems] = useState<ListCellProps[]>(exampleOptions);
+
+  const handleTrayVisibilityChange = useCallback((e: 'visible' | 'hidden') => {
+    console.log('Tray visibility changed:', e);
+  }, []);
+
+  const handleOptionPress = useCallback((index: number) => {
+    setItems((prev) => {
+      const newItems = prev.map((item, i) => {
+        if (i === index) {
+          return { ...item, selected: !item.selected };
+        }
+        return item;
+      });
+      return newItems;
+    });
+  }, []);
+
+  const renderItem = useCallback(
+    ({ index, item }: { index: number; item: ListCellProps }) => {
+      // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+      return <ListCell onPress={() => handleOptionPress(index)} {...item} />;
+    },
+    [handleOptionPress],
+  );
+
+  const handleKeyExtractor = useCallback((item: ListCellProps) => item.title as string, []);
+
+  return (
+    <>
+      <Button onPress={handleOpenTray}>Open</Button>
+      {isTrayVisible && (
+        <Tray
+          ref={trayRef}
+          disableCapturePanGestureToDismiss
+          handleBarAccessibilityLabel="Dismiss"
+          onCloseComplete={handleCloseTray}
+          onVisibilityChange={handleTrayVisibilityChange}
+          title={<SectionHeader paddingX={3} title="Section header" />}
+        >
+          {({ handleClose }) => (
+            <TrayStickyFooter>
+              <FlatList data={items} keyExtractor={handleKeyExtractor} renderItem={renderItem} />
+              <StickyFooter paddingX={3}>
+                <Button block onPress={handleClose}>
+                  Button
+                </Button>
+              </StickyFooter>
+            </TrayStickyFooter>
+          )}
+        </Tray>
+      )}
+    </>
+  );
+};
+
+const NonDimissable = () => {
+  return <Default hideHandleBar preventDismissGestures preventHardwareBackBehaviorAndroid />;
+};
+
+export const ActionTrayScreen = () => {
+  return (
+    <ExampleScreen>
+      <Example title="Action Tray">
+        <Default />
+      </Example>
+      <Example title="With Sticky Footer">
+        <WithStickyFooter />
+      </Example>
+      <Example title="Non-dimissable">
+        <NonDimissable />
+      </Example>
+    </ExampleScreen>
+  );
+};
+
+export default ActionTrayScreen;

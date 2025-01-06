@@ -17,19 +17,19 @@ describe('useCellSpacing', () => {
   it('will correctly override defaults', () => {
     const { result } = renderHook(() => {
       return useCellSpacing({
-        innerSpacing: { spacingVertical: 3 },
-        outerSpacing: { spacingHorizontal: 0 },
+        innerSpacing: { paddingY: 3 },
+        outerSpacing: { paddingX: 0 },
       });
     });
 
     expect(result.current).toEqual({
       inner: {
         ...innerDefaults,
-        spacingVertical: 3,
+        paddingY: 3,
       },
       outer: {
         ...outerDefaults,
-        spacingHorizontal: 0,
+        paddingX: 0,
       },
     });
   });

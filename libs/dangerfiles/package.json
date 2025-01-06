@@ -8,11 +8,7 @@
     "url": "git@github.cbhq.net:frontend/cds.git",
     "directory": "libs/dangerfiles"
   },
-  "files": [
-    "CHANGELOG"
-  ],
   "dependencies": {
     "semver": "^7.5.4"
-  },
-  "nx": {}
+  }
 }

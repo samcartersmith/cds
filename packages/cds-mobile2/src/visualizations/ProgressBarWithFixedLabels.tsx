@@ -1,0 +1,145 @@
+import React, { memo } from 'react';
+import { I18nManager, View } from 'react-native';
+import {
+  ProgressBarFixedLabelBesideProps,
+  ProgressBarFixedLabelContainerProps,
+  ProgressBarFixedLabelProps,
+  ProgressBarWithFixedLabelsProps,
+} from '@cbhq/cds-common2/types/ProgressBarBaseProps';
+import { getProgressBarLabelParts } from '@cbhq/cds-common2/visualizations/getProgressBarLabelParts';
+
+import { Box, VStack } from '../layout';
+
+import { ProgressTextLabel } from './ProgressTextLabel';
+
+const ProgressBarFixedLabelBeside = memo(
+  ({ label, visuallyDisabled }: ProgressBarFixedLabelBesideProps) => {
+    const { value: labelNum, render: renderLabel } = getProgressBarLabelParts(label);
+
+    return (
+      <ProgressTextLabel
+        color="textForeground"
+        disabled={visuallyDisabled}
+        renderLabel={renderLabel}
+        value={labelNum}
+      />
+    );
+  },
+);
+
+const ProgressBarFixedLabel = memo(
+  ({ label, position, visuallyDisabled }: ProgressBarFixedLabelProps) => {
+    return (
+      <View testID={`cds-progress-bar-fixed-label-${position}`}>
+        <ProgressBarFixedLabelBeside label={label} visuallyDisabled={visuallyDisabled} />
+      </View>
+    );
+  },
+);
+
+const ProgressBarFixedLabelContainer = memo(
+  ({
+    startLabel,
+    endLabel,
+    visuallyDisabled,
+    paddingBottom,
+    paddingTop,
+  }: ProgressBarFixedLabelContainerProps) => {
+    const nodes: React.ReactElement[] = [];
+
+    if (typeof startLabel !== 'undefined') {
+      nodes.push(
+        <ProgressBarFixedLabel
+          key="start-label"
+          label={startLabel}
+          position="start"
+          visuallyDisabled={visuallyDisabled}
+        />,
+      );
+    } else {
+      // pushes an end label to the end if no start label is available to push it
+      nodes.push(<View key="end-label-spacer" />);
+    }
+
+    if (typeof endLabel !== 'undefined') {
+      nodes.push(
+        <ProgressBarFixedLabel
+          key="end-label"
+          label={endLabel}
+          position="end"
+          visuallyDisabled={visuallyDisabled}
+        />,
+      );
+    } else {
+      // pushes a start label to the start if there is no end label available to push it
+      nodes.push(<View key="start-label-spacer" />);
+    }
+
+    if (I18nManager.isRTL) {
+      nodes.reverse();
+    }
+
+    return (
+      <Box
+        alignItems="center"
+        flexDirection="row"
+        justifyContent="space-between"
+        paddingBottom={paddingBottom}
+        paddingTop={paddingTop}
+        testID="cds-progress-label-container"
+        width="100%"
+      >
+        {nodes}
+      </Box>
+    );
+  },
+);
+
+export const ProgressBarWithFixedLabels: React.FC<
+  React.PropsWithChildren<ProgressBarWithFixedLabelsProps>
+> = memo(
+  ({ startLabel, endLabel, labelPlacement = 'beside', disabled = false, children, testID }) => {
+    const startLabelEl = typeof startLabel !== 'undefined' && (
+      <Box flexGrow={0} flexShrink={0} paddingRight={1}>
+        <ProgressBarFixedLabelBeside label={startLabel} visuallyDisabled={disabled} />
+      </Box>
+    );
+
+    const endLabelEl = typeof endLabel !== 'undefined' && (
+      <Box flexGrow={0} flexShrink={0} paddingLeft={1}>
+        <ProgressBarFixedLabelBeside label={endLabel} visuallyDisabled={disabled} />
+      </Box>
+    );
+
+    const leftEl = I18nManager.isRTL ? endLabelEl : startLabelEl;
+    const rightEl = I18nManager.isRTL ? startLabelEl : endLabelEl;
+
+    return (
+      <VStack testID={testID}>
+        {labelPlacement === 'above' && (
+          <ProgressBarFixedLabelContainer
+            endLabel={endLabel}
+            paddingBottom={1}
+            startLabel={startLabel}
+            visuallyDisabled={disabled}
+          />
+        )}
+
+        <Box alignItems="center" flexDirection="row" flexShrink={0} flexWrap="nowrap" width="100%">
+          {labelPlacement === 'beside' && leftEl}
+          {children}
+          {labelPlacement === 'beside' && rightEl}
+        </Box>
+
+        {labelPlacement === 'below' && (
+          <ProgressBarFixedLabelContainer
+            endLabel={endLabel}
+            paddingTop={1}
+            startLabel={startLabel}
+            visuallyDisabled={disabled}
+          />
+        )}
+      </VStack>
+    );
+  },
+);

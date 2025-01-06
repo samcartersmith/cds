@@ -1,6 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
 import Link from '@docusaurus/Link';
 import { css } from '@linaria/core';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 import { noop } from 'lodash';
 import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
@@ -16,8 +18,6 @@ import { Modal, ModalBody, ModalHeader, Tooltip } from '@cbhq/cds-web/overlays';
 import { PressableOpacity } from '@cbhq/cds-web/system';
 import { TextBody, TextDisplay1, TextLabel1, TextTitle2 } from '@cbhq/cds-web/typography';
 import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
-import TabItem from '@cbhq/docusaurus-theme/theme/TabItem';
-import Tabs from '@cbhq/docusaurus-theme/theme/Tabs';
 
 import { TableExample } from './TableExample';
 
@@ -100,7 +100,7 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
             </Tooltip>
           </Box>
 
-          <Tabs groupId="page" variant="primary">
+          <Tabs groupId="page">
             <TabItem label="I don’t think this where you’re headed" value="tab_one">
               <Link href="https://www.w3.org/WAI/WCAG21/Understanding/">WCAG 2.1</Link>
             </TabItem>

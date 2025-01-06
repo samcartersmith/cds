@@ -1,5 +1,5 @@
-export const maxWidth = 260;
+export const tooltipMaxWidth = 260;
 
-// Spacing around text inside tooltip.
-export const spacingHorizontal = 2;
-export const spacingVertical = 1;
+// Padding around text inside tooltip.
+export const tooltipPaddingX = 2;
+export const tooltipPaddingY = 1;

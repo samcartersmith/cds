@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { TableBody, TableCell, TableRow } from '@cbhq/cds-web/tables';
 import { Table } from '@cbhq/cds-web/tables/Table';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';
@@ -11,9 +12,9 @@ export const DataTable = ({ data }: { data: Record<string, string> }) => {
   return (
     <Table bordered variant="graph">
       <TableBody>
-        {Object.entries(data).map(([headline, body]) => {
+        {Object.entries(data).map(([headline, body], index) => {
           return (
-            <TableRow>
+            <TableRow key={`${headline}-${body}-${index}`}>
               <TableCell>
                 <TextHeadline as="h1">{headline}</TextHeadline>
               </TableCell>

@@ -1,15 +1,15 @@
-import { HintMotionBaseProps } from './MotionBaseProps';
-import { PaletteAlias } from './Palette';
+import { ThemeVars } from '../new/vars';
 
-export type ColorSurgeBackground = Extract<PaletteAlias, 'primary' | 'positive' | 'negative'>;
+import { HintMotionBaseProps } from './MotionBaseProps';
+
 export type ColorSurgeBaseProps = {
   /**
    * Palette alias of the surge color
    * @default primary
    */
-  background?: ColorSurgeBackground;
+  background?: ThemeVars.Color;
 } & HintMotionBaseProps;
 
 export type ColorSurgeRefBaseProps = {
-  play: (background?: ColorSurgeBackground) => Promise<void>;
+  play: (background?: ThemeVars.Color) => Promise<void>;
 };

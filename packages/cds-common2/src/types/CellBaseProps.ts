@@ -1,19 +1,18 @@
+import { ThemeVars } from '../new/vars';
 import { cellPriorities } from '../tokens/cell';
 
-import { BorderRadius } from './BorderRadius';
 import { FallbackRectWidthProps } from './FallbackBaseProps';
 import { IconName } from './IconName';
 import { PictogramProps } from './IllustrationProps';
-import { PaletteForeground } from './Palette';
 import { SharedProps } from './SharedProps';
-import { OffsetProps, SpacingProps } from './SpacingProps';
+import { MarginProps, PaddingProps } from './SpacingProps';
 
-export type CellSpacing = SpacingProps & OffsetProps;
+export type CellSpacing = PaddingProps & MarginProps;
 export type CellSpacingConfig = Pick<CellBaseProps, 'innerSpacing' | 'outerSpacing'>;
 export type CellPriority = (typeof cellPriorities)[number];
 
 export type CellCommonProps = {
-  borderRadius?: BorderRadius;
+  borderRadius?: ThemeVars.BorderRadius;
   /** enables compact spacing */
   compact?: boolean;
   /** Apply a fixed width to the detail (end). */
@@ -51,12 +50,9 @@ export type CellAccessoryProps = {
    * @danger This is a migration escape hatch. It is not intended to be used normally.
    */
   className?: string;
-} & SpacingProps;
+} & PaddingProps;
 
-export type CellDetailVariant = Extract<
-  PaletteForeground,
-  'foregroundMuted' | 'negative' | 'positive' | 'warning'
->;
+export type CellDetailVariant = 'foregroundMuted' | 'negative' | 'positive' | 'warning';
 
 export type CellDetailProps = {
   /**
@@ -80,7 +76,7 @@ export type CellMediaSource = string | number;
 export type CellMediaIconProps = {
   type: Extract<CellMediaType, 'icon'>;
   name: IconName;
-  color?: Extract<PaletteForeground, 'primary' | 'foreground' | 'foregroundMuted'>;
+  color?: Extract<ThemeVars.Color, 'iconPrimary' | 'iconForeground' | 'iconForegroundMuted'>;
 } & SharedProps;
 
 export type CellMediaPictogramProps<T> = {

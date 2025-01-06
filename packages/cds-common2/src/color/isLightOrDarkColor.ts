@@ -1,6 +1,4 @@
-import * as d3Color from 'd3-color';
-
-const { color } = d3Color;
+import { color } from 'd3-color';
 
 export const isLightOrDarkColor = (value: string) => {
   const rgbObject = color(value)?.rgb();

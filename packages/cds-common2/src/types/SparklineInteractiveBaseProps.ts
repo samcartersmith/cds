@@ -1,6 +1,8 @@
 import React from 'react';
 import { Area, Line } from 'd3-shape';
 
+import { ThemeVars } from '../new/vars';
+
 import type {
   ChartData,
   ChartDataPoint,
@@ -12,7 +14,6 @@ import type {
   ChartXFunction,
 } from './Chart';
 import { Placement } from './Placement';
-import { SpacingScale } from './SpacingScale';
 import type { SparklineScalingBaseProps } from './SparklineBaseProps';
 
 export type SparklineInteractiveBaseProps<Period extends string> = {
@@ -123,7 +124,7 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
   /**
    * Optional gutter to add to the Period selector. This is useful if you choose to use the full screen width for the chart
    */
-  timePeriodGutter?: SpacingScale;
+  timePeriodGutter?: ThemeVars.Space;
 
   /**
    * Optional placement prop that position the period selector component above or below the chart
@@ -163,7 +164,7 @@ export type SparklineInteractiveMarkerDatesProps<Period extends string> = {
   getMarker: ChartGetMarker;
   formatDate: ChartFormatDate<Period>;
   selectedPeriod: Period;
-  timePeriodGutter?: SpacingScale;
+  timePeriodGutter?: ThemeVars.Space;
 };
 
 export type SparklineInteractivePeriodSelectorProps<Period extends string> = {

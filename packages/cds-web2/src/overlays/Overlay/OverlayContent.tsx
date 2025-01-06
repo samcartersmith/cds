@@ -18,7 +18,7 @@ export type OverlayProps = {
 } & VStackProps<'div'> &
   SharedProps;
 
-export const OverlayContent = forwardRef<HTMLElement, OverlayProps>(
+export const OverlayContent = forwardRef<HTMLDivElement, OverlayProps>(
   ({ onPress, animated = false, ...props }, forwardedRef) => {
     const motionProps = useMotionProps({
       enterConfigs: [animateInOpacityConfig],

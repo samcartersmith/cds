@@ -6,13 +6,10 @@ import type {
   DotSymbolBaseProps,
   IconBaseProps,
   RemoteImageBaseProps,
-  Scale,
   SelectBaseProps,
   SelectOptionBaseProps,
-  Spectrum,
   StackBaseProps,
   TextInputBaseProps,
-  ThemeProviderBaseProps,
   TrayBaseProps,
 } from '../types';
 
@@ -41,9 +38,6 @@ export type CreateSelectStoriesProps = {
     React.PropsWithChildren<Omit<BoxBaseProps, 'flexDirection'> & StackBaseProps>
   >;
   SelectOption: React.ComponentType<React.PropsWithChildren<SelectOptionProps>>;
-  ThemeProvider: React.ComponentType<React.PropsWithChildren<ThemeProviderBaseProps>>;
-  spectrum?: Spectrum;
-  scale?: Scale;
   InputIcon: React.ComponentType<React.PropsWithChildren<Omit<IconBaseProps, 'size'>>>;
   DotSymbol: React.ComponentType<React.PropsWithChildren<DotSymbolBaseProps & { source: string }>>;
   RemoteImage: React.ComponentType<
@@ -88,9 +82,6 @@ export const selectBuilder = ({
   Select,
   VStack,
   SelectOption,
-  ThemeProvider,
-  spectrum,
-  scale,
   InputIcon,
   DotSymbol,
   RemoteImage,
@@ -121,40 +112,38 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <ThemeProvider scale={scale} spectrum={spectrum}>
-        <VStack background spacing={2}>
-          <Select
-            accessibilityLabel={accessibilityLabel}
-            helperText={helperText}
-            label={label}
-            onBlur={onBlur}
-            onChange={setValue}
-            onPress={onPress}
-            placeholder={placeholder}
-            testID={testID}
-            value={value}
-            variant={variant}
-            width={width}
-          >
+      <VStack background="background" padding={2}>
+        <Select
+          accessibilityLabel={accessibilityLabel}
+          helperText={helperText}
+          label={label}
+          onBlur={onBlur}
+          onChange={setValue}
+          onPress={onPress}
+          placeholder={placeholder}
+          testID={testID}
+          value={value}
+          variant={variant}
+          width={width}
+        >
+          <SelectOption
+            key="Disabled"
+            disabled
+            description="BTC"
+            title="Disabled"
+            value="disabled"
+          />
+          {exampleOptions.map((option) => (
             <SelectOption
-              key="Disabled"
-              disabled
+              key={option}
               description="BTC"
-              title="Disabled"
-              value="disabled"
+              testID={`option-${option}`}
+              title={option}
+              value={option}
             />
-            {exampleOptions.map((option) => (
-              <SelectOption
-                key={option}
-                description="BTC"
-                testID={`option-${option}`}
-                title={option}
-                value={option}
-              />
-            ))}
-          </Select>
-        </VStack>
-      </ThemeProvider>
+          ))}
+        </Select>
+      </VStack>
     );
   };
 
@@ -183,33 +172,31 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>(exampleLongOptions[0]);
 
     return (
-      <ThemeProvider scale={scale} spectrum={spectrum}>
-        <VStack background spacing={2}>
-          <Select
-            accessibilityLabel={accessibilityLabel}
-            helperText={helperText}
-            label={label}
-            onBlur={onBlur}
-            onChange={setValue}
-            onPress={onPress}
-            placeholder={placeholder}
-            testID={testID}
-            value={value}
-            variant={variant}
-            width={width}
-          >
-            {exampleLongOptions.map((option) => (
-              <SelectOption
-                key={option}
-                description="BTC"
-                testID={`option-${option}`}
-                title={option}
-                value={option}
-              />
-            ))}
-          </Select>
-        </VStack>
-      </ThemeProvider>
+      <VStack background="background" padding={2}>
+        <Select
+          accessibilityLabel={accessibilityLabel}
+          helperText={helperText}
+          label={label}
+          onBlur={onBlur}
+          onChange={setValue}
+          onPress={onPress}
+          placeholder={placeholder}
+          testID={testID}
+          value={value}
+          variant={variant}
+          width={width}
+        >
+          {exampleLongOptions.map((option) => (
+            <SelectOption
+              key={option}
+              description="BTC"
+              testID={`option-${option}`}
+              title={option}
+              value={option}
+            />
+          ))}
+        </Select>
+      </VStack>
     );
   };
 
@@ -219,123 +206,115 @@ export const selectBuilder = ({
     const ethLogo = assets.eth.imageUrl;
 
     return (
-      <ThemeProvider scale={scale} spectrum={spectrum}>
-        <VStack background minHeight={100} spacing={2}>
-          <Select
-            label="Select Asset"
-            onChange={setAsset}
-            startNode={
-              <Box spacingHorizontal={2}>
+      <VStack background="background" minHeight={100} padding={2}>
+        <Select
+          label="Select Asset"
+          onChange={setAsset}
+          startNode={
+            <Box paddingX={2}>
+              <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
+                <RemoteImage shape="circle" size="l" source={assetConfig.imageUrl} />
+              </DotSymbol>
+            </Box>
+          }
+          value={asset}
+          valueLabel={assetConfig.name}
+        >
+          {Object.values(assets).map(({ name, imageUrl }, idx) => (
+            <SelectOption
+              key={name}
+              description="BTC"
+              media={
                 <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
-                  <RemoteImage shape="circle" size="l" source={assetConfig.imageUrl} />
+                  <RemoteImage shape="circle" size="l" source={imageUrl} />
                 </DotSymbol>
-              </Box>
-            }
-            value={asset}
-            valueLabel={assetConfig.name}
-          >
-            {Object.values(assets).map(({ name, imageUrl }, idx) => (
-              <SelectOption
-                key={name}
-                description="BTC"
-                media={
-                  <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
-                    <RemoteImage shape="circle" size="l" source={imageUrl} />
-                  </DotSymbol>
-                }
-                testID={`option-${name}`}
-                title={name}
-                value={assetKeys[idx]}
-              />
-            ))}
-          </Select>
-        </VStack>
-      </ThemeProvider>
+              }
+              testID={`option-${name}`}
+              title={name}
+              value={assetKeys[idx]}
+            />
+          ))}
+        </Select>
+      </VStack>
     );
   };
   const InputStackOptions = () => {
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <ThemeProvider scale={scale} spectrum={spectrum}>
-        <VStack background minHeight={100} spacing={2}>
-          <Select
-            helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
-            label="I am a very long label that is supposed to be indicative of what my purpose is. Do you know my purpose? Directive? Directive? Directive? "
-            onChange={setValue}
-            placeholder="I am some ridiculously, absurdly, ostentatiously long placeholder text that would ideally get truncated when I meet the edge of my parent container. "
-            startNode={<InputIcon name="calendar" />}
-            value={value}
-          >
-            {exampleOptions.map((option) => (
-              <SelectOption
-                key={option}
-                description="BTC"
-                testID={`option-${option}`}
-                title={option}
-                value={option}
-              />
-            ))}
-          </Select>
-        </VStack>
-      </ThemeProvider>
+      <VStack background="background" minHeight={100} padding={2}>
+        <Select
+          helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
+          label="I am a very long label that is supposed to be indicative of what my purpose is. Do you know my purpose? Directive? Directive? Directive? "
+          onChange={setValue}
+          placeholder="I am some ridiculously, absurdly, ostentatiously long placeholder text that would ideally get truncated when I meet the edge of my parent container. "
+          startNode={<InputIcon name="calendar" />}
+          value={value}
+        >
+          {exampleOptions.map((option) => (
+            <SelectOption
+              key={option}
+              description="BTC"
+              testID={`option-${option}`}
+              title={option}
+              value={option}
+            />
+          ))}
+        </Select>
+      </VStack>
     );
   };
   const Disabled = () => {
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <ThemeProvider scale={scale} spectrum={spectrum}>
-        <VStack background minHeight={100} spacing={2}>
-          <Select
-            disabled
-            helperText="You can only choose one option"
-            label="How many would you like?"
-            onChange={setValue}
-            placeholder="Choose an amount"
-            value={value}
-          >
-            {exampleOptions.map((option) => (
-              <SelectOption
-                key={option}
-                description="BTC"
-                testID={`option-${option}`}
-                title={option}
-                value={option}
-              />
-            ))}
-          </Select>
-        </VStack>
-      </ThemeProvider>
+      <VStack background="background" minHeight={100} padding={2}>
+        <Select
+          disabled
+          helperText="You can only choose one option"
+          label="How many would you like?"
+          onChange={setValue}
+          placeholder="Choose an amount"
+          value={value}
+        >
+          {exampleOptions.map((option) => (
+            <SelectOption
+              key={option}
+              description="BTC"
+              testID={`option-${option}`}
+              title={option}
+              value={option}
+            />
+          ))}
+        </Select>
+      </VStack>
     );
   };
   const Compact = () => {
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <ThemeProvider scale={scale} spectrum={spectrum}>
-        <VStack background minHeight={100} spacing={2}>
-          <Select
-            compact
-            helperText="You only get one choice"
-            label="How many would you like? "
-            onChange={setValue}
-            placeholder="Choose an amount"
-            value={value}
-          >
-            {exampleOptions.map((option) => (
-              <SelectOption
-                key={option}
-                compact
-                description="BTC"
-                testID={`option-${option}`}
-                title={option}
-                value={option}
-              />
-            ))}
-          </Select>
-        </VStack>
-      </ThemeProvider>
+      <VStack background="background" minHeight={100} padding={2}>
+        <Select
+          compact
+          helperText="You only get one choice"
+          label="How many would you like? "
+          onChange={setValue}
+          placeholder="Choose an amount"
+          value={value}
+        >
+          {exampleOptions.map((option) => (
+            <SelectOption
+              key={option}
+              compact
+              description="BTC"
+              testID={`option-${option}`}
+              title={option}
+              value={option}
+            />
+          ))}
+        </Select>
+      </VStack>
     );
   };
   const Variants = () => {
@@ -354,13 +333,11 @@ export const selectBuilder = ({
     const selectRef = useRef<HTMLButtonElement>(null);
 
     return (
-      <ThemeProvider scale={scale} spectrum={spectrum}>
-        <VStack background minHeight={100} spacing={2}>
-          <Select ref={selectRef} onChange={setValue} placeholder="Choose an amount" value={value}>
-            <SelectOption compact description="BTC" title={loremIpsum} value={loremIpsum} />
-          </Select>
-        </VStack>
-      </ThemeProvider>
+      <VStack background="background" minHeight={100} padding={2}>
+        <Select ref={selectRef} onChange={setValue} placeholder="Choose an amount" value={value}>
+          <SelectOption compact description="BTC" title={loremIpsum} value={loremIpsum} />
+        </Select>
+      </VStack>
     );
   };
   return {
@@ -499,7 +476,7 @@ export const selectBuilderMobile = ({
         onChange={setAsset}
         onPress={toggleOn}
         startNode={
-          <Box spacingHorizontal={2}>
+          <Box paddingX={2}>
             <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
               <RemoteImage shape="circle" size="l" source={assetConfig.imageUrl} />
             </DotSymbol>

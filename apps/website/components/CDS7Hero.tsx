@@ -48,8 +48,8 @@ const crossColors = {
   light: '#999',
 };
 
-useLoader.preload(RGBELoader, textureUrls.light);
-useLoader.preload(RGBELoader, textureUrls.dark);
+// useLoader.preload(RGBELoader, textureUrls.light);
+// useLoader.preload(RGBELoader, textureUrls.dark);
 
 const finalConfig = {
   backside: true,

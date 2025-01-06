@@ -1,5 +1,6 @@
+import { ThemeVars } from '../new/vars';
+
 import type { CardBaseProps } from './CardBaseProps';
-import type { ProgressColor } from './ProgressBaseProps';
 import type { SharedProps } from './SharedProps';
 
 export type DataCardBaseProps = {
@@ -11,6 +12,6 @@ export type DataCardBaseProps = {
   endLabel?: string;
   progressVariant?: 'bar' | 'circle';
   progress?: number;
-  progressColor?: ProgressColor;
+  progressColor?: ThemeVars.Color;
 } & CardBaseProps &
   SharedProps;

@@ -112,7 +112,7 @@ const config = {
       for (const use of rule.use) {
         if (
           typeof use === 'object' &&
-          typeof use.options === 'object' &&
+          typeof use?.options === 'object' &&
           use.loader?.includes('babel-loader')
         ) {
           Object.assign(use.options, BABEL_OPTIONS);

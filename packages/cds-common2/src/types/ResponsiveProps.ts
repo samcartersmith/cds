@@ -2,7 +2,7 @@ import { FlexGrow, FlexShrink, FlexStyles, StackBaseProps } from './BoxBaseProps
 import { CellSpacingConfig } from './CellBaseProps';
 import { Display } from './Display';
 import { ResponsivePropsDevices } from './Responsive';
-import { OffsetProps, SpacingProps } from './SpacingProps';
+import { MarginProps, PaddingProps } from './SpacingProps';
 import { Visibility } from './Visibility';
 
 type VisibilityProps = {
@@ -19,8 +19,8 @@ type DisplayProps = {
  */
 export type ResponsiveStyles = DisplayProps &
   FlexStyles &
-  SpacingProps &
-  OffsetProps &
+  PaddingProps &
+  MarginProps &
   StackBaseProps &
   VisibilityProps &
   FlexGrow &

@@ -96,7 +96,7 @@ export type NudgeCardBaseProps = {
   onDismissPress?: React.MouseEventHandler;
 };
 
-export type NudgeCardProps = NudgeCardBaseProps & BoxProps<'div'>;
+export type NudgeCardProps = NudgeCardBaseProps & Omit<BoxProps<'div'>, 'title'>;
 
 export const NudgeCard = ({
   title,
@@ -122,7 +122,7 @@ export const NudgeCard = ({
 }: NudgeCardProps) => {
   const hasMedia = pictogram || media;
   const paddingBottom = action ? 1 : 2;
-  const spacingProps = getCardBodyPaddingProps({
+  const paddingProps = getCardBodyPaddingProps({
     paddingBottom,
     compact: true,
   });
@@ -172,7 +172,7 @@ export const NudgeCard = ({
         height={height}
         justifyContent={mediaPosition === 'right' ? 'space-between' : 'flex-start'}
         minHeight={minHeight}
-        {...spacingProps}
+        {...paddingProps}
       >
         {hasMedia && mediaPosition === 'left' && renderMedia}
         <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>

@@ -2,7 +2,6 @@ import React, { useCallback, useState } from 'react';
 import { searchInputBuilder } from '@cbhq/cds-common2/internal/searchInputBuilder';
 
 import { VStack } from '../../layout';
-import { ThemeProvider } from '../../providers/ThemeProvider';
 import { InputIconButton } from '../InputIconButton';
 import { SearchInput } from '../SearchInput';
 
@@ -15,27 +14,25 @@ const { Basic, Disabled, Compact, HideStartIcon, HideEndIcon, CustomEndNode } =
   searchInputBuilder(SearchInput);
 
 export const Default = () => (
-  <ThemeProvider>
-    <VStack gap={2}>
-      <Basic />
-      <Disabled />
-      <Compact />
-      <HideStartIcon />
-      <HideEndIcon />
-      <CustomEndNode
-        end={
-          <InputIconButton
-            accessibilityHint="Warning text"
-            accessibilityLabel="Warning text"
-            name="warning"
-            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-            onClick={() => {}}
-            testID="custom-close-iconbtn"
-          />
-        }
-      />
-    </VStack>
-  </ThemeProvider>
+  <VStack gap={2}>
+    <Basic />
+    <Disabled />
+    <Compact />
+    <HideStartIcon />
+    <HideEndIcon />
+    <CustomEndNode
+      end={
+        <InputIconButton
+          accessibilityHint="Warning text"
+          accessibilityLabel="Warning text"
+          name="warning"
+          // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+          onClick={() => {}}
+          testID="custom-close-iconbtn"
+        />
+      }
+    />
+  </VStack>
 );
 
 /**
@@ -53,7 +50,7 @@ export const OnChangeExample = () => {
   );
 
   return (
-    <ThemeProvider>
+    <div>
       <SearchInput
         accessibilityLabel="Search"
         onChange={handleOnChange}
@@ -61,6 +58,6 @@ export const OnChangeExample = () => {
         value={text}
       />
       <p>{text}</p>
-    </ThemeProvider>
+    </div>
   );
 };

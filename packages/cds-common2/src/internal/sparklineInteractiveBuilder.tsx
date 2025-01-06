@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
 
-import { SpacingScale } from '../types';
+import { ThemeVars } from '../new/vars';
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 import {
@@ -18,9 +18,9 @@ type SparklineInteractivePriceProps = Omit<
     hideHoverDate?: boolean;
     hideMinMaxLabel?: boolean;
     trailing?: React.ReactNode;
-    gutter?: SpacingScale;
+    gutter?: ThemeVars.Space;
     disableHorizontalPadding?: boolean;
-    timePeriodGutter?: SpacingScale;
+    timePeriodGutter?: ThemeVars.Space;
     labelNode?: React.ReactNode;
     allowOverflowGestures?: boolean;
   };

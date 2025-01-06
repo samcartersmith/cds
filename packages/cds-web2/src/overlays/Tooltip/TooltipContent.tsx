@@ -6,7 +6,11 @@ import {
   animateOutOpacityConfig,
   getTranslateConfigByPlacement,
 } from '@cbhq/cds-common2/animation/tooltip';
-import { maxWidth, spacingHorizontal, spacingVertical } from '@cbhq/cds-common2/tokens/tooltip';
+import {
+  tooltipMaxWidth,
+  tooltipPaddingX,
+  tooltipPaddingY,
+} from '@cbhq/cds-common2/tokens/tooltip';
 
 import { Box } from '../../layout/Box';
 import { useMotionProps } from '../../motion/useMotionProps';
@@ -68,10 +72,12 @@ export const TooltipContent = memo(
             background={invertSpectrum ? 'backgroundInverse' : 'background'}
             borderRadius={200}
             data-testid={testID}
+            // TO DO: Fix this, elevation=0 is not valid in the new theme
+            // @ts-expect-error Elevation=0 is not valid
             elevation={elevation}
-            maxWidth={maxWidth}
-            paddingX={spacingHorizontal}
-            paddingY={spacingVertical}
+            maxWidth={tooltipMaxWidth}
+            paddingX={tooltipPaddingX}
+            paddingY={tooltipPaddingY}
           >
             {typeof content === 'string' ? (
               <Text

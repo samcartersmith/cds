@@ -1,10 +1,14 @@
 import { useMemo } from 'react';
 import { emptyObject } from '@cbhq/cds-utils';
 
+import { ThemeVars } from '../new/vars';
 import { borderRadius } from '../tokens/borderRadius';
-import type { BorderRadius, PinningDirection } from '../types';
+import type { PinningDirection } from '../types';
 
-export const usePinBorderRadiusStyles = (pin?: PinningDirection, radius?: BorderRadius) => {
+export const usePinBorderRadiusStyles = (
+  pin?: PinningDirection,
+  radius?: ThemeVars.BorderRadius,
+) => {
   return useMemo(() => {
     if (!radius) return emptyObject;
     switch (pin) {

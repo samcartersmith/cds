@@ -1,4 +1,6 @@
 import React from 'react';
+import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
 import { Box } from '../../layout/Box';
 import { InputIcon } from '../InputIcon';
@@ -9,13 +11,16 @@ export default {
   component: InputIcon,
 };
 
-const variants = [
-  'textForeground',
-  'textForegroundMuted',
-  'textPrimary',
-  'textNegative',
-  'textPositive',
-] as const;
+const variants = ['foreground', 'foregroundMuted', 'primary', 'negative', 'positive'] as const;
+
+const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
+  primary: 'iconPrimary',
+  positive: 'iconPositive',
+  negative: 'iconNegative',
+  foreground: 'iconForeground',
+  foregroundMuted: 'iconForegroundMuted',
+  secondary: 'backgroundSecondary',
+};
 
 const Basic = () => {
   return (
@@ -24,7 +29,7 @@ const Basic = () => {
         <TextInput
           key={`${variant}-inputicon`}
           label={variant}
-          start={<InputIcon color={variant} name="add" />}
+          start={<InputIcon color={variantColorMap[variant]} name="add" />}
           variant={variant}
         />
       ))}
@@ -43,9 +48,7 @@ const AccessibleInputIcon = () => {
 };
 
 const DefaultsToForeground = () => {
-  return (
-    <TextInput label="Search" start={<InputIcon name="search" />} variant="textForegroundMuted" />
-  );
+  return <TextInput label="Search" start={<InputIcon name="search" />} variant="foregroundMuted" />;
 };
 
 const SetColorAndInheritFocusStyle = () => {
@@ -53,7 +56,7 @@ const SetColorAndInheritFocusStyle = () => {
     <TextInput
       label="Search"
       start={<InputIcon color="textPositive" name="search" />}
-      variant="textForegroundMuted"
+      variant="foregroundMuted"
     />
   );
 };

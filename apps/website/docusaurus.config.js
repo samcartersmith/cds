@@ -9,6 +9,7 @@ module.exports = {
   tagline: '',
   url: process.env.NODE_ENV === 'production' ? 'https://cds.cbhq.net' : 'https://cds-dev.cbhq.net',
   baseUrl: '/',
+  onBrokenAnchors: 'ignore',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onDuplicateRoutes: 'throw',

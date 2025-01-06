@@ -11,7 +11,7 @@ const overlayContentContextValue: OverlayContentContextValue = {
 };
 
 export const Overlay = memo(
-  forwardRef<HTMLElement, OverlayProps>((props, forwardedRef) => {
+  forwardRef<HTMLDivElement, OverlayProps>((props, forwardedRef) => {
     return (
       <OverlayContentContext.Provider value={overlayContentContextValue}>
         <OverlayContent ref={forwardedRef} {...props} />

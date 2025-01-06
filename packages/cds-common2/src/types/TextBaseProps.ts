@@ -1,5 +1,5 @@
 import { SharedProps } from './SharedProps';
-import { SpacingProps } from './SpacingProps';
+import { PaddingProps } from './SpacingProps';
 
 export type TextTransform = 'uppercase' | 'lowercase' | 'capitalize' | 'none';
 
@@ -65,6 +65,6 @@ export type TextBaseProps = {
    * Truncates text after wrapping to a defined number of lines.
    */
   numberOfLines?: number;
-} & SpacingProps &
+} & PaddingProps &
   TextAlignProps &
   SharedProps;

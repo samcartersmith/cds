@@ -1,34 +1,29 @@
-import type { SpectrumVars } from '../styles/spectrum';
-import type * as vars from '../styles/vars';
+import type { Property } from 'csstype';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 
-/** The categories of themable CSS variables that power CDS. */
-export type VarType = keyof typeof vars;
-export type SpectrumVarType = 'spectrum';
-export type StyleVarType = Exclude<VarType, SpectrumVarType>;
+export type Theme = {
+  spectrum: { [key in ThemeVars.SpectrumColor]: string };
+  color: { [key in ThemeVars.Color]: Property.Color };
+  illustrationColor: { [key in ThemeVars.IllustrationColor]: Property.Color };
+  space: { [key in ThemeVars.Space]: number };
+  iconSize: { [key in ThemeVars.IconSize]: number };
+  avatarSize: { [key in ThemeVars.AvatarSize]: number };
+  borderWidth: { [key in ThemeVars.BorderWidth]: number };
+  borderRadius: { [key in ThemeVars.BorderRadius]: number };
+  fontFamily: { [key in ThemeVars.FontFamily]: Property.FontFamily };
+  fontSize: { [key in ThemeVars.FontSize]: Property.FontSize };
+  fontWeight: { [key in ThemeVars.FontWeight]: Property.FontWeight };
+  lineHeight: { [key in ThemeVars.LineHeight]: Property.LineHeight };
+  shadow: { [key in ThemeVars.Shadow]: Property.BoxShadow };
+  zIndex: { [key in ThemeVars.ZIndex]: Property.ZIndex };
+  control: { [key in ThemeVars.ControlSize]: number };
+};
 
-/** The canonical list of themeable vars. We don't use the vars.js directly because we want to allow vars.js to be tree-shaken when a consumer is supplying their own vars / theme and not consuming vars.js directly. */
-export const varNames = {
-  spectrum: 1,
-  color: 1,
-  illustrationColor: 1,
-  space: 1,
-  iconSize: 1,
-  avatarSize: 1,
-  borderWidth: 1,
-  borderRadius: 1,
-  fontFamily: 1,
-  fontSize: 1,
-  fontWeight: 1,
-  lineHeight: 1,
-  shadow: 1,
-  zIndex: 1,
-  control: 1,
-} as const satisfies Record<VarType, 1>;
-
-/** Maps our StyleVars to their CSS variable prefixes. For example, the names of CSS vars generated from `illustrationColor` vars will be prefixed with `--illo-`. */
+/** Maps our StyleVars to their CSS variable prefixes. For example, the names of CSS vars generated from `illustrationColor` vars will be prefixed with `--illColor-`. */
 export const styleVarPrefixes = {
+  spectrum: '',
   color: 'color',
-  illustrationColor: 'illo',
+  illustrationColor: 'illColor',
   space: 'space',
   iconSize: 'iconSize',
   avatarSize: 'avatarSize',
@@ -41,43 +36,76 @@ export const styleVarPrefixes = {
   shadow: 'shadow',
   zIndex: 'zIndex',
   control: 'control',
-} as const satisfies Record<StyleVarType, string>;
+} as const satisfies Record<keyof Theme, string>;
 
-/** Maps our StyleVarTypes to the CSS property types they affect. Vars like `size` can affect multiple properties like width, height, etc - but all those properties have the same type. */
-export const styleVarProperties = {
-  color: 'color',
-  illustrationColor: 'color',
-  space: 'padding',
-  iconSize: 'width',
-  avatarSize: 'width',
-  borderWidth: 'borderWidth',
-  borderRadius: 'borderRadius',
-  fontFamily: 'fontFamily',
-  fontSize: 'fontSize',
-  fontWeight: 'fontWeight',
-  lineHeight: 'lineHeight',
-  shadow: 'boxShadow',
-  zIndex: 'zIndex',
-  control: 'width',
-} as const satisfies Record<StyleVarType, keyof React.CSSProperties>;
+type ThemeObjectCSSVars = {
+  spectrum: {
+    [key in ThemeVars.SpectrumColor as `--${key}`]: string;
+  };
+  color: {
+    [key in ThemeVars.Color as `--${typeof styleVarPrefixes.color}-${key}`]: Property.Color;
+  };
+  illustrationColor: {
+    [key in ThemeVars.IllustrationColor as `--${typeof styleVarPrefixes.illustrationColor}-${key}`]: Property.Color;
+  };
+  space: {
+    [key in ThemeVars.Space as `--${typeof styleVarPrefixes.space}-${key}`]: Property.Padding;
+  };
+  iconSize: {
+    [key in ThemeVars.IconSize as `--${typeof styleVarPrefixes.iconSize}-${key}`]: Property.Width;
+  };
+  avatarSize: {
+    [key in ThemeVars.AvatarSize as `--${typeof styleVarPrefixes.avatarSize}-${key}`]: Property.Width;
+  };
+  borderWidth: {
+    [key in ThemeVars.BorderWidth as `--${typeof styleVarPrefixes.borderWidth}-${key}`]: Property.BorderWidth;
+  };
+  borderRadius: {
+    [key in ThemeVars.BorderRadius as `--${typeof styleVarPrefixes.borderRadius}-${key}`]: Property.BorderRadius;
+  };
+  fontFamily: {
+    [key in ThemeVars.FontFamily as `--${typeof styleVarPrefixes.fontFamily}-${key}`]: Property.FontFamily;
+  };
+  fontSize: {
+    [key in ThemeVars.FontSize as `--${typeof styleVarPrefixes.fontSize}-${key}`]: Property.FontSize;
+  };
+  fontWeight: {
+    [key in ThemeVars.FontWeight as `--${typeof styleVarPrefixes.fontWeight}-${key}`]: Property.FontWeight;
+  };
+  lineHeight: {
+    [key in ThemeVars.LineHeight as `--${typeof styleVarPrefixes.lineHeight}-${key}`]: Property.LineHeight;
+  };
+  shadow: {
+    [key in ThemeVars.Shadow as `--${typeof styleVarPrefixes.shadow}-${key}`]: Property.BoxShadow;
+  };
+  zIndex: {
+    [key in ThemeVars.ZIndex as `--${typeof styleVarPrefixes.zIndex}-${key}`]: Property.ZIndex;
+  };
+  control: {
+    [key in ThemeVars.ControlSize as `--${typeof styleVarPrefixes.control}-${key}`]: Property.Width;
+  };
+};
 
-/** The canonical type of the core CDS theme object. Contains all themeable vars. Does not include media queries.  */
-export type Theme = {
-  // If it's a SpectrumVarType, it should be a SpectrumVars object.
-  [Var in VarType]: Var extends SpectrumVarType
-    ? SpectrumVars
-    : // If it's a StyleVarType, it should be an object with React.CSSProperties values.
-    Var extends StyleVarType
-    ? {
-        [key in keyof (typeof vars)[Var]]: NonNullable<
-          React.CSSProperties[(typeof styleVarProperties)[Var]]
-        >;
-      }
-    : never;
+type UnionToIntersection<U> = (U extends unknown ? (x: U) => void : never) extends (
+  x: infer I,
+) => void
+  ? I
+  : never;
+
+/** A flat object of the CSS variable names of all themeable vars, based on the Theme type. */
+export type ThemeCSSVars = UnionToIntersection<ThemeObjectCSSVars[keyof ThemeObjectCSSVars]>;
+
+export type ColorScheme = 'light' | 'dark';
+export type ColorSchemePreference = ColorScheme | 'system';
+
+export type ThemeMetadata = {
+  colorScheme?: ColorScheme;
+  contrast?: 'less' | 'more';
 };
 
 export type ThemeConfig = Theme & {
-  [mediaQuery: `@media ${string}`]: Theme;
+  metadata?: ThemeMetadata;
+  [mediaQuery: `@media ${string}`]: Partial<Theme>;
 };
 
 // -------------------
@@ -102,46 +130,3 @@ export type DensityTheme = Pick<
 // -------------------
 // End subthemes
 // -------------------
-
-/** The Theme type, but the themeable vars have their CSS variable names - which may be prefixed, e.g. `color['line']` becomes `color['--color-line']`. */
-export type ThemeCSSVars = {
-  [VarType in keyof Theme]: VarType extends keyof typeof styleVarPrefixes
-    ? {
-        // If VarType is a key of styleVarPrefixes we need to add the prefix to the CSS var name.
-        [Var in keyof Theme[VarType] as `--${(typeof styleVarPrefixes)[VarType]}-${Var &
-          string}`]: React.CSSProperties[(typeof styleVarProperties)[VarType]];
-      }
-    : {
-        // If VarType is not a key of styleVarPrefixes we don't need to add any prefix.
-        [Var in keyof Theme[VarType] as `--${Var & string}`]: Theme[VarType][Var];
-      };
-};
-
-type UnionToIntersection<U> = (U extends unknown ? (x: U) => void : never) extends (
-  x: infer I,
-) => void
-  ? I
-  : never;
-
-/** A flat object of the CSS variable names of all themeable vars, based on the Theme type. */
-export type AllThemeCSSVars = UnionToIntersection<ThemeCSSVars[keyof ThemeCSSVars]>;
-
-/** The Theme type, but the themeable vars have their CSS variable names - which may be prefixed, e.g. `color['line']` becomes `color['--color-line']`. You should prefer to use `ThemeCSSVars`. This type is used to extend React.CSSProperties, and thus has removed the types of most theme vars, because they extended from React.CSSProperties which creates a circular type definition. */
-export type ThemeCSSVarsUntyped = {
-  [Var in VarType]: Var extends keyof typeof styleVarPrefixes
-    ? {
-        // If Var is a key of styleVarPrefixes we need to add the prefix to the CSS var name.
-
-        [VarValue in keyof (typeof vars)[Var] as `--${(typeof styleVarPrefixes)[Var]}-${VarValue &
-          string}`]: any;
-      }
-    : {
-        // If Var is not a key of styleVarPrefixes we don't need to add any prefix.
-        [VarValue in keyof SpectrumVars as `--${VarValue & string}`]: SpectrumVars[VarValue];
-      };
-};
-
-/** A flat object of the CSS variable names of all themeable vars, based on the Theme type. You should prefer to use `AllThemeCSSVars` instead. This type is used to extend React.CSSProperties, and thus has removed the types of most theme vars, because they extended from React.CSSProperties which creates a circular type definition. */
-export type AllThemeCSSVarsUntyped = UnionToIntersection<
-  ThemeCSSVarsUntyped[keyof ThemeCSSVarsUntyped]
->;

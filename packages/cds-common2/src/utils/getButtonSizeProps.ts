@@ -1,21 +1,20 @@
 import { interactableHeight } from '../tokens/interactableHeight';
-import type { IconSize, Scale } from '../types';
+import type { IconSize } from '../types';
 
 import { memoize } from './memoize';
 
-type GetButtonSizeStyles = { compact?: boolean; scale: Scale; compactSize?: string };
+type GetButtonSizeStyles = { compact?: boolean; compactSize?: string };
 
-function getCacheKey({ compact, scale }: GetButtonSizeStyles) {
-  return `${scale}-${compact}`;
+function getCacheKey({ compact }: GetButtonSizeStyles) {
+  return `${compact}`;
 }
 
 export const getButtonSizeProps = memoize(function getButtonSizeProps({
-  scale,
   compact,
   compactSize,
 }: GetButtonSizeStyles) {
   const sizeVariant = compact ? 'compact' : 'regular';
-  const minHeight = interactableHeight[scale][sizeVariant];
+  const minHeight = interactableHeight[sizeVariant];
   const borderRadius = minHeight;
   const defaultCompactSize = 's';
 

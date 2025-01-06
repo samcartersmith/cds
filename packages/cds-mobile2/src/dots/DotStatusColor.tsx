@@ -1,0 +1,67 @@
+import React, { memo, useMemo } from 'react';
+import { View, ViewStyle } from 'react-native';
+import { useIconSize } from '@cbhq/cds-common2';
+import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { DotBaseProps, DotVariant } from '@cbhq/cds-common2/types/DotBaseProps';
+
+import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
+import { useTheme } from '../system';
+
+import { getTransform } from './dotStyles';
+import { useDotsLayout } from './useDotsLayout';
+
+const variantColorMap: Record<DotVariant, ThemeVars.Color> = {
+  primary: 'backgroundPrimary',
+  foregroundMuted: 'iconForegroundMuted',
+  positive: 'backgroundPositive',
+  warning: 'backgroundWarning',
+  negative: 'backgroundNegative',
+};
+
+export const DotStatusColor = memo(
+  ({ variant, pin, size = 's', children, overlap, ...props }: DotBaseProps) => {
+    const theme = useTheme();
+    const { iconSize } = useIconSize(size);
+    const [childrenSize, onLayout] = useDotsLayout();
+
+    const transforms = useDotPinStyles(childrenSize, iconSize, overlap);
+
+    const pinStyles = useMemo(() => {
+      if (pin && transforms !== null) {
+        const [vertical, horizontal] = (pin as string).split('-');
+
+        return getTransform(
+          transforms[horizontal as DotPinStylesKey],
+          transforms[vertical as DotPinStylesKey],
+        );
+      }
+      return {};
+    }, [pin, transforms]);
+
+    const dotContentStyles: ViewStyle = useMemo(() => {
+      return {
+        borderRadius: theme.borderRadius[1000],
+        width: iconSize,
+        height: iconSize,
+        backgroundColor: theme.color[variantColorMap[variant]],
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor: theme.color.backgroundSecondary,
+        borderWidth: 1,
+        ...pinStyles,
+      };
+    }, [iconSize, theme.color, theme.borderRadius, pinStyles, variant]);
+
+    // only check childrenSize when children is defined
+    const shouldShow = children !== undefined ? childrenSize !== null : true;
+
+    return (
+      <View {...props}>
+        <View onLayout={onLayout} testID={`${props.testID}-children`}>
+          {children}
+        </View>
+        {shouldShow && <View style={dotContentStyles} testID="dotstatuscolor-inner-container" />}
+      </View>
+    );
+  },
+);

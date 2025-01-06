@@ -1,5 +1,5 @@
 import { SharedProps } from './SharedProps';
-import { SpacingProps } from './SpacingProps';
+import { PaddingProps } from './SpacingProps';
 
 export type CollapsibleDirection = 'vertical' | 'horizontal';
 
@@ -19,4 +19,4 @@ export type CollapsibleBaseProps = {
    */
   direction?: CollapsibleDirection;
 } & SharedProps &
-  SpacingProps;
+  PaddingProps;

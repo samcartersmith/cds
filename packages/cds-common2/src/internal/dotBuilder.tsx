@@ -44,11 +44,11 @@ export function dotBuilder(
     return (
       <>
         {counts.map((count) => (
-          <Box key={`DotCount-${count}`} alignItems="flex-start" spacing={1}>
+          <Box key={`DotCount-${count}`} alignItems="flex-start" padding={1}>
             <DotCount count={count} />
           </Box>
         ))}
-        <Box alignItems="flex-start" spacing={1}>
+        <Box alignItems="flex-start" padding={1}>
           <DotCount count={11} max={9} />
         </Box>
       </>
@@ -66,7 +66,7 @@ export function dotBuilder(
       };
     }, []);
     return (
-      <Box alignItems="flex-start" minHeight={100} spacing={1}>
+      <Box alignItems="flex-start" minHeight={100} padding={1}>
         <DotCount count={count}>
           <Icon name="airdrop" size="m" />
         </DotCount>
@@ -107,8 +107,8 @@ export function dotBuilder(
         key="DotCount-placement-top-end"
         alignItems="flex-start"
         gap={4}
-        spacing={1}
-        spacingBottom={4}
+        padding={1}
+        paddingBottom={4}
       >
         <TextLabel1>top-end</TextLabel1>
         <DotCount count={30} pin="top-end">
@@ -201,8 +201,8 @@ export function dotBuilder(
             key={`DotStatusColor-placement-${pinDirection}`}
             alignItems="flex-start"
             gap={4}
-            spacing={1}
-            spacingBottom={4}
+            padding={1}
+            paddingBottom={4}
           >
             <TextLabel1>{pinDirection}</TextLabel1>
             <DotStatusColor pin={pinDirection} variant="positive">
@@ -229,8 +229,8 @@ export function dotBuilder(
               key={`DotStatusColor-overlap-${pinDirection}-${avatarSize}`}
               alignItems="flex-start"
               gap={4}
-              spacing={1}
-              spacingBottom={4}
+              padding={1}
+              paddingBottom={4}
             >
               <TextLabel1>
                 {pinDirection}, avatarSize: {avatarSize}
@@ -267,8 +267,8 @@ export function dotBuilder(
             key={`dotsymbol-placement-${pinDirection}`}
             alignItems="flex-start"
             gap={4}
-            spacing={1}
-            spacingBottom={4}
+            padding={1}
+            paddingBottom={4}
           >
             <TextLabel1>{pinDirection}</TextLabel1>
             <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
@@ -307,8 +307,8 @@ export function dotBuilder(
               key={`dotsymbol-icons-${pinDirection}-${avatarSize}`}
               alignItems="flex-start"
               gap={4}
-              spacing={1}
-              spacingBottom={4}
+              padding={1}
+              paddingBottom={4}
             >
               <TextLabel1>
                 Pin Direction: {pinDirection} Avatar Size: {avatarSize} Icon Size:{' '}
@@ -338,8 +338,8 @@ export function dotBuilder(
               key={`dotsymbol-overlap-${size}-${pinDirection}`}
               alignItems="flex-start"
               gap={4}
-              spacing={1}
-              spacingBottom={4}
+              padding={1}
+              paddingBottom={4}
             >
               <TextLabel1>
                 {pinDirection}, dot-size: {size}

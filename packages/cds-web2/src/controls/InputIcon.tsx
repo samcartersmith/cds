@@ -1,4 +1,6 @@
 import React, { forwardRef, memo, useContext } from 'react';
+import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { Icon, IconProps } from '../icons/Icon';
@@ -15,6 +17,15 @@ export type InputIconProps = {
 } & Omit<IconProps, 'size'> &
   SharedProps;
 
+const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
+  primary: 'iconPrimary',
+  positive: 'iconPositive',
+  negative: 'iconNegative',
+  foreground: 'iconForeground',
+  foregroundMuted: 'iconForegroundMuted',
+  secondary: 'backgroundSecondary',
+};
+
 export const InputIcon = memo(
   forwardRef(
     (
@@ -26,11 +37,17 @@ export const InputIcon = memo(
       }: InputIconProps,
       ref: React.ForwardedRef<HTMLDivElement>,
     ) => {
-      const variant = useContext(TextInputFocusVariantContext) ?? color;
+      const variant = useContext(TextInputFocusVariantContext);
+      const variantColor = variant ? variantColorMap[variant] : undefined;
 
       return (
         <Box paddingX={2} testID={testID}>
-          <Icon color={disableInheritFocusStyle ? color : variant} size="s" {...props} ref={ref} />
+          <Icon
+            color={disableInheritFocusStyle ? color : variantColor ?? color}
+            size="s"
+            {...props}
+            ref={ref}
+          />
         </Box>
       );
     },

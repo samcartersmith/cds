@@ -1,5 +1,4 @@
 import React, { memo, StrictMode, useMemo } from 'react';
-import { css, cx } from '@linaria/core';
 /* eslint-disable import/no-extraneous-dependencies */
 import { Story } from '@storybook/react';
 import merge from 'lodash/merge';
@@ -8,18 +7,12 @@ import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common2/internal/ut
 // import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
 import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
-import { ThemeProvider } from '@cbhq/cds-web2/providers/ThemeProvider';
-import { autoTheme } from '@cbhq/cds-web2/themes/auto';
+import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
+import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
 import { darkTheme } from '@cbhq/cds-web2/themes/dark';
 import { lightTheme } from '@cbhq/cds-web2/themes/light';
 // TODO migrate Group
 // import { Group } from '@cbhq/cds-web2/layout/Group';
-
-const themeMap = {
-  auto: autoTheme,
-  light: lightTheme,
-  dark: darkTheme,
-} as const;
 
 // const oldWrapperProps = {
 //   className: css`
@@ -70,16 +63,18 @@ export function StoryContainer<Props>(
     //   : oldWrapperProps;
     return (
       <LocalStrictMode>
-        <ThemeProvider display="contents" theme={isDarkMode ? themeMap.dark : themeMap.light}>
-          <PortalProvider>
-            {/* <Group {...wrapperProps}> */}
-            <InnerWrapper>
-              {/* arbitrary padding to make the storybook layout match the old storybook for easier comparison */}
-              <div style={{ padding: 20 }}>{contents}</div>
-            </InnerWrapper>
-            {/* </Group> */}
-          </PortalProvider>
-        </ThemeProvider>
+        <MediaQueryProvider>
+          <ThemeProvider display="contents" theme={isDarkMode ? darkTheme : lightTheme}>
+            <PortalProvider>
+              {/* <Group {...wrapperProps}> */}
+              <InnerWrapper>
+                {/* arbitrary padding to make the storybook layout match the old storybook for easier comparison */}
+                <div style={{ padding: 20 }}>{contents}</div>
+              </InnerWrapper>
+              {/* </Group> */}
+            </PortalProvider>
+          </ThemeProvider>
+        </MediaQueryProvider>
       </LocalStrictMode>
     );
   });

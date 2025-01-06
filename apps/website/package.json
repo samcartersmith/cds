@@ -11,13 +11,13 @@
     "@cbhq/cds-web-visualization": "workspace:^",
     "@cbhq/docusaurus-preset": "workspace:^",
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",
-    "@docusaurus/core": "2.0.0-beta.18",
-    "@docusaurus/module-type-aliases": "2.0.0-beta.18",
+    "@docusaurus/core": "^3.6.3",
+    "@docusaurus/module-type-aliases": "^3.6.3",
     "@linaria/babel-preset": "^3.0.0-beta.22",
     "@linaria/core": "^3.0.0-beta.22",
     "@linaria/shaker": "^3.0.0-beta.22",
     "@linaria/webpack-loader": "^3.0.0-beta.22",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^3.1.0",
     "@react-three/drei": "9.115.0",
     "@react-three/fiber": "8.17.10",
     "contentful": "^7.14.6",
@@ -35,7 +35,8 @@
     "@types/react-dom": "^18.3.1",
     "@types/three": "0.169.0",
     "concurrently": "^7.2.1",
-    "get-tsconfig": "^4.2.0"
+    "get-tsconfig": "^4.2.0",
+    "url-loader": "^3"
   },
   "browserslist": {
     "production": [

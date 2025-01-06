@@ -1,7 +1,7 @@
+import { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import type { PositionStyles } from '@cbhq/cds-common2/types/BoxBaseProps';
 import type {
   BaseTooltipPlacement,
-  GapSpacing,
   TooltipBaseProps,
 } from '@cbhq/cds-common2/types/TooltipBaseProps';
 
@@ -39,7 +39,7 @@ export type TooltipProps = {
   >;
 
 export type PopperTooltipProps = {
-  gap: GapSpacing;
+  gap: ThemeVars.Space;
   /**
    * A unique ID used to ensure tooltips are accessible
    */

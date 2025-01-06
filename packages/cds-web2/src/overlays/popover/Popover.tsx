@@ -4,8 +4,8 @@ import { css, cx } from '@linaria/core';
 
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { Box } from '../../layout/Box';
-import { useThemeContext } from '../../providers/ThemeProvider';
 import { zIndex } from '../../styles/styles';
+import { useTheme } from '../../system/ThemeProvider';
 import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal';
@@ -69,7 +69,7 @@ export const Popover = memo(
     autoFocusDelay,
     controlledElementAccessibilityProps,
   }: PopoverProps) => {
-    const theme = useThemeContext();
+    const theme = useTheme();
     const { setSubject, setPopper, popperStyles, popperAttributes } = usePopper(contentPosition);
 
     // We use this to infer that hover events are triggering the mounting/dismounting of the content
@@ -106,7 +106,7 @@ export const Popover = memo(
             onEscPress={handleClose}
             respectNegativeTabIndex={respectNegativeTabIndex}
           >
-            {/* Box with Horizontal spacing to ensure proper margins but still rely on popper for layout. */}
+            {/* Box with Horizontal padding to ensure proper margins but still rely on popper for layout. */}
             <Box
               background="transparent"
               data-testid={testID}

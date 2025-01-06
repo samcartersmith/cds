@@ -1,7 +1,8 @@
 {
   "name": "@cbhq/cds-common2",
-  "version": "7.7.0",
-  "description": "Coinbase Design System - CDS Common 2",
+  "version": "8.0.0-alpha.1",
+  "description": "Coinbase Design System - CDS Common",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:frontend/cds.git",
@@ -10,7 +11,6 @@
   "react-native": "./src/index.ts",
   "type": "module",
   "main": "./esm/index.js",
-  "private": true,
   "types": "./dts/index.d.ts",
   "exports": {
     "./package.json": "./package.json",

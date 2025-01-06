@@ -1,13 +1,9 @@
 import { IconSize } from './IconSize';
-import { PaletteForeground } from './Palette';
 import { PinPlacement } from './Placement';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
-export type DotVariant = Extract<
-  PaletteForeground,
-  'positive' | 'negative' | 'primary' | 'foregroundMuted' | 'warning'
->;
+export type DotVariant = 'positive' | 'negative' | 'primary' | 'foregroundMuted' | 'warning';
 
 // There is only one type of overlap right now,
 // but could potentially have more overlap types

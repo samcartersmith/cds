@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { IllustrationVariant, useSpectrum } from '@cbhq/cds-common2';
+import { IllustrationVariant } from '@cbhq/cds-common2';
 import {
   IllustrationBaseProps,
   IllustrationNamesMap,
@@ -8,6 +8,8 @@ import { convertDimensionToSize } from '@cbhq/cds-common2/utils/convertDimension
 import { convertSizeWithMultiplier } from '@cbhq/cds-common2/utils/convertSizeWithMultiplier';
 import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common2/utils/getDefaultSizeObjectForIllustration';
 import { isDevelopment } from '@cbhq/cds-utils';
+
+import { useColorScheme } from '../hooks/useColorScheme';
 
 type IllustrationConfigShape<Variant extends IllustrationVariant> = Record<
   IllustrationNamesMap[Variant],
@@ -40,11 +42,10 @@ export function createIllustration<Variant extends IllustrationVariant>(
     alt = '',
     fallback = null,
   }: IllustrationProps) {
-    // TO DO: We have no support for useSpectrum() and no great way to support toggleable dark/light mode while still having automatic prefer-color-scheme support
-    const spectrum = useSpectrum();
+    const colorScheme = useColorScheme();
     const version = config[name];
 
-    const src = `https://static-assets.coinbase.com/ui-infra/illustration/v1/${variant}/svg/${spectrum}/${name}-${version}.svg`;
+    const src = `https://static-assets.coinbase.com/ui-infra/illustration/v1/${variant}/svg/${colorScheme}/${name}-${version}.svg`;
 
     const { width, height } = useMemo(() => {
       let size = defaultSize;

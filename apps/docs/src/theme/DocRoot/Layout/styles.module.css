@@ -1,0 +1,32 @@
+.docRoot {
+  display: flex;
+  width: 100%;
+}
+
+.docsWrapper {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.docMainAndFooterWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  gap: 80px;
+  padding: 24px 60px 48px 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .docMainAndFooterWrapper {
+    padding: 16px 24px 32px 24px;
+    gap: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .docMainAndFooterWrapper {
+    padding: 24px 48px 48px 48px;
+    gap: 60px;
+  }
+}

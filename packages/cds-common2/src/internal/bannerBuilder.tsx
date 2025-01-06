@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
 
+import { ThemeVars } from '../new/vars';
 import { LinkBaseProps } from '../types';
 import { BannerBaseProps } from '../types/BannerBaseProps';
 import { TextBaseProps } from '../types/TextBaseProps';
-import { SpacerBaseProps, SpacingScale, StackBaseProps } from '..';
+import { SpacerBaseProps, StackBaseProps } from '..';
 
 import { loremIpsum } from './loremIpsumBuilder';
 
@@ -60,7 +61,7 @@ export function bannerBuilder(
   }: {
     title: string;
     children: React.ReactElement<Partial<BannerBaseProps>>;
-    gap?: SpacingScale;
+    gap?: ThemeVars.Space;
     showVariations?: boolean;
   }) => {
     let longTextChild = null;
@@ -174,7 +175,7 @@ export function bannerBuilder(
     return (
       <Container gap={2} title="FullBleed">
         <Banner
-          borderRadius="roundedNone"
+          borderRadius={0}
           bordered={false}
           {...sharedProps}
           title={`${sharedProps.title}(Full bleed)`}

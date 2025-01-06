@@ -1,0 +1,44 @@
+{
+  "name": "cds-mobile2",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/cds-mobile2/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "danger": {
+      "executor": "@cbhq/mono-tasks:danger",
+      "options": {
+        "dangerfile": "libs/dangerfiles/dangerfile.ts"
+      }
+    },
+    "danger-test": {
+      "executor": "@cbhq/mono-tasks:danger",
+      "options": {
+        "dangerfile": "libs/dangerfiles/dangerfile-coverage.ts",
+        "timeoutSeconds": 30
+      }
+    },
+    "audit-a11y": {
+      "executor": "@cbhq/ui-scorecard:audit-a11y",
+      "dependsOn": [
+        "test"
+      ],
+      "options": {
+        "eventProjectName": "cds_mobile",
+        "platform": "mobile"
+      }
+    },
+    "publish-figma": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "figma connect publish --token $FIGMA_CODE_CONNECT_TOKEN"
+        ],
+        "cwd": "packages/cds-mobile2"
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ describe('useInteractableBorderRadius', () => {
   });
 
   it('returns the correct value for alias if an alias is passed in', () => {
-    const { result } = renderHook(() => useInteractableBorderRadius('rounded'));
-    expect(result.current).toEqual(borderRadii.rounded);
+    const { result } = renderHook(() => useInteractableBorderRadius(200));
+    expect(result.current).toEqual(borderRadii[200]);
   });
 });

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { usePopper as useExternalPopper } from 'react-popper';
 import { Options as PopperOptions } from '@popperjs/core';
 
-import { space } from '../../styles/vars';
+import { useTheme } from '../../system/ThemeProvider';
 
 import { PopoverContentPositionConfig } from './PopoverProps';
 // import { getComputedStyleForSelector } from '../../utils/getComputedStyleForSelector'
@@ -18,12 +18,13 @@ export const usePopper = ({
 }: PopoverContentPositionConfig) => {
   const [subject, setSubject] = useState<HTMLDivElement | null>(null);
   const [popper, setPopper] = useState<HTMLDivElement | null>(null);
+  const theme = useTheme();
   // const [computedSkid, setComputedSkid] = useState<number>(0)
   // const [computedGap, setComputedGap] = useState<number>(0)
 
   // hardcoded to default space values for now
-  const computedSkid = parseInt(space[skid]);
-  const computedGap = parseInt(space[gap]);
+  const computedSkid = theme.space[skid];
+  const computedGap = theme.space[gap];
   const getOffsetGap = offsetGap && gap - offsetGap;
 
   const popperOptions: Partial<PopperOptions> = useMemo(

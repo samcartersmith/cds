@@ -8,23 +8,23 @@ import React, {
 } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { colorSurgeEnterConfig, colorSurgeExitConfig } from '@cbhq/cds-common2/motion/hint';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import type { HintMotionBaseProps } from '@cbhq/cds-common2/types/MotionBaseProps';
 
 import { Box } from '../layout/Box';
-import type { StaticStyleProps } from '../styles/styleProps';
 
 import { useMotionProps } from './useMotionProps';
 
 export type ColorSurgeRefBaseProps = {
-  play: (background?: StaticStyleProps['color']) => Promise<void>;
+  play: (background?: ThemeVars.Color) => Promise<void>;
 };
 
 export type ColorSurgeTypes = {
   /**
-   * Palette alias of the surge color
+   * The surge color
    * @default backgroundPrimary
    */
-  background?: StaticStyleProps['color'];
+  background?: ThemeVars.Color;
 } & HintMotionBaseProps;
 
 const MotionBox = motion(Box);
@@ -37,7 +37,7 @@ export const ColorSurge = memo(
     { background = 'backgroundPrimary', disableAnimateOnMount = false }: ColorSurgeTypes,
     ref: React.ForwardedRef<ColorSurgeRefBaseProps>,
   ) {
-    const [backgroundState, setBackgroundState] = useState<StaticStyleProps['color']>(background);
+    const [backgroundState, setBackgroundState] = useState<ThemeVars.Color>(background);
 
     const controls = useAnimation();
 
@@ -48,7 +48,7 @@ export const ColorSurge = memo(
     });
 
     const playAnimation = useCallback(
-      async (backgroundParam?: StaticStyleProps['color']) => {
+      async (backgroundParam?: ThemeVars.Color) => {
         if (backgroundParam) {
           setBackgroundState(backgroundParam);
         }

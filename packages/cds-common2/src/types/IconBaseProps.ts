@@ -3,7 +3,7 @@ import React from 'react';
 import type { IconName } from './IconName';
 import type { IconSize } from './IconSize';
 import type { SharedProps } from './SharedProps';
-import type { SpacingProps } from './SpacingProps';
+import type { PaddingProps } from './SpacingProps';
 
 export type IconBaseProps = {
   /**
@@ -29,5 +29,5 @@ export type IconBaseProps = {
    * @default false
    */
   active?: boolean;
-} & SpacingProps &
+} & PaddingProps &
   SharedProps;

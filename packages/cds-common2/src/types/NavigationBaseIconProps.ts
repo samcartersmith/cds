@@ -1,7 +1,7 @@
 import type { NavigationIconName } from './IconName';
 import type { IconSize } from './IconSize';
 import { SharedProps } from './SharedProps';
-import { SpacingProps } from './SpacingProps';
+import { PaddingProps } from './SpacingProps';
 
 export type NavigationIconSize = 's' | 'm' | 'l';
 
@@ -28,5 +28,5 @@ export type NavigationBaseIconProps = {
    * @default false
    */
   active?: boolean;
-} & SpacingProps &
+} & PaddingProps &
   SharedProps;

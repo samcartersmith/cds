@@ -1,5 +1,5 @@
+import { ThemeVars } from '../new/vars';
 import { SpacerBaseProps } from '../types/SpacerBaseProps';
-import { SpacingScale } from '../types/SpacingScale';
 
 export const getSpacerStyle = ({
   flexGrow,
@@ -12,7 +12,9 @@ export const getSpacerStyle = ({
   minHorizontal,
   minVertical,
   spacingScaleValues,
-}: SpacerBaseProps & { spacingScaleValues: Record<Exclude<SpacingScale, 0>, string | number> }) => {
+}: SpacerBaseProps & {
+  spacingScaleValues: Record<Exclude<ThemeVars.Space, 0>, string | number>;
+}) => {
   const isFixedSize = horizontal !== undefined || vertical !== undefined;
 
   return {

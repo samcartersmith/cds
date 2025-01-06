@@ -7,7 +7,7 @@ import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import { type ThemeConfig } from '../core/theme';
 import { Box } from '../layout/Box';
 import { convertTransition } from '../motion/utils';
-import { ThemeProvider, useThemeContext } from '../providers/ThemeProvider';
+import { ThemeProvider, useTheme } from '../system/ThemeProvider';
 
 import { Control, ControlProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
@@ -75,7 +75,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
   { children, checked, switchPaletteOverrides, disabled, ...props },
   ref,
 ) {
-  const theme = useThemeContext();
+  const theme = useTheme();
 
   const { outerContainerMotionProps } = useControlMotionProps({
     checked,

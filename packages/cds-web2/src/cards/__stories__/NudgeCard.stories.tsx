@@ -127,7 +127,7 @@ export const CustomTextNodes = () => (
   <NudgeCard
     {...exampleProps}
     action={
-      <HStack spacingBottom={1}>
+      <HStack paddingBottom={1}>
         <Button compact onClick={noopFn}>
           Custom action
         </Button>

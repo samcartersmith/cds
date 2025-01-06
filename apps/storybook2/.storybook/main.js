@@ -92,6 +92,8 @@ const config = {
             displayName: !isProduction,
             sourceMap: !isProduction,
             babelOptions: BABEL_OPTIONS,
+            // @ts-expect-error Missing linaria classNameSlug types
+            classNameSlug: (hash, title) => `cds-${title}-${hash}`,
           },
         });
       }

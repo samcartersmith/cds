@@ -34,8 +34,8 @@
     "@cbhq/docusaurus-plugin-docgen": "workspace:^",
     "@cbhq/docusaurus-plugin-kbar": "workspace:^",
     "@cbhq/docusaurus-theme": "workspace:^",
-    "@docusaurus/preset-classic": "2.0.0-beta.18",
-    "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
+    "@docusaurus/preset-classic": "^3.6.3",
+    "@docusaurus/theme-live-codeblock": "^3.6.3",
     "type-fest": "^2.19.0"
   },
   "devDependencies": {
@@ -43,6 +43,6 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@docusaurus/types": "2.0.0-beta.18"
+    "@docusaurus/types": "^3.6.3"
   }
 }

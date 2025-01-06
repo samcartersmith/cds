@@ -4,7 +4,7 @@ import { FlexStyles, StackBaseProps } from './BoxBaseProps';
 import { GridColumn } from './Grid';
 import { SharedGridProps } from './GridBaseProps';
 import { ResponsivePropsDevices } from './Responsive';
-import { OffsetProps, SpacingProps } from './SpacingProps';
+import { MarginProps, PaddingProps } from './SpacingProps';
 
 /** Grid columns are 1 indexed and the last column is referenced by -1 */
 type GridColumnSpan = GridColumn | -1;
@@ -56,8 +56,8 @@ type GridColumnSpanProps = {
 export type ResponsiveColumnStyles = Partial<
   GridColumnSpanProps &
     Pick<FlexStyles, 'alignItems' | 'alignContent' | 'justifyContent' | 'alignSelf'> &
-    OffsetProps &
-    SpacingProps &
+    PaddingProps &
+    MarginProps &
     StackBaseProps
 >;
 

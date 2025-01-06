@@ -1,0 +1,42 @@
+{
+  "name": "docs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/docs",
+  "projectType": "app",
+  "tags": [],
+  "targets": {
+    "dev": {
+      "command": "docusaurus start --port 3000",
+      "options": {
+        "cwd": "apps/docs",
+        "env": {
+          "NODE_ENV": "development"
+        }
+      }
+    },
+    "start": {
+      "command": "docusaurus serve --dir dist --port 3000",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "cwd": "apps/docs"
+      }
+    },
+    "build": {
+      "command": "docusaurus build --out-dir dist",
+      "options": {
+        "cwd": "apps/docs"
+      }
+    },
+    "clear": {
+      "command": "docusaurus clear",
+      "options": {
+        "cwd": "apps/docs"
+      }
+    },
+    "typecheck": {
+      "command": "tsc --build --pretty --verbose"
+    }
+  }
+}

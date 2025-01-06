@@ -1,0 +1,17 @@
+export type { TextProps } from './createText';
+export { numberStyles } from './createText';
+export * from './Link';
+export * from './TextBody';
+export * from './TextCaption';
+export * from './TextDisplay1';
+export * from './TextDisplay2';
+export * from './TextDisplay3';
+export * from './TextHeadline';
+export * from './TextLabel1';
+export * from './TextLabel2';
+export * from './TextLegal';
+export * from './TextTitle1';
+export * from './TextTitle2';
+export * from './TextTitle3';
+export * from './TextTitle4';
+export * from './useTypographyStyles';

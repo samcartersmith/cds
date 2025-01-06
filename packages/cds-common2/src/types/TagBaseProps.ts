@@ -1,12 +1,12 @@
+import { ThemeVars } from '../new/vars';
+
 import { BoxBaseProps } from './BoxBaseProps';
-import { PaletteValue } from './Palette';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
-import { SpectrumHue } from './Spectrum';
 
 export type TagIntent = 'informational' | 'promotional';
 export type ColorScheme = Extract<
-  SpectrumHue,
+  ThemeVars.SpectrumHue,
   'green' | 'purple' | 'blue' | 'yellow' | 'red' | 'gray'
 >;
 
@@ -29,9 +29,9 @@ type TagWildcardProps = {
    */
   colorScheme?: never;
   /** @danger Custom background color */
-  background?: PaletteValue;
+  background?: ThemeVars.SpectrumColor;
   /** @danger Custom text color */
-  color?: PaletteValue;
+  color?: ThemeVars.SpectrumColor;
 };
 
 export type TagBaseProps = {

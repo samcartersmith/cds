@@ -1,5 +1,6 @@
+import { ThemeVars } from '../new/vars';
+
 import { AvatarSize } from './AvatarSize';
-import { PaletteBorder } from './Palette';
 import { Shape } from './Shape';
 import { SharedProps } from './SharedProps';
 import { SpectrumHue } from './Spectrum';
@@ -27,7 +28,7 @@ export type AvatarBaseProps = {
   size?: AvatarSize;
 
   /** Adds a border to the Avatar */
-  borderColor?: PaletteBorder;
+  borderColor?: ThemeVars.Color;
 
   /**
    * @danger Creates a custom Avatar size. The size prop should be used in most circumstances.

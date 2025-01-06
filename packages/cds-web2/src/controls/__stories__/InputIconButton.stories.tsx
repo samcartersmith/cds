@@ -10,12 +10,12 @@ export default {
 };
 
 const variants = [
-  'textForeground',
-  'textForegroundMuted',
-  'textPrimary',
-  'textNegative',
-  'textPositive',
-  'backgroundSecondary',
+  'foreground',
+  'foregroundMuted',
+  'primary',
+  'negative',
+  'positive',
+  'secondary',
 ] as const;
 
 const Basic = () => {
@@ -38,7 +38,7 @@ const DefaultsToPrimary = () => {
     <TextInput
       label="Label"
       start={<InputIconButton accessibilityLabel="Search" name="search" />}
-      variant="textForegroundMuted"
+      variant="foregroundMuted"
     />
   );
 };
@@ -48,7 +48,7 @@ const SetColorAndInheritFocusStyle = () => {
     <TextInput
       label="Search"
       start={<InputIconButton accessibilityLabel="Search" name="search" variant="secondary" />}
-      variant="textForegroundMuted"
+      variant="foregroundMuted"
     />
   );
 };

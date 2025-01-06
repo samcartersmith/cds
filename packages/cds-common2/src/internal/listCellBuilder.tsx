@@ -123,7 +123,7 @@ export function listCellBuilder(
     );
   };
 
-  const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+  const innerSpacingConfig: CellSpacing = { paddingX: 1 };
 
   const PressableContent = () => (
     <>
@@ -584,7 +584,7 @@ export function listCellBuilder(
     <>
       <ListCell
         selected
-        borderRadius="roundedNone"
+        borderRadius={0}
         description="Description"
         detail="$1,230"
         detailWidth={100}
@@ -593,7 +593,7 @@ export function listCellBuilder(
         {...selectCellSpacingConfig}
       />
       <ListCell
-        borderRadius="roundedNone"
+        borderRadius={0}
         description="Description"
         detail="$1,230"
         detailWidth={100}

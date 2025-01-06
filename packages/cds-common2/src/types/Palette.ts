@@ -1,23 +1,6 @@
-import type { ReadonlyDeep } from 'type-fest';
+import { ThemeVars } from '../new/vars';
 
-import {
-  defaultPalette,
-  paletteBackgrounds,
-  paletteBorders,
-  paletteForegrounds,
-} from '../palette/constants';
-
-import type { SpectrumAlias, SpectrumAliasWithOpacity } from './Spectrum';
-
-export type PaletteAlias = keyof typeof defaultPalette;
-export type PaletteValue = SpectrumAlias | SpectrumAliasWithOpacity;
-export type PaletteValueTuple = SpectrumAliasWithOpacity;
-export type PaletteForeground = Extract<PaletteAlias, (typeof paletteForegrounds)[number]>;
-export type PaletteBackground = Extract<PaletteAlias, (typeof paletteBackgrounds)[number]>;
-export type PaletteBorder = Extract<PaletteAlias, (typeof paletteBorders)[number]>;
-export type PaletteConfig = ReadonlyDeep<Record<PaletteAlias, PaletteValue>>;
-export type PartialPaletteConfig = Partial<PaletteConfig>;
-export type Palette = Record<PaletteAlias, string>;
+export type PaletteValue = ThemeVars.SpectrumColor | [ThemeVars.SpectrumColor, number];
+export type PaletteValueTuple = [ThemeVars.SpectrumColor, number];
 // Web returns CSS variables and RN returns actual rgb values
-export type UsePaletteFn = () => Palette;
-export type PaletteOrTransparentColor = PaletteAlias | 'transparent';
+export type UsePaletteFn = () => Record<ThemeVars.Color, string>;

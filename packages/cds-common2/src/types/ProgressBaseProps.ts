@@ -1,13 +1,9 @@
+import { ThemeVars } from '../new/vars';
+
 import { HintMotionBaseProps } from './MotionBaseProps';
-import type { PaletteForeground } from './Palette';
 import type { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import type { SharedProps } from './SharedProps';
 import type { Weight } from './Weight';
-
-export type ProgressColor = Extract<
-  PaletteForeground,
-  'positive' | 'negative' | 'primary' | 'foreground' | 'warning'
->;
 
 export type ProgressBaseProps = {
   /** Number between 0-1 representing the progress percentage */
@@ -28,7 +24,7 @@ export type ProgressBaseProps = {
    * Custom progress color.
    * @default primary
    */
-  color?: ProgressColor;
+  color?: ThemeVars.Color;
 } & SharedProps &
   Pick<HintMotionBaseProps, 'disableAnimateOnMount'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'>;

@@ -21,7 +21,7 @@ export function createAnnouncementCard<OnPressFn>({
     accessibilityLabel,
     accessibilityHint,
     elevation = 0,
-    borderRadius = 'roundedNone',
+    borderRadius = 0,
     ...props
   }: AnnouncementCardBaseProps & {
     onPress?: OnPressFn;

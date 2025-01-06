@@ -21,7 +21,7 @@ export function createFeatureEntryCard<OnPressFn>({
     accessibilityLabel,
     description,
     title,
-    borderRadius = 'roundedNone',
+    borderRadius = 0,
     elevation = 0,
     ...props
   }: FeatureEntryCardBaseProps & { onPress?: OnPressFn; onActionPress?: OnPressFn }) {

@@ -4,8 +4,8 @@ import { css, cx } from '@linaria/core';
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { type BoxProps, Box } from '../../layout/Box';
-import { useThemeContext } from '../../providers/ThemeProvider';
 import { media } from '../../styles/media';
+import { useTheme } from '../../system/ThemeProvider';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal, PortalProps } from '../Portal';
 import { modalContainerId } from '../PortalProvider';
@@ -82,7 +82,7 @@ export const ModalWrapper = memo(
       }: ModalWrapperProps,
       ref: React.ForwardedRef<HTMLDivElement>,
     ) => {
-      const theme = useThemeContext();
+      const theme = useTheme();
       const blockScroll = useScrollBlocker();
 
       // prevent body scroll when modal is open

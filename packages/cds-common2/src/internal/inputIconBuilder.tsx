@@ -1,12 +1,24 @@
 import React from 'react';
 
+import { ThemeVars } from '../new/vars';
 import type {
   BoxBaseProps,
   IconBaseProps,
   IconName,
-  PaletteForeground,
+  InputVariant,
   TextInputBaseProps,
 } from '../types';
+
+const variants = ['foreground', 'foregroundMuted', 'primary', 'negative', 'positive'] as const;
+
+const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
+  primary: 'iconPrimary',
+  positive: 'iconPositive',
+  negative: 'iconNegative',
+  foreground: 'iconForeground',
+  foregroundMuted: 'iconForegroundMuted',
+  secondary: 'backgroundSecondary',
+};
 
 export function inputIconBuilder(
   TextInput: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>,
@@ -15,7 +27,7 @@ export function inputIconBuilder(
       {
         disableInheritFocusStyle?: boolean;
         name: IconName;
-        color?: PaletteForeground;
+        color?: ThemeVars.Color;
         accessibilityLabel?: string;
       } & Omit<IconBaseProps, 'name' | 'size'>
     >
@@ -23,15 +35,13 @@ export function inputIconBuilder(
   Box: React.ComponentType<React.PropsWithChildren<BoxBaseProps>>,
 ) {
   const Basic = () => {
-    const variants = ['foreground', 'foregroundMuted', 'primary', 'negative', 'positive'] as const;
-
     return (
       <>
         {variants.map((variant) => (
           <TextInput
             key={`${variant}-inputicon`}
             label={variant}
-            start={<InputIcon color={variant} name="add" />}
+            start={<InputIcon color={variantColorMap[variant]} name="add" />}
             variant={variant}
           />
         ))}
@@ -59,7 +69,7 @@ export function inputIconBuilder(
     return (
       <TextInput
         label="Search"
-        start={<InputIcon color="positive" name="search" />}
+        start={<InputIcon color="iconPositive" name="search" />}
         variant="foregroundMuted"
       />
     );
@@ -73,7 +83,7 @@ export function inputIconBuilder(
     return (
       <TextInput
         label="Label"
-        start={<InputIcon disableInheritFocusStyle color="foreground" name="add" />}
+        start={<InputIcon disableInheritFocusStyle color="textForeground" name="add" />}
       />
     );
   };
@@ -81,7 +91,7 @@ export function inputIconBuilder(
   const AddCustomColorEnd = () => {
     return (
       <TextInput
-        end={<InputIcon disableInheritFocusStyle color="foreground" name="add" />}
+        end={<InputIcon disableInheritFocusStyle color="textForeground" name="add" />}
         label="Label"
       />
     );

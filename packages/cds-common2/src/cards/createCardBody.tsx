@@ -1,7 +1,8 @@
 import React, { memo, useMemo } from 'react';
 
+import { ThemeVars } from '../new/vars';
 import { defaultMediaSize } from '../tokens/card';
-import type { PaletteForeground, SharedProps, TextBaseProps } from '../types';
+import type { SharedProps, TextBaseProps } from '../types';
 import type {
   ButtonBaseProps,
   CardBodyBaseProps,
@@ -13,7 +14,7 @@ import type {
 import { getCardBodySpacingProps } from './getCardBodySpacingProps';
 
 type TextProps = TextBaseProps & {
-  color?: PaletteForeground;
+  color?: ThemeVars.Color;
   /** TODO: Add ellipsize functionality to web and remove this conditional */
   ellipsize?: 'head' | 'middle' | 'tail' | 'clip' | undefined;
 } & SharedProps;
@@ -51,13 +52,13 @@ export function createCardBody<OnPressFn>({
     spotSquare,
     image,
     media: mediaProp,
-    spacing,
-    spacingVertical,
-    spacingHorizontal,
-    spacingTop,
-    spacingBottom,
-    spacingStart,
-    spacingEnd,
+    padding,
+    paddingX,
+    paddingY,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft,
     numberOfLines = 3,
     accessibilityLabel,
     children,
@@ -65,13 +66,13 @@ export function createCardBody<OnPressFn>({
     ...props
   }: CardBodyBaseProps & { onActionPress?: OnPressFn }) {
     const spacingProps = getCardBodySpacingProps({
-      spacing,
-      spacingVertical,
-      spacingHorizontal,
-      spacingStart,
-      spacingBottom,
-      spacingEnd,
-      spacingTop,
+      padding,
+      paddingX,
+      paddingY,
+      paddingTop,
+      paddingRight,
+      paddingBottom,
+      paddingLeft,
       compact,
     });
 
@@ -121,21 +122,21 @@ export function createCardBody<OnPressFn>({
       return (
         <VStack
           gap={2}
-          spacingBottom={spacingProps.spacingBottom}
-          spacingTop={spacingProps.spacingTop}
+          paddingBottom={spacingProps.paddingBottom}
+          paddingTop={spacingProps.paddingTop}
           testID={testID}
           {...props}
         >
           {mediaContent}
           <VStack
             gap={1}
-            spacingEnd={spacingProps.spacingEnd}
-            spacingStart={spacingProps.spacingStart}
+            paddingLeft={spacingProps.paddingLeft}
+            paddingRight={spacingProps.paddingRight}
           >
             <TextHeadline {...textProps} testID={`${testID}-title`}>
               {title}
             </TextHeadline>
-            <TextLabel2 color="foregroundMuted" {...textProps} testID={`${testID}-description`}>
+            <TextLabel2 color="textForegroundMuted" {...textProps} testID={`${testID}-description`}>
               {description}
             </TextLabel2>
             {action}
@@ -156,11 +157,11 @@ export function createCardBody<OnPressFn>({
         {...props}
       >
         <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
-          <VStack gap={1} maxWidth="100%" spacingTop={mediaContent ? 0 : 2}>
+          <VStack gap={1} maxWidth="100%" paddingTop={mediaContent ? 0 : 2}>
             <TextHeadline {...textProps} testID={`${testID}-title`}>
               {title}
             </TextHeadline>
-            <TextLabel2 color="foregroundMuted" {...textProps} testID={`${testID}-description`}>
+            <TextLabel2 color="textForegroundMuted" {...textProps} testID={`${testID}-description`}>
               {description}
             </TextLabel2>
           </VStack>

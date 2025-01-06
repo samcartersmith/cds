@@ -1,54 +1,54 @@
-import { PaletteBackground, PaletteBorder, PaletteForeground } from '../types';
+import { ThemeVars } from '../new/vars';
 import { BannerVariant } from '../types/AlphaBannerBaseProps';
 
 export type BannerVariantStyle = {
-  background: PaletteBackground | undefined;
-  iconColor: PaletteForeground;
-  textColor: PaletteForeground;
-  primaryActionColor: PaletteForeground;
-  secondaryActionColor: PaletteForeground;
-  iconButtonColor: PaletteForeground;
-  borderColor: PaletteBorder;
+  background: ThemeVars.Color | undefined;
+  iconColor: ThemeVars.Color;
+  textColor: ThemeVars.Color;
+  primaryActionColor: ThemeVars.Color;
+  secondaryActionColor: ThemeVars.Color;
+  iconButtonColor: ThemeVars.Color;
+  borderColor: ThemeVars.Color;
 };
 
 export type BannerVariantConfig = Record<BannerVariant, BannerVariantStyle>;
 
 export const variants: BannerVariantConfig = {
   informational: {
-    background: 'secondary',
-    iconColor: 'primary',
-    textColor: 'foreground',
-    primaryActionColor: 'primary',
-    secondaryActionColor: 'foreground',
-    iconButtonColor: 'foreground',
-    borderColor: 'primary',
+    background: 'backgroundSecondary',
+    iconColor: 'iconPrimary',
+    textColor: 'textForeground',
+    primaryActionColor: 'textPrimary',
+    secondaryActionColor: 'textForeground',
+    iconButtonColor: 'iconForeground',
+    borderColor: 'backgroundPrimary',
   },
   promotional: {
-    background: 'primaryWash',
-    iconColor: 'primary',
-    textColor: 'foreground',
-    primaryActionColor: 'primary',
-    secondaryActionColor: 'foreground',
-    iconButtonColor: 'foreground',
-    borderColor: 'primary',
+    background: 'backgroundPrimaryWash',
+    iconColor: 'iconPrimary',
+    textColor: 'textForeground',
+    primaryActionColor: 'textPrimary',
+    secondaryActionColor: 'textForeground',
+    iconButtonColor: 'iconForeground',
+    borderColor: 'backgroundPrimary',
   },
   warning: {
-    background: undefined, // todo: replace when token is available
-    iconColor: 'warningForeground',
-    textColor: 'foreground',
-    primaryActionColor: 'primary',
-    secondaryActionColor: 'foreground',
-    iconButtonColor: 'foreground',
-    borderColor: 'warningForeground',
+    background: 'backgroundWarningWash',
+    iconColor: 'iconWarning',
+    textColor: 'textForeground',
+    primaryActionColor: 'textPrimary',
+    secondaryActionColor: 'textForeground',
+    iconButtonColor: 'iconForeground',
+    borderColor: 'backgroundWarning',
   },
   error: {
-    background: 'negativeWash',
-    iconColor: 'negative',
-    textColor: 'foreground',
-    primaryActionColor: 'primary',
-    secondaryActionColor: 'foreground',
-    iconButtonColor: 'foreground',
-    borderColor: 'negative',
+    background: 'backgroundNegativeWash',
+    iconColor: 'iconNegative',
+    textColor: 'textForeground',
+    primaryActionColor: 'textPrimary',
+    secondaryActionColor: 'textForeground',
+    iconButtonColor: 'iconForeground',
+    borderColor: 'backgroundNegative',
   },
 };
 

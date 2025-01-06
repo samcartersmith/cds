@@ -11,8 +11,9 @@ import React, {
 import { css } from '@linaria/core';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { usePrefixedId } from '@cbhq/cds-common2/hooks/usePrefixedId';
+import { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
-import type { SharedInputProps } from '@cbhq/cds-common2/types/InputBaseProps';
+import type { InputVariant, SharedInputProps } from '@cbhq/cds-common2/types/InputBaseProps';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import type { TextAlignProps } from '@cbhq/cds-common2/types/TextBaseProps';
@@ -31,7 +32,7 @@ import { NativeInput } from './NativeInput';
  * If start exist, the padding
  * between input area and icon should be 0.5 (4px).
  * This is not the case when there is no start.
- * In normal circumstances, spacing horizontal should be 2 (16px)
+ * In normal circumstances, padding horizontal should be 2 (16px)
  */
 const nativeInputContainerStyle = css`
   padding-top: var(--space-2);
@@ -104,12 +105,20 @@ export type TextInputProps = {
   > &
   Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width'>;
 
-const useInputVariant = (focused: boolean, variant: InputStackBaseProps['variant']) => {
+const useInputVariant = (focused: boolean, variant: InputVariant) => {
   return useMemo(
-    () =>
-      focused && variant !== 'textPositive' && variant !== 'textNegative' ? 'textPrimary' : variant,
+    () => (focused && variant !== 'positive' && variant !== 'negative' ? 'primary' : variant),
     [focused, variant],
   );
+};
+
+const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
+  primary: 'textPrimary',
+  positive: 'textPositive',
+  negative: 'textNegative',
+  foreground: 'textForeground',
+  foregroundMuted: 'textForegroundMuted',
+  secondary: 'backgroundSecondary',
 };
 
 export const TextInput = memo(
@@ -118,7 +127,7 @@ export const TextInput = memo(
       label,
       accessibilityLabel,
       helperText = '',
-      variant = 'textForegroundMuted',
+      variant = 'foregroundMuted',
       testID,
       testIDMap,
       start,
@@ -183,7 +192,7 @@ export const TextInput = memo(
           onBlur: handleOnBlur,
           ref: refs,
           'aria-describedby': shouldSetHelperTextId && helperTextId,
-          'aria-invalid': variant === 'textNegative',
+          'aria-invalid': variant === 'negative',
           id: shouldSetLabelId ? labelId : undefined,
           disabled,
         });
@@ -198,7 +207,7 @@ export const TextInput = memo(
           accessibilityHint={shouldSetHelperTextId ? helperTextId : undefined}
           accessibilityLabel={accessibilityLabel ?? label}
           align={align}
-          aria-invalid={variant === 'textNegative'}
+          aria-invalid={variant === 'negative'}
           compact={compact}
           containerSpacing={start ? nativeInputContainerStyle : undefined}
           data-compact={compact}
@@ -265,7 +274,7 @@ export const TextInput = memo(
             (typeof helperText === 'string' ? (
               <HelperText
                 accessibilityLabel={helperText}
-                color={variant}
+                color={variantColorMap[variant]}
                 errorIconAccessibilityLabel={helperTextErrorIconAccessibilityLabel}
                 errorIconTestID={`${testIDMap?.helperText}-error-icon`}
                 id={shouldSetHelperTextId ? helperTextId : undefined}

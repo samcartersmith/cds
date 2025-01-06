@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
 import { black, blue, white } from './useLogo';
-import { useSpectrumConditional } from './useSpectrumConditional';
 
 type SubBrandLogoData = {
   viewBox: string;
@@ -301,16 +300,22 @@ const subBrandLogoData: { wordmark: SubBrandLogoWordmarkData; mark: SubBrandLogo
 export type SubBrandLogoWordmarkParams = {
   type: SubBrandLogoWordmarkType;
   foreground?: boolean;
+  colorScheme: 'light' | 'dark';
 };
 
 export type SubBrandLogoMarkParams = {
   type: SubBrandLogoMarkType;
   foreground?: boolean;
+  colorScheme: 'light' | 'dark';
 };
 
-export const useSubBrandLogoWordmark = ({ foreground, type }: SubBrandLogoWordmarkParams) => {
-  const logoColor = useSpectrumConditional({ light: foreground ? black : blue, dark: white });
-  const typeColor = useSpectrumConditional({ light: black, dark: white });
+export const useSubBrandLogoWordmark = ({
+  foreground,
+  type,
+  colorScheme,
+}: SubBrandLogoWordmarkParams) => {
+  const logoColor = colorScheme === 'dark' ? white : foreground ? black : blue;
+  const typeColor = colorScheme === 'dark' ? white : black;
 
   const { viewBox, logoPath, typePath } = subBrandLogoData.wordmark[type];
 
@@ -325,9 +330,9 @@ export const useSubBrandLogoWordmark = ({ foreground, type }: SubBrandLogoWordma
   }, [logoColor, typeColor, viewBox, logoPath, typePath]);
 };
 
-export const useSubBrandLogoMark = ({ foreground, type }: SubBrandLogoMarkParams) => {
-  const logoColor = useSpectrumConditional({ light: foreground ? black : blue, dark: white });
-  const typeColor = useSpectrumConditional({ light: black, dark: white });
+export const useSubBrandLogoMark = ({ foreground, type, colorScheme }: SubBrandLogoMarkParams) => {
+  const logoColor = colorScheme === 'dark' ? white : foreground ? black : blue;
+  const typeColor = colorScheme === 'dark' ? white : black;
 
   const { viewBox, logoPath, typePath } = subBrandLogoData.mark[type];
 

@@ -1,4 +1,5 @@
-import { ColorSurgeBackground } from './ColorSurgeBaseProps';
+import { ThemeVars } from '../new/vars';
+
 import { DimensionValue } from './DimensionStyles';
 import { OverlayLifecycleProps } from './OverlayLifecycleProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
@@ -39,7 +40,7 @@ export type ToastBaseOptions = {
    * Controls color surge background
    * @default primary
    */
-  variant?: ColorSurgeBackground;
+  variant?: ThemeVars.Color;
 } & Pick<OverlayLifecycleProps, 'onWillHide' | 'onDidHide'>;
 
 export type ToastOptions = ToastBaseOptions & ToastDuration;

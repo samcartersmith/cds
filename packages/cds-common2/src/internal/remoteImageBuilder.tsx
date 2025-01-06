@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { paletteBorders } from '../palette/constants';
+import { ThemeVars } from '../new/vars';
 import { StackBaseProps, TextBaseProps } from '../types';
 
 import { svgs } from './data/assets';
@@ -15,6 +15,18 @@ export type RemoteImageBuilderProps = {
   HStack: React.ComponentType<React.PropsWithChildren<StackBaseProps>>;
   TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
 };
+
+export const borderColors = [
+  'backgroundPrimary',
+  'backgroundPrimaryWash',
+  'backgroundSecondary',
+  'backgroundPositive',
+  'backgroundNegative',
+  'line',
+  'lineHeavy',
+  'transparent',
+  'backgroundWarning',
+] as const satisfies ThemeVars.Color[];
 
 export const remoteImageBuilder = ({
   RemoteImage,
@@ -52,7 +64,7 @@ export const remoteImageBuilder = ({
 
   const BorderColorImg = () => (
     <VStack gap={2}>
-      {paletteBorders.map((borderColor, idx) => {
+      {borderColors.map((borderColor, idx) => {
         const key = `border-imgs-${idx}`;
         return (
           <RemoteImage
@@ -69,7 +81,7 @@ export const remoteImageBuilder = ({
 
   const BorderColorSvgs = () => (
     <VStack gap={1}>
-      {paletteBorders.map((borderColor, idx) => {
+      {borderColors.map((borderColor, idx) => {
         const key = `border-svgs-${idx}`;
         return (
           <RemoteImage

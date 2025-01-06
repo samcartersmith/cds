@@ -2,9 +2,9 @@
  * These styles are used to power component style props.
  */
 import { type LinariaClassName, css } from '@linaria/core';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 
 import type { DynamicStyleProps } from './styleProps';
-import type * as vars from './vars';
 
 export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   width: css`
@@ -102,8 +102,7 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   `,
 } as const;
 
-// TO DO: should we add values for currentcolor?
-export const color: Record<keyof typeof vars.color, LinariaClassName> = {
+export const color: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   textForeground: css`
     color: var(--color-textForeground);
@@ -305,7 +304,7 @@ export const color: Record<keyof typeof vars.color, LinariaClassName> = {
   `,
 } as const;
 
-export const background: Record<keyof typeof vars.color, LinariaClassName> = {
+export const background: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   textForeground: css`
     background-color: var(--color-textForeground);
@@ -507,7 +506,7 @@ export const background: Record<keyof typeof vars.color, LinariaClassName> = {
   `,
 } as const;
 
-export const borderColor: Record<keyof typeof vars.color, LinariaClassName> = {
+export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   textForeground: css`
     border-style: solid;
@@ -773,7 +772,7 @@ export const borderColor: Record<keyof typeof vars.color, LinariaClassName> = {
   `,
 } as const;
 
-export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
+export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   textForeground: css`
     &:hover {
@@ -1103,7 +1102,7 @@ export const hoverColor: Record<keyof typeof vars.color, LinariaClassName> = {
   `,
 } as const;
 
-export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> = {
+export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   textForeground: css`
     &:hover {
@@ -1433,7 +1432,7 @@ export const hoverBackground: Record<keyof typeof vars.color, LinariaClassName> 
   `,
 } as const;
 
-export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName> = {
+export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   textForeground: css`
     &:hover {
@@ -1763,7 +1762,7 @@ export const hoverBorderColor: Record<keyof typeof vars.color, LinariaClassName>
   `,
 } as const;
 
-export const borderWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+export const borderWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
     border-width: var(--borderWidth-0);
   `,
@@ -1784,7 +1783,7 @@ export const borderWidth: Record<keyof typeof vars.borderWidth, LinariaClassName
   `,
 } as const;
 
-export const borderTopWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+export const borderTopWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
     border-top-width: var(--borderWidth-0);
   `,
@@ -1805,7 +1804,7 @@ export const borderTopWidth: Record<keyof typeof vars.borderWidth, LinariaClassN
   `,
 } as const;
 
-export const borderRightWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+export const borderRightWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
     border-right-width: var(--borderWidth-0);
   `,
@@ -1826,7 +1825,7 @@ export const borderRightWidth: Record<keyof typeof vars.borderWidth, LinariaClas
   `,
 } as const;
 
-export const borderBottomWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+export const borderBottomWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
     border-bottom-width: var(--borderWidth-0);
   `,
@@ -1847,7 +1846,7 @@ export const borderBottomWidth: Record<keyof typeof vars.borderWidth, LinariaCla
   `,
 } as const;
 
-export const borderLeftWidth: Record<keyof typeof vars.borderWidth, LinariaClassName> = {
+export const borderLeftWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
     border-left-width: var(--borderWidth-0);
   `,
@@ -1868,7 +1867,7 @@ export const borderLeftWidth: Record<keyof typeof vars.borderWidth, LinariaClass
   `,
 } as const;
 
-export const borderRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+export const borderRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
     border-radius: var(--borderRadius-0);
   `,
@@ -1904,7 +1903,7 @@ export const borderRadius: Record<keyof typeof vars.borderRadius, LinariaClassNa
   `,
 } as const;
 
-export const borderTopLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+export const borderTopLeftRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
     border-top-left-radius: var(--borderRadius-0);
   `,
@@ -1940,7 +1939,7 @@ export const borderTopLeftRadius: Record<keyof typeof vars.borderRadius, Linaria
   `,
 } as const;
 
-export const borderTopRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+export const borderTopRightRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
     border-top-right-radius: var(--borderRadius-0);
   `,
@@ -1976,7 +1975,7 @@ export const borderTopRightRadius: Record<keyof typeof vars.borderRadius, Linari
   `,
 } as const;
 
-export const borderBottomLeftRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+export const borderBottomLeftRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
     border-bottom-left-radius: var(--borderRadius-0);
   `,
@@ -2012,7 +2011,7 @@ export const borderBottomLeftRadius: Record<keyof typeof vars.borderRadius, Lina
   `,
 } as const;
 
-export const borderBottomRightRadius: Record<keyof typeof vars.borderRadius, LinariaClassName> = {
+export const borderBottomRightRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
     border-bottom-right-radius: var(--borderRadius-0);
   `,
@@ -2048,7 +2047,7 @@ export const borderBottomRightRadius: Record<keyof typeof vars.borderRadius, Lin
   `,
 } as const;
 
-export const fontFamily: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
+export const fontFamily: Record<ThemeVars.FontFamily, LinariaClassName> = {
   display1: css`
     font-family: var(--fontFamily-display1);
   `,
@@ -2090,7 +2089,7 @@ export const fontFamily: Record<keyof typeof vars.fontFamily, LinariaClassName> 
   `,
 } as const;
 
-export const fontSize: Record<keyof typeof vars.fontSize, LinariaClassName> = {
+export const fontSize: Record<ThemeVars.FontSize, LinariaClassName> = {
   display1: css`
     font-size: var(--fontSize-display1);
   `,
@@ -2132,7 +2131,7 @@ export const fontSize: Record<keyof typeof vars.fontSize, LinariaClassName> = {
   `,
 } as const;
 
-export const fontWeight: Record<keyof typeof vars.fontWeight, LinariaClassName> = {
+export const fontWeight: Record<ThemeVars.FontWeight, LinariaClassName> = {
   display1: css`
     font-weight: var(--fontWeight-display1);
   `,
@@ -2174,7 +2173,7 @@ export const fontWeight: Record<keyof typeof vars.fontWeight, LinariaClassName> 
   `,
 } as const;
 
-export const lineHeight: Record<keyof typeof vars.lineHeight, LinariaClassName> = {
+export const lineHeight: Record<ThemeVars.LineHeight, LinariaClassName> = {
   display1: css`
     line-height: var(--lineHeight-display1);
   `,
@@ -2216,7 +2215,7 @@ export const lineHeight: Record<keyof typeof vars.lineHeight, LinariaClassName> 
   `,
 } as const;
 
-export const font: Record<keyof typeof vars.fontFamily, LinariaClassName> = {
+export const font: Record<ThemeVars.FontFamily, LinariaClassName> = {
   display1: css`
     font-size: var(--fontSize-display1);
     line-height: var(--lineHeight-display1);
@@ -2336,7 +2335,7 @@ export const textDecorationThickness = {
   `,
 } as const;
 
-export const textDecorationColor: Record<keyof typeof vars.color, LinariaClassName> = {
+export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   textForeground: css`
     text-decoration-color: var(--color-textForeground);
@@ -2616,7 +2615,7 @@ export const overflow = {
   `,
 } as const;
 
-export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const gap: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     gap: var(--space-0);
   `,
@@ -2664,7 +2663,7 @@ export const gap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const columnGap: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     column-gap: var(--space-0);
   `,
@@ -2712,7 +2711,7 @@ export const columnGap: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const rowGap: Record<keyof typeof vars.space, LinariaClassName> = {
+export const rowGap: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     row-gap: var(--space-0);
   `,
@@ -2967,7 +2966,7 @@ export const position = {
   `,
 } as const;
 
-export const zIndex: Record<keyof typeof vars.zIndex, LinariaClassName> = {
+export const zIndex: Record<ThemeVars.ZIndex, LinariaClassName> = {
   interactable: css`
     z-index: var(--zIndex-interactable);
   `,
@@ -3000,7 +2999,7 @@ export const zIndex: Record<keyof typeof vars.zIndex, LinariaClassName> = {
   `,
 } as const;
 
-export const padding: Record<keyof typeof vars.space, LinariaClassName> = {
+export const padding: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     padding-top: var(--space-0);
     padding-bottom: var(--space-0);
@@ -3093,7 +3092,7 @@ export const padding: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const paddingX: Record<keyof typeof vars.space, LinariaClassName> = {
+export const paddingX: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     padding-left: var(--space-0);
     padding-right: var(--space-0);
@@ -3156,7 +3155,7 @@ export const paddingX: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const paddingY: Record<keyof typeof vars.space, LinariaClassName> = {
+export const paddingY: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     padding-top: var(--space-0);
     padding-bottom: var(--space-0);
@@ -3219,7 +3218,7 @@ export const paddingY: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const paddingTop: Record<keyof typeof vars.space, LinariaClassName> = {
+export const paddingTop: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     padding-top: var(--space-0);
   `,
@@ -3267,7 +3266,7 @@ export const paddingTop: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const paddingBottom: Record<keyof typeof vars.space, LinariaClassName> = {
+export const paddingBottom: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     padding-bottom: var(--space-0);
   `,
@@ -3315,7 +3314,7 @@ export const paddingBottom: Record<keyof typeof vars.space, LinariaClassName> = 
   `,
 } as const;
 
-export const paddingLeft: Record<keyof typeof vars.space, LinariaClassName> = {
+export const paddingLeft: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     padding-left: var(--space-0);
   `,
@@ -3363,7 +3362,7 @@ export const paddingLeft: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const paddingRight: Record<keyof typeof vars.space, LinariaClassName> = {
+export const paddingRight: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     padding-right: var(--space-0);
   `,
@@ -3411,7 +3410,7 @@ export const paddingRight: Record<keyof typeof vars.space, LinariaClassName> = {
   `,
 } as const;
 
-export const margin: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> = {
+export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
     margin-top: calc(-1 * var(--space-0));
     margin-bottom: calc(-1 * var(--space-0));
@@ -3504,138 +3503,133 @@ export const margin: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, L
   `,
 } as const;
 
-export const marginX: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> =
-  {
-    '0': css`
-      margin-right: calc(-1 * var(--space-0));
-      margin-left: calc(-1 * var(--space-0));
-    `,
-    '-0.25': css`
-      margin-right: calc(-1 * var(--space-0\\.25));
-      margin-left: calc(-1 * var(--space-0\\.25));
-    `,
-    '-0.5': css`
-      margin-right: calc(-1 * var(--space-0\\.5));
-      margin-left: calc(-1 * var(--space-0\\.5));
-    `,
-    '-0.75': css`
-      margin-right: calc(-1 * var(--space-0\\.75));
-      margin-left: calc(-1 * var(--space-0\\.75));
-    `,
-    '-1': css`
-      margin-right: calc(-1 * var(--space-1));
-      margin-left: calc(-1 * var(--space-1));
-    `,
-    '-1.5': css`
-      margin-right: calc(-1 * var(--space-1\\.5));
-      margin-left: calc(-1 * var(--space-1\\.5));
-    `,
-    '-2': css`
-      margin-right: calc(-1 * var(--space-2));
-      margin-left: calc(-1 * var(--space-2));
-    `,
-    '-3': css`
-      margin-right: calc(-1 * var(--space-3));
-      margin-left: calc(-1 * var(--space-3));
-    `,
-    '-4': css`
-      margin-right: calc(-1 * var(--space-4));
-      margin-left: calc(-1 * var(--space-4));
-    `,
-    '-5': css`
-      margin-right: calc(-1 * var(--space-5));
-      margin-left: calc(-1 * var(--space-5));
-    `,
-    '-6': css`
-      margin-right: calc(-1 * var(--space-6));
-      margin-left: calc(-1 * var(--space-6));
-    `,
-    '-7': css`
-      margin-right: calc(-1 * var(--space-7));
-      margin-left: calc(-1 * var(--space-7));
-    `,
-    '-8': css`
-      margin-right: calc(-1 * var(--space-8));
-      margin-left: calc(-1 * var(--space-8));
-    `,
-    '-9': css`
-      margin-right: calc(-1 * var(--space-9));
-      margin-left: calc(-1 * var(--space-9));
-    `,
-    '-10': css`
-      margin-right: calc(-1 * var(--space-10));
-      margin-left: calc(-1 * var(--space-10));
-    `,
-  } as const;
+export const marginX: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
+  '0': css`
+    margin-right: calc(-1 * var(--space-0));
+    margin-left: calc(-1 * var(--space-0));
+  `,
+  '-0.25': css`
+    margin-right: calc(-1 * var(--space-0\\.25));
+    margin-left: calc(-1 * var(--space-0\\.25));
+  `,
+  '-0.5': css`
+    margin-right: calc(-1 * var(--space-0\\.5));
+    margin-left: calc(-1 * var(--space-0\\.5));
+  `,
+  '-0.75': css`
+    margin-right: calc(-1 * var(--space-0\\.75));
+    margin-left: calc(-1 * var(--space-0\\.75));
+  `,
+  '-1': css`
+    margin-right: calc(-1 * var(--space-1));
+    margin-left: calc(-1 * var(--space-1));
+  `,
+  '-1.5': css`
+    margin-right: calc(-1 * var(--space-1\\.5));
+    margin-left: calc(-1 * var(--space-1\\.5));
+  `,
+  '-2': css`
+    margin-right: calc(-1 * var(--space-2));
+    margin-left: calc(-1 * var(--space-2));
+  `,
+  '-3': css`
+    margin-right: calc(-1 * var(--space-3));
+    margin-left: calc(-1 * var(--space-3));
+  `,
+  '-4': css`
+    margin-right: calc(-1 * var(--space-4));
+    margin-left: calc(-1 * var(--space-4));
+  `,
+  '-5': css`
+    margin-right: calc(-1 * var(--space-5));
+    margin-left: calc(-1 * var(--space-5));
+  `,
+  '-6': css`
+    margin-right: calc(-1 * var(--space-6));
+    margin-left: calc(-1 * var(--space-6));
+  `,
+  '-7': css`
+    margin-right: calc(-1 * var(--space-7));
+    margin-left: calc(-1 * var(--space-7));
+  `,
+  '-8': css`
+    margin-right: calc(-1 * var(--space-8));
+    margin-left: calc(-1 * var(--space-8));
+  `,
+  '-9': css`
+    margin-right: calc(-1 * var(--space-9));
+    margin-left: calc(-1 * var(--space-9));
+  `,
+  '-10': css`
+    margin-right: calc(-1 * var(--space-10));
+    margin-left: calc(-1 * var(--space-10));
+  `,
+} as const;
 
-export const marginY: Record<'0' | `-${Exclude<keyof typeof vars.space, '0'>}`, LinariaClassName> =
-  {
-    '0': css`
-      margin-top: calc(-1 * var(--space-0));
-      margin-bottom: calc(-1 * var(--space-0));
-    `,
-    '-0.25': css`
-      margin-top: calc(-1 * var(--space-0\\.25));
-      margin-bottom: calc(-1 * var(--space-0\\.25));
-    `,
-    '-0.5': css`
-      margin-top: calc(-1 * var(--space-0\\.5));
-      margin-bottom: calc(-1 * var(--space-0\\.5));
-    `,
-    '-0.75': css`
-      margin-top: calc(-1 * var(--space-0\\.75));
-      margin-bottom: calc(-1 * var(--space-0\\.75));
-    `,
-    '-1': css`
-      margin-top: calc(-1 * var(--space-1));
-      margin-bottom: calc(-1 * var(--space-1));
-    `,
-    '-1.5': css`
-      margin-top: calc(-1 * var(--space-1\\.5));
-      margin-bottom: calc(-1 * var(--space-1\\.5));
-    `,
-    '-2': css`
-      margin-top: calc(-1 * var(--space-2));
-      margin-bottom: calc(-1 * var(--space-2));
-    `,
-    '-3': css`
-      margin-top: calc(-1 * var(--space-3));
-      margin-bottom: calc(-1 * var(--space-3));
-    `,
-    '-4': css`
-      margin-top: calc(-1 * var(--space-4));
-      margin-bottom: calc(-1 * var(--space-4));
-    `,
-    '-5': css`
-      margin-top: calc(-1 * var(--space-5));
-      margin-bottom: calc(-1 * var(--space-5));
-    `,
-    '-6': css`
-      margin-top: calc(-1 * var(--space-6));
-      margin-bottom: calc(-1 * var(--space-6));
-    `,
-    '-7': css`
-      margin-top: calc(-1 * var(--space-7));
-      margin-bottom: calc(-1 * var(--space-7));
-    `,
-    '-8': css`
-      margin-top: calc(-1 * var(--space-8));
-      margin-bottom: calc(-1 * var(--space-8));
-    `,
-    '-9': css`
-      margin-top: calc(-1 * var(--space-9));
-      margin-bottom: calc(-1 * var(--space-9));
-    `,
-    '-10': css`
-      margin-top: calc(-1 * var(--space-10));
-      margin-bottom: calc(-1 * var(--space-10));
-    `,
-  } as const;
+export const marginY: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
+  '0': css`
+    margin-top: calc(-1 * var(--space-0));
+    margin-bottom: calc(-1 * var(--space-0));
+  `,
+  '-0.25': css`
+    margin-top: calc(-1 * var(--space-0\\.25));
+    margin-bottom: calc(-1 * var(--space-0\\.25));
+  `,
+  '-0.5': css`
+    margin-top: calc(-1 * var(--space-0\\.5));
+    margin-bottom: calc(-1 * var(--space-0\\.5));
+  `,
+  '-0.75': css`
+    margin-top: calc(-1 * var(--space-0\\.75));
+    margin-bottom: calc(-1 * var(--space-0\\.75));
+  `,
+  '-1': css`
+    margin-top: calc(-1 * var(--space-1));
+    margin-bottom: calc(-1 * var(--space-1));
+  `,
+  '-1.5': css`
+    margin-top: calc(-1 * var(--space-1\\.5));
+    margin-bottom: calc(-1 * var(--space-1\\.5));
+  `,
+  '-2': css`
+    margin-top: calc(-1 * var(--space-2));
+    margin-bottom: calc(-1 * var(--space-2));
+  `,
+  '-3': css`
+    margin-top: calc(-1 * var(--space-3));
+    margin-bottom: calc(-1 * var(--space-3));
+  `,
+  '-4': css`
+    margin-top: calc(-1 * var(--space-4));
+    margin-bottom: calc(-1 * var(--space-4));
+  `,
+  '-5': css`
+    margin-top: calc(-1 * var(--space-5));
+    margin-bottom: calc(-1 * var(--space-5));
+  `,
+  '-6': css`
+    margin-top: calc(-1 * var(--space-6));
+    margin-bottom: calc(-1 * var(--space-6));
+  `,
+  '-7': css`
+    margin-top: calc(-1 * var(--space-7));
+    margin-bottom: calc(-1 * var(--space-7));
+  `,
+  '-8': css`
+    margin-top: calc(-1 * var(--space-8));
+    margin-bottom: calc(-1 * var(--space-8));
+  `,
+  '-9': css`
+    margin-top: calc(-1 * var(--space-9));
+    margin-bottom: calc(-1 * var(--space-9));
+  `,
+  '-10': css`
+    margin-top: calc(-1 * var(--space-10));
+    margin-bottom: calc(-1 * var(--space-10));
+  `,
+} as const;
 
-export const marginTop: Record<
-  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
-  LinariaClassName
-> = {
+export const marginTop: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
     margin-top: calc(-1 * var(--space-0));
   `,
@@ -3683,10 +3677,7 @@ export const marginTop: Record<
   `,
 } as const;
 
-export const marginBottom: Record<
-  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
-  LinariaClassName
-> = {
+export const marginBottom: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
     margin-bottom: calc(-1 * var(--space-0));
   `,
@@ -3734,10 +3725,7 @@ export const marginBottom: Record<
   `,
 } as const;
 
-export const marginRight: Record<
-  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
-  LinariaClassName
-> = {
+export const marginRight: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
     margin-right: calc(-1 * var(--space-0));
   `,
@@ -3785,10 +3773,7 @@ export const marginRight: Record<
   `,
 } as const;
 
-export const marginLeft: Record<
-  '0' | `-${Exclude<keyof typeof vars.space, '0'>}`,
-  LinariaClassName
-> = {
+export const marginLeft: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
     margin-left: calc(-1 * var(--space-0));
   `,

@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 
+import { ThemeVars } from '../new/vars';
 import { gutter } from '../tokens/sizing';
-import type { AvatarBaseProps, PaletteForeground, TextBaseProps } from '../types';
+import type { AvatarBaseProps, TextBaseProps } from '../types';
 import type { CardBoxProps, CardHeaderProps } from '../types';
 
 type CreateCardHeaderParams<T> = {
@@ -11,8 +12,7 @@ type CreateCardHeaderParams<T> = {
   TextLabel1: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
   TextLegal: React.ComponentType<
     React.PropsWithChildren<
-      | { color?: PaletteForeground }
-      | (T extends { color?: infer Color } ? { color?: Color } : never)
+      { color?: ThemeVars.Color } | (T extends { color?: infer Color } ? { color?: Color } : never)
     >
   >;
 };
@@ -35,8 +35,8 @@ export function createCardHeader<T>({
       <HStack
         alignItems="center"
         justifyContent="space-between"
-        spacingHorizontal={gutter}
-        spacingTop={2}
+        paddingTop={2}
+        paddingX={gutter}
         testID={testID}
       >
         <HStack alignItems="center" flexGrow={1} gap={1}>
@@ -45,7 +45,7 @@ export function createCardHeader<T>({
           ) : null}
           <VStack>
             {description ? <TextLabel1>{description}</TextLabel1> : null}
-            {metaData ? <TextLegal color="foregroundMuted">{metaData}</TextLegal> : null}
+            {metaData ? <TextLegal color="textForegroundMuted">{metaData}</TextLegal> : null}
           </VStack>
         </HStack>
         {action}

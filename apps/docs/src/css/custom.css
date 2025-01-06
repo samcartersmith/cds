@@ -1,0 +1,208 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #3578e5;
+  --ifm-color-primary-dark: #2f6cd1;
+  --ifm-color-primary-darker: #295fbd;
+  --ifm-color-primary-darkest: #234aa9;
+  --ifm-color-primary-light: #3d84f0;
+  --ifm-color-primary-lighter: #468ffb;
+  --ifm-color-primary-lightest: #509aff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: #fff;
+
+  /* left sidebar */
+  --cds-menu-active-background: #eef0f3;
+
+  --cds-page-background-color: rgb(255, 255, 255);
+  --gray-5: #eef0f3;
+  --gray-10: #dee1e7;
+
+  --border-radius-none: 0;
+  --border-radius-sm: 4px;
+  --border-radius-rounded: 8px;
+  --border-radius-m: 12px;
+  --border-radius-l: 16px;
+  --border-radius-xl: 24px;
+  --border-radius-full: 1000px;
+  /* maybe use 100% instead of 1000 */
+
+  --font-style-display: 'Coinbase Display', system-ui;
+  --font-style-body: 'Coinbase Sans', system-ui;
+  --font-style-label: 'Coinbase Sans', system-ui;
+  --font-style-text: 'Coinbase Text', system-ui;
+  --font-style-code: 'Coinbase Mono', monospace;
+
+  --font-size-display-1: 4rem;
+  --font-size-display-2: 3rem;
+  --font-size-display-3: 2.5rem;
+  --font-size-title-1: 1.75rem;
+  --font-size-title-2: 1.75rem;
+  --font-size-title-3: 1.25rem;
+  --font-size-title-4: 1.25rem;
+  --font-size-headline: 1rem;
+  --font-size-body: 1rem;
+  --font-size-code: 0.875rem;
+  --font-size-label-1: 0.875rem;
+  --font-size-label-2: 0.875rem;
+  --font-size-caption: 0.8125rem;
+  --font-size-legal: 0.75rem;
+
+  --font-line-height-display-1: 4.5rem;
+  --font-line-height-display-2: 3.5rem;
+  --font-line-height-display-3: 3rem;
+  --font-line-height-title-1: 2.25rem;
+  --font-line-height-title-2: 2.25rem;
+  --font-line-height-title-3: 1.75rem;
+  --font-line-height-title-4: 1.75rem;
+  --font-line-height-headline: 1.5rem;
+  --font-line-height-body: 1.5rem;
+  --font-line-height-code: 1.5rem;
+  --font-line-height-label-1: 1.25rem;
+  --font-line-height-label-2: 1.25rem;
+  --font-line-height-caption: 1rem;
+  --font-line-height-legal: 1rem;
+
+  --palette-foreground: #0a0b0d;
+  --palette-foregroundMuted: #5b616e;
+  --palette-backgroundAlternate: #eef0f3;
+  --palette-secondary: #eef0f3;
+  --palette-line: rgba(91, 97, 110, 0.2);
+
+  --states-secondaryHovered: #e8eaed;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #3578e5;
+  --ifm-color-primary-dark: #2f6cd1;
+  --ifm-color-primary-darker: #295fbd;
+  --ifm-color-primary-darkest: #234aa9;
+  --ifm-color-primary-light: #3d84f0;
+  --ifm-color-primary-lighter: #468ffb;
+  --ifm-color-primary-lightest: #509aff;
+  --docusaurus-highlighted-code-line-bg: #32353d;
+
+  /* left sidebar */
+  --cds-menu-active-background: rgb(50, 53, 61);
+
+  --cds-page-background-color: #1e2025;
+  --gray-5: #141519;
+  --gray-10: #1e2025;
+
+  --palette-foreground: #ffffff;
+  --palette-foregroundMuted: #8a919e;
+  --palette-backgroundAlternate: #141519;
+  --palette-secondary: #32353d;
+  --palette-line: rgba(138, 145, 158, 0.2);
+
+  --states-secondaryHovered: #3a3d45;
+}
+
+/* Docusaurus-specific utility class */
+.docusaurus-mt-lg {
+  margin-top: 3rem;
+}
+
+#__docusaurus {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: var(--cds-page-background-color);
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/**
+ * Hide breadcrumbs navigation
+*/
+.theme-doc-breadcrumbs {
+  display: none;
+}
+
+/**
+ * Hide pagination navigation
+*/
+.pagination-nav {
+  display: none;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-doc-sidebar-item-category-level-2 .menu__list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 32px;
+  border: 1px solid black;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible {
+  background-color: var(--cds-menu-active-background);
+  padding: 4px;
+  border-radius: 32px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.display-2 {
+  font-family: var(--font-style-display);
+  font-size: var(--font-size-display-2);
+  font-style: normal;
+  line-height: var(--font-line-height-display-2);
+}
+
+.title-2 {
+  font-family: var(--font-style-display);
+  font-size: var(--font-size-title-2);
+  font-style: normal;
+  line-height: var(--font-line-height-title-2);
+}
+
+.headline-text {
+  font-family: var(--font-style-body);
+  font-size: var(--font-size-headline);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--font-line-height-headline);
+}
+
+.body-text {
+  font-family: var(--font-style-body);
+  font-size: var(--font-size-body);
+  font-style: normal;
+  line-height: var(--font-line-height-body);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}

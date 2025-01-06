@@ -1,14 +1,17 @@
-import { BorderRadius } from './BorderRadius';
+import { ThemeVars } from '../new/vars';
+
 import { DimensionValue } from './DimensionStyles';
-import { PaletteForeground } from './Palette';
 import type { SharedProps } from './SharedProps';
 
-export type InputVariant = Extract<
-  PaletteForeground,
-  'positive' | 'negative' | 'foreground' | 'primary' | 'foregroundMuted' | 'secondary'
->;
+export type InputVariant =
+  | 'positive'
+  | 'negative'
+  | 'foreground'
+  | 'primary'
+  | 'foregroundMuted'
+  | 'secondary';
 
-export type InputStackBorderRadius = Extract<BorderRadius, 'rounded' | 'roundedFull'>;
+export type InputStackBorderRadius = Extract<ThemeVars.BorderRadius, 200 | 1000>;
 
 export type InputStackBaseProps = {
   /**

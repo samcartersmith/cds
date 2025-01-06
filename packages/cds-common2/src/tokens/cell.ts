@@ -1,54 +1,32 @@
-import { ScaleDensity } from '../types/Scale';
-
 import { gutter } from './sizing';
 
-export type CellScaleDensity = Record<ScaleDensity, number>;
-
-export const mediaSize: CellScaleDensity = {
-  dense: 24,
-  normal: 32,
-};
+export const mediaSize = 32;
 
 // Height of the inner cell without padding
-export const imageSize: CellScaleDensity = {
-  dense: 40,
-  normal: 48,
-};
+export const imageSize = 48;
 
-export const pictogramScaleMultiplier: CellScaleDensity = {
-  dense: 0.834,
-  normal: 1,
-};
+export const pictogramScaleMultiplier = 1;
 
-export const listHeight: CellScaleDensity = {
-  normal: 80,
-  dense: 64,
-};
+export const listHeight = 80;
 
-export const compactListHeight: CellScaleDensity = {
-  normal: 40,
-  dense: 36,
-};
+export const compactListHeight = 40;
 
 /** Spacing configs for Cells to be parsed in common/hooks/useCellSpacing */
 
 /** Default spacing config */
 export const defaultSpacingConfig = {
   innerSpacing: {
-    spacingHorizontal: 2,
-    spacingVertical: 1,
-    offsetHorizontal: 2,
+    paddingX: 2,
+    paddingY: 1,
+    marginX: -2,
   },
   outerSpacing: {
-    spacingHorizontal: gutter,
-    spacingVertical: 1,
-    offsetHorizontal: 0,
+    paddingX: gutter,
+    paddingY: 1,
+    marginX: 0,
   },
 } as const;
 
-export const selectOptionHeight: CellScaleDensity = {
-  normal: 56,
-  dense: 44,
-};
+export const selectOptionHeight = 56;
 
 export const cellPriorities = ['start', 'middle', 'end'] as const;

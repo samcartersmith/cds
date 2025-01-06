@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { ThemeVars } from '../new/vars';
 import {
   BoxBaseProps,
   ButtonBaseProps,
@@ -10,7 +11,6 @@ import {
   FeedCardBaseProps,
   IconButtonBaseProps,
   ListCellBaseProps,
-  PaletteForeground,
   SpotSquareProps,
   StackBaseProps,
 } from '../types';
@@ -42,7 +42,7 @@ export type CreateCardProps = {
   IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps>>;
   VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
   LoremIpsum: React.ComponentType<
-    React.PropsWithChildren<{ title: string; color?: PaletteForeground; concise?: boolean }>
+    React.PropsWithChildren<{ title: string; color?: ThemeVars.Color; concise?: boolean }>
   >;
   Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps>>;
   ListCell: React.ComponentType<
@@ -57,7 +57,7 @@ export type CreateCardProps = {
   ThemeProvider: React.ComponentType<React.PropsWithChildren<unknown>>;
 };
 
-const innerSpacingConfig: CellSpacing = { spacingHorizontal: 1 };
+const innerSpacingConfig: CellSpacing = { paddingX: 1 };
 
 export function cardBuilder({
   Box,
@@ -114,7 +114,7 @@ export function cardBuilder({
         <Card {...sharedPressProps} elevation={2} size="medium">
           <LoremIpsum title="Medium size" />
         </Card>
-        <Card {...sharedPressProps} borderRadius="roundedLarge" elevation={1}>
+        <Card {...sharedPressProps} borderRadius={400} elevation={1}>
           <LoremIpsum title="With Border Radius" />
         </Card>
       </VStack>
@@ -124,16 +124,16 @@ export function cardBuilder({
   const PressableColoredCards = () => (
     <ThemeProvider>
       <VStack gap={2} {...sharedWrapperProps}>
-        <Card {...sharedPressProps} background="primary">
-          <LoremIpsum color="primaryForeground" title="Primary" />
+        <Card {...sharedPressProps} background="backgroundPrimary">
+          <LoremIpsum color="textForegroundInverse" title="Primary" />
         </Card>
 
-        <Card {...sharedPressProps} background="positive">
-          <LoremIpsum color="positiveForeground" title="Positive" />
+        <Card {...sharedPressProps} background="backgroundPositive">
+          <LoremIpsum color="textForegroundInverse" title="Positive" />
         </Card>
 
-        <Card {...sharedPressProps} background="negative">
-          <LoremIpsum color="negativeForeground" title="Negative" />
+        <Card {...sharedPressProps} background="backgroundNegative">
+          <LoremIpsum color="textForegroundInverse" title="Negative" />
         </Card>
       </VStack>
     </ThemeProvider>
@@ -158,16 +158,16 @@ export function cardBuilder({
   const NonClickableColoredCards = () => (
     <ThemeProvider>
       <VStack gap={2} {...sharedWrapperProps}>
-        <Card {...sharedProps} background="primary">
-          <LoremIpsum color="primaryForeground" title="Primary" />
+        <Card {...sharedProps} background="backgroundPrimary">
+          <LoremIpsum color="textForegroundInverse" title="Primary" />
         </Card>
 
-        <Card {...sharedProps} background="positive">
-          <LoremIpsum color="positiveForeground" title="Positive" />
+        <Card {...sharedProps} background="backgroundPositive">
+          <LoremIpsum color="textForegroundInverse" title="Positive" />
         </Card>
 
-        <Card {...sharedProps} background="negative">
-          <LoremIpsum color="negativeForeground" title="Negative" />
+        <Card {...sharedProps} background="backgroundNegative">
+          <LoremIpsum color="textForegroundInverse" title="Negative" />
         </Card>
       </VStack>
     </ThemeProvider>

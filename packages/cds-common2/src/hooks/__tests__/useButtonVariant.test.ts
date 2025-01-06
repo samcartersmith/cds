@@ -17,8 +17,8 @@ describe('useButtonVariant', () => {
       transparent: false,
     });
     expect(value).toStrictEqual({
-      color: 'primaryForeground',
-      backgroundColor: 'primary',
+      color: 'textForegroundInverse',
+      backgroundColor: 'backgroundPrimary',
       borderColor: 'transparent',
     });
   });
@@ -28,8 +28,8 @@ describe('useButtonVariant', () => {
       transparent: false,
     });
     expect(value).toStrictEqual({
-      color: 'secondaryForeground',
-      backgroundColor: 'secondary',
+      color: 'textForeground',
+      backgroundColor: 'backgroundSecondary',
       borderColor: 'transparent',
     });
   });
@@ -39,8 +39,8 @@ describe('useButtonVariant', () => {
       transparent: false,
     });
     expect(value).toStrictEqual({
-      color: 'foregroundMuted',
-      backgroundColor: 'secondary',
+      color: 'textForegroundMuted',
+      backgroundColor: 'backgroundSecondary',
       borderColor: 'line',
     });
   });
@@ -50,8 +50,8 @@ describe('useButtonVariant', () => {
       transparent: false,
     });
     expect(value).toStrictEqual({
-      color: 'positiveForeground',
-      backgroundColor: 'positive',
+      color: 'textForegroundInverse',
+      backgroundColor: 'backgroundPositive',
       borderColor: 'transparent',
     });
   });
@@ -61,8 +61,8 @@ describe('useButtonVariant', () => {
       transparent: false,
     });
     expect(value).toStrictEqual({
-      color: 'negativeForeground',
-      backgroundColor: 'negative',
+      color: 'textForegroundInverse',
+      backgroundColor: 'backgroundNegative',
       borderColor: 'transparent',
     });
   });
@@ -74,7 +74,7 @@ describe('useButtonVariant', () => {
       transparent: true,
     });
     expect(value).toStrictEqual({
-      color: 'primary',
+      color: 'textPrimary',
       backgroundColor: 'background',
       borderColor: 'transparent',
     });
@@ -85,7 +85,7 @@ describe('useButtonVariant', () => {
       transparent: true,
     });
     expect(value).toStrictEqual({
-      color: 'secondaryForeground',
+      color: 'textForeground',
       backgroundColor: 'background',
       borderColor: 'transparent',
     });
@@ -96,7 +96,7 @@ describe('useButtonVariant', () => {
       transparent: true,
     });
     expect(value).toStrictEqual({
-      color: 'foregroundMuted',
+      color: 'textForegroundMuted',
       backgroundColor: 'background',
       borderColor: 'transparent',
     });
@@ -107,7 +107,7 @@ describe('useButtonVariant', () => {
       transparent: true,
     });
     expect(value).toStrictEqual({
-      color: 'positive',
+      color: 'textPositive',
       backgroundColor: 'background',
       borderColor: 'transparent',
     });
@@ -118,7 +118,7 @@ describe('useButtonVariant', () => {
       transparent: true,
     });
     expect(value).toStrictEqual({
-      color: 'negative',
+      color: 'textNegative',
       backgroundColor: 'background',
       borderColor: 'transparent',
     });

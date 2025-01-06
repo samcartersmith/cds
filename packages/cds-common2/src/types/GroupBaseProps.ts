@@ -1,5 +1,6 @@
+import { ThemeVars } from '../new/vars';
+
 import { SharedProps } from './SharedProps';
-import { SpacingScale } from './SpacingScale';
 
 export type GroupDirection = 'horizontal' | 'vertical';
 
@@ -15,7 +16,7 @@ export type GroupBaseProps<BoxProps> = {
   /** Divider Component to include between each item in a group. */
   divider?: React.ComponentType<React.PropsWithChildren<unknown>> | null;
   /** Gap to insert between siblings. */
-  gap?: SpacingScale;
+  gap?: ThemeVars.Space;
   /** Control the layout of each item in a group.
    * @default Box component for given platform
    * @example

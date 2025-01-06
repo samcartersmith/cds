@@ -2,12 +2,11 @@
 import React, { useMemo } from 'react';
 import { getAvatarFallbackColor } from '@cbhq/cds-common2/media/getAvatarFallbackColor';
 import { AvatarSize } from '@cbhq/cds-common2/types/AvatarSize';
-import { autoTheme } from '@cbhq/cds-web2/themes/auto';
-import { denseDensityTheme } from '@cbhq/cds-web2/themes/subthemes/density/dense';
+import { denseDensityTheme } from '@cbhq/cds-web2/themes/dense';
 
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { ThemeProvider } from '../../providers/ThemeProvider';
+import { ThemeProvider, useTheme } from '../../system/ThemeProvider';
 import { Text } from '../../text/Text';
 import { Avatar, AvatarWebProps } from '../Avatar';
 
@@ -25,7 +24,7 @@ const names = ['Sneezy', 'Happy', 'Sleepy', 'Doc', 'Bashful', 'Grumpy', 'Dopey',
 // base64 encode the images to help make percy more reliable
 export const Normal = () => {
   return (
-    <ThemeProvider>
+    <div>
       <VStack gap={2}>
         <Text as="h3" font="headline">
           Default
@@ -106,7 +105,7 @@ export const Normal = () => {
           ))}
         </HStack>
       </VStack>
-    </ThemeProvider>
+    </div>
   );
 };
 
@@ -144,7 +143,7 @@ const FallbackColoredBase = ({
 
 export const FallbackColored = () => {
   return (
-    <ThemeProvider>
+    <div>
       <VStack gap={2} paddingTop={4}>
         <Text as="h3" font="headline">
           Default
@@ -189,14 +188,15 @@ export const FallbackColored = () => {
         </Text>
         <FallbackColoredBase selected shape="hexagon" />
       </VStack>
-    </ThemeProvider>
+    </div>
   );
 };
 
 export const FallbackColoredDense = () => {
-  const theme = useMemo(() => ({ ...autoTheme, ...denseDensityTheme }), []);
+  const theme = useTheme();
+  const newTheme = useMemo(() => ({ ...theme, ...denseDensityTheme }), [theme]);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={newTheme}>
       <VStack gap={2} paddingTop={4}>
         <Text as="h3" font="headline">
           Default
@@ -247,7 +247,7 @@ export const FallbackColoredDense = () => {
 
 export const FallbackImage = () => {
   return (
-    <ThemeProvider>
+    <div>
       <VStack gap={2}>
         <Text as="h3" font="headline">
           Default
@@ -308,6 +308,6 @@ export const FallbackImage = () => {
           ))}
         </HStack>
       </VStack>
-    </ThemeProvider>
+    </div>
   );
 };

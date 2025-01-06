@@ -1,0 +1,33 @@
+{
+  "extends": "../../tsconfig.project.json",
+  "compilerOptions": {
+    "declarationDir": "dts"
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    "dts",
+    "jest.config.*",
+    "babel.config.*",
+    "node_modules"
+  ],
+  "references": [
+    {
+      "path": "../../packages/common"
+    },
+    {
+      "path": "../../packages/icons"
+    },
+    {
+      "path": "../../packages/illustrations"
+    },
+    {
+      "path": "../../packages/web"
+    },
+    {
+      "path": "../../packages/web-visualization"
+    }
+  ]
+}

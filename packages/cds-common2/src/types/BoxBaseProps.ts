@@ -1,11 +1,10 @@
-import { BorderRadius } from './BorderRadius';
+import { ThemeVars } from '../new/vars';
+
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { ElevationLevels } from './ElevationLevels';
-import { PaletteBackground, PaletteBorder } from './Palette';
 import { Position } from './Position';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
-import { OffsetProps, SpacingProps } from './SpacingProps';
-import { SpacingScale } from './SpacingScale';
+import { MarginProps, PaddingProps } from './SpacingProps';
 import { Visibility } from './Visibility';
 
 export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
@@ -66,7 +65,7 @@ export type PositionStyles = {
   /** Position the box to the top edge. */
   top?: DimensionValue;
   /** Adjust the z-index positioning layer. */
-  zIndex?: number;
+  zIndex?: ThemeVars.ZIndex;
 };
 
 export type BorderedStyles = {
@@ -85,9 +84,9 @@ export type BorderedStyles = {
   /** Add a border to the top and bottom sides of the box. */
   borderedVertical?: boolean;
   /** Leverage one of the borderRadius styles we offer to round the corners of the box. */
-  borderRadius?: BorderRadius;
+  borderRadius?: ThemeVars.BorderRadius;
   /** Adds a custom border color from the palette */
-  borderColor?: PaletteBorder;
+  borderColor?: ThemeVars.Color;
 };
 
 export type BoxA11yProps = Pick<
@@ -103,7 +102,7 @@ export type BoxBackgroundProps = {
    * Set the background color of the box. Passing `true` will enable the default background,
    * otherwise a custom palette alias can be passed.
    */
-  background?: true | Exclude<PaletteBackground, 'divider' | 'stroke'>;
+  background?: Exclude<ThemeVars.Color, 'divider' | 'stroke'>;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetBackground?: string;
 };
@@ -121,8 +120,8 @@ export type BoxBaseProps = {
   elevation?: ElevationLevels;
 } & DimensionStyles &
   FlexStyles &
-  OffsetProps &
-  SpacingProps &
+  PaddingProps &
+  MarginProps &
   PositionStyles &
   BorderedStyles &
   BoxA11yProps &
@@ -131,5 +130,5 @@ export type BoxBaseProps = {
 
 export type StackBaseProps = {
   /** Gap to insert between siblings. */
-  gap?: SpacingScale;
+  gap?: ThemeVars.Space;
 };

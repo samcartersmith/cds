@@ -2,7 +2,7 @@ import { UiIconName } from '@cbhq/cds-icons';
 
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
-import { SpacingProps } from './SpacingProps';
+import { PaddingProps } from './SpacingProps';
 
 export type SectionHeaderProps = {
   /** Text or ReactNode to be displayed in Title */
@@ -19,4 +19,4 @@ export type SectionHeaderProps = {
   end?: React.ReactNode;
 } & SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
-  SpacingProps;
+  PaddingProps;

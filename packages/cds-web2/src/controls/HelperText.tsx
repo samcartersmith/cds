@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
 import { css } from '@linaria/core';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
-import type { StaticStyleProps } from '../styles/styleProps';
 import { Text, TextProps } from '../text/Text';
 
 export type HelperTextProps = {
   /** Color of helper text. negative color will render an icon */
-  color?: StaticStyleProps['color'];
+  color?: ThemeVars.Color;
   /** Used to associate the helper text with an input */
   id?: string;
   /** Accessibility label for the error icon */

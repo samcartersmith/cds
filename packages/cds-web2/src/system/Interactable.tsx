@@ -1,17 +1,17 @@
 import React, { createElement, forwardRef, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
-import type { StaticStyleProps } from '../styles/styleProps';
 import {
   background as backgroundStyles,
   borderColor as borderColorStyles,
   borderWidth as borderWidthStyles,
 } from '../styles/styles';
-import { borderRadius as borderRadiusStyle, elevation as elevationStyle } from '../styles/styles';
+import { elevation as elevationStyle } from '../styles/styles';
 
 import { highHueBackgrounds, interactableBackground } from './interactableCSSProperties';
 
@@ -182,10 +182,10 @@ export type InteractableProps = {
   /** Apply class names to the outer container. */
   className?: string;
   focusable?: boolean;
-  background: StaticStyleProps['background'];
-  borderColor?: StaticStyleProps['borderColor'];
-  borderWidth?: StaticStyleProps['borderWidth'];
-  borderRadius?: StaticStyleProps['borderRadius'] | number;
+  background: ThemeVars.Color;
+  borderColor?: ThemeVars.Color;
+  borderWidth?: ThemeVars.BorderWidth;
+  borderRadius?: ThemeVars.BorderRadius;
   // TODO: Remove borderWidth, borderColor, borderRadius and background prop in common in favor of using the updated props
 } & Omit<InteractableBaseProps, 'background' | 'borderColor' | 'borderWidth' | 'borderRadius'> &
   InteractableInheritedProps &
@@ -252,11 +252,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
   const style = useMemo(
     () => ({
       [interactableBackground]: `var(--color-${background})`,
-      borderRadius:
-        // TO DO: fix this to make this behave more predictably for numbers and border radius tokens
-        typeof borderRadius === 'number' && borderRadius.toString() in borderRadiusStyle
-          ? `var(--borderRadius-${borderRadius})`
-          : borderRadius,
+      borderRadius: `var(--borderRadius-${borderRadius})`,
       width,
       height,
       ...customStyle,

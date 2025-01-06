@@ -1,4 +1,4 @@
-import { PaletteValue } from '../types';
+import { ThemeVars } from '../new/vars';
 import { ColorScheme, TagIntent } from '../types/TagBaseProps';
 
 export const horizontalSpacing = {
@@ -8,7 +8,7 @@ export const horizontalSpacing = {
 
 type TagColorMap = Record<
   TagIntent,
-  Record<ColorScheme, { background: PaletteValue; foreground: PaletteValue }>
+  Record<ColorScheme, { background: ThemeVars.SpectrumColor; foreground: ThemeVars.SpectrumColor }>
 >;
 export const tagColorMap: TagColorMap = {
   informational: {

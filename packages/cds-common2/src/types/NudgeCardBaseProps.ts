@@ -1,6 +1,7 @@
+import { ThemeVars } from '../new/vars';
+
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { IllustrationPictogramNames } from './IllustrationNames';
-import { PaletteBackground } from './Palette';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
@@ -32,7 +33,7 @@ export type NudgeCardBaseProps = {
    * Background color for the card.
    * @default backgroundAlternate
    */
-  background?: PaletteBackground;
+  background?: ThemeVars.Color;
   /**
    * Set the media position for the pictogram or media.
    * @default right

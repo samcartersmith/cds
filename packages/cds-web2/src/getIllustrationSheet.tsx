@@ -1,6 +1,6 @@
 /* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import React, { memo } from 'react';
-import type { IllustrationNamesMap, IllustrationVariant, Spectrum } from '@cbhq/cds-common';
+import type { IllustrationNamesMap, IllustrationVariant, Spectrum } from '@cbhq/cds-common2';
 import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common2/tokens/illustrations';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
@@ -122,8 +122,8 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
   const renderItem = ({ name, spectrum }: DataItem) => {
     return (
       <VStack
-        background
         alignItems="flex-start"
+        background="background"
         gap={1}
         height={height + 20}
         overflow="hidden"

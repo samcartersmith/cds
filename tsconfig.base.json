@@ -75,6 +75,12 @@
       "@cbhq/cds-mobile/*": [
         "packages/mobile/src/*"
       ],
+      "@cbhq/cds-mobile2": [
+        "packages/cds-mobile2/src"
+      ],
+      "@cbhq/cds-mobile2/*": [
+        "packages/cds-mobile2/src/*"
+      ],
       "@cbhq/cds-utils": [
         "packages/utils/src"
       ],
@@ -83,9 +89,6 @@
       ],
       "@cbhq/cds-web": [
         "packages/web/src"
-      ],
-      "@cbhq/cds-web2": [
-        "packages/cds-web2/src"
       ],
       "@cbhq/cds-web-utils": [
         "libs/web-utils/src"
@@ -101,6 +104,9 @@
       ],
       "@cbhq/cds-web/*": [
         "packages/web/src/*"
+      ],
+      "@cbhq/cds-web2": [
+        "packages/cds-web2/src"
       ],
       "@cbhq/cds-web2/*": [
         "packages/cds-web2/src/*"
@@ -164,6 +170,9 @@
       ],
       "@cbhq/ui-scorecard/*": [
         "packages/ui-scorecard/src/*"
+      ],
+      "@site/*": [
+        "apps/docs/*"
       ]
     }
   }

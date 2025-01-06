@@ -1,4 +1,4 @@
-import type { LoadedVersion } from '@docusaurus/plugin-content-docs/lib/types';
+import type { LoadedVersion } from '@docusaurus/plugin-content-docs';
 import { createAction } from 'kbar';
 import kebabCase from 'lodash/kebabCase';
 import uniqBy from 'lodash/uniqBy';

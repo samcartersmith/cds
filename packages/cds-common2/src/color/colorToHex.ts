@@ -1,6 +1,4 @@
-import * as d3Color from 'd3-color';
-
-const { color } = d3Color;
+import { color } from 'd3-color';
 
 /**
  * @param color - any valid color value, i.e. `rgba(255, 255, 255, 1)`

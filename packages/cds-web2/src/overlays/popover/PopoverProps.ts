@@ -1,8 +1,8 @@
 import React from 'react';
 import { Placement, PositioningStrategy } from '@popperjs/core';
+import { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
-import type { SpacingScale } from '@cbhq/cds-common2/types/SpacingScale';
 
 import { AccessibleControlledReturnType } from '../../hooks/useA11yControlledVisibility';
 import { type FocusTrapProps } from '../FocusTrap';
@@ -14,9 +14,9 @@ export type PopoverContentPositionConfig = {
    */
   placement?: Placement;
   /** Offset content placement on the x axis */
-  skid?: SpacingScale;
+  skid?: ThemeVars.Space;
   /** Offset content placement on the y axis */
-  gap?: SpacingScale;
+  gap?: ThemeVars.Space;
   /** This should only be used if there is content within the subject that needs to be overlaid
    * eg: helperText below a Select input
    * This value will be subtracted from the gap

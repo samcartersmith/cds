@@ -1,7 +1,8 @@
-import type { PaletteForeground } from './Palette';
+import { ThemeVars } from '../new/vars';
+
 import type { Placement } from './Placement';
 import type { ProgressBaseProps } from './ProgressBaseProps';
-import type { SpacingProps } from './SpacingProps';
+import type { PaddingProps } from './SpacingProps';
 
 export type ProgressBarLabel =
   | number
@@ -43,7 +44,7 @@ export type ProgressBarFloatLabelProps = Pick<
 export type ProgressBarFixedLabelContainerProps = {
   visuallyDisabled: boolean;
 } & Omit<ProgressBarWithFixedLabelsProps, 'labelPlacement' | 'progress' | 'disabled'> &
-  Pick<SpacingProps, 'spacingBottom' | 'spacingTop'>;
+  Pick<PaddingProps, 'paddingBottom' | 'paddingTop'>;
 
 export type ProgressBarFixedLabelBesideProps = {
   label: ProgressBarLabel;
@@ -59,5 +60,5 @@ export type ProgressBarFixedLabelProps = {
 export type ProgressTextLabelProps = {
   value: number;
   renderLabel?: (num: number, disabled?: boolean) => React.ReactNode;
-  color?: PaletteForeground;
+  color?: ThemeVars.Color;
 } & Pick<ProgressBaseProps, 'disabled'>;

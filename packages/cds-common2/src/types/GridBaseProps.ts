@@ -14,7 +14,7 @@ import { GridColumn } from './Grid';
 import { ResponsivePropsDevices } from './Responsive';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
-import { OffsetProps, SpacingProps } from './SpacingProps';
+import { MarginProps, PaddingProps } from './SpacingProps';
 import { VisibilityProps } from './Visibility';
 
 type ExplicitGridColumnProps = {
@@ -77,8 +77,8 @@ export type SharedGridProps = Pick<
   BorderedStyles &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy' | 'id'> &
   BoxBackgroundProps &
-  OffsetProps &
-  SpacingProps &
+  PaddingProps &
+  MarginProps &
   StackBaseProps &
   SharedProps &
   DimensionStyles &
@@ -98,8 +98,8 @@ export type GridBaseProps = {
 
 export type ResponsiveGridStyles = Partial<ResponsiveGridColumnProps> &
   Pick<FlexStyles, 'alignItems' | 'alignContent' | 'justifyContent' | 'alignSelf'> &
-  OffsetProps &
-  SpacingProps &
+  PaddingProps &
+  MarginProps &
   StackBaseProps &
   Partial<VisibilityProps>;
 

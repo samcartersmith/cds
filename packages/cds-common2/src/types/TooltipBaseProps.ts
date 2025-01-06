@@ -1,8 +1,9 @@
+import { ThemeVars } from '../new/vars';
+
 import { ElevationProps } from './ElevationLevels';
 import { SharedProps } from './SharedProps';
-import { SpacingScale } from './SpacingScale';
 
-export type GapSpacing = Extract<SpacingScale, 0 | 1 | 2>;
+export type GapSpacing = ThemeVars.Space;
 
 export type BaseTooltipPlacement = 'top' | 'bottom' | 'right' | 'left';
 

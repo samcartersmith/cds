@@ -11,9 +11,16 @@ import {
   TextTitle4,
 } from '@cbhq/cds-web/typography';
 
-import slugify from '../utils/slugify';
-
 import { TOKENS } from './tokens';
+
+function slugify(str: string) {
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 
 const headingMap = {
   h1: TextDisplay1,

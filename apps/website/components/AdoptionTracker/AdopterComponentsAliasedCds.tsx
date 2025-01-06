@@ -1,4 +1,5 @@
-import React, { memo, useCallback, useState } from 'react';
+/* eslint-disable react/no-array-index-key */
+import React, { Fragment, memo, useCallback, useState } from 'react';
 import { Icon } from '@cbhq/cds-web/icons';
 import { Divider, VStack } from '@cbhq/cds-web/layout';
 import { TextHeadline, TextLabel1, TextLabel2 } from '@cbhq/cds-web/typography';
@@ -57,8 +58,9 @@ export const AdopterComponentsAliasedCds = memo(
             <TextLabel1 as="p" spacingTop={2}>
               Call Sites
             </TextLabel1>
-            {callSites.map((callSite) => (
+            {callSites.map((callSite, index) => (
               <BetaCell
+                key={`${callSite}-${index}`}
                 end={
                   <TextLabel2 align="end" as="p">
                     1 file
@@ -92,12 +94,12 @@ export const AdopterComponentsAliasedCds = memo(
         <TextHeadline as="h4" spacingBottom={1}>
           Aliased Components
         </TextHeadline>
-        {sortedAliasedComponents?.map(({ aliasPath, callSites }) => {
+        {sortedAliasedComponents?.map(({ aliasPath, callSites }, index) => {
           const callSiteCount = callSites.length;
           const selected = activeProp === aliasPath;
           const instancesText = callSiteCount === 1 ? 'instance' : 'instances';
           return (
-            <>
+            <Fragment key={`${aliasPath}-${index}`}>
               <BetaCell
                 key={aliasPath}
                 end={
@@ -121,7 +123,7 @@ export const AdopterComponentsAliasedCds = memo(
                 }
               />
               {selected && selectedContent(aliasPath, callSites)}
-            </>
+            </Fragment>
           );
         })}
       </VStack>

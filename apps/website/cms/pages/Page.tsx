@@ -1,5 +1,4 @@
 import React, { memo, useMemo } from 'react';
-import { LiveProviderProps } from 'react-live';
 import { TOCItems } from '@theme/createTOCManager';
 import { CMSProvider } from '@cb/cms';
 import { Box } from '@cbhq/cds-web/layout';
@@ -27,7 +26,7 @@ export type CMSProps = {
    * Fallback component when CMS response is not available
    */
   fallback?: React.ReactElement;
-  scope?: LiveProviderProps['scope'];
+  scope?: Record<string, unknown>;
 };
 
 export const Page = memo(function CMS({ fallback, scope, ...props }: CMSProps) {

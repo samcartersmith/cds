@@ -1,16 +1,9 @@
-import { ScaleDensity, SpacingScale } from '../types';
+import { ThemeVars } from '../new/vars';
 
-export const accordionSpacing: Record<ScaleDensity, Record<string, SpacingScale>> = {
-  normal: {
-    spacingTop: 2,
-    spacingHorizontal: 3,
-    spacingBottom: 3,
-  },
-  dense: {
-    spacingTop: 2,
-    spacingHorizontal: 4,
-    spacingBottom: 4,
-  },
-};
+export const accordionSpacing = {
+  paddingTop: 2,
+  paddingX: 3,
+  paddingBottom: 3,
+} as const satisfies Record<string, ThemeVars.Space>;
 
 export const accordionMinWidth = 300;

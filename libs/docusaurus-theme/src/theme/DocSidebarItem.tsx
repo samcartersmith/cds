@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
-import { isActiveSidebarItem } from '@docusaurus/theme-common/lib';
+import { isActiveSidebarItem } from '@docusaurus/plugin-content-docs/client';
+import { Collapsible } from '@docusaurus/theme-common';
 import JSDocTag, { JSDocTagVariant } from '@theme/JSDocTag';
 import type { Expand, SpacingScale } from '@cbhq/cds-common';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { Collapsible } from '@cbhq/cds-web/collapsible';
 import { HStack } from '@cbhq/cds-web/layout/HStack';
 import { VStack } from '@cbhq/cds-web/layout/VStack';
 import { AnimatedCaret } from '@cbhq/cds-web/motion/AnimatedCaret';
@@ -67,7 +66,7 @@ function SidebarItemLink({
         noScaleOnPress
         transparentWhileInactive
         as={Link}
-        background="background"
+        background="transparent"
         borderRadius="roundedLarge"
         to={item.href}
       >
@@ -90,24 +89,24 @@ function CollapsibleCategory({
   level,
   parentLevel = 0,
 }: CollapsibleCategoryProps) {
+  const { collapsible } = item;
   const isActive = isActiveSidebarItem(item, activePath);
-  const [collapsed, { toggle, toggleOff }] = useToggler(isActive ? false : item.collapsed);
+  const [collapsed, setCollapsed] = useState(!isActive);
 
-  // expand if corresponding page is active
+  const toggleCollapsed = useCallback(() => setCollapsed((s) => !s), []);
+
   useEffect(() => {
-    if (isActive) {
-      toggleOff();
-    }
-  }, [isActive, toggleOff]);
+    if (isActive) setCollapsed(false);
+  }, [collapsible, isActive]);
 
   return (
     <VStack spacingHorizontal={0}>
       <Pressable
         noScaleOnPress
         transparentWhileInactive
-        background="background"
+        background="transparent"
         borderRadius="roundedLarge"
-        onPress={toggle}
+        onPress={toggleCollapsed}
       >
         <HStack
           alignItems="center"
@@ -134,7 +133,7 @@ function CollapsibleCategory({
           </HStack>
         </HStack>
       </Pressable>
-      <Collapsible collapsed={collapsed}>
+      <Collapsible collapsed={collapsed} lazy={false}>
         <VStack spacingHorizontal={parentLevel} width="100%">
           {item.items.map((val, index) => (
             // eslint-disable-next-line @typescript-eslint/no-use-before-define

@@ -3,12 +3,10 @@
  * Generated from scripts/codegen/main.ts
  */
 export const borderWidth = {
-  none: 0,
-  button: 1,
-  card: 1,
-  checkbox: 2,
-  radio: 2,
-  sparkline: 2,
-  focusRing: 2,
-  input: 1,
+  0: 0,
+  100: 1,
+  200: 2,
+  300: 4,
+  400: 6,
+  500: 8,
 } as const;

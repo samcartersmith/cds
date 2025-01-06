@@ -12,7 +12,7 @@ const exampleColor = {
   base: 'iconWarning',
   minTablet: 'iconNegative',
   minDesktop: 'iconPositive',
-};
+} as const;
 
 export const PrimaryIcon = () => (
   <HStack alignItems="center" gap={2}>

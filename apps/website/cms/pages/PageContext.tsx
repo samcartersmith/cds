@@ -1,10 +1,9 @@
 import React from 'react';
-import { LiveProviderProps } from 'react-live';
 
 import ReactLiveScope from '../../src/theme/ReactLiveScope';
 
 export type PageContextType = {
-  scope?: LiveProviderProps['scope'];
+  scope?: Record<string, unknown>;
 };
 
 export const PageContext = React.createContext<PageContextType>({

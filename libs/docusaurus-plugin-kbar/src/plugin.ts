@@ -1,5 +1,6 @@
+/* eslint-disable import/extensions */
 import docsPlugin from '@docusaurus/plugin-content-docs';
-import { DEFAULT_OPTIONS } from '@docusaurus/plugin-content-docs/options';
+import { DEFAULT_OPTIONS } from '@docusaurus/plugin-content-docs/lib/options.js';
 import type { LoadContext, Plugin } from '@docusaurus/types';
 
 import { getKBarActions } from './utils/getKBarActions';
@@ -18,6 +19,7 @@ export default async function plugin(
       const docsPluginInstance = await docsPlugin(context, {
         ...DEFAULT_OPTIONS,
         ...docs,
+        id: PLUGIN_ID,
       });
       const loadedContent = await docsPluginInstance.loadContent?.();
       const currentVersion = loadedContent?.loadedVersions[0];

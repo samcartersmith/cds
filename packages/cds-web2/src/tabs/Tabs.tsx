@@ -3,6 +3,7 @@ import useMeasure from 'react-use-measure';
 import { type MotionProps, type Transition, motion } from 'framer-motion';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
+import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common2/tabs/useTabs';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
@@ -10,9 +11,8 @@ import { type Rect, defaultRect } from '@cbhq/cds-common2/types/Rect';
 
 import { type BoxProps, Box } from '../layout/Box';
 import { type HStackProps, HStack } from '../layout/HStack';
-import type { StaticStyleProps } from '../styles/styleProps';
 
-const MotionBox = motion<BoxProps>(Box);
+const MotionBox = motion<BoxProps<'div'>>(Box);
 
 type TabContainerProps = {
   id: string;
@@ -38,7 +38,7 @@ export const tabsTransitionConfig = {
 
 export type TabsActiveIndicatorProps = {
   activeTabRect: Rect;
-} & BoxProps &
+} & BoxProps<'div'> &
   MotionProps;
 
 export const TabsActiveIndicator = ({
@@ -75,7 +75,7 @@ export type TabsProps = {
   /** The default Component to render the tabs active indicator. */
   TabsActiveIndicatorComponent: TabsActiveIndicatorComponent;
   /** Background color passed to the TabsActiveIndicatorComponent. */
-  activeBackground?: StaticStyleProps['color'];
+  activeBackground?: ThemeVars.Color;
 } & Omit<TabsOptions, 'tabs'> &
   Omit<HStackProps<'div'>, 'onChange'>;
 

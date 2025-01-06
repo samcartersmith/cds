@@ -1,66 +1,67 @@
 import { useMemo } from 'react';
 
-import { ButtonVariant, PaletteBackground, PaletteBorder, PaletteForeground } from '../types';
+import { ThemeVars } from '../new/vars';
+import { ButtonVariant } from '../types';
 
 export type ButtonVariantStyles = {
-  backgroundColor: PaletteBackground;
-  borderColor: PaletteBorder | 'transparent';
-  color: PaletteForeground;
+  backgroundColor: ThemeVars.Color;
+  borderColor: ThemeVars.Color;
+  color: ThemeVars.Color;
 };
 
 export type ButtonVariantConfig = Record<ButtonVariant, ButtonVariantStyles>;
 
 const variants: ButtonVariantConfig = {
   primary: {
-    color: 'primaryForeground',
-    backgroundColor: 'primary',
+    color: 'textForegroundInverse',
+    backgroundColor: 'backgroundPrimary',
     borderColor: 'transparent',
   },
   secondary: {
-    color: 'secondaryForeground',
-    backgroundColor: 'secondary',
+    color: 'textForeground',
+    backgroundColor: 'backgroundSecondary',
     borderColor: 'transparent',
   },
   foregroundMuted: {
-    color: 'foregroundMuted',
-    backgroundColor: 'secondary',
+    color: 'textForegroundMuted',
+    backgroundColor: 'backgroundSecondary',
     borderColor: 'line',
   },
   positive: {
-    color: 'positiveForeground',
-    backgroundColor: 'positive',
+    color: 'textForegroundInverse',
+    backgroundColor: 'backgroundPositive',
     borderColor: 'transparent',
   },
   negative: {
-    color: 'negativeForeground',
-    backgroundColor: 'negative',
+    color: 'textForegroundInverse',
+    backgroundColor: 'backgroundNegative',
     borderColor: 'transparent',
   },
 };
 
 const transparentVariants: ButtonVariantConfig = {
   primary: {
-    color: 'primary',
+    color: 'textPrimary',
     backgroundColor: 'background',
     borderColor: 'transparent',
   },
   secondary: {
-    color: 'secondaryForeground',
+    color: 'textForeground',
     backgroundColor: 'background',
     borderColor: 'transparent',
   },
   foregroundMuted: {
-    color: 'foregroundMuted',
+    color: 'textForegroundMuted',
     backgroundColor: 'background',
     borderColor: 'transparent',
   },
   positive: {
-    color: 'positive',
+    color: 'textPositive',
     backgroundColor: 'background',
     borderColor: 'transparent',
   },
   negative: {
-    color: 'negative',
+    color: 'textNegative',
     backgroundColor: 'background',
     borderColor: 'transparent',
   },

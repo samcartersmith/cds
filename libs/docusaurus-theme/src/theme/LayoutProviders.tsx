@@ -3,7 +3,6 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocgenProjectProvider from '@theme/DocgenProjectProvider';
 import KBarProvider from '@theme/KBarProvider';
 import useDocgenPluginData from '@theme/useDocgenPluginData';
-import OriginalLayoutProviders from '@theme-init/LayoutProviders';
 import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
 import { FeatureFlagProvider, ThemeProvider } from '@cbhq/cds-web/system';
 import { RootScaleProvider } from '@cbhq/cds-web/system/RootScaleProvider';
@@ -34,7 +33,7 @@ function useIsDarkMode() {
   return isDarkTheme;
 }
 
-const CdsProviders = memo(function CdsProviders({ children }: ProviderProps) {
+export const CdsProviders = memo(function CdsProviders({ children }: ProviderProps) {
   const { enabled } = useDocgenPluginData();
   const isDarkMode = useIsDarkMode();
   const DocgenProvider = enabled ? DocgenProjectProvider : Fragment;
@@ -52,13 +51,3 @@ const CdsProviders = memo(function CdsProviders({ children }: ProviderProps) {
     </FeatureFlagProvider>
   );
 });
-
-const LayoutProviders = memo(function LayoutProviders({ children }: ProviderProps) {
-  return (
-    <OriginalLayoutProviders>
-      <CdsProviders>{children}</CdsProviders>
-    </OriginalLayoutProviders>
-  );
-});
-
-export default LayoutProviders;

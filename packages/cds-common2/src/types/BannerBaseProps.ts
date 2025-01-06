@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { BorderRadius } from './BorderRadius';
+import { ThemeVars } from '../new/vars';
+
 import { IconName } from './IconName';
 import { SharedProps } from './SharedProps';
 
@@ -35,7 +36,7 @@ export type BannerBaseProps = {
    * Determines banner's border radius
    * @default 'rounded'
    * */
-  borderRadius?: BorderRadius;
+  borderRadius?: ThemeVars.BorderRadius;
   /** Indicates the max number of lines after which body text will be truncated */
   numberOfLines?: number;
 } & SharedProps;

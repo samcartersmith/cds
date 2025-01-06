@@ -1,17 +1,19 @@
 import { useMemo } from 'react';
 
-import { BorderRadius } from '../types/BorderRadius';
+import { ThemeVars } from '../new/vars';
 import { Shape } from '../types/Shape';
 
-export function useShapeToBorderRadiusAlias(shape: Shape | undefined): BorderRadius | undefined {
+export function useShapeToBorderRadiusAlias(
+  shape: Shape | undefined,
+): ThemeVars.BorderRadius | undefined {
   return useMemo(() => {
     switch (shape) {
       case 'circle':
-        return 'roundedFull';
+        return 1000;
       case 'squircle':
-        return 'rounded';
+        return 200;
       case 'square':
-        return 'roundedSmall';
+        return 100;
       default:
         return undefined;
     }

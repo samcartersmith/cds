@@ -10,13 +10,13 @@ import type { DimensionStyles } from './DimensionStyles';
 import type { ElevationLevels } from './ElevationLevels';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import type { SharedProps } from './SharedProps';
-import type { OffsetProps, SpacingProps } from './SpacingProps';
+import type { MarginProps, PaddingProps } from './SpacingProps';
 
 export type CardVariant = 'announcement' | 'feed' | 'feature';
 export type CardBoxProps = SharedProps &
-  SpacingProps &
+  PaddingProps &
+  MarginProps &
   FlexStyles &
-  OffsetProps &
   DimensionStyles &
   StackBaseProps &
   BorderedStyles &

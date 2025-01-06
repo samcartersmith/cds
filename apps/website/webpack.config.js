@@ -46,23 +46,6 @@ function configureForDocusaurus(config) {
     '../../packages/web-visualization/src',
   );
 
-  // config.resolve.alias['@cbhq/docusaurus-plugin-docgen'] = path.resolve(
-  //   __dirname,
-  //   '../../libs/docusaurus-plugin-docgen/src',
-  // );
-  // config.resolve.alias['@cbhq/docusaurus-plugin-kbar'] = path.resolve(
-  //   __dirname,
-  //   '../../libs/docusaurus-plugin-kbar/src',
-  // );
-  // config.resolve.alias['@cbhq/docusaurus-preset'] = path.resolve(
-  //   __dirname,
-  //   '../../libs/docusaurus-preset/src',
-  // );
-  // config.resolve.alias['@cbhq/docusaurus-theme'] = path.resolve(
-  //   __dirname,
-  //   '../../libs/docusaurus-theme/src',
-  // );
-
   return {};
 }
 

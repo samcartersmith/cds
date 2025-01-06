@@ -1,0 +1,134 @@
+---
+id: installation
+title: Installation
+---
+
+# Installation
+
+This guide will help you get started with installing the Coinbase Design System (CDS) in your React or React Native project. Follow the instructions below to set up CDS and start building with our cross-platform components.
+
+## Prerequisites
+
+Before you begin, make sure your development environment meets the following requirements:
+
+- **Node.js**: Version 18 or later.
+- **React**: Version 18 or later.
+- **React Native**: Version 0.64 or later (for mobile applications).
+
+For web projects, ensure your build system supports importing CSS files.
+
+## Installing CDS
+
+### For Web Applications
+
+To install the CDS library for React web applications, run the following command:
+
+```bash
+npm install @cbhq/cds-web
+```
+
+Alternatively, if you are using Yarn:
+
+```bash
+yarn add @cbhq/cds-web
+```
+
+### For React Native Applications
+
+To install the CDS library for React Native applications, run the following command:
+
+```bash
+npm install @cbhq/cds-mobile
+```
+
+Alternatively, if you are using Yarn:
+
+```bash
+yarn add @cbhq/cds-mobile
+```
+
+> **Note:** For React Native projects, ensure you have set up your environment for React Native development. Refer to the [React Native Environment Setup Guide](https://reactnative.dev/docs/environment-setup) if needed.
+
+## Setting Up the ThemeProvider
+
+CDS requires a `ThemeProvider` at the root of your application to provide consistent theming. The setup process differs slightly for web and mobile platforms.
+
+### Web
+
+Wrap your application with the `ThemeProvider` from `@cbhq/cds-web`. Here's an example:
+
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ThemeProvider } from '@cbhq/cds-web';
+import App from './App';
+
+ReactDOM.render(
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>,
+  document.getElementById('root'),
+);
+```
+
+### React Native
+
+Wrap your application with the `ThemeProvider` from `@cbhq/cds-mobile`. Here's an example:
+
+```tsx
+import React from 'react';
+import { ThemeProvider } from '@cbhq/cds-mobile';
+import { NavigationContainer } from '@react-navigation/native';
+import App from './App';
+
+export default function Main() {
+  return (
+    <ThemeProvider>
+      <NavigationContainer>
+        <App />
+      </NavigationContainer>
+    </ThemeProvider>
+  );
+}
+```
+
+## Verifying the Installation
+
+To ensure everything is set up correctly, try importing and using a simple CDS component. For example:
+
+### Web
+
+```tsx
+import React from 'react';
+import { Button } from '@cbhq/cds-web';
+
+export default function App() {
+  return <Button>Click Me</Button>;
+}
+```
+
+### React Native
+
+```tsx
+import React from 'react';
+import { Button } from '@cbhq/cds-mobile';
+import { View } from 'react-native';
+
+export default function App() {
+  return (
+    <View>
+      <Button>Click Me</Button>
+    </View>
+  );
+}
+```
+
+If the button renders correctly, you're all set!
+
+## Next Steps
+
+- [Theming](#): Learn how to customize your application's theme.
+- [Component Library](#): Explore the full set of components available in CDS.
+- [Responsive Design](#): Understand how to leverage responsive StyleProps in your project.
+
+Start building with CDS today and create amazing applications with ease!

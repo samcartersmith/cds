@@ -18,7 +18,7 @@ module.exports = {
         sourceDir: 'packages/cds-web2/src',
         outputDir: 'packages/cds-web2/esm',
         linariaOptions: {
-          classNameSlug: (hash, title) => (isTestEnv ? title : `cds-${title}-${hash}`),
+          classNameSlug: (hash, title) => `cds-${title}-${hash}`,
         },
       },
     ],

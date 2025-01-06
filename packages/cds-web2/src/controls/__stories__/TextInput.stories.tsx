@@ -2,13 +2,14 @@
 import React from 'react';
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { css } from '@linaria/core';
+import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
 // import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { Link } from '../../link/Link';
 // import { Avatar } from '../../media/Avatar';
 import { borderRadius } from '../../styles/styles';
-import type { InputVariant } from '../context';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
 import { NativeTextArea } from '../NativeTextArea';
@@ -29,7 +30,7 @@ const nativeInputCustomCSS = css`
   background-color: transparent;
 `;
 
-const variants = ['textPositive', 'textNegative', 'textForegroundMuted'] as const;
+const variants = ['positive', 'negative', 'foregroundMuted'] as const;
 
 const customContainerPaddingStyle = css`
   padding: var(--space-4);
@@ -208,7 +209,7 @@ export const EndContent = function EndContent() {
   return (
     <TextInput
       end={
-        <HStack spacingEnd={1}>
+        <HStack paddingRight={1}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <Link font="headline" to="">
             Hello
@@ -265,7 +266,7 @@ export const CompactInputEnd = function CompactInputEnd() {
     <TextInput
       compact
       end={
-        <HStack spacingEnd={1}>
+        <HStack paddingRight={1}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <Link font="headline" to="">
             Hello
@@ -453,18 +454,27 @@ export const RenderNativeTextAreaCustomSpacing = () => {
  * to prove that it can be done with our component.
  */
 
+const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
+  primary: 'textPrimary',
+  positive: 'textPositive',
+  negative: 'textNegative',
+  foreground: 'textForeground',
+  foregroundMuted: 'textForegroundMuted',
+  secondary: 'backgroundSecondary',
+};
+
 export const CopyTextInput = function CopyTextInput() {
   const [copied, setCopied] = useState(false);
-  const [variant, setVariant] = useState<InputVariant>('textForegroundMuted');
+  const [variant, setVariant] = useState<InputVariant>('foregroundMuted');
 
   const handleOnPress = useCallback(() => {
     setCopied(!copied);
-    setVariant(copied ? 'textForegroundMuted' : 'textPositive');
+    setVariant(copied ? 'foregroundMuted' : 'positive');
     console.log(variant);
   }, [copied, variant]);
 
   const handleOnChange = useCallback(() => {
-    setVariant('textForegroundMuted');
+    setVariant('foregroundMuted');
     setCopied(false);
   }, []);
 
@@ -474,7 +484,7 @@ export const CopyTextInput = function CopyTextInput() {
         /* eslint-disable jsx-a11y/anchor-is-valid */
         end={
           <HStack>
-            <Link color={variant} onClick={handleOnPress}>
+            <Link color={variantColorMap[variant]} onClick={handleOnPress}>
               {copied ? 'copied' : 'copy'}
             </Link>
             <InputIcon name="visibleActive" />

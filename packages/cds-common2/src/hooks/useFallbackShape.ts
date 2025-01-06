@@ -43,7 +43,7 @@ export function useFallbackShape(
       return Number(width) / 2;
     }
 
-    return shape === 'squircle' ? borderRadii.rounded : 0;
+    return shape === 'squircle' ? borderRadii[200] : 0;
   }, [shape, width]);
 
   return useMemo(() => ({ borderRadius, width }), [borderRadius, width]);
