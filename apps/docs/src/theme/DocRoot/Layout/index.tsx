@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDocsSidebar } from '@docusaurus/plugin-content-docs/client';
 import BackToTopButton from '@theme/BackToTopButton';
-import DocRootLayoutSidebar from '@theme/DocRoot/Layout/Sidebar';
-import DocRootLayoutMain from '@theme/DocRoot/Layout/Main';
 import type { Props } from '@theme/DocRoot/Layout';
+import DocRootLayoutMain from '@theme/DocRoot/Layout/Main';
+import DocRootLayoutSidebar from '@theme/DocRoot/Layout/Sidebar';
+import Footer from '@theme/Footer';
 
 import styles from './styles.module.css';
-import Footer from '@theme/Footer';
 
 export default function DocRootLayout({ children }: Props): JSX.Element {
   const sidebar = useDocsSidebar();
@@ -17,9 +17,9 @@ export default function DocRootLayout({ children }: Props): JSX.Element {
       <div className={styles.docRoot}>
         {sidebar && (
           <DocRootLayoutSidebar
-            sidebar={sidebar.items}
             hiddenSidebarContainer={hiddenSidebarContainer}
             setHiddenSidebarContainer={setHiddenSidebarContainer}
+            sidebar={sidebar.items}
           />
         )}
         <div className={styles.docMainAndFooterWrapper}>

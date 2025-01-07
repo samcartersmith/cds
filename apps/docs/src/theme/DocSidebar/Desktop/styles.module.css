@@ -32,6 +32,7 @@
   }
 }
 
+/* stylelint-disable-next-line a11y/no-display-none -- this one is okay */
 .sidebarLogo {
   display: none;
 }

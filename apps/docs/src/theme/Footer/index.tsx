@@ -1,9 +1,10 @@
 import React from 'react';
 import { FooterLinkItem, useColorMode, useThemeConfig } from '@docusaurus/theme-common';
-import styles from './styles.module.css';
 import { cx } from '@linaria/core';
-import CDSLogo from '@site/static/img/cds_logo.svg';
-import CDSLogoDark from '@site/static/img/cds_logo_dark.svg';
+import CDSLogo from '@site/static/img/logos/cds_logo.svg';
+import CDSLogoDark from '@site/static/img/logos/cds_logo_dark.svg';
+
+import styles from './styles.module.css';
 
 export default function Footer(): JSX.Element | null {
   const { footer } = useThemeConfig();
@@ -27,7 +28,7 @@ export default function Footer(): JSX.Element | null {
         </p>
         <div className={styles.footerLinksWrapper}>
           {(links as FooterLinkItem[]).map(({ label, href }) => (
-            <a className={cx('headline-text', styles.footerLink)} href={href} key={label}>
+            <a key={label} className={cx('headline-text', styles.footerLink)} href={href}>
               {label}
             </a>
           ))}

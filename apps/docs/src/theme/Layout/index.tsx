@@ -1,15 +1,18 @@
 import React from 'react';
-import clsx from 'clsx';
-import ErrorBoundary from '@docusaurus/ErrorBoundary';
+import ErrorBoundary, { FallbackParams } from '@docusaurus/ErrorBoundary';
 import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';
 import { useKeyboardNavigation } from '@docusaurus/theme-common/internal';
-import SkipToContent from '@theme/SkipToContent';
+import { cx } from '@linaria/core';
 import AnnouncementBar from '@theme/AnnouncementBar';
-import Navbar from '@theme/Navbar';
-import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import type { Props } from '@theme/Layout';
+import LayoutProvider from '@theme/Layout/Provider';
+import Navbar from '@theme/Navbar';
+import SkipToContent from '@theme/SkipToContent';
+
 import styles from './styles.module.css';
+
+const fallbackFunction = (params: FallbackParams) => <ErrorPageContent {...params} />;
 
 export default function Layout(props: Props): JSX.Element {
   const {
@@ -24,7 +27,7 @@ export default function Layout(props: Props): JSX.Element {
 
   return (
     <LayoutProvider>
-      <PageMetadata title={title} description={description} />
+      <PageMetadata description={description} title={title} />
 
       <SkipToContent />
 
@@ -33,12 +36,10 @@ export default function Layout(props: Props): JSX.Element {
       <Navbar />
 
       <div
+        className={cx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
         id={SkipToContentFallbackId}
-        className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
       >
-        <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
-          {children}
-        </ErrorBoundary>
+        <ErrorBoundary fallback={fallbackFunction}>{children}</ErrorBoundary>
       </div>
     </LayoutProvider>
   );

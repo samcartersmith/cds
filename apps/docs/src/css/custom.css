@@ -133,6 +133,7 @@ h6 {
 /**
  * Hide breadcrumbs navigation
 */
+/* stylelint-disable-next-line a11y/no-display-none -- this one is okay */
 .theme-doc-breadcrumbs {
   display: none;
 }
@@ -140,6 +141,7 @@ h6 {
 /**
  * Hide pagination navigation
 */
+/* stylelint-disable-next-line a11y/no-display-none -- this one is okay */
 .pagination-nav {
   display: none;
 }
@@ -155,7 +157,6 @@ h6 {
   flex-direction: column;
   gap: 8px;
   border-radius: 32px;
-  border: 1px solid black;
 }
 
 .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible {

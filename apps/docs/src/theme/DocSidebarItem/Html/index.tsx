@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
 import { ThemeClassNames } from '@docusaurus/theme-common';
+import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebarItem/Html';
 
 import styles from './styles.module.css';
@@ -9,14 +9,16 @@ export default function DocSidebarItemHtml({ item, level, index }: Props): JSX.E
   const { value, defaultStyle, className } = item;
   return (
     <li
-      className={clsx(
+      // eslint-disable-next-line react/no-danger, react-perf/jsx-no-new-object-as-prop
+      dangerouslySetInnerHTML={{ __html: value }}
+      key={index}
+      className={cx(
         ThemeClassNames.docs.docSidebarItemLink,
         ThemeClassNames.docs.docSidebarItemLinkLevel(level),
-        defaultStyle && [styles.menuHtmlItem, 'menu__list-item'],
+        defaultStyle && styles.menuHtmlItem,
+        defaultStyle && 'menu__list-item',
         className,
       )}
-      key={index}
-      dangerouslySetInnerHTML={{ __html: value }}
     />
   );
 }

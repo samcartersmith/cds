@@ -1,14 +1,16 @@
-import styles from './styles.module.css';
-import { useColorMode } from '@docusaurus/theme-common';
+import React from 'react';
 import Link from '@docusaurus/Link';
+import { useColorMode } from '@docusaurus/theme-common';
 
-export interface QuickStartLinkProps {
+import styles from './styles.module.css';
+
+export type QuickStartLinkProps = {
   title: string;
   description: string;
   link: { label: string; to: string } | { label: string; href: string };
   BannerComponentLight: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   BannerComponentDark: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-}
+};
 
 export const QuickStartCampaignCard = ({
   title,
@@ -37,7 +39,7 @@ export const QuickStartCampaignCard = ({
           </Link>
         </div>
         <div className={styles.bannerArtWrapper}>
-          <BannerComponent width="100%" height="100%" />
+          <BannerComponent height="100%" width="100%" />
         </div>
       </div>
     </div>

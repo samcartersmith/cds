@@ -1,23 +1,23 @@
-import React, { type ComponentProps, useEffect, useMemo } from 'react';
-import clsx from 'clsx';
+import React, { type ComponentProps, useCallback, useEffect, useMemo } from 'react';
+import Link from '@docusaurus/Link';
 import {
-  ThemeClassNames,
-  useThemeConfig,
-  usePrevious,
-  Collapsible,
-  useCollapsible,
-} from '@docusaurus/theme-common';
-import { isSamePath } from '@docusaurus/theme-common/internal';
-import {
-  isActiveSidebarItem,
   findFirstSidebarItemLink,
+  isActiveSidebarItem,
   useDocSidebarItemsExpandedState,
 } from '@docusaurus/plugin-content-docs/client';
-import Link from '@docusaurus/Link';
+import {
+  Collapsible,
+  ThemeClassNames,
+  useCollapsible,
+  usePrevious,
+  useThemeConfig,
+} from '@docusaurus/theme-common';
+import { isSamePath } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-import DocSidebarItems from '@theme/DocSidebarItems';
+import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebarItem/Category';
+import DocSidebarItems from '@theme/DocSidebarItems';
 
 // If we navigate to a category and it becomes active, it should automatically
 // expand itself
@@ -73,6 +73,7 @@ function CollapseButton({
 }) {
   return (
     <button
+      aria-expanded={!collapsed}
       aria-label={
         collapsed
           ? translate(
@@ -92,10 +93,9 @@ function CollapseButton({
               { label: categoryLabel },
             )
       }
-      aria-expanded={!collapsed}
-      type="button"
       className="clean-btn menu__caret"
       onClick={onClick}
+      type="button"
     />
   );
 }
@@ -132,85 +132,92 @@ export default function DocSidebarItemCategory({
 
   const { expandedItem, setExpandedItem } = useDocSidebarItemsExpandedState();
   // Use this instead of `setCollapsed`, because it is also reactive
-  const updateCollapsed = (toCollapsed: boolean = !collapsed) => {
-    setExpandedItem(toCollapsed ? null : index);
-    setCollapsed(toCollapsed);
-  };
+  const updateCollapsed = useCallback(
+    (toCollapsed = !collapsed) => {
+      setExpandedItem(toCollapsed ? null : index);
+      setCollapsed(toCollapsed);
+    },
+    [collapsed, index, setCollapsed, setExpandedItem],
+  );
   useAutoExpandActiveCategory({ isActive, collapsed, updateCollapsed });
   useEffect(() => {
     if (collapsible && expandedItem != null && expandedItem !== index && autoCollapseCategories) {
       setCollapsed(true);
     }
   }, [collapsible, expandedItem, index, setCollapsed, autoCollapseCategories]);
+  const handleLinkClick = collapsible
+    ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        onItemClick?.(item);
+        if (href) {
+          updateCollapsed(false);
+        } else {
+          e.preventDefault();
+          updateCollapsed();
+        }
+      }
+    : () => {
+        onItemClick?.(item);
+      };
+
+  const handleCollapseButtonClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      e.preventDefault();
+      updateCollapsed();
+    },
+    [updateCollapsed],
+  );
 
   return (
     <li
-      className={clsx(
+      className={cx(
         ThemeClassNames.docs.docSidebarItemCategory,
         ThemeClassNames.docs.docSidebarItemCategoryLevel(level),
         'menu__list-item',
-        {
-          'menu__list-item--collapsed': collapsed,
-        },
+        collapsed && 'menu__list-item--collapsed',
         className,
       )}
     >
       <div
-        className={clsx('menu__list-item-collapsible', {
-          'menu__list-item-collapsible--active': isCurrentPage,
-        })}
+        className={cx(
+          'menu__list-item-collapsible',
+          isCurrentPage && 'menu__list-item-collapsible--active',
+        )}
         style={{
           backgroundColor: isActive ? 'var(--cds-menu-active-background)' : undefined,
           color: isActive ? 'var(--cds-menu-active-text)' : undefined,
         }}
       >
         <Link
-          className={clsx('menu__link', {
-            'menu__link--sublist': collapsible,
-            'menu__link--sublist-caret': !href && collapsible,
-            'menu__link--active': isActive,
-          })}
-          onClick={
-            collapsible
-              ? (e) => {
-                  onItemClick?.(item);
-                  if (href) {
-                    updateCollapsed(false);
-                  } else {
-                    e.preventDefault();
-                    updateCollapsed();
-                  }
-                }
-              : () => {
-                  onItemClick?.(item);
-                }
-          }
           aria-current={isCurrentPage ? 'page' : undefined}
-          role={collapsible && !href ? 'button' : undefined}
           aria-expanded={collapsible && !href ? !collapsed : undefined}
+          className={cx(
+            'menu__link',
+            collapsible && 'menu__link--sublist',
+            !href && collapsible && 'menu__link--sublist-caret',
+            isActive && 'menu__link--active',
+          )}
           href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
+          onClick={handleLinkClick}
+          role={collapsible && !href ? 'button' : undefined}
           {...props}
         >
           {label}
         </Link>
         {href && collapsible && (
           <CollapseButton
-            collapsed={collapsed}
             categoryLabel={label}
-            onClick={(e) => {
-              e.preventDefault();
-              updateCollapsed();
-            }}
+            collapsed={collapsed}
+            onClick={handleCollapseButtonClick}
           />
         )}
       </div>
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
         <DocSidebarItems
-          items={items}
-          tabIndex={collapsed ? -1 : 0}
-          onItemClick={onItemClick}
           activePath={activePath}
+          items={items}
           level={level + 1}
+          onItemClick={onItemClick}
+          tabIndex={collapsed ? -1 : 0}
         />
       </Collapsible>
     </li>

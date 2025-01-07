@@ -1,8 +1,10 @@
-import styles from './styles.module.css';
+import React from 'react';
+import Link from '@docusaurus/Link';
+import { useColorMode } from '@docusaurus/theme-common';
 import BannerArt from '@site/static/img/heroBanners/banner_art.svg';
 import BannerArtDark from '@site/static/img/heroBanners/banner_art_dark.svg';
-import { useColorMode } from '@docusaurus/theme-common';
-import Link from '@docusaurus/Link';
+
+import styles from './styles.module.css';
 
 export const Hero = () => {
   const { colorMode } = useColorMode();

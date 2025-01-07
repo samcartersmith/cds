@@ -1,9 +1,9 @@
 import React from 'react';
+import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 import { useWindowSize } from '@docusaurus/theme-common';
+import type { Props } from '@theme/DocSidebar';
 import DocSidebarDesktop from '@theme/DocSidebar/Desktop';
 import DocSidebarMobile from '@theme/DocSidebar/Mobile';
-import type { Props } from '@theme/DocSidebar';
-import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 
 export default function DocSidebar(props: Props): JSX.Element {
   const windowSize = useWindowSize();

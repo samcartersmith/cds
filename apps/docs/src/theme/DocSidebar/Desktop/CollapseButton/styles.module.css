@@ -34,6 +34,7 @@
   }
 }
 
+/* stylelint-disable-next-line a11y/no-display-none -- this one is okay */
 .collapseSidebarButton {
   display: none;
   margin: 0;

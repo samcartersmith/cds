@@ -29,6 +29,15 @@
         "cwd": "apps/docs"
       }
     },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@cbhq/mono-tasks:lint"
+    },
+    "lint-styles": {
+      "executor": "@cbhq/mono-tasks:lint-styles"
+    },
     "clear": {
       "command": "docusaurus clear",
       "options": {

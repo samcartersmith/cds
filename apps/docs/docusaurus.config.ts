@@ -1,5 +1,5 @@
-import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 const config: Config = {
   title: 'Coinbase Design System',
@@ -52,8 +52,8 @@ const config: Config = {
     navbar: {
       logo: {
         alt: 'Coinbase Design System Logo',
-        src: 'img/cds_logo.svg',
-        srcDark: 'img/cds_logo_dark.svg',
+        src: 'img/logos/cds_logo.svg',
+        srcDark: 'img/logos/cds_logo_dark.svg',
       },
       items: [
         { to: '/blog', label: 'Blog', position: 'right' },
