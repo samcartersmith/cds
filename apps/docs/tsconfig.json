@@ -15,7 +15,7 @@
   ],
   "references": [
     {
-      "path": "../../packages/common"
+      "path": "../../packages/cds-common2"
     },
     {
       "path": "../../packages/icons"
@@ -24,7 +24,7 @@
       "path": "../../packages/illustrations"
     },
     {
-      "path": "../../packages/web"
+      "path": "../../packages/cds-web2"
     },
     {
       "path": "../../packages/web-visualization"

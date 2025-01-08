@@ -18,6 +18,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
+    "@cbhq/cds-common2": "workspace:^",
+    "@cbhq/cds-icons": "workspace:^",
+    "@cbhq/cds-illustrations": "workspace:^",
+    "@cbhq/cds-web2": "workspace:^",
+    "@cbhq/docusaurus-preset": "workspace:^",
     "@docusaurus/core": "^3.6.3",
     "@docusaurus/mdx-loader": "^3.6.3",
     "@docusaurus/plugin-content-blog": "^3.6.3",

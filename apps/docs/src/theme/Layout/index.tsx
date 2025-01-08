@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import ErrorBoundary, { FallbackParams } from '@docusaurus/ErrorBoundary';
 import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';
+import { useColorMode } from '@docusaurus/theme-common';
 import { useKeyboardNavigation } from '@docusaurus/theme-common/internal';
 import { cx } from '@linaria/core';
 import AnnouncementBar from '@theme/AnnouncementBar';
@@ -9,10 +10,29 @@ import type { Props } from '@theme/Layout';
 import LayoutProvider from '@theme/Layout/Provider';
 import Navbar from '@theme/Navbar';
 import SkipToContent from '@theme/SkipToContent';
+import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
+import { globalStyles } from '@cbhq/cds-web2/styles/global';
+import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
+import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
+import { darkTheme } from '@cbhq/cds-web2/themes/dark';
+import { lightTheme } from '@cbhq/cds-web2/themes/light';
 
 import styles from './styles.module.css';
 
-const fallbackFunction = (params: FallbackParams) => <ErrorPageContent {...params} />;
+const CDSContainer = ({ children }: { children: React.ReactNode }) => {
+  const { colorMode } = useColorMode();
+
+  const isDarkMode = colorMode === 'dark';
+  return (
+    <div className={globalStyles}>
+      <MediaQueryProvider>
+        <ThemeProvider display="contents" theme={isDarkMode ? darkTheme : lightTheme}>
+          <PortalProvider>{children}</PortalProvider>
+        </ThemeProvider>
+      </MediaQueryProvider>
+    </div>
+  );
+};
 
 export default function Layout(props: Props): JSX.Element {
   const {
@@ -25,22 +45,26 @@ export default function Layout(props: Props): JSX.Element {
 
   useKeyboardNavigation();
 
+  const fallback = useCallback((params: FallbackParams) => <ErrorPageContent {...params} />, []);
+
   return (
     <LayoutProvider>
-      <PageMetadata description={description} title={title} />
+      <CDSContainer>
+        <PageMetadata description={description} title={title} />
 
-      <SkipToContent />
+        <SkipToContent />
 
-      <AnnouncementBar />
+        <AnnouncementBar />
 
-      <Navbar />
+        <Navbar />
 
-      <div
-        className={cx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
-        id={SkipToContentFallbackId}
-      >
-        <ErrorBoundary fallback={fallbackFunction}>{children}</ErrorBoundary>
-      </div>
+        <div
+          className={cx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
+          id={SkipToContentFallbackId}
+        >
+          <ErrorBoundary fallback={fallback}>{children}</ErrorBoundary>
+        </div>
+      </CDSContainer>
     </LayoutProvider>
   );
 }

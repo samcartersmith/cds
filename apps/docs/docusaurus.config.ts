@@ -1,5 +1,62 @@
-import type { Config } from '@docusaurus/types';
+import type { Config, Plugin } from '@docusaurus/types';
+import path from 'node:path';
 import { themes as prismThemes } from 'prism-react-renderer';
+
+const webpackPlugin = () => {
+  const plugin: Plugin = {
+    name: 'cds-docusaurus-webpack-plugin',
+    configureWebpack: (config) => ({
+      resolve: {
+        alias: {
+          ...(config.mode === 'production'
+            ? {}
+            : {
+                '@cbhq/cds-common2': path.resolve(__dirname, '../../packages/cds-common2/src'),
+                '@cbhq/cds-fonts': path.resolve(__dirname, '../../packages/fonts/src'),
+                '@cbhq/cds-lottie-files': path.resolve(
+                  __dirname,
+                  '../../packages/lottie-files/src',
+                ),
+                '@cbhq/cds-icons': path.resolve(__dirname, '../../packages/icons/src'),
+                '@cbhq/cds-illustrations': path.resolve(
+                  __dirname,
+                  '../../packages/illustrations/src',
+                ),
+                '@cbhq/cds-utils': path.resolve(__dirname, '../../packages/utils/src'),
+                '@cbhq/cds-web2': path.resolve(__dirname, '../../packages/cds-web2/src'),
+                '@cbhq/cds-web-visualization': path.resolve(
+                  __dirname,
+                  '../../packages/web-visualization/src',
+                ),
+              }),
+        },
+      },
+      module: {
+        rules: [
+          config.mode === 'production'
+            ? // Supports extensionless imports with ESM in cds-web2, cds-common2 and cds-utils package
+              {
+                test: /\.(js|ts)x?$/,
+                include: /packages\/(cds-[^\\/]+|utils)/,
+                resolve: {
+                  fullySpecified: false,
+                },
+              }
+            : {
+                test: /\.(js|ts)x?$/,
+                loader: '@linaria/webpack-loader',
+                options: {
+                  displayName: true,
+                  sourceMap: true,
+                  babelOptions: { configFile: true },
+                },
+              },
+        ],
+      },
+    }),
+  };
+  return plugin;
+};
 
 const config: Config = {
   title: 'Coinbase Design System',
@@ -113,6 +170,7 @@ const config: Config = {
         id: 'codeblock',
       },
     ],
+    webpackPlugin,
   ],
 };
 
