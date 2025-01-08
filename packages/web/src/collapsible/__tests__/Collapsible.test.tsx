@@ -29,12 +29,12 @@ describe('Collapsible', () => {
 
   it('shows and hides content', async () => {
     render(<MockCollapsible />);
-    expect(screen.getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
+    expect(screen.getByTestId('mock-collapse')).toHaveAttribute('aria-hidden', 'true');
     expect(screen.getByText('Collapsible Content')).not.toBeVisible();
 
     fireEvent.click(screen.getByText('Click me!'));
     await waitFor(() => {
-      expect(screen.getByTestId('mock-collapse')).toHaveStyle('visibility: visible');
+      expect(screen.getByTestId('mock-collapse')).toHaveAttribute('aria-hidden', 'false');
     });
     await waitFor(() => {
       expect(screen.getByText('Collapsible Content')).toBeVisible();
@@ -42,7 +42,7 @@ describe('Collapsible', () => {
 
     fireEvent.click(screen.getByText('Click me!'));
     await waitFor(() => {
-      expect(screen.getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
+      expect(screen.getByTestId('mock-collapse')).toHaveAttribute('aria-hidden', 'true');
     });
     await waitFor(() => {
       expect(screen.getByText('Collapsible Content')).not.toBeVisible();

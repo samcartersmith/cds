@@ -40,7 +40,7 @@ describe('Banner Actions', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  it('Bannner collapses when dismiss icon button is pressed', async () => {
+  it('Banner collapses when dismiss icon button is pressed', async () => {
     const spy = jest.fn();
     render(<MockBanner showDismiss onClose={spy} testID={TEST_ID} />);
     const collapsibleTestID = `${TEST_ID}-collapsible`;
@@ -48,14 +48,14 @@ describe('Banner Actions', () => {
     const dismissBtn = screen.getByLabelText('close');
 
     // Before dismiss is pressed, banner should be visible
-    expect(screen.getByTestId(collapsibleTestID)).toHaveStyle('visibility: visible');
+    expect(screen.getByTestId(collapsibleTestID)).toHaveAttribute('aria-hidden', 'false');
 
     fireEvent.click(dismissBtn);
     expect(spy).toHaveBeenCalledTimes(1);
 
     // After dismiss is pressed, banner should be collapsed
     await waitFor(() => {
-      expect(screen.getByTestId(collapsibleTestID)).toHaveStyle('visibility: hidden');
+      expect(screen.getByTestId(collapsibleTestID)).toHaveAttribute('aria-hidden', 'true');
     });
   });
 });

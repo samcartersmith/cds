@@ -16,17 +16,9 @@ export const useCollapsibleMotionProps = ({
   dangerouslyDisableOverflowHidden,
 }: Pick<CollapsibleProps, 'collapsed' | 'direction' | 'dangerouslyDisableOverflowHidden'>) => {
   const defaultStyle = useMemo(() => {
-    // override visibility: hidden
-    const styles = { visibility: 'visible' as React.CSSProperties['visibility'] };
-
-    if (dangerouslyDisableOverflowHidden) {
-      return styles;
-    }
-    return {
-      ...styles,
-      // need this for enter animation to have correct masking effect
-      overflow: 'hidden',
-    };
+    // overflow: hidden is needed for enter animation to have correct masking effect as the element height grows
+    // the consumer must dangerously opt-out of this behavior
+    return dangerouslyDisableOverflowHidden ? {} : { overflow: 'hidden' };
   }, [dangerouslyDisableOverflowHidden]);
 
   return useMotionProps({
@@ -36,8 +28,6 @@ export const useCollapsibleMotionProps = ({
     ],
     exitConfigs: {
       tokens: [animateOutOpacityConfig[direction], animateOutMaxSizeConfig[direction]],
-      // prevent focus on collapsed element
-      transitionEnd: { visibility: 'hidden' },
     },
     style: defaultStyle,
     // prevent animation on mount

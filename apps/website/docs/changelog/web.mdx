@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.6.3 (1/7/2025 PST)
+
+#### 🐞 Fixes
+
+- Bugfix [DX-4329] - Changing states quickly in Collapsible led to inconsistent visual state. [[#3488](https://github.cbhq.net/frontend/cds/pull/3488)] [[DX-4329](https://jira.coinbase-corp.com/browse/DX-4329)]
+
 ## 7.6.2 ((12/18/2024, 09:05 AM PST))
 
 This is an artificial version bump with no new change.

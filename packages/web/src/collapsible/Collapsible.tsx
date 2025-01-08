@@ -82,10 +82,13 @@ export const Collapsible = memo(
         <motion.div
           {...styles}
           ref={forwardedRef}
+          aria-hidden={collapsed}
           aria-labelledby={accessibilityLabelledBy}
           data-testid={testID}
           id={id}
           role={role}
+          // ensures the element is not focusable while collapsed
+          tabIndex={collapsed ? -1 : undefined}
         >
           <div className={outerSpacing}>
             <Stack
