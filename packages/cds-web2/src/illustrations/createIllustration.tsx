@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { IllustrationVariant } from '@cbhq/cds-common2';
+import type { IllustrationVariant } from '@cbhq/cds-common2/types/IllustrationNames';
 import {
   IllustrationBaseProps,
   IllustrationNamesMap,

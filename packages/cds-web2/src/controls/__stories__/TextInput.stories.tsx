@@ -5,11 +5,13 @@ import { css } from '@linaria/core';
 import { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
-// import { Box } from '../../layout/Box';
+import { Icon } from '../../icons/Icon';
+import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
-import { Link } from '../../link/Link';
-// import { Avatar } from '../../media/Avatar';
+import { VStack } from '../../layout/VStack';
+import { Avatar } from '../../media/Avatar';
 import { borderRadius } from '../../styles/styles';
+import { Link } from '../../text/Link';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
 import { NativeTextArea } from '../NativeTextArea';
@@ -243,23 +245,23 @@ export const CompactInput = function CompactInput() {
   return <TextInput compact label="Label" />;
 };
 
-// export const CompactInputStart = function CompactInputStart() {
-//   return (
-//     <TextInput
-//       compact
-//       label="Label"
-//       start={
-//         <Box>
-//           <Avatar
-//             alt="address"
-//             size="l"
-//             src="https://dynamic-assets.coinbase.com/e785e0181f1a23a30d9476038d9be91e9f6c63959b538eabbc51a1abc8898940383291eede695c3b8dfaa1829a9b57f5a2d0a16b0523580346c6b8fab67af14b/asset_icons/b57ac673f06a4b0338a596817eb0a50ce16e2059f327dc117744449a47915cb2.png"
-//           />
-//         </Box>
-//       }
-//     />
-//   );
-// };
+export const CompactInputStart = function CompactInputStart() {
+  return (
+    <TextInput
+      compact
+      label="Label"
+      start={
+        <Box>
+          <Avatar
+            alt="address"
+            size="l"
+            src="https://dynamic-assets.coinbase.com/e785e0181f1a23a30d9476038d9be91e9f6c63959b538eabbc51a1abc8898940383291eede695c3b8dfaa1829a9b57f5a2d0a16b0523580346c6b8fab67af14b/asset_icons/b57ac673f06a4b0338a596817eb0a50ce16e2059f327dc117744449a47915cb2.png"
+          />
+        </Box>
+      }
+    />
+  );
+};
 
 export const CompactInputEnd = function CompactInputEnd() {
   return (
@@ -512,5 +514,40 @@ export const CustomStyle = function Align() {
       placeholder="placeholder"
       style={customStyle}
     />
+  );
+};
+
+export const ReadOnly = function ReadOnly() {
+  return (
+    <VStack gap={1}>
+      <TextInput readOnly label="Read-Only Label" value="Some text" />
+      <TextInput
+        readOnly
+        helperText="Some helper text"
+        label="Read-Only with HelperText"
+        value="Some text"
+      />
+      <TextInput
+        readOnly
+        label="Read-Only with Start Node"
+        start={
+          <Box paddingX={2}>
+            <Icon color="textForeground" name="qrCode" size="m" />
+          </Box>
+        }
+        value="Some text"
+      />
+      <TextInput
+        compact
+        readOnly
+        end={
+          <Box paddingX={2}>
+            <Icon color="textForeground" name="qrCode" size="m" />
+          </Box>
+        }
+        label="Compact Read-Only with End Node"
+        placeholder="Placeholder"
+      />
+    </VStack>
   );
 };

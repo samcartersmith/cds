@@ -1,3 +1,5 @@
+export * from './Link';
+export * from './Text';
 export * from './TextBody';
 export * from './TextCaption';
 export * from './TextDisplay1';

@@ -33,6 +33,10 @@ const baseStyle = css`
   /* stylelint-enable plugin/no-low-performance-animation-properties */
   overflow: hidden;
 
+  &:hover {
+    opacity: 1;
+  }
+
   &:focus-within {
     border-color: var(--border-color-focused);
     box-shadow: 0 0 0 var(--border-width-focused) var(--border-color-focused);

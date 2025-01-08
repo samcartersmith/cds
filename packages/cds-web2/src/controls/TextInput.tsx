@@ -184,6 +184,14 @@ export const TextInput = memo(
       internalRef.current?.focus();
     }, [setFocused, internalRef]);
 
+    // Define a distinct read-only style to differentiate it from the disabled style.
+    const startEndBackground = useMemo(() => {
+      if (!disabled && htmlInputElmProps.readOnly) {
+        return 'backgroundSecondary';
+      }
+      return undefined;
+    }, [disabled, htmlInputElmProps.readOnly]);
+
     const inputElement = useMemo(() => {
       /** Ensures that the renderedInput has the blurring, focusing, disabled features */
       if (inputNode) {
@@ -253,6 +261,7 @@ export const TextInput = memo(
             (suffix !== '' || !!end) && (
               <HStack
                 alignItems="center"
+                background={startEndBackground}
                 gap={2}
                 justifyContent="center"
                 onClick={handleNodePress}
@@ -303,6 +312,7 @@ export const TextInput = memo(
             (compact || !!start) && (
               <HStack
                 alignItems="center"
+                background={startEndBackground}
                 gap={2}
                 justifyContent="center"
                 onClick={handleNodePress}

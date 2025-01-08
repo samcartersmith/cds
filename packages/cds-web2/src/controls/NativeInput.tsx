@@ -38,7 +38,7 @@ const baseStyle = css`
   }
 
   &[readonly]:not(:disabled) {
-    background-color: var(--secondary);
+    background-color: var(--color-backgroundSecondary);
   }
 
   /* stylelint-disable a11y/no-display-none */

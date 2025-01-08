@@ -3,25 +3,11 @@ import { css, cx } from '@linaria/core';
 
 import { type BoxProps, Box } from '../layout/Box';
 
-// import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common'
-
 export type SpinnerBaseProps = {
   /**
    * The font size of the spinner in pixels - used to calculate the width, height, and borderWidth. Width and height are 10em while borderWidth is 1.1em.
    */
   size: number;
-  /**
-   * Accessibility label
-   * TO DO: replace with shared a11y label
-   */
-  accessibilityLabel?: string;
-  /**
-   * TO DO: add testID from shared props instead of this one
-   * Used to locate this element in unit and end-to-end tests.
-   * Under the hood, testID translates to data-testid on Web. On Mobile, testID
-   * stays the same - testID
-   */
-  testID?: string;
 };
 
 export type SpinnerProps = SpinnerBaseProps & BoxProps<'div'>;
