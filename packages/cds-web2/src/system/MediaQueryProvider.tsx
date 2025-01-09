@@ -95,6 +95,6 @@ export const MediaQueryProvider = ({
   children,
   defaultValues = cdsDefaultValues,
 }: MediaQueryProviderProps) => {
-  useState(() => store.init(defaultValues));
+  useState(() => store.init({ defaultValues }));
   return <MediaQueryContext.Provider value={store}>{children}</MediaQueryContext.Provider>;
 };

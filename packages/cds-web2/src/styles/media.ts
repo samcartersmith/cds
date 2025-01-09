@@ -20,3 +20,15 @@ export const media = {
   desktopLarge: `(min-width: 1440px) and (max-width: 1599px)`,
   extraWide: `(min-width: 1600px)`,
 } as const;
+
+export type DeviceBreakpoint =
+  | 'phone'
+  | 'phonePortrait'
+  | 'phoneLandscape'
+  | 'tablet'
+  | 'tabletPortrait'
+  | 'tabletLandscape'
+  | 'desktop'
+  | 'desktopSmall'
+  | 'desktopLarge'
+  | 'extraWide';

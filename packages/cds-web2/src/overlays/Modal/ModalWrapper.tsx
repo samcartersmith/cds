@@ -5,7 +5,6 @@ import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { type BoxProps, Box } from '../../layout/Box';
 import { media } from '../../styles/media';
-import { useTheme } from '../../system/ThemeProvider';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal, PortalProps } from '../Portal';
 import { modalContainerId } from '../PortalProvider';
@@ -82,7 +81,6 @@ export const ModalWrapper = memo(
       }: ModalWrapperProps,
       ref: React.ForwardedRef<HTMLDivElement>,
     ) => {
-      const theme = useTheme();
       const blockScroll = useScrollBlocker();
 
       // prevent body scroll when modal is open
@@ -97,7 +95,7 @@ export const ModalWrapper = memo(
       return (
         <NewAnimatePresence onExitComplete={onDidClose}>
           {!!visible && (
-            <Portal containerId={modalContainerId} disablePortal={disablePortal} theme={theme}>
+            <Portal containerId={modalContainerId} disablePortal={disablePortal}>
               <Box
                 ref={ref}
                 alignItems={alignItems}

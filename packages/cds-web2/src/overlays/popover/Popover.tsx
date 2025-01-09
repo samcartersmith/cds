@@ -5,7 +5,6 @@ import { css, cx } from '@linaria/core';
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { Box } from '../../layout/Box';
 import { zIndex } from '../../styles/styles';
-import { useTheme } from '../../system/ThemeProvider';
 import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal';
@@ -69,7 +68,6 @@ export const Popover = memo(
     autoFocusDelay,
     controlledElementAccessibilityProps,
   }: PopoverProps) => {
-    const theme = useTheme();
     const { setSubject, setPopper, popperStyles, popperAttributes } = usePopper(contentPosition);
 
     // We use this to infer that hover events are triggering the mounting/dismounting of the content
@@ -172,7 +170,7 @@ export const Popover = memo(
         </div>
         <NewAnimatePresence>
           {shouldShowContent ? (
-            <Portal containerId={tooltipContainerId} disablePortal={disablePortal} theme={theme}>
+            <Portal containerId={tooltipContainerId} disablePortal={disablePortal}>
               {showOverlay ? (
                 <Box bottom={0} className={zIndexStyle} left={0} position="fixed" right={0} top={0}>
                   <Overlay animated onPress={handleClose} />
