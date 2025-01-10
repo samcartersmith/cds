@@ -1,3 +1,6 @@
+import '@cbhq/cds-fonts/fonts.css';
+import '@cbhq/cds-icons/fonts/web/icon-font.css';
+
 import React, { useCallback } from 'react';
 import ErrorBoundary, { FallbackParams } from '@docusaurus/ErrorBoundary';
 import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';

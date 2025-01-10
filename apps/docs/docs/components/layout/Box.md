@@ -11,6 +11,6 @@ This is the documentation for the Box component.
 
 ```jsx live
 function Example() {
-  return <Button>Hello World 👋</Button>;
+  return <Button startIcon={'add'}>Hello World 👋</Button>;
 }
 ```
