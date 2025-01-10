@@ -87,7 +87,7 @@ export function cardBuilder({
                 onPress={onPressConsole}
                 subdetail="-2.34%"
                 title="Title"
-                variant="negative"
+                variant="textNegative"
               />
             );
           })}

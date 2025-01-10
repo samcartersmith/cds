@@ -52,7 +52,10 @@ export type CellAccessoryProps = {
   className?: string;
 } & PaddingProps;
 
-export type CellDetailVariant = 'foregroundMuted' | 'negative' | 'positive' | 'warning';
+type CellDetailVariant = Extract<
+  ThemeVars.Color,
+  'textForegroundMuted' | 'textNegative' | 'textPositive' | 'textWarning'
+>;
 
 export type CellDetailProps = {
   /**

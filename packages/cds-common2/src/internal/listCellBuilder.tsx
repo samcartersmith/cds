@@ -6,7 +6,6 @@ import type {
   CellMediaProps,
   CellPriority,
   CellSpacing,
-  ControlBaseProps,
   IconButtonBaseProps,
   IllustrationPictogramNames,
   ListCellBaseProps,
@@ -30,9 +29,6 @@ export function listCellBuilder(
   CellMedia: React.ComponentType<React.PropsWithChildren<CellMediaProps>>,
   Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps>>,
   IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps>>,
-  Checkbox: React.ComponentType<
-    React.PropsWithChildren<ControlBaseProps<string> & { accessibilityLabel: string }>
-  >,
   Pictogram: React.ComponentType<React.PropsWithChildren<{ name: IllustrationPictogramNames }>>,
 ) {
   const Content = () => {
@@ -55,22 +51,22 @@ export function listCellBuilder(
           detail="Detail"
           subdetail="+Positive"
           title="Title"
-          variant="positive"
+          variant="textPositive"
         />
 
-        <ListCell subdetail="+Positive" title="Title" variant="positive" />
+        <ListCell subdetail="+Positive" title="Title" variant="textPositive" />
 
         <ListCell
           description="Description"
           detail="Detail"
           subdetail="-Negative"
           title="Title"
-          variant="negative"
+          variant="textNegative"
         />
 
-        <ListCell detail="Detail" subdetail="-Negative" title="Title" variant="negative" />
+        <ListCell detail="Detail" subdetail="-Negative" title="Title" variant="textNegative" />
 
-        <ListCell detail="Detail" subdetail="Warning" title="Title" variant="warning" />
+        <ListCell detail="Detail" subdetail="Warning" title="Title" variant="textWarning" />
       </>
     );
   };
@@ -102,10 +98,10 @@ export function listCellBuilder(
           detail="Detail"
           subdetail="+Positive"
           title="Title"
-          variant="positive"
+          variant="textPositive"
         />
 
-        <ListCell compact subdetail="+Positive" title="Title" variant="positive" />
+        <ListCell compact subdetail="+Positive" title="Title" variant="textPositive" />
 
         <ListCell
           compact
@@ -113,12 +109,18 @@ export function listCellBuilder(
           detail="Detail"
           subdetail="-Negative"
           title="Title"
-          variant="negative"
+          variant="textNegative"
         />
 
-        <ListCell compact detail="Detail" subdetail="-Negative" title="Title" variant="negative" />
+        <ListCell
+          compact
+          detail="Detail"
+          subdetail="-Negative"
+          title="Title"
+          variant="textNegative"
+        />
 
-        <ListCell compact detail="Detail" subdetail="Warning" title="Title" variant="warning" />
+        <ListCell compact detail="Detail" subdetail="Warning" title="Title" variant="textWarning" />
       </>
     );
   };
@@ -203,7 +205,7 @@ export function listCellBuilder(
         onPress={onPressConsole}
         subdetail="+Postive"
         title="Title"
-        variant="positive"
+        variant="textPositive"
       />
 
       <ListCell
@@ -214,7 +216,7 @@ export function listCellBuilder(
         onPress={onPressConsole}
         subdetail="Warning"
         title="Title"
-        variant="warning"
+        variant="textWarning"
       />
     </>
   );
@@ -307,7 +309,7 @@ export function listCellBuilder(
         onPress={onPressConsole}
         subdetail="+Postive"
         title="Title"
-        variant="positive"
+        variant="textPositive"
       />
 
       <ListCell
@@ -319,7 +321,7 @@ export function listCellBuilder(
         onPress={onPressConsole}
         subdetail="Warning"
         title="Title"
-        variant="warning"
+        variant="textWarning"
       />
     </>
   );
@@ -365,7 +367,7 @@ export function listCellBuilder(
         priority="start"
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="positive"
+        variant="textPositive"
       />
       <ListCell
         description="Some description of the asset"
@@ -374,7 +376,7 @@ export function listCellBuilder(
         priority="middle"
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="positive"
+        variant="textPositive"
       />
       <ListCell
         description="Some description of the asset"
@@ -383,7 +385,7 @@ export function listCellBuilder(
         priority="end"
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="positive"
+        variant="textPositive"
       />
       <ListCell
         description="Some description of the asset"
@@ -392,7 +394,7 @@ export function listCellBuilder(
         priority={cellPriorities}
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="positive"
+        variant="textPositive"
       />
       <ListCell
         description="Some description of the asset"
@@ -401,7 +403,7 @@ export function listCellBuilder(
         priority={cellPriorities}
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="warning"
+        variant="textWarning"
       />
     </>
   );
@@ -447,7 +449,7 @@ export function listCellBuilder(
         detail="Detail"
         subdetail="+Positive"
         title="Title"
-        variant="positive"
+        variant="textPositive"
       />
 
       <ListCell
@@ -456,7 +458,7 @@ export function listCellBuilder(
         detail="Detail"
         subdetail="-Negative"
         title="Title"
-        variant="negative"
+        variant="textNegative"
       />
 
       <ListCell
@@ -465,7 +467,7 @@ export function listCellBuilder(
         detail="Detail"
         subdetail="Warning"
         title="Title"
-        variant="warning"
+        variant="textWarning"
       />
     </>
   );
@@ -517,8 +519,6 @@ export function listCellBuilder(
 
   const WithActions = () => (
     <>
-      <ListCell action={<Checkbox checked accessibilityLabel="Checkbox" />} title="Title" />
-
       <ListCell action={<Button>Action</Button>} detail="Detail" title="Title" />
 
       <ListCell
