@@ -9,8 +9,7 @@ import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common2/internal/ut
 import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
 import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
 import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
-import { darkTheme } from '@cbhq/cds-web2/themes/dark';
-import { lightTheme } from '@cbhq/cds-web2/themes/light';
+import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
 // TODO migrate Group
 // import { Group } from '@cbhq/cds-web2/layout/Group';
 
@@ -64,7 +63,11 @@ export function StoryContainer<Props>(
     return (
       <LocalStrictMode>
         <MediaQueryProvider>
-          <ThemeProvider display="contents" theme={isDarkMode ? darkTheme : lightTheme}>
+          <ThemeProvider
+            display="contents"
+            activeColorScheme={isDarkMode ? 'dark' : 'light'}
+            theme={defaultTheme}
+          >
             <PortalProvider>
               {/* <Group {...wrapperProps}> */}
               <InnerWrapper>

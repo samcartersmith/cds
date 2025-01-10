@@ -13,27 +13,27 @@ import { RemoteImage } from './RemoteImage';
 
 const wrapperStyles = css`
   // Styles the possible values of the colorScheme prop. Children elements will use CSS currentColor to inherit this color styles.
-  &[data-colorScheme='blue'] {
+  &[data-colorscheme='blue'] {
     color: rgb(var(--blue60));
   }
 
-  &[data-colorScheme='teal'] {
+  &[data-colorscheme='teal'] {
     color: rgb(var(--teal60));
   }
 
-  &[data-colorScheme='purple'] {
+  &[data-colorscheme='purple'] {
     color: rgb(var(--purple60));
   }
 
-  &[data-colorScheme='pink'] {
+  &[data-colorscheme='pink'] {
     color: rgb(var(--pink60));
   }
 
-  &[data-colorScheme='green'] {
+  &[data-colorscheme='green'] {
     color: rgb(var(--green60));
   }
 
-  &[data-colorScheme='gray'] {
+  &[data-colorscheme='gray'] {
     // TO DO: in the original implementation the light and dark themes used different values for gray
     // we will need to find a value that works for both themes until we can detect/change themes in v8
     color: rgb(var(--gray60));
@@ -184,7 +184,7 @@ export const Avatar = memo(
 
     return (
       // set position required to place the HexagonBorder elements properly
-      <Box className={wrapperStyles} data-colorScheme={colorSchemeProp} position="relative">
+      <Box className={wrapperStyles} data-colorscheme={colorSchemeProp} position="relative">
         <Box
           alignItems="center"
           className={cx(avatarStyles, borderRadiusStyles[shape], className)}

@@ -5,7 +5,7 @@ import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
 export type TagIntent = 'informational' | 'promotional';
-export type ColorScheme = Extract<
+export type TagColorScheme = Extract<
   ThemeVars.SpectrumHue,
   'green' | 'purple' | 'blue' | 'yellow' | 'red' | 'gray'
 >;
@@ -15,7 +15,7 @@ type TagThemedProps = {
    * Specify the colorScheme of the Tag
    * @default blue
    */
-  colorScheme: ColorScheme;
+  colorScheme: TagColorScheme;
   /** @danger Custom background color */
   background?: never;
   /** @danger Custom text color */

@@ -7,30 +7,32 @@ import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { MarginProps, PaddingProps } from './SpacingProps';
 import { Visibility } from './Visibility';
 
-export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
-export type FlexAlignCommon = FlexAxisValue | 'stretch';
-export type FlexSpaceCommon = 'space-between' | 'space-around';
-/** @link https://www.w3.org/TR/css-flexbox/#main-size */
-type FlexMainSize = 1 | 2 | 3;
-export type FlexShrink = { flexShrink?: FlexMainSize };
-export type FlexGrow = { flexGrow?: FlexMainSize };
+export type FlexShrink = { flexShrink?: number };
+export type FlexGrow = { flexGrow?: number };
 
 export type FlexStyles = {
   /**
    * Set the distribution of space between and around content items along the cross-axis.
    * @default flex-start
    */
-  alignContent?: FlexAlignCommon | FlexSpaceCommon;
+  alignContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'stretch'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly';
   /**
    * Set the alignment of all direct children on the cross-axis.
    * @default stretch
    */
-  alignItems?: FlexAlignCommon | 'baseline';
+  alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
   /**
    * Override the parent's defined item alignment for this element alone.
    * @default auto
    */
-  alignSelf?: FlexAlignCommon | 'auto' | 'baseline';
+  alignSelf?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'auto' | 'baseline';
   /** Sets the initial main flex size. */
   flexBasis?: number | string;
   /** Order children on the main-axis in this direction. */
@@ -48,7 +50,13 @@ export type FlexStyles = {
    * Set the distribution of space between and around content items along the main-axis.
    * @default flex-start
    */
-  justifyContent?: FlexAxisValue | FlexSpaceCommon | 'space-evenly';
+  justifyContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly';
 };
 
 export type PinningDirection = 'top' | 'bottom' | 'left' | 'right' | 'all';

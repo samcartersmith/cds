@@ -203,7 +203,6 @@ export const Test = () => {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [showPinnedBox, setShowPinnedBox] = useState(false);
   const [switchChecked, setSwitchChecked] = useState(false);
-  const [switchChecked2, setSwitchChecked2] = useState(false);
   const colorSurgeRef = useRef<ColorSurgeRefBaseProps>(null);
 
   return (
@@ -1071,13 +1070,6 @@ export const Test = () => {
           Normal
         </Switch>
         <Switch disabled>Disabled</Switch>
-        <Switch
-          checked={switchChecked2}
-          onChange={() => setSwitchChecked2(!switchChecked2)}
-          switchPaletteOverrides={{ backgroundAlternate: 'red' }}
-        >
-          Override Background
-        </Switch>
       </VStack>
       <Spacer vertical={2} />
       <VStack>

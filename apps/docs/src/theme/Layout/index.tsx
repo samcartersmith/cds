@@ -17,8 +17,7 @@ import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
 import { globalStyles } from '@cbhq/cds-web2/styles/global';
 import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
 import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
-import { darkTheme } from '@cbhq/cds-web2/themes/dark';
-import { lightTheme } from '@cbhq/cds-web2/themes/light';
+import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
 
 import styles from './styles.module.css';
 
@@ -29,7 +28,11 @@ const CDSContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={globalStyles}>
       <MediaQueryProvider>
-        <ThemeProvider display="contents" theme={isDarkMode ? darkTheme : lightTheme}>
+        <ThemeProvider
+          activeColorScheme={isDarkMode ? 'dark' : 'light'}
+          display="contents"
+          theme={defaultTheme}
+        >
           <PortalProvider>{children}</PortalProvider>
         </ThemeProvider>
       </MediaQueryProvider>

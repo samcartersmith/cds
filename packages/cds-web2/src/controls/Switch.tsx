@@ -1,13 +1,11 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
 import { motion } from 'framer-motion';
 import { switchTransitionConfig } from '@cbhq/cds-common2/motion/switch';
 import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 
-import { type ThemeConfig } from '../core/theme';
 import { Box } from '../layout/Box';
 import { convertTransition } from '../motion/utils';
-import { ThemeProvider, useTheme } from '../system/ThemeProvider';
 
 import { Control, ControlProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
@@ -55,10 +53,7 @@ const focusRingStyle = css`
   }
 `;
 
-export type SwitchProps = {
-  /** The palette to override default switch control palette. */
-  switchPaletteOverrides?: Partial<ThemeConfig['color']>;
-} & Omit<ControlBaseProps<string> & ControlProps, 'value'>;
+export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>;
 
 const MotionBox = motion(Box);
 
@@ -72,26 +67,13 @@ const thumbMotionVariants = {
 };
 
 const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchWithRef(
-  { children, checked, switchPaletteOverrides, disabled, ...props },
+  { children, checked, disabled, ...props },
   ref,
 ) {
-  const theme = useTheme();
-
   const { outerContainerMotionProps } = useControlMotionProps({
     checked,
     initialBackground: 'var(--color-backgroundAlternate)',
   });
-
-  const paletteConfig = useMemo(
-    () =>
-      switchPaletteOverrides
-        ? { ...theme, color: { ...theme.color, ...switchPaletteOverrides } }
-        : {
-            ...theme,
-            color: { ...theme.color, backgroundAlternate: 'rgb(var(--gray20))' },
-          },
-    [switchPaletteOverrides, theme],
-  );
 
   const switchNode = (
     <Control
@@ -124,21 +106,17 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
     </Control>
   );
 
-  return (
-    <ThemeProvider theme={paletteConfig}>
-      {children ? (
-        <Box
-          alignItems="center"
-          minHeight="var(--control-switchHeight)"
-          role="presentation"
-          width="fit-content"
-        >
-          {switchNode}
-        </Box>
-      ) : (
-        switchNode
-      )}
-    </ThemeProvider>
+  return children ? (
+    <Box
+      alignItems="center"
+      minHeight="var(--control-switchHeight)"
+      role="presentation"
+      width="fit-content"
+    >
+      {switchNode}
+    </Box>
+  ) : (
+    switchNode
   );
 });
 

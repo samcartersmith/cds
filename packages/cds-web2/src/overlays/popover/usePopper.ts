@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { usePopper as useExternalPopper } from 'react-popper';
 import { Options as PopperOptions } from '@popperjs/core';
 
-import { useTheme } from '../../system/ThemeProvider';
+import { useTheme } from '../../hooks/useTheme';
 
 import { PopoverContentPositionConfig } from './PopoverProps';
 // import { getComputedStyleForSelector } from '../../utils/getComputedStyleForSelector'

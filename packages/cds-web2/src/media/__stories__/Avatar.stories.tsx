@@ -2,11 +2,12 @@
 import React, { useMemo } from 'react';
 import { getAvatarFallbackColor } from '@cbhq/cds-common2/media/getAvatarFallbackColor';
 import { AvatarSize } from '@cbhq/cds-common2/types/AvatarSize';
-import { denseDensityTheme } from '@cbhq/cds-web2/themes/dense';
+import { denseTheme } from '@cbhq/cds-web2/themes/denseTheme';
 
+import { useTheme } from '../../hooks/useTheme';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { ThemeProvider, useTheme } from '../../system/ThemeProvider';
+import { ThemeProvider } from '../../system/ThemeProvider';
 import { Text } from '../../text/Text';
 import { Avatar, AvatarWebProps } from '../Avatar';
 
@@ -194,9 +195,9 @@ export const FallbackColored = () => {
 
 export const FallbackColoredDense = () => {
   const theme = useTheme();
-  const newTheme = useMemo(() => ({ ...theme, ...denseDensityTheme }), [theme]);
+  const newTheme = useMemo(() => ({ ...theme, ...denseTheme }), [theme]);
   return (
-    <ThemeProvider theme={newTheme}>
+    <ThemeProvider activeColorScheme={theme.colorScheme} theme={newTheme}>
       <VStack gap={2} paddingTop={4}>
         <Text as="h3" font="headline">
           Default

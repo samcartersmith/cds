@@ -31,6 +31,7 @@ const {
   PinnedBottomCard,
   PinnedLeftCard,
 } = cardBuilder({
+  // @ts-expect-error AndroidAccessibilityProps type's accessibilityLabelledBy allows an array, which is not compatible with BoxBaseProps in common
   Box,
   Button,
   Card: (props) => <Card accessibilityHint="Card" accessibilityLabel="Card" {...props} />,

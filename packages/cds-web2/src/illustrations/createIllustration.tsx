@@ -9,7 +9,7 @@ import { convertSizeWithMultiplier } from '@cbhq/cds-common2/utils/convertSizeWi
 import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common2/utils/getDefaultSizeObjectForIllustration';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { useColorScheme } from '../hooks/useColorScheme';
+import { useTheme } from '../hooks/useTheme';
 
 type IllustrationConfigShape<Variant extends IllustrationVariant> = Record<
   IllustrationNamesMap[Variant],
@@ -42,7 +42,7 @@ export function createIllustration<Variant extends IllustrationVariant>(
     alt = '',
     fallback = null,
   }: IllustrationProps) {
-    const colorScheme = useColorScheme();
+    const { colorScheme } = useTheme();
     const version = config[name];
 
     const src = `https://static-assets.coinbase.com/ui-infra/illustration/v1/${variant}/svg/${colorScheme}/${name}-${version}.svg`;

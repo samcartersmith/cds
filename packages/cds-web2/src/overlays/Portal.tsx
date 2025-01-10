@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { createPortal } from 'react-dom';
 
-import { useTheme } from '../system/ThemeProvider';
+import { useThemeContext } from '../hooks/useThemeContext';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { isSSR } from '../utils/browser';
 
@@ -22,14 +22,17 @@ export const Portal = memo(function Portal({
   children,
   containerId = '',
 }: PortalProps) {
-  const theme = useTheme();
+  const theme = useThemeContext();
+
   if (disablePortal || isSSR() || !document.getElementById(containerId)) {
     // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{children}</>;
   }
 
   return createPortal(
-    <ThemeProvider theme={theme}>{children}</ThemeProvider>,
+    <ThemeProvider activeColorScheme={theme.colorScheme} theme={theme}>
+      {children}
+    </ThemeProvider>,
     document.getElementById(containerId) as HTMLElement,
   );
 });

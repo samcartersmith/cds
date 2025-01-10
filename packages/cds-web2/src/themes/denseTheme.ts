@@ -1,7 +1,10 @@
-import type { DensityTheme } from '../core/theme';
+import type { ThemeConfig } from '../core/theme';
+
+import { defaultTheme } from './defaultTheme';
 
 // TO DO: update the space token once the design tokens are updated
-export const denseDensityTheme = {
+export const denseTheme = {
+  ...defaultTheme,
   space: {
     '0': 0,
     '0.25': 1,
@@ -102,4 +105,4 @@ export const denseDensityTheme = {
     caption: '1rem', // 16px
     legal: '1rem', // 16px
   },
-} as const satisfies DensityTheme;
+} as const satisfies ThemeConfig;

@@ -1,10 +1,11 @@
 import type { Property } from 'csstype';
 import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 
-export type Theme = {
-  spectrum: { [key in ThemeVars.SpectrumColor]: string };
-  color: { [key in ThemeVars.Color]: Property.Color };
-  illustrationColor: { [key in ThemeVars.IllustrationColor]: Property.Color };
+export type ThemeConfig = {
+  lightSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
+  darkSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
+  light?: { [key in ThemeVars.Color]: Property.Color };
+  dark?: { [key in ThemeVars.Color]: Property.Color };
   space: { [key in ThemeVars.Space]: number };
   iconSize: { [key in ThemeVars.IconSize]: number };
   avatarSize: { [key in ThemeVars.AvatarSize]: number };
@@ -19,11 +20,16 @@ export type Theme = {
   control: { [key in ThemeVars.ControlSize]: number };
 };
 
-/** Maps our StyleVars to their CSS variable prefixes. For example, the names of CSS vars generated from `illustrationColor` vars will be prefixed with `--illColor-`. */
+export type Theme = ThemeConfig & {
+  colorScheme: ColorScheme;
+  spectrum: { [key in ThemeVars.SpectrumColor]: string };
+  color: { [key in ThemeVars.Color]: Property.Color };
+};
+
+/** Maps our StyleVars to their CSS variable prefixes. For example, the names of CSS vars generated from `iconSize` vars will be prefixed with `--iconSize-`. */
 export const styleVarPrefixes = {
   spectrum: '',
   color: 'color',
-  illustrationColor: 'illColor',
   space: 'space',
   iconSize: 'iconSize',
   avatarSize: 'avatarSize',
@@ -36,17 +42,17 @@ export const styleVarPrefixes = {
   shadow: 'shadow',
   zIndex: 'zIndex',
   control: 'control',
-} as const satisfies Record<keyof Theme, string>;
+} as const satisfies Record<
+  Exclude<keyof Theme, 'colorScheme' | 'lightSpectrum' | 'darkSpectrum' | 'light' | 'dark'>,
+  string
+>;
 
-type ThemeObjectCSSVars = {
+type ThemeObjectCssVars = {
   spectrum: {
     [key in ThemeVars.SpectrumColor as `--${key}`]: string;
   };
   color: {
     [key in ThemeVars.Color as `--${typeof styleVarPrefixes.color}-${key}`]: Property.Color;
-  };
-  illustrationColor: {
-    [key in ThemeVars.IllustrationColor as `--${typeof styleVarPrefixes.illustrationColor}-${key}`]: Property.Color;
   };
   space: {
     [key in ThemeVars.Space as `--${typeof styleVarPrefixes.space}-${key}`]: Property.Padding;
@@ -93,40 +99,7 @@ type UnionToIntersection<U> = (U extends unknown ? (x: U) => void : never) exten
   : never;
 
 /** A flat object of the CSS variable names of all themeable vars, based on the Theme type. */
-export type ThemeCSSVars = UnionToIntersection<ThemeObjectCSSVars[keyof ThemeObjectCSSVars]>;
+export type ThemeCSSVars = UnionToIntersection<ThemeObjectCssVars[keyof ThemeObjectCssVars]>;
 
 export type ColorScheme = 'light' | 'dark';
 export type ColorSchemePreference = ColorScheme | 'system';
-
-export type ThemeMetadata = {
-  colorScheme?: ColorScheme;
-  contrast?: 'less' | 'more';
-};
-
-export type ThemeConfig = Theme & {
-  metadata?: ThemeMetadata;
-  [mediaQuery: `@media ${string}`]: Partial<Theme>;
-};
-
-// -------------------
-// Begin subthemes
-// -------------------
-export type ColorTheme = Pick<Theme, 'color'>;
-
-export type IllustrationColorTheme = Pick<Theme, 'illustrationColor'>;
-
-export type DensityTheme = Pick<
-  Theme,
-  | 'space'
-  | 'iconSize'
-  | 'avatarSize'
-  | 'fontFamily'
-  | 'fontSize'
-  | 'fontWeight'
-  | 'lineHeight'
-  | 'avatarSize'
-  | 'control'
->;
-// -------------------
-// End subthemes
-// -------------------
