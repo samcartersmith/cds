@@ -1,15 +1,14 @@
 import React, { memo, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common2/hooks/useShapeToBorderRadiusAlias';
-import { useAvatarSrc } from '@cbhq/cds-common2/media/useAvatarSrc';
 import { colorSchemeMap } from '@cbhq/cds-common2/tokens/avatar';
 import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
 import { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 import { avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout';
-import { useTheme } from '../system/ThemeProvider';
 import { TextBody, TextCaption, TextTitle2 } from '../typography';
 
 import { RemoteImage } from './RemoteImage';
@@ -17,9 +16,12 @@ import { RemoteImage } from './RemoteImage';
 const borderWidth = 2;
 export const coloredFallbackTestID = 'cds-avatar-colored-fallback';
 
+export const fallbackImageSrc =
+  'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAOAA4AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+t80Zo4o4oAM0ZrsPBvw7m8Sxi7uZDa2GcKwHzyeu30HvXdf8Kp0Dytnlz7v+ennHP8Ah+lAHiuaM12XjL4dTeG4jd2sjXViDhiR88f1x1HvXG8UAGaKOKKADI9Kkt4vtFxFEOC7Bc/U4qPJ9KVXZGDLwwOQaAPpS0tY7G1ht4VCRRKEVcdABipc1meG9eh8RaRBeRMNzACRB1R+4/z2rU/OgCK5t47y3lgmUPFKpR1I6gjBr5uu4fst1NCefLdkz64OK+g/EWuQ+HtJnvJmHyjCIerv2Ar55klaWRnblmJJPqaAG5HpRRk+lFABzVnTtOutWvY7W0iMs8hwqj+Z9BVbB9a9o+GXhlNI0VL2VR9rvFD5PVY/4R+PX8vSgCfwX4EXwsDNJdSTXTrh1RisQ/Dv9T+QrrP89aT8qPyoA5Txr4FHilRNHdSQ3Ua4RHYtEfw7fUfrXjOo6dc6Tey2t3EYp4zgqf5j1FfSP5VxvxN8Mpq+jPfRKPtlmpfI6tH/ABD8Ov5+tAHi/NFGDRQBY060+3aja22f9dKsf5kD+tfSKIsaKigKqjAAHAFFFAC/j+lL+P6UUUAH4/pTXRZEZGG5WGCCOooooA+btRtPsOoXVtn/AFMrR/kSKKKKAP/Z';
+
 export const Avatar = memo(
   ({
-    src,
+    src = fallbackImageSrc,
     shape = 'circle',
     size = 'l',
     borderColor,
@@ -30,7 +32,6 @@ export const Avatar = memo(
   }: AvatarBaseProps) => {
     const borderRadius = useShapeToBorderRadiusAlias(shape);
     const avatarSize = avatarSizeMap[size];
-    const imgSrc = useAvatarSrc(src);
     const theme = useTheme();
     const placeholderLetter = name?.charAt(0);
     const isLargestSize = size.includes('xx');
@@ -40,8 +41,8 @@ export const Avatar = memo(
       dangerouslySetSize && dangerouslySetSize > interactableHeight.regular;
 
     const colorScheme = colorSchemeMap[colorSchemeProp ?? 'blue'];
-    const colorSchemeHex = theme.spectrum[colorScheme];
-    const fallbackTextColor = getAccessibleColor(colorSchemeHex);
+    const colorSchemeRgb = theme.spectrum[colorScheme];
+    const fallbackTextColor = getAccessibleColor(colorSchemeRgb);
 
     const computedSize = dangerouslySetSize ?? avatarSize;
     const shouldShowAvatarImage = !!src || !name;
@@ -83,7 +84,7 @@ export const Avatar = memo(
         <Box
           alignItems="center"
           borderRadius={borderRadius}
-          dangerouslySetBackground={colorSchemeProp ? colorSchemeHex : undefined}
+          dangerouslySetBackground={colorSchemeProp ? `rgb(${colorSchemeRgb})` : undefined}
           height="100%"
           justifyContent="center"
           testID={coloredFallbackTestID}
@@ -92,7 +93,7 @@ export const Avatar = memo(
           {avatarText}
         </Box>
       );
-    }, [avatarText, borderRadius, colorSchemeHex, colorSchemeProp]);
+    }, [avatarText, borderRadius, colorSchemeRgb, colorSchemeProp]);
 
     return (
       <Box
@@ -115,7 +116,7 @@ export const Avatar = memo(
             height={computedSize}
             resizeMode="cover"
             shape={shape}
-            source={{ uri: imgSrc }}
+            source={{ uri: src }}
             testID={`${testID ?? ''}-image`}
             width={computedSize}
           />

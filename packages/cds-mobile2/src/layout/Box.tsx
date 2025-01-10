@@ -4,8 +4,8 @@ import { PinningDirection, TextAlignProps } from '@cbhq/cds-common2';
 import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 
 import type { Theme } from '../core/theme';
+import { useTheme } from '../hooks/useTheme';
 import { type StyleProps, getStyles } from '../styles/styleProps';
-import { useTheme } from '../system/ThemeProvider';
 
 export type BoxProps = StyleProps &
   Omit<ViewProps, 'style'> & {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { squareAssets } from '@cbhq/cds-common2/internal/data/assets';
-import { NoopFn as noopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Button } from '../../buttons/Button';
 import { HStack } from '../../layout/HStack';
@@ -13,7 +12,7 @@ const exampleProps: NudgeCardProps = {
   description: 'Stand with crypto and mint your NFT. ',
   pictogram: 'key',
   action: 'Join the movement',
-  onActionPress: noopFn,
+  onActionPress: () => {},
 };
 
 const compactProps: NudgeCardProps = {
@@ -37,7 +36,7 @@ const exampleMediaProps: NudgeCardProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT. ',
   action: 'Join the movement',
-  onActionPress: noopFn,
+  onActionPress: () => {},
   media: <img alt="placeholder" src={squareAssets.human2} width={60} />,
 };
 
@@ -52,29 +51,29 @@ const compactMediaProps: NudgeCardProps = {
 export const Default = () => (
   <VStack gap={2}>
     <NudgeCard {...exampleProps} />
-    <NudgeCard {...exampleProps} onDismissPress={noopFn} />
+    <NudgeCard {...exampleProps} onDismissPress={() => {}} />
     <NudgeCard {...exampleProps} mediaPosition="left" />
-    <NudgeCard {...exampleProps} mediaPosition="left" onDismissPress={noopFn} />
+    <NudgeCard {...exampleProps} mediaPosition="left" onDismissPress={() => {}} />
   </VStack>
 );
 
 export const Compact = () => (
   <VStack gap={2}>
     <NudgeCard {...compactProps} />
-    <NudgeCard {...compactProps} onDismissPress={noopFn} />
+    <NudgeCard {...compactProps} onDismissPress={() => {}} />
     <NudgeCard {...compactProps} mediaPosition="left" />{' '}
-    <NudgeCard {...compactProps} mediaPosition="left" onDismissPress={noopFn} />
+    <NudgeCard {...compactProps} mediaPosition="left" onDismissPress={() => {}} />
   </VStack>
 );
 
 export const CustomMedia = () => (
   <VStack gap={2}>
     <NudgeCard {...exampleMediaProps} />
-    <NudgeCard {...exampleMediaProps} onDismissPress={noopFn} />
+    <NudgeCard {...exampleMediaProps} onDismissPress={() => {}} />
     <NudgeCard {...compactMediaProps} />
-    <NudgeCard {...compactMediaProps} onDismissPress={noopFn} />
+    <NudgeCard {...compactMediaProps} onDismissPress={() => {}} />
     <NudgeCard {...exampleMediaProps} mediaPosition="left" />
-    <NudgeCard {...exampleMediaProps} mediaPosition="left" onDismissPress={noopFn} />
+    <NudgeCard {...exampleMediaProps} mediaPosition="left" onDismissPress={() => {}} />
   </VStack>
 );
 
@@ -100,8 +99,8 @@ export const VerticallyStacked = () => (
 
 export const Carousel = () => (
   <HStack gap={2} overflow="scroll">
-    <NudgeCard {...exampleProps} onDismissPress={noopFn} />
-    <NudgeCard {...longProps} numberOfLines={3} onDismissPress={noopFn} />
+    <NudgeCard {...exampleProps} onDismissPress={() => {}} />
+    <NudgeCard {...longProps} numberOfLines={3} onDismissPress={() => {}} />
     <NudgeCard {...exampleProps} />
   </HStack>
 );
@@ -128,7 +127,7 @@ export const CustomTextNodes = () => (
     {...exampleProps}
     action={
       <HStack paddingBottom={1}>
-        <Button compact onClick={noopFn}>
+        <Button compact onClick={() => {}}>
           Custom action
         </Button>
       </HStack>

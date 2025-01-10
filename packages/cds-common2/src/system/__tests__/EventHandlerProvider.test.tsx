@@ -1,12 +1,12 @@
 import { act } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 
+import { useEventHandler } from '../../hooks/useEventHandler';
 import {
   EventHandlerConfig,
   EventHandlerCustomConfig,
   EventHandlerProvider,
 } from '../EventHandlerProvider';
-import { useEventHandler } from '../useEventHandler';
 
 const EVENT_HANDLER_CONFIG: EventHandlerConfig = {
   handlers: {

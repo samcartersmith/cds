@@ -2,9 +2,11 @@ import React from 'react';
 import { ElevationLevels } from '@cbhq/cds-common2';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useTheme } from '../../hooks/useTheme';
 import { Box, HStack, VStack } from '../../layout';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { TextCaption } from '../../typography';
-import { ThemeProvider, useTheme } from '../ThemeProvider';
+import { ThemeProvider } from '../ThemeProvider';
 
 const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
   const theme = useTheme();
@@ -41,7 +43,7 @@ const PaletteScreen = () => {
         <Palette />
       </Example>
       <Example title="Dark Palette">
-        <ThemeProvider name="dark-palette" spectrum="dark">
+        <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
           <Palette />
         </ThemeProvider>
       </Example>
@@ -51,7 +53,7 @@ const PaletteScreen = () => {
         </Box>
       </Example>
       <Example title="Dark Palette Elevation 1">
-        <ThemeProvider name="dark-palette-elevation-1" spectrum="dark">
+        <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
           <Box elevation={1}>
             <Palette elevation={1} />
           </Box>
@@ -63,7 +65,7 @@ const PaletteScreen = () => {
         </Box>
       </Example>
       <Example title="Dark Palette Elevation 2">
-        <ThemeProvider name="dark-palette-elevation-2" spectrum="dark">
+        <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
           <Box elevation={2}>
             <Palette elevation={2} />
           </Box>

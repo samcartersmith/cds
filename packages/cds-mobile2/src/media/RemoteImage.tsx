@@ -9,7 +9,6 @@ import {
   ImageStyle,
   ImageURISource,
   StyleProp,
-  useColorScheme,
 } from 'react-native';
 import Svg, { ClipPath, Defs, Image as SvgImage, Path, SvgXml } from 'react-native-svg';
 import { SvgCssUri } from 'react-native-svg/css';
@@ -17,8 +16,7 @@ import { AspectRatio, avatarSizeMap, FixedValue, RemoteImageBaseProps } from '@c
 import { useShapeToBorderRadiusSize } from '@cbhq/cds-common2/hooks/useShapeToBorderRadiusSize';
 import { getRemoteImageWidthAndHeight } from '@cbhq/cds-common2/utils/getRemoteImageWidthAndHeight';
 
-import { useInvertedPaletteColor } from '../color/useInvertedPaletteColor';
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
 type SourceProp = string | ImageProps['source'];
 
@@ -126,7 +124,7 @@ export const RemoteImage = memo(function RemoteImage({
 }: RemoteImageProps) {
   const shapeBorderRadius = useShapeToBorderRadiusSize(shape);
   const avatarSize = avatarSizeMap[size];
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useTheme();
 
   const { width: finalWidth, height: finalHeight } = getRemoteImageWidthAndHeight({
     size,
@@ -142,7 +140,6 @@ export const RemoteImage = memo(function RemoteImage({
   );
 
   const theme = useTheme();
-  const backgroundColor = useInvertedPaletteColor('background');
 
   const applyDarkModeEnhancement =
     colorScheme === 'dark' && (shouldApplyDarkModeEnhacements || darkModeEnhancementsApplied);
@@ -150,13 +147,13 @@ export const RemoteImage = memo(function RemoteImage({
   const darkModeStyles = useMemo(() => {
     if (applyDarkModeEnhancement) {
       return {
-        backgroundColor,
+        backgroundColor: theme.color.backgroundInverse,
         borderWidth: 1,
         borderColor: theme.color.lineHeavy,
       };
     }
     return undefined;
-  }, [applyDarkModeEnhancement, backgroundColor, theme.color.lineHeavy]);
+  }, [applyDarkModeEnhancement, theme.color]);
 
   const borderStyles = useMemo(() => {
     // shouldApplyDarkModeEnhancement border decoration takes precedence

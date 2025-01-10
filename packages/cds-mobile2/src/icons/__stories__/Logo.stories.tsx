@@ -5,6 +5,7 @@ import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { LogoMark } from '../LogoMark';
 import { LogoWordmark } from '../LogoWordmark';
 import { SubBrandLogoMark } from '../SubBrandLogoMark';
@@ -43,12 +44,12 @@ const LogoScreen = () => {
           <Box height={30} padding={1}>
             <LogoWordmark />
           </Box>
-          <ThemeProvider name="light-only-spectrum" spectrum="light">
+          <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
             <Box background="background" height={30} padding={1}>
               <LogoWordmark foreground />
             </Box>
           </ThemeProvider>
-          <ThemeProvider name="dark-only-spectrum" spectrum="dark">
+          <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
             <Box background="background" height={30} padding={1}>
               <LogoWordmark foreground />
             </Box>

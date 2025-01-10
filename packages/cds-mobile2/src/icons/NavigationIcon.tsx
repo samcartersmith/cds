@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { NavigationBaseIconProps } from '@cbhq/cds-common2/types/NavigationBaseIconProps';
 
 import { Icon } from './Icon';

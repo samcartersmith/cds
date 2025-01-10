@@ -93,7 +93,6 @@ export const Default = (props: Partial<TrayBaseProps>) => {
             <ListCell
               key={item.title}
               media={<CellMedia source={media} type="avatar" />}
-              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
               onPress={() => handleOptionPress(index)}
               {...item}
             />
@@ -128,7 +127,6 @@ export const WithStickyFooter = () => {
 
   const renderItem = useCallback(
     ({ index, item }: { index: number; item: ListCellProps }) => {
-      // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       return <ListCell onPress={() => handleOptionPress(index)} {...item} />;
     },
     [handleOptionPress],

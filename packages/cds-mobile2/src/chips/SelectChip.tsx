@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useCallback, useEffect, useRef } from 'react';
 import { GestureResponderEvent, View } from 'react-native';
 import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common2/animation/select';
-import { useMergedRef } from '@cbhq/cds-common2/hooks/useMergedRef';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import { DrawerRefBaseProps, SelectBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
 
@@ -60,7 +60,7 @@ export const SelectChip = memo(
 
       const trayRef = useRef<DrawerRefBaseProps>(null);
       const internalRef = useRef(null);
-      const refs = useMergedRef(ref, internalRef);
+      const refs = useMergeRefs(ref, internalRef);
 
       const handleCloseTray = useCallback(() => {
         trayRef.current?.handleClose();

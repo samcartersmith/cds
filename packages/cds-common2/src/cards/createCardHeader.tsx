@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { gutter } from '../tokens/sizing';
 import type { AvatarBaseProps, TextBaseProps } from '../types';
 import type { CardBoxProps, CardHeaderProps } from '../types';

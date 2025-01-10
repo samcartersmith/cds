@@ -5,7 +5,6 @@ import {
   IllustrationNamesMap,
   IllustrationVariant,
   PictogramDimension,
-  Spectrum,
   SpotIconDimension,
 } from '@cbhq/cds-common2';
 import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common2/tokens/illustrations';
@@ -15,8 +14,10 @@ import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/d
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
+import { ColorScheme } from '../../core/theme';
 import { Divider, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { TextLegal } from '../../typography';
 import {
   HeroSquare,
@@ -85,18 +86,18 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
   type IllustrationName = IllustrationNamesMap[Type];
 
   const names = images[type] as IllustrationName[];
-  type DataItem = { name: IllustrationName; spectrum: Spectrum };
+  type DataItem = { name: IllustrationName; colorScheme: ColorScheme };
 
   const data: DataItem[] = [];
 
   names.forEach((name) => {
     data.push({
       name,
-      spectrum: 'light' as const,
+      colorScheme: 'light' as const,
     });
     data.push({
       name,
-      spectrum: 'dark' as const,
+      colorScheme: 'dark' as const,
     });
   });
 
@@ -109,7 +110,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
     const dim = `${SIZES[type].width}x${SIZES[type].height}` as const;
 
     return (
-      <ThemeProvider name="default" scale="xSmall" spectrum={item.spectrum}>
+      <ThemeProvider activeColorScheme={item.colorScheme} theme={defaultTheme}>
         <VStack
           background="background"
           overflow="hidden"
@@ -173,7 +174,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
     []);
 
     const keyExtractor = useCallback(function keyExtractor(item: DataItem) {
-      return `${type}-${item.name}-${item.spectrum}`;
+      return `${type}-${item.name}-${item.colorScheme}`;
     }, []);
 
     return (

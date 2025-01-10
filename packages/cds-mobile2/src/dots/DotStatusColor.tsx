@@ -1,11 +1,10 @@
 import React, { memo, useMemo } from 'react';
 import { View, ViewStyle } from 'react-native';
-import { useIconSize } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { DotBaseProps, DotVariant } from '@cbhq/cds-common2/types/DotBaseProps';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
 import { getTransform } from './dotStyles';
 import { useDotsLayout } from './useDotsLayout';
@@ -21,7 +20,7 @@ const variantColorMap: Record<DotVariant, ThemeVars.Color> = {
 export const DotStatusColor = memo(
   ({ variant, pin, size = 's', children, overlap, ...props }: DotBaseProps) => {
     const theme = useTheme();
-    const { iconSize } = useIconSize(size);
+    const iconSize = theme.iconSize[size];
     const [childrenSize, onLayout] = useDotsLayout();
 
     const transforms = useDotPinStyles(childrenSize, iconSize, overlap);

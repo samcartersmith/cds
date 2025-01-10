@@ -15,8 +15,8 @@ import { useProgressSize } from '@cbhq/cds-common2/visualizations/useProgressSiz
 import { isTest } from '@cbhq/cds-utils';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
+import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout';
-import { useTheme } from '../system/ThemeProvider';
 
 import { ProgressTextLabel } from './ProgressTextLabel';
 import { VisualizationContainer } from './VisualizationContainer';

@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import { FlexStyles } from './BoxBaseProps';
 

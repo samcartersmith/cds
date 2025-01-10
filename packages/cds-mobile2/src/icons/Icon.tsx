@@ -1,14 +1,17 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, Text, TextStyle } from 'react-native';
-import { useIconSize } from '@cbhq/cds-common2/hooks/useIconSize';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
-import type { IconBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type {
+  IconBaseProps,
+  IconSourcePixelSize,
+  SharedAccessibilityProps,
+} from '@cbhq/cds-common2/types';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
-import { useTheme } from '../system';
 
 import { IconOutline } from './IconOutline';
 
@@ -26,6 +29,12 @@ export type IconProps = IconBaseProps & {
   animated?: boolean;
   style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
+
+export const getIconSourceSize = (iconSize: number): IconSourcePixelSize => {
+  if (iconSize <= 12) return 12;
+  if (iconSize <= 16) return 16;
+  return 24;
+};
 
 export const Icon = memo(function Icon({
   accessibilityLabel,
@@ -50,11 +59,12 @@ export const Icon = memo(function Icon({
   iconType,
 }: IconProps) {
   const TextComponent = animated ? Animated.Text : Text;
-  const { wrapperSize, iconSize, sourceSize } = useIconSize(size, bordered);
-
   const theme = useTheme();
   const iconColor = theme.color[color];
   const finalColor = dangerouslySetColor ?? iconColor;
+  const containerSize = theme.iconSize[size];
+  const iconSize = bordered ? containerSize - 2 : containerSize;
+  const sourceSize = getIconSourceSize(containerSize);
 
   const boxStyles = useMemo(
     () => [
@@ -158,7 +168,7 @@ export const Icon = memo(function Icon({
 
   return (
     <Box animated={animated} style={boxStyles} testID={testID}>
-      <Box alignItems="center" height={wrapperSize} justifyContent="center" width={wrapperSize}>
+      <Box alignItems="center" height={containerSize} justifyContent="center" width={containerSize}>
         <TextComponent
           accessibilityHint={accessibilityHint}
           accessibilityLabel={accessibilityLabel}
@@ -173,7 +183,7 @@ export const Icon = memo(function Icon({
           <IconOutline
             animated={animated}
             color={iconColor}
-            size={wrapperSize}
+            size={containerSize}
             sourceSize={sourceSize}
           />
         )}

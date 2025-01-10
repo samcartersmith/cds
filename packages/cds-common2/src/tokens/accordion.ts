@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 export const accordionSpacing = {
   paddingTop: 2,

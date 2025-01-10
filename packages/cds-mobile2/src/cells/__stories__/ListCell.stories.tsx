@@ -1,7 +1,6 @@
 import React from 'react';
 import { listCellBuilder } from '@cbhq/cds-common2/internal/listCellBuilder';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
-import { entries } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';
@@ -17,7 +16,7 @@ const titlePadding = { paddingX: gutter } as const;
 const ListCellScreen = () => {
   return (
     <ExampleScreen>
-      {entries(stories).map(([name, Component]) => {
+      {Object.entries(stories).map(([name, Component]) => {
         return (
           <Example key={name} inline paddingX={0} title={name} titlePadding={titlePadding}>
             <Component />

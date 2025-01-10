@@ -5,9 +5,9 @@ import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import { colorToHex } from '@cbhq/cds-common2/color/colorToHex';
 
 import { Theme } from '../core/theme';
+import { useTheme } from '../hooks/useTheme';
 
 import { useStatusBarStyle } from './StatusBar';
-import { useTheme } from './ThemeProvider';
 
 export type AndroidNavigationBarProps = {
   theme?: Theme;

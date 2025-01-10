@@ -6,8 +6,8 @@ import { RemoteImageBaseProps } from '@cbhq/cds-common2/types/RemoteImageBasePro
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common2/types/RemoteImageGroupBaseProps';
 import { getRemoteImageGroupOverlapSpacing } from '@cbhq/cds-common2/utils/getRemoteImageGroupOverlapSpacing';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
-import { useTheme } from '../system';
 import { useTypographyStyles } from '../typography/useTypographyStyles';
 
 export const RemoteImageGroup = ({

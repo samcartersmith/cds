@@ -1,6 +1,6 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { useTheme } from '../system';
+import { useTheme } from './useTheme';
 
 export const useSafeBottomPadding = (): number => {
   const { bottom } = useSafeAreaInsets();

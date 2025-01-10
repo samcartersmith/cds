@@ -1,8 +1,16 @@
+import React from 'react';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import { renderHook } from '@testing-library/react-hooks';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { useAndroidNavigationBarUpdater } from '../AndroidNavigationBar';
-import { LightModeProvider } from '../ThemeProvider';
+import { ThemeProvider } from '../ThemeProvider';
+
+const LightModeProvider = ({ children }: { children: React.ReactNode }) => (
+  <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
+    {children}
+  </ThemeProvider>
+);
 
 jest.useFakeTimers();
 jest.mock('react-native-navigation-bar-color');

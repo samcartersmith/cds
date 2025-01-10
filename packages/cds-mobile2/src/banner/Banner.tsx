@@ -1,18 +1,17 @@
 import React, { forwardRef, isValidElement, memo, useCallback, useMemo, useState } from 'react';
 import { Animated, StyleProp, useWindowDimensions, View, ViewStyle } from 'react-native';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { variants } from '@cbhq/cds-common2/tokens/banner';
 import { BannerBaseProps } from '@cbhq/cds-common2/types/BannerBaseProps';
 import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Collapsible } from '../collapsible/Collapsible';
-import { useColorScheme } from '../hooks/useColorScheme';
+import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { useTheme } from '../system';
 import { Pressable } from '../system/Pressable';
 import { Link, LinkProps } from '../typography';
 import { TextBody } from '../typography/TextBody';
@@ -92,7 +91,6 @@ export const Banner = memo(
   ) {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const theme = useTheme();
-    const colorScheme = useColorScheme();
 
     // Measure and configure layout
     const { width } = useWindowDimensions();
@@ -172,7 +170,7 @@ export const Banner = memo(
       const shouldOverride =
         variant === 'warning' || variant === 'promotional' || variant === 'error';
       if (shouldOverride) {
-        const { backgroundColor, borderColor } = stylesForVariant[variant][colorScheme];
+        const { backgroundColor, borderColor } = stylesForVariant[variant][theme.colorScheme];
         return {
           backgroundColor: backgroundColor ? `rgb(${theme.spectrum[backgroundColor]})` : undefined,
           borderColor: `rgb(${theme.spectrum[borderColor]})`,
@@ -181,7 +179,7 @@ export const Banner = memo(
       }
 
       return style;
-    }, [colorScheme, variant, style, theme.spectrum]);
+    }, [variant, style, theme.colorScheme, theme.spectrum]);
 
     // temporary fix for error banner
     const customIconColor = useMemo(
@@ -189,11 +187,11 @@ export const Banner = memo(
         variant === 'error'
           ? {
               dangerouslySetColor: `rgb(${
-                theme.spectrum[colorScheme === 'light' ? 'orange40' : 'orange70']
+                theme.spectrum[theme.colorScheme === 'light' ? 'orange40' : 'orange70']
               })`,
             }
           : {},
-      [variant, colorScheme, theme.spectrum],
+      [variant, theme.colorScheme, theme.spectrum],
     );
 
     return (

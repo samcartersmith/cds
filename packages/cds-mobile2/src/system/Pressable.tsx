@@ -7,8 +7,7 @@ import {
   View,
 } from 'react-native';
 import { ComponentEventHandlerProps } from '@cbhq/cds-common2';
-import { useEventHandler } from '@cbhq/cds-common2/system/useEventHandler';
-import { emptyArray } from '@cbhq/cds-utils';
+import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { HapticFeedbackType } from '../types';
@@ -87,7 +86,7 @@ export const Pressable = memo(
       borderWidth,
       disableDebounce,
       elevation,
-      style = emptyArray,
+      style,
       contentStyle,
       wrapperStyles,
       transparentWhileInactive,
@@ -106,14 +105,9 @@ export const Pressable = memo(
 
     const onPressHandler = useMemo(
       () => (event: GestureResponderEvent) => {
-        if (feedback === 'light') {
-          void Haptics.lightImpact();
-        } else if (feedback === 'normal') {
-          void Haptics.normalImpact();
-        } else if (feedback === 'heavy') {
-          void Haptics.heavyImpact();
-        }
-
+        if (feedback === 'light') void Haptics.lightImpact();
+        else if (feedback === 'normal') void Haptics.normalImpact();
+        else if (feedback === 'heavy') void Haptics.heavyImpact();
         onPress?.(event);
         onEventHandler();
       },
@@ -127,11 +121,8 @@ export const Pressable = memo(
 
     const handlePress = useCallback(
       (event: GestureResponderEvent) => {
-        if (!disableDebounce) {
-          debouncedOnPressHandler(event);
-        } else {
-          onPressHandler(event);
-        }
+        if (!disableDebounce) debouncedOnPressHandler(event);
+        else onPressHandler(event);
       },
       [disableDebounce, debouncedOnPressHandler, onPressHandler],
     );

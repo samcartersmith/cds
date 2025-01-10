@@ -1,14 +1,13 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import { AvatarSize } from './AvatarSize';
 import { Shape } from './Shape';
 import { SharedProps } from './SharedProps';
-import { SpectrumHue } from './Spectrum';
 
 export type AvatarShape = Exclude<Shape, 'rectangle' | 'squircle'>;
 export type AvatarFallback = 'image' | 'text';
 export type FallbackColor = Extract<
-  SpectrumHue,
+  ThemeVars.SpectrumHue,
   'blue' | 'purple' | 'green' | 'teal' | 'pink' | 'gray'
 >;
 

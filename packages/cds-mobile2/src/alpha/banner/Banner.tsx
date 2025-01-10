@@ -6,9 +6,9 @@ import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Collapsible } from '../../collapsible/Collapsible';
+import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons';
 import { Box, HStack, HStackProps, VStack } from '../../layout';
-import { useTheme } from '../../system';
 import { Pressable } from '../../system/Pressable';
 import { Link, LinkProps } from '../../typography';
 import { TextLabel1, TextLabel2, TextLegal } from '../../typography';

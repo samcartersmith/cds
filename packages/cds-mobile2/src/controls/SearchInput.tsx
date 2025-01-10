@@ -14,7 +14,7 @@ import {
   TextInputFocusEventData,
   TextInputProps as RNTextInputProps,
 } from 'react-native';
-import { useMergedRef } from '@cbhq/cds-common2/hooks/useMergedRef';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { IconName } from '@cbhq/cds-common2/types';
 import { SearchInputBaseProps } from '@cbhq/cds-common2/types/SearchInputBaseProps';
 
@@ -66,7 +66,7 @@ export const SearchInput = memo(
     ) => {
       const [startIconName, setStartIconName] = useState<IconName>(startIcon ?? 'search');
       const internalRef = useRef<RNTextInput>(null);
-      const refs = useMergedRef(ref, internalRef);
+      const refs = useMergeRefs(ref, internalRef);
 
       const handleOnFocus = useCallback(
         (e: NativeSyntheticEvent<TextInputFocusEventData>) => {

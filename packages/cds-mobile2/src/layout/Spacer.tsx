@@ -4,7 +4,7 @@ import { FixedValue, SharedProps } from '@cbhq/cds-common2';
 import { SpacerBaseProps } from '@cbhq/cds-common2/types/SpacerBaseProps';
 import { getSpacerStyle } from '@cbhq/cds-common2/utils/getSpacerStyle';
 
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
 export type SpacerProps = SpacerBaseProps &
   SharedProps &

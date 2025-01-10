@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Appearance, Platform, useColorScheme } from 'react-native';
-import { Spectrum } from '@cbhq/cds-common2';
+
+import { ColorScheme } from '../core/theme';
 
 import { useAppState } from './useAppState';
 
 /** Update device preference on app state change for Android. React Native's useColorScheme does not seem to fire on Android on App State change - this fixes that. */
-export const useDeviceSpectrum: () => Spectrum = () => {
+export const useDeviceSpectrum: () => ColorScheme = () => {
   const appState = useAppState();
   const colorSchemeSubscription = useColorScheme();
   const [devicePreference, setDevicePreference] = useState(colorSchemeSubscription);

@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import { type BoxBaseProps } from './BoxBaseProps';
 import { type DotCountBaseProps } from './DotCountBaseProps';

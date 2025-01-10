@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { ButtonVariant } from '../types';
 
 export type ButtonVariantStyles = {

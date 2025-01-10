@@ -27,7 +27,7 @@ import {
 } from '@cbhq/cds-common2/tokens/drawer';
 import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
-import { useColorScheme } from '../../hooks/useColorScheme';
+import { useTheme } from '../../hooks/useTheme';
 import { Box } from '../../layout/Box';
 import { HandleBar } from '../HandleBar/HandleBar';
 import { Overlay } from '../Overlay/Overlay';
@@ -61,6 +61,7 @@ export const Drawer = memo(
     },
     ref,
   ) {
+    const { colorScheme } = useTheme();
     const { width, height } = useWindowDimensions();
     const isAndroid = Platform.OS === 'android';
 
@@ -74,7 +75,6 @@ export const Drawer = memo(
     const [opacityAnimation, animateOverlayIn, animateOverlayOut] = useOverlayAnimation(
       drawerAnimationDefaultDuration,
     );
-    const colorScheme = useColorScheme();
     const spacingStyles = useDrawerSpacing(pin);
     const isMounted = useRef(false);
 

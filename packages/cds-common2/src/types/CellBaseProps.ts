@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { cellPriorities } from '../tokens/cell';
 
 import { FallbackRectWidthProps } from './FallbackBaseProps';

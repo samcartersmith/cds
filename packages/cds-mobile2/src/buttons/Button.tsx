@@ -5,9 +5,9 @@ import type { ButtonBaseProps, ComponentEventHandlerProps } from '@cbhq/cds-comm
 import { getButtonSizeProps } from '@cbhq/cds-common2/utils/getButtonSizeProps';
 import { getButtonSpacingProps } from '@cbhq/cds-common2/utils/getButtonSpacingProps';
 
+import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { useTheme } from '../system';
 import { Pressable, PressableInternalProps, PressableProps } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 

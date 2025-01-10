@@ -1,9 +1,17 @@
 import { Linking, Platform } from 'react-native';
 import { InAppBrowser } from 'react-native-inappbrowser-reborn';
 
-import { darkTheme } from '../../themes/dark';
+import { Theme } from '../../core/theme';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { CustomTabsHelper } from '../customTabsHelper';
 import { openWebBrowser } from '../openWebBrowser';
+
+const darkTheme = {
+  ...defaultTheme,
+  colorScheme: 'dark',
+  spectrum: defaultTheme.darkSpectrum,
+  color: defaultTheme.dark,
+} satisfies Theme;
 
 describe('openWebBrowser', () => {
   it('opens web browser outside of app', async () => {
@@ -34,16 +42,17 @@ describe('openWebBrowser', () => {
     });
     expect(selectPlatform).toHaveBeenCalledWith({
       android: {
+        theme: darkTheme,
         showTitle: true,
         toolbarColor: darkTheme.color.background,
         secondaryToolbarColor: darkTheme.color.lineHeavy,
         enableUrlBarHiding: true,
         enableDefaultShare: true,
         forceCloseOnRedirection: false,
-        spectrum: 'dark',
         forceOpenOutsideApp: false,
       },
       ios: {
+        theme: darkTheme,
         dismissButtonStyle: 'close',
         preferredBarTintColor: darkTheme.color.background,
         preferredControlTintColor: darkTheme.color.backgroundPrimary,
@@ -53,7 +62,6 @@ describe('openWebBrowser', () => {
         modalTransitionStyle: 'crossDissolve',
         modalEnabled: true,
         enableBarCollapsing: false,
-        spectrum: 'dark',
         forceOpenOutsideApp: false,
       },
     });
@@ -68,6 +76,7 @@ describe('openWebBrowser', () => {
     });
     expect(selectPlatform).toHaveBeenCalledWith({
       android: {
+        theme: darkTheme,
         showTitle: true,
         toolbarColor: darkTheme.color.background,
         secondaryToolbarColor: darkTheme.color.lineHeavy,
@@ -75,10 +84,10 @@ describe('openWebBrowser', () => {
         enableDefaultShare: true,
         forceCloseOnRedirection: false,
         readerMode: true,
-        theme: darkTheme,
         forceOpenOutsideApp: false,
       },
       ios: {
+        theme: darkTheme,
         dismissButtonStyle: 'close',
         preferredBarTintColor: darkTheme.color.background,
         preferredControlTintColor: darkTheme.color.backgroundPrimary,
@@ -88,7 +97,6 @@ describe('openWebBrowser', () => {
         modalTransitionStyle: 'crossDissolve',
         modalEnabled: true,
         enableBarCollapsing: false,
-        theme: darkTheme,
         forceOpenOutsideApp: false,
       },
     });

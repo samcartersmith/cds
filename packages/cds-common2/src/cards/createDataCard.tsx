@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { defaultMediaSize } from '../tokens/card';
 import { gutter } from '../tokens/sizing';
 import type {

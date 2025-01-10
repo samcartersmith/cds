@@ -10,9 +10,9 @@ import React, {
 import { TouchableWithoutFeedback } from 'react-native';
 import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common2/animation/select';
 import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
-import { useMergedRef } from '@cbhq/cds-common2/hooks/useMergedRef';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   selectTriggerCompactMinHeight,
   selectTriggerMinHeight,
@@ -71,7 +71,7 @@ export const Select = memo(
       const focusedVariant = useInputVariant(!!isSelectTrayOpen, variant);
       const sanitizedValue = defaultValue === '' ? undefined : defaultValue;
       const internalRef = useRef(null);
-      const refs = useMergedRef(ref, internalRef);
+      const refs = useMergeRefs(ref, internalRef);
       const context = useSelect({ value: sanitizedValue, onChange });
       const { value } = context;
       const { setA11yFocus, announceForA11y } = useA11y();

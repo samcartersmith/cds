@@ -11,10 +11,10 @@ import { getButtonSizeProps } from '@cbhq/cds-common2/utils/getButtonSizeProps';
 import { getButtonSpacingProps } from '@cbhq/cds-common2/utils/getButtonSpacingProps';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
+import { useTheme } from '../hooks/useTheme';
 import { TextIcon } from '../icons/TextIcon';
 import { HStack } from '../layout/HStack';
 import { Pressable, PressableProps } from '../system/Pressable';
-import { useTheme } from '../system/ThemeProvider';
 import { TextLabel1 } from '../typography/TextLabel1';
 
 export type LikeButtonProps = LikeButtonBaseProps & PressableProps;

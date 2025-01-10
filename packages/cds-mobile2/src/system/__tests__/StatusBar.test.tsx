@@ -1,6 +1,7 @@
 import { StatusBar as RNStatusBar } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { useStatusBarStyle, useStatusBarUpdater } from '../StatusBar';
 import { ThemeProvider } from '../ThemeProvider';
 
@@ -14,12 +15,15 @@ jest.mock('react-native/Libraries/Components/StatusBar/StatusBar', () => ({
 }));
 
 const MockDarkMode: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
-  <ThemeProvider name="mock-dark-mode" spectrum="dark">
+  <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
     {children}
   </ThemeProvider>
 );
 const MockCustomPalette: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
-  <ThemeProvider name="mock-custom-palette" palette={{ background: 'orange60' }}>
+  <ThemeProvider
+    activeColorScheme="light"
+    theme={{ ...defaultTheme, light: { ...defaultTheme.light, background: 'orange' } }}
+  >
     {children}
   </ThemeProvider>
 );

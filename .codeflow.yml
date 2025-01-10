@@ -10,7 +10,7 @@ secure:
   auto_assign_reviewers: true
 build:
   engines:
-    # Apps
+    # CSS
     - BaldurECR:
         name: cds-css-upload
         path: ./packages/web/cssupload-production.Dockerfile
@@ -21,6 +21,12 @@ build:
         path: ./packages/web/cssupload-development.Dockerfile
         autobuild_files:
           - packages/web/package.json
+
+    # Apps
+    - BaldurECR:
+        name: cds-next-docs
+        path: ./apps/docs/production.Dockerfile
+        autobuild: true
     - BaldurECR:
         name: cds-storybook
         path: ./apps/storybook/production.Dockerfile

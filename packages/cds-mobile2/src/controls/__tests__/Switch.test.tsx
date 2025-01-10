@@ -116,19 +116,4 @@ describe('Switch.test', () => {
       backgroundColor: 'rgba(0,82,255,1)',
     });
   });
-
-  it('can override default palette', () => {
-    render(
-      <Switch
-        checked
-        onChange={jest.fn()}
-        switchPaletteOverrides={{ primary: 'pink60' }}
-        testID="test-test-id"
-      />,
-    );
-
-    expect(screen.getByTestId('test-test-id')).toHaveStyle({
-      backgroundColor: 'rgba(179,58,162,1)',
-    });
-  });
 });

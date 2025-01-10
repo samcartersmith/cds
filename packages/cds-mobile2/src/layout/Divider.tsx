@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { DividerBaseProps } from '@cbhq/cds-common2';
 
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
 import { Box, BoxProps } from './Box';
 

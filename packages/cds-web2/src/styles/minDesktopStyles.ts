@@ -2,7 +2,7 @@
  * These styles are used to power component style props.
  */
 import { type LinariaClassName, css } from '@linaria/core';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import type { DynamicStyleProps } from './styleProps';
 

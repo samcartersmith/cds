@@ -7,9 +7,9 @@ import { getButtonSpacingProps } from '@cbhq/cds-common2/utils/getButtonSpacingP
 import { memoize } from '@cbhq/cds-common2/utils/memoize';
 
 import { Theme } from '../core/theme';
+import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { Pressable, PressableProps } from '../system/Pressable';
-import { useTheme } from '../system/ThemeProvider';
 
 export type IconButtonProps = IconButtonBaseProps &
   PressableProps & {

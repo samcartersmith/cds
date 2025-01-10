@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { FallbackColor } from '../types';
 
 type FallbackColorMap = Record<FallbackColor, ThemeVars.SpectrumColor>;

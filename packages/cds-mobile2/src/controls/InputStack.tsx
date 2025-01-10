@@ -1,17 +1,17 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common2/tokens/borderRadius';
 import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common2/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { InputStackBaseProps, InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
 import { useLayout } from '../hooks/useLayout';
+import { useTheme } from '../hooks/useTheme';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { ColorSurge } from '../motion/ColorSurge';
-import { useTheme } from '../system';
 
 export type InputStackProps = {
   /** Adds border styling to input  */

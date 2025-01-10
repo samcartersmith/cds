@@ -3,6 +3,7 @@ import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { ThemeProvider } from '../../system';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { Switch } from '../Switch';
 
 const SwitchScreen = () => {
@@ -39,7 +40,13 @@ const SwitchScreen = () => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const [isChecked, { toggle }] = useToggler(true);
           return (
-            <ThemeProvider name="switch-provider" palette={{ primary: 'pink50' }}>
+            <ThemeProvider
+              activeColorScheme="light"
+              theme={{
+                ...defaultTheme,
+                light: { ...defaultTheme.light, backgroundPrimary: 'pink' },
+              }}
+            >
               <Switch checked={isChecked} onChange={toggle}>
                 Default
               </Switch>

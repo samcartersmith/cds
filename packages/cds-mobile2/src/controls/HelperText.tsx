@@ -1,9 +1,9 @@
 import React, { memo, useMemo } from 'react';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { IconSize, IconSourcePixelSize } from '@cbhq/cds-common2/types/IconSize';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 import { TextLabel2, TextProps } from '../typography';
 
 export type HelperTextProps = {

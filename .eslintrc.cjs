@@ -36,6 +36,13 @@ module.exports = {
         'react/react-in-jsx-scope': 'error',
       },
     },
+    // Story overrides
+    {
+      files: ['**/*.stories.ts', '**/*.stories.tsx'],
+      rules: {
+        'react-perf/jsx-no-new-function-as-prop': 'off',
+      },
+    },
     // Jest configs
     {
       files: [

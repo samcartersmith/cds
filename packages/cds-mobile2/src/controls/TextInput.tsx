@@ -17,16 +17,16 @@ import {
   TextInputProps as RNTextInputProps,
 } from 'react-native';
 import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
-import { useMergedRef } from '@cbhq/cds-common2/hooks/useMergedRef';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 import { TextInputBaseProps } from '@cbhq/cds-common2/types/TextInputBaseProps';
 
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
+import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { useTheme } from '../system';
 import { TextLabel1 } from '../typography/TextLabel1';
 
 import { TextInputFocusVariantContext } from './context';
@@ -106,7 +106,7 @@ export const TextInput = memo(
       const [focused, setFocused] = useState(false);
       const focusedVariant = useInputVariant(focused, variant);
       const internalRef = useRef<RNTextInput>(null);
-      const refs = useMergedRef(ref, internalRef);
+      const refs = useMergeRefs(ref, internalRef);
       const { borderFocusedStyle, borderUnfocusedStyle } = useInputBorderStyle(
         focused,
         variant,

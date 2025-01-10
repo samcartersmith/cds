@@ -10,13 +10,13 @@ import {
   ViewStyle,
 } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
+import { useTheme } from '../hooks/useTheme';
 import { Spacer } from '../layout/Spacer';
-import { useTheme } from '../system';
 import { TextProps } from '../typography/createText';
 import { TextBody } from '../typography/TextBody';
 import { Haptics } from '../utils/haptics';

@@ -3,10 +3,9 @@ import { TextInput as RNTextInput, TextInput, TextInputProps, ViewStyle } from '
 import { SharedProps, TextBaseProps, TextInputBaseProps } from '@cbhq/cds-common2';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 
-import { useColorScheme } from '../hooks/useColorScheme';
 import { useInputTextStyles } from '../hooks/useInputStyles';
 import { useTextAlign } from '../hooks/useTextAlign';
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
 export type NativeInputProps = {
   /**
@@ -52,7 +51,6 @@ export const NativeInput = memo(
       ref: React.ForwardedRef<TextInput>,
     ) => {
       const theme = useTheme();
-      const colorScheme = useColorScheme();
       const textAlignInputTransformed = useTextAlign(align).textAlign;
       const inputTextStyle = useInputTextStyles('foreground');
 
@@ -95,7 +93,7 @@ export const NativeInput = memo(
           accessibilityLabel={accessibilityLabel}
           accessibilityRole="search"
           editable={!disabled}
-          keyboardAppearance={colorScheme}
+          keyboardAppearance={theme.colorScheme}
           placeholderTextColor={theme.color.textForegroundMuted}
           style={inputRootStyles}
           testID={testID}

@@ -2,7 +2,7 @@ import React from 'react';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { useTheme } from '../../system';
+import { useTheme } from '../../hooks/useTheme';
 import { TextBody, TextLabel1 } from '../../typography';
 import { LinearGradient } from '../LinearGradient';
 

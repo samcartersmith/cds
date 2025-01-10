@@ -1,4 +1,4 @@
-/* eslint-disable react-perf/jsx-no-new-array-as-prop, react-perf/jsx-no-new-function-as-prop */
+/* eslint-disable react-perf/jsx-no-new-array-as-prop */
 import { useCallback, useState } from 'react';
 import { DateInputValidationError } from '@cbhq/cds-common/dates/DateInputValidationError';
 import { LocaleProvider } from '@cbhq/cds-common/system/LocaleProvider';

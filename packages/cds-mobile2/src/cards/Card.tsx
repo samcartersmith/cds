@@ -1,11 +1,11 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, DimensionValue, StyleProp, ViewStyle } from 'react-native';
-import { usePinBorderRadiusStyles } from '@cbhq/cds-common2/hooks/usePinBorderRadiusStyles';
 import { cardSizes } from '@cbhq/cds-common2/tokens/card';
 import type { CardBaseProps } from '@cbhq/cds-common2/types';
 
-import { usePinStyles } from '../hooks/usePinStyles';
+import { useTheme } from '../hooks/useTheme';
 import { VStack } from '../layout/VStack';
+import { pinStyles } from '../styles/pinStyles';
 import { Pressable, PressableProps } from '../system/Pressable';
 
 export type CardProps = {
@@ -18,6 +18,38 @@ export type CardProps = {
   style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
 } & CardBaseProps &
   Pick<PressableProps, 'onPress'>;
+
+const getBorderRadiusPinStyle = (borderRadius: number) => ({
+  top: {
+    borderBottomRightRadius: borderRadius,
+    borderBottomLeftRadius: borderRadius,
+    borderTopRightRadius: 0,
+    borderTopLeftRadius: 0,
+    borderTopWidth: 0,
+  },
+  right: {
+    borderTopLeftRadius: borderRadius,
+    borderBottomLeftRadius: borderRadius,
+    borderBottomRightRadius: 0,
+    borderTopRightRadius: 0,
+    borderRightWidth: 0,
+  },
+  bottom: {
+    borderTopRightRadius: borderRadius,
+    borderTopLeftRadius: borderRadius,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    borderBottomWidth: 0,
+  },
+  left: {
+    borderTopRightRadius: borderRadius,
+    borderBottomRightRadius: borderRadius,
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
+    borderLeftWidth: 0,
+  },
+  all: {},
+});
 
 export const Card = memo(function OldCard({
   children,
@@ -38,12 +70,13 @@ export const Card = memo(function OldCard({
 }: CardProps) {
   const width = widthProps ?? cardSizes[size].width;
   const height = heightProps ?? cardSizes[size].height;
-  const pinStyles = usePinStyles(pin);
-  const borderRadiusOverrides = usePinBorderRadiusStyles(pin, 200);
-  const contentStyles = useMemo(
-    () => [borderRadiusOverrides, style],
-    [borderRadiusOverrides, style],
-  );
+  const theme = useTheme();
+
+  const borderRadiusPinStyle = useMemo(() => {
+    return pin ? getBorderRadiusPinStyle(theme.borderRadius[200])[pin] : undefined;
+  }, [pin, theme]);
+
+  const contentStyles = useMemo(() => [borderRadiusPinStyle, style], [borderRadiusPinStyle, style]);
 
   const content = (
     <VStack
@@ -70,7 +103,11 @@ export const Card = memo(function OldCard({
       borderRadius={borderRadius}
       elevation={elevation}
       onPress={onPress}
-      style={{ ...pinStyles, width: width as DimensionValue, height: height as DimensionValue }}
+      style={{
+        ...(pin ? pinStyles[pin] : undefined),
+        width: width as DimensionValue,
+        height: height as DimensionValue,
+      }}
       testID={testID}
       {...pressableProps}
     >

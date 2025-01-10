@@ -3,8 +3,8 @@ import { Animated, StyleSheet, View } from 'react-native';
 import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common2';
 
 import { DotCount } from '../dots/DotCount';
+import { useTheme } from '../hooks/useTheme';
 import { HStack } from '../layout';
-import { useTheme } from '../system';
 import { TextHeadline, TextTitle3, TextTitle4 } from '../typography';
 import { TextProps } from '../typography/createText';
 

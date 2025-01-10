@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { StackBaseProps, TextBaseProps } from '../types';
 
 import { svgs } from './data/assets';

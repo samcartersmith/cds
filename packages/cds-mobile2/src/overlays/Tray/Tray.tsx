@@ -60,8 +60,8 @@ export const Tray = memo(
                 alignItems="center"
                 onLayout={onTitleLayout}
                 paddingBottom={2}
-                paddingX={3}
                 paddingTop={3}
+                paddingX={3}
               >
                 <TextTitle3>{title}</TextTitle3>
               </HStack>

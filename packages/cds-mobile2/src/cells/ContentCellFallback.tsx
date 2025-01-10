@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 import { ContentCellFallbackProps } from '@cbhq/cds-common2';
 import { getRectWidthVariant } from '@cbhq/cds-common2/utils/getRectWidthVariant';
 
+import { useTheme } from '../hooks/useTheme';
 import { Fallback } from '../layout';
-import { useTheme } from '../system';
 
 import { ContentCell } from './ContentCell';
 import { MediaFallback } from './MediaFallback';

@@ -15,9 +15,9 @@ import {
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
 
 import { useContentSize } from '../hooks/useContentSize';
+import { useTheme } from '../hooks/useTheme';
 import { convertMotionConfigs } from '../motion/convertMotionConfig';
 import { withMotionTiming } from '../motion/withMotionTiming';
-import { useTheme } from '../system';
 
 const ReanimatedView = Animated.createAnimatedComponent(View);
 

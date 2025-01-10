@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react-native';
-import { normalScaleMap } from '@cbhq/cds-common2';
 import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 
 import { ThemeProvider } from '../../system';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { RemoteImage } from '../RemoteImage';
 
 const mockSvgFetch = async () =>
@@ -14,9 +14,8 @@ const mockSvgFetch = async () =>
 
 describe('RemoteImage', () => {
   it('shouldApplyDarkModeEnhacements border styles takes precedence over custom borderColor and passes a11y', () => {
-    const spectrum = 'dark';
     render(
-      <ThemeProvider name="remoteimage-test-theme-provider" spectrum={spectrum}>
+      <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <RemoteImage
           shouldApplyDarkModeEnhacements
           borderColor="backgroundPrimary"
@@ -35,9 +34,8 @@ describe('RemoteImage', () => {
     });
   });
   it('darkModeEnhancementsApplied border styles takes precedence over custom borderColor and passes a11y', () => {
-    const spectrum = 'dark';
     render(
-      <ThemeProvider name="remoteimage-test-theme-provider" spectrum={spectrum}>
+      <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <RemoteImage
           darkModeEnhancementsApplied
           borderColor="backgroundPrimary"
@@ -70,7 +68,7 @@ describe('RemoteImage', () => {
 
   it('if width/height/size is not set, it will default to size = m. Passes a11y', () => {
     render(<RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />);
-    const avatarSizeM = normalScaleMap.m;
+    const avatarSizeM = 16;
 
     const image = screen.queryByTestId('remoteimage');
 

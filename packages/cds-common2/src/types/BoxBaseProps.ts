@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import { DimensionStyles, DimensionValue } from './DimensionStyles';
 import { ElevationLevels } from './ElevationLevels';

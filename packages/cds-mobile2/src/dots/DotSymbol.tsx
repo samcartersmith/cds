@@ -6,13 +6,13 @@ import {
   ImageSourcePropType,
   View,
 } from 'react-native';
-import { DotSymbolBaseProps, useIconSize } from '@cbhq/cds-common2';
+import { DotSymbolBaseProps } from '@cbhq/cds-common2';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
+import { useTheme } from '../hooks/useTheme';
 import { type IconProps, Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
-import { useTheme } from '../system';
 
 import { getTransform } from './dotStyles';
 import { useDotsLayout } from './useDotsLayout';
@@ -43,7 +43,7 @@ export const DotSymbol = memo(
     ...props
   }: DotSymbolProps) => {
     const theme = useTheme();
-    const { iconSize } = useIconSize(size);
+    const iconSize = theme.iconSize[size];
     const [childrenSize, onChildrenLayout] = useDotsLayout();
     const dotIsIcon = iconName !== undefined;
     const transforms = useDotPinStyles(

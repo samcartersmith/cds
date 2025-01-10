@@ -1,6 +1,6 @@
 import React, { memo, useContext } from 'react';
 import { InputVariant, SharedAccessibilityProps } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { Icon, IconProps } from '../icons/Icon';

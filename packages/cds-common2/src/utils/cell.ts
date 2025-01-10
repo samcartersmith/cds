@@ -1,5 +1,3 @@
-import { arrayIncludes } from '@cbhq/cds-utils/array';
-
 import { CellPriority } from '../types';
 
 export const hasCellPriority = (
@@ -7,8 +5,6 @@ export const hasCellPriority = (
   priority?: CellPriority | CellPriority[],
 ) => {
   if (!priority) return false;
-  if (Array.isArray(priority)) {
-    return arrayIncludes(priority, priorityToMatch);
-  }
+  if (Array.isArray(priority)) return priority.includes(priorityToMatch);
   return priority === priorityToMatch;
 };

@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import { useCallback, useState } from 'react';
 import { Meta } from '@storybook/react';
 import startCase from 'lodash/startCase';

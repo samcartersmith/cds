@@ -8,7 +8,7 @@ import {
   EventHandlerConfig,
   EventHandlerContext,
   EventHandlerCustomConfig,
-} from './EventHandlerProvider';
+} from '../system/EventHandlerProvider';
 
 const noOp = () => {};
 

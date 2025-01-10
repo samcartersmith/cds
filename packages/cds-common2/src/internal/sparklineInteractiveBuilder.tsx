@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
 
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { ChartData, ChartDataPoint, ChartFormatAmount, ChartScrubParams } from '../types/Chart';
 import { SparklineInteractiveBaseProps } from '../types/SparklineInteractiveBaseProps';
 import {

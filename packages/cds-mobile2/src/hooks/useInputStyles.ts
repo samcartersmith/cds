@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
 import { InputVariant } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
-import { useTheme } from '../system/ThemeProvider';
 import { useTypographyStyles } from '../typography';
+
+import { useTheme } from './useTheme';
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   primary: 'textPrimary',

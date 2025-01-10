@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
 import { Animated, LayoutChangeEvent, View } from 'react-native';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Box } from '../../layout/Box';
 

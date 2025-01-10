@@ -5,13 +5,13 @@ import {
   useSubBrandLogoWordmark,
 } from '@cbhq/cds-common2/hooks/useSubBrandLogo';
 
-import { useColorScheme } from '../hooks/useColorScheme';
+import { useTheme } from '../hooks/useTheme';
 
 export type SubBrandLogoWordmarkProps = SubBrandLogoWordmarkParams;
 
 export const SubBrandLogoWordmark = memo(
   (props: Omit<SubBrandLogoWordmarkProps, 'colorScheme'>) => {
-    const colorScheme = useColorScheme();
+    const { colorScheme } = useTheme();
     const { logoColor, typeColor, viewBox, logoPath, typePath } = useSubBrandLogoWordmark({
       ...props,
       colorScheme,

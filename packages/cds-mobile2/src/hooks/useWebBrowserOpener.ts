@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 import { Linking } from 'react-native';
 
-import { useTheme } from '../system/ThemeProvider';
 import { openWebBrowser, OpenWebBrowserOptions } from '../utils/openWebBrowser';
+
+import { useTheme } from './useTheme';
 
 export const useWebBrowserOpener = () => {
   const theme = useTheme();

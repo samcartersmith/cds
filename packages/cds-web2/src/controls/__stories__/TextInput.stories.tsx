@@ -2,7 +2,7 @@
 import React from 'react';
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { css } from '@linaria/core';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
 import { Icon } from '../../icons/Icon';

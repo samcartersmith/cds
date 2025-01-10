@@ -1,17 +1,16 @@
 import React from 'react';
 
 import { Button } from '../../buttons';
-import { Theme } from '../../core/theme';
+import type { ThemeConfig } from '../../core/theme';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { useColorScheme } from '../../hooks/useColorScheme';
+import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout/VStack';
-import { darkTheme } from '../../themes/dark';
-import { lightTheme } from '../../themes/light';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { TextBody } from '../../typography';
 import { ThemeProvider } from '../ThemeProvider';
 
 const Child = ({ expectedColorScheme }: { expectedColorScheme: string }) => {
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useTheme();
 
   return (
     <VStack background="background">
@@ -54,25 +53,25 @@ const Child = ({ expectedColorScheme }: { expectedColorScheme: string }) => {
 
 const ChildThemeProviderDark = () => {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
       <Child expectedColorScheme="dark" />
     </ThemeProvider>
   );
 };
 
 const customLightTheme = {
-  ...lightTheme,
-  color: {
-    ...lightTheme.color,
-    backgroundSecondary: 'blue50',
-    backgroundPrimary: 'red20',
-    background: 'orange50',
+  ...defaultTheme,
+  light: {
+    ...defaultTheme.light,
+    backgroundSecondary: defaultTheme.lightSpectrum.blue50,
+    backgroundPrimary: defaultTheme.lightSpectrum.red20,
+    background: defaultTheme.lightSpectrum.orange50,
   },
-} satisfies Theme;
+} satisfies ThemeConfig;
 
 const ChildThemeWithOverrides = () => {
   return (
-    <ThemeProvider theme={customLightTheme}>
+    <ThemeProvider activeColorScheme="light" theme={customLightTheme}>
       <TextBody>With theme overrides</TextBody>
       <Child expectedColorScheme="light" />
     </ThemeProvider>
@@ -80,18 +79,18 @@ const ChildThemeWithOverrides = () => {
 };
 
 const customDarkTheme = {
-  ...darkTheme,
-  color: {
-    ...darkTheme.color,
-    backgroundSecondary: 'blue50',
-    backgroundPrimary: 'red20',
-    background: 'orange50',
+  ...defaultTheme,
+  dark: {
+    ...defaultTheme.dark,
+    backgroundSecondary: defaultTheme.darkSpectrum.blue50,
+    backgroundPrimary: defaultTheme.darkSpectrum.red20,
+    background: defaultTheme.darkSpectrum.orange50,
   },
-} satisfies Theme;
+} satisfies ThemeConfig;
 
 const ChildThemeWithOverridesDark = () => {
   return (
-    <ThemeProvider theme={customDarkTheme}>
+    <ThemeProvider activeColorScheme="dark" theme={customDarkTheme}>
       <TextBody>With theme overrides</TextBody>
       <Child expectedColorScheme="dark" />
     </ThemeProvider>
@@ -100,8 +99,8 @@ const ChildThemeWithOverridesDark = () => {
 
 const ChildThemeWithNestedOverrides = () => {
   return (
-    <ThemeProvider theme={customLightTheme}>
-      <ThemeProvider theme={lightTheme}>
+    <ThemeProvider activeColorScheme="light" theme={customLightTheme}>
+      <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
         <TextBody>With theme overrides</TextBody>
         <Child expectedColorScheme="light" />
       </ThemeProvider>
@@ -111,8 +110,8 @@ const ChildThemeWithNestedOverrides = () => {
 
 const ChildThemeWithNestedOverridesDark = () => {
   return (
-    <ThemeProvider theme={customDarkTheme}>
-      <ThemeProvider theme={darkTheme}>
+    <ThemeProvider activeColorScheme="dark" theme={customDarkTheme}>
+      <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <TextBody>With theme overrides</TextBody>
         <Child expectedColorScheme="dark" />
       </ThemeProvider>
@@ -124,7 +123,7 @@ const ThemeProviderTest = () => {
   return (
     <ExampleScreen>
       <Example title="Nested ThemeProviders">
-        <ThemeProvider theme={lightTheme}>
+        <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
           <VStack gap={3}>
             <Child expectedColorScheme="light" />
             <ChildThemeProviderDark />

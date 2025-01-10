@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { normalScaleMap } from '@cbhq/cds-common2/hooks/useIconSize';
 
 import { Icon } from '../../icons/Icon';
 import { DotSymbol } from '../DotSymbol';
@@ -25,7 +24,7 @@ describe('DotSymbol', () => {
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTSYMBOL_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+      nativeEvent: { layout: { height: 12, width: 12 } },
     });
 
     expect(screen.getByTestId('dotsymbol-remote-image').props.source).toEqual({ uri: src });
@@ -35,7 +34,7 @@ describe('DotSymbol', () => {
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTSYMBOL_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+      nativeEvent: { layout: { height: 12, width: 12 } },
     });
 
     expect(screen.getByTestId('dotsymbol-remote-image').props.source).toEqual({ uri: src });
@@ -51,7 +50,7 @@ describe('DotSymbol', () => {
   });
 
   it('Placed in the correct position relative to its children', () => {
-    const iconSize = normalScaleMap.l;
+    const iconSize = 24;
     const dotSize = 16;
 
     render(

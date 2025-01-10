@@ -6,8 +6,8 @@ import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { DotStatusColor } from '../../dots';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useTheme } from '../../hooks/useTheme';
 import { Carousel } from '../../media';
-import { useTheme } from '../../system/ThemeProvider';
 import { TextLabel2 } from '../../typography';
 import { ContainedAssetCard, ContainedAssetCardProps } from '../ContainedAssetCard';
 

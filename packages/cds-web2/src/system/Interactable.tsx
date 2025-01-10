@@ -1,6 +1,6 @@
 import React, { createElement, forwardRef, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';

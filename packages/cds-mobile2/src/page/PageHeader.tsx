@@ -1,6 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { View } from 'react-native';
-import { useScaleConditional } from '@cbhq/cds-common2/scale/useScaleConditional';
 import { pageHeaderHeight } from '@cbhq/cds-common2/tokens/page';
 import { PageHeaderBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
 
@@ -14,20 +13,19 @@ export const PageHeader = memo(
     { start, title, end, ...props }: PageHeaderBaseProps,
     ref: React.ForwardedRef<View>,
   ) {
-    const headerHeight = useScaleConditional(pageHeaderHeight);
     const isMultiRow = useMemo(() => Boolean(start && title && end), [start, end, title]);
 
     return (
       <VStack ref={ref} accessibilityRole="header" {...props}>
         <HStack
           alignItems="center"
-          height={headerHeight}
+          height={pageHeaderHeight}
           justifyContent={isMultiRow ? 'space-between' : undefined}
           paddingY={1}
         >
           {!!start && <Box paddingX={3}>{start}</Box>}
           {!isMultiRow && (
-            <Box flexGrow={1} paddingRight={end ? 0 : 3} paddingLeft={start ? 0 : 3}>
+            <Box flexGrow={1} paddingLeft={start ? 0 : 3} paddingRight={end ? 0 : 3}>
               {typeof title === 'string' ? <TextTitle1>{title}</TextTitle1> : title}
             </Box>
           )}

@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { TagColorScheme, TagIntent } from '../types/TagBaseProps';
 
 export const horizontalSpacing = {

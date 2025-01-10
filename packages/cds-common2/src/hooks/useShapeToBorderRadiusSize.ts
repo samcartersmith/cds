@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { borderRadius as borderRadiusTokens } from '../tokens/borderRadius';
 import { Shape } from '../types';
 

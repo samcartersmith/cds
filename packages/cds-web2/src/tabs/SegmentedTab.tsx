@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { motion } from 'framer-motion';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { type TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';

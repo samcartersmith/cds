@@ -4,9 +4,9 @@ import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useTheme } from '../../hooks/useTheme';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { useTheme } from '../../system';
 import { PressableOpacity } from '../../system/PressableOpacity';
 import { TextBody } from '../../typography';
 import { Icon } from '../Icon';

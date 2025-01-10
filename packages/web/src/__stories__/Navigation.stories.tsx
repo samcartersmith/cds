@@ -46,7 +46,6 @@ export const NavigationRecipe = () => {
             <SidebarItem
               key={`sidebar-item--${props.title}`}
               active={index === activeIndex}
-              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
               onPress={() => handleItemPress(index)}
               tooltipContent={props.title}
               {...props}

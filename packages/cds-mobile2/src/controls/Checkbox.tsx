@@ -2,9 +2,8 @@ import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import { ControlBaseProps } from '@cbhq/cds-common2';
 
+import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
-import * as scaleStyles from '../styles/scale';
-import { useTheme } from '../system';
 import { Interactable } from '../system/Interactable';
 
 import { Control, ControlIconProps, ControlProps } from './Control';

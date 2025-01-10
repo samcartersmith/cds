@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useIndexCounter } from '@cbhq/cds-common/hooks/useIndexCounter';

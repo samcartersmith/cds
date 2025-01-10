@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { useTheme } from '../../system';
 import { TextBody } from '../../typography/TextBody';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';

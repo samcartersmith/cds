@@ -8,14 +8,14 @@ import {
   ViewStyle,
 } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { type TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { borderRadius as borderRadii } from '@cbhq/cds-common2/tokens/borderRadius';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout';
-import { useTheme } from '../system';
 import { TextHeadline } from '../typography';
 
 import { tabsSpringConfig } from './Tabs';

@@ -13,23 +13,30 @@ import {
   dotScaleEnterConfig,
   dotScaleExitConfig,
 } from '@cbhq/cds-common2/motion/dot';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   dotCountContent,
   dotCountSize,
   dotOuterContainerStyles,
 } from '@cbhq/cds-common2/tokens/dot';
 import { DotCountBaseProps, DotCountVariants } from '@cbhq/cds-common2/types/DotCountBaseProps';
-import { parseDotCountMaxOverflow } from '@cbhq/cds-common2/utils/parseDotCountMaxOverflow';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
+import { useTheme } from '../hooks/useTheme';
 import { convertMotionConfigs } from '../motion/convertMotionConfig';
 import { withMotionTiming } from '../motion/withMotionTiming';
-import { useTheme } from '../system';
 import { TextCaption } from '../typography/TextCaption';
 
 import { getTransform } from './dotStyles';
 import { useDotsLayout } from './useDotsLayout';
+
+// If a badge count is greater than max (optional, defaults at 99), it should
+// truncate the numbers so its x+.
+export const MAX_OVERFLOW_COUNT = 99;
+
+export const parseDotCountMaxOverflow = (count: number, max: number = MAX_OVERFLOW_COUNT) => {
+  return count <= max ? count : `${max}+`;
+};
 
 const [opacityEnter, opacityExit, scaleEnter, scaleExit] = convertMotionConfigs([
   dotOpacityEnterConfig,

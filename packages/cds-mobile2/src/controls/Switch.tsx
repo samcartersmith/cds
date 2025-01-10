@@ -1,19 +1,16 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { PressableProps, StyleSheet, View } from 'react-native';
-import { NewPartialPaletteConfig } from '@cbhq/cds-common2';
 import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 import { Interactable } from '../system/Interactable';
-import { ThemeProvider, useTheme } from '../system/ThemeProvider';
 
 import { Control, ControlIconProps } from './Control';
 
 export type SwitchProps = {
   /** Triggered when switch is toggled. */
   onChange?: () => void;
-  /** The palette to override default switch control palette. */
-  switchPaletteOverrides?: NewPartialPaletteConfig;
 } & Omit<ControlBaseProps<string>, 'value'> &
   Omit<PressableProps, 'disabled' | 'children' | 'style'>;
 
@@ -79,15 +76,11 @@ const SwitchIcon = ({
 };
 
 const SwitchWithRef = forwardRef(function SwitchWithRef(
-  { children, switchPaletteOverrides, ...props }: SwitchProps,
+  { children, ...props }: SwitchProps,
   ref: React.ForwardedRef<View>,
 ) {
   const theme = useTheme();
   const { switchHeight } = theme.control;
-  const palette = useMemo(
-    () => switchPaletteOverrides ?? switchControlPalette,
-    [switchPaletteOverrides],
-  );
 
   const switchNode = (
     <Control
@@ -102,19 +95,12 @@ const SwitchWithRef = forwardRef(function SwitchWithRef(
     </Control>
   );
 
-  return (
-    <ThemeProvider
-      name={`switch-control${switchPaletteOverrides ? '-overrides' : ''}`}
-      palette={palette}
-    >
-      {children ? (
-        <Box alignItems="center" flexDirection="row" minHeight={switchHeight}>
-          {switchNode}
-        </Box>
-      ) : (
-        switchNode
-      )}
-    </ThemeProvider>
+  return children ? (
+    <Box alignItems="center" flexDirection="row" minHeight={switchHeight}>
+      {switchNode}
+    </Box>
+  ) : (
+    switchNode
   );
 });
 

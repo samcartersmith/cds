@@ -1,5 +1,8 @@
 import type { Property } from 'csstype';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+
+export type ColorScheme = 'light' | 'dark';
+export type ColorSchemePreference = ColorScheme | 'system';
 
 export type ThemeConfig = {
   lightSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
@@ -100,6 +103,3 @@ type UnionToIntersection<U> = (U extends unknown ? (x: U) => void : never) exten
 
 /** A flat object of the CSS variable names of all themeable vars, based on the Theme type. */
 export type ThemeCSSVars = UnionToIntersection<ThemeObjectCssVars[keyof ThemeObjectCssVars]>;
-
-export type ColorScheme = 'light' | 'dark';
-export type ColorSchemePreference = ColorScheme | 'system';

@@ -8,7 +8,7 @@ import {
 } from '@cbhq/cds-common2/hooks/useFallbackShape';
 
 import { LinearGradient } from '../gradients/LinearGradient';
-import { useColorScheme } from '../hooks/useColorScheme';
+import { useTheme } from '../hooks/useTheme';
 import { fallbackShimmer } from '../styles/fallbackShimmer';
 
 import { Box, BoxProps } from './Box';
@@ -33,7 +33,7 @@ export const Fallback = memo(function Fallback({
 
   const { width, borderRadius } = useFallbackShape(shape, baseWidth, fallbackShapeOptions);
 
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useTheme();
   const shimmerColor = colorScheme === 'light' ? fallbackShimmer.light : fallbackShimmer.dark;
   const shimmerPosition = useRef(new Animated.Value(-1));
 

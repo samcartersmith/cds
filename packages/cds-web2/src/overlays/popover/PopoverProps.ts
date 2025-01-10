@@ -1,6 +1,6 @@
 import React from 'react';
 import { Placement, PositioningStrategy } from '@popperjs/core';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 

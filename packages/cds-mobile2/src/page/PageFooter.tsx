@@ -1,6 +1,5 @@
 import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
-import { useScaleConditional } from '@cbhq/cds-common2/scale/useScaleConditional';
 import { pageFooterHeight } from '@cbhq/cds-common2/tokens/page';
 import { PageFooterBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
 
@@ -11,14 +10,12 @@ export const PageFooter = memo(
     { action, ...props }: PageFooterBaseProps,
     ref: React.ForwardedRef<View>,
   ) {
-    const footerHeight = useScaleConditional(pageFooterHeight);
-
     return (
       <Box
         ref={ref}
         accessibilityRole="toolbar"
         alignItems="center"
-        height={footerHeight}
+        height={pageFooterHeight}
         paddingX={3}
         paddingY={1.5}
         {...props}

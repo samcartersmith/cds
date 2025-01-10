@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { css } from '@linaria/core';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';

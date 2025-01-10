@@ -7,8 +7,8 @@ import { ProgressBaseProps } from '@cbhq/cds-common2/types/ProgressBaseProps';
 import { useProgressSize } from '@cbhq/cds-common2/visualizations/useProgressSize';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
+import { useTheme } from '../hooks/useTheme';
 import { Box, HStack, VStack } from '../layout';
-import { useTheme } from '../system';
 
 export const ProgressBar = memo(
   forwardRef(

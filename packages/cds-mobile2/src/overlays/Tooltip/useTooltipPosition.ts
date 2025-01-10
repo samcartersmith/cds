@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
 import { IOS_BOTTOM_NAV_BAR_HEIGHT, useDimensions } from '../../hooks/useDimensions';
-import { useTheme } from '../../system';
+import { useTheme } from '../../hooks/useTheme';
 
 import { TooltipPlacement, UseTooltipPositionParams } from './TooltipProps';
 

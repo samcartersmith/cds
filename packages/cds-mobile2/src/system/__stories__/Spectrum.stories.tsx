@@ -2,9 +2,9 @@ import React from 'react';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout/VStack';
 import { TextCaption } from '../../typography/TextCaption';
-import { useTheme } from '../ThemeProvider';
 
 const hueNames = [
   'blue',

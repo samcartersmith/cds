@@ -6,8 +6,6 @@ import { DotCount } from '../DotCount';
 
 const DOTCOUNT_TESTID = 'dot-count-test';
 
-const normalScaleMap = { xxxl: 56, xxl: 48, xl: 40, l: 32, m: 24, s: 16 };
-
 describe('DotCount', () => {
   beforeEach(() => {
     jest.useFakeTimers();
@@ -34,7 +32,7 @@ describe('DotCount', () => {
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+      nativeEvent: { layout: { height: 16, width: 16 } },
     });
   });
 
@@ -43,7 +41,7 @@ describe('DotCount', () => {
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+      nativeEvent: { layout: { height: 16, width: 16 } },
     });
 
     expect(screen.getByText('1')).toBeTruthy();
@@ -54,7 +52,7 @@ describe('DotCount', () => {
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+      nativeEvent: { layout: { height: 16, width: 16 } },
     });
 
     expect(screen.queryByText('0')).toBeNull();
@@ -70,7 +68,7 @@ describe('DotCount', () => {
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+      nativeEvent: { layout: { height: 16, width: 16 } },
     });
 
     expect(screen.getByText('99+')).toBeTruthy();

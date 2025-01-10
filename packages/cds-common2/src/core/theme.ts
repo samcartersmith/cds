@@ -1,5 +1,5 @@
 /**
- * The core CDS Theme types.
+ * The core CDS Theme variable types.
  */
 export namespace ThemeVars {
   export type SpectrumHue =

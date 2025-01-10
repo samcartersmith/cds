@@ -111,7 +111,6 @@ export const ObjectValueModel = () => {
       active={value !== undefined}
       content={content}
       end={<Icon color="foreground" name={value.iconName} size="s" />}
-      // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       onChange={(newValue: string) => handleChange(newValue)}
       value={value.value}
       valueLabel={value.label}

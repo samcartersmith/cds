@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react-native';
-import { normalScaleMap } from '@cbhq/cds-common2';
 import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common2/types/RemoteImageGroupBaseProps';
 
@@ -72,8 +71,8 @@ describe('RemoteImageGroup', () => {
       const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
-        width: normalScaleMap.m,
-        height: normalScaleMap.m,
+        width: 16,
+        height: 16,
       });
     });
   });
@@ -120,8 +119,8 @@ describe('RemoteImageGroup', () => {
       const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
-        width: normalScaleMap.l,
-        height: normalScaleMap.l,
+        width: 24,
+        height: 24,
       });
     });
   });
@@ -137,7 +136,7 @@ describe('RemoteImageGroup', () => {
     const excessText = screen.getByTestId(`${TEST_ID}-excess-text`);
 
     expect(excessText).toHaveStyle({
-      fontSize: normalScaleMap.m * 0.4,
+      fontSize: 16 * 0.4,
     });
   });
 

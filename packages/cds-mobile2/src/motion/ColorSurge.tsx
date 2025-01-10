@@ -15,7 +15,7 @@ import type {
   MotionBaseSpec,
 } from '@cbhq/cds-common2';
 import { colorSurgeEnterConfig, colorSurgeExitConfig } from '@cbhq/cds-common2/motion/hint';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { Box } from '../layout';

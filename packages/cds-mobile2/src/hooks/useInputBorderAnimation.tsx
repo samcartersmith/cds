@@ -4,11 +4,12 @@ import {
   animateInputBorderInConfig,
   animateInputBorderOutConfig,
 } from '@cbhq/cds-common2/animation/border';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { useTheme } from '../system';
+
+import { useTheme } from './useTheme';
 
 type InputBorderAnimationReturnType = {
   animateInputBorderIn: Animated.CompositeAnimation;

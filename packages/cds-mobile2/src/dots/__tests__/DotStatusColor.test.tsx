@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { normalScaleMap } from '@cbhq/cds-common2/hooks/useIconSize';
 
 import { Icon } from '../../icons/Icon';
 import { DotStatusColor } from '../DotStatusColor';
@@ -25,7 +24,7 @@ describe('DotStatusColor', () => {
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTSTATUSCOLOR_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+      nativeEvent: { layout: { height: 12, width: 12 } },
     });
   });
 
@@ -40,7 +39,7 @@ describe('DotStatusColor', () => {
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTSTATUSCOLOR_TESTID}-children`), 'layout', {
-      nativeEvent: { layout: { height: normalScaleMap.s, width: normalScaleMap.s } },
+      nativeEvent: { layout: { height: 12, width: 12 } },
     });
   });
 
@@ -51,7 +50,7 @@ describe('DotStatusColor', () => {
   });
 
   it('can change size to small', () => {
-    const iconSize = normalScaleMap.s;
+    const iconSize = 12;
 
     render(<DotStatusColor size="s" testID={DOTSTATUSCOLOR_TESTID} variant="negative" />);
 
@@ -77,7 +76,7 @@ describe('DotStatusColor', () => {
   });
 
   it('Placed in the correct position relative to its children', () => {
-    const iconSize = normalScaleMap.l;
+    const iconSize = 24;
     const dotSize = 16;
 
     render(

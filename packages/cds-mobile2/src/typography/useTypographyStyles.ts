@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
 function getMonoFont(fontFamily: string) {
   const [, weight] = fontFamily.split('-');

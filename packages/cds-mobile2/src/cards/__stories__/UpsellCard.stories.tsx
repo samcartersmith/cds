@@ -5,10 +5,9 @@ import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { useLargeTextStyles } from '../../hooks/useLargeTextStyles';
+import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout';
 import { Carousel } from '../../media';
-import { useTheme } from '../../system/ThemeProvider';
 import { TextHeadline, TextLabel2, TextTitle3 } from '../../typography';
 import { UpsellCard } from '../UpsellCard';
 
@@ -58,7 +57,6 @@ const UpsellCardScreen = () => {
   const customBackgroundColor = `rgb(${theme.spectrum.purple70})`;
 
   const defaultBackground = `rgb(${theme.spectrum.teal20})`;
-  const largeTextStyle = useLargeTextStyles();
 
   const windowWidth = useWindowDimensions().width;
   const carouselCardWidth = windowWidth - 48;
@@ -90,14 +88,12 @@ const UpsellCardScreen = () => {
           }
           dangerouslySetBackground={customTextNodeBackgroundColor}
           description={
-            <TextLabel2 dangerouslySetColor={customTextNodeColor} style={largeTextStyle}>
+            <TextLabel2 dangerouslySetColor={customTextNodeColor}>
               Start your free 30 day trial of Coinbase One
             </TextLabel2>
           }
           title={
-            <TextHeadline dangerouslySetColor={customTextNodeColor} style={largeTextStyle}>
-              Coinbase One
-            </TextHeadline>
+            <TextHeadline dangerouslySetColor={customTextNodeColor}>Coinbase One</TextHeadline>
           }
         />
       </Example>
@@ -106,14 +102,12 @@ const UpsellCardScreen = () => {
           {...exampleProps}
           dangerouslySetBackground={customBackgroundColor}
           description={
-            <TextLabel2 dangerouslySetColor={customTextNodeColor} style={largeTextStyle}>
+            <TextLabel2 dangerouslySetColor={customTextNodeColor}>
               Start your free 30 day trial of Coinbase One
             </TextLabel2>
           }
           title={
-            <TextHeadline dangerouslySetColor={customTextNodeColor} style={largeTextStyle}>
-              Coinbase One
-            </TextHeadline>
+            <TextHeadline dangerouslySetColor={customTextNodeColor}>Coinbase One</TextHeadline>
           }
         />
       </Example>

@@ -15,7 +15,7 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common2/tabs/useTabs';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';

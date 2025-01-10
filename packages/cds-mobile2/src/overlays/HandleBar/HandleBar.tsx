@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 import { handleBarHeight, handleBarOffset } from '@cbhq/cds-common2/tokens/drawer';
 
-import { useTheme } from '../../system';
+import { useTheme } from '../../hooks/useTheme';
 
 export const HandleBar = (props: ViewProps) => {
   const theme = useTheme();

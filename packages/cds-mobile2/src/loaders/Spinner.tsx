@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 import { ActivityIndicator, ActivityIndicatorProps } from 'react-native';
 
-import { useColorScheme } from '../hooks/useColorScheme';
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
 export const Spinner = memo(function Spinner({
   size = 'small',
@@ -10,9 +9,8 @@ export const Spinner = memo(function Spinner({
   ...props
 }: ActivityIndicatorProps) {
   const theme = useTheme();
-  const colorScheme = useColorScheme();
   const color =
-    colorScheme === 'dark' ? theme.color.backgroundOverlay : theme.color.backgroundPrimary;
+    theme.colorScheme === 'dark' ? theme.color.backgroundOverlay : theme.color.backgroundPrimary;
 
   return <ActivityIndicator animating={animating} color={color} size={size} {...props} />;
 });

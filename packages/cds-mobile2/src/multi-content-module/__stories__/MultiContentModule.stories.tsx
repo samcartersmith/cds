@@ -9,7 +9,7 @@ import { CellMedia } from '../../cells';
 import { ListCell } from '../../cells';
 import { TextInput } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { useColorScheme } from '../../hooks/useColorScheme';
+import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons';
 import { Divider, HStack, VStack } from '../../layout';
 import { Box } from '../../layout';
@@ -34,7 +34,7 @@ type SocialMediaItem = {
 const onPressConsole = () => console.log('onPress');
 
 const PasskeyIcon = () => {
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useTheme();
   const size = 24;
   const fill = colorScheme === 'dark' ? 'white' : 'black';
 
@@ -49,7 +49,7 @@ const PasskeyIcon = () => {
 };
 
 const GoogleIcon = () => {
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useTheme();
   const size = 24;
   const fill = colorScheme === 'dark' ? 'white' : 'black';
   return (
@@ -87,7 +87,7 @@ const GoogleIcon = () => {
 };
 
 const AppleIcon = () => {
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useTheme();
   const size = 24;
   const fill = colorScheme === 'dark' ? 'white' : 'black';
   return (
@@ -230,7 +230,7 @@ export const WithEnd = () => {
   const end = (
     <VStack gap={1} paddingX={3}>
       <VStack>
-        <HStack justifyContent="center" zIndex={1}>
+        <HStack justifyContent="center" zIndex="interactable">
           <Box background="background" paddingX={1.5}>
             <TextBody color="textForegroundMuted">OR</TextBody>
           </Box>

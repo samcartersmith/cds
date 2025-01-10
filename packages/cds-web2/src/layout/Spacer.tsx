@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import type { Polymorphic } from '../core/polymorphism';
 

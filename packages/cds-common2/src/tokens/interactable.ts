@@ -1,6 +1,6 @@
-import { SpectrumHueStep } from '../types';
+import { ThemeVars } from '../core/theme';
 
-export const opacityHovered: Record<SpectrumHueStep, number> = {
+export const opacityHovered: Record<ThemeVars.SpectrumHueStep, number> = {
   0: 0.98,
   5: 0.98,
   10: 0.97,
@@ -16,7 +16,7 @@ export const opacityHovered: Record<SpectrumHueStep, number> = {
   100: 0.88,
 } as const;
 
-export const opacityPressed: Record<SpectrumHueStep, number> = {
+export const opacityPressed: Record<ThemeVars.SpectrumHueStep, number> = {
   0: 0.92,
   5: 0.92,
   10: 0.91,

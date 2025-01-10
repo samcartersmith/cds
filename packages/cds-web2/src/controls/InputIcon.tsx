@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useContext } from 'react';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 

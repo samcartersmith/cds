@@ -3,13 +3,13 @@ import React, { memo } from 'react';
 import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common2/tokens/illustrations';
 import type { IllustrationVariant } from '@cbhq/cds-common2/types/IllustrationNames';
 import type { IllustrationNamesMap } from '@cbhq/cds-common2/types/IllustrationProps';
-import type { Spectrum } from '@cbhq/cds-common2/types/Spectrum';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
 import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/data/versionMap';
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
+import { ColorScheme } from './core/theme';
 import { HStack } from './layout/HStack';
 import { VStack } from './layout/VStack';
 import { Text } from './text/Text';
@@ -85,9 +85,9 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
   endIndex,
 }: IllustrationSheetProps<Type>) {
   type IllustrationName = IllustrationNamesMap[Type];
-  type DataItem = { name: IllustrationName; spectrum: Spectrum };
+  type DataItem = { name: IllustrationName; colorScheme: ColorScheme };
   type LocalIllustrationProps = {
-    spectrum: Spectrum;
+    colorScheme: ColorScheme;
     name: IllustrationName;
     version: number;
   };
@@ -101,27 +101,27 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
     .reduce(
       (acc: DataItem[], name) => [
         ...acc,
-        { name, spectrum: 'light' as const },
-        { name, spectrum: 'dark' as const },
+        { name, colorScheme: 'light' as const },
+        { name, colorScheme: 'dark' as const },
       ],
       [],
     );
 
   const LocalIllustration = memo(function LocalIllustration({
-    spectrum,
+    colorScheme,
     name,
     version,
   }: LocalIllustrationProps) {
     // TO DO: svgPath pulled from local repo previously from generated illustrations which are obtained via figma-sync script
     // To DO: requires resolving storybook and static dir imports
-    // const svgPath = `@cbhq/cds-illustrations/src/__generated__/${type}/svg/${spectrum}/${name}-${version}.svg`
+    // const svgPath = `@cbhq/cds-illustrations/src/__generated__/${type}/svg/${colorScheme}/${name}-${version}.svg`
 
-    const svgPath = `https://static-assets.coinbase.com/ui-infra/illustration/v1/${type}/svg/${spectrum}/${name}-${version}.svg`;
+    const svgPath = `https://static-assets.coinbase.com/ui-infra/illustration/v1/${type}/svg/${colorScheme}/${name}-${version}.svg`;
 
     return <img alt={name} height={height} src={svgPath} width={width} />;
   });
 
-  const renderItem = ({ name, spectrum }: DataItem) => {
+  const renderItem = ({ name, colorScheme }: DataItem) => {
     return (
       <VStack
         alignItems="flex-start"
@@ -131,7 +131,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
         overflow="hidden"
         width={width}
       >
-        <LocalIllustration name={name} spectrum={spectrum} version={versionMap[name]} />
+        <LocalIllustration colorScheme={colorScheme} name={name} version={versionMap[name]} />
         <Text as="p" style={{ whiteSpace: 'nowrap' }}>
           {name}
         </Text>

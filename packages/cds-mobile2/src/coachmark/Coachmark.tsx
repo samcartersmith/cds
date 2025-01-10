@@ -3,8 +3,8 @@ import { useWindowDimensions, View } from 'react-native';
 import { CoachmarkBaseProps } from '@cbhq/cds-common2';
 
 import { IconButton } from '../buttons';
+import { useTheme } from '../hooks/useTheme';
 import { Box, HStack, VStack } from '../layout';
-import { useTheme } from '../system';
 import { TextBody, TextHeadline } from '../typography';
 
 export type CoachmarkProps = CoachmarkBaseProps;

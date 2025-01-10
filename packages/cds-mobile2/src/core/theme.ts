@@ -1,5 +1,8 @@
 import type { TextStyle, ViewStyle } from 'react-native';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+
+export type ColorScheme = 'light' | 'dark';
+export type ColorSchemePreference = ColorScheme | 'system';
 
 type Shadow = {
   shadowColor?: ViewStyle['shadowColor'];
@@ -8,10 +11,11 @@ type Shadow = {
   shadowRadius?: ViewStyle['shadowRadius'];
 };
 
-export type Theme = {
-  spectrum: { [key in ThemeVars.SpectrumColor]: string };
-  color: { [key in ThemeVars.Color]: string };
-  illustrationColor: { [key in ThemeVars.IllustrationColor]: string };
+export type ThemeConfig = {
+  lightSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
+  darkSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
+  light?: { [key in ThemeVars.Color]: string };
+  dark?: { [key in ThemeVars.Color]: string };
   space: { [key in ThemeVars.Space]: number };
   iconSize: { [key in ThemeVars.IconSize]: number };
   avatarSize: { [key in ThemeVars.AvatarSize]: number };
@@ -26,37 +30,8 @@ export type Theme = {
   control: { [key in ThemeVars.ControlSize]: number };
 };
 
-export type ColorScheme = 'light' | 'dark';
-export type ColorSchemePreference = ColorScheme | 'system';
-
-export type ThemeMetadata = {
-  colorScheme?: ColorScheme;
-  contrast?: 'less' | 'more';
+export type Theme = ThemeConfig & {
+  colorScheme: ColorScheme;
+  spectrum: { [key in ThemeVars.SpectrumColor]: string };
+  color: { [key in ThemeVars.Color]: string };
 };
-
-export type ThemeConfig = Theme & {
-  metadata?: ThemeMetadata;
-};
-
-// -------------------
-// Begin subthemes
-// -------------------
-export type ColorTheme = Pick<Theme, 'color'>;
-
-export type IllustrationColorTheme = Pick<Theme, 'illustrationColor'>;
-
-export type DensityTheme = Pick<
-  Theme,
-  | 'space'
-  | 'iconSize'
-  | 'avatarSize'
-  | 'fontFamily'
-  | 'fontSize'
-  | 'fontWeight'
-  | 'lineHeight'
-  | 'avatarSize'
-  | 'control'
->;
-// -------------------
-// End subthemes
-// -------------------

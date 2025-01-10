@@ -1,7 +1,7 @@
 import React from 'react';
 import { Area, Line } from 'd3-shape';
 
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import type {
   ChartData,

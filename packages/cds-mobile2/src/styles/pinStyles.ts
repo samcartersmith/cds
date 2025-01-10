@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { PinningDirection } from '@cbhq/cds-common2';
 
-const styles = StyleSheet.create({
+export const pinStyles = StyleSheet.create({
   top: {
     position: 'absolute',
     top: 0,
@@ -28,7 +27,3 @@ const styles = StyleSheet.create({
   },
   all: StyleSheet.absoluteFillObject,
 });
-
-export const usePinStyles = (pin?: PinningDirection) => {
-  return pin ? styles[pin] : undefined;
-};

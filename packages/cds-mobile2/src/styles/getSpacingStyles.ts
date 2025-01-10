@@ -1,6 +1,6 @@
 import { I18nManager, ViewStyle } from 'react-native';
 import { InternalSpacingProps } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { memoize } from '@cbhq/cds-common2/utils/memoize';
 
 import * as scales from './scale';

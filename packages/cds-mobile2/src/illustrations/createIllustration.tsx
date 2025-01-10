@@ -8,7 +8,7 @@ import { convertSizeWithMultiplier } from '@cbhq/cds-common2/utils/convertSizeWi
 import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common2/utils/getDefaultSizeObjectForIllustration';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { useColorScheme } from '../hooks/useColorScheme';
+import { useTheme } from '../hooks/useTheme';
 
 type IllustrationConfigShape = Record<string, { light: () => string; dark: () => string }>;
 
@@ -37,7 +37,7 @@ export function createIllustration<
     accessibilityHint,
     accessibilityLabel,
   }: IllustrationProps) {
-    const colorScheme = useColorScheme();
+    const { colorScheme } = useTheme();
     const requireFn = config[name]?.[colorScheme];
 
     const xml = useMemo(() => requireFn?.(), [requireFn]);

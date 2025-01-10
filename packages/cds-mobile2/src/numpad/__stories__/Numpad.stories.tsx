@@ -7,9 +7,9 @@ import { Button, ButtonGroup } from '../../buttons';
 import { TextInput } from '../../controls';
 import { ExampleScreen } from '../../examples/ExampleScreen';
 import { useSafeBottomPadding } from '../../hooks/useSafeBottomPadding';
+import { useTheme } from '../../hooks/useTheme';
 import { Box, HStack, VStack } from '../../layout';
 import { Modal, ModalBody, ModalHeader } from '../../overlays';
-import { useTheme } from '../../system/ThemeProvider';
 import { TextBody, TextHeadline } from '../../typography';
 import { DELETE, Numpad, NumpadValue, SEPARATOR } from '../Numpad';
 

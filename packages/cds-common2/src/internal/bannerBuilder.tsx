@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { LinkBaseProps } from '../types';
 import { BannerBaseProps } from '../types/BannerBaseProps';
 import { TextBaseProps } from '../types/TextBaseProps';

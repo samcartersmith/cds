@@ -1,4 +1,4 @@
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { PositionStyles } from '@cbhq/cds-common2/types/BoxBaseProps';
 import type {
   BaseTooltipPlacement,

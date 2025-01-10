@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { Animated, StyleSheet, Text, TextStyle } from 'react-native';
-import { IconPixelSize, IconSourcePixelSize } from '@cbhq/cds-common2';
+import { IconSourcePixelSize } from '@cbhq/cds-common2';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
 type IconOutlineProps = {
   animated: boolean;
-  size: IconPixelSize;
+  size: number;
   sourceSize: IconSourcePixelSize;
   color: string;
 };

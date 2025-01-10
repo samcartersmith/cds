@@ -1,9 +1,9 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import useMeasure from 'react-use-measure';
 import { type MotionProps, type Transition, motion } from 'framer-motion';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common2/tabs/useTabs';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';

@@ -8,17 +8,19 @@ import {
   TextStyle,
 } from 'react-native';
 import { SharedProps, TextBaseProps } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import { isChildrenFalsy } from '@cbhq/cds-common2/utils/isChildrenFalsy';
-import { pascalCase } from '@cbhq/cds-utils';
 
 import { useTextAlign } from '../hooks/useTextAlign';
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 import { getAdjustsFontSizeToFitProp } from '../utils/getAdjustsFontSizeToFitProp';
 
 import { useTypographyStyles } from './useTypographyStyles';
+
+const pascalCase = (string: string) =>
+  string.replace(/\w+/g, (word) => word[0].toUpperCase() + word.charAt(0).toLowerCase());
 
 const styles = StyleSheet.create({
   tabularNumbers: {

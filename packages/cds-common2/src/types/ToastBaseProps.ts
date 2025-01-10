@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import { DimensionValue } from './DimensionStyles';
 import { OverlayLifecycleProps } from './OverlayLifecycleProps';

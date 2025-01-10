@@ -99,7 +99,6 @@ export * from './SparklineBaseProps';
 export * from './SparklineInteractiveBaseProps';
 export * from './SparklineInteractiveHeaderBaseProps';
 export * from './SparklinePathBaseProps';
-export * from './Spectrum';
 export * from './StickyFooterProps';
 export * from './TabbedChipsBaseProps';
 export * from './TabsProps';

@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
-import type { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { inputStackGap } from '@cbhq/cds-common2/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';

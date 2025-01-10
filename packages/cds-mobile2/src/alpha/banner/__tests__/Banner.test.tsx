@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
-import { Link, TextBody } from '../../../typography';
+import { TextBody } from '../../../typography';
 import { Banner, MobileBannerProps } from '../Banner';
 
 const TEST_ID = 'test-banner';
@@ -18,8 +18,6 @@ const MockBanner = ({
     <TextBody>Banner content</TextBody>
   </Banner>
 );
-
-const action = <Link to="https://www.coinbase.com">Link</Link>;
 
 describe('Banner', () => {
   it('renders a Banner', () => {

@@ -1,6 +1,6 @@
 import { UiIconName } from '@cbhq/cds-icons';
 
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import { IconSize } from './IconSize';
 

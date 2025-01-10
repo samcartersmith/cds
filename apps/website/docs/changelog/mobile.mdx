@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Stop enforcing memoization in Storybook files. [[#3495](https://github.cbhq.net/frontend/cds/pull/3495)]
+
 ## 7.6.3 ((1/7/2025, 04:44 PM PST))
 
 This is an artificial version bump with no new change.

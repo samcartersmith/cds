@@ -4,9 +4,9 @@ import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 
 import { Button } from '../buttons';
 import { useA11y } from '../hooks/useA11y';
+import { useTheme } from '../hooks/useTheme';
 import { Box, HStack } from '../layout';
 import { ColorSurge } from '../motion/ColorSurge';
-import { useTheme } from '../system/ThemeProvider';
 import { TextHeadline } from '../typography';
 
 import { useToastAnimation } from './useToastAnimation';

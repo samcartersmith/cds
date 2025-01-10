@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 import { BorderedStyles, ElevationLevels } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { borderRadius as borderRadii } from '@cbhq/cds-common2/tokens/borderRadius';
 import { borderWidth as borderWidthTokens } from '@cbhq/cds-common2/tokens/borderWidth';
 import { memoize } from '@cbhq/cds-common2/utils/memoize';
@@ -28,7 +28,6 @@ function getCacheKey({
   borderColor,
   borderWidth,
   elevation,
-  theme,
 }: GetBorderStyleParams) {
   return `${
     elevation ? `elevation-${elevation}` : 'no-elevation'
@@ -46,7 +45,6 @@ export const getBorderStyles = memoize(function getBorderStyles({
   borderRadius,
   borderColor,
   borderWidth,
-  elevation,
   theme,
 }: GetBorderStyleParams) {
   const styles: ViewStyle = {};

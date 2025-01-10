@@ -29,7 +29,7 @@ import {
 } from '@cbhq/cds-common2/tour/useTour';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
 import { DefaultTourMask } from './DefaultTourMask';
 import { DefaultTourStepArrow } from './DefaultTourStepArrow';

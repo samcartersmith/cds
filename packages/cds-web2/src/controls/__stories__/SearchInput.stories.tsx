@@ -26,7 +26,6 @@ export const Default = () => (
           accessibilityHint="Warning text"
           accessibilityLabel="Warning text"
           name="warning"
-          // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
           onClick={() => {}}
           testID="custom-close-iconbtn"
         />

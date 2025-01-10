@@ -29,7 +29,18 @@ const {
   DotSymbolOverlap,
   DotSymbolSizes,
   DotSymbolComplex,
-} = dotBuilder(DotCount, DotStatusColor, DotSymbol, Box, Avatar, TextLabel1, Icon, VStack, HStack);
+} = dotBuilder(
+  DotCount,
+  DotStatusColor,
+  DotSymbol,
+  // @ts-expect-error AndroidAccessibilityProps type's accessibilityLabelledBy allows an array, which is not compatible with BoxBaseProps in common
+  Box,
+  Avatar,
+  TextLabel1,
+  Icon,
+  VStack,
+  HStack,
+);
 
 const DotScreen = () => {
   return (

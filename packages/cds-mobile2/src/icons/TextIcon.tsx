@@ -1,14 +1,13 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, Text, TextStyle } from 'react-native';
 import { IconName } from '@cbhq/cds-common2';
-import { useIconSize } from '@cbhq/cds-common2/hooks/useIconSize';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { useTheme } from '../system';
+import { useTheme } from '../hooks/useTheme';
 
-import { IconProps } from './Icon';
+import { getIconSourceSize, IconProps } from './Icon';
 
 export type TextIconProps = Pick<IconProps, 'color' | 'size' | 'testID'> & {
   name: IconName;
@@ -38,9 +37,10 @@ export const TextIcon = memo(function TextIcon({
   testID,
   style,
 }: TextIconProps) {
-  const Component = animated ? Animated.Text : Text;
-  const { iconSize, sourceSize } = useIconSize(size, false);
   const theme = useTheme();
+  const Component = animated ? Animated.Text : Text;
+  const iconSize = theme.iconSize[size];
+  const sourceSize = getIconSourceSize(iconSize);
   const iconColor = theme.color[color];
 
   const styles = useMemo(

@@ -1,5 +1,7 @@
-import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
+import React, { Fragment, memo, useCallback, useMemo, useRef, useState } from 'react';
 import { Modal as RNModal, TouchableOpacity, View } from 'react-native';
+
+import { InvertedThemeProvider } from '../../system/ThemeProvider';
 
 import { InternalTooltip } from './InternalTooltip';
 import { SubjectLayout, TooltipProps } from './TooltipProps';
@@ -25,7 +27,10 @@ export const Tooltip = memo(
   }: TooltipProps) => {
     const subjectRef = useRef<View | null>(null);
     const [isOpen, setIsOpen] = useState(false);
+    const isVisible = visible !== false && isOpen;
     const [subjectLayout, setSubjectLayout] = useState<SubjectLayout>();
+
+    const WrapperComponent = invertSpectrum ? InvertedThemeProvider : Fragment;
 
     const { opacity, translateY, animateIn, animateOut } = useTooltipAnimation(placement);
 
@@ -81,8 +86,6 @@ export const Tooltip = memo(
       [content, accessibilityLabelForContent, accessibilityHintForContent, handleRequestClose],
     );
 
-    const isVisible = useMemo(() => visible !== false && isOpen, [visible, isOpen]);
-
     return (
       <View ref={subjectRef} collapsable={false}>
         <TouchableOpacity
@@ -108,20 +111,21 @@ export const Tooltip = memo(
             onPress={handleRequestClose}
             style={{ flex: 1 }}
           />
-          <InternalTooltip
-            animateIn={animateIn}
-            content={content}
-            elevation={elevation}
-            gap={gap}
-            invertSpectrum={invertSpectrum}
-            opacity={opacity}
-            placement={placement}
-            subjectLayout={subjectLayout}
-            testID={testID}
-            translateY={translateY}
-            yShiftByStatusBarHeight={yShiftByStatusBarHeight}
-            {...accessibilityPropsForContent}
-          />
+          <WrapperComponent>
+            <InternalTooltip
+              animateIn={animateIn}
+              content={content}
+              elevation={elevation}
+              gap={gap}
+              opacity={opacity}
+              placement={placement}
+              subjectLayout={subjectLayout}
+              testID={testID}
+              translateY={translateY}
+              yShiftByStatusBarHeight={yShiftByStatusBarHeight}
+              {...accessibilityPropsForContent}
+            />
+          </WrapperComponent>
         </RNModal>
       </View>
     );

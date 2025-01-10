@@ -1,11 +1,24 @@
 import { useMemo } from 'react';
 import { LottieSource } from '@cbhq/cds-common2';
 import { colorToHex } from '@cbhq/cds-common2/color/colorToHex';
-import { mapKeys } from '@cbhq/cds-utils';
 
-import { useTheme } from '../system/ThemeProvider';
+import { useTheme } from '../hooks/useTheme';
 
 import { LottieProps } from './LottieProps';
+
+type AnyObject = Record<string, unknown>;
+type StringKey<T> = T extends string ? T : string;
+
+function mapKeys<
+  T extends AnyObject,
+  K extends (value: T[keyof T], key: keyof T, obj: T) => StringKey<unknown>,
+>(obj: T, callbackFn: K) {
+  return Object.keys(obj).reduce((acc, key: keyof T) => {
+    const newKey = callbackFn(obj[key], key, obj) as ReturnType<typeof callbackFn>;
+    acc[newKey] = obj[key];
+    return acc;
+  }, {} as { [key in ReturnType<K>]: T[keyof T] });
+}
 
 /**
  * Override colors of Lottie layers.

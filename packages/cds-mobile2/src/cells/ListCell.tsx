@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import { ListCellBaseProps } from '@cbhq/cds-common2';
 import { compactListHeight, listHeight } from '@cbhq/cds-common2/tokens/cell';
 
-import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { VStack } from '../layout/VStack';
 import { TextBody, TextHeadline } from '../typography';
 
@@ -41,7 +40,6 @@ export const ListCell = memo(function ListCell({
   const minHeight = compact ? compactListHeight : listHeight;
   const accessoryType = selected && !disableSelectionAccessory ? 'selected' : accessory;
   const hasDetails = Boolean(detail || subdetail);
-  const largeTextStyle = useLargeTextStyles();
 
   return (
     <Cell
@@ -72,7 +70,6 @@ export const ListCell = memo(function ListCell({
           <TextHeadline
             ellipsize="tail"
             numberOfLines={description || disableMultilineTitle ? 1 : 2}
-            style={largeTextStyle}
           >
             {title}
           </TextHeadline>
@@ -83,7 +80,6 @@ export const ListCell = memo(function ListCell({
             color="textForegroundMuted"
             ellipsize={multiline ? undefined : 'tail'}
             numberOfLines={multiline ? undefined : title ? 1 : 2}
-            style={largeTextStyle}
           >
             {description}
           </TextBody>

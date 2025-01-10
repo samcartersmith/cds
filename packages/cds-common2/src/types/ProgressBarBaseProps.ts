@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import type { Placement } from './Placement';
 import type { ProgressBaseProps } from './ProgressBaseProps';

@@ -1,10 +1,9 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, Fragment, memo } from 'react';
 import { View } from 'react-native';
 import { chipMaxWidth } from '@cbhq/cds-common2/tokens/chip';
 
-import { useColorScheme } from '../hooks/useColorScheme';
 import { HStack } from '../layout';
-import { Pressable, ThemeProvider } from '../system';
+import { InvertedThemeProvider, Pressable } from '../system';
 import { TextHeadline } from '../typography';
 
 import { ChipProps } from './ChipProps';
@@ -29,11 +28,7 @@ export const Chip = memo(
     }: ChipProps,
     ref: React.ForwardedRef<View>,
   ) {
-    const colorScheme = useColorScheme();
-    const invertedTheme = useMemo(
-      () => (colorScheme === 'light' ? 'dark' : 'light'),
-      [colorScheme],
-    );
+    const WrapperComponent = inverted ? InvertedThemeProvider : Fragment;
 
     const content = (
       <HStack
@@ -61,7 +56,7 @@ export const Chip = memo(
     );
 
     return (
-      <ThemeProvider name="chip-theme" spectrum={inverted ? invertedTheme : theme}>
+      <WrapperComponent>
         {/* this ensures that when a Chip is wrapped in a VStack it won't fill the entire width of the parent */}
         <HStack>
           {onPress ? (
@@ -79,7 +74,7 @@ export const Chip = memo(
             content
           )}
         </HStack>
-      </ThemeProvider>
+      </WrapperComponent>
     );
   }),
 );

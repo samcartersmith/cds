@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import { TagBaseProps } from '@cbhq/cds-common2';
 import { horizontalSpacing, tagColorMap } from '@cbhq/cds-common2/tokens/tags';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box, BoxProps } from '../layout';
-import { useTheme } from '../system';
 import { TextCaption, TextLabel1 } from '../typography';
 
 export const Tag = memo(

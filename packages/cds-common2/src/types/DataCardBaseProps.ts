@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import type { CardBaseProps } from './CardBaseProps';
 import type { SharedProps } from './SharedProps';

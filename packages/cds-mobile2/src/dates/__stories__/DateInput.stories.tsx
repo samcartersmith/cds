@@ -6,7 +6,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons';
 import { Group } from '../../layout/Group';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { darkTheme } from '../../themes/dark';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DateInput } from '../DateInput';
 
 const today = new Date(new Date(2024, 7, 18).setHours(0, 0, 0, 0));
@@ -30,7 +30,7 @@ export const Examples = () => {
           <LocaleProvider locale="ES-es">
             <DateInput {...sharedProps} {...props} />
           </LocaleProvider>
-          <ThemeProvider theme={darkTheme}>
+          <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
             <DateInput {...sharedProps} {...props} />
           </ThemeProvider>
           <DateInput compact {...sharedProps} {...props} />

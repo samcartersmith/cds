@@ -7,8 +7,7 @@ import {
 import { isLightOrDarkColor } from '@cbhq/cds-common2/color/isLightOrDarkColor';
 
 import { Theme } from '../core/theme';
-
-import { useTheme } from './ThemeProvider';
+import { useTheme } from '../hooks/useTheme';
 
 export type StatusBarProps = RNStatusBarProps & {
   theme?: Theme;

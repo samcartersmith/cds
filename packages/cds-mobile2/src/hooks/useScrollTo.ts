@@ -1,7 +1,12 @@
 import { useCallback, useRef } from 'react';
 import { ScrollView } from 'react-native';
-import { AnyRef, CallbackRef, useMergedRef } from '@cbhq/cds-common2/hooks/useMergedRef';
-import { emptyObject } from '@cbhq/cds-utils';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+
+type CallbackRef<T> = (node: T) => void;
+type AnyRef<T> =
+  | React.Ref<T | null | undefined>
+  | CallbackRef<T | null | undefined>
+  | React.MutableRefObject<T | null | undefined>;
 
 export type ScrollRef = CallbackRef<ScrollView> | null;
 export type ScrollToParams = { x?: number; y?: number; animated?: boolean };
@@ -14,12 +19,12 @@ export type ScrollToFns = {
 
 export const useScrollTo = (ref?: AnyRef<ScrollView>): [ScrollRef, ScrollToFns] => {
   const internalRef = useRef<ScrollView>();
-  const scrollRef = useMergedRef(ref, internalRef);
+  const scrollRef = useMergeRefs(ref, internalRef);
   const scrollTo = useCallback(({ x = 0, y = 0, animated = true }: ScrollToParams) => {
     internalRef.current?.scrollTo({ x, y, animated });
   }, []);
 
-  const scrollToEnd = useCallback(({ animated = true }: ScrollToParams = emptyObject) => {
+  const scrollToEnd = useCallback(({ animated = true }: ScrollToParams = {}) => {
     internalRef.current?.scrollToEnd({ animated });
   }, []);
 

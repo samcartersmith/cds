@@ -7,8 +7,8 @@ import {
   Text as NativeText,
 } from 'react-native';
 
+import { useTheme } from '../hooks/useTheme';
 import { type StyleProps, getStyles } from '../styles/styleProps';
-import { useTheme } from '../system/ThemeProvider';
 
 // TO DO: Make elevation and "bordered" props work!!!
 

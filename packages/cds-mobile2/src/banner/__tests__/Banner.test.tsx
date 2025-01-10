@@ -5,8 +5,8 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 import { useDimensions } from '../../hooks/useDimensions';
 import { galaxyScreenDimensions as narrowScreenDimensions } from '../../overlays/Tooltip/__tests__/UseTooltipPositionTestData';
 import { ThemeProvider } from '../../system';
-import { darkTheme } from '../../themes/dark';
-import { Link, TextBody } from '../../typography';
+import { defaultTheme } from '../../themes/defaultTheme';
+import { TextBody } from '../../typography';
 import { Banner, BannerProps } from '../Banner';
 
 const TEST_ID = 'test-banner';
@@ -28,8 +28,6 @@ const MockBanner = ({
     <TextBody>Banner content</TextBody>
   </Banner>
 );
-
-const action = <Link to="https://www.coinbase.com">Link</Link>;
 
 jest.mock('../../hooks/useDimensions');
 const mockUseDimensions = (mocks: ReturnType<typeof useDimensions>) => {
@@ -92,7 +90,7 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
 
   it('renders error banner correctly on dark mode', () => {
     render(
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <MockBanner variant="error" />
       </ThemeProvider>,
     );

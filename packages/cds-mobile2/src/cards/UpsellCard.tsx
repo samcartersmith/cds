@@ -4,7 +4,6 @@ import { UpsellCardBaseProps } from '@cbhq/cds-common2';
 import { upsellCardDefaultWidth, upsellCardMinHeight } from '@cbhq/cds-common2/tokens/card';
 
 import { Button, IconButton } from '../buttons';
-import { useLargeTextStyles } from '../hooks/useLargeTextStyles';
 import { HStack, VStack } from '../layout';
 import { PressableOpacity } from '../system';
 import { TextHeadline, TextLabel2 } from '../typography';
@@ -31,8 +30,6 @@ export const UpsellCard = memo(
     width = upsellCardDefaultWidth,
     onPress,
   }: UpsellCardProps) => {
-    const largeTextStyle = useLargeTextStyles();
-
     const content = (
       <HStack
         alignContent="space-between"
@@ -61,15 +58,9 @@ export const UpsellCard = memo(
             width="70%"
           >
             <VStack gap={1}>
-              {typeof title === 'string' ? (
-                <TextHeadline style={largeTextStyle}>{title}</TextHeadline>
-              ) : (
-                title
-              )}
+              {typeof title === 'string' ? <TextHeadline>{title}</TextHeadline> : title}
               {typeof description === 'string' ? (
-                <TextLabel2 numberOfLines={3} style={largeTextStyle}>
-                  {description}
-                </TextLabel2>
+                <TextLabel2 numberOfLines={3}>{description}</TextLabel2>
               ) : (
                 description
               )}

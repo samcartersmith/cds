@@ -2,7 +2,7 @@ import React, { createContext, memo, useCallback, useMemo, useRef, useState } fr
 import { Animated, View } from 'react-native';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2';
 import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common2/animation/carousel';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { IconButton } from '../../buttons/IconButton';

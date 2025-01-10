@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 import { BannerVariant } from '../types/AlphaBannerBaseProps';
 
 export type BannerVariantStyle = {

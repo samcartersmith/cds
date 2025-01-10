@@ -10,14 +10,13 @@ import React, {
 import { Animated, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
-import { emptyObject } from '@cbhq/cds-utils';
 
 import { useScrollOffset } from '../../hooks/useScrollOffset';
 import { ScrollToParams, useScrollTo } from '../../hooks/useScrollTo';
+import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout/VStack';
-import { useTheme } from '../../system';
 import {
   PROGRESS_INDICATOR_WIDTH,
   ProgressIndicator,
@@ -176,7 +175,7 @@ export const Carousel = memo(
 
       /** Imperatively handling scrolling Carousel to an item. LayoutMap has the index to x coordinate mapping. */
       const scrollToId = useCallback(
-        (id: CarouselId, params: ScrollToParams | undefined = emptyObject) => {
+        (id: CarouselId, params: ScrollToParams | undefined = {}) => {
           const snapPoint = visibleItems.find((item) => item.id === id)?.snapPoint;
           if (snapPoint) {
             scrollTo({ x: snapPoint, ...params });

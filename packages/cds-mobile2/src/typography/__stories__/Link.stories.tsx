@@ -1,7 +1,5 @@
-/* eslint-disable react-native/no-raw-text */
-/* eslint-disable jsx-a11y/anchor-is-valid  */
+/* eslint-disable react-native/no-raw-text, jsx-a11y/anchor-is-valid  */
 import React, { useCallback } from 'react';
-import { capitalize } from '@cbhq/cds-utils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useWebBrowserOpener } from '../../hooks/useWebBrowserOpener';
@@ -22,6 +20,8 @@ const typographies = [
   'caption',
   'legal',
 ] as const;
+
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 
 const links = typographies.map((typography) => (
   <Example key={typography} inline>

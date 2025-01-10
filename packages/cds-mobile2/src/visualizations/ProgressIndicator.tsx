@@ -2,8 +2,8 @@ import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box, BoxProps } from '../layout/Box';
-import { useTheme } from '../system';
 
 export const PROGRESS_INDICATOR_WIDTH = 24;
 

@@ -5,10 +5,9 @@ import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps'
 import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
 
+import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { Group } from '../layout';
-import * as scaleStyles from '../styles/scale';
-import { useTheme } from '../system';
 import { Interactable } from '../system/Interactable';
 
 import { Control, ControlIconProps, ControlProps } from './Control';

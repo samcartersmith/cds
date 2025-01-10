@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 

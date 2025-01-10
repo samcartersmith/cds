@@ -32,7 +32,6 @@ export const DotCountPressable = () => {
     <HStack gap={4}>
       {[1, 10, 20, 50, 100].map((count: number) => {
         return (
-          // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
           <Pressable noScaleOnPress background="transparent" onPress={() => console.log('pressed')}>
             <Box
               accessibilityLabel="test"

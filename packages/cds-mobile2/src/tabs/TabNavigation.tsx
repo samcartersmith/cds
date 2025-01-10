@@ -4,6 +4,7 @@ import { TabNavigationProps, TabProps } from '@cbhq/cds-common2/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useHorizontallyScrollingPressables } from '../hooks/useHorizontallyScrollingPressables';
+import { OverflowGradient } from '../layout';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
@@ -130,7 +131,7 @@ export const TabNavigation = memo(
           ref={forwardedRef}
           background={background}
           overflow={
-            isScrollContentOverflowing && isScrollContentOffscreenRight ? 'gradient' : 'visible'
+            isScrollContentOverflowing && isScrollContentOffscreenRight ? undefined : 'visible'
           }
           testID={testID}
           {...rest}
@@ -156,6 +157,9 @@ export const TabNavigation = memo(
               )}
             </VStack>
           </ScrollView>
+          {isScrollContentOverflowing && isScrollContentOffscreenRight ? (
+            <OverflowGradient />
+          ) : null}
         </Box>
       );
     },

@@ -1,4 +1,4 @@
-/* eslint-disable react/button-has-type, react-perf/jsx-no-new-function-as-prop */
+/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 import {
   OverlayContentContext,

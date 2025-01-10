@@ -3,11 +3,12 @@ import { render, screen } from '@testing-library/react-native';
 
 import { LinearGradient } from '../../gradients/LinearGradient';
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { Box as BoxComponent, BoxProps } from '../Box';
 import { OverflowGradient } from '../OverflowGradient';
 
 const Box = (props: BoxProps) => (
-  <ThemeProvider name="box-test">
+  <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
     <BoxComponent {...props} />
   </ThemeProvider>
 );
@@ -181,7 +182,7 @@ describe('Box', () => {
         right="30px"
         testID="parent"
         top="25%"
-        zIndex={200}
+        zIndex="alert"
       >
         <Text>Child</Text>
       </Box>,
@@ -197,7 +198,7 @@ describe('Box', () => {
       position: 'absolute',
       right: '30px',
       top: '25%',
-      zIndex: 200,
+      zIndex: 7,
     });
   });
 

@@ -1,12 +1,10 @@
 import React, { memo, useMemo } from 'react';
-import { type StyleProp, type ViewStyle, Animated, Falsy, Platform, View } from 'react-native';
+import { type StyleProp, type ViewStyle, Animated, Falsy, View } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
-import { emptyArray } from '@cbhq/cds-utils';
 
+import { useTheme } from '../hooks/useTheme';
 import { getInteractableStyles } from '../styles/getInteractableStyles';
-
-import { useTheme } from './ThemeProvider';
 
 export type InteractableProps = {
   children?: React.ReactNode;
@@ -33,7 +31,7 @@ export const Interactable = memo(function Interactable({
   disabled,
   elevation,
   pressed,
-  style = emptyArray,
+  style,
   contentStyle,
   wrapperStyles,
   transparentWhileInactive,
@@ -65,7 +63,7 @@ export const Interactable = memo(function Interactable({
   const mergedWrapperStyles = useMemo(
     () => [
       block && { flexGrow: 1 },
-      ...style,
+      ...(style ?? []),
       defaultWrapperStyles.static,
       wrapperStyles?.base,
       !transparentWhilePressed && pressed && defaultWrapperStyles.pressed,

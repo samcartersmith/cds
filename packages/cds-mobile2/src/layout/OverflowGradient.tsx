@@ -3,8 +3,8 @@ import { StyleSheet, ViewStyle } from 'react-native';
 import { PinningDirection, SharedProps } from '@cbhq/cds-common2';
 
 import { LinearGradient } from '../gradients/LinearGradient';
-import { usePinStyles } from '../hooks/usePinStyles';
-import { useTheme } from '../system/ThemeProvider';
+import { useTheme } from '../hooks/useTheme';
+import { pinStyles } from '../styles/pinStyles';
 
 export type OverflowGradientProps = {
   pin?: Exclude<PinningDirection, 'all'>;
@@ -36,7 +36,6 @@ export const OverflowGradient = memo(function OverflowGradient({
   testID,
 }: OverflowGradientProps) {
   const theme = useTheme();
-  const pinStyles = usePinStyles(pin);
   const gradientColors = useMemo(
     () => [
       /* Override background to be transparent bc android can't gradient from 'transparent' string */
@@ -52,7 +51,7 @@ export const OverflowGradient = memo(function OverflowGradient({
       end={gradient[pin].end}
       pointerEvents="none"
       start={gradient[pin].start}
-      style={[styles.gradient, pinStyles, style]}
+      style={[styles.gradient, pinStyles[pin], style]}
       testID={testID}
     />
   );

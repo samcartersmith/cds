@@ -11,8 +11,7 @@ import React, {
 import { Animated, Platform, ScrollView, ScrollViewProps, StyleSheet } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
 import { animateOpacityConfig, animateSizeConfig } from '@cbhq/cds-common2/animation/carousel';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
-import { emptyObject } from '@cbhq/cds-utils';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { ScrollToParams, useScrollTo } from '../../hooks/useScrollTo';
@@ -92,7 +91,7 @@ export const Carousel = memo(
       }, []);
       /** Imperatively handling scrolling Carousel to an item. LayoutMap has the index to x coordinate mapping. */
       const scrollToId = useCallback(
-        (id: CarouselItemId, params: ScrollToParams | undefined = emptyObject) => {
+        (id: CarouselItemId, params: ScrollToParams | undefined = {}) => {
           scrollTo({ x: layoutMap[id], ...params });
         },
         [layoutMap, scrollTo],

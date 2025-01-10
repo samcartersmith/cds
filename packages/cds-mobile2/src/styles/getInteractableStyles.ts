@@ -30,7 +30,6 @@ function getCacheKey({
   borderColor,
   borderRadius,
   borderWidth,
-  theme,
   elevation,
 }: GetInteractableStylesParams) {
   const elevationName = elevation ? `elevation-${elevation}` : 'no-elevation';

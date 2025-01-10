@@ -1,7 +1,6 @@
 import { I18nManager, ViewStyle } from 'react-native';
 import { ButtonBaseProps } from '@cbhq/cds-common2';
 import { memoize } from '@cbhq/cds-common2/utils/memoize';
-import { emptyObject } from '@cbhq/cds-utils';
 
 type GetFlushStylesProps = {
   flush: ButtonBaseProps['flush'];
@@ -30,6 +29,6 @@ export const getFlushStyles = memoize(function getFlushStyles({
     marginRight: offsetDirection === 'right' ? Number(spacing.paddingRight ?? 0) * -1 : 0,
   };
 
-  return flush ? style : emptyObject;
+  return flush ? style : {};
 },
 getCacheKey);

@@ -9,9 +9,9 @@ import React, {
   useState,
 } from 'react';
 import { css } from '@linaria/core';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { usePrefixedId } from '@cbhq/cds-common2/hooks/usePrefixedId';
-import { ThemeVars } from '@cbhq/cds-common2/new/vars';
 import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import type { InputVariant, SharedInputProps } from '@cbhq/cds-common2/types/InputBaseProps';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';

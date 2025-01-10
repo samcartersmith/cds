@@ -1,4 +1,4 @@
-import { ThemeVars } from '../new/vars';
+import { ThemeVars } from '../core/theme';
 
 import { BoxBaseProps } from './BoxBaseProps';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';

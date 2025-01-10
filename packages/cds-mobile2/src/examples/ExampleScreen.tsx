@@ -4,10 +4,10 @@ import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 import type { PaddingProps } from '@cbhq/cds-common2/types';
 
 import { Switch } from '../controls/Switch';
+import { useTheme } from '../hooks/useTheme';
 import { Box, BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
-import { useTheme } from '../system';
 import { TextTitle3 } from '../typography/TextTitle3';
 
 type ExampleRenderChildren = () => NonNullable<JSX.Element>;

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { createPortal } from 'react-dom';
 
-import { useThemeContext } from '../hooks/useThemeContext';
+import { useTheme } from '../hooks/useTheme';
 import { ThemeProvider } from '../system/ThemeProvider';
 import { isSSR } from '../utils/browser';
 
@@ -22,7 +22,7 @@ export const Portal = memo(function Portal({
   children,
   containerId = '',
 }: PortalProps) {
-  const theme = useThemeContext();
+  const theme = useTheme();
 
   if (disablePortal || isSSR() || !document.getElementById(containerId)) {
     // eslint-disable-next-line react/jsx-no-useless-fragment
