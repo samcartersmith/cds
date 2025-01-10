@@ -113,21 +113,18 @@ const config: Config = {
         srcDark: 'img/logos/cds_logo_dark.svg',
       },
       items: [
-        { to: '/blog', label: 'Blog', position: 'right' },
-        {
-          href: 'https://www.figma.com/files/657352101224507447/project/62154462/%E2%9C%A8-CDS-Libraries?fuid=992108968165608574',
-          label: 'Figma',
-          position: 'right',
-        },
+        { type: 'search' },
         {
           href: 'https://cds-storybook.cbhq.net/',
           label: 'Storybook',
-          position: 'right',
+        },
+        {
+          href: 'https://www.coinbase.com/blog',
+          label: 'Blog',
         },
         {
           href: 'https://github.cbhq.net/frontend/cds',
           label: 'GitHub',
-          position: 'right',
         },
       ],
     },

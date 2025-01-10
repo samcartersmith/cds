@@ -1,0 +1,61 @@
+import React from 'react';
+import { useWindowSize } from '@docusaurus/theme-common';
+import { cx } from '@linaria/core';
+import { IconButton } from '@cbhq/cds-web2/buttons';
+import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
+import { HStack } from '@cbhq/cds-web2/layout';
+import {
+  background,
+  borderColor,
+  borderWidth,
+  margin,
+  paddingX,
+  paddingY,
+} from '@cbhq/cds-web2/styles/styles';
+import { Text } from '@cbhq/cds-web2/text/Text';
+
+import styles from './styles.module.css';
+
+const kbdClassname = cx(
+  styles.keyboard,
+  paddingX[0.5],
+  paddingY[0],
+  margin[0],
+  background.transparent,
+  borderColor.line,
+  borderWidth[100],
+);
+
+// temporary noop function, will remove once search modal is implemented
+const noop = () => {};
+
+const SearchBar = () => {
+  const size = useWindowSize({ desktopBreakpoint: 1280 });
+  if (size === 'desktop') {
+    return (
+      <SearchInput
+        compact
+        bordered={false}
+        end={
+          <HStack alignItems="center" flexShrink={0} gap={1} paddingRight={2}>
+            <Text mono as="kbd" className={kbdClassname}>
+              ⌘
+            </Text>
+            <Text mono as="kbd" className={kbdClassname}>
+              K
+            </Text>
+          </HStack>
+        }
+        onChangeText={noop}
+        onClick={noop}
+        placeholder="Search or ask a question"
+        startIcon="search"
+        value=""
+        width={375}
+      />
+    );
+  }
+  return <IconButton name="magnifyingGlass" />;
+};
+
+export default SearchBar;

@@ -14,6 +14,7 @@
   --ifm-color-primary-lighter: #468ffb;
   --ifm-color-primary-lightest: #509aff;
   --ifm-code-font-size: 95%;
+  --ifm-navbar-sidebar-width: 240px;
   --docusaurus-highlighted-code-line-bg: #fff;
 
   /* left sidebar */
@@ -119,6 +120,12 @@ body {
   background-color: var(--cds-page-background-color);
   font-style: normal;
   font-weight: 400;
+}
+
+.navbar {
+  padding: 0;
+  height: auto;
+  background-color: var(--cds-page-background-color);
 }
 
 h1,
