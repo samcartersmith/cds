@@ -126,6 +126,7 @@ body {
   padding: 0;
   height: auto;
   background-color: var(--cds-page-background-color);
+  box-shadow: none;
 }
 
 h1,
@@ -156,20 +157,16 @@ h6 {
 .menu__list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
-.theme-doc-sidebar-item-category-level-2 .menu__list-item {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-radius: 32px;
+.menu__link:hover {
+  background: none;
+  transition: none;
 }
 
-.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible {
-  background-color: var(--cds-menu-active-background);
-  padding: 4px;
-  border-radius: 32px;
+.menu__link--active:not(.menu__link--sublist) {
+  background: none;
 }
 
 p {

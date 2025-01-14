@@ -10,7 +10,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Getting started',
+      label: 'Get started',
       items: [
         'getting-started/introduction',
         'getting-started/installation',
@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
         'getting-started/templates',
       ],
       customProps: {
-        icon: 'settings',
+        icon: 'compass',
       },
     },
     {
@@ -279,6 +279,9 @@ const sidebars: SidebarsConfig = {
           items: [{ type: 'doc', id: 'components/other/dot', label: 'Dot' }],
         },
       ],
+      customProps: {
+        icon: 'newsfeed',
+      },
     },
     {
       type: 'category',
@@ -345,6 +348,9 @@ const sidebars: SidebarsConfig = {
           label: 'useTriggerFocus',
         },
       ],
+      customProps: {
+        icon: 'participate',
+      },
     },
     {
       type: 'category',
@@ -381,6 +387,9 @@ const sidebars: SidebarsConfig = {
           label: 'Advanced Customization',
         },
       ],
+      customProps: {
+        icon: 'application',
+      },
     },
   ],
 };

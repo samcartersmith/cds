@@ -6,6 +6,7 @@ import { ThemeClassNames } from '@docusaurus/theme-common';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebarItem/Link';
 import IconExternalLink from '@theme/Icon/ExternalLink';
+import { Text } from '@cbhq/cds-web2/text/Text';
 
 import styles from './styles.module.css';
 
@@ -14,6 +15,7 @@ export default function DocSidebarItemLink({
   onItemClick,
   activePath,
   level,
+  index,
   ...props
 }: Props): JSX.Element {
   const { href, label, className, autoAddBaseUrl } = item;
@@ -43,7 +45,12 @@ export default function DocSidebarItemLink({
         })}
         {...props}
       >
-        {label}
+        <Text
+          color={isActive ? 'textPrimary' : 'textForeground'}
+          font={isActive ? 'label1' : 'label2'}
+        >
+          {label}
+        </Text>
         {!isInternalLink && <IconExternalLink />}
       </Link>
     </li>

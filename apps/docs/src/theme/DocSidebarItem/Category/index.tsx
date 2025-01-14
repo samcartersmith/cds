@@ -1,3 +1,4 @@
+/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { type ComponentProps, useCallback, useEffect, useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import {
@@ -18,6 +19,13 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebarItem/Category';
 import DocSidebarItems from '@theme/DocSidebarItems';
+import { IconName } from '@cbhq/cds-common2/types';
+import { Icon } from '@cbhq/cds-web2/icons/Icon';
+import { HStack } from '@cbhq/cds-web2/layout/HStack';
+import { Pressable } from '@cbhq/cds-web2/system/Pressable';
+import { Text } from '@cbhq/cds-web2/text/Text';
+
+import styles from './styles.module.css';
 
 // If we navigate to a category and it becomes active, it should automatically
 // expand itself
@@ -108,7 +116,7 @@ export default function DocSidebarItemCategory({
   index,
   ...props
 }: Props): JSX.Element {
-  const { items, label, collapsible, className, href } = item;
+  const { items, label, collapsible, className, href, customProps } = item;
   const {
     docs: {
       sidebar: { autoCollapseCategories },
@@ -137,7 +145,7 @@ export default function DocSidebarItemCategory({
       setExpandedItem(toCollapsed ? null : index);
       setCollapsed(toCollapsed);
     },
-    [collapsed, index, setCollapsed, setExpandedItem],
+    [collapsed, index, setExpandedItem, setCollapsed],
   );
   useAutoExpandActiveCategory({ isActive, collapsed, updateCollapsed });
   useEffect(() => {
@@ -145,27 +153,6 @@ export default function DocSidebarItemCategory({
       setCollapsed(true);
     }
   }, [collapsible, expandedItem, index, setCollapsed, autoCollapseCategories]);
-  const handleLinkClick = collapsible
-    ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        onItemClick?.(item);
-        if (href) {
-          updateCollapsed(false);
-        } else {
-          e.preventDefault();
-          updateCollapsed();
-        }
-      }
-    : () => {
-        onItemClick?.(item);
-      };
-
-  const handleCollapseButtonClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      e.preventDefault();
-      updateCollapsed();
-    },
-    [updateCollapsed],
-  );
 
   return (
     <li
@@ -177,41 +164,125 @@ export default function DocSidebarItemCategory({
         className,
       )}
     >
-      <div
-        className={cx(
-          'menu__list-item-collapsible',
-          isCurrentPage && 'menu__list-item-collapsible--active',
-        )}
-        style={{
-          backgroundColor: isActive ? 'var(--cds-menu-active-background)' : undefined,
-          color: isActive ? 'var(--cds-menu-active-text)' : undefined,
-        }}
-      >
-        <Link
-          aria-current={isCurrentPage ? 'page' : undefined}
-          aria-expanded={collapsible && !href ? !collapsed : undefined}
-          className={cx(
-            'menu__link',
-            collapsible && 'menu__link--sublist',
-            !href && collapsible && 'menu__link--sublist-caret',
-            isActive && 'menu__link--active',
-          )}
-          href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
-          onClick={handleLinkClick}
-          role={collapsible && !href ? 'button' : undefined}
-          {...props}
+      {level === 1 ? (
+        <Pressable
+          background="backgroundSecondary"
+          borderRadius={600}
+          onPress={
+            collapsible
+              ? (e) => {
+                  onItemClick?.(item);
+                  if (href) {
+                    updateCollapsed(false);
+                  } else {
+                    e.preventDefault();
+                    updateCollapsed();
+                  }
+                }
+              : () => {
+                  onItemClick?.(item);
+                }
+          }
+          width="100%"
         >
-          {label}
-        </Link>
-        {href && collapsible && (
-          <CollapseButton
-            categoryLabel={label}
-            collapsed={collapsed}
-            onClick={handleCollapseButtonClick}
-          />
-        )}
-      </div>
-      <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
+          <HStack
+            alignContent="center"
+            alignItems="center"
+            gap={1}
+            justifyContent="space-between"
+            paddingX={2}
+            paddingY={1}
+          >
+            <HStack alignContent="center" alignItems="center" gap={1}>
+              {typeof customProps?.icon === 'string' && (
+                <Icon color="textForeground" name={customProps.icon as IconName} size="s" />
+              )}
+              <Text font="label1">{label}</Text>
+            </HStack>
+            <Icon
+              color="textForeground"
+              name={expandedItem === index ? 'minus' : 'add'}
+              paddingRight={2}
+              size="s"
+            />
+          </HStack>
+        </Pressable>
+      ) : (
+        <div
+          className={cx(
+            'menu__list-item-collapsible',
+            isCurrentPage && 'menu__list-item-collapsible--active',
+            styles.menuListItemCollapsibleHover,
+          )}
+        >
+          <Link
+            aria-current={isCurrentPage ? 'page' : undefined}
+            aria-expanded={collapsible && !href ? !collapsed : undefined}
+            className={cx(
+              'menu__link',
+              collapsible && 'menu__link--sublist',
+              isActive && 'menu__link--active',
+              level === 1 && 'menu__link--collapsible',
+            )}
+            href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
+            onClick={
+              collapsible
+                ? (e) => {
+                    onItemClick?.(item);
+                    if (href) {
+                      updateCollapsed(false);
+                    } else {
+                      e.preventDefault();
+                      updateCollapsed();
+                    }
+                  }
+                : () => {
+                    onItemClick?.(item);
+                  }
+            }
+            role={collapsible && !href ? 'button' : undefined}
+            {...props}
+          >
+            <HStack
+              alignContent="center"
+              alignItems="center"
+              gap={1}
+              justifyContent="space-between"
+              paddingX={0.5}
+              width="100%"
+            >
+              <Text color="textForeground" font="label2">
+                {label}
+              </Text>
+              {level !== 1 && (
+                <Icon
+                  color="textForeground"
+                  name={expandedItem === index ? 'caretUp' : 'caretDown'}
+                  paddingRight={0}
+                  size="s"
+                />
+              )}
+            </HStack>
+          </Link>
+          {href && collapsible && (
+            <CollapseButton
+              categoryLabel={label}
+              collapsed={collapsed}
+              onClick={(e) => {
+                e.preventDefault();
+                updateCollapsed();
+              }}
+            />
+          )}
+        </div>
+      )}
+
+      <Collapsible
+        lazy
+        as="ul"
+        className={cx('menu__list', styles.menuListCollapsible)}
+        collapsed={collapsed}
+      >
         <DocSidebarItems
           activePath={activePath}
           items={items}

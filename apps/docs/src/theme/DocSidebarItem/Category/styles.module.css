@@ -1,0 +1,11 @@
+.menuListCollapsible {
+  padding-top: 8px;
+}
+
+.menuListCollapsible > li {
+  padding-bottom: 12px;
+}
+
+.menuListItemCollapsibleHover:hover {
+  background: none;
+}
