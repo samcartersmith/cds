@@ -51,22 +51,22 @@ export function listCellBuilder(
           detail="Detail"
           subdetail="+Positive"
           title="Title"
-          variant="textPositive"
+          variant="positive"
         />
 
-        <ListCell subdetail="+Positive" title="Title" variant="textPositive" />
+        <ListCell subdetail="+Positive" title="Title" variant="positive" />
 
         <ListCell
           description="Description"
           detail="Detail"
           subdetail="-Negative"
           title="Title"
-          variant="textNegative"
+          variant="negative"
         />
 
-        <ListCell detail="Detail" subdetail="-Negative" title="Title" variant="textNegative" />
+        <ListCell detail="Detail" subdetail="-Negative" title="Title" variant="negative" />
 
-        <ListCell detail="Detail" subdetail="Warning" title="Title" variant="textWarning" />
+        <ListCell detail="Detail" subdetail="Warning" title="Title" variant="warning" />
       </>
     );
   };
@@ -98,10 +98,10 @@ export function listCellBuilder(
           detail="Detail"
           subdetail="+Positive"
           title="Title"
-          variant="textPositive"
+          variant="positive"
         />
 
-        <ListCell compact subdetail="+Positive" title="Title" variant="textPositive" />
+        <ListCell compact subdetail="+Positive" title="Title" variant="positive" />
 
         <ListCell
           compact
@@ -109,18 +109,12 @@ export function listCellBuilder(
           detail="Detail"
           subdetail="-Negative"
           title="Title"
-          variant="textNegative"
+          variant="negative"
         />
 
-        <ListCell
-          compact
-          detail="Detail"
-          subdetail="-Negative"
-          title="Title"
-          variant="textNegative"
-        />
+        <ListCell compact detail="Detail" subdetail="-Negative" title="Title" variant="negative" />
 
-        <ListCell compact detail="Detail" subdetail="Warning" title="Title" variant="textWarning" />
+        <ListCell compact detail="Detail" subdetail="Warning" title="Title" variant="warning" />
       </>
     );
   };
@@ -205,7 +199,7 @@ export function listCellBuilder(
         onPress={onPressConsole}
         subdetail="+Postive"
         title="Title"
-        variant="textPositive"
+        variant="positive"
       />
 
       <ListCell
@@ -216,7 +210,7 @@ export function listCellBuilder(
         onPress={onPressConsole}
         subdetail="Warning"
         title="Title"
-        variant="textWarning"
+        variant="warning"
       />
     </>
   );
@@ -309,7 +303,7 @@ export function listCellBuilder(
         onPress={onPressConsole}
         subdetail="+Postive"
         title="Title"
-        variant="textPositive"
+        variant="positive"
       />
 
       <ListCell
@@ -321,7 +315,7 @@ export function listCellBuilder(
         onPress={onPressConsole}
         subdetail="Warning"
         title="Title"
-        variant="textWarning"
+        variant="warning"
       />
     </>
   );
@@ -367,7 +361,7 @@ export function listCellBuilder(
         priority="start"
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="textPositive"
+        variant="positive"
       />
       <ListCell
         description="Some description of the asset"
@@ -376,7 +370,7 @@ export function listCellBuilder(
         priority="middle"
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="textPositive"
+        variant="positive"
       />
       <ListCell
         description="Some description of the asset"
@@ -385,7 +379,7 @@ export function listCellBuilder(
         priority="end"
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="textPositive"
+        variant="positive"
       />
       <ListCell
         description="Some description of the asset"
@@ -394,7 +388,7 @@ export function listCellBuilder(
         priority={cellPriorities}
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="textPositive"
+        variant="positive"
       />
       <ListCell
         description="Some description of the asset"
@@ -403,7 +397,7 @@ export function listCellBuilder(
         priority={cellPriorities}
         subdetail="+4.06%"
         title="Asset with a really long name"
-        variant="textWarning"
+        variant="warning"
       />
     </>
   );
@@ -449,7 +443,7 @@ export function listCellBuilder(
         detail="Detail"
         subdetail="+Positive"
         title="Title"
-        variant="textPositive"
+        variant="positive"
       />
 
       <ListCell
@@ -458,7 +452,7 @@ export function listCellBuilder(
         detail="Detail"
         subdetail="-Negative"
         title="Title"
-        variant="textNegative"
+        variant="negative"
       />
 
       <ListCell
@@ -467,7 +461,7 @@ export function listCellBuilder(
         detail="Detail"
         subdetail="Warning"
         title="Title"
-        variant="textWarning"
+        variant="warning"
       />
     </>
   );

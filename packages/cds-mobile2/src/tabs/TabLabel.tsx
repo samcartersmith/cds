@@ -6,7 +6,7 @@ import { DotCount } from '../dots/DotCount';
 import { useTheme } from '../hooks/useTheme';
 import { HStack } from '../layout';
 import { TextHeadline, TextTitle3, TextTitle4 } from '../typography';
-import { TextProps } from '../typography/createText';
+import { TextProps } from '../typography/Text';
 
 import { useDotAnimation } from './hooks/useDotAnimation';
 

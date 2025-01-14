@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, Text, TextStyle } from 'react-native';
-import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
 import type {
   IconBaseProps,
   IconSourcePixelSize,

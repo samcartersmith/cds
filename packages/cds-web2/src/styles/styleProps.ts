@@ -46,6 +46,7 @@ export type DynamicStyleProps = {
   gridColumn?: React.CSSProperties['gridColumn'];
   gridArea?: React.CSSProperties['gridArea'];
   opacity?: React.CSSProperties['opacity'];
+  zIndex?: React.CSSProperties['zIndex'];
 };
 
 /**
@@ -65,7 +66,7 @@ export const dynamicPixelProps = {
   flexBasis: 1,
 } as const satisfies Partial<Record<keyof DynamicStyleProps, 1>>;
 
-type ResponsiveProps<T> = {
+export type ResponsiveProps<T> = {
   [key in keyof T]?: T[key] | { base?: T[key]; minTablet?: T[key]; minDesktop?: T[key] };
 };
 

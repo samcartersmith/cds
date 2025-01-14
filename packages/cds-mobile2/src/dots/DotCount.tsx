@@ -6,6 +6,7 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
 import {
   dotOpacityEnterConfig,
@@ -13,7 +14,6 @@ import {
   dotScaleEnterConfig,
   dotScaleExitConfig,
 } from '@cbhq/cds-common2/motion/dot';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   dotCountContent,
   dotCountSize,

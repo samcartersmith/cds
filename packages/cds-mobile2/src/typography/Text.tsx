@@ -4,77 +4,29 @@ import {
   type TextProps as NativeTextProps,
   type TextStyle,
   Animated,
+  StyleSheet,
   Text as NativeText,
 } from 'react-native';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 
 import { useTheme } from '../hooks/useTheme';
 import { type StyleProps, getStyles } from '../styles/styleProps';
-
-// TO DO: Make elevation and "bordered" props work!!!
-
-const borderStyle = {
-  bordered: `
-    border-width: var(--borderWidth-100);
-    border-style: solid;
-    border-color: var(--color-line);
-  `,
-  borderedHorizontal: `
-    border-left-width: var(--borderWidth-100);
-    border-left-style: solid;
-    border-right-width: var(--borderWidth-100);
-    border-right-style: solid;
-    border-color: var(--color-line);
-  `,
-  borderedVertical: `
-    border-top-width: var(--borderWidth-100);
-    border-top-style: solid;
-    border-bottom-width: var(--borderWidth-100);
-    border-bottom-style: solid;
-    border-color: var(--color-line);
-  `,
-  borderedStart: `
-    border-left-width: var(--borderWidth-100);
-    border-left-style: solid;
-    border-color: var(--color-line);
-  `,
-  borderedEnd: `
-    border-right-width: var(--borderWidth-100);
-    border-right-style: solid;
-    border-color: var(--color-line);
-  `,
-  borderedTop: `
-    border-top-width: var(--borderWidth-100);
-    border-top-style: solid;
-    border-color: var(--color-line);
-  `,
-  borderedBottom: `
-    border-bottom-width: var(--borderWidth-100);
-    border-bottom-style: solid;
-    border-color: var(--color-line);
-  `,
-};
 
 export type TextProps = StyleProps &
   Omit<NativeTextProps, 'style'> & {
     children?: React.ReactNode;
     style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
     animated?: boolean;
+    font?: ThemeVars.FontFamily;
     inherit?: boolean;
-    unstyled?: boolean;
-    /** Add a border around all sides of the box. */
-    bordered?: boolean;
-    /** Add a border to the top side of the box. */
-    borderedTop?: boolean;
-    /** Add a border to the bottom side of the box. */
-    borderedBottom?: boolean;
-    /** Add a border to the leading side of the box. */
-    borderedStart?: boolean;
-    /** Add a border to the trailing side of the box. */
-    borderedEnd?: boolean;
-    /** Add a border to the leading and trailing sides of the box. */
-    borderedHorizontal?: boolean;
-    /** Add a border to the top and bottom sides of the box. */
-    borderedVertical?: boolean;
+    disabled?: boolean;
+    mono?: boolean;
+    underline?: boolean;
+    tabularNumbers?: boolean;
+    numberOfLines?: number;
+    ellipsize?: NativeTextProps['ellipsizeMode'];
+    noWrap?: boolean;
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
     dangerouslySetColor?: TextStyle['color'];
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
@@ -82,6 +34,21 @@ export type TextProps = StyleProps &
     /** Used to locate this element in unit and end-to-end tests. */
     testID?: string;
   };
+
+const styles = StyleSheet.create({
+  disabled: {
+    opacity: accessibleOpacityDisabled,
+  },
+  ellipsize: {
+    overflow: 'hidden',
+  },
+  underline: {
+    textDecorationLine: 'underline',
+  },
+  tabularNumbers: {
+    fontVariant: ['tabular-nums'],
+  },
+});
 
 export const Text = forwardRef<NativeText, TextProps>(
   (
@@ -93,15 +60,16 @@ export const Text = forwardRef<NativeText, TextProps>(
       style,
       animated,
       inherit,
-      unstyled,
+
+      disabled,
+      mono,
+      underline,
+      tabularNumbers,
+      numberOfLines = 1,
+      ellipsize,
+      noWrap,
+
       testID,
-      bordered,
-      borderedTop,
-      borderedBottom,
-      borderedStart,
-      borderedEnd,
-      borderedHorizontal,
-      borderedVertical,
       dangerouslySetColor,
       dangerouslySetBackground,
       // Begin style props
@@ -132,11 +100,11 @@ export const Text = forwardRef<NativeText, TextProps>(
       elevation,
       borderWidth,
       borderRadius,
-      font,
-      fontFamily,
-      fontSize,
-      fontWeight,
-      lineHeight,
+      font = 'body',
+      fontFamily = font,
+      fontSize = font,
+      fontWeight = font,
+      lineHeight = font,
       align,
       textDecorationStyle,
       textDecorationColor,
@@ -180,16 +148,30 @@ export const Text = forwardRef<NativeText, TextProps>(
     const Component = animated ? Animated.Text : NativeText;
 
     const theme = useTheme();
+    const monoFontFamily = mono && theme.fontFamilyMono?.[fontFamily];
 
-    const inlineStyle = useMemo(
-      () => ({
-        color: dangerouslySetColor,
-        backgroundColor: dangerouslySetBackground,
-      }),
-      [dangerouslySetColor, dangerouslySetBackground],
+    const propStyles = useMemo(
+      () => [
+        disabled && styles.disabled,
+        underline && styles.underline,
+        tabularNumbers && styles.tabularNumbers,
+        ellipsize && styles.ellipsize,
+        monoFontFamily ? { fontFamily: monoFontFamily } : undefined,
+        dangerouslySetColor ? { color: dangerouslySetColor } : undefined,
+        dangerouslySetBackground ? { backgroundColor: dangerouslySetBackground } : undefined,
+      ],
+      [
+        disabled,
+        underline,
+        tabularNumbers,
+        ellipsize,
+        monoFontFamily,
+        dangerouslySetColor,
+        dangerouslySetBackground,
+      ],
     );
 
-    const styles = useMemo(
+    const memoizedStyles = useMemo(
       () => [
         getStyles(
           {
@@ -220,11 +202,14 @@ export const Text = forwardRef<NativeText, TextProps>(
             borderBottomWidth,
             borderLeftWidth,
             elevation,
-            font: inherit ? undefined : font,
-            fontFamily: inherit ? undefined : fontFamily,
-            fontSize: inherit ? undefined : fontSize,
-            fontWeight: inherit ? undefined : fontWeight,
-            lineHeight: inherit ? undefined : lineHeight,
+            ...(inherit
+              ? undefined
+              : {
+                  fontFamily,
+                  fontSize,
+                  fontWeight,
+                  lineHeight,
+                }),
             align,
             textDecorationStyle,
             textDecorationColor,
@@ -264,7 +249,7 @@ export const Text = forwardRef<NativeText, TextProps>(
           },
           theme,
         ),
-        inlineStyle,
+        propStyles,
         style,
       ],
       [
@@ -295,7 +280,6 @@ export const Text = forwardRef<NativeText, TextProps>(
         borderBottomWidth,
         borderLeftWidth,
         elevation,
-        font,
         fontFamily,
         fontSize,
         fontWeight,
@@ -337,7 +321,7 @@ export const Text = forwardRef<NativeText, TextProps>(
         flexGrow,
         opacity,
         theme,
-        inlineStyle,
+        propStyles,
         style,
         inherit,
       ],
@@ -346,20 +330,12 @@ export const Text = forwardRef<NativeText, TextProps>(
     return (
       <Component
         ref={ref}
-        // aria-describedby={accessibilityHint}
-        // aria-label={accessibilityLabel}
-        // aria-labelledby={accessibilityLabelledBy}
-        // className={cx(
-        //   bordered && borderStyle.bordered,
-        //   borderedTop && borderStyle.borderedTop,
-        //   borderedBottom && borderStyle.borderedBottom,
-        //   borderedStart && borderStyle.borderedStart,
-        //   borderedEnd && borderStyle.borderedEnd,
-        //   borderedHorizontal && borderStyle.borderedHorizontal,
-        //   borderedVertical && borderStyle.borderedVertical,
-        // )}
-        data-testid={testID}
-        style={styles}
+        allowFontScaling
+        ellipsizeMode={ellipsize}
+        maxFontSizeMultiplier={1}
+        numberOfLines={noWrap ? 1 : numberOfLines}
+        style={memoizedStyles}
+        testID={testID}
         {...props}
       >
         {children}

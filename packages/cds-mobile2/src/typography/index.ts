@@ -1,6 +1,5 @@
-export type { TextProps } from './createText';
-export { numberStyles } from './createText';
 export * from './Link';
+export type { TextProps } from './Text';
 export * from './TextBody';
 export * from './TextCaption';
 export * from './TextDisplay1';
@@ -14,4 +13,3 @@ export * from './TextTitle1';
 export * from './TextTitle2';
 export * from './TextTitle3';
 export * from './TextTitle4';
-export * from './useTypographyStyles';

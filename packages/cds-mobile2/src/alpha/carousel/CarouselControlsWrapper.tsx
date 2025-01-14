@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
+import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 
 import { HStack, HStackProps } from '../../layout/HStack';
 
@@ -22,7 +23,7 @@ export const CarouselControlsWrapper = memo(function CarouselControlsWrapper({
       position="absolute"
       right={0}
       top={0}
-      zIndex="interactable"
+      zIndex={zIndex.interactable}
       {...props}
     >
       {children}

@@ -74,9 +74,9 @@ export const Toast = memo(
           position="absolute"
           style={{
             // display on android
-            elevation: zIndex.overlays.portal,
+            elevation: zIndex.portal,
           }}
-          zIndex="portal"
+          zIndex={zIndex.portal}
           {...rest}
           accessibilityRole="alert"
         >

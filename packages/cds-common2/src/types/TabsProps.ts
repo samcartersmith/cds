@@ -2,10 +2,11 @@ import { ThemeVars } from '../core/theme';
 
 import { type BoxBaseProps } from './BoxBaseProps';
 import { type DotCountBaseProps } from './DotCountBaseProps';
-import { type SetState } from './React';
 import { type SharedProps } from './SharedProps';
 
-type OnChange<T extends string | undefined = string> = ((tabId: T) => void) | SetState<T>;
+type OnChange<T extends string | undefined = string> =
+  | ((tabId: T) => void)
+  | React.Dispatch<React.SetStateAction<T>>;
 
 /**
  * This is only used on the apps/website, not used by consumers as of Nov 29, 2023

@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react-native';
 import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common2/types/RemoteImageGroupBaseProps';
 
-import * as scaleStyles from '../../styles/scale';
 import { RemoteImage } from '../RemoteImage';
 import { RemoteImageGroup } from '../RemoteImageGroup';
 
@@ -41,7 +40,7 @@ describe('RemoteImageGroup', () => {
       const imageChildren = screen.getByTestId(`${TEST_ID}-inner-box-${index}`);
 
       expect(imageChildren).toHaveStyle({
-        marginRight: -scaleStyles.xxLarge.spacing[1],
+        marginRight: -8,
       });
     });
   });
@@ -59,7 +58,7 @@ describe('RemoteImageGroup', () => {
       const imageChildren = screen.getByTestId(`${TEST_ID}-inner-box-${index}`);
 
       expect(imageChildren).toHaveStyle({
-        marginRight: -scaleStyles.xxLarge.spacing[2],
+        marginRight: -16,
       });
     });
   });

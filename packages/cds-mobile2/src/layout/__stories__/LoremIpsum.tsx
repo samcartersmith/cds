@@ -1,6 +1,6 @@
 import React from 'react';
-import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { TextBody, TextLabel1 } from '../../typography';
 

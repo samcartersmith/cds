@@ -230,7 +230,7 @@ export const WithEnd = () => {
   const end = (
     <VStack gap={1} paddingX={3}>
       <VStack>
-        <HStack justifyContent="center" zIndex="interactable">
+        <HStack justifyContent="center" zIndex={2}>
           <Box background="background" paddingX={1.5}>
             <TextBody color="textForegroundMuted">OR</TextBody>
           </Box>

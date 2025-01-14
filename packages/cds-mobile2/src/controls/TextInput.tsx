@@ -16,9 +16,9 @@ import {
   TextInputFocusEventData,
   TextInputProps as RNTextInputProps,
 } from 'react-native';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 import { TextInputBaseProps } from '@cbhq/cds-common2/types/TextInputBaseProps';

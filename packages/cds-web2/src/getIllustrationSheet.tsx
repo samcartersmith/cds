@@ -1,5 +1,6 @@
 /* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import React, { memo } from 'react';
+import type { ColorScheme } from '@cbhq/cds-common2/core/theme';
 import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common2/tokens/illustrations';
 import type { IllustrationVariant } from '@cbhq/cds-common2/types/IllustrationNames';
 import type { IllustrationNamesMap } from '@cbhq/cds-common2/types/IllustrationProps';
@@ -9,7 +10,6 @@ import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/d
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
-import { ColorScheme } from './core/theme';
 import { HStack } from './layout/HStack';
 import { VStack } from './layout/VStack';
 import { Text } from './text/Text';

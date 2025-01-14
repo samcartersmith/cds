@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
+import { PinningDirection } from '@cbhq/cds-common2/types/BoxBaseProps';
 
 export const pinStyles = StyleSheet.create({
   top: {
@@ -26,4 +27,4 @@ export const pinStyles = StyleSheet.create({
     left: 0,
   },
   all: StyleSheet.absoluteFillObject,
-});
+} satisfies Record<PinningDirection, ViewStyle>);

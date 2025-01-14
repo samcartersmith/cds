@@ -9,10 +9,10 @@ import React, {
 } from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common2/animation/select';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   selectTriggerCompactMinHeight,
   selectTriggerMinHeight,

@@ -4,9 +4,9 @@ import { PortalContext } from '@cbhq/cds-common2/overlays/PortalContext';
 import { ToastProvider, ToastProviderProps } from '@cbhq/cds-common2/overlays/ToastProvider';
 import { usePortal } from '@cbhq/cds-common2/overlays/usePortal';
 import { PortalNode, usePortalState } from '@cbhq/cds-common2/overlays/usePortalState';
+import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 
 import { IsoHexagonClipPath } from '../media/Hexagon';
-import { zIndex } from '../styles/styles';
 import { BrowserOnly } from '../system/BrowserOnly';
 import { getBrowserGlobals } from '../utils/browser';
 
@@ -40,7 +40,7 @@ export const PortalHost: React.FC = memo(() => {
     if (safeDocument?.getElementById(portalRootId) || !portalRoot) return undefined;
 
     portalRoot.id = portalRootId;
-    portalRoot.style.zIndex = 'var(--zIndex-portal)';
+    portalRoot.style.zIndex = zIndex.portal.toString();
     // enable stack order
     portalRoot.style.position = 'relative';
     // enable stack order on children
@@ -61,13 +61,25 @@ export const PortalHost: React.FC = memo(() => {
 
   return createPortal(
     <>
-      <div className={zIndex.modal} data-testid="portal-modal-container" id={modalContainerId} />
-      <div className={zIndex.toast} data-testid="portal-toast-container" id={toastContainerId} />
-      <div className={zIndex.alert} data-testid="portal-alert-container" id={alertContainerId} />
       <div
-        className={zIndex.tooltip}
+        data-testid="portal-modal-container"
+        id={modalContainerId}
+        style={{ zIndex: zIndex.modal }}
+      />
+      <div
+        data-testid="portal-toast-container"
+        id={toastContainerId}
+        style={{ zIndex: zIndex.toast }}
+      />
+      <div
+        data-testid="portal-alert-container"
+        id={alertContainerId}
+        style={{ zIndex: zIndex.alert }}
+      />
+      <div
         data-testid="portal-tooltip-container"
         id={tooltipContainerId}
+        style={{ zIndex: zIndex.tooltip }}
       />
     </>,
     portalRoot,

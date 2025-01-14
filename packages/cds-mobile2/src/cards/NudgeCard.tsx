@@ -70,7 +70,7 @@ export const NudgeCard = memo(
       >
         {onDismissPress ? (
           // zIndex is required otherwise CardBody sits on top of it
-          <Box padding={0.5} position="absolute" right={0} top={0} zIndex="navigation">
+          <Box padding={0.5} position="absolute" right={0} top={0} zIndex={2}>
             <IconButton
               transparent
               accessibilityLabel={

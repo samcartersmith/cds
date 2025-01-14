@@ -1,10 +1,12 @@
 import React, { forwardRef, useMemo } from 'react';
 import { type StyleProp, type ViewProps, type ViewStyle, Animated, View } from 'react-native';
 import { PinningDirection, TextAlignProps } from '@cbhq/cds-common2';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 
 import type { Theme } from '../core/theme';
 import { useTheme } from '../hooks/useTheme';
+import { pinStyles } from '../styles/pinStyles';
 import { type StyleProps, getStyles } from '../styles/styleProps';
 
 export type BoxProps = StyleProps &
@@ -12,9 +14,9 @@ export type BoxProps = StyleProps &
     children?: React.ReactNode;
     style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
     animated?: boolean;
-    unstyled?: boolean;
     /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
     elevation?: ElevationLevels;
+    font?: ThemeVars.FontFamily;
     /** Direction in which to absolutely pin the box. */
     pin?: PinningDirection;
     /** Add a border around all sides of the box. */
@@ -37,14 +39,6 @@ export type BoxProps = StyleProps &
     /** Used to locate this element in unit and end-to-end tests. */
     testID?: string;
   };
-
-const pinStyles: Record<PinningDirection, ViewStyle> = {
-  top: { position: 'absolute', top: 0, left: 0, right: 0 },
-  bottom: { position: 'absolute', bottom: 0, left: 0, right: 0 },
-  left: { position: 'absolute', left: 0, top: 0, bottom: 0 },
-  right: { position: 'absolute', right: 0, top: 0, bottom: 0 },
-  all: { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 },
-};
 
 const getElevationStyles = (elevation: ElevationLevels, theme: Theme): ViewStyle => {
   const elevationStyles: Record<ElevationLevels, ViewStyle> = {
@@ -142,7 +136,6 @@ export const Box = forwardRef<View, BoxProps>(
       accessibilityHint,
       style,
       animated,
-      unstyled,
       testID,
       pin,
       bordered,
@@ -182,10 +175,10 @@ export const Box = forwardRef<View, BoxProps>(
       borderWidth,
       borderRadius,
       font,
-      fontFamily,
-      fontSize,
-      fontWeight,
-      lineHeight,
+      fontFamily = font,
+      fontSize = font,
+      fontWeight = font,
+      lineHeight = font,
       align,
       textDecorationStyle,
       textDecorationColor,
@@ -261,7 +254,6 @@ export const Box = forwardRef<View, BoxProps>(
             borderBottomWidth,
             borderLeftWidth,
             elevation,
-            font,
             fontFamily,
             fontSize,
             fontWeight,
@@ -319,7 +311,7 @@ export const Box = forwardRef<View, BoxProps>(
         ),
         elevation ? getElevationStyles(elevation, theme) : undefined,
         pin && pinStyles[pin],
-        { backgroundColor: dangerouslySetBackground },
+        dangerouslySetBackground ? { backgroundColor: dangerouslySetBackground } : undefined,
         style,
       ],
       [
@@ -350,7 +342,6 @@ export const Box = forwardRef<View, BoxProps>(
         borderBottomWidth,
         borderLeftWidth,
         elevation,
-        font,
         fontFamily,
         fontSize,
         fontWeight,
@@ -406,15 +397,7 @@ export const Box = forwardRef<View, BoxProps>(
     );
 
     return (
-      <Component
-        ref={ref}
-        // aria-describedby={accessibilityHint}
-        // aria-label={accessibilityLabel}
-        // aria-labelledby={accessibilityLabelledBy}
-        data-testid={testID}
-        style={styles}
-        {...props}
-      >
+      <Component ref={ref} style={styles} testID={testID} {...props}>
         {children}
       </Component>
     );

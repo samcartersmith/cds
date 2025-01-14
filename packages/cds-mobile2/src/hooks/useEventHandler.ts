@@ -3,4 +3,4 @@
  * CDS common is dep of cds-mobile.
  * This allows consumers to pull directly from cds-mobile.
  */
-export { useEventHandler } from '@cbhq/cds-common2/system/useEventHandler';
+export { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';

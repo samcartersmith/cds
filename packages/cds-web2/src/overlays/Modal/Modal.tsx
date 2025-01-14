@@ -12,6 +12,7 @@ import {
   type OverlayContentContextValue,
   OverlayContentContext,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
+import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 import { ModalRefBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
 import type { Position } from '@cbhq/cds-common2/types/Position';
 
@@ -36,7 +37,7 @@ const baseStyle = css`
   display: flex;
   justify-content: center;
   /* this makes sure modal dialogue displays on top of overlay */
-  z-index: var(--zIndex-modal);
+  z-index: ${zIndex.modal};
 `;
 
 const modalDialogResponsiveStyle = css`

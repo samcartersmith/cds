@@ -1,5 +1,4 @@
 import { InputStackBaseProps, SharedInputProps } from './InputBaseProps';
-import { SetState } from './React';
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
@@ -16,7 +15,7 @@ export type SelectBaseProps = {
   /** Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input */
   label?: string;
   /** Callback that is fired whenever a select option is selected */
-  onChange?: ((newValue: string) => void) | SetState<string>;
+  onChange?: ((newValue: string) => void) | React.Dispatch<React.SetStateAction<string>>;
 } & SharedProps &
   Pick<InputStackBaseProps, 'width' | 'disabled' | 'variant' | 'focused' | 'startNode'> &
   Pick<

@@ -1,5 +1,6 @@
 import { Animated, Text, View } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
+import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 
 import { LinearGradient } from '../../gradients/LinearGradient';
 import { ThemeProvider } from '../../system/ThemeProvider';
@@ -182,7 +183,7 @@ describe('Box', () => {
         right="30px"
         testID="parent"
         top="25%"
-        zIndex="alert"
+        zIndex={zIndex.alert}
       >
         <Text>Child</Text>
       </Box>,

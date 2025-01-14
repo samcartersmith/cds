@@ -7,6 +7,7 @@ import {
   PictogramDimension,
   SpotIconDimension,
 } from '@cbhq/cds-common2';
+import type { ColorScheme } from '@cbhq/cds-common2/core/theme';
 import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common2/tokens/illustrations';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
@@ -14,7 +15,6 @@ import spotIconVersionMap from '@cbhq/cds-illustrations/__generated__/spotIcon/d
 import spotRectangleVersionMap from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/versionMap';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
-import { ColorScheme } from '../../core/theme';
 import { Divider, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';

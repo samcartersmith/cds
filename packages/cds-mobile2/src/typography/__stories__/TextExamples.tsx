@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
-import { TextProps } from '../createText';
+import { TextProps } from '../Text';
 
 const TextExamplesScreen = ({
   component: Text,
@@ -118,7 +118,7 @@ const TextExamplesScreen = ({
 
       <Example title="Slashed zeros">
         <Box>
-          <Text slashedZero>$1,305.00</Text>
+          <Text>$1,305.00</Text>
         </Box>
       </Example>
 

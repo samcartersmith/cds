@@ -22,7 +22,7 @@ const PlaygroundContent = memo(({ routes = [], listScreenTitle }: PlaygroundProp
     return routes.map(({ key }) => key);
   }, [routes]);
 
-  const listScreenProps = useMemo(() => {
+  const { key: listScreenKey, ...listScreenProps } = useMemo(() => {
     let options: StackNavigationOptions = {};
 
     if (listScreenTitle) {
@@ -38,7 +38,7 @@ const PlaygroundContent = memo(({ routes = [], listScreenTitle }: PlaygroundProp
     };
   }, [listScreenTitle, routeKeys]);
 
-  const searchScreenProps = useMemo(() => {
+  const { key: searchScreenKey, ...searchScreenProps } = useMemo(() => {
     return {
       ...transformRouteToNavComponent({
         route: createStaticRoute(searchRouteKey, ExamplesListScreen),
@@ -49,20 +49,19 @@ const PlaygroundContent = memo(({ routes = [], listScreenTitle }: PlaygroundProp
 
   const exampleScreens = useMemo(
     () =>
-      [...routes].map((route) => (
-        <Stack.Screen
-          {...transformRouteToNavComponent({
-            route,
-          })}
-        />
-      )),
+      [...routes].map((route) => {
+        const { key, ...routeProps } = transformRouteToNavComponent({
+          route,
+        });
+        return <Stack.Screen key={key} {...routeProps} />;
+      }),
     [routes],
   );
 
   return (
     <Stack.Navigator {...navigatorProps}>
-      <Stack.Screen {...listScreenProps} />
-      <Stack.Screen {...searchScreenProps} />
+      <Stack.Screen key={listScreenKey} {...listScreenProps} />
+      <Stack.Screen key={searchScreenKey} {...searchScreenProps} />
       {exampleScreens}
     </Stack.Navigator>
   );

@@ -27,12 +27,6 @@ export type TextBaseProps = {
    */
   slashedZero?: boolean;
   /**
-   * Set select behavior. On mobile, selectable is binary, 'none' will be not selectable and either 'text' or 'all' will be selectable on Android. It is not yet supported on iOS.
-   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select) | [React Native Docs](https://reactnative.dev/docs/text#selectable)
-   * @default 'text' for web, 'none' for mobile
-   */
-  selectable?: 'none' | 'text' | 'all';
-  /**
    * Set text decoration to underline.
    * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)
    * @default false

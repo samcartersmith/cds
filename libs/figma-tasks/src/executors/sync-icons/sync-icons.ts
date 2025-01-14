@@ -78,7 +78,13 @@ const updateCoinbaseIconsFile = () => {
       'apps/mobile-app/assets/fonts/CoinbaseIcons.ttf',
     );
 
+    const destinationPath2 = path.resolve(
+      MONOREPO_ROOT,
+      'apps/mobile-app2/assets/fonts/CoinbaseIcons.ttf',
+    );
+
     fs.copyFileSync(sourcePath, destinationPath);
+    fs.copyFileSync(sourcePath, destinationPath2);
     console.info('CoinbaseIcons.ttf file successfully updated!');
   } catch (err) {
     throw new Error(`Error updating CoinbaseIcons.ttf file in mobile-app/assets/fonts/: ${err}`);

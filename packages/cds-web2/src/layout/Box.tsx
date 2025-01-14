@@ -1,10 +1,12 @@
 import React, { forwardRef, useMemo } from 'react';
-import { css, cx } from '@linaria/core';
+import { type LinariaClassName, css, cx } from '@linaria/core';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { PinningDirection } from '@cbhq/cds-common2/types/BoxBaseProps';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { type StyleProps, getStyles } from '../styles/styleProps';
+import { type ResponsiveProps, type StyleProps, getStyles } from '../styles/styleProps';
 
 const borderStyle = {
   bordered: css`
@@ -48,6 +50,40 @@ const borderStyle = {
   `,
 };
 
+const pinStyle: Record<PinningDirection, LinariaClassName> = {
+  top: css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  `,
+  bottom: css`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  `,
+  right: css`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  `,
+  left: css`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  `,
+  all: css`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  `,
+};
+
 const boxDefaultElement = 'div';
 
 export type BoxDefaultElement = typeof boxDefaultElement;
@@ -59,9 +95,9 @@ export type BoxBaseProps = StyleProps &
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   > & {
     style?: React.CSSProperties;
-    // TO DO: consider removing unstyled and baseClassName
-    unstyled?: boolean;
-    baseClassName?: string;
+    font?: ResponsiveProps<ThemeVars.FontFamily>;
+    /** Direction in which to absolutely pin the box. */
+    pin?: PinningDirection;
     /** Add a border around all sides of the box. */
     bordered?: boolean;
     /** Add a border to the top side of the box. */
@@ -108,9 +144,8 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
       accessibilityHint,
       style,
       className,
-      unstyled,
-      baseClassName,
       testID,
+      pin,
       bordered,
       borderedTop,
       borderedBottom,
@@ -151,10 +186,10 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
       borderWidth,
       borderRadius,
       font,
-      fontFamily,
-      fontSize,
-      fontWeight,
-      lineHeight,
+      fontFamily = font,
+      fontSize = font,
+      fontWeight = font,
+      lineHeight = font,
       textAlign,
       textDecoration,
       textDecorationColor,
@@ -257,7 +292,6 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
             borderBottomWidth,
             borderLeftWidth,
             elevation,
-            font,
             fontFamily,
             fontSize,
             fontWeight,
@@ -348,7 +382,6 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
         borderBottomWidth,
         borderLeftWidth,
         elevation,
-        font,
         fontFamily,
         fontSize,
         fontWeight,
@@ -417,6 +450,7 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
         aria-labelledby={accessibilityLabelledBy}
         className={cx(
           styles.className,
+          pin && pinStyle[pin],
           bordered && borderStyle.bordered,
           borderedTop && borderStyle.borderedTop,
           borderedBottom && borderStyle.borderedBottom,

@@ -8,7 +8,6 @@ import { getRemoteImageGroupOverlapSpacing } from '@cbhq/cds-common2/utils/getRe
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
-import { useTypographyStyles } from '../typography/useTypographyStyles';
 
 export const RemoteImageGroup = ({
   children,
@@ -47,14 +46,13 @@ export const RemoteImageGroup = ({
   // Dynamically calculate font size based on size of remote image
   // so smaller excess image gets a smaller text, and larger excess
   // image gets a larger text
-  const { fontFamily } = useTypographyStyles('legal');
   const typographyStyles = useMemo(() => {
     return {
-      fontFamily,
+      fontFamily: theme.fontFamily.legal,
       color: theme.color.textForeground,
       fontSize: (sizeIsNumber ? size : avatarSize) * 0.4,
     };
-  }, [fontFamily, theme.color, sizeIsNumber, size, avatarSize]);
+  }, [theme.fontFamily.legal, theme.color.textForeground, sizeIsNumber, size, avatarSize]);
 
   return (
     <Box

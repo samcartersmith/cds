@@ -1,5 +1,5 @@
 import React, { forwardRef, useMemo } from 'react';
-import { css, cx } from '@linaria/core';
+import { type LinariaClassName, css, cx } from '@linaria/core';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 
 import type { Polymorphic } from '../core/polymorphism';
@@ -19,29 +19,6 @@ const textInherit = css`
   letter-spacing: inherit;
   font-weight: inherit;
   font-family: inherit;
-`;
-
-/** Strikesthrough element accessibility implementation
- * @link: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s#accessibility_concerns
- */
-const strikethroughStyle = css`
-  &::before,
-  &::after {
-    clip-path: inset(100%);
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-  &::before {
-    content: attr(data-strikethrough-start);
-  }
-
-  &::after {
-    content: attr(data-strikethrough-end);
-  }
 `;
 
 const numberOfLinesStyle = css`
@@ -69,6 +46,18 @@ const slashedZeroStyle = css`
 const noWrapStyle = css`
   white-space: nowrap;
 `;
+
+const userSelectStyle: Record<NonNullable<TextBaseProps['selectable']>, LinariaClassName> = {
+  none: css`
+    user-select: none;
+  `,
+  text: css`
+    user-select: text;
+  `,
+  all: css`
+    user-select: all;
+  `,
+};
 
 const overflowStyle = {
   truncate: css`
@@ -139,20 +128,15 @@ export type TextBaseProps = Polymorphic.ExtendableProps<
     /** Should the Text component inherit styles of parent */
     inherit?: boolean;
     /**
+     * Set select behavior.
+     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select)
+     */
+    selectable?: 'none' | 'text' | 'all';
+    /**
      * Set overflow behavior.
      * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
      */
-    readonly overflow?: 'truncate' | 'clip' | 'wrap' | 'break';
-    /**
-     * accessibility label before strikethrough element
-     * @default '[start of stricken text]'
-     * */
-    strikethroughStartAccessibilityLabel?: string;
-    /**
-     * accessibility label after strikethrough element
-     * @default '[end of stricken text]'
-     */
-    strikethroughEndAccessibilityLabel?: string;
+    overflow?: 'truncate' | 'clip' | 'wrap' | 'break';
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
     dangerouslySetColor?: string;
   }
@@ -175,7 +159,7 @@ export const Text: TextComponent = forwardRef<React.ReactElement<TextBaseProps>,
       font = 'body',
       color = 'textForeground',
       display = 'block',
-      textAlign = 'start',
+      textAlign,
       numberOfLines,
       style,
       className,
@@ -186,26 +170,15 @@ export const Text: TextComponent = forwardRef<React.ReactElement<TextBaseProps>,
       underline,
       mono,
       noWrap,
+      selectable,
       overflow,
       inherit,
-      strikethroughStartAccessibilityLabel = '[start of stricken text]',
-      strikethroughEndAccessibilityLabel = '[end of stricken text]',
       textDecoration = underline ? 'underline' : undefined,
       ...props
     }: TextProps<AsComponent>,
     ref?: Polymorphic.Ref<AsComponent>,
   ) => {
     const Component = (as ?? textDefaultElement) satisfies React.ElementType;
-    const strikethroughAttributes = useMemo(
-      () =>
-        Component === 's'
-          ? {
-              'data-strikethrough-start': strikethroughStartAccessibilityLabel,
-              'data-strikethrough-end': strikethroughEndAccessibilityLabel,
-            }
-          : {},
-      [Component, strikethroughStartAccessibilityLabel, strikethroughEndAccessibilityLabel],
-    );
     const textStyle = useMemo(
       () => ({
         color: dangerouslySetColor,
@@ -224,10 +197,10 @@ export const Text: TextComponent = forwardRef<React.ReactElement<TextBaseProps>,
           disabled && disabledStyle,
           inherit && textInherit,
           mono && monoStyle,
-          Component === 's' && strikethroughStyle,
           tabularNumbers && tabularNumbersStyle,
           slashedZero && slashedZeroStyle,
           noWrap && noWrapStyle,
+          selectable && userSelectStyle[selectable],
           overflow && overflowStyle[overflow],
           className,
         )}
@@ -237,7 +210,6 @@ export const Text: TextComponent = forwardRef<React.ReactElement<TextBaseProps>,
         style={textStyle}
         textAlign={textAlign}
         textDecoration={textDecoration}
-        {...strikethroughAttributes}
         {...props}
       />
     );

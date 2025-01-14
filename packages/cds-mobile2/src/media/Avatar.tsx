@@ -41,7 +41,7 @@ export const Avatar = memo(
       dangerouslySetSize && dangerouslySetSize > interactableHeight.regular;
 
     const colorScheme = colorSchemeMap[colorSchemeProp ?? 'blue'];
-    const colorSchemeRgb = theme.spectrum[colorScheme];
+    const colorSchemeRgb = `rgb(${theme.spectrum[colorScheme]})`;
     const fallbackTextColor = getAccessibleColor(colorSchemeRgb);
 
     const computedSize = dangerouslySetSize ?? avatarSize;
@@ -84,7 +84,7 @@ export const Avatar = memo(
         <Box
           alignItems="center"
           borderRadius={borderRadius}
-          dangerouslySetBackground={colorSchemeProp ? `rgb(${colorSchemeRgb})` : undefined}
+          dangerouslySetBackground={colorSchemeRgb}
           height="100%"
           justifyContent="center"
           testID={coloredFallbackTestID}
@@ -93,7 +93,7 @@ export const Avatar = memo(
           {avatarText}
         </Box>
       );
-    }, [avatarText, borderRadius, colorSchemeRgb, colorSchemeProp]);
+    }, [avatarText, borderRadius, colorSchemeRgb]);
 
     return (
       <Box

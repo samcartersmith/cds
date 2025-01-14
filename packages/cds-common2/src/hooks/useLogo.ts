@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { ColorScheme } from '../core/theme';
+
 export const blue = '#0052FF';
 export const black = '#0A0B0D';
 export const white = '#FFFFFF';
@@ -7,12 +9,12 @@ export const white = '#FFFFFF';
 export type LogoMarkParams = {
   size?: 16 | 24 | 32;
   foreground?: boolean;
-  colorScheme: 'light' | 'dark';
+  colorScheme: ColorScheme;
 };
 
 export type LogoWordmarkParams = {
   foreground?: boolean;
-  colorScheme: 'light' | 'dark';
+  colorScheme: ColorScheme;
 };
 
 const logoMarkData = {

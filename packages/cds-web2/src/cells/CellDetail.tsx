@@ -1,12 +1,20 @@
 import React, { memo } from 'react';
-import type { CellDetailProps } from '@cbhq/cds-common2/types/CellBaseProps';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { CellDetailProps, CellDetailVariant } from '@cbhq/cds-common2/types/CellBaseProps';
 
 import { Text } from '../text/Text';
+
+const variantColorMap: Record<CellDetailVariant, ThemeVars.Color> = {
+  foregroundMuted: 'textForegroundMuted',
+  negative: 'textNegative',
+  positive: 'textPositive',
+  warning: 'textWarning',
+};
 
 export const CellDetail = memo(function CellDetail({
   detail,
   subdetail,
-  variant = 'textForegroundMuted',
+  variant = 'foregroundMuted',
 }: CellDetailProps) {
   return (
     <>
@@ -17,7 +25,13 @@ export const CellDetail = memo(function CellDetail({
       )}
 
       {!!subdetail && (
-        <Text as="div" color={variant} font="body" overflow="truncate" textAlign="end">
+        <Text
+          as="div"
+          color={variantColorMap[variant]}
+          font="body"
+          overflow="truncate"
+          textAlign="end"
+        >
           {subdetail}
         </Text>
       )}

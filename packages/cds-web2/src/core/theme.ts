@@ -1,8 +1,5 @@
 import type { Property } from 'csstype';
-import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
-
-export type ColorScheme = 'light' | 'dark';
-export type ColorSchemePreference = ColorScheme | 'system';
+import type { ColorScheme, ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 export type ThemeConfig = {
   lightSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
@@ -19,7 +16,6 @@ export type ThemeConfig = {
   fontWeight: { [key in ThemeVars.FontWeight]: Property.FontWeight };
   lineHeight: { [key in ThemeVars.LineHeight]: Property.LineHeight };
   shadow: { [key in ThemeVars.Shadow]: Property.BoxShadow };
-  zIndex: { [key in ThemeVars.ZIndex]: Property.ZIndex };
   control: { [key in ThemeVars.ControlSize]: number };
 };
 
@@ -43,7 +39,6 @@ export const styleVarPrefixes = {
   fontWeight: 'fontWeight',
   lineHeight: 'lineHeight',
   shadow: 'shadow',
-  zIndex: 'zIndex',
   control: 'control',
 } as const satisfies Record<
   Exclude<keyof Theme, 'colorScheme' | 'lightSpectrum' | 'darkSpectrum' | 'light' | 'dark'>,
@@ -86,9 +81,6 @@ type ThemeObjectCssVars = {
   };
   shadow: {
     [key in ThemeVars.Shadow as `--${typeof styleVarPrefixes.shadow}-${key}`]: Property.BoxShadow;
-  };
-  zIndex: {
-    [key in ThemeVars.ZIndex as `--${typeof styleVarPrefixes.zIndex}-${key}`]: Property.ZIndex;
   };
   control: {
     [key in ThemeVars.ControlSize as `--${typeof styleVarPrefixes.control}-${key}`]: Property.Width;

@@ -153,6 +153,12 @@ apps/mobile-app/prebuilds/android-*
 !apps/mobile-app/prebuilds/android-release-*.zip
 !apps/mobile-app/credentials/android-release-*.keystore
 
+apps/mobile-app2/artifacts
+apps/mobile-app2/prebuilds/android-*
+!apps/mobile-app2/prebuilds/android-release-*.zip
+!apps/mobile-app2/credentials/android-release-*.keystore
+
+
 # adoption tracker output
 apps/website/static/data/__generated__/adoption/snowflake_adoption_stats.json
 apps/website/static/data/__generated__/product-component/*/product_component_summary.json

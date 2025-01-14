@@ -3,6 +3,7 @@
  */
 import { type LinariaClassName, css } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 
 import type { DynamicStyleProps } from './styleProps';
 
@@ -160,6 +161,11 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   opacity: css`
     @media (min-width: 768px) {
       opacity: var(--minTablet-opacity);
+    }
+  `,
+  zIndex: css`
+    @media (min-width: 768px) {
+      z-index: var(--zIndex);
     }
   `,
 } as const;
@@ -3319,113 +3325,6 @@ export const lineHeight: Record<ThemeVars.LineHeight, LinariaClassName> = {
   `,
 } as const;
 
-export const font: Record<ThemeVars.FontFamily, LinariaClassName> = {
-  display1: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-display1);
-      line-height: var(--lineHeight-display1);
-      font-weight: var(--fontWeight-display1);
-      font-family: var(--fontFamily-display1);
-    }
-  `,
-  display2: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-display2);
-      line-height: var(--lineHeight-display2);
-      font-weight: var(--fontWeight-display2);
-      font-family: var(--fontFamily-display2);
-    }
-  `,
-  display3: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-display3);
-      line-height: var(--lineHeight-display3);
-      font-weight: var(--fontWeight-display3);
-      font-family: var(--fontFamily-display3);
-    }
-  `,
-  title1: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-title1);
-      line-height: var(--lineHeight-title1);
-      font-weight: var(--fontWeight-title1);
-      font-family: var(--fontFamily-title1);
-    }
-  `,
-  title2: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-title2);
-      line-height: var(--lineHeight-title2);
-      font-weight: var(--fontWeight-title2);
-      font-family: var(--fontFamily-title2);
-    }
-  `,
-  title3: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-title3);
-      line-height: var(--lineHeight-title3);
-      font-weight: var(--fontWeight-title3);
-      font-family: var(--fontFamily-title3);
-    }
-  `,
-  title4: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-title4);
-      line-height: var(--lineHeight-title4);
-      font-weight: var(--fontWeight-title4);
-      font-family: var(--fontFamily-title4);
-    }
-  `,
-  headline: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-headline);
-      line-height: var(--lineHeight-headline);
-      font-weight: var(--fontWeight-headline);
-      font-family: var(--fontFamily-headline);
-    }
-  `,
-  body: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-body);
-      line-height: var(--lineHeight-body);
-      font-weight: var(--fontWeight-body);
-      font-family: var(--fontFamily-body);
-    }
-  `,
-  label1: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-label1);
-      line-height: var(--lineHeight-label1);
-      font-weight: var(--fontWeight-label1);
-      font-family: var(--fontFamily-label1);
-    }
-  `,
-  label2: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-label2);
-      line-height: var(--lineHeight-label2);
-      font-weight: var(--fontWeight-label2);
-      font-family: var(--fontFamily-label2);
-    }
-  `,
-  caption: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-caption);
-      line-height: var(--lineHeight-caption);
-      font-weight: var(--fontWeight-caption);
-      font-family: var(--fontFamily-caption);
-    }
-  `,
-  legal: css`
-    @media (min-width: 768px) {
-      font-size: var(--fontSize-legal);
-      line-height: var(--lineHeight-legal);
-      font-weight: var(--fontWeight-legal);
-      font-family: var(--fontFamily-legal);
-    }
-  `,
-} as const;
-
 export const textDecoration = {
   none: css`
     @media (min-width: 768px) {
@@ -4500,59 +4399,6 @@ export const position = {
   sticky: css`
     @media (min-width: 768px) {
       position: sticky;
-    }
-  `,
-} as const;
-
-export const zIndex: Record<ThemeVars.ZIndex, LinariaClassName> = {
-  interactable: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-interactable);
-    }
-  `,
-  navigation: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-navigation);
-    }
-  `,
-  portal: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-portal);
-    }
-  `,
-  popoverMenu: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-popoverMenu);
-    }
-  `,
-  modal: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-modal);
-    }
-  `,
-  dropdown: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-dropdown);
-    }
-  `,
-  tooltip: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-tooltip);
-    }
-  `,
-  toast: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-toast);
-    }
-  `,
-  alert: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-alert);
-    }
-  `,
-  max: css`
-    @media (min-width: 768px) {
-      z-index: var(--zIndex-max);
     }
   `,
 } as const;
@@ -5799,7 +5645,8 @@ export const marginLeft: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linaria
   `,
 } as const;
 
-export const elevation = {
+export const elevation: Record<ElevationLevels, LinariaClassName> = {
+  '0': css``,
   '1': css`
     @media (min-width: 768px) {
       background-color: var(--color-backgroundElevation1);

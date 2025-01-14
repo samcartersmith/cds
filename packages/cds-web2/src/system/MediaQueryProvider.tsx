@@ -30,8 +30,7 @@ const createMediaQueryStore = () => {
     if (options.defaultValues) Object.assign(defaultValues, options.defaultValues);
   };
 
-  const getSnapshot = (query: string): boolean =>
-    mediaQueryLists[query]?.matches ?? defaultValues[query] ?? false;
+  const getSnapshot = (query: string): boolean => mediaQueryLists[query]?.matches ?? false;
 
   const getServerSnapshot = (query: string): boolean => defaultValues[query] ?? false;
 

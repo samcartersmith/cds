@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { ViewProps } from 'react-native';
 import { CellBaseProps } from '@cbhq/cds-common2';
-import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
 import { hasCellPriority } from '@cbhq/cds-common2/utils/cell';
 
 import { useTheme } from '../hooks/useTheme';

@@ -1,6 +1,10 @@
 /**
  * The core CDS Theme variable types.
  */
+
+export type ColorScheme = 'dark' | 'light';
+export type ColorSchemePreference = ColorScheme | 'system';
+
 export namespace ThemeVars {
   export type SpectrumHue =
     | 'blue'
@@ -138,19 +142,7 @@ export namespace ThemeVars {
   export type FontWeight = Font;
   export type LineHeight = Font;
 
-  export type Shadow = 'light' | 'elevation1' | 'elevation2';
-
-  export type ZIndex =
-    | 'interactable'
-    | 'navigation'
-    | 'portal'
-    | 'popoverMenu'
-    | 'modal'
-    | 'dropdown'
-    | 'tooltip'
-    | 'toast'
-    | 'alert'
-    | 'max';
+  export type Shadow = 'elevation1' | 'elevation2';
 
   export type ControlSize =
     | 'checkboxSize'

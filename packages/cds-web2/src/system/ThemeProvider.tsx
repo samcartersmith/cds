@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useId, useMemo } from 'react';
+import type { ColorScheme } from '@cbhq/cds-common2/core/theme';
 
 import { createCssString } from '../core/createCssString';
 import { createThemeCssVars } from '../core/createThemeCssVars';
-import type { ColorScheme, Theme, ThemeConfig, ThemeCSSVars } from '../core/theme';
+import type { Theme, ThemeConfig, ThemeCSSVars } from '../core/theme';
 
 /* Augments csstype's Properties by adding all our theme CSS variable names. Effectively adds all theme CSS variable names as valid keys to React.CSSProperties. */
 declare module 'csstype' {

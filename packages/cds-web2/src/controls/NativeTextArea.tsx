@@ -5,7 +5,6 @@ import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { TextInputBaseProps } from '@cbhq/cds-common2/types/TextInputBaseProps';
 
 import { Box, BoxProps } from '../layout/Box';
-import { font } from '../styles/styles';
 
 const baseStyle = css`
   min-width: 0;
@@ -58,6 +57,7 @@ export type NativeTextAreaProp = NativeTextAreaBaseProp & BoxProps<'textarea'>;
 export const NativeTextArea = memo(
   forwardRef(function NativeTextArea(
     {
+      font = 'body',
       testID,
       onFocus,
       onPress,
@@ -78,14 +78,10 @@ export const NativeTextArea = memo(
         ref={ref}
         aria-describedby={accessibilityHint}
         as="textarea"
-        className={cx(
-          baseStyle,
-          font.body,
-          containerSpacing ?? defaultContainerPaddingStyle,
-          className,
-        )}
+        className={cx(baseStyle, containerSpacing ?? defaultContainerPaddingStyle, className)}
         data-compact={compact}
         data-testid={testID}
+        font={font}
         onBlur={onBlur}
         onChange={onChange}
         onClick={onPress}

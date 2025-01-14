@@ -3,7 +3,6 @@ import { TextInput as RNTextInput, TextInput, TextInputProps, ViewStyle } from '
 import { SharedProps, TextBaseProps, TextInputBaseProps } from '@cbhq/cds-common2';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 
-import { useInputTextStyles } from '../hooks/useInputStyles';
 import { useTextAlign } from '../hooks/useTextAlign';
 import { useTheme } from '../hooks/useTheme';
 
@@ -52,7 +51,18 @@ export const NativeInput = memo(
     ) => {
       const theme = useTheme();
       const textAlignInputTransformed = useTextAlign(align).textAlign;
-      const inputTextStyle = useInputTextStyles('foreground');
+
+      const inputTextStyle = useMemo(
+        () => ({
+          fontSize: theme.fontSize.body,
+          fontFamily: theme.fontFamily.body,
+          minHeight: theme.lineHeight.body,
+          padding: 0,
+          margin: 0,
+          color: theme.color.textForeground,
+        }),
+        [theme.fontSize, theme.fontFamily, theme.lineHeight, theme.color.textForeground],
+      );
 
       const containerStyle: ViewStyle = useMemo(() => {
         return {

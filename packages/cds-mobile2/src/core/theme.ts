@@ -1,8 +1,5 @@
 import type { TextStyle, ViewStyle } from 'react-native';
-import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
-
-export type ColorScheme = 'light' | 'dark';
-export type ColorSchemePreference = ColorScheme | 'system';
+import type { ColorScheme, ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 type Shadow = {
   shadowColor?: ViewStyle['shadowColor'];
@@ -22,11 +19,11 @@ export type ThemeConfig = {
   borderWidth: { [key in ThemeVars.BorderWidth]: number };
   borderRadius: { [key in ThemeVars.BorderRadius]: number };
   fontFamily: { [key in ThemeVars.FontFamily]: string };
+  fontFamilyMono?: { [key in ThemeVars.FontFamily]: string };
   fontSize: { [key in ThemeVars.FontSize]: number };
   fontWeight: { [key in ThemeVars.FontWeight]: TextStyle['fontWeight'] };
   lineHeight: { [key in ThemeVars.LineHeight]: number };
   shadow: { [key in ThemeVars.Shadow]: Shadow };
-  zIndex: { [key in ThemeVars.ZIndex]: ViewStyle['zIndex'] };
   control: { [key in ThemeVars.ControlSize]: number };
 };
 

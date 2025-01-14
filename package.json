@@ -15,6 +15,7 @@
     "reset-nx-daemon": "nx reset",
     "clean": "yarn clean-nx-dir && yarn clean-packemon-outs && yarn clean-dist-outs && yarn reset-nx-daemon",
     "clean-expo": "rm -rf apps/mobile-app/ios && rm -rf apps/mobile-app/.expo",
+    "clean-expo2": "rm -rf apps/mobile-app2/ios && rm -rf apps/mobile-app2/.expo",
     "codeowners": "mono-pipeline sync-codeowners",
     "diagnose": "mono-env diagnose --group common web mobile",
     "setup": "mono-env setup --group common web mobile",

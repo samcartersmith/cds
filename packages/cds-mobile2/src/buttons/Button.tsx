@@ -80,7 +80,7 @@ export const Button = memo(
             align="center"
             color={color}
             numberOfLines={numberOfLines}
-            selectable="none"
+            selectable={false}
             style={styles.text}
             testID="text-headline"
           >

@@ -29,8 +29,8 @@ export const Tag = memo(
         [colorScheme, intent],
       );
       const Text = useMemo(() => (intent === 'informational' ? TextLabel1 : TextCaption), [intent]);
-      const backgroundColor = theme.spectrum[customBackground ?? background];
-      const color = theme.spectrum[customColor ?? foreground];
+      const backgroundColor = `rgb(${theme.spectrum[customBackground ?? background]})`;
+      const color = `rgb(${theme.spectrum[customColor ?? foreground]})`;
       const style = useMemo(
         () => ({ paddingVertical: 2, paddingHorizontal: theme.space[horizontalSpacing[intent]] }),
         [theme.space, intent],

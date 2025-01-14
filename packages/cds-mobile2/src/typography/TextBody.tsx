@@ -1,3 +1,5 @@
-import { createText } from './createText';
+import React from 'react';
 
-export const TextBody = createText('body');
+import { type TextProps, Text } from './Text';
+
+export const TextBody = (props: TextProps) => <Text font="body" {...props} />;

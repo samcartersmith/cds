@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Appearance, Platform, useColorScheme } from 'react-native';
-
-import { ColorScheme } from '../core/theme';
+import type { ColorScheme } from '@cbhq/cds-common2/core/theme';
 
 import { useAppState } from './useAppState';
 

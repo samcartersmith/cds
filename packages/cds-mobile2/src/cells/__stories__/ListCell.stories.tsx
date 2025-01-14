@@ -4,13 +4,12 @@ import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';
-import { Checkbox } from '../../controls/Checkbox';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
-const stories = listCellBuilder(ListCell, CellMedia, Button, IconButton, Checkbox, Pictogram);
+const stories = listCellBuilder(ListCell, CellMedia, Button, IconButton, Pictogram);
 const titlePadding = { paddingX: gutter } as const;
 
 const ListCellScreen = () => {

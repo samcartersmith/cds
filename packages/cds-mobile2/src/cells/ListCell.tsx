@@ -50,7 +50,6 @@ export const ListCell = memo(function ListCell({
         action ||
         (hasDetails && (
           <CellDetail
-            // eslint-disable-next-line react/forbid-component-props
             adjustsFontSizeToFit={!!detailWidth}
             detail={detail}
             subdetail={subdetail}

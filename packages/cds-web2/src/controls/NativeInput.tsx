@@ -3,7 +3,7 @@ import { css, cx } from '@linaria/core';
 import type { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
-import type { TextBaseProps } from '@cbhq/cds-common2/types/TextBaseProps';
+import type { TextAlignProps } from '@cbhq/cds-common2/types/TextBaseProps';
 
 const baseStyle = css`
   font-size: var(--fontSize-body);
@@ -88,7 +88,7 @@ export type NativeInputProps = {
    * Text Align Input
    * @default start
    * */
-  align?: TextBaseProps['align'];
+  align?: TextAlignProps['align'];
   /**
    * Callback fired when pressed/clicked
    */

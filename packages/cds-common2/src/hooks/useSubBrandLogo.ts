@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { ColorScheme } from '../core/theme';
+
 import { black, blue, white } from './useLogo';
 
 type SubBrandLogoData = {
@@ -300,13 +302,13 @@ const subBrandLogoData: { wordmark: SubBrandLogoWordmarkData; mark: SubBrandLogo
 export type SubBrandLogoWordmarkParams = {
   type: SubBrandLogoWordmarkType;
   foreground?: boolean;
-  colorScheme: 'light' | 'dark';
+  colorScheme: ColorScheme;
 };
 
 export type SubBrandLogoMarkParams = {
   type: SubBrandLogoMarkType;
   foreground?: boolean;
-  colorScheme: 'light' | 'dark';
+  colorScheme: ColorScheme;
 };
 
 export const useSubBrandLogoWordmark = ({

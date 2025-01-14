@@ -33,12 +33,6 @@
         }
       }
     },
-    "all": {
-      "command": "tsx ./src/main.ts",
-      "options": {
-        "cwd": "libs/codegen"
-      }
-    },
     "update-website-changelogs": {
       "command": "tsx ./src/website/updateWebsiteChangelogs.ts",
       "options": {

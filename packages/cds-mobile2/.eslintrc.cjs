@@ -9,12 +9,7 @@ module.exports = {
         'react/forbid-component-props': [
           'error',
           {
-            forbid: [
-              {
-                propName: 'adjustsFontSizeToFit',
-                message: 'Interact with this prop via the getAdjustsFontSizeToFitProp helper.',
-              },
-            ],
+            forbid: [],
           },
         ],
         'no-restricted-imports': [

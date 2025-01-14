@@ -17,7 +17,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useTheme } from '../hooks/useTheme';
 import { Spacer } from '../layout/Spacer';
-import { TextProps } from '../typography/createText';
+import { TextProps } from '../typography/Text';
 import { TextBody } from '../typography/TextBody';
 import { Haptics } from '../utils/haptics';
 

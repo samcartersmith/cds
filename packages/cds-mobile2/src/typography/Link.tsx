@@ -5,7 +5,7 @@ import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common2/types/LinkBaseP
 
 import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
 
-import { TextProps } from './createText';
+import { TextProps } from './Text';
 import { TextBody } from './TextBody';
 import { TextCaption } from './TextCaption';
 import { TextHeadline } from './TextHeadline';
@@ -34,6 +34,7 @@ const TYPOGRAPHY_MAP: Record<
   legal: TextLegal,
   inherit: TextInherited,
 };
+
 export type LinkProps = {
   /** Callback to fire when pressed */
   onPress?: (event: GestureResponderEvent) => void;

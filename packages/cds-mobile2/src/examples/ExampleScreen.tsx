@@ -68,16 +68,18 @@ const Screen: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
 };
 
 export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
-  const isDarkEnabled = false;
-  const toggleDark = useCallback(() => {}, []);
-
+  const theme = useTheme();
+  const noop = useCallback(() => {}, []);
   return (
     <VStack testID="mobile-playground-screen">
       <Screen>
         <VStack>
           <VStack background="background" gap={1} paddingX={gutter} paddingY={3}>
-            <Switch checked={isDarkEnabled} onChange={toggleDark}>
+            <Switch checked={theme.colorScheme === 'dark'} onChange={noop}>
               Dark Spectrum
+            </Switch>
+            <Switch checked={false} onChange={noop}>
+              Dense Scale
             </Switch>
           </VStack>
           <Divider />

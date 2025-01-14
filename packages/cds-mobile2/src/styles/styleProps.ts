@@ -28,7 +28,6 @@ export type StyleProps = {
   fontSize?: ThemeVars.FontSize;
   fontWeight?: ThemeVars.FontWeight;
   lineHeight?: ThemeVars.LineHeight;
-  font?: ThemeVars.FontFamily;
   textDecorationStyle?: TextStyle['textDecorationStyle'];
   textDecorationLine?: TextStyle['textDecorationLine'];
   textDecorationColor?: ThemeVars.Color;
@@ -47,7 +46,7 @@ export type StyleProps = {
   flexWrap?: ViewStyle['flexWrap'];
   position?: Position;
   // position?: ViewStyle['position'];
-  zIndex?: ThemeVars.ZIndex;
+  zIndex?: ViewStyle['zIndex'];
   padding?: ThemeVars.Space;
   paddingX?: ThemeVars.Space;
   paddingY?: ThemeVars.Space;
@@ -113,12 +112,10 @@ export const themedStyleProps = {
   fontSize: 'fontSize',
   fontWeight: 'fontWeight',
   lineHeight: 'lineHeight',
-  font: 'fontFamily',
   textDecorationColor: 'color',
   gap: 'space',
   columnGap: 'space',
   rowGap: 'space',
-  zIndex: 'zIndex',
   padding: 'space',
   paddingX: 'space',
   paddingY: 'space',
@@ -139,29 +136,11 @@ export const themedStyleProps = {
 const stylePropAliases = {
   align: ['textAlign'],
   background: ['backgroundColor'],
-  font: ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight'],
   paddingX: ['paddingLeft', 'paddingRight'],
   paddingY: ['paddingTop', 'paddingBottom'],
   marginX: ['marginLeft', 'marginRight'],
   marginY: ['marginTop', 'marginBottom'],
 } as const satisfies { [key in keyof StyleProps]: (keyof (ViewStyle & TextStyle))[] };
-
-/**
- * StyleProps that should have "px" concatenated if they are numbers and not equal to zero.
- */
-export const dynamicPixelProps = {
-  width: 1,
-  height: 1,
-  minWidth: 1,
-  minHeight: 1,
-  maxWidth: 1,
-  maxHeight: 1,
-  top: 1,
-  bottom: 1,
-  left: 1,
-  right: 1,
-  flexBasis: 1,
-} as const;
 
 export const getStyles = (styleProps: StyleProps, theme: Theme) => {
   const style: ViewStyle | TextStyle = {};
@@ -174,29 +153,25 @@ export const getStyles = (styleProps: StyleProps, theme: Theme) => {
     if (typeof stylePropAliases[styleProp as keyof typeof stylePropAliases] === 'undefined') {
       // If it's not themed...
       if (typeof themedStyleProps[styleProp as keyof typeof themedStyleProps] === 'undefined') {
-        // const isPixelProp = dynamicPixelProps[styleProp as keyof typeof dynamicPixelProps];
-        // style[styleProp as keyof typeof style] = isPixelProp && typeof value === 'number' && value !== 0 ? value + 'px' : value;
         style[styleProp as keyof typeof style] = value as any;
       }
       // If it is themed...
       else {
         style[styleProp as keyof typeof style] = (
           theme[themedStyleProps[styleProp as keyof typeof themedStyleProps]] as any
-        )[value as any];
+        )[(styleProp.includes('margin') ? -value : value) as any];
       }
     } else {
-      for (const propAlias in stylePropAliases[styleProp as keyof typeof stylePropAliases]) {
+      for (const propAlias of stylePropAliases[styleProp as keyof typeof stylePropAliases]) {
         // If it's not themed...
-        if (typeof themedStyleProps[propAlias as keyof typeof themedStyleProps] === 'undefined') {
-          // const isPixelProp = dynamicPixelProps[stylePropAlias as keyof typeof dynamicPixelProps];
-          // style[stylePropAlias as keyof typeof style] = isPixelProp && typeof value === 'number' && value !== 0 ? value + 'px' : value;
+        if (typeof themedStyleProps[styleProp as keyof typeof themedStyleProps] === 'undefined') {
           style[propAlias as keyof typeof style] = value as any;
         }
         // If it is themed...
         else {
           style[propAlias as keyof typeof style] = (
-            theme[themedStyleProps[propAlias as keyof typeof themedStyleProps]] as any
-          )[value as any];
+            theme[themedStyleProps[styleProp as keyof typeof themedStyleProps]] as any
+          )[(styleProp.includes('margin') ? -value : value) as any];
         }
       }
     }

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useMemo } from 'react';
+import type { ColorScheme } from '@cbhq/cds-common2/core/theme';
 
-import type { ColorScheme, Theme, ThemeConfig } from '../core/theme';
+import type { Theme, ThemeConfig } from '../core/theme';
 
 export type ThemeContextValue = Theme;
 

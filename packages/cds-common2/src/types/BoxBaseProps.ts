@@ -73,7 +73,7 @@ export type PositionStyles = {
   /** Position the box to the top edge. */
   top?: DimensionValue;
   /** Adjust the z-index positioning layer. */
-  zIndex?: ThemeVars.ZIndex;
+  zIndex?: number;
 };
 
 export type BorderedStyles = {

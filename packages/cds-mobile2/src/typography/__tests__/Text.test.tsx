@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-raw-text */
+import { createRef } from 'react';
 import { Animated, StyleSheet, Text, TextStyle } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 import { entries } from '@cbhq/cds-utils';
 
-import { TextProps } from '../createText';
 import {
   TextBody,
   TextCaption,
@@ -19,6 +19,7 @@ import {
   TextTitle3,
   TextTitle4,
 } from '../index';
+import { TextProps } from '../Text';
 
 const Type = {
   TextDisplay1,
@@ -37,7 +38,9 @@ const Type = {
 };
 
 const textTestRunner = (
-  testFn: (type: React.ComponentType<React.PropsWithChildren<TextProps>>) => void,
+  testFn: (
+    type: React.ComponentType<React.PropsWithChildren<TextProps & { ref?: React.Ref<Text> }>>,
+  ) => void,
 ) => {
   entries<Record<string, React.FC<TextProps>>>(Type).forEach(async ([, TextComponent]) =>
     testFn(TextComponent),
@@ -70,7 +73,7 @@ describe('Text', () => {
 
   it('sets forwarded ref', () => {
     textTestRunner((TextComponent) => {
-      const ref = { current: null };
+      const ref = createRef<Text>();
       render(
         <TextComponent ref={ref} testID="mock-text">
           Text

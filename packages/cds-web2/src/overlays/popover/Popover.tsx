@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
 import React, { memo, useCallback, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
+import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { Box } from '../../layout/Box';
-import { zIndex } from '../../styles/styles';
 import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal';
@@ -29,10 +29,6 @@ const defaultContentPosition: PopoverContentPositionConfig = {
 
 const blockStyles = css`
   width: 100%;
-`;
-
-const zIndexStyle = css`
-  z-index: calc(var(--zIndex-portal) + var(--zIndex-modal));
 `;
 
 /**
@@ -88,9 +84,9 @@ export const Popover = memo(
       () => (
         <div
           ref={setPopper}
-          className={zIndex.dropdown}
           style={{
             ...popperStyles.popper,
+            zIndex: zIndex.dropdown,
           }}
           {...popperAttributes.popper}
           onClick={handleCaptureEvents}
@@ -140,13 +136,13 @@ export const Popover = memo(
         aria-label={accessibilityLabel}
         aria-modal="true"
         bottom={0}
-        className={zIndexStyle}
         left={0}
         onClick={handleClose}
         position="fixed"
         right={0}
         role="dialog"
         top={0}
+        zIndex={zIndex.portal + zIndex.modal}
       >
         {memoizedContent}
       </Box>
@@ -172,7 +168,14 @@ export const Popover = memo(
           {shouldShowContent ? (
             <Portal containerId={tooltipContainerId} disablePortal={disablePortal}>
               {showOverlay ? (
-                <Box bottom={0} className={zIndexStyle} left={0} position="fixed" right={0} top={0}>
+                <Box
+                  bottom={0}
+                  left={0}
+                  position="fixed"
+                  right={0}
+                  top={0}
+                  zIndex={zIndex.portal + zIndex.modal}
+                >
                   <Overlay animated onPress={handleClose} />
                   {memoizedContent}
                 </Box>

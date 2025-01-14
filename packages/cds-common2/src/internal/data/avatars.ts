@@ -1,8 +1,3 @@
-/**
- * DO NOT MODIFY
- * Generated from scripts/codegen/main.ts
- */
-
 export const avatarSizes = ['s', 'm', 'l', 'xl', 'xxl', 'xxxl'] as const;
 
 export const avatars = [
