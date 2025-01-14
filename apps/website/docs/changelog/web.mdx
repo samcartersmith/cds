@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 7.6.4 (1/13/2025 PST)
+
+#### 🐞 Fixes
+
+- Replace improper use of aria-hidden attr in Collapsible in favor of a solution using visibility style. [[#3501](https://github.cbhq.net/frontend/cds/pull/3501)]
 
 #### 📘 Misc
 

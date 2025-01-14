@@ -48,14 +48,14 @@ describe('Banner Actions', () => {
     const dismissBtn = screen.getByLabelText('close');
 
     // Before dismiss is pressed, banner should be visible
-    expect(screen.getByTestId(collapsibleTestID)).toHaveAttribute('aria-hidden', 'false');
+    expect(screen.getByTestId(collapsibleTestID)).toHaveStyle('visibility: visible');
 
     fireEvent.click(dismissBtn);
     expect(spy).toHaveBeenCalledTimes(1);
 
     // After dismiss is pressed, banner should be collapsed
     await waitFor(() => {
-      expect(screen.getByTestId(collapsibleTestID)).toHaveAttribute('aria-hidden', 'true');
+      expect(screen.getByTestId(collapsibleTestID)).toHaveStyle('visibility: hidden');
     });
   });
 });

@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo, useCallback, useMemo, useState } from 'react';
 import { m as motion } from 'framer-motion';
 import type { CollapsibleBaseProps, DimensionValue } from '@cbhq/cds-common/types';
 
@@ -49,7 +49,7 @@ export const Collapsible = memo(
       }: CollapsibleProps,
       forwardedRef: React.ForwardedRef<HTMLDivElement>,
     ) => {
-      const styles = useCollapsibleMotionProps({
+      const { style: motionStyle, ...motionProps } = useCollapsibleMotionProps({
         collapsed,
         direction,
         dangerouslyDisableOverflowHidden,
@@ -78,17 +78,41 @@ export const Collapsible = memo(
 
       const Stack = direction === 'horizontal' ? HStack : Box;
 
+      // visibility is used to prevent child content from being focusable when collapsed
+      const [visibility, setVisibility] = useState<
+        Extract<React.CSSProperties['visibility'], 'visible' | 'hidden'>
+      >(collapsed ? 'hidden' : 'visible');
+      // update the visibility to "visible" when the content is expanding
+      if (!collapsed && visibility !== 'visible') {
+        setVisibility('visible');
+      }
+
+      // when the animation completes, set the visibility to "hidden" if the content should be collapsed
+      // this is to prevent children of the Collapsible element from being focusable in this state
+      const handleAnimationComplete = useCallback(() => {
+        if (collapsed) {
+          setVisibility('hidden');
+        }
+      }, [collapsed]);
+
+      // merge visible style with the computed framer-motion styles
+      const style = useMemo(() => {
+        return {
+          ...motionStyle,
+          visibility,
+        };
+      }, [visibility, motionStyle]);
+
       return (
         <motion.div
-          {...styles}
+          {...motionProps}
           ref={forwardedRef}
-          aria-hidden={collapsed}
           aria-labelledby={accessibilityLabelledBy}
           data-testid={testID}
           id={id}
+          onAnimationComplete={handleAnimationComplete}
           role={role}
-          // ensures the element is not focusable while collapsed
-          tabIndex={collapsed ? -1 : undefined}
+          style={style}
         >
           <div className={outerSpacing}>
             <Stack
