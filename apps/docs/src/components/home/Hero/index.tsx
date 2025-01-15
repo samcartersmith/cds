@@ -1,14 +1,19 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
+import React, { useCallback } from 'react';
+import { useHistory } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
 import BannerArt from '@site/static/img/heroBanners/banner_art.svg';
 import BannerArtDark from '@site/static/img/heroBanners/banner_art_dark.svg';
+import { Button } from '@cbhq/cds-web2/buttons';
 
 import styles from './styles.module.css';
 
 export const Hero = () => {
   const { colorMode } = useColorMode();
   const BannerArtComponent = colorMode === 'dark' ? BannerArtDark : BannerArt;
+  const history = useHistory();
+  const navigateToGettingStarted = useCallback(() => {
+    history.push('/getting-started/introduction');
+  }, [history]);
 
   return (
     <section className={styles.bannerWrapper}>
@@ -21,7 +26,14 @@ export const Hero = () => {
             decentralized future.
           </p>
         </div>
-        <Link to="/getting-started/introduction">Get Started</Link>
+        <Button
+          compact
+          aria-label="Get started with our documentation"
+          endIcon="forwardArrow"
+          onClick={navigateToGettingStarted}
+        >
+          Get started
+        </Button>
       </div>
       <div className={styles.bannerArtWrapper}>
         <BannerArtComponent className={styles.bannerArt} />

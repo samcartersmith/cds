@@ -1,6 +1,7 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
+import React, { useCallback } from 'react';
+import { useHistory } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
+import { Button } from '@cbhq/cds-web2/buttons';
 
 import styles from './styles.module.css';
 
@@ -21,6 +22,10 @@ export const QuickStartCampaignCard = ({
 }: QuickStartLinkProps) => {
   const { colorMode } = useColorMode();
   const BannerComponent = colorMode === 'dark' ? BannerComponentDark : BannerComponentLight;
+  const history = useHistory();
+  const navigate = useCallback(() => {
+    history.push('to' in link ? link.to : link.href);
+  }, [history, link]);
 
   return (
     <div className={styles.cardWrapper}>
@@ -31,12 +36,18 @@ export const QuickStartCampaignCard = ({
             <h3 className={styles.cardTitle}>{title}</h3>
             <p className={styles.cardDescription}>{description}</p>
           </div>
-          <Link
-            {...('to' in link ? { to: link.to } : { href: link.href })}
-            className={styles.cardLink}
+          <Button
+            compact
+            transparent
+            alignSelf="start"
+            aria-label={`Navigate to ${link.label}`}
+            endIcon="forwardArrow"
+            flush="start"
+            onClick={navigate}
+            variant="primary"
           >
             {link.label}
-          </Link>
+          </Button>
         </div>
         <div className={styles.bannerArtWrapper}>
           <BannerComponent height="100%" width="100%" />
