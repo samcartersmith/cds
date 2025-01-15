@@ -114,16 +114,23 @@ export const RemoteImage = memo(
     borderWidth = borderColor ? 200 : undefined,
     style,
     ...props
-  }: RemoteImageProps) => {
+  }: BaseRemoteImageProps) => {
     const styles = useMemo(
       () =>
         ({
           aspectRatio: aspectRatio ? aspectRatio.join(' / ') : undefined,
-          ...(!width && { width: `var(--avatarSize-${size})` }),
-          ...(!height && { height: `var(--avatarSize-${size})` }),
           ...style,
         } as const),
-      [aspectRatio, height, size, style, width],
+      [aspectRatio, style],
+    );
+    // If height and width are not provided, we default to avatarSize
+    const computedHeight = useMemo(
+      () => (width || height ? height : `var(--avatarSize-${size})`),
+      [width, height, size],
+    );
+    const computedWidth = useMemo(
+      () => (width || height ? width : `var(--avatarSize-${size})`),
+      [width, height, size],
     );
 
     return (
@@ -140,10 +147,10 @@ export const RemoteImage = memo(
           !source && fallbackStyle,
           className,
         )}
-        height={height}
+        height={computedHeight}
         src={source}
         style={styles}
-        width={width}
+        width={computedWidth}
         {...props}
       />
     );

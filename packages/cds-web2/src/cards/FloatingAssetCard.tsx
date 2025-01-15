@@ -70,6 +70,7 @@ export const FloatingAssetCard = ({
       gap={1}
       maxWidth={width}
       onClick={onClick}
+      tabIndex={onClick ? 0 : undefined}
       testID={testID}
       {...props}
     >

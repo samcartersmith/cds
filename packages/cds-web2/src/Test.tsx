@@ -561,17 +561,14 @@ export const Test = () => {
             </VStack>
             <VStack gap={2}>
               <Text>Circle Fallback</Text>
-              {/* @ts-expect-error Fix the RemoteImage props type */}
               <RemoteImage shape="circle" />
             </VStack>
             <VStack gap={2}>
               <Text>Rectangle Fallback</Text>
-              {/* @ts-expect-error Fix the RemoteImage props type */}
               <RemoteImage shape="rectangle" />
             </VStack>
             <VStack gap={2}>
               <Text>Square Fallback</Text>
-              {/* @ts-expect-error Fix the RemoteImage props type */}
               <RemoteImage shape="square" />
             </VStack>
           </VStack>

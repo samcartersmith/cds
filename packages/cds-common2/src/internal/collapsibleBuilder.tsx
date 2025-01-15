@@ -15,7 +15,7 @@ import { loremIpsum } from './data/loremIpsum';
 export type CreateCollapsibleProps = {
   Button: React.ComponentType<
     React.PropsWithChildren<
-      ButtonBaseProps & { onPress?: () => void; id?: string; disableDebounce?: boolean }
+      ButtonBaseProps & { onClick?: () => void; id?: string; disableDebounce?: boolean }
     >
   >;
   Collapsible: React.ComponentType<
@@ -51,7 +51,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onPress={toggle}
+          onClick={toggle}
         >
           Click me!
         </Button>
@@ -71,7 +71,7 @@ export function collapsibleBuilder({
         <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
           <TextBody as="p">{loremIpsum}</TextBody>
         </Collapsible>
-        <Button disableDebounce aria-controls={collapsibleId} id={triggerId} onPress={toggle}>
+        <Button disableDebounce aria-controls={collapsibleId} id={triggerId} onClick={toggle}>
           Click me!
         </Button>
       </>
@@ -89,7 +89,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onPress={toggle}
+          onClick={toggle}
         >
           Click me!
         </Button>
@@ -111,7 +111,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onPress={toggle}
+          onClick={toggle}
         >
           Click me!
         </Button>
@@ -138,7 +138,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onPress={toggle}
+          onClick={toggle}
         >
           Click me!
         </Button>
@@ -167,7 +167,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onPress={toggle}
+          onClick={toggle}
         >
           Click me!
         </Button>

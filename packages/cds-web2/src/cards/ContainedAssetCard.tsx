@@ -91,6 +91,7 @@ export const ContainedAssetCard = ({
       minWidth={minWidth}
       onClick={onClick}
       overflow={overflow}
+      tabIndex={onClick ? 0 : undefined}
       testID={testID}
       {...props}
     >

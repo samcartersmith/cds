@@ -20,9 +20,8 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
 
   if (props.type === 'icon') {
     content = (
-      <Box
+      <Icon
         accessibilityLabel={props.accessibilityLabel}
-        as={Icon}
         color={props.color ?? 'iconForeground'}
         name={props.name}
         size="s"

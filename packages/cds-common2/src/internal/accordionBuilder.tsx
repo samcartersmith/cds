@@ -19,7 +19,7 @@ export type CreateAccordionProps = {
 };
 
 type OnPress = (key: string) => void;
-type MockAccordionProps = {
+export type MockAccordionProps = {
   onChange?: OnPress;
   onPress1?: OnPress;
   onPress2?: OnPress;

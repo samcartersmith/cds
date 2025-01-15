@@ -1,0 +1,52 @@
+import React, { useCallback, useState } from 'react';
+import { ComponentStoryObj } from '@storybook/react';
+
+import { Button } from '../../buttons';
+import { VStack } from '../../layout/VStack';
+import { TextBody, TextHeadline } from '../../text';
+import { AccessibilityAnnouncer, AccessibilityAnnouncerProps } from '../AccessibilityAnnouncer';
+
+const DEFAULT_MESSAGE =
+  'This is a title we would want to display, but the announcement is a little more catered to a person navigating with a screen reader.';
+
+const MockAppScreen = ({ message, ...rest }: AccessibilityAnnouncerProps) => {
+  const [internalMessage, updateInternalMessage] = useState(message);
+
+  const handleMessageChange = useCallback(() => {
+    updateInternalMessage(
+      internalMessage === message ? 'Look, something new and special!' : message,
+    );
+  }, [internalMessage, message]);
+
+  return (
+    <VStack gap={2}>
+      <TextHeadline as="h2">Open VoiceOver and update the Message field 👀</TextHeadline>
+      <>
+        <TextBody aria-hidden as="p">
+          {message}
+        </TextBody>
+        <AccessibilityAnnouncer message={internalMessage} {...rest} />
+      </>
+      <Button onClick={handleMessageChange}>Update message</Button>
+    </VStack>
+  );
+};
+
+export default {
+  title: 'Core Components/AccessibilityAnnouncer',
+  component: MockAppScreen,
+  args: { message: DEFAULT_MESSAGE },
+};
+
+export const Default: ComponentStoryObj<typeof MockAppScreen> = {
+  ...MockAppScreen,
+};
+
+export const Assertive: ComponentStoryObj<typeof MockAppScreen> = {
+  ...MockAppScreen,
+  args: {
+    politeness: 'assertive',
+    message:
+      "It isn't common we would want to display alternate text to screen readers, but it is sometimes important",
+  },
+};
