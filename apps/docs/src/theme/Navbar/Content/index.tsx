@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
-import { useWindowSize } from '@docusaurus/theme-common/internal';
+import { useWindowSizeWithBreakpointOverride } from '@site/src/utils/useWindowSizeWithBreakpointOverride';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
@@ -14,7 +14,7 @@ function useNavbarItems() {
 }
 
 export default function NavbarContent(): JSX.Element {
-  const windowSize = useWindowSize({ desktopBreakpoint: 1280 });
+  const windowSize = useWindowSizeWithBreakpointOverride();
 
   const items = useNavbarItems();
   const linkItems = useMemo(

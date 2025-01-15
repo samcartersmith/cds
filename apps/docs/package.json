@@ -23,6 +23,7 @@
     "@cbhq/cds-icons": "workspace:^",
     "@cbhq/cds-illustrations": "workspace:^",
     "@cbhq/cds-web2": "workspace:^",
+    "@cbhq/docusaurus-plugin-kbar": "workspace:^",
     "@cbhq/docusaurus-preset": "workspace:^",
     "@docusaurus/core": "^3.6.3",
     "@docusaurus/mdx-loader": "^3.6.3",
@@ -41,6 +42,7 @@
     "@linaria/core": "^3.0.0-beta.22",
     "@mdx-js/react": "^3.1.0",
     "framer-motion": "^10.18.0",
+    "kbar": "^0.1.0-beta.35",
     "prism-react-renderer": "^2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

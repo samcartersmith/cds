@@ -1,0 +1,6 @@
+.searchInput {
+  flex-grow: 1;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}

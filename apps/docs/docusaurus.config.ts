@@ -167,6 +167,17 @@ const config: Config = {
         id: 'codeblock',
       },
     ],
+    [
+      '@cbhq/docusaurus-plugin-kbar',
+      {
+        docs: {
+          breadcrumbs: false,
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.ts'),
+          sidebarCollapsible: true,
+        },
+      },
+    ],
     webpackPlugin,
   ],
 };

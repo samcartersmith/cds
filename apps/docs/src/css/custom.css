@@ -74,6 +74,7 @@
   --palette-backgroundAlternate: #eef0f3;
   --palette-secondary: #eef0f3;
   --palette-line: rgba(91, 97, 110, 0.2);
+  --zIndex-portal: 100001;
 
   --states-secondaryHovered: #e8eaed;
 }

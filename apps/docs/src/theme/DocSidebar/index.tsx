@@ -1,12 +1,12 @@
 import React from 'react';
 import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
-import { useWindowSize } from '@docusaurus/theme-common';
+import { useWindowSizeWithBreakpointOverride } from '@site/src/utils/useWindowSizeWithBreakpointOverride';
 import type { Props } from '@theme/DocSidebar';
 import DocSidebarDesktop from '@theme/DocSidebar/Desktop';
 import DocSidebarMobile from '@theme/DocSidebar/Mobile';
 
 export default function DocSidebar(props: Props): JSX.Element {
-  const windowSize = useWindowSize();
+  const windowSize = useWindowSizeWithBreakpointOverride();
 
   const filterItems = (items: PropSidebarItem[] = []): PropSidebarItem[] => {
     return items?.filter((item) => !item.customProps?.hidden).map((item) => item);

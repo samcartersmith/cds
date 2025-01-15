@@ -1,6 +1,7 @@
-import React from 'react';
-import { useWindowSize } from '@docusaurus/theme-common';
+import React, { useCallback } from 'react';
 import { cx } from '@linaria/core';
+import { useWindowSizeWithBreakpointOverride } from '@site/src/utils/useWindowSizeWithBreakpointOverride';
+import { useKBar } from 'kbar';
 import { IconButton } from '@cbhq/cds-web2/buttons';
 import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
 import { HStack } from '@cbhq/cds-web2/layout';
@@ -30,7 +31,11 @@ const kbdClassname = cx(
 const noop = () => {};
 
 const SearchBar = () => {
-  const size = useWindowSize({ desktopBreakpoint: 1280 });
+  const size = useWindowSizeWithBreakpointOverride();
+  const { query } = useKBar();
+  const handleOnClick = useCallback(() => {
+    query.toggle();
+  }, [query]);
   if (size === 'desktop') {
     return (
       <SearchInput
@@ -47,7 +52,7 @@ const SearchBar = () => {
           </HStack>
         }
         onChangeText={noop}
-        onClick={noop}
+        onClick={handleOnClick}
         placeholder="Search or ask a question"
         startIcon="search"
         value=""
@@ -55,7 +60,7 @@ const SearchBar = () => {
       />
     );
   }
-  return <IconButton name="magnifyingGlass" />;
+  return <IconButton name="magnifyingGlass" onClick={handleOnClick} />;
 };
 
 export default SearchBar;

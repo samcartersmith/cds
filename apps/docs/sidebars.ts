@@ -1,7 +1,7 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
-  docsSidebar: [
+  docs: [
     {
       type: 'doc',
       id: 'home/home',
@@ -21,11 +21,21 @@ const sidebars: SidebarsConfig = {
       ],
       customProps: {
         icon: 'compass',
+        kbar: {
+          icon: 'compass',
+          description: 'A checklist of everything you need to get up and running',
+        },
       },
     },
     {
       type: 'category',
       label: 'Components',
+      customProps: {
+        icon: 'newsfeed',
+        kbar: {
+          description: 'Design guidelines, figma resources and code components',
+        },
+      },
       items: [
         {
           type: 'category',
@@ -279,9 +289,6 @@ const sidebars: SidebarsConfig = {
           items: [{ type: 'doc', id: 'components/other/dot', label: 'Dot' }],
         },
       ],
-      customProps: {
-        icon: 'newsfeed',
-      },
     },
     {
       type: 'category',
