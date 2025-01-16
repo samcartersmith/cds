@@ -73,7 +73,7 @@ export type LinkableProps = {
   onPress?: OnPress;
   /** URL that this links to when pressed. */
   to?: string;
-} & Pick<React.AllHTMLAttributes<HTMLAnchorElement>, 'target' | 'href' | 'onKeyDown' | 'onKeyUp'> &
+} & Pick<React.AllHTMLAttributes<HTMLElement>, 'target' | 'href' | 'onKeyDown' | 'onKeyUp'> &
   Pick<
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'

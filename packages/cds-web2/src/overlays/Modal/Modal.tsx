@@ -13,11 +13,10 @@ import {
   OverlayContentContext,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
-import { ModalRefBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
+import type { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
 import type { Position } from '@cbhq/cds-common2/types/Position';
 
 import { useA11yLabels } from '../../hooks/useA11yLabels';
-import { type BoxProps } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { breakpoints, media } from '../../styles/media';
@@ -84,7 +83,7 @@ const overlayContentContextValue: OverlayContentContextValue = {
   isModal: true,
 };
 
-export type ModalBaseProps = {
+export type ModalProps = {
   /**
    * If pressing the esc key should close the modal
    * @default true
@@ -107,28 +106,11 @@ export type ModalBaseProps = {
    * @default false
    */
   focusTabIndexElements?: boolean;
-  /** Component to render as the Modal content */
-  children: React.FC<{ closeModal: () => void }> | NonNullable<React.ReactNode>;
-  /**
-   * Callback function fired when modal is closed.
-   */
-  onRequestClose: () => void;
-  /**
-   * Hide top and bottom dividers inside Modal body
-   * @default false
-   */
-  hideDividers?: boolean;
-  /**
-   * Hide the close icon on the top right
-   * @default false
-   */
-  hideCloseButton?: boolean;
-} & Omit<ModalWrapperProps, 'onOverlayPress' | 'children'>;
-
-export type ModalProps = ModalBaseProps & Omit<BoxProps<'div'>, 'children'>;
+} & ModalBaseProps &
+  Omit<ModalWrapperProps, 'onOverlayPress'>;
 
 export const Modal = memo(
-  forwardRef(
+  forwardRef<ModalRefBaseProps, ModalProps>(
     (
       {
         children,
@@ -147,8 +129,8 @@ export const Modal = memo(
         hideCloseButton,
         hideDividers,
         ...props
-      }: ModalProps,
-      ref: React.ForwardedRef<ModalRefBaseProps>,
+      },
+      ref,
     ) => {
       const { labelledBySource, labelledBy, label } = useA11yLabels({
         accessibilityLabelledBy,

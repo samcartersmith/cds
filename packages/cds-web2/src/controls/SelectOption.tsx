@@ -1,0 +1,195 @@
+import React, { memo, useCallback, useEffect, useRef } from 'react';
+import { css, cx } from '@linaria/core';
+import { selectCellSpacingConfig } from '@cbhq/cds-common2/tokens/select';
+import { type SelectOptionBaseProps } from '@cbhq/cds-common2/types';
+
+import { Cell } from '../cells/Cell';
+import { CellAccessory } from '../cells/CellAccessory';
+import { VStack } from '../layout/VStack';
+import { visibility } from '../styles/styles';
+import { type PressableProps, Pressable } from '../system/Pressable';
+import { Text } from '../text/Text';
+
+import { useSelectContext } from './selectContext';
+
+export const selectOptionStaticClassName = 'cds-select-option';
+
+const pressableStyles = css`
+  --bookendRadius: var(--borderRadius-400);
+  // overrides common user agent button defaults
+  padding: 0;
+  // overrides Safari user agent button defaults
+  margin: 0;
+  border: none;
+
+  &:first-child {
+    border-top-right-radius: var(--bookendRadius);
+    border-top-left-radius: var(--bookendRadius);
+  }
+
+  &:last-child {
+    border-bottom-right-radius: var(--bookendRadius);
+    border-bottom-left-radius: var(--bookendRadius);
+  }
+
+  // restrict text from overflow viewport, 95 to leave space for scrollbar
+  max-width: 95vw;
+
+  // -- START focus ring styles
+  position: relative;
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--borderRadius-100);
+      border: 2px solid var(--color-linePrimary);
+    }
+
+    &:first-child {
+      &::before {
+        border-top-right-radius: var(--bookendRadius);
+        border-top-left-radius: var(--bookendRadius);
+      }
+    }
+
+    &:last-child {
+      &::before {
+        border-bottom-right-radius: var(--bookendRadius);
+        border-bottom-left-radius: var(--bookendRadius);
+      }
+    }
+  }
+  // -- END focus ring styles:
+`;
+
+const normalStyles = css`
+  min-height: 48px;
+  max-height: 64px;
+`;
+
+const compactStyles = css`
+  min-height: 40px;
+  max-height: 56px;
+`;
+
+const multilineStyles = css`
+  min-height: min-content;
+  max-height: max-content;
+`;
+
+const multilineTextStyles = css`
+  overflow: auto;
+  text-overflow: unset;
+  white-space: normal;
+`;
+
+export type SelectOptionProps = {
+  /** Prevent menu from closing when an option is selected */
+  disableCloseOnOptionChange?: boolean;
+  /**
+   * Necessary to control roving tabindex for accessibility
+   * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+   * */
+  tabIndex?: number;
+} & SelectOptionBaseProps &
+  Pick<PressableProps, 'onPress' | 'to'>;
+
+export const SelectOption = memo(
+  ({
+    title,
+    description,
+    multiline,
+    compact,
+    value,
+    disableCloseOnOptionChange,
+    onPress,
+    tabIndex,
+    accessibilityLabel,
+    testID,
+    disabled,
+    ...props
+  }: SelectOptionProps) => {
+    const selectOptionRef = useRef<HTMLButtonElement | null>(null);
+    const { onChange, value: selectedValue, handleCloseMenu } = useSelectContext();
+    const selected = selectedValue === value;
+
+    const heightStyles = compact ? compactStyles : normalStyles;
+
+    useEffect(() => {
+      if (selected) {
+        selectOptionRef.current?.focus();
+      }
+    }, [selected]);
+
+    const handleChange = useCallback(() => {
+      onChange?.(value);
+      // You can disable close on option change from either an individual SelectOption or globally through the Select or Dropdown components
+      if (!disableCloseOnOptionChange) {
+        handleCloseMenu?.();
+      }
+    }, [onChange, value, disableCloseOnOptionChange, handleCloseMenu]);
+
+    const handlePress = useCallback(
+      (event: React.MouseEvent) => {
+        handleChange();
+        onPress?.(event);
+      },
+      [onPress, handleChange],
+    );
+
+    return (
+      <Pressable
+        ref={selectOptionRef}
+        noScaleOnPress
+        accessibilityLabel={accessibilityLabel}
+        background="background"
+        className={cx(selectOptionStaticClassName, pressableStyles)}
+        disabled={disabled}
+        onPress={handlePress}
+        role="menuitem"
+        tabIndex={tabIndex ?? -1} // default to -1 since this is a grouped control and the parent control will have tabIndex 0
+        testID={testID}
+      >
+        <Cell
+          {...selectCellSpacingConfig}
+          accessory={
+            <CellAccessory
+              className={selected ? visibility.visible : visibility.hidden}
+              type="selected"
+            />
+          }
+          borderRadius={0}
+          className={cx(heightStyles, multiline ? multilineStyles : undefined)}
+          selected={selected}
+          {...props}
+        >
+          <VStack>
+            {!!title && (
+              <Text as="div" font="headline" overflow="truncate">
+                {title}
+              </Text>
+            )}
+
+            {!!description && (
+              <Text
+                as="div"
+                className={multiline ? multilineTextStyles : undefined}
+                color="textForegroundMuted"
+                font="body"
+                overflow={multiline ? undefined : 'truncate'}
+              >
+                {description}
+              </Text>
+            )}
+          </VStack>
+        </Cell>
+      </Pressable>
+    );
+  },
+);

@@ -26,12 +26,14 @@ export type ModalBaseProps = {
    * @default false
    */
   hideCloseButton?: boolean;
-  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-  width?: number;
   /**
    * Callback fired after the component is closed.
    */
   onDidClose?: () => void;
+  /**
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   * */
+  width?: number;
 } & SharedProps &
   Pick<PositionStyles, 'zIndex'>;
 
