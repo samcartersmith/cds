@@ -201,7 +201,7 @@ export default function DocSidebarItemCategory({
             </HStack>
             <Icon
               color="textForeground"
-              name={expandedItem === index ? 'minus' : 'add'}
+              name={!collapsed ? 'minus' : 'add'}
               paddingRight={2}
               size="s"
             />
