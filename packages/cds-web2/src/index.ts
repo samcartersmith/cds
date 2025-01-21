@@ -28,5 +28,4 @@ export * from './layout/VStack';
 export * from './loaders/Spinner';
 export * from './system/FramerMotionProvider';
 export * from './system/ThemeProvider';
-export * from './Test';
 export * from './text/Text';

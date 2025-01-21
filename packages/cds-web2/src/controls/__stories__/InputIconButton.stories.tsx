@@ -1,4 +1,5 @@
 import React from 'react';
+import { inputIconButtonBuilder } from '@cbhq/cds-common2/internal/inputIconButtonBuilder';
 
 import { Box } from '../../layout/Box';
 import { InputIconButton } from '../InputIconButton';
@@ -9,95 +10,17 @@ export default {
   component: InputIconButton,
 };
 
-const variants = [
-  'foreground',
-  'foregroundMuted',
-  'primary',
-  'negative',
-  'positive',
-  'secondary',
-] as const;
-
-const Basic = () => {
-  return (
-    <>
-      {variants.map((variant) => (
-        <TextInput
-          key={`${variant}-input-iconbutton`}
-          label={variant}
-          start={<InputIconButton accessibilityLabel="Add" name="add" variant="foregroundMuted" />}
-          variant={variant}
-        />
-      ))}
-    </>
-  );
-};
-
-const DefaultsToPrimary = () => {
-  return (
-    <TextInput
-      label="Label"
-      start={<InputIconButton accessibilityLabel="Search" name="search" />}
-      variant="foregroundMuted"
-    />
-  );
-};
-
-const SetColorAndInheritFocusStyle = () => {
-  return (
-    <TextInput
-      label="Search"
-      start={<InputIconButton accessibilityLabel="Search" name="search" variant="secondary" />}
-      variant="foregroundMuted"
-    />
-  );
-};
-
-const BasicEnd = () => {
-  return <TextInput end={<InputIconButton accessibilityLabel="Add" name="add" />} label="Label" />;
-};
-
-const AddCustomColor = () => {
-  return (
-    <TextInput
-      label="Label"
-      start={
-        <InputIconButton
-          disableInheritFocusStyle
-          accessibilityLabel="Add"
-          name="add"
-          variant="foregroundMuted"
-        />
-      }
-    />
-  );
-};
-
-const AddCustomColorEnd = () => {
-  return (
-    <TextInput
-      end={
-        <InputIconButton
-          disableInheritFocusStyle
-          transparent
-          accessibilityLabel="Add"
-          name="add"
-          variant="foregroundMuted"
-        />
-      }
-      label="Label"
-    />
-  );
-};
-
-/** Testing that nothing breaks when you use it out of context */
-const InvalidPlacement = () => {
-  return (
-    <Box background="backgroundAlternate">
-      <InputIconButton accessibilityLabel="Add" name="add" variant="foregroundMuted" />
-    </Box>
-  );
-};
+const {
+  Basic,
+  SetColorAndInheritFocusStyle,
+  DefaultsToPrimary,
+  BasicEnd,
+  AddCustomColor,
+  AddCustomColorEnd,
+  InvalidPlacement,
+} = inputIconButtonBuilder(TextInput, InputIconButton, (props) => (
+  <Box {...props} background="backgroundAlternate" />
+));
 
 export {
   AddCustomColor,

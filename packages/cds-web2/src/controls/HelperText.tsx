@@ -28,16 +28,25 @@ export const HelperText = memo(function HelperTex({
   errorIconAccessibilityLabel,
   errorIconTestID,
   children,
+  dangerouslySetColor,
   textAlign = 'start',
   ...props
 }: HelperTextProps) {
   return (
-    <Text as="span" color={color} font="label2" textAlign={textAlign} {...props}>
+    <Text
+      as="span"
+      color={color}
+      dangerouslySetColor={dangerouslySetColor}
+      font="label2"
+      textAlign={textAlign}
+      {...props}
+    >
       {color === 'textNegative' && (
         <Box as="span" className={boxStyle}>
           <Icon
             accessibilityLabel={errorIconAccessibilityLabel}
             color="iconNegative"
+            dangerouslySetColor={dangerouslySetColor}
             name="info"
             size="xs"
             testID={errorIconTestID}

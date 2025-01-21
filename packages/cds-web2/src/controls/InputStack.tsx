@@ -183,10 +183,10 @@ export const InputStack = memo(
         }
 
         if (variant !== 'positive' && variant !== 'negative') {
-          return 'var(--color-textPrimary)';
+          return 'var(--color- backgroundPrimary)';
         }
 
-        return `var(--color-${variant})`;
+        return `var(--color-${variantColorMap[variant]})`;
       }, [disableFocusedStyle, variant]);
 
       const defaultBorderStyle = useMemo(() => {
@@ -196,7 +196,7 @@ export const InputStack = memo(
               ? 'transparent'
               : variant === 'foregroundMuted' || !variant
               ? 'var(--color-lineHeavy)'
-              : `var(--color-${variant})`,
+              : `var(--color-${variantColorMap[variant]})`,
           '--border-color-focused': borderColorFocused,
           '--border-width-focused': `var(--borderWidth-${borderWidth})`,
           ...inputBorderRadius,

@@ -76,7 +76,7 @@ const borderedSizeStyles: {
   `,
 };
 
-const sourceSizeMap: {
+export const sourceSizeMap: {
   [key in IconSize]: IconSourcePixelSize;
 } = {
   xs: 12,

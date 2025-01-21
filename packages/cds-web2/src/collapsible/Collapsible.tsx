@@ -4,7 +4,6 @@ import type { CollapsibleBaseProps } from '@cbhq/cds-common2/types/CollapsibleBa
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 
 import { Box, BoxProps, HStack } from '../layout';
-import { getStyles } from '../styles/styleProps';
 
 import { useCollapsibleMotionProps } from './useCollapsibleMotionProps';
 
@@ -55,19 +54,6 @@ export const Collapsible = memo(
         direction,
         dangerouslyDisableOverflowHidden,
       });
-      const outerStyles = useMemo(() => getStyles({ paddingTop }), [paddingTop]);
-      const innerStyles = useMemo(
-        () =>
-          getStyles({
-            padding,
-            paddingBottom,
-            paddingRight,
-            paddingX,
-            paddingLeft,
-            paddingY,
-          }),
-        [padding, paddingBottom, paddingLeft, paddingRight, paddingX, paddingY],
-      );
 
       const sizeProps = useMemo(() => {
         return direction === 'horizontal'
@@ -117,16 +103,20 @@ export const Collapsible = memo(
           role={role}
           style={style}
         >
-          <div className={outerStyles.className} style={outerStyles.style}>
+          <Box paddingTop={paddingTop}>
             <Stack
               overflow={maxWidth || maxHeight ? 'auto' : undefined}
               {...sizeProps}
-              className={innerStyles.className}
-              style={innerStyles.style}
+              padding={padding}
+              paddingBottom={paddingBottom}
+              paddingLeft={paddingLeft}
+              paddingRight={paddingRight}
+              paddingX={paddingX}
+              paddingY={paddingY}
             >
               {children}
             </Stack>
-          </div>
+          </Box>
         </motion.div>
       );
     },

@@ -18,6 +18,7 @@ export const MessageAreaColor = () => {
     'textForeground',
     'textPrimary',
     'textForegroundMuted',
+    // TO DO: replace backgroundSecondary with textSecondary after value is confirmed with design
     'backgroundSecondary',
   ] as const;
 
@@ -30,14 +31,28 @@ export const MessageAreaColor = () => {
   );
 };
 
+MessageAreaColor.parameters = {
+  a11y: { config: { rules: [{ id: 'color-contrast', enabled: false }] } },
+};
+
 export const TextAlign = () => {
-  const alignments = ['start', 'end', 'center', 'justify'] as const;
+  const alignments = ['start', 'end'] as const;
 
   return (
     <div>
       {alignments.map((alignment) => (
         <HelperText textAlign={alignment}>{`${alignment} message`}</HelperText>
       ))}
+    </div>
+  );
+};
+
+export const CustomColor = () => {
+  return (
+    <div>
+      <HelperText color="textNegative" dangerouslySetColor="purple">
+        Test message
+      </HelperText>
     </div>
   );
 };

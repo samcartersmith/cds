@@ -61,7 +61,7 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
             backAccessibilityLabel="Back"
             closeAccessibilityHint="Close this dialog to continue"
             closeAccessibilityLabel="Close"
-            onBackButtonPress={toggleOff}
+            onBackButtonClick={toggleOff}
           />
           <ModalBody>
             <Box alignItems="center">

@@ -95,13 +95,13 @@ describe('Modal', () => {
   });
 
   it('triggers back action on back button press', () => {
-    const onBackButtonPress = jest.fn();
-    render(<MockModal backAccessibilityLabel="Back" onBackButtonPress={onBackButtonPress} />);
+    const onBackButtonClick = jest.fn();
+    render(<MockModal backAccessibilityLabel="Back" onBackButtonClick={onBackButtonClick} />);
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByLabelText('Back'));
 
-    expect(onBackButtonPress).toHaveBeenCalledTimes(1);
+    expect(onBackButtonClick).toHaveBeenCalledTimes(1);
   });
 
   it('renders modal title', async () => {
@@ -167,7 +167,7 @@ describe('Modal', () => {
       <MockModal
         backAccessibilityHint="Back button hint"
         backAccessibilityLabel="Back"
-        onBackButtonPress={jest.fn()}
+        onBackButtonClick={jest.fn()}
       />,
     );
 

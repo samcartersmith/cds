@@ -9,7 +9,7 @@ import { Text } from '../../text/Text';
 
 type ModalHeaderBaseProps = {
   /** Handles back button press */
-  onBackButtonPress?: React.MouseEventHandler;
+  onBackButtonClick?: React.MouseEventHandler;
 } & Omit<SharedModalHeaderBaseProps, 'onRequestClose'>;
 
 export type ModalHeaderProps = ModalHeaderBaseProps & BoxProps<'div'>;
@@ -19,7 +19,7 @@ export const ModalHeader = ({
   paddingX = 3,
   paddingY = 2,
   title,
-  onBackButtonPress,
+  onBackButtonClick,
   backAccessibilityLabel,
   backAccessibilityHint,
   closeAccessibilityLabel,
@@ -29,7 +29,7 @@ export const ModalHeader = ({
   const { onRequestClose, accessibilityLabelledBy, hideCloseButton, hideDividers } =
     useModalParent();
 
-  if (!title && !onBackButtonPress && !onRequestClose) return null;
+  if (!title && !onBackButtonClick && !onRequestClose) return null;
 
   return (
     <HStack
@@ -39,14 +39,14 @@ export const ModalHeader = ({
       paddingY={paddingY}
       {...props}
     >
-      {!!onBackButtonPress && (
+      {!!onBackButtonClick && (
         <Box>
           <IconButton
             transparent
             accessibilityHint={backAccessibilityHint}
             accessibilityLabel={backAccessibilityLabel}
             name="backArrow"
-            onClick={onBackButtonPress}
+            onClick={onBackButtonClick}
             testID="modal-back-button"
           />
         </Box>

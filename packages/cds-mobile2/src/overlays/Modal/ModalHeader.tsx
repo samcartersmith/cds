@@ -9,12 +9,12 @@ import { TextHeadline } from '../../typography';
 
 type ModalHeaderProps = {
   /** Handles back button press */
-  onBackButtonPress?: (event: GestureResponderEvent) => void;
+  onBackButtonClick?: (event: GestureResponderEvent) => void;
 } & ModalHeaderBaseProps;
 
 export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = ({
   title,
-  onBackButtonPress,
+  onBackButtonClick,
   backAccessibilityLabel,
   backAccessibilityHint,
   closeAccessibilityLabel,
@@ -32,13 +32,13 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
       testID={testID}
     >
       <Box flexBasis={0} flexGrow={1}>
-        {!!onBackButtonPress && (
+        {!!onBackButtonClick && (
           <IconButton
             transparent
             accessibilityHint={backAccessibilityHint}
             accessibilityLabel={backAccessibilityLabel}
             name="backArrow"
-            onPress={onBackButtonPress}
+            onPress={onBackButtonClick}
             testID="modal-back-button"
           />
         )}

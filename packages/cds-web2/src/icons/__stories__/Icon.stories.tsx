@@ -1,28 +1,19 @@
+/**
+ * DO NOT MODIFY
+ * Generated from yarn nx run icons:generate-stories
+ */
+
 import React from 'react';
 
-import { HStack } from '../../layout/HStack';
 import { Icon } from '../Icon';
 
+import { IconSheet } from './IconSheet';
+
 export default {
+  title: 'Icon',
   component: Icon,
-  title: 'Icons/Icon',
 };
 
-const exampleColor = {
-  base: 'iconWarning',
-  minTablet: 'iconNegative',
-  minDesktop: 'iconPositive',
-} as const;
-
-export const PrimaryIcon = () => (
-  <HStack alignItems="center" gap={2}>
-    <Icon color="iconWarning" name="airdrop" size="xs" />
-    <Icon color="iconNegative" name="airdrop" size="s" />
-    <Icon color="iconPositive" name="airdrop" size="m" />
-    <Icon color="iconPrimary" name="airdrop" size="l" />
-    <Icon bordered color="iconPrimary" name="airdrop" size="l" />
-    <Icon bordered color="iconPrimary" name="airdrop" size="m" />
-    <Icon color={exampleColor} name="airdrop" size="l" />
-    <Icon dangerouslySetColor="purple" name="airdrop" size="l" />
-  </HStack>
-);
+// single sheet is too large for Percy, need to split up in chunks of 160 to stay under resource limit
+export const Sheet1 = () => <IconSheet endIndex={160} startIndex={0} />;
+export const Sheet2 = () => <IconSheet endIndex={320} startIndex={160} />;

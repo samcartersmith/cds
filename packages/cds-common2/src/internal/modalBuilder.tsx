@@ -40,21 +40,21 @@ export type CreateModalProps = {
   >;
   ModalBody: React.ComponentType<React.PropsWithChildren<SharedProps>>;
   ModalHeader: React.ComponentType<
-    React.PropsWithChildren<ModalHeaderBaseProps & { onBackButtonPress?: () => void }>
+    React.PropsWithChildren<ModalHeaderBaseProps & { onBackButtonClick?: () => void }>
   >;
   ModalFooter: React.ComponentType<
     React.PropsWithChildren<
       {
-        primaryAction: NonNullable<React.ReactElement<ButtonBaseProps & { onPress?: () => void }>> &
+        primaryAction: NonNullable<React.ReactElement<ButtonBaseProps & { onClick?: () => void }>> &
           SharedProps;
-        secondaryAction?: React.ReactElement<ButtonBaseProps & { onPress?: () => void }>;
+        secondaryAction?: React.ReactElement<ButtonBaseProps & { onClick?: () => void }>;
       } & SharedProps
     >
   >;
   LoremIpsum: React.ComponentType<React.PropsWithChildren<Record<string, unknown>>>;
   Button: React.ComponentType<
     React.PropsWithChildren<
-      ButtonBaseProps & { onPress?: () => void } & SharedProps & {
+      ButtonBaseProps & { onClick?: () => void } & SharedProps & {
           ref?: React.RefObject<HTMLButtonElement>;
         }
     >
@@ -86,7 +86,7 @@ export function modalBuilder({
 
     return (
       <>
-        <Button ref={triggerRef} onPress={toggleOn}>
+        <Button ref={triggerRef} onClick={toggleOn}>
           Open Modal
         </Button>
         <Modal
@@ -101,15 +101,15 @@ export function modalBuilder({
           <ModalHeader
             backAccessibilityLabel="Back"
             closeAccessibilityLabel="Close"
-            onBackButtonPress={enableBackButton ? toggleOff : undefined}
+            onBackButtonClick={enableBackButton ? toggleOff : undefined}
             testID="Basic Modal Test ID"
             title="Basic Modal"
           />
           <ModalBody testID="modal-body">{children}</ModalBody>
           <ModalFooter
-            primaryAction={<Button onPress={toggleOff}>Save</Button>}
+            primaryAction={<Button onClick={toggleOff}>Save</Button>}
             secondaryAction={
-              <Button onPress={toggleOff} variant="secondary">
+              <Button onClick={toggleOff} variant="secondary">
                 Cancel
               </Button>
             }
@@ -133,9 +133,9 @@ export function modalBuilder({
             <ModalHeader closeAccessibilityLabel="Close" title="Default Modal" />
             <ModalBody>{children}</ModalBody>
             <ModalFooter
-              primaryAction={<Button onPress={closeModal}>Save</Button>}
+              primaryAction={<Button onClick={closeModal}>Save</Button>}
               secondaryAction={
-                <Button onPress={closeModal} variant="secondary">
+                <Button onClick={closeModal} variant="secondary">
                   Cancel
                 </Button>
               }
@@ -152,7 +152,7 @@ export function modalBuilder({
     }, [closeModal, handlePress]);
 
     return (
-      <Button ref={triggerRef} onPress={handlePress}>
+      <Button ref={triggerRef} onClick={handlePress}>
         Open Modal
       </Button>
     );
@@ -161,7 +161,7 @@ export function modalBuilder({
   const MockModal = ({
     onRequestClose,
     onDidClose,
-    onBackButtonPress,
+    onBackButtonClick,
     title = 'Basic Modal',
     visible: externalVisible,
     testID,
@@ -173,7 +173,7 @@ export function modalBuilder({
     backAccessibilityHint,
     closeAccessibilityLabel,
     closeAccessibilityHint,
-  }: Partial<ModalBaseProps & ModalHeaderBaseProps & { onBackButtonPress?: () => void }> &
+  }: Partial<ModalBaseProps & ModalHeaderBaseProps & { onBackButtonClick?: () => void }> &
     ModalA11yProps) => {
     const [visible, { toggleOn, toggleOff }] = useToggler(externalVisible);
 
@@ -189,7 +189,7 @@ export function modalBuilder({
 
     return (
       <>
-        <Button ref={triggerRef} onPress={toggleOn} testID="modal-trigger">
+        <Button ref={triggerRef} onClick={toggleOn} testID="modal-trigger">
           Open Modal
         </Button>
         <Modal
@@ -206,7 +206,7 @@ export function modalBuilder({
             backAccessibilityLabel={backAccessibilityLabel}
             closeAccessibilityHint={closeAccessibilityHint}
             closeAccessibilityLabel={closeAccessibilityLabel}
-            onBackButtonPress={onBackButtonPress}
+            onBackButtonClick={onBackButtonClick}
             title={title}
           />
           <ModalBody>
@@ -214,12 +214,12 @@ export function modalBuilder({
           </ModalBody>
           <ModalFooter
             primaryAction={
-              <Button onPress={toggleOff} testID="modal-footer-save">
+              <Button onClick={toggleOff} testID="modal-footer-save">
                 Save
               </Button>
             }
             secondaryAction={
-              <Button onPress={toggleOff} variant="secondary">
+              <Button onClick={toggleOff} variant="secondary">
                 Cancel
               </Button>
             }

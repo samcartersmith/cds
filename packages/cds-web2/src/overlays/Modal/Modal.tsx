@@ -20,7 +20,6 @@ import { useA11yLabels } from '../../hooks/useA11yLabels';
 import { VStack } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { breakpoints, media } from '../../styles/media';
-import { getStyles } from '../../styles/styleProps';
 import { FocusTrap } from '../FocusTrap';
 
 import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
@@ -169,9 +168,9 @@ export const Modal = memo(
       // TODO: remove render props as we no longer need the method to close modal
       const renderChildrenProps = useMemo(() => ({ closeModal: handleClose }), [handleClose]);
 
-      const dialogStyles = useMemo(
-        () => getStyles({ width, position: dangerouslySetPosition }),
-        [width, dangerouslySetPosition],
+      const dialogStyles = useMemo<React.CSSProperties>(
+        () => ({ position: dangerouslySetPosition, width }),
+        [dangerouslySetPosition, width],
       );
 
       return (
@@ -188,13 +187,9 @@ export const Modal = memo(
           >
             <motion.div
               {...motionProps}
-              className={cx(
-                baseStyle,
-                !dangerouslyDisableResponsiveness && modalResponsiveStyle,
-                dialogStyles.className,
-              )}
+              className={cx(baseStyle, !dangerouslyDisableResponsiveness && modalResponsiveStyle)}
               data-testid="modal-dialog-motion"
-              style={dialogStyles.style}
+              style={dialogStyles}
             >
               <FocusTrap
                 disableFocusTrap={disableFocusTrap}

@@ -3,7 +3,7 @@ import { ButtonBaseProps } from '../types';
 import { storyBuilder } from './utils/storyBuilder';
 
 // eslint-disable-next-line no-console
-const onPressConsole = () => console.log('pressed');
+const onClickConsole = () => console.log('clicked');
 
 const config = {
   argTypes: {
@@ -13,7 +13,7 @@ const config = {
   },
   args: {
     children: 'Button',
-    onPress: onPressConsole,
+    onClick: onClickConsole,
   },
 } as const;
 
