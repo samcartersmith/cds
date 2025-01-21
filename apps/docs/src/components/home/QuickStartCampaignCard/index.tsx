@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { useHistory } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
 import { Button } from '@cbhq/cds-web2/buttons';
+import { Divider } from '@cbhq/cds-web2/layout';
 
 import styles from './styles.module.css';
 
@@ -29,7 +30,7 @@ export const QuickStartCampaignCard = ({
 
   return (
     <div className={styles.cardWrapper}>
-      <hr className={styles.cardDivider} />
+      <Divider />
       <div className={styles.cardMainWrapper}>
         <div className={styles.cardContentWrapper}>
           <div className={styles.cardTextWrapper}>

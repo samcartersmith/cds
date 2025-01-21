@@ -11,18 +11,15 @@ export type DividerBaseProps = {
   direction?: 'horizontal' | 'vertical';
 };
 
-export type DividerProps = DividerBaseProps & Omit<BoxProps<'div'>, 'as' | 'role'>;
+export type DividerProps = DividerBaseProps & Omit<BoxProps<'hr'>, 'as' | 'role'>;
 
 const directionStyles: {
   [key in NonNullable<DividerBaseProps['direction']>]: string;
 } = {
   horizontal: css`
-    flex-grow: 1;
     height: 1px;
-    display: block;
   `,
   vertical: css`
-    flex-grow: 1;
     width: 1px;
   `,
 } as const;
@@ -31,9 +28,12 @@ export const Divider = memo(
   ({ color, direction = 'horizontal', background = 'line', ...props }: DividerProps) => {
     return (
       <Box
+        alignSelf="stretch"
         aria-orientation={direction}
+        as="hr"
         background={color ?? background}
         className={cx(directionStyles[direction])}
+        margin={0}
         role="separator"
         {...props}
       />
