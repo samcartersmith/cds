@@ -7,6 +7,15 @@
   "targets": {
     "dev": {
       "command": "docusaurus start --port 3000",
+      "dependsOn": [
+        {
+          "projects": [
+            "docusaurus-plugin-docgen",
+            "docusaurus-plugin-kbar"
+          ],
+          "target": "build"
+        }
+      ],
       "options": {
         "cwd": "apps/docs",
         "env": {
