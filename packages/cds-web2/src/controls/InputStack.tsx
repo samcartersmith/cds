@@ -6,7 +6,6 @@ import { durations } from '@cbhq/cds-common2/motion/tokens';
 import { inputStackGap } from '@cbhq/cds-common2/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
-import type { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
@@ -62,8 +61,8 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   primary: 'backgroundPrimary',
   positive: 'backgroundPositive',
   negative: 'backgroundNegative',
-  foreground: 'textForeground',
-  foregroundMuted: 'textForegroundMuted',
+  foreground: 'backgroundInverse',
+  foregroundMuted: 'lineHeavy',
   secondary: 'backgroundSecondary',
 };
 
@@ -131,7 +130,7 @@ export type InputStackBaseProps = {
 export type InputStackProps = InputStackBaseProps & BoxProps<'div'>;
 
 export const InputStack = memo(
-  forwardRef(
+  forwardRef<HTMLElement, InputStackProps>(
     (
       {
         width = '100%',
@@ -152,8 +151,8 @@ export const InputStack = memo(
         disableFocusedStyle = false,
         enableColorSurge,
         ...props
-      }: InputStackProps,
-      ref: ForwardedRef<HTMLElement>,
+      },
+      ref,
     ) => {
       const focusedVariant = useMemo(
         () => (focused && variant !== 'positive' && variant !== 'negative' ? 'primary' : variant),
@@ -182,26 +181,30 @@ export const InputStack = memo(
           return 'transparent';
         }
 
-        if (variant !== 'positive' && variant !== 'negative') {
-          return 'var(--color- backgroundPrimary)';
+        if (variant === 'positive' || variant === 'negative') {
+          return `var(--color-${variantColorMap[variant]})`;
+        }
+
+        // all variants except for positive/negative receive the primary focus color
+        return 'var(--color-backgroundPrimary)';
+      }, [disableFocusedStyle, variant]);
+
+      const borderColorUnfocused = useMemo(() => {
+        if (variant === 'secondary') {
+          return 'transparent';
         }
 
         return `var(--color-${variantColorMap[variant]})`;
-      }, [disableFocusedStyle, variant]);
+      }, [variant]);
 
       const defaultBorderStyle = useMemo(() => {
         return {
-          '--border-color-unfocused':
-            variant === 'secondary'
-              ? 'transparent'
-              : variant === 'foregroundMuted' || !variant
-              ? 'var(--color-lineHeavy)'
-              : `var(--color-${variantColorMap[variant]})`,
+          '--border-color-unfocused': borderColorUnfocused,
           '--border-color-focused': borderColorFocused,
           '--border-width-focused': `var(--borderWidth-${borderWidth})`,
           ...inputBorderRadius,
         };
-      }, [variant, borderColorFocused, borderWidth, inputBorderRadius]);
+      }, [borderColorUnfocused, borderColorFocused, borderWidth, inputBorderRadius]);
 
       return (
         <VStack

@@ -1,0 +1,134 @@
+import React, { forwardRef, memo, useCallback, useMemo, useState } from 'react';
+import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+import { helperTextHeight, inputStackGap } from '@cbhq/cds-common2/tokens/input';
+import type { SelectBaseProps } from '@cbhq/cds-common2/types';
+import { useTheme } from '@cbhq/cds-web2/hooks/useTheme';
+
+import { Dropdown } from '../dropdown/Dropdown';
+import { DropdownProps } from '../dropdown/DropdownProps';
+import { HStack } from '../layout/HStack';
+import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+
+import { TextInputFocusVariantContext } from './context';
+import { SelectTrigger } from './SelectTrigger';
+import { useRefocusTrigger } from './useRefocusTrigger';
+
+export type SelectProps = {
+  children: React.ReactNode;
+} & SelectBaseProps &
+  Pick<DropdownProps, 'disablePortal'>;
+
+export const Select = memo(
+  forwardRef<HTMLButtonElement, SelectProps>(function Select(
+    {
+      children,
+      value,
+      valueLabel,
+      variant = 'foregroundMuted',
+      disabled = false,
+      width = '100%',
+      onPress,
+      helperText,
+      onChange,
+      disablePortal,
+      ...props
+    },
+    ref,
+  ) {
+    const [visible, setVisible] = useState(false);
+    const [menuHasClosed, setMenuHasClosed] = useState(false);
+    const focusedVariant = useInputVariant(visible, variant);
+    /** prevents animation from firing on mount */
+    const [animationsEnabled, setAnimationsEnabled] = useState(false);
+    const theme = useTheme();
+
+    /** If the spacer height in InputStack between the helper text and the input changes, this value will need to change */
+    const calculateInputStackGap = theme.space[inputStackGap];
+    const menuOffset = calculateInputStackGap + helperTextHeight;
+    const triggerRef = useRefocusTrigger(menuHasClosed);
+
+    const handleOnSelectPress = useCallback(() => {
+      onPress?.();
+      setAnimationsEnabled(true);
+    }, [onPress]);
+
+    const onOpenMenu = useCallback(() => {
+      setVisible(true);
+      // this makes sure if you open/close the menu more than once it'll work as expected
+      if (menuHasClosed) {
+        setMenuHasClosed(false);
+      }
+    }, [menuHasClosed]);
+
+    const onCloseMenu = useCallback(() => {
+      setVisible(false);
+      setMenuHasClosed(true);
+    }, []);
+
+    const refs = useMergeRefs(ref, triggerRef);
+
+    const trigger = useMemo(
+      () => (
+        <TextInputFocusVariantContext.Provider value={focusedVariant}>
+          <SelectTrigger
+            ref={refs}
+            disabled={disabled}
+            helperText={helperText}
+            onPress={handleOnSelectPress}
+            triggerHasFocus={visible}
+            value={valueLabel ?? value}
+            variant={variant}
+            visible={animationsEnabled && visible}
+            {...props}
+          />
+        </TextInputFocusVariantContext.Provider>
+      ),
+      [
+        focusedVariant,
+        disabled,
+        valueLabel,
+        value,
+        variant,
+        visible,
+        handleOnSelectPress,
+        refs,
+        helperText,
+        animationsEnabled,
+        props,
+      ],
+    );
+
+    const contentPosition: PopoverContentPositionConfig = useMemo(
+      () => ({
+        gap: 0.5,
+        offsetGap: helperText ? menuOffset : undefined,
+      }),
+      [helperText, menuOffset],
+    );
+
+    return (
+      <HStack width={width}>
+        {disabled ? (
+          trigger
+        ) : (
+          <Dropdown
+            block
+            content={children}
+            contentPosition={contentPosition}
+            disablePortal={disablePortal}
+            // @ts-expect-error TODO: support string values for dimensions in layout components
+            maxWidth="95vw"
+            onChange={onChange}
+            onCloseMenu={onCloseMenu}
+            onOpenMenu={onOpenMenu}
+            value={value}
+            width={width}
+          >
+            {trigger}
+          </Dropdown>
+        )}
+      </HStack>
+    );
+  }),
+);

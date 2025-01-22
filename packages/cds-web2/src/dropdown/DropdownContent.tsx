@@ -46,7 +46,7 @@ export const DropdownContent = memo(
         <MotionVStack
           ref={ref}
           bordered
-          background="backgroundPrimary"
+          background="background"
           borderRadius={400}
           className={dropdownStaticClassName}
           elevation={2}

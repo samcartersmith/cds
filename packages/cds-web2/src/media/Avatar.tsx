@@ -40,9 +40,14 @@ const wrapperStyles = css`
 `;
 
 const avatarStyles = css`
-  background: var(--avatar-background);
-  border: solid var(--borderWidth-200) var(--avatar-borderColor);
   overflow: hidden;
+
+  // it may have been unintentional, but in v7 downwards the unselected Avatar has a 1px transparent border on the inner div
+  // to reduce visual regressions, this has been preserved in the migration for v8
+  border: solid var(--borderWidth-100) var(--avatar-borderColor);
+  &[data-bordered='true'] {
+    border-width: var(--borderWidth-200);
+  }
 
   &[data-selected='true'] {
     // Box shadow is used to place a ring around the avatar in the color chosen by the colorScheme prop
@@ -108,7 +113,7 @@ export const fallbackImageSrc =
 export const Avatar = memo(
   ({
     alt,
-    src = fallbackImageSrc,
+    src,
     shape = 'circle',
     size = 'l',
     borderColor,
@@ -120,6 +125,10 @@ export const Avatar = memo(
     name,
     style = {},
   }: AvatarWebProps) => {
+    const avatarSize = `var(--avatarSize-${size})`;
+    const userProvidedSize = style?.width ?? style?.height ?? dangerouslySetSize;
+    const computedSize = userProvidedSize ?? avatarSize;
+
     const avatarText = useMemo(() => {
       const placeholderLetter = name?.charAt(0);
 
@@ -160,10 +169,6 @@ export const Avatar = memo(
     }, [name, size, dangerouslySetSize]);
 
     const avatarInlineStyles = useMemo(() => {
-      const avatarSize = `var(--avatarSize-${size})`;
-      const userProvidedSize = style?.width ?? style?.height ?? dangerouslySetSize;
-      const computedSize = userProvidedSize ?? avatarSize;
-
       return {
         width: computedSize,
         height: computedSize,
@@ -171,9 +176,8 @@ export const Avatar = memo(
         '--avatar-borderColor': borderColor
           ? `var(--color-${borderColor})`
           : 'var(--color-transparent)',
-        '--avatar-background': src || 'transparent',
       } as React.CSSProperties;
-    }, [size, style, dangerouslySetSize, borderColor, src]);
+    }, [style, computedSize, borderColor]);
 
     const fallbackStyle = useMemo(
       () => ({
@@ -188,6 +192,7 @@ export const Avatar = memo(
         <Box
           alignItems="center"
           className={cx(avatarStyles, borderRadiusStyles[shape], className)}
+          data-bordered={!!borderColor}
           data-selected={selected}
           data-shape={shape}
           flexGrow={0}
@@ -198,7 +203,13 @@ export const Avatar = memo(
         >
           {/* render the Remote image when neither a src URL or name is passed in */}
           {!!src || !name ? (
-            <RemoteImage alt={alt} height="100%" shape={shape} source={src} width="100%" />
+            <RemoteImage
+              alt={alt}
+              height={computedSize}
+              shape={shape}
+              source={src ?? fallbackImageSrc}
+              width={computedSize}
+            />
           ) : (
             <Box
               alignItems="center"
