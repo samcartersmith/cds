@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.3 (1/22/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix hidePeriodSelector prop not working on web SparklineInteractive. [[DX-4598](https://jira.coinbase-corp.com/browse/DX-4598)]
+
 ## 2.1.2 (11/27/2024 PST)
 
 #### 🐞 Fixes

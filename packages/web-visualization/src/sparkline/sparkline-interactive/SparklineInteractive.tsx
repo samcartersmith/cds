@@ -88,6 +88,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   const palette = usePalette();
 
   const isMobileLayout = containerWidth > 0 && containerWidth < mobileLayoutBreakpoint;
+  const showHeaderPeriodSelector = periodSelectorPlacement === 'above' && !hidePeriodSelector;
 
   const color = strokeColor;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
@@ -181,20 +182,16 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
 
   return (
     <div ref={containerRef} style={{ width: '100%' }}>
-      {(!hidePeriodSelector || !!headerNode) && (
-        <>
-          {isMobileLayout && periodSelectorPlacement === 'above' && (
-            <Box spacingBottom={2} width="100%">
-              {periodSelector}
-            </Box>
-          )}
-          <Box alignItems="center" justifyContent="space-between" spacingBottom={2}>
-            {header ?? <div />}
-            {!isMobileLayout && periodSelectorPlacement === 'above' && (
-              <Box flexGrow={0}>{periodSelector}</Box>
-            )}
-          </Box>
-        </>
+      {isMobileLayout && showHeaderPeriodSelector && (
+        <Box spacingBottom={2} width="100%">
+          {periodSelector}
+        </Box>
+      )}
+      {(!!headerNode || (!isMobileLayout && showHeaderPeriodSelector)) && (
+        <Box alignItems="center" justifyContent="space-between" spacingBottom={2}>
+          {header ?? <div />}
+          {!isMobileLayout && showHeaderPeriodSelector && <Box flexGrow={0}>{periodSelector}</Box>}
+        </Box>
       )}
       <SparklineInteractiveScrubProvider>
         <VStack spacingBottom={(formatHoverDate || formatHoverPrice) && 1}>
@@ -257,7 +254,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           />
         </Box>
       )}
-      {periodSelectorPlacement === 'below' && !isMarkerDateVisible && (
+      {periodSelectorPlacement === 'below' && !isMarkerDateVisible && !hidePeriodSelector && (
         <Box background spacingTop={1} width="100%" zIndex={1}>
           {periodSelector}
         </Box>
