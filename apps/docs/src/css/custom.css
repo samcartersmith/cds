@@ -15,6 +15,8 @@
   --ifm-color-primary-lightest: #509aff;
   --ifm-code-font-size: 95%;
   --ifm-navbar-sidebar-width: 240px;
+  --ifm-navbar-height: 74px;
+  --ifm-link-hover-decoration: none;
   --docusaurus-highlighted-code-line-bg: #fff;
 
   /* left sidebar */
@@ -77,6 +79,12 @@
   --zIndex-portal: 100001;
 
   --states-secondaryHovered: #e8eaed;
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --ifm-navbar-height: 72px;
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -168,6 +176,10 @@ h6 {
 
 .menu__link--active:not(.menu__link--sublist) {
   background: none;
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 0;
 }
 
 p {

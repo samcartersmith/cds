@@ -5,6 +5,7 @@ import { translate } from '@docusaurus/Translate';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebar/Desktop/Content';
 import DocSidebarItems from '@theme/DocSidebarItems';
+import { VStack } from '@cbhq/cds-web2/layout';
 
 import styles from './styles.module.css';
 
@@ -27,22 +28,26 @@ export default function DocSidebarDesktopContent({ path, sidebar, className }: P
   const showAnnouncementBar = useShowAnnouncementBar();
 
   return (
-    <nav
+    <VStack
       aria-label={translate({
         id: 'theme.docs.sidebar.navAriaLabel',
         message: 'Docs sidebar',
         description: 'The ARIA label for the sidebar navigation',
       })}
+      as="nav"
       className={cx(
         'menu thin-scrollbar',
         styles.menu,
         showAnnouncementBar && styles.menuWithAnnouncementBar,
         className,
       )}
+      paddingLeft={2}
+      paddingRight={1.5}
+      paddingY={3}
     >
-      <ul className={cx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
+      <VStack as="ul" className={cx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')} gap={3}>
         <DocSidebarItems activePath={path} items={sidebar} level={1} />
-      </ul>
-    </nav>
+      </VStack>
+    </VStack>
   );
 }
