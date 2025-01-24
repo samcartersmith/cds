@@ -103,7 +103,7 @@ export const Collapsible = memo(
           role={role}
           style={style}
         >
-          <Box paddingTop={paddingTop}>
+          <Box display="block" paddingTop={paddingTop}>
             <Stack
               overflow={maxWidth || maxHeight ? 'auto' : undefined}
               {...sizeProps}
