@@ -10,7 +10,7 @@ export type InteractableBaseProps = {
   /** Border color of the element being interacted with. */
   borderColor?: ThemeVars.Color;
   /** Border radius of the element being interacted with. Number should only be used if value comes from useButtonBorderRadius. */
-  borderRadius?: ThemeVars.BorderRadius | number;
+  borderRadius?: ThemeVars.BorderRadius;
   /** Width of the border. */
   borderWidth?: ThemeVars.BorderWidth;
   /** Is the element currently disabled. */

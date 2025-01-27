@@ -3664,6 +3664,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/cds-lottie-files2@workspace:^, @cbhq/cds-lottie-files2@workspace:packages/lottie-files2":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/cds-lottie-files2@workspace:packages/lottie-files2"
+  dependencies:
+    "@babel/core": "npm:^7.20.12"
+    "@babel/preset-env": "npm:^7.20.2"
+    "@babel/preset-react": "npm:^7.18.6"
+    "@babel/preset-typescript": "npm:^7.18.6"
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/cds-lottie-files@workspace:^, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-lottie-files@workspace:packages/lottie-files"
@@ -3741,7 +3752,7 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.18.6"
     "@cbhq/cds-common2": "workspace:^"
     "@cbhq/cds-fonts": "workspace:^"
-    "@cbhq/cds-lottie-files": "workspace:^"
+    "@cbhq/cds-lottie-files2": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/ui-scorecard": "workspace:^"
     "@figma/code-connect": "npm:^1.2.2"

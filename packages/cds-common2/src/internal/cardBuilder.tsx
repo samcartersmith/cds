@@ -25,7 +25,7 @@ const sharedWrapperProps = {
   width: '100%',
 } as const;
 
-const sharedProps = { spacing: 2 } as const;
+const sharedProps = { padding: 2 } as const;
 const sharedPressProps = { onPress: onPressConsole, ...sharedProps } as const;
 const pinnedSharedProps = { ...sharedProps, elevation: 2 } as const;
 const pinnedSharedWrapperProps = {

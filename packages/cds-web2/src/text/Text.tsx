@@ -1,6 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
+import { isChildrenFalsy } from '@cbhq/cds-common2/utils/isChildrenFalsy';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { type BoxBaseProps, Box } from '../layout/Box';
@@ -187,6 +188,10 @@ export const Text: TextComponent = forwardRef<React.ReactElement<TextBaseProps>,
       }),
       [dangerouslySetColor, numberOfLines, style],
     );
+
+    if (isChildrenFalsy(props.children)) {
+      return null;
+    }
     return (
       <Box
         ref={ref}

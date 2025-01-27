@@ -18,13 +18,11 @@ function NavigationIconScreen() {
           return (
             <HStack key={`nav-icon-wrapper-${name}`} alignItems="center" gap={2}>
               <HStack alignItems="center" gap={2}>
-                <NavigationIcon name={name} size="s" />
                 {(['s', 'm', 'l'] as const).map((size) => {
                   return <NavigationIcon key={`${name}-${size}`} name={name} size={size} />;
                 })}
               </HStack>
               <HStack alignItems="center" gap={2}>
-                <NavigationIcon active name={name} size="s" />
                 {(['s', 'm', 'l'] as const).map((size) => {
                   return (
                     <NavigationIcon key={`${name}-${size}-active`} active name={name} size={size} />

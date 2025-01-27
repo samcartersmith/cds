@@ -5,6 +5,7 @@ import { CoachmarkBaseProps } from '@cbhq/cds-common2';
 import { IconButton } from '../buttons';
 import { useTheme } from '../hooks/useTheme';
 import { Box, HStack, VStack } from '../layout';
+import { InvertedThemeProvider } from '../system';
 import { TextBody, TextHeadline } from '../typography';
 
 export type CoachmarkProps = CoachmarkBaseProps;
@@ -30,43 +31,48 @@ export const Coachmark = memo(
       const paddingX = theme.space[2];
 
       return (
-        <VStack
-          ref={ref}
-          background="background"
-          borderRadius={400}
-          maxWidth={windowWidth - paddingX * 2}
-          overflow="hidden"
-          testID={testID}
-          width={width}
-        >
-          {media}
-          <VStack padding={2}>
-            <VStack gap={2}>
-              <VStack gap={0.5}>
-                {typeof title === 'string' ? (
-                  <TextHeadline accessibilityRole="header">{title}</TextHeadline>
-                ) : (
-                  title
-                )}
-                {typeof content === 'string' ? <TextBody>{content}</TextBody> : content}
+        <InvertedThemeProvider>
+          <VStack
+            ref={ref}
+            background="background"
+            borderRadius={400}
+            maxWidth={windowWidth - paddingX * 2}
+            overflow="hidden"
+            testID={testID}
+            width={width}
+          >
+            {media}
+            <VStack padding={2}>
+              <VStack gap={2}>
+                <VStack gap={0.5}>
+                  {typeof title === 'string' ? (
+                    <TextHeadline accessibilityRole="header">{title}</TextHeadline>
+                  ) : (
+                    title
+                  )}
+                  {typeof content === 'string' ? <TextBody>{content}</TextBody> : content}
+                </VStack>
+                <HStack
+                  alignItems="center"
+                  justifyContent={checkbox ? 'space-between' : 'flex-end'}
+                >
+                  {checkbox}
+                  {action}
+                </HStack>
               </VStack>
-              <HStack alignItems="center" justifyContent={checkbox ? 'space-between' : 'flex-end'}>
-                {checkbox}
-                {action}
-              </HStack>
             </VStack>
+            {!!onClose && (
+              <Box padding={1} position="absolute" right={0} top={0}>
+                <IconButton
+                  transparent
+                  accessibilityLabel={closeButtonAccessibilityLabel}
+                  name="close"
+                  onPress={onClose}
+                />
+              </Box>
+            )}
           </VStack>
-          {!!onClose && (
-            <Box padding={1} position="absolute" right={0} top={0}>
-              <IconButton
-                transparent
-                accessibilityLabel={closeButtonAccessibilityLabel}
-                name="close"
-                onPress={onClose}
-              />
-            </Box>
-          )}
-        </VStack>
+        </InvertedThemeProvider>
       );
     },
   ),

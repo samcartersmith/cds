@@ -15,7 +15,7 @@ export const getButtonSizeProps = memoize(function getButtonSizeProps({
 }: GetButtonSizeStyles) {
   const sizeVariant = compact ? 'compact' : 'regular';
   const minHeight = interactableHeight[sizeVariant];
-  const borderRadius = minHeight;
+  const borderRadius = compact ? 700 : 900;
   const defaultCompactSize = 's';
 
   const iconSize = (compact ? compactSize ?? defaultCompactSize : 'm') as IconSize;

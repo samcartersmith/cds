@@ -1,5 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { type TextProps, Text } from './Text';
 
-export const TextInherited = (props: TextProps) => <Text inherit font="body" {...props} />;
+export const TextInherited = memo((props: TextProps) => <Text inherit font="body" {...props} />);

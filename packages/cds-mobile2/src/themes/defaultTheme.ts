@@ -341,10 +341,10 @@ export const defaultTheme = {
     accentSubtleGray: `rgb(${lightSpectrum.gray10})`,
     accentBoldGray: `rgb(${lightSpectrum.gray80})`,
     // Transparent
-    transparent: `rgba(${lightSpectrum.gray0},0)`,
-    transparentHover: 'rgba(250,250,250,0.98)',
-    transparentPressed: 'rgba(235,235,236,0.92)',
-    transparentDisabled: 'rgb(255,255,255)',
+    transparent: `rgba(${lightSpectrum.gray0},0)`, // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
+    transparentHover: 'rgba(250,250,250,0.98)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
+    transparentPressed: 'rgba(235,235,236,0.92)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
+    transparentDisabled: 'rgb(255,255,255)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
   },
   dark: {
     // Text
@@ -362,7 +362,7 @@ export const defaultTheme = {
     backgroundOverlay: `rgba(${darkSpectrum.gray80},0.33)`,
     backgroundPrimary: `rgb(${darkSpectrum.blue70})`,
     backgroundPrimaryWash: `rgb(${darkSpectrum.blue0})`,
-    backgroundSecondary: `rgb(${darkSpectrum.gray10})`,
+    backgroundSecondary: `rgb(${darkSpectrum.gray10})`, // TO DO: confirm correct colors. this color has same value as backgroundElevation2
     backgroundSecondaryWash: `rgb(${darkSpectrum.gray0})`, // TO DO confirm correct colors
     backgroundNegative: `rgb(${darkSpectrum.red60})`,
     backgroundNegativeWash: `rgb(${darkSpectrum.red0})`,
@@ -373,16 +373,16 @@ export const defaultTheme = {
     currentColor: 'currentColor',
     // Background states
     backgroundPrimaryHover: `rgb(${darkSpectrum.blue70})`,
-    backgroundPrimaryPressed: `rgb(${darkSpectrum.blue80})`,
-    backgroundPrimaryDisabled: `rgb(${darkSpectrum.blue15})`,
+    backgroundPrimaryPressed: `rgb(${darkSpectrum.blue80})`, // TO DO: confirm correct colors
+    backgroundPrimaryDisabled: `rgb(${darkSpectrum.blue15})`, // TO DO: confirm correct colors
     backgroundSecondaryHover: `rgb(${darkSpectrum.gray5})`,
     backgroundSecondaryPressed: `rgb(${darkSpectrum.gray5})`,
     backgroundSecondaryDisabled: `rgb(${darkSpectrum.gray5})`,
     backgroundNegativeHover: `rgb(${darkSpectrum.red60})`,
-    backgroundNegativePressed: `rgb(${darkSpectrum.red60})`,
+    backgroundNegativePressed: `rgb(${darkSpectrum.red60})`, // TO DO: confirm correct colors
     backgroundNegativeDisabled: `rgb(${darkSpectrum.red60})`,
     backgroundPositiveHover: `rgb(${darkSpectrum.green60})`, // TO DO: confirm correct colors
-    backgroundPositivePressed: `rgb(${darkSpectrum.green60})`,
+    backgroundPositivePressed: `rgb(${darkSpectrum.green60})`, // TO DO: confirm correct colors
     backgroundPositiveDisabled: `rgb(${darkSpectrum.green60})`,
     // Line
     line: `rgba(${darkSpectrum.gray60},0.2)`,
@@ -415,10 +415,10 @@ export const defaultTheme = {
     accentSubtleGray: `rgb(${darkSpectrum.gray10})`,
     accentBoldGray: `rgb(${darkSpectrum.gray80})`,
     // Transparent
-    transparent: `rgba(${darkSpectrum.gray0},0)`,
-    transparentHover: 'rgba(15,16,18,0.98)',
-    transparentPressed: 'rgba(30,31,32,0.92)',
-    transparentDisabled: 'rgb(10,11,13)',
+    transparent: `rgba(${darkSpectrum.gray0},0)`, // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
+    transparentHover: 'rgba(15,16,18,0.98)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
+    transparentPressed: 'rgba(30,31,32,0.92)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
+    transparentDisabled: 'rgb(10,11,13)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
   },
   space: {
     '0': 0,

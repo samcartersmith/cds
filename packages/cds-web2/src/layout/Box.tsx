@@ -146,7 +146,8 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
       className,
       testID,
       pin,
-      bordered,
+      elevation,
+      bordered = !!elevation,
       borderedTop,
       borderedBottom,
       borderedStart,
@@ -179,7 +180,7 @@ export const Box: BoxComponent = forwardRef<React.ReactElement<BoxBaseProps>, Bo
       borderRightWidth,
       borderBottomWidth,
       borderLeftWidth,
-      elevation,
+
       hoverColor,
       hoverBackground,
       hoverBorderColor,

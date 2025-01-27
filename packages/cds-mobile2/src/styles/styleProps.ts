@@ -90,7 +90,6 @@ export type StyleProps = {
   flexGrow?: ViewStyle['flexGrow'];
   flexShrink?: ViewStyle['flexShrink'];
   opacity?: ViewStyle['opacity'];
-  align?: TextAlignProps['align'];
 };
 
 /** StyleProps that get their values from the theme. */
@@ -134,7 +133,6 @@ export const themedStyleProps = {
 
 /** For StyleProps whose names are not keys of ViewStyle & TextStyle, this maps those StyleProp names to their ViewStyle & TextStyle keys. */
 const stylePropAliases = {
-  align: ['textAlign'],
   background: ['backgroundColor'],
   paddingX: ['paddingLeft', 'paddingRight'],
   paddingY: ['paddingTop', 'paddingBottom'],
@@ -155,11 +153,17 @@ export const getStyles = (styleProps: StyleProps, theme: Theme) => {
       if (typeof themedStyleProps[styleProp as keyof typeof themedStyleProps] === 'undefined') {
         style[styleProp as keyof typeof style] = value as any;
       }
+      // If it is themed and it is margin* prop
+      else if (styleProp.includes('margin')) {
+        style[styleProp as keyof typeof style] = -(
+          theme[themedStyleProps[styleProp as keyof typeof themedStyleProps]] as any
+        )[-value as any] as any;
+      }
       // If it is themed...
       else {
         style[styleProp as keyof typeof style] = (
           theme[themedStyleProps[styleProp as keyof typeof themedStyleProps]] as any
-        )[(styleProp.includes('margin') ? -value : value) as any];
+        )[value as any];
       }
     } else {
       for (const propAlias of stylePropAliases[styleProp as keyof typeof stylePropAliases]) {
@@ -167,11 +171,17 @@ export const getStyles = (styleProps: StyleProps, theme: Theme) => {
         if (typeof themedStyleProps[styleProp as keyof typeof themedStyleProps] === 'undefined') {
           style[propAlias as keyof typeof style] = value as any;
         }
+        // If it is themed and it is margin* prop
+        else if (styleProp.includes('margin')) {
+          style[propAlias as keyof typeof style] = -(
+            theme[themedStyleProps[styleProp as keyof typeof themedStyleProps]] as any
+          )[-value as any] as any;
+        }
         // If it is themed...
         else {
           style[propAlias as keyof typeof style] = (
             theme[themedStyleProps[styleProp as keyof typeof themedStyleProps]] as any
-          )[(styleProp.includes('margin') ? -value : value) as any];
+          )[value as any];
         }
       }
     }

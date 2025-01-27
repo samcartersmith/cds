@@ -134,7 +134,7 @@
   "dependencies": {
     "@cbhq/cds-common2": "workspace:^",
     "@cbhq/cds-fonts": "workspace:^",
-    "@cbhq/cds-lottie-files": "workspace:^",
+    "@cbhq/cds-lottie-files2": "workspace:^",
     "@cbhq/cds-utils": "workspace:^",
     "@floating-ui/react-native": "^0.10.5",
     "@react-spring/native": "^9.7.4",

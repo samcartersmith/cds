@@ -20,7 +20,7 @@ const aliases = {
   '@cbhq/cds-fonts': path.resolve(__dirname, '../../packages/fonts/src'),
   '@cbhq/cds-icons': path.resolve(__dirname, '../../packages/icons/src'),
   '@cbhq/cds-illustrations': path.resolve(__dirname, '../../packages/illustrations/src'),
-  '@cbhq/cds-lottie-files': path.resolve(__dirname, '../../packages/lottie-files/src'),
+  '@cbhq/cds-lottie-files2': path.resolve(__dirname, '../../packages/lottie-files2/src'),
   '@cbhq/cds-mobile2': path.resolve(__dirname, '../../packages/cds-mobile2/src'),
   '@cbhq/cds-mobile-visualization': path.resolve(
     __dirname,

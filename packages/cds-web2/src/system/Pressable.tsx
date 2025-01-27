@@ -1,13 +1,14 @@
 import React, { forwardRef, useCallback } from 'react';
 import { css, cx, LinariaClassName } from '@linaria/core';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
+import { highHueBackgrounds } from '@cbhq/cds-common2/tokens/interactable';
 import { ComponentEventHandlerProps } from '@cbhq/cds-common2/types/ComponentEventHandlerProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';
-import { highHueBackgrounds, interactableBackground } from './interactableCSSProperties';
+import { interactableBackground } from './interactableCSSProperties';
 
 const loadingBackgroundStyle: Record<string, LinariaClassName> = {
   transparent: css`

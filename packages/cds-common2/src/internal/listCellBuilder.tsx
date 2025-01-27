@@ -29,6 +29,9 @@ export function listCellBuilder(
   CellMedia: React.ComponentType<React.PropsWithChildren<CellMediaProps>>,
   Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps>>,
   IconButton: React.ComponentType<React.PropsWithChildren<IconButtonBaseProps>>,
+  // Checkbox?: React.ComponentType<
+  //   React.PropsWithChildren<ControlBaseProps<string> & { accessibilityLabel: string }>
+  // >,
   Pictogram: React.ComponentType<React.PropsWithChildren<{ name: IllustrationPictogramNames }>>,
 ) {
   const Content = () => {
@@ -513,6 +516,7 @@ export function listCellBuilder(
 
   const WithActions = () => (
     <>
+      {/* <ListCell action={<Checkbox checked accessibilityLabel="Checkbox" />} title="Title" /> */}
       <ListCell action={<Button>Action</Button>} detail="Detail" title="Title" />
 
       <ListCell

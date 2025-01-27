@@ -5,6 +5,7 @@ import {
   OverlayContentContext,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 
+import { useTheme } from '../../hooks/useTheme';
 import { VStack, VStackProps } from '../../layout/VStack';
 
 const overlayContentContextValue: OverlayContentContextValue = {
@@ -17,12 +18,16 @@ export type OverlayProps = {
 } & Omit<VStackProps, 'opacity'>;
 
 export const Overlay = memo(function Overlay({ opacity, ...props }: OverlayProps) {
+  const theme = useTheme();
   return (
     <OverlayContentContext.Provider value={overlayContentContextValue}>
       <VStack
         animated
         renderToHardwareTextureAndroid
         background="backgroundOverlay"
+        dangerouslySetBackground={
+          theme.colorScheme === 'dark' ? `rgba(${theme?.darkSpectrum?.gray0}, 0.5)` : undefined
+        }
         opacity={opacity}
         pin="all"
         {...props}

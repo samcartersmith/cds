@@ -31,6 +31,7 @@ export type AvatarBaseProps = {
 
   /**
    * @danger Creates a custom Avatar size. The size prop should be used in most circumstances.
+   * @deprecated Use the style prop instead to set the width/height properties
    * This is an escape hatch when using the Avatar in a fixed size container where you cannot control the dimensions.
    */
   dangerouslySetSize?: number;

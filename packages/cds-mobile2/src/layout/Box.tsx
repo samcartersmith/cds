@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { type StyleProp, type ViewProps, type ViewStyle, Animated, View } from 'react-native';
 import { PinningDirection, TextAlignProps } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
@@ -6,6 +6,7 @@ import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 
 import type { Theme } from '../core/theme';
 import { useTheme } from '../hooks/useTheme';
+import { getElevationStyles } from '../styles/getElevationStyles';
 import { pinStyles } from '../styles/pinStyles';
 import { type StyleProps, getStyles } from '../styles/styleProps';
 
@@ -35,27 +36,9 @@ export type BoxProps = StyleProps &
     borderedVertical?: boolean;
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
     dangerouslySetBackground?: string;
-    align?: TextAlignProps['align'];
     /** Used to locate this element in unit and end-to-end tests. */
     testID?: string;
   };
-
-const getElevationStyles = (elevation: ElevationLevels, theme: Theme): ViewStyle => {
-  const elevationStyles: Record<ElevationLevels, ViewStyle> = {
-    0: {},
-    1: {
-      backgroundColor: theme.color.backgroundElevation1,
-      elevation: 2,
-      ...theme.shadow.elevation1,
-    },
-    2: {
-      backgroundColor: theme.color.backgroundElevation2,
-      elevation: 8,
-      ...theme.shadow.elevation2,
-    },
-  };
-  return elevationStyles[elevation];
-};
 
 const getBorderedStyles = (
   {
@@ -66,6 +49,7 @@ const getBorderedStyles = (
     borderedEnd,
     borderedTop,
     borderedBottom,
+    elevation,
   }: {
     bordered?: boolean;
     borderedHorizontal?: boolean;
@@ -74,6 +58,7 @@ const getBorderedStyles = (
     borderedEnd?: boolean;
     borderedTop?: boolean;
     borderedBottom?: boolean;
+    elevation?: ElevationLevels;
   },
   theme: Theme,
 ): (ViewStyle | false | undefined)[] => {
@@ -115,6 +100,11 @@ const getBorderedStyles = (
       borderStyle: 'solid',
       borderColor: theme.color.line,
     },
+    elevation: {
+      borderWidth: theme.borderWidth[100],
+      borderStyle: 'solid',
+      borderColor: theme.color.line,
+    },
   } satisfies Record<string, ViewStyle>;
   return [
     bordered && borderStyles.bordered,
@@ -124,198 +114,30 @@ const getBorderedStyles = (
     borderedEnd && borderStyles.borderedEnd,
     borderedTop && borderStyles.borderedTop,
     borderedBottom && borderStyles.borderedBottom,
+    // When elevating, always apply a border
+    !!elevation && borderStyles.elevation,
   ];
 };
 
-export const Box = forwardRef<View, BoxProps>(
-  (
-    {
-      children,
-      accessibilityLabel,
-      accessibilityLabelledBy,
-      accessibilityHint,
-      style,
-      animated,
-      testID,
-      pin,
-      bordered,
-      borderedTop,
-      borderedBottom,
-      borderedStart,
-      borderedEnd,
-      borderedHorizontal,
-      borderedVertical,
-      dangerouslySetBackground,
-      // Begin style props
-      display = 'flex',
-      position,
-      overflow,
-      zIndex,
-      gap,
-      columnGap,
-      rowGap,
-      justifyContent,
-      alignContent,
-      alignItems,
-      alignSelf,
-      flexDirection,
-      flexWrap,
-      color,
-      background,
-      borderColor,
-      borderTopLeftRadius,
-      borderTopRightRadius,
-      borderBottomLeftRadius,
-      borderBottomRightRadius,
-      borderTopWidth,
-      borderRightWidth,
-      borderBottomWidth,
-      borderLeftWidth,
-      elevation,
-      borderWidth,
-      borderRadius,
-      font,
-      fontFamily = font,
-      fontSize = font,
-      fontWeight = font,
-      lineHeight = font,
-      align,
-      textDecorationStyle,
-      textDecorationColor,
-      textDecorationLine,
-      textTransform,
-      padding,
-      paddingX,
-      paddingY,
-      paddingTop,
-      paddingBottom,
-      paddingLeft,
-      paddingRight,
-      margin,
-      marginX,
-      marginY,
-      marginTop,
-      marginBottom,
-      marginLeft,
-      marginRight,
-      userSelect,
-      width,
-      height,
-      minWidth,
-      minHeight,
-      maxWidth,
-      maxHeight,
-      aspectRatio,
-      top,
-      bottom,
-      left,
-      right,
-      transform,
-      flexBasis,
-      flexShrink,
-      flexGrow,
-      opacity,
-      ...props
-    },
-    ref,
-  ) => {
-    const Component = animated ? Animated.View : View;
-
-    const theme = useTheme();
-
-    const styles = useMemo(
-      () => [
-        getStyles(
-          {
-            display,
-            position,
-            overflow,
-            zIndex,
-            gap,
-            columnGap,
-            rowGap,
-            justifyContent,
-            alignContent,
-            alignItems,
-            alignSelf,
-            flexDirection,
-            flexWrap,
-            color,
-            background,
-            borderColor,
-            borderWidth,
-            borderRadius,
-            borderTopLeftRadius,
-            borderTopRightRadius,
-            borderBottomLeftRadius,
-            borderBottomRightRadius,
-            borderTopWidth,
-            borderRightWidth,
-            borderBottomWidth,
-            borderLeftWidth,
-            elevation,
-            fontFamily,
-            fontSize,
-            fontWeight,
-            lineHeight,
-            align,
-            textDecorationStyle,
-            textDecorationColor,
-            textDecorationLine,
-            textTransform,
-            padding,
-            paddingX,
-            paddingY,
-            paddingTop,
-            paddingBottom,
-            paddingLeft,
-            paddingRight,
-            margin,
-            marginX,
-            marginY,
-            marginTop,
-            marginBottom,
-            marginLeft,
-            marginRight,
-            userSelect,
-            width,
-            height,
-            minWidth,
-            minHeight,
-            maxWidth,
-            maxHeight,
-            aspectRatio,
-            top,
-            bottom,
-            left,
-            right,
-            transform,
-            flexBasis,
-            flexShrink,
-            flexGrow,
-            opacity,
-          },
-          theme,
-        ),
-        getBorderedStyles(
-          {
-            bordered,
-            borderedHorizontal,
-            borderedVertical,
-            borderedStart,
-            borderedEnd,
-            borderedTop,
-            borderedBottom,
-          },
-          theme,
-        ),
-        elevation ? getElevationStyles(elevation, theme) : undefined,
-        pin && pinStyles[pin],
-        dangerouslySetBackground ? { backgroundColor: dangerouslySetBackground } : undefined,
+export const Box = memo(
+  forwardRef<View, BoxProps>(
+    (
+      {
+        children,
         style,
-      ],
-      [
-        display,
+        animated,
+        testID,
+        pin,
+        bordered,
+        borderedTop,
+        borderedBottom,
+        borderedStart,
+        borderedEnd,
+        borderedHorizontal,
+        borderedVertical,
+        dangerouslySetBackground,
+        // Begin style props
+        display = 'flex',
         position,
         overflow,
         zIndex,
@@ -331,8 +153,6 @@ export const Box = forwardRef<View, BoxProps>(
         color,
         background,
         borderColor,
-        borderWidth,
-        borderRadius,
         borderTopLeftRadius,
         borderTopRightRadius,
         borderBottomLeftRadius,
@@ -342,11 +162,13 @@ export const Box = forwardRef<View, BoxProps>(
         borderBottomWidth,
         borderLeftWidth,
         elevation,
-        fontFamily,
-        fontSize,
-        fontWeight,
-        lineHeight,
-        align,
+        borderWidth,
+        borderRadius,
+        font,
+        fontFamily = font,
+        fontSize = font,
+        fontWeight = font,
+        lineHeight = font,
         textDecorationStyle,
         textDecorationColor,
         textDecorationLine,
@@ -382,26 +204,192 @@ export const Box = forwardRef<View, BoxProps>(
         flexShrink,
         flexGrow,
         opacity,
-        dangerouslySetBackground,
-        pin,
-        bordered,
-        borderedHorizontal,
-        borderedVertical,
-        borderedStart,
-        borderedEnd,
-        borderedTop,
-        borderedBottom,
-        theme,
-        style,
-      ],
-    );
+        ...props
+      },
+      ref,
+    ) => {
+      const Component = animated ? Animated.View : View;
 
-    return (
-      <Component ref={ref} style={styles} testID={testID} {...props}>
-        {children}
-      </Component>
-    );
-  },
+      const theme = useTheme();
+
+      const styles = useMemo(
+        () => [
+          getBorderedStyles(
+            {
+              bordered,
+              borderedHorizontal,
+              borderedVertical,
+              borderedStart,
+              borderedEnd,
+              borderedTop,
+              borderedBottom,
+            },
+            theme,
+          ),
+          getStyles(
+            {
+              display,
+              position,
+              overflow,
+              zIndex,
+              gap,
+              columnGap,
+              rowGap,
+              justifyContent,
+              alignContent,
+              alignItems,
+              alignSelf,
+              flexDirection,
+              flexWrap,
+              color,
+              background,
+              borderColor,
+              borderWidth,
+              borderRadius,
+              borderTopLeftRadius,
+              borderTopRightRadius,
+              borderBottomLeftRadius,
+              borderBottomRightRadius,
+              borderTopWidth,
+              borderRightWidth,
+              borderBottomWidth,
+              borderLeftWidth,
+              elevation,
+              fontFamily,
+              fontSize,
+              fontWeight,
+              lineHeight,
+              textDecorationStyle,
+              textDecorationColor,
+              textDecorationLine,
+              textTransform,
+              padding,
+              paddingX,
+              paddingY,
+              paddingTop,
+              paddingBottom,
+              paddingLeft,
+              paddingRight,
+              margin,
+              marginX,
+              marginY,
+              marginTop,
+              marginBottom,
+              marginLeft,
+              marginRight,
+              userSelect,
+              width,
+              height,
+              minWidth,
+              minHeight,
+              maxWidth,
+              maxHeight,
+              aspectRatio,
+              top,
+              bottom,
+              left,
+              right,
+              transform,
+              flexBasis,
+              flexShrink,
+              flexGrow,
+              opacity,
+            },
+            theme,
+          ),
+          elevation ? getElevationStyles(elevation, theme, background) : undefined,
+          pin && pinStyles[pin],
+          dangerouslySetBackground ? { backgroundColor: dangerouslySetBackground } : undefined,
+          style,
+        ],
+        [
+          display,
+          position,
+          overflow,
+          zIndex,
+          gap,
+          columnGap,
+          rowGap,
+          justifyContent,
+          alignContent,
+          alignItems,
+          alignSelf,
+          flexDirection,
+          flexWrap,
+          color,
+          background,
+          borderColor,
+          borderWidth,
+          borderRadius,
+          borderTopLeftRadius,
+          borderTopRightRadius,
+          borderBottomLeftRadius,
+          borderBottomRightRadius,
+          borderTopWidth,
+          borderRightWidth,
+          borderBottomWidth,
+          borderLeftWidth,
+          elevation,
+          fontFamily,
+          fontSize,
+          fontWeight,
+          lineHeight,
+          textDecorationStyle,
+          textDecorationColor,
+          textDecorationLine,
+          textTransform,
+          padding,
+          paddingX,
+          paddingY,
+          paddingTop,
+          paddingBottom,
+          paddingLeft,
+          paddingRight,
+          margin,
+          marginX,
+          marginY,
+          marginTop,
+          marginBottom,
+          marginLeft,
+          marginRight,
+          userSelect,
+          width,
+          height,
+          minWidth,
+          minHeight,
+          maxWidth,
+          maxHeight,
+          aspectRatio,
+          top,
+          bottom,
+          left,
+          right,
+          transform,
+          flexBasis,
+          flexShrink,
+          flexGrow,
+          opacity,
+          dangerouslySetBackground,
+          pin,
+          bordered,
+          borderedHorizontal,
+          borderedVertical,
+          borderedStart,
+          borderedEnd,
+          borderedTop,
+          borderedBottom,
+          theme,
+          style,
+        ],
+      );
+
+      return (
+        <Component ref={ref} style={styles} testID={testID} {...props}>
+          {children}
+        </Component>
+      );
+    },
+  ),
 );
 
 Box.displayName = 'Box';

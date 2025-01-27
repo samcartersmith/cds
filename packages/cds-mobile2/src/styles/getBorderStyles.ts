@@ -11,7 +11,7 @@ export type BorderStyles = ViewStyle;
 
 export type GetBorderStyleParams = Omit<BorderedStyles, 'borderRadius'> & {
   borderWidth?: ThemeVars.BorderWidth;
-  borderRadius?: ThemeVars.BorderRadius | number;
+  borderRadius?: ThemeVars.BorderRadius;
   elevation?: ElevationLevels;
   theme: Theme;
 };
@@ -28,10 +28,13 @@ function getCacheKey({
   borderColor,
   borderWidth,
   elevation,
+  theme,
 }: GetBorderStyleParams) {
   return `${
     elevation ? `elevation-${elevation}` : 'no-elevation'
-  }-${bordered}-${borderedTop}-${borderedBottom}-${borderedStart}-${borderedEnd}-${borderedHorizontal}-${borderedVertical}-${borderRadius}-${borderWidth}-${borderColor}`;
+  }-${bordered}-${borderedTop}-${borderedBottom}-${borderedStart}-${borderedEnd}-${borderedHorizontal}-${borderedVertical}-${borderRadius}-${borderWidth}-${borderColor}-${
+    theme.colorScheme
+  }`;
 }
 
 export const getBorderStyles = memoize(function getBorderStyles({
@@ -46,12 +49,12 @@ export const getBorderStyles = memoize(function getBorderStyles({
   borderColor,
   borderWidth,
   theme,
+  elevation,
 }: GetBorderStyleParams) {
   const styles: ViewStyle = {};
 
   if (borderRadius) {
-    styles.borderRadius =
-      typeof borderRadius === 'number' ? borderRadius : borderRadii[borderRadius];
+    styles.borderRadius = borderRadii[borderRadius];
   }
 
   if (bordered !== undefined) {
@@ -98,12 +101,10 @@ export const getBorderStyles = memoize(function getBorderStyles({
   }
 
   // When elevating, always apply a border
-
-  // TO DO: Elevation styles
-  // if (elevationConfig) {
-  //   styles.borderColor = elevationConfig.getBorderColor(borderColor);
-  //   styles.borderWidth = elevationConfig.getBorderWidth(borderWidth);
-  // }
+  if (elevation) {
+    styles.borderColor = theme.color[borderColor ?? 'line'];
+    styles.borderWidth = borderWidthTokens[borderWidth ?? 100];
+  }
   return styles;
 },
 getCacheKey);

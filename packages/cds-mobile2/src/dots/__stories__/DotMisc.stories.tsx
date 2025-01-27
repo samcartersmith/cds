@@ -16,7 +16,6 @@ const { DotCountDynamic } = dotBuilder(
   DotCount,
   DotStatusColor,
   DotSymbol,
-  // @ts-expect-error AndroidAccessibilityProps type's accessibilityLabelledBy allows an array, which is not compatible with BoxBaseProps in common
   Box,
   Avatar,
   TextLabel1,

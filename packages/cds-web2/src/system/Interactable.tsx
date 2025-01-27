@@ -1,7 +1,7 @@
 import React, { createElement, forwardRef, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
-import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
+import { highHueBackgrounds } from '@cbhq/cds-common2/tokens/interactable';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
@@ -13,7 +13,7 @@ import {
 } from '../styles/styles';
 import { elevation as elevationStyle } from '../styles/styles';
 
-import { highHueBackgrounds, interactableBackground } from './interactableCSSProperties';
+import { interactableBackground } from './interactableCSSProperties';
 
 const focusRingStyle = css`
   position: relative;
@@ -182,12 +182,7 @@ export type InteractableProps = {
   /** Apply class names to the outer container. */
   className?: string;
   focusable?: boolean;
-  background: ThemeVars.Color;
-  borderColor?: ThemeVars.Color;
-  borderWidth?: ThemeVars.BorderWidth;
-  borderRadius?: ThemeVars.BorderRadius;
-  // TODO: Remove borderWidth, borderColor, borderRadius and background prop in common in favor of using the updated props
-} & Omit<InteractableBaseProps, 'background' | 'borderColor' | 'borderWidth' | 'borderRadius'> &
+} & InteractableBaseProps &
   InteractableInheritedProps &
   SharedProps &
   Pick<

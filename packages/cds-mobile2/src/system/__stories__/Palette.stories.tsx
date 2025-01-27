@@ -13,20 +13,19 @@ const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
 
   return (
     <HStack background="background" flexWrap="wrap">
-      {Object.keys(theme.color).map((color) => {
+      {Object.entries(theme.color).map(([name, value]) => {
         return (
           <Box
-            key={color}
+            key={name}
             alignItems="center"
-            dangerouslySetBackground={theme.color[color as keyof typeof theme.color]}
+            dangerouslySetBackground={theme.color[name as keyof typeof theme.color]}
             height={100}
             justifyContent="center"
             width="50%"
           >
             <VStack background="background">
-              <TextCaption align="center">{color}</TextCaption>
-              {/* @ts-expect-error figure this out */}
-              <TextCaption align="center">{palette[color]}</TextCaption>
+              <TextCaption align="center">{name}</TextCaption>
+              <TextCaption align="center">{value}</TextCaption>
               {!!elevation && <TextCaption align="center">Elevation: {elevation}</TextCaption>}
             </VStack>
           </Box>

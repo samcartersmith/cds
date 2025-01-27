@@ -116,7 +116,6 @@ const NumpadExample1 = () => {
         </ModalBody>
         <Box
           borderedTop
-          borderColor="backgroundSecondary"
           bottom={0}
           paddingTop={2}
           position="absolute"

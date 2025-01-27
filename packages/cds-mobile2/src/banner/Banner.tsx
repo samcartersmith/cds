@@ -172,7 +172,7 @@ export const Banner = memo(
       if (shouldOverride) {
         const { backgroundColor, borderColor } = stylesForVariant[variant][theme.colorScheme];
         return {
-          backgroundColor: backgroundColor ? `rgb(${theme.spectrum[backgroundColor]})` : undefined,
+          ...(backgroundColor && { backgroundColor: `rgb(${theme.spectrum[backgroundColor]})` }),
           borderColor: `rgb(${theme.spectrum[borderColor]})`,
           ...(style as ViewStyle),
         };

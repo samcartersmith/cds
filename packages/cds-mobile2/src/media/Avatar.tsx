@@ -2,7 +2,6 @@ import React, { memo, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common2/hooks/useShapeToBorderRadiusAlias';
 import { colorSchemeMap } from '@cbhq/cds-common2/tokens/avatar';
-import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
 import { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 import { avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
@@ -13,6 +12,7 @@ import { TextBody, TextCaption, TextTitle2 } from '../typography';
 
 import { RemoteImage } from './RemoteImage';
 
+const smallAvatarSize = 44;
 const borderWidth = 2;
 export const coloredFallbackTestID = 'cds-avatar-colored-fallback';
 
@@ -21,7 +21,7 @@ export const fallbackImageSrc =
 
 export const Avatar = memo(
   ({
-    src = fallbackImageSrc,
+    src,
     shape = 'circle',
     size = 'l',
     borderColor,
@@ -30,19 +30,22 @@ export const Avatar = memo(
     colorScheme: colorSchemeProp,
     name,
   }: AvatarBaseProps) => {
+    const imgSrc = src ?? fallbackImageSrc;
     const borderRadius = useShapeToBorderRadiusAlias(shape);
     const avatarSize = avatarSizeMap[size];
     const theme = useTheme();
     const placeholderLetter = name?.charAt(0);
     const isLargestSize = size.includes('xx');
-    const isCompactAvatarButton =
-      dangerouslySetSize && dangerouslySetSize <= interactableHeight.regular;
-    const isNormalAvatarButton =
-      dangerouslySetSize && dangerouslySetSize > interactableHeight.regular;
-
+    const isCustomSize = typeof dangerouslySetSize !== 'undefined';
+    const isCustomSizeAndSmall = isCustomSize && dangerouslySetSize <= smallAvatarSize;
     const colorScheme = colorSchemeMap[colorSchemeProp ?? 'blue'];
     const colorSchemeRgb = `rgb(${theme.spectrum[colorScheme]})`;
-    const fallbackTextColor = getAccessibleColor(colorSchemeRgb);
+    const fallbackTextColor = useMemo(() => {
+      const colorSchemeArray = theme.spectrum[colorScheme]
+        .split(',')
+        .map((color) => parseInt(color));
+      return getAccessibleColor(colorSchemeArray);
+    }, [colorScheme, theme.spectrum]);
 
     const computedSize = dangerouslySetSize ?? avatarSize;
     const shouldShowAvatarImage = !!src || !name;
@@ -50,14 +53,14 @@ export const Avatar = memo(
     const hasBorder = shouldShowAvatarImage && borderColor && shape !== 'hexagon';
 
     const avatarText = useMemo(() => {
-      if (isLargestSize || isNormalAvatarButton) {
+      if (isLargestSize || (isCustomSize && !isCustomSizeAndSmall)) {
         return (
           <TextTitle2 align="center" dangerouslySetColor={fallbackTextColor} transform="uppercase">
             {placeholderLetter}
           </TextTitle2>
         );
       }
-      if (size === 'm' || isCompactAvatarButton) {
+      if (size === 'm' || isCustomSizeAndSmall) {
         return (
           <TextCaption align="center" dangerouslySetColor={fallbackTextColor} transform="uppercase">
             {placeholderLetter}
@@ -72,9 +75,9 @@ export const Avatar = memo(
       );
     }, [
       isLargestSize,
-      isNormalAvatarButton,
+      isCustomSize,
+      isCustomSizeAndSmall,
       size,
-      isCompactAvatarButton,
       fallbackTextColor,
       placeholderLetter,
     ]);
@@ -100,7 +103,7 @@ export const Avatar = memo(
         alignItems="center"
         borderColor={borderColor}
         borderRadius={borderRadius}
-        dangerouslySetBackground={src}
+        dangerouslySetBackground={imgSrc}
         flexGrow={0}
         flexShrink={0}
         height={computedSize}
@@ -116,7 +119,7 @@ export const Avatar = memo(
             height={computedSize}
             resizeMode="cover"
             shape={shape}
-            source={{ uri: src }}
+            source={{ uri: imgSrc }}
             testID={`${testID ?? ''}-image`}
             width={computedSize}
           />

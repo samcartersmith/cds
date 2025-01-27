@@ -63,6 +63,12 @@
       "@cbhq/cds-lottie-files/*": [
         "packages/lottie-files/src/*"
       ],
+      "@cbhq/cds-lottie-files2": [
+        "packages/lottie-files2/src"
+      ],
+      "@cbhq/cds-lottie-files2/*": [
+        "packages/lottie-files2/src/*"
+      ],
       "@cbhq/cds-mobile": [
         "packages/mobile/src"
       ],

@@ -1,5 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { type TextProps, Text } from './Text';
 
-export const TextLegal = (props: TextProps) => <Text font="legal" {...props} />;
+export const TextLegal = memo((props: TextProps) => <Text font="legal" {...props} />);
