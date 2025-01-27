@@ -9,6 +9,7 @@ import {
   ScrollControllerProvider,
 } from '@docusaurus/theme-common/internal';
 import KBarProvider from '@site/src/components/kbar/KBarProvider';
+import { PlatformContextProvider } from '@site/src/utils/PlatformContext';
 import type { Props } from '@theme/Layout/Provider';
 import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
 import { globalStyles } from '@cbhq/cds-web2/styles/global';
@@ -44,6 +45,7 @@ const Provider = composeProviders([
   DocsPreferredVersionContextProvider,
   PluginHtmlClassNameProvider,
   NavbarProvider,
+  PlatformContextProvider,
 ]);
 
 export default function LayoutProvider({ children }: Props): JSX.Element {

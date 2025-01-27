@@ -1,6 +1,7 @@
 ---
 id: box
 title: Box
+platform_switcher_options: { web: true, native: true }
 ---
 
 # Box

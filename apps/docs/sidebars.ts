@@ -46,7 +46,11 @@ const sidebars: SidebarsConfig = {
               id: 'components/layout/accordion',
               label: 'Accordion',
             },
-            { type: 'doc', id: 'components/layout/box', label: 'Box' },
+            {
+              type: 'doc',
+              id: 'components/layout/box',
+              label: 'Box',
+            },
             {
               type: 'doc',
               id: 'components/layout/buttonGroup',

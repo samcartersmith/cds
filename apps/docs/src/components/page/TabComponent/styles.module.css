@@ -1,0 +1,7 @@
+.tabComponent:hover {
+  background-color: transparent;
+}
+
+.tabComponent:focus {
+  background-color: transparent;
+}
