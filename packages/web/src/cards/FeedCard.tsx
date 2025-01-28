@@ -11,8 +11,10 @@ import { CardFooter } from './CardFooter';
 import { CardHeader } from './CardHeader';
 import { LikeButton } from './LikeButton';
 
+/** @deprecated use ContentCard instead */
 export type FeedCardProps = React.ComponentProps<typeof FeedCard>;
 
+/** @deprecated use ContentCard instead */
 export const FeedCard = createFeedCard<OnPress>({
   Button,
   Card,

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Deprecate feedcard component. [[#3528](https://github.cbhq.net/frontend/cds/pull/3528)]
+
 ## 7.6.4 (1/13/2025 PST)
 
 #### 🐞 Fixes

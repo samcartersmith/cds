@@ -348,7 +348,12 @@ const sidebars = {
               label: 'Feature Entry Card',
               customProps: { tag: 'deprecated' },
             },
-            { type: 'doc', id: 'components/cards/FeedCard/feed-card', label: 'Feed Card' },
+            {
+              type: 'doc',
+              id: 'components/cards/FeedCard/feed-card',
+              label: 'Feed Card',
+              customProps: { tag: 'deprecated' },
+            },
             {
               type: 'doc',
               id: 'components/cards/NudgeCard/nudge-card',
