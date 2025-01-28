@@ -16,5 +16,5 @@ jobs:
     name: RAID
     uses: consumer/bedrock-pr-reviewer/.github/workflows/raid.yml@master
     with:
-      code-convention-rollout-percentage: 0
-      review-rollout-percentage: 0
+      code-convention-rollout-percentage: 100
+      review-rollout-percentage: 100
