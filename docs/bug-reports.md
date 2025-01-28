@@ -30,9 +30,10 @@ See the [web bugs](#web-bugs), [mobile bugs](#mobile-bugs), and [package bugs](#
 2. Install dependencies `cd cds && yarn`
 3. Confirm your dev environment is set up correctly `yarn setup`
 4. Create a new branch `git checkout -b bug/modal-oct4-2023`
-5. Run `yarn nx run mobile-app:go` to start developing. You can use local simulators or your own device. Note that you must have already opened the iOS simulator through Xcode to launch it from the terminal here.
-6. Edit [`apps/mobile-app/src/App.tsx`](/apps/mobile-app/src/App.tsx) and replace the `<Playground />` component with a new component containing your minimum viable reproduction.
-7. Commit your changes and push up your new branch.
+5. Run `yarn nx run mobile-app:launch` to get the prebuilds onto your simulator.
+6. Run `yarn nx run mobile-app:start` to start developing. You can use local simulators or your own device. Note that you must have already opened the iOS simulator through Xcode to launch it from the terminal here.
+7. Edit [`apps/mobile-app/src/App.tsx`](/apps/mobile-app/src/App.tsx) and replace the `<Playground />` component with a new component containing your minimum viable reproduction.
+8. Commit your changes and push up your new branch.
 
 ## Package bugs
 
