@@ -449,8 +449,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-4').content,
   },
   loanValue: {
-    light: () => require('../svgJs/light/loanValue-0').content,
-    dark: () => require('../svgJs/dark/loanValue-0').content,
+    light: () => require('../svgJs/light/loanValue-1').content,
+    dark: () => require('../svgJs/dark/loanValue-1').content,
   },
   login: {
     light: () => require('../svgJs/light/login-3').content,

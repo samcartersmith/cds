@@ -77,6 +77,8 @@ export type HeroSquareName =
   | 'coinbaseOneWaitlist'
   | 'coinbaseOneWalletWarning'
   | 'coinbaseOneWelcome'
+  | 'coinbaseOneZeroPortal'
+  | 'coinbaseOneZeroPromotion'
   | 'coinbaseRedesigned'
   | 'coinbaseWalletToTrade'
   | 'coinCheckmark'

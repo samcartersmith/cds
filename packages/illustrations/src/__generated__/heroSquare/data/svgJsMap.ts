@@ -300,6 +300,14 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseOneWelcome-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneWelcome-2').content,
   },
+  coinbaseOneZeroPortal: {
+    light: () => require('../svgJs/light/coinbaseOneZeroPortal-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneZeroPortal-0').content,
+  },
+  coinbaseOneZeroPromotion: {
+    light: () => require('../svgJs/light/coinbaseOneZeroPromotion-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneZeroPromotion-0').content,
+  },
   coinbaseRedesigned: {
     light: () => require('../svgJs/light/coinbaseRedesigned-2').content,
     dark: () => require('../svgJs/dark/coinbaseRedesigned-2').content,

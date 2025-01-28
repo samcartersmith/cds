@@ -58,6 +58,7 @@ const names: SpotSquareName[] = [
   'coinbaseOneStarToken',
   'coinbaseOneTokenRewards',
   'coinbaseOneUSDC',
+  'coinbaseOneZeroPortal',
   'collectingNfts',
   'commerceAccounting',
   'commerceInvoices',

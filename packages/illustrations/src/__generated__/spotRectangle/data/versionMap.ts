@@ -199,7 +199,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   faceId: 0,
   portfolioOverviewRelaunch: 0,
   cbbtc: 0,
-  loanValue: 0,
+  loanValue: 1,
   usdcLoan: 0,
   leadingProtocol: 0,
   borrowLoan: 0,

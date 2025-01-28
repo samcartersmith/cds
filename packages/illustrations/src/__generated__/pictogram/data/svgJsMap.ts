@@ -685,8 +685,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/locationUsa-3').content,
   },
   lock: {
-    light: () => require('../svgJs/light/lock-2').content,
-    dark: () => require('../svgJs/dark/lock-2').content,
+    light: () => require('../svgJs/light/lock-3').content,
+    dark: () => require('../svgJs/dark/lock-3').content,
   },
   lowFees: {
     light: () => require('../svgJs/light/lowFees-2').content,
@@ -1225,8 +1225,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/walletWarning-3').content,
   },
   warning: {
-    light: () => require('../svgJs/light/warning-2').content,
-    dark: () => require('../svgJs/dark/warning-2').content,
+    light: () => require('../svgJs/light/warning-3').content,
+    dark: () => require('../svgJs/dark/warning-3').content,
   },
   winBTC: {
     light: () => require('../svgJs/light/winBTC-1').content,

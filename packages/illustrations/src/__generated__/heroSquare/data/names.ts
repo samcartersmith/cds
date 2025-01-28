@@ -85,6 +85,8 @@ const names: HeroSquareName[] = [
   'coinbaseOneWaitlist',
   'coinbaseOneWalletWarning',
   'coinbaseOneWelcome',
+  'coinbaseOneZeroPortal',
+  'coinbaseOneZeroPromotion',
   'coinbaseRedesigned',
   'coinbaseWalletToTrade',
   'coinsInWallet',

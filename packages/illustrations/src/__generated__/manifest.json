@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-12-03T19:46:33.231Z",
+  "lastUpdated": "2025-01-28T23:07:10.874Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -7385,22 +7385,22 @@
     "2:41484": {
       "type": "pictogram",
       "name": "warning",
-      "hash": "CxJy/o6GMwxcxudIz4u/FaYTF7088NLvgXqN3PiL5gs=",
+      "hash": "YavueQmlKOh2MHe3MdMOSgYHPHqj6JzMXZzPZ914Hd8=",
       "width": 48,
       "height": 48,
       "description": "warning, yellow, triangle, error, warn, yield",
       "createdAt": "2022-08-05T05:36:58.349Z",
-      "lastUpdated": "2024-09-09T16:11:16.731Z",
+      "lastUpdated": "2025-01-23T17:17:10.281Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/warning-2.svg",
-        "svgDark": "./pictogram/svg/dark/warning-2.svg",
-        "svgThemed": "./pictogram/svg/themeable/warning-2.svg",
-        "svgJsLight": "./pictogram/svgJs/light/warning-2.js",
-        "svgJsDark": "./pictogram/svgJs/dark/warning-2.js",
-        "pngLight": "./pictogram/png/light/warning-2.png",
-        "pngDark": "./pictogram/png/dark/warning-2.png"
+        "svgLight": "./pictogram/svg/light/warning-3.svg",
+        "svgDark": "./pictogram/svg/dark/warning-3.svg",
+        "svgThemed": "./pictogram/svg/themeable/warning-3.svg",
+        "svgJsLight": "./pictogram/svgJs/light/warning-3.js",
+        "svgJsDark": "./pictogram/svgJs/dark/warning-3.js",
+        "pngLight": "./pictogram/png/light/warning-3.png",
+        "pngDark": "./pictogram/png/dark/warning-3.png"
       },
-      "version": 2
+      "version": 3
     },
     "2:41485": {
       "type": "pictogram",
@@ -8685,22 +8685,22 @@
     "2:41550": {
       "type": "pictogram",
       "name": "lock",
-      "hash": "GXuWBHmx6FEv3ED29CHIxYcND6eA8H3+rD6UYxQ8Ulk=",
+      "hash": "Mv1tMIWxe9vh0t12P3zD9fYCTx2VhnpyvJTJ0KHKEsk=",
       "width": 48,
       "height": 48,
       "description": "lock, no access, latch, blocked, 🔒, 🔐, 🔑, 🗝",
       "createdAt": "2022-08-05T05:36:58.068Z",
-      "lastUpdated": "2024-09-09T16:12:51.835Z",
+      "lastUpdated": "2025-01-23T17:07:20.840Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/lock-2.svg",
-        "svgDark": "./pictogram/svg/dark/lock-2.svg",
-        "svgThemed": "./pictogram/svg/themeable/lock-2.svg",
-        "svgJsLight": "./pictogram/svgJs/light/lock-2.js",
-        "svgJsDark": "./pictogram/svgJs/dark/lock-2.js",
-        "pngLight": "./pictogram/png/light/lock-2.png",
-        "pngDark": "./pictogram/png/dark/lock-2.png"
+        "svgLight": "./pictogram/svg/light/lock-3.svg",
+        "svgDark": "./pictogram/svg/dark/lock-3.svg",
+        "svgThemed": "./pictogram/svg/themeable/lock-3.svg",
+        "svgJsLight": "./pictogram/svgJs/light/lock-3.js",
+        "svgJsDark": "./pictogram/svgJs/dark/lock-3.js",
+        "pngLight": "./pictogram/png/light/lock-3.png",
+        "pngDark": "./pictogram/png/dark/lock-3.png"
       },
-      "version": 2
+      "version": 3
     },
     "2:41551": {
       "type": "pictogram",
@@ -21925,22 +21925,22 @@
     "12288:211": {
       "type": "spotRectangle",
       "name": "loanValue",
-      "hash": "QmzjJjfWvO0j7BZupnm+V+4rLmddQ0Wo3HpzMIN81hE=",
+      "hash": "7yeF+fCaDF5Gvb3UW5ReOcIdtfXf/q28r6OXRoH/p1c=",
       "width": 240,
       "height": 120,
       "description": "margin, trading, add, stack, more, lever, up, buy, sell, put, options, trade, risk, clock, error state",
       "createdAt": "2024-10-16T17:02:31.039Z",
-      "lastUpdated": "2024-10-16T17:02:31.039Z",
+      "lastUpdated": "2025-01-23T17:07:20.850Z",
       "outputs": {
-        "svgLight": "./spotRectangle/svg/light/loanValue-0.svg",
-        "svgDark": "./spotRectangle/svg/dark/loanValue-0.svg",
-        "svgThemed": "./spotRectangle/svg/themeable/loanValue-0.svg",
-        "svgJsLight": "./spotRectangle/svgJs/light/loanValue-0.js",
-        "svgJsDark": "./spotRectangle/svgJs/dark/loanValue-0.js",
-        "pngLight": "./spotRectangle/png/light/loanValue-0.png",
-        "pngDark": "./spotRectangle/png/dark/loanValue-0.png"
+        "svgLight": "./spotRectangle/svg/light/loanValue-1.svg",
+        "svgDark": "./spotRectangle/svg/dark/loanValue-1.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/loanValue-1.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/loanValue-1.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/loanValue-1.js",
+        "pngLight": "./spotRectangle/png/light/loanValue-1.png",
+        "pngDark": "./spotRectangle/png/dark/loanValue-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "12459:12": {
       "type": "spotIcon",
@@ -22159,6 +22159,66 @@
         "svgJsDark": "./spotIcon/svgJs/dark/layeredNetworks-0.js",
         "pngLight": "./spotIcon/png/light/layeredNetworks-0.png",
         "pngDark": "./spotIcon/png/dark/layeredNetworks-0.png"
+      },
+      "version": 0
+    },
+    "14313:90": {
+      "type": "heroSquare",
+      "name": "coinbaseOneZeroPortal",
+      "hash": "JNgkI2zqUgpbu04HclweJ7qA1bC5fwXPG6uzB6M49uM=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-01-28T20:48:33.535Z",
+      "lastUpdated": "2025-01-28T23:05:04.306Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/coinbaseOneZeroPortal-0.svg",
+        "svgDark": "./heroSquare/svg/dark/coinbaseOneZeroPortal-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/coinbaseOneZeroPortal-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/coinbaseOneZeroPortal-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/coinbaseOneZeroPortal-0.js",
+        "pngLight": "./heroSquare/png/light/coinbaseOneZeroPortal-0.png",
+        "pngDark": "./heroSquare/png/dark/coinbaseOneZeroPortal-0.png"
+      },
+      "version": 0
+    },
+    "14313:91": {
+      "type": "spotSquare",
+      "name": "coinbaseOneZeroPortal",
+      "hash": "FH0ZF9AyyM0etpDJy6r2eyheKS9VtdXmyZq6lsd/t9g=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-01-28T20:48:33.526Z",
+      "lastUpdated": "2025-01-28T20:48:33.526Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/coinbaseOneZeroPortal-0.svg",
+        "svgDark": "./spotSquare/svg/dark/coinbaseOneZeroPortal-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/coinbaseOneZeroPortal-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/coinbaseOneZeroPortal-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneZeroPortal-0.js",
+        "pngLight": "./spotSquare/png/light/coinbaseOneZeroPortal-0.png",
+        "pngDark": "./spotSquare/png/dark/coinbaseOneZeroPortal-0.png"
+      },
+      "version": 0
+    },
+    "14313:92": {
+      "type": "heroSquare",
+      "name": "coinbaseOneZeroPromotion",
+      "hash": "0Dx82v/QI47ySzPVWIup1zZmqytscBNK8wCz2qW1tzQ=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-01-28T20:48:33.531Z",
+      "lastUpdated": "2025-01-28T23:05:04.297Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/coinbaseOneZeroPromotion-0.svg",
+        "svgDark": "./heroSquare/svg/dark/coinbaseOneZeroPromotion-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/coinbaseOneZeroPromotion-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/coinbaseOneZeroPromotion-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/coinbaseOneZeroPromotion-0.js",
+        "pngLight": "./heroSquare/png/light/coinbaseOneZeroPromotion-0.png",
+        "pngDark": "./heroSquare/png/dark/coinbaseOneZeroPromotion-0.png"
       },
       "version": 0
     }

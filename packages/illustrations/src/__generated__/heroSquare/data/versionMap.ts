@@ -367,6 +367,8 @@ const versionMap: Record<HeroSquareName, number> = {
   coinFifty: 0,
   coinbaseOneEarn: 0,
   layerThree: 0,
+  coinbaseOneZeroPromotion: 0,
+  coinbaseOneZeroPortal: 0,
 };
 
 export default versionMap;

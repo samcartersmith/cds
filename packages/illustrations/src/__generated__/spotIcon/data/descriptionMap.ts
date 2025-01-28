@@ -9,14 +9,6 @@
  * The search query filters the shown illustrations based on matches with name or description.
  */
 const descriptionMap: Record<string, string[]> = {
-  layers: ['layeredNetworks'],
-  'layer three': ['layeredNetworks'],
-  three: ['layeredNetworks'],
-  isometric: ['layeredNetworks'],
-  networks: ['layeredNetworks'],
-  base: ['layeredNetworks', 'base'],
-  blue: ['layeredNetworks'],
-  yellow: ['layeredNetworks', 'warning', 'outage'],
   product: [
     'productCoinbaseCard',
     'productPro',
@@ -155,6 +147,7 @@ const descriptionMap: Record<string, string[]> = {
   ventures: ['venturesProduct'],
   one: ['coinbaseOneProduct'],
   cb1: ['coinbaseOneProduct'],
+  base: ['base', 'layeredNetworks'],
   participate: ['participateProduct'],
   delegate: ['delegateProduct'],
   learning: ['learningRewardsProduct'],
@@ -316,6 +309,7 @@ const descriptionMap: Record<string, string[]> = {
   '💶': ['bank'],
   '💷': ['bank'],
   warning: ['warning', 'outage'],
+  yellow: ['warning', 'outage', 'layeredNetworks'],
   triangle: ['warning', 'outage'],
   error: ['warning', 'outage'],
   warn: ['warning', 'outage'],
@@ -440,6 +434,12 @@ const descriptionMap: Record<string, string[]> = {
   Coinbase: ['coinbaseOneEarn'],
   Concierge: ['coinbaseOneEarn'],
   attendant: ['coinbaseOneEarn'],
+  layers: ['layeredNetworks'],
+  'layer three': ['layeredNetworks'],
+  three: ['layeredNetworks'],
+  isometric: ['layeredNetworks'],
+  networks: ['layeredNetworks'],
+  blue: ['layeredNetworks'],
 };
 
 export default descriptionMap;
