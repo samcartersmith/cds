@@ -2,12 +2,13 @@ import React, { memo, useCallback, useMemo, useState } from 'react';
 import times from 'lodash/times';
 import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common/types/SparklineInteractiveBaseProps';
 import { useDateLookup } from '@cbhq/cds-common/visualizations/useDateLookup';
-import { Box } from '@cbhq/cds-web/layout';
+import { HStack } from '@cbhq/cds-web/layout';
 import { TextLabel2 } from '@cbhq/cds-web/typography/TextLabel2';
 
 import { fadeInClassName } from './fade';
 
 const labelWidth = 125;
+const noPointerEvents = { pointerEvents: 'none' } as const;
 
 const SparklineInteractiveMarkerDate: React.FunctionComponent<
   React.PropsWithChildren<{
@@ -27,7 +28,7 @@ const SparklineInteractiveMarkerDate: React.FunctionComponent<
   const fallback = <span style={{ visibility: 'hidden' }}>-</span>;
   return (
     <span ref={setupRef}>
-      <TextLabel2 align="center" as="span" color="foregroundMuted" spacingTop={3}>
+      <TextLabel2 align="center" as="span" color="foregroundMuted">
         {dateStr || fallback}
       </TextLabel2>
     </span>
@@ -62,19 +63,17 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
   }, [getFormattedDate, numberOfLabels]);
 
   return (
-    <Box
+    <HStack
       key={selectedPeriod}
       ref={setupRef}
-      background="background"
       className={fadeInClassName}
       justifyContent="space-between"
-      position="relative"
       spacingHorizontal={timePeriodGutter}
-      spacingTop={2}
+      style={noPointerEvents}
       width="100%"
     >
       {markers}
-    </Box>
+    </HStack>
   );
 }
 

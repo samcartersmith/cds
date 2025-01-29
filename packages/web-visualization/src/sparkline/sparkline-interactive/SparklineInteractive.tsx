@@ -15,7 +15,7 @@ import { emptyArray, isStorybook, noop } from '@cbhq/cds-utils';
 import { Lottie } from '@cbhq/cds-web/animation';
 import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions';
 import { usePalette } from '@cbhq/cds-web/hooks/usePalette';
-import { VStack } from '@cbhq/cds-web/layout';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { ThemeProvider } from '@cbhq/cds-web/system';
 import { getBrowserGlobals } from '@cbhq/cds-web/utils/browser';
@@ -53,7 +53,6 @@ const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallb
     </ThemeProvider>
   );
 });
-const stylesToPreventInteraction = { pointerEvents: 'none' } as const;
 
 const mobileLayoutBreakpoint = 650;
 function SparklineInteractiveContentWithGeneric<Period extends string>({
@@ -89,6 +88,13 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
 
   const isMobileLayout = containerWidth > 0 && containerWidth < mobileLayoutBreakpoint;
   const showHeaderPeriodSelector = periodSelectorPlacement === 'above' && !hidePeriodSelector;
+  const showBottomMarkerDates = useMemo(
+    () =>
+      periodSelectorPlacement === 'above' ||
+      (periodSelectorPlacement === 'below' && hidePeriodSelector) ||
+      isMarkerDateVisible,
+    [isMarkerDateVisible, periodSelectorPlacement, hidePeriodSelector],
+  );
 
   const color = strokeColor;
   const [selectedPeriod, setSelectedPeriod] = useState(defaultPeriod);
@@ -166,11 +172,6 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     );
   }
 
-  const showBottomMarkerDates = useMemo(
-    () => periodSelectorPlacement === 'above' || isMarkerDateVisible,
-    [isMarkerDateVisible, periodSelectorPlacement],
-  );
-
   const periodSelector = (
     <SparklineInteractivePeriodSelector
       color={color}
@@ -244,21 +245,20 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
           )}
         </VisualizationContainer>
       </SparklineInteractiveScrubProvider>
-      {showBottomMarkerDates && (
-        <Box background style={stylesToPreventInteraction} width="100%">
+      <HStack alignItems="flex-end" minHeight={50} width="100%">
+        {showBottomMarkerDates && (
           <SparklineInteractiveMarkerDates
             formatDate={formatDate}
             getMarker={getMarker}
             selectedPeriod={selectedPeriod}
             timePeriodGutter={timePeriodGutter}
           />
-        </Box>
-      )}
-      {periodSelectorPlacement === 'below' && !isMarkerDateVisible && !hidePeriodSelector && (
-        <Box background spacingTop={1} width="100%" zIndex={1}>
-          {periodSelector}
-        </Box>
-      )}
+        )}
+        {periodSelectorPlacement === 'below' &&
+          !isMarkerDateVisible &&
+          !hidePeriodSelector &&
+          periodSelector}
+      </HStack>
     </div>
   );
 }

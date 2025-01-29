@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.4 (1/29/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix(DX-4634): fix layout shift in SparklineInteractive component". [[#3537](https://github.cbhq.net/frontend/cds/pull/3537)] [[DX-4634](https://jira.coinbase-corp.com/browse/DX-4634)]
+
 ## 2.1.3 (1/22/2025 PST)
 
 #### 🐞 Fixes
