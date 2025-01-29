@@ -44,14 +44,14 @@ const avatarStyles = css`
 
   // it may have been unintentional, but in v7 downwards the unselected Avatar has a 1px transparent border on the inner div
   // to reduce visual regressions, this has been preserved in the migration for v8
-  border: solid var(--borderWidth-100) var(--avatar-borderColor);
+  border: solid 1px var(--avatar-borderColor);
   &[data-bordered='true'] {
-    border-width: var(--borderWidth-200);
+    border-width: 2px;
   }
 
   &[data-selected='true'] {
     // Box shadow is used to place a ring around the avatar in the color chosen by the colorScheme prop
-    box-shadow: 0 0 0 var(--borderWidth-200) currentColor;
+    box-shadow: 0 0 0 2px currentColor;
   }
 
   &[data-shape='hexagon'] {
