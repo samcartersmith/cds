@@ -24,7 +24,7 @@ import { ColorSurge } from '../motion/ColorSurge';
 import { useMotionProps } from '../motion/useMotionProps';
 import { Text } from '../text/Text';
 
-import { ModalProps } from './Modal/Modal';
+import { ModalProps } from './modal/Modal';
 import { Portal } from './Portal';
 import { toastContainerId } from './PortalProvider';
 

@@ -6,7 +6,7 @@ import { DotSymbol } from '../../dots';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box, HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
-import { Tray } from '../../overlays/Tray/Tray';
+import { Tray } from '../../overlays/tray/Tray';
 import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';

@@ -9,7 +9,7 @@ import { SectionHeader } from '../../section-header/SectionHeader';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
 import { TextBody, TextHeadline, TextLabel2, TextLegal } from '../../typography';
 import { ProgressBar } from '../../visualizations/ProgressBar';
-import { Tray, TrayStickyFooter } from '../Tray/Tray';
+import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 export const Default = () => {
   const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =

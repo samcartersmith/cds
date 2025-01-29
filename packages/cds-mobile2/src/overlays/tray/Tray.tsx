@@ -16,7 +16,7 @@ import { DrawerRefBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
 
 import { Box, HStack, VStack } from '../../layout';
 import { TextTitle3 } from '../../typography/TextTitle3';
-import { Drawer } from '../Drawer/Drawer';
+import { Drawer } from '../drawer/Drawer';
 
 type RenderTrayProps = {
   handleClose: () => void;

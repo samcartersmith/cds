@@ -8,7 +8,7 @@ import { Button } from '../../buttons/Button';
 import { Menu } from '../../controls/Menu';
 import { SelectOption } from '../../controls/SelectOption';
 import { Fallback, VStack } from '../../layout';
-import { Tray } from '../Tray/Tray';
+import { Tray } from '../tray/Tray';
 
 export const options: string[] = prices.slice(0, 4);
 

@@ -2,10 +2,10 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { RectReadOnly } from 'react-use-measure';
 import type { DimensionValue } from '@cbhq/cds-common2';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { useTheme } from '@cbhq/cds-web2/hooks/useTheme';
 
 import { useIsoEffect } from '../hooks/useIsoEffect';
-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+import { useTheme } from '../hooks/useTheme';
+import { type PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 import { getBrowserGlobals, isSSR } from '../utils/browser';
 
 type UseResponsiveHeightParams = {

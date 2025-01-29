@@ -8,8 +8,8 @@ import { useA11y } from '../../hooks/useA11y';
 import { Icon } from '../../icons/Icon';
 import { Box, HStack, VStack } from '../../layout';
 import { TextLabel2 } from '../../typography';
-import { Modal as CDSModal } from '../Modal/Modal';
-import { Tooltip } from '../Tooltip/Tooltip';
+import { Modal as CDSModal } from '../modal/Modal';
+import { Tooltip } from '../tooltip/Tooltip';
 
 type ContentTypes = {
   title: string;

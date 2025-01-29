@@ -6,9 +6,9 @@ import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextBody } from '../../typography/TextBody';
 import { Alert } from '../Alert';
-import { Modal } from '../Modal/Modal';
-import { ModalBody } from '../Modal/ModalBody';
-import { ModalFooter } from '../Modal/ModalFooter';
+import { Modal } from '../modal/Modal';
+import { ModalBody } from '../modal/ModalBody';
+import { ModalFooter } from '../modal/ModalFooter';
 
 const AlertOnModal = () => {
   const { openModal, closeModal } = useModal();

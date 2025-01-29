@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { Animated } from 'react-native';
 
-import { useModalAnimation } from './Modal/useModalAnimation';
-import { useOverlayAnimation } from './Overlay/useOverlayAnimation';
+import { useModalAnimation } from './modal/useModalAnimation';
+import { useOverlayAnimation } from './overlay/useOverlayAnimation';
 
 export const useAlertAnimation = (): [
   { modalOpacity: Animated.Value; modalScale: Animated.Value; overlayOpacity: Animated.Value },

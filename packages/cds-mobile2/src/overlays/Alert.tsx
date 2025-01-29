@@ -7,7 +7,7 @@ import { Pictogram } from '../illustrations';
 import { Box, HStack, VStack } from '../layout';
 import { TextBody, TextTitle3 } from '../typography';
 
-import { Overlay } from './Overlay/Overlay';
+import { Overlay } from './overlay/Overlay';
 import { useAlertAnimation } from './useAlertAnimation';
 
 export type AlertProps = AlertBaseProps;

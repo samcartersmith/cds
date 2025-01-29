@@ -3,12 +3,12 @@ import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { helperTextHeight, inputStackGap } from '@cbhq/cds-common2/tokens/input';
 import type { SelectBaseProps } from '@cbhq/cds-common2/types';
-import { useTheme } from '@cbhq/cds-web2/hooks/useTheme';
 
 import { Dropdown } from '../dropdown/Dropdown';
 import { DropdownProps } from '../dropdown/DropdownProps';
+import { useTheme } from '../hooks/useTheme';
 import { HStack } from '../layout/HStack';
-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+import { type PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 
 import { TextInputFocusVariantContext } from './context';
 import { SelectTrigger } from './SelectTrigger';

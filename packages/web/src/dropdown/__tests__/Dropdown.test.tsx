@@ -93,7 +93,6 @@ describe('Dropdown', () => {
 
     fireEvent.click(screen.getByTestId(subjectTestID));
 
-    // look for overflow: auto
     expect(await screen.findByTestId('dropdown-modal')).toBeInTheDocument();
   });
 });

@@ -10,7 +10,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { PressableOpacity } from '../../system';
-import { Drawer } from '../Drawer/Drawer';
+import { Drawer } from '../drawer/Drawer';
 
 const lotsOfOptions: string[] = prices.slice(0, 30);
 

@@ -4,7 +4,7 @@ import { KBarSearch, useKBar, VisualState } from 'kbar';
 import { IconButton } from '@cbhq/cds-web2/buttons';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { Divider, HStack } from '@cbhq/cds-web2/layout';
-import { Modal } from '@cbhq/cds-web2/overlays/Modal/Modal';
+import { Modal } from '@cbhq/cds-web2/overlays/modal/Modal';
 import {
   background,
   fontFamily,

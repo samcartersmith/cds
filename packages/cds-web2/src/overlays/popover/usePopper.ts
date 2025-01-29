@@ -5,6 +5,7 @@ import { Options as PopperOptions } from '@popperjs/core';
 import { useTheme } from '../../hooks/useTheme';
 
 import { PopoverContentPositionConfig } from './PopoverProps';
+
 // import { getComputedStyleForSelector } from '../../utils/getComputedStyleForSelector'
 
 // const THEME_SELECTOR = '[class^="cds-theme-"]'

@@ -10,7 +10,7 @@ import { SelectOption } from '../../controls/SelectOption';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { HStack } from '../../layout';
-import { Tray } from '../Tray/Tray';
+import { Tray } from '../tray/Tray';
 
 const NavigationTray = () => {
   const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =

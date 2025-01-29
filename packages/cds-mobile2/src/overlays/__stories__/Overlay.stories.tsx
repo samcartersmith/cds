@@ -4,8 +4,8 @@ import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { Overlay } from '../Overlay/Overlay';
-import { useOverlayAnimation } from '../Overlay/useOverlayAnimation';
+import { Overlay } from '../overlay/Overlay';
+import { useOverlayAnimation } from '../overlay/useOverlayAnimation';
 
 const OverlayScreen = () => {
   const [visible, { toggleOn, toggleOff }] = useToggler(false);

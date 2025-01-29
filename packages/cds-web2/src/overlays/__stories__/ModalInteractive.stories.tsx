@@ -8,10 +8,10 @@ import { durations } from '@cbhq/cds-common2/motion/tokens';
 import { Button } from '../../buttons/Button';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { pauseStory } from '../../utils/storybook';
-import { Modal } from '../Modal/Modal';
-import { ModalBody } from '../Modal/ModalBody';
-import { ModalFooter } from '../Modal/ModalFooter';
-import { ModalHeader } from '../Modal/ModalHeader';
+import { Modal } from '../modal/Modal';
+import { ModalBody } from '../modal/ModalBody';
+import { ModalFooter } from '../modal/ModalFooter';
+import { ModalHeader } from '../modal/ModalHeader';
 
 const { BasicModal } = modalBuilder({
   Modal,

@@ -17,7 +17,7 @@ export type InputIconProps = {
 } & Omit<IconProps, 'size'> &
   SharedProps;
 
-const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
+export const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   primary: 'iconPrimary',
   positive: 'iconPositive',
   negative: 'iconNegative',

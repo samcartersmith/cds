@@ -1,10 +1,11 @@
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef, memo, useCallback, useRef, useState } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
 import { IconName } from '@cbhq/cds-common2/types/IconName';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
 import { type BoxBaseProps, Box } from '../layout/Box';
+import { isNativeClick } from '../system/reakit-utils';
 
 const iconButtonDefaultElement = 'button';
 
@@ -231,6 +232,8 @@ export const IconButton: IconButtonComponent = memo(
         variant = 'secondary',
         style,
         loading,
+        onKeyDown,
+        onKeyUp,
         flush,
         ...props
       }: IconButtonProps<AsComponent>,
@@ -239,6 +242,56 @@ export const IconButton: IconButtonComponent = memo(
       const Component = (as ?? iconButtonDefaultElement) satisfies React.ElementType;
       const iconSize = compact ? 's' : 'm';
       const color = 'currentColor';
+
+      const [active, setActive] = useState(false);
+      const isActiveRef = useRef(false);
+
+      const handleKeyDown = useCallback(
+        (event: React.KeyboardEvent<HTMLElement>) => {
+          onKeyDown?.(event);
+
+          if (
+            event.defaultPrevented ||
+            disabled ||
+            event.metaKey ||
+            event.target !== event.currentTarget
+          )
+            return;
+
+          const isEnter = event.key === 'Enter';
+          const isSpace = event.key === ' ';
+
+          if (isEnter || isSpace) {
+            if (isNativeClick(event)) return;
+            event.preventDefault();
+            // Trigger click on Enter
+            if (isEnter) event.currentTarget.click();
+            // Set active state on Space down
+            else if (isSpace && !isActiveRef.current) {
+              isActiveRef.current = true;
+              setActive(true);
+            }
+          }
+        },
+        [disabled, onKeyDown],
+      );
+
+      const handleKeyUp = useCallback(
+        (event: React.KeyboardEvent<HTMLElement>) => {
+          onKeyUp?.(event);
+
+          if (event.defaultPrevented || disabled || event.metaKey) return;
+
+          // Trigger click on Space up
+          if (isActiveRef.current && event.key === ' ') {
+            isActiveRef.current = false;
+            setActive(false);
+            event.currentTarget.click();
+          }
+        },
+        [disabled, onKeyUp],
+      );
+
       return (
         <Box
           ref={ref}
@@ -253,9 +306,13 @@ export const IconButton: IconButtonComponent = memo(
             loading && loadingBaseStyle,
             loading && loadingVariantStyle[variant],
           )}
+          data-active={active || undefined}
           data-testid={testID}
-          disabled={disabled}
+          disabled={disabled || loading}
+          onKeyDown={handleKeyDown}
+          onKeyUp={handleKeyUp}
           style={style}
+          type="button"
           {...props}
         >
           <Icon color={color} name={name} size={iconSize} />

@@ -5,7 +5,7 @@ import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
 import { type BoxProps, Box } from '../../layout/Box';
 import { media } from '../../styles/media';
-import { Overlay } from '../Overlay/Overlay';
+import { Overlay } from '../overlay/Overlay';
 import { Portal, PortalProps } from '../Portal';
 import { modalContainerId } from '../PortalProvider';
 

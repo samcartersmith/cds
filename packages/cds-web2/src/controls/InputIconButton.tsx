@@ -6,7 +6,7 @@ import { Box } from '../layout/Box';
 
 import { TextInputFocusVariantContext } from './context';
 
-const variantTransformMap: Record<InputVariant, IconButtonVariant> = {
+export const variantTransformMap: Record<InputVariant, IconButtonVariant> = {
   positive: 'primary',
   negative: 'primary',
   foreground: 'primary',

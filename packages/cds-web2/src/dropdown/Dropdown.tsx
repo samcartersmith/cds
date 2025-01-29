@@ -11,9 +11,9 @@ import useMeasure from 'react-use-measure';
 import { SelectProvider } from '../controls/selectContext';
 import { useBreakpoints } from '../hooks/useBreakpoints';
 import { FocusTrap } from '../overlays/FocusTrap';
-import { ModalWrapper } from '../overlays/Modal/ModalWrapper';
+import { ModalWrapper } from '../overlays/modal/ModalWrapper';
 import { Popover } from '../overlays/popover/Popover';
-import { PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
+import { type PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 
 import { DropdownContent } from './DropdownContent';
 import type { DropdownInternalProps, DropdownProps, DropdownRef } from './DropdownProps';

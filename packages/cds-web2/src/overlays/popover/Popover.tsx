@@ -6,7 +6,7 @@ import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { Box } from '../../layout/Box';
 import { FocusTrap } from '../FocusTrap';
-import { Overlay } from '../Overlay/Overlay';
+import { Overlay } from '../overlay/Overlay';
 import { Portal } from '../Portal';
 import { tooltipContainerId } from '../PortalProvider';
 

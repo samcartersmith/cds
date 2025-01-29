@@ -6,7 +6,7 @@ import { SelectOption } from '../../controls/SelectOption';
 import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
 import { Icon } from '../../icons/Icon';
 import { HStack } from '../../layout';
-import { PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
+import { type PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
 import { Pressable } from '../../system/Pressable';
 import { PressableOpacity } from '../../system/PressableOpacity';
 import { Text } from '../../text/Text';

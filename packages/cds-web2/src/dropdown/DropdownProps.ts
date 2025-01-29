@@ -1,6 +1,6 @@
 import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 
-import { PopoverProps } from '../overlays/popover/PopoverProps';
+import { type PopoverProps } from '../overlays/popover/PopoverProps';
 
 export type DropdownRef = {
   openMenu: () => void;

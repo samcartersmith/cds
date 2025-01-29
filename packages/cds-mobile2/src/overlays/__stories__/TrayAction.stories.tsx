@@ -11,7 +11,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { SectionHeader } from '../../section-header/SectionHeader';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
 import { Link, TextBody } from '../../typography';
-import { Tray, TrayStickyFooter } from '../Tray/Tray';
+import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 type Option = {
   title: string;

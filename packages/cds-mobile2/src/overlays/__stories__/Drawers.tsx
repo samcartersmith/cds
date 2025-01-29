@@ -9,7 +9,7 @@ import { VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Avatar } from '../../media/Avatar';
 import { TextTitle3 } from '../../typography';
-import { Drawer } from '../Drawer/Drawer';
+import { Drawer } from '../drawer/Drawer';
 
 export const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
   const [isVisible, { toggleOn, toggleOff }] = useToggler(true);

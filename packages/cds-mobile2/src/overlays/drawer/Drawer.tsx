@@ -29,9 +29,9 @@ import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common2/type
 
 import { useTheme } from '../../hooks/useTheme';
 import { Box } from '../../layout/Box';
-import { HandleBar } from '../HandleBar/HandleBar';
-import { Overlay } from '../Overlay/Overlay';
-import { useOverlayAnimation } from '../Overlay/useOverlayAnimation';
+import { HandleBar } from '../handlebar/HandleBar';
+import { Overlay } from '../overlay/Overlay';
+import { useOverlayAnimation } from '../overlay/useOverlayAnimation';
 
 import { DrawerStatusBar } from './DrawerStatusBar';
 import { useDrawerAnimation } from './useDrawerAnimation';

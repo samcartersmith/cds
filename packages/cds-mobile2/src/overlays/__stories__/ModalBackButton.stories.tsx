@@ -4,10 +4,10 @@ import { CreateModalProps, modalBuilder } from '@cbhq/cds-common2/internal/modal
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
-import { Modal } from '../Modal/Modal';
-import { ModalBody } from '../Modal/ModalBody';
-import { ModalFooter } from '../Modal/ModalFooter';
-import { ModalHeader } from '../Modal/ModalHeader';
+import { Modal } from '../modal/Modal';
+import { ModalBody } from '../modal/ModalBody';
+import { ModalFooter } from '../modal/ModalFooter';
+import { ModalHeader } from '../modal/ModalHeader';
 
 const { BackButtonModal } = modalBuilder({
   Modal,

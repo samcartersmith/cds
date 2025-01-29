@@ -6,8 +6,8 @@ import {
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 
 import { VStack } from '../../layout/VStack';
-import { Modal } from '../Modal/Modal';
-import { Overlay } from '../Overlay/Overlay';
+import { Modal } from '../modal/Modal';
+import { Overlay } from '../overlay/Overlay';
 
 export default {
   title: 'Core Components/OverlayContentContext',

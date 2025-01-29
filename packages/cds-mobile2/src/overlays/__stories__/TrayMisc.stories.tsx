@@ -11,10 +11,10 @@ import { useA11y } from '../../hooks/useA11y';
 import { HStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { TextBody } from '../../typography';
-import { Modal } from '../Modal/Modal';
-import { ModalBody } from '../Modal/ModalBody';
-import { ModalHeader } from '../Modal/ModalHeader';
-import { Tray } from '../Tray/Tray';
+import { Modal } from '../modal/Modal';
+import { ModalBody } from '../modal/ModalBody';
+import { ModalHeader } from '../modal/ModalHeader';
+import { Tray } from '../tray/Tray';
 
 import { options } from './Trays';
 

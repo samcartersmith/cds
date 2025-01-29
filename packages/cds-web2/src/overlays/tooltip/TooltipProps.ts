@@ -5,7 +5,7 @@ import type {
   TooltipBaseProps,
 } from '@cbhq/cds-common2/types/TooltipBaseProps';
 
-import { type PopoverProps } from '../popover/PopoverProps';
+import { PopoverProps } from '../popover/PopoverProps';
 
 type TooltipPlacement = BaseTooltipPlacement;
 

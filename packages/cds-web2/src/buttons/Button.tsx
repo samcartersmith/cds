@@ -352,6 +352,7 @@ export const Button = memo(
       testID,
       noScaleOnPress,
       flush,
+      type = 'button',
       ...props
     }: ButtonProps,
     ref: React.ForwardedRef<HTMLButtonElement>,
@@ -396,6 +397,7 @@ export const Button = memo(
         )}
         data-testid={testID}
         disabled={disabled}
+        type={type}
         {...props}
       >
         {start ? (

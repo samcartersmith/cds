@@ -7,7 +7,9 @@ describe('MediaFallback.test', () => {
   it('renders media fallback', () => {
     render(<MediaFallback testID="test-media-fallback" type="asset" />);
 
-    expect(screen.getByTestId('test-media-fallback')).toHaveStyle({
+    const element = screen.getByTestId('test-media-fallback');
+
+    expect(element).toHaveStyle({
       width: `${mediaSize.normal}px`,
     });
   });

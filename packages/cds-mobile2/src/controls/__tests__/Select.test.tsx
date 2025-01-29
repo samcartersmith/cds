@@ -6,7 +6,7 @@ import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common2/intern
 import { DotSymbol } from '../../dots';
 import { Box, HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
-import { Tray } from '../../overlays/Tray/Tray';
+import { Tray } from '../../overlays/tray/Tray';
 import { TextBody } from '../../typography';
 import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
 import { Select } from '../Select';

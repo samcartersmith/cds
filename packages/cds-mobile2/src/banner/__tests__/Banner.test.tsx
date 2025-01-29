@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { useDimensions } from '../../hooks/useDimensions';
-import { galaxyScreenDimensions as narrowScreenDimensions } from '../../overlays/Tooltip/__tests__/UseTooltipPositionTestData';
+import { galaxyScreenDimensions as narrowScreenDimensions } from '../../overlays/tooltip/__tests__/UseTooltipPositionTestData';
 import { ThemeProvider } from '../../system';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { TextBody } from '../../typography';

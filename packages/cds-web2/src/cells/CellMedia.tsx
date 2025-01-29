@@ -38,6 +38,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
 
     content = (
       <Box
+        alt={props.accessibilityLabel}
         as={RemoteImage}
         height={size}
         shape={isImage ? 'squircle' : 'circle'}

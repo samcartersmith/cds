@@ -8,7 +8,7 @@ import { SpotRectangle } from '../../illustrations';
 import { Box, VStack } from '../../layout';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
 import { TextBody, TextTitle1 } from '../../typography';
-import { Tray, TrayStickyFooter } from '../Tray/Tray';
+import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 export const Default = () => {
   const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
