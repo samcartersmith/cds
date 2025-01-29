@@ -3,4 +3,9 @@
   box-sizing: border-box;
   outline: none;
   border: none;
+  font-family: var(--fontFamily-title4);
+  font-size: var(--fontSize-title4);
+  font-weight: var(--fontWeight-title4);
+  line-height: var(--lineHeight-title4);
+  background-color: var(--color-transparent);
 }

@@ -1,31 +1,12 @@
 import React, { useCallback } from 'react';
-import { cx } from '@linaria/core';
 import { useWindowSizeWithBreakpointOverride } from '@site/src/utils/useWindowSizeWithBreakpointOverride';
 import { useKBar } from 'kbar';
 import { IconButton } from '@cbhq/cds-web2/buttons';
 import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
 import { HStack } from '@cbhq/cds-web2/layout';
-import {
-  background,
-  borderColor,
-  borderWidth,
-  margin,
-  paddingX,
-  paddingY,
-} from '@cbhq/cds-web2/styles/styles';
 import { Text } from '@cbhq/cds-web2/text/Text';
 
 import styles from './styles.module.css';
-
-const kbdClassname = cx(
-  styles.keyboard,
-  paddingX[0.5],
-  paddingY[0],
-  margin[0],
-  background.transparent,
-  borderColor.line,
-  borderWidth[100],
-);
 
 // temporary noop function, will remove once search modal is implemented
 const noop = () => {};
@@ -43,10 +24,10 @@ const SearchBar = () => {
         bordered={false}
         end={
           <HStack alignItems="center" flexShrink={0} gap={1} paddingRight={2}>
-            <Text mono as="kbd" className={kbdClassname}>
+            <Text mono as="kbd" className={styles.kbd}>
               ⌘
             </Text>
-            <Text mono as="kbd" className={kbdClassname}>
+            <Text mono as="kbd" className={styles.kbd}>
               K
             </Text>
           </HStack>

@@ -2,16 +2,12 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import { isRegexpStringMatch } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { cx } from '@linaria/core';
 import type { Props } from '@theme/NavbarItem/NavbarNavLink';
 import { HStack } from '@cbhq/cds-web2/layout';
-import { alignItems, display, paddingX, paddingY } from '@cbhq/cds-web2/styles/styles';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
 import { Text } from '@cbhq/cds-web2/text/Text';
 
 import styles from './styles.module.css';
-
-const linkClassName = cx(paddingX[2], paddingY[1], styles.link, display.flex, alignItems.center);
 
 export default function NavbarNavLink({
   activeBasePath,
@@ -33,7 +29,7 @@ export default function NavbarNavLink({
         noScaleOnPress
         as={Link}
         background="backgroundSecondary"
-        className={linkClassName}
+        className={styles.link}
         href={prependBaseUrlToHref ? normalizedHref : href}
       >
         <Text font="headline">{label}</Text>
@@ -47,7 +43,7 @@ export default function NavbarNavLink({
       noScaleOnPress
       as={Link}
       background="backgroundSecondary"
-      className={linkClassName}
+      className={styles.link}
       to={toUrl}
       {...((activeBasePath || activeBaseRegex) && {
         isActive: (_: unknown, location: Location) =>
