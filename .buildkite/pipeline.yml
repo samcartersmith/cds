@@ -120,26 +120,26 @@ steps:
     <<: *k8s_large
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci build --exclude=mobile-app,mobile-app2 --allOnMaster --verbose
+      - yarn nx affected --target=build --exclude=mobile-app,mobile-app2 --verbose
 
   - label: Lint
     <<: *k8s_large
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci lint --allOnMaster
+      - yarn nx affected --target=lint --verbose
 
   - label: Format
     <<: *k8s_medium
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci format --allOnMaster
+      - yarn nx format:check --verbose
 
   - label: Test
     <<: *k8s_large
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci test --allOnMaster
-      - yarn mono-pipeline run-ci other --targets=audit-a11y --allOnMaster
+      - yarn nx affected --target=test --verbose
+      - yarn nx affected --target=audit-a11y --verbose
     retry:
       automatic:
         limit: 1
@@ -148,14 +148,7 @@ steps:
     <<: *k8s_medium
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci typecheck --allOnMaster
-
-  - label: Danger
-    <<: *k8s_medium
-    parallelism: 1
-    commands:
-      - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci danger --allOnMaster --removePreviousComments
+      - yarn nx affected --target=typecheck --verbose
 
   - label: 'Visreg (Web - All)'
     <<: *k8s_large_chrome

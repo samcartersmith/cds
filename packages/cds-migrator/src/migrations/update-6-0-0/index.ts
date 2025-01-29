@@ -1,4 +1,4 @@
-import { Tree } from '@nrwl/devkit';
+import { Tree } from '@nx/devkit';
 
 import revertDecomp from '../revert-decomp';
 import packageDecompMigrations from '../update-decomp';

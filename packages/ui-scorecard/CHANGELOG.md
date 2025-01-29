@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.2 (1/28/2025 PST)
+
+#### 🐞 Fixes
+
+- Update to Nx 21. [[#3527](https://github.cbhq.net/frontend/cds/pull/3527)]
+
 ## 0.2.1 (12/10/2024 PST)
 
 #### 🐞 Fixes

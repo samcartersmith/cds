@@ -1,4 +1,4 @@
-import { output as devkitOutput } from '@nrwl/devkit';
+import { output as devkitOutput } from '@nx/devkit';
 import { uniqBy } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';

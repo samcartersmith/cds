@@ -8,14 +8,8 @@
     "build": {
       "command": "yarn workspace @cbhq/cds-figma-strings-plugin build"
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
-    },
-    "test": {
-      "executor": "@cbhq/mono-tasks:test"
+      "executor": "@nx/eslint:lint"
     },
     "typecheck": {
       "executor": "nx:run-commands",

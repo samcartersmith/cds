@@ -1,4 +1,4 @@
-import { joinPathFragments, ProjectConfiguration, readJson, Tree } from '@nrwl/devkit';
+import { joinPathFragments, ProjectConfiguration, readJson, Tree } from '@nx/devkit';
 import type { PackageJson } from 'type-fest';
 
 type CheckHasDependencyParams = {
@@ -12,7 +12,7 @@ type CheckHasDependencyParams = {
 /**
  * Checks if the project uses a specified package as a dependency
  * @param packageName - The name of the package you are looking for, eg: @cbhq/cds-web
- * @param tree - The NX @nrwl/devkit tree that gets passed to a generator
+ * @param tree - The NX @nx/devkit tree that gets passed to a generator
  * @param project - The project configuration
  * @param type - The type of dependency. Defaults to direct 'dependencies'
  * @returns boolean

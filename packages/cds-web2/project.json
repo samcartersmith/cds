@@ -8,14 +8,8 @@
     "build": {
       "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
-    },
-    "lint-styles": {
-      "executor": "@cbhq/mono-tasks:lint-styles"
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"

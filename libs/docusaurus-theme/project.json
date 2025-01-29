@@ -17,14 +17,8 @@
     "clear": {
       "command": "docusaurus clear"
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
-    },
-    "test": {
-      "executor": "@cbhq/mono-tasks:test"
+      "executor": "@nx/eslint:lint"
     },
     "typecheck": {
       "executor": "nx:run-commands",

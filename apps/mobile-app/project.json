@@ -123,11 +123,8 @@
         "parallel": true
       }
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"

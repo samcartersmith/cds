@@ -34,11 +34,11 @@
     "CHANGELOG"
   ],
   "peerDependencies": {
-    "@nrwl/devkit": ">=15.0.0"
+    "@nx/devkit": ">=15.0.0"
   },
   "dependencies": {
     "@cbhq/figma-api": "workspace:^",
-    "@cbhq/mono-tasks": "^1.15.0",
+    "@cbhq/mono-tasks": "^1.16.0",
     "@cbhq/script-utils": "workspace:^",
     "@types/svgo": "^2.6.4",
     "lodash": "^4.17.21",

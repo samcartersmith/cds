@@ -1,3 +1,5 @@
+.yarnrc.yml
+
 *.graphql
 **/persisted_queries.json
 **/__generated__

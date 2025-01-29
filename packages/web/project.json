@@ -17,14 +17,8 @@
         "cwd": "packages/web"
       }
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
-    },
-    "lint-styles": {
-      "executor": "@cbhq/mono-tasks:lint-styles"
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"
@@ -39,19 +33,6 @@
         "prod": {
           "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
         }
-      }
-    },
-    "danger": {
-      "executor": "@cbhq/mono-tasks:danger",
-      "options": {
-        "dangerfile": "libs/dangerfiles/dangerfile.ts"
-      }
-    },
-    "danger-test": {
-      "executor": "@cbhq/mono-tasks:danger",
-      "options": {
-        "dangerfile": "libs/dangerfiles/dangerfile-coverage.ts",
-        "timeoutSeconds": 30
       }
     },
     "audit-a11y": {

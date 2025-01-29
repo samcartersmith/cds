@@ -8,9 +8,6 @@
     "build": {
       "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "typecheck": {
       "executor": "nx:run-commands",
       "defaultConfiguration": "dev",
@@ -21,19 +18,6 @@
         "prod": {
           "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
         }
-      }
-    },
-    "danger": {
-      "executor": "@cbhq/mono-tasks:danger",
-      "options": {
-        "dangerfile": "libs/dangerfiles/dangerfile.ts"
-      }
-    },
-    "danger-test": {
-      "executor": "@cbhq/mono-tasks:danger",
-      "options": {
-        "dangerfile": "libs/dangerfiles/dangerfile-coverage.ts",
-        "timeoutSeconds": 30
       }
     },
     "audit-a11y": {

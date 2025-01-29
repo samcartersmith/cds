@@ -1,4 +1,4 @@
-import { joinPathFragments, ProjectConfiguration, readJson, Tree } from '@nrwl/devkit';
+import { joinPathFragments, ProjectConfiguration, readJson, Tree } from '@nx/devkit';
 import type { PackageJson } from 'type-fest';
 
 import { PackageName } from './types';
@@ -13,7 +13,7 @@ type Params = {
 /**
  * Checks if the project uses a specified CDS package as a dependency
  * @param packageName - The name of the CDS package you are looking for, eg: @cbhq/cds-web
- * @param tree - The NX @nrwl/devkit tree that gets passed to a generator
+ * @param tree - The NX @nx/devkit tree that gets passed to a generator
  * @param project - The project configuration
  * @returns boolean
  */

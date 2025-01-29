@@ -26,14 +26,8 @@
         "parallel": true
       }
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
-    },
-    "test": {
-      "executor": "@cbhq/mono-tasks:test"
+      "executor": "@nx/eslint:lint"
     },
     "typecheck": {
       "command": "tsc --build --pretty --verbose"

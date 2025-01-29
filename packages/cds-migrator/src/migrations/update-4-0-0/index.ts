@@ -1,4 +1,4 @@
-import { Tree } from '@nrwl/devkit';
+import { Tree } from '@nx/devkit';
 
 import renameIcons from './rename-icons';
 import renameIllustrations from './rename-illustrations';

@@ -108,6 +108,9 @@
         "^production",
         "{workspaceRoot}/.eslintignore"
       ],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "cache": true
     },
     "test": {

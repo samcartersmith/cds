@@ -1,4 +1,4 @@
-import { joinPathFragments, ProjectConfiguration, readJson, Tree } from '@nrwl/devkit';
+import { joinPathFragments, ProjectConfiguration, readJson, Tree } from '@nx/devkit';
 import type { PackageJson } from 'type-fest';
 
 import {
@@ -45,7 +45,7 @@ export type CheckHasCdsDependencyReturnType = {
 
 /**
  * Checks if the project uses a CDS package as a dependency
- * @param tree - The NX @nrwl/devkit tree that gets passed to a generator
+ * @param tree - The NX @nx/devkit tree that gets passed to a generator
  * @param project - The project configuration
  * @returns { hasCdsDependency: boolean, hasCoreCdsDependency: boolean, packageJsonPath: string, dependencies: Partial<Record<PackageName, string>>, devDependencies: Partial<Record<PackageName, string>>, peerDependencies: Partial<Record<PackageName, string>>}
  */

@@ -85,5 +85,10 @@ export function createMockTask<TaskName extends keyof Tasks>({
     isVerbose: true,
   };
 
-  return new Task('mock-task', options, mockContext);
+  return new Task(
+    'mock-task',
+    options,
+    // @ts-expect-error Wrong Nx types
+    mockContext,
+  );
 }

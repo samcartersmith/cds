@@ -7,11 +7,8 @@
     "build": {
       "command": "rm -rf cjs && babel ./src --out-dir cjs --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"

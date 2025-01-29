@@ -83,7 +83,7 @@
   "dependencies": {
     "@cb/config-service-node": "^3.4.0",
     "@cbhq/eslint-plugin": "^1.40.1",
-    "@cbhq/mono-tasks": "^1.15.0",
+    "@cbhq/mono-tasks": "^1.16.0",
     "octokit": "^3.0.0",
     "prettier": "^2.8.3",
     "type-fest": "^2.19.0",

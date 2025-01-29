@@ -34,11 +34,8 @@
         "command": "echo 'Building icons for mobile'"
       }
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
+      "executor": "@nx/eslint:lint"
     },
     "sync": {
       "executor": "@cbhq/figma-tasks:sync-icons",
@@ -84,9 +81,6 @@
         ],
         "parallel": false
       }
-    },
-    "test": {
-      "executor": "@cbhq/mono-tasks:test"
     }
   }
 }

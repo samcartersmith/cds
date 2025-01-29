@@ -1,4 +1,4 @@
-import { output, Tree } from '@nrwl/devkit';
+import { output, Tree } from '@nx/devkit';
 import fs from 'node:fs';
 
 import {

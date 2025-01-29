@@ -1,4 +1,4 @@
-import { Tree } from '@nrwl/devkit';
+import { Tree } from '@nx/devkit';
 
 import migrateBanner from '../../migrations/banner';
 import migrateGap from '../../migrations/gap';

@@ -16,11 +16,8 @@
         "command": "echo 'Building illustrations for mobile'"
       }
     },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
+      "executor": "@nx/eslint:lint"
     },
     "sync": {
       "executor": "@cbhq/figma-tasks:sync-illustrations",
@@ -66,9 +63,6 @@
         ],
         "parallel": false
       }
-    },
-    "test": {
-      "executor": "@cbhq/mono-tasks:test"
     },
     "typecheck": {
       "executor": "nx:run-commands",

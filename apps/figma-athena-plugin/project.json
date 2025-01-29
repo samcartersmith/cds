@@ -33,19 +33,10 @@
       "command": "rm -rf dist && webpack --mode production"
     },
     "dockerup": {
-      "executor": "@cbhq/mono-tasks:run-package-script",
-      "defaultConfiguration": "app",
-      "configurations": {
-        "app": {
-          "script": "server-dockerup"
-        }
-      }
+      "command": "yarn workspace figma-athena-plugin server-dockerup"
     },
     "dockerdown": {
-      "executor": "@cbhq/mono-tasks:run-package-script",
-      "options": {
-        "script": "server-dockerdown"
-      }
+      "command": "yarn workspace figma-athena-plugin server-dockerdown"
     },
     "serve": {
       "command": "tsx ./src/server/index.ts",
@@ -72,7 +63,7 @@
       }
     },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
+      "executor": "@nx/eslint:lint"
     }
   }
 }

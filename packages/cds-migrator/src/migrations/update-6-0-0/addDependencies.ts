@@ -1,4 +1,4 @@
-import { getProjects, readJson, Tree, updateJson } from '@nrwl/devkit';
+import { getProjects, readJson, Tree, updateJson } from '@nx/devkit';
 import { PackageJson } from 'type-fest';
 
 import {

@@ -1,4 +1,4 @@
-import { output } from '@nrwl/devkit';
+import { output } from '@nx/devkit';
 
 import { JsxElementType } from './types';
 

@@ -9,6 +9,7 @@ if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
 const mockTask = new Task(
   'mock-task',
   {},
+  // @ts-expect-error Wrong Nx types
   {
     root: MONOREPO_ROOT,
     projectName: 'mock-tasks',

@@ -1,4 +1,4 @@
-import { ProjectConfiguration, Tree } from '@nrwl/devkit';
+import { ProjectConfiguration, Tree } from '@nx/devkit';
 import { JsxOpeningElement, JsxSelfClosingElement, SourceFile } from 'ts-morph';
 
 export type CreateMigrationParams = {

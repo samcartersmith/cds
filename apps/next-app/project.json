@@ -19,12 +19,6 @@
         "cwd": "apps/next-app"
       }
     },
-    "extract": {
-      "executor": "@cbhq/mono-tasks:extract-messages"
-    },
-    "format": {
-      "executor": "@cbhq/mono-tasks:format"
-    },
     "lint": {
       "command": "next lint",
       "options": {

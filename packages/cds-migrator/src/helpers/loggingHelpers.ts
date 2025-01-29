@@ -1,4 +1,4 @@
-import { output } from '@nrwl/devkit';
+import { output } from '@nx/devkit';
 
 export function logDebug(title: string, bodyLines?: string[]) {
   output.log({ title, bodyLines, color: 'white' });

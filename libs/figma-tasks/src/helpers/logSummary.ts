@@ -1,4 +1,4 @@
-import { output as devkitOutput } from '@nrwl/devkit';
+import { output as devkitOutput } from '@nx/devkit';
 import { Task } from '@cbhq/mono-tasks';
 
 import type { Manifest, ManifestTaskOptions } from '../tools/Manifest';

@@ -1,4 +1,4 @@
-import { Tree } from '@nrwl/devkit';
+import { Tree } from '@nx/devkit';
 
 import { parseSourceFiles } from './parseSourceFiles';
 import { CreateMigrationParams, PackageName } from './types';

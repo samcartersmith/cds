@@ -1,4 +1,4 @@
-import { Tree } from '@nrwl/devkit';
+import { Tree } from '@nx/devkit';
 
 import jestMockMigrations from './jestMockMigrations';
 import packageDecompMigrations from './packageDecompMigrations';

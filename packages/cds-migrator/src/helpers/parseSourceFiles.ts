@@ -1,4 +1,4 @@
-import { getProjects, joinPathFragments, Tree } from '@nrwl/devkit';
+import { getProjects, joinPathFragments, Tree } from '@nx/devkit';
 import chalk from 'chalk';
 import progress from 'cli-progress';
 import glob from 'fast-glob';
@@ -14,7 +14,7 @@ import { CreateMigrationParams, PackageName } from './types';
  * Pulls `sourceFiles` from projects that have CDS package(s) as dependency
  * and are Typescript projects
  * Passes the absolute path, tree, and project of each sourceFile to the @transformFn
- * @param tree - The NX @nrwl/devkit tree that gets passed to a generator
+ * @param tree - The NX @nx/devkit tree that gets passed to a generator
  * @param transformFn - The function that will be called for each sourceFile. Passes through the NX tree and ts-morph sourceFile
  * @param filterSourceFiles - Parses sourceFiles that meet a conditional
  * @param packageNames - Checks if a project has specific CDS package(s) as a dependency

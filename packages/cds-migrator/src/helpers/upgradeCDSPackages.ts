@@ -1,4 +1,4 @@
-import { getProjects, output, Tree, updateJson } from '@nrwl/devkit';
+import { getProjects, output, Tree, updateJson } from '@nx/devkit';
 import semver from 'semver';
 
 import { CdsDependencyCheck, checkHasCdsDependency } from './checkHasCdsDependency';
