@@ -3,7 +3,6 @@ import { BorderedStyles, ElevationLevels } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { borderRadius as borderRadii } from '@cbhq/cds-common2/tokens/borderRadius';
 import { borderWidth as borderWidthTokens } from '@cbhq/cds-common2/tokens/borderWidth';
-import { memoize } from '@cbhq/cds-common2/utils/memoize';
 
 import { Theme } from '../core/theme';
 
@@ -16,28 +15,7 @@ export type GetBorderStyleParams = Omit<BorderedStyles, 'borderRadius'> & {
   theme: Theme;
 };
 
-function getCacheKey({
-  bordered,
-  borderedTop,
-  borderedBottom,
-  borderedStart,
-  borderedEnd,
-  borderedHorizontal,
-  borderedVertical,
-  borderRadius,
-  borderColor,
-  borderWidth,
-  elevation,
-  theme,
-}: GetBorderStyleParams) {
-  return `${
-    elevation ? `elevation-${elevation}` : 'no-elevation'
-  }-${bordered}-${borderedTop}-${borderedBottom}-${borderedStart}-${borderedEnd}-${borderedHorizontal}-${borderedVertical}-${borderRadius}-${borderWidth}-${borderColor}-${
-    theme.colorScheme
-  }`;
-}
-
-export const getBorderStyles = memoize(function getBorderStyles({
+export const getBorderStyles = ({
   bordered,
   borderedTop,
   borderedBottom,
@@ -50,7 +28,7 @@ export const getBorderStyles = memoize(function getBorderStyles({
   borderWidth,
   theme,
   elevation,
-}: GetBorderStyleParams) {
+}: GetBorderStyleParams) => {
   const styles: ViewStyle = {};
 
   if (borderRadius) {
@@ -106,5 +84,4 @@ export const getBorderStyles = memoize(function getBorderStyles({
     styles.borderWidth = borderWidthTokens[borderWidth ?? 100];
   }
   return styles;
-},
-getCacheKey);
+};

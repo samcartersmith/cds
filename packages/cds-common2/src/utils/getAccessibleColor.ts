@@ -1,20 +1,22 @@
-export const getAccessibleColor = (backgroundColor: string | number[]) => {
-  let r;
-  let g;
-  let b;
-  if (typeof backgroundColor === 'string' && backgroundColor.startsWith('#')) {
-    r = parseInt(backgroundColor.substring(1, 3), 16);
-    g = parseInt(backgroundColor.substring(3, 5), 16);
-    b = parseInt(backgroundColor.substring(5, 7), 16);
-  } else
-    [r, g, b] =
-      typeof backgroundColor === 'string'
-        ? backgroundColor.split(',').map(parseInt)
-        : backgroundColor;
+import { getRGBColor, type ColorValue } from '../color/blendColors';
+
+const contrastRatio = (l1: number, l2: number) => {
+  return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+};
+
+export const getAccessibleColor = (backgroundColor: ColorValue) => {
+  const { r, g, b } = getRGBColor(backgroundColor);
   const rLuminance = (r / 255) ** 2.2;
   const gLuminance = (g / 255) ** 2.2;
   const bLuminance = (b / 255) ** 2.2;
+
   // sRGB constants
   const colorLuminance = 0.2126 * rLuminance + 0.7151 * gLuminance + 0.0721 * bLuminance;
-  return colorLuminance < 140 ? '#ffffff' : '#000000';
+
+  // Contrast ratios with white and black
+  const whiteContrast = contrastRatio(colorLuminance, 1); // White luminance = 1
+  const blackContrast = contrastRatio(colorLuminance, 0); // Black luminance = 0
+
+  // Return the color with higher contrast
+  return whiteContrast >= blackContrast ? '#ffffff' : '#000000';
 };

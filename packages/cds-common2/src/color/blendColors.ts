@@ -10,7 +10,7 @@ type BlendColorsParams = {
   overlayColor: ColorValue;
 };
 
-const getRGBColor = (color: ColorValue): RGBColor => {
+export const getRGBColor = (color: ColorValue): RGBColor => {
   if (typeof color === 'string') {
     return rgb(color);
   }

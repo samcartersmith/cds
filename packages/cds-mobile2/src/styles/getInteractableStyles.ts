@@ -9,12 +9,11 @@ import {
 } from '@cbhq/cds-common2/tokens/interactable';
 import { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
-import { memoize } from '@cbhq/cds-common2/utils/memoize';
 
 import { Theme } from '../core/theme';
 
 import { getBorderStyles } from './getBorderStyles';
-import { getElevationStyles } from './getElevationStyles';
+import { getElevationStyles } from '../layout/Box';
 
 export type InteractableStyles = {
   staticStyles: ViewStyle;
@@ -33,18 +32,6 @@ export type GetInteractableStylesParams = Pick<
   elevation?: ElevationLevels;
   theme: Theme;
 };
-
-function getCacheKey({
-  background,
-  borderColor,
-  borderRadius,
-  borderWidth,
-  elevation,
-  theme,
-}: GetInteractableStylesParams) {
-  const elevationName = elevation ? `elevation-${elevation}` : 'no-elevation';
-  return `${theme.colorScheme}-${elevationName}-${background}-${borderColor}-${borderRadius}-${borderWidth}`;
-}
 
 const blendBackgroundColor = ({
   background,
@@ -76,14 +63,14 @@ const blendBackgroundColor = ({
   return blendColors({ underlayColor, overlayColor: pressedOverlayColor });
 };
 
-export const getInteractableStyles = memoize(function getInteractableStyles({
+export const getInteractableStyles = ({
   background,
   borderColor,
   borderRadius,
   borderWidth,
   theme,
   elevation,
-}: GetInteractableStylesParams) {
+}: GetInteractableStylesParams) => {
   const borderStyles = getBorderStyles({
     borderColor,
     borderRadius,
@@ -132,5 +119,4 @@ export const getInteractableStyles = memoize(function getInteractableStyles({
     wrapperStyles,
     contentStyles,
   };
-},
-getCacheKey);
+};

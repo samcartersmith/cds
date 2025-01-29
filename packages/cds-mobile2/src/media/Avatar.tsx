@@ -40,12 +40,10 @@ export const Avatar = memo(
     const isCustomSizeAndSmall = isCustomSize && dangerouslySetSize <= smallAvatarSize;
     const colorScheme = colorSchemeMap[colorSchemeProp ?? 'blue'];
     const colorSchemeRgb = `rgb(${theme.spectrum[colorScheme]})`;
-    const fallbackTextColor = useMemo(() => {
-      const colorSchemeArray = theme.spectrum[colorScheme]
-        .split(',')
-        .map((color) => parseInt(color));
-      return getAccessibleColor(colorSchemeArray);
-    }, [colorScheme, theme.spectrum]);
+    const fallbackTextColor = useMemo(
+      () => getAccessibleColor(colorSchemeRgb),
+      [colorScheme, theme.spectrum],
+    );
 
     const computedSize = dangerouslySetSize ?? avatarSize;
     const shouldShowAvatarImage = !!src || !name;
@@ -55,21 +53,29 @@ export const Avatar = memo(
     const avatarText = useMemo(() => {
       if (isLargestSize || (isCustomSize && !isCustomSizeAndSmall)) {
         return (
-          <TextTitle2 align="center" dangerouslySetColor={fallbackTextColor} transform="uppercase">
+          <TextTitle2
+            align="center"
+            dangerouslySetColor={fallbackTextColor}
+            textTransform="uppercase"
+          >
             {placeholderLetter}
           </TextTitle2>
         );
       }
       if (size === 'm' || isCustomSizeAndSmall) {
         return (
-          <TextCaption align="center" dangerouslySetColor={fallbackTextColor} transform="uppercase">
+          <TextCaption
+            align="center"
+            dangerouslySetColor={fallbackTextColor}
+            textTransform="uppercase"
+          >
             {placeholderLetter}
           </TextCaption>
         );
       }
 
       return (
-        <TextBody align="center" dangerouslySetColor={fallbackTextColor} transform="uppercase">
+        <TextBody align="center" dangerouslySetColor={fallbackTextColor} textTransform="uppercase">
           {placeholderLetter}
         </TextBody>
       );

@@ -99,7 +99,7 @@ export const NudgeCard = memo(
                 ellipsize="tail"
                 numberOfLines={numberOfLines}
                 testID={`${testID}-title`}
-                transform="none"
+                textTransform="none"
               >
                 {title}
               </TextHeadline>
@@ -107,7 +107,7 @@ export const NudgeCard = memo(
                 ellipsize="tail"
                 numberOfLines={numberOfLines}
                 testID={`${testID}-description`}
-                transform="none"
+                textTransform="none"
               >
                 {description}
               </TextLabel2>

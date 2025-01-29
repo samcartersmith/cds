@@ -1,12 +1,11 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { type StyleProp, type ViewProps, type ViewStyle, Animated, View } from 'react-native';
-import { PinningDirection, TextAlignProps } from '@cbhq/cds-common2';
+import { PinningDirection } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 
 import type { Theme } from '../core/theme';
 import { useTheme } from '../hooks/useTheme';
-import { getElevationStyles } from '../styles/getElevationStyles';
 import { pinStyles } from '../styles/pinStyles';
 import { type StyleProps, getStyles } from '../styles/styleProps';
 
@@ -39,6 +38,34 @@ export type BoxProps = StyleProps &
     /** Used to locate this element in unit and end-to-end tests. */
     testID?: string;
   };
+
+export const getElevationStyles = (
+  elevation: ElevationLevels,
+  theme: Theme,
+  background?: ThemeVars.Color,
+): ViewStyle => {
+  // TODO: This is a temporary solution to apply elevation background color.
+  // Only override background color when background props is `background` or undefined.
+  // This means no custom background color is applied, so should use elevation background color.
+  const elevationStyles: Record<ElevationLevels, ViewStyle> = {
+    0: {},
+    1: {
+      elevation: 2,
+      ...(background === 'background' || background === undefined
+        ? { backgroundColor: theme.color.backgroundElevation1 }
+        : {}),
+      ...theme.shadow.elevation1,
+    },
+    2: {
+      elevation: 8,
+      ...(background === 'background' || background === undefined
+        ? { backgroundColor: theme.color.backgroundElevation2 }
+        : {}),
+      ...theme.shadow.elevation2,
+    },
+  };
+  return elevationStyles[elevation];
+};
 
 const getBorderedStyles = (
   {
@@ -223,6 +250,7 @@ export const Box = memo(
               borderedEnd,
               borderedTop,
               borderedBottom,
+              elevation,
             },
             theme,
           ),

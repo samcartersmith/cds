@@ -74,15 +74,15 @@ const TextExamplesScreen = ({
 
       <Example title="Casing">
         <Box>
-          <Text transform="uppercase">Uppercased text</Text>
+          <Text textTransform="uppercase">Uppercased text</Text>
         </Box>
 
         <Box>
-          <Text transform="lowercase">Lowercased text</Text>
+          <Text textTransform="lowercase">Lowercased text</Text>
         </Box>
 
         <Box>
-          <Text transform="capitalize">Capitalized text</Text>
+          <Text textTransform="capitalize">Capitalized text</Text>
         </Box>
       </Example>
 

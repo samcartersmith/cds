@@ -341,10 +341,10 @@ export const defaultTheme = {
     accentSubtleGray: `rgb(${lightSpectrum.gray10})`,
     accentBoldGray: `rgb(${lightSpectrum.gray80})`,
     // Transparent
-    transparent: `rgba(${lightSpectrum.gray0},0)`, // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
-    transparentHover: 'rgba(250,250,250,0.98)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
-    transparentPressed: 'rgba(235,235,236,0.92)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
-    transparentDisabled: 'rgb(255,255,255)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
+    transparent: `rgba(${lightSpectrum.gray0},0)`,
+    transparentHover: 'transparent',
+    transparentPressed: 'transparent',
+    transparentDisabled: 'transparent',
   },
   dark: {
     // Text
@@ -415,10 +415,10 @@ export const defaultTheme = {
     accentSubtleGray: `rgb(${darkSpectrum.gray10})`,
     accentBoldGray: `rgb(${darkSpectrum.gray80})`,
     // Transparent
-    transparent: `rgba(${darkSpectrum.gray0},0)`, // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
-    transparentHover: 'rgba(15,16,18,0.98)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
-    transparentPressed: 'rgba(30,31,32,0.92)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
-    transparentDisabled: 'rgb(10,11,13)', // TO DO: confirm correct colors. this is transparent on Pressable in old CDS
+    transparent: `rgba(${darkSpectrum.gray0},0)`,
+    transparentHover: 'transparent',
+    transparentPressed: 'transparent',
+    transparentDisabled: 'transparent',
   },
   space: {
     '0': 0,

@@ -342,9 +342,9 @@ export const defaultTheme = {
     accentBoldGray: 'rgb(var(--gray80))',
     // Transparent
     transparent: 'rgba(var(--gray100),0)',
-    transparentHover: 'rgba(250,250,250,0.98)',
-    transparentPressed: 'rgba(235,235,236,0.92)',
-    transparentDisabled: 'rgb(255,255,255)',
+    transparentHover: 'transparent',
+    transparentPressed: 'transparent',
+    transparentDisabled: 'transparent',
   },
   dark: {
     // Text
@@ -416,9 +416,9 @@ export const defaultTheme = {
     accentBoldGray: 'rgb(var(--gray80))',
     // Transparent
     transparent: 'rgba(var(--gray0),0)',
-    transparentHover: 'rgba(15,16,18,0.98)',
-    transparentPressed: 'rgba(30,31,32,0.92)',
-    transparentDisabled: 'rgb(10,11,13)',
+    transparentHover: 'transparent',
+    transparentPressed: 'transparent',
+    transparentDisabled: 'transparent',
   },
   space: {
     '0': 0,

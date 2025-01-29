@@ -63,9 +63,9 @@ const customLightTheme = {
   ...defaultTheme,
   light: {
     ...defaultTheme.light,
-    backgroundSecondary: defaultTheme.lightSpectrum.blue50,
-    backgroundPrimary: defaultTheme.lightSpectrum.red20,
-    background: defaultTheme.lightSpectrum.orange50,
+    backgroundSecondary: `rgb(${defaultTheme.lightSpectrum.blue50})`,
+    backgroundPrimary: `rgb(${defaultTheme.lightSpectrum.red20})`,
+    background: `rgb(${defaultTheme.lightSpectrum.orange50})`,
   },
 } satisfies ThemeConfig;
 
@@ -82,9 +82,9 @@ const customDarkTheme = {
   ...defaultTheme,
   dark: {
     ...defaultTheme.dark,
-    backgroundSecondary: defaultTheme.darkSpectrum.blue50,
-    backgroundPrimary: defaultTheme.darkSpectrum.red20,
-    background: defaultTheme.darkSpectrum.orange50,
+    backgroundSecondary: `rgb(${defaultTheme.darkSpectrum.blue50})`,
+    backgroundPrimary: `rgb(${defaultTheme.darkSpectrum.red20})`,
+    background: `rgb(${defaultTheme.darkSpectrum.orange50})`,
   },
 } satisfies ThemeConfig;
 
