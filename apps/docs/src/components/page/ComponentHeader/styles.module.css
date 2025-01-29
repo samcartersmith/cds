@@ -1,0 +1,5 @@
+.importText {
+  word-break: break-all;
+  flex: 1;
+  min-width: 0;
+}
