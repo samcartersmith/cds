@@ -4,6 +4,7 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react-nativ
 
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
+import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Carousel } from '../Carousel';
 import { useCarousel } from '../useCarousel';
 
@@ -35,7 +36,7 @@ describe('useCarousel', () => {
     );
 
     return (
-      <>
+      <DefaultThemeProvider>
         <Button disableDebounce onPress={handleLogLength} testID="LogLength">
           Log Length
         </Button>
@@ -46,7 +47,7 @@ describe('useCarousel', () => {
           Trigger ScrollToEnd
         </Button>
         <Carousel carouselRef={carouselRef} items={items} />
-      </>
+      </DefaultThemeProvider>
     );
   };
 

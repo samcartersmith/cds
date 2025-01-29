@@ -1,6 +1,7 @@
 import TestRenderer from 'react-test-renderer';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Link } from '../Link';
 
 const TEST_ID = 'link';
@@ -9,9 +10,11 @@ const URL = 'www.coinbase.com';
 describe('Link', () => {
   it('passes a11y', () => {
     render(
-      <Link testID={TEST_ID} to="/" variant="body">
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link testID={TEST_ID} to="/" variant="body">
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID)).toBeAccessible();
@@ -19,9 +22,11 @@ describe('Link', () => {
 
   it('renders a children text', () => {
     render(
-      <Link to="/" variant="body">
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link to="/" variant="body">
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText('Child')).not.toBeNull();
@@ -29,9 +34,11 @@ describe('Link', () => {
 
   it('renders a link', () => {
     render(
-      <Link testID={TEST_ID} to="/">
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link testID={TEST_ID} to="/">
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();
@@ -52,9 +59,11 @@ describe('Link', () => {
 
     variants.forEach((variant) => {
       const linkRenderer = TestRenderer.create(
-        <Link testID={TEST_ID} to="/" variant={variant}>
-          Child
-        </Link>,
+        <DefaultThemeProvider>
+          <Link testID={TEST_ID} to="/" variant={variant}>
+            Child
+          </Link>
+        </DefaultThemeProvider>,
       );
       const linkInstance = linkRenderer.root;
       expect(linkInstance.props.variant).toEqual(variant);
@@ -65,9 +74,11 @@ describe('Link', () => {
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
     render(
-      <Link onPress={spy} testID={TEST_ID} to="/">
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link onPress={spy} testID={TEST_ID} to="/">
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId(TEST_ID));
@@ -77,9 +88,11 @@ describe('Link', () => {
 
   it('to prop works as expected', () => {
     const linkRenderer = TestRenderer.create(
-      <Link testID={TEST_ID} to={URL}>
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link testID={TEST_ID} to={URL}>
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
     const linkInstance = linkRenderer.root;
     expect(linkInstance.props.to).toEqual(URL);
@@ -87,9 +100,11 @@ describe('Link', () => {
 
   it('can set forceOpenOutsideApp to true', () => {
     const linkRenderer = TestRenderer.create(
-      <Link forceOpenOutsideApp testID={TEST_ID} to={URL}>
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link forceOpenOutsideApp testID={TEST_ID} to={URL}>
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
     const linkInstance = linkRenderer.root;
     expect(linkInstance.props.forceOpenOutsideApp).toBe(true);
@@ -97,9 +112,11 @@ describe('Link', () => {
 
   it('can set readerMode to true', () => {
     const linkRenderer = TestRenderer.create(
-      <Link readerMode testID={TEST_ID} to={URL}>
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link readerMode testID={TEST_ID} to={URL}>
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
     const linkInstance = linkRenderer.root;
     expect(linkInstance.props.readerMode).toBe(true);
@@ -107,9 +124,11 @@ describe('Link', () => {
 
   it('removes text style when inherited', () => {
     render(
-      <Link testID={TEST_ID} to={URL} variant="inherit">
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link testID={TEST_ID} to={URL} variant="inherit">
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
     // specifically test text style, check line 124 in createText.tsx
     expect(screen.getByTestId(TEST_ID).props.style[2]).toBe(false);
@@ -117,9 +136,11 @@ describe('Link', () => {
 
   it('inherits by default', () => {
     render(
-      <Link testID={TEST_ID} to={URL}>
-        Child
-      </Link>,
+      <DefaultThemeProvider>
+        <Link testID={TEST_ID} to={URL}>
+          Child
+        </Link>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(TEST_ID).props.style[2]).toBe(false);
   });

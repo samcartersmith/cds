@@ -1,20 +1,27 @@
 /* eslint-disable react-native/no-raw-text */
 import { render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { HelperText } from '../HelperText';
 
 describe('HelperText.test', () => {
   it('renders children', () => {
-    render(<HelperText>Test text</HelperText>);
+    render(
+      <DefaultThemeProvider>
+        <HelperText>Test text</HelperText>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText('Test text')).toBeTruthy();
   });
 
   it('renders custom color', () => {
     render(
-      <HelperText color="textNegative" dangerouslySetColor="yellow" errorIconTestID="error-icon">
-        Test text
-      </HelperText>,
+      <DefaultThemeProvider>
+        <HelperText color="textNegative" dangerouslySetColor="yellow" errorIconTestID="error-icon">
+          Test text
+        </HelperText>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText('Test text')).toHaveStyle({ color: 'yellow' });
@@ -23,9 +30,11 @@ describe('HelperText.test', () => {
 
   it('renders custom spacing', () => {
     render(
-      <HelperText padding={4} testID="helper-text-test">
-        Test text
-      </HelperText>,
+      <DefaultThemeProvider>
+        <HelperText padding={4} testID="helper-text-test">
+          Test text
+        </HelperText>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('helper-text-test')).toHaveStyle({
       paddingBottom: 32,

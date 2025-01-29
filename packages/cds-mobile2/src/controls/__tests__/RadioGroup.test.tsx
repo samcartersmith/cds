@@ -3,22 +3,35 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
 import { TextLabel1 } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Radio } from '../RadioGroup';
 
 describe('Radio', () => {
   it('passes a11y', () => {
-    render(<Radio testID="mock-radio">Radio</Radio>);
+    render(
+      <DefaultThemeProvider>
+        <Radio testID="mock-radio">Radio</Radio>
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('mock-radio')).toBeAccessible();
   });
   it('renders a Pressable', () => {
-    render(<Radio>Radio</Radio>);
+    render(
+      <DefaultThemeProvider>
+        <Radio>Radio</Radio>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryAllByType(Pressable)).toHaveLength(1);
     expect(screen.getByText('Radio')).toBeTruthy();
   });
 
   it('renders a dot icon when checked', () => {
-    render(<Radio checked>Checked</Radio>);
+    render(
+      <DefaultThemeProvider>
+        <Radio checked>Checked</Radio>
+      </DefaultThemeProvider>,
+    );
 
     const icon = screen.getByText(glyphMap['ui-dot-16']);
     expect(icon).toBeTruthy();
@@ -26,34 +39,52 @@ describe('Radio', () => {
 
   it('attaches testID', () => {
     const TEST_ID = 'radio-testid-test';
-    render(<Radio testID={TEST_ID}>Radio</Radio>);
+    render(
+      <DefaultThemeProvider>
+        <Radio testID={TEST_ID}>Radio</Radio>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.queryAllByTestId(TEST_ID)).toHaveLength(1);
   });
 
   it('has accessibility role radio', () => {
-    render(<Radio>Radio</Radio>);
+    render(
+      <DefaultThemeProvider>
+        <Radio>Radio</Radio>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.queryAllByRole('radio')).toHaveLength(1);
   });
 
   it('has accessibility state checked when checked', () => {
-    render(<Radio checked>Checked</Radio>);
+    render(
+      <DefaultThemeProvider>
+        <Radio checked>Checked</Radio>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.queryAllByA11yState({ checked: true })).toHaveLength(1);
   });
 
   it('has accessibility state disabled when disabled', () => {
-    render(<Radio disabled>Disabled</Radio>);
+    render(
+      <DefaultThemeProvider>
+        <Radio disabled>Disabled</Radio>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.queryAllByA11yState({ disabled: true })).toHaveLength(1);
   });
 
   it('Can set custom accessibility label and hints', () => {
     render(
-      <Radio accessibilityHint="Custom hint" accessibilityLabel="Custom label">
-        Checkbox
-      </Radio>,
+      <DefaultThemeProvider>
+        <Radio accessibilityHint="Custom hint" accessibilityLabel="Custom label">
+          Checkbox
+        </Radio>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText('Custom label')).toBeTruthy();
@@ -62,19 +93,25 @@ describe('Radio', () => {
 
   it('fires `onChange` when pressed and not disabled', () => {
     const spy = jest.fn();
-    render(<Radio onChange={spy}>Radio</Radio>);
+    render(
+      <DefaultThemeProvider>
+        <Radio onChange={spy}>Radio</Radio>
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Radio'));
 
     expect(spy).toHaveBeenCalled();
   });
 
-  it('does not fires `onChange` when disabled and pressed', () => {
+  it('does not fire `onChange` when disabled and pressed', () => {
     const spy = jest.fn();
     render(
-      <Radio disabled onChange={spy}>
-        Radio
-      </Radio>,
+      <DefaultThemeProvider>
+        <Radio disabled onChange={spy}>
+          Radio
+        </Radio>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByText('Radio'));
@@ -84,9 +121,11 @@ describe('Radio', () => {
 
   it('renders a ReactNode as content', () => {
     render(
-      <Radio>
-        <TextLabel1>Custom ReactNode</TextLabel1>
-      </Radio>,
+      <DefaultThemeProvider>
+        <Radio>
+          <TextLabel1>Custom ReactNode</TextLabel1>
+        </Radio>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText('Custom ReactNode')).toBeTruthy();

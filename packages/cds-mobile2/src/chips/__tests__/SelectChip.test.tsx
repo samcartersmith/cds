@@ -3,7 +3,7 @@ import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-c
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { SelectOption } from '../../controls';
-import { SAFE_AREA_METRICS } from '../../utils/testHelpers';
+import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../utils/testHelpers';
 import { SelectChip, SelectChipProps } from '../SelectChip';
 
 const options = ['Balance', 'Name', 'Asset Value'];
@@ -31,9 +31,11 @@ const BaseSelectChip = ({ value: defaultValue, ...props }: Omit<SelectChipProps,
 
 const TestSelectChip = ({ ...props }) => {
   return (
-    <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-      <BaseSelectChip {...props} />
-    </SafeAreaProvider>
+    <DefaultThemeProvider>
+      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+        <BaseSelectChip {...props} />
+      </SafeAreaProvider>
+    </DefaultThemeProvider>
   );
 };
 

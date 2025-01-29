@@ -5,17 +5,26 @@ import { Text, View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Numpad } from '../Numpad';
 
 describe('Numpad', () => {
   it('renders without crashing', () => {
-    render(<Numpad onPress={NoopFn} testID="mock-numpad" />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad onPress={NoopFn} testID="mock-numpad" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('mock-numpad')).toBeTruthy();
   });
 
   it('dispatches onPress events for number buttons', () => {
     const onPress = jest.fn();
-    render(<Numpad onPress={onPress} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad onPress={onPress} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('1'));
     expect(onPress).toHaveBeenCalledWith(1);
@@ -23,7 +32,11 @@ describe('Numpad', () => {
 
   it('dispatches onPress events for separator button', () => {
     const onPress = jest.fn();
-    render(<Numpad onPress={onPress} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad onPress={onPress} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('.'));
     expect(onPress).toHaveBeenCalledWith('SEPARATOR');
@@ -31,7 +44,11 @@ describe('Numpad', () => {
 
   it('dispatches onPress events for back button', () => {
     const onPress = jest.fn();
-    render(<Numpad onPress={onPress} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad onPress={onPress} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByTestId('numpad-back'));
     expect(onPress).toHaveBeenCalledWith('DELETE');
@@ -39,7 +56,11 @@ describe('Numpad', () => {
 
   it('dispatches onLongPress events', () => {
     const onLongPress = jest.fn();
-    render(<Numpad onLongPress={onLongPress} onPress={NoopFn} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad onLongPress={onLongPress} onPress={NoopFn} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent(screen.getByText('1'), 'onLongPress');
 
@@ -49,7 +70,11 @@ describe('Numpad', () => {
   it('renders accessory and action nodes when passed', () => {
     const accessory = <Text>Accessory</Text>;
     const action = <Text>Action</Text>;
-    render(<Numpad accessory={accessory} action={action} onPress={NoopFn} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad accessory={accessory} action={action} onPress={NoopFn} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText('Accessory')).toBeTruthy();
     expect(screen.getByText('Action')).toBeTruthy();
@@ -57,20 +82,32 @@ describe('Numpad', () => {
 
   it('renders custom separator when passed', () => {
     const separator = '*';
-    render(<Numpad onPress={NoopFn} separator={separator} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad onPress={NoopFn} separator={separator} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText(separator)).toBeTruthy();
   });
 
   it('does not render seperator when null', () => {
-    render(<Numpad onPress={NoopFn} separator="" />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad onPress={NoopFn} separator="" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.queryByText('.')).toBeNull();
   });
 
   it('forwards ref', () => {
     const ref = createRef<View>();
-    render(<Numpad ref={ref} onPress={NoopFn} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad ref={ref} onPress={NoopFn} />
+      </DefaultThemeProvider>,
+    );
 
     expect(ref.current).toBeTruthy();
   });
@@ -78,7 +115,11 @@ describe('Numpad', () => {
   it('does not dispatch onPress or onLongPress events when disabled', () => {
     const onPress = jest.fn();
     const onLongPress = jest.fn();
-    render(<Numpad disabled onLongPress={onLongPress} onPress={onPress} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad disabled onLongPress={onLongPress} onPress={onPress} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('1'));
     fireEvent(screen.getByText('1'), 'onLongPress');
@@ -89,7 +130,11 @@ describe('Numpad', () => {
 
   it('applies correct accessibilityLabel to separator when separatorAccessibilityLabel prop is passed', () => {
     const separatorAccessibilityLabel = 'numpad-separator';
-    render(<Numpad onPress={NoopFn} separatorAccessibilityLabel={separatorAccessibilityLabel} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad onPress={NoopFn} separatorAccessibilityLabel={separatorAccessibilityLabel} />
+      </DefaultThemeProvider>,
+    );
 
     const separator = screen.getByTestId('numpad-separator');
     expect(separator.props.accessibilityLabel).toBe(separatorAccessibilityLabel);
@@ -97,7 +142,11 @@ describe('Numpad', () => {
 
   it('applies correct accessibilityLabel to back button when deleteAccessibilityLabel prop is passed', () => {
     const deleteAccessibilityLabel = 'numpad-back';
-    render(<Numpad deleteAccessibilityLabel={deleteAccessibilityLabel} onPress={NoopFn} />);
+    render(
+      <DefaultThemeProvider>
+        <Numpad deleteAccessibilityLabel={deleteAccessibilityLabel} onPress={NoopFn} />
+      </DefaultThemeProvider>,
+    );
 
     const backButton = screen.getByTestId('numpad-back');
     expect(backButton.props.accessibilityLabel).toBe(deleteAccessibilityLabel);

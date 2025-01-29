@@ -15,7 +15,7 @@ import { delay } from '@cbhq/cds-common2/utils/delay';
 import { Button } from '../../../buttons';
 import { VStack } from '../../../layout/VStack';
 import { TextBody, TextLabel1 } from '../../../typography';
-import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
+import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../../utils/testHelpers';
 import { Drawer } from '../Drawer';
 
 // We're using the drawers animation time here just to be extra close to the implementation
@@ -68,7 +68,9 @@ const MockDrawer = ({
 const MockDrawerWithSafeArea = ({ ...props }) => {
   return (
     <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-      <MockDrawer {...props} />
+      <DefaultThemeProvider>
+        <MockDrawer {...props} />
+      </DefaultThemeProvider>
     </SafeAreaProvider>
   );
 };

@@ -1,22 +1,25 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { TextTitle1 } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { TextInput } from '../TextInput';
 
 describe('TextInput', () => {
   it('passes a11y', () => {
     const testID = 'textinput-id';
     render(
-      <TextInput
-        accessibilityHint="Text"
-        accessibilityLabel="Text"
-        end={<TextTitle1>Node</TextTitle1>}
-        helperText="Text"
-        label="Text"
-        placeholder="Text"
-        start={<TextTitle1>Node</TextTitle1>}
-        testID={testID}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text"
+          accessibilityLabel="Text"
+          end={<TextTitle1>Node</TextTitle1>}
+          helperText="Text"
+          label="Text"
+          placeholder="Text"
+          start={<TextTitle1>Node</TextTitle1>}
+          testID={testID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toBeAccessible();
   });
@@ -25,14 +28,16 @@ describe('TextInput', () => {
     const testID = 'textinput-id';
     const MockTextInput = TextInput;
     render(
-      <MockTextInput
-        end={<TextTitle1>Node</TextTitle1>}
-        helperText="Text"
-        label="Text"
-        placeholder="Text"
-        start={<TextTitle1>Node</TextTitle1>}
-        testID={testID}
-      />,
+      <DefaultThemeProvider>
+        <MockTextInput
+          end={<TextTitle1>Node</TextTitle1>}
+          helperText="Text"
+          label="Text"
+          placeholder="Text"
+          start={<TextTitle1>Node</TextTitle1>}
+          testID={testID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toBeAccessible();
   });
@@ -41,13 +46,15 @@ describe('TextInput', () => {
     const testID = 'textinput-id';
     const value = 'Example value';
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        onChange={jest.fn()}
-        testID={testID}
-        value={value}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          onChange={jest.fn()}
+          testID={testID}
+          value={value}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID).props.value).toBe(value);
   });
@@ -56,14 +63,16 @@ describe('TextInput', () => {
     const testID = 'label-testid';
     const labelText = 'Example label';
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        label="Example label"
-        testIDMap={{
-          label: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Example label"
+          testIDMap={{
+            label: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(labelText);
   });
@@ -72,15 +81,17 @@ describe('TextInput', () => {
     const testID = 'start-testid';
     const labelText = 'Example label';
     render(
-      <TextInput
-        compact
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        label="Example label"
-        testIDMap={{
-          start: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Example label"
+          testIDMap={{
+            start: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(labelText);
   });
@@ -89,15 +100,17 @@ describe('TextInput', () => {
     const testID = 'helpertext-testid';
     const helperText = 'Example helper text';
     render(
-      <TextInput
-        compact
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        helperText={helperText}
-        testIDMap={{
-          helperText: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          helperText={helperText}
+          testIDMap={{
+            helperText: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(helperText);
   });
@@ -106,16 +119,18 @@ describe('TextInput', () => {
     const testID = 'helpertext-testid';
     const helperText = 'Example helper text';
     render(
-      <TextInput
-        compact
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        helperText={helperText}
-        testIDMap={{
-          helperText: testID,
-        }}
-        variant="negative"
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          helperText={helperText}
+          testIDMap={{
+            helperText: testID,
+          }}
+          variant="negative"
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(`${testID}-error-icon`)).toBeTruthy();
     expect(screen.getByTestId(`${testID}-error-icon`)).toBeAccessible();
@@ -125,16 +140,18 @@ describe('TextInput', () => {
     const testID = 'helpertext-testid';
     const helperText = 'Example helper text';
     render(
-      <TextInput
-        compact
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        helperText={<TextTitle1>{helperText}</TextTitle1>}
-        testIDMap={{
-          helperText: testID,
-        }}
-        variant="negative"
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          helperText={<TextTitle1>{helperText}</TextTitle1>}
+          testIDMap={{
+            helperText: testID,
+          }}
+          variant="negative"
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.queryByTestId(`${testID}-error-icon`)).toBeFalsy();
   });
@@ -142,11 +159,13 @@ describe('TextInput', () => {
   it('renders placeholder text', () => {
     const placeholderText = 'Example placeholder text';
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        placeholder={placeholderText}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          placeholder={placeholderText}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByPlaceholderText(placeholderText)).toBeDefined();
   });
@@ -155,14 +174,16 @@ describe('TextInput', () => {
     const testID = 'start-testid';
     const startNodeText = 'Example start node';
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        start={<TextTitle1>{startNodeText}</TextTitle1>}
-        testIDMap={{
-          start: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          start={<TextTitle1>{startNodeText}</TextTitle1>}
+          testIDMap={{
+            start: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(startNodeText);
   });
@@ -171,14 +192,16 @@ describe('TextInput', () => {
     const testID = 'end-testid';
     const endNodeText = 'Example end node';
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        start={<TextTitle1>{endNodeText}</TextTitle1>}
-        testIDMap={{
-          start: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          start={<TextTitle1>{endNodeText}</TextTitle1>}
+          testIDMap={{
+            start: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(endNodeText);
   });
@@ -187,14 +210,16 @@ describe('TextInput', () => {
     const testID = 'end-testid';
     const suffixText = 'Example suffix';
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        suffix={suffixText}
-        testIDMap={{
-          end: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          suffix={suffixText}
+          testIDMap={{
+            end: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(suffixText);
   });
@@ -203,12 +228,14 @@ describe('TextInput', () => {
     const testID = 'input-testid';
     const onChange = jest.fn();
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        onChangeText={onChange}
-        testID={testID}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          onChangeText={onChange}
+          testID={testID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(onChange).not.toHaveBeenCalled();
     fireEvent.changeText(screen.getByTestId(testID), 'Updated value');
@@ -221,13 +248,15 @@ describe('TextInput', () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        onBlur={onBlur}
-        onFocus={onFocus}
-        testID={testID}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          onBlur={onBlur}
+          onFocus={onFocus}
+          testID={testID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(onFocus).not.toHaveBeenCalled();
     expect(onBlur).not.toHaveBeenCalled();
@@ -242,12 +271,14 @@ describe('TextInput', () => {
   it('applies device font size scaling', () => {
     const testID = 'native-input-id';
     render(
-      <TextInput
-        accessibilityHint="Text input field"
-        accessibilityLabel="Text input field"
-        end={<TextTitle1>Hello</TextTitle1>}
-        testID={testID}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          end={<TextTitle1>Hello</TextTitle1>}
+          testID={testID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveProp('allowFontScaling', true);
     expect(screen.getByTestId(testID)).toHaveProp('maxFontSizeMultiplier', 1);

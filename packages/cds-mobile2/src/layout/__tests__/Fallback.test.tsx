@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Fallback } from '../Fallback';
 
 const testID = 'test-fallback';
@@ -11,7 +12,11 @@ const props = {
 
 describe('Fallback', () => {
   it('passes accessibility', async () => {
-    render(<Fallback {...props} />);
+    render(
+      <DefaultThemeProvider>
+        <Fallback {...props} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(testID)).toBeAccessible();
   });
 });

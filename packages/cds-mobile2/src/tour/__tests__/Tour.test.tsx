@@ -3,6 +3,7 @@ import { Button, Text } from 'react-native';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { useTourContext } from '@cbhq/cds-common2/tour/TourContext';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { type TourProps, Tour } from '../Tour';
 
 const StepOne = () => {
@@ -51,12 +52,20 @@ const exampleProps: TourProps = {
 
 describe('Tour', () => {
   it('passes accessibility', async () => {
-    render(<Tour {...exampleProps} />);
+    render(
+      <DefaultThemeProvider>
+        <Tour {...exampleProps} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('tour-test')).toBeAccessible();
   });
 
   it('renders the active tour step', () => {
-    render(<Tour {...exampleProps} />);
+    render(
+      <DefaultThemeProvider>
+        <Tour {...exampleProps} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText('Step 1')).toBeTruthy();
     expect(screen.getByTestId('tour-step-arrow')).toBeTruthy();
@@ -64,7 +73,11 @@ describe('Tour', () => {
 
   it('calls onChange when changing steps', async () => {
     const onChange = jest.fn();
-    render(<Tour {...exampleProps} onChange={onChange} />);
+    render(
+      <DefaultThemeProvider>
+        <Tour {...exampleProps} onChange={onChange} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Next'));
 
@@ -74,13 +87,21 @@ describe('Tour', () => {
   });
 
   it('sets tour inactive when activeTourStep is null', () => {
-    render(<Tour {...exampleProps} activeTourStep={null} />);
+    render(
+      <DefaultThemeProvider>
+        <Tour {...exampleProps} activeTourStep={null} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.queryByRole('dialog')).not.toBeTruthy();
   });
 
   it('sets the second tour step active when activeTourStep is second step', () => {
-    render(<Tour {...exampleProps} activeTourStep={mockTour[1]} />);
+    render(
+      <DefaultThemeProvider>
+        <Tour {...exampleProps} activeTourStep={mockTour[1]} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText('Step 2')).toBeTruthy();
   });

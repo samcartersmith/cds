@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react-native';
 import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 
-import { ThemeProvider } from '../../system';
 import { defaultTheme } from '../../themes/defaultTheme';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { RemoteImage } from '../RemoteImage';
 
 const mockSvgFetch = async () =>
@@ -15,14 +15,14 @@ const mockSvgFetch = async () =>
 describe('RemoteImage', () => {
   it('shouldApplyDarkModeEnhacements border styles takes precedence over custom borderColor and passes a11y', () => {
     render(
-      <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
+      <DefaultThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <RemoteImage
           shouldApplyDarkModeEnhacements
           borderColor="backgroundPrimary"
           source="https://images.coinbase.com/avatar?s=56"
           testID="remoteimage"
         />
-      </ThemeProvider>,
+      </DefaultThemeProvider>,
     );
     const image = screen.queryByTestId('remoteimage');
     expect(image).toBeTruthy();
@@ -35,14 +35,14 @@ describe('RemoteImage', () => {
   });
   it('darkModeEnhancementsApplied border styles takes precedence over custom borderColor and passes a11y', () => {
     render(
-      <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
+      <DefaultThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <RemoteImage
           darkModeEnhancementsApplied
           borderColor="backgroundPrimary"
           source="https://images.coinbase.com/avatar?s=56"
           testID="remoteimage"
         />
-      </ThemeProvider>,
+      </DefaultThemeProvider>,
     );
     const image = screen.queryByTestId('remoteimage');
     expect(image).toBeTruthy();
@@ -55,7 +55,11 @@ describe('RemoteImage', () => {
   });
 
   it('has a default shape of square and passes a11y', () => {
-    render(<RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />);
+    render(
+      <DefaultThemeProvider>
+        <RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />
+      </DefaultThemeProvider>,
+    );
 
     const image = screen.queryByTestId('remoteimage');
 
@@ -67,7 +71,11 @@ describe('RemoteImage', () => {
   });
 
   it('if width/height/size is not set, it will default to size = m. Passes a11y', () => {
-    render(<RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />);
+    render(
+      <DefaultThemeProvider>
+        <RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />
+      </DefaultThemeProvider>,
+    );
     const avatarSizeM = 16;
 
     const image = screen.queryByTestId('remoteimage');
@@ -84,11 +92,13 @@ describe('RemoteImage', () => {
     const spy = jest.spyOn(global, 'fetch').mockImplementation(mockSvgFetch);
 
     render(
-      <RemoteImage
-        accessibilityHint="A hint"
-        accessibilityLabel="A label"
-        source="https://example.com/example.svg"
-      />,
+      <DefaultThemeProvider>
+        <RemoteImage
+          accessibilityHint="A hint"
+          accessibilityLabel="A label"
+          source="https://example.com/example.svg"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(await screen.findByRole('image')).toHaveProp('accessible', true);
@@ -100,12 +110,14 @@ describe('RemoteImage', () => {
 
   it('sets accessibility attributes and labels for hexagon shaped images', () => {
     render(
-      <RemoteImage
-        accessibilityHint="A hint"
-        accessibilityLabel="A label"
-        shape="hexagon"
-        source="https://images.coinbase.com/avatar?s=56"
-      />,
+      <DefaultThemeProvider>
+        <RemoteImage
+          accessibilityHint="A hint"
+          accessibilityLabel="A label"
+          shape="hexagon"
+          source="https://images.coinbase.com/avatar?s=56"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('image')).toHaveProp('accessible', true);
@@ -115,11 +127,13 @@ describe('RemoteImage', () => {
 
   it('sets accessibility attributes and labels for images', () => {
     render(
-      <RemoteImage
-        accessibilityHint="A hint"
-        accessibilityLabel="A label"
-        source="https://images.coinbase.com/avatar?s=56"
-      />,
+      <DefaultThemeProvider>
+        <RemoteImage
+          accessibilityHint="A hint"
+          accessibilityLabel="A label"
+          source="https://images.coinbase.com/avatar?s=56"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('image')).toHaveProp('accessibilityElementsHidden', false);
@@ -130,10 +144,12 @@ describe('RemoteImage', () => {
 
   it('sets accessibility attributes and labels for the fallback', () => {
     render(
-      <RemoteImage
-        fallbackAccessibilityHint="A fallback hint"
-        fallbackAccessibilityLabel="A fallback label"
-      />,
+      <DefaultThemeProvider>
+        <RemoteImage
+          fallbackAccessibilityHint="A fallback hint"
+          fallbackAccessibilityLabel="A fallback label"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('image')).toHaveProp('accessible', true);

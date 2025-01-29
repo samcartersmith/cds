@@ -3,13 +3,18 @@ import { render, screen } from '@testing-library/react-native';
 import { TabNavigationProps } from '@cbhq/cds-common2';
 import { sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { TabbedChips } from '../TabbedChips';
 
 const testID = 'tabbedChip';
 
 const Demo = () => {
   const [value, setValue] = useState<TabNavigationProps['value']>(sampleTabs[0].id);
-  return <TabbedChips onChange={setValue} tabs={sampleTabs} testID={testID} value={value} />;
+  return (
+    <DefaultThemeProvider>
+      <TabbedChips onChange={setValue} tabs={sampleTabs} testID={testID} value={value} />
+    </DefaultThemeProvider>
+  );
 };
 
 describe('TabbedChips', () => {

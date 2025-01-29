@@ -1,11 +1,13 @@
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
+import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../../utils/testHelpers';
 import { useDrawerSpacing } from '../useDrawerSpacing';
 
 const wrapper = ({ children }: { children: React.ReactNode }) => (
-  <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>{children}</SafeAreaProvider>
+  <DefaultThemeProvider>
+    <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>{children}</SafeAreaProvider>
+  </DefaultThemeProvider>
 );
 
 describe('useDrawerSpacing.test', () => {

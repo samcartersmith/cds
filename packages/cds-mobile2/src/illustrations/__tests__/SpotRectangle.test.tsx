@@ -1,28 +1,39 @@
 import { render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { SpotRectangle } from '../SpotRectangle';
 
 const SPOT_RECTANGLE_TEST_ID = 'add-spot-rectangle-test';
 
 describe('SpotRectangle', () => {
   it('passes a11y', () => {
-    render(<SpotRectangle name="creditCardExcitement" testID={SPOT_RECTANGLE_TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <SpotRectangle name="creditCardExcitement" testID={SPOT_RECTANGLE_TEST_ID} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(SPOT_RECTANGLE_TEST_ID)).toBeAccessible();
   });
 
   it('renders a SpotRectangle', () => {
-    render(<SpotRectangle name="creditCardExcitement" testID={SPOT_RECTANGLE_TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <SpotRectangle name="creditCardExcitement" testID={SPOT_RECTANGLE_TEST_ID} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(SPOT_RECTANGLE_TEST_ID)).toBeTruthy();
   });
 
   it('renders a SpotRectangle with accessibilityHint and accessibilityLabel', () => {
     render(
-      <SpotRectangle
-        accessibilityHint="Accessibility Hint"
-        accessibilityLabel="Accessibility Label"
-        name="creditCardExcitement"
-        testID={SPOT_RECTANGLE_TEST_ID}
-      />,
+      <DefaultThemeProvider>
+        <SpotRectangle
+          accessibilityHint="Accessibility Hint"
+          accessibilityLabel="Accessibility Label"
+          name="creditCardExcitement"
+          testID={SPOT_RECTANGLE_TEST_ID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(SPOT_RECTANGLE_TEST_ID)).toBeTruthy();
     expect(screen.getByTestId(SPOT_RECTANGLE_TEST_ID)).toHaveProp(
@@ -42,11 +53,13 @@ describe('SpotRectangle', () => {
 
   it('renders a SpotRectangle with accessibilityHint and no accessibilityLabel', () => {
     render(
-      <SpotRectangle
-        accessibilityHint="Accessibility Hint"
-        name="creditCardExcitement"
-        testID={SPOT_RECTANGLE_TEST_ID}
-      />,
+      <DefaultThemeProvider>
+        <SpotRectangle
+          accessibilityHint="Accessibility Hint"
+          name="creditCardExcitement"
+          testID={SPOT_RECTANGLE_TEST_ID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(SPOT_RECTANGLE_TEST_ID)).toBeTruthy();
 

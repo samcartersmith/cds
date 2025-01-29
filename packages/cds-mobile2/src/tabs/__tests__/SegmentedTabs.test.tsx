@@ -8,6 +8,7 @@ import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Box } from '../../layout';
 import { TextDisplay1 } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
 
 const TEST_ID = 'mock-segmented-tabs';
@@ -63,18 +64,22 @@ describe('SegmentedTabs', () => {
   });
   it('passes a11y', () => {
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTabs {...exampleProps} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTabs {...exampleProps} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(TEST_ID)).toBeAccessible();
   });
 
   it('set the first tab active by default', () => {
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTabs {...exampleProps} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTabs {...exampleProps} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
 
     const tabsContainer = screen.getByTestId(TEST_ID);
@@ -103,9 +108,11 @@ describe('SegmentedTabs', () => {
       })),
     };
     const { rerender } = render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTabs {...exampleProps} onChange={onChange} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTabs {...exampleProps} onChange={onChange} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     mockUseRefMap(mockData);
     fireEvent.press(screen.getByTestId('sell-tab'));
@@ -113,9 +120,11 @@ describe('SegmentedTabs', () => {
 
     const newProps = { ...exampleProps, activeTab: tabs[1] };
     rerender(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTabs {...newProps} onChange={onChange} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTabs {...newProps} onChange={onChange} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
 
     jest.advanceTimersByTime(300);
@@ -131,9 +140,11 @@ describe('SegmentedTabs', () => {
     // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const Component = () => <TextDisplay1 testID="custom-tab">Custom tab</TextDisplay1>;
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTabs {...exampleProps} TabComponent={Component} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTabs {...exampleProps} TabComponent={Component} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     expect(screen.getAllByTestId('custom-tab')[0]).toBeTruthy();
   });
@@ -142,9 +153,14 @@ describe('SegmentedTabs', () => {
     // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const ActiveIndicatorComponent = () => <AnimatedBox animated testID="custom-indicator" />;
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTabs {...exampleProps} TabsActiveIndicatorComponent={ActiveIndicatorComponent} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTabs
+            {...exampleProps}
+            TabsActiveIndicatorComponent={ActiveIndicatorComponent}
+          />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     jest.advanceTimersByTime(300);
 
@@ -154,9 +170,11 @@ describe('SegmentedTabs', () => {
   it('forwards ref correctly', () => {
     const ref = React.createRef<View>();
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTabs {...exampleProps} ref={ref} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTabs {...exampleProps} ref={ref} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     expect(ref.current).toBeInstanceOf(View);
   });

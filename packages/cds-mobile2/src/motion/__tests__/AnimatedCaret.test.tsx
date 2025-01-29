@@ -4,6 +4,7 @@ import { withTimeTravel } from '@cbhq/cds-common2/jest/timeTravel';
 
 import { Button } from '../../buttons';
 import { VStack } from '../../layout';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { AnimatedCaret } from '../AnimatedCaret';
 
 const rotates = [0, 90, 180, -90];
@@ -13,18 +14,24 @@ const MockAnimatedCaret = () => {
   const handleRotate = useCallback(() => setRotateIndex((prevIndex) => prevIndex + 1), []);
 
   return (
-    <VStack>
-      <Button onPress={handleRotate} testID="mock-rotate-button">
-        Rotate
-      </Button>
-      <AnimatedCaret rotate={rotates[rotateIndex]} testID="mock-animated-caret" />
-    </VStack>
+    <DefaultThemeProvider>
+      <VStack>
+        <Button onPress={handleRotate} testID="mock-rotate-button">
+          Rotate
+        </Button>
+        <AnimatedCaret rotate={rotates[rotateIndex]} testID="mock-animated-caret" />
+      </VStack>
+    </DefaultThemeProvider>
   );
 };
 
 describe('AnimatedCaret', () => {
   it('passes a11y', () => {
-    render(<AnimatedCaret rotate={1} testID="mock-animated-caret" />);
+    render(
+      <DefaultThemeProvider>
+        <AnimatedCaret rotate={1} testID="mock-animated-caret" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('mock-animated-caret')).toBeAccessible();
   });
 

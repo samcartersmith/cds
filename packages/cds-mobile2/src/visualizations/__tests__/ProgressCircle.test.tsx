@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react-native';
 import { getCircumference, getRadius } from '@cbhq/cds-common2/utils/circle';
 import { UseCounterParams } from '@cbhq/cds-common2/visualizations/useCounter';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { ProgressCircle } from '../ProgressCircle';
 
 jest.useFakeTimers();
@@ -27,7 +28,11 @@ jest.mock('@cbhq/cds-common2/visualizations/useCounter', () => ({
 describe('ProgressCircle tests and passes a11y', () => {
   it('handles 0 percent', () => {
     const size = 100;
-    render(<ProgressCircle progress={0} size={size} testID="mock-progress-circle" />);
+    render(
+      <DefaultThemeProvider>
+        <ProgressCircle progress={0} size={size} testID="mock-progress-circle" />
+      </DefaultThemeProvider>,
+    );
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -44,7 +49,11 @@ describe('ProgressCircle tests and passes a11y', () => {
 
   it('handles 50 percent', () => {
     const size = 100;
-    render(<ProgressCircle progress={0.5} size={size} testID="mock-progress-circle" />);
+    render(
+      <DefaultThemeProvider>
+        <ProgressCircle progress={0.5} size={size} testID="mock-progress-circle" />
+      </DefaultThemeProvider>,
+    );
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -62,7 +71,11 @@ describe('ProgressCircle tests and passes a11y', () => {
 
   it('handles 100 percent', () => {
     const size = 100;
-    render(<ProgressCircle progress={1} size={size} testID="mock-progress-circle" />);
+    render(
+      <DefaultThemeProvider>
+        <ProgressCircle progress={1} size={size} testID="mock-progress-circle" />
+      </DefaultThemeProvider>,
+    );
 
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -81,7 +94,9 @@ describe('ProgressCircle tests and passes a11y', () => {
   it('handles heavy weight', () => {
     const size = 100;
     render(
-      <ProgressCircle progress={1} size={size} testID="mock-progress-circle" weight="heavy" />,
+      <DefaultThemeProvider>
+        <ProgressCircle progress={1} size={size} testID="mock-progress-circle" weight="heavy" />
+      </DefaultThemeProvider>,
     );
 
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
@@ -92,7 +107,11 @@ describe('ProgressCircle tests and passes a11y', () => {
 
   it('handles no text', () => {
     const size = 100;
-    render(<ProgressCircle hideText progress={1} size={size} testID="mock-progress-circle" />);
+    render(
+      <DefaultThemeProvider>
+        <ProgressCircle hideText progress={1} size={size} testID="mock-progress-circle" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.queryAllByText('100%')).toHaveLength(0);
     expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
@@ -101,12 +120,14 @@ describe('ProgressCircle tests and passes a11y', () => {
   it('handles different color', () => {
     const size = 100;
     render(
-      <ProgressCircle
-        color="backgroundPositive"
-        progress={1}
-        size={size}
-        testID="mock-progress-circle"
-      />,
+      <DefaultThemeProvider>
+        <ProgressCircle
+          color="backgroundPositive"
+          progress={1}
+          size={size}
+          testID="mock-progress-circle"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('cds-progress-circle-inner')).toBeDefined();

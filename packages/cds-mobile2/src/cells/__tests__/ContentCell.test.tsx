@@ -1,6 +1,7 @@
 import { Text, View } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { CellMedia } from '../CellMedia';
 import { ContentCell } from '../ContentCell';
 
@@ -8,7 +9,11 @@ describe('ContentCell', () => {
   it('errors if meta is provided without title/subtitle', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation();
 
-    render(<ContentCell meta="Meta" />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCell meta="Meta" />
+      </DefaultThemeProvider>,
+    );
 
     expect(spy).toHaveBeenCalledWith(
       'ContentCell: Cannot use `meta` without a `title` or `subtitle`.',
@@ -19,13 +24,15 @@ describe('ContentCell', () => {
 
   it('renders a title', () => {
     render(
-      <ContentCell
-        title={
-          <View testID="title">
-            <Text>Title</Text>
-          </View>
-        }
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          title={
+            <View testID="title">
+              <Text>Title</Text>
+            </View>
+          }
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('title')).not.toBeNull();
@@ -33,14 +40,16 @@ describe('ContentCell', () => {
 
   it('Cell with title passes a11y', () => {
     render(
-      <ContentCell
-        testID="cell-with-title"
-        title={
-          <View testID="title">
-            <Text>Title</Text>
-          </View>
-        }
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          testID="cell-with-title"
+          title={
+            <View testID="title">
+              <Text>Title</Text>
+            </View>
+          }
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('cell-with-title')).toBeAccessible();
@@ -48,27 +57,31 @@ describe('ContentCell', () => {
 
   it('renders a subtitle', () => {
     render(
-      <ContentCell
-        subtitle={
-          <View testID="subtitle">
-            <Text>Subtitle</Text>
-          </View>
-        }
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          subtitle={
+            <View testID="subtitle">
+              <Text>Subtitle</Text>
+            </View>
+          }
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('subtitle')).not.toBeNull();
   });
   it('Cell with subtitle passes a11y', () => {
     render(
-      <ContentCell
-        subtitle={
-          <View testID="subtitle">
-            <Text>Subtitle</Text>
-          </View>
-        }
-        testID="cell-with-subtitle"
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          subtitle={
+            <View testID="subtitle">
+              <Text>Subtitle</Text>
+            </View>
+          }
+          testID="cell-with-subtitle"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('cell-with-subtitle')).toBeAccessible();
@@ -76,27 +89,31 @@ describe('ContentCell', () => {
 
   it('renders a description', () => {
     render(
-      <ContentCell
-        description={
-          <View testID="description">
-            <Text>Description</Text>
-          </View>
-        }
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          description={
+            <View testID="description">
+              <Text>Description</Text>
+            </View>
+          }
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('description')).not.toBeNull();
   });
   it('Cell with description passes a11y', () => {
     render(
-      <ContentCell
-        description={
-          <View testID="description">
-            <Text>Description</Text>
-          </View>
-        }
-        testID="cell-with-description"
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          description={
+            <View testID="description">
+              <Text>Description</Text>
+            </View>
+          }
+          testID="cell-with-description"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('cell-with-description')).toBeAccessible();
@@ -104,14 +121,16 @@ describe('ContentCell', () => {
 
   it('renders meta', () => {
     render(
-      <ContentCell
-        meta={
-          <View testID="meta">
-            <Text>Meta</Text>
-          </View>
-        }
-        title="Title"
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          meta={
+            <View testID="meta">
+              <Text>Meta</Text>
+            </View>
+          }
+          title="Title"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('meta')).not.toBeNull();
@@ -119,51 +138,71 @@ describe('ContentCell', () => {
 
   it('Cell with meta passes a11y', () => {
     render(
-      <ContentCell
-        meta={
-          <View testID="meta">
-            <Text>Meta</Text>
-          </View>
-        }
-        testID="cell-with-meta"
-        title="Title"
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          meta={
+            <View testID="meta">
+              <Text>Meta</Text>
+            </View>
+          }
+          testID="cell-with-meta"
+          title="Title"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('cell-with-meta')).toBeAccessible();
   });
 
   it('renders media', () => {
-    render(<ContentCell media={<CellMedia name="add" testID="media" type="icon" />} />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCell media={<CellMedia name="add" testID="media" type="icon" />} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('media')).not.toBeNull();
   });
 
   it('Cell with media passes a11y', () => {
     render(
-      <ContentCell
-        media={<CellMedia name="add" testID="media" type="icon" />}
-        testID="cell-with-media"
-      />,
+      <DefaultThemeProvider>
+        <ContentCell
+          media={<CellMedia name="add" testID="media" type="icon" />}
+          testID="cell-with-media"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('cell-with-media')).toBeAccessible();
   });
 
   it('renders an accessory', () => {
-    render(<ContentCell accessory="arrow" />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCell accessory="arrow" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('accessory')).not.toBeNull();
   });
 
   it('Cell with accessory passes a11y', () => {
-    render(<ContentCell accessory="arrow" testID="cell-with-accessory" />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCell accessory="arrow" testID="cell-with-accessory" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('cell-with-accessory')).toBeAccessible();
   });
 
   it('renders empty strings without crashing', () => {
-    render(<ContentCell description="" meta="" subtitle="" title="" />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCell description="" meta="" subtitle="" title="" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.container).not.toBeNull();
   });

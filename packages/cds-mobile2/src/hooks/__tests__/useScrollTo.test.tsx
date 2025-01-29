@@ -5,6 +5,7 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react-nativ
 
 import { Button } from '../../buttons';
 import { Box } from '../../layout';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { useScrollTo } from '../useScrollTo';
 
 jest.mock('react-native/Libraries/Components/ScrollView/ScrollView');
@@ -23,14 +24,16 @@ describe('useScrollTo', () => {
       const [scrollRef, { scrollTo }] = useScrollTo();
       const onPress = useCallback(() => scrollTo({ x: 400 }), [scrollTo]);
       return (
-        <Box>
-          <Button onPress={onPress} testID="Button">
-            Scroll To
-          </Button>
-          <ScrollView ref={scrollRef} horizontal>
-            <Box width={900} />
-          </ScrollView>
-        </Box>
+        <DefaultThemeProvider>
+          <Box>
+            <Button onPress={onPress} testID="Button">
+              Scroll To
+            </Button>
+            <ScrollView ref={scrollRef} horizontal>
+              <Box width={900} />
+            </ScrollView>
+          </Box>
+        </DefaultThemeProvider>
       );
     };
     render(<MockUsage />);
@@ -47,14 +50,16 @@ describe('useScrollTo', () => {
       const [scrollRef, { scrollToEnd }] = useScrollTo();
       const onPress = useCallback(() => scrollToEnd(), [scrollToEnd]);
       return (
-        <Box>
-          <Button onPress={onPress} testID="Button">
-            Scroll To
-          </Button>
-          <ScrollView ref={scrollRef} horizontal>
-            <Box width={900} />
-          </ScrollView>
-        </Box>
+        <DefaultThemeProvider>
+          <Box>
+            <Button onPress={onPress} testID="Button">
+              Scroll To
+            </Button>
+            <ScrollView ref={scrollRef} horizontal>
+              <Box width={900} />
+            </ScrollView>
+          </Box>
+        </DefaultThemeProvider>
       );
     };
     render(<MockUsage />);

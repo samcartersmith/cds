@@ -4,6 +4,7 @@ import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { RemoteImage } from '../../media';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { InputChipProps } from '../ChipProps';
 import { InputChip } from '../InputChip';
 
@@ -19,11 +20,13 @@ const chipTestID = 'chip-test';
 const startNodeTestID = 'start-node-test';
 
 const TestInputChip = ({ testID = chipTestID, ...props }: InputChipProps) => (
-  <InputChip
-    start={<RemoteImage {...assetIconProps} testID={startNodeTestID} />}
-    testID={testID}
-    {...props}
-  />
+  <DefaultThemeProvider>
+    <InputChip
+      start={<RemoteImage {...assetIconProps} testID={startNodeTestID} />}
+      testID={testID}
+      {...props}
+    />
+  </DefaultThemeProvider>
 );
 
 describe('InputChip', () => {

@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react-native';
 import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common2/types/RemoteImageGroupBaseProps';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { RemoteImage } from '../RemoteImage';
 import { RemoteImageGroup } from '../RemoteImageGroup';
 
@@ -10,11 +11,13 @@ const TEST_ID = 'remote-image-test-id';
 const remoteImageIndices = [0, 1, 2, 3];
 
 const MockRemoteImageGroup = ({ ...props }: RemoteImageGroupBaseProps) => (
-  <RemoteImageGroup shape="circle" testID={TEST_ID} {...props}>
-    {remoteImageIndices.map((index) => (
-      <RemoteImage key={`remote-image-child-${index}`} source={src} />
-    ))}
-  </RemoteImageGroup>
+  <DefaultThemeProvider>
+    <RemoteImageGroup shape="circle" testID={TEST_ID} {...props}>
+      {remoteImageIndices.map((index) => (
+        <RemoteImage key={`remote-image-child-${index}`} source={src} />
+      ))}
+    </RemoteImageGroup>
+  </DefaultThemeProvider>
 );
 
 describe('RemoteImageGroup', () => {

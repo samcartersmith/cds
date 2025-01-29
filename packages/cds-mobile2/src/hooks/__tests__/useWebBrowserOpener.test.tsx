@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import * as openWebBrowser from '../../utils/openWebBrowser';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { useWebBrowserOpener } from '../useWebBrowserOpener';
 
 const URL = 'https://www.coinbase.com';
@@ -11,7 +12,7 @@ const DEFAULT_OPEN_WEB_BROWSER_OPTIONS = {
 
 describe('useWebBrowserOpener', () => {
   it('optional openWebBrowser options work as expected', async () => {
-    const { result } = renderHook(() => useWebBrowserOpener());
+    const { result } = renderHook(() => useWebBrowserOpener(), { wrapper: DefaultThemeProvider });
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
 
     await result.current(URL);
@@ -20,7 +21,7 @@ describe('useWebBrowserOpener', () => {
   });
 
   it('pass user specified options to openWebBrowser', async () => {
-    const { result } = renderHook(() => useWebBrowserOpener());
+    const { result } = renderHook(() => useWebBrowserOpener(), { wrapper: DefaultThemeProvider });
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
     const options = {
       spectrum: 'dark',
@@ -35,7 +36,7 @@ describe('useWebBrowserOpener', () => {
   });
 
   it('test that spectrum is optional', async () => {
-    const { result } = renderHook(() => useWebBrowserOpener());
+    const { result } = renderHook(() => useWebBrowserOpener(), { wrapper: DefaultThemeProvider });
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
     const options = {
       preventRedirectionIntoApp: false,
@@ -56,7 +57,7 @@ describe('useWebBrowserOpener', () => {
    * the hook to use the default spectrum value.
    */
   it('if user passes no options, they should use the default option values', async () => {
-    const { result } = renderHook(() => useWebBrowserOpener());
+    const { result } = renderHook(() => useWebBrowserOpener(), { wrapper: DefaultThemeProvider });
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
 
     await result.current(URL);
@@ -65,7 +66,7 @@ describe('useWebBrowserOpener', () => {
   });
 
   it('test all the InAppBrowser configuration, making sure that all of them can be used', async () => {
-    const { result } = renderHook(() => useWebBrowserOpener());
+    const { result } = renderHook(() => useWebBrowserOpener(), { wrapper: DefaultThemeProvider });
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
     const options = {
       // cds custom properties

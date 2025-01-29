@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { InputIconButton } from '../InputIconButton';
 import { SearchInput } from '../SearchInput';
 
@@ -14,16 +15,18 @@ describe('Search', () => {
 
   beforeAll(() => {
     SearchComponent = (
-      <SearchInput
-        clearIconAccessibilityLabel="Clear text"
-        onChangeText={onChangeTextSpy}
-        onClear={onClearSpy}
-        onSearch={onSearchSpy}
-        placeholder="Placeholder"
-        startIconAccessibilityLabel="Back"
-        testID={TEST_ID}
-        value="value"
-      />
+      <DefaultThemeProvider>
+        <SearchInput
+          clearIconAccessibilityLabel="Clear text"
+          onChangeText={onChangeTextSpy}
+          onClear={onClearSpy}
+          onSearch={onSearchSpy}
+          placeholder="Placeholder"
+          startIconAccessibilityLabel="Back"
+          testID={TEST_ID}
+          value="value"
+        />
+      </DefaultThemeProvider>
     );
   });
 
@@ -51,17 +54,19 @@ describe('Search', () => {
 
   it('renders a backArrow icon button at the start node', () => {
     render(
-      <SearchInput
-        clearIconAccessibilityLabel="Clear text"
-        onChangeText={onChangeTextSpy}
-        onClear={onClearSpy}
-        onSearch={onSearchSpy}
-        placeholder="Placeholder"
-        startIcon="backArrow"
-        startIconAccessibilityLabel="Back"
-        testID={TEST_ID}
-        value="value"
-      />,
+      <DefaultThemeProvider>
+        <SearchInput
+          clearIconAccessibilityLabel="Clear text"
+          onChangeText={onChangeTextSpy}
+          onClear={onClearSpy}
+          onSearch={onSearchSpy}
+          placeholder="Placeholder"
+          startIcon="backArrow"
+          startIconAccessibilityLabel="Back"
+          testID={TEST_ID}
+          value="value"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText(`Back`)).toBeDefined();
@@ -69,13 +74,15 @@ describe('Search', () => {
 
   it('does not render a startIcon when hideStartIcon=true', () => {
     render(
-      <SearchInput
-        hideStartIcon
-        onChangeText={onChangeTextSpy}
-        placeholder="Placeholder"
-        testID={TEST_ID}
-        value="value"
-      />,
+      <DefaultThemeProvider>
+        <SearchInput
+          hideStartIcon
+          onChangeText={onChangeTextSpy}
+          placeholder="Placeholder"
+          testID={TEST_ID}
+          value="value"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.queryByTestId(`${TEST_ID}-searchinput-iconbtn`)).toBeNull();
@@ -83,13 +90,15 @@ describe('Search', () => {
 
   it('does not render a End IconButton when hideEndIcon=true', () => {
     render(
-      <SearchInput
-        hideEndIcon
-        onChangeText={onChangeTextSpy}
-        placeholder="Placeholder"
-        testID={TEST_ID}
-        value="value"
-      />,
+      <DefaultThemeProvider>
+        <SearchInput
+          hideEndIcon
+          onChangeText={onChangeTextSpy}
+          placeholder="Placeholder"
+          testID={TEST_ID}
+          value="value"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.queryByTestId(`${TEST_ID}-close-iconbtn`)).toBeNull();
@@ -97,12 +106,14 @@ describe('Search', () => {
 
   it('renders a End IconButton when hideEndIcon is undefined', () => {
     render(
-      <SearchInput
-        onChangeText={onChangeTextSpy}
-        placeholder="Placeholder"
-        testID={TEST_ID}
-        value="value"
-      />,
+      <DefaultThemeProvider>
+        <SearchInput
+          onChangeText={onChangeTextSpy}
+          placeholder="Placeholder"
+          testID={TEST_ID}
+          value="value"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(`${TEST_ID}-close-iconbtn`)).toBeDefined();
@@ -110,22 +121,24 @@ describe('Search', () => {
 
   it('renders a Custom End Node when endNode is defined', () => {
     render(
-      <SearchInput
-        end={
-          <InputIconButton
-            accessibilityHint="Warning text"
-            accessibilityLabel="Warning text"
-            name="warning"
-            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-            onPress={() => console.log()}
-            testID="custom-end-iconbtn"
-          />
-        }
-        onChangeText={onChangeTextSpy}
-        placeholder="Placeholder"
-        testID={TEST_ID}
-        value="value"
-      />,
+      <DefaultThemeProvider>
+        <SearchInput
+          end={
+            <InputIconButton
+              accessibilityHint="Warning text"
+              accessibilityLabel="Warning text"
+              name="warning"
+              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
+              onPress={() => console.log()}
+              testID="custom-end-iconbtn"
+            />
+          }
+          onChangeText={onChangeTextSpy}
+          placeholder="Placeholder"
+          testID={TEST_ID}
+          value="value"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(`custom-end-iconbtn`)).toBeDefined();
@@ -140,16 +153,18 @@ describe('Search', () => {
 
   it('announces the Back arrow icon button', () => {
     render(
-      <SearchInput
-        onChangeText={onChangeTextSpy}
-        onClear={onClearSpy}
-        onSearch={onSearchSpy}
-        placeholder="Placeholder"
-        startIcon="backArrow"
-        startIconAccessibilityLabel="Back"
-        testID={TEST_ID}
-        value="value"
-      />,
+      <DefaultThemeProvider>
+        <SearchInput
+          onChangeText={onChangeTextSpy}
+          onClear={onClearSpy}
+          onSearch={onSearchSpy}
+          placeholder="Placeholder"
+          startIcon="backArrow"
+          startIconAccessibilityLabel="Back"
+          testID={TEST_ID}
+          value="value"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText(`Back`)).toBeAccessible();

@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
 import { RemoteImage } from '../../media';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { type CoachmarkProps, Coachmark } from '../Coachmark';
 
 const exampleProps: CoachmarkProps = {
@@ -14,12 +15,20 @@ const exampleProps: CoachmarkProps = {
 
 describe('Coachmark', () => {
   it('passes accessibility', async () => {
-    render(<Coachmark {...exampleProps} />);
+    render(
+      <DefaultThemeProvider>
+        <Coachmark {...exampleProps} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(exampleProps.testID as string)).toBeAccessible();
   });
 
   it('renders title and content', () => {
-    render(<Coachmark {...exampleProps} />);
+    render(
+      <DefaultThemeProvider>
+        <Coachmark {...exampleProps} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText('Title')).toBeTruthy();
     expect(screen.getByText('Content')).toBeTruthy();
@@ -27,21 +36,33 @@ describe('Coachmark', () => {
 
   it('renders checkbox', () => {
     const checkbox = <Checkbox>Checked</Checkbox>;
-    render(<Coachmark {...exampleProps} checkbox={checkbox} />);
+    render(
+      <DefaultThemeProvider>
+        <Coachmark {...exampleProps} checkbox={checkbox} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByRole('switch')).toBeTruthy();
   });
 
   it('renders action button', () => {
     const action = <Button>Action</Button>;
-    render(<Coachmark {...exampleProps} action={action} />);
+    render(
+      <DefaultThemeProvider>
+        <Coachmark {...exampleProps} action={action} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByRole('button', { name: 'Action' })).toBeTruthy();
   });
 
   it('calls onClose when close button is clicked', () => {
     const onClose = jest.fn();
-    render(<Coachmark {...exampleProps} closeButtonAccessibilityLabel="close" onClose={onClose} />);
+    render(
+      <DefaultThemeProvider>
+        <Coachmark {...exampleProps} closeButtonAccessibilityLabel="close" onClose={onClose} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByLabelText('close'));
 
@@ -56,13 +77,21 @@ describe('Coachmark', () => {
         testID="remoteimage"
       />
     );
-    render(<Coachmark {...exampleProps} media={media} />);
+    render(
+      <DefaultThemeProvider>
+        <Coachmark {...exampleProps} media={media} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('remoteimage')).toBeTruthy();
   });
 
   it('renders with custom width', () => {
-    render(<Coachmark {...exampleProps} width={500} />);
+    render(
+      <DefaultThemeProvider>
+        <Coachmark {...exampleProps} width={500} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('coachmark-test')).toHaveStyle({ width: 500 });
   });

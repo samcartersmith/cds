@@ -5,6 +5,7 @@ import { noop } from '@cbhq/cds-utils';
 import { CellMedia } from '../../cells/CellMedia';
 import { TextInput } from '../../controls';
 import { TextBody } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
 
@@ -18,7 +19,11 @@ const { MockAccordion } = accordionBuilder({
 
 describe('Accordion', () => {
   it('passes a11y', () => {
-    render(<MockAccordion />);
+    render(
+      <DefaultThemeProvider>
+        <MockAccordion />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('mock-accordion-item1-header')).toBeAccessible();
   });
@@ -28,7 +33,11 @@ describe('Accordion', () => {
     const onPress1 = jest.fn();
     const onPress2 = jest.fn();
 
-    render(<MockAccordion onChange={onChange} onPress1={onPress1} onPress2={onPress2} />);
+    render(
+      <DefaultThemeProvider>
+        <MockAccordion onChange={onChange} onPress1={onPress1} onPress2={onPress2} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByTestId('mock-accordion-item1-header'));
 
@@ -48,7 +57,11 @@ describe('Accordion', () => {
   });
 
   it('renders titles', () => {
-    render(<MockAccordion />);
+    render(
+      <DefaultThemeProvider>
+        <MockAccordion />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText('Accordion #1')).toBeTruthy();
     expect(screen.getByText('subtitle1')).toBeTruthy();
@@ -57,14 +70,22 @@ describe('Accordion', () => {
   });
 
   it('renders media', () => {
-    render(<MockAccordion />);
+    render(
+      <DefaultThemeProvider>
+        <MockAccordion />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('mock-accordion-item1-media')).toBeTruthy();
     expect(screen.getByTestId('mock-accordion-item2-media')).toBeTruthy();
   });
 
   it('renders children', () => {
-    render(<MockAccordion />);
+    render(
+      <DefaultThemeProvider>
+        <MockAccordion />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText('Accordion Content1')).toBeTruthy();
     expect(screen.getByText('Accordion Content2')).toBeTruthy();
@@ -72,32 +93,34 @@ describe('Accordion', () => {
 
   it('can override styles', () => {
     render(
-      <Accordion
-        defaultActiveKey="2"
-        onChange={noop}
-        style={{ padding: 20 }}
-        testID="mock-accordion"
-      >
-        <AccordionItem
-          itemKey="1"
-          onPress={noop}
-          style={{ padding: 30 }}
-          subtitle="subtitle1"
-          testID="mock-accordion-item1"
-          title="Accordion #1"
+      <DefaultThemeProvider>
+        <Accordion
+          defaultActiveKey="2"
+          onChange={noop}
+          style={{ padding: 20 }}
+          testID="mock-accordion"
         >
-          <TextBody>Accordion Content1</TextBody>
-        </AccordionItem>
-        <AccordionItem
-          itemKey="2"
-          onPress={noop}
-          subtitle="subtitle2"
-          testID="mock-accordion-item2"
-          title="Accordion #2"
-        >
-          <TextBody>Accordion Content2</TextBody>
-        </AccordionItem>
-      </Accordion>,
+          <AccordionItem
+            itemKey="1"
+            onPress={noop}
+            style={{ padding: 30 }}
+            subtitle="subtitle1"
+            testID="mock-accordion-item1"
+            title="Accordion #1"
+          >
+            <TextBody>Accordion Content1</TextBody>
+          </AccordionItem>
+          <AccordionItem
+            itemKey="2"
+            onPress={noop}
+            subtitle="subtitle2"
+            testID="mock-accordion-item2"
+            title="Accordion #2"
+          >
+            <TextBody>Accordion Content2</TextBody>
+          </AccordionItem>
+        </Accordion>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('mock-accordion')).toHaveStyle('padding: 20');

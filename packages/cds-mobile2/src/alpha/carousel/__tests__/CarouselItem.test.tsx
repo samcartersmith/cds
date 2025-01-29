@@ -2,6 +2,7 @@ import React from 'react';
 import { Animated, Text, View } from 'react-native';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { CarouselItem } from '../CarouselItem';
 
 describe('CarouselItem.test', () => {
@@ -10,17 +11,19 @@ describe('CarouselItem.test', () => {
   it('triggers onMount', () => {
     const onMount = jest.fn();
     render(
-      <CarouselItem
-        id="item1"
-        index={0}
-        onMount={onMount}
-        paddingRight={2}
-        totalItems={3}
-        width={50}
-        xOffset={new Animated.Value(10)}
-      >
-        <Text>test</Text>
-      </CarouselItem>,
+      <DefaultThemeProvider>
+        <CarouselItem
+          id="item1"
+          index={0}
+          onMount={onMount}
+          paddingRight={2}
+          totalItems={3}
+          width={50}
+          xOffset={new Animated.Value(10)}
+        >
+          <Text>test</Text>
+        </CarouselItem>
+      </DefaultThemeProvider>,
     );
 
     fireEvent(screen.getByTestId('CarouselItemWrapper-item1'), 'layout', {
@@ -39,21 +42,23 @@ describe('CarouselItem.test', () => {
     const onDismissLastItem = jest.fn();
 
     render(
-      <CarouselItem
-        showDismiss
-        id="item1"
-        index={0}
-        onDismiss={onDismiss}
-        onDismissLastItem={onDismissLastItem}
-        onMount={jest.fn()}
-        paddingRight={2}
-        progressOpacity={new Animated.Value(0.5)}
-        totalItems={2}
-        width={50}
-        xOffset={new Animated.Value(10)}
-      >
-        <Text>test</Text>
-      </CarouselItem>,
+      <DefaultThemeProvider>
+        <CarouselItem
+          showDismiss
+          id="item1"
+          index={0}
+          onDismiss={onDismiss}
+          onDismissLastItem={onDismissLastItem}
+          onMount={jest.fn()}
+          paddingRight={2}
+          progressOpacity={new Animated.Value(0.5)}
+          totalItems={2}
+          width={50}
+          xOffset={new Animated.Value(10)}
+        >
+          <Text>test</Text>
+        </CarouselItem>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId('CarouselItemDismiss-item1'));
@@ -77,21 +82,23 @@ describe('CarouselItem.test', () => {
     const onDismissLastItem = jest.fn();
 
     render(
-      <CarouselItem
-        showDismiss
-        id="item1"
-        index={0}
-        onDismiss={onDismiss}
-        onDismissLastItem={onDismissLastItem}
-        onMount={jest.fn()}
-        paddingRight={2}
-        progressOpacity={new Animated.Value(0)}
-        totalItems={1}
-        width={50}
-        xOffset={new Animated.Value(10)}
-      >
-        <Text>test</Text>
-      </CarouselItem>,
+      <DefaultThemeProvider>
+        <CarouselItem
+          showDismiss
+          id="item1"
+          index={0}
+          onDismiss={onDismiss}
+          onDismissLastItem={onDismissLastItem}
+          onMount={jest.fn()}
+          paddingRight={2}
+          progressOpacity={new Animated.Value(0)}
+          totalItems={1}
+          width={50}
+          xOffset={new Animated.Value(10)}
+        >
+          <Text>test</Text>
+        </CarouselItem>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId('CarouselItemDismiss-item1'));
@@ -107,20 +114,22 @@ describe('CarouselItem.test', () => {
 
   it('passes a11y', () => {
     render(
-      <CarouselItem
-        showDismiss
-        dismissButtonAccessibilityHint="Dismiss this item"
-        dismissButtonAccessibilityLabel="Dismiss"
-        id="item1"
-        index={0}
-        onMount={jest.fn()}
-        paddingRight={2}
-        totalItems={3}
-        width={50}
-        xOffset={new Animated.Value(10)}
-      >
-        <Text>test</Text>
-      </CarouselItem>,
+      <DefaultThemeProvider>
+        <CarouselItem
+          showDismiss
+          dismissButtonAccessibilityHint="Dismiss this item"
+          dismissButtonAccessibilityLabel="Dismiss"
+          id="item1"
+          index={0}
+          onMount={jest.fn()}
+          paddingRight={2}
+          totalItems={3}
+          width={50}
+          xOffset={new Animated.Value(10)}
+        >
+          <Text>test</Text>
+        </CarouselItem>
+      </DefaultThemeProvider>,
     );
 
     const carouselItem = screen.getByTestId('CarouselItemWrapper-item1');

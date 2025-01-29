@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react-native';
 import { getRectWidthVariant } from '@cbhq/cds-common2/utils/getRectWidthVariant';
 
 import { Fallback } from '../../layout';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { ContentCellFallback } from '../ContentCellFallback';
 import { MediaFallback } from '../MediaFallback';
 
@@ -23,12 +24,20 @@ describe('ContentCellFallback', () => {
       <Text>{`MediaFallback ${type}`}</Text>
     ));
 
-    render(<ContentCellFallback media="image" />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCellFallback media="image" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByText('MediaFallback image')).toBeDefined();
   });
 
   it('should render description fallback', () => {
-    render(<ContentCellFallback description disableRandomRectWidth rectWidthVariant={1} />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCellFallback description disableRandomRectWidth rectWidthVariant={1} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByText('Fallback')).toBeDefined();
     expect(Fallback).toHaveBeenCalledWith(
       {
@@ -43,7 +52,11 @@ describe('ContentCellFallback', () => {
   });
 
   it('should render meta fallback', () => {
-    render(<ContentCellFallback disableRandomRectWidth meta subtitle title rectWidthVariant={1} />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCellFallback disableRandomRectWidth meta subtitle title rectWidthVariant={1} />
+      </DefaultThemeProvider>,
+    );
     expect(Fallback).toHaveBeenCalledWith(
       {
         height: 2,
@@ -56,7 +69,11 @@ describe('ContentCellFallback', () => {
   });
 
   it('should render title fallback', () => {
-    render(<ContentCellFallback disableRandomRectWidth title rectWidthVariant={1} />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCellFallback disableRandomRectWidth title rectWidthVariant={1} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByText('Fallback')).toBeDefined();
     expect(Fallback).toHaveBeenCalledWith(
       {
@@ -70,7 +87,11 @@ describe('ContentCellFallback', () => {
   });
 
   it('should render subtitle fallback', () => {
-    render(<ContentCellFallback disableRandomRectWidth subtitle rectWidthVariant={1} />);
+    render(
+      <DefaultThemeProvider>
+        <ContentCellFallback disableRandomRectWidth subtitle rectWidthVariant={1} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByText('Fallback')).toBeDefined();
     expect(Fallback).toHaveBeenCalledWith(
       {

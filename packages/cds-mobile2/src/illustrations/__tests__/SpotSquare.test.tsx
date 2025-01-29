@@ -1,28 +1,39 @@
 import { render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { SpotSquare } from '../SpotSquare';
 
 const SPOT_SQUARE_TEST_ID = 'add-spot-square-test';
 
 describe('SpotSquare', () => {
   it('passes a11y', () => {
-    render(<SpotSquare name="gifting" testID={SPOT_SQUARE_TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <SpotSquare name="gifting" testID={SPOT_SQUARE_TEST_ID} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(SPOT_SQUARE_TEST_ID)).toBeAccessible();
   });
 
   it('renders a SpotSquare', () => {
-    render(<SpotSquare name="gifting" testID={SPOT_SQUARE_TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <SpotSquare name="gifting" testID={SPOT_SQUARE_TEST_ID} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(SPOT_SQUARE_TEST_ID)).toBeTruthy();
   });
 
   it('renders a SpotSquare with accessibilityHint and accessibilityLabel', () => {
     render(
-      <SpotSquare
-        accessibilityHint="Accessibility Hint"
-        accessibilityLabel="Accessibility Label"
-        name="gifting"
-        testID={SPOT_SQUARE_TEST_ID}
-      />,
+      <DefaultThemeProvider>
+        <SpotSquare
+          accessibilityHint="Accessibility Hint"
+          accessibilityLabel="Accessibility Label"
+          name="gifting"
+          testID={SPOT_SQUARE_TEST_ID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(SPOT_SQUARE_TEST_ID)).toBeTruthy();
 
@@ -40,11 +51,13 @@ describe('SpotSquare', () => {
 
   it('renders a SpotSquare with accessibilityHint and no accessibilityLabel', () => {
     render(
-      <SpotSquare
-        accessibilityHint="Accessibility Hint"
-        name="gifting"
-        testID={SPOT_SQUARE_TEST_ID}
-      />,
+      <DefaultThemeProvider>
+        <SpotSquare
+          accessibilityHint="Accessibility Hint"
+          name="gifting"
+          testID={SPOT_SQUARE_TEST_ID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(SPOT_SQUARE_TEST_ID)).toBeTruthy();
 

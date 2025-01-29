@@ -4,9 +4,9 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { useDimensions } from '../../hooks/useDimensions';
 import { galaxyScreenDimensions as narrowScreenDimensions } from '../../overlays/tooltip/__tests__/UseTooltipPositionTestData';
-import { ThemeProvider } from '../../system';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { TextBody } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Banner, BannerProps } from '../Banner';
 
 const TEST_ID = 'test-banner';
@@ -24,9 +24,11 @@ const MockBanner = ({
   testID = TEST_ID,
   ...props
 }: Partial<BannerProps>) => (
-  <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
-    <TextBody>Banner content</TextBody>
-  </Banner>
+  <DefaultThemeProvider>
+    <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
+      <TextBody>Banner content</TextBody>
+    </Banner>
+  </DefaultThemeProvider>
 );
 
 jest.mock('../../hooks/useDimensions');
@@ -90,9 +92,9 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
 
   it('renders error banner correctly on dark mode', () => {
     render(
-      <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
+      <DefaultThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <MockBanner variant="error" />
-      </ThemeProvider>,
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgba(65,27,0,1)' });
@@ -147,9 +149,17 @@ describe('Banner actions', () => {
   it('Banner forwardRef works as expected', () => {
     const ref = React.createRef<View>();
     render(
-      <Banner ref={ref} startIcon="cashUSD" testID={TEST_ID} title="Banner title" variant="warning">
-        <TextBody>Content</TextBody>
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner
+          ref={ref}
+          startIcon="cashUSD"
+          testID={TEST_ID}
+          title="Banner title"
+          variant="warning"
+        >
+          <TextBody>Content</TextBody>
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();

@@ -1,10 +1,13 @@
 import { render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Icon, IconProps } from '../Icon';
 
 const testID = 'test-icon';
 const IconExample = (props: Omit<IconProps, 'name' | 'size'>) => (
-  <Icon name="copy" size="m" {...props} />
+  <DefaultThemeProvider>
+    <Icon name="copy" size="m" {...props} />
+  </DefaultThemeProvider>
 );
 
 describe('Icon', () => {

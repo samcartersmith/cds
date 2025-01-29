@@ -5,6 +5,7 @@ import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { TextDisplay1 } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { SegmentedTab, SegmentedTabProps } from '../SegmentedTab';
 
 const TEST_ID = 'mock-segmented-tab';
@@ -35,20 +36,25 @@ describe('SegmentedTab', () => {
     jest.runOnlyPendingTimers();
     jest.useRealTimers();
   });
+
   it('passes a11y', () => {
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTab {...exampleProps} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTab {...exampleProps} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(TEST_ID)).toBeAccessible();
   });
 
   it('renders SegmentedTab correctly', () => {
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTab {...exampleProps} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTab {...exampleProps} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByText('Buy')).toBeTruthy();
     expect(screen.getByText('Buy')).toHaveAnimatedStyle({ color: 'rgba(10,11,13,1)' });
@@ -56,9 +62,11 @@ describe('SegmentedTab', () => {
 
   it('renders correct color when active', () => {
     render(
-      <TabsContext.Provider value={mockActiveApi}>
-        <SegmentedTab {...exampleProps} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockActiveApi}>
+          <SegmentedTab {...exampleProps} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     jest.advanceTimersByTime(300);
     expect(screen.getByTestId(`${TEST_ID}-label`)).toHaveAnimatedStyle({
@@ -69,9 +77,11 @@ describe('SegmentedTab', () => {
   it('triggers onPress when clicking the tab', () => {
     const onPress = jest.fn();
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTab {...exampleProps} onPress={onPress} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTab {...exampleProps} onPress={onPress} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     fireEvent.press(screen.getByTestId(TEST_ID));
 
@@ -81,9 +91,11 @@ describe('SegmentedTab', () => {
   it('renders custom node for label', () => {
     const label = <TextDisplay1 testID="custom-label">Custom label</TextDisplay1>;
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTab {...exampleProps} label={label} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTab {...exampleProps} label={label} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('custom-label')).toBeTruthy();
   });
@@ -91,9 +103,11 @@ describe('SegmentedTab', () => {
   it('forwards ref correctly', () => {
     const ref = React.createRef<View>();
     render(
-      <TabsContext.Provider value={mockApi}>
-        <SegmentedTab {...exampleProps} ref={ref} />
-      </TabsContext.Provider>,
+      <DefaultThemeProvider>
+        <TabsContext.Provider value={mockApi}>
+          <SegmentedTab {...exampleProps} ref={ref} />
+        </TabsContext.Provider>
+      </DefaultThemeProvider>,
     );
     expect(ref.current).toBeInstanceOf(View);
   });

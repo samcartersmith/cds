@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
 import { AnnouncementCard } from '../../../cards/AnnouncementCard';
+import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Carousel, CarouselRef } from '../Carousel';
 
 jest.mock('react-native-safe-area-context', () => {
@@ -31,18 +32,20 @@ describe('Carousel.test', () => {
 
   it('passes a11y', () => {
     render(
-      <Carousel
-        showDismiss
-        dismissButtonAccessibilityHint="Dismiss announcement"
-        dismissButtonAccessibilityLabel="Dismiss"
-        items={[
-          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
-          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
-        ]}
-        onDismissItem={jest.fn()}
-        onDismissLastItem={jest.fn()}
-        testID="mock-carousel"
-      />,
+      <DefaultThemeProvider>
+        <Carousel
+          showDismiss
+          dismissButtonAccessibilityHint="Dismiss announcement"
+          dismissButtonAccessibilityLabel="Dismiss"
+          items={[
+            <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+            <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+          ]}
+          onDismissItem={jest.fn()}
+          onDismissLastItem={jest.fn()}
+          testID="mock-carousel"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('mock-carousel')).toBeAccessible();
@@ -56,14 +59,16 @@ describe('Carousel.test', () => {
 
   it('renders items', () => {
     render(
-      <Carousel
-        items={[
-          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
-          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
-        ]}
-        onDismissItem={jest.fn()}
-        onDismissLastItem={jest.fn()}
-      />,
+      <DefaultThemeProvider>
+        <Carousel
+          items={[
+            <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+            <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+          ]}
+          onDismissItem={jest.fn()}
+          onDismissLastItem={jest.fn()}
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText('Item1 title')).toBeTruthy();
@@ -76,16 +81,18 @@ describe('Carousel.test', () => {
 
   it('renders progress and dismiss', () => {
     render(
-      <Carousel
-        showDismiss
-        showProgress
-        items={[
-          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
-          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
-        ]}
-        onDismissItem={jest.fn()}
-        onDismissLastItem={jest.fn()}
-      />,
+      <DefaultThemeProvider>
+        <Carousel
+          showDismiss
+          showProgress
+          items={[
+            <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+            <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+          ]}
+          onDismissItem={jest.fn()}
+          onDismissLastItem={jest.fn()}
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('Carousel-progress')).toBeTruthy();
@@ -102,16 +109,18 @@ describe('Carousel.test', () => {
     const onDismissLastItem = jest.fn();
 
     render(
-      <Carousel
-        showDismiss
-        showProgress
-        items={[
-          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
-          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
-        ]}
-        onDismissItem={onDismissItem}
-        onDismissLastItem={onDismissLastItem}
-      />,
+      <DefaultThemeProvider>
+        <Carousel
+          showDismiss
+          showProgress
+          items={[
+            <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+            <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+          ]}
+          onDismissItem={onDismissItem}
+          onDismissLastItem={onDismissLastItem}
+        />
+      </DefaultThemeProvider>,
     );
 
     // dismiss first item
@@ -147,18 +156,20 @@ describe('Carousel.test', () => {
     const ref = React.createRef<CarouselRef>();
 
     render(
-      <Carousel
-        showDismiss
-        showProgress
-        carouselRef={ref as React.MutableRefObject<CarouselRef>}
-        itemWidth={300}
-        items={[
-          <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
-          <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
-        ]}
-        onDismissItem={jest.fn()}
-        onDismissLastItem={jest.fn()}
-      />,
+      <DefaultThemeProvider>
+        <Carousel
+          showDismiss
+          showProgress
+          carouselRef={ref as React.MutableRefObject<CarouselRef>}
+          itemWidth={300}
+          items={[
+            <AnnouncementCard key="item1" description="Item1 description" title="Item1 title" />,
+            <AnnouncementCard key="item2" description="Item2 description" title="Item2 title" />,
+          ]}
+          onDismissItem={jest.fn()}
+          onDismissLastItem={jest.fn()}
+        />
+      </DefaultThemeProvider>,
     );
 
     ref.current?.scrollToId('item2');

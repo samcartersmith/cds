@@ -2,36 +2,59 @@ import { render, screen } from '@testing-library/react-native';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
 import { Pictogram } from '../../illustrations';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { CellMedia } from '../CellMedia';
 
 describe('CellMedia', () => {
   it('icon passes accessibility', () => {
-    render(<CellMedia name="arrowUp" testID="cell-media-id" type="icon" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia name="arrowUp" testID="cell-media-id" type="icon" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
   it('asset passes accessibility', () => {
-    render(<CellMedia source="some/image/path" testID="cell-media-id" type="asset" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia source="some/image/path" testID="cell-media-id" type="asset" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
   it('avatar passes accessibility', () => {
-    render(<CellMedia source="some/image/path" testID="cell-media-id" type="avatar" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia source="some/image/path" testID="cell-media-id" type="avatar" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
   it('image passes accessibility', () => {
-    render(<CellMedia source="some/image/path" testID="cell-media-id" type="image" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia source="some/image/path" testID="cell-media-id" type="image" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
   });
 
   it('pictogram passes accessibility', () => {
     render(
-      <CellMedia illustration={<Pictogram name="2fa" />} testID="cell-media-id" type="pictogram" />,
+      <DefaultThemeProvider>
+        <CellMedia
+          illustration={<Pictogram name="2fa" />}
+          testID="cell-media-id"
+          type="pictogram"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('cell-media-id')).toBeAccessible();
@@ -39,12 +62,14 @@ describe('CellMedia', () => {
 
   it('icon sets an accessible label', () => {
     render(
-      <CellMedia
-        accessibilityHint="Icon hint"
-        accessibilityLabel="Icon label"
-        name="arrowUp"
-        type="icon"
-      />,
+      <DefaultThemeProvider>
+        <CellMedia
+          accessibilityHint="Icon hint"
+          accessibilityLabel="Icon label"
+          name="arrowUp"
+          type="icon"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText('Icon label')).toBeTruthy();
@@ -53,12 +78,14 @@ describe('CellMedia', () => {
 
   it('asset sets an accessible label', () => {
     render(
-      <CellMedia
-        accessibilityHint="Asset hint"
-        accessibilityLabel="Asset label"
-        source="some/image/path"
-        type="asset"
-      />,
+      <DefaultThemeProvider>
+        <CellMedia
+          accessibilityHint="Asset hint"
+          accessibilityLabel="Asset label"
+          source="some/image/path"
+          type="asset"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText('Asset label')).toBeTruthy();
@@ -67,12 +94,14 @@ describe('CellMedia', () => {
 
   it('avatar sets an accessible label', () => {
     render(
-      <CellMedia
-        accessibilityHint="Avatar hint"
-        accessibilityLabel="Avatar label"
-        source="some/image/path"
-        type="avatar"
-      />,
+      <DefaultThemeProvider>
+        <CellMedia
+          accessibilityHint="Avatar hint"
+          accessibilityLabel="Avatar label"
+          source="some/image/path"
+          type="avatar"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText('Avatar label')).toBeTruthy();
@@ -81,12 +110,14 @@ describe('CellMedia', () => {
 
   it('image sets an accessible label', () => {
     render(
-      <CellMedia
-        accessibilityHint="Image hint"
-        accessibilityLabel="Image label"
-        source="some/image/path"
-        type="image"
-      />,
+      <DefaultThemeProvider>
+        <CellMedia
+          accessibilityHint="Image hint"
+          accessibilityLabel="Image label"
+          source="some/image/path"
+          type="image"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText('Image label')).toBeTruthy();
@@ -95,12 +126,14 @@ describe('CellMedia', () => {
 
   it('pictogram sets an accessible label on CellMedia', () => {
     render(
-      <CellMedia
-        accessibilityHint="Pictogram hint"
-        accessibilityLabel="Pictogram label"
-        illustration={<Pictogram name="2fa" />}
-        type="pictogram"
-      />,
+      <DefaultThemeProvider>
+        <CellMedia
+          accessibilityHint="Pictogram hint"
+          accessibilityLabel="Pictogram label"
+          illustration={<Pictogram name="2fa" />}
+          type="pictogram"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
@@ -109,16 +142,18 @@ describe('CellMedia', () => {
 
   it('pictogram sets an accessible label on Pictogram', () => {
     render(
-      <CellMedia
-        illustration={
-          <Pictogram
-            accessibilityHint="Pictogram hint"
-            accessibilityLabel="Pictogram label"
-            name="2fa"
-          />
-        }
-        type="pictogram"
-      />,
+      <DefaultThemeProvider>
+        <CellMedia
+          illustration={
+            <Pictogram
+              accessibilityHint="Pictogram hint"
+              accessibilityLabel="Pictogram label"
+              name="2fa"
+            />
+          }
+          type="pictogram"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText('Pictogram label')).toBeTruthy();
@@ -127,18 +162,20 @@ describe('CellMedia', () => {
 
   it('pictogram CellMedia accessible labels override Pictogram accessible labels', () => {
     render(
-      <CellMedia
-        accessibilityHint="CellMedia hint"
-        accessibilityLabel="CellMedia label"
-        illustration={
-          <Pictogram
-            accessibilityHint="Pictogram hint"
-            accessibilityLabel="Pictogram label"
-            name="2fa"
-          />
-        }
-        type="pictogram"
-      />,
+      <DefaultThemeProvider>
+        <CellMedia
+          accessibilityHint="CellMedia hint"
+          accessibilityLabel="CellMedia label"
+          illustration={
+            <Pictogram
+              accessibilityHint="Pictogram hint"
+              accessibilityLabel="Pictogram label"
+              name="2fa"
+            />
+          }
+          type="pictogram"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByLabelText('CellMedia label')).toBeTruthy();
@@ -146,13 +183,21 @@ describe('CellMedia', () => {
   });
 
   it('renders an icon', () => {
-    render(<CellMedia name="arrowUp" type="icon" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia name="arrowUp" type="icon" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toBeTruthy();
   });
 
   it('renders an asset', () => {
-    render(<CellMedia source="some/image/path" type="asset" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia source="some/image/path" type="asset" />
+      </DefaultThemeProvider>,
+    );
     const image = screen.getByRole('image');
 
     expect(image).toHaveProp('source', { cache: undefined, uri: 'some/image/path' });
@@ -160,7 +205,11 @@ describe('CellMedia', () => {
   });
 
   it('renders an avatar', () => {
-    render(<CellMedia source="some/image/path" type="avatar" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia source="some/image/path" type="avatar" />
+      </DefaultThemeProvider>,
+    );
     const image = screen.getByRole('image');
 
     expect(image).toHaveProp('source', { cache: undefined, uri: 'some/image/path' });
@@ -168,7 +217,11 @@ describe('CellMedia', () => {
   });
 
   it('renders an image', () => {
-    render(<CellMedia source="some/image/path" type="image" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia source="some/image/path" type="image" />
+      </DefaultThemeProvider>,
+    );
     const image = screen.getByRole('image');
 
     expect(image).toHaveProp('source', { cache: undefined, uri: 'some/image/path' });
@@ -177,7 +230,9 @@ describe('CellMedia', () => {
 
   it('renders a pictogram', () => {
     render(
-      <CellMedia illustration={<Pictogram name="2fa" testID="pictogram-id" />} type="pictogram" />,
+      <DefaultThemeProvider>
+        <CellMedia illustration={<Pictogram name="2fa" testID="pictogram-id" />} type="pictogram" />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('pictogram-id')).toBeTruthy();
@@ -185,35 +240,53 @@ describe('CellMedia', () => {
 
   describe('at normal scale', () => {
     it('sets icon size', () => {
-      render(<CellMedia name="arrowUp" type="icon" />);
+      render(
+        <DefaultThemeProvider>
+          <CellMedia name="arrowUp" type="icon" />
+        </DefaultThemeProvider>,
+      );
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 16, height: 16 });
     });
 
     it('sets asset size', () => {
-      render(<CellMedia source="some/image/path" type="asset" />);
+      render(
+        <DefaultThemeProvider>
+          <CellMedia source="some/image/path" type="asset" />
+        </DefaultThemeProvider>,
+      );
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 32, height: 32 });
     });
 
     it('sets avatar size', () => {
-      render(<CellMedia source="some/image/path" type="avatar" />);
+      render(
+        <DefaultThemeProvider>
+          <CellMedia source="some/image/path" type="avatar" />
+        </DefaultThemeProvider>,
+      );
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 32, height: 32 });
     });
 
     it('sets image size', () => {
-      render(<CellMedia source="some/image/path" type="image" />);
+      render(
+        <DefaultThemeProvider>
+          <CellMedia source="some/image/path" type="image" />
+        </DefaultThemeProvider>,
+      );
 
       expect(screen.getByRole('image')).toHaveStyle({ width: 48, height: 48 });
     });
 
     it('sets pictogram size', () => {
       render(
-        <CellMedia
-          illustration={<Pictogram name="2fa" testID="pictogram-id" />}
-          type="pictogram"
-        />,
+        <DefaultThemeProvider>
+          <CellMedia
+            illustration={<Pictogram name="2fa" testID="pictogram-id" />}
+            type="pictogram"
+          />
+        </DefaultThemeProvider>,
       );
 
       expect(screen.getByTestId('pictogram-id')).toHaveStyle({ width: 48, height: 48 });
@@ -221,12 +294,14 @@ describe('CellMedia', () => {
 
     it('sets pictogram size and cannot be overridden by Pictogram props', () => {
       render(
-        <CellMedia
-          illustration={
-            <Pictogram dimension="64x64" name="2fa" scaleMultiplier={2} testID="pictogram-id" />
-          }
-          type="pictogram"
-        />,
+        <DefaultThemeProvider>
+          <CellMedia
+            illustration={
+              <Pictogram dimension="64x64" name="2fa" scaleMultiplier={2} testID="pictogram-id" />
+            }
+            type="pictogram"
+          />
+        </DefaultThemeProvider>,
       );
 
       expect(screen.getByTestId('pictogram-id')).toHaveStyle({ width: 48, height: 48 });

@@ -5,6 +5,7 @@ import { type CustomTabProps, type TabProps } from '@cbhq/cds-common2/types/Tabs
 
 import { HStack } from '../../layout';
 import { TextHeadline } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { TabNavigation } from '../TabNavigation';
 
 const sampleTabs = tabs.slice(0, 4);
@@ -17,7 +18,11 @@ const MockTabNavigation = ({
   tabs?: TabProps[];
 }) => {
   const [activeTab, setActiveTab] = useState(sampleTabs[0].id);
-  return <TabNavigation onChange={setActiveTab} tabs={tabs} testID={testID} value={activeTab} />;
+  return (
+    <DefaultThemeProvider>
+      <TabNavigation onChange={setActiveTab} tabs={tabs} testID={testID} value={activeTab} />
+    </DefaultThemeProvider>
+  );
 };
 
 const customTestID = 'custom-test-id';
@@ -31,13 +36,15 @@ const renderCustomTab = ({ label, id, ...props }: CustomTabProps) => (
 const MockTabNavigationWithCustomTabs = ({ testID }: { testID: string }) => {
   const [activeTab, setActiveTab] = useState(sampleTabs[0].id);
   return (
-    <TabNavigation
-      Component={renderCustomTab}
-      onChange={setActiveTab}
-      tabs={sampleTabs}
-      testID={testID}
-      value={activeTab}
-    />
+    <DefaultThemeProvider>
+      <TabNavigation
+        Component={renderCustomTab}
+        onChange={setActiveTab}
+        tabs={sampleTabs}
+        testID={testID}
+        value={activeTab}
+      />
+    </DefaultThemeProvider>
   );
 };
 

@@ -6,6 +6,7 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react-nativ
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
 import { TextBody } from '../../../typography';
+import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Carousel } from '../Carousel';
 import { CarouselItemContext } from '../CarouselItemContext';
 import { useCarouselItem } from '../useCarouselItem';
@@ -85,14 +86,16 @@ describe('useCarouselItem', () => {
     };
 
     render(
-      <CarouselItemContext.Provider
-        value={{
-          id: 'item1',
-          dismiss: dismissSpy,
-        }}
-      >
-        <ChildWithPressable />
-      </CarouselItemContext.Provider>,
+      <DefaultThemeProvider>
+        <CarouselItemContext.Provider
+          value={{
+            id: 'item1',
+            dismiss: dismissSpy,
+          }}
+        >
+          <ChildWithPressable />
+        </CarouselItemContext.Provider>
+      </DefaultThemeProvider>,
     );
     fireEvent.press(screen.getByTestId('DismissButton'));
     expect(dismissSpy).toHaveBeenCalled();

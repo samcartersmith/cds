@@ -10,6 +10,7 @@ import { CreateModalProps, modalBuilder } from '@cbhq/cds-common2/internal/modal
 
 import { Button } from '../../../buttons';
 import { TextBody, TextLabel1 } from '../../../typography';
+import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Modal } from '../Modal';
 import { ModalBody } from '../ModalBody';
 import { ModalFooter } from '../ModalFooter';
@@ -42,18 +43,30 @@ describe('Modal', () => {
   });
 
   it('passes a11y', () => {
-    render(<MockModal visible testID="mock-modal" />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal visible testID="mock-modal" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('mock-modal')).toBeAccessible();
   });
 
   it('renders React Native Modal', () => {
-    render(<MockModal />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryAllByType(RNModal)).toHaveLength(1);
   });
 
   it('show modal on press', () => {
-    render(<MockModal />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryByProps({ visible: false })).toBeTruthy();
 
@@ -67,11 +80,13 @@ describe('Modal', () => {
     const onDidClose = jest.fn();
 
     render(
-      <MockModal
-        closeAccessibilityLabel="Close"
-        onDidClose={onDidClose}
-        onRequestClose={onRequestClose}
-      />,
+      <DefaultThemeProvider>
+        <MockModal
+          closeAccessibilityLabel="Close"
+          onDidClose={onDidClose}
+          onRequestClose={onRequestClose}
+        />
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByText('Open Modal'));
@@ -83,7 +98,11 @@ describe('Modal', () => {
   it('triggers onDidClose after animation finished', () => {
     const onDidClose = jest.fn();
 
-    render(<MockModal closeAccessibilityLabel="Close" onDidClose={onDidClose} />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal closeAccessibilityLabel="Close" onDidClose={onDidClose} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByLabelText('Close'));
@@ -96,7 +115,11 @@ describe('Modal', () => {
 
   it('triggers back action on back button press', () => {
     const onBackButtonClick = jest.fn();
-    render(<MockModal backAccessibilityLabel="Back" onBackButtonClick={onBackButtonClick} />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal backAccessibilityLabel="Back" onBackButtonClick={onBackButtonClick} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Open Modal'));
     fireEvent.press(screen.getByLabelText('Back'));
@@ -106,7 +129,11 @@ describe('Modal', () => {
 
   it('renders modal title', async () => {
     const title = 'Modal Title';
-    render(<MockModal title={title} />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal title={title} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Open Modal'));
 
@@ -114,7 +141,11 @@ describe('Modal', () => {
   });
 
   it('renders modal body', async () => {
-    render(<MockModal />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Open Modal'));
 
@@ -122,7 +153,11 @@ describe('Modal', () => {
   });
 
   it('renders modal body without dividers', async () => {
-    render(<MockModal hideDividers />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal hideDividers />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Open Modal'));
 
@@ -130,7 +165,11 @@ describe('Modal', () => {
   });
 
   it('renders modal footer', () => {
-    render(<MockModal />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Open Modal'));
 
@@ -142,7 +181,11 @@ describe('Modal', () => {
     const animationParallelSpy = jest.spyOn(Animated, 'parallel');
     const animationTimingSpy = jest.spyOn(Animated, 'timing');
 
-    render(<MockModal visible onRequestClose={onRequestClose} />);
+    render(
+      <DefaultThemeProvider>
+        <MockModal visible onRequestClose={onRequestClose} />
+      </DefaultThemeProvider>,
+    );
 
     // press on footer action
     fireEvent.press(screen.getByTestId('modal-footer-save'));
@@ -153,7 +196,9 @@ describe('Modal', () => {
 
   it('sets accessible labels on close button', () => {
     render(
-      <MockModal closeAccessibilityHint="Close button hint" closeAccessibilityLabel="Close" />,
+      <DefaultThemeProvider>
+        <MockModal closeAccessibilityHint="Close button hint" closeAccessibilityLabel="Close" />
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByText('Open Modal'));
@@ -164,11 +209,13 @@ describe('Modal', () => {
 
   it('sets accessible labels on back button', () => {
     render(
-      <MockModal
-        backAccessibilityHint="Back button hint"
-        backAccessibilityLabel="Back"
-        onBackButtonClick={jest.fn()}
-      />,
+      <DefaultThemeProvider>
+        <MockModal
+          backAccessibilityHint="Back button hint"
+          backAccessibilityLabel="Back"
+          onBackButtonClick={jest.fn()}
+        />
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByText('Open Modal'));

@@ -1,36 +1,61 @@
 import { render, screen } from '@testing-library/react-native';
 import { CellSpacing } from '@cbhq/cds-common2';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { ListCellFallback } from '../ListCellFallback';
 
 describe('ListCellFallback', () => {
   it('renders a ListCellFallback component', () => {
-    render(<ListCellFallback testID="list-cell-fallback" />);
+    render(
+      <DefaultThemeProvider>
+        <ListCellFallback testID="list-cell-fallback" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('list-cell-fallback')).toBeTruthy();
   });
 
   it('renders a Fallback component if description is passed', () => {
-    render(<ListCellFallback description />);
+    render(
+      <DefaultThemeProvider>
+        <ListCellFallback description />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('list-cell-fallback-description')).toBeTruthy();
   });
 
   it('renders a Fallback component if detail is passed', () => {
-    render(<ListCellFallback detail />);
+    render(
+      <DefaultThemeProvider>
+        <ListCellFallback detail />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('list-cell-fallback-detail')).toBeTruthy();
   });
 
   it('renders a Fallback component if subdetail is passed', () => {
-    render(<ListCellFallback subdetail />);
+    render(
+      <DefaultThemeProvider>
+        <ListCellFallback subdetail />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('list-cell-fallback-subdetail')).toBeTruthy();
   });
 
   it('renders a Fallback component if title is passed', () => {
-    render(<ListCellFallback title />);
+    render(
+      <DefaultThemeProvider>
+        <ListCellFallback title />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('list-cell-fallback-title')).toBeTruthy();
   });
 
   it('renders a MediaFallback component if media is passed', () => {
-    render(<ListCellFallback media="asset" />);
+    render(
+      <DefaultThemeProvider>
+        <ListCellFallback media="asset" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('list-cell-fallback-media')).toBeTruthy();
   });
 
@@ -45,11 +70,13 @@ describe('ListCellFallback', () => {
     };
 
     render(
-      <ListCellFallback
-        innerSpacing={innerSpacing}
-        outerSpacing={outerSpacing}
-        testID="list-cell-fallback"
-      />,
+      <DefaultThemeProvider>
+        <ListCellFallback
+          innerSpacing={innerSpacing}
+          outerSpacing={outerSpacing}
+          testID="list-cell-fallback"
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('list-cell-fallback')).toHaveStyle(
       `padding: ${outerSpacing.paddingY}px ${innerSpacing.paddingX}px;`,

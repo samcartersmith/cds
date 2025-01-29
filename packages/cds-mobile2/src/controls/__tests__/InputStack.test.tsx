@@ -2,6 +2,7 @@ import { TextInput as RNTextInput } from 'react-native';
 import TestRenderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { InputStack, InputStackProps } from '../InputStack';
 import { NativeInput } from '../NativeInput';
 
@@ -16,7 +17,9 @@ function expectAttribute<
     // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" for \`${prop}\` prop`, () => {
       const inputRenderer = TestRenderer.create(
-        <InputStack testID={TEST_ID} {...{ [prop]: value }} inputNode={input} />,
+        <DefaultThemeProvider>
+          <InputStack testID={TEST_ID} {...{ [prop]: value }} inputNode={input} />
+        </DefaultThemeProvider>,
       );
 
       const inputInstance = inputRenderer.root;
@@ -48,7 +51,11 @@ describe('styles', () => {
       borderWidth: 1,
     };
 
-    render(<InputStack borderStyle={borderStyle} inputNode={<NativeInput />} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <InputStack borderStyle={borderStyle} inputNode={<NativeInput />} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     await screen.findByTestId(`${TEST_ID}-input-area`);
 

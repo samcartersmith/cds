@@ -8,6 +8,9 @@
     "build": {
       "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
     "typecheck": {
       "executor": "nx:run-commands",
       "defaultConfiguration": "dev",

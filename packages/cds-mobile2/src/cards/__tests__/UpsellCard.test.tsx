@@ -5,6 +5,7 @@ import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Button } from '../../buttons';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { UpsellCard, UpsellCardProps } from '../UpsellCard';
 
 const styles = StyleSheet.create({
@@ -59,12 +60,20 @@ const compactProps = {
 
 describe('UpsellCard', () => {
   it('passes accessibility', async () => {
-    render(<UpsellCard {...exampleProps} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(exampleProps.testID as string)).toBeAccessible();
   });
 
   it('renders title, description, action and dismiss', () => {
-    render(<UpsellCard {...exampleProps} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByText('Test Title')).toBeDefined();
     expect(screen.getByText('Test Description')).toBeDefined();
     expect(screen.getByRole('button', { name: 'Test Action' })).toBeDefined();
@@ -72,7 +81,11 @@ describe('UpsellCard', () => {
   });
 
   it('renders dangerouslySetBackground', () => {
-    render(<UpsellCard {...exampleProps} dangerouslySetBackground="#d3d3d3" />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} dangerouslySetBackground="#d3d3d3" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(exampleProps.testID as string)).toHaveStyle({
       backgroundColor: '#d3d3d3',
     });
@@ -80,39 +93,57 @@ describe('UpsellCard', () => {
 
   it('calls onActionPress on action button click', async () => {
     const onActionPressMock = jest.fn();
-    render(<UpsellCard {...exampleProps} onActionPress={onActionPressMock} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} onActionPress={onActionPressMock} />
+      </DefaultThemeProvider>,
+    );
     fireEvent.press(screen.getByText(exampleProps.action as string));
     expect(onActionPressMock).toHaveBeenCalled();
   });
 
   it('calls onDismissPress on dismiss button click', () => {
     const onDismissPressMock = jest.fn();
-    render(<UpsellCard {...exampleProps} onDismissPress={onDismissPressMock} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} onDismissPress={onDismissPressMock} />
+      </DefaultThemeProvider>,
+    );
     fireEvent.press(screen.getByTestId(`${exampleProps.testID}-dismiss-button`));
     expect(onDismissPressMock).toHaveBeenCalled();
   });
   it('renders custom action button', () => {
     render(
-      <UpsellCard
-        {...exampleProps}
-        action={
-          <Button role="button" testID="custom-action-button">
-            Custom Action
-          </Button>
-        }
-      />,
+      <DefaultThemeProvider>
+        <UpsellCard
+          {...exampleProps}
+          action={
+            <Button role="button" testID="custom-action-button">
+              Custom Action
+            </Button>
+          }
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('custom-action-button')).toBeVisible();
   });
   it('does not render action button if action prop is not passed', () => {
     const { action, ...propsWithoutAction } = exampleProps;
-    render(<UpsellCard {...propsWithoutAction} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...propsWithoutAction} />
+      </DefaultThemeProvider>,
+    );
     const actionButton = screen.queryByRole('button', { name: 'Test Action' });
     expect(actionButton).toBeNull();
   });
   it('calls onPress when the card is pressed', () => {
     const onPressFn = jest.fn();
-    render(<UpsellCard onPress={onPressFn} {...compactProps} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard onPress={onPressFn} {...compactProps} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText(`${compactProps.title}`));
 

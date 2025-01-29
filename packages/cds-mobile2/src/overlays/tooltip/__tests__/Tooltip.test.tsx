@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Button } from '../../../buttons';
 import { useDimensions } from '../../../hooks/useDimensions';
+import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Tooltip } from '../Tooltip';
 import { TooltipPlacement, TooltipProps, UseTooltipPositionParams } from '../TooltipProps';
 import { useTooltipPosition } from '../useTooltipPosition';
@@ -25,18 +26,23 @@ const mockPlatformAndroid = () => {
 };
 
 const createHookInstance = (options: UseTooltipPositionParams) => {
-  return renderHook(() => {
-    return useTooltipPosition(options);
-  });
+  return renderHook(
+    () => {
+      return useTooltipPosition(options);
+    },
+    { wrapper: DefaultThemeProvider },
+  );
 };
 
 const contentText = 'Test content';
 const subjectText = 'Open Tooltip';
 
 const MockTooltip = ({ children, ...props }: Omit<TooltipProps, 'content'>) => (
-  <Tooltip content={contentText} {...props}>
-    {children}
-  </Tooltip>
+  <DefaultThemeProvider>
+    <Tooltip content={contentText} {...props}>
+      {children}
+    </Tooltip>
+  </DefaultThemeProvider>
 );
 
 describe('Tooltip', () => {

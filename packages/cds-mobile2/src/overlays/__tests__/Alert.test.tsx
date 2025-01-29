@@ -3,6 +3,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common2/internal/alertBuilder';
 
 import { Button } from '../../buttons';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Alert } from '../Alert';
 import { PortalProvider } from '../PortalProvider';
 
@@ -26,7 +27,11 @@ describe('Alert', () => {
   });
 
   it('renders React Native Modal', () => {
-    render(<MockAlert />);
+    render(
+      <DefaultThemeProvider>
+        <MockAlert />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryAllByType(RNModal)).toHaveLength(1);
   });
@@ -34,7 +39,11 @@ describe('Alert', () => {
   it('show alert on press', () => {
     const title = 'Alert title';
 
-    render(<MockAlert title={title} />);
+    render(
+      <DefaultThemeProvider>
+        <MockAlert title={title} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryByProps({ visible: false })).toBeTruthy();
 
@@ -48,7 +57,11 @@ describe('Alert', () => {
 
   it('renders title and passes a11y', () => {
     const title = 'Test title';
-    render(<MockAlert testID="mock-alert" title={title} />);
+    render(
+      <DefaultThemeProvider>
+        <MockAlert testID="mock-alert" title={title} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Show Alert'));
 
@@ -58,7 +71,11 @@ describe('Alert', () => {
 
   it('renders body and passes a11y', () => {
     const body = 'Test body';
-    render(<MockAlert body={body} testID="mock-alert" />);
+    render(
+      <DefaultThemeProvider>
+        <MockAlert body={body} testID="mock-alert" />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Show Alert'));
 
@@ -72,13 +89,15 @@ describe('Alert', () => {
     const onRequestClose = jest.fn();
 
     render(
-      <MockAlert
-        visible
-        onPreferredActionPress={onPreferredActionPress}
-        onRequestClose={onRequestClose}
-        preferredActionLabel="Save"
-        testID="mock-alert"
-      />,
+      <DefaultThemeProvider>
+        <MockAlert
+          visible
+          onPreferredActionPress={onPreferredActionPress}
+          onRequestClose={onRequestClose}
+          preferredActionLabel="Save"
+          testID="mock-alert"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('mock-alert')).toBeAccessible();
@@ -95,12 +114,14 @@ describe('Alert', () => {
     const onRequestClose = jest.fn();
 
     render(
-      <MockAlert
-        visible
-        dismissActionLabel="Cancel"
-        onRequestClose={onRequestClose}
-        testID="mock-alert"
-      />,
+      <DefaultThemeProvider>
+        <MockAlert
+          visible
+          dismissActionLabel="Cancel"
+          onRequestClose={onRequestClose}
+          testID="mock-alert"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('mock-alert')).toBeAccessible();

@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { debounce } from '../../utils/debounce';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { IconButton } from '../IconButton';
 
 jest.mock('../../utils/debounce');
@@ -11,20 +12,32 @@ const name = 'allTimeHigh';
 
 describe('IconButton', () => {
   it('passes accessibility', async () => {
-    render(<IconButton accessibilityLabel="test-label" name={name} />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton accessibilityLabel="test-label" name={name} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByRole('button')).toBeAccessible();
   });
 
   it('renders an accessibility label', () => {
-    render(<IconButton accessibilityLabel="test-label" name={name} />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton accessibilityLabel="test-label" name={name} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByLabelText('test-label')).toBeTruthy();
   });
 
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
-    render(<IconButton name={name} onPress={spy} />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton name={name} onPress={spy} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByRole('button'));
 
@@ -33,7 +46,11 @@ describe('IconButton', () => {
 
   it('disables user interaction when disabled', () => {
     const spy = jest.fn();
-    render(<IconButton disabled name={name} onPress={spy} />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton disabled name={name} onPress={spy} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByRole('button'));
 
@@ -52,7 +69,11 @@ describe('IconButton', () => {
 
   it('disables user interaction when loading', () => {
     const spy = jest.fn();
-    render(<IconButton loading name={name} onPress={spy} />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton loading name={name} onPress={spy} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByRole('button'));
 
@@ -63,7 +84,11 @@ describe('IconButton', () => {
   });
 
   it('passes down testID', () => {
-    render(<IconButton name={name} testID="test-test-id" />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton name={name} testID="test-test-id" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('test-test-id')).toBeTruthy();
   });

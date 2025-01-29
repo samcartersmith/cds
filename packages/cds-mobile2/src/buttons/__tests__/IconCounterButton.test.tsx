@@ -5,23 +5,36 @@ import { View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Pressable } from '../../system';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { IconCounterButton } from '../IconCounterButton';
 
 describe('IconCounterButton', () => {
   it('passes a11y', () => {
-    render(<IconCounterButton icon="heart" testID="button" />);
+    render(
+      <DefaultThemeProvider>
+        <IconCounterButton icon="heart" testID="button" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('button')).toBeAccessible();
   });
 
   it('renders a pressable', () => {
-    render(<IconCounterButton icon="heart" testID="button" />);
+    render(
+      <DefaultThemeProvider>
+        <IconCounterButton icon="heart" testID="button" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryAllByType(Pressable)).toHaveLength(1);
   });
 
   it('calls onPress when pressed', () => {
     const handlePress = jest.fn();
-    render(<IconCounterButton icon="heart" onPress={handlePress} testID="button" />);
+    render(
+      <DefaultThemeProvider>
+        <IconCounterButton icon="heart" onPress={handlePress} testID="button" />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByTestId('button'));
 
@@ -30,7 +43,11 @@ describe('IconCounterButton', () => {
 
   it('forwards ref correctly', () => {
     const ref = React.createRef<View>();
-    render(<IconCounterButton ref={ref} icon="heartActive" />);
+    render(
+      <DefaultThemeProvider>
+        <IconCounterButton ref={ref} icon="heartActive" />
+      </DefaultThemeProvider>,
+    );
 
     expect(ref.current).not.toBeNull();
     expect(ref.current).toBeInstanceOf(View);

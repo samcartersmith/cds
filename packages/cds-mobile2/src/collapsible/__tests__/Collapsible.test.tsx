@@ -4,6 +4,7 @@ import { useToggler } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { TextBody } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Collapsible } from '../Collapsible';
 
 jest.mock('../../hooks/useContentSize', () => ({
@@ -14,7 +15,7 @@ const MockCollapsible = ({ defaultCollapsed = true }: { defaultCollapsed?: boole
   const [collapsed, { toggle }] = useToggler(defaultCollapsed);
   const collapsibleId = useId();
   return (
-    <>
+    <DefaultThemeProvider>
       <Button
         disableDebounce
         aria-controls={collapsibleId}
@@ -27,7 +28,7 @@ const MockCollapsible = ({ defaultCollapsed = true }: { defaultCollapsed?: boole
       <Collapsible collapsed={collapsed} testID="mock-collapse">
         <TextBody>Collapsible Content</TextBody>
       </Collapsible>
-    </>
+    </DefaultThemeProvider>
   );
 };
 

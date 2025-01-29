@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { TextBody } from '../../../typography';
+import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Banner, MobileBannerProps } from '../Banner';
 
 const TEST_ID = 'test-banner';
@@ -14,9 +15,11 @@ const MockBanner = ({
   testID = TEST_ID,
   ...props
 }: Partial<MobileBannerProps>) => (
-  <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
-    <TextBody>Banner content</TextBody>
-  </Banner>
+  <DefaultThemeProvider>
+    <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
+      <TextBody>Banner content</TextBody>
+    </Banner>
+  </DefaultThemeProvider>
 );
 
 describe('Banner', () => {
@@ -68,9 +71,17 @@ describe('Banner actions', () => {
   it('Banner forwardRef works as expected', () => {
     const ref = React.createRef<View>();
     render(
-      <Banner ref={ref} startIcon="cashUSD" testID={TEST_ID} title="Banner title" variant="warning">
-        <TextBody>Content</TextBody>
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner
+          ref={ref}
+          startIcon="cashUSD"
+          testID={TEST_ID}
+          title="Banner title"
+          variant="warning"
+        >
+          <TextBody>Content</TextBody>
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();

@@ -5,6 +5,7 @@ import { squareAssets } from '@cbhq/cds-common2/internal/data/assets';
 import { NoopFn as noopFn } from '@cbhq/cds-common2/utils/mockUtils';
 import { PictogramName } from '@cbhq/cds-illustrations';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { NudgeCard as BaseNudgeCard, NudgeCardProps } from '../NudgeCard';
 
 const exampleProps = {
@@ -23,7 +24,11 @@ const NudgeCard = (
       'onDismissPress' | 'onActionPress' | 'pictogram' | 'media' | 'accessibilityLabel'
     >
   >,
-) => <BaseNudgeCard {...exampleProps} {...props} />;
+) => (
+  <DefaultThemeProvider>
+    <BaseNudgeCard {...exampleProps} {...props} />
+  </DefaultThemeProvider>
+);
 
 describe('createNudgeCard', () => {
   it('passes accessibility', () => {

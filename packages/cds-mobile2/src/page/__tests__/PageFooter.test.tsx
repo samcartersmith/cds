@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react-native';
 
 import { Box } from '../../layout';
 import { TextBody } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { PageFooter } from '../PageFooter';
 
 const defaultProps = {
@@ -17,22 +18,39 @@ const defaultProps = {
 
 describe('PageFooter', () => {
   it('passes accessiblility', () => {
-    render(<PageFooter {...defaultProps} />);
+    render(
+      <DefaultThemeProvider>
+        <PageFooter {...defaultProps} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(defaultProps.testID)).toBeAccessible();
   });
+
   it('renders action correctly', () => {
-    render(<PageFooter action={<TextBody>Test</TextBody>} />);
+    render(
+      <DefaultThemeProvider>
+        <PageFooter action={<TextBody>Test</TextBody>} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByText('Test')).toBeTruthy();
   });
 
   it('forwards ref correctly', () => {
     const ref = React.createRef<View>();
-    render(<PageFooter {...defaultProps} ref={ref} />);
+    render(
+      <DefaultThemeProvider>
+        <PageFooter {...defaultProps} ref={ref} />
+      </DefaultThemeProvider>,
+    );
     expect(ref.current).not.toBeNull();
   });
 
   it('applies testID correctly', () => {
-    render(<PageFooter {...defaultProps} />);
+    render(
+      <DefaultThemeProvider>
+        <PageFooter {...defaultProps} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(defaultProps.testID)).toBeTruthy();
   });
 });

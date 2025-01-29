@@ -2,6 +2,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/re
 
 import { Box } from '../../../layout';
 import { TextBody } from '../../../typography';
+import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Carousel } from '../Carousel';
 
 describe('Carousel', () => {
@@ -16,7 +17,11 @@ describe('Carousel', () => {
         <TextBody>CarouselItem</TextBody>
       </Box>
     ));
-    return <Carousel items={items} onReady={onReadySpy} />;
+    return (
+      <DefaultThemeProvider>
+        <Carousel items={items} onReady={onReadySpy} />
+      </DefaultThemeProvider>
+    );
   };
 
   afterEach(cleanup);

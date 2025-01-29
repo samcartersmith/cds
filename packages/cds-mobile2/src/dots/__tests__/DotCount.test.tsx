@@ -2,6 +2,7 @@ import { act } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Icon } from '../../icons/Icon';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { DotCount } from '../DotCount';
 
 const DOTCOUNT_TESTID = 'dot-count-test';
@@ -17,18 +18,30 @@ describe('DotCount', () => {
   });
 
   it('passes a11y for single digit counter', () => {
-    render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
+    render(
+      <DefaultThemeProvider>
+        <DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 
   it('renders a DotCount', () => {
-    render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
+    render(
+      <DefaultThemeProvider>
+        <DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeTruthy();
   });
 
   it('renders a secondary border in light mode', () => {
-    render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
+    render(
+      <DefaultThemeProvider>
+        <DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />
+      </DefaultThemeProvider>,
+    );
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
@@ -37,7 +50,11 @@ describe('DotCount', () => {
   });
 
   it('renders correct count when count equals 1', () => {
-    render(<DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />);
+    render(
+      <DefaultThemeProvider>
+        <DotCount count={1} testID={DOTCOUNT_TESTID} variant="negative" />
+      </DefaultThemeProvider>,
+    );
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
@@ -48,7 +65,11 @@ describe('DotCount', () => {
   });
 
   it('renders correct count when count  0', () => {
-    render(<DotCount count={0} testID={DOTCOUNT_TESTID} variant="negative" />);
+    render(
+      <DefaultThemeProvider>
+        <DotCount count={0} testID={DOTCOUNT_TESTID} variant="negative" />
+      </DefaultThemeProvider>,
+    );
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
@@ -59,12 +80,20 @@ describe('DotCount', () => {
   });
 
   it('passes a11y for 0 counter', () => {
-    render(<DotCount count={0} testID={DOTCOUNT_TESTID} variant="negative" />);
+    render(
+      <DefaultThemeProvider>
+        <DotCount count={0} testID={DOTCOUNT_TESTID} variant="negative" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 
   it('renders count 99+ when count > 99', () => {
-    render(<DotCount count={120} testID={DOTCOUNT_TESTID} variant="negative" />);
+    render(
+      <DefaultThemeProvider>
+        <DotCount count={120} testID={DOTCOUNT_TESTID} variant="negative" />
+      </DefaultThemeProvider>,
+    );
 
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
@@ -75,7 +104,11 @@ describe('DotCount', () => {
   });
 
   it('passes a11y for double or more digit counter', () => {
-    render(<DotCount count={120} testID={DOTCOUNT_TESTID} variant="negative" />);
+    render(
+      <DefaultThemeProvider>
+        <DotCount count={120} testID={DOTCOUNT_TESTID} variant="negative" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();
   });
 
@@ -137,9 +170,11 @@ describe('DotCount', () => {
 
   it('passes a11y when dot is placed relative to its parent', () => {
     render(
-      <DotCount count={1} pin="top-end" testID={DOTCOUNT_TESTID} variant="negative">
-        <Icon name="airdrop" size="l" />
-      </DotCount>,
+      <DefaultThemeProvider>
+        <DotCount count={1} pin="top-end" testID={DOTCOUNT_TESTID} variant="negative">
+          <Icon name="airdrop" size="l" />
+        </DotCount>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(DOTCOUNT_TESTID)).toBeAccessible();

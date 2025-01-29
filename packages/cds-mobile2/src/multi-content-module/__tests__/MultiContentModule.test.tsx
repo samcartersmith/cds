@@ -8,6 +8,7 @@ import { ButtonGroup } from '../../buttons/ButtonGroup';
 import { LogoMark } from '../../icons';
 import { Box, VStack } from '../../layout';
 import { TextBody, TextDisplay1 } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { MultiContentModule, MultiContentModuleProps } from '../MultiContentModule';
 
 const exampleProps: MultiContentModuleProps = {
@@ -19,24 +20,34 @@ const exampleProps: MultiContentModuleProps = {
 
 describe('MultiContentModule', () => {
   it('passes accessibility', () => {
-    render(<MultiContentModule {...exampleProps} />);
+    render(
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('mcm')).toBeAccessible();
   });
 
   it('passes accessibility when passing action', () => {
     render(
-      <MultiContentModule
-        {...exampleProps}
-        action="Button"
-        actionAccessibilityLabel="Button Label"
-        onActionPress={NoopFn}
-      />,
+      <DefaultThemeProvider>
+        <MultiContentModule
+          {...exampleProps}
+          action="Button"
+          actionAccessibilityLabel="Button Label"
+          onActionPress={NoopFn}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('mcm')).toBeAccessible();
   });
 
   it('renders pictogram, title and description correctly', () => {
-    render(<MultiContentModule {...exampleProps} />);
+    render(
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByText('Title')).toBeTruthy();
     expect(screen.getByText('Description')).toBeTruthy();
     expect(screen.getByTestId('mcm-pictogram')).toBeTruthy();
@@ -49,27 +60,41 @@ describe('MultiContentModule', () => {
         <LogoMark size={32} />
       </Box>
     );
-    render(<MultiContentModule {...exampleProps} pictogram={pictogram} />);
+    render(
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps} pictogram={pictogram} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('custom-pictogram')).toBeTruthy();
   });
 
   it('renders custom node for title', () => {
     const title = <TextDisplay1 testID="custom-title">Custom Title</TextDisplay1>;
-    render(<MultiContentModule {...exampleProps} title={title} />);
+    render(
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps} title={title} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('custom-title')).toBeTruthy();
   });
 
   it('renders custom node for description', () => {
     const description = <TextBody testID="custom-description">Custom Description</TextBody>;
-    render(<MultiContentModule {...exampleProps} description={description} />);
+    render(
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps} description={description} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('custom-description')).toBeTruthy();
   });
 
   it('renders children correctly', () => {
     render(
-      <MultiContentModule {...exampleProps}>
-        <TextBody>primary content</TextBody>
-      </MultiContentModule>,
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps}>
+          <TextBody>primary content</TextBody>
+        </MultiContentModule>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByText('primary content')).toBeTruthy();
   });
@@ -77,12 +102,14 @@ describe('MultiContentModule', () => {
   it('renders action correctly', () => {
     const spy = jest.fn();
     render(
-      <MultiContentModule
-        {...exampleProps}
-        action="Button"
-        actionAccessibilityLabel="Button Label"
-        onActionPress={spy}
-      />,
+      <DefaultThemeProvider>
+        <MultiContentModule
+          {...exampleProps}
+          action="Button"
+          actionAccessibilityLabel="Button Label"
+          onActionPress={spy}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByText('Button')).toBeTruthy();
     expect(screen.getByLabelText('Button Label')).toBeTruthy();
@@ -104,19 +131,31 @@ describe('MultiContentModule', () => {
         </ButtonGroup>
       </VStack>
     );
-    render(<MultiContentModule {...exampleProps} action={action} />);
+    render(
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps} action={action} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('continue-btn')).toBeTruthy();
     expect(screen.getByTestId('cancel-btn')).toBeTruthy();
   });
 
   it('sets aria-label correctly', () => {
-    render(<MultiContentModule {...exampleProps} accessibilityLabel="Test Aria Label" />);
+    render(
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps} accessibilityLabel="Test Aria Label" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByLabelText('Test Aria Label')).toBeTruthy();
   });
 
   it('forwards ref correctly', () => {
     const ref = React.createRef<View>();
-    render(<MultiContentModule {...exampleProps} ref={ref} />);
+    render(
+      <DefaultThemeProvider>
+        <MultiContentModule {...exampleProps} ref={ref} />
+      </DefaultThemeProvider>,
+    );
     expect(ref.current).not.toBeNull();
   });
 });

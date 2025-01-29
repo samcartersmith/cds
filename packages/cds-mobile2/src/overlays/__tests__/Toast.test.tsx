@@ -1,6 +1,7 @@
 import { Animated } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Toast } from '../Toast';
 
 jest.mock('react-native/Libraries/Animated/Animated', () => {
@@ -29,10 +30,13 @@ describe('Toast', () => {
 
   it('renders text and passes a11y', () => {
     const text = 'Toast copy';
-    render(<Toast testID="mock-toast" text={text} />);
+    render(
+      <DefaultThemeProvider>
+        <Toast testID="mock-toast" text={text} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('mock-toast')).toBeAccessible();
-
     expect(screen.getByText(text)).toBeTruthy();
   });
 
@@ -46,13 +50,15 @@ describe('Toast', () => {
       testID: 'toast-action',
     };
     render(
-      <Toast
-        action={action}
-        onDidHide={onDidHide}
-        onWillHide={onWillHide}
-        testID="mock-toast"
-        text={text}
-      />,
+      <DefaultThemeProvider>
+        <Toast
+          action={action}
+          onDidHide={onDidHide}
+          onWillHide={onWillHide}
+          testID="mock-toast"
+          text={text}
+        />
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId(action.testID));
@@ -65,7 +71,11 @@ describe('Toast', () => {
 
   it('triggers animation', () => {
     const text = 'Toast copy';
-    render(<Toast text={text} />);
+    render(
+      <DefaultThemeProvider>
+        <Toast text={text} />
+      </DefaultThemeProvider>,
+    );
 
     expect(animationParallelSpy).toHaveBeenCalled();
     expect(animationTimingSpy).toHaveBeenCalled();

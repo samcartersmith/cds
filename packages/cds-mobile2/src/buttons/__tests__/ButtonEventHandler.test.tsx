@@ -5,6 +5,7 @@ import {
   EventHandlerProvider,
 } from '@cbhq/cds-common2/system/EventHandlerProvider';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Button } from '../Button';
 
 const EVENT_HANDLER_CONFIG: EventHandlerConfig = {
@@ -42,11 +43,13 @@ describe('ButtonEventDelegation', () => {
     const spy = jest.fn();
 
     render(
-      <EventHandlerProvider>
-        <Button onPress={spy} testID="button">
-          Child
-        </Button>
-      </EventHandlerProvider>,
+      <DefaultThemeProvider>
+        <EventHandlerProvider>
+          <Button onPress={spy} testID="button">
+            Child
+          </Button>
+        </EventHandlerProvider>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId('button'));
@@ -60,11 +63,13 @@ describe('ButtonEventDelegation', () => {
     const spy = jest.fn();
 
     render(
-      <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
-        <Button onPress={spy} testID="button">
-          Child
-        </Button>
-      </EventHandlerProvider>,
+      <DefaultThemeProvider>
+        <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
+          <Button onPress={spy} testID="button">
+            Child
+          </Button>
+        </EventHandlerProvider>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId('button'));
@@ -84,11 +89,13 @@ describe('ButtonEventDelegation', () => {
     };
 
     render(
-      <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
-        <Button eventConfig={customEventConfig} onPress={spy} testID="button">
-          Child
-        </Button>
-      </EventHandlerProvider>,
+      <DefaultThemeProvider>
+        <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
+          <Button eventConfig={customEventConfig} onPress={spy} testID="button">
+            Child
+          </Button>
+        </EventHandlerProvider>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId('button'));
@@ -108,11 +115,13 @@ describe('ButtonEventDelegation', () => {
     };
 
     render(
-      <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
-        <Button eventConfig={customEventConfig} onPress={spy} testID="button">
-          Child
-        </Button>
-      </EventHandlerProvider>,
+      <DefaultThemeProvider>
+        <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
+          <Button eventConfig={customEventConfig} onPress={spy} testID="button">
+            Child
+          </Button>
+        </EventHandlerProvider>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId('button'));
@@ -132,11 +141,13 @@ describe('ButtonEventDelegation', () => {
     };
 
     render(
-      <EventHandlerProvider config={CUSTOM_EVENT_HANDLER_WITH_MAPPING}>
-        <Button eventConfig={customEventConfig} onPress={spy} testID="button">
-          Child
-        </Button>
-      </EventHandlerProvider>,
+      <DefaultThemeProvider>
+        <EventHandlerProvider config={CUSTOM_EVENT_HANDLER_WITH_MAPPING}>
+          <Button eventConfig={customEventConfig} onPress={spy} testID="button">
+            Child
+          </Button>
+        </EventHandlerProvider>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByTestId('button'));

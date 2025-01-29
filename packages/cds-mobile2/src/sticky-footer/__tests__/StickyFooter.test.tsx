@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react-native';
 
 import { Button } from '../../buttons';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { StickyFooter } from '../StickyFooter';
 
 jest.mock('../../hooks/useSafeBottomPadding', () => {
@@ -11,14 +12,20 @@ jest.mock('../../hooks/useSafeBottomPadding', () => {
 
 describe('StickyFooter', () => {
   it('passes a11y', () => {
-    render(<StickyFooter />);
+    render(
+      <DefaultThemeProvider>
+        <StickyFooter />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('sticky-footer')).toBeAccessible();
   });
   it('renders children', () => {
     render(
-      <StickyFooter>
-        <Button>Action</Button>
-      </StickyFooter>,
+      <DefaultThemeProvider>
+        <StickyFooter>
+          <Button>Action</Button>
+        </StickyFooter>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByText('Action')).toBeTruthy();
   });

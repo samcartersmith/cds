@@ -1,28 +1,39 @@
 import { render, screen } from '@testing-library/react-native';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Pictogram } from '../Pictogram';
 
 const PICTOGRAM_TEST_ID = 'add-pictogram-test';
 
 describe('Pictogram', () => {
   it('passes a11y', () => {
-    render(<Pictogram name="add" testID={PICTOGRAM_TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <Pictogram name="add" testID={PICTOGRAM_TEST_ID} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeAccessible();
   });
 
   it('renders a pictogram', () => {
-    render(<Pictogram name="add" testID={PICTOGRAM_TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <Pictogram name="add" testID={PICTOGRAM_TEST_ID} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
   });
 
   it('renders a pictogram with accessibilityHint and accessibilityLabel', () => {
     render(
-      <Pictogram
-        accessibilityHint="Accessibility Hint"
-        accessibilityLabel="Accessibility Label"
-        name="add"
-        testID={PICTOGRAM_TEST_ID}
-      />,
+      <DefaultThemeProvider>
+        <Pictogram
+          accessibilityHint="Accessibility Hint"
+          accessibilityLabel="Accessibility Label"
+          name="add"
+          testID={PICTOGRAM_TEST_ID}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toHaveProp(
@@ -42,7 +53,9 @@ describe('Pictogram', () => {
 
   it('renders a Pictogram with accessibilityHint and no accessibilityLabel', () => {
     render(
-      <Pictogram accessibilityHint="Accessibility Hint" name="add" testID={PICTOGRAM_TEST_ID} />,
+      <DefaultThemeProvider>
+        <Pictogram accessibilityHint="Accessibility Hint" name="add" testID={PICTOGRAM_TEST_ID} />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(PICTOGRAM_TEST_ID)).toBeTruthy();
 

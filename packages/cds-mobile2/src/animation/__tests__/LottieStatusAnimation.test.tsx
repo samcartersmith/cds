@@ -6,6 +6,7 @@ import {
   useStatusAnimationPoller,
 } from '@cbhq/cds-common2';
 
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { LottieStatusAnimation } from '../LottieStatusAnimation';
 
 type UseStatusAnimationPollerParams = {
@@ -36,7 +37,11 @@ jest.mock('@cbhq/cds-common2', () => {
 
 describe('LottieStatusAnimation', () => {
   it('renders a LottieStatusAnimation', () => {
-    render(<LottieStatusAnimation height="100" testID="lottie-status-animation-test" />);
+    render(
+      <DefaultThemeProvider>
+        <LottieStatusAnimation height="100" testID="lottie-status-animation-test" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryAllByType(LottieView)).toHaveLength(1);
     expect(screen.getByTestId('lottie-status-animation-test')).toBeTruthy();
@@ -46,11 +51,13 @@ describe('LottieStatusAnimation', () => {
     const mockOnFinish = jest.fn();
 
     render(
-      <LottieStatusAnimation
-        height="100"
-        onFinish={mockOnFinish}
-        testID="lottie-status-animation-test"
-      />,
+      <DefaultThemeProvider>
+        <LottieStatusAnimation
+          height="100"
+          onFinish={mockOnFinish}
+          testID="lottie-status-animation-test"
+        />
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('lottie-status-animation-test')).toBeTruthy();
@@ -67,7 +74,11 @@ describe('LottieStatusAnimation', () => {
         height: '100',
       };
 
-      render(<LottieStatusAnimation {...props} />);
+      render(
+        <DefaultThemeProvider>
+          <LottieStatusAnimation {...props} />
+        </DefaultThemeProvider>,
+      );
       expect(screen.getByTestId(`lottie-status-animation-${status}`)).toBeTruthy();
     });
   });

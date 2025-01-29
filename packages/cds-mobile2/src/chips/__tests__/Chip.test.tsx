@@ -5,6 +5,7 @@ import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { Icon } from '../../icons';
 import { RemoteImage } from '../../media';
 import { TextHeadline } from '../../typography';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Chip } from '../Chip';
 import { ChipProps } from '../ChipProps';
 
@@ -21,14 +22,16 @@ const chipTestID = 'chip-test';
 const customContentStyle = { maxWidth: 300 };
 
 const TestChip = (props: Omit<ChipProps, 'children'>) => (
-  <Chip
-    end={<Icon color="iconForeground" name="caretDown" size="s" testID="end-test" />}
-    start={<RemoteImage {...assetIconProps} testID="start-test" />}
-    testID={chipTestID}
-    {...props}
-  >
-    <TextHeadline>USD</TextHeadline>
-  </Chip>
+  <DefaultThemeProvider>
+    <Chip
+      end={<Icon color="iconForeground" name="caretDown" size="s" testID="end-test" />}
+      start={<RemoteImage {...assetIconProps} testID="start-test" />}
+      testID={chipTestID}
+      {...props}
+    >
+      <TextHeadline>USD</TextHeadline>
+    </Chip>
+  </DefaultThemeProvider>
 );
 
 describe('Chip', () => {

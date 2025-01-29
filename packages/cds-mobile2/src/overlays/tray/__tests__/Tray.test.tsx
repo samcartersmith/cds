@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react-native';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { TextBody, TextTitle2 } from '../../../typography';
-import { SAFE_AREA_METRICS } from '../../../utils/testHelpers';
+import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../../utils/testHelpers';
 import { Tray, TrayContext } from '../Tray';
 
 const titleText = 'Test Title';
@@ -14,11 +14,13 @@ describe('Tray', () => {
   it('renders the Tray and passes a11y', () => {
     const onCloseCompleteSpy = jest.fn();
     render(
-      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <Tray onCloseComplete={onCloseCompleteSpy} testID="mock-tray">
-          <TextBody>{loremIpsum}</TextBody>
-        </Tray>
-      </SafeAreaProvider>,
+      <DefaultThemeProvider>
+        <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+          <Tray onCloseComplete={onCloseCompleteSpy} testID="mock-tray">
+            <TextBody>{loremIpsum}</TextBody>
+          </Tray>
+        </SafeAreaProvider>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByText(loremIpsum)).toBeTruthy();
     expect(screen.getByTestId('mock-tray')).toBeAccessible();
@@ -26,11 +28,13 @@ describe('Tray', () => {
   it('renders a title', () => {
     const onCloseCompleteSpy = jest.fn();
     render(
-      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <Tray onCloseComplete={onCloseCompleteSpy} title={titleText}>
-          {loremIpsum}
-        </Tray>
-      </SafeAreaProvider>,
+      <DefaultThemeProvider>
+        <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+          <Tray onCloseComplete={onCloseCompleteSpy} title={titleText}>
+            {loremIpsum}
+          </Tray>
+        </SafeAreaProvider>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText(titleText)).toBeTruthy();
@@ -40,11 +44,13 @@ describe('Tray', () => {
     const onCloseCompleteSpy = jest.fn();
     const customTitle = <TextTitle2 testID="test-title">Test Title</TextTitle2>;
     render(
-      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <Tray onCloseComplete={onCloseCompleteSpy} title={customTitle}>
-          {loremIpsum}
-        </Tray>
-      </SafeAreaProvider>,
+      <DefaultThemeProvider>
+        <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+          <Tray onCloseComplete={onCloseCompleteSpy} title={customTitle}>
+            {loremIpsum}
+          </Tray>
+        </SafeAreaProvider>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId('test-title')).toBeTruthy();
@@ -52,9 +58,11 @@ describe('Tray', () => {
   it('renders a HandleBar', () => {
     const onCloseCompleteSpy = jest.fn();
     render(
-      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <Tray onCloseComplete={onCloseCompleteSpy}>{loremIpsum}</Tray>
-      </SafeAreaProvider>,
+      <DefaultThemeProvider>
+        <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+          <Tray onCloseComplete={onCloseCompleteSpy}>{loremIpsum}</Tray>
+        </SafeAreaProvider>
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('handleBar')).toBeTruthy();
   });
@@ -63,11 +71,13 @@ describe('Tray', () => {
     const onVisibilityChangeSpy = jest.fn();
     const onCloseCompleteSpy = jest.fn();
     const { unmount } = render(
-      <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
-        <Tray onCloseComplete={onCloseCompleteSpy} onVisibilityChange={onVisibilityChangeSpy}>
-          {loremIpsum}
-        </Tray>
-      </SafeAreaProvider>,
+      <DefaultThemeProvider>
+        <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
+          <Tray onCloseComplete={onCloseCompleteSpy} onVisibilityChange={onVisibilityChangeSpy}>
+            {loremIpsum}
+          </Tray>
+        </SafeAreaProvider>
+      </DefaultThemeProvider>,
     );
 
     expect(onVisibilityChangeSpy).toHaveBeenCalledWith('visible');
