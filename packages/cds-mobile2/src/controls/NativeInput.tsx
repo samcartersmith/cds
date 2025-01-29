@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { TextInput as RNTextInput, TextInput, TextInputProps, ViewStyle } from 'react-native';
+import { TextInput, TextInputProps, ViewStyle } from 'react-native';
 import { SharedProps, TextBaseProps, TextInputBaseProps } from '@cbhq/cds-common2';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 
@@ -97,7 +97,7 @@ export const NativeInput = memo(
       }, [inputTextStyle, containerStyle, textAlign, textAlignInputTransformed, style]);
 
       return (
-        <RNTextInput
+        <TextInput
           ref={ref}
           accessibilityHint={accessibilityLabel}
           accessibilityLabel={accessibilityLabel}

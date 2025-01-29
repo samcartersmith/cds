@@ -21,6 +21,22 @@ describe('TextInput', () => {
     expect(screen.getByTestId(testID)).toBeAccessible();
   });
 
+  it('passes a11y with wrapper component', () => {
+    const testID = 'textinput-id';
+    const MockTextInput = TextInput;
+    render(
+      <MockTextInput
+        end={<TextTitle1>Node</TextTitle1>}
+        helperText="Text"
+        label="Text"
+        placeholder="Text"
+        start={<TextTitle1>Node</TextTitle1>}
+        testID={testID}
+      />,
+    );
+    expect(screen.getByTestId(testID)).toBeAccessible();
+  });
+
   it('renders a TextInput', () => {
     const testID = 'textinput-id';
     const value = 'Example value';

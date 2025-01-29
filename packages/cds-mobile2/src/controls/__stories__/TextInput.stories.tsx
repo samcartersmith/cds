@@ -61,6 +61,14 @@ const InputScreen = () => {
           placeholder="john.doe@coinbase.com"
         />
       </Example>
+      <Example inline title="TextInput ForegroundMuted accessibility label">
+        <MockTextInput
+          accessibilityLabel="Accessibility label for username"
+          helperText="username must start with an @ symbol"
+          label="Username"
+          placeholder="john.doe@coinbase.com"
+        />
+      </Example>
       <Example inline title="TextInput ellipsis long text">
         <MockTextInput
           helperText="Use textAlign='unset' to workaround the issue where long text does not ellipsis correctly."

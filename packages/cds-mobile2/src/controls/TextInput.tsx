@@ -224,7 +224,7 @@ export const TextInput = memo(
             <NativeInput
               ref={refs}
               accessibilityHint={accessibilityLabel}
-              accessibilityLabel={accessibilityLabel}
+              accessibilityLabel={accessibilityLabel ?? label}
               align={align}
               compact={compact}
               containerSpacing={start ? startSpacing : {}}
