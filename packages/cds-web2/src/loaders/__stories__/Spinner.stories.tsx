@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Spacer, VStack } from '../../layout';
-import { TextBody, TextTitle1 } from '../../text';
+import { TextBody, TextTitle1 } from '../../typography';
 import { Spinner } from '../Spinner';
 
 export default {

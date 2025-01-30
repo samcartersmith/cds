@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { CellDetailProps, CellDetailVariant } from '@cbhq/cds-common2/types/CellBaseProps';
 
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 const variantColorMap: Record<CellDetailVariant, ThemeVars.Color> = {
   foregroundMuted: 'textForegroundMuted',

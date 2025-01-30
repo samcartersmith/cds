@@ -9,7 +9,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { Box } from '../layout/Box';
 import { Spacer } from '../layout/Spacer';
 import { Interactable, InteractableProps } from '../system/Interactable';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 import { FilteredHTMLAttributes } from '../types';
 import { isRtl } from '../utils/isRtl';
 

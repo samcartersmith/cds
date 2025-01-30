@@ -5,7 +5,7 @@ import { IconName } from '@cbhq/cds-common2/types/IconName';
 import { Icon } from '../icons/Icon';
 import { type BoxProps, Box } from '../layout/Box';
 import { Spinner } from '../loaders/Spinner';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 export const spinnerHeight = 2.5;
 
@@ -75,7 +75,7 @@ const baseStyle = css`
   padding-right: var(--space-4);
   color: var(--color-textForegroundInverse);
   border-color: transparent;
-  border-radius: 56px;
+  border-radius: var(--borderRadius-900);
   text-decoration: none;
   display: inline-flex;
   text-align: center;
@@ -229,7 +229,7 @@ const compactStyle = css`
   padding-left: var(--space-2);
   padding-right: var(--space-2);
   min-height: 40px;
-  border-radius: 40px;
+  border-radius: var(--borderRadius-700);
 `;
 const spinnerContainerStyle = css`
   position: absolute;

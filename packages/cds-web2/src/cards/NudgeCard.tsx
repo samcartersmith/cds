@@ -8,7 +8,7 @@ import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { type StyleProps } from '../styles/styleProps';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 const actionButtonStyle = css`
   transform: scale(1);
@@ -68,7 +68,7 @@ export type NudgeCardBaseProps = {
    * Maximum number of lines shown for the title and description text. Text that exceeds will be truncated.
    * @default 3
    */
-  numberOfLines?: number; // TO DO: make this work!
+  numberOfLines?: number;
   /**
    * @default 327
    */

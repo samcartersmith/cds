@@ -4,7 +4,7 @@ import { css, cx } from '@linaria/core';
 import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 export type ContainedAssetCardBaseProps = {
   header: React.ReactNode;

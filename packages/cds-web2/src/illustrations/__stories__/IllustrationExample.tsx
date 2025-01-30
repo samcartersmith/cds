@@ -11,10 +11,10 @@ export const IllustrationExample = memo(function IllustrationExample({
   return (
     <VStack alignItems="flex-start" gap={2}>
       <ThemeProvider activeColorScheme="light" theme={theme}>
-        <Box>{children}</Box>
+        <Box background="background">{children}</Box>
       </ThemeProvider>
       <ThemeProvider activeColorScheme="dark" theme={theme}>
-        <Box>{children}</Box>
+        <Box background="background">{children}</Box>
       </ThemeProvider>
     </VStack>
   );

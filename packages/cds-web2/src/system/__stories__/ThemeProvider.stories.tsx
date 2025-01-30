@@ -4,7 +4,7 @@ import { Button } from '../../buttons';
 import { ThemeConfig } from '../../core/theme';
 import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout/VStack';
-import { TextBody } from '../../text/TextBody';
+import { TextBody } from '../../typography/TextBody';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { ThemeProvider, useThemeProviderStyles } from '../ThemeProvider';
 

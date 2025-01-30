@@ -12,7 +12,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../../buttons';
 import { ThemeProvider } from '../../../system/ThemeProvider';
-import { TextBody, TextLabel1 } from '../../../text';
+import { TextBody, TextLabel1 } from '../../../typography';
 import { DefaultThemeProvider } from '../../../utils/test';
 import { Modal } from '../Modal';
 import { ModalBody } from '../ModalBody';

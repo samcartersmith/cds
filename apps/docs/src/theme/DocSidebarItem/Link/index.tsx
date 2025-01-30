@@ -6,7 +6,7 @@ import { ThemeClassNames } from '@docusaurus/theme-common';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebarItem/Link';
 import IconExternalLink from '@theme/Icon/ExternalLink';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import styles from './styles.module.css';
 

@@ -3,7 +3,7 @@ import { useThemeConfig } from '@docusaurus/theme-common';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { HStack, VStack } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved

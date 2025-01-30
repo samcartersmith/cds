@@ -4,8 +4,8 @@ import { svgs } from '@cbhq/cds-common2/internal/data/assets';
 import { remoteImageBuilder } from '@cbhq/cds-common2/internal/remoteImageBuilder';
 
 import { HStack, VStack } from '../../layout';
-import { TextBody } from '../../text/TextBody';
-import { TextTitle1 } from '../../text/TextTitle1';
+import { TextBody } from '../../typography/TextBody';
+import { TextTitle1 } from '../../typography/TextTitle1';
 import { RemoteImage } from '../RemoteImage';
 
 export default {

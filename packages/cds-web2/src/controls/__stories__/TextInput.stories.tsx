@@ -11,7 +11,7 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Avatar } from '../../media/Avatar';
 import { borderRadius } from '../../styles/styles';
-import { Link } from '../../text/Link';
+import { Link } from '../../typography/Link';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
 import { NativeTextArea } from '../NativeTextArea';

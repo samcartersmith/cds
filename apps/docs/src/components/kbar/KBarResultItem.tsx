@@ -5,7 +5,7 @@ import { Cell } from '@cbhq/cds-web2/cells/Cell';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { Pictogram } from '@cbhq/cds-web2/illustrations/Pictogram';
 import { HStack, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 type KBarResultItemProps = {
   action: ActionImpl & {

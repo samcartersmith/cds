@@ -5,7 +5,7 @@ import type { FloatingAssetCardBaseProps } from '@cbhq/cds-common2/types/Floatin
 import { type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 export const floatingAssetCardLargeWidth = 359;
 export const floatingAssetCardSmallDimension = 156;

@@ -10,7 +10,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 import { CellMedia } from '../../cells/CellMedia';
 import { TextInput } from '../../controls/TextInput';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { TextBody } from '../../text/TextBody';
+import { TextBody } from '../../typography/TextBody';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';

@@ -3,8 +3,8 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { VStack } from '@cbhq/cds-web2/layout/VStack';
-import { Link } from '@cbhq/cds-web2/text/Link';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Link } from '@cbhq/cds-web2/typography/Link';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import styles from './styles.module.css';
 

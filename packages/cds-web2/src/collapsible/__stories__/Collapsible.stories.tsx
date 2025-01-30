@@ -6,7 +6,7 @@ import {
 import { Button } from '../../buttons';
 import { DotCount } from '../../dots';
 import { HStack } from '../../layout';
-import { TextBody } from '../../text/TextBody';
+import { TextBody } from '../../typography/TextBody';
 import { Collapsible } from '..';
 
 export default {

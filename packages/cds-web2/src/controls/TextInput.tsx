@@ -19,7 +19,7 @@ import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import type { TextAlignProps } from '@cbhq/cds-common2/types/TextBaseProps';
 
 import { HStack } from '../layout/HStack';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { TextInputFocusVariantContext } from './context';
 import { HelperText } from './HelperText';

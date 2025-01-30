@@ -7,7 +7,7 @@ import { type TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { Box } from '../layout/Box';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { type TabComponent } from './Tabs';
 import { tabsTransitionConfig } from './Tabs';

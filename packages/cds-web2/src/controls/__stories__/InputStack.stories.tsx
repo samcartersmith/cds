@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box } from '../../layout/Box';
-import { TextBody } from '../../text/TextBody';
+import { TextBody } from '../../typography/TextBody';
 import { InputStack } from '../InputStack';
 
 export default {

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-import { TextProps } from '../text/Text';
-import { TextLabel1 } from '../text/TextLabel1';
+import { TextProps } from '../typography/Text';
+import { TextLabel1 } from '../typography/TextLabel1';
 
 export type InputLabelProps = TextProps<'label'>;
 

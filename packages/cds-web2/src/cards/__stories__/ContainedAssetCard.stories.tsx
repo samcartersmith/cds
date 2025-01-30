@@ -3,7 +3,7 @@ import { assets, ethBackground } from '@cbhq/cds-common2/internal/data/assets';
 import { subheadIconSignMap } from '@cbhq/cds-common2/tokens/sparkline';
 
 import { HStack, VStack } from '../../layout';
-import { Text } from '../../text/Text';
+import { Text } from '../../typography/Text';
 import { ContainedAssetCard, ContainedAssetCardProps } from '../ContainedAssetCard';
 
 const a11ySkipConfig = {

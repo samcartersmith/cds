@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextBody, TextTitle1, TextTitle3 } from '../../text';
+import { TextBody, TextTitle1, TextTitle3 } from '../../typography';
 import { Grid, GridProps } from '../Grid';
 import { GridColumn } from '../GridColumn';
 import { HStack, HStackProps } from '../HStack';

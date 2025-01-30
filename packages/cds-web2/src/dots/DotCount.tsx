@@ -22,7 +22,7 @@ import { parseDotCountMaxOverflow } from '@cbhq/cds-common2/utils/parseDotCountM
 import { NewAnimatePresence } from '../animation/NewAnimatePresence';
 import { useTheme } from '../hooks/useTheme';
 import { useMotionProps } from '../motion/useMotionProps';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { getTransform } from './dotStyles';
 

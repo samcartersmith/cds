@@ -22,7 +22,7 @@ import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { ColorSurge } from '../motion/ColorSurge';
 import { useMotionProps } from '../motion/useMotionProps';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { ModalProps } from './modal/Modal';
 import { Portal } from './Portal';

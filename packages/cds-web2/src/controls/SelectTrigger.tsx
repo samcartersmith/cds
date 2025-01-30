@@ -7,7 +7,7 @@ import type { InputVariant, SelectBaseProps } from '@cbhq/cds-common2/types';
 import { HStack } from '../layout/HStack';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { PressableOpacity } from '../system/PressableOpacity';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { TextInputFocusVariantContext } from './context';
 import { InputLabel } from './InputLabel';

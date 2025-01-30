@@ -17,7 +17,7 @@ import type {
 import { Box, HStack, VStack } from '../layout';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { Pressable } from '../system/Pressable';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
 

@@ -4,7 +4,7 @@ import { useKBar } from 'kbar';
 import { IconButton } from '@cbhq/cds-web2/buttons';
 import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
 import { HStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import styles from './styles.module.css';
 

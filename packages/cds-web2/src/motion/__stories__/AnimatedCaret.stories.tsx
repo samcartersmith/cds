@@ -3,7 +3,7 @@ import random from 'lodash/random';
 
 import { Button } from '../../buttons';
 import { VStack } from '../../layout/VStack';
-import { TextBody } from '../../text';
+import { TextBody } from '../../typography';
 import { AnimatedCaret } from '../AnimatedCaret';
 
 export default {

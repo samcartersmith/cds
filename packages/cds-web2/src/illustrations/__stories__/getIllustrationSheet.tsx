@@ -10,7 +10,7 @@ import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSqua
 
 import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { TextLegal } from '../../text/TextLegal';
+import { TextLegal } from '../../typography/TextLegal';
 import { defaultTheme } from '../../themes/defaultTheme';
 
 type TypeMap = {
@@ -125,6 +125,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
       >
         <VStack
           alignItems="flex-start"
+          background="background"
           gap={1}
           height={height + 20}
           overflow="hidden"

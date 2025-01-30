@@ -4,7 +4,7 @@ import { squareAssets } from '@cbhq/cds-common2/internal/data/assets';
 import { Button } from '../../buttons/Button';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { TextBody, TextHeadline } from '../../text';
+import { TextBody, TextHeadline } from '../../typography';
 import { NudgeCard, NudgeCardProps } from '../NudgeCard';
 
 const exampleProps: NudgeCardProps = {

@@ -3,7 +3,7 @@ import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { Box } from '@cbhq/cds-web2/layout';
 import { PressableOpacity } from '@cbhq/cds-web2/system/PressableOpacity';
 import { TabComponent as TabComponentType } from '@cbhq/cds-web2/tabs/Tabs';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import styles from './styles.module.css';
 

@@ -2,7 +2,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { SelectProvider } from '../../controls/selectContext';
-import { TextTitle2 } from '../../text/TextTitle2';
+import { TextTitle2 } from '../../typography/TextTitle2';
 import { MenuItem } from '../MenuItem';
 
 describe('MenuItem', () => {

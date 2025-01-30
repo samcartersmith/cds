@@ -4,7 +4,7 @@ import { dotBuilder } from '@cbhq/cds-common2/internal/dotBuilder';
 import { Icon } from '../../icons/Icon';
 import { Box, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
-import { TextLabel1 } from '../../text/TextLabel1';
+import { TextLabel1 } from '../../typography/TextLabel1';
 import { DotCount, DotStatusColor, DotSymbol } from '..';
 
 export default {

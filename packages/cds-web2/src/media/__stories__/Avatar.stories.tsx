@@ -8,7 +8,7 @@ import { useTheme } from '../../hooks/useTheme';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { Text } from '../../text/Text';
+import { Text } from '../../typography/Text';
 import { Avatar, AvatarWebProps } from '../Avatar';
 
 const avatarImageUrl =

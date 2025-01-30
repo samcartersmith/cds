@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { VStack } from '../../layout/VStack';
-import { Text } from '../../text/Text';
+import { Text } from '../../typography/Text';
 import { defaultContext, SelectProvider } from '../selectContext';
 import { SelectOption } from '../SelectOption';
 

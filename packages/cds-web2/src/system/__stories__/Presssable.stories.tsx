@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box, Grid, VStack } from '../../layout';
-import { TextBody } from '../../text/TextBody';
+import { TextBody } from '../../typography/TextBody';
 import { Pressable } from '../Pressable';
 
 export default {

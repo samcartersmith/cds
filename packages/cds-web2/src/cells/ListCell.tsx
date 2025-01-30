@@ -4,7 +4,7 @@ import type { ListCellBaseProps } from '@cbhq/cds-common2/types';
 
 import { type BoxProps, Box } from '../layout/Box';
 import { VStack } from '../layout/VStack';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { Cell, CellSharedProps, overflowClassName } from './Cell';
 import { CellAccessory } from './CellAccessory';

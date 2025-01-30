@@ -8,7 +8,7 @@ import namesOld from '@cbhq/cds-icons/__generated__/ui/data/names-old';
 
 import { useTheme } from '../../hooks/useTheme';
 import { HStack, VStack } from '../../layout';
-import { TextLegal } from '../../text/TextLegal';
+import { TextLegal } from '../../typography/TextLegal';
 import { Icon, sourceSizeMap } from '../Icon';
 
 type SvgFromFigmaProps = { name: IconName; size: IconSize };

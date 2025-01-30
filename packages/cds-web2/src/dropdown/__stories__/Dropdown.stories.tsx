@@ -9,7 +9,7 @@ import { HStack } from '../../layout';
 import { type PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
 import { Pressable } from '../../system/Pressable';
 import { PressableOpacity } from '../../system/PressableOpacity';
-import { Text } from '../../text/Text';
+import { Text } from '../../typography/Text';
 import { Dropdown } from '../Dropdown';
 import type { DropdownProps, DropdownRef } from '../DropdownProps';
 import { MenuItem } from '../MenuItem';

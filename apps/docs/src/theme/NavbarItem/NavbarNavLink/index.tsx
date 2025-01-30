@@ -5,7 +5,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import type { Props } from '@theme/NavbarItem/NavbarNavLink';
 import { HStack } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import styles from './styles.module.css';
 

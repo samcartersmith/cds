@@ -5,7 +5,7 @@ import {
 } from '@cbhq/cds-common2/internal/data/assets';
 
 import { HStack, VStack } from '../../layout';
-import { Text } from '../../text/Text';
+import { Text } from '../../typography/Text';
 import { FloatingAssetCard } from '../FloatingAssetCard';
 
 // eslint-disable-next-line no-console

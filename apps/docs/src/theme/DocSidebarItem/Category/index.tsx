@@ -23,7 +23,7 @@ import { IconName } from '@cbhq/cds-common2/types';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import styles from './styles.module.css';
 

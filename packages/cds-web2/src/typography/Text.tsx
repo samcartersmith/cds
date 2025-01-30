@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { isChildrenFalsy } from '@cbhq/cds-common2/utils/isChildrenFalsy';
@@ -153,72 +153,74 @@ type TextComponent = (<AsComponent extends React.ElementType = TextDefaultElemen
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
 
-export const Text: TextComponent = forwardRef<React.ReactElement<TextBaseProps>, TextBaseProps>(
-  <AsComponent extends React.ElementType>(
-    {
-      as,
-      font = 'body',
-      color = 'textForeground',
-      display = 'block',
-      textAlign = 'start',
-      numberOfLines,
-      style,
-      className,
-      disabled,
-      dangerouslySetColor,
-      tabularNumbers,
-      slashedZero,
-      underline,
-      mono,
-      noWrap,
-      selectable,
-      overflow,
-      inherit,
-      textDecoration = underline ? 'underline' : undefined,
-      ...props
-    }: TextProps<AsComponent>,
-    ref?: Polymorphic.Ref<AsComponent>,
-  ) => {
-    const Component = (as ?? textDefaultElement) satisfies React.ElementType;
-    const textStyle = useMemo(
-      () => ({
-        color: dangerouslySetColor,
-        '--text-numberOfLines': numberOfLines,
-        ...style,
-      }),
-      [dangerouslySetColor, numberOfLines, style],
-    );
+export const Text: TextComponent = memo(
+  forwardRef<React.ReactElement<TextBaseProps>, TextBaseProps>(
+    <AsComponent extends React.ElementType>(
+      {
+        as,
+        font = 'body',
+        color = 'textForeground',
+        display = 'block',
+        textAlign = 'start',
+        numberOfLines,
+        style,
+        className,
+        disabled,
+        dangerouslySetColor,
+        tabularNumbers,
+        slashedZero,
+        underline,
+        mono,
+        noWrap,
+        selectable,
+        overflow,
+        inherit,
+        textDecoration = underline ? 'underline' : undefined,
+        ...props
+      }: TextProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const Component = (as ?? textDefaultElement) satisfies React.ElementType;
+      const textStyle = useMemo(
+        () => ({
+          color: dangerouslySetColor,
+          '--text-numberOfLines': numberOfLines,
+          ...style,
+        }),
+        [dangerouslySetColor, numberOfLines, style],
+      );
 
-    if (isChildrenFalsy(props.children)) {
-      return null;
-    }
-    return (
-      <Box
-        ref={ref}
-        as={Component}
-        className={cx(
-          baseStyle,
-          numberOfLines && numberOfLinesStyle,
-          disabled && disabledStyle,
-          inherit && textInherit,
-          mono && monoStyle,
-          tabularNumbers && tabularNumbersStyle,
-          slashedZero && slashedZeroStyle,
-          noWrap && noWrapStyle,
-          selectable && userSelectStyle[selectable],
-          overflow && overflowStyle[overflow],
-          className,
-        )}
-        color={color}
-        display={display}
-        font={font}
-        style={textStyle}
-        textAlign={textAlign}
-        textDecoration={textDecoration}
-        {...props}
-      />
-    );
-  },
+      if (isChildrenFalsy(props.children)) {
+        return null;
+      }
+      return (
+        <Box
+          ref={ref}
+          as={Component}
+          className={cx(
+            baseStyle,
+            numberOfLines && numberOfLinesStyle,
+            disabled && disabledStyle,
+            inherit && textInherit,
+            mono && monoStyle,
+            tabularNumbers && tabularNumbersStyle,
+            slashedZero && slashedZeroStyle,
+            noWrap && noWrapStyle,
+            selectable && userSelectStyle[selectable],
+            overflow && overflowStyle[overflow],
+            className,
+          )}
+          color={color}
+          display={display}
+          font={font}
+          style={textStyle}
+          textAlign={textAlign}
+          textDecoration={textDecoration}
+          {...props}
+        />
+      );
+    },
+  ),
 );
 
 Text.displayName = 'Text';

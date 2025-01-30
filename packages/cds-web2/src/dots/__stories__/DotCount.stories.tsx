@@ -5,7 +5,7 @@ import { Icon } from '../../icons/Icon';
 import { Box, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
 import { Pressable } from '../../system/Pressable';
-import { TextLabel1 } from '../../text/TextLabel1';
+import { TextLabel1 } from '../../typography/TextLabel1';
 import { DotSymbol } from '../DotSymbol';
 import { DotCount, DotStatusColor } from '..';
 

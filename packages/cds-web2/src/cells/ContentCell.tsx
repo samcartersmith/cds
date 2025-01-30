@@ -5,7 +5,7 @@ import { isProduction } from '@cbhq/cds-utils';
 import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { Cell, CellSharedProps, overflowClassName, truncateClassName } from './Cell';
 import { CellAccessory } from './CellAccessory';

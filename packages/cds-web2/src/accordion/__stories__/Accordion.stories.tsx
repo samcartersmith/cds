@@ -7,7 +7,7 @@ import { noop } from '@cbhq/cds-utils';
 
 import { CellMedia } from '../../cells/CellMedia';
 import { TextInput } from '../../controls/TextInput';
-import { TextBody } from '../../text/TextBody';
+import { TextBody } from '../../typography/TextBody';
 import { Accordion, AccordionItem } from '..';
 
 export default {

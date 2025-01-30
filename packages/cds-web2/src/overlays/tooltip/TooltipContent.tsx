@@ -15,7 +15,7 @@ import { zIndex as zIndexTokens } from '@cbhq/cds-common2/tokens/zIndex';
 
 import { Box } from '../../layout/Box';
 import { useMotionProps } from '../../motion/useMotionProps';
-import { Text } from '../../text/Text';
+import { Text } from '../../typography/Text';
 
 import { PopperTooltipProps } from './TooltipProps';
 

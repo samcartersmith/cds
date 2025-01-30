@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useId, useMemo } from 'react';
+import { cx } from '@linaria/core';
 import type { ColorScheme } from '@cbhq/cds-common2/core/theme';
 
 import { createCssString } from '../core/createCssString';
@@ -39,7 +40,7 @@ const ThemeManager = ({ display, children, theme }: ThemeManagerProps) => {
     [className, css],
   );
   return (
-    <div className={className} style={style}>
+    <div className={cx(className, theme.colorScheme)} style={style}>
       {styleElement}
       {children}
     </div>

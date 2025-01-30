@@ -5,7 +5,7 @@ import { ModalHeaderBaseProps as SharedModalHeaderBaseProps } from '@cbhq/cds-co
 import { IconButton } from '../../buttons/IconButton';
 import { type BoxProps, Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
-import { Text } from '../../text/Text';
+import { Text } from '../../typography/Text';
 
 type ModalHeaderBaseProps = {
   /** Handles back button press */

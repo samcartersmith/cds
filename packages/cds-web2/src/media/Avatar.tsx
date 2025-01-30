@@ -5,7 +5,7 @@ import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { AvatarBaseProps, AvatarShape } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
 import { Box } from '../layout/Box';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { hexagonAvatarClipId, HexagonBorder } from './Hexagon';
 import { RemoteImage } from './RemoteImage';

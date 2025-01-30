@@ -3,7 +3,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { TextTitle1 } from '../../text/TextTitle1';
+import { TextTitle1 } from '../../typography/TextTitle1';
 import { TextInput } from '../TextInput';
 
 describe('TextInput', () => {

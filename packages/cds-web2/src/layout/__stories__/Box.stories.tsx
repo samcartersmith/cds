@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { borderRadius } from '../../styles/styles';
-import { TextBody, TextTitle4 } from '../../text';
+import { TextBody, TextTitle4 } from '../../typography';
 import { Box } from '../Box';
 import { VStack } from '../VStack';
 

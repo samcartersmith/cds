@@ -5,7 +5,7 @@ import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { Box, Divider, VStack } from '@cbhq/cds-web2/layout';
 import { Tabs } from '@cbhq/cds-web2/tabs/Tabs';
-import { Text } from '@cbhq/cds-web2/text/Text';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 const tabs = [
   { id: 'examples-tab', label: 'Examples' },

@@ -3,7 +3,7 @@ import { ComponentStoryObj } from '@storybook/react';
 
 import { Button } from '../../buttons';
 import { VStack } from '../../layout/VStack';
-import { TextBody, TextHeadline } from '../../text';
+import { TextBody, TextHeadline } from '../../typography';
 import { AccessibilityAnnouncer, AccessibilityAnnouncerProps } from '../AccessibilityAnnouncer';
 
 const DEFAULT_MESSAGE =

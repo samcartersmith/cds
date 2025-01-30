@@ -8,7 +8,7 @@ import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
 import { visibility } from '../styles/styles';
 import { type PressableProps, Pressable } from '../system/Pressable';
-import { Text } from '../text/Text';
+import { Text } from '../typography/Text';
 
 import { useSelectContext } from './selectContext';
 

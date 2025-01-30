@@ -3,7 +3,7 @@ import React from 'react';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { MediaQueryProvider } from '../../system/MediaQueryProvider';
-import { Text } from '../../text/Text';
+import { Text } from '../../typography/Text';
 import { DeviceBreakpointValues, useBreakpoints } from '../useBreakpoints';
 
 const deviceMap: Record<string, string> = {
