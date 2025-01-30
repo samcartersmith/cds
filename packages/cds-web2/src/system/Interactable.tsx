@@ -161,10 +161,7 @@ const blockStyle = css`
   width: 100%;
 `;
 
-export type InteractableInheritedProps = Omit<
-  React.AllHTMLAttributes<Element>,
-  'as' | 'className' | 'css'
->;
+export type InteractableInheritedProps = Omit<React.AllHTMLAttributes<Element>, 'as' | 'className'>;
 
 export type InteractableProps = {
   children: NonNullable<React.ReactNode>;
@@ -202,6 +199,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     className: customClassName,
     disabled,
     elevation,
+    // TODO - why do we need basically a second disabled prop?
     loading,
     pressed,
     style: customStyle,
@@ -223,13 +221,19 @@ export const InteractableContent = forwardRef(function InteractableContent(
 
   const className = cx(
     baseStyle,
+    // TODO - why is there logic for this? Both these classNames can be merged to the root style
     disabled ? disabledStyle : focusRingStyle,
+    // TODO this is a specific case for Safari, maybe remove as it sounds like its been fixed
     disabled && borderColor === 'transparent' ? disabledBorderStyle : null,
+    // use transparent override prop to set styles for border and background
+    // TODO - how do these only impact the inactive styles?
     transparentWhileInactive ? borderColorStyles.transparent : borderColorStyles[borderColor],
+    transparentWhileInactive ? backgroundStyles.transparent : backgroundStyles[background],
+    // TODO - this is basically the default border width
     borderColor && typeof borderWidth === 'undefined' && borderWidthStyles[100],
     borderWidth && borderWidthStyles[borderWidth],
+    // TODO - could consider encouraging the use of style prop or className for setting display - the user agent styles for the element should be enough
     block && blockStyle,
-    transparentWhileInactive ? backgroundStyles.transparent : backgroundStyles[background],
     elevation && elevationStyle[elevation],
     /**
      * Apply an interactive background style.
@@ -246,6 +250,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
 
   const style = useMemo(
     () => ({
+      // TODO it doesn't look like --interactable-background is used at all in cds-web2
       [interactableBackground]: `var(--color-${background})`,
       borderRadius: `var(--borderRadius-${borderRadius})`,
       width,
@@ -273,9 +278,9 @@ export const InteractableContent = forwardRef(function InteractableContent(
   );
 });
 
-export const Interactable = forwardRef(function Interactable(
-  { children, ...props }: InteractableProps,
-  ref: React.Ref<Element>,
+export const Interactable = forwardRef<Element, InteractableProps>(function Interactable(
+  { children, ...props },
+  ref,
 ) {
   return (
     <InteractableContent ref={ref} {...props}>

@@ -65,6 +65,7 @@ export const InvertedThemeProvider = ({ children }: InvertedThemeProviderProps) 
   if (!context) throw Error('InvertedThemeProvider must be used within a ThemeProvider');
   const inverseColorScheme = context.colorScheme === 'dark' ? 'light' : 'dark';
   const newColorScheme = context[inverseColorScheme] ? inverseColorScheme : context.colorScheme;
+
   return (
     <ThemeProvider activeColorScheme={newColorScheme} theme={context}>
       {children}

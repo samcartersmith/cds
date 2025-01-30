@@ -1,0 +1,103 @@
+import React from 'react';
+import { assets } from '@cbhq/cds-common2/internal/data/assets';
+import type { ChipBaseProps } from '@cbhq/cds-common2/types';
+
+import { Icon } from '../../icons/Icon';
+import { HStack, VStack } from '../../layout';
+import { RemoteImage, RemoteImageProps } from '../../media';
+import { Text } from '../../typography/Text';
+import { Chip } from '../Chip';
+
+export default {
+  title: 'Core Components/Chips/Chip',
+  component: Chip,
+};
+
+const assetIconProps: RemoteImageProps = {
+  height: 16,
+  shape: 'circle',
+  source: assets.eth.imageUrl,
+  width: 16,
+};
+
+const ChipExamples = ({
+  label,
+  ...props
+}: { label?: string } & Omit<ChipBaseProps, 'children'>) => (
+  <HStack gap={2}>
+    <Chip {...props}>
+      {label ?? (
+        <Text as="span" font="headline">
+          Base
+        </Text>
+      )}
+    </Chip>
+    <Chip {...props} start={<RemoteImage {...assetIconProps} />}>
+      {label ?? (
+        <Text as="span" font="headline">
+          Start
+        </Text>
+      )}
+    </Chip>
+    <Chip
+      {...props}
+      end={<Icon color="iconForeground" name="caretDown" size="s" />}
+      start={<RemoteImage {...assetIconProps} />}
+    >
+      {label ?? (
+        <Text as="span" font="headline">
+          End & Start
+        </Text>
+      )}
+    </Chip>
+    <Chip {...props} end={<Icon color="iconForeground" name="filter" size="s" />}>
+      Filter 2
+    </Chip>
+    <Chip
+      {...props}
+      end={<Icon color="iconForeground" name="caretDown" size="s" />}
+      onPress={() => {}}
+      start={<RemoteImage {...assetIconProps} />}
+    >
+      {label ?? (
+        <Text as="span" font="headline">
+          Pressable
+        </Text>
+      )}
+    </Chip>
+    <Chip
+      {...props}
+      disabled
+      end={<Icon color="iconForeground" name="caretDown" size="s" />}
+      onPress={() => {}}
+      start={<RemoteImage {...assetIconProps} />}
+    >
+      {label ?? (
+        <Text as="span" font="headline">
+          Disabled
+        </Text>
+      )}
+    </Chip>
+  </HStack>
+);
+
+export const Default = () => (
+  <VStack gap={2}>
+    <Text as="h3" font="headline">
+      Default
+    </Text>
+    <ChipExamples />
+    <Text as="h3" font="headline" paddingTop={3}>
+      Inverted
+    </Text>
+    <ChipExamples inverted />
+    <Text as="h3" font="headline">
+      Compact
+    </Text>
+    <ChipExamples compact />
+    <Text as="h3" font="headline" paddingTop={3}>
+      Long text
+    </Text>
+    <ChipExamples label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget" />
+  </VStack>
+);
