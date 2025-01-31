@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { borderRadius as borderRadii } from '../tokens/borderRadius';
+import { shapeBorderRadius } from '../tokens/borderRadius';
 import { Shape } from '../types/Shape';
 
 const WIDTH_MODIFIERS = [0.5, 0, 0.6, 0.8, 0.1, 0.9, 0.4, 0.2, 0.7, 0.3];
@@ -43,7 +43,7 @@ export function useFallbackShape(
       return Number(width) / 2;
     }
 
-    return shape === 'squircle' ? borderRadii[200] : 0;
+    return shape === 'squircle' ? shapeBorderRadius.squircle : 0;
   }, [shape, width]);
 
   return useMemo(() => ({ borderRadius, width }), [borderRadius, width]);

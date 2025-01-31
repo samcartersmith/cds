@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react-native';
-import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 
 import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
@@ -66,7 +65,7 @@ describe('RemoteImage', () => {
     expect(image).toBeAccessible();
 
     expect(image).toHaveStyle({
-      borderRadius: borderRadius[100],
+      borderRadius: defaultTheme.borderRadius[100],
     });
   });
 

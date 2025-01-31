@@ -2,7 +2,6 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common2/tokens/borderRadius';
 import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common2/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { InputStackBaseProps, InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
@@ -81,11 +80,11 @@ export const InputStack = memo(function InputStack({
       flexGrow: 1,
       backgroundColor:
         variant === 'secondary' ? theme.color.backgroundSecondary : theme.color.background,
-      borderRadius: borderRadiusTokens[borderRadius],
+      borderRadius: theme.borderRadius[borderRadius],
       overflow: 'hidden',
       ...inputBorderRadius,
     };
-  }, [prependNode, appendNode, variant, theme.color, borderRadius]);
+  }, [prependNode, appendNode, variant, theme.color, theme.borderRadius, borderRadius]);
 
   const inputAreaStyles = useMemo(() => {
     return [inputAreaStyle, borderStyle];

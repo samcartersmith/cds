@@ -11,7 +11,6 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-na
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { type TabValue } from '@cbhq/cds-common2/tabs/useTabs';
-import { borderRadius as borderRadii } from '@cbhq/cds-common2/tokens/borderRadius';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 
 import { useTheme } from '../hooks/useTheme';
@@ -88,10 +87,10 @@ export const SegmentedTab = memo(
 
       const pressableStyle = useMemo(
         () => ({
-          borderRadius: borderRadii[1000],
+          borderRadius: theme.borderRadius[1000],
           opacity: disabledProp && !allTabsDisabled ? accessibleOpacityDisabled : undefined,
         }),
-        [disabledProp, allTabsDisabled],
+        [theme.borderRadius, disabledProp, allTabsDisabled],
       );
 
       return (

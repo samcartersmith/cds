@@ -1,6 +1,8 @@
+/* eslint-disable react-native/no-unused-styles */
 import React, { Children, isValidElement, useMemo } from 'react';
-import { StyleSheet, Text } from 'react-native';
-import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common2/hooks/useShapeToBorderRadiusAlias';
+import { StyleSheet, Text, ViewStyle } from 'react-native';
+import { Shape } from '@cbhq/cds-common2';
+import { shapeBorderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 import { avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 import { RemoteImageBaseProps } from '@cbhq/cds-common2/types/RemoteImageBaseProps';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common2/types/RemoteImageGroupBaseProps';
@@ -20,7 +22,7 @@ export const RemoteImageGroup = ({
   const arrayChildren = Children.toArray(children);
   const theme = useTheme();
 
-  const borderRadius = useShapeToBorderRadiusAlias(shape);
+  const shapeStyle = shapeStyles[shape];
   const sizeIsString = typeof size === 'string';
   const sizeIsNumber = typeof size === 'number';
   const overlapSpacing = getRemoteImageGroupOverlapSpacing(size);
@@ -66,10 +68,10 @@ export const RemoteImageGroup = ({
         <Box
           alignItems="center"
           background="backgroundOverlay"
-          borderRadius={borderRadius}
           height={excessSize}
           justifyContent="center"
           marginLeft={overlapSpacing}
+          style={shapeStyle}
           width={excessSize}
         >
           <Text style={[typographyStyles, styles.centerText]} testID={`${testID}-excess-text`}>
@@ -137,8 +139,27 @@ export const RemoteImageGroup = ({
     </Box>
   );
 };
+
 const styles = StyleSheet.create({
   centerText: {
     textAlign: 'center',
+  },
+});
+
+export const shapeStyles = StyleSheet.create<Record<Shape, ViewStyle>>({
+  circle: {
+    borderRadius: shapeBorderRadius.circle,
+  },
+  squircle: {
+    borderRadius: shapeBorderRadius.squircle,
+  },
+  square: {
+    borderRadius: shapeBorderRadius.square,
+  },
+  rectangle: {
+    borderRadius: shapeBorderRadius.rectangle,
+  },
+  hexagon: {
+    borderRadius: shapeBorderRadius.hexagon,
   },
 });

@@ -13,7 +13,6 @@ import {
 import Svg, { ClipPath, Defs, Image as SvgImage, Path, SvgXml } from 'react-native-svg';
 import { SvgCssUri } from 'react-native-svg/css';
 import { AspectRatio, avatarSizeMap, FixedValue, RemoteImageBaseProps } from '@cbhq/cds-common2';
-import { useShapeToBorderRadiusSize } from '@cbhq/cds-common2/hooks/useShapeToBorderRadiusSize';
 import { getRemoteImageWidthAndHeight } from '@cbhq/cds-common2/utils/getRemoteImageWidthAndHeight';
 
 import { useTheme } from '../hooks/useTheme';
@@ -104,6 +103,14 @@ const HexagonClipPath = ({ image, ...props }: HexagonClipPathProps) => {
   );
 };
 
+const shapeBorderRadius: Record<NonNullable<BaseRemoteImageProps['shape']>, number> = {
+  circle: 1e5,
+  squircle: 8,
+  square: 4,
+  rectangle: 0,
+  hexagon: 0,
+};
+
 export const RemoteImage = memo(function RemoteImage({
   width,
   height,
@@ -122,7 +129,7 @@ export const RemoteImage = memo(function RemoteImage({
   fallbackAccessibilityHint,
   ...props
 }: RemoteImageProps) {
-  const shapeBorderRadius = useShapeToBorderRadiusSize(shape);
+  const shapeRadius = shapeBorderRadius[shape];
   const avatarSize = avatarSizeMap[size];
   const { colorScheme } = useTheme();
 
@@ -172,13 +179,13 @@ export const RemoteImage = memo(function RemoteImage({
       [
         {
           aspectRatio: aspectRatio ? aspectRatio[0] / aspectRatio[1] : undefined,
-          borderRadius: borderRadius ?? shapeBorderRadius,
+          borderRadius: borderRadius ?? shapeRadius,
         } as const,
         style,
         darkModeStyles,
         borderStyles,
       ].filter(Boolean),
-    [aspectRatio, shapeBorderRadius, borderRadius, borderStyles, style, darkModeStyles],
+    [aspectRatio, shapeRadius, borderRadius, borderStyles, style, darkModeStyles],
   );
 
   const stylesWithDimensions = useMemo(

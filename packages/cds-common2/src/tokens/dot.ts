@@ -1,9 +1,6 @@
 import type { DotSize } from '../types';
 import type { AvatarSize } from '../types/AvatarSize';
 
-import { borderRadius } from './borderRadius';
-import { borderWidth } from './borderWidth';
-
 export const avatarIconSizeMap: Record<AvatarSize, DotSize> = {
   xxxl: 's',
   xxl: 's',
@@ -26,7 +23,7 @@ export const dotOuterContainerStyles = {
   alignItems: 'center',
   justifyContent: 'center',
   display: 'flex',
-  borderWidth: borderWidth[100],
+  borderWidth: 1,
 } as const;
 
 export const dotCountSize = 24;
@@ -34,7 +31,7 @@ export const dotCountSize = 24;
 export const dotCountContent = {
   minWidth: dotCountSize,
   height: dotCountSize,
-  borderRadius: borderRadius[400],
+  borderRadius: 16,
 } as const;
 
 export const dotCountPadding = {

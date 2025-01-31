@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react-native';
-import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 import { RemoteImageGroupBaseProps } from '@cbhq/cds-common2/types/RemoteImageGroupBaseProps';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { RemoteImage } from '../RemoteImage';
 import { RemoteImageGroup } from '../RemoteImageGroup';
@@ -88,7 +88,7 @@ describe('RemoteImageGroup', () => {
       const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
-        borderRadius: borderRadius[1000],
+        borderRadius: defaultTheme.borderRadius[1000],
       });
     });
   });

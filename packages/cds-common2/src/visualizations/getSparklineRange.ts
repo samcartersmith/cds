@@ -1,5 +1,3 @@
-import { borderWidth } from '../tokens/borderWidth';
-
 export const getSparklineRange = ({
   height,
   width,
@@ -9,10 +7,7 @@ export const getSparklineRange = ({
   width: number;
   yAxisScalingFactor?: number;
 }) => {
-  const xRange = [borderWidth[200], width - borderWidth[200]];
-  const yRange = [
-    Math.max(borderWidth[200] + 1, (height - borderWidth[200]) * yAxisScalingFactor),
-    borderWidth[200],
-  ];
+  const xRange = [2, width - 2];
+  const yRange = [Math.max(2 + 1, (height - 2) * yAxisScalingFactor), 2];
   return { xRange, yRange };
 };

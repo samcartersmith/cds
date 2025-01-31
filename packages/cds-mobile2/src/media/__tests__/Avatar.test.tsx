@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react-native';
-import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 import { AvatarSize, avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Avatar, coloredFallbackTestID } from '../Avatar';
 
@@ -94,7 +94,7 @@ describe('Avatar', () => {
     expect(box).toBeAccessible();
 
     expect(box).toHaveStyle({
-      borderRadius: borderRadius[1000],
+      borderRadius: defaultTheme.borderRadius[1000],
     });
 
     render(
@@ -112,10 +112,10 @@ describe('Avatar', () => {
     box = screen.queryByTestId('avatar');
 
     expect(box).not.toHaveStyle({
-      borderRadius: borderRadius[1000],
+      borderRadius: defaultTheme.borderRadius[1000],
     });
     expect(box).toHaveStyle({
-      borderRadius: borderRadius[100],
+      borderRadius: defaultTheme.borderRadius[100],
     });
 
     render(

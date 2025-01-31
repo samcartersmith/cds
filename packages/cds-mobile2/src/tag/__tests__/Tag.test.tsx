@@ -1,7 +1,7 @@
 import { Text } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
-import { borderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Tag } from '../Tag';
 
@@ -49,7 +49,7 @@ describe('Tag', () => {
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
-      borderRadius: borderRadius[100],
+      borderRadius: defaultTheme.borderRadius[100],
     });
   });
 
@@ -62,7 +62,7 @@ describe('Tag', () => {
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
-      borderRadius: borderRadius[1000],
+      borderRadius: defaultTheme.borderRadius[1000],
     });
   });
 

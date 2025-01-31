@@ -1,8 +1,6 @@
 import { ViewStyle } from 'react-native';
 import { BorderedStyles, ElevationLevels } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { borderRadius as borderRadii } from '@cbhq/cds-common2/tokens/borderRadius';
-import { borderWidth as borderWidthTokens } from '@cbhq/cds-common2/tokens/borderWidth';
 
 import { Theme } from '../core/theme';
 
@@ -32,7 +30,7 @@ export const getBorderStyles = ({
   const styles: ViewStyle = {};
 
   if (borderRadius) {
-    styles.borderRadius = borderRadii[borderRadius];
+    styles.borderRadius = theme.borderRadius[borderRadius];
   }
 
   if (bordered !== undefined) {
@@ -75,13 +73,13 @@ export const getBorderStyles = ({
 
   if (borderWidth) {
     styles.borderStyle = 'solid';
-    styles.borderWidth = borderWidthTokens[borderWidth];
+    styles.borderWidth = theme.borderWidth[borderWidth];
   }
 
   // When elevating, always apply a border
   if (elevation) {
     styles.borderColor = theme.color[borderColor ?? 'line'];
-    styles.borderWidth = borderWidthTokens[borderWidth ?? 100];
+    styles.borderWidth = theme.borderWidth[borderWidth ?? 100];
   }
   return styles;
 };

@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { useShapeToBorderRadiusAlias } from '@cbhq/cds-common2/hooks/useShapeToBorderRadiusAlias';
+import { StyleSheet, ViewStyle } from 'react-native';
 import { colorSchemeMap } from '@cbhq/cds-common2/tokens/avatar';
+import { shapeBorderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 import { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 import { avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
@@ -11,6 +11,7 @@ import { Box } from '../layout';
 import { TextBody, TextCaption, TextTitle2 } from '../typography';
 
 import { RemoteImage } from './RemoteImage';
+import { shapeStyles } from './RemoteImageGroup';
 
 const smallAvatarSize = 44;
 const borderWidth = 2;
@@ -31,7 +32,7 @@ export const Avatar = memo(
     name,
   }: AvatarBaseProps) => {
     const imgSrc = src ?? fallbackImageSrc;
-    const borderRadius = useShapeToBorderRadiusAlias(shape);
+    const shapeStyle = shapeStyles[shape];
     const avatarSize = avatarSizeMap[size];
     const theme = useTheme();
     const placeholderLetter = name?.charAt(0);
@@ -89,23 +90,22 @@ export const Avatar = memo(
       return (
         <Box
           alignItems="center"
-          borderRadius={borderRadius}
           dangerouslySetBackground={colorSchemeRgb}
           height="100%"
           justifyContent="center"
+          style={shapeStyle}
           testID={coloredFallbackTestID}
           width="100%"
         >
           {avatarText}
         </Box>
       );
-    }, [avatarText, borderRadius, colorSchemeRgb]);
+    }, [avatarText, shapeStyle, colorSchemeRgb]);
 
     return (
       <Box
         alignItems="center"
         borderColor={borderColor}
-        borderRadius={borderRadius}
         dangerouslySetBackground={imgSrc}
         flexGrow={0}
         flexShrink={0}
@@ -113,7 +113,7 @@ export const Avatar = memo(
         justifyContent="center"
         overflow="hidden"
         position="relative"
-        style={hasBorder ? styles.border : undefined}
+        style={hasBorder ? [styles.border, shapeStyle] : shapeStyle}
         testID={testID}
         width={computedSize}
       >
