@@ -10,8 +10,8 @@ import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSqua
 
 import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { TextLegal } from '../../typography/TextLegal';
 import { defaultTheme } from '../../themes/defaultTheme';
+import { TextLegal } from '../../typography/TextLegal';
 
 type TypeMap = {
   [K in IllustrationVariant]: {

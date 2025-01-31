@@ -2,6 +2,7 @@ import { act } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Icon } from '../../icons/Icon';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { DotCount } from '../DotCount';
 
@@ -46,6 +47,11 @@ describe('DotCount', () => {
     // Trigger onLayout for the icon
     fireEvent(screen.getByTestId(`${DOTCOUNT_TESTID}-children`), 'layout', {
       nativeEvent: { layout: { height: 16, width: 16 } },
+    });
+
+    expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
+      borderColor: defaultTheme.light.backgroundSecondary,
+      borderWidth: 1,
     });
   });
 

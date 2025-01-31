@@ -11,9 +11,9 @@ import { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
 
 import { Theme } from '../core/theme';
+import { getElevationStyles } from '../layout/Box';
 
 import { getBorderStyles } from './getBorderStyles';
-import { getElevationStyles } from '../layout/Box';
 
 export type InteractableStyles = {
   staticStyles: ViewStyle;

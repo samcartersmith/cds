@@ -85,6 +85,18 @@ const config: Config = {
     locales: ['en'],
   },
 
+  future: {
+    // Enable Rspack
+    experimental_faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: false,
+      lightningCssMinimizer: true,
+      rspackBundler: true,
+      mdxCrossCompilerCache: true,
+    },
+  },
+
   presets: [
     [
       '@docusaurus/preset-classic',
