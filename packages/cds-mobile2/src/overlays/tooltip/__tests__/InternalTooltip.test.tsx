@@ -1,6 +1,7 @@
 import { Animated, Text } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 
+import { defaultTheme } from '../../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { InternalTooltip } from '../InternalTooltip';
 
@@ -49,7 +50,7 @@ describe('InternalTooltip.test', () => {
 
     expect(screen.getByText('test content')).toBeTruthy();
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
-      backgroundColor: 'rgba(10,11,13,1)',
+      backgroundColor: defaultTheme.light.background,
     });
     expect(mockAnimateIn.start).toHaveBeenCalledTimes(1);
   });
@@ -90,7 +91,7 @@ describe('InternalTooltip.test', () => {
     );
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
-      backgroundColor: 'rgba(255,255,255,1)',
+      backgroundColor: defaultTheme.light.background,
     });
   });
 });

@@ -41,7 +41,7 @@ describe('ContentCellFallback', () => {
     expect(screen.getByText('Fallback')).toBeDefined();
     expect(Fallback).toHaveBeenCalledWith(
       {
-        height: 1,
+        height: 24,
         width: 110,
         paddingTop: 0.5,
         disableRandomRectWidth: true,
@@ -59,7 +59,7 @@ describe('ContentCellFallback', () => {
     );
     expect(Fallback).toHaveBeenCalledWith(
       {
-        height: 2,
+        height: 20,
         width: 50,
         disableRandomRectWidth: true,
         rectWidthVariant: getRectWidthVariant(1, 1),
@@ -77,7 +77,7 @@ describe('ContentCellFallback', () => {
     expect(screen.getByText('Fallback')).toBeDefined();
     expect(Fallback).toHaveBeenCalledWith(
       {
-        height: 2,
+        height: 20,
         width: 90,
         disableRandomRectWidth: true,
         rectWidthVariant: getRectWidthVariant(1, 2),
@@ -95,7 +95,7 @@ describe('ContentCellFallback', () => {
     expect(screen.getByText('Fallback')).toBeDefined();
     expect(Fallback).toHaveBeenCalledWith(
       {
-        height: 2,
+        height: 20,
         width: 90,
         disableRandomRectWidth: true,
         rectWidthVariant: getRectWidthVariant(1, 2),

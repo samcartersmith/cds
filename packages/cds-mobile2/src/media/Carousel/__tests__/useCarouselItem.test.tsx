@@ -29,7 +29,11 @@ describe('useCarouselItem', () => {
       <MockCarouselItem key={`carousel-item-${i}`} />
     ));
 
-    return <Carousel items={items} />;
+    return (
+      <DefaultThemeProvider>
+        <Carousel items={items} />
+      </DefaultThemeProvider>
+    );
   };
 
   it('logs an error if used outside of CarouselItemContext', () => {

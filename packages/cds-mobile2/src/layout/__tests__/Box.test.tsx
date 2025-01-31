@@ -65,7 +65,7 @@ describe('Box', () => {
     expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
-      backgroundColor: 'rgba(238,240,243,1)',
+      backgroundColor: defaultTheme.light.backgroundAlternate,
     });
   });
 

@@ -49,7 +49,7 @@ describe('DotStatusColor', () => {
   });
 
   it('can change size to small', () => {
-    const iconSize = 12;
+    const iconSize = 16;
 
     render(
       <DefaultThemeProvider>

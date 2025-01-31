@@ -42,7 +42,7 @@ describe('Avatar', () => {
 
     expect(box).toHaveStyle({
       borderWidth: 2,
-      borderColor: 'rgba(9,133,81,1)',
+      borderColor: defaultTheme.light.backgroundPositive,
     });
   });
 

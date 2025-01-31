@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
+import { avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 
 import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
@@ -75,7 +76,7 @@ describe('RemoteImage', () => {
         <RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />
       </DefaultThemeProvider>,
     );
-    const avatarSizeM = 16;
+    const avatarSizeM = avatarSizeMap.m;
 
     const image = screen.queryByTestId('remoteimage');
 

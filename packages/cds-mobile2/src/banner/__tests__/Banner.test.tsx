@@ -24,11 +24,9 @@ const MockBanner = ({
   testID = TEST_ID,
   ...props
 }: Partial<BannerProps>) => (
-  <DefaultThemeProvider>
-    <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
-      <TextBody>Banner content</TextBody>
-    </Banner>
-  </DefaultThemeProvider>
+  <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
+    <TextBody>Banner content</TextBody>
+  </Banner>
 );
 
 jest.mock('../../hooks/useDimensions');
@@ -42,29 +40,62 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
   });
 
   it('passes a11y', () => {
-    render(<MockBanner />);
+    render(
+      <DefaultThemeProvider>
+        <MockBanner />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(TEST_ID)).toBeAccessible();
   });
 
   it('renders a Banner on wide screen', () => {
-    render(<MockBanner />);
+    render(
+      <DefaultThemeProvider>
+        <MockBanner />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
-  it('Banner bordered={false} borderRadius={0} has correct visuals', () => {
-    render(<MockBanner borderRadius={0} bordered={false} />);
+  it('Banner borderRadius={0} and bordered={false} has correct visuals', () => {
+    render(
+      <DefaultThemeProvider>
+        <MockBanner borderRadius={0} bordered={false} />
+      </DefaultThemeProvider>,
+    );
+    const rootContainer = screen.getByTestId(TEST_ID);
 
+    expect(rootContainer).not.toHaveStyle({
+      borderWidth: 1,
+    });
+
+    expect(rootContainer).toHaveStyle({
+      borderRadius: 0,
+    });
+  });
+
+  it('Banner bordered=true has correct visuals', () => {
+    render(
+      <DefaultThemeProvider>
+        <MockBanner bordered borderRadius={0} />
+      </DefaultThemeProvider>,
+    );
     const rootContainer = screen.getByTestId(TEST_ID);
 
     expect(rootContainer).toHaveStyle({
-      borderWidth: 0,
+      borderWidth: 1,
+      borderRadius: 0,
     });
   });
 
   it('inner-end-box should be an HStack', () => {
-    render(<MockBanner />);
+    render(
+      <DefaultThemeProvider>
+        <MockBanner />
+      </DefaultThemeProvider>,
+    );
 
     const innerEndBox = screen.getByTestId(`${TEST_ID}-inner-end-box`);
 
@@ -78,16 +109,24 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
       paddingTop: 40,
     };
 
-    render(<MockBanner style={bannerCustomStyle} />);
+    render(
+      <DefaultThemeProvider>
+        <MockBanner style={bannerCustomStyle} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle(bannerCustomStyle);
   });
 
   it('renders error banner correctly on light mode', () => {
-    render(<MockBanner variant="error" />);
+    render(
+      <DefaultThemeProvider>
+        <MockBanner variant="error" />
+      </DefaultThemeProvider>,
+    );
 
-    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgba(255,242,178,1)' });
-    expect(screen.getByRole('image')).toHaveStyle({ color: 'rgba(237,112,47,1)' });
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgb(255,242,178)' });
+    expect(screen.getByRole('image')).toHaveStyle({ color: 'rgb(237,112,47)' });
   });
 
   it('renders error banner correctly on dark mode', () => {
@@ -97,8 +136,8 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgba(65,27,0,1)' });
-    expect(screen.getByRole('image')).toHaveStyle({ color: 'rgba(248,150,86,1)' });
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgb(65,27,0)' });
+    expect(screen.getByRole('image')).toHaveStyle({ color: 'rgb(248,150,86)' });
   });
 });
 
@@ -108,7 +147,11 @@ describe('Banner testing with narrow screen configurations (screen size < 724)',
   });
 
   it('renders a Banner on narrow screen', () => {
-    render(<MockBanner />);
+    render(
+      <DefaultThemeProvider>
+        <MockBanner />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
@@ -121,7 +164,11 @@ describe('Banner actions', () => {
 
   it('fires `onClose` when dismiss icon button is pressed', () => {
     const spy = jest.fn();
-    render(<MockBanner showDismiss onClose={spy} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <MockBanner showDismiss onClose={spy} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     const dismissBtn = screen.getByLabelText('close');
 
@@ -132,7 +179,11 @@ describe('Banner actions', () => {
 
   it('Bannner collapses when dismiss icon button is pressed', () => {
     const spy = jest.fn();
-    render(<MockBanner showDismiss onClose={spy} />);
+    render(
+      <DefaultThemeProvider>
+        <MockBanner showDismiss onClose={spy} />
+      </DefaultThemeProvider>,
+    );
 
     const dismissBtn = screen.getByLabelText('close');
 

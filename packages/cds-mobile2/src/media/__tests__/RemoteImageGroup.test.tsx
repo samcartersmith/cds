@@ -73,8 +73,8 @@ describe('RemoteImageGroup', () => {
       const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
-        width: 16,
-        height: 16,
+        width: 24,
+        height: 24,
       });
     });
   });
@@ -121,8 +121,8 @@ describe('RemoteImageGroup', () => {
       const remoteImage = screen.getByTestId(`${TEST_ID}-image-${index}`);
 
       expect(remoteImage).toHaveStyle({
-        width: 24,
-        height: 24,
+        width: 32,
+        height: 32,
       });
     });
   });
@@ -138,7 +138,7 @@ describe('RemoteImageGroup', () => {
     const excessText = screen.getByTestId(`${TEST_ID}-excess-text`);
 
     expect(excessText).toHaveStyle({
-      fontSize: 16 * 0.4,
+      fontSize: 24 * 0.4,
     });
   });
 

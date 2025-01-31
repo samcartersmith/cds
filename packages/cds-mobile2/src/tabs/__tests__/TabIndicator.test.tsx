@@ -1,6 +1,7 @@
 import { View } from 'react-native';
 import { render, screen, waitFor } from '@testing-library/react-native';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { TabIndicator } from '../TabIndicator';
 
@@ -40,7 +41,7 @@ describe('TabIndicator', () => {
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('cds-tab-indicator-inner-bar')).toHaveStyle({
-      backgroundColor: 'rgba(238,240,243,1)',
+      backgroundColor: defaultTheme.light.backgroundSecondary,
     });
   });
 

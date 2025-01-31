@@ -75,7 +75,7 @@ describe('Tag', () => {
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
-      backgroundColor: 'rgba(255,245,246,1)', // red
+      backgroundColor: defaultTheme.light.backgroundNegativeWash,
     });
   });
 });

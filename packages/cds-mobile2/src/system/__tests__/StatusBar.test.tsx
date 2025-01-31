@@ -2,6 +2,7 @@ import { StatusBar as RNStatusBar } from 'react-native';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { defaultTheme } from '../../themes/defaultTheme';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { useStatusBarStyle, useStatusBarUpdater } from '../StatusBar';
 import { ThemeProvider } from '../ThemeProvider';
 
@@ -35,7 +36,7 @@ const MockCustomPalette: React.FC<React.PropsWithChildren<unknown>> = ({ childre
 describe('useStatusBarStyle', () => {
   it('correctly infers background color luminosity from context for light spectrum', () => {
     const { result } = renderHook(() => useStatusBarStyle(), {
-      wrapper: ThemeProvider,
+      wrapper: DefaultThemeProvider,
     });
     expect(result.current).toBe('dark-content');
   });
@@ -58,7 +59,7 @@ describe('useStatusBarStyle', () => {
 describe('useStatusBarUpdater', () => {
   it('correctly updates React Native StatusBar bar style', () => {
     const { result } = renderHook(() => useStatusBarUpdater(), {
-      wrapper: ThemeProvider,
+      wrapper: DefaultThemeProvider,
     });
     result.current();
     expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content', true);
@@ -66,7 +67,7 @@ describe('useStatusBarUpdater', () => {
 
   it('does not call setBackgroundColor or setTranslucent on iOS', () => {
     const { result } = renderHook(() => useStatusBarUpdater(), {
-      wrapper: ThemeProvider,
+      wrapper: DefaultThemeProvider,
     });
     result.current();
     expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content', true);
@@ -80,7 +81,7 @@ describe('useStatusBarUpdater', () => {
       OS: 'android',
     }));
     const { result } = renderHook(() => useStatusBarUpdater(), {
-      wrapper: ThemeProvider,
+      wrapper: DefaultThemeProvider,
     });
     result.current();
     expect(RNStatusBar.setBarStyle).toHaveBeenCalledWith('dark-content', true);

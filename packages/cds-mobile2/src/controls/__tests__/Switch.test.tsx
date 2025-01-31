@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Text, View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Switch } from '../Switch';
 
@@ -140,7 +141,7 @@ describe('Switch.test', () => {
     );
 
     expect(screen.getByTestId('test-test-id')).toHaveStyle({
-      backgroundColor: 'rgba(191,196,207,1)',
+      backgroundColor: defaultTheme.light.backgroundAlternate,
     });
   });
 
@@ -152,7 +153,7 @@ describe('Switch.test', () => {
     );
 
     expect(screen.getByTestId('test-test-id')).toHaveStyle({
-      backgroundColor: 'rgba(0,82,255,1)',
+      backgroundColor: defaultTheme.light.backgroundPrimary,
     });
   });
 });

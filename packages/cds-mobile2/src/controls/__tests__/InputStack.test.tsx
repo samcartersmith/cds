@@ -15,15 +15,15 @@ function expectAttribute<
 
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe
-    it(`will set "${value}" for \`${prop}\` prop`, () => {
+    it(`will set "${value}" for \`${prop}\` prop`, async () => {
       const inputRenderer = TestRenderer.create(
         <DefaultThemeProvider>
           <InputStack testID={TEST_ID} {...{ [prop]: value }} inputNode={input} />
         </DefaultThemeProvider>,
       );
 
-      const inputInstance = inputRenderer.root;
-      expect(inputInstance.props[prop]).toEqual(value);
+      const inputStackInstance = await inputRenderer.root.findByProps({ testID: TEST_ID });
+      expect(inputStackInstance.props[prop]).toEqual(value);
     });
   });
 }

@@ -201,7 +201,7 @@ describe('CellMedia', () => {
     const image = screen.getByRole('image');
 
     expect(image).toHaveProp('source', { cache: undefined, uri: 'some/image/path' });
-    expect(image).toHaveStyle({ borderRadius: 1000 });
+    expect(image).toHaveStyle({ borderRadius: 100000 });
   });
 
   it('renders an avatar', () => {
@@ -213,7 +213,7 @@ describe('CellMedia', () => {
     const image = screen.getByRole('image');
 
     expect(image).toHaveProp('source', { cache: undefined, uri: 'some/image/path' });
-    expect(image).toHaveStyle({ borderRadius: 1000 });
+    expect(image).toHaveStyle({ borderRadius: 100000 });
   });
 
   it('renders an image', () => {
