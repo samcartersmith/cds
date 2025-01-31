@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { InputVariant } from '@cbhq/cds-common2';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { InputIconButton, variantTransformMap } from '../InputIconButton';
 import { TextInput } from '../TextInput';
 
@@ -8,13 +9,15 @@ describe('Test InputIconButton inheritFocusedVariant interaction', () => {
   Object.entries(variantTransformMap).map(([variant, focusedColor]) => {
     return it(`${variant} TextInput will set icon to ${focusedColor} when focused`, () => {
       render(
-        <TextInput
-          key={`${variant}-inputicon`}
-          label="Label"
-          start={<InputIconButton name="add" testID="input-icon" />}
-          testID="text-input"
-          variant={variant as InputVariant}
-        />,
+        <DefaultThemeProvider>
+          <TextInput
+            key={`${variant}-inputicon`}
+            label="Label"
+            start={<InputIconButton name="add" testID="input-icon" />}
+            testID="text-input"
+            variant={variant as InputVariant}
+          />
+        </DefaultThemeProvider>,
       );
 
       fireEvent.click(screen.getByRole('textbox'));
@@ -29,13 +32,15 @@ describe('InputIconButton', () => {
     const variant = 'foregroundMuted';
 
     render(
-      <TextInput
-        key={`${variant}-inputicon`}
-        label="Label"
-        start={<InputIconButton name="add" testID="input-icon" variant={variant} />}
-        testID="text-input"
-        variant={variant as InputVariant}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          key={`${variant}-inputicon`}
+          label="Label"
+          start={<InputIconButton name="add" testID="input-icon" variant={variant} />}
+          testID="text-input"
+          variant={variant as InputVariant}
+        />
+      </DefaultThemeProvider>,
     );
 
     fireEvent.click(screen.getByRole('textbox'));

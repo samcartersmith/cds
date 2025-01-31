@@ -1,16 +1,11 @@
 import { ViewStyle } from 'react-native';
-import * as d3Color from 'd3-color';
-import { blendColors } from '@cbhq/cds-common2/color/blendColors';
+import { getBlendedBackgroundColor } from '@cbhq/cds-common2/color/getBlendedBackgroundColor';
 import { type ThemeVars } from '@cbhq/cds-common2/core/theme';
-import {
-  accessibleOpacityDisabled,
-  highHueBackgrounds,
-  opacityPressed,
-} from '@cbhq/cds-common2/tokens/interactable';
+import { accessibleOpacityDisabled, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 import { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
 
-import { Theme } from '../core/theme';
+import { type Theme } from '../core/theme';
 import { getElevationStyles } from '../layout/Box';
 
 import { getBorderStyles } from './getBorderStyles';
@@ -31,36 +26,6 @@ export type GetInteractableStylesParams = Pick<
 > & {
   elevation?: ElevationLevels;
   theme: Theme;
-};
-
-const blendBackgroundColor = ({
-  background,
-  theme,
-  isDisabledState = false,
-}: {
-  background: ThemeVars.Color;
-  theme: Theme;
-  isDisabledState?: boolean;
-}) => {
-  const d3BackgroundColor = d3Color.color(theme.color[background]);
-  // If the background is 'currentColor', we are unable to blend it with the theme background
-  if (background === 'currentColor' || d3BackgroundColor === null) return undefined;
-
-  // TO DO: use D3 color to determine if the background is a high hue color?
-  const isHighHue = highHueBackgrounds.includes(background);
-  const underlayColor = theme.color[isHighHue ? 'background' : 'backgroundInverse'];
-  const disabledOverlayColor = d3BackgroundColor.copy({ opacity: accessibleOpacityDisabled });
-  // TO DO: use 0.92 for now until we can get the hue value of the background color in the theme
-  const pressedOverlayColor = d3BackgroundColor.copy({ opacity: opacityPressed[0] });
-
-  if (isDisabledState) {
-    return blendColors({
-      underlayColor: theme.color.background,
-      overlayColor: disabledOverlayColor,
-    });
-  }
-
-  return blendColors({ underlayColor, overlayColor: pressedOverlayColor });
 };
 
 export const getInteractableStyles = ({
@@ -92,24 +57,36 @@ export const getInteractableStyles = ({
       ...borderStyles,
       ...elevationStyles,
     },
+    // TO DO: use 0.82 for opacity until we can get the hue value of the background color in the theme
     pressed: {
       backgroundColor:
         `${background}Pressed` in theme.color
           ? theme.color[`${background}Pressed` as ThemeVars.Color]
-          : blendBackgroundColor({ background, theme }),
+          : getBlendedBackgroundColor({
+              background,
+              themeColor: theme.color,
+              opacity: opacityPressed[100],
+              colorScheme: theme.colorScheme,
+            }),
     },
     disabled: {
       backgroundColor:
         `${background}Disabled` in theme.color
           ? theme.color[`${background}Disabled` as ThemeVars.Color]
-          : blendBackgroundColor({ background, theme, isDisabledState: true }),
+          : getBlendedBackgroundColor({
+              background,
+              themeColor: theme.color,
+              opacity: accessibleOpacityDisabled,
+              colorScheme: theme.colorScheme,
+              isDisabled: true,
+            }),
     },
   };
 
   const contentStyles = {
     pressed: {
-      // TO DO: use 0.92 for now until we can get the hue value of the background color in the theme
-      opacity: opacityPressed[0],
+      // TO DO: use 0.82 for opacity until we can get the hue value of the background color in the theme
+      opacity: opacityPressed[100],
     },
     disabled: {
       opacity: accessibleOpacityDisabled,

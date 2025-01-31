@@ -3,14 +3,17 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { SelectProvider } from '../../controls/selectContext';
 import { TextTitle2 } from '../../typography/TextTitle2';
+import { DefaultThemeProvider } from '../../utils/test';
 import { MenuItem } from '../MenuItem';
 
 describe('MenuItem', () => {
   it('renders children', () => {
     render(
-      <MenuItem value="1">
-        <TextTitle2 as="p">Item1</TextTitle2>
-      </MenuItem>,
+      <DefaultThemeProvider>
+        <MenuItem value="1">
+          <TextTitle2 as="p">Item1</TextTitle2>
+        </MenuItem>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText('Item1')).toBeTruthy();
@@ -22,9 +25,11 @@ describe('MenuItem', () => {
 
     render(
       <SelectProvider value={{ handleCloseMenu }}>
-        <MenuItem onPress={onPress} testID="test-menu-item" value="1">
-          <TextTitle2 as="p">Item1</TextTitle2>
-        </MenuItem>
+        <DefaultThemeProvider>
+          <MenuItem onPress={onPress} testID="test-menu-item" value="1">
+            <TextTitle2 as="p">Item1</TextTitle2>
+          </MenuItem>
+        </DefaultThemeProvider>
       </SelectProvider>,
     );
 
@@ -40,9 +45,11 @@ describe('MenuItem', () => {
 
     render(
       <SelectProvider value={{ handleCloseMenu }}>
-        <MenuItem disableCloseOnOptionChange onPress={onPress} testID="test-menu-item" value="1">
-          <TextTitle2 as="p">Item1</TextTitle2>
-        </MenuItem>
+        <DefaultThemeProvider>
+          <MenuItem disableCloseOnOptionChange onPress={onPress} testID="test-menu-item" value="1">
+            <TextTitle2 as="p">Item1</TextTitle2>
+          </MenuItem>
+        </DefaultThemeProvider>
       </SelectProvider>,
     );
 

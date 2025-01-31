@@ -1,5 +1,6 @@
 import TestRenderer from 'react-test-renderer';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { InputStack, InputStackProps } from '../InputStack';
 
 const TEST_ID = 'input';
@@ -11,12 +12,14 @@ function expectAttribute<
 
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe
-    it(`will set "${value}" for \`${prop}\` prop`, () => {
+    it(`will set "${value}" for \`${prop}\` prop`, async () => {
       const inputRenderer = TestRenderer.create(
-        <InputStack testID={TEST_ID} {...{ [prop]: value }} inputNode={input} />,
+        <DefaultThemeProvider>
+          <InputStack testID={TEST_ID} {...{ [prop]: value }} inputNode={input} />
+        </DefaultThemeProvider>,
       );
 
-      const inputInstance = inputRenderer.root;
+      const inputInstance = await inputRenderer.root.findByType(InputStack);
       expect(inputInstance.props[prop]).toEqual(value);
     });
   });

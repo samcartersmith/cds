@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { NativeTextArea } from '../NativeTextArea';
 import { TextInput } from '../TextInput';
 
@@ -9,14 +10,22 @@ const TEST_ID = 'native-textarea';
 describe('NativeTextArea Accessibility', () => {
   it('passes accessibility', async () => {
     expect(
-      await renderA11y(<TextInput inputNode={<NativeTextArea />} label="label" />),
+      await renderA11y(
+        <DefaultThemeProvider>
+          <TextInput inputNode={<NativeTextArea />} label="label" />
+        </DefaultThemeProvider>,
+      ),
     ).toHaveNoViolations();
   });
 });
 
 describe('NativeTextArea', () => {
   it('can mark as disabled', () => {
-    render(<NativeTextArea disabled testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeTextArea disabled testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('disabled');
   });
@@ -25,7 +34,11 @@ describe('NativeTextArea', () => {
 describe('NativeTextArea events', () => {
   it('fires `onClick` when clicked', () => {
     const spy = jest.fn();
-    render(<NativeTextArea onClick={spy} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeTextArea onClick={spy} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.click(screen.getByRole('textbox'));
 
@@ -34,7 +47,11 @@ describe('NativeTextArea events', () => {
 
   it('fires `onFocus` when clicked', () => {
     const spy = jest.fn();
-    render(<NativeTextArea onFocus={spy} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeTextArea onFocus={spy} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.focus(screen.getByRole('textbox'));
 
@@ -43,7 +60,11 @@ describe('NativeTextArea events', () => {
 
   it('fires `onBlur` when clicking outside of input', () => {
     const spy = jest.fn();
-    render(<NativeTextArea onBlur={spy} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeTextArea onBlur={spy} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.blur(screen.getByRole('textbox'));
 
@@ -51,7 +72,11 @@ describe('NativeTextArea events', () => {
   });
 
   it('text changes with `onChange`', () => {
-    render(<NativeTextArea testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeTextArea testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     const textarea = screen.getByTestId(TEST_ID);
 

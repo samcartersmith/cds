@@ -1,19 +1,31 @@
 import React, { createElement, forwardRef, useMemo } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
-import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
-import { highHueBackgrounds } from '@cbhq/cds-common2/tokens/interactable';
+import { css, cx } from '@linaria/core';
+import { getBlendedBackgroundColor } from '@cbhq/cds-common2/color/getBlendedBackgroundColor';
+import { type ThemeVars } from '@cbhq/cds-common2/core/theme';
+import {
+  accessibleOpacityDisabled,
+  opacityHovered,
+  opacityPressed,
+} from '@cbhq/cds-common2/tokens/interactable';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
+import { useTheme } from '../hooks/useTheme';
 import {
-  background as backgroundStyles,
   borderColor as borderColorStyles,
   borderWidth as borderWidthStyles,
 } from '../styles/styles';
 import { elevation as elevationStyle } from '../styles/styles';
 
-import { interactableBackground } from './interactableCSSProperties';
+import {
+  interactableBackground,
+  interactableDisabledBackground,
+  interactableHoveredBackground,
+  interactableHoveredOpacity,
+  interactablePressedBackground,
+  interactablePressedOpacity,
+} from './interactableCSSProperties';
 
 const focusRingStyle = css`
   position: relative;
@@ -34,6 +46,7 @@ const disabledStyle = css`
   cursor: default;
   pointer-events: none;
   touch-action: none;
+  background-color: var(${interactableDisabledBackground});
 `;
 
 const disabledBorderStyle = css`
@@ -46,6 +59,7 @@ const baseStyle = css`
   cursor: pointer;
   user-select: none;
   text-decoration: none;
+  background-color: var(${interactableBackground});
 
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
@@ -53,112 +67,29 @@ const baseStyle = css`
     padding: 0;
     margin: 0;
   }
-`;
 
-const backgroundInteractiveStyle: Record<string, LinariaClassName> = {
-  transparent: css`
-    &:hover {
-      background-color: var(--color-transparentHover);
+  &:hover {
+    background-color: var(${interactableHoveredBackground});
+    > * {
+      opacity: var(${interactableHoveredOpacity});
     }
-    &:active {
-      background-color: var(--color-transparentPressed);
+  }
+
+  &:active {
+    background-color: var(${interactablePressedBackground});
+    > * {
+      opacity: var(${interactablePressedOpacity});
     }
-    &:disabled {
-      background-color: var(--color-transparentDisabled);
-    }
-  `,
-  backgroundPrimary: css`
-    &:hover {
-      background-color: var(--color-backgroundPrimaryHover);
-    }
-    &:active {
-      background-color: var(--color-backgroundPrimaryPressed);
-    }
-    &:disabled {
-      background-color: var(--color-backgroundPrimaryDisabled);
-    }
-  `,
-  backgroundSecondary: css`
-    &:hover {
-      background-color: var(--color-backgroundSecondaryHover);
-    }
-    &:active {
-      background-color: var(--color-backgroundSecondaryPressed);
-    }
-    &:disabled {
-      background-color: var(--color-backgroundSecondaryDisabled);
-    }
-  `,
-  backgroundNegative: css`
-    &:hover {
-      background-color: var(--color-backgroundNegativeHover);
-    }
-    &:active {
-      background-color: var(--color-backgroundNegativePressed);
-    }
-    &:disabled {
-      background-color: var(--color-backgroundNegativeDisabled);
-    }
-  `,
-  backgroundPositive: css`
-    &:hover {
-      background-color: var(--color-backgroundPositiveHover);
-    }
-    &:active {
-      background-color: var(--color-backgroundPositivePressed);
-    }
-    &:disabled {
-      background-color: var(--color-backgroundPositiveDisabled);
-    }
-  `,
-  mixBackground: css`
-    &:hover {
-      opacity: 0.8;
-    }
-    @supports (background-color: color-mix(in srgb, red 50%, blue 50%)) {
-      &:hover {
-        opacity: 1;
-        background-color: color-mix(
-          in srgb,
-          var(${interactableBackground}) 85%,
-          var(--color-background) 15%
-        );
-      }
-      &:active {
-        background-color: color-mix(
-          in srgb,
-          var(${interactableBackground}) 78%,
-          var(--color-background) 22%
-        );
-      }
-    }
-  `,
-  mixBackgroundInverse: css`
-    &:hover {
-      opacity: 0.8;
-    }
-    @supports (background-color: color-mix(in srgb, red 50%, blue 50%)) {
-      &:hover {
-        background-color: color-mix(
-          in srgb,
-          var(${interactableBackground}) 94%,
-          var(--color-backgroundInverse) 6%
-        );
-      }
-      &:active {
-        background-color: color-mix(
-          in srgb,
-          var(${interactableBackground}) 92%,
-          var(--color-backgroundInverse) 8%
-        );
-      }
-    }
-  `,
-};
+  }
+`;
 
 const blockStyle = css`
   display: block;
   width: 100%;
+`;
+
+const transparentWhileInactiveStyle = css`
+  background-color: transparent;
 `;
 
 export type InteractableInheritedProps = Omit<React.AllHTMLAttributes<Element>, 'as' | 'className'>;
@@ -214,6 +145,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
   }: InteractableProps,
   ref: React.Ref<Element>,
 ) {
+  const theme = useTheme();
   /**
    * this variable should only be used when conditionally rendering the disabled DOM attribute
    */
@@ -228,23 +160,13 @@ export const InteractableContent = forwardRef(function InteractableContent(
     // use transparent override prop to set styles for border and background
     // TODO - how do these only impact the inactive styles?
     transparentWhileInactive ? borderColorStyles.transparent : borderColorStyles[borderColor],
-    transparentWhileInactive ? backgroundStyles.transparent : backgroundStyles[background],
+    transparentWhileInactive && transparentWhileInactiveStyle,
     // TODO - this is basically the default border width
     borderColor && typeof borderWidth === 'undefined' && borderWidthStyles[100],
     borderWidth && borderWidthStyles[borderWidth],
     // TODO - could consider encouraging the use of style prop or className for setting display - the user agent styles for the element should be enough
     block && blockStyle,
     elevation && elevationStyle[elevation],
-    /**
-     * Apply an interactive background style.
-     * Use the corresponding state color if available;
-     * if not, blend the color with the background or backgroundInverse values
-     */
-    Object.hasOwn(backgroundInteractiveStyle, background)
-      ? backgroundInteractiveStyle[background]
-      : highHueBackgrounds.includes(background)
-      ? backgroundInteractiveStyle.mixBackground
-      : backgroundInteractiveStyle.mixBackgroundInverse,
     customClassName,
   );
 
@@ -252,12 +174,52 @@ export const InteractableContent = forwardRef(function InteractableContent(
     () => ({
       // TODO it doesn't look like --interactable-background is used at all in cds-web2
       [interactableBackground]: `var(--color-${background})`,
+      /**
+       * Apply an interactive background style.
+       * Use the corresponding state color if available;
+       * if not, blend the color with the background or backgroundInverse values
+       */
+      // Hover:
+      // TO DO: use 0.88 for opacity until we can get the hue value of the background color in the theme
+      [interactableHoveredBackground]:
+        `${background}Hover` in theme.color
+          ? theme.color[`${background}Hover` as ThemeVars.Color]
+          : getBlendedBackgroundColor({
+              background,
+              themeColor: theme.color,
+              opacity: opacityHovered[100],
+              colorScheme: theme.colorScheme,
+            }),
+      [interactableHoveredOpacity]: opacityHovered[100],
+      // Pressed:
+      // TO DO: use 0.82 for opacity until we can get the hue value of the background color in the theme
+      [interactablePressedBackground]:
+        `${background}Pressed` in theme.color
+          ? theme.color[`${background}Pressed` as ThemeVars.Color]
+          : getBlendedBackgroundColor({
+              background,
+              themeColor: theme.color,
+              opacity: opacityPressed[100],
+              colorScheme: theme.colorScheme,
+            }),
+      [interactablePressedOpacity]: opacityPressed[100],
+      // Disabled:
+      [interactableDisabledBackground]:
+        `${background}Disabled` in theme.color
+          ? theme.color[`${background}Disabled` as ThemeVars.Color]
+          : getBlendedBackgroundColor({
+              background,
+              themeColor: theme.color,
+              opacity: accessibleOpacityDisabled,
+              colorScheme: theme.colorScheme,
+              isDisabled: true,
+            }),
       borderRadius: `var(--borderRadius-${borderRadius})`,
       width,
       height,
       ...customStyle,
     }),
-    [customStyle, height, width, background, borderRadius],
+    [customStyle, height, width, background, borderRadius, theme],
   );
 
   return createElement(

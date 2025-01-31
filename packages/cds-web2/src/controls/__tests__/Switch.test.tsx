@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { Switch } from '../Switch';
 
 describe('Switch.test', () => {
@@ -12,12 +13,12 @@ describe('Switch.test', () => {
       const onChange: React.ChangeEventHandler<HTMLInputElement> = (event) =>
         setChecked(event.target.checked);
       return (
-        <div>
+        <DefaultThemeProvider>
           <div>checked is {checked ? 'true' : 'false'}</div>
           <Switch checked={checked} onChange={onChange}>
             test label
           </Switch>
-        </div>
+        </DefaultThemeProvider>
       );
     };
 
@@ -35,11 +36,21 @@ describe('Switch.test', () => {
   });
 
   it('passes accessibility', async () => {
-    expect(await renderA11y(<Switch onChange={jest.fn()}>test label</Switch>)).toHaveNoViolations();
+    expect(
+      await renderA11y(
+        <DefaultThemeProvider>
+          <Switch onChange={jest.fn()}>test label</Switch>
+        </DefaultThemeProvider>,
+      ),
+    ).toHaveNoViolations();
   });
 
   it('renders label', () => {
-    render(<Switch onChange={jest.fn()}>test label</Switch>);
+    render(
+      <DefaultThemeProvider>
+        <Switch onChange={jest.fn()}>test label</Switch>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByLabelText('test label')).toBeTruthy();
   });
@@ -47,7 +58,11 @@ describe('Switch.test', () => {
   it('disables user interaction when disabled', () => {
     const onChange = jest.fn();
 
-    render(<Switch disabled onChange={onChange} />);
+    render(
+      <DefaultThemeProvider>
+        <Switch disabled onChange={onChange} />
+      </DefaultThemeProvider>,
+    );
 
     // dispatching event doesn't respect disabled inputs
     // so we use click method directly
@@ -59,25 +74,41 @@ describe('Switch.test', () => {
   it('sets forwarded ref', () => {
     const ref = { current: null };
 
-    render(<Switch ref={ref} onChange={jest.fn()} />);
+    render(
+      <DefaultThemeProvider>
+        <Switch ref={ref} onChange={jest.fn()} />
+      </DefaultThemeProvider>,
+    );
 
     expect(ref.current).toBeInstanceOf(HTMLInputElement);
   });
 
   it('renders testID', () => {
-    render(<Switch onChange={jest.fn()} testID="test-test-id" />);
+    render(
+      <DefaultThemeProvider>
+        <Switch onChange={jest.fn()} testID="test-test-id" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('test-test-id')).toBeTruthy();
   });
 
   it('has default color', () => {
-    render(<Switch onChange={jest.fn()} testID="test-test-id" />);
+    render(
+      <DefaultThemeProvider>
+        <Switch onChange={jest.fn()} testID="test-test-id" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('test-test-id')).toHaveStyle({ backgroundColor: 'gray20' });
   });
 
   it('has default color when it is checked', () => {
-    render(<Switch checked onChange={jest.fn()} testID="test-test-id" />);
+    render(
+      <DefaultThemeProvider>
+        <Switch checked onChange={jest.fn()} testID="test-test-id" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('test-test-id')).toHaveStyle({ backgroundColor: 'primary60' });
   });

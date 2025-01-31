@@ -1,5 +1,8 @@
 import React from 'react';
+import { type ThemeVars } from '@cbhq/cds-common2/core/theme';
+import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 
+import { useTheme } from '../../hooks/useTheme';
 import { Box, Grid, VStack } from '../../layout';
 import { TextBody } from '../../typography/TextBody';
 import { Pressable } from '../Pressable';
@@ -171,6 +174,57 @@ export const Variations = () => {
       <Default />
       <Transparent />
       <Borders />
+    </VStack>
+  );
+};
+
+export const ThemeColors = () => {
+  const theme = useTheme();
+  return (
+    <VStack gap={2}>
+      {Object.entries(theme.color).map(([color, value]) => {
+        let textColor = getAccessibleColor(value);
+        if (color === 'currentColor') textColor = '#ffffff';
+        return (
+          <Pressable
+            key={color}
+            as="button"
+            background={color as ThemeVars.Color}
+            borderColor="line"
+            borderWidth={100}
+          >
+            <TextBody as="p" dangerouslySetColor={textColor} padding={1}>
+              {color}
+            </TextBody>
+          </Pressable>
+        );
+      })}
+    </VStack>
+  );
+};
+
+export const ThemeColorsWithDisabled = () => {
+  const theme = useTheme();
+  return (
+    <VStack gap={2}>
+      {Object.entries(theme.color).map(([color, value]) => {
+        let textColor = getAccessibleColor(value);
+        if (color === 'currentColor') textColor = '#ffffff';
+        return (
+          <Pressable
+            key={color}
+            disabled
+            as="button"
+            background={color as ThemeVars.Color}
+            borderColor="line"
+            borderWidth={100}
+          >
+            <TextBody as="p" dangerouslySetColor={textColor} padding={1}>
+              {color}
+            </TextBody>
+          </Pressable>
+        );
+      })}
     </VStack>
   );
 };

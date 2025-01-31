@@ -33,19 +33,3 @@ export const opacityPressed: Record<ThemeVars.SpectrumHueStep, number> = {
 } as const;
 
 export const accessibleOpacityDisabled = 0.5;
-
-// Colors with hueStep > 60.
-export const highHueBackgrounds = [
-  'textForeground',
-  'backgroundInverse',
-  'backgroundOverlay',
-  'backgroundPrimaryHover',
-  'backgroundPrimaryPressed',
-  'backgroundNegativeHover',
-  'backgroundNegativePressed',
-  'backgroundPositiveHover',
-  'backgroundPositivePressed',
-  'iconForeground',
-  'accentBoldPurple',
-  'accentBoldGray',
-];

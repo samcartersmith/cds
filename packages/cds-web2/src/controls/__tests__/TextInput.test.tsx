@@ -4,28 +4,35 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { TextTitle1 } from '../../typography/TextTitle1';
+import { DefaultThemeProvider } from '../../utils/test';
 import { TextInput } from '../TextInput';
 
 describe('TextInput', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <TextInput
-          accessibilityHint="Text"
-          accessibilityLabel="Text"
-          end={<TextTitle1 as="h1">Node</TextTitle1>}
-          helperText="Text"
-          label="Text"
-          placeholder="Text"
-          start={<TextTitle1 as="h1">Node</TextTitle1>}
-        />,
+        <DefaultThemeProvider>
+          <TextInput
+            accessibilityHint="Text"
+            accessibilityLabel="Text"
+            end={<TextTitle1 as="h1">Node</TextTitle1>}
+            helperText="Text"
+            label="Text"
+            placeholder="Text"
+            start={<TextTitle1 as="h1">Node</TextTitle1>}
+          />
+        </DefaultThemeProvider>,
       ),
     ).toHaveNoViolations();
   });
 
   it('renders an input', () => {
     const value = 'Example value';
-    render(<TextInput onChange={jest.fn()} value={value} />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput onChange={jest.fn()} value={value} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByRole('textbox')).toHaveValue(value);
   });
 
@@ -33,12 +40,14 @@ describe('TextInput', () => {
     const testID = 'label-testid';
     const labelText = 'Example label';
     render(
-      <TextInput
-        label="Example label"
-        testIDMap={{
-          label: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          label="Example label"
+          testIDMap={{
+            label: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(labelText);
   });
@@ -47,13 +56,15 @@ describe('TextInput', () => {
     const testID = 'start-testid';
     const labelText = 'Example label';
     render(
-      <TextInput
-        compact
-        label="Example label"
-        testIDMap={{
-          start: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          label="Example label"
+          testIDMap={{
+            start: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(labelText);
   });
@@ -62,12 +73,14 @@ describe('TextInput', () => {
     const testID = 'helpertext-testid';
     const helperText = 'Example helper text';
     render(
-      <TextInput
-        helperText={helperText}
-        testIDMap={{
-          helperText: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          helperText={helperText}
+          testIDMap={{
+            helperText: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(helperText);
   });
@@ -76,13 +89,15 @@ describe('TextInput', () => {
     const testID = 'helpertext-testid';
     const helperText = 'Example helper text';
     render(
-      <TextInput
-        helperText={helperText}
-        testIDMap={{
-          helperText: testID,
-        }}
-        variant="negative"
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          helperText={helperText}
+          testIDMap={{
+            helperText: testID,
+          }}
+          variant="negative"
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(`${testID}-error-icon`)).toBeTruthy();
   });
@@ -91,20 +106,26 @@ describe('TextInput', () => {
     const testID = 'helpertext-testid';
     const helperText = 'Example helper text';
     render(
-      <TextInput
-        helperText={<TextTitle1 as="p">{helperText}</TextTitle1>}
-        testIDMap={{
-          helperText: testID,
-        }}
-        variant="negative"
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          helperText={<TextTitle1 as="p">{helperText}</TextTitle1>}
+          testIDMap={{
+            helperText: testID,
+          }}
+          variant="negative"
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.queryByTestId(`${testID}-error-icon`)).toBeFalsy();
   });
 
   it('renders placeholder text', () => {
     const placeholderText = 'Example placeholder text';
-    render(<TextInput placeholder={placeholderText} />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput placeholder={placeholderText} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByPlaceholderText(placeholderText)).toBeDefined();
   });
 
@@ -112,12 +133,14 @@ describe('TextInput', () => {
     const testID = 'start-testid';
     const startNodeText = 'Example start node';
     render(
-      <TextInput
-        start={<TextTitle1 as="h1">{startNodeText}</TextTitle1>}
-        testIDMap={{
-          start: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          start={<TextTitle1 as="h1">{startNodeText}</TextTitle1>}
+          testIDMap={{
+            start: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(startNodeText);
   });
@@ -126,12 +149,14 @@ describe('TextInput', () => {
     const testID = 'end-testid';
     const endNodeText = 'Example end node';
     render(
-      <TextInput
-        start={<TextTitle1 as="h1">{endNodeText}</TextTitle1>}
-        testIDMap={{
-          start: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          start={<TextTitle1 as="h1">{endNodeText}</TextTitle1>}
+          testIDMap={{
+            start: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(endNodeText);
   });
@@ -140,19 +165,25 @@ describe('TextInput', () => {
     const testID = 'end-testid';
     const suffixText = 'Example suffix';
     render(
-      <TextInput
-        suffix={suffixText}
-        testIDMap={{
-          end: testID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          suffix={suffixText}
+          testIDMap={{
+            end: testID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID)).toHaveTextContent(suffixText);
   });
 
   it('calls onChange when input value changes', () => {
     const onChange = jest.fn();
-    render(<TextInput onChange={onChange} />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput onChange={onChange} />
+      </DefaultThemeProvider>,
+    );
     expect(onChange).not.toHaveBeenCalled();
     fireEvent.change(screen.getByRole('textbox'), {
       target: {
@@ -166,7 +197,11 @@ describe('TextInput', () => {
   it('calls onFocus and onBlur when input is focused / blurred', () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
-    render(<TextInput onBlur={onBlur} onFocus={onFocus} />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput onBlur={onBlur} onFocus={onFocus} />
+      </DefaultThemeProvider>,
+    );
     expect(onFocus).not.toHaveBeenCalled();
     expect(onBlur).not.toHaveBeenCalled();
     fireEvent.focus(screen.getByRole('textbox'));
@@ -181,7 +216,9 @@ describe('TextInput', () => {
     const onFocus = jest.fn();
     const startNodeText = 'Start';
     render(
-      <TextInput onFocus={onFocus} start={<TextTitle1 as="h1">{startNodeText}</TextTitle1>} />,
+      <DefaultThemeProvider>
+        <TextInput onFocus={onFocus} start={<TextTitle1 as="h1">{startNodeText}</TextTitle1>} />
+      </DefaultThemeProvider>,
     );
     expect(onFocus).not.toHaveBeenCalled();
     fireEvent.click(screen.getByText(startNodeText));
@@ -191,14 +228,22 @@ describe('TextInput', () => {
   it('focuses input when end node is pressed', () => {
     const onFocus = jest.fn();
     const endNodeText = 'End';
-    render(<TextInput end={<TextTitle1 as="h1">{endNodeText}</TextTitle1>} onFocus={onFocus} />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput end={<TextTitle1 as="h1">{endNodeText}</TextTitle1>} onFocus={onFocus} />
+      </DefaultThemeProvider>,
+    );
     expect(onFocus).not.toHaveBeenCalled();
     fireEvent.click(screen.getByText(endNodeText));
     expect(onFocus).toHaveBeenCalledTimes(1);
   });
 
   it('Generates accessible id for screen reader to read label if label exists', () => {
-    render(<TextInput inputNode={<input data-testid="internal-input" />} label="textinput" />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput inputNode={<input data-testid="internal-input" />} label="textinput" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('internal-input')).toHaveAttribute(
       'id',
@@ -207,13 +252,21 @@ describe('TextInput', () => {
   });
 
   it('id is undefined if label does not exist', () => {
-    render(<TextInput inputNode={<input data-testid="internal-input" />} />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput inputNode={<input data-testid="internal-input" />} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('internal-input')).not.toHaveAttribute('id');
   });
 
   it('Generates accessibleHint mapping if helperText exists', () => {
-    render(<TextInput helperText="success" label="textinput" testID="textinput-testid" />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput helperText="success" label="textinput" testID="textinput-testid" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('textinput-testid')).toHaveAttribute(
       'aria-describedby',
@@ -222,7 +275,11 @@ describe('TextInput', () => {
   });
 
   it('accessibilityHint is undefined if label does not exist', () => {
-    render(<TextInput label="textinput" testID="textinput-testid" />);
+    render(
+      <DefaultThemeProvider>
+        <TextInput label="textinput" testID="textinput-testid" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('textinput-testid')).not.toHaveAttribute('aria-describedby');
   });
@@ -230,12 +287,14 @@ describe('TextInput', () => {
   it('focuses the input element when label is clicked', () => {
     const labelTestID = 'label-testid';
     render(
-      <TextInput
-        label="Example label"
-        testIDMap={{
-          label: labelTestID,
-        }}
-      />,
+      <DefaultThemeProvider>
+        <TextInput
+          label="Example label"
+          testIDMap={{
+            label: labelTestID,
+          }}
+        />
+      </DefaultThemeProvider>,
     );
     const labelForAttribute = screen.getByTestId(labelTestID).getAttribute('for');
     expect(labelForAttribute?.startsWith('cds-textinput-label')).toBe(true);

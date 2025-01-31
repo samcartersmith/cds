@@ -2,17 +2,18 @@ import { render, screen, within } from '@testing-library/react';
 import type { DotBaseProps } from '@cbhq/cds-common2/types/DotBaseProps';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
+import { DefaultThemeProvider } from '../../utils/test';
 import { DotStatusColor } from '../DotStatusColor';
 
 const DOTSTATUSCOLOR_TESTID = 'dot-status-test';
+const DOTSTATUSCOLOR_INNER_CONTAINER_TESTID = 'dotstatuscolor-inner-container';
 
 const MockDotStatusColorWithTheme = (props: DotBaseProps) => {
   return (
-    <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
+    <DefaultThemeProvider>
       <DotStatusColor {...props} />
-    </ThemeProvider>
+    </DefaultThemeProvider>
   );
 };
 
@@ -43,7 +44,7 @@ describe('DotStatusColor', () => {
   it('can change variant to negative', () => {
     render(<MockDotStatusColorWithTheme testID={DOTSTATUSCOLOR_TESTID} variant="negative" />);
 
-    expect(screen.getByTestId(DOTSTATUSCOLOR_TESTID)).toHaveStyle({
+    expect(screen.getByTestId(DOTSTATUSCOLOR_INNER_CONTAINER_TESTID)).toHaveStyle({
       backgroundColor: defaultTheme.light.textNegative,
     });
   });
@@ -51,7 +52,7 @@ describe('DotStatusColor', () => {
   it('can change variant to positive', () => {
     render(<MockDotStatusColorWithTheme testID={DOTSTATUSCOLOR_TESTID} variant="positive" />);
 
-    expect(screen.getByTestId(DOTSTATUSCOLOR_TESTID)).toHaveStyle({
+    expect(screen.getByTestId(DOTSTATUSCOLOR_INNER_CONTAINER_TESTID)).toHaveStyle({
       backgroundColor: defaultTheme.light.textPositive,
     });
   });

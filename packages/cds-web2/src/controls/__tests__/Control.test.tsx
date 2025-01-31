@@ -1,13 +1,16 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { Control } from '../Control';
 
 describe('Control', () => {
   it('renders label and children', () => {
     render(
-      <Control readOnly label="test label">
-        <div>test children</div>
-      </Control>,
+      <DefaultThemeProvider>
+        <Control readOnly label="test label">
+          <div>test children</div>
+        </Control>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText('test label')).toBeTruthy();
@@ -17,9 +20,11 @@ describe('Control', () => {
   it('triggers onChange', () => {
     const onChange = jest.fn();
     render(
-      <Control label="test label" onChange={onChange} testID="test-control" type="checkbox">
-        <div />
-      </Control>,
+      <DefaultThemeProvider>
+        <Control label="test label" onChange={onChange} testID="test-control" type="checkbox">
+          <div />
+        </Control>
+      </DefaultThemeProvider>,
     );
 
     fireEvent.click(screen.getByTestId('test-control'));
@@ -34,8 +39,12 @@ describe('Control', () => {
     // suppress warning
     jest.spyOn(console, 'warn').mockImplementation(() => {});
 
-    // @ts-expect-error Test falsy children to trigger console warning
-    render(<Control label="test label" onChange={onChange} type="checkbox" />);
+    render(
+      <DefaultThemeProvider>
+        {/* @ts-expect-error Test falsy children to trigger console warning */}
+        <Control label="test label" onChange={onChange} type="checkbox" />
+      </DefaultThemeProvider>,
+    );
 
     expect(console.warn).toHaveBeenCalledTimes(1);
     process.env.NODE_ENV = 'test';

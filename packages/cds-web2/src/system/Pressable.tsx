@@ -1,52 +1,16 @@
 import React, { forwardRef, useCallback } from 'react';
-import { css, cx, LinariaClassName } from '@linaria/core';
+import { css, cx } from '@linaria/core';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
-import { highHueBackgrounds } from '@cbhq/cds-common2/tokens/interactable';
 import { ComponentEventHandlerProps } from '@cbhq/cds-common2/types/ComponentEventHandlerProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { ButtonOrLink } from './ButtonOrLink';
 import { Interactable, InteractableProps } from './Interactable';
-import { interactableBackground } from './interactableCSSProperties';
-
-const loadingBackgroundStyle: Record<string, LinariaClassName> = {
-  transparent: css`
-    background-color: var(--color-transparentPressed);
-  `,
-  backgroundPrimary: css`
-    background-color: var(--color-backgroundPrimaryPressed);
-  `,
-  backgroundSecondary: css`
-    background-color: var(--color-backgroundSecondaryPressed);
-  `,
-  backgroundNegative: css`
-    background-color: var(--color-backgroundNegativePressed);
-  `,
-  backgroundPositive: css`
-    background-color: var(--color-backgroundPositivePressed);
-  `,
-  mixBackground: css`
-    background-color: var(${interactableBackground});
-    @supports (background-color: color-mix(in srgb, red 50%, blue 50%)) {
-      background-color: color-mix(
-        in srgb,
-        var(${interactableBackground}) 78%,
-        var(--color-background) 22%
-      );
-    }
-  `,
-  mixBackgroundInverse: css`
-    background-color: var(${interactableBackground});
-    @supports (background-color: color-mix(in srgb, red 50%, blue 50%)) {
-      background-color: color-mix(
-        in srgb,
-        var(${interactableBackground}) 92%,
-        var(--color-backgroundInverse) 8%
-      );
-    }
-  `,
-};
+import {
+  interactablePressedBackground,
+  interactablePressedOpacity,
+} from './interactableCSSProperties';
 
 const scaledDownStyle = css`
   /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */
@@ -65,6 +29,10 @@ const loadingStyle = css`
   cursor: default;
   pointer-events: none;
   touch-action: none;
+  background-color: var(${interactablePressedBackground});
+  > * {
+    opacity: var(${interactablePressedOpacity});
+  }
 `;
 
 export type OnPress = React.MouseEventHandler;
@@ -137,12 +105,6 @@ export const Pressable = forwardRef(function Pressable(
         !className && resetStyle,
         className,
         loading && loadingStyle,
-        loading &&
-          (Object.hasOwn(loadingBackgroundStyle, background)
-            ? loadingBackgroundStyle[background]
-            : highHueBackgrounds.includes(background)
-            ? loadingBackgroundStyle.mixBackground
-            : loadingBackgroundStyle.mixBackgroundInverse),
       )}
       focusable={focusable}
       loading={loading}
