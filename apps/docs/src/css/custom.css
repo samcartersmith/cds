@@ -223,3 +223,28 @@ p {
   display: flex;
   flex-direction: column;
 }
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  word-break: break-word;
+  border-radius: var(--borderRadius-400);
+}
+
+/* Add padding to table cells */
+table th,
+table td {
+  border: 1px solid rgb(var(--gray20));
+  padding: var(--space-2);
+  text-align: left;
+}
+
+/* Remove background color from table rows */
+table tr:nth-child(even),
+table tr:nth-child(odd) {
+  background-color: transparent;
+}
+
+table thead th {
+  background-color: rgb(var(--gray10));
+}

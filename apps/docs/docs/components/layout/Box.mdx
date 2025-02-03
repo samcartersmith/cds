@@ -7,6 +7,14 @@ hide_title: true
 
 import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
 import { BoxBanner } from '@site/src/components/page/ComponentBanner/BoxBanner';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import ComponentPropsTable from '@site/src/components/page/ComponentPropsTable';
+
+import webPropsData from ':docgen/cds-web2/layout/Box/data';
+import mobilePropsData from ':docgen/cds-mobile2/layout/Box/data';
+import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
+import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
+import tocProps from ':docgen/cds-web2/layout/Box/toc-props';
 
 <ComponentHeader
   title="Box"
@@ -32,3 +40,20 @@ function Example() {
   return <Button startIcon={'add'}>Hello World 👋</Button>;
 }
 ```
+
+<ComponentTabsContainer
+  webPropsTable={
+    <ComponentPropsTable
+      props={webPropsData}
+      sharedTypeAliases={sharedTypeAliases}
+      sharedParentTypes={sharedParentTypes}
+    />
+  }
+  nativePropsTable={
+    <ComponentPropsTable
+      props={mobilePropsData}
+      sharedTypeAliases={sharedTypeAliases}
+      sharedParentTypes={sharedParentTypes}
+    />
+  }
+/>

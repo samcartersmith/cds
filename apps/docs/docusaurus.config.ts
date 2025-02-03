@@ -2,6 +2,8 @@ import type { Config, Plugin } from '@docusaurus/types';
 import path from 'node:path';
 import { themes as prismThemes } from 'prism-react-renderer';
 
+import docgenConfig from './docgen.config';
+
 const webpackPlugin = () => {
   const plugin: Plugin = {
     name: 'cds-docusaurus-webpack-plugin',
@@ -189,6 +191,7 @@ const config: Config = {
         },
       },
     ],
+    ['@cbhq/docusaurus-plugin-docgen', docgenConfig],
     webpackPlugin,
   ],
 };

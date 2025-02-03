@@ -63,6 +63,8 @@ export default function plugin(
     configureWebpack(_webpackConfig, _isServer, _utils, content) {
       let metadataAliases = {};
       let apiAliases = {};
+      let dataAliases = {};
+      let tocPropsAliases = {};
       if (content) {
         apiAliases = Object.fromEntries(
           content.parsedDocs.map((item) => [
@@ -77,11 +79,27 @@ export default function plugin(
             path.join(item.cacheDirectory, 'metadata.js'),
           ]),
         );
+
+        dataAliases = Object.fromEntries(
+          content.parsedDocs.map((item) => [
+            path.join(':docgen', path.relative(pluginDir, item.cacheDirectory), 'data'),
+            path.join(item.cacheDirectory, 'data.js'),
+          ]),
+        );
+
+        tocPropsAliases = Object.fromEntries(
+          content.parsedDocs.map((item) => [
+            path.join(':docgen', path.relative(pluginDir, item.cacheDirectory), 'toc-props'),
+            path.join(item.cacheDirectory, 'toc-props.js'),
+          ]),
+        );
       }
 
       const aliases = {
         ...apiAliases,
         ...metadataAliases,
+        ...dataAliases,
+        ...tocPropsAliases,
         [`:docgen/_types/sharedTypeAliases`]: path.join(pluginDir, '_types/sharedTypeAliases'),
         [`:docgen/_types/sharedParentTypes`]: path.join(pluginDir, '_types/sharedParentTypes'),
       };

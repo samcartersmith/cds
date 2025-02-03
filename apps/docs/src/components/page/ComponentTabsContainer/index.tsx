@@ -5,7 +5,6 @@ import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { Box, Divider, VStack } from '@cbhq/cds-web2/layout';
 import { Tabs } from '@cbhq/cds-web2/tabs/Tabs';
-import { Text } from '@cbhq/cds-web2/typography/Text';
 
 const tabs = [
   { id: 'examples-tab', label: 'Examples' },
@@ -45,12 +44,7 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
         />
       </Box>
       <Divider />
-      <VStack gap={3} paddingBottom={4} paddingLeft={4} paddingRight={4} paddingTop={5}>
-        <Box>
-          <Text>
-            {activeTab?.label} for {platform} goes here
-          </Text>
-        </Box>
+      <VStack gap={3} paddingBottom={2} paddingLeft={4} paddingRight={4} paddingTop={5}>
         {shouldRenderExamples && isWeb && webExamples}
         {shouldRenderExamples && isNative && nativeExamples}
         {shouldRenderProps && isWeb && webPropsTable}

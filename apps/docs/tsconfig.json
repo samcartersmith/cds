@@ -31,6 +31,12 @@
     },
     {
       "path": "../../libs/docusaurus-plugin-kbar"
+    },
+    {
+      "path": "../../libs/docusaurus-plugin-docgen"
+    },
+    {
+      "path": "../../libs/docusaurus-theme"
     }
   ]
 }
