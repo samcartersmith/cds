@@ -175,7 +175,6 @@ const config: Config = {
     [
       '@docusaurus/theme-live-codeblock',
       {
-        playgroundPosition: 'bottom',
         id: 'codeblock',
       },
     ],
