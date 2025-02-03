@@ -8,7 +8,11 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
-## Unreleased
+## 7.6.5 (1/31/2025 PST)
+
+#### 🐞 Fixes
+
+- Update default assignment of scope on table cells. [[#3548](https://github.cbhq.net/frontend/cds/pull/3548)] [[A11Y-676](https://jira.coinbase-corp.com/browse/A11Y-676)]
 
 #### 📘 Misc
 

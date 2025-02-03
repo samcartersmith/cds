@@ -26,6 +26,7 @@ export const TableCell = memo(
     alignItems,
     children,
     colSpan = 1,
+    scope,
     color = 'currentColor',
     direction = 'vertical',
     end,
@@ -114,8 +115,9 @@ export const TableCell = memo(
     const cellScope = useMemo(() => {
       if (TableCellComponent !== 'th') return undefined;
 
-      return tableSectionType === 'thead' ? 'row' : 'col';
-    }, [TableCellComponent, tableSectionType]);
+      if (scope) return scope;
+      return tableSectionType === 'thead' ? 'col' : 'row';
+    }, [TableCellComponent, tableSectionType, scope]);
     const Stack = useMemo(() => (direction === 'vertical' ? VStack : HStack), [direction]);
     const TextComponent = useMemo(
       () => (tableSectionType === 'thead' ? TextHeadline : TextBody),

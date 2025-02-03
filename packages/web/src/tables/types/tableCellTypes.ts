@@ -48,6 +48,10 @@ type TableCellBaseProps = {
    */
   colSpan?: number;
   /**
+   * Used for <th> elements. Defines the cells that the header element relates to
+   */
+  scope?: 'col' | 'row' | 'colgroup' | 'rowgroup';
+  /**
    * Callback to fire when pressed
    * @default noop
    */

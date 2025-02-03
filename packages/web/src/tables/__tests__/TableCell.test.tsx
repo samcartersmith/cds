@@ -5,6 +5,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
+import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
 
 const testClassName = css`
@@ -39,6 +40,34 @@ describe('Table Cell', () => {
     );
 
     expect(screen.getByText('children text')).toBeTruthy();
+  });
+
+  it('assigns default header scope correctly', () => {
+    render(
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell testID={exampleTestId}>Header Cell</TableCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell as="th" testID="row-header-cell">
+              Row Header Cell
+            </TableCell>
+            <TableCell testID="body-cell">Body Cell</TableCell>
+            <TableCell as="th" scope="col" testID="custom-scope-cell">
+              Custom Scope Cell
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>,
+    );
+
+    expect(screen.getByTestId(exampleTestId)).toHaveAttribute('scope', 'col');
+    expect(screen.getByTestId('row-header-cell')).toHaveAttribute('scope', 'row');
+    expect(screen.getByTestId('body-cell')).not.toHaveAttribute('scope');
+    expect(screen.getByTestId('custom-scope-cell')).toHaveAttribute('scope', 'col');
   });
 
   it('renders with title and subtitle', () => {
