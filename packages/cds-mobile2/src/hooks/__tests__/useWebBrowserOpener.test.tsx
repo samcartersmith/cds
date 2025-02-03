@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import * as openWebBrowser from '../../utils/openWebBrowser';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { useWebBrowserOpener } from '../useWebBrowserOpener';
@@ -7,7 +8,12 @@ import { useWebBrowserOpener } from '../useWebBrowserOpener';
 const URL = 'https://www.coinbase.com';
 
 const DEFAULT_OPEN_WEB_BROWSER_OPTIONS = {
-  spectrum: 'light',
+  theme: {
+    ...defaultTheme,
+    colorScheme: 'light' as const,
+    color: defaultTheme.light,
+    spectrum: defaultTheme.lightSpectrum,
+  },
 };
 
 describe('useWebBrowserOpener', () => {
@@ -24,7 +30,7 @@ describe('useWebBrowserOpener', () => {
     const { result } = renderHook(() => useWebBrowserOpener(), { wrapper: DefaultThemeProvider });
     const openWebBrowserSpy = jest.spyOn(openWebBrowser, 'openWebBrowser').mockImplementation();
     const options = {
-      spectrum: 'dark',
+      ...DEFAULT_OPEN_WEB_BROWSER_OPTIONS,
       preventRedirectionIntoApp: true,
       forceOpenOutsideApp: true,
       readerMode: true,

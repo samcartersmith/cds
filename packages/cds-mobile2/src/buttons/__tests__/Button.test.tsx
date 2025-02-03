@@ -5,31 +5,48 @@ import { Box } from '../../layout';
 import { HStack } from '../../layout/HStack';
 import { TextTitle1, TextTitle2 } from '../../typography';
 import { debounce } from '../../utils/debounce';
+import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Button } from '../Button';
 
-jest.mock('@cbhq/cds-common2/system/useEventHandler');
+jest.mock('@cbhq/cds-common2/hooks/useEventHandler');
 jest.mock('../../utils/debounce');
 
 describe('Button', () => {
   it('passes a11y', () => {
-    render(<Button testID="mock-btn">Child</Button>);
+    render(
+      <DefaultThemeProvider>
+        <Button testID="mock-btn">Child</Button>
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('mock-btn')).toBeAccessible();
   });
 
   it('renders an animated view', () => {
-    render(<Button>Child</Button>);
+    render(
+      <DefaultThemeProvider>
+        <Button>Child</Button>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryAllByType(Animated.View)).toHaveLength(1);
   });
 
   it('renders a pressable', () => {
-    render(<Button>Child</Button>);
+    render(
+      <DefaultThemeProvider>
+        <Button>Child</Button>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.UNSAFE_queryAllByType(Pressable)).toHaveLength(1);
   });
 
   it('renders children text', () => {
-    render(<Button>Child</Button>);
+    render(
+      <DefaultThemeProvider>
+        <Button>Child</Button>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByText('Child')).not.toBeNull();
   });
@@ -37,7 +54,11 @@ describe('Button', () => {
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
     (debounce as jest.Mock).mockImplementation(() => spy);
-    render(<Button onPress={spy}>Child</Button>);
+    render(
+      <DefaultThemeProvider>
+        <Button onPress={spy}>Child</Button>
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.press(screen.getByText('Child'));
 
@@ -45,19 +66,25 @@ describe('Button', () => {
   });
 
   it('Wraps children with a text component when using a string as children', () => {
-    render(<Button>Child</Button>);
+    render(
+      <DefaultThemeProvider>
+        <Button>Child</Button>
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('text-headline')).not.toBeNull();
   });
 
   it('Does not wrap children with a text component when using a ReactNode as children', () => {
     render(
-      <Button>
-        <HStack gap={1}>
-          <TextTitle1>Title</TextTitle1>
-          <TextTitle2>Subtitle</TextTitle2>
-        </HStack>
-      </Button>,
+      <DefaultThemeProvider>
+        <Button>
+          <HStack gap={1}>
+            <TextTitle1>Title</TextTitle1>
+            <TextTitle2>Subtitle</TextTitle2>
+          </HStack>
+        </Button>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.queryByTestId('text-headline')).toBeNull();
@@ -70,9 +97,11 @@ describe('Button', () => {
       </Box>
     );
     render(
-      <Button end={<CustomIcon />}>
-        <TextTitle1>Child</TextTitle1>
-      </Button>,
+      <DefaultThemeProvider>
+        <Button end={<CustomIcon />}>
+          <TextTitle1>Child</TextTitle1>
+        </Button>
+      </DefaultThemeProvider>,
     );
     const button = screen.getByRole('button');
     expect(button).toBeDefined();

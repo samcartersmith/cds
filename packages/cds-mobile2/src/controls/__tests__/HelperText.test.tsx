@@ -36,11 +36,11 @@ describe('HelperText.test', () => {
         </HelperText>
       </DefaultThemeProvider>,
     );
-    expect(screen.getByTestId('helper-text-test')).toHaveStyle({
-      paddingBottom: 32,
-      paddingLeft: 32,
-      paddingRight: 32,
-      paddingTop: 32,
+
+    const element = screen.getByTestId('helper-text-test');
+
+    expect(element).toHaveStyle({
+      padding: 32,
     });
   });
 });

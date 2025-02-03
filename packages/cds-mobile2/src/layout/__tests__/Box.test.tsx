@@ -96,7 +96,7 @@ describe('Box', () => {
     expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
-      borderColor: 'rgba(91,97,110,0.2)',
+      borderColor: defaultTheme.light.line,
       borderRadius: 8,
       borderWidth: 1,
     });
@@ -266,10 +266,8 @@ describe('Box', () => {
       expect(screen.getByTestId('parent')).toBeAccessible();
 
       expect(screen.getByTestId('parent')).toHaveStyle({
-        paddingTop: 8,
-        paddingBottom: 8,
-        paddingLeft: 8,
-        paddingRight: 8,
+        display: 'flex',
+        padding: 8,
       });
     });
 
@@ -355,10 +353,8 @@ describe('Box', () => {
       await screen.findByTestId('parent');
 
       expect(screen.getByTestId('parent')).toHaveStyle({
-        marginTop: -8,
-        marginBottom: -8,
-        marginLeft: -8,
-        marginRight: -8,
+        display: 'flex',
+        margin: -8,
       });
     });
 
