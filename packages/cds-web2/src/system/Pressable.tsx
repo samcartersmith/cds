@@ -102,7 +102,7 @@ export const Pressable = forwardRef(function Pressable(
       background={background}
       className={cx(
         !noScaleOnPress && scaledDownStyle,
-        !className && resetStyle,
+        resetStyle,
         className,
         loading && loadingStyle,
       )}

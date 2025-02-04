@@ -1,16 +1,15 @@
-import React, { forwardRef, memo, useCallback, useMemo, useState } from 'react';
-import { css, cx } from '@linaria/core';
+import React, { forwardRef, memo, useCallback, useState } from 'react';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
-import { durations } from '@cbhq/cds-common2/motion/tokens';
 import type { SelectBaseProps } from '@cbhq/cds-common2/types';
 
 import { useRefocusTrigger } from '../controls/useRefocusTrigger';
 import { Dropdown, DropdownProps } from '../dropdown';
-import { useTheme } from '../hooks/useTheme';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
 
 import { Chip } from './Chip';
 import { ChipProps } from './ChipProps';
+
+export const SELECT_CHIP_DEFAULT_TEST_ID = 'select-chip';
 
 export type SelectChipProps = {
   /** Indicates that the control is being used to manipulate data elsewhere */
@@ -22,28 +21,6 @@ export type SelectChipProps = {
 } & Omit<ChipProps, 'inverted' | 'children' | 'onBlur' | 'noScaleOnPress' | 'content'> &
   Pick<SelectBaseProps, 'onChange' | 'valueLabel' | 'placeholder' | 'value'> &
   Omit<DropdownProps, 'onChange' | 'children'>;
-
-const defaultStyles = css`
-  border-color: var(--border-color-unfocused);
-  /* stylelint-disable plugin/no-low-performance-animation-properties */
-  transition: box-shadow ${durations.moderate1}ms ease-in-out;
-  /* stylelint-enable plugin/no-low-performance-animation-properties */
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-
-  &:focus-within {
-    border-color: var(--border-color-focused);
-    box-shadow: 0 0 0 var(--border-width-focused) var(--border-color-focused);
-  }
-`;
-
-const persistedFocusStyles = css`
-  padding: 0;
-  margin: 0;
-  border-color: var(--border-color-focused);
-  box-shadow: 0 0 0 var(--border-width-focused) var(--border-color-focused);
-`;
 
 export const SelectChip = memo(
   forwardRef(function SelectChip(
@@ -57,7 +34,7 @@ export const SelectChip = memo(
       onCloseMenu,
       onOpenMenu,
       end,
-      testID = 'select-chip',
+      testID = SELECT_CHIP_DEFAULT_TEST_ID,
       // dropdown props
       block,
       contentPosition,
@@ -71,7 +48,6 @@ export const SelectChip = memo(
       onBlur,
       showOverlay,
       width,
-      className,
       respectNegativeTabIndex,
       ...props
     }: SelectChipProps,
@@ -81,29 +57,16 @@ export const SelectChip = memo(
     const [menuHasClosed, setMenuHasClosed] = useState(false);
     const triggerRef = useRefocusTrigger(menuHasClosed);
     const mergedRefs = useMergeRefs(ref, triggerRef);
-    const { color: palette, borderWidth } = useTheme();
-
-    const borderStyles = useMemo(() => {
-      return {
-        '--border-color-unfocused': palette.transparent,
-        '--border-color-focused': palette.backgroundPrimary,
-        // TODO will need to guess and check with the value of this
-        '--border-width-focused': borderWidth['200'],
-      };
-    }, [borderWidth, palette.backgroundPrimary, palette.transparent]);
 
     const handleOpenMenu = useCallback(() => {
       setIsOpen(true);
-      if (menuHasClosed) {
-        // this makes sure if you open/close more than once it'll continue to work correctly
-        setMenuHasClosed(false);
-      }
-    }, [menuHasClosed]);
+      setMenuHasClosed(false);
+    }, []);
 
     const handleCloseMenu = useCallback(() => {
       setIsOpen(false);
-      onCloseMenu?.();
       setMenuHasClosed(true);
+      onCloseMenu?.();
     }, [onCloseMenu]);
 
     return (
@@ -131,12 +94,10 @@ export const SelectChip = memo(
         <Chip
           ref={mergedRefs}
           noScaleOnPress
-          className={cx(isOpen ? persistedFocusStyles : defaultStyles, className)}
+          active={active}
           disabled={disabled}
           end={end ?? <AnimatedCaret color="iconForeground" rotate={isOpen ? 0 : 180} />}
-          inverted={active}
           onPress={handleOpenMenu}
-          style={borderStyles as React.CSSProperties}
           testID={testID}
           {...props}
         >

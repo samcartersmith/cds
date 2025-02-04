@@ -1,10 +1,10 @@
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef, Fragment, memo } from 'react';
 import { css } from '@linaria/core';
 import { curves, durations } from '@cbhq/cds-common2/motion/tokens';
 import { chipMaxWidth } from '@cbhq/cds-common2/tokens/chip';
 
 import { HStack } from '../layout';
-import { PressableOpacity } from '../system/PressableOpacity';
+import { Pressable } from '../system/Pressable';
 import { InvertedThemeProvider } from '../system/ThemeProvider';
 import { Text } from '../typography/Text';
 
@@ -24,6 +24,7 @@ export const Chip = memo(
       start,
       end,
       inverted,
+      active,
       maxWidth = chipMaxWidth,
       compact,
       numberOfLines = 1,
@@ -39,7 +40,8 @@ export const Chip = memo(
       <HStack
         accessibilityLabel={accessibilityLabel}
         alignItems="center"
-        background="backgroundSecondary"
+        // need to set the background here if the content is not wrapped in a Pressable
+        background={onPress ? undefined : 'backgroundSecondary'}
         borderRadius={500}
         className={motionStyles}
         gap={1}
@@ -61,21 +63,21 @@ export const Chip = memo(
       </HStack>
     );
 
-    const Wrapper = inverted ? InvertedThemeProvider : React.Fragment;
+    const Wrapper = active || inverted ? InvertedThemeProvider : Fragment;
 
     return (
       <Wrapper>
         {onPress ? (
-          <PressableOpacity
+          <Pressable
             ref={ref}
-            // TODO the PressableOpacity props supposedly Omit borderRadius, so its not clear why this is allowed
+            background="backgroundSecondary"
             borderRadius={500}
             onPress={onPress}
             testID={testID}
             {...props}
           >
             {content}
-          </PressableOpacity>
+          </Pressable>
         ) : (
           content
         )}

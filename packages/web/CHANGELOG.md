@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.6.6 (2/3/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix an issue where a fixed background color in Chip content was preventing certain opacity features inherited from Pressabe from working. [[#3550](https://github.cbhq.net/frontend/cds/pull/3550)] [[DX-4622](https://jira.coinbase-corp.com/browse/DX-4622)]
+
 ## 7.6.5 (1/31/2025 PST)
 
 #### 🐞 Fixes

@@ -35,9 +35,9 @@ const focusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-200);
-    outline-color: var(--color-backgroundPrimary);
+    outline-width: 2px;
     outline-offset: 2px;
+    outline-color: var(--color-backgroundPrimary);
   }
 `;
 
@@ -80,6 +80,12 @@ const baseStyle = css`
     > * {
       opacity: var(${interactablePressedOpacity});
     }
+  }
+`;
+
+const transparentActiveStyle = css`
+  &:active {
+    background-color: var(--color-transparent);
   }
 `;
 
@@ -136,6 +142,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     style: customStyle,
     testID,
     transparentWhileInactive,
+    transparentWhilePressed,
     width,
     height,
     accessibilityLabel,
@@ -153,14 +160,14 @@ export const InteractableContent = forwardRef(function InteractableContent(
 
   const className = cx(
     baseStyle,
-    // TODO - why is there logic for this? Both these classNames can be merged to the root style
-    disabled ? disabledStyle : focusRingStyle,
+    focusRingStyle,
+    disabled && disabledStyle,
     // TODO this is a specific case for Safari, maybe remove as it sounds like its been fixed
     disabled && borderColor === 'transparent' ? disabledBorderStyle : null,
     // use transparent override prop to set styles for border and background
-    // TODO - how do these only impact the inactive styles?
     transparentWhileInactive ? borderColorStyles.transparent : borderColorStyles[borderColor],
     transparentWhileInactive && transparentWhileInactiveStyle,
+    transparentWhilePressed && transparentActiveStyle,
     // TODO - this is basically the default border width
     borderColor && typeof borderWidth === 'undefined' && borderWidthStyles[100],
     borderWidth && borderWidthStyles[borderWidth],
@@ -225,6 +232,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
   return createElement(
     Container,
     {
+      // TODO - if this isn't necessary on web we can cut the pressed prop from Interactable
       'aria-pressed': pressed,
       'data-testid': testID,
       'aria-label': accessibilityLabel,

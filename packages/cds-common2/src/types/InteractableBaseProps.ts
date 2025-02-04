@@ -24,8 +24,14 @@ export type InteractableBaseProps = {
   loading?: boolean;
   /** Is the element being pressed. Primarily a mobile feature, but can be used on the web. */
   pressed?: boolean;
-  /** Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc). */
+  /**
+   * Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc).
+   * Must be used in conjunction with the "pressed" prop
+   * */
   transparentWhileInactive?: boolean;
-  /** Mark the background and border as transparent even while element is interacted with (elevation underlay issue). */
+  /**
+   * Mark the background and border as transparent even while element is interacted with (elevation underlay issue).
+   * Must be used in conjunction with the "pressed" prop
+   * */
   transparentWhilePressed?: boolean;
 };

@@ -5,7 +5,7 @@ import { curves, durations } from '@cbhq/cds-common/motion/tokens';
 import { chipMaxWidth } from '@cbhq/cds-common/tokens/chip';
 
 import { HStack } from '../layout';
-import { PressableOpacity, ThemeProvider } from '../system';
+import { Pressable, ThemeProvider } from '../system';
 import { TextHeadline } from '../typography';
 
 import { ChipProps } from './ChipProps';
@@ -42,7 +42,7 @@ export const Chip = memo(
       <HStack
         accessibilityLabel={accessibilityLabel}
         alignItems="center"
-        background="secondary"
+        background={onPress ? undefined : 'secondary'}
         borderRadius="roundedXLarge"
         className={motionStyles}
         gap={1}
@@ -67,15 +67,16 @@ export const Chip = memo(
     return (
       <ThemeProvider spectrum={inverted ? invertedTheme : theme}>
         {onPress ? (
-          <PressableOpacity
+          <Pressable
             ref={ref}
+            background="secondary"
             borderRadius="roundedXLarge"
             onPress={onPress}
             testID={testID}
             {...props}
           >
             {content}
-          </PressableOpacity>
+          </Pressable>
         ) : (
           content
         )}

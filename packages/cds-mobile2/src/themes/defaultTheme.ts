@@ -286,7 +286,7 @@ export const defaultTheme = {
     backgroundOverlay: `rgba(${lightSpectrum.gray80},0.33)`,
     backgroundPrimary: `rgb(${lightSpectrum.blue60})`,
     backgroundPrimaryWash: `rgb(${lightSpectrum.blue0})`,
-    backgroundSecondary: `rgb(${lightSpectrum.gray10})`,
+    backgroundSecondary: `rgb(${lightSpectrum.gray15})`,
     backgroundSecondaryWash: `rgb(${lightSpectrum.gray5})`,
     backgroundNegative: `rgb(${lightSpectrum.red60})`,
     backgroundNegativeWash: `rgb(${lightSpectrum.red0})`,
@@ -362,7 +362,7 @@ export const defaultTheme = {
     backgroundOverlay: `rgba(${darkSpectrum.gray80},0.33)`,
     backgroundPrimary: `rgb(${darkSpectrum.blue70})`,
     backgroundPrimaryWash: `rgb(${darkSpectrum.blue0})`,
-    backgroundSecondary: `rgb(${darkSpectrum.gray10})`, // TO DO: confirm correct colors. this color has same value as backgroundElevation2
+    backgroundSecondary: `rgb(${darkSpectrum.gray15})`, // TO DO: confirm correct colors. this color has same value as backgroundElevation2
     backgroundSecondaryWash: `rgb(${darkSpectrum.gray0})`, // TO DO confirm correct colors
     backgroundNegative: `rgb(${darkSpectrum.red60})`,
     backgroundNegativeWash: `rgb(${darkSpectrum.red0})`,

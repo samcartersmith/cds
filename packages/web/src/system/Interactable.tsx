@@ -16,6 +16,7 @@ import * as borderColors from '../styles/borderColor';
 import * as borderWidths from '../styles/borderWidth';
 import { disabledBorder, disabledState } from '../styles/disabledState';
 import { focusRing } from '../styles/focus';
+import { palette } from '../tokens';
 import { cx } from '../utils/linaria';
 
 import {
@@ -55,6 +56,12 @@ const interactable = css`
     > * {
       opacity: var(${interactablePressedOpacity});
     }
+  }
+`;
+
+const transparentActiveStyle = css`
+  &:active {
+    background-color: ${palette.transparent};
   }
 `;
 
@@ -109,6 +116,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     style: customStyle,
     testID,
     transparentWhileInactive,
+    transparentWhilePressed,
     width,
     height,
     accessibilityLabel,
@@ -143,6 +151,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
     disabled ? disabledState : focusRing,
     disabled && borderColor === 'transparent' ? disabledBorder : null,
     transparentWhileInactive ? borderColors.transparent : borderColors[borderColor],
+    transparentWhilePressed && transparentActiveStyle,
     borderWidth && borderWidths[borderWidth],
     block && fullWidth,
     customClassName,
