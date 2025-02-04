@@ -2,13 +2,19 @@ import React, { memo, useCallback, useState } from 'react';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
-import { ErrorBoundaryErrorMessageFallback, usePrismTheme } from '@docusaurus/theme-common';
+import {
+  ErrorBoundaryErrorMessageFallback,
+  useColorMode,
+  usePrismTheme,
+} from '@docusaurus/theme-common';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { VStack } from '@cbhq/cds-web2/layout/VStack';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
+import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
+import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
 import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import styles from './styles.module.css';
@@ -47,6 +53,7 @@ const Playground = memo(function Playground({
   const [collapsed, setIsCollapsed] = useState(!editorStartsExpanded);
   const toggleCode = useCallback(() => setIsCollapsed((collapsed) => !collapsed), []);
   const toast = useToast();
+  const { colorMode } = useColorMode();
 
   const transformCode = useCallback(
     (val: string) => transformCodeProp(val.replace(/\n$/, '')),
@@ -67,59 +74,61 @@ const Playground = memo(function Playground({
   }, [toast, code]);
 
   return (
-    <VStack gap={1} paddingBottom={3}>
-      <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
-        {!hidePreview && (
-          <VStack background="backgroundSecondary" borderRadius={400} padding={3}>
-            <BrowserOnly fallback={<div>Loading...</div>}>{previewComponent}</BrowserOnly>
-          </VStack>
-        )}
-        {!hideControls && (
-          <HStack alignItems="center" gap={0.5}>
-            <Pressable
-              noScaleOnPress
-              transparentWhileInactive
-              background="background"
+    <ThemeProvider activeColorScheme={colorMode === 'dark' ? 'dark' : 'light'} theme={defaultTheme}>
+      <VStack gap={1} paddingBottom={3}>
+        <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
+          {!hidePreview && (
+            <VStack background="background" borderRadius={400} padding={3}>
+              <BrowserOnly fallback={<div>Loading...</div>}>{previewComponent}</BrowserOnly>
+            </VStack>
+          )}
+          {!hideControls && (
+            <HStack alignItems="center" gap={0.5}>
+              <Pressable
+                noScaleOnPress
+                transparentWhileInactive
+                background="background"
+                borderRadius={400}
+                onPress={toggleCode}
+              >
+                <HStack alignItems="center" gap={1} padding={1} width={112}>
+                  <Icon color="iconPrimary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
+                  <Text as="p" color="textPrimary" font="caption" transform="none">
+                    {collapsed ? 'Show code' : 'Hide code'}
+                  </Text>
+                </HStack>
+              </Pressable>
+              <Pressable
+                noScaleOnPress
+                transparentWhileInactive
+                background="background"
+                borderRadius={1000}
+                onPress={handleCopyToClipboard}
+              >
+                <HStack alignItems="center" gap={1} padding={1}>
+                  <Icon color="iconPrimary" name="copy" size="xs" />
+                  <Text color="textPrimary" font="caption" transform="none">
+                    Copy code
+                  </Text>
+                </HStack>
+              </Pressable>
+            </HStack>
+          )}
+          <Collapsible collapsed={collapsed}>
+            <VStack
+              background="backgroundSecondaryWash"
               borderRadius={400}
-              onPress={toggleCode}
+              overflow="hidden"
+              paddingX={3}
+              paddingY={2}
+              width="100%"
             >
-              <HStack alignItems="center" gap={1} padding={1} width={112}>
-                <Icon color="iconPrimary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
-                <Text as="p" color="textPrimary" font="caption" transform="none">
-                  {collapsed ? 'Show code' : 'Hide code'}
-                </Text>
-              </HStack>
-            </Pressable>
-            <Pressable
-              noScaleOnPress
-              transparentWhileInactive
-              background="background"
-              borderRadius={1000}
-              onPress={handleCopyToClipboard}
-            >
-              <HStack alignItems="center" gap={1} padding={1}>
-                <Icon color="iconPrimary" name="copy" size="xs" />
-                <Text color="textPrimary" font="caption" transform="none">
-                  Copy code
-                </Text>
-              </HStack>
-            </Pressable>
-          </HStack>
-        )}
-        <Collapsible collapsed={collapsed}>
-          <VStack
-            background="backgroundSecondaryWash"
-            borderRadius={400}
-            overflow="hidden"
-            paddingX={3}
-            paddingY={2}
-            width="100%"
-          >
-            <LiveEditor className={styles.playgroundEditor} />
-          </VStack>
-        </Collapsible>
-      </LiveProvider>
-    </VStack>
+              <LiveEditor className={styles.playgroundEditor} />
+            </VStack>
+          </Collapsible>
+        </LiveProvider>
+      </VStack>
+    </ThemeProvider>
   );
 });
 

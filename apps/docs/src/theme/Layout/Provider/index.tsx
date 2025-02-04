@@ -17,6 +17,15 @@ import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
 import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
 import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
 
+const docsTheme = {
+  ...defaultTheme,
+  dark: {
+    ...defaultTheme.dark,
+    background: `rgb(${defaultTheme.darkSpectrum.gray10})`, // instead of gray0
+    backgroundSecondary: `rgb(${defaultTheme.darkSpectrum.gray20})`, // instead of gray10
+  },
+};
+
 const CDSContainer = ({ children }: { children: React.ReactNode }) => {
   const { colorMode } = useColorMode();
 
@@ -27,7 +36,7 @@ const CDSContainer = ({ children }: { children: React.ReactNode }) => {
         <ThemeProvider
           activeColorScheme={isDarkMode ? 'dark' : 'light'}
           display="contents"
-          theme={defaultTheme}
+          theme={docsTheme}
         >
           <PortalProvider>
             <KBarProvider>{children}</KBarProvider>
