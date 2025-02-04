@@ -18,7 +18,6 @@ export const Chip = memo(
       start,
       end,
       inverted,
-      active,
       maxWidth = chipMaxWidth,
       compact,
       numberOfLines = 1,
@@ -29,7 +28,7 @@ export const Chip = memo(
     }: ChipProps,
     ref: React.ForwardedRef<View>,
   ) {
-    const WrapperComponent = active || inverted ? InvertedThemeProvider : Fragment;
+    const WrapperComponent = inverted ? InvertedThemeProvider : Fragment;
 
     const content = (
       <HStack

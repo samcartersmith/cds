@@ -24,7 +24,6 @@ export const Chip = memo(
       start,
       end,
       inverted,
-      active,
       maxWidth = chipMaxWidth,
       compact,
       numberOfLines = 1,
@@ -63,7 +62,7 @@ export const Chip = memo(
       </HStack>
     );
 
-    const Wrapper = active || inverted ? InvertedThemeProvider : Fragment;
+    const Wrapper = inverted ? InvertedThemeProvider : Fragment;
 
     return (
       <Wrapper>
