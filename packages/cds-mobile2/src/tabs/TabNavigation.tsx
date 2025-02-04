@@ -8,7 +8,7 @@ import { OverflowGradient } from '../layout';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { PressableOpacity } from '../system/PressableOpacity';
+import { Pressable } from '../system/Pressable';
 
 import { TabIndicator } from './TabIndicator';
 import { TabLabel } from './TabLabel';
@@ -91,12 +91,13 @@ export const TabNavigation = memo(
 
                 return (
                   <View key={id} onLayout={getPressableLayoutHandler(id)}>
-                    <PressableOpacity
+                    <Pressable
                       transparentWhilePressed
                       accessibilityHint={a11yLabelToString}
                       accessibilityLabel={a11yLabelToString}
                       accessibilityRole={descendantAriaRole}
                       accessibilityState={a11yState}
+                      background="transparent"
                       disabled={disabled}
                       onPress={getTabPressHandler({ id, onPress })}
                       testID={tabLabelTestID}
@@ -108,7 +109,7 @@ export const TabNavigation = memo(
                           {label}
                         </TabLabel>
                       )}
-                    </PressableOpacity>
+                    </Pressable>
                   </View>
                 );
               },

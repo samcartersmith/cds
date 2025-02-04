@@ -149,5 +149,6 @@ export namespace ThemeVars {
     | 'radioSize'
     | 'switchWidth'
     | 'switchHeight'
-    | 'switchThumbSize';
+    | 'switchThumbSize'
+    | 'tileSize';
 }

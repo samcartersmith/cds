@@ -9,7 +9,7 @@ import { Menu, SelectOption } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
-import { PressableOpacity } from '../../system';
+import { Pressable } from '../../system/Pressable';
 import { Drawer } from '../drawer/Drawer';
 
 const lotsOfOptions: string[] = prices.slice(0, 30);
@@ -55,9 +55,9 @@ const SideDrawerScrollableContent = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pi
         >
           <VStack height={120} paddingBottom={1} paddingX={3}>
             <ScrollView>
-              <PressableOpacity noScaleOnPress>
+              <Pressable noScaleOnPress accessibilityRole="button" background="transparent">
                 <LoremIpsum repeat={2} />
-              </PressableOpacity>
+              </Pressable>
             </ScrollView>
           </VStack>
           <Menu onChange={setValue} value={value}>

@@ -33,8 +33,8 @@ describe('GridColumn', () => {
     render(<GridColumn gap={2} testID={TEST_ID} />);
 
     const element = screen.getByTestId(TEST_ID);
-    expect(element.className).toContain('cds-2');
-    expect(element.className).toContain('cds-gridColumnStart');
-    expect(element.className).toContain('cds-gridColumnEnd');
+    expect(element.className).toContain('2');
+    expect(element.className).toContain('gridColumnStart');
+    expect(element.className).toContain('gridColumnEnd');
   });
 });

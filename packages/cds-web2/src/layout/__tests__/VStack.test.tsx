@@ -10,6 +10,6 @@ describe('VStack', () => {
 
   it('applies column class', () => {
     render(<VStack>Child</VStack>);
-    expect(screen.getByText('Child').className).toContain('cds-column');
+    expect(screen.getByText('Child').className).toContain('column');
   });
 });

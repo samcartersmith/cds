@@ -8,7 +8,6 @@ import { Icon } from '../../icons/Icon';
 import { HStack } from '../../layout';
 import { type PopoverContentPositionConfig } from '../../overlays/popover/PopoverProps';
 import { Pressable } from '../../system/Pressable';
-import { PressableOpacity } from '../../system/PressableOpacity';
 import { Text } from '../../typography/Text';
 import { Dropdown } from '../Dropdown';
 import type { DropdownProps, DropdownRef } from '../DropdownProps';
@@ -313,11 +312,11 @@ export const CustomOptions = () => {
 
   return (
     <Dropdown content={content} maxWidth={190} onChange={onChange} value={value}>
-      <PressableOpacity>
+      <Pressable background="transparent">
         <Text as="p" font="title2">
           {currentGlyph}
         </Text>
-      </PressableOpacity>
+      </Pressable>
     </Dropdown>
   );
 };

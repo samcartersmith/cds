@@ -5,7 +5,7 @@ import type { Polymorphic } from '../core/polymorphism';
 
 import { type BoxBaseProps, Box } from './Box';
 
-const spacerDefaultElement = 'span';
+export const spacerDefaultElement = 'span';
 
 export type SpacerDefaultElement = typeof spacerDefaultElement;
 

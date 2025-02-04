@@ -7,7 +7,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useTheme } from '../../hooks/useTheme';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { PressableOpacity } from '../../system/PressableOpacity';
+import { Pressable } from '../../system/Pressable';
 import { TextBody } from '../../typography';
 import { Icon } from '../Icon';
 import { TextIcon } from '../TextIcon';
@@ -78,10 +78,11 @@ const IconScreen = () => {
         </VStack>
       </Example>
       <Example title="Animated Icon">
-        <PressableOpacity
+        <Pressable
           noScaleOnPress
           accessibilityHint="hit star to rate the product"
           accessibilityLabel="rating a product"
+          background="transparent"
           onPress={toggle}
         >
           <HStack gap={1}>
@@ -90,7 +91,7 @@ const IconScreen = () => {
             {animatedIcon}
             {animatedIcon}
           </HStack>
-        </PressableOpacity>
+        </Pressable>
       </Example>
       <Example title="Icon Sheet">
         <IconSheet />

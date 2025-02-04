@@ -23,6 +23,7 @@ const flexStyles = getFlexStyles({
   justifyContent: 'center',
 });
 
+/** @deprecated Will be removed in Q1 2025. Use IconButton instead. */
 export const NavigationIconButton = memo(
   forwardRef(function NavigationIconButton(
     {

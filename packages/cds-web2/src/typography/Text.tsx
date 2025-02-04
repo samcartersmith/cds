@@ -89,7 +89,7 @@ const overflowStyle = {
   `,
 } as const;
 
-const textDefaultElement = 'span';
+export const textDefaultElement = 'span';
 
 export type TextDefaultElement = typeof textDefaultElement;
 

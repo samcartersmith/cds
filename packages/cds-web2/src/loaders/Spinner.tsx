@@ -18,7 +18,6 @@ export const baseStyle = css`
   border-radius: 50%;
   width: 10em;
   height: 10em;
-  // TO DO: Dark Mode color tokens need to be updated
   border-top-color: var(--color-backgroundAlternate);
   border-right-color: var(--color-backgroundAlternate);
   border-left-color: var(--color-backgroundAlternate);

@@ -6,7 +6,7 @@ import { NudgeCardBaseProps } from '@cbhq/cds-common2/types';
 import { IconButton } from '../buttons';
 import { Pictogram } from '../illustrations/Pictogram';
 import { Box, HStack, VStack } from '../layout';
-import { PressableOpacity } from '../system';
+import { Pressable } from '../system/Pressable';
 import { TextHeadline, TextLabel2 } from '../typography';
 
 export type NudgeCardProps = NudgeCardBaseProps & {
@@ -40,11 +40,11 @@ export const NudgeCard = memo(
     const renderAction = isValidElement(action) ? (
       action
     ) : (
-      <PressableOpacity onPress={onActionPress}>
+      <Pressable accessibilityRole="button" background="transparent" onPress={onActionPress}>
         <TextHeadline color="textPrimary" numberOfLines={1} paddingY={1}>
           {action}
         </TextHeadline>
-      </PressableOpacity>
+      </Pressable>
     );
 
     const renderMedia = pictogram ? (
@@ -118,6 +118,12 @@ export const NudgeCard = memo(
         </HStack>
       </Box>
     );
-    return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;
+    return onPress ? (
+      <Pressable accessibilityRole="button" background="transparent" onPress={onPress}>
+        {content}
+      </Pressable>
+    ) : (
+      content
+    );
   },
 );

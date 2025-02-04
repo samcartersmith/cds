@@ -472,12 +472,13 @@ export const defaultTheme = {
     xxl: 48,
     xxxl: 56,
   },
-  control: {
+  controlSize: {
     checkboxSize: 20,
     radioSize: 20,
     switchWidth: 52,
     switchHeight: 32,
     switchThumbSize: 30,
+    tileSize: 106,
   },
   fontFamily: {
     display1: 'CoinbaseDisplay-Regular',

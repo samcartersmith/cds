@@ -227,7 +227,7 @@ describe('Grid', () => {
     it('renders columns className', () => {
       render(<Grid columns={12}>Child</Grid>);
 
-      expect(screen.getByText('Child').className).toContain('cds-gridTemplateColumns');
+      expect(screen.getByText('Child').className).toContain('gridTemplateColumns');
       expect(screen.getByText('Child').className).toContain(DEFAULT_CLASS);
     });
   });
@@ -266,14 +266,14 @@ describe('Grid', () => {
 
       const element = screen.getByText('Child');
       expect(element.className).toContain(DEFAULT_COLUMN_CLASS);
-      expect(element.className).toContain('cds-gridColumnStart');
+      expect(element.className).toContain('gridColumnStart');
     });
     it('renders the colEnd className', () => {
       render(<GridColumn colEnd={2}>Child</GridColumn>);
 
       const element = screen.getByText('Child');
       expect(element.className).toContain(DEFAULT_COLUMN_CLASS);
-      expect(element.className).toContain('cds-gridColumnEnd-');
+      expect(element.className).toContain('gridColumnEnd');
     });
     it('renders the colSpan style', () => {
       render(<GridColumn colSpan={2}>Child</GridColumn>);

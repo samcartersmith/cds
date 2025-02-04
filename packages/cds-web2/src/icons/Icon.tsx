@@ -183,7 +183,7 @@ export const Icon = memo(
         <Box
           className={cx(sizeStyles[size], bordered && borderedSizeStyles[size])}
           color={color}
-          position="relative" // TO DO: can we remove this?
+          position="relative"
           style={inlineStyle}
           testID={testID}
           {...props}

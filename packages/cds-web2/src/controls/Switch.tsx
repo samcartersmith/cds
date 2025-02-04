@@ -11,8 +11,8 @@ import { Control, ControlProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
 const track = css`
-  width: var(--control-switchWidth);
-  height: var(--control-switchHeight);
+  width: var(--controlSize-switchWidth);
+  height: var(--controlSize-switchHeight);
   border-radius: var(--borderRadius-1000);
   flex-shrink: 0;
 
@@ -27,8 +27,8 @@ const track = css`
 `;
 
 const thumb = css`
-  width: var(--control-switchThumbSize);
-  height: var(--control-switchThumbSize);
+  width: var(--controlSize-switchThumbSize);
+  height: var(--controlSize-switchThumbSize);
   background-color: var(--color-background);
   border: 0.5 solid var(--color-line);
 
@@ -47,7 +47,7 @@ const focusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-200);
+    outline-width: 2px;
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 2px;
   }
@@ -59,7 +59,7 @@ const MotionBox = motion(Box);
 
 const thumbMotionVariants = {
   checked: {
-    x: `calc(var(--control-switchWidth) - var(--control-switchThumbSize) - 2px)`,
+    x: `calc(var(--controlSize-switchWidth) - var(--controlSize-switchThumbSize) - 2px)`,
   },
   unchecked: {
     x: 0,
@@ -109,7 +109,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
   return children ? (
     <Box
       alignItems="center"
-      minHeight="var(--control-switchHeight)"
+      minHeight="var(--controlSize-switchHeight)"
       role="presentation"
       width="fit-content"
     >

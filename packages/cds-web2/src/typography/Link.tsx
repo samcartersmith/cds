@@ -38,7 +38,7 @@ const baseStyle = css`
   }
 
   &:focus-visible {
-    outline-width: var(--borderWidth-200);
+    outline-width: 2px;
     outline-style: solid;
     outline-color: var(--color-backgroundPrimary);
     border-radius: var(--borderRadius-100);

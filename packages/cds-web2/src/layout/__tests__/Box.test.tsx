@@ -169,7 +169,7 @@ describe('Box', () => {
       );
 
       const child = screen.getByText('Child');
-      expect(child.className).toContain('cds-absolute');
+      expect(child.className).toContain('absolute');
       expect(child).toHaveAttribute(
         'style',
         '--zIndex: 200; --top: 25%; --bottom: 8rem; --left: 1000%; --right: 30px;',
@@ -249,31 +249,31 @@ describe('Box', () => {
     it('renders "top" pin', async () => {
       render(<Box pin="top">Child</Box>);
 
-      expect(screen.getByText('Child').className).toContain('cds-top');
+      expect(screen.getByText('Child').className).toContain('top');
     });
 
     it('renders "bottom" pin', async () => {
       render(<Box pin="bottom">Child</Box>);
 
-      expect(screen.getByText('Child').className).toContain('cds-bottom');
+      expect(screen.getByText('Child').className).toContain('bottom');
     });
 
     it('renders "right" pin', async () => {
       render(<Box pin="right">Child</Box>);
 
-      expect(screen.getByText('Child').className).toContain('cds-right');
+      expect(screen.getByText('Child').className).toContain('right');
     });
 
     it('renders "left" pin', async () => {
       render(<Box pin="left">Child</Box>);
 
-      expect(screen.getByText('Child').className).toContain('cds-left');
+      expect(screen.getByText('Child').className).toContain('left');
     });
 
     it('renders "all" pin', async () => {
       render(<Box pin="all">Child</Box>);
 
-      expect(screen.getByText('Child').className).toContain('cds-all');
+      expect(screen.getByText('Child').className).toContain('all');
     });
   });
 

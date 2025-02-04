@@ -24,7 +24,7 @@ export type ThemeConfig = {
   fontWeight: { [key in ThemeVars.FontWeight]: TextStyle['fontWeight'] };
   lineHeight: { [key in ThemeVars.LineHeight]: number };
   shadow: { [key in ThemeVars.Shadow]: Shadow };
-  control: { [key in ThemeVars.ControlSize]: number };
+  controlSize: { [key in ThemeVars.ControlSize]: number };
 };
 
 export type Theme = ThemeConfig & {

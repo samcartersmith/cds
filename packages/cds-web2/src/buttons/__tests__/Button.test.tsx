@@ -38,7 +38,7 @@ describe('Button', () => {
     const buttonChild = screen.getByText('Child');
 
     expect(button).toHaveAttribute('aria-label', 'Loading');
-    expect(buttonChild.className).toContain('cds-hiddenStyle');
+    expect(buttonChild.className).toContain('hiddenStyle');
   });
 
   it('renders a button with a type', () => {

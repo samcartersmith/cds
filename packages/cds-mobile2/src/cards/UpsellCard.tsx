@@ -5,7 +5,7 @@ import { upsellCardDefaultWidth, upsellCardMinHeight } from '@cbhq/cds-common2/t
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
-import { PressableOpacity } from '../system';
+import { Pressable } from '../system/Pressable';
 import { TextHeadline, TextLabel2 } from '../typography';
 
 export type UpsellCardProps = UpsellCardBaseProps & {
@@ -102,6 +102,12 @@ export const UpsellCard = memo(
         </HStack>
       </HStack>
     );
-    return onPress ? <PressableOpacity onPress={onPress}>{content}</PressableOpacity> : content;
+    return onPress ? (
+      <Pressable accessibilityRole="button" background="transparent" onPress={onPress}>
+        {content}
+      </Pressable>
+    ) : (
+      content
+    );
   },
 );

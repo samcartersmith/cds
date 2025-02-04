@@ -36,12 +36,13 @@ export const denseTheme = {
     xxl: 44,
     xxxl: 48,
   },
-  control: {
+  controlSize: {
     checkboxSize: 16,
     radioSize: 16,
     switchWidth: 42,
     switchHeight: 24,
     switchThumbSize: 22,
+    tileSize: 92,
   },
   fontFamily: {
     // TO DO: Align font family values with doc.

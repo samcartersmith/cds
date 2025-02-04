@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { NativeInput } from '../NativeInput';
 
 const TEST_ID = 'native-input';
@@ -9,11 +10,21 @@ describe('NativeInput Accessibility', () => {
   const accessibilityLabel = 'label';
 
   it('passes accessibility', async () => {
-    expect(await renderA11y(<NativeInput accessibilityLabel="label" />)).toHaveNoViolations();
+    expect(
+      await renderA11y(
+        <DefaultThemeProvider>
+          <NativeInput accessibilityLabel="label" />
+        </DefaultThemeProvider>,
+      ),
+    ).toHaveNoViolations();
   });
 
   it('can pass `aria-label` attribute', () => {
-    render(<NativeInput accessibilityLabel={accessibilityLabel} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeInput accessibilityLabel={accessibilityLabel} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('aria-label', accessibilityLabel);
   });
@@ -21,28 +32,60 @@ describe('NativeInput Accessibility', () => {
 
 describe('NativeInput', () => {
   it('can change type', () => {
-    render(<NativeInput testID={TEST_ID} type="number" />);
+    render(
+      <DefaultThemeProvider>
+        <NativeInput testID={TEST_ID} type="number" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('type', 'number');
   });
 
   it('can mark as disabled', () => {
-    render(<NativeInput disabled testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeInput disabled testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('disabled');
   });
 
-  it('changes align style if override passed as align prop', () => {
-    render(<NativeInput align="center" testID={TEST_ID} />);
+  it('changes scheme style for input icons for dark spectrum', () => {
+    render(
+      <DefaultThemeProvider activeColorScheme="dark">
+        <NativeInput testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
-    expect(screen.getByTestId(TEST_ID)).toHaveAttribute('style', 'text-align: center;');
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute(
+      'style',
+      'text-align: start; color-scheme: dark;',
+    );
+  });
+
+  it('changes align style if override passed as align prop', () => {
+    render(
+      <DefaultThemeProvider>
+        <NativeInput align="center" testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId(TEST_ID)).toHaveAttribute(
+      'style',
+      'text-align: center; color-scheme: light;',
+    );
   });
 });
 
 describe('NativeInput events', () => {
   it('fires `onClick` when clicked', () => {
     const spy = jest.fn();
-    render(<NativeInput onClick={spy} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeInput onClick={spy} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.click(screen.getByRole('textbox'));
 
@@ -51,7 +94,11 @@ describe('NativeInput events', () => {
 
   it('fires `onFocus` when clicked', () => {
     const spy = jest.fn();
-    render(<NativeInput onFocus={spy} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeInput onFocus={spy} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.focus(screen.getByRole('textbox'));
 
@@ -60,7 +107,11 @@ describe('NativeInput events', () => {
 
   it('fires `onBlur` when clicking outside of input', () => {
     const spy = jest.fn();
-    render(<NativeInput onBlur={spy} testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeInput onBlur={spy} testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.blur(screen.getByRole('textbox'));
 
@@ -68,7 +119,11 @@ describe('NativeInput events', () => {
   });
 
   it('text changes with `onChange`', () => {
-    render(<NativeInput testID={TEST_ID} />);
+    render(
+      <DefaultThemeProvider>
+        <NativeInput testID={TEST_ID} />
+      </DefaultThemeProvider>,
+    );
 
     const input = screen.getByTestId(TEST_ID);
 

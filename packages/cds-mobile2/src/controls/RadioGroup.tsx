@@ -23,7 +23,7 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
   testID,
 }) => {
   const theme = useTheme();
-  const { radioSize } = theme.control;
+  const { radioSize } = theme.controlSize;
 
   return (
     <Interactable

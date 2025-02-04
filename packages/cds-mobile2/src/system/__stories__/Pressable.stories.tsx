@@ -63,15 +63,15 @@ const PressableScreen = () => {
 
       <Example title="Pressable (opacity only)">
         <Box padding={1}>
-          <PressableOpacity>
+          <Pressable accessibilityRole="button" background="transparent">
             <TextBody>Default background</TextBody>
-          </PressableOpacity>
+          </Pressable>
         </Box>
 
         <Box background="backgroundOverlay" padding={1}>
-          <PressableOpacity>
+          <Pressable accessibilityRole="button" background="transparent">
             <TextBody>Other background</TextBody>
-          </PressableOpacity>
+          </Pressable>
         </Box>
       </Example>
       <Example title="Pressable transparentWhileInactive">

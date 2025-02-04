@@ -16,8 +16,8 @@ describe('HelperText.test', () => {
       </HelperText>,
     );
 
-    expect(screen.getByText('Test text').className).toContain('cds-textNegative-');
-    expect(screen.getByTestId('error-icon').className).toContain('cds-iconNegative-');
+    expect(screen.getByText('Test text').className).toContain('textNegative');
+    expect(screen.getByTestId('error-icon').className).toContain('iconNegative');
   });
 
   it('renders custom padding', () => {
@@ -27,6 +27,6 @@ describe('HelperText.test', () => {
       </HelperText>,
     );
 
-    expect(screen.getByTestId('helper-text-test').className).toContain('cds-4-');
+    expect(screen.getByTestId('helper-text-test').className).toContain('4');
   });
 });

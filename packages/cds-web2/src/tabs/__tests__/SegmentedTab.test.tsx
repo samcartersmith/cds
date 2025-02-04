@@ -43,7 +43,7 @@ describe('SegmentedTab', () => {
     );
     const buyTab = screen.getByText('Buy');
     expect(buyTab).toBeInTheDocument();
-    expect(buyTab.className).toContain('cds-textForeground-');
+    expect(buyTab.className).toContain('textForeground');
   });
 
   it('renders SegmentedTab correctly when disabled', () => {

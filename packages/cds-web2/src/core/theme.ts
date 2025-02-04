@@ -16,7 +16,7 @@ export type ThemeConfig = {
   fontWeight: { [key in ThemeVars.FontWeight]: Property.FontWeight };
   lineHeight: { [key in ThemeVars.LineHeight]: Property.LineHeight };
   shadow: { [key in ThemeVars.Shadow]: Property.BoxShadow };
-  control: { [key in ThemeVars.ControlSize]: number };
+  controlSize: { [key in ThemeVars.ControlSize]: number };
 };
 
 export type Theme = ThemeConfig & {
@@ -39,7 +39,7 @@ export const styleVarPrefixes = {
   fontWeight: 'fontWeight',
   lineHeight: 'lineHeight',
   shadow: 'shadow',
-  control: 'control',
+  controlSize: 'controlSize',
 } as const satisfies Record<
   Exclude<keyof Theme, 'colorScheme' | 'lightSpectrum' | 'darkSpectrum' | 'light' | 'dark'>,
   string
@@ -82,8 +82,8 @@ type ThemeObjectCssVars = {
   shadow: {
     [key in ThemeVars.Shadow as `--${typeof styleVarPrefixes.shadow}-${key}`]: Property.BoxShadow;
   };
-  control: {
-    [key in ThemeVars.ControlSize as `--${typeof styleVarPrefixes.control}-${key}`]: Property.Width;
+  controlSize: {
+    [key in ThemeVars.ControlSize as `--${typeof styleVarPrefixes.controlSize}-${key}`]: Property.Width;
   };
 };
 

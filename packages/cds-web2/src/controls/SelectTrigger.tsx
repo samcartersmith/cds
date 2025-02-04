@@ -6,7 +6,7 @@ import type { InputVariant, SelectBaseProps } from '@cbhq/cds-common2/types';
 
 import { HStack } from '../layout/HStack';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
-import { PressableOpacity } from '../system/PressableOpacity';
+import { Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 import { TextInputFocusVariantContext } from './context';
@@ -73,8 +73,9 @@ export const SelectTrigger = memo(
         label={label}
         variant={variant}
       >
-        <PressableOpacity
+        <Pressable
           noScaleOnPress
+          background="transparent"
           className={pressableOverrides}
           onPress={onPress}
           tabIndex={0}
@@ -125,7 +126,7 @@ export const SelectTrigger = memo(
               </HStack>
             </HStack>
           </HStack>
-        </PressableOpacity>
+        </Pressable>
       </SelectStack>
     );
   }),

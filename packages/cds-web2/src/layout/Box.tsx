@@ -84,7 +84,7 @@ const pinStyle: Record<PinningDirection, LinariaClassName> = {
   `,
 };
 
-const boxDefaultElement = 'div';
+export const boxDefaultElement = 'div';
 
 export type BoxDefaultElement = typeof boxDefaultElement;
 
@@ -173,7 +173,6 @@ export const Box: BoxComponent = memo(
         borderRightWidth,
         borderBottomWidth,
         borderLeftWidth,
-
         hoverColor,
         hoverBackground,
         hoverBorderColor,

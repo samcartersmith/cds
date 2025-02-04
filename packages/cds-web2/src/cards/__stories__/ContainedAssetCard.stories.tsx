@@ -2,6 +2,7 @@ import React from 'react';
 import { assets, ethBackground } from '@cbhq/cds-common2/internal/data/assets';
 import { subheadIconSignMap } from '@cbhq/cds-common2/tokens/sparkline';
 
+import { DotStatusColor } from '../../dots/DotStatusColor';
 import { HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { ContainedAssetCard, ContainedAssetCardProps } from '../ContainedAssetCard';
@@ -132,19 +133,18 @@ export const Carousel = (): JSX.Element => (
   </HStack>
 );
 
-// TO DO: Uncomment this to add HeaderWithDotColorStatus when DotStatusColor has been migrated
-// export const HeaderWithDotColorStatus = (): JSX.Element => {
-//   return (
-//     <ContainedAssetCard
-//       {...exampleProps}
-//       header={
-//         <DotStatusColor overlap="circular" pin="top-end" size="xs" variant="negative">
-//           {exampleProps.header}
-//         </DotStatusColor>
-//       }
-//     />
-//   );
-// };
+export const HeaderWithDotColorStatus = (): JSX.Element => {
+  return (
+    <ContainedAssetCard
+      {...exampleProps}
+      header={
+        <DotStatusColor overlap="circular" pin="top-end" size="xs" variant="negative">
+          {exampleProps.header}
+        </DotStatusColor>
+      }
+    />
+  );
+};
 
 export const CustomWidth = (): JSX.Element => {
   return (

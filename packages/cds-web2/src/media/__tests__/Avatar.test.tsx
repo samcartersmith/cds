@@ -33,12 +33,12 @@ describe('Avatar', () => {
     );
     const box = screen.getByTestId('avatar-component');
 
-    expect(box.className).toContain('cds-avatarStyles-');
+    expect(box.className).toContain('avatarStyles');
     expect(box).toHaveAttribute('data-bordered', 'true');
     expect(box.style.getPropertyValue('--avatar-borderColor')).toBe(
       'var(--color-backgroundPositive)',
     );
-    expect(box.className).toContain('cds-circle-');
+    expect(box.className).toContain('circle');
   });
 
   it('renders with different sizes', () => {
@@ -60,19 +60,19 @@ describe('Avatar', () => {
     const box = screen.getByTestId('avatar-component');
     expect(box).toBeTruthy();
     expect(box).toHaveAttribute('data-shape', 'circle');
-    expect(box.className).toContain('cds-circle-');
+    expect(box.className).toContain('circle');
 
     render(<Avatar alt="TestName" shape="square" src={src} testID="avatar-square-component" />);
     const square = screen.getByTestId('avatar-square-component');
     expect(square).toBeTruthy();
     expect(square).toHaveAttribute('data-shape', 'square');
-    expect(square.className).toContain('cds-square-');
+    expect(square.className).toContain('square');
 
     render(<Avatar alt="TestName" shape="hexagon" src={src} testID="avatar-hexagon-component" />);
     const hexagon = screen.getByTestId('avatar-hexagon-component');
     expect(hexagon).toBeTruthy();
     expect(hexagon).toHaveAttribute('data-shape', 'hexagon');
-    expect(hexagon.className).toContain('cds-hexagon-');
+    expect(hexagon.className).toContain('hexagon');
   });
 
   it('capitalizes first letter of avatar name', () => {

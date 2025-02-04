@@ -20,7 +20,7 @@ const insetFocusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-200);
+    outline-width: 2px;
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 0;
   }

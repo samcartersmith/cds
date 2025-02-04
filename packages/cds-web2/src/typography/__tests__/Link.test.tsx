@@ -72,7 +72,7 @@ describe('Link', () => {
         Child
       </Link>,
     );
-    expect(screen.getByTestId(testID).className).toContain('cds-textInherit');
+    expect(screen.getByTestId(testID).className).toContain('textInherit');
   });
 
   it('inherits by default', () => {
@@ -82,6 +82,6 @@ describe('Link', () => {
         Child
       </Link>,
     );
-    expect(screen.getByText('Child').className).toContain('cds-textInherit');
+    expect(screen.getByText('Child').className).toContain('textInherit');
   });
 });

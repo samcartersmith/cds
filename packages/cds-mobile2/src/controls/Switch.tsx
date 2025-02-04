@@ -22,7 +22,7 @@ const SwitchIcon = ({
   testID,
 }: ControlIconProps) => {
   const theme = useTheme();
-  const { switchWidth, switchHeight, switchThumbSize } = theme.control;
+  const { switchWidth, switchHeight, switchThumbSize } = theme.controlSize;
 
   const trackStyle = useMemo(
     () => [
@@ -80,7 +80,7 @@ const SwitchWithRef = forwardRef(function SwitchWithRef(
   ref: React.ForwardedRef<View>,
 ) {
   const theme = useTheme();
-  const { switchHeight } = theme.control;
+  const { switchHeight } = theme.controlSize;
 
   const switchNode = (
     <Control

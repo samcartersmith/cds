@@ -21,7 +21,7 @@ const CheckboxIcon = memo(
     testID,
   }: React.PropsWithChildren<ControlIconProps>) => {
     const theme = useTheme();
-    const { checkboxSize } = theme.control;
+    const { checkboxSize } = theme.controlSize;
     const backgroundColor = useMemo(() => {
       return checked || indeterminate ? 'backgroundPrimary' : 'background';
     }, [checked, indeterminate]);

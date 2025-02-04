@@ -5,6 +5,8 @@ import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAcc
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import type { TextAlignProps } from '@cbhq/cds-common2/types/TextBaseProps';
 
+import { useTheme } from '../hooks/useTheme';
+
 const baseStyle = css`
   font-size: var(--fontSize-body);
   line-height: var(--lineHeight-body);
@@ -120,6 +122,7 @@ export const NativeInput = memo(
     }: NativeInputProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) {
+    const { colorScheme } = useTheme();
     const defaultContainerPadding = compact
       ? compactContainerPaddingStyle
       : originalContainerPaddingStyle;
@@ -127,11 +130,10 @@ export const NativeInput = memo(
     const dynamicStyles = useMemo(() => {
       return {
         textAlign: align,
-        // TODO: do we need this?
-        // colorScheme: spectrum,
+        colorScheme,
         ...style,
       };
-    }, [align, style]);
+    }, [align, colorScheme, style]);
 
     return (
       <input

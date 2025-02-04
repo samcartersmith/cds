@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.6.7 (2/4/2025 PST)
+
+#### 🐞 Fixes
+
+- Deprecated PressableOpacity. [[#3554](https://github.cbhq.net/frontend/cds/pull/3554)]
+
 ## 7.6.6 ((2/3/2025, 02:57 PM PST))
 
 This is an artificial version bump with no new change.

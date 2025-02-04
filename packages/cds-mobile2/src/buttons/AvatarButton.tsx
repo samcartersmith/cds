@@ -4,7 +4,7 @@ import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight'
 import { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
 import { Avatar } from '../media';
-import { PressableOpacity, PressableProps } from '../system';
+import { type PressableProps, Pressable } from '../system/Pressable';
 
 export type AvatarButtonProps = PressableProps &
   SharedProps &
@@ -26,9 +26,10 @@ export const AvatarButton = memo(function AvatarButton({
   const height = compact ? interactableHeight.compact : interactableHeight.regular;
 
   return (
-    <PressableOpacity
+    <Pressable
       accessibilityHint={accessibilityLabel ?? alt}
       accessibilityLabel={accessibilityLabel ?? alt}
+      background="transparent"
       feedback={feedback}
       {...props}
     >
@@ -41,6 +42,6 @@ export const AvatarButton = memo(function AvatarButton({
         shape={shape}
         src={src}
       />
-    </PressableOpacity>
+    </Pressable>
   );
 });

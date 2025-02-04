@@ -7,7 +7,7 @@ import { Icon } from '../icons/Icon';
 import { type BoxBaseProps, Box } from '../layout/Box';
 import { isNativeClick } from '../system/reakit-utils';
 
-const iconButtonDefaultElement = 'button';
+export const iconButtonDefaultElement = 'button';
 
 export type IconButtonDefaultElement = typeof iconButtonDefaultElement;
 
@@ -213,7 +213,7 @@ const focusRingStyle = css`
   }
   &:focus-visible {
     outline-style: solid;
-    outline-width: var(--borderWidth-200);
+    outline-width: 2px;
     outline-color: var(--color-backgroundPrimary);
     outline-offset: 2px;
   }
