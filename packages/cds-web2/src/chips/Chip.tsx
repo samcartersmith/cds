@@ -1,5 +1,5 @@
 import React, { forwardRef, Fragment, memo } from 'react';
-import { css } from '@linaria/core';
+import { css, cx } from '@linaria/core';
 import { curves, durations } from '@cbhq/cds-common2/motion/tokens';
 import { chipMaxWidth } from '@cbhq/cds-common2/tokens/chip';
 
@@ -10,8 +10,14 @@ import { Text } from '../typography/Text';
 
 import type { ChipProps } from './ChipProps';
 
-const motionStyles = css`
+const contentClass = css`
   transition: background ${durations.fast3}ms cubic-bezier(${curves.global.join(',')});
+`;
+
+// styles that clamp the width and height of the Chip container
+const containerClass = css`
+  max-height: fit-content;
+  min-width: min(fit-content, ${chipMaxWidth}px);
 `;
 
 /**
@@ -23,32 +29,34 @@ export const Chip = memo(
       children,
       start,
       end,
-      inverted,
       maxWidth = chipMaxWidth,
+      inverted,
       compact,
       numberOfLines = 1,
       onPress,
       testID,
       accessibilityLabel,
       contentStyle,
-      ...props
+      ...pressableProps
     },
     ref,
   ) {
+    const hasPressableContainer = Boolean(onPress);
+
     const content = (
       <HStack
         accessibilityLabel={accessibilityLabel}
         alignItems="center"
         // need to set the background here if the content is not wrapped in a Pressable
-        background={onPress ? undefined : 'backgroundSecondary'}
+        background={hasPressableContainer ? undefined : 'backgroundSecondary'}
         borderRadius={500}
-        className={motionStyles}
+        className={cx(contentClass, !hasPressableContainer && containerClass)}
         gap={1}
         maxWidth={maxWidth}
         paddingX={compact ? 1 : 2}
         paddingY={compact ? 0.5 : 1}
         style={contentStyle}
-        testID={!onPress ? testID : undefined}
+        testID={!hasPressableContainer ? testID : undefined}
       >
         {start}
         {typeof children === 'string' ? (
@@ -66,14 +74,15 @@ export const Chip = memo(
 
     return (
       <Wrapper>
-        {onPress ? (
+        {hasPressableContainer ? (
           <Pressable
             ref={ref}
             background="backgroundSecondary"
             borderRadius={500}
+            className={containerClass}
             onPress={onPress}
             testID={testID}
-            {...props}
+            {...pressableProps}
           >
             {content}
           </Pressable>
