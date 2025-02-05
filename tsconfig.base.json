@@ -78,6 +78,12 @@
       "@cbhq/cds-mobile-visualization/*": [
         "packages/mobile-visualization/src/*"
       ],
+      "@cbhq/cds-mobile-visualization2": [
+        "packages/mobile-visualization2/src"
+      ],
+      "@cbhq/cds-mobile-visualization2/*": [
+        "packages/mobile-visualization2/src/*"
+      ],
       "@cbhq/cds-mobile/*": [
         "packages/mobile/src/*"
       ],

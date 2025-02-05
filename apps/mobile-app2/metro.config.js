@@ -22,9 +22,9 @@ const aliases = {
   '@cbhq/cds-illustrations': path.resolve(__dirname, '../../packages/illustrations/src'),
   '@cbhq/cds-lottie-files2': path.resolve(__dirname, '../../packages/lottie-files2/src'),
   '@cbhq/cds-mobile2': path.resolve(__dirname, '../../packages/cds-mobile2/src'),
-  '@cbhq/cds-mobile-visualization': path.resolve(
+  '@cbhq/cds-mobile-visualization2': path.resolve(
     __dirname,
-    '../../packages/mobile-visualization/src',
+    '../../packages/mobile-visualization2/src',
   ),
   '@cbhq/cds-utils': path.resolve(__dirname, '../../packages/utils/src'),
   '@cbhq/ui-mobile-playground2': path.resolve(

@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.project.json",
+  "compilerOptions": {
+    "declarationDir": "dts",
+    "rootDir": "src"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [],
+  "references": [
+    {
+      "path": "../../packages/cds-common2"
+    },
+    {
+      "path": "../../packages/lottie-files2"
+    },
+    {
+      "path": "../../packages/cds-mobile2"
+    },
+    {
+      "path": "../../packages/utils"
+    }
+  ]
+}

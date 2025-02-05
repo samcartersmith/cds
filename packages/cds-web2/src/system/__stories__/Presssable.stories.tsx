@@ -183,7 +183,7 @@ export const ThemeColors = () => {
   return (
     <VStack gap={2}>
       {Object.entries(theme.color).map(([color, value]) => {
-        let textColor = getAccessibleColor(value);
+        let textColor = getAccessibleColor({ background: value });
         if (color === 'currentColor') textColor = '#ffffff';
         return (
           <Pressable
@@ -208,7 +208,7 @@ export const ThemeColorsWithDisabled = () => {
   return (
     <VStack gap={2}>
       {Object.entries(theme.color).map(([color, value]) => {
-        let textColor = getAccessibleColor(value);
+        let textColor = getAccessibleColor({ background: value });
         if (color === 'currentColor') textColor = '#ffffff';
         return (
           <Pressable

@@ -24,3 +24,5 @@ export const subheadIconSignMap: Record<SparklineInteractiveSubHead['sign'], str
   downwardTrend: '\u2198',
   '': '',
 };
+
+export const borderWidth = 2;

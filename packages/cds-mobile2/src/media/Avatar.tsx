@@ -41,7 +41,10 @@ export const Avatar = memo(
     const isCustomSizeAndSmall = isCustomSize && dangerouslySetSize <= smallAvatarSize;
     const colorScheme = colorSchemeMap[colorSchemeProp ?? 'blue'];
     const colorSchemeRgb = `rgb(${theme.spectrum[colorScheme]})`;
-    const fallbackTextColor = useMemo(() => getAccessibleColor(colorSchemeRgb), [colorSchemeRgb]);
+    const fallbackTextColor = useMemo(
+      () => getAccessibleColor({ background: colorSchemeRgb }),
+      [colorSchemeRgb],
+    );
 
     const computedSize = dangerouslySetSize ?? avatarSize;
     const shouldShowAvatarImage = !!src || !name;

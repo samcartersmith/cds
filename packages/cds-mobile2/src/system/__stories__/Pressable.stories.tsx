@@ -98,7 +98,7 @@ const PressableScreen = () => {
       <Example title="Pressable variants">
         <VStack gap={2}>
           {Object.entries(theme.color).map(([color, value]) => {
-            let textColor = getAccessibleColor(value);
+            let textColor = getAccessibleColor({ background: value });
             if (color === 'currentColor')
               textColor = theme.colorScheme === 'dark' ? '#ffffff' : '#000000';
             return (
@@ -118,7 +118,7 @@ const PressableScreen = () => {
       <Example title="Pressable variants with disabled">
         <VStack gap={2}>
           {Object.entries(theme.color).map(([color, value]) => {
-            let textColor = getAccessibleColor(value);
+            let textColor = getAccessibleColor({ background: value });
             if (color === 'currentColor')
               textColor = theme.colorScheme === 'dark' ? '#ffffff' : '#000000';
             return (

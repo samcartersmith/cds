@@ -2,27 +2,11 @@ import { color } from 'd3-color';
 
 import type { ColorScheme, ThemeVars } from '../core/theme';
 
-import { type ColorValue, blendColors, getRGBColor } from './blendColors';
+import { blendColors } from './blendColors';
+import { getLuminance } from './getLuminance';
 
 const darkColorThreshold = 0.11;
 const lightColorThreshold = 0.4;
-
-// Apply sRGB gamma correction
-const correctSrgbGamma = (c: number) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
-
-// Function to calculate relative luminance
-// WCGA 2.0 relative luminance calculation https://www.w3.org/WAI/GL/wiki/Relative_luminance
-const getRelativeLuminance = (d3Color: ColorValue) => {
-  const { r, g, b } = getRGBColor(d3Color);
-  const [red, green, blue] = [r, g, b].map((val) => val / 255);
-
-  const Y =
-    0.2126 * correctSrgbGamma(red) +
-    0.7152 * correctSrgbGamma(green) +
-    0.0722 * correctSrgbGamma(blue);
-
-  return Y; // Returns a brightness value from 0 (black) to 1 (white)
-};
 
 export const getBlendedBackgroundColor = ({
   background,
@@ -42,7 +26,7 @@ export const getBlendedBackgroundColor = ({
   if (background === 'currentColor' || d3BackgroundColor === null) return themeColor[background];
   // return transparent if the background is transparent
   if (d3BackgroundColor.opacity === 0) return 'transparent';
-  const backgroundLuminance = getRelativeLuminance(d3BackgroundColor);
+  const backgroundLuminance = getLuminance(themeColor[background]) ?? 1;
   const isHighHue =
     colorScheme === 'dark'
       ? backgroundLuminance >= lightColorThreshold // This filters out the light colors in the default darkSpectrum, e.g. gray70-gray100

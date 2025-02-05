@@ -72,7 +72,7 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
  * CDS handles everything above 1 and anything below 1 will use React Native's font scaling.
  * This is temporary until we run a scale project to sort out how we want CDS scale to work with dense device scales.
  */
-const fontScaleProps = {
+export const fontScaleProps = {
   allowFontScaling: true,
   maxFontSizeMultiplier: 1,
 } as const;

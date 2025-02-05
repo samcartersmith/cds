@@ -32,7 +32,7 @@ const SpectrumScreen = () => {
               {hueSteps.map((step) => {
                 const paletteValue = `${hue}${step}` as const;
                 const background = `rgb(${theme.spectrum[paletteValue]})`;
-                const foreground = getAccessibleColor(background);
+                const foreground = getAccessibleColor({ background });
                 return (
                   <VStack key={paletteValue} dangerouslySetBackground={background}>
                     <TextCaption align="center" dangerouslySetColor={foreground}>
