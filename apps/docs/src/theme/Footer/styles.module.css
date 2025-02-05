@@ -4,7 +4,7 @@
   align-items: stretch;
   border-radius: var(--border-radius-xl);
   padding: 24px;
-  background-color: var(--gray-5);
+  background-color: var(--color-backgroundAlternate);
 }
 
 @media screen and (max-width: 768px) {
@@ -50,7 +50,7 @@
 }
 
 .footerText {
-  color: var(--palette-foreground, #fff);
+  color: var(--color-textForeground);
   flex-grow: 1;
 }
 
@@ -61,5 +61,5 @@
 }
 
 .footerLink {
-  color: var(--palette-foreground);
+  color: var(--color-textForeground);
 }

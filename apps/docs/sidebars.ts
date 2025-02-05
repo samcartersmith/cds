@@ -48,7 +48,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/layout/box',
+              id: 'components/layout/Box/box',
               label: 'Box',
             },
             {

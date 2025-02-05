@@ -116,7 +116,7 @@ const Playground = memo(function Playground({
           )}
           <Collapsible collapsed={collapsed}>
             <VStack
-              background="backgroundSecondaryWash"
+              background="background"
               borderRadius={400}
               overflow="hidden"
               paddingX={3}

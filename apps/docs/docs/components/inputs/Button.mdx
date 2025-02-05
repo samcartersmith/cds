@@ -1,7 +1,7 @@
 ---
 id: button
 title: Button
-platform_switcher_options: { web: true, native: true }
+platform_switcher_options: { web: true, mobile: true }
 ---
 
 import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
@@ -22,7 +22,7 @@ import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
       sharedParentTypes={sharedParentTypes}
     />
   }
-  nativePropsTable={
+  mobilePropsTable={
     <ComponentPropsTable
       props={mobilePropsData}
       sharedTypeAliases={sharedTypeAliases}

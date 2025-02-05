@@ -2,7 +2,7 @@ import React, { createContext, useCallback, useContext, useMemo } from 'react';
 import { useHistory } from '@docusaurus/router';
 import { useLocation } from '@docusaurus/router';
 
-type Platform = 'web' | 'native';
+type Platform = 'web' | 'mobile';
 
 type PlatformContextType = {
   platform: Platform;
@@ -22,7 +22,7 @@ export const PlatformContextProvider = ({ children }: { children: React.ReactNod
 
   const platform = useMemo<Platform>(() => {
     const platform = new URLSearchParams(search).get(PLATFORM_SEARCH_PARAM_KEY);
-    if (platform === 'web' || platform === 'native') {
+    if (platform === 'web' || platform === 'mobile') {
       return platform;
     }
     return 'web';
@@ -32,12 +32,12 @@ export const PlatformContextProvider = ({ children }: { children: React.ReactNod
     (platformUpdater: Platform | ((prevPlatform: Platform) => Platform)) => {
       const searchParams = new URLSearchParams(search);
       let currentPlatform = searchParams.get(PLATFORM_SEARCH_PARAM_KEY);
-      if (currentPlatform !== 'web' && currentPlatform !== 'native') {
+      if (currentPlatform !== 'web' && currentPlatform !== 'mobile') {
         currentPlatform = 'web';
       }
       const newPlatform =
         typeof platformUpdater === 'function'
-          ? platformUpdater(currentPlatform as 'native' | 'web')
+          ? platformUpdater(currentPlatform as 'mobile' | 'web')
           : platformUpdater;
       searchParams.set(PLATFORM_SEARCH_PARAM_KEY, newPlatform);
       history.push({ search: searchParams.toString() });

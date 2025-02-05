@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { cx } from '@linaria/core';
 import { VStack } from '@cbhq/cds-web2/layout';
 import { TextBody } from '@cbhq/cds-web2/typography/TextBody';
 import { TextLabel2 } from '@cbhq/cds-web2/typography/TextLabel2';
@@ -6,6 +7,7 @@ import { SharedTypeAliases } from '@cbhq/docusaurus-plugin-docgen';
 import { ProcessedPropItem } from '@cbhq/docusaurus-plugin-docgen/types';
 
 import ModalLink from './ModalLink';
+import styles from './styles.module.css';
 
 export type TypeAliasModalContentProps = {
   typeAlias: string;
@@ -84,7 +86,7 @@ function PropsTableRow({ prop, sharedTypeAliases, searchTerm = '' }: PropsTableR
 
   const nameContent = useMemo(() => {
     return (
-      <VStack id={name}>
+      <VStack as="h3" className={cx(styles.propsTableWrapper, 'anchor')} id={name}>
         <TextBody as="p">
           {highlightedName}
           {required && <span style={{ color: 'rgb(var(--red50))' }}>*</span>}

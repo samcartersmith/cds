@@ -3,6 +3,8 @@ import { DocFrontMatter } from '@docusaurus/plugin-content-docs';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import { useWindowSize } from '@docusaurus/theme-common';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
+import { usePropsTOC } from '@site/src/utils/toc/PropsTOCManager';
+import { useTOC } from '@site/src/utils/toc/TOCManager';
 import ContentVisibility from '@theme/ContentVisibility';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import DocItemContent from '@theme/DocItem/Content';
@@ -14,35 +16,42 @@ import DocVersionBadge from '@theme/DocVersionBadge';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import Footer from '@theme/Footer';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
-import { HStack, VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web2/layout';
 import { SegmentedTabs } from '@cbhq/cds-web2/tabs/SegmentedTabs';
+import { Text } from '@cbhq/cds-web2/typography/Text';
 
 type DocFrontMatterExtended = DocFrontMatter & {
-  platform_switcher_options?: { web: boolean; native: boolean };
+  platform_switcher_options?: { web: boolean; mobile: boolean };
 };
 
 export default function DocItemLayout({ children }: Props): JSX.Element {
   const { frontMatter, toc, metadata } = useDoc();
+  const { items: propsTocItems = [] } = usePropsTOC();
+  const { items: tocItems = [] } = useTOC();
+  const updatedTocItems = useMemo(
+    () => [...toc, ...tocItems, ...propsTocItems],
+    [toc, tocItems, propsTocItems],
+  );
   const typedFrontMatter = frontMatter as DocFrontMatterExtended;
 
   const windowSize = useWindowSize({ desktopBreakpoint: 1280 });
   const isDesktop = windowSize === 'desktop' || windowSize === 'ssr';
   const isMobile = windowSize === 'mobile';
 
-  const shouldRenderToc = !frontMatter.hide_table_of_contents && toc.length > 0;
+  const shouldRenderToc = !frontMatter.hide_table_of_contents && updatedTocItems.length > 0;
   const shouldRenderPlatformSwitcher =
-    typedFrontMatter.platform_switcher_options?.native ||
+    typedFrontMatter.platform_switcher_options?.mobile ||
     typedFrontMatter.platform_switcher_options?.web ||
     false;
 
   const supportsWeb = typedFrontMatter.platform_switcher_options?.web || false;
-  const supportsNative = typedFrontMatter.platform_switcher_options?.native || false;
+  const supportsMobile = typedFrontMatter.platform_switcher_options?.mobile || false;
 
   const { platform, setPlatform } = usePlatformContext();
 
   const handlePlatformChange = useCallback(
     (tab: TabValue | null) => {
-      setPlatform(tab?.id as 'web' | 'native');
+      setPlatform(tab?.id as 'web' | 'mobile');
     },
     [setPlatform],
   );
@@ -51,20 +60,20 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
     () => [
       { id: 'web', label: 'Web', disabled: !typedFrontMatter.platform_switcher_options?.web },
       {
-        id: 'native',
-        label: 'Native',
-        disabled: !typedFrontMatter.platform_switcher_options?.native,
+        id: 'mobile',
+        label: 'Mobile',
+        disabled: !typedFrontMatter.platform_switcher_options?.mobile,
       },
     ],
     [
-      typedFrontMatter.platform_switcher_options?.native,
+      typedFrontMatter.platform_switcher_options?.mobile,
       typedFrontMatter.platform_switcher_options?.web,
     ],
   );
 
   const platformSwitcher = useMemo(() => {
     const activeTab =
-      supportsWeb && supportsNative
+      supportsWeb && supportsMobile
         ? platform === 'web'
           ? tabs[0]
           : tabs[1]
@@ -72,10 +81,10 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
         ? tabs[0]
         : tabs[1];
     return <SegmentedTabs activeTab={activeTab} onChange={handlePlatformChange} tabs={tabs} />;
-  }, [handlePlatformChange, platform, supportsNative, supportsWeb, tabs]);
+  }, [handlePlatformChange, platform, supportsMobile, supportsWeb, tabs]);
 
   return (
-    <HStack gap={5}>
+    <>
       <VStack flexGrow={1}>
         <ContentVisibility metadata={metadata} />
         <DocVersionBanner />
@@ -94,11 +103,26 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
         </VStack>
       </VStack>
       {isDesktop && (shouldRenderPlatformSwitcher || shouldRenderToc) && (
-        <VStack gap={4}>
+        <VStack
+          flexBasis={230}
+          flexGrow={0}
+          flexShrink={0}
+          gap={4}
+          maxHeight="calc(100vh - var(--ifm-navbar-height) - 3rem)"
+          position="sticky"
+          top="calc(var(--ifm-navbar-height) + 1.5rem)"
+        >
           {shouldRenderPlatformSwitcher && platformSwitcher}
-          {shouldRenderToc && <DocItemTOCDesktop />}
+          <VStack gap={2} overflow="auto">
+            {shouldRenderToc && (
+              <Text font="headline" paddingX={0.5}>
+                On This Page
+              </Text>
+            )}
+            {shouldRenderToc && <DocItemTOCDesktop />}
+          </VStack>
         </VStack>
       )}
-    </HStack>
+    </>
   );
 }
