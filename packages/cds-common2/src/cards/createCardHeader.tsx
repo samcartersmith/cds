@@ -45,7 +45,7 @@ export function createCardHeader<T>({
           ) : null}
           <VStack>
             {description ? <TextLabel1>{description}</TextLabel1> : null}
-            {metaData ? <TextLegal color="textForegroundMuted">{metaData}</TextLegal> : null}
+            {metaData ? <TextLegal color="fgMuted">{metaData}</TextLegal> : null}
           </VStack>
         </HStack>
         {action}

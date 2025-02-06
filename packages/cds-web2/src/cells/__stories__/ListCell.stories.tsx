@@ -45,7 +45,7 @@ const {
   WithActions,
   WithIntermediary,
 } = listCellBuilder(ListCell, CellMedia, Button, IconButton, (props) => (
-  <Box {...props} background="backgroundAlternate" />
+  <Box {...props} background="bgAlternate" />
 ));
 
 export {

@@ -28,7 +28,7 @@ export default function NavbarNavLink({
       <Pressable
         noScaleOnPress
         as={Link}
-        background="backgroundSecondary"
+        background="bgSecondary"
         className={styles.link}
         href={prependBaseUrlToHref ? normalizedHref : href}
       >
@@ -42,7 +42,7 @@ export default function NavbarNavLink({
       isNavLink
       noScaleOnPress
       as={Link}
-      background="backgroundSecondary"
+      background="bgSecondary"
       className={styles.link}
       to={toUrl}
       {...((activeBasePath || activeBaseRegex) && {

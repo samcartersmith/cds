@@ -13,56 +13,56 @@ export type ButtonVariantConfig = Record<ButtonVariant, ButtonVariantStyles>;
 
 const variants: ButtonVariantConfig = {
   primary: {
-    color: 'textForegroundInverse',
-    backgroundColor: 'backgroundPrimary',
+    color: 'fgInverse',
+    backgroundColor: 'bgPrimary',
     borderColor: 'transparent',
   },
   secondary: {
-    color: 'textForeground',
-    backgroundColor: 'backgroundSecondary',
+    color: 'fg',
+    backgroundColor: 'bgSecondary',
     borderColor: 'transparent',
   },
   foregroundMuted: {
-    color: 'textForegroundMuted',
-    backgroundColor: 'backgroundSecondary',
-    borderColor: 'line',
+    color: 'fgMuted',
+    backgroundColor: 'bgSecondary',
+    borderColor: 'bgLine',
   },
   positive: {
-    color: 'textForegroundInverse',
-    backgroundColor: 'backgroundPositive',
+    color: 'fgInverse',
+    backgroundColor: 'bgPositive',
     borderColor: 'transparent',
   },
   negative: {
-    color: 'textForegroundInverse',
-    backgroundColor: 'backgroundNegative',
+    color: 'fgInverse',
+    backgroundColor: 'bgNegative',
     borderColor: 'transparent',
   },
 };
 
 const transparentVariants: ButtonVariantConfig = {
   primary: {
-    color: 'textPrimary',
-    backgroundColor: 'background',
+    color: 'fgPrimary',
+    backgroundColor: 'bg',
     borderColor: 'transparent',
   },
   secondary: {
-    color: 'textForeground',
-    backgroundColor: 'background',
+    color: 'fg',
+    backgroundColor: 'bg',
     borderColor: 'transparent',
   },
   foregroundMuted: {
-    color: 'textForegroundMuted',
-    backgroundColor: 'background',
+    color: 'fgMuted',
+    backgroundColor: 'bg',
     borderColor: 'transparent',
   },
   positive: {
-    color: 'textPositive',
-    backgroundColor: 'background',
+    color: 'fgPositive',
+    backgroundColor: 'bg',
     borderColor: 'transparent',
   },
   negative: {
-    color: 'textNegative',
-    backgroundColor: 'background',
+    color: 'fgNegative',
+    backgroundColor: 'bg',
     borderColor: 'transparent',
   },
 };

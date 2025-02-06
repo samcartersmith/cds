@@ -20,7 +20,7 @@ export function useSparklineInteractiveLineStyles() {
     return {
       dotStyle: [
         {
-          backgroundColor: theme.color.textForegroundMuted,
+          backgroundColor: theme.color.fgMuted,
         },
         {
           position: 'absolute',
@@ -35,8 +35,8 @@ export function useSparklineInteractiveLineStyles() {
       lineProps: {
         ...staticLineProps,
         strokeWidth: borderWidth,
-        stroke: theme.color.textForegroundMuted,
+        stroke: theme.color.fgMuted,
       },
     };
-  }, [theme.color.textForegroundMuted, theme.space]);
+  }, [theme.color.fgMuted, theme.space]);
 }

@@ -148,7 +148,7 @@ export function contentCellBuilder(
 
       <ContentCell
         description="Description"
-        media={<CellMedia color="iconPrimary" name="phone" type="icon" />}
+        media={<CellMedia color="fgPrimary" name="phone" type="icon" />}
         title="Icon (With Primary Color)"
       />
 

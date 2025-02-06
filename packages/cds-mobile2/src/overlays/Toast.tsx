@@ -83,7 +83,7 @@ export const Toast = memo(
           <HStack
             animated
             alignItems="center"
-            background="background"
+            background="bg"
             borderRadius={200}
             elevation={2}
             overflow="hidden"

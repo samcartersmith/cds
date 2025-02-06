@@ -79,7 +79,7 @@ export const ContentCell = memo(function ContentCell(
               paddingLeft={2}
               paddingTop={0.5}
             >
-              <Text as="span" color="textForegroundMuted" font="label2" overflow="truncate">
+              <Text as="span" color="fgMuted" font="label2" overflow="truncate">
                 {meta}
               </Text>
             </Box>
@@ -89,7 +89,7 @@ export const ContentCell = memo(function ContentCell(
 
       {!!description && (
         <div className={overflowClassName}>
-          <Text as="div" color="textForegroundMuted" font="body">
+          <Text as="div" color="fgMuted" font="body">
             {description}
           </Text>
         </div>

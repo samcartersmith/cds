@@ -15,8 +15,8 @@ export const SegmentedTabs = memo(
       {
         TabComponent = SegmentedTab,
         TabsActiveIndicatorComponent = SegmentedTabsActiveIndicator,
-        activeBackground = 'backgroundInverse',
-        background = 'backgroundSecondary',
+        activeBackground = 'bgInverse',
+        background = 'bgSecondary',
         borderRadius = 1000,
         ...props
       }: SegmentedTabsProps,

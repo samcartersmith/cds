@@ -45,12 +45,12 @@ const LogoScreen = () => {
             <LogoWordmark />
           </Box>
           <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
-            <Box background="background" height={30} padding={1}>
+            <Box background="bg" height={30} padding={1}>
               <LogoWordmark foreground />
             </Box>
           </ThemeProvider>
           <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
-            <Box background="background" height={30} padding={1}>
+            <Box background="bg" height={30} padding={1}>
               <LogoWordmark foreground />
             </Box>
           </ThemeProvider>

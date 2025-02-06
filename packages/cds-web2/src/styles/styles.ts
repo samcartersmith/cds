@@ -108,154 +108,132 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
 
 export const color: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
-    color: var(--color-textForeground);
+  fg: css`
+    color: var(--color-fg);
   `,
-  textForegroundInverse: css`
-    color: var(--color-textForegroundInverse);
+  fgInverse: css`
+    color: var(--color-fgInverse);
   `,
-  textForegroundMuted: css`
-    color: var(--color-textForegroundMuted);
+  fgMuted: css`
+    color: var(--color-fgMuted);
   `,
-  textPrimary: css`
-    color: var(--color-textPrimary);
+  fgPrimary: css`
+    color: var(--color-fgPrimary);
   `,
-  textPositive: css`
-    color: var(--color-textPositive);
+  fgPositive: css`
+    color: var(--color-fgPositive);
   `,
-  textNegative: css`
-    color: var(--color-textNegative);
+  fgNegative: css`
+    color: var(--color-fgNegative);
   `,
-  textWarning: css`
-    color: var(--color-textWarning);
+  fgWarning: css`
+    color: var(--color-fgWarning);
   `,
   // Background
-  background: css`
-    color: var(--color-background);
+  bg: css`
+    color: var(--color-bg);
   `,
-  backgroundAlternate: css`
-    color: var(--color-backgroundAlternate);
+  bgAlternate: css`
+    color: var(--color-bgAlternate);
   `,
-  backgroundInverse: css`
-    color: var(--color-backgroundInverse);
+  bgInverse: css`
+    color: var(--color-bgInverse);
   `,
-  backgroundOverlay: css`
-    color: var(--color-backgroundOverlay);
+  bgOverlay: css`
+    color: var(--color-bgOverlay);
   `,
-  backgroundPrimary: css`
-    color: var(--color-backgroundPrimary);
+  bgPrimary: css`
+    color: var(--color-bgPrimary);
   `,
-  backgroundPrimaryWash: css`
-    color: var(--color-backgroundPrimaryWash);
+  bgPrimaryWash: css`
+    color: var(--color-bgPrimaryWash);
   `,
-  backgroundSecondary: css`
-    color: var(--color-backgroundSecondary);
+  bgSecondary: css`
+    color: var(--color-bgSecondary);
   `,
-  backgroundSecondaryWash: css`
-    color: var(--color-backgroundSecondaryWash);
+  bgSecondaryWash: css`
+    color: var(--color-bgSecondaryWash);
   `,
-  backgroundNegative: css`
-    color: var(--color-backgroundNegative);
+  bgNegative: css`
+    color: var(--color-bgNegative);
   `,
-  backgroundNegativeWash: css`
-    color: var(--color-backgroundNegativeWash);
+  bgNegativeWash: css`
+    color: var(--color-bgNegativeWash);
   `,
-  backgroundPositive: css`
-    color: var(--color-backgroundPositive);
+  bgPositive: css`
+    color: var(--color-bgPositive);
   `,
-  backgroundPositiveWash: css`
-    color: var(--color-backgroundPositiveWash);
+  bgPositiveWash: css`
+    color: var(--color-bgPositiveWash);
   `,
-  backgroundWarning: css`
-    color: var(--color-backgroundWarning);
+  bgWarning: css`
+    color: var(--color-bgWarning);
   `,
-  backgroundWarningWash: css`
-    color: var(--color-backgroundWarningWash);
+  bgWarningWash: css`
+    color: var(--color-bgWarningWash);
   `,
   currentColor: css`
     color: var(--color-currentColor);
   `,
   // Background states
   backgroundPrimaryHover: css`
-    color: var(--color-backgroundPrimaryHover);
+    color: var(--color-bgPrimaryHover);
   `,
   backgroundPrimaryPressed: css`
-    color: var(--color-backgroundPrimaryPressed);
+    color: var(--color-bgPrimaryPressed);
   `,
   backgroundPrimaryDisabled: css`
-    color: var(--color-backgroundPrimaryDisabled);
+    color: var(--color-bgPrimaryDisabled);
   `,
   backgroundSecondaryHover: css`
-    color: var(--color-backgroundSecondaryHover);
+    color: var(--color-bgSecondaryHover);
   `,
   backgroundSecondaryPressed: css`
-    color: var(--color-backgroundSecondaryPressed);
+    color: var(--color-bgSecondaryPressed);
   `,
   backgroundSecondaryDisabled: css`
-    color: var(--color-backgroundSecondaryDisabled);
+    color: var(--color-bgSecondaryDisabled);
   `,
   backgroundNegativeHover: css`
-    color: var(--color-backgroundNegativeHover);
+    color: var(--color-bgNegativeHover);
   `,
   backgroundNegativePressed: css`
-    color: var(--color-backgroundNegativePressed);
+    color: var(--color-bgNegativePressed);
   `,
   backgroundNegativeDisabled: css`
-    color: var(--color-backgroundNegativeDisabled);
+    color: var(--color-bgNegativeDisabled);
   `,
   backgroundPositiveHover: css`
-    color: var(--color-backgroundPositiveHover);
+    color: var(--color-bgPositiveHover);
   `,
   backgroundPositivePressed: css`
-    color: var(--color-backgroundPositivePressed);
+    color: var(--color-bgPositivePressed);
   `,
   backgroundPositiveDisabled: css`
-    color: var(--color-backgroundPositiveDisabled);
+    color: var(--color-bgPositiveDisabled);
   `,
   // Line
-  line: css`
-    color: var(--color-line);
+  bgLine: css`
+    color: var(--color-bgLine);
   `,
-  lineInverse: css`
-    color: var(--color-lineInverse);
+  bgLineInverse: css`
+    color: var(--color-bgLineInverse);
   `,
-  lineHeavy: css`
-    color: var(--color-lineHeavy);
+  bgLineHeavy: css`
+    color: var(--color-bgLineHeavy);
   `,
   linePrimary: css`
-    color: var(--color-linePrimary);
+    color: var(--color-bgLinePrimary);
   `,
-  linePrimaryLight: css`
-    color: var(--color-linePrimaryLight);
+  bgLinePrimarySubtle: css`
+    color: var(--color-bgLinePrimarySubtle);
   `,
   // Elevation
-  backgroundElevation1: css`
-    color: var(--color-backgroundElevation1);
+  bgElevation1: css`
+    color: var(--color-bgElevation1);
   `,
-  backgroundElevation2: css`
-    color: var(--color-backgroundElevation2);
-  `,
-  // Icon
-  iconForeground: css`
-    color: var(--color-iconForeground);
-  `,
-  iconForegroundInverse: css`
-    color: var(--color-iconForegroundInverse);
-  `,
-  iconForegroundMuted: css`
-    color: var(--color-iconForegroundMuted);
-  `,
-  iconPrimary: css`
-    color: var(--color-iconPrimary);
-  `,
-  iconPositive: css`
-    color: var(--color-iconPositive);
-  `,
-  iconNegative: css`
-    color: var(--color-iconNegative);
-  `,
-  iconWarning: css`
-    color: var(--color-iconWarning);
+  bgElevation2: css`
+    color: var(--color-bgElevation2);
   `,
   // Accent
   accentSubtleGreen: css`
@@ -310,154 +288,132 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const background: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
-    background-color: var(--color-textForeground);
+  fg: css`
+    background-color: var(--color-fg);
   `,
-  textForegroundInverse: css`
-    background-color: var(--color-textForegroundInverse);
+  fgInverse: css`
+    background-color: var(--color-fgInverse);
   `,
-  textForegroundMuted: css`
-    background-color: var(--color-textForegroundMuted);
+  fgMuted: css`
+    background-color: var(--color-fgMuted);
   `,
-  textPrimary: css`
-    background-color: var(--color-textPrimary);
+  fgPrimary: css`
+    background-color: var(--color-fgPrimary);
   `,
-  textPositive: css`
-    background-color: var(--color-textPositive);
+  fgPositive: css`
+    background-color: var(--color-fgPositive);
   `,
-  textNegative: css`
-    background-color: var(--color-textNegative);
+  fgNegative: css`
+    background-color: var(--color-fgNegative);
   `,
-  textWarning: css`
-    background-color: var(--color-textWarning);
+  fgWarning: css`
+    background-color: var(--color-fgWarning);
   `,
   // Background
-  background: css`
-    background-color: var(--color-background);
+  bg: css`
+    background-color: var(--color-bg);
   `,
-  backgroundAlternate: css`
-    background-color: var(--color-backgroundAlternate);
+  bgAlternate: css`
+    background-color: var(--color-bgAlternate);
   `,
-  backgroundInverse: css`
-    background-color: var(--color-backgroundInverse);
+  bgInverse: css`
+    background-color: var(--color-bgInverse);
   `,
-  backgroundOverlay: css`
-    background-color: var(--color-backgroundOverlay);
+  bgOverlay: css`
+    background-color: var(--color-bgOverlay);
   `,
-  backgroundPrimary: css`
-    background-color: var(--color-backgroundPrimary);
+  bgPrimary: css`
+    background-color: var(--color-bgPrimary);
   `,
-  backgroundPrimaryWash: css`
-    background-color: var(--color-backgroundPrimaryWash);
+  bgPrimaryWash: css`
+    background-color: var(--color-bgPrimaryWash);
   `,
-  backgroundSecondary: css`
-    background-color: var(--color-backgroundSecondary);
+  bgSecondary: css`
+    background-color: var(--color-bgSecondary);
   `,
-  backgroundSecondaryWash: css`
-    background-color: var(--color-backgroundSecondaryWash);
+  bgSecondaryWash: css`
+    background-color: var(--color-bgSecondaryWash);
   `,
-  backgroundNegative: css`
-    background-color: var(--color-backgroundNegative);
+  bgNegative: css`
+    background-color: var(--color-bgNegative);
   `,
-  backgroundNegativeWash: css`
-    background-color: var(--color-backgroundNegativeWash);
+  bgNegativeWash: css`
+    background-color: var(--color-bgNegativeWash);
   `,
-  backgroundPositive: css`
-    background-color: var(--color-backgroundPositive);
+  bgPositive: css`
+    background-color: var(--color-bgPositive);
   `,
-  backgroundPositiveWash: css`
-    background-color: var(--color-backgroundPositiveWash);
+  bgPositiveWash: css`
+    background-color: var(--color-bgPositiveWash);
   `,
-  backgroundWarning: css`
-    background-color: var(--color-backgroundWarning);
+  bgWarning: css`
+    background-color: var(--color-bgWarning);
   `,
-  backgroundWarningWash: css`
-    background-color: var(--color-backgroundWarningWash);
+  bgWarningWash: css`
+    background-color: var(--color-bgWarningWash);
   `,
   currentColor: css`
     background-color: var(--color-currentColor);
   `,
   // Background states
   backgroundPrimaryHover: css`
-    background-color: var(--color-backgroundPrimaryHover);
+    background-color: var(--color-bgPrimaryHover);
   `,
   backgroundPrimaryPressed: css`
-    background-color: var(--color-backgroundPrimaryPressed);
+    background-color: var(--color-bgPrimaryPressed);
   `,
   backgroundPrimaryDisabled: css`
-    background-color: var(--color-backgroundPrimaryDisabled);
+    background-color: var(--color-bgPrimaryDisabled);
   `,
   backgroundSecondaryHover: css`
-    background-color: var(--color-backgroundSecondaryHover);
+    background-color: var(--color-bgSecondaryHover);
   `,
   backgroundSecondaryPressed: css`
-    background-color: var(--color-backgroundSecondaryPressed);
+    background-color: var(--color-bgSecondaryPressed);
   `,
   backgroundSecondaryDisabled: css`
-    background-color: var(--color-backgroundSecondaryDisabled);
+    background-color: var(--color-bgSecondaryDisabled);
   `,
   backgroundNegativeHover: css`
-    background-color: var(--color-backgroundNegativeHover);
+    background-color: var(--color-bgNegativeHover);
   `,
   backgroundNegativePressed: css`
-    background-color: var(--color-backgroundNegativePressed);
+    background-color: var(--color-bgNegativePressed);
   `,
   backgroundNegativeDisabled: css`
-    background-color: var(--color-backgroundNegativeDisabled);
+    background-color: var(--color-bgNegativeDisabled);
   `,
   backgroundPositiveHover: css`
-    background-color: var(--color-backgroundPositiveHover);
+    background-color: var(--color-bgPositiveHover);
   `,
   backgroundPositivePressed: css`
-    background-color: var(--color-backgroundPositivePressed);
+    background-color: var(--color-bgPositivePressed);
   `,
   backgroundPositiveDisabled: css`
-    background-color: var(--color-backgroundPositiveDisabled);
+    background-color: var(--color-bgPositiveDisabled);
   `,
   // Line
-  line: css`
-    background-color: var(--color-line);
+  bgLine: css`
+    background-color: var(--color-bgLine);
   `,
-  lineInverse: css`
-    background-color: var(--color-lineInverse);
+  bgLineInverse: css`
+    background-color: var(--color-bgLineInverse);
   `,
-  lineHeavy: css`
-    background-color: var(--color-lineHeavy);
+  bgLineHeavy: css`
+    background-color: var(--color-bgLineHeavy);
   `,
   linePrimary: css`
-    background-color: var(--color-linePrimary);
+    background-color: var(--color-bgLinePrimary);
   `,
-  linePrimaryLight: css`
-    background-color: var(--color-linePrimaryLight);
+  bgLinePrimarySubtle: css`
+    background-color: var(--color-bgLinePrimarySubtle);
   `,
   // Elevation
-  backgroundElevation1: css`
-    background-color: var(--color-backgroundElevation1);
+  bgElevation1: css`
+    background-color: var(--color-bgElevation1);
   `,
-  backgroundElevation2: css`
-    background-color: var(--color-backgroundElevation2);
-  `,
-  // Icon
-  iconForeground: css`
-    background-color: var(--color-iconForeground);
-  `,
-  iconForegroundInverse: css`
-    background-color: var(--color-iconForegroundInverse);
-  `,
-  iconForegroundMuted: css`
-    background-color: var(--color-iconForegroundMuted);
-  `,
-  iconPrimary: css`
-    background-color: var(--color-iconPrimary);
-  `,
-  iconPositive: css`
-    background-color: var(--color-iconPositive);
-  `,
-  iconNegative: css`
-    background-color: var(--color-iconNegative);
-  `,
-  iconWarning: css`
-    background-color: var(--color-iconWarning);
+  bgElevation2: css`
+    background-color: var(--color-bgElevation2);
   `,
   // Accent
   accentSubtleGreen: css`
@@ -512,90 +468,90 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     border-style: solid;
-    border-color: var(--color-textForeground);
+    border-color: var(--color-fg);
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     border-style: solid;
-    border-color: var(--color-textForegroundInverse);
+    border-color: var(--color-fgInverse);
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     border-style: solid;
-    border-color: var(--color-textForegroundMuted);
+    border-color: var(--color-fgMuted);
   `,
-  textPrimary: css`
+  fgPrimary: css`
     border-style: solid;
-    border-color: var(--color-textPrimary);
+    border-color: var(--color-fgPrimary);
   `,
-  textPositive: css`
+  fgPositive: css`
     border-style: solid;
-    border-color: var(--color-textPositive);
+    border-color: var(--color-fgPositive);
   `,
-  textNegative: css`
+  fgNegative: css`
     border-style: solid;
-    border-color: var(--color-textNegative);
+    border-color: var(--color-fgNegative);
   `,
-  textWarning: css`
+  fgWarning: css`
     border-style: solid;
-    border-color: var(--color-textWarning);
+    border-color: var(--color-fgWarning);
   `,
   // Background
-  background: css`
+  bg: css`
     border-style: solid;
-    border-color: var(--color-background);
+    border-color: var(--color-bg);
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     border-style: solid;
-    border-color: var(--color-backgroundAlternate);
+    border-color: var(--color-bgAlternate);
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     border-style: solid;
-    border-color: var(--color-backgroundInverse);
+    border-color: var(--color-bgInverse);
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     border-style: solid;
-    border-color: var(--color-backgroundOverlay);
+    border-color: var(--color-bgOverlay);
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     border-style: solid;
-    border-color: var(--color-backgroundPrimary);
+    border-color: var(--color-bgPrimary);
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     border-style: solid;
-    border-color: var(--color-backgroundPrimaryWash);
+    border-color: var(--color-bgPrimaryWash);
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     border-style: solid;
-    border-color: var(--color-backgroundSecondary);
+    border-color: var(--color-bgSecondary);
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     border-style: solid;
-    border-color: var(--color-backgroundSecondaryWash);
+    border-color: var(--color-bgSecondaryWash);
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     border-style: solid;
-    border-color: var(--color-backgroundNegative);
+    border-color: var(--color-bgNegative);
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     border-style: solid;
-    border-color: var(--color-backgroundNegativeWash);
+    border-color: var(--color-bgNegativeWash);
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     border-style: solid;
-    border-color: var(--color-backgroundPositive);
+    border-color: var(--color-bgPositive);
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     border-style: solid;
-    border-color: var(--color-backgroundPositiveWash);
+    border-color: var(--color-bgPositiveWash);
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     border-style: solid;
-    border-color: var(--color-backgroundWarning);
+    border-color: var(--color-bgWarning);
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     border-style: solid;
-    border-color: var(--color-backgroundWarningWash);
+    border-color: var(--color-bgWarningWash);
   `,
   currentColor: css`
     border-style: solid;
@@ -604,110 +560,81 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Background states
   backgroundPrimaryHover: css`
     border-style: solid;
-    border-color: var(--color-backgroundPrimaryHover);
+    border-color: var(--color-bgPrimaryHover);
   `,
   backgroundPrimaryPressed: css`
     border-style: solid;
-    border-color: var(--color-backgroundPrimaryPressed);
+    border-color: var(--color-bgPrimaryPressed);
   `,
   backgroundPrimaryDisabled: css`
     border-style: solid;
-    border-color: var(--color-backgroundPrimaryDisabled);
+    border-color: var(--color-bgPrimaryDisabled);
   `,
   backgroundSecondaryHover: css`
     border-style: solid;
-    border-color: var(--color-backgroundSecondaryHover);
+    border-color: var(--color-bgSecondaryHover);
   `,
   backgroundSecondaryPressed: css`
     border-style: solid;
-    border-color: var(--color-backgroundSecondaryPressed);
+    border-color: var(--color-bgSecondaryPressed);
   `,
   backgroundSecondaryDisabled: css`
     border-style: solid;
-    border-color: var(--color-backgroundSecondaryDisabled);
+    border-color: var(--color-bgSecondaryDisabled);
   `,
   backgroundNegativeHover: css`
     border-style: solid;
-    border-color: var(--color-backgroundNegativeHover);
+    border-color: var(--color-bgNegativeHover);
   `,
   backgroundNegativePressed: css`
     border-style: solid;
-    border-color: var(--color-backgroundNegativePressed);
+    border-color: var(--color-bgNegativePressed);
   `,
   backgroundNegativeDisabled: css`
     border-style: solid;
-    border-color: var(--color-backgroundNegativeDisabled);
+    border-color: var(--color-bgNegativeDisabled);
   `,
   backgroundPositiveHover: css`
     border-style: solid;
-    border-color: var(--color-backgroundPositiveHover);
+    border-color: var(--color-bgPositiveHover);
   `,
   backgroundPositivePressed: css`
     border-style: solid;
-    border-color: var(--color-backgroundPositivePressed);
+    border-color: var(--color-bgPositivePressed);
   `,
   backgroundPositiveDisabled: css`
     border-style: solid;
-    border-color: var(--color-backgroundPositiveDisabled);
+    border-color: var(--color-bgPositiveDisabled);
   `,
   // Line
-  line: css`
+  bgLine: css`
     border-style: solid;
-    border-color: var(--color-line);
+    border-color: var(--color-bgLine);
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     border-style: solid;
-    border-color: var(--color-lineInverse);
+    border-color: var(--color-bgLineInverse);
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     border-style: solid;
-    border-color: var(--color-lineHeavy);
+    border-color: var(--color-bgLineHeavy);
   `,
   linePrimary: css`
     border-style: solid;
-    border-color: var(--color-linePrimary);
+    border-color: var(--color-bgLinePrimary);
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     border-style: solid;
-    border-color: var(--color-linePrimaryLight);
+    border-color: var(--color-bgLinePrimarySubtle);
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     border-style: solid;
-    border-color: var(--color-backgroundElevation1);
+    border-color: var(--color-bgElevation1);
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     border-style: solid;
-    border-color: var(--color-backgroundElevation2);
-  `,
-  // Icon
-  iconForeground: css`
-    border-style: solid;
-    border-color: var(--color-iconForeground);
-  `,
-  iconForegroundInverse: css`
-    border-style: solid;
-    border-color: var(--color-iconForegroundInverse);
-  `,
-  iconForegroundMuted: css`
-    border-style: solid;
-    border-color: var(--color-iconForegroundMuted);
-  `,
-  iconPrimary: css`
-    border-style: solid;
-    border-color: var(--color-iconPrimary);
-  `,
-  iconPositive: css`
-    border-style: solid;
-    border-color: var(--color-iconPositive);
-  `,
-  iconNegative: css`
-    border-style: solid;
-    border-color: var(--color-iconNegative);
-  `,
-  iconWarning: css`
-    border-style: solid;
-    border-color: var(--color-iconWarning);
+    border-color: var(--color-bgElevation2);
   `,
   // Accent
   accentSubtleGreen: css`
@@ -778,110 +705,110 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     &:hover {
-      color: var(--color-textForeground);
+      color: var(--color-fg);
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     &:hover {
-      color: var(--color-textForegroundInverse);
+      color: var(--color-fgInverse);
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     &:hover {
-      color: var(--color-textForegroundMuted);
+      color: var(--color-fgMuted);
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     &:hover {
-      color: var(--color-textPrimary);
+      color: var(--color-fgPrimary);
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     &:hover {
-      color: var(--color-textPositive);
+      color: var(--color-fgPositive);
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     &:hover {
-      color: var(--color-textNegative);
+      color: var(--color-fgNegative);
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     &:hover {
-      color: var(--color-textWarning);
+      color: var(--color-fgWarning);
     }
   `,
   // Background
-  background: css`
+  bg: css`
     &:hover {
-      color: var(--color-background);
+      color: var(--color-bg);
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     &:hover {
-      color: var(--color-backgroundAlternate);
+      color: var(--color-bgAlternate);
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     &:hover {
-      color: var(--color-backgroundInverse);
+      color: var(--color-bgInverse);
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     &:hover {
-      color: var(--color-backgroundOverlay);
+      color: var(--color-bgOverlay);
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     &:hover {
-      color: var(--color-backgroundPrimary);
+      color: var(--color-bgPrimary);
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     &:hover {
-      color: var(--color-backgroundPrimaryWash);
+      color: var(--color-bgPrimaryWash);
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     &:hover {
-      color: var(--color-backgroundSecondary);
+      color: var(--color-bgSecondary);
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     &:hover {
-      color: var(--color-backgroundSecondaryWash);
+      color: var(--color-bgSecondaryWash);
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     &:hover {
-      color: var(--color-backgroundNegative);
+      color: var(--color-bgNegative);
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     &:hover {
-      color: var(--color-backgroundNegativeWash);
+      color: var(--color-bgNegativeWash);
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     &:hover {
-      color: var(--color-backgroundPositive);
+      color: var(--color-bgPositive);
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     &:hover {
-      color: var(--color-backgroundPositiveWash);
+      color: var(--color-bgPositiveWash);
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     &:hover {
-      color: var(--color-backgroundWarning);
+      color: var(--color-bgWarning);
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     &:hover {
-      color: var(--color-backgroundWarningWash);
+      color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
@@ -892,135 +819,99 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Background states
   backgroundPrimaryHover: css`
     &:hover {
-      color: var(--color-backgroundPrimaryHover);
+      color: var(--color-bgPrimaryHover);
     }
   `,
   backgroundPrimaryPressed: css`
     &:hover {
-      color: var(--color-backgroundPrimaryPressed);
+      color: var(--color-bgPrimaryPressed);
     }
   `,
   backgroundPrimaryDisabled: css`
     &:hover {
-      color: var(--color-backgroundPrimaryDisabled);
+      color: var(--color-bgPrimaryDisabled);
     }
   `,
   backgroundSecondaryHover: css`
     &:hover {
-      color: var(--color-backgroundSecondaryHover);
+      color: var(--color-bgSecondaryHover);
     }
   `,
   backgroundSecondaryPressed: css`
     &:hover {
-      color: var(--color-backgroundSecondaryPressed);
+      color: var(--color-bgSecondaryPressed);
     }
   `,
   backgroundSecondaryDisabled: css`
     &:hover {
-      color: var(--color-backgroundSecondaryDisabled);
+      color: var(--color-bgSecondaryDisabled);
     }
   `,
   backgroundNegativeHover: css`
     &:hover {
-      color: var(--color-backgroundNegativeHover);
+      color: var(--color-bgNegativeHover);
     }
   `,
   backgroundNegativePressed: css`
     &:hover {
-      color: var(--color-backgroundNegativePressed);
+      color: var(--color-bgNegativePressed);
     }
   `,
   backgroundNegativeDisabled: css`
     &:hover {
-      color: var(--color-backgroundNegativeDisabled);
+      color: var(--color-bgNegativeDisabled);
     }
   `,
   backgroundPositiveHover: css`
     &:hover {
-      color: var(--color-backgroundPositiveHover);
+      color: var(--color-bgPositiveHover);
     }
   `,
   backgroundPositivePressed: css`
     &:hover {
-      color: var(--color-backgroundPositivePressed);
+      color: var(--color-bgPositivePressed);
     }
   `,
   backgroundPositiveDisabled: css`
     &:hover {
-      color: var(--color-backgroundPositiveDisabled);
+      color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     &:hover {
-      color: var(--color-line);
+      color: var(--color-bgLine);
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     &:hover {
-      color: var(--color-lineInverse);
+      color: var(--color-bgLineInverse);
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     &:hover {
-      color: var(--color-lineHeavy);
+      color: var(--color-bgLineHeavy);
     }
   `,
   linePrimary: css`
     &:hover {
-      color: var(--color-linePrimary);
+      color: var(--color-bgLinePrimary);
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     &:hover {
-      color: var(--color-linePrimaryLight);
+      color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     &:hover {
-      color: var(--color-backgroundElevation1);
+      color: var(--color-bgElevation1);
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     &:hover {
-      color: var(--color-backgroundElevation2);
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    &:hover {
-      color: var(--color-iconForeground);
-    }
-  `,
-  iconForegroundInverse: css`
-    &:hover {
-      color: var(--color-iconForegroundInverse);
-    }
-  `,
-  iconForegroundMuted: css`
-    &:hover {
-      color: var(--color-iconForegroundMuted);
-    }
-  `,
-  iconPrimary: css`
-    &:hover {
-      color: var(--color-iconPrimary);
-    }
-  `,
-  iconPositive: css`
-    &:hover {
-      color: var(--color-iconPositive);
-    }
-  `,
-  iconNegative: css`
-    &:hover {
-      color: var(--color-iconNegative);
-    }
-  `,
-  iconWarning: css`
-    &:hover {
-      color: var(--color-iconWarning);
+      color: var(--color-bgElevation2);
     }
   `,
   // Accent
@@ -1108,110 +999,110 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     &:hover {
-      background-color: var(--color-textForeground);
+      background-color: var(--color-fg);
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     &:hover {
-      background-color: var(--color-textForegroundInverse);
+      background-color: var(--color-fgInverse);
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     &:hover {
-      background-color: var(--color-textForegroundMuted);
+      background-color: var(--color-fgMuted);
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     &:hover {
-      background-color: var(--color-textPrimary);
+      background-color: var(--color-fgPrimary);
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     &:hover {
-      background-color: var(--color-textPositive);
+      background-color: var(--color-fgPositive);
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     &:hover {
-      background-color: var(--color-textNegative);
+      background-color: var(--color-fgNegative);
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     &:hover {
-      background-color: var(--color-textWarning);
+      background-color: var(--color-fgWarning);
     }
   `,
   // Background
-  background: css`
+  bg: css`
     &:hover {
-      background-color: var(--color-background);
+      background-color: var(--color-bg);
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     &:hover {
-      background-color: var(--color-backgroundAlternate);
+      background-color: var(--color-bgAlternate);
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     &:hover {
-      background-color: var(--color-backgroundInverse);
+      background-color: var(--color-bgInverse);
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     &:hover {
-      background-color: var(--color-backgroundOverlay);
+      background-color: var(--color-bgOverlay);
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     &:hover {
-      background-color: var(--color-backgroundPrimary);
+      background-color: var(--color-bgPrimary);
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     &:hover {
-      background-color: var(--color-backgroundPrimaryWash);
+      background-color: var(--color-bgPrimaryWash);
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     &:hover {
-      background-color: var(--color-backgroundSecondary);
+      background-color: var(--color-bgSecondary);
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     &:hover {
-      background-color: var(--color-backgroundSecondaryWash);
+      background-color: var(--color-bgSecondaryWash);
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     &:hover {
-      background-color: var(--color-backgroundNegative);
+      background-color: var(--color-bgNegative);
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     &:hover {
-      background-color: var(--color-backgroundNegativeWash);
+      background-color: var(--color-bgNegativeWash);
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     &:hover {
-      background-color: var(--color-backgroundPositive);
+      background-color: var(--color-bgPositive);
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     &:hover {
-      background-color: var(--color-backgroundPositiveWash);
+      background-color: var(--color-bgPositiveWash);
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     &:hover {
-      background-color: var(--color-backgroundWarning);
+      background-color: var(--color-bgWarning);
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     &:hover {
-      background-color: var(--color-backgroundWarningWash);
+      background-color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
@@ -1222,135 +1113,99 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   // Background states
   backgroundPrimaryHover: css`
     &:hover {
-      background-color: var(--color-backgroundPrimaryHover);
+      background-color: var(--color-bgPrimaryHover);
     }
   `,
   backgroundPrimaryPressed: css`
     &:hover {
-      background-color: var(--color-backgroundPrimaryPressed);
+      background-color: var(--color-bgPrimaryPressed);
     }
   `,
   backgroundPrimaryDisabled: css`
     &:hover {
-      background-color: var(--color-backgroundPrimaryDisabled);
+      background-color: var(--color-bgPrimaryDisabled);
     }
   `,
   backgroundSecondaryHover: css`
     &:hover {
-      background-color: var(--color-backgroundSecondaryHover);
+      background-color: var(--color-bgSecondaryHover);
     }
   `,
   backgroundSecondaryPressed: css`
     &:hover {
-      background-color: var(--color-backgroundSecondaryPressed);
+      background-color: var(--color-bgSecondaryPressed);
     }
   `,
   backgroundSecondaryDisabled: css`
     &:hover {
-      background-color: var(--color-backgroundSecondaryDisabled);
+      background-color: var(--color-bgSecondaryDisabled);
     }
   `,
   backgroundNegativeHover: css`
     &:hover {
-      background-color: var(--color-backgroundNegativeHover);
+      background-color: var(--color-bgNegativeHover);
     }
   `,
   backgroundNegativePressed: css`
     &:hover {
-      background-color: var(--color-backgroundNegativePressed);
+      background-color: var(--color-bgNegativePressed);
     }
   `,
   backgroundNegativeDisabled: css`
     &:hover {
-      background-color: var(--color-backgroundNegativeDisabled);
+      background-color: var(--color-bgNegativeDisabled);
     }
   `,
   backgroundPositiveHover: css`
     &:hover {
-      background-color: var(--color-backgroundPositiveHover);
+      background-color: var(--color-bgPositiveHover);
     }
   `,
   backgroundPositivePressed: css`
     &:hover {
-      background-color: var(--color-backgroundPositivePressed);
+      background-color: var(--color-bgPositivePressed);
     }
   `,
   backgroundPositiveDisabled: css`
     &:hover {
-      background-color: var(--color-backgroundPositiveDisabled);
+      background-color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     &:hover {
-      background-color: var(--color-line);
+      background-color: var(--color-bgLine);
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     &:hover {
-      background-color: var(--color-lineInverse);
+      background-color: var(--color-bgLineInverse);
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     &:hover {
-      background-color: var(--color-lineHeavy);
+      background-color: var(--color-bgLineHeavy);
     }
   `,
   linePrimary: css`
     &:hover {
-      background-color: var(--color-linePrimary);
+      background-color: var(--color-bgLinePrimary);
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     &:hover {
-      background-color: var(--color-linePrimaryLight);
+      background-color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     &:hover {
-      background-color: var(--color-backgroundElevation1);
+      background-color: var(--color-bgElevation1);
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     &:hover {
-      background-color: var(--color-backgroundElevation2);
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    &:hover {
-      background-color: var(--color-iconForeground);
-    }
-  `,
-  iconForegroundInverse: css`
-    &:hover {
-      background-color: var(--color-iconForegroundInverse);
-    }
-  `,
-  iconForegroundMuted: css`
-    &:hover {
-      background-color: var(--color-iconForegroundMuted);
-    }
-  `,
-  iconPrimary: css`
-    &:hover {
-      background-color: var(--color-iconPrimary);
-    }
-  `,
-  iconPositive: css`
-    &:hover {
-      background-color: var(--color-iconPositive);
-    }
-  `,
-  iconNegative: css`
-    &:hover {
-      background-color: var(--color-iconNegative);
-    }
-  `,
-  iconWarning: css`
-    &:hover {
-      background-color: var(--color-iconWarning);
+      background-color: var(--color-bgElevation2);
     }
   `,
   // Accent
@@ -1438,110 +1293,110 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     &:hover {
-      border-color: var(--color-textForeground);
+      border-color: var(--color-fg);
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     &:hover {
-      border-color: var(--color-textForegroundInverse);
+      border-color: var(--color-fgInverse);
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     &:hover {
-      border-color: var(--color-textForegroundMuted);
+      border-color: var(--color-fgMuted);
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     &:hover {
-      border-color: var(--color-textPrimary);
+      border-color: var(--color-fgPrimary);
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     &:hover {
-      border-color: var(--color-textPositive);
+      border-color: var(--color-fgPositive);
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     &:hover {
-      border-color: var(--color-textNegative);
+      border-color: var(--color-fgNegative);
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     &:hover {
-      border-color: var(--color-textWarning);
+      border-color: var(--color-fgWarning);
     }
   `,
   // Background
-  background: css`
+  bg: css`
     &:hover {
-      border-color: var(--color-background);
+      border-color: var(--color-bg);
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     &:hover {
-      border-color: var(--color-backgroundAlternate);
+      border-color: var(--color-bgAlternate);
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     &:hover {
-      border-color: var(--color-backgroundInverse);
+      border-color: var(--color-bgInverse);
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     &:hover {
-      border-color: var(--color-backgroundOverlay);
+      border-color: var(--color-bgOverlay);
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     &:hover {
-      border-color: var(--color-backgroundPrimary);
+      border-color: var(--color-bgPrimary);
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     &:hover {
-      border-color: var(--color-backgroundPrimaryWash);
+      border-color: var(--color-bgPrimaryWash);
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     &:hover {
-      border-color: var(--color-backgroundSecondary);
+      border-color: var(--color-bgSecondary);
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     &:hover {
-      border-color: var(--color-backgroundSecondaryWash);
+      border-color: var(--color-bgSecondaryWash);
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     &:hover {
-      border-color: var(--color-backgroundNegative);
+      border-color: var(--color-bgNegative);
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     &:hover {
-      border-color: var(--color-backgroundNegativeWash);
+      border-color: var(--color-bgNegativeWash);
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     &:hover {
-      border-color: var(--color-backgroundPositive);
+      border-color: var(--color-bgPositive);
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     &:hover {
-      border-color: var(--color-backgroundPositiveWash);
+      border-color: var(--color-bgPositiveWash);
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     &:hover {
-      border-color: var(--color-backgroundWarning);
+      border-color: var(--color-bgWarning);
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     &:hover {
-      border-color: var(--color-backgroundWarningWash);
+      border-color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
@@ -1552,135 +1407,99 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Background states
   backgroundPrimaryHover: css`
     &:hover {
-      border-color: var(--color-backgroundPrimaryHover);
+      border-color: var(--color-bgPrimaryHover);
     }
   `,
   backgroundPrimaryPressed: css`
     &:hover {
-      border-color: var(--color-backgroundPrimaryPressed);
+      border-color: var(--color-bgPrimaryPressed);
     }
   `,
   backgroundPrimaryDisabled: css`
     &:hover {
-      border-color: var(--color-backgroundPrimaryDisabled);
+      border-color: var(--color-bgPrimaryDisabled);
     }
   `,
   backgroundSecondaryHover: css`
     &:hover {
-      border-color: var(--color-backgroundSecondaryHover);
+      border-color: var(--color-bgSecondaryHover);
     }
   `,
   backgroundSecondaryPressed: css`
     &:hover {
-      border-color: var(--color-backgroundSecondaryPressed);
+      border-color: var(--color-bgSecondaryPressed);
     }
   `,
   backgroundSecondaryDisabled: css`
     &:hover {
-      border-color: var(--color-backgroundSecondaryDisabled);
+      border-color: var(--color-bgSecondaryDisabled);
     }
   `,
   backgroundNegativeHover: css`
     &:hover {
-      border-color: var(--color-backgroundNegativeHover);
+      border-color: var(--color-bgNegativeHover);
     }
   `,
   backgroundNegativePressed: css`
     &:hover {
-      border-color: var(--color-backgroundNegativePressed);
+      border-color: var(--color-bgNegativePressed);
     }
   `,
   backgroundNegativeDisabled: css`
     &:hover {
-      border-color: var(--color-backgroundNegativeDisabled);
+      border-color: var(--color-bgNegativeDisabled);
     }
   `,
   backgroundPositiveHover: css`
     &:hover {
-      border-color: var(--color-backgroundPositiveHover);
+      border-color: var(--color-bgPositiveHover);
     }
   `,
   backgroundPositivePressed: css`
     &:hover {
-      border-color: var(--color-backgroundPositivePressed);
+      border-color: var(--color-bgPositivePressed);
     }
   `,
   backgroundPositiveDisabled: css`
     &:hover {
-      border-color: var(--color-backgroundPositiveDisabled);
+      border-color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     &:hover {
-      border-color: var(--color-line);
+      border-color: var(--color-bgLine);
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     &:hover {
-      border-color: var(--color-lineInverse);
+      border-color: var(--color-bgLineInverse);
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     &:hover {
-      border-color: var(--color-lineHeavy);
+      border-color: var(--color-bgLineHeavy);
     }
   `,
   linePrimary: css`
     &:hover {
-      border-color: var(--color-linePrimary);
+      border-color: var(--color-bgLinePrimary);
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     &:hover {
-      border-color: var(--color-linePrimaryLight);
+      border-color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     &:hover {
-      border-color: var(--color-backgroundElevation1);
+      border-color: var(--color-bgElevation1);
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     &:hover {
-      border-color: var(--color-backgroundElevation2);
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    &:hover {
-      border-color: var(--color-iconForeground);
-    }
-  `,
-  iconForegroundInverse: css`
-    &:hover {
-      border-color: var(--color-iconForegroundInverse);
-    }
-  `,
-  iconForegroundMuted: css`
-    &:hover {
-      border-color: var(--color-iconForegroundMuted);
-    }
-  `,
-  iconPrimary: css`
-    &:hover {
-      border-color: var(--color-iconPrimary);
-    }
-  `,
-  iconPositive: css`
-    &:hover {
-      border-color: var(--color-iconPositive);
-    }
-  `,
-  iconNegative: css`
-    &:hover {
-      border-color: var(--color-iconNegative);
-    }
-  `,
-  iconWarning: css`
-    &:hover {
-      border-color: var(--color-iconWarning);
+      border-color: var(--color-bgElevation2);
     }
   `,
   // Accent
@@ -2260,154 +2079,132 @@ export const textDecorationThickness = {
 
 export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
-    text-decoration-color: var(--color-textForeground);
+  fg: css`
+    text-decoration-color: var(--color-fg);
   `,
-  textForegroundInverse: css`
-    text-decoration-color: var(--color-textForegroundInverse);
+  fgInverse: css`
+    text-decoration-color: var(--color-fgInverse);
   `,
-  textForegroundMuted: css`
-    text-decoration-color: var(--color-textForegroundMuted);
+  fgMuted: css`
+    text-decoration-color: var(--color-fgMuted);
   `,
-  textPrimary: css`
-    text-decoration-color: var(--color-textPrimary);
+  fgPrimary: css`
+    text-decoration-color: var(--color-fgPrimary);
   `,
-  textPositive: css`
-    text-decoration-color: var(--color-textPositive);
+  fgPositive: css`
+    text-decoration-color: var(--color-fgPositive);
   `,
-  textNegative: css`
-    text-decoration-color: var(--color-textNegative);
+  fgNegative: css`
+    text-decoration-color: var(--color-fgNegative);
   `,
-  textWarning: css`
-    text-decoration-color: var(--color-textWarning);
+  fgWarning: css`
+    text-decoration-color: var(--color-fgWarning);
   `,
   // Background
-  background: css`
-    text-decoration-color: var(--color-background);
+  bg: css`
+    text-decoration-color: var(--color-bg);
   `,
-  backgroundAlternate: css`
-    text-decoration-color: var(--color-backgroundAlternate);
+  bgAlternate: css`
+    text-decoration-color: var(--color-bgAlternate);
   `,
-  backgroundInverse: css`
-    text-decoration-color: var(--color-backgroundInverse);
+  bgInverse: css`
+    text-decoration-color: var(--color-bgInverse);
   `,
-  backgroundOverlay: css`
-    text-decoration-color: var(--color-backgroundOverlay);
+  bgOverlay: css`
+    text-decoration-color: var(--color-bgOverlay);
   `,
-  backgroundPrimary: css`
-    text-decoration-color: var(--color-backgroundPrimary);
+  bgPrimary: css`
+    text-decoration-color: var(--color-bgPrimary);
   `,
-  backgroundPrimaryWash: css`
-    text-decoration-color: var(--color-backgroundPrimaryWash);
+  bgPrimaryWash: css`
+    text-decoration-color: var(--color-bgPrimaryWash);
   `,
-  backgroundSecondary: css`
-    text-decoration-color: var(--color-backgroundSecondary);
+  bgSecondary: css`
+    text-decoration-color: var(--color-bgSecondary);
   `,
-  backgroundSecondaryWash: css`
-    text-decoration-color: var(--color-backgroundSecondaryWash);
+  bgSecondaryWash: css`
+    text-decoration-color: var(--color-bgSecondaryWash);
   `,
-  backgroundNegative: css`
-    text-decoration-color: var(--color-backgroundNegative);
+  bgNegative: css`
+    text-decoration-color: var(--color-bgNegative);
   `,
-  backgroundNegativeWash: css`
-    text-decoration-color: var(--color-backgroundNegativeWash);
+  bgNegativeWash: css`
+    text-decoration-color: var(--color-bgNegativeWash);
   `,
-  backgroundPositive: css`
-    text-decoration-color: var(--color-backgroundPositive);
+  bgPositive: css`
+    text-decoration-color: var(--color-bgPositive);
   `,
-  backgroundPositiveWash: css`
-    text-decoration-color: var(--color-backgroundPositiveWash);
+  bgPositiveWash: css`
+    text-decoration-color: var(--color-bgPositiveWash);
   `,
-  backgroundWarning: css`
-    text-decoration-color: var(--color-backgroundWarning);
+  bgWarning: css`
+    text-decoration-color: var(--color-bgWarning);
   `,
-  backgroundWarningWash: css`
-    text-decoration-color: var(--color-backgroundWarningWash);
+  bgWarningWash: css`
+    text-decoration-color: var(--color-bgWarningWash);
   `,
   currentColor: css`
     text-decoration-color: var(--color-currentColor);
   `,
   // Background states
   backgroundPrimaryHover: css`
-    text-decoration-color: var(--color-backgroundPrimaryHover);
+    text-decoration-color: var(--color-bgPrimaryHover);
   `,
   backgroundPrimaryPressed: css`
-    text-decoration-color: var(--color-backgroundPrimaryPressed);
+    text-decoration-color: var(--color-bgPrimaryPressed);
   `,
   backgroundPrimaryDisabled: css`
-    text-decoration-color: var(--color-backgroundPrimaryDisabled);
+    text-decoration-color: var(--color-bgPrimaryDisabled);
   `,
   backgroundSecondaryHover: css`
-    text-decoration-color: var(--color-backgroundSecondaryHover);
+    text-decoration-color: var(--color-bgSecondaryHover);
   `,
   backgroundSecondaryPressed: css`
-    text-decoration-color: var(--color-backgroundSecondaryPressed);
+    text-decoration-color: var(--color-bgSecondaryPressed);
   `,
   backgroundSecondaryDisabled: css`
-    text-decoration-color: var(--color-backgroundSecondaryDisabled);
+    text-decoration-color: var(--color-bgSecondaryDisabled);
   `,
   backgroundNegativeHover: css`
-    text-decoration-color: var(--color-backgroundNegativeHover);
+    text-decoration-color: var(--color-bgNegativeHover);
   `,
   backgroundNegativePressed: css`
-    text-decoration-color: var(--color-backgroundNegativePressed);
+    text-decoration-color: var(--color-bgNegativePressed);
   `,
   backgroundNegativeDisabled: css`
-    text-decoration-color: var(--color-backgroundNegativeDisabled);
+    text-decoration-color: var(--color-bgNegativeDisabled);
   `,
   backgroundPositiveHover: css`
-    text-decoration-color: var(--color-backgroundPositiveHover);
+    text-decoration-color: var(--color-bgPositiveHover);
   `,
   backgroundPositivePressed: css`
-    text-decoration-color: var(--color-backgroundPositivePressed);
+    text-decoration-color: var(--color-bgPositivePressed);
   `,
   backgroundPositiveDisabled: css`
-    text-decoration-color: var(--color-backgroundPositiveDisabled);
+    text-decoration-color: var(--color-bgPositiveDisabled);
   `,
   // Line
-  line: css`
-    text-decoration-color: var(--color-line);
+  bgLine: css`
+    text-decoration-color: var(--color-bgLine);
   `,
-  lineInverse: css`
-    text-decoration-color: var(--color-lineInverse);
+  bgLineInverse: css`
+    text-decoration-color: var(--color-bgLineInverse);
   `,
-  lineHeavy: css`
-    text-decoration-color: var(--color-lineHeavy);
+  bgLineHeavy: css`
+    text-decoration-color: var(--color-bgLineHeavy);
   `,
   linePrimary: css`
-    text-decoration-color: var(--color-linePrimary);
+    text-decoration-color: var(--color-bgLinePrimary);
   `,
-  linePrimaryLight: css`
-    text-decoration-color: var(--color-linePrimaryLight);
+  bgLinePrimarySubtle: css`
+    text-decoration-color: var(--color-bgLinePrimarySubtle);
   `,
   // Elevation
-  backgroundElevation1: css`
-    text-decoration-color: var(--color-backgroundElevation1);
+  bgElevation1: css`
+    text-decoration-color: var(--color-bgElevation1);
   `,
-  backgroundElevation2: css`
-    text-decoration-color: var(--color-backgroundElevation2);
-  `,
-  // Icon
-  iconForeground: css`
-    text-decoration-color: var(--color-iconForeground);
-  `,
-  iconForegroundInverse: css`
-    text-decoration-color: var(--color-iconForegroundInverse);
-  `,
-  iconForegroundMuted: css`
-    text-decoration-color: var(--color-iconForegroundMuted);
-  `,
-  iconPrimary: css`
-    text-decoration-color: var(--color-iconPrimary);
-  `,
-  iconPositive: css`
-    text-decoration-color: var(--color-iconPositive);
-  `,
-  iconNegative: css`
-    text-decoration-color: var(--color-iconNegative);
-  `,
-  iconWarning: css`
-    text-decoration-color: var(--color-iconWarning);
+  bgElevation2: css`
+    text-decoration-color: var(--color-bgElevation2);
   `,
   // Accent
   accentSubtleGreen: css`
@@ -2491,10 +2288,13 @@ export const userSelect = {
 } as const;
 
 export const display = {
+  none: css`
+    display: none;
+  `,
   block: css`
     display: block;
   `,
-  inline: css`
+  inbgLine: css`
     display: inline;
   `,
   'inline-block': css`
@@ -3714,11 +3514,11 @@ export const marginLeft: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linaria
 export const elevation: Record<ElevationLevels, LinariaClassName> = {
   '0': css``,
   '1': css`
-    background-color: var(--color-backgroundElevation1);
+    background-color: var(--color-bgElevation1);
     box-shadow: var(--shadow-elevation1);
   `,
   '2': css`
-    background-color: var(--color-backgroundElevation2);
+    background-color: var(--color-bgElevation2);
     box-shadow: var(--shadow-elevation2);
   `,
 } as const;

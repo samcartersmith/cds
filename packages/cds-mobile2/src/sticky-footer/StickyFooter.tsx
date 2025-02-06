@@ -22,7 +22,7 @@ export const StickyFooter = memo(
         <Box
           ref={forwardedRef}
           accessibilityLabel={accessibilityLabel}
-          borderColor="backgroundSecondary"
+          borderColor="bgSecondary"
           borderedTop={elevated}
           padding={padding}
           role={role as Role}

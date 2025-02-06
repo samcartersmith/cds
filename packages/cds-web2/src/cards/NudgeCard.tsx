@@ -79,7 +79,7 @@ export type NudgeCardBaseProps = {
   minHeight?: StyleProps['minHeight'];
   /**
    * Background color for the card.
-   * @default backgroundAlternate
+   * @default bgAlternate
    */
   background?: StyleProps['background'];
   /**
@@ -114,7 +114,7 @@ export const NudgeCard = ({
   accessibilityLabel,
   maxHeight,
   maxWidth,
-  background = 'backgroundAlternate',
+  background = 'bgAlternate',
   minHeight,
   height,
   aspectRatio,
@@ -198,7 +198,7 @@ export const NudgeCard = ({
           </VStack>
           {typeof action === 'string' ? (
             <HStack as="button" className={actionButtonStyle} onClick={onActionPress} paddingY={1}>
-              <Text as="span" color="textPrimary" font="headline" numberOfLines={1}>
+              <Text as="span" color="fgPrimary" font="headline" numberOfLines={1}>
                 {action}
               </Text>
             </HStack>

@@ -64,7 +64,7 @@ function ParentTypesList({
 
   return (
     <HStack alignItems="center" flexWrap="wrap" gap={1}>
-      <Text color="textForegroundMuted" font="label1">
+      <Text color="fgMuted" font="label1">
         Extended from:&nbsp;
       </Text>
       {parentTypesAsArray.map(([key, value]) => (

@@ -54,7 +54,7 @@ export const ComponentHeader = memo(
 
     if (!activeMetadata) return null;
     return (
-      <VStack background="backgroundAlternate" borderRadius={600} overflow="hidden">
+      <VStack background="bgAlternate" borderRadius={600} overflow="hidden">
         <VStack height={200} width="100%">
           {typeof activeBanner === 'string' ? (
             <img

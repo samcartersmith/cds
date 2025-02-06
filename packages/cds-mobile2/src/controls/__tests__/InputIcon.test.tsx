@@ -9,7 +9,7 @@ describe('InputIcon', () => {
   it('passes a11y', () => {
     render(
       <DefaultThemeProvider>
-        <InputIcon color="iconForeground" name="add" testID={INPUTICON_TEST_ID} />
+        <InputIcon color="fg" name="add" testID={INPUTICON_TEST_ID} />
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(INPUTICON_TEST_ID)).toBeAccessible();
@@ -18,7 +18,7 @@ describe('InputIcon', () => {
   it('renders an InputIcon', () => {
     render(
       <DefaultThemeProvider>
-        <InputIcon color="iconForeground" name="add" testID={INPUTICON_TEST_ID} />
+        <InputIcon color="fg" name="add" testID={INPUTICON_TEST_ID} />
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(INPUTICON_TEST_ID)).toBeTruthy();

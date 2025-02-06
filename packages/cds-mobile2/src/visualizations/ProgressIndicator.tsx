@@ -24,13 +24,13 @@ export const ProgressIndicator = memo(
   ) {
     const theme = useTheme();
     const outerStyles = useMemo(
-      () => [styles.dash, { backgroundColor: theme.color.line }],
-      [theme.color.line],
+      () => [styles.dash, { backgroundColor: theme.color.bgLine }],
+      [theme.color.bgLine],
     );
     const innerStyles = useMemo(
       () => [
         styles.dashOverlay,
-        { backgroundColor: theme.color.backgroundInverse, zIndex: 2 },
+        { backgroundColor: theme.color.bgInverse, zIndex: 2 },
         progress && {
           transform: [
             {
@@ -42,7 +42,7 @@ export const ProgressIndicator = memo(
           ],
         },
       ],
-      [theme.color.backgroundInverse, progress],
+      [theme.color.bgInverse, progress],
     );
 
     return (

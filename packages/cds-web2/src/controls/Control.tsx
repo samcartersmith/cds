@@ -125,7 +125,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       <Interactable
         transparentWhileInactive
         as="div"
-        background={background ?? (checked ? 'backgroundPrimary' : 'background')}
+        background={background ?? (checked ? 'bgPrimary' : 'bg')}
         borderColor={borderColor}
         borderRadius={borderRadius}
         borderWidth={borderWidth}
@@ -163,7 +163,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
           <Spacer horizontal={1} />
           <Text
             as="span"
-            color={checked ? 'textForeground' : 'textForegroundMuted'}
+            color={checked ? 'fg' : 'fgMuted'}
             disabled={disabled || readOnly}
             font="body"
             id={labelId}

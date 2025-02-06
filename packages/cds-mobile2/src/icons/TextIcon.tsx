@@ -32,7 +32,7 @@ export const TextIcon = memo(function TextIcon({
   name,
   size = 'm',
   active,
-  color = 'iconPrimary',
+  color = 'fgPrimary',
   animated,
   testID,
   style,

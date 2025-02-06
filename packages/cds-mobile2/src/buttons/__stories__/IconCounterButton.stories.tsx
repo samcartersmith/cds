@@ -28,13 +28,13 @@ const IconCounterButtonScreen = () => {
         <HStack gap={4}>
           <IconCounterButton
             accessibilityLabel="99 likes, like"
-            color="iconNegative"
+            color="fgNegative"
             count={99}
             icon="heartActive"
           />
           <IconCounterButton
             accessibilityLabel="4200 comments, comment"
-            color="iconPrimary"
+            color="fgPrimary"
             count={4200}
             icon="comment"
           />

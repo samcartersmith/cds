@@ -12,44 +12,44 @@ export default {
 export const InputStackExamples = () => (
   <InputStack
     appendNode={
-      <Box background="backgroundPrimary">
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPrimary">
+        <TextBody as="p" color="fgInverse">
           Append
         </TextBody>
       </Box>
     }
     endNode={
-      <Box background="backgroundPositive" borderRadius={200}>
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPositive" borderRadius={200}>
+        <TextBody as="p" color="fgInverse">
           EndContent
         </TextBody>
       </Box>
     }
     helperTextNode={
-      <Box background="backgroundOverlay" height={30} width="100%">
+      <Box background="bgOverlay" height={30} width="100%">
         <TextBody as="p">HelperText</TextBody>
       </Box>
     }
     inputNode={
-      <Box background="backgroundAlternate" flexGrow={2}>
+      <Box background="bgAlternate" flexGrow={2}>
         <TextBody as="p">Input</TextBody>
       </Box>
     }
     labelNode={
-      <Box background="backgroundAlternate" height={30} width="100%">
+      <Box background="bgAlternate" height={30} width="100%">
         <TextBody as="p">Label</TextBody>
       </Box>
     }
     prependNode={
-      <Box background="backgroundPrimary">
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPrimary">
+        <TextBody as="p" color="fgInverse">
           Prepend
         </TextBody>
       </Box>
     }
     startNode={
-      <Box background="backgroundPositive" borderRadius={200}>
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPositive" borderRadius={200}>
+        <TextBody as="p" color="fgInverse">
           StartContent
         </TextBody>
       </Box>
@@ -61,37 +61,37 @@ export const InputStackExamples = () => (
 export const Append = () => (
   <InputStack
     appendNode={
-      <Box background="backgroundPrimary" borderRadius={200}>
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPrimary" borderRadius={200}>
+        <TextBody as="p" color="fgInverse">
           Append
         </TextBody>
       </Box>
     }
     endNode={
-      <Box background="backgroundPositive" borderRadius={200}>
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPositive" borderRadius={200}>
+        <TextBody as="p" color="fgInverse">
           EndContent
         </TextBody>
       </Box>
     }
     helperTextNode={
-      <Box background="backgroundOverlay" height={30} width="100%">
+      <Box background="bgOverlay" height={30} width="100%">
         <TextBody as="p">HelperText</TextBody>
       </Box>
     }
     inputNode={
-      <Box background="backgroundAlternate" flexGrow={2}>
+      <Box background="bgAlternate" flexGrow={2}>
         <TextBody as="p">Input</TextBody>
       </Box>
     }
     labelNode={
-      <Box background="backgroundAlternate" height={30} width="100%">
+      <Box background="bgAlternate" height={30} width="100%">
         <TextBody as="p">Label</TextBody>
       </Box>
     }
     startNode={
-      <Box background="backgroundPositive" borderRadius={200}>
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPositive" borderRadius={200}>
+        <TextBody as="p" color="fgInverse">
           StartContent
         </TextBody>
       </Box>
@@ -103,37 +103,37 @@ export const Append = () => (
 export const Prepend = () => (
   <InputStack
     endNode={
-      <Box background="backgroundPositive" borderRadius={200}>
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPositive" borderRadius={200}>
+        <TextBody as="p" color="fgInverse">
           EndContent
         </TextBody>
       </Box>
     }
     helperTextNode={
-      <Box background="backgroundOverlay" height={30} width="100%">
+      <Box background="bgOverlay" height={30} width="100%">
         <TextBody as="p">HelperText</TextBody>
       </Box>
     }
     inputNode={
-      <Box background="backgroundAlternate" flexGrow={2}>
+      <Box background="bgAlternate" flexGrow={2}>
         <TextBody as="p">Input</TextBody>
       </Box>
     }
     labelNode={
-      <Box background="backgroundAlternate" height={30} width="100%">
+      <Box background="bgAlternate" height={30} width="100%">
         <TextBody as="p">Label</TextBody>
       </Box>
     }
     prependNode={
-      <Box background="backgroundPrimary" borderRadius={200}>
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPrimary" borderRadius={200}>
+        <TextBody as="p" color="fgInverse">
           Append
         </TextBody>
       </Box>
     }
     startNode={
-      <Box background="backgroundPositive" borderRadius={200}>
-        <TextBody as="p" color="textForegroundInverse">
+      <Box background="bgPositive" borderRadius={200}>
+        <TextBody as="p" color="fgInverse">
           StartContent
         </TextBody>
       </Box>

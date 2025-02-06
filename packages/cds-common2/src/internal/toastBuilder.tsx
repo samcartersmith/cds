@@ -53,7 +53,7 @@ export function toastBuilder({ Toast, Button, PortalProvider, Stack }: CreateToa
 
     const handleVariant = useCallback(() => {
       toast.show('Toast copy', {
-        variant: 'backgroundNegative',
+        variant: 'bgNegative',
       });
     }, [toast]);
 

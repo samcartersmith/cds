@@ -23,7 +23,7 @@ export const UpsellCard = memo(
     onActionPress,
     onDismissPress,
     media,
-    background = 'backgroundPrimaryWash',
+    background = 'bgPrimaryWash',
     dangerouslySetBackground,
     testID = 'upsell-card',
     accessibilityLabel,

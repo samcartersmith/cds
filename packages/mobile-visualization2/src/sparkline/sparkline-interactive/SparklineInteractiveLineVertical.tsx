@@ -69,7 +69,7 @@ const SparklineInteractiveDottedLine = memo(
         height: dottedLineHeight,
         width: chartWidth,
         top: showHoverDate ? 0 : -SparklineInteractiveMinMaxLabelHeight,
-        backgroundColor: theme.color.background,
+        backgroundColor: theme.color.bg,
         opacity: maskOpacity,
         zIndex: 1,
       };
@@ -78,7 +78,7 @@ const SparklineInteractiveDottedLine = memo(
       chartWidth,
       dottedLineHeight,
       showHoverDate,
-      theme.color.background,
+      theme.color.bg,
     ]);
 
     const maskPositionStyles = useMemo(

@@ -207,7 +207,7 @@ export const Drawer = memo(
           <Box
             {...getPanGestureHandlers}
             animated
-            background="background"
+            background="bg"
             borderRadius={isPinHorizontal ? 0 : 400}
             bordered={colorScheme === 'dark'}
             elevation={colorScheme === 'dark' ? 2 : 0}

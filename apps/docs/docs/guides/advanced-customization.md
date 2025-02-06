@@ -44,8 +44,8 @@ import { Grid, Box } from '@cbhq/cds-web';
 
 const ResponsiveLayout = () => (
   <Grid templateColumns={{ base: '1fr', minTablet: 'repeat(2, 1fr)' }} gap={4}>
-    <Box background="backgroundPrimary">Item 1</Box>
-    <Box background="backgroundPrimary">Item 2</Box>
+    <Box background="bgPrimary">Item 1</Box>
+    <Box background="bgPrimary">Item 2</Box>
   </Grid>
 );
 ```
@@ -63,7 +63,7 @@ import React from 'react';
 import { Box, Text } from '@cbhq/cds-web';
 
 const CustomCard = ({ title, description }) => (
-  <Box background="backgroundSecondary" borderRadius={200} padding={4}>
+  <Box background="bgSecondary" borderRadius={200} padding={4}>
     <Text as="h3" fontSize="headline">
       {title}
     </Text>
@@ -141,7 +141,7 @@ import { Box, Text } from '@cbhq/cds-web';
 
 const Badge = ({ label, color }) => (
   <Box paddingX={2} paddingY={1} background={color || 'backgroundPrimary'} borderRadius={100}>
-    <Text color="textInverse" fontSize="caption">
+    <Text color="fgInverse" fontSize="caption">
       {label}
     </Text>
   </Box>

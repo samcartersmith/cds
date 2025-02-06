@@ -20,18 +20,18 @@ export type InputIconProps = {
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'iconPrimary',
-  positive: 'iconPositive',
-  negative: 'iconNegative',
-  foreground: 'iconForeground',
-  foregroundMuted: 'iconForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export const InputIcon = memo(function InputIcon({
   disableInheritFocusStyle = false,
   testID,
-  color = 'iconForeground',
+  color = 'fg',
   compact,
   accessibilityLabel,
   accessibilityHint,

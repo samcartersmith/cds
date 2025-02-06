@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { type TabValue } from '@cbhq/cds-common2/tabs/useTabs';
@@ -21,7 +21,7 @@ const insetFocusRingStyle = css`
   &:focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     outline-offset: 0;
   }
 `;
@@ -70,8 +70,8 @@ export const SegmentedTab = memo(
         label,
         disabled: disabledProp,
         onPress,
-        color = 'textForeground',
-        activeColor = 'textForegroundInverse',
+        color = 'fg',
+        activeColor = 'fgInverse',
         className,
         'aria-pressed': ariaPressed,
         testID,

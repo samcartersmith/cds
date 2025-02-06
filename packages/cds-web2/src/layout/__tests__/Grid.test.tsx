@@ -34,7 +34,7 @@ describe('Grid', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <Grid background="background" columns={12} padding={2}>
+        <Grid background="bg" columns={12} padding={2}>
           Child
         </Grid>,
       ),
@@ -68,13 +68,13 @@ describe('Grid', () => {
 
   describe('background', () => {
     expectClassName('background', [
-      'background',
-      'backgroundAlternate',
-      'backgroundOverlay',
-      'backgroundPrimary',
-      'backgroundSecondary',
-      'backgroundPositive',
-      'backgroundNegative',
+      'bg',
+      'bgAlternate',
+      'bgOverlay',
+      'bgPrimary',
+      'bgSecondary',
+      'bgPositive',
+      'bgNegative',
     ]);
   });
 

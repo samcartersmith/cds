@@ -22,7 +22,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
     content = (
       <Icon
         accessibilityLabel={props.accessibilityLabel}
-        color={props.color ?? 'iconForeground'}
+        color={props.color ?? 'fg'}
         name={props.name}
         size="s"
       />

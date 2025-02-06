@@ -9,7 +9,7 @@ import { useTabIndicatorStyles } from './hooks/useTabIndicatorStyles';
 export const TabIndicator = memo(
   forwardRef(
     (
-      { width, x, background = 'background', testID, ...props }: TabIndicatorProps,
+      { width, x, background = 'bg', testID, ...props }: TabIndicatorProps,
       forwardedRef: ForwardedRef<View>,
     ) => {
       const { widthStyle, xStyle } = useTabIndicatorStyles({ width, x });
@@ -17,7 +17,7 @@ export const TabIndicator = memo(
       return (
         <Animated.View ref={forwardedRef} style={xStyle} testID={testID} {...props}>
           <Box
-            background="backgroundPrimary"
+            background="bgPrimary"
             flexGrow={1}
             height={2}
             overflow="hidden"

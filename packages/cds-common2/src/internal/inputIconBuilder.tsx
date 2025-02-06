@@ -12,12 +12,12 @@ import type {
 const variants = ['foreground', 'foregroundMuted', 'primary', 'negative', 'positive'] as const;
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'iconPrimary',
-  positive: 'iconPositive',
-  negative: 'iconNegative',
-  foreground: 'iconForeground',
-  foregroundMuted: 'iconForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export function inputIconBuilder(
@@ -69,7 +69,7 @@ export function inputIconBuilder(
     return (
       <TextInput
         label="Search"
-        start={<InputIcon color="iconPositive" name="search" />}
+        start={<InputIcon color="fgPositive" name="search" />}
         variant="foregroundMuted"
       />
     );
@@ -83,17 +83,14 @@ export function inputIconBuilder(
     return (
       <TextInput
         label="Label"
-        start={<InputIcon disableInheritFocusStyle color="textForeground" name="add" />}
+        start={<InputIcon disableInheritFocusStyle color="fg" name="add" />}
       />
     );
   };
 
   const AddCustomColorEnd = () => {
     return (
-      <TextInput
-        end={<InputIcon disableInheritFocusStyle color="textForeground" name="add" />}
-        label="Label"
-      />
+      <TextInput end={<InputIcon disableInheritFocusStyle color="fg" name="add" />} label="Label" />
     );
   };
 

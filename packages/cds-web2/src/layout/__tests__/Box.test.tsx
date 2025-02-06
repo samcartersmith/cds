@@ -29,7 +29,7 @@ describe('Box', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(
-        <Box background="background" padding={2}>
+        <Box background="bg" padding={2}>
           Child
         </Box>,
       ),
@@ -79,13 +79,13 @@ describe('Box', () => {
 
   describe('background', () => {
     expectClassName('background', [
-      'background',
-      'backgroundAlternate',
-      'backgroundOverlay',
-      'backgroundPrimary',
-      'backgroundSecondary',
-      'backgroundPositive',
-      'backgroundNegative',
+      'bg',
+      'bgAlternate',
+      'bgOverlay',
+      'bgPrimary',
+      'bgSecondary',
+      'bgPositive',
+      'bgNegative',
     ]);
   });
 

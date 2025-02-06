@@ -23,7 +23,7 @@ const ExampleSelectChip = ({
   const content = (
     <>
       <HStack padding={2} role="separator">
-        <Text as="h2" color="textForegroundMuted" font="caption">
+        <Text as="h2" color="fgMuted" font="caption">
           Section Heading
         </Text>
       </HStack>
@@ -52,12 +52,9 @@ export const Default = () => (
 
 export const CustomEndNode = () => (
   <HStack gap={2}>
+    <ExampleSelectChip end={<Icon color="fg" name="filter" size="s" />} placeholder="Filter" />
     <ExampleSelectChip
-      end={<Icon color="iconForeground" name="filter" size="s" />}
-      placeholder="Filter"
-    />
-    <ExampleSelectChip
-      end={<Icon color="iconForeground" name="filter" size="s" />}
+      end={<Icon color="fg" name="filter" size="s" />}
       placeholder="Filter"
       value="Balance"
     />
@@ -110,7 +107,7 @@ export const ObjectValueModel = () => {
     <SelectChip
       active={value !== undefined}
       content={content}
-      end={<Icon color="iconForeground" name={value.iconName} size="s" />}
+      end={<Icon color="fg" name={value.iconName} size="s" />}
       onChange={(newValue: string) => handleChange(newValue)}
       value={value.value}
       valueLabel={value.label}

@@ -18,7 +18,7 @@ const ProgressBarFixedLabelBeside = memo(
 
     return (
       <ProgressTextLabel
-        color="textForeground"
+        color="fg"
         disabled={visuallyDisabled}
         renderLabel={renderLabel}
         value={labelNum}

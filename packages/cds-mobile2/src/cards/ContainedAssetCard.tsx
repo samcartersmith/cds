@@ -48,7 +48,7 @@ export const ContainedAssetCard = memo(
     }, [maxWidth, minWidth]);
     const content = (
       <HStack
-        background="backgroundAlternate"
+        background="bgAlternate"
         borderRadius={500}
         height={containedAssetCardSmallDimension}
         maxWidth={maxWidth}
@@ -68,7 +68,7 @@ export const ContainedAssetCard = memo(
           <HStack>{header}</HStack>
           <VStack gap={0.5}>
             {typeof subtitle === 'string' ? (
-              <TextLegal color="textForegroundMuted" numberOfLines={1}>
+              <TextLegal color="fgMuted" numberOfLines={1}>
                 {subtitle}
               </TextLegal>
             ) : (
@@ -80,7 +80,7 @@ export const ContainedAssetCard = memo(
               title
             )}
             {typeof description === 'string' ? (
-              <TextLabel2 color="textForegroundMuted" numberOfLines={1}>
+              <TextLabel2 color="fgMuted" numberOfLines={1}>
                 {description}
               </TextLabel2>
             ) : (

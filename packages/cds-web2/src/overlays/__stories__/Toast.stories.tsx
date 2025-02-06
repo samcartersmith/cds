@@ -44,7 +44,7 @@ export const BasicToast = () => {
 
   const handleVariant = useCallback(() => {
     toast.show('Toast copy', {
-      variant: 'backgroundNegative',
+      variant: 'bgNegative',
     });
   }, [toast]);
 

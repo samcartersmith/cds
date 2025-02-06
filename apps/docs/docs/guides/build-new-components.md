@@ -97,7 +97,7 @@ Example:
 ```tsx
 const MyComponent = () => {
   return (
-    <Box color="textPrimary" background="backgroundSecondary" padding={4}>
+    <Box color="fgPrimary" background="bgSecondary" padding={4}>
       Themed Component
     </Box>
   );
@@ -150,7 +150,7 @@ type CardProps = {
 
 export const Card: React.FC<CardProps> = ({ title, description, styleProps }) => {
   return (
-    <Box borderRadius={200} background="backgroundPrimary" padding={4} {...styleProps}>
+    <Box borderRadius={200} background="bgPrimary" padding={4} {...styleProps}>
       <Text as="h2" fontSize="headline">
         {title}
       </Text>

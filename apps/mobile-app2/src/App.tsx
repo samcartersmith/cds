@@ -28,10 +28,7 @@ if (Platform.OS === 'android') {
 
 const CdsSafeAreaProvider: React.FC<React.PropsWithChildren<unknown>> = memo(({ children }) => {
   const theme = useTheme();
-  const style = useMemo(
-    () => ({ backgroundColor: theme.color.background }),
-    [theme.color.background],
-  );
+  const style = useMemo(() => ({ backgroundColor: theme.color.bg }), [theme.color.bg]);
   return <SafeAreaProvider style={style}>{children}</SafeAreaProvider>;
 });
 

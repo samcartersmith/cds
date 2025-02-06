@@ -78,7 +78,7 @@ const Playground = memo(function Playground({
       <VStack gap={1} paddingBottom={3}>
         <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
           {!hidePreview && (
-            <VStack background="background" borderRadius={400} padding={3}>
+            <VStack background="bg" borderRadius={400} padding={3}>
               <BrowserOnly fallback={<div>Loading...</div>}>{previewComponent}</BrowserOnly>
             </VStack>
           )}
@@ -87,13 +87,13 @@ const Playground = memo(function Playground({
               <Pressable
                 noScaleOnPress
                 transparentWhileInactive
-                background="background"
+                background="bg"
                 borderRadius={400}
                 onPress={toggleCode}
               >
                 <HStack alignItems="center" gap={1} padding={1} width={112}>
-                  <Icon color="iconPrimary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
-                  <Text as="p" color="textPrimary" font="caption" transform="none">
+                  <Icon color="fgPrimary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
+                  <Text as="p" color="fgPrimary" font="caption" transform="none">
                     {collapsed ? 'Show code' : 'Hide code'}
                   </Text>
                 </HStack>
@@ -101,13 +101,13 @@ const Playground = memo(function Playground({
               <Pressable
                 noScaleOnPress
                 transparentWhileInactive
-                background="background"
+                background="bg"
                 borderRadius={1000}
                 onPress={handleCopyToClipboard}
               >
                 <HStack alignItems="center" gap={1} padding={1}>
-                  <Icon color="iconPrimary" name="copy" size="xs" />
-                  <Text color="textPrimary" font="caption" transform="none">
+                  <Icon color="fgPrimary" name="copy" size="xs" />
+                  <Text color="fgPrimary" font="caption" transform="none">
                     Copy code
                   </Text>
                 </HStack>
@@ -116,7 +116,7 @@ const Playground = memo(function Playground({
           )}
           <Collapsible collapsed={collapsed}>
             <VStack
-              background="background"
+              background="bg"
               borderRadius={400}
               overflow="hidden"
               paddingX={3}

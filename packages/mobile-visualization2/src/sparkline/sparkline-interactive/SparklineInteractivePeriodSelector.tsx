@@ -44,9 +44,9 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
 
   const textStyle = useMemo(
     () => ({
-      color: isSelected ? color : theme.color.textForegroundMuted,
+      color: isSelected ? color : theme.color.fgMuted,
     }),
-    [color, isSelected, theme.color.textForegroundMuted],
+    [color, isSelected, theme.color.fgMuted],
   );
 
   const accessibilityState = useMemo(
@@ -68,7 +68,7 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
         accessibilityHint={periodHint}
         accessibilityLabel={periodLabel}
         accessibilityState={accessibilityState}
-        background={isSelected ? 'backgroundPrimaryWash' : 'background'}
+        background={isSelected ? 'bgPrimaryWash' : 'bg'}
         borderColor="transparent"
         borderRadius={1000}
         onPress={handleOnPress}
@@ -102,7 +102,7 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
 }: SparklineInteractivePeriodSelectorProps<Period>) => {
   const theme = useTheme();
   const accessibleForeground = getAccessibleColor({
-    background: theme.color.background,
+    background: theme.color.bg,
     foreground: color,
   });
   const { markerOpacity } = useSparklineInteractiveContext();
@@ -122,7 +122,7 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
   });
 
   return (
-    <Box animated background="background" opacity={opacity}>
+    <Box animated background="bg" opacity={opacity}>
       <ScrollView
         ref={scrollRef}
         horizontal

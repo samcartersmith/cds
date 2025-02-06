@@ -86,13 +86,13 @@ export const ContentCell = memo(function ContentCell({
 
             {!!meta && (
               <Box justifyContent="flex-end" paddingLeft={1} paddingTop={0.5}>
-                <TextLabel2 color="textForegroundMuted">{meta}</TextLabel2>
+                <TextLabel2 color="fgMuted">{meta}</TextLabel2>
               </Box>
             )}
           </HStack>
         )}
 
-        {!!description && <TextBody color="textForegroundMuted">{description}</TextBody>}
+        {!!description && <TextBody color="fgMuted">{description}</TextBody>}
       </VStack>
     </Cell>
   );

@@ -18,13 +18,13 @@ const variantToHelperTextColor: Record<
   Exclude<SelectStackProps['variant'], undefined>,
   ThemeVars.Color
 > = {
-  foreground: 'textForeground',
-  positive: 'textPositive',
-  negative: 'textNegative',
-  primary: 'textPrimary',
-  foregroundMuted: 'textForegroundMuted',
+  foreground: 'fg',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  primary: 'fgPrimary',
+  foregroundMuted: 'fgMuted',
   // TODO replace with new textSecondary color once it is added to the theme
-  secondary: 'backgroundSecondary',
+  secondary: 'bgSecondary',
 };
 
 export const SelectStack = memo(
@@ -54,7 +54,7 @@ export const SelectStack = memo(
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={handlePreventPropagation}>
               <HelperText
-                color={variant ? variantToHelperTextColor[variant] : 'textForegroundMuted'}
+                color={variant ? variantToHelperTextColor[variant] : 'fgMuted'}
                 errorIconAccessibilityLabel={helperTextErrorIconAccessibilityLabel}
                 errorIconTestID="select-error-icon"
                 id={accessibilityDescriptionId}
@@ -73,7 +73,7 @@ export const SelectStack = memo(
           !!label && (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={handlePreventPropagation}>
-              <InputLabel color="textForeground" id={accessibilityLabelId} overflow="truncate">
+              <InputLabel color="fg" id={accessibilityLabelId} overflow="truncate">
                 {label}
               </InputLabel>
             </div>

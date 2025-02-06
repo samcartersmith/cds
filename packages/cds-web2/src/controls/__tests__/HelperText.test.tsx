@@ -11,13 +11,13 @@ describe('HelperText.test', () => {
 
   it('renders negative color', () => {
     render(
-      <HelperText color="textNegative" errorIconTestID="error-icon">
+      <HelperText color="fgNegative" errorIconTestID="error-icon">
         Test text
       </HelperText>,
     );
 
-    expect(screen.getByText('Test text').className).toContain('textNegative');
-    expect(screen.getByTestId('error-icon').className).toContain('iconNegative');
+    expect(screen.getByText('Test text').className).toContain('fgNegative');
+    expect(screen.getByTestId('error-icon').className).toContain('fgNegative');
   });
 
   it('renders custom padding', () => {

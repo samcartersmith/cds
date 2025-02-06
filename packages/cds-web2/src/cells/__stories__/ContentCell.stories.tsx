@@ -13,7 +13,7 @@ export default {
 const { Content, PressableContent, LongContent, WithAccessory, WithMedia } = contentCellBuilder(
   ContentCell,
   CellMedia,
-  (props) => <Box {...props} background="backgroundAlternate" />,
+  (props) => <Box {...props} background="bgAlternate" />,
 );
 
 export { Content, LongContent, PressableContent, WithAccessory, WithMedia };

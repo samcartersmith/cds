@@ -10,7 +10,7 @@ const baseStyle = css`
   min-width: 0;
   flex-grow: 2;
   background-color: transparent;
-  color: var(--color-textForeground);
+  color: var(--color-fg);
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -25,7 +25,7 @@ const baseStyle = css`
   }
 
   &::placeholder {
-    color: var(--color-textForegroundMuted);
+    color: var(--color-fgMuted);
     opacity: 1;
   }
 

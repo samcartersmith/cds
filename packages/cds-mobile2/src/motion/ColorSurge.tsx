@@ -27,7 +27,7 @@ export type ColorSurgeTypes = ColorSurgeBaseProps;
  */
 export const ColorSurge = memo(
   forwardRef(function ColorSurge(
-    { background = 'backgroundPrimary', disableAnimateOnMount = false }: ColorSurgeTypes,
+    { background = 'bgPrimary', disableAnimateOnMount = false }: ColorSurgeTypes,
     ref: ForwardedRef<ColorSurgeRefBaseProps>,
   ) {
     const [backgroundState, setBackgroundState] = useState<ThemeVars.Color>(background);

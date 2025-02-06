@@ -23,6 +23,7 @@ export type GroupToggleState<T extends string> = {
   ]
  */
 
+/** @deprecated Do not use this. */
 export const useGroupToggler = <T extends string>(
   values: T[],
   initialState?: T[],

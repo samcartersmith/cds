@@ -56,7 +56,7 @@ const FloatingAssetCardScreen = () => {
       <Example title="FloatingAssetCard with custom nodes">
         <FloatingAssetCard
           {...exampleProps}
-          description={<TextLabel2 color="textForegroundMuted">Description</TextLabel2>}
+          description={<TextLabel2 color="fgMuted">Description</TextLabel2>}
           media={
             <Image
               accessibilityIgnoresInvertColors

@@ -14,7 +14,7 @@ const Item: React.FC<React.PropsWithChildren<HStackProps<'div' | 'li'>>> = ({
 }) => (
   <HStack
     alignItems="center"
-    background="backgroundAlternate"
+    background="bgAlternate"
     justifyContent="center"
     padding={2}
     {...props}
@@ -100,7 +100,7 @@ const ColumnExamples = ({ responsive }: GridColumnProps) => {
         <GridColumn
           // eslint-disable-next-line react/no-array-index-key
           key={idx}
-          background="backgroundPrimary"
+          background="bgPrimary"
           gridColumnEnd={responsive ? responsiveColEndConfig(idx) : idx + 2}
           gridColumnStart={responsive ? responsiveColStartConfig(idx) : 1}
           padding={2}
@@ -113,21 +113,16 @@ const ColumnExamples = ({ responsive }: GridColumnProps) => {
 const FullBleedExample = () => {
   return (
     <Grid gap={0.5} templateColumns="100px 1fr 100px">
-      <Item background="background">
+      <Item background="bg">
         <TextBody as="p">Gutter</TextBody>
       </Item>
       <Item>
         <TextBody as="p">Body</TextBody>
       </Item>
-      <Item background="background">
+      <Item background="bg">
         <TextBody as="p">Gutter</TextBody>
       </Item>
-      <GridColumn
-        background="backgroundAlternate"
-        gridColumn="1 / -1"
-        justifyContent="center"
-        padding={2}
-      >
+      <GridColumn background="bgAlternate" gridColumn="1 / -1" justifyContent="center" padding={2}>
         <TextBody as="p">Full Bleed</TextBody>
       </GridColumn>
     </Grid>

@@ -136,7 +136,7 @@ export function createCardBody<OnPressFn>({
             <TextHeadline {...textProps} testID={`${testID}-title`}>
               {title}
             </TextHeadline>
-            <TextLabel2 color="textForegroundMuted" {...textProps} testID={`${testID}-description`}>
+            <TextLabel2 color="fgMuted" {...textProps} testID={`${testID}-description`}>
               {description}
             </TextLabel2>
             {action}
@@ -161,7 +161,7 @@ export function createCardBody<OnPressFn>({
             <TextHeadline {...textProps} testID={`${testID}-title`}>
               {title}
             </TextHeadline>
-            <TextLabel2 color="textForegroundMuted" {...textProps} testID={`${testID}-description`}>
+            <TextLabel2 color="fgMuted" {...textProps} testID={`${testID}-description`}>
               {description}
             </TextLabel2>
           </VStack>

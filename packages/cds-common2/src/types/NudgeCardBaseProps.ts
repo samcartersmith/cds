@@ -31,7 +31,7 @@ export type NudgeCardBaseProps = {
   minHeight?: DimensionValue;
   /**
    * Background color for the card.
-   * @default backgroundAlternate
+   * @default bgAlternate
    */
   background?: ThemeVars.Color;
   /**

@@ -30,7 +30,7 @@ export const InputLabelTextAlignments = () => {
 };
 
 export const LabelColor = () => {
-  return <InputLabel color="textForegroundMuted">Label</InputLabel>;
+  return <InputLabel color="fgMuted">Label</InputLabel>;
 };
 
 export const InputLabelDangerouslySetClassName = () => {
@@ -39,7 +39,7 @@ export const InputLabelDangerouslySetClassName = () => {
   `;
 
   return (
-    <InputLabel className={fontWeight} color="textForegroundMuted">
+    <InputLabel className={fontWeight} color="fgMuted">
       Label
     </InputLabel>
   );

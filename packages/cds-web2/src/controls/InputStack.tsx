@@ -58,12 +58,12 @@ const persistedFocusStyle = css`
 `;
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'backgroundPrimary',
-  positive: 'backgroundPositive',
-  negative: 'backgroundNegative',
-  foreground: 'backgroundInverse',
-  foregroundMuted: 'lineHeavy',
-  secondary: 'backgroundSecondary',
+  primary: 'bgPrimary',
+  positive: 'bgPositive',
+  negative: 'bgNegative',
+  foreground: 'bgInverse',
+  foregroundMuted: 'bgLineHeavy',
+  secondary: 'bgSecondary',
 };
 
 export type InputStackBaseProps = {
@@ -76,7 +76,7 @@ export type InputStackBaseProps = {
    * we allow startContent and endContent to be custom ReactNode,
    * the content placed inside these slots will not change colors according
    * to the variant. You will have to add that yourself
-   * @default textForegroundMuted
+   * @default fgMuted
    */
   variant?: InputVariant;
   /**
@@ -186,7 +186,7 @@ export const InputStack = memo(
         }
 
         // all variants except for positive/negative receive the primary focus color
-        return 'var(--color-backgroundPrimary)';
+        return 'var(--color-bgPrimary)';
       }, [disableFocusedStyle, variant]);
 
       const borderColorUnfocused = useMemo(() => {
@@ -223,7 +223,7 @@ export const InputStack = memo(
               <Interactable
                 ref={ref}
                 as="span"
-                background={variant === 'secondary' ? 'backgroundSecondary' : 'background'}
+                background={variant === 'secondary' ? 'bgSecondary' : 'bg'}
                 borderRadius={borderRadius}
                 borderWidth={borderWidth}
                 className={cx(baseStyle, focused && persistedFocusStyle)}

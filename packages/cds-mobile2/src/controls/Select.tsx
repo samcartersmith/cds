@@ -34,12 +34,12 @@ import { SelectProvider } from './SelectContext';
 import { useSelect } from './useSelect';
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'textPrimary',
-  positive: 'textPositive',
-  negative: 'textNegative',
-  foreground: 'textForeground',
-  foregroundMuted: 'textForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export const Select = memo(
@@ -84,7 +84,7 @@ export const Select = memo(
         focusedVariant,
       );
 
-      const labelTextColor = 'textForeground';
+      const labelTextColor = 'fg';
 
       const handleA11y = useCallback(() => {
         // bring a11y focus back to the trigger
@@ -173,7 +173,7 @@ export const Select = memo(
                 inputNode={
                   <HStack
                     alignItems="center"
-                    background="background"
+                    background="bg"
                     borderRadius={200}
                     flexBasis={1}
                     flexGrow={1}
@@ -186,7 +186,7 @@ export const Select = memo(
                     <TextBody
                       accessibilityState={accessibilityState}
                       align={compact ? 'end' : 'start'}
-                      color="textForegroundMuted"
+                      color="fgMuted"
                       disabled={disabled}
                       ellipsize="tail"
                     >

@@ -10,10 +10,10 @@ export type CellDetailProps = {
 } & CellDetailBaseProps;
 
 const variantColorMap: Record<CellDetailVariant, ThemeVars.Color> = {
-  foregroundMuted: 'textForegroundMuted',
-  negative: 'textNegative',
-  positive: 'textPositive',
-  warning: 'textWarning',
+  foregroundMuted: 'fgMuted',
+  negative: 'fgNegative',
+  positive: 'fgPositive',
+  warning: 'fgWarning',
 };
 
 export const CellDetail = memo(function CellDetail({

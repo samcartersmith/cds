@@ -113,12 +113,12 @@ const useInputVariant = (focused: boolean, variant: InputVariant) => {
 };
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'textPrimary',
-  positive: 'textPositive',
-  negative: 'textNegative',
-  foreground: 'textForeground',
-  foregroundMuted: 'textForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export const TextInput = memo(
@@ -187,7 +187,7 @@ export const TextInput = memo(
     // Define a distinct read-only style to differentiate it from the disabled style.
     const startEndBackground = useMemo(() => {
       if (!disabled && htmlInputElmProps.readOnly) {
-        return 'backgroundSecondary';
+        return 'bgSecondary';
       }
       return undefined;
     }, [disabled, htmlInputElmProps.readOnly]);
@@ -268,7 +268,7 @@ export const TextInput = memo(
                 testID={testIDMap?.end ?? ''}
               >
                 {suffix !== '' && (
-                  <Text as="p" color="textForegroundMuted" font="label1" paddingRight={2}>
+                  <Text as="p" color="fgMuted" font="label1" paddingRight={2}>
                     {suffix}
                   </Text>
                 )}

@@ -24,9 +24,9 @@ const useSubIconWidth = () => {
 };
 
 const variantColorMap: Record<SparklineInteractiveSubHeadIconColor, ThemeVars.Color> = {
-  positive: 'textPositive',
-  negative: 'textNegative',
-  foregroundMuted: 'textForegroundMuted',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foregroundMuted: 'fgMuted',
 };
 
 export const styles = StyleSheet.create({
@@ -94,7 +94,7 @@ export function useSparklineInteractiveHeaderStyles() {
           styles.fullWidth,
           {
             fontSize: titleFontSize,
-            color: theme.color.textForeground,
+            color: theme.color.fg,
             height: lineHeight.title1,
           },
         ];
@@ -106,7 +106,7 @@ export function useSparklineInteractiveHeaderStyles() {
         styles.fullWidth,
         {
           height: lineHeight.label1,
-          color: theme.color.textForegroundMuted,
+          color: theme.color.fgMuted,
         },
       ] as StyleProp<TextStyle>,
       // SUBHEAD ICON STYLES - the + or - after price and in front of percent change)
@@ -138,7 +138,7 @@ export function useSparklineInteractiveHeaderStyles() {
         typography.label2,
         styles.inputReset,
         {
-          color: theme.color.textForegroundMuted,
+          color: theme.color.fgMuted,
           marginLeft: theme.space[0.5],
           textAlign: 'left',
         },

@@ -53,7 +53,7 @@ const getBorderRadiusPinStyle = (borderRadius: number) => ({
 
 export const Card = memo(function OldCard({
   children,
-  background = 'background',
+  background = 'bg',
   elevation = 1,
   size = 'large',
   onPress,

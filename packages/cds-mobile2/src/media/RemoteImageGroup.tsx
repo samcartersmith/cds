@@ -51,10 +51,10 @@ export const RemoteImageGroup = ({
   const typographyStyles = useMemo(() => {
     return {
       fontFamily: theme.fontFamily.legal,
-      color: theme.color.textForeground,
+      color: theme.color.fg,
       fontSize: (sizeIsNumber ? size : avatarSize) * 0.4,
     };
-  }, [theme.fontFamily.legal, theme.color.textForeground, sizeIsNumber, size, avatarSize]);
+  }, [theme.fontFamily.legal, theme.color.fg, sizeIsNumber, size, avatarSize]);
 
   return (
     <Box
@@ -67,7 +67,7 @@ export const RemoteImageGroup = ({
       {showExcess && (
         <Box
           alignItems="center"
-          background="backgroundOverlay"
+          background="bgOverlay"
           height={excessSize}
           justifyContent="center"
           marginLeft={overlapSpacing}

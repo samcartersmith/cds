@@ -13,33 +13,19 @@ const Child = ({ expectedColorScheme }: { expectedColorScheme: string }) => {
   const { colorScheme } = useTheme();
 
   return (
-    <VStack background="background">
+    <VStack background="bg">
       <VStack gap={3} padding={1}>
         <VStack>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
-          <TextBody color="backgroundSecondary">Secondary text</TextBody>
+          <TextBody color="bgSecondary">Secondary text</TextBody>
         </VStack>
-        <VStack
-          bordered
-          background="background"
-          borderRadius={200}
-          elevation={1}
-          gap={1}
-          padding={2}
-        >
+        <VStack bordered background="bg" borderRadius={200} elevation={1} gap={1} padding={2}>
           <TextBody>Elevation 1</TextBody>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
-        <VStack
-          bordered
-          background="background"
-          borderRadius={200}
-          elevation={2}
-          gap={1}
-          padding={2}
-        >
+        <VStack bordered background="bg" borderRadius={200} elevation={2} gap={1} padding={2}>
           <TextBody>Elevation 2</TextBody>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
@@ -63,9 +49,9 @@ const customLightTheme = {
   ...defaultTheme,
   light: {
     ...defaultTheme.light,
-    backgroundSecondary: `rgb(${defaultTheme.lightSpectrum.blue50})`,
-    backgroundPrimary: `rgb(${defaultTheme.lightSpectrum.red20})`,
-    background: `rgb(${defaultTheme.lightSpectrum.orange50})`,
+    bg: `rgb(${defaultTheme.lightSpectrum.orange50})`,
+    bgPrimary: `rgb(${defaultTheme.lightSpectrum.red20})`,
+    bgSecondary: `rgb(${defaultTheme.lightSpectrum.blue50})`,
   },
 } satisfies ThemeConfig;
 
@@ -82,9 +68,9 @@ const customDarkTheme = {
   ...defaultTheme,
   dark: {
     ...defaultTheme.dark,
-    backgroundSecondary: `rgb(${defaultTheme.darkSpectrum.blue50})`,
-    backgroundPrimary: `rgb(${defaultTheme.darkSpectrum.red20})`,
-    background: `rgb(${defaultTheme.darkSpectrum.orange50})`,
+    bg: `rgb(${defaultTheme.darkSpectrum.orange50})`,
+    bgPrimary: `rgb(${defaultTheme.darkSpectrum.red20})`,
+    bgSecondary: `rgb(${defaultTheme.darkSpectrum.blue50})`,
   },
 } satisfies ThemeConfig;
 

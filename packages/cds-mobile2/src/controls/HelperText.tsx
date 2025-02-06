@@ -9,7 +9,7 @@ import { TextLabel2, TextProps } from '../typography';
 export type HelperTextProps = {
   /**
    * Determines the color of the text
-   * @default textForegroundMuted
+   * @default fgMuted
    */
   color?: ThemeVars.Color;
   /** Accessibility label for the error icon */
@@ -56,7 +56,7 @@ export const HelperText = memo(function HelperText({
 
   return (
     <TextLabel2 align={align} color={color} dangerouslySetColor={dangerouslySetColor} {...props}>
-      {color === 'textNegative' && (
+      {color === 'fgNegative' && (
         <TextLabel2
           accessible
           accessibilityLabel={errorIconAccessibilityLabel}

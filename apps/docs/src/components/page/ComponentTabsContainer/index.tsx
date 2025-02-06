@@ -44,7 +44,7 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
   const isMobile = platform === 'mobile';
 
   return (
-    <VStack background="backgroundAlternate" borderRadius={500} paddingTop={3}>
+    <VStack background="bgAlternate" borderRadius={500} paddingTop={3}>
       <Box paddingX={4}>
         <Tabs
           TabComponent={TabComponent}

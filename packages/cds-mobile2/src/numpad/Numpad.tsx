@@ -77,7 +77,7 @@ export const Numpad = memo(
       deleteAccessibilityLabel = 'delete',
       separatorAccessibilityLabel = 'period',
       testID,
-      background = 'background',
+      background = 'bg',
       flexGrow = 0,
       flexShrink = 0,
       gap = 2,
@@ -92,7 +92,7 @@ export const Numpad = memo(
           <HStack
             key={`num_pad_item_${i}`} // eslint-disable-line react/no-array-index-key
             alignItems="stretch"
-            background="background"
+            background="bg"
             flexGrow={1}
             flexWrap="nowrap"
             justifyContent="space-between"
@@ -156,7 +156,7 @@ const NumpadButton = memo(function NumpadButton({
 }: NumpadButtonProps) {
   const content = useMemo(() => {
     if (value === 'DELETE') {
-      return <Icon color="iconForeground" name="backArrow" size="s" />;
+      return <Icon color="fg" name="backArrow" size="s" />;
     }
     return (
       <TextTitle2 align="center" padding={0}>
@@ -204,7 +204,7 @@ const NumpadButton = memo(function NumpadButton({
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="button"
       accessibilityState={{ disabled }}
-      background="background"
+      background="bg"
       borderRadius={200}
       debounceTime={100}
       disabled={disabled}

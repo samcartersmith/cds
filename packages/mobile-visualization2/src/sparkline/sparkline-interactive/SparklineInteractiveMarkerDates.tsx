@@ -39,7 +39,7 @@ const SparklineInteractiveMarkerDate: React.FunctionComponent<
   return (
     <TextLabel2
       align="center"
-      color="textForegroundMuted"
+      color="fgMuted"
       onLayout={onLayout}
       paddingTop={3}
       style={styles.label}
@@ -76,10 +76,10 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
     return {
       ...styles.wrapper,
       opacity: markerOpacity,
-      backgroundColor: theme.color.background,
+      backgroundColor: theme.color.bg,
       ...paddingHorizontalStyle,
     };
-  }, [markerOpacity, paddingHorizontalStyle, theme.color.background]);
+  }, [markerOpacity, paddingHorizontalStyle, theme.color.bg]);
 
   return (
     <Animated.View pointerEvents="none" style={rootStyle}>

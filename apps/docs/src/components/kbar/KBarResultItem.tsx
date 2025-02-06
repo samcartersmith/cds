@@ -37,10 +37,10 @@ const KBarResultItem = memo(
           <HStack gap={1}>
             {ancestors?.map((ancestor) => (
               <Fragment key={ancestor.id}>
-                <Text as="span" color="textForegroundMuted">
+                <Text as="span" color="fgMuted">
                   {ancestor.name}
                 </Text>
-                <Text as="span" color="textForegroundMuted">
+                <Text as="span" color="fgMuted">
                   &rsaquo;
                 </Text>
               </Fragment>
@@ -56,7 +56,7 @@ const KBarResultItem = memo(
         }
         return (
           <HStack alignItems="center" height={24}>
-            <Icon color="iconForeground" name="compass" size="s" />
+            <Icon color="fg" name="compass" size="s" />
           </HStack>
         );
       }, [action]);
@@ -77,7 +77,7 @@ const KBarResultItem = memo(
               </Text>
             )}
             {!!action.subtitle && (
-              <Text as="div" color="textForegroundMuted" font="body" overflow="truncate">
+              <Text as="div" color="fgMuted" font="body" overflow="truncate">
                 {action.subtitle}
               </Text>
             )}

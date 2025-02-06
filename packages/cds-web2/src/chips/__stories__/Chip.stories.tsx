@@ -41,7 +41,7 @@ const ChipExamples = ({
     </Chip>
     <Chip
       {...props}
-      end={<Icon color="iconForeground" name="caretDown" size="s" />}
+      end={<Icon color="fg" name="caretDown" size="s" />}
       start={<RemoteImage {...assetIconProps} />}
     >
       {label ?? (
@@ -50,12 +50,12 @@ const ChipExamples = ({
         </Text>
       )}
     </Chip>
-    <Chip {...props} end={<Icon color="iconForeground" name="filter" size="s" />}>
+    <Chip {...props} end={<Icon color="fg" name="filter" size="s" />}>
       Filter 2
     </Chip>
     <Chip
       {...props}
-      end={<Icon color="iconForeground" name="caretDown" size="s" />}
+      end={<Icon color="fg" name="caretDown" size="s" />}
       onPress={() => {}}
       start={<RemoteImage {...assetIconProps} />}
     >
@@ -68,7 +68,7 @@ const ChipExamples = ({
     <Chip
       {...props}
       disabled
-      end={<Icon color="iconForeground" name="caretDown" size="s" />}
+      end={<Icon color="fg" name="caretDown" size="s" />}
       onPress={() => {}}
       start={<RemoteImage {...assetIconProps} />}
     >

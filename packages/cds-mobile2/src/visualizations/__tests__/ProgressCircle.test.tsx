@@ -121,12 +121,7 @@ describe('ProgressCircle tests and passes a11y', () => {
     const size = 100;
     render(
       <DefaultThemeProvider>
-        <ProgressCircle
-          color="backgroundPositive"
-          progress={1}
-          size={size}
-          testID="mock-progress-circle"
-        />
+        <ProgressCircle color="bgPositive" progress={1} size={size} testID="mock-progress-circle" />
       </DefaultThemeProvider>,
     );
 

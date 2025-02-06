@@ -76,7 +76,7 @@ export const ListCell = memo(function ListCell({
 
         {!!description && (
           <TextBody
-            color="textForegroundMuted"
+            color="fgMuted"
             ellipsize={multiline ? undefined : 'tail'}
             numberOfLines={multiline ? undefined : title ? 1 : 2}
           >

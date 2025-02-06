@@ -229,7 +229,7 @@ const InputScreen = () => {
             <TextBody
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
-              color="textForegroundMuted"
+              color="fgMuted"
               paddingRight={2}
             >
               Cancel
@@ -259,7 +259,7 @@ const InputScreen = () => {
             <TextBody
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
-              color="textForegroundMuted"
+              color="fgMuted"
               paddingRight={2}
             >
               Cancel
@@ -375,7 +375,7 @@ const InputScreen = () => {
           label="Read-Only with Start Node"
           start={
             <Box paddingX={2}>
-              <Icon color="iconForeground" name="qrCode" size="m" />
+              <Icon color="fg" name="qrCode" size="m" />
             </Box>
           }
           value="Some text"
@@ -385,7 +385,7 @@ const InputScreen = () => {
           accessibilityLabel="Text input field"
           end={
             <Box paddingX={2}>
-              <Icon color="iconForeground" name="qrCode" size="m" />
+              <Icon color="fg" name="qrCode" size="m" />
             </Box>
           }
           label="Compact Read-Only with End Node"

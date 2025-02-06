@@ -15,7 +15,7 @@ type SvgFromFigmaProps = { name: IconName; size: IconSize };
 
 const iconFontOverride = css`
   span {
-    color: var(--color-iconForeground) !important;
+    color: var(--color-fg) !important;
   }
 `;
 
@@ -53,11 +53,9 @@ export const IconSheet = memo(function IconSheet({ startIndex, endIndex }: IconS
             <HStack key={`icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
               <VStack gap={2}>
                 <HStack alignItems="center" className={iconFontOverride} gap={2}>
-                  <Icon color="iconForeground" name={name} size="s" />
+                  <Icon color="fg" name={name} size="s" />
                   {(['s', 'm', 'l'] as const).map((size) => {
-                    return (
-                      <Icon key={`icon-${size}`} color="iconForeground" name={name} size={size} />
-                    );
+                    return <Icon key={`icon-${size}`} color="fg" name={name} size={size} />;
                   })}
                 </HStack>
                 <HStack alignItems="center" gap={2}>

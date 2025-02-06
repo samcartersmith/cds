@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import type { Placement } from '@popperjs/core';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import {
   animateDropdownOpacityInConfig,
   animateDropdownOpacityOutConfig,
@@ -46,7 +46,7 @@ export const DropdownContent = memo(
         <MotionVStack
           ref={ref}
           bordered
-          background="background"
+          background="bg"
           borderRadius={400}
           className={dropdownStaticClassName}
           elevation={2}

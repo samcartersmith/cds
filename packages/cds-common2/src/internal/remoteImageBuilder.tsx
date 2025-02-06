@@ -17,15 +17,15 @@ export type RemoteImageBuilderProps = {
 };
 
 export const borderColors = [
-  'backgroundPrimary',
-  'backgroundPrimaryWash',
-  'backgroundSecondary',
-  'backgroundPositive',
-  'backgroundNegative',
-  'line',
-  'lineHeavy',
+  'bgPrimary',
+  'bgPrimaryWash',
+  'bgSecondary',
+  'bgPositive',
+  'bgNegative',
+  'bgLine',
+  'bgLineHeavy',
   'transparent',
-  'backgroundWarning',
+  'bgWarning',
 ] as const satisfies ThemeVars.Color[];
 
 export const remoteImageBuilder = ({

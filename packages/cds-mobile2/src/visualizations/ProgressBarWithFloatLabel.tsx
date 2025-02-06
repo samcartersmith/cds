@@ -78,7 +78,7 @@ const ProgressBarFloatLabel = memo(
           testID="cds-progress-bar-float-label"
         >
           <ProgressTextLabel
-            color="textForegroundMuted"
+            color="fgMuted"
             disabled={disabled}
             renderLabel={renderLabel}
             value={labelNum}

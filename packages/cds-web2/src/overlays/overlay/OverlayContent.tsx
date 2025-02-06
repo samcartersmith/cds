@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import {
   animateInOpacityConfig,
   animateOutOpacityConfig,
@@ -28,7 +28,7 @@ export const OverlayContent = forwardRef<HTMLDivElement, OverlayProps>(
 
     const content = (
       <VStack
-        background="backgroundOverlay"
+        background="bgOverlay"
         bottom={0}
         left={0}
         onClick={onPress}

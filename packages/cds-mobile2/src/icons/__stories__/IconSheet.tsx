@@ -13,9 +13,7 @@ function IconSheetRow({ name }: { name: IconName }) {
     <VStack>
       <HStack gap={2} paddingBottom={2}>
         {(['xs', 's', 'm', 'l'] as const).map((size) => {
-          return (
-            <Icon key={`icon-${name}-${size}`} color="iconForeground" name={name} size={size} />
-          );
+          return <Icon key={`icon-${name}-${size}`} color="fg" name={name} size={size} />;
         })}
       </HStack>
     </VStack>

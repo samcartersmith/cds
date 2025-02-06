@@ -91,7 +91,7 @@ export const Icon = memo(
       {
         accessibilityLabel,
         bordered = false,
-        color = 'iconPrimary',
+        color = 'fgPrimary',
         dangerouslySetColor,
         fallback = null,
         name,

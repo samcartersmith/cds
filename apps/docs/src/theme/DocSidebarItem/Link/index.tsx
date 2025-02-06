@@ -45,10 +45,7 @@ export default function DocSidebarItemLink({
         })}
         {...props}
       >
-        <Text
-          color={isActive ? 'textPrimary' : 'textForeground'}
-          font={isActive ? 'label1' : 'label2'}
-        >
+        <Text color={isActive ? 'fgPrimary' : 'fg'} font={isActive ? 'label1' : 'label2'}>
           {label}
         </Text>
         {!isInternalLink && <IconExternalLink />}

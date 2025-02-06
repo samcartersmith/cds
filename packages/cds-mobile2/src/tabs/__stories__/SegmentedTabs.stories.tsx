@@ -14,11 +14,11 @@ import { TabsActiveIndicator } from '../Tabs';
 const CustomActiveIndicator = ({
   activeTabRect,
 }: Pick<TabsActiveIndicatorProps, 'activeTabRect'>) => (
-  <TabsActiveIndicator activeTabRect={activeTabRect} background="backgroundOverlay" />
+  <TabsActiveIndicator activeTabRect={activeTabRect} background="bgOverlay" />
 );
 
 const CustomSegmentedTab: TabComponent = (props) => (
-  <SegmentedTab {...props} activeColor="accentBoldPurple" color="textPrimary" />
+  <SegmentedTab {...props} activeColor="accentBoldPurple" color="fgPrimary" />
 );
 
 const AnotherCustomSegmentedTab: TabComponent = ({ id, label, disabled }) => {
@@ -38,7 +38,7 @@ const AnotherCustomSegmentedTab: TabComponent = ({ id, label, disabled }) => {
     >
       <Box alignItems="center" paddingX={3} paddingY={1}>
         {typeof label === 'string' ? (
-          <TextLabel2 color={isActive ? 'textPositive' : 'textNegative'} ellipsize="tail">
+          <TextLabel2 color={isActive ? 'fgPositive' : 'fgNegative'} ellipsize="tail">
             {label}
           </TextLabel2>
         ) : (

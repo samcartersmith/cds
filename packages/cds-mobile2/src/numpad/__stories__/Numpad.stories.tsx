@@ -183,13 +183,9 @@ const NumpadExample2 = () => {
                     borderWidth: 2,
                     borderRadius: 10,
                     borderColor:
-                      index < value.length
-                        ? theme.color.backgroundPrimary
-                        : theme.color.backgroundOverlay,
+                      index < value.length ? theme.color.bgPrimary : theme.color.bgOverlay,
                     backgroundColor:
-                      index < value.length
-                        ? theme.color.backgroundPrimary
-                        : theme.color.transparent,
+                      index < value.length ? theme.color.bgPrimary : theme.color.transparent,
                     margin: 5,
                   }}
                 />

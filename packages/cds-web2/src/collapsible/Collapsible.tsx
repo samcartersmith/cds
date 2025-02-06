@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useCallback, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import type { CollapsibleBaseProps } from '@cbhq/cds-common2/types/CollapsibleBaseProps';
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 

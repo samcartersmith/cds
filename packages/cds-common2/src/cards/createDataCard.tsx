@@ -60,7 +60,7 @@ export function createDataCard<OnPressFn>({
             <TextHeadline testID={`${testID}-start-label`}>{startLabelProp}</TextHeadline>
           )}
           {!!endLabelProp && (
-            <TextEndLabel color="textForegroundMuted" testID={`${testID}-end-label`}>
+            <TextEndLabel color="fgMuted" testID={`${testID}-end-label`}>
               {endLabelProp}
             </TextEndLabel>
           )}

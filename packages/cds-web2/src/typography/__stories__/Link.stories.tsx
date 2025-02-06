@@ -23,7 +23,7 @@ export const VariantBody = () => (
 
 export const NegativeColor = () => (
   <div>
-    <Link color="textNegative" font="headline" to="https://www.google.com/">
+    <Link color="fgNegative" font="headline" to="https://www.google.com/">
       Negative
     </Link>
   </div>
@@ -44,7 +44,7 @@ export const NoUnderline = () => (
       Body
     </Link>
     <br />
-    <Link color="textNegative" font="headline" to="https://www.google.com/" underline={false}>
+    <Link color="fgNegative" font="headline" to="https://www.google.com/" underline={false}>
       Negative
     </Link>
   </div>
@@ -126,7 +126,7 @@ export const RenderContainer = () => (
   <div>
     <Router>
       <Link
-        color="textPrimary"
+        color="fgPrimary"
         font="body"
         onClick={noop}
         renderContainer={RenderContainerExample}
@@ -142,7 +142,7 @@ export const RenderContainerColor = () => (
   <div>
     <Router>
       <Link
-        color="textNegative"
+        color="fgNegative"
         font="label1"
         onClick={noop}
         renderContainer={RenderContainerExample}

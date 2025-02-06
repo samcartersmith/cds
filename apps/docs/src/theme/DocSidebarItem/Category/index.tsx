@@ -166,7 +166,7 @@ export default function DocSidebarItemCategory({
     >
       {level === 1 ? (
         <Pressable
-          background="backgroundSecondary"
+          background="bgSecondary"
           borderRadius={600}
           onPress={
             collapsible
@@ -195,16 +195,11 @@ export default function DocSidebarItemCategory({
           >
             <HStack alignContent="center" alignItems="center" gap={1}>
               {typeof customProps?.icon === 'string' && (
-                <Icon color="textForeground" name={customProps.icon as IconName} size="s" />
+                <Icon color="fg" name={customProps.icon as IconName} size="s" />
               )}
               <Text font="label1">{label}</Text>
             </HStack>
-            <Icon
-              color="textForeground"
-              name={!collapsed ? 'minus' : 'add'}
-              paddingRight={2}
-              size="s"
-            />
+            <Icon color="fg" name={!collapsed ? 'minus' : 'add'} paddingRight={2} size="s" />
           </HStack>
         </Pressable>
       ) : (
@@ -251,12 +246,12 @@ export default function DocSidebarItemCategory({
               paddingX={0.5}
               width="100%"
             >
-              <Text color="textForeground" font="label2">
+              <Text color="fg" font="label2">
                 {label}
               </Text>
               {level !== 1 && (
                 <Icon
-                  color="textForeground"
+                  color="fg"
                   name={expandedItem === index ? 'caretUp' : 'caretDown'}
                   paddingRight={0}
                   size="s"

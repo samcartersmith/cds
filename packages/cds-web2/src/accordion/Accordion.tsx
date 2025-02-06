@@ -16,7 +16,7 @@ export const Accordion = ({
   style,
 }: AccordionProps) => {
   const { colorScheme } = useTheme();
-  const dividerColor = colorScheme === 'light' ? 'line' : 'lineHeavy';
+  const dividerColor = colorScheme === 'light' ? 'bgLine' : 'bgLineHeavy';
 
   return (
     <AccordionParentProvider defaultActiveKey={defaultActiveKey} onChange={onChange}>

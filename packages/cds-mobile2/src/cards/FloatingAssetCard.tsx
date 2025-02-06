@@ -47,7 +47,7 @@ export const FloatingAssetCard = memo(
         </HStack>
         <VStack gap={0.5} maxWidth={width}>
           {typeof subtitle === 'string' ? (
-            <TextLegal color="textForegroundMuted" numberOfLines={1}>
+            <TextLegal color="fgMuted" numberOfLines={1}>
               {subtitle}
             </TextLegal>
           ) : (
@@ -59,7 +59,7 @@ export const FloatingAssetCard = memo(
             title
           )}
           {typeof description === 'string' ? (
-            <TextLabel2 color="textForegroundMuted" numberOfLines={2}>
+            <TextLabel2 color="fgMuted" numberOfLines={2}>
               {description}
             </TextLabel2>
           ) : (

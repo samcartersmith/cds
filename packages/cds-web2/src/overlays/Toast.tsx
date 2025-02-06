@@ -7,7 +7,7 @@ import React, {
   useImperativeHandle,
 } from 'react';
 import { css } from '@linaria/core';
-import { motion, useAnimation } from 'framer-motion';
+import { m as motion, useAnimation } from 'framer-motion';
 import { SharedAccessibilityProps, ToastBaseProps, ToastRefBaseProps } from '@cbhq/cds-common2';
 import {
   animateInBottomConfig,
@@ -124,7 +124,7 @@ export const Toast = memo(
             >
               <HStack
                 alignItems="center"
-                background="backgroundAlternate"
+                background="bgAlternate"
                 borderRadius={200}
                 elevation={2}
                 maxWidth={550}

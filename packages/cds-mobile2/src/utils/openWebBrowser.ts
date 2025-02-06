@@ -74,8 +74,8 @@ export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions
   const browserConfig: InAppBrowserOptions | undefined = Platform.select({
     android: {
       showTitle: true,
-      toolbarColor: options.theme.color.background,
-      secondaryToolbarColor: options.theme.color.lineHeavy,
+      toolbarColor: options.theme.color.bg,
+      secondaryToolbarColor: options.theme.color.bgLineHeavy,
       enableUrlBarHiding: true,
       enableDefaultShare: true,
       forceCloseOnRedirection: false,
@@ -83,8 +83,8 @@ export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions
     },
     ios: {
       dismissButtonStyle: 'close',
-      preferredBarTintColor: options.theme.color.background,
-      preferredControlTintColor: options.theme.color.backgroundPrimary,
+      preferredBarTintColor: options.theme.color.bg,
+      preferredControlTintColor: options.theme.color.bgPrimary,
       readerMode: false,
       animated: true,
       modalPresentationStyle: 'fullScreen',

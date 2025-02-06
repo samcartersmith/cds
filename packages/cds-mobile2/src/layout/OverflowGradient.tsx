@@ -40,7 +40,7 @@ export const OverflowGradient = memo(function OverflowGradient({
     () => [
       /* Override background to be transparent bc android can't gradient from 'transparent' string */
       theme.color.transparent, // transparent will always be an rgba string
-      theme.color.background,
+      theme.color.bg,
     ],
     [theme.color],
   );

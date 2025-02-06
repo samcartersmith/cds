@@ -12,12 +12,12 @@ import { useDotAnimation } from './hooks/useDotAnimation';
 
 const COLORS = {
   primary: {
-    active: 'textPrimary',
-    inactive: 'textForeground',
+    active: 'fgPrimary',
+    inactive: 'fg',
   },
   secondary: {
-    active: 'textForeground',
-    inactive: 'textForegroundMuted',
+    active: 'fg',
+    inactive: 'fgMuted',
   },
 } as const;
 

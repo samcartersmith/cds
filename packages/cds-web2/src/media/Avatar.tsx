@@ -140,7 +140,7 @@ export const Avatar = memo(
         return (
           <Text
             as="p"
-            color="textForegroundInverse"
+            color="fgInverse"
             font="title2"
             // scope is already memoized
             // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
@@ -158,7 +158,7 @@ export const Avatar = memo(
       return (
         <Text
           as="p"
-          color="textForegroundInverse"
+          color="fgInverse"
           font={showLargerFont ? 'title2' : 'body'}
           textAlign="center"
           transform="uppercase"

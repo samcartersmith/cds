@@ -37,7 +37,7 @@ export const MultiContentModule = memo(
       <VStack
         ref={ref}
         accessibilityLabel={accessibilityLabel}
-        background="background"
+        background="bg"
         borderRadius={400}
         bordered={bordered}
         flexGrow={1}
@@ -58,7 +58,7 @@ export const MultiContentModule = memo(
         )}
         {typeof title === 'string' ? <TextTitle1>{title}</TextTitle1> : title}
         {typeof description === 'string' ? (
-          <TextBody color="textForegroundMuted" numberOfLines={3}>
+          <TextBody color="fgMuted" numberOfLines={3}>
             {description}
           </TextBody>
         ) : (

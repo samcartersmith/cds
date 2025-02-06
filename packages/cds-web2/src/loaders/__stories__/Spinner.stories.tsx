@@ -24,7 +24,7 @@ export const SpinnerPrimary = () => {
     <VStack>
       <TextTitle1 as="h1">Spinner Primary Color</TextTitle1>
       <Spacer vertical={3} />
-      <Spinner accessibilityLabel="Loading" color="backgroundPrimary" size={10} />
+      <Spinner accessibilityLabel="Loading" color="bgPrimary" size={10} />
     </VStack>
   );
 };
@@ -46,11 +46,7 @@ export const SpinnerWithAccessibility = () => {
         10 seconds.
       </TextBody>
       <Spacer vertical={3} />
-      <Spinner
-        accessibilityLabel={loading ? 'Loading' : 'Complete'}
-        color="backgroundPrimary"
-        size={10}
-      />
+      <Spinner accessibilityLabel={loading ? 'Loading' : 'Complete'} color="bgPrimary" size={10} />
     </VStack>
   );
 };

@@ -83,7 +83,7 @@ export const Default = ({
   const content = (
     <>
       <HStack paddingX={2} paddingY={2} role="separator">
-        <Text as="h2" color="textForegroundMuted" font="caption">
+        <Text as="h2" color="fgMuted" font="caption">
           Section Heading
         </Text>
       </HStack>
@@ -133,7 +133,7 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
   const content = (
     <>
       <HStack padding={2}>
-        <Text as="h2" color="textForegroundMuted" font="caption">
+        <Text as="h2" color="fgMuted" font="caption">
           Section Heading
         </Text>
       </HStack>
@@ -196,7 +196,7 @@ export const SubMenu = () => {
     () => (
       <>
         <HStack padding={2}>
-          <Text as="h2" color="textForegroundMuted" font="caption">
+          <Text as="h2" color="fgMuted" font="caption">
             Section Heading
           </Text>
         </HStack>
@@ -212,7 +212,7 @@ export const SubMenu = () => {
           width="100%"
         >
           {/* Note: you can't use a SelectOption as the trigger or else SelectProvider will think this is a menu option */}
-          <Pressable background="background" width="100%">
+          <Pressable background="bg" width="100%">
             <HStack
               alignItems="center"
               justifyContent="space-between"
@@ -223,7 +223,7 @@ export const SubMenu = () => {
               <Text as="p" font="headline">
                 More
               </Text>
-              <Icon color="iconForeground" name="caretRight" size="s" />
+              <Icon color="fg" name="caretRight" size="s" />
             </HStack>
           </Pressable>
         </Dropdown>
@@ -247,7 +247,7 @@ export const SubMenu = () => {
       </HStack>
       <HStack
         alignItems="center"
-        background="backgroundAlternate"
+        background="bgAlternate"
         borderRadius={200}
         flexGrow={3}
         justifyContent="center"
@@ -292,7 +292,7 @@ export const CustomOptions = () => {
     () => (
       <>
         <HStack paddingX={2} paddingY={2}>
-          <Text as="h2" color="textForegroundMuted" font="caption">
+          <Text as="h2" color="fgMuted" font="caption">
             Section Heading
           </Text>
         </HStack>
@@ -338,7 +338,7 @@ export const LongText = () => {
 
   const content = (
     <HStack maxWidth="95vw" padding={2} role="separator">
-      <Text as="h2" color="textForegroundMuted" font="caption" overflow="truncate">
+      <Text as="h2" color="fgMuted" font="caption" overflow="truncate">
         {loremIpsum}
       </Text>
     </HStack>

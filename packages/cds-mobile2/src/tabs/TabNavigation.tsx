@@ -21,7 +21,7 @@ export const TabNavigation = memo(
         value = tabs[0].id,
         variant = 'primary',
         testID = 'tabNavigation',
-        background = 'background',
+        background = 'bg',
         onChange,
         Component,
         gap = 4,

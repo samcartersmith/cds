@@ -28,11 +28,7 @@ const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseP
   return (
     <Box alignItems="center" height="100%" justifyContent="center" position="absolute" width="100%">
       <Box alignSelf="center" flexGrow={0} flexShrink={0}>
-        <ProgressTextLabel
-          color="textForegroundMuted"
-          disabled={disabled}
-          value={Math.round(progress * 100)}
-        />
+        <ProgressTextLabel color="fgMuted" disabled={disabled} value={Math.round(progress * 100)} />
       </Box>
     </Box>
   );
@@ -70,7 +66,7 @@ const ProgressCircleInner = memo(
         {...getProgressCircleParams({
           size,
           strokeWidth,
-          stroke: !visuallyDisabled ? theme.color[color] : theme.color.lineHeavy,
+          stroke: !visuallyDisabled ? theme.color[color] : theme.color.bgLineHeavy,
         })}
       />
     );
@@ -83,7 +79,7 @@ export const ProgressCircle = memo(
       {
         weight = 'normal',
         progress,
-        color = 'backgroundPrimary',
+        color = 'bgPrimary',
         disabled = false,
         testID,
         hideText,
@@ -121,7 +117,7 @@ export const ProgressCircle = memo(
                       {...getProgressCircleParams({
                         size: circleSize,
                         strokeWidth,
-                        stroke: theme.color.line,
+                        stroke: theme.color.bgLine,
                       })}
                     />
                     <ProgressCircleInner

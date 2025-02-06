@@ -58,7 +58,7 @@ export type TabIndicatorProps = {
   /** The xPosition of the active TabLabel. */
   x: number;
   /** This should always match the background color of the parent container
-   * @default: 'background'
+   * @default: 'bg'
    */
   background?: ThemeVars.Color;
 } & SharedProps;
@@ -81,7 +81,7 @@ export type TabNavigationProps<T extends string | undefined = string> = {
   /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
   onChange: OnChange<T>;
   /** This should always match the background color of the parent container
-   * @default: 'background'
+   * @default: 'bg'
    */
   background?: ThemeVars.Color;
   /**

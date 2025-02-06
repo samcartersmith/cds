@@ -73,7 +73,7 @@ const baseStyle = css`
   min-width: 100px;
   padding-left: var(--space-4);
   padding-right: var(--space-4);
-  color: var(--color-textForegroundInverse);
+  color: var(--color-fgInverse);
   border-color: transparent;
   border-radius: var(--borderRadius-900);
   text-decoration: none;
@@ -112,75 +112,75 @@ const variantStyles: {
   [key in NonNullable<ButtonBaseProps['variant']>]: LinariaClassName;
 } = {
   primary: css`
-    background-color: var(--color-backgroundPrimary);
+    background-color: var(--color-bgPrimary);
 
     &:hover {
-      background-color: var(--color-backgroundPrimaryHover);
+      background-color: var(--color-bgPrimaryHover);
       opacity: 0.92;
     }
 
     &:active {
-      background-color: var(--color-backgroundPrimaryPressed);
+      background-color: var(--color-bgPrimaryPressed);
       opacity: 0.86;
     }
 
     &:disabled {
-      background-color: var(--color-backgroundPrimaryDisabled);
+      background-color: var(--color-bgPrimaryDisabled);
       opacity: 1;
     }
   `,
   secondary: css`
-    background-color: var(--color-backgroundSecondary);
-    color: var(--color-textForeground);
+    background-color: var(--color-bgSecondary);
+    color: var(--color-fg);
 
     &:hover {
-      background-color: var(--color-backgroundSecondaryHover);
+      background-color: var(--color-bgSecondaryHover);
       opacity: 0.92;
     }
 
     &:active {
-      background-color: var(--color-backgroundSecondaryPressed);
+      background-color: var(--color-bgSecondaryPressed);
       opacity: 0.86;
     }
 
     &:disabled {
-      background-color: var(--color-backgroundSecondaryDisabled);
+      background-color: var(--color-bgSecondaryDisabled);
       opacity: 1;
     }
   `,
   positive: css`
-    background-color: var(--color-backgroundPositive);
+    background-color: var(--color-bgPositive);
 
     &:hover {
-      background-color: var(--color-backgroundPositiveHover);
+      background-color: var(--color-bgPositiveHover);
       opacity: 0.92;
     }
 
     &:active {
-      background-color: var(--color-backgroundPositivePressed);
+      background-color: var(--color-bgPositivePressed);
       opacity: 0.86;
     }
 
     &:disabled {
-      background-color: var(--color-backgroundPositiveDisabled);
+      background-color: var(--color-bgPositiveDisabled);
       opacity: 1;
     }
   `,
   negative: css`
-    background-color: var(--color-backgroundNegative);
+    background-color: var(--color-bgNegative);
 
     &:hover {
-      background-color: var(--color-backgroundNegativeHover);
+      background-color: var(--color-bgNegativeHover);
       opacity: 0.92;
     }
 
     &:active {
-      background-color: var(--color-backgroundNegativePressed);
+      background-color: var(--color-bgNegativePressed);
       opacity: 0.86;
     }
 
     &:disabled {
-      background-color: var(--color-backgroundNegativeDisabled);
+      background-color: var(--color-bgNegativeDisabled);
       opacity: 1;
     }
   `,
@@ -205,16 +205,16 @@ const transparentVariantStyle: {
   [key in NonNullable<ButtonBaseProps['variant']>]: LinariaClassName;
 } = {
   primary: css`
-    color: var(--color-textPrimary);
+    color: var(--color-fgPrimary);
   `,
   secondary: css`
-    color: var(--color-textForeground);
+    color: var(--color-fg);
   `,
   positive: css`
-    color: var(--color-textPositive);
+    color: var(--color-fgPositive);
   `,
   negative: css`
-    color: var(--color-textNegative);
+    color: var(--color-fgNegative);
   `,
 };
 
@@ -288,16 +288,16 @@ const loadingVariantStyle: {
   [key in NonNullable<ButtonBaseProps['variant']>]: LinariaClassName;
 } = {
   primary: css`
-    background-color: var(--color-backgroundPrimaryPressed);
+    background-color: var(--color-bgPrimaryPressed);
   `,
   secondary: css`
-    background-color: var(--color-backgroundSecondaryPressed);
+    background-color: var(--color-bgSecondaryPressed);
   `,
   positive: css`
-    background-color: var(--color-backgroundPositivePressed);
+    background-color: var(--color-bgPositivePressed);
   `,
   negative: css`
-    background-color: var(--color-backgroundNegativePressed);
+    background-color: var(--color-bgNegativePressed);
   `,
 };
 
@@ -329,7 +329,7 @@ const focusRingStyle = css`
   &:focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     outline-offset: 2px;
   }
 `;

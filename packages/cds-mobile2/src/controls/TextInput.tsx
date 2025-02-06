@@ -59,12 +59,12 @@ export type TextInputProps = {
   Omit<RNTextInputProps, 'value' | 'onChange' | 'onChangeText' | 'textAlign'>;
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'textPrimary',
-  positive: 'textPositive',
-  negative: 'textNegative',
-  foreground: 'textForeground',
-  foregroundMuted: 'textForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 /**
@@ -165,7 +165,7 @@ export const TextInput = memo(
 
       const startEndBackground = useMemo(() => {
         if (!disabled && editableInputAddonProps.readOnly) {
-          return 'backgroundSecondary';
+          return 'bgSecondary';
         }
         return undefined;
       }, [disabled, editableInputAddonProps.readOnly]);
@@ -189,7 +189,7 @@ export const TextInput = memo(
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
                   <HStack>
                     {suffix !== '' && (
-                      <TextLabel1 color="textForegroundMuted" paddingRight={2}>
+                      <TextLabel1 color="fgMuted" paddingRight={2}>
                         {suffix}
                       </TextLabel1>
                     )}

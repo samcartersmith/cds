@@ -48,7 +48,7 @@ export const Chip = memo(
         accessibilityLabel={accessibilityLabel}
         alignItems="center"
         // need to set the background here if the content is not wrapped in a Pressable
-        background={hasPressableContainer ? undefined : 'backgroundSecondary'}
+        background={hasPressableContainer ? undefined : 'bgSecondary'}
         borderRadius={500}
         className={cx(contentClass, !hasPressableContainer && containerClass)}
         gap={1}
@@ -77,7 +77,7 @@ export const Chip = memo(
         {hasPressableContainer ? (
           <Pressable
             ref={ref}
-            background="backgroundSecondary"
+            background="bgSecondary"
             borderRadius={500}
             className={containerClass}
             onPress={onPress}

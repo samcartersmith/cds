@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 
+/** @deprecated Use React.useState instead. */
 export function useToggler(initial = false): [
   boolean,
   {

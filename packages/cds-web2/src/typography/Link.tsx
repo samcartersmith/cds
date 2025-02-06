@@ -40,7 +40,7 @@ const baseStyle = css`
   &:focus-visible {
     outline-width: 2px;
     outline-style: solid;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     border-radius: var(--borderRadius-100);
   }
 `;
@@ -67,7 +67,7 @@ export const Link = memo(
       underline = true,
       disabled,
       display = 'inline-flex',
-      color = 'textPrimary',
+      color = 'fgPrimary',
       font,
       openInNewWindow = false,
       rel,

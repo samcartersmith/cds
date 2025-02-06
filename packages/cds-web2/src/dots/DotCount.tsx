@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { css } from '@linaria/core';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   dotOpacityEnterConfig,
@@ -39,7 +39,7 @@ const dotCountContentStyle = css`
 `;
 
 const variantColorMap: Record<DotCountVariants, ThemeVars.Color> = {
-  negative: 'textNegative',
+  negative: 'fgNegative',
 };
 
 export const DotCount = memo(
@@ -61,7 +61,7 @@ export const DotCount = memo(
       const variantColor = variantColorMap[variant];
       return {
         backgroundColor: color[variantColor],
-        borderColor: color.backgroundSecondary,
+        borderColor: color.bgSecondary,
         ...pinStyles,
       };
     }, [color, pinStyles, variant]);
@@ -83,7 +83,7 @@ export const DotCount = memo(
               data-testid="dotcount-outer-container"
               style={styles}
             >
-              <Text as="p" color="textForegroundInverse" font="caption" textAlign="center">
+              <Text as="p" color="fgInverse" font="caption" textAlign="center">
                 {parseDotCountMaxOverflow(count, max)}
               </Text>
             </motion.div>

@@ -41,11 +41,11 @@ export const HelperText = memo(function HelperTex({
       textAlign={textAlign}
       {...props}
     >
-      {color === 'textNegative' && (
+      {color === 'fgNegative' && (
         <Box as="span" className={boxStyle}>
           <Icon
             accessibilityLabel={errorIconAccessibilityLabel}
-            color="iconNegative"
+            color="fgNegative"
             dangerouslySetColor={dangerouslySetColor}
             name="info"
             size="xs"

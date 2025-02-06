@@ -112,7 +112,7 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <VStack background="background" padding={2}>
+      <VStack background="bg" padding={2}>
         <Select
           accessibilityLabel={accessibilityLabel}
           helperText={helperText}
@@ -172,7 +172,7 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>(exampleLongOptions[0]);
 
     return (
-      <VStack background="background" padding={2}>
+      <VStack background="bg" padding={2}>
         <Select
           accessibilityLabel={accessibilityLabel}
           helperText={helperText}
@@ -206,7 +206,7 @@ export const selectBuilder = ({
     const ethLogo = assets.eth.imageUrl;
 
     return (
-      <VStack background="background" minHeight={100} padding={2}>
+      <VStack background="bg" minHeight={100} padding={2}>
         <Select
           label="Select Asset"
           onChange={setAsset}
@@ -242,7 +242,7 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <VStack background="background" minHeight={100} padding={2}>
+      <VStack background="bg" minHeight={100} padding={2}>
         <Select
           helperText="What happens when helper text gets ridiculously long? We shall find out... Bueller.. Bueller.. is the edge of my parent container present? Ugh I still have a way to go. "
           label="I am a very long label that is supposed to be indicative of what my purpose is. Do you know my purpose? Directive? Directive? Directive? "
@@ -268,7 +268,7 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <VStack background="background" minHeight={100} padding={2}>
+      <VStack background="bg" minHeight={100} padding={2}>
         <Select
           disabled
           helperText="You can only choose one option"
@@ -294,7 +294,7 @@ export const selectBuilder = ({
     const [value, setValue] = useState<string | undefined>('');
 
     return (
-      <VStack background="background" minHeight={100} padding={2}>
+      <VStack background="bg" minHeight={100} padding={2}>
         <Select
           compact
           helperText="You only get one choice"
@@ -333,7 +333,7 @@ export const selectBuilder = ({
     const selectRef = useRef<HTMLButtonElement>(null);
 
     return (
-      <VStack background="background" minHeight={100} padding={2}>
+      <VStack background="bg" minHeight={100} padding={2}>
         <Select ref={selectRef} onChange={setValue} placeholder="Choose an amount" value={value}>
           <SelectOption compact description="BTC" title={loremIpsum} value={loremIpsum} />
         </Select>
@@ -606,7 +606,7 @@ export const selectBuilderMobile = ({
     const [visible, handleTrayVisibility] = useToggler(false);
 
     return (
-      <VStack background="background" gap={2} minHeight={400}>
+      <VStack background="bg" gap={2} minHeight={400}>
         <TextInput label="Account number" />
         <TextInput label="Re-enter account number" />
         <Select

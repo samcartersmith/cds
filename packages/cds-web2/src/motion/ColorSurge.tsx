@@ -6,7 +6,7 @@ import React, {
   useImperativeHandle,
   useState,
 } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { m as motion, useAnimation } from 'framer-motion';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { colorSurgeEnterConfig, colorSurgeExitConfig } from '@cbhq/cds-common2/motion/hint';
 import type { HintMotionBaseProps } from '@cbhq/cds-common2/types/MotionBaseProps';
@@ -22,7 +22,7 @@ export type ColorSurgeRefBaseProps = {
 export type ColorSurgeTypes = {
   /**
    * The surge color
-   * @default backgroundPrimary
+   * @default bgPrimary
    */
   background?: ThemeVars.Color;
 } & HintMotionBaseProps;
@@ -34,7 +34,7 @@ const MotionBox = motion(Box);
  */
 export const ColorSurge = memo(
   forwardRef(function ColorSurge(
-    { background = 'backgroundPrimary', disableAnimateOnMount = false }: ColorSurgeTypes,
+    { background = 'bgPrimary', disableAnimateOnMount = false }: ColorSurgeTypes,
     ref: React.ForwardedRef<ColorSurgeRefBaseProps>,
   ) {
     const [backgroundState, setBackgroundState] = useState<ThemeVars.Color>(background);

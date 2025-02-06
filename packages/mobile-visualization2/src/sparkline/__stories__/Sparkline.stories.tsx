@@ -41,7 +41,7 @@ const SparklineExample = ({ imageUrl, name, symbol, color }: SparklineExamplePro
             <TextBody align="end" numberOfLines={1}>
               $2,874.49
             </TextBody>
-            <TextBody align="end" color="textForegroundMuted" numberOfLines={1}>
+            <TextBody align="end" color="fgMuted" numberOfLines={1}>
               +36.08%
             </TextBody>
           </VStack>

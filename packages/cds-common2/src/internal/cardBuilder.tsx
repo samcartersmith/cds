@@ -124,16 +124,16 @@ export function cardBuilder({
   const PressableColoredCards = () => (
     <ThemeProvider>
       <VStack gap={2} {...sharedWrapperProps}>
-        <Card {...sharedPressProps} background="backgroundPrimary">
-          <LoremIpsum color="textForegroundInverse" title="Primary" />
+        <Card {...sharedPressProps} background="bgPrimary">
+          <LoremIpsum color="fgInverse" title="Primary" />
         </Card>
 
-        <Card {...sharedPressProps} background="backgroundPositive">
-          <LoremIpsum color="textForegroundInverse" title="Positive" />
+        <Card {...sharedPressProps} background="bgPositive">
+          <LoremIpsum color="fgInverse" title="Positive" />
         </Card>
 
-        <Card {...sharedPressProps} background="backgroundNegative">
-          <LoremIpsum color="textForegroundInverse" title="Negative" />
+        <Card {...sharedPressProps} background="bgNegative">
+          <LoremIpsum color="fgInverse" title="Negative" />
         </Card>
       </VStack>
     </ThemeProvider>
@@ -158,16 +158,16 @@ export function cardBuilder({
   const NonClickableColoredCards = () => (
     <ThemeProvider>
       <VStack gap={2} {...sharedWrapperProps}>
-        <Card {...sharedProps} background="backgroundPrimary">
-          <LoremIpsum color="textForegroundInverse" title="Primary" />
+        <Card {...sharedProps} background="bgPrimary">
+          <LoremIpsum color="fgInverse" title="Primary" />
         </Card>
 
-        <Card {...sharedProps} background="backgroundPositive">
-          <LoremIpsum color="textForegroundInverse" title="Positive" />
+        <Card {...sharedProps} background="bgPositive">
+          <LoremIpsum color="fgInverse" title="Positive" />
         </Card>
 
-        <Card {...sharedProps} background="backgroundNegative">
-          <LoremIpsum color="textForegroundInverse" title="Negative" />
+        <Card {...sharedProps} background="bgNegative">
+          <LoremIpsum color="fgInverse" title="Negative" />
         </Card>
       </VStack>
     </ThemeProvider>
@@ -175,7 +175,7 @@ export function cardBuilder({
 
   const PinnedTopCard = () => (
     <ThemeProvider>
-      <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
+      <Box {...pinnedSharedWrapperProps} background="bgAlternate">
         <Card {...pinnedSharedProps} pin="top">
           <LoremIpsum concise title="Top" />
         </Card>
@@ -185,7 +185,7 @@ export function cardBuilder({
 
   const PinnedRightCard = () => (
     <ThemeProvider>
-      <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
+      <Box {...pinnedSharedWrapperProps} background="bgAlternate">
         <Card {...pinnedSharedProps} pin="right">
           <LoremIpsum concise title="Right" />
         </Card>
@@ -195,7 +195,7 @@ export function cardBuilder({
 
   const PinnedBottomCard = () => (
     <ThemeProvider>
-      <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
+      <Box {...pinnedSharedWrapperProps} background="bgAlternate">
         <Card {...pinnedSharedProps} pin="bottom">
           <LoremIpsum concise title="Bottom" />
         </Card>
@@ -205,7 +205,7 @@ export function cardBuilder({
 
   const PinnedLeftCard = () => (
     <ThemeProvider>
-      <Box {...pinnedSharedWrapperProps} background="backgroundAlternate">
+      <Box {...pinnedSharedWrapperProps} background="bgAlternate">
         <Card {...pinnedSharedProps} pin="left">
           <LoremIpsum concise title="Left" />
         </Card>

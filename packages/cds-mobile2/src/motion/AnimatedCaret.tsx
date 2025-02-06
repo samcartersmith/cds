@@ -40,7 +40,7 @@ export const useAnimatedCaretAnimation = () => {
 export const AnimatedCaret = memo(function AnimatedCaret({
   rotate,
   size = 's',
-  color = 'iconForegroundMuted',
+  color = 'fgMuted',
   style,
   ...rest
 }: AnimatedCaretProps) {

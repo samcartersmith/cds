@@ -154,9 +154,9 @@ export const RemoteImage = memo(function RemoteImage({
   const darkModeStyles = useMemo(() => {
     if (applyDarkModeEnhancement) {
       return {
-        backgroundColor: theme.color.backgroundInverse,
+        backgroundColor: theme.color.bgInverse,
         borderWidth: 1,
-        borderColor: theme.color.lineHeavy,
+        borderColor: theme.color.bgLineHeavy,
       };
     }
     return undefined;

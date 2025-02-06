@@ -20,7 +20,7 @@ export const TabComponent: TabComponentType = ({ label, disabled, id }) => {
       onPress={handlePress}
     >
       <Box paddingY={2}>
-        <Text color={isActive ? 'textPrimary' : 'textForeground'} font="headline">
+        <Text color={isActive ? 'fgPrimary' : 'fg'} font="headline">
           {label || ''}
         </Text>
       </Box>

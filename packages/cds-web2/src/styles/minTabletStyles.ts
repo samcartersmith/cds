@@ -172,110 +172,110 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
 
 export const color: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     @media (min-width: 768px) {
-      color: var(--color-textForeground);
+      color: var(--color-fg);
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     @media (min-width: 768px) {
-      color: var(--color-textForegroundInverse);
+      color: var(--color-fgInverse);
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     @media (min-width: 768px) {
-      color: var(--color-textForegroundMuted);
+      color: var(--color-fgMuted);
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     @media (min-width: 768px) {
-      color: var(--color-textPrimary);
+      color: var(--color-fgPrimary);
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     @media (min-width: 768px) {
-      color: var(--color-textPositive);
+      color: var(--color-fgPositive);
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     @media (min-width: 768px) {
-      color: var(--color-textNegative);
+      color: var(--color-fgNegative);
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     @media (min-width: 768px) {
-      color: var(--color-textWarning);
+      color: var(--color-fgWarning);
     }
   `,
   // Background
-  background: css`
+  bg: css`
     @media (min-width: 768px) {
-      color: var(--color-background);
+      color: var(--color-bg);
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundAlternate);
+      color: var(--color-bgAlternate);
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundInverse);
+      color: var(--color-bgInverse);
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundOverlay);
+      color: var(--color-bgOverlay);
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPrimary);
+      color: var(--color-bgPrimary);
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPrimaryWash);
+      color: var(--color-bgPrimaryWash);
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundSecondary);
+      color: var(--color-bgSecondary);
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundSecondaryWash);
+      color: var(--color-bgSecondaryWash);
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundNegative);
+      color: var(--color-bgNegative);
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundNegativeWash);
+      color: var(--color-bgNegativeWash);
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPositive);
+      color: var(--color-bgPositive);
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPositiveWash);
+      color: var(--color-bgPositiveWash);
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundWarning);
+      color: var(--color-bgWarning);
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundWarningWash);
+      color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
@@ -286,135 +286,99 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPrimaryHover);
+      color: var(--color-bgPrimaryHover);
     }
   `,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPrimaryPressed);
+      color: var(--color-bgPrimaryPressed);
     }
   `,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPrimaryDisabled);
+      color: var(--color-bgPrimaryDisabled);
     }
   `,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundSecondaryHover);
+      color: var(--color-bgSecondaryHover);
     }
   `,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundSecondaryPressed);
+      color: var(--color-bgSecondaryPressed);
     }
   `,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundSecondaryDisabled);
+      color: var(--color-bgSecondaryDisabled);
     }
   `,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundNegativeHover);
+      color: var(--color-bgNegativeHover);
     }
   `,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundNegativePressed);
+      color: var(--color-bgNegativePressed);
     }
   `,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundNegativeDisabled);
+      color: var(--color-bgNegativeDisabled);
     }
   `,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPositiveHover);
+      color: var(--color-bgPositiveHover);
     }
   `,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPositivePressed);
+      color: var(--color-bgPositivePressed);
     }
   `,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundPositiveDisabled);
+      color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     @media (min-width: 768px) {
-      color: var(--color-line);
+      color: var(--color-bgLine);
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     @media (min-width: 768px) {
-      color: var(--color-lineInverse);
+      color: var(--color-bgLineInverse);
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     @media (min-width: 768px) {
-      color: var(--color-lineHeavy);
+      color: var(--color-bgLineHeavy);
     }
   `,
   linePrimary: css`
     @media (min-width: 768px) {
-      color: var(--color-linePrimary);
+      color: var(--color-bgLinePrimary);
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     @media (min-width: 768px) {
-      color: var(--color-linePrimaryLight);
+      color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundElevation1);
+      color: var(--color-bgElevation1);
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     @media (min-width: 768px) {
-      color: var(--color-backgroundElevation2);
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    @media (min-width: 768px) {
-      color: var(--color-iconForeground);
-    }
-  `,
-  iconForegroundInverse: css`
-    @media (min-width: 768px) {
-      color: var(--color-iconForegroundInverse);
-    }
-  `,
-  iconForegroundMuted: css`
-    @media (min-width: 768px) {
-      color: var(--color-iconForegroundMuted);
-    }
-  `,
-  iconPrimary: css`
-    @media (min-width: 768px) {
-      color: var(--color-iconPrimary);
-    }
-  `,
-  iconPositive: css`
-    @media (min-width: 768px) {
-      color: var(--color-iconPositive);
-    }
-  `,
-  iconNegative: css`
-    @media (min-width: 768px) {
-      color: var(--color-iconNegative);
-    }
-  `,
-  iconWarning: css`
-    @media (min-width: 768px) {
-      color: var(--color-iconWarning);
+      color: var(--color-bgElevation2);
     }
   `,
   // Accent
@@ -502,110 +466,110 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const background: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     @media (min-width: 768px) {
-      background-color: var(--color-textForeground);
+      background-color: var(--color-fg);
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     @media (min-width: 768px) {
-      background-color: var(--color-textForegroundInverse);
+      background-color: var(--color-fgInverse);
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     @media (min-width: 768px) {
-      background-color: var(--color-textForegroundMuted);
+      background-color: var(--color-fgMuted);
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     @media (min-width: 768px) {
-      background-color: var(--color-textPrimary);
+      background-color: var(--color-fgPrimary);
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     @media (min-width: 768px) {
-      background-color: var(--color-textPositive);
+      background-color: var(--color-fgPositive);
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     @media (min-width: 768px) {
-      background-color: var(--color-textNegative);
+      background-color: var(--color-fgNegative);
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     @media (min-width: 768px) {
-      background-color: var(--color-textWarning);
+      background-color: var(--color-fgWarning);
     }
   `,
   // Background
-  background: css`
+  bg: css`
     @media (min-width: 768px) {
-      background-color: var(--color-background);
+      background-color: var(--color-bg);
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundAlternate);
+      background-color: var(--color-bgAlternate);
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundInverse);
+      background-color: var(--color-bgInverse);
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundOverlay);
+      background-color: var(--color-bgOverlay);
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPrimary);
+      background-color: var(--color-bgPrimary);
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPrimaryWash);
+      background-color: var(--color-bgPrimaryWash);
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundSecondary);
+      background-color: var(--color-bgSecondary);
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundSecondaryWash);
+      background-color: var(--color-bgSecondaryWash);
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundNegative);
+      background-color: var(--color-bgNegative);
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundNegativeWash);
+      background-color: var(--color-bgNegativeWash);
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPositive);
+      background-color: var(--color-bgPositive);
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPositiveWash);
+      background-color: var(--color-bgPositiveWash);
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundWarning);
+      background-color: var(--color-bgWarning);
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundWarningWash);
+      background-color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
@@ -616,135 +580,99 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPrimaryHover);
+      background-color: var(--color-bgPrimaryHover);
     }
   `,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPrimaryPressed);
+      background-color: var(--color-bgPrimaryPressed);
     }
   `,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPrimaryDisabled);
+      background-color: var(--color-bgPrimaryDisabled);
     }
   `,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundSecondaryHover);
+      background-color: var(--color-bgSecondaryHover);
     }
   `,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundSecondaryPressed);
+      background-color: var(--color-bgSecondaryPressed);
     }
   `,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundSecondaryDisabled);
+      background-color: var(--color-bgSecondaryDisabled);
     }
   `,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundNegativeHover);
+      background-color: var(--color-bgNegativeHover);
     }
   `,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundNegativePressed);
+      background-color: var(--color-bgNegativePressed);
     }
   `,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundNegativeDisabled);
+      background-color: var(--color-bgNegativeDisabled);
     }
   `,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPositiveHover);
+      background-color: var(--color-bgPositiveHover);
     }
   `,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPositivePressed);
+      background-color: var(--color-bgPositivePressed);
     }
   `,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundPositiveDisabled);
+      background-color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     @media (min-width: 768px) {
-      background-color: var(--color-line);
+      background-color: var(--color-bgLine);
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     @media (min-width: 768px) {
-      background-color: var(--color-lineInverse);
+      background-color: var(--color-bgLineInverse);
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     @media (min-width: 768px) {
-      background-color: var(--color-lineHeavy);
+      background-color: var(--color-bgLineHeavy);
     }
   `,
   linePrimary: css`
     @media (min-width: 768px) {
-      background-color: var(--color-linePrimary);
+      background-color: var(--color-bgLinePrimary);
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     @media (min-width: 768px) {
-      background-color: var(--color-linePrimaryLight);
+      background-color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundElevation1);
+      background-color: var(--color-bgElevation1);
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundElevation2);
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    @media (min-width: 768px) {
-      background-color: var(--color-iconForeground);
-    }
-  `,
-  iconForegroundInverse: css`
-    @media (min-width: 768px) {
-      background-color: var(--color-iconForegroundInverse);
-    }
-  `,
-  iconForegroundMuted: css`
-    @media (min-width: 768px) {
-      background-color: var(--color-iconForegroundMuted);
-    }
-  `,
-  iconPrimary: css`
-    @media (min-width: 768px) {
-      background-color: var(--color-iconPrimary);
-    }
-  `,
-  iconPositive: css`
-    @media (min-width: 768px) {
-      background-color: var(--color-iconPositive);
-    }
-  `,
-  iconNegative: css`
-    @media (min-width: 768px) {
-      background-color: var(--color-iconNegative);
-    }
-  `,
-  iconWarning: css`
-    @media (min-width: 768px) {
-      background-color: var(--color-iconWarning);
+      background-color: var(--color-bgElevation2);
     }
   `,
   // Accent
@@ -832,131 +760,131 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-textForeground);
+      border-color: var(--color-fg);
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-textForegroundInverse);
+      border-color: var(--color-fgInverse);
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-textForegroundMuted);
+      border-color: var(--color-fgMuted);
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-textPrimary);
+      border-color: var(--color-fgPrimary);
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-textPositive);
+      border-color: var(--color-fgPositive);
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-textNegative);
+      border-color: var(--color-fgNegative);
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-textWarning);
+      border-color: var(--color-fgWarning);
     }
   `,
   // Background
-  background: css`
+  bg: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-background);
+      border-color: var(--color-bg);
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundAlternate);
+      border-color: var(--color-bgAlternate);
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundInverse);
+      border-color: var(--color-bgInverse);
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundOverlay);
+      border-color: var(--color-bgOverlay);
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPrimary);
+      border-color: var(--color-bgPrimary);
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPrimaryWash);
+      border-color: var(--color-bgPrimaryWash);
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundSecondary);
+      border-color: var(--color-bgSecondary);
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundSecondaryWash);
+      border-color: var(--color-bgSecondaryWash);
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundNegative);
+      border-color: var(--color-bgNegative);
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundNegativeWash);
+      border-color: var(--color-bgNegativeWash);
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPositive);
+      border-color: var(--color-bgPositive);
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPositiveWash);
+      border-color: var(--color-bgPositiveWash);
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundWarning);
+      border-color: var(--color-bgWarning);
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundWarningWash);
+      border-color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
@@ -969,160 +897,117 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPrimaryHover);
+      border-color: var(--color-bgPrimaryHover);
     }
   `,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPrimaryPressed);
+      border-color: var(--color-bgPrimaryPressed);
     }
   `,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPrimaryDisabled);
+      border-color: var(--color-bgPrimaryDisabled);
     }
   `,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundSecondaryHover);
+      border-color: var(--color-bgSecondaryHover);
     }
   `,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundSecondaryPressed);
+      border-color: var(--color-bgSecondaryPressed);
     }
   `,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundSecondaryDisabled);
+      border-color: var(--color-bgSecondaryDisabled);
     }
   `,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundNegativeHover);
+      border-color: var(--color-bgNegativeHover);
     }
   `,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundNegativePressed);
+      border-color: var(--color-bgNegativePressed);
     }
   `,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundNegativeDisabled);
+      border-color: var(--color-bgNegativeDisabled);
     }
   `,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPositiveHover);
+      border-color: var(--color-bgPositiveHover);
     }
   `,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPositivePressed);
+      border-color: var(--color-bgPositivePressed);
     }
   `,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundPositiveDisabled);
+      border-color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-line);
+      border-color: var(--color-bgLine);
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-lineInverse);
+      border-color: var(--color-bgLineInverse);
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-lineHeavy);
+      border-color: var(--color-bgLineHeavy);
     }
   `,
   linePrimary: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-linePrimary);
+      border-color: var(--color-bgLinePrimary);
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-linePrimaryLight);
+      border-color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundElevation1);
+      border-color: var(--color-bgElevation1);
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     @media (min-width: 768px) {
       border-style: solid;
-      border-color: var(--color-backgroundElevation2);
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    @media (min-width: 768px) {
-      border-style: solid;
-      border-color: var(--color-iconForeground);
-    }
-  `,
-  iconForegroundInverse: css`
-    @media (min-width: 768px) {
-      border-style: solid;
-      border-color: var(--color-iconForegroundInverse);
-    }
-  `,
-  iconForegroundMuted: css`
-    @media (min-width: 768px) {
-      border-style: solid;
-      border-color: var(--color-iconForegroundMuted);
-    }
-  `,
-  iconPrimary: css`
-    @media (min-width: 768px) {
-      border-style: solid;
-      border-color: var(--color-iconPrimary);
-    }
-  `,
-  iconPositive: css`
-    @media (min-width: 768px) {
-      border-style: solid;
-      border-color: var(--color-iconPositive);
-    }
-  `,
-  iconNegative: css`
-    @media (min-width: 768px) {
-      border-style: solid;
-      border-color: var(--color-iconNegative);
-    }
-  `,
-  iconWarning: css`
-    @media (min-width: 768px) {
-      border-style: solid;
-      border-color: var(--color-iconWarning);
+      border-color: var(--color-bgElevation2);
     }
   `,
   // Accent
@@ -1226,151 +1111,151 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-textForeground);
+        color: var(--color-fg);
       }
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-textForegroundInverse);
+        color: var(--color-fgInverse);
       }
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-textForegroundMuted);
+        color: var(--color-fgMuted);
       }
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-textPrimary);
+        color: var(--color-fgPrimary);
       }
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-textPositive);
+        color: var(--color-fgPositive);
       }
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-textNegative);
+        color: var(--color-fgNegative);
       }
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-textWarning);
+        color: var(--color-fgWarning);
       }
     }
   `,
   // Background
-  background: css`
+  bg: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-background);
+        color: var(--color-bg);
       }
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundAlternate);
+        color: var(--color-bgAlternate);
       }
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundInverse);
+        color: var(--color-bgInverse);
       }
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundOverlay);
+        color: var(--color-bgOverlay);
       }
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPrimary);
+        color: var(--color-bgPrimary);
       }
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPrimaryWash);
+        color: var(--color-bgPrimaryWash);
       }
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundSecondary);
+        color: var(--color-bgSecondary);
       }
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundSecondaryWash);
+        color: var(--color-bgSecondaryWash);
       }
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundNegative);
+        color: var(--color-bgNegative);
       }
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundNegativeWash);
+        color: var(--color-bgNegativeWash);
       }
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPositive);
+        color: var(--color-bgPositive);
       }
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPositiveWash);
+        color: var(--color-bgPositiveWash);
       }
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundWarning);
+        color: var(--color-bgWarning);
       }
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundWarningWash);
+        color: var(--color-bgWarningWash);
       }
     }
   `,
@@ -1385,185 +1270,135 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPrimaryHover);
+        color: var(--color-bgPrimaryHover);
       }
     }
   `,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPrimaryPressed);
+        color: var(--color-bgPrimaryPressed);
       }
     }
   `,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPrimaryDisabled);
+        color: var(--color-bgPrimaryDisabled);
       }
     }
   `,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundSecondaryHover);
+        color: var(--color-bgSecondaryHover);
       }
     }
   `,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundSecondaryPressed);
+        color: var(--color-bgSecondaryPressed);
       }
     }
   `,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundSecondaryDisabled);
+        color: var(--color-bgSecondaryDisabled);
       }
     }
   `,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundNegativeHover);
+        color: var(--color-bgNegativeHover);
       }
     }
   `,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundNegativePressed);
+        color: var(--color-bgNegativePressed);
       }
     }
   `,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundNegativeDisabled);
+        color: var(--color-bgNegativeDisabled);
       }
     }
   `,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPositiveHover);
+        color: var(--color-bgPositiveHover);
       }
     }
   `,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPositivePressed);
+        color: var(--color-bgPositivePressed);
       }
     }
   `,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundPositiveDisabled);
+        color: var(--color-bgPositiveDisabled);
       }
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-line);
+        color: var(--color-bgLine);
       }
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-lineInverse);
+        color: var(--color-bgLineInverse);
       }
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-lineHeavy);
+        color: var(--color-bgLineHeavy);
       }
     }
   `,
   linePrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-linePrimary);
+        color: var(--color-bgLinePrimary);
       }
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-linePrimaryLight);
+        color: var(--color-bgLinePrimarySubtle);
       }
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundElevation1);
+        color: var(--color-bgElevation1);
       }
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     @media (min-width: 768px) {
       &:hover {
-        color: var(--color-backgroundElevation2);
-      }
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    @media (min-width: 768px) {
-      &:hover {
-        color: var(--color-iconForeground);
-      }
-    }
-  `,
-  iconForegroundInverse: css`
-    @media (min-width: 768px) {
-      &:hover {
-        color: var(--color-iconForegroundInverse);
-      }
-    }
-  `,
-  iconForegroundMuted: css`
-    @media (min-width: 768px) {
-      &:hover {
-        color: var(--color-iconForegroundMuted);
-      }
-    }
-  `,
-  iconPrimary: css`
-    @media (min-width: 768px) {
-      &:hover {
-        color: var(--color-iconPrimary);
-      }
-    }
-  `,
-  iconPositive: css`
-    @media (min-width: 768px) {
-      &:hover {
-        color: var(--color-iconPositive);
-      }
-    }
-  `,
-  iconNegative: css`
-    @media (min-width: 768px) {
-      &:hover {
-        color: var(--color-iconNegative);
-      }
-    }
-  `,
-  iconWarning: css`
-    @media (min-width: 768px) {
-      &:hover {
-        color: var(--color-iconWarning);
+        color: var(--color-bgElevation2);
       }
     }
   `,
@@ -1684,151 +1519,151 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-textForeground);
+        background-color: var(--color-fg);
       }
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-textForegroundInverse);
+        background-color: var(--color-fgInverse);
       }
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-textForegroundMuted);
+        background-color: var(--color-fgMuted);
       }
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-textPrimary);
+        background-color: var(--color-fgPrimary);
       }
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-textPositive);
+        background-color: var(--color-fgPositive);
       }
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-textNegative);
+        background-color: var(--color-fgNegative);
       }
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-textWarning);
+        background-color: var(--color-fgWarning);
       }
     }
   `,
   // Background
-  background: css`
+  bg: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-background);
+        background-color: var(--color-bg);
       }
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundAlternate);
+        background-color: var(--color-bgAlternate);
       }
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundInverse);
+        background-color: var(--color-bgInverse);
       }
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundOverlay);
+        background-color: var(--color-bgOverlay);
       }
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPrimary);
+        background-color: var(--color-bgPrimary);
       }
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPrimaryWash);
+        background-color: var(--color-bgPrimaryWash);
       }
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundSecondary);
+        background-color: var(--color-bgSecondary);
       }
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundSecondaryWash);
+        background-color: var(--color-bgSecondaryWash);
       }
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundNegative);
+        background-color: var(--color-bgNegative);
       }
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundNegativeWash);
+        background-color: var(--color-bgNegativeWash);
       }
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPositive);
+        background-color: var(--color-bgPositive);
       }
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPositiveWash);
+        background-color: var(--color-bgPositiveWash);
       }
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundWarning);
+        background-color: var(--color-bgWarning);
       }
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundWarningWash);
+        background-color: var(--color-bgWarningWash);
       }
     }
   `,
@@ -1843,185 +1678,135 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPrimaryHover);
+        background-color: var(--color-bgPrimaryHover);
       }
     }
   `,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPrimaryPressed);
+        background-color: var(--color-bgPrimaryPressed);
       }
     }
   `,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPrimaryDisabled);
+        background-color: var(--color-bgPrimaryDisabled);
       }
     }
   `,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundSecondaryHover);
+        background-color: var(--color-bgSecondaryHover);
       }
     }
   `,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundSecondaryPressed);
+        background-color: var(--color-bgSecondaryPressed);
       }
     }
   `,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundSecondaryDisabled);
+        background-color: var(--color-bgSecondaryDisabled);
       }
     }
   `,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundNegativeHover);
+        background-color: var(--color-bgNegativeHover);
       }
     }
   `,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundNegativePressed);
+        background-color: var(--color-bgNegativePressed);
       }
     }
   `,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundNegativeDisabled);
+        background-color: var(--color-bgNegativeDisabled);
       }
     }
   `,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPositiveHover);
+        background-color: var(--color-bgPositiveHover);
       }
     }
   `,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPositivePressed);
+        background-color: var(--color-bgPositivePressed);
       }
     }
   `,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundPositiveDisabled);
+        background-color: var(--color-bgPositiveDisabled);
       }
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-line);
+        background-color: var(--color-bgLine);
       }
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-lineInverse);
+        background-color: var(--color-bgLineInverse);
       }
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-lineHeavy);
+        background-color: var(--color-bgLineHeavy);
       }
     }
   `,
   linePrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-linePrimary);
+        background-color: var(--color-bgLinePrimary);
       }
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-linePrimaryLight);
+        background-color: var(--color-bgLinePrimarySubtle);
       }
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundElevation1);
+        background-color: var(--color-bgElevation1);
       }
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     @media (min-width: 768px) {
       &:hover {
-        background-color: var(--color-backgroundElevation2);
-      }
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    @media (min-width: 768px) {
-      &:hover {
-        background-color: var(--color-iconForeground);
-      }
-    }
-  `,
-  iconForegroundInverse: css`
-    @media (min-width: 768px) {
-      &:hover {
-        background-color: var(--color-iconForegroundInverse);
-      }
-    }
-  `,
-  iconForegroundMuted: css`
-    @media (min-width: 768px) {
-      &:hover {
-        background-color: var(--color-iconForegroundMuted);
-      }
-    }
-  `,
-  iconPrimary: css`
-    @media (min-width: 768px) {
-      &:hover {
-        background-color: var(--color-iconPrimary);
-      }
-    }
-  `,
-  iconPositive: css`
-    @media (min-width: 768px) {
-      &:hover {
-        background-color: var(--color-iconPositive);
-      }
-    }
-  `,
-  iconNegative: css`
-    @media (min-width: 768px) {
-      &:hover {
-        background-color: var(--color-iconNegative);
-      }
-    }
-  `,
-  iconWarning: css`
-    @media (min-width: 768px) {
-      &:hover {
-        background-color: var(--color-iconWarning);
+        background-color: var(--color-bgElevation2);
       }
     }
   `,
@@ -2142,151 +1927,151 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-textForeground);
+        border-color: var(--color-fg);
       }
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-textForegroundInverse);
+        border-color: var(--color-fgInverse);
       }
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-textForegroundMuted);
+        border-color: var(--color-fgMuted);
       }
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-textPrimary);
+        border-color: var(--color-fgPrimary);
       }
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-textPositive);
+        border-color: var(--color-fgPositive);
       }
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-textNegative);
+        border-color: var(--color-fgNegative);
       }
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-textWarning);
+        border-color: var(--color-fgWarning);
       }
     }
   `,
   // Background
-  background: css`
+  bg: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-background);
+        border-color: var(--color-bg);
       }
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundAlternate);
+        border-color: var(--color-bgAlternate);
       }
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundInverse);
+        border-color: var(--color-bgInverse);
       }
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundOverlay);
+        border-color: var(--color-bgOverlay);
       }
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPrimary);
+        border-color: var(--color-bgPrimary);
       }
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPrimaryWash);
+        border-color: var(--color-bgPrimaryWash);
       }
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundSecondary);
+        border-color: var(--color-bgSecondary);
       }
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundSecondary);
+        border-color: var(--color-bgSecondary);
       }
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundNegative);
+        border-color: var(--color-bgNegative);
       }
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundNegativeWash);
+        border-color: var(--color-bgNegativeWash);
       }
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPositive);
+        border-color: var(--color-bgPositive);
       }
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPositiveWash);
+        border-color: var(--color-bgPositiveWash);
       }
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundWarning);
+        border-color: var(--color-bgWarning);
       }
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundWarningWash);
+        border-color: var(--color-bgWarningWash);
       }
     }
   `,
@@ -2301,185 +2086,135 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPrimaryHover);
+        border-color: var(--color-bgPrimaryHover);
       }
     }
   `,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPrimaryPressed);
+        border-color: var(--color-bgPrimaryPressed);
       }
     }
   `,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPrimaryDisabled);
+        border-color: var(--color-bgPrimaryDisabled);
       }
     }
   `,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundSecondaryHover);
+        border-color: var(--color-bgSecondaryHover);
       }
     }
   `,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundSecondaryPressed);
+        border-color: var(--color-bgSecondaryPressed);
       }
     }
   `,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundSecondaryDisabled);
+        border-color: var(--color-bgSecondaryDisabled);
       }
     }
   `,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundNegativeHover);
+        border-color: var(--color-bgNegativeHover);
       }
     }
   `,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundNegativePressed);
+        border-color: var(--color-bgNegativePressed);
       }
     }
   `,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundNegativeDisabled);
+        border-color: var(--color-bgNegativeDisabled);
       }
     }
   `,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPositiveHover);
+        border-color: var(--color-bgPositiveHover);
       }
     }
   `,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPositivePressed);
+        border-color: var(--color-bgPositivePressed);
       }
     }
   `,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundPositiveDisabled);
+        border-color: var(--color-bgPositiveDisabled);
       }
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-line);
+        border-color: var(--color-bgLine);
       }
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-lineInverse);
+        border-color: var(--color-bgLineInverse);
       }
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-lineHeavy);
+        border-color: var(--color-bgLineHeavy);
       }
     }
   `,
   linePrimary: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-linePrimary);
+        border-color: var(--color-bgLinePrimary);
       }
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-linePrimaryLight);
+        border-color: var(--color-bgLinePrimarySubtle);
       }
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundElevation1);
+        border-color: var(--color-bgElevation1);
       }
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     @media (min-width: 768px) {
       &:hover {
-        border-color: var(--color-backgroundElevation2);
-      }
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    @media (min-width: 768px) {
-      &:hover {
-        border-color: var(--color-iconForeground);
-      }
-    }
-  `,
-  iconForegroundInverse: css`
-    @media (min-width: 768px) {
-      &:hover {
-        border-color: var(--color-iconForegroundInverse);
-      }
-    }
-  `,
-  iconForegroundMuted: css`
-    @media (min-width: 768px) {
-      &:hover {
-        border-color: var(--color-iconForegroundMuted);
-      }
-    }
-  `,
-  iconPrimary: css`
-    @media (min-width: 768px) {
-      &:hover {
-        border-color: var(--color-iconPrimary);
-      }
-    }
-  `,
-  iconPositive: css`
-    @media (min-width: 768px) {
-      &:hover {
-        border-color: var(--color-iconPositive);
-      }
-    }
-  `,
-  iconNegative: css`
-    @media (min-width: 768px) {
-      &:hover {
-        border-color: var(--color-iconNegative);
-      }
-    }
-  `,
-  iconWarning: css`
-    @media (min-width: 768px) {
-      &:hover {
-        border-color: var(--color-iconWarning);
+        border-color: var(--color-bgElevation2);
       }
     }
   `,
@@ -3388,110 +3123,110 @@ export const textDecorationThickness = {
 
 export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
-  textForeground: css`
+  fg: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-textForeground);
+      text-decoration-color: var(--color-fg);
     }
   `,
-  textForegroundInverse: css`
+  fgInverse: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-textForegroundInverse);
+      text-decoration-color: var(--color-fgInverse);
     }
   `,
-  textForegroundMuted: css`
+  fgMuted: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-textForegroundMuted);
+      text-decoration-color: var(--color-fgMuted);
     }
   `,
-  textPrimary: css`
+  fgPrimary: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-textPrimary);
+      text-decoration-color: var(--color-fgPrimary);
     }
   `,
-  textPositive: css`
+  fgPositive: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-textPositive);
+      text-decoration-color: var(--color-fgPositive);
     }
   `,
-  textNegative: css`
+  fgNegative: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-textNegative);
+      text-decoration-color: var(--color-fgNegative);
     }
   `,
-  textWarning: css`
+  fgWarning: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-textWarning);
+      text-decoration-color: var(--color-fgWarning);
     }
   `,
   // Background
-  background: css`
+  bg: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-background);
+      text-decoration-color: var(--color-bg);
     }
   `,
-  backgroundAlternate: css`
+  bgAlternate: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundAlternate);
+      text-decoration-color: var(--color-bgAlternate);
     }
   `,
-  backgroundInverse: css`
+  bgInverse: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundInverse);
+      text-decoration-color: var(--color-bgInverse);
     }
   `,
-  backgroundOverlay: css`
+  bgOverlay: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundOverlay);
+      text-decoration-color: var(--color-bgOverlay);
     }
   `,
-  backgroundPrimary: css`
+  bgPrimary: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPrimary);
+      text-decoration-color: var(--color-bgPrimary);
     }
   `,
-  backgroundPrimaryWash: css`
+  bgPrimaryWash: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPrimaryWash);
+      text-decoration-color: var(--color-bgPrimaryWash);
     }
   `,
-  backgroundSecondary: css`
+  bgSecondary: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundSecondary);
+      text-decoration-color: var(--color-bgSecondary);
     }
   `,
-  backgroundSecondaryWash: css`
+  bgSecondaryWash: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundSecondaryWash);
+      text-decoration-color: var(--color-bgSecondaryWash);
     }
   `,
-  backgroundNegative: css`
+  bgNegative: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundNegative);
+      text-decoration-color: var(--color-bgNegative);
     }
   `,
-  backgroundNegativeWash: css`
+  bgNegativeWash: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundNegativeWash);
+      text-decoration-color: var(--color-bgNegativeWash);
     }
   `,
-  backgroundPositive: css`
+  bgPositive: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPositive);
+      text-decoration-color: var(--color-bgPositive);
     }
   `,
-  backgroundPositiveWash: css`
+  bgPositiveWash: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPositiveWash);
+      text-decoration-color: var(--color-bgPositiveWash);
     }
   `,
-  backgroundWarning: css`
+  bgWarning: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundWarning);
+      text-decoration-color: var(--color-bgWarning);
     }
   `,
-  backgroundWarningWash: css`
+  bgWarningWash: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundWarningWash);
+      text-decoration-color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
@@ -3502,135 +3237,99 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Background states
   backgroundPrimaryHover: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPrimaryHover);
+      text-decoration-color: var(--color-bgPrimaryHover);
     }
   `,
   backgroundPrimaryPressed: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPrimaryPressed);
+      text-decoration-color: var(--color-bgPrimaryPressed);
     }
   `,
   backgroundPrimaryDisabled: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPrimaryDisabled);
+      text-decoration-color: var(--color-bgPrimaryDisabled);
     }
   `,
   backgroundSecondaryHover: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundSecondaryHover);
+      text-decoration-color: var(--color-bgSecondaryHover);
     }
   `,
   backgroundSecondaryPressed: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundSecondaryPressed);
+      text-decoration-color: var(--color-bgSecondaryPressed);
     }
   `,
   backgroundSecondaryDisabled: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundSecondaryDisabled);
+      text-decoration-color: var(--color-bgSecondaryDisabled);
     }
   `,
   backgroundNegativeHover: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundNegativeHover);
+      text-decoration-color: var(--color-bgNegativeHover);
     }
   `,
   backgroundNegativePressed: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundNegativePressed);
+      text-decoration-color: var(--color-bgNegativePressed);
     }
   `,
   backgroundNegativeDisabled: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundNegativeDisabled);
+      text-decoration-color: var(--color-bgNegativeDisabled);
     }
   `,
   backgroundPositiveHover: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPositiveHover);
+      text-decoration-color: var(--color-bgPositiveHover);
     }
   `,
   backgroundPositivePressed: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPositivePressed);
+      text-decoration-color: var(--color-bgPositivePressed);
     }
   `,
   backgroundPositiveDisabled: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundPositiveDisabled);
+      text-decoration-color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
-  line: css`
+  bgLine: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-line);
+      text-decoration-color: var(--color-bgLine);
     }
   `,
-  lineInverse: css`
+  bgLineInverse: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-lineInverse);
+      text-decoration-color: var(--color-bgLineInverse);
     }
   `,
-  lineHeavy: css`
+  bgLineHeavy: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-lineHeavy);
+      text-decoration-color: var(--color-bgLineHeavy);
     }
   `,
   linePrimary: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-linePrimary);
+      text-decoration-color: var(--color-bgLinePrimary);
     }
   `,
-  linePrimaryLight: css`
+  bgLinePrimarySubtle: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-linePrimaryLight);
+      text-decoration-color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
-  backgroundElevation1: css`
+  bgElevation1: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundElevation1);
+      text-decoration-color: var(--color-bgElevation1);
     }
   `,
-  backgroundElevation2: css`
+  bgElevation2: css`
     @media (min-width: 768px) {
-      text-decoration-color: var(--color-backgroundElevation2);
-    }
-  `,
-  // Icon
-  iconForeground: css`
-    @media (min-width: 768px) {
-      text-decoration-color: var(--color-iconForeground);
-    }
-  `,
-  iconForegroundInverse: css`
-    @media (min-width: 768px) {
-      text-decoration-color: var(--color-iconForegroundInverse);
-    }
-  `,
-  iconForegroundMuted: css`
-    @media (min-width: 768px) {
-      text-decoration-color: var(--color-iconForegroundMuted);
-    }
-  `,
-  iconPrimary: css`
-    @media (min-width: 768px) {
-      text-decoration-color: var(--color-iconPrimary);
-    }
-  `,
-  iconPositive: css`
-    @media (min-width: 768px) {
-      text-decoration-color: var(--color-iconPositive);
-    }
-  `,
-  iconNegative: css`
-    @media (min-width: 768px) {
-      text-decoration-color: var(--color-iconNegative);
-    }
-  `,
-  iconWarning: css`
-    @media (min-width: 768px) {
-      text-decoration-color: var(--color-iconWarning);
+      text-decoration-color: var(--color-bgElevation2);
     }
   `,
   // Accent
@@ -3763,12 +3462,17 @@ export const userSelect = {
 } as const;
 
 export const display = {
+  none: css`
+    @media (min-width: 768px) {
+      display: none;
+    }
+  `,
   block: css`
     @media (min-width: 768px) {
       display: block;
     }
   `,
-  inline: css`
+  inbgLine: css`
     @media (min-width: 768px) {
       display: inline;
     }
@@ -5649,13 +5353,13 @@ export const elevation: Record<ElevationLevels, LinariaClassName> = {
   '0': css``,
   '1': css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundElevation1);
+      background-color: var(--color-bgElevation1);
       box-shadow: var(--shadow-elevation1);
     }
   `,
   '2': css`
     @media (min-width: 768px) {
-      background-color: var(--color-backgroundElevation2);
+      background-color: var(--color-bgElevation2);
       box-shadow: var(--shadow-elevation2);
     }
   `,

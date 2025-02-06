@@ -43,7 +43,7 @@ const AvatarScreen = () => {
           <Avatar alt="" src={image} />
           <Avatar alt="" name="Happy" shape="square" src={image} />
           <Avatar alt="" name="Grumpy" shape="hexagon" src={image} />
-          <Avatar alt="" borderColor="backgroundPositive" name="Sleepy" src={image} />
+          <Avatar alt="" borderColor="bgPositive" name="Sleepy" src={image} />
           <Avatar alt="" name="Bashful" size="m" src={image} />
           <Avatar alt="" name="Grumpy" size="l" src={image} />
           <Avatar alt="" name="Grumpy" size="xl" src={image} />
@@ -57,7 +57,7 @@ const AvatarScreen = () => {
           <Avatar alt="" />
           <Avatar alt="" shape="square" />
           <Avatar alt="" shape="hexagon" />
-          <Avatar alt="" borderColor="backgroundPositive" />
+          <Avatar alt="" borderColor="bgPositive" />
           <Avatar alt="" size="m" />
           <Avatar alt="" size="l" />
           <Avatar alt="" size="xl" />

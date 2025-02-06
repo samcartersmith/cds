@@ -125,7 +125,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
       >
         <VStack
           alignItems="flex-start"
-          background="background"
+          background="bg"
           gap={1}
           height={height + 20}
           overflow="hidden"

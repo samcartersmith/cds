@@ -24,7 +24,7 @@ export const Overlay = memo(function Overlay({ opacity, ...props }: OverlayProps
       <VStack
         animated
         renderToHardwareTextureAndroid
-        background="backgroundOverlay"
+        background="bgOverlay"
         dangerouslySetBackground={
           theme.colorScheme === 'dark' ? `rgba(${theme?.darkSpectrum?.gray0}, 0.5)` : undefined
         }

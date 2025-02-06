@@ -18,7 +18,7 @@ describe('RemoteImage', () => {
       <DefaultThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <RemoteImage
           shouldApplyDarkModeEnhacements
-          borderColor="backgroundPrimary"
+          borderColor="bgPrimary"
           source="https://images.coinbase.com/avatar?s=56"
           testID="remoteimage"
         />
@@ -38,7 +38,7 @@ describe('RemoteImage', () => {
       <DefaultThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <RemoteImage
           darkModeEnhancementsApplied
-          borderColor="backgroundPrimary"
+          borderColor="bgPrimary"
           source="https://images.coinbase.com/avatar?s=56"
           testID="remoteimage"
         />

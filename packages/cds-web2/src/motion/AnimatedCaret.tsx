@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { motion, MotionConfig } from 'framer-motion';
+import { m as motion, MotionConfig } from 'framer-motion';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { animateRotateConfig } from '@cbhq/cds-common2/motion/animatedCaret';
 import type { AnimatedCaretBaseProps } from '@cbhq/cds-common2/types/AnimatedCaretBaseProp';
@@ -17,18 +17,18 @@ export type AnimatedCaretProps = AnimatedCaretBaseProps &
   PaddingProps;
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'textPrimary',
-  positive: 'textPositive',
-  negative: 'textNegative',
-  foreground: 'textForeground',
-  foregroundMuted: 'textForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export const AnimatedCaret = memo(function AnimatedCaret({
   rotate,
   size = 's',
-  color = 'textForegroundMuted',
+  color = 'fgMuted',
   testID,
   padding,
   paddingBottom,

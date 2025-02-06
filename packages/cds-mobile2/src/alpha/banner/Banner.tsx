@@ -199,7 +199,7 @@ export const Banner = memo(
                 )}
               </VStack>
               {typeof label === 'string' ? (
-                <TextLegal color="textForegroundMuted" numberOfLines={1}>
+                <TextLegal color="fgMuted" numberOfLines={1}>
                   {label}
                 </TextLegal>
               ) : (

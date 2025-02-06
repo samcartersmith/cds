@@ -18,13 +18,13 @@ export const SparklineGradient = memo(
       const patternId = useRef<string>(generateRandomId());
       const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
       const gradient = getAccessibleForegroundGradient({
-        background: background ?? theme.color.background,
+        background: background ?? theme.color.bg,
         color,
         colorScheme: theme.colorScheme,
         usage: 'graphic',
       });
       const areaColor = getAccessibleColor({
-        background: background ?? theme.color.background,
+        background: background ?? theme.color.bg,
         foreground: color,
         usage: 'graphic',
       });

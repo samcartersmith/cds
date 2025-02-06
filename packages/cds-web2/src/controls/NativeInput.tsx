@@ -15,7 +15,7 @@ const baseStyle = css`
   min-width: 0;
   flex-grow: 2;
   background-color: transparent;
-  color: var(--color-textForeground);
+  color: var(--color-fg);
   border-color: transparent;
 
   &::-webkit-outer-spin-button,
@@ -31,7 +31,7 @@ const baseStyle = css`
   }
 
   &::placeholder {
-    color: var(--color-textForegroundMuted);
+    color: var(--color-fgMuted);
     opacity: 1;
   }
 
@@ -40,7 +40,7 @@ const baseStyle = css`
   }
 
   &[readonly]:not(:disabled) {
-    background-color: var(--color-backgroundSecondary);
+    background-color: var(--color-bgSecondary);
   }
 
   /* stylelint-disable a11y/no-display-none */
@@ -69,7 +69,7 @@ const baseStyle = css`
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
     border-radius: var(--borderRadius-200);
-    -webkit-text-fill-color: var(--color-textForeground);
+    -webkit-text-fill-color: var(--color-fg);
     transition: background-color 0s ease-in-out 5000s;
   }
 `;

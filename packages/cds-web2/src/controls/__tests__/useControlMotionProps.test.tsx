@@ -21,10 +21,10 @@ describe('useControlMotionProps.test', () => {
     );
 
     expect(result.current.outerContainerMotionProps.variants?.enter).toMatchObject({
-      backgroundColor: 'var(--color-backgroundPrimary)',
+      backgroundColor: 'var(--color-bgPrimary)',
     });
     expect(result.current.outerContainerMotionProps.variants?.exit).toMatchObject({
-      backgroundColor: 'var(--color-background)',
+      backgroundColor: 'var(--color-bg)',
     });
   });
 
@@ -46,15 +46,15 @@ describe('useControlMotionProps.test', () => {
       useControlMotionProps({
         checked: false,
         shouldAnimateBackground: true,
-        initialBackground: 'var(--color-backgroundAlternate)',
+        initialBackground: 'var(--color-bgAlternate)',
       }),
     );
 
     expect(result.current.outerContainerMotionProps.variants?.enter).toMatchObject({
-      backgroundColor: 'var(--color-backgroundPrimary)',
+      backgroundColor: 'var(--color-bgPrimary)',
     });
     expect(result.current.outerContainerMotionProps.variants?.exit).toMatchObject({
-      backgroundColor: 'var(--color-backgroundAlternate)',
+      backgroundColor: 'var(--color-bgAlternate)',
     });
   });
 });

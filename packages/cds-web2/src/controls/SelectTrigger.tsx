@@ -90,7 +90,7 @@ export const SelectTrigger = memo(
             )}
             {shouldShowCompactLabel ? (
               <HStack alignItems="center" maxWidth="40%" paddingRight={1}>
-                <InputLabel color="textForeground" id={accessibilityLabelId} overflow="truncate">
+                <InputLabel color="fg" id={accessibilityLabelId} overflow="truncate">
                   {label}
                 </InputLabel>
               </HStack>
@@ -111,7 +111,7 @@ export const SelectTrigger = memo(
               >
                 <Text
                   as="p"
-                  color={sanitizedValue ? 'textForeground' : 'textForegroundMuted'}
+                  color={sanitizedValue ? 'fg' : 'fgMuted'}
                   font="body"
                   overflow="truncate"
                   textAlign={shouldShowCompactLabel ? 'end' : 'start'}

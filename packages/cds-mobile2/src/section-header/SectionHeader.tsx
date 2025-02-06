@@ -43,14 +43,14 @@ export const SectionHeader = memo(
               title
             )}
             {typeof icon === 'string' ? (
-              <Icon color="iconForeground" name={icon as UiIconName} size="xs" />
+              <Icon color="fg" name={icon as UiIconName} size="xs" />
             ) : (
               icon
             )}
           </HStack>
           {typeof balance === 'string' ? <TextTitle3>{balance}</TextTitle3> : balance}
           {typeof description === 'string' ? (
-            <TextBody color="textForegroundMuted" numberOfLines={2}>
+            <TextBody color="fgMuted" numberOfLines={2}>
               {description}
             </TextBody>
           ) : (

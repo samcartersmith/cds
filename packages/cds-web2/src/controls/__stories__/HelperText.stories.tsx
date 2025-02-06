@@ -13,13 +13,13 @@ export const MessageAreaBasic = () => {
 
 export const MessageAreaColor = () => {
   const colors = [
-    'textPositive',
-    'textNegative',
-    'textForeground',
-    'textPrimary',
-    'textForegroundMuted',
-    // TO DO: replace backgroundSecondary with textSecondary after value is confirmed with design
-    'backgroundSecondary',
+    'fgPositive',
+    'fgNegative',
+    'fg',
+    'fgPrimary',
+    'fgMuted',
+    // TO DO: replace bgSecondary with textSecondary after value is confirmed with design
+    'bgSecondary',
   ] as const;
 
   return (
@@ -50,7 +50,7 @@ export const TextAlign = () => {
 export const CustomColor = () => {
   return (
     <div>
-      <HelperText color="textNegative" dangerouslySetColor="purple">
+      <HelperText color="fgNegative" dangerouslySetColor="purple">
         Test message
       </HelperText>
     </div>

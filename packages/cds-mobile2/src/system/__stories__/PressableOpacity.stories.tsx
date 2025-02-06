@@ -24,7 +24,7 @@ const PressableOpacityScreen = () => {
             width: 40,
           }}
         >
-          <Icon color="iconForeground" name="bell" size="s" />
+          <Icon color="fg" name="bell" size="s" />
         </PressableOpacity>
       </Example>
     </ExampleScreen>

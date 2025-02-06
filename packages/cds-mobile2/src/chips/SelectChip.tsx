@@ -117,13 +117,7 @@ export const SelectChip = memo(
             disabled={disabled}
             end={
               end ?? (
-                <Icon
-                  animated
-                  color="iconForeground"
-                  name="caretDown"
-                  size="s"
-                  style={rotateAnimationStyles}
-                />
+                <Icon animated color="fg" name="caretDown" size="s" style={rotateAnimationStyles} />
               )
             }
             inverted={active}

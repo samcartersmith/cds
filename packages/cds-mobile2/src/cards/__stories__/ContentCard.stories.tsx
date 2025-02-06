@@ -57,10 +57,10 @@ const exampleProps: {
     body: 'Ethereum Network Shatters Records With Hashrate Climbing to 464 EH/s',
     label: (
       <HStack alignItems="flex-end" flexWrap="wrap" gap={0.5}>
-        <TextLabel2 color="textForegroundMuted" numberOfLines={1}>
+        <TextLabel2 color="fgMuted" numberOfLines={1}>
           $9,9081.01
         </TextLabel2>
-        <TextLabel2 color="textPositive">↗ 6.37%</TextLabel2>
+        <TextLabel2 color="fgPositive">↗ 6.37%</TextLabel2>
       </HStack>
     ),
     media: (
@@ -106,8 +106,8 @@ const CarouselItem = () => (
       }}
     />
     <VStack bottom={16} gap={1} left={16} position="absolute">
-      <TextHeadline color="backgroundSecondary">Break the cycle</TextHeadline>
-      <TextLegal color="backgroundSecondary">24M views</TextLegal>
+      <TextHeadline color="bgSecondary">Break the cycle</TextHeadline>
+      <TextLegal color="bgSecondary">24M views</TextLegal>
     </VStack>
   </VStack>
 );
@@ -210,7 +210,7 @@ const ContentCardScreen = () => {
           <ContentCardHeader
             {...exampleProps.contentHeaderProps}
             avatar={null}
-            end={<TextLegal color="textForegroundMuted">Updated 1hr ago</TextLegal>}
+            end={<TextLegal color="fgMuted">Updated 1hr ago</TextLegal>}
             meta={null}
             title={<TextTitle3>Today&apos;s briefing</TextTitle3>}
           />
@@ -229,7 +229,7 @@ const ContentCardScreen = () => {
                 <HStack
                   bordered
                   alignItems="center"
-                  background="background"
+                  background="bg"
                   borderRadius={300}
                   gap={0.5}
                   justifyContent="center"
@@ -239,7 +239,7 @@ const ContentCardScreen = () => {
                   top={16}
                 >
                   <TextCaption>ETH</TextCaption>
-                  <TextLabel2 color="textPositive">↗ 6.37%</TextLabel2>
+                  <TextLabel2 color="fgPositive">↗ 6.37%</TextLabel2>
                 </HStack>
               </HStack>
             }

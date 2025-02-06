@@ -268,7 +268,7 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
             {!!hasData && !!path && (
               <>
                 <SparklineInteractiveLineVertical
-                  color={hoverData ? theme.color.lineHeavy : color}
+                  color={hoverData ? theme.color.bgLineHeavy : color}
                   showHoverDate={!!formatHoverDate}
                 />
                 <SparklineInteractivePaths

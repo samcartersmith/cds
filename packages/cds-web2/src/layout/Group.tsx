@@ -1,0 +1,69 @@
+import React, { forwardRef, memo, useMemo } from 'react';
+import { GroupBaseProps } from '@cbhq/cds-common2/types';
+import { flattenAndJoinNodes } from '@cbhq/cds-common2/utils/flattenAndJoinNodes';
+
+import { type BoxProps, Box } from './Box';
+import { Spacer } from './Spacer';
+
+export type RenderGroupItem = GroupBaseProps<BoxProps<'div'>>['renderItem'];
+export type GroupProps = GroupBaseProps<BoxProps<'div'>>;
+
+const ItemWrapper: React.FC<React.PropsWithChildren<BoxProps<'div'>>> = memo(
+  ({ className, ...props }) => <Box display="contents" {...props} />,
+);
+
+const fallbackRenderItem: RenderGroupItem = ({
+  item,
+  index,
+}: {
+  item: React.ReactChild;
+  index: number;
+}) => {
+  return <ItemWrapper key={index}>{item}</ItemWrapper>;
+};
+
+export const Group = memo(
+  forwardRef<HTMLDivElement, GroupProps>(
+    (
+      {
+        children,
+        direction = 'vertical',
+        divider,
+        gap,
+        renderItem = fallbackRenderItem,
+        ...boxProps
+      },
+      ref,
+    ) => {
+      // TODO: Remove once `horizontal` is sunset in Q2.
+      const contents = useMemo(
+        () =>
+          flattenAndJoinNodes({
+            children,
+            gap,
+            divider,
+            renderItem,
+            direction,
+            Spacer,
+            ItemWrapper,
+          }),
+        [children, direction, divider, gap, renderItem],
+      );
+
+      return (
+        <Box
+          ref={ref}
+          alignItems="stretch"
+          flexDirection={direction === 'horizontal' ? 'row' : 'column'}
+          flexWrap="nowrap"
+          role="group"
+          {...boxProps}
+        >
+          {contents}
+        </Box>
+      );
+    },
+  ),
+);
+
+Group.displayName = 'Group';

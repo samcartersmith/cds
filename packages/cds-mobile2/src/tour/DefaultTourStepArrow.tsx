@@ -27,7 +27,7 @@ export const DefaultTourStepArrow = memo(
     return (
       <Box
         ref={ref}
-        background="backgroundInverse"
+        background="bgInverse"
         height={24}
         style={arrowStyles}
         testID="tour-step-arrow"

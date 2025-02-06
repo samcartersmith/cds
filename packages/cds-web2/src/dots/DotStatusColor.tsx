@@ -15,11 +15,11 @@ const baseStyle = css`
 `;
 
 const variantColorMap: Record<DotVariant, ThemeVars.Color> = {
-  primary: 'textPrimary',
-  positive: 'textPositive',
-  negative: 'textNegative',
-  foregroundMuted: 'textForegroundMuted',
-  warning: 'textWarning',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foregroundMuted: 'fgMuted',
+  warning: 'fgWarning',
 };
 
 export const DotStatusColor = memo(
@@ -41,7 +41,7 @@ export const DotStatusColor = memo(
       const variantColor = variantColorMap[variant];
       return {
         borderRadius: 'var(--borderRadius-1000)',
-        borderColor: color.backgroundSecondary,
+        borderColor: color.bgSecondary,
         borderWidth: '1px',
         width: `var(--iconSize-${size})`,
         height: `var(--iconSize-${size})`,

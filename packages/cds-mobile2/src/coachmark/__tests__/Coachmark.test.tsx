@@ -72,7 +72,7 @@ describe('Coachmark', () => {
   it('renders media', () => {
     const media = (
       <RemoteImage
-        borderColor="backgroundPrimary"
+        borderColor="bgPrimary"
         source="https://images.coinbase.com/avatar?s=56"
         testID="remoteimage"
       />

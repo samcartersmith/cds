@@ -22,12 +22,12 @@ export type InputStackProps = {
 } & InputStackBaseProps;
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'textPrimary',
-  positive: 'textPositive',
-  negative: 'textNegative',
-  foreground: 'textForeground',
-  foregroundMuted: 'textForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export const InputStack = memo(function InputStack({
@@ -74,12 +74,11 @@ export const InputStack = memo(function InputStack({
         variant === 'secondary'
           ? 'transparent'
           : theme.color[
-              variant === 'foregroundMuted' || !variant ? 'lineHeavy' : variantColorMap[variant]
+              variant === 'foregroundMuted' || !variant ? 'bgLineHeavy' : variantColorMap[variant]
             ],
       flexDirection: 'row',
       flexGrow: 1,
-      backgroundColor:
-        variant === 'secondary' ? theme.color.backgroundSecondary : theme.color.background,
+      backgroundColor: variant === 'secondary' ? theme.color.bgSecondary : theme.color.bg,
       borderRadius: theme.borderRadius[borderRadius],
       overflow: 'hidden',
       ...inputBorderRadius,

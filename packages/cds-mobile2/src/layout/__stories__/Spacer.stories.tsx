@@ -13,7 +13,7 @@ const SpacerScreen = () => {
       <Example title="Vertical space">
         <Box
           alignItems="center"
-          background="backgroundAlternate"
+          background="bgAlternate"
           height={100}
           justifyContent="center"
           width="100%"
@@ -23,7 +23,7 @@ const SpacerScreen = () => {
         <Spacer vertical={3} />
         <Box
           alignItems="center"
-          background="backgroundAlternate"
+          background="bgAlternate"
           height={100}
           justifyContent="center"
           width="100%"
@@ -36,7 +36,7 @@ const SpacerScreen = () => {
         <HStack>
           <Box
             alignItems="center"
-            background="backgroundAlternate"
+            background="bgAlternate"
             height={30}
             justifyContent="center"
             width={150}
@@ -46,7 +46,7 @@ const SpacerScreen = () => {
           <Spacer horizontal={3} />
           <Box
             alignItems="center"
-            background="backgroundAlternate"
+            background="bgAlternate"
             height={50}
             justifyContent="center"
             width={150}
@@ -57,7 +57,7 @@ const SpacerScreen = () => {
       </Example>
 
       <Example title="Fluid space">
-        <VStack background="backgroundPrimaryWash" height={150}>
+        <VStack background="bgPrimaryWash" height={150}>
           <Box bordered alignItems="center" height={50} justifyContent="center" width="100%">
             <TextBody>Top Content</TextBody>
           </Box>
@@ -70,7 +70,7 @@ const SpacerScreen = () => {
         <HStack>
           <Box
             alignItems="center"
-            background="backgroundAlternate"
+            background="bgAlternate"
             height={50}
             justifyContent="center"
             width={150}
@@ -80,7 +80,7 @@ const SpacerScreen = () => {
           <Spacer />
           <Box
             alignItems="center"
-            background="backgroundAlternate"
+            background="bgAlternate"
             height={50}
             justifyContent="center"
             width={150}

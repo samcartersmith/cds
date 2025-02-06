@@ -26,7 +26,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
       <Icon
         accessibilityHint={props.accessibilityHint}
         accessibilityLabel={props.accessibilityLabel}
-        color={props.color ?? 'iconForeground'}
+        color={props.color ?? 'fg'}
         name={props.name}
         size="s"
       />

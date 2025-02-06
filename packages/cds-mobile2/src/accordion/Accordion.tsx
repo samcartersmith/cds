@@ -12,7 +12,7 @@ export const Accordion = memo(
     return (
       <AccordionParentProvider defaultActiveKey={defaultActiveKey} onChange={onChange}>
         <VStack style={style} testID={testID} width="100%">
-          {join(Children.toArray(children), <Divider color="lineHeavy" />)}
+          {join(Children.toArray(children), <Divider color="bgLineHeavy" />)}
         </VStack>
       </AccordionParentProvider>
     );

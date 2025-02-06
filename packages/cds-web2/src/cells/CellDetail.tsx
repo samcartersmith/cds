@@ -5,10 +5,10 @@ import type { CellDetailProps, CellDetailVariant } from '@cbhq/cds-common2/types
 import { Text } from '../typography/Text';
 
 const variantColorMap: Record<CellDetailVariant, ThemeVars.Color> = {
-  foregroundMuted: 'textForegroundMuted',
-  negative: 'textNegative',
-  positive: 'textPositive',
-  warning: 'textWarning',
+  foregroundMuted: 'fgMuted',
+  negative: 'fgNegative',
+  positive: 'fgPositive',
+  warning: 'fgWarning',
 };
 
 export const CellDetail = memo(function CellDetail({

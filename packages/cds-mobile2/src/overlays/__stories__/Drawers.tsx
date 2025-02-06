@@ -84,7 +84,7 @@ export const SideDrawerContent = ({ handleClose }: SideDrawerContentProps) => {
             <ListCell
               key={label}
               compact
-              media={<Icon color="iconForeground" name={icon} size="s" />}
+              media={<Icon color="fg" name={icon} size="s" />}
               onPress={handleClose}
               title={label}
             />

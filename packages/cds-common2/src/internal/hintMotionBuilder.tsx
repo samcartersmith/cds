@@ -42,15 +42,9 @@ export function hintMotionBuilder({
   const ColorSurge = () => {
     const ref = useRef<ColorSurgeRefBaseProps>(null);
 
-    const handleSurgePrimary = useCallback(async () => ref.current?.play('backgroundPrimary'), []);
-    const handleSurgePositive = useCallback(
-      async () => ref.current?.play('backgroundPositive'),
-      [],
-    );
-    const handleSurgeNegative = useCallback(
-      async () => ref.current?.play('backgroundNegative'),
-      [],
-    );
+    const handleSurgePrimary = useCallback(async () => ref.current?.play('bgPrimary'), []);
+    const handleSurgePositive = useCallback(async () => ref.current?.play('bgPositive'), []);
+    const handleSurgeNegative = useCallback(async () => ref.current?.play('bgNegative'), []);
 
     return (
       <VStack gap={3}>
@@ -100,9 +94,9 @@ export function hintMotionBuilder({
     return (
       <VStack gap={3}>
         <PulseComponent ref={ref} disableAnimateOnMount variant="heavy">
-          <Box background="backgroundPrimary" height={50} width={50} />
-          <Box background="backgroundNegative" height={50} width={50} />
-          <Box background="backgroundPositive" height={50} width={50} />
+          <Box background="bgPrimary" height={50} width={50} />
+          <Box background="bgNegative" height={50} width={50} />
+          <Box background="bgPositive" height={50} width={50} />
         </PulseComponent>
         <Button onPress={handlePulseHeavy}>Pulse - Heavy</Button>
         <Button onPress={handlePulseModerate}>Pulse - Moderate</Button>
@@ -110,9 +104,9 @@ export function hintMotionBuilder({
         <Button onPress={handleStop}>Stop</Button>
         <TextBody as="p">Custom Transition</TextBody>
         <PulseComponent ref={customRef} disableAnimateOnMount motionConfig={customTransition}>
-          <Box background="backgroundPrimary" height={50} width={50} />
-          <Box background="backgroundNegative" height={50} width={50} />
-          <Box background="backgroundPositive" height={50} width={50} />
+          <Box background="bgPrimary" height={50} width={50} />
+          <Box background="bgNegative" height={50} width={50} />
+          <Box background="bgPositive" height={50} width={50} />
         </PulseComponent>
         <Button onPress={handleCustom}>Pulse - Custom</Button>
         <Button onPress={handleCustomStop}>Stop</Button>

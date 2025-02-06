@@ -33,7 +33,7 @@ export const Chip = memo(
     const content = (
       <HStack
         alignItems="center"
-        background={onPress ? undefined : 'backgroundSecondary'}
+        background={onPress ? undefined : 'bgSecondary'}
         borderRadius={500}
         gap={1}
         maxWidth={maxWidth}
@@ -62,7 +62,7 @@ export const Chip = memo(
           {onPress ? (
             <Pressable
               ref={ref}
-              background="backgroundSecondary"
+              background="bgSecondary"
               borderRadius={500}
               onPress={onPress}
               testID={testID}

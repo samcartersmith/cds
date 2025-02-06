@@ -18,7 +18,7 @@ export const useAndroidNavigationBarUpdater = ({
 }: AndroidNavigationBarProps | undefined = {}) => {
   const statusBarStyle = useStatusBarStyle({ theme });
   const contextTheme = useTheme();
-  const { background } = theme?.color ?? contextTheme.color;
+  const { bg } = theme?.color ?? contextTheme.color;
   return useCallback(() => {
     // Don't change the navigation bar color on Android 7 (API 25) or lower.
     // On these versions, Android doesn't support changing the color of the navigation bar icons, meaning
@@ -26,14 +26,14 @@ export const useAndroidNavigationBarUpdater = ({
     if (Platform.OS === 'android' && Platform.Version > 25) {
       return changeNavigationBarColor(
         // All palette values are in rgba and color has to be converted to hex.
-        colorToHex(background),
+        colorToHex(bg),
         // dark-content means light background
         statusBarStyle === 'dark-content',
         true,
       );
     }
     return undefined;
-  }, [background, statusBarStyle]);
+  }, [bg, statusBarStyle]);
 };
 
 export const AndroidNavigationBar = memo((props: AndroidNavigationBarProps) => {

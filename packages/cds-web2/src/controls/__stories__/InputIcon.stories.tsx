@@ -18,9 +18,7 @@ const {
   AddCustomColor,
   AddCustomColorEnd,
   InvalidPlacement,
-} = inputIconBuilder(TextInput, InputIcon, (props) => (
-  <Box {...props} background="backgroundAlternate" />
-));
+} = inputIconBuilder(TextInput, InputIcon, (props) => <Box {...props} background="bgAlternate" />);
 
 export {
   AddCustomColor,

@@ -144,9 +144,7 @@ export const Underline = () => (
 export const Strikethrough = () => <TextBody as="s">Manual verification</TextBody>;
 
 const MediumContainer = ({ children }: { children?: React.ReactNode }) => (
-  <div
-    style={{ width: '35%', height: '50px', backgroundColor: 'var(--color-backgroundAlternate)' }}
-  >
+  <div style={{ width: '35%', height: '50px', backgroundColor: 'var(--color-bgAlternate)' }}>
     {children}
   </div>
 );

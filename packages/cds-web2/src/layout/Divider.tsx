@@ -25,7 +25,7 @@ const directionStyles: {
 } as const;
 
 export const Divider = memo(
-  ({ color, direction = 'horizontal', background = 'line', ...props }: DividerProps) => {
+  ({ color, direction = 'horizontal', background = 'bgLine', ...props }: DividerProps) => {
     return (
       <Box
         alignSelf="stretch"

@@ -19,7 +19,7 @@ const {
   AddCustomColorEnd,
   InvalidPlacement,
 } = inputIconButtonBuilder(TextInput, InputIconButton, (props) => (
-  <Box {...props} background="backgroundAlternate" />
+  <Box {...props} background="bgAlternate" />
 ));
 
 export {

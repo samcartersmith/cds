@@ -56,7 +56,7 @@ const PatternDisclosureMedFrictionScreen = () => {
               {data.map(({ id, headline, body }) => (
                 <VStack key={id} gap={1}>
                   <HStack alignItems="center" gap={2}>
-                    <Icon color="iconForeground" name="checkmark" size="s" />
+                    <Icon color="fg" name="checkmark" size="s" />
                     <TextHeadline style={{ flex: 1 }}>{headline}</TextHeadline>
                   </HStack>
                   <TextBody paddingLeft={4}>{body}</TextBody>

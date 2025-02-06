@@ -9,37 +9,29 @@ import { LinearGradient } from '../LinearGradient';
 const stops = [0, 0.5, 1];
 const LinearGradientScreen = () => {
   const theme = useTheme();
-  const { background, backgroundPrimary, backgroundPositive, backgroundNegative } = theme.color;
-  const backgroundTransparent = theme.color.transparent;
+  const { bg, bgPrimary, bgPositive, bgNegative, transparent } = theme.color;
   return (
     <ExampleScreen>
       <Example inline title="As Background">
-        <LinearGradient colors={[backgroundPrimary, backgroundPositive]}>
+        <LinearGradient colors={[bgPrimary, bgPositive]}>
           <TextBody>First example</TextBody>
         </LinearGradient>
-        <LinearGradient
-          colors={[backgroundPrimary, backgroundPositive, backgroundNegative]}
-          stops={stops}
-        >
+        <LinearGradient colors={[bgPrimary, bgPositive, bgNegative]} stops={stops}>
           <TextBody>Second example</TextBody>
         </LinearGradient>
         <TextLabel1>Horizontal gradient</TextLabel1>
-        <LinearGradient
-          angle={90}
-          colors={[backgroundPrimary, backgroundPositive, backgroundNegative]}
-          stops={stops}
-        >
+        <LinearGradient angle={90} colors={[bgPrimary, bgPositive, bgNegative]} stops={stops}>
           <TextBody>Horizontal angle example</TextBody>
         </LinearGradient>
       </Example>
       <Example inline title="As overlay with isBelowChildren set to false">
-        <LinearGradient colors={[backgroundTransparent, background]} isBelowChildren={false}>
+        <LinearGradient colors={[transparent, bg]} isBelowChildren={false}>
           <TextBody>{loremIpsum}...</TextBody>
         </LinearGradient>
         <TextLabel1>More</TextLabel1>
       </Example>
       <Example inline title="As overlay with elevated prop">
-        <LinearGradient elevated colors={[backgroundTransparent, background]}>
+        <LinearGradient elevated colors={[transparent, bg]}>
           <TextBody>{loremIpsum}...</TextBody>
         </LinearGradient>
         <TextLabel1>More</TextLabel1>

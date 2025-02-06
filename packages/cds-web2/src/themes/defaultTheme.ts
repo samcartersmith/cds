@@ -271,29 +271,29 @@ export const defaultTheme = {
   darkSpectrum,
   light: {
     // Text
-    textForeground: `rgb(${lightSpectrum.gray100})`,
-    textForegroundMuted: `rgb(${lightSpectrum.gray60})`,
-    textForegroundInverse: `rgb(${lightSpectrum.gray0})`,
-    textPrimary: `rgb(${lightSpectrum.blue60})`,
-    textWarning: `rgb(${lightSpectrum.orange60})`,
-    textPositive: `rgb(${lightSpectrum.green60})`,
-    textNegative: `rgb(${lightSpectrum.red60})`,
+    fg: `rgb(${lightSpectrum.gray100})`,
+    fgMuted: `rgb(${lightSpectrum.gray60})`,
+    fgInverse: `rgb(${lightSpectrum.gray0})`,
+    fgPrimary: `rgb(${lightSpectrum.blue60})`,
+    fgWarning: `rgb(${lightSpectrum.orange60})`,
+    fgPositive: `rgb(${lightSpectrum.green60})`,
+    fgNegative: `rgb(${lightSpectrum.red60})`,
 
     // Background
-    background: `rgb(${lightSpectrum.gray0})`,
-    backgroundAlternate: `rgb(${lightSpectrum.gray5})`,
-    backgroundInverse: `rgb(${lightSpectrum.gray100})`,
-    backgroundOverlay: `rgba(${lightSpectrum.gray80},0.33)`,
-    backgroundPrimary: `rgb(${lightSpectrum.blue60})`,
-    backgroundPrimaryWash: `rgb(${lightSpectrum.blue0})`,
-    backgroundSecondary: `rgb(${lightSpectrum.gray15})`,
-    backgroundSecondaryWash: `rgb(${lightSpectrum.gray5})`,
-    backgroundNegative: `rgb(${lightSpectrum.red60})`,
-    backgroundNegativeWash: `rgb(${lightSpectrum.red0})`,
-    backgroundPositive: `rgb(${lightSpectrum.green60})`, // TO DO: confirm Positive values
-    backgroundPositiveWash: `rgb(${lightSpectrum.green0})`,
-    backgroundWarning: `rgb(${lightSpectrum.orange40})`,
-    backgroundWarningWash: `rgb(${lightSpectrum.orange0})`,
+    bg: `rgb(${lightSpectrum.gray0})`,
+    bgAlternate: `rgb(${lightSpectrum.gray5})`,
+    bgInverse: `rgb(${lightSpectrum.gray100})`,
+    bgOverlay: `rgba(${lightSpectrum.gray80},0.33)`,
+    bgPrimary: `rgb(${lightSpectrum.blue60})`,
+    bgPrimaryWash: `rgb(${lightSpectrum.blue0})`,
+    bgSecondary: `rgb(${lightSpectrum.gray15})`,
+    bgSecondaryWash: `rgb(${lightSpectrum.gray5})`,
+    bgNegative: `rgb(${lightSpectrum.red60})`,
+    bgNegativeWash: `rgb(${lightSpectrum.red0})`,
+    bgPositive: `rgb(${lightSpectrum.green60})`, // TO DO: confirm Positive values
+    bgPositiveWash: `rgb(${lightSpectrum.green0})`,
+    bgWarning: `rgb(${lightSpectrum.orange40})`,
+    bgWarningWash: `rgb(${lightSpectrum.orange0})`,
     currentColor: 'currentColor',
     // Background states
     backgroundPrimaryHover: `rgb(${lightSpectrum.blue70})`,
@@ -310,22 +310,14 @@ export const defaultTheme = {
     backgroundPositiveDisabled: `rgb(${lightSpectrum.green5})`,
 
     // Line
-    line: `rgba(${lightSpectrum.gray60},0.2)`,
-    lineHeavy: `rgba(${lightSpectrum.gray60},0.66)`,
-    lineInverse: `rgb(${lightSpectrum.gray0})`,
+    bgLine: `rgba(${lightSpectrum.gray60},0.2)`,
+    bgLineHeavy: `rgba(${lightSpectrum.gray60},0.66)`,
+    bgLineInverse: `rgb(${lightSpectrum.gray0})`,
     linePrimary: `rgb(${lightSpectrum.blue60})`,
-    linePrimaryLight: `rgb(${lightSpectrum.blue20})`,
+    bgLinePrimarySubtle: `rgb(${lightSpectrum.blue20})`,
     // Elevation
-    backgroundElevation1: `rgb(${lightSpectrum.gray0})`,
-    backgroundElevation2: `rgb(${lightSpectrum.gray0})`,
-    // Icon
-    iconForeground: `rgb(${lightSpectrum.gray100})`,
-    iconForegroundMuted: `rgb(${lightSpectrum.gray60})`,
-    iconForegroundInverse: `rgb(${lightSpectrum.gray0})`,
-    iconPrimary: `rgb(${lightSpectrum.blue60})`,
-    iconWarning: `rgb(${lightSpectrum.orange40})`,
-    iconPositive: `rgb(${lightSpectrum.green60})`,
-    iconNegative: `rgb(${lightSpectrum.red60})`,
+    bgElevation1: `rgb(${lightSpectrum.gray0})`,
+    bgElevation2: `rgb(${lightSpectrum.gray0})`,
 
     // Accent
     accentSubtleGreen: `rgb(${lightSpectrum.green0})`, // TO DO: check if correct value, if exists
@@ -348,28 +340,28 @@ export const defaultTheme = {
   },
   dark: {
     // Text
-    textForeground: `rgb(${darkSpectrum.gray100})`,
-    textForegroundInverse: `rgb(${darkSpectrum.gray0})`,
-    textForegroundMuted: `rgb(${darkSpectrum.gray60})`,
-    textPrimary: `rgb(${darkSpectrum.blue60})`,
-    textPositive: `rgb(${darkSpectrum.green60})`,
-    textNegative: `rgb(${darkSpectrum.red60})`,
-    textWarning: `rgb(${darkSpectrum.orange70})`,
+    fg: `rgb(${darkSpectrum.gray100})`,
+    fgInverse: `rgb(${darkSpectrum.gray0})`,
+    fgMuted: `rgb(${darkSpectrum.gray60})`,
+    fgPrimary: `rgb(${darkSpectrum.blue60})`,
+    fgPositive: `rgb(${darkSpectrum.green60})`,
+    fgNegative: `rgb(${darkSpectrum.red60})`,
+    fgWarning: `rgb(${darkSpectrum.orange70})`,
     // Background
-    background: `rgb(${darkSpectrum.gray0})`,
-    backgroundAlternate: `rgb(${darkSpectrum.gray5})`,
-    backgroundInverse: `rgb(${darkSpectrum.gray100})`,
-    backgroundOverlay: `rgba(${darkSpectrum.gray80},0.33)`,
-    backgroundPrimary: `rgb(${darkSpectrum.blue70})`,
-    backgroundPrimaryWash: `rgb(${darkSpectrum.blue0})`,
-    backgroundSecondary: `rgb(${darkSpectrum.gray15})`, // TO DO: confirm correct colors. this color has same value as backgroundElevation2
-    backgroundSecondaryWash: `rgb(${darkSpectrum.gray0})`, // TO DO confirm correct colors
-    backgroundNegative: `rgb(${darkSpectrum.red60})`,
-    backgroundNegativeWash: `rgb(${darkSpectrum.red0})`,
-    backgroundPositive: `rgb(${darkSpectrum.green60})`, // TO DO: confirm correct colors
-    backgroundPositiveWash: `rgb(${darkSpectrum.green0})`,
-    backgroundWarning: `rgb(${darkSpectrum.yellow50})`,
-    backgroundWarningWash: `rgb(${darkSpectrum.orange0})`,
+    bg: `rgb(${darkSpectrum.gray0})`,
+    bgAlternate: `rgb(${darkSpectrum.gray5})`,
+    bgInverse: `rgb(${darkSpectrum.gray100})`,
+    bgOverlay: `rgba(${darkSpectrum.gray80},0.33)`,
+    bgPrimary: `rgb(${darkSpectrum.blue70})`,
+    bgPrimaryWash: `rgb(${darkSpectrum.blue0})`,
+    bgSecondary: `rgb(${darkSpectrum.gray15})`, // TO DO: confirm correct colors. this color has same value as bgElevation2
+    bgSecondaryWash: `rgb(${darkSpectrum.gray0})`, // TO DO confirm correct colors
+    bgNegative: `rgb(${darkSpectrum.red60})`,
+    bgNegativeWash: `rgb(${darkSpectrum.red0})`,
+    bgPositive: `rgb(${darkSpectrum.green60})`, // TO DO: confirm correct colors
+    bgPositiveWash: `rgb(${darkSpectrum.green0})`,
+    bgWarning: `rgb(${darkSpectrum.yellow50})`,
+    bgWarningWash: `rgb(${darkSpectrum.orange0})`,
     currentColor: 'currentColor',
     // Background states
     backgroundPrimaryHover: `rgb(${darkSpectrum.blue70})`,
@@ -385,22 +377,14 @@ export const defaultTheme = {
     backgroundPositivePressed: `rgb(${darkSpectrum.green60})`, // TO DO: confirm correct colors
     backgroundPositiveDisabled: `rgb(${darkSpectrum.green60})`,
     // Line
-    line: `rgba(${darkSpectrum.gray60},0.2)`,
-    lineInverse: `rgb(${darkSpectrum.gray0})`,
-    lineHeavy: `rgba(${darkSpectrum.gray60},0.66)`,
+    bgLine: `rgba(${darkSpectrum.gray60},0.2)`,
+    bgLineInverse: `rgb(${darkSpectrum.gray0})`,
+    bgLineHeavy: `rgba(${darkSpectrum.gray60},0.66)`,
     linePrimary: `rgb(${darkSpectrum.blue70})`,
-    linePrimaryLight: `rgb(${darkSpectrum.blue20})`,
+    bgLinePrimarySubtle: `rgb(${darkSpectrum.blue20})`,
     // Elevation
-    backgroundElevation1: `rgb(${darkSpectrum.gray5})`,
-    backgroundElevation2: `rgb(${darkSpectrum.gray10})`,
-    // Icon
-    iconForeground: `rgb(${darkSpectrum.gray100})`,
-    iconForegroundInverse: `rgb(${darkSpectrum.gray0})`,
-    iconForegroundMuted: `rgb(${darkSpectrum.gray60})`,
-    iconPrimary: `rgb(${darkSpectrum.blue70})`,
-    iconPositive: `rgb(${darkSpectrum.green60})`,
-    iconNegative: `rgb(${darkSpectrum.red60})`,
-    iconWarning: `rgb(${darkSpectrum.orange70})`,
+    bgElevation1: `rgb(${darkSpectrum.gray5})`,
+    bgElevation2: `rgb(${darkSpectrum.gray10})`,
     // Accent
     accentSubtleGreen: `rgb(${darkSpectrum.green0})`,
     accentBoldGreen: `rgb(${darkSpectrum.green60})`,

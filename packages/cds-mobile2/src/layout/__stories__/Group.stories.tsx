@@ -11,7 +11,7 @@ function createCustomDivider(wrapperProps?: BoxProps, dividerProps?: BoxProps) {
   function CustomDivider() {
     return (
       <Box {...wrapperProps}>
-        <Box background="backgroundPrimary" height={4} width="100%" {...dividerProps} />
+        <Box background="bgPrimary" height={4} width="100%" {...dividerProps} />
       </Box>
     );
   }
@@ -23,7 +23,7 @@ const CustomDivider1 = createCustomDivider();
 const CustomDivider2 = createCustomDivider({ paddingBottom: gutter });
 const customRenderItem: RenderGroupItem = ({ item, Wrapper, isFirst, isLast }) => {
   return (
-    <Wrapper borderColor="lineHeavy" borderedBottom={isLast} borderedTop={isFirst}>
+    <Wrapper borderColor="bgLineHeavy" borderedBottom={isLast} borderedTop={isFirst}>
       {item}
     </Wrapper>
   );
@@ -32,13 +32,13 @@ const customRenderItem: RenderGroupItem = ({ item, Wrapper, isFirst, isLast }) =
 const GroupScreen = () => {
   const boxes = (
     <>
-      <Box background="backgroundAlternate" padding={1}>
+      <Box background="bgAlternate" padding={1}>
         <TextBody>Box 1</TextBody>
       </Box>
-      <Box background="backgroundAlternate" padding={1}>
+      <Box background="bgAlternate" padding={1}>
         <TextBody>Box 2</TextBody>
       </Box>
-      <Box background="backgroundAlternate" padding={1}>
+      <Box background="bgAlternate" padding={1}>
         <TextBody>Box 3</TextBody>
       </Box>
     </>

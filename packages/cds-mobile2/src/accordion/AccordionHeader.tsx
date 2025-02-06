@@ -27,7 +27,7 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
   <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
       <TextHeadline>{title}</TextHeadline>
-      {!!subtitle && <TextBody color="textForegroundMuted">{subtitle}</TextBody>}
+      {!!subtitle && <TextBody color="fgMuted">{subtitle}</TextBody>}
     </VStack>
   </Box>
 ));
@@ -63,7 +63,7 @@ export const AccordionHeader = memo(
           accessibilityLabel={accessibilityLabel}
           accessibilityRole="togglebutton"
           accessibilityState={{ expanded: !collapsed }}
-          background="background"
+          background="bg"
           onPress={handlePress}
           testID={testID}
         >

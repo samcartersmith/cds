@@ -70,7 +70,7 @@ export const InternalTooltip = memo(function InternalTooltip({
     >
       <Box
         animated
-        background="background"
+        background="bg"
         borderRadius={200}
         elevation={elevation}
         maxWidth={tooltipMaxWidth}
@@ -87,11 +87,7 @@ export const InternalTooltip = memo(function InternalTooltip({
         testID={testID}
         {...props}
       >
-        {typeof content === 'string' ? (
-          <TextLabel2 color="textForeground">{content}</TextLabel2>
-        ) : (
-          content
-        )}
+        {typeof content === 'string' ? <TextLabel2 color="fg">{content}</TextLabel2> : content}
       </Box>
     </View>
   );

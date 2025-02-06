@@ -32,7 +32,7 @@ import React from 'react';
 import { Box } from '@cbhq/cds-web';
 
 const Example = () => (
-  <Box as="section" padding={4} background="backgroundPrimary">
+  <Box as="section" padding={4} background="bgPrimary">
     <h1>Section Title</h1>
     <p>Content inside a section rendered by a polymorphic Box component.</p>
   </Box>
@@ -63,7 +63,7 @@ CDS polymorphic components are type-safe. When you specify the `as` prop, the co
 ### Example
 
 ```tsx
-<Box as="a" href="https://www.coinbase.com" color="textPrimary">
+<Box as="a" href="https://www.coinbase.com" color="fgPrimary">
   Visit Coinbase
 </Box>
 ```
@@ -90,7 +90,7 @@ Polymorphic components make it easy to define semantic HTML for better accessibi
 Reusing a single component, like `Box`, for various elements simplifies styling while maintaining a consistent design language.
 
 ```tsx
-<Box as="button" padding={2} background="backgroundPrimary" borderRadius={200}>
+<Box as="button" padding={2} background="bgPrimary" borderRadius={200}>
   Click Me
 </Box>
 ```

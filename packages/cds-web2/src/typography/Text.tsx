@@ -159,7 +159,7 @@ export const Text: TextComponent = memo(
       {
         as,
         font = 'body',
-        color = 'textForeground',
+        color = 'fg',
         display = 'block',
         textAlign = 'start',
         numberOfLines,

@@ -28,7 +28,7 @@ export const NudgeCard = memo(
     width = '100%',
     testID = 'nudge-card',
     accessibilityLabel,
-    background = 'backgroundAlternate',
+    background = 'bgAlternate',
     onPress,
     maxWidth,
     ...props
@@ -41,7 +41,7 @@ export const NudgeCard = memo(
       action
     ) : (
       <Pressable accessibilityRole="button" background="transparent" onPress={onActionPress}>
-        <TextHeadline color="textPrimary" numberOfLines={1} paddingY={1}>
+        <TextHeadline color="fgPrimary" numberOfLines={1} paddingY={1}>
           {action}
         </TextHeadline>
       </Pressable>

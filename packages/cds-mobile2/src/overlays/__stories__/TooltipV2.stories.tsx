@@ -51,7 +51,7 @@ const ToolTipWithA11y = ({ tooltipText, yShiftByStatusBarHeight }: Omit<ContentT
 const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) => {
   return (
     <Example title={title}>
-      <VStack background="backgroundAlternate" gap={8} height={800} paddingY={2}>
+      <VStack background="bgAlternate" gap={8} height={800} paddingY={2}>
         <HStack justifyContent="space-around">
           <Tooltip content={tooltipText} yShiftByStatusBarHeight={yShiftByStatusBarHeight}>
             <TextLabel2>{topTextSubject}</TextLabel2>

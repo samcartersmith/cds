@@ -61,18 +61,13 @@ const SparklineInteractiveMinMaxContent: React.FunctionComponent<
   const textLabelStyle = useMemo(() => {
     return {
       ...styles.caption,
-      backgroundColor: theme.color.background,
+      backgroundColor: theme.color.bg,
     };
-  }, [theme.color.background]);
+  }, [theme.color.bg]);
 
   return (
     <Animated.View pointerEvents="none" style={rootStyle}>
-      <TextLabel2
-        color="textForegroundMuted"
-        onLayout={onLayout}
-        padding={0}
-        style={textLabelStyle}
-      >
+      <TextLabel2 color="fgMuted" onLayout={onLayout} padding={0} style={textLabelStyle}>
         {children}
       </TextLabel2>
     </Animated.View>
@@ -90,10 +85,10 @@ export const SparklineInteractiveMinMax: React.FunctionComponent<
     return {
       ...styles.outer,
       opacity: minMaxOpacity,
-      backgroundColor: theme.color.background,
+      backgroundColor: theme.color.bg,
       height: SparklineInteractiveMinMaxLabelHeight,
     };
-  }, [SparklineInteractiveMinMaxLabelHeight, minMaxOpacity, theme.color.background]);
+  }, [SparklineInteractiveMinMaxLabelHeight, minMaxOpacity, theme.color.bg]);
 
   return (
     <Animated.View pointerEvents="none" style={rootStyle}>

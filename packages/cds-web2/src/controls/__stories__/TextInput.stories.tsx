@@ -457,12 +457,12 @@ export const RenderNativeTextAreaCustomSpacing = () => {
  */
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'textPrimary',
-  positive: 'textPositive',
-  negative: 'textNegative',
-  foreground: 'textForeground',
-  foregroundMuted: 'textForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export const CopyTextInput = function CopyTextInput() {
@@ -532,7 +532,7 @@ export const ReadOnly = function ReadOnly() {
         label="Read-Only with Start Node"
         start={
           <Box paddingX={2}>
-            <Icon color="textForeground" name="qrCode" size="m" />
+            <Icon color="fg" name="qrCode" size="m" />
           </Box>
         }
         value="Some text"
@@ -542,7 +542,7 @@ export const ReadOnly = function ReadOnly() {
         readOnly
         end={
           <Box paddingX={2}>
-            <Icon color="textForeground" name="qrCode" size="m" />
+            <Icon color="fg" name="qrCode" size="m" />
           </Box>
         }
         label="Compact Read-Only with End Node"

@@ -54,13 +54,7 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
         {title}
       </Text>
       {!!subtitle && (
-        <Text
-          as="div"
-          className={subtitleStyle}
-          color="textForegroundMuted"
-          font="body"
-          overflow="wrap"
-        >
+        <Text as="div" className={subtitleStyle} color="fgMuted" font="body" overflow="wrap">
           {subtitle}
         </Text>
       )}
@@ -98,7 +92,7 @@ export const AccordionHeader = memo(
             transparentWhileInactive
             aria-controls={getAccordionPanelId(itemKey)}
             aria-expanded={!collapsed} // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
-            background="background"
+            background="bg"
             id={getAccordionHeaderId(itemKey)}
             onPress={handlePress}
             testID={testID}

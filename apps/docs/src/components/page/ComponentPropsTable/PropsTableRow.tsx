@@ -91,7 +91,7 @@ function PropsTableRow({ prop, sharedTypeAliases, searchTerm = '' }: PropsTableR
           {highlightedName}
           {required && <span style={{ color: 'rgb(var(--red50))' }}>*</span>}
         </TextBody>
-        <TextLabel2 as="p" color="textForegroundMuted" overflow="break" paddingTop={0.5}>
+        <TextLabel2 as="p" color="fgMuted" overflow="break" paddingTop={0.5}>
           {description}
         </TextLabel2>
       </VStack>

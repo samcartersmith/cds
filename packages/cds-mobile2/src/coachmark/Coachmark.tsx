@@ -34,7 +34,7 @@ export const Coachmark = memo(
         <InvertedThemeProvider>
           <VStack
             ref={ref}
-            background="background"
+            background="bg"
             borderRadius={400}
             maxWidth={windowWidth - paddingX * 2}
             overflow="hidden"

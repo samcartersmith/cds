@@ -48,11 +48,11 @@ const ProgressBarScreen = () => {
       </Example>
       <Example title="Colors">
         <HStack flexWrap="wrap" gap={2}>
-          <ProgressCircle color="backgroundPositive" progress={0.5} size={100} />
-          <ProgressCircle color="backgroundNegative" progress={0.5} size={100} />
-          <ProgressCircle color="backgroundPrimary" progress={0.5} size={100} />
-          <ProgressCircle color="backgroundInverse" progress={0.5} size={100} />
-          <ProgressCircle disabled color="backgroundInverse" progress={0.5} size={100} />
+          <ProgressCircle color="bgPositive" progress={0.5} size={100} />
+          <ProgressCircle color="bgNegative" progress={0.5} size={100} />
+          <ProgressCircle color="bgPrimary" progress={0.5} size={100} />
+          <ProgressCircle color="bgInverse" progress={0.5} size={100} />
+          <ProgressCircle disabled color="bgInverse" progress={0.5} size={100} />
         </HStack>
       </Example>
       <Example title="FillParent">

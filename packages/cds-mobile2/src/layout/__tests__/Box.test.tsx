@@ -55,7 +55,7 @@ describe('Box', () => {
 
   it('renders alternate background', async () => {
     render(
-      <Box background="backgroundAlternate" testID="parent">
+      <Box background="bgAlternate" testID="parent">
         <Text>Child</Text>
       </Box>,
     );
@@ -65,7 +65,7 @@ describe('Box', () => {
     expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
-      backgroundColor: defaultTheme.light.backgroundAlternate,
+      backgroundColor: defaultTheme.light.bgAlternate,
     });
   });
 
@@ -96,7 +96,7 @@ describe('Box', () => {
     expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
-      borderColor: defaultTheme.light.line,
+      borderColor: defaultTheme.light.bgLine,
       borderRadius: 8,
       borderWidth: 1,
     });

@@ -9,7 +9,7 @@ import { Box, BoxProps } from './Box';
 export type DividerProps = DividerBaseProps & BoxProps;
 
 export const Divider = memo(function Divider({
-  color = 'line',
+  color = 'bgLine',
   direction = 'horizontal',
   ...boxProps
 }: DividerProps) {

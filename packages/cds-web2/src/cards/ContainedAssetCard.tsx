@@ -56,7 +56,7 @@ const focusRingStyle = css`
   &:focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     outline-offset: 2px;
   }
 `;
@@ -70,7 +70,7 @@ export const ContainedAssetCard = ({
   children,
   className,
   flexDirection = 'row',
-  background = 'backgroundAlternate',
+  background = 'bgAlternate',
   borderRadius = 500,
   height = containedAssetCardHeight,
   width = size === 'l' ? containedAssetCardLargeWidth : containedAssetCardSmallWidth,
@@ -108,7 +108,7 @@ export const ContainedAssetCard = ({
           {typeof subtitle !== 'string' ? (
             subtitle
           ) : (
-            <Text as="p" color="textForegroundMuted" font="legal" numberOfLines={1}>
+            <Text as="p" color="fgMuted" font="legal" numberOfLines={1}>
               {subtitle}
             </Text>
           )}
@@ -122,7 +122,7 @@ export const ContainedAssetCard = ({
           {typeof description !== 'string' ? (
             description
           ) : (
-            <Text as="p" color="textForegroundMuted" font="label2" numberOfLines={1}>
+            <Text as="p" color="fgMuted" font="label2" numberOfLines={1}>
               {description}
             </Text>
           )}

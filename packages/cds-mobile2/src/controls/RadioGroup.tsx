@@ -27,8 +27,8 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
 
   return (
     <Interactable
-      background="background"
-      borderColor={checked ? 'backgroundPrimary' : 'lineHeavy'}
+      background="bg"
+      borderColor={checked ? 'bgPrimary' : 'bgLineHeavy'}
       borderRadius={1000}
       borderWidth={200}
       disabled={disabled}
@@ -45,7 +45,7 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
       <Animated.View
         style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
       >
-        <Icon color="iconPrimary" name="dot" size="s" />
+        <Icon color="fgPrimary" name="dot" size="s" />
       </Animated.View>
     </Interactable>
   );

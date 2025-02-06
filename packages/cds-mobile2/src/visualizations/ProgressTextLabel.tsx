@@ -28,7 +28,7 @@ export const ProgressTextLabel = memo(
               tabularNumbers
               accessibilityState={accessibilityState}
               align="end"
-              color={color ?? 'textForeground'}
+              color={color ?? 'fg'}
               disabled={disabled}
             >
               {textValue}

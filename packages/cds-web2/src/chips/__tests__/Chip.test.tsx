@@ -25,7 +25,7 @@ const customContentStyle = { maxWidth: 300 };
 const ChipWithNodes = (props: Omit<ChipProps, 'children'>) => (
   <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
     <Chip
-      end={<Icon color="iconForeground" name="caretDown" size="s" testID="start-test" />}
+      end={<Icon color="fg" name="caretDown" size="s" testID="start-test" />}
       start={<RemoteImage {...assetIconProps} testID="end-test" />}
       testID={testID}
       {...props}

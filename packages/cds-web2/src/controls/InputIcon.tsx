@@ -18,23 +18,18 @@ export type InputIconProps = {
   SharedProps;
 
 export const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'iconPrimary',
-  positive: 'iconPositive',
-  negative: 'iconNegative',
-  foreground: 'iconForeground',
-  foregroundMuted: 'iconForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export const InputIcon = memo(
   forwardRef(
     (
-      {
-        disableInheritFocusStyle = false,
-        testID,
-        color = 'textForeground',
-        ...props
-      }: InputIconProps,
+      { disableInheritFocusStyle = false, testID, color = 'fg', ...props }: InputIconProps,
       ref: React.ForwardedRef<HTMLDivElement>,
     ) => {
       const variant = useContext(TextInputFocusVariantContext);

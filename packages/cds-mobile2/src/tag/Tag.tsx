@@ -40,7 +40,7 @@ export const Tag = memo(
         <Box
           ref={forwardedRef}
           alignItems={alignItems}
-          background="background"
+          background="bg"
           borderRadius={intent === 'informational' ? 100 : 1000}
           dangerouslySetBackground={backgroundColor}
           justifyContent={justifyContent}

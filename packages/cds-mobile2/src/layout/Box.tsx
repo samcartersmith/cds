@@ -51,15 +51,15 @@ export const getElevationStyles = (
     0: {},
     1: {
       elevation: 2,
-      ...(background === 'background' || background === undefined
-        ? { backgroundColor: theme.color.backgroundElevation1 }
+      ...(background === 'bg' || background === undefined
+        ? { backgroundColor: theme.color.bgElevation1 }
         : {}),
       ...theme.shadow.elevation1,
     },
     2: {
       elevation: 8,
-      ...(background === 'background' || background === undefined
-        ? { backgroundColor: theme.color.backgroundElevation2 }
+      ...(background === 'bg' || background === undefined
+        ? { backgroundColor: theme.color.bgElevation2 }
         : {}),
       ...theme.shadow.elevation2,
     },
@@ -93,44 +93,44 @@ const getBorderedStyles = (
     bordered: {
       borderWidth: theme.borderWidth[100],
       borderStyle: 'solid',
-      borderColor: theme.color.line,
+      borderColor: theme.color.bgLine,
     },
     borderedHorizontal: {
       borderLeftWidth: theme.borderWidth[100],
       borderRightWidth: theme.borderWidth[100],
       borderStyle: 'solid',
-      borderColor: theme.color.line,
+      borderColor: theme.color.bgLine,
     },
     borderedVertical: {
       borderTopWidth: theme.borderWidth[100],
       borderBottomWidth: theme.borderWidth[100],
       borderStyle: 'solid',
-      borderColor: theme.color.line,
+      borderColor: theme.color.bgLine,
     },
     borderedStart: {
       borderLeftWidth: theme.borderWidth[100],
       borderStyle: 'solid',
-      borderColor: theme.color.line,
+      borderColor: theme.color.bgLine,
     },
     borderedEnd: {
       borderRightWidth: theme.borderWidth[100],
       borderStyle: 'solid',
-      borderColor: theme.color.line,
+      borderColor: theme.color.bgLine,
     },
     borderedTop: {
       borderTopWidth: theme.borderWidth[100],
       borderStyle: 'solid',
-      borderColor: theme.color.line,
+      borderColor: theme.color.bgLine,
     },
     borderedBottom: {
       borderBottomWidth: theme.borderWidth[100],
       borderStyle: 'solid',
-      borderColor: theme.color.line,
+      borderColor: theme.color.bgLine,
     },
     elevation: {
       borderWidth: theme.borderWidth[100],
       borderStyle: 'solid',
-      borderColor: theme.color.line,
+      borderColor: theme.color.bgLine,
     },
   } satisfies Record<string, ViewStyle>;
   return [

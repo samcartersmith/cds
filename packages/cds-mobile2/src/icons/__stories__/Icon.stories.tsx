@@ -54,7 +54,7 @@ const IconScreen = () => {
       animated
       dangerouslySetColor={animationRef.interpolate({
         inputRange: [0, 1],
-        outputRange: [theme.color.line, theme.color.iconPrimary],
+        outputRange: [theme.color.bgLine, theme.color.fgPrimary],
       })}
       name="starActive"
       size="l"

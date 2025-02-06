@@ -177,12 +177,12 @@ const ProgressBarScreen = () => {
       </Example>
       <Example title="Colors">
         <VStack gap={2}>
-          <ProgressBar color="backgroundPositive" progress={0.5} />
-          <ProgressBar color="backgroundNegative" progress={0.5} />
-          <ProgressBar color="backgroundPrimary" progress={0.5} />
-          <ProgressBar color="backgroundWarning" progress={0.5} />
-          <ProgressBar color="backgroundInverse" progress={0.5} />
-          <ProgressBar disabled color="backgroundInverse" progress={0.5} />
+          <ProgressBar color="bgPositive" progress={0.5} />
+          <ProgressBar color="bgNegative" progress={0.5} />
+          <ProgressBar color="bgPrimary" progress={0.5} />
+          <ProgressBar color="bgWarning" progress={0.5} />
+          <ProgressBar color="bgInverse" progress={0.5} />
+          <ProgressBar disabled color="bgInverse" progress={0.5} />
         </VStack>
       </Example>
       <Example title="CustomLabel">

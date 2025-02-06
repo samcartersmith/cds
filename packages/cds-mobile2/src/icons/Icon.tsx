@@ -41,7 +41,7 @@ export const Icon = memo(function Icon({
   accessibilityHint,
   animated = false,
   bordered = false,
-  color = 'iconPrimary',
+  color = 'fgPrimary',
   dangerouslySetColor,
   style,
   fallback = null,

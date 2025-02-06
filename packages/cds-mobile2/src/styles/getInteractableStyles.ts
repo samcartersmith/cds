@@ -49,7 +49,7 @@ export const getInteractableStyles = ({
   /**
    * Apply an interactive background style.
    * Use the corresponding state color if available in theme;
-   * if not, blend the color with the theme background or backgroundInverse values
+   * if not, blend the color with the theme background or bgInverse values
    */
   const wrapperStyles = {
     static: {

@@ -12,7 +12,7 @@ const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
   const theme = useTheme();
 
   return (
-    <HStack background="background" flexWrap="wrap">
+    <HStack background="bg" flexWrap="wrap">
       {Object.entries(theme.color).map(([name, value]) => {
         return (
           <Box
@@ -23,7 +23,7 @@ const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
             justifyContent="center"
             width="50%"
           >
-            <VStack background="background">
+            <VStack background="bg">
               <TextCaption align="center">{name}</TextCaption>
               <TextCaption align="center">{value}</TextCaption>
               {!!elevation && <TextCaption align="center">Elevation: {elevation}</TextCaption>}

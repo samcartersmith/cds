@@ -69,7 +69,7 @@ export const ListCell = memo(
             <Text
               as="div"
               className={multiline ? overflowClassName : undefined}
-              color="textForegroundMuted"
+              color="fgMuted"
               font="body"
               overflow={multiline ? undefined : 'truncate'}
             >

@@ -17,7 +17,7 @@ export const IconCounterButton = memo(
       icon,
       iconSize = 's',
       count = 0,
-      color = 'iconForeground',
+      color = 'fg',
       dangerouslySetColor,
       ...props
     }: IconCounterButtonProps,

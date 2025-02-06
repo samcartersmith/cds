@@ -98,7 +98,7 @@ export const LikeButton = memo(function LikeButton({
       >
         <TextIcon
           animated
-          color={liked ? 'iconNegative' : 'iconForeground'}
+          color={liked ? 'fgNegative' : 'fg'}
           name={liked ? 'heartActive' : 'heartInactive'}
           size={iconSize}
           style={iconStyles}

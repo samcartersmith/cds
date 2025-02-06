@@ -23,8 +23,8 @@ export const IconCounterButtonExample = () => {
       <Divider />
       <TextTitle3 as="h3">Colored</TextTitle3>
       <HStack gap={4}>
-        <IconCounterButton color="iconNegative" count={99} icon="heartActive" />
-        <IconCounterButton color="iconPrimary" count={4200} icon="comment" />
+        <IconCounterButton color="fgNegative" count={99} icon="heartActive" />
+        <IconCounterButton color="fgPrimary" count={4200} icon="comment" />
         <IconCounterButton count={69000000} dangerouslySetColor="orange" icon="arrowsHorizontal" />
       </HStack>
       <Divider />

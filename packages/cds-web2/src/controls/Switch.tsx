@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { switchTransitionConfig } from '@cbhq/cds-common2/motion/switch';
 import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 
@@ -29,8 +29,8 @@ const track = css`
 const thumb = css`
   width: var(--controlSize-switchThumbSize);
   height: var(--controlSize-switchThumbSize);
-  background-color: var(--color-background);
-  border: 0.5 solid var(--color-line);
+  background-color: var(--color-bg);
+  border: 0.5 solid var(--color-bgLine);
 
   position: absolute;
   top: 1px;
@@ -48,7 +48,7 @@ const focusRingStyle = css`
   &:focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     outline-offset: 2px;
   }
 `;
@@ -72,13 +72,13 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
 ) {
   const { outerContainerMotionProps } = useControlMotionProps({
     checked,
-    initialBackground: 'var(--color-backgroundAlternate)',
+    initialBackground: 'var(--color-bgAlternate)',
   });
 
   const switchNode = (
     <Control
       ref={ref}
-      background={checked ? 'backgroundPrimary' : 'backgroundAlternate'}
+      background={checked ? 'bgPrimary' : 'bgAlternate'}
       borderRadius={400}
       checked={checked}
       disabled={disabled}

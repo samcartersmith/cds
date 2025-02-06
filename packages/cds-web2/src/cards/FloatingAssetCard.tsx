@@ -46,7 +46,7 @@ const focusRingStyle = css`
   &:focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     outline-offset: 2px;
     border-radius: var(--borderRadius-500);
   }
@@ -75,7 +75,7 @@ export const FloatingAssetCard = ({
       {...props}
     >
       <HStack
-        borderColor="line"
+        borderColor="bgLine"
         borderRadius={500}
         borderWidth={100}
         height={floatingAssetCardSmallDimension}
@@ -87,7 +87,7 @@ export const FloatingAssetCard = ({
       </HStack>
       <VStack gap={0.5}>
         {typeof subtitle === 'string' ? (
-          <Text as="p" color="textForegroundMuted" font="legal" numberOfLines={1}>
+          <Text as="p" color="fgMuted" font="legal" numberOfLines={1}>
             {subtitle}
           </Text>
         ) : (
@@ -101,7 +101,7 @@ export const FloatingAssetCard = ({
           title
         )}
         {typeof description === 'string' ? (
-          <Text as="p" color="textForegroundMuted" font="label2" numberOfLines={2}>
+          <Text as="p" color="fgMuted" font="label2" numberOfLines={2}>
             {description}
           </Text>
         ) : (

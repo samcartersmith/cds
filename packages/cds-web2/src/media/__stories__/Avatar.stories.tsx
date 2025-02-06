@@ -52,13 +52,7 @@ export const Normal = () => {
         </Text>
         <HStack alignItems="center" gap={2}>
           {sizes.map((size, i) => (
-            <Avatar
-              key={i}
-              alt=""
-              borderColor="backgroundPositive"
-              size={size}
-              src={avatarImageUrl}
-            />
+            <Avatar key={i} alt="" borderColor="bgPositive" size={size} src={avatarImageUrl} />
           ))}
         </HStack>
         <HStack alignItems="center" gap={2}>
@@ -66,7 +60,7 @@ export const Normal = () => {
             <Avatar
               key={i}
               alt=""
-              borderColor="backgroundPositive"
+              borderColor="bgPositive"
               shape="square"
               size={size}
               src={avatarImageUrl}
@@ -78,7 +72,7 @@ export const Normal = () => {
             <Avatar
               key={i}
               alt=""
-              borderColor="backgroundPositive"
+              borderColor="bgPositive"
               shape="hexagon"
               size={size}
               src={avatarImageUrl}
@@ -275,17 +269,17 @@ export const FallbackImage = () => {
         </Text>
         <HStack alignItems="center" gap={2}>
           {sizes.map((size, i) => (
-            <Avatar key={i} alt="" borderColor="backgroundPositive" size={size} />
+            <Avatar key={i} alt="" borderColor="bgPositive" size={size} />
           ))}
         </HStack>
         <HStack alignItems="center" gap={2}>
           {sizes.map((size, i) => (
-            <Avatar key={i} alt="" borderColor="backgroundPositive" shape="square" size={size} />
+            <Avatar key={i} alt="" borderColor="bgPositive" shape="square" size={size} />
           ))}
         </HStack>
         <HStack alignItems="center" gap={2}>
           {sizes.map((size, i) => (
-            <Avatar key={i} alt="" borderColor="backgroundPositive" shape="hexagon" size={size} />
+            <Avatar key={i} alt="" borderColor="bgPositive" shape="hexagon" size={size} />
           ))}
         </HStack>
       </VStack>

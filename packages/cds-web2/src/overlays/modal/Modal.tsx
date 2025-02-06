@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import {
   animateInOpacityConfig,
   animateInScaleConfig,
@@ -197,7 +197,7 @@ export const Modal = memo(
                 onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
               >
                 <VStack
-                  background="background"
+                  background="bg"
                   borderRadius={200}
                   className={cx(!dangerouslyDisableResponsiveness && modalDialogResponsiveStyle)}
                   elevation={2}

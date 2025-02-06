@@ -106,7 +106,7 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
       return {
         position: shouldTakeUpHeight ? 'relative' : 'absolute',
         opacity: hoverDateOpacity,
-        backgroundColor: theme.color.background,
+        backgroundColor: theme.color.bg,
         height: SparklineInteractiveMinMaxLabelHeight,
         ...styles.outer,
       } as const;
@@ -114,7 +114,7 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
       SparklineInteractiveMinMaxLabelHeight,
       hoverDateOpacity,
       shouldTakeUpHeight,
-      theme.color.background,
+      theme.color.bg,
     ]);
 
     const innerStyle = useMemo(() => {
@@ -129,10 +129,10 @@ const SparklineInteractiveHoverDateWithGeneric = forwardRef(
         fontSize: theme.fontSize.label2,
         lineHeight: theme.lineHeight.label2,
         fontFamily: theme.fontFamily.label2,
-        color: theme.color.textForegroundMuted,
+        color: theme.color.fgMuted,
       };
     }, [
-      theme.color.textForegroundMuted,
+      theme.color.fgMuted,
       theme.fontFamily.label2,
       theme.fontSize.label2,
       theme.lineHeight.label2,

@@ -112,7 +112,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
     return (
       <ThemeProvider activeColorScheme={item.colorScheme} theme={defaultTheme}>
         <VStack
-          background="background"
+          background="bg"
           overflow="hidden"
           width={SIZES[type].width * SIZES[type].scaleMultiplier}
         >
@@ -181,7 +181,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
       <VStack
         // TODO: pull from ui-mobile-playground/helpers/constants via screen constant
         alignItems="center"
-        background="background"
+        background="bg"
         flexGrow={1}
         justifyContent="center"
         testID="mobile-playground-screen"

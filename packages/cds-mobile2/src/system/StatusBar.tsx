@@ -19,11 +19,11 @@ export type StatusBarProps = RNStatusBarProps & {
  */
 export const useStatusBarStyle = ({ theme }: StatusBarProps | undefined = {}) => {
   const contextTheme = useTheme();
+  const { bg } = theme?.color ?? contextTheme.color;
   return useMemo(() => {
-    const { background } = theme?.color ?? contextTheme.color;
-    const luminosity = isLightOrDarkColor(background);
+    const luminosity = isLightOrDarkColor(bg);
     return luminosity === 'light' ? 'dark-content' : 'light-content';
-  }, [contextTheme.color, theme?.color]);
+  }, [bg]);
 };
 
 // Imperative way to update StatusBar styles

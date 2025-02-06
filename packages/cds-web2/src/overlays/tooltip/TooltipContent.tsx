@@ -1,6 +1,6 @@
 import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import {
   animateInOpacityConfig,
   animateOutOpacityConfig,
@@ -70,7 +70,7 @@ export const TooltipContent = memo(
         <motion.div {...motionProps} data-testid={`${testID}-motion`}>
           <Box
             ref={ref}
-            background={invertSpectrum ? 'backgroundInverse' : 'background'}
+            background={invertSpectrum ? 'bgInverse' : 'bg'}
             borderRadius={200}
             data-testid={testID}
             elevation={elevation}
@@ -81,7 +81,7 @@ export const TooltipContent = memo(
             {typeof content === 'string' ? (
               <Text
                 className={textStyle}
-                color={invertSpectrum ? 'textForegroundInverse' : 'textForeground'}
+                color={invertSpectrum ? 'fgInverse' : 'fg'}
                 font="label2"
                 id={tooltipId}
               >

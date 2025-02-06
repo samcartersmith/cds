@@ -12,7 +12,7 @@ import { TextHeadline } from '../../typography';
 import { TabNavigation } from '../TabNavigation';
 
 const renderCustomTab = ({ label, ...props }: CustomTabProps) => (
-  <HStack bordered background="background" borderRadius={100} paddingX={2} paddingY={1} {...props}>
+  <HStack bordered background="bg" borderRadius={100} paddingX={2} paddingY={1} {...props}>
     <TextHeadline>{label}</TextHeadline>
   </HStack>
 );

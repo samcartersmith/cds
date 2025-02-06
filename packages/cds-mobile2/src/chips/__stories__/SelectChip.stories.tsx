@@ -67,7 +67,7 @@ const ObjectValueModel = () => {
   return (
     <SelectChip
       active={value !== undefined}
-      end={<Icon color="iconForeground" name={value.iconName} size="s" />}
+      end={<Icon color="fg" name={value.iconName} size="s" />}
       onChange={(newValue: string) => handleChange(newValue)}
       value={value.value}
       valueLabel={value.label}
@@ -86,12 +86,9 @@ const SelectChipScreen = () => (
       <SelectChipExample placeholder="Sort" value="Balance" />
     </Example>
     <Example title="Custom end node">
+      <SelectChipExample end={<Icon color="fg" name="filter" size="s" />} placeholder="Filter" />
       <SelectChipExample
-        end={<Icon color="iconForeground" name="filter" size="s" />}
-        placeholder="Filter"
-      />
-      <SelectChipExample
-        end={<Icon color="iconForeground" name="filter" size="s" />}
+        end={<Icon color="fg" name="filter" size="s" />}
         placeholder="Filter"
         value="Balance"
       />

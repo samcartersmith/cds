@@ -18,11 +18,11 @@ export default {
 const CustomActiveIndicator = ({
   activeTabRect,
 }: Pick<TabsActiveIndicatorProps, 'activeTabRect'>) => (
-  <TabsActiveIndicator activeTabRect={activeTabRect} background="backgroundOverlay" />
+  <TabsActiveIndicator activeTabRect={activeTabRect} background="bgOverlay" />
 );
 
 const CustomSegmentedTab: TabComponent = (props) => (
-  <SegmentedTab {...props} activeColor="textWarning" color="backgroundPrimary" />
+  <SegmentedTab {...props} activeColor="fgWarning" color="bgPrimary" />
 );
 
 const buttonStyle = css`
@@ -33,7 +33,7 @@ const AnotherCustomSegmentedTab: TabComponent = ({ id, label, disabled }) => {
   const { activeTab } = useTabsContext();
   const isActive = activeTab?.id === id;
   const renderedLabel = (
-    <TextLabel2 as="span" color={isActive ? 'textPositive' : 'textNegative'} overflow="truncate">
+    <TextLabel2 as="span" color={isActive ? 'fgPositive' : 'fgNegative'} overflow="truncate">
       {label}
     </TextLabel2>
   );

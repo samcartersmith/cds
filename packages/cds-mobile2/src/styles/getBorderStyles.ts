@@ -64,7 +64,7 @@ export const getBorderStyles = ({
   }
 
   if (Object.keys(styles).length > (borderRadius ? 1 : 0)) {
-    styles.borderColor = theme.color.line;
+    styles.borderColor = theme.color.bgLine;
   }
 
   if (borderColor) {
@@ -78,7 +78,7 @@ export const getBorderStyles = ({
 
   // When elevating, always apply a border
   if (elevation) {
-    styles.borderColor = theme.color[borderColor ?? 'line'];
+    styles.borderColor = theme.color[borderColor ?? 'bgLine'];
     styles.borderWidth = theme.borderWidth[borderWidth ?? 100];
   }
   return styles;

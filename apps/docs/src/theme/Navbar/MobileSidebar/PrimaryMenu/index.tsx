@@ -25,7 +25,7 @@ export default function NavbarMobilePrimaryMenu(): JSX.Element {
           <Pressable as="a" background="transparent" borderRadius={1000} href={href}>
             <HStack alignItems="center" justifyContent="space-between" paddingX={2} paddingY={1}>
               <Text font="label2">{label}</Text>
-              <Icon color="iconForeground" name="externalLink" size="s" />
+              <Icon color="fg" name="externalLink" size="s" />
             </HStack>
           </Pressable>
         </VStack>

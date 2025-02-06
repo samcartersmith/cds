@@ -24,13 +24,8 @@ const PageHeaderInErrorEmptyState = () => {
     <View>
       <ExampleScreen>
         <VStack gap={0} width="100%">
-          <PageHeader
-            background="background"
-            position="sticky"
-            start={exampleProps.logoMark2}
-            top="0"
-          />
-          <Box background="backgroundPrimaryWash">
+          <PageHeader background="bg" position="sticky" start={exampleProps.logoMark2} top="0" />
+          <Box background="bgPrimaryWash">
             <VStack
               alignContent="center"
               alignItems="center"

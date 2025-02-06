@@ -18,7 +18,7 @@ const focusStyles = css`
   &:focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     outline-offset: 2px;
   }
 `;
@@ -64,7 +64,7 @@ export const TileButton = memo(
           {...props}
           ref={ref}
           noScaleOnPress
-          background="background"
+          background="bg"
           borderRadius={400}
           className={focusStyles}
         >

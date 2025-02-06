@@ -56,7 +56,7 @@ const exampleProps = {
   end2: (
     <HStack alignItems="center" gap={1}>
       <Link to="https://cds.cbhq.net/components/link">
-        <TextHeadline color="textPrimary">Help</TextHeadline>
+        <TextHeadline color="fgPrimary">Help</TextHeadline>
       </Link>
       <HStack gap={0}>
         <IconButton
@@ -111,69 +111,69 @@ const PageHeaderScreen = () => {
       <ExampleScreen>
         <VStack gap={3}>
           <PageHeader
-            background="backgroundPrimaryWash"
+            background="bgPrimaryWash"
             end={exampleProps.end2}
             start={exampleProps.logoMark2}
             title={exampleProps.title1}
           />
           <Divider />
           <PageHeader
-            background="backgroundPrimaryWash"
+            background="bgPrimaryWash"
             end={exampleProps.end2}
             title={exampleProps.title1}
           />
           <Divider />
           <PageHeader
-            background="backgroundPrimaryWash"
+            background="bgPrimaryWash"
             start={exampleProps.logoMark2}
             title={exampleProps.title1}
           />
           <Divider />
           <PageHeader
-            background="backgroundPrimaryWash"
+            background="bgPrimaryWash"
             end={exampleProps.end2}
             start={exampleProps.logoMark2}
             title={exampleProps.intermediary1}
           />
           <Divider />
           <PageHeader
-            background="backgroundPrimaryWash"
+            background="bgPrimaryWash"
             end={exampleProps.end2}
             start={exampleProps.logoMark2}
             title={exampleProps.title2}
           />
           <Divider />
           <PageHeader
-            background="background"
+            background="bg"
             end={exampleProps.end3}
             start={exampleProps.start1}
             title={exampleProps.intermediary1}
           />
           <Divider />
           <PageHeader
-            background="background"
+            background="bg"
             end={exampleProps.end4}
             start={exampleProps.start1}
             title={exampleProps.title1}
           />
           <Divider />
           <PageHeader
-            background="background"
+            background="bg"
             end={exampleProps.end4}
             start={exampleProps.start1}
             title={exampleProps.title2}
           />
           <Divider />
-          <PageHeader background="background" end={exampleProps.end4} start={exampleProps.start1} />
+          <PageHeader background="bg" end={exampleProps.end4} start={exampleProps.start1} />
           <Divider />
           <PageHeader
-            background="backgroundPrimaryWash"
+            background="bgPrimaryWash"
             end={exampleProps.end3}
             title={exampleProps.intermediary1}
           />
           <Divider />
           <PageHeader
-            background="backgroundPrimaryWash"
+            background="bgPrimaryWash"
             end={exampleProps.end2}
             start={exampleProps.logoMark2}
             title={exampleProps.intermediary2}

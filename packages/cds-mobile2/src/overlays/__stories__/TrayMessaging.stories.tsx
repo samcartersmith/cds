@@ -38,7 +38,7 @@ export const Default = () => {
                 <TextTitle1 align="center" paddingBottom={1}>
                   You’re ready to explore
                 </TextTitle1>
-                <TextBody align="center" color="textForegroundMuted">
+                <TextBody align="center" color="fgMuted">
                   You don’t have any dapps open right now. Here’s one you might like: [dapp]
                 </TextBody>
               </VStack>

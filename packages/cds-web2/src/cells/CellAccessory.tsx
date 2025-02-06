@@ -17,17 +17,15 @@ export const CellAccessory = memo(
     let icon;
 
     if (type === 'more') {
-      icon = <Icon color="iconForegroundMuted" name="more" size="s" />;
+      icon = <Icon color="fgMuted" name="more" size="s" />;
     }
 
     if (type === 'arrow') {
-      icon = (
-        <Icon color="iconForegroundMuted" name={isRtl() ? 'caretLeft' : 'caretRight'} size="s" />
-      );
+      icon = <Icon color="fgMuted" name={isRtl() ? 'caretLeft' : 'caretRight'} size="s" />;
     }
 
     if (type === 'selected') {
-      icon = <Icon color="iconPrimary" name="checkmark" size="s" />;
+      icon = <Icon color="fgPrimary" name="checkmark" size="s" />;
     }
 
     if (!icon) {

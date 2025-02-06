@@ -63,7 +63,7 @@ export const Link = memo(
     accessibilityLabel,
     children,
     to,
-    color = 'textPrimary',
+    color = 'fgPrimary',
     testID,
     onPress,
     variant = 'inherit',

@@ -18,7 +18,7 @@ const {
 } = inputIconBuilder(
   (props) => <TextInput editable={__DEV__} {...props} />,
   InputIcon,
-  (props) => <Box {...props} background="backgroundAlternate" />,
+  (props) => <Box {...props} background="bgAlternate" />,
 );
 
 const InputIconScreen = () => {

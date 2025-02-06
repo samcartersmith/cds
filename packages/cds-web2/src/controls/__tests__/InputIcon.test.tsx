@@ -29,7 +29,7 @@ describe('Test InputIcon inheritFocusedVariant interaction', () => {
 
 describe('InputIcon', () => {
   it(`Can override focused color provided by context.`, () => {
-    const variant = 'textForeground';
+    const variant = 'fg';
 
     render(
       <DefaultThemeProvider>

@@ -5,11 +5,11 @@ import { Spinner } from '../Spinner';
 
 describe('Spinner', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<Spinner color="backgroundPrimary" size={60} />)).toHaveNoViolations();
+    expect(await renderA11y(<Spinner color="bgPrimary" size={60} />)).toHaveNoViolations();
   });
 
   it('should render with a div element', () => {
-    render(<Spinner color="backgroundPrimary" size={60} testID="div-spinner" />);
+    render(<Spinner color="bgPrimary" size={60} testID="div-spinner" />);
     expect(screen.getByTestId('div-spinner')).toBeTruthy();
   });
 
@@ -21,15 +21,13 @@ describe('Spinner', () => {
   it('accepts custom styles', () => {
     render(
       // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
-      <Spinner color="backgroundPrimary" size={60} style={{ color: 'red' }} testID="div-spinner" />,
+      <Spinner color="bgPrimary" size={60} style={{ color: 'red' }} testID="div-spinner" />,
     );
     expect(screen.getByTestId('div-spinner')).toHaveStyle({ color: 'red' });
   });
 
   it('accepts custom className', () => {
-    render(
-      <Spinner className="custom-class" color="backgroundPrimary" size={60} testID="div-spinner" />,
-    );
+    render(<Spinner className="custom-class" color="bgPrimary" size={60} testID="div-spinner" />);
     expect(screen.getByTestId('div-spinner')).toHaveClass('custom-class');
   });
 });

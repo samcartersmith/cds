@@ -20,7 +20,7 @@ const TimeseriesPath = memo(
     const { strokeColor } = timeseries;
 
     const lineColor = getAccessibleColor({
-      background: theme.color.background,
+      background: theme.color.bg,
       foreground: strokeColor,
       usage: 'graphic',
     });

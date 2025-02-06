@@ -17,7 +17,7 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
         <VStack>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
-          <TextBody as="p" color="backgroundSecondary">
+          <TextBody as="p" color="bgSecondary">
             Secondary text
           </TextBody>
         </VStack>
@@ -65,15 +65,15 @@ const customTheme: ThemeConfig = {
   ...defaultTheme,
   light: {
     ...defaultTheme.light,
-    backgroundSecondary: 'rgb(var(--blue50))',
-    backgroundPrimary: 'rgb(var(--red20))',
-    background: 'rgb(var(--orange50))',
+    bg: 'rgb(var(--orange50))',
+    bgPrimary: 'rgb(var(--red20))',
+    bgSecondary: 'rgb(var(--blue50))',
   },
   dark: {
     ...defaultTheme.dark,
-    backgroundSecondary: 'rgb(var(--blue50))',
-    backgroundPrimary: 'rgb(var(--red20))',
-    background: 'rgb(var(--orange50))',
+    bg: 'rgb(var(--orange50))',
+    bgPrimary: 'rgb(var(--red20))',
+    bgSecondary: 'rgb(var(--blue50))',
   },
 };
 

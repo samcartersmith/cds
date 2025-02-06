@@ -17,16 +17,16 @@ export type UseControlMotionParams = {
 export const useControlMotionProps = ({
   checked,
   shouldAnimateBackground = true,
-  initialBackground = 'var(--color-background)',
+  initialBackground = 'var(--color-bg)',
 }: UseControlMotionParams) => {
   const outerContainerMotionProps = useMotionProps({
     variants: {
       enter: {
-        borderColor: 'var(--color-backgroundPrimary)',
-        ...(shouldAnimateBackground ? { backgroundColor: 'var(--color-backgroundPrimary)' } : {}),
+        borderColor: 'var(--color-bgPrimary)',
+        ...(shouldAnimateBackground ? { backgroundColor: 'var(--color-bgPrimary)' } : {}),
       },
       exit: {
-        borderColor: 'var(--color-lineHeavy)',
+        borderColor: 'var(--color-bgLineHeavy)',
         ...(shouldAnimateBackground ? { backgroundColor: initialBackground } : {}),
       },
     },

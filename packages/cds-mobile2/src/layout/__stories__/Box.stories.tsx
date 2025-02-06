@@ -13,27 +13,27 @@ const BoxScreen = () => {
           <TextBody>Default background</TextBody>
         </Box>
 
-        <Box background="backgroundAlternate" padding={1}>
+        <Box background="bgAlternate" padding={1}>
           <TextBody>Alternate background</TextBody>
         </Box>
 
-        <Box background="backgroundOverlay" padding={1}>
+        <Box background="bgOverlay" padding={1}>
           <TextBody>Overlay background</TextBody>
         </Box>
 
-        <Box background="backgroundPrimary" padding={1}>
+        <Box background="bgPrimary" padding={1}>
           <TextBody>Primary background</TextBody>
         </Box>
 
-        <Box background="backgroundSecondary" padding={1}>
+        <Box background="bgSecondary" padding={1}>
           <TextBody>Secondary background</TextBody>
         </Box>
 
-        <Box background="backgroundPositive" padding={1}>
+        <Box background="bgPositive" padding={1}>
           <TextBody>Positive background</TextBody>
         </Box>
 
-        <Box background="backgroundNegative" padding={1}>
+        <Box background="bgNegative" padding={1}>
           <TextBody>Negative background</TextBody>
         </Box>
       </Example>
@@ -47,7 +47,7 @@ const BoxScreen = () => {
           <TextBody>With rounded borders</TextBody>
         </Box>
 
-        <Box background="backgroundAlternate" borderRadius={200} padding={1}>
+        <Box background="bgAlternate" borderRadius={200} padding={1}>
           <TextBody>With rounded corners</TextBody>
         </Box>
       </Example>
@@ -63,17 +63,17 @@ const BoxScreen = () => {
       </Example>
 
       <Example title="Dimensions">
-        <Box background="backgroundAlternate" padding={1} width="50%">
+        <Box background="bgAlternate" padding={1} width="50%">
           <TextBody>Custom width</TextBody>
         </Box>
 
-        <Box background="backgroundAlternate" height={100} padding={1}>
+        <Box background="bgAlternate" height={100} padding={1}>
           <TextBody>Custom height</TextBody>
         </Box>
       </Example>
 
       <Example title="Overflow Gradient">
-        <Box alignItems="flex-end" background="backgroundAlternate" padding={1}>
+        <Box alignItems="flex-end" background="bgAlternate" padding={1}>
           <TextBody>
             Some large text that should fill the screen so we can see the gradient
           </TextBody>
@@ -82,22 +82,22 @@ const BoxScreen = () => {
       </Example>
 
       <Example title="Opacity">
-        <Box background="backgroundAlternate" opacity={0.1} padding={1}>
+        <Box background="bgAlternate" opacity={0.1} padding={1}>
           <TextBody>Custom Opacity</TextBody>
         </Box>
 
-        <Box background="backgroundAlternate" opacity={0.5} padding={1}>
+        <Box background="bgAlternate" opacity={0.5} padding={1}>
           <TextBody>Custom Opacity</TextBody>
         </Box>
       </Example>
 
       <Example title="Spacing">
-        <Box background="backgroundAlternate" padding={3}>
+        <Box background="bgAlternate" padding={3}>
           <TextBody>All sides</TextBody>
         </Box>
 
         <Box
-          background="backgroundAlternate"
+          background="bgAlternate"
           paddingBottom={3}
           paddingLeft={4}
           paddingRight={2}
@@ -106,49 +106,43 @@ const BoxScreen = () => {
           <TextBody>Custom sides</TextBody>
         </Box>
 
-        <Box background="backgroundAlternate" paddingY={3}>
+        <Box background="bgAlternate" paddingY={3}>
           <TextBody>Vertical only</TextBody>
         </Box>
 
-        <Box background="backgroundAlternate" paddingX={3}>
+        <Box background="bgAlternate" paddingX={3}>
           <TextBody>Horizontal only</TextBody>
         </Box>
       </Example>
 
       <Example title="Offset">
-        <Box background="backgroundAlternate" padding={5}>
-          <Box background="background" margin={-3}>
+        <Box background="bgAlternate" padding={5}>
+          <Box background="bg" margin={-3}>
             <TextBody>All sides</TextBody>
           </Box>
         </Box>
 
-        <Box background="backgroundAlternate" padding={5}>
-          <Box
-            background="background"
-            marginBottom={-3}
-            marginLeft={-4}
-            marginRight={-2}
-            marginTop={-1}
-          >
+        <Box background="bgAlternate" padding={5}>
+          <Box background="bg" marginBottom={-3} marginLeft={-4} marginRight={-2} marginTop={-1}>
             <TextBody>Custom sides</TextBody>
           </Box>
         </Box>
 
-        <Box background="backgroundAlternate" padding={5}>
-          <Box background="background" marginY={-3}>
+        <Box background="bgAlternate" padding={5}>
+          <Box background="bg" marginY={-3}>
             <TextBody>Vertical only</TextBody>
           </Box>
         </Box>
 
-        <Box background="backgroundAlternate" padding={5}>
-          <Box background="background" marginX={-3}>
+        <Box background="bgAlternate" padding={5}>
+          <Box background="bg" marginX={-3}>
             <TextBody>Horizontal only</TextBody>
           </Box>
         </Box>
       </Example>
 
       <Example title="Positioning">
-        <Box background="backgroundAlternate" height={100} padding={1}>
+        <Box background="bgAlternate" height={100} padding={1}>
           <TextBody>Relative parent</TextBody>
 
           <Box bottom={16} position="absolute" right={8}>
@@ -158,32 +152,32 @@ const BoxScreen = () => {
       </Example>
 
       <Example title="Pinning">
-        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
-          <Box background="backgroundOverlay" pin="top">
+        <Box background="bgAlternate" height={150} position="relative" width="100%">
+          <Box background="bgOverlay" pin="top">
             <TextBody>Top from left to right</TextBody>
           </Box>
         </Box>
 
-        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
-          <Box background="backgroundOverlay" pin="right">
+        <Box background="bgAlternate" height={150} position="relative" width="100%">
+          <Box background="bgOverlay" pin="right">
             <TextBody>Right from top to bottom</TextBody>
           </Box>
         </Box>
 
-        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
-          <Box background="backgroundOverlay" pin="bottom">
+        <Box background="bgAlternate" height={150} position="relative" width="100%">
+          <Box background="bgOverlay" pin="bottom">
             <TextBody>Bottom from left to right</TextBody>
           </Box>
         </Box>
 
-        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
-          <Box background="backgroundOverlay" pin="left">
+        <Box background="bgAlternate" height={150} position="relative" width="100%">
+          <Box background="bgOverlay" pin="left">
             <TextBody>Left from top to bottom</TextBody>
           </Box>
         </Box>
 
-        <Box background="backgroundAlternate" height={150} position="relative" width="100%">
-          <Box background="backgroundOverlay" pin="all">
+        <Box background="bgAlternate" height={150} position="relative" width="100%">
+          <Box background="bgOverlay" pin="all">
             <TextBody>To all corners</TextBody>
           </Box>
         </Box>

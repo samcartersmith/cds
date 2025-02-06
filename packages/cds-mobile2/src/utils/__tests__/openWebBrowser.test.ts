@@ -44,8 +44,8 @@ describe('openWebBrowser', () => {
       android: {
         theme: darkTheme,
         showTitle: true,
-        toolbarColor: darkTheme.color.background,
-        secondaryToolbarColor: darkTheme.color.lineHeavy,
+        toolbarColor: darkTheme.color.bg,
+        secondaryToolbarColor: darkTheme.color.bgLineHeavy,
         enableUrlBarHiding: true,
         enableDefaultShare: true,
         forceCloseOnRedirection: false,
@@ -54,8 +54,8 @@ describe('openWebBrowser', () => {
       ios: {
         theme: darkTheme,
         dismissButtonStyle: 'close',
-        preferredBarTintColor: darkTheme.color.background,
-        preferredControlTintColor: darkTheme.color.backgroundPrimary,
+        preferredBarTintColor: darkTheme.color.bg,
+        preferredControlTintColor: darkTheme.color.bgPrimary,
         readerMode: false,
         animated: true,
         modalPresentationStyle: 'fullScreen',
@@ -78,8 +78,8 @@ describe('openWebBrowser', () => {
       android: {
         theme: darkTheme,
         showTitle: true,
-        toolbarColor: darkTheme.color.background,
-        secondaryToolbarColor: darkTheme.color.lineHeavy,
+        toolbarColor: darkTheme.color.bg,
+        secondaryToolbarColor: darkTheme.color.bgLineHeavy,
         enableUrlBarHiding: true,
         enableDefaultShare: true,
         forceCloseOnRedirection: false,
@@ -89,8 +89,8 @@ describe('openWebBrowser', () => {
       ios: {
         theme: darkTheme,
         dismissButtonStyle: 'close',
-        preferredBarTintColor: darkTheme.color.background,
-        preferredControlTintColor: darkTheme.color.backgroundPrimary,
+        preferredBarTintColor: darkTheme.color.bg,
+        preferredControlTintColor: darkTheme.color.bgPrimary,
         readerMode: true,
         animated: true,
         modalPresentationStyle: 'fullScreen',
@@ -149,8 +149,8 @@ describe('openWebBrowser', () => {
     });
     expect(selectPlatform).toHaveBeenCalledWith({
       android: {
-        toolbarColor: darkTheme.color.background,
-        secondaryToolbarColor: darkTheme.color.lineHeavy,
+        toolbarColor: darkTheme.color.bg,
+        secondaryToolbarColor: darkTheme.color.bgLineHeavy,
         // cds custom properties
         theme: darkTheme,
         preventRedirectionIntoApp: true,
@@ -183,8 +183,8 @@ describe('openWebBrowser', () => {
         },
       },
       ios: {
-        preferredBarTintColor: darkTheme.color.background,
-        preferredControlTintColor: darkTheme.color.backgroundPrimary,
+        preferredBarTintColor: darkTheme.color.bg,
+        preferredControlTintColor: darkTheme.color.bgPrimary,
         // cds custom properties
         theme: darkTheme,
         preventRedirectionIntoApp: true,

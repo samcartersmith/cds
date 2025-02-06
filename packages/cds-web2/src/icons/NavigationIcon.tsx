@@ -23,7 +23,7 @@ export const NavigationIcon = memo(
         accessibilityLabel,
         active = false,
         fallback = null,
-        color = active ? 'iconPrimary' : 'iconForeground',
+        color = active ? 'fgPrimary' : 'fg',
         name,
         size = 'm',
         testID,

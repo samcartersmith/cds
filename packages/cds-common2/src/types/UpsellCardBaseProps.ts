@@ -17,7 +17,7 @@ export type UpsellCardBaseProps = {
   media?: React.ReactNode;
   /**
    * Background color for the card.
-   * @default 'backgroundPrimaryWash'
+   * @default 'bgPrimaryWash'
    */
   background?: ThemeVars.Color;
   /**

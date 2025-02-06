@@ -86,7 +86,7 @@ export function useExampleNavigatorProps({ setColorScheme }: UseExampleNavigator
       );
 
       return (
-        <Box animated background="background" onLayout={onLayout} style={style}>
+        <Box animated background="bg" onLayout={onLayout} style={style}>
           <HStack alignItems="center" justifyContent="center" paddingX={2} paddingY={1}>
             {leftHeaderButton}
             <Spacer />
@@ -126,7 +126,7 @@ export function useExampleNavigatorProps({ setColorScheme }: UseExampleNavigator
       headerTitleAllowFontScaling: false,
       headerMode: 'float',
       headerStyle: {
-        backgroundColor: theme.color.background,
+        backgroundColor: theme.color.bg,
         borderWidth: 0,
         shadowColor: 'transparent',
         height: headerSize.height,
@@ -139,5 +139,5 @@ export function useExampleNavigatorProps({ setColorScheme }: UseExampleNavigator
       initialRouteName,
       screenOptions,
     };
-  }, [header, headerSize.height, theme.color.background]);
+  }, [header, headerSize.height, theme.color.bg]);
 }

@@ -20,7 +20,7 @@ describe('TabIndicator', () => {
     const TEST_ID = 'tabIndicator';
     render(
       <DefaultThemeProvider>
-        <TabIndicator background="backgroundSecondary" testID={TEST_ID} width={1000} x={50} />
+        <TabIndicator background="bgSecondary" testID={TEST_ID} width={1000} x={50} />
       </DefaultThemeProvider>,
     );
     await waitFor(() =>
@@ -37,11 +37,11 @@ describe('TabIndicator', () => {
   it('renders background', () => {
     render(
       <DefaultThemeProvider>
-        <TabIndicator background="backgroundSecondary" width={100} x={0} />
+        <TabIndicator background="bgSecondary" width={100} x={0} />
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('cds-tab-indicator-inner-bar')).toHaveStyle({
-      backgroundColor: defaultTheme.light.backgroundSecondary,
+      backgroundColor: defaultTheme.light.bgSecondary,
     });
   });
 

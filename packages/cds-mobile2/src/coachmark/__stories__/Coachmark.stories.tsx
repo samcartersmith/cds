@@ -44,7 +44,7 @@ const CoachmarkExamples = () => {
         closeButtonAccessibilityLabel="Close"
         content={
           <VStack gap={2}>
-            <TextCaption color="textForegroundMuted">50%</TextCaption>
+            <TextCaption color="fgMuted">50%</TextCaption>
             <ProgressBar progress={0.5} />
             <TextBody>
               Add up to 3 lines of body copy. Deliver your message with clarity and impact

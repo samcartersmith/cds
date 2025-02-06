@@ -48,7 +48,7 @@ const pressableStyles = css`
       position: absolute;
       inset: 0;
       border-radius: var(--borderRadius-100);
-      border: 2px solid var(--color-linePrimary);
+      border: 2px solid var(--color-bgLinePrimary);
     }
 
     &:first-child {
@@ -148,7 +148,7 @@ export const SelectOption = memo(
         ref={selectOptionRef}
         noScaleOnPress
         accessibilityLabel={accessibilityLabel}
-        background="background"
+        background="bg"
         className={cx(selectOptionStaticClassName, pressableStyles)}
         disabled={disabled}
         onPress={handlePress}
@@ -180,7 +180,7 @@ export const SelectOption = memo(
               <Text
                 as="div"
                 className={multiline ? multilineTextStyles : undefined}
-                color="textForegroundMuted"
+                color="fgMuted"
                 font="body"
                 overflow={multiline ? undefined : 'truncate'}
               >

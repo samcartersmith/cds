@@ -28,7 +28,7 @@ const PageHeaderInPage = () => {
       <ExampleScreen>
         <VStack gap={0} width="100%">
           <PageHeader
-            background="background"
+            background="bg"
             end={<IconButton name="close" testID="header-back-button" />}
             position="sticky"
             start={exampleProps.start}

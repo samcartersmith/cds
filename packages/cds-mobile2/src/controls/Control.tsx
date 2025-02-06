@@ -106,8 +106,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   const controlIconProps = {
     checked,
     indeterminate,
-    backgroundColor:
-      checked || indeterminate ? ('backgroundPrimary' as const) : ('background' as const),
+    backgroundColor: checked || indeterminate ? ('bgPrimary' as const) : ('bg' as const),
     disabled: pressDisabled,
     animatedScaleValue,
     animatedOpacityValue,
@@ -161,11 +160,11 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
             <Spacer horizontal={1} />
             <TextBody
               animated
-              color={checked || indeterminate ? 'textForeground' : 'textForegroundMuted'}
+              color={checked || indeterminate ? 'fg' : 'fgMuted'}
               style={{
                 color: animatedBoxValue.interpolate({
                   inputRange: [0, 1],
-                  outputRange: [theme.color.textForegroundMuted, theme.color.textForeground],
+                  outputRange: [theme.color.fgMuted, theme.color.fg],
                 }),
                 // Simplify to use opacity for default palette foreground color (i.e. gray100) hue step
                 opacity: pressed ? opacityPressed[100] : 1,

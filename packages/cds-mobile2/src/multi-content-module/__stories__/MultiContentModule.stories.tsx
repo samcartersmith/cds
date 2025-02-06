@@ -141,7 +141,7 @@ const socialMediaItems: SocialMediaItem[] = [
   },
   {
     name: 'Wallet',
-    icon: <Icon color="iconForeground" name="wallet" size="m" />,
+    icon: <Icon color="fg" name="wallet" size="m" />,
   },
 ];
 
@@ -210,7 +210,7 @@ export const WithButtonGroup = () => {
             <ModalHeader closeAccessibilityLabel="Close" />
             <ModalBody contentContainerStyle={{ flexGrow: 1 }}>
               <MultiContentModule action={action(closeModal)} {...exampleProps}>
-                <Box bordered borderColor="backgroundPrimary" borderRadius={300}>
+                <Box bordered borderColor="bgPrimary" borderRadius={300}>
                   <ListCell
                     description="Satoshi Nakamoto"
                     media={<Avatar alt="Sneezy" colorScheme="blue" name="Sneezy" />}
@@ -231,8 +231,8 @@ export const WithEnd = () => {
     <VStack gap={1} paddingX={3}>
       <VStack>
         <HStack justifyContent="center" zIndex={2}>
-          <Box background="background" paddingX={1.5}>
-            <TextBody color="textForegroundMuted">OR</TextBody>
+          <Box background="bg" paddingX={1.5}>
+            <TextBody color="fgMuted">OR</TextBody>
           </Box>
         </HStack>
         <Divider marginTop={-1.5} paddingBottom={1.5} />
@@ -243,7 +243,7 @@ export const WithEnd = () => {
             <Pressable
               accessibilityLabel={name}
               accessibilityRole="button"
-              background="backgroundSecondary"
+              background="bgSecondary"
               borderColor="transparent"
               borderRadius={1000}
               borderWidth={100}
@@ -251,7 +251,7 @@ export const WithEnd = () => {
             >
               <Box padding={2}>{icon}</Box>
             </Pressable>
-            <TextLabel2 color="textForegroundMuted" paddingTop={1}>
+            <TextLabel2 color="fgMuted" paddingTop={1}>
               {name}
             </TextLabel2>
           </VStack>

@@ -26,7 +26,7 @@ const insetFocusRingStyle = css`
   &:focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     outline-offset: 0;
   }
 `;
@@ -118,7 +118,7 @@ export const Cell = memo(
     let content = (
       <HStack
         alignItems={alignItems}
-        background={selected ? 'backgroundAlternate' : undefined}
+        background={selected ? 'bgAlternate' : undefined}
         borderRadius={borderRadius}
         flexGrow={1}
         gap={gap}
@@ -184,7 +184,7 @@ export const Cell = memo(
           accessibilityHint={accessibilityHint}
           accessibilityLabel={accessibilityLabel}
           accessibilityLabelledBy={accessibilityLabelledBy}
-          background="background"
+          background="bg"
           borderRadius={borderRadius}
           className={cx(pressClassName, offsetClassName, insetFocusRingStyle)}
           disabled={disabled}

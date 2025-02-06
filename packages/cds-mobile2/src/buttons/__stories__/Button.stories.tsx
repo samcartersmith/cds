@@ -18,7 +18,7 @@ const ButtonScreen = () => {
         <Button compact endIcon="caretDown" variant="secondary">
           <HStack alignItems="center" justifyContent="center" paddingTop={0}>
             <RemoteImage height={16} resizeMode="cover" shape="circle" width={16} />
-            <TextLabel2 color="textForegroundMuted" paddingLeft={1} testID="DexInputNetwork">
+            <TextLabel2 color="fgMuted" paddingLeft={1} testID="DexInputNetwork">
               Ethereum
             </TextLabel2>
           </HStack>
@@ -41,14 +41,14 @@ const ButtonScreen = () => {
       <Example title="Custom endIcon on Button">
         <VStack gap={2}>
           <ButtonGroup accessibilityLabel="Group">
-            <Button end={<Icon color="iconForeground" name="caretRight" size="s" />}>
+            <Button end={<Icon color="fg" name="caretRight" size="s" />}>
               <TextLabel1>Test</TextLabel1>
             </Button>
-            <Button end={<Icon color="iconForeground" name="add" size="s" />} variant="secondary">
+            <Button end={<Icon color="fg" name="add" size="s" />} variant="secondary">
               <TextLabel1>Test</TextLabel1>
             </Button>
             <Button
-              end={<Icon color="iconForeground" name="airdrop" size="s" />}
+              end={<Icon color="fg" name="airdrop" size="s" />}
               endIcon="airdrop"
               variant="secondary"
             >

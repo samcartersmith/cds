@@ -31,7 +31,7 @@ export const Example = ({ children, inline, title, titlePadding, ...props }: Exa
 
   const content = (
     <>
-      <Box background="background" padding={2} paddingBottom={3} {...props}>
+      <Box background="bg" padding={2} paddingBottom={3} {...props}>
         {!!title && <TextTitle3 {...titlePadding}>{title}</TextTitle3>}
 
         {typeof children === 'function'
@@ -58,7 +58,7 @@ const Screen: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
       keyboardShouldPersistTaps="always"
       persistentScrollbar={false}
       showsVerticalScrollIndicator={false}
-      style={{ backgroundColor: theme.color.background, height: '100%' }}
+      style={{ backgroundColor: theme.color.bg, height: '100%' }}
       testID="mobile-playground-scrollview"
     >
       {children}
@@ -74,7 +74,7 @@ export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ chil
     <VStack testID="mobile-playground-screen">
       <Screen>
         <VStack>
-          <VStack background="background" gap={1} paddingX={gutter} paddingY={3}>
+          <VStack background="bg" gap={1} paddingX={gutter} paddingY={3}>
             <Switch checked={theme.colorScheme === 'dark'} onChange={noop}>
               Dark Spectrum
             </Switch>

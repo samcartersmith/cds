@@ -33,7 +33,7 @@ const PageFooterScreen = () => {
   return (
     <View>
       <ExampleScreen>
-        <PageFooter action={exampleProps.endButton} background="backgroundPrimaryWash" />
+        <PageFooter action={exampleProps.endButton} background="bgPrimaryWash" />
         <Divider />
         <PageFooter action={exampleProps.endButtons} />
         <Divider />

@@ -18,9 +18,9 @@ export const baseStyle = css`
   border-radius: 50%;
   width: 10em;
   height: 10em;
-  border-top-color: var(--color-backgroundAlternate);
-  border-right-color: var(--color-backgroundAlternate);
-  border-left-color: var(--color-backgroundAlternate);
+  border-top-color: var(--color-bgAlternate);
+  border-right-color: var(--color-bgAlternate);
+  border-left-color: var(--color-bgAlternate);
   animation: spin 1000ms linear infinite;
   @keyframes spin {
     0% {

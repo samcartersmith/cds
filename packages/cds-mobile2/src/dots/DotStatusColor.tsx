@@ -10,11 +10,11 @@ import { getTransform } from './dotStyles';
 import { useDotsLayout } from './useDotsLayout';
 
 const variantColorMap: Record<DotVariant, ThemeVars.Color> = {
-  primary: 'backgroundPrimary',
-  foregroundMuted: 'iconForegroundMuted',
-  positive: 'backgroundPositive',
-  warning: 'backgroundWarning',
-  negative: 'backgroundNegative',
+  primary: 'bgPrimary',
+  foregroundMuted: 'fgMuted',
+  positive: 'bgPositive',
+  warning: 'bgWarning',
+  negative: 'bgNegative',
 };
 
 export const DotStatusColor = memo(
@@ -45,7 +45,7 @@ export const DotStatusColor = memo(
         backgroundColor: theme.color[variantColorMap[variant]],
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: theme.color.backgroundSecondary,
+        borderColor: theme.color.bgSecondary,
         borderWidth: 1,
         ...pinStyles,
       };

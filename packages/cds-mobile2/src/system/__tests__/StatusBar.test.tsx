@@ -25,7 +25,7 @@ const MockCustomPalette: React.FC<React.PropsWithChildren<unknown>> = ({ childre
     activeColorScheme="light"
     theme={{
       ...defaultTheme,
-      light: { ...defaultTheme.light, background: `rgb(${defaultTheme.lightSpectrum.orange60})` },
+      light: { ...defaultTheme.light, bg: `rgb(${defaultTheme.lightSpectrum.orange60})` },
     }}
   >
     {children}

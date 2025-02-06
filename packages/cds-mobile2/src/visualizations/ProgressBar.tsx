@@ -16,7 +16,7 @@ export const ProgressBar = memo(
       {
         weight = 'normal',
         progress,
-        color = 'backgroundPrimary',
+        color = 'bgPrimary',
         disabled = false,
         disableAnimateOnMount = false,
         testID,
@@ -81,7 +81,7 @@ export const ProgressBar = memo(
             <Box
               alignItems={I18nManager.isRTL ? 'flex-end' : 'flex-start'}
               borderRadius={200}
-              dangerouslySetBackground={theme.color.line}
+              dangerouslySetBackground={theme.color.bgLine}
               flexGrow={1}
               flexShrink={1}
               height={height}
@@ -94,7 +94,7 @@ export const ProgressBar = memo(
                 animated
                 alignItems="flex-start"
                 borderRadius={200}
-                dangerouslySetBackground={!disabled ? theme.color[color] : theme.color.lineHeavy}
+                dangerouslySetBackground={!disabled ? theme.color[color] : theme.color.bgLineHeavy}
                 flexGrow={0}
                 flexShrink={0}
                 height={height}

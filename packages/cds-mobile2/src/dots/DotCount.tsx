@@ -48,7 +48,7 @@ const [opacityEnter, opacityExit, scaleEnter, scaleExit] = convertMotionConfigs(
 const dotTextPaddingHorizontal = 6;
 
 const variantColorMap: Record<DotCountVariants, ThemeVars.Color> = {
-  negative: 'backgroundNegative',
+  negative: 'bgNegative',
 };
 
 export const DotCount = memo(
@@ -85,7 +85,7 @@ export const DotCount = memo(
         dotOuterContainerStyles,
         {
           backgroundColor: theme.color[variantColorMap[variant]],
-          borderColor: theme.color.backgroundSecondary,
+          borderColor: theme.color.bgSecondary,
         },
       ];
     }, [theme.color, variant]);
@@ -142,7 +142,7 @@ export const DotCount = memo(
           <View style={pinStyles}>
             <Animated.View style={dotCountInnerContainerStyle} testID="dotcount-inner-container">
               <TextCaption
-                color="textForegroundInverse"
+                color="fgInverse"
                 style={{ paddingHorizontal: dotTextPaddingHorizontal }}
               >
                 {parseDotCountMaxOverflow(countInternal, max)}

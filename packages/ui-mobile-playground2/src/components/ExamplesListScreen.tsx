@@ -52,7 +52,7 @@ export function ExamplesListScreen() {
     });
 
   return (
-    <Box background="background" flexGrow={1} testID="mobile-playground-home-screen">
+    <Box background="bg" flexGrow={1} testID="mobile-playground-home-screen">
       <FlatList
         ItemSeparatorComponent={null}
         data={data}

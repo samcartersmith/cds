@@ -66,7 +66,7 @@ const baseStyle = css`
   min-height: 56px;
   width: 56px;
   border-radius: 56px;
-  color: var(--color-textForeground);
+  color: var(--color-fg);
   border-color: transparent;
   display: inline-flex;
   text-align: center;
@@ -100,57 +100,57 @@ const variantStyles: {
   [key in NonNullable<IconButtonBaseProps['variant']>]: LinariaClassName;
 } = {
   primary: css`
-    background-color: var(--color-backgroundPrimary);
-    color: var(--color-textForegroundInverse);
+    background-color: var(--color-bgPrimary);
+    color: var(--color-fgInverse);
     &:hover {
-      background-color: var(--color-backgroundPrimaryHover);
+      background-color: var(--color-bgPrimaryHover);
       opacity: 0.92;
     }
 
     &:active {
-      background-color: var(--color-backgroundPrimaryPressed);
+      background-color: var(--color-bgPrimaryPressed);
       opacity: 0.86;
     }
 
     &:disabled {
-      background-color: var(--color-backgroundPrimaryDisabled);
+      background-color: var(--color-bgPrimaryDisabled);
       opacity: 0.5;
     }
   `,
   secondary: css`
-    background-color: var(--color-backgroundSecondary);
+    background-color: var(--color-bgSecondary);
 
     &:hover {
-      background-color: var(--color-backgroundSecondaryHover);
+      background-color: var(--color-bgSecondaryHover);
       opacity: 0.92;
     }
 
     &:active {
-      background-color: var(--color-backgroundSecondaryPressed);
+      background-color: var(--color-bgSecondaryPressed);
       opacity: 0.86;
     }
 
     &:disabled {
-      background-color: var(--color-backgroundSecondaryDisabled);
+      background-color: var(--color-bgSecondaryDisabled);
       opacity: 0.5;
     }
   `,
   foregroundMuted: css`
-    background-color: var(--color-backgroundSecondary);
-    color: var(--color-textForegroundMuted);
+    background-color: var(--color-bgSecondary);
+    color: var(--color-fgMuted);
 
     &:hover {
-      background-color: var(--color-backgroundSecondaryHover);
+      background-color: var(--color-bgSecondaryHover);
       opacity: 0.92;
     }
 
     &:active {
-      background-color: var(--color-backgroundSecondaryPressed);
+      background-color: var(--color-bgSecondaryPressed);
       opacity: 0.86;
     }
 
     &:disabled {
-      background-color: var(--color-backgroundSecondaryDisabled);
+      background-color: var(--color-bgSecondaryDisabled);
       opacity: 0.5;
     }
   `,
@@ -176,13 +176,13 @@ const transparentVariantStyle: {
   [key in NonNullable<IconButtonBaseProps['variant']>]: LinariaClassName;
 } = {
   primary: css`
-    color: var(--color-textPrimary);
+    color: var(--color-fgPrimary);
   `,
   secondary: css`
-    color: var(--color-textForeground);
+    color: var(--color-fg);
   `,
   foregroundMuted: css`
-    color: var(--color-textForegroundMuted);
+    color: var(--color-fgMuted);
   `,
 };
 
@@ -196,13 +196,13 @@ const loadingVariantStyle: {
   [key in NonNullable<IconButtonBaseProps['variant']>]: LinariaClassName;
 } = {
   primary: css`
-    background-color: var(--color-backgroundPrimaryPressed);
+    background-color: var(--color-bgPrimaryPressed);
   `,
   secondary: css`
-    background-color: var(--color-backgroundSecondaryPressed);
+    background-color: var(--color-bgSecondaryPressed);
   `,
   foregroundMuted: css`
-    background-color: var(--color-backgroundSecondaryPressed);
+    background-color: var(--color-bgSecondaryPressed);
   `,
 };
 
@@ -214,7 +214,7 @@ const focusRingStyle = css`
   &:focus-visible {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
     outline-offset: 2px;
   }
 `;

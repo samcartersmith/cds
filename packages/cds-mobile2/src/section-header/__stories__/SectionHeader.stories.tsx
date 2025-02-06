@@ -17,13 +17,13 @@ import { SectionHeader } from '../SectionHeader';
 const defaultProps: SectionHeaderProps = {
   title: 'SectionHeader',
   start: <RemoteImage shape="circle" size="m" source={assets.btc.imageUrl} />,
-  icon: <Icon color="iconForeground" name="info" size="xs" />,
+  icon: <Icon color="fg" name="info" size="xs" />,
   balance: (
     <HStack alignItems="flex-end" flexWrap="wrap" gap={0.5}>
-      <TextTitle3 color="textForegroundMuted" numberOfLines={1}>
+      <TextTitle3 color="fgMuted" numberOfLines={1}>
         $3,9081.01
       </TextTitle3>
-      <TextBody color="textPositive">↗ 6.37%</TextBody>
+      <TextBody color="fgPositive">↗ 6.37%</TextBody>
     </HStack>
   ),
   description: 'Add up to 2 lines of text.',

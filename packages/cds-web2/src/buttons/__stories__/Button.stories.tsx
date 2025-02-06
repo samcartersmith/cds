@@ -18,15 +18,11 @@ export default {
 export const CustomEndIconButton = () => (
   <VStack gap={2}>
     <ButtonGroup accessibilityLabel="Group">
-      <Button end={<Icon color="iconForeground" name="caretRight" size="s" />}>Test</Button>
-      <Button end={<Icon color="iconForeground" name="add" size="s" />} variant="secondary">
+      <Button end={<Icon color="fg" name="caretRight" size="s" />}>Test</Button>
+      <Button end={<Icon color="fg" name="add" size="s" />} variant="secondary">
         Test
       </Button>
-      <Button
-        end={<Icon color="iconForeground" name="add" size="s" />}
-        endIcon="airdrop"
-        variant="secondary"
-      >
+      <Button end={<Icon color="fg" name="add" size="s" />} endIcon="airdrop" variant="secondary">
         Test
       </Button>
     </ButtonGroup>

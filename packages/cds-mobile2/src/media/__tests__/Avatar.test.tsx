@@ -29,7 +29,7 @@ describe('Avatar', () => {
       <DefaultThemeProvider>
         <Avatar
           alt=""
-          borderColor="backgroundPositive"
+          borderColor="bgPositive"
           src="https://images.coinbase.com/avatar?s=56"
           testID="avatar"
         />
@@ -42,7 +42,7 @@ describe('Avatar', () => {
 
     expect(box).toHaveStyle({
       borderWidth: 2,
-      borderColor: defaultTheme.light.backgroundPositive,
+      borderColor: defaultTheme.light.bgPositive,
     });
   });
 

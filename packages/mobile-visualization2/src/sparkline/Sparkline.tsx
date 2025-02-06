@@ -23,7 +23,7 @@ export const Sparkline = memo(
     const theme = useTheme();
     const patternId = useRef<string>(generateRandomId());
     const stroke = getAccessibleColor({
-      background: background ?? theme.color.background,
+      background: background ?? theme.color.bg,
       foreground: color,
       usage: 'graphic',
     });

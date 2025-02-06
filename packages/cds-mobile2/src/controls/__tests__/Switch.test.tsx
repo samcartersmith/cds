@@ -141,7 +141,7 @@ describe('Switch.test', () => {
     );
 
     expect(screen.getByTestId('test-test-id')).toHaveStyle({
-      backgroundColor: defaultTheme.light.backgroundAlternate,
+      backgroundColor: defaultTheme.light.bgAlternate,
     });
   });
 
@@ -153,7 +153,7 @@ describe('Switch.test', () => {
     );
 
     expect(screen.getByTestId('test-test-id')).toHaveStyle({
-      backgroundColor: defaultTheme.light.backgroundPrimary,
+      backgroundColor: defaultTheme.light.bgPrimary,
     });
   });
 });

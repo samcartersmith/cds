@@ -11,7 +11,7 @@ export const DefaultTourMask = memo(
   ({ activeTourStepTarget, padding, borderRadius = 12 }: TourMaskComponentProps) => {
     const [rect, setRect] = useState<Rect>(defaultRect);
     const theme = useTheme();
-    const overlayFillRgba = theme.color.backgroundOverlay;
+    const overlayFillRgba = theme.color.bgOverlay;
     const defaultPadding = theme.space[2];
 
     // Convert string padding to number and fallback to default padding value

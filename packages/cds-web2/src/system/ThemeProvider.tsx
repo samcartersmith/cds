@@ -6,6 +6,8 @@ import { createCssString } from '../core/createCssString';
 import { createThemeCssVars } from '../core/createThemeCssVars';
 import type { Theme, ThemeConfig, ThemeCSSVars } from '../core/theme';
 
+import { type FramerMotionProviderProps, FramerMotionProvider } from './FramerMotionProvider';
+
 /* Augments csstype's Properties by adding all our theme CSS variable names. Effectively adds all theme CSS variable names as valid keys to React.CSSProperties. */
 declare module 'csstype' {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions, @typescript-eslint/no-empty-interface
@@ -51,17 +53,19 @@ const ThemeManager = ({ display, children, theme }: ThemeManagerProps) => {
 //   ThemeManagerProps &
 //   FramerMotionProviderProps;
 
-export type ThemeProviderProps = Pick<ThemeManagerProps, 'display'> & {
-  theme: ThemeConfig;
-  activeColorScheme: ColorScheme;
-  children?: React.ReactNode;
-};
+export type ThemeProviderProps = Pick<ThemeManagerProps, 'display'> &
+  Pick<FramerMotionProviderProps, 'motionFeatures'> & {
+    theme: ThemeConfig;
+    activeColorScheme: ColorScheme;
+    children?: React.ReactNode;
+  };
 
 export const ThemeProvider = ({
   theme,
   activeColorScheme,
   children,
   display,
+  motionFeatures,
 }: ThemeProviderProps) => {
   const themeApi = useMemo(() => {
     const activeSpectrumKey = activeColorScheme === 'dark' ? 'darkSpectrum' : 'lightSpectrum';
@@ -98,11 +102,13 @@ export const ThemeProvider = ({
   }, [theme, activeColorScheme]);
 
   return (
-    <ThemeContext.Provider value={themeApi}>
-      <ThemeManager display={display} theme={themeApi}>
-        {children}
-      </ThemeManager>
-    </ThemeContext.Provider>
+    <FramerMotionProvider motionFeatures={motionFeatures}>
+      <ThemeContext.Provider value={themeApi}>
+        <ThemeManager display={display} theme={themeApi}>
+          {children}
+        </ThemeManager>
+      </ThemeContext.Provider>
+    </FramerMotionProvider>
   );
 };
 

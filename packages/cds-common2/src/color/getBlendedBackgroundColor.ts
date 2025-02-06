@@ -31,9 +31,7 @@ export const getBlendedBackgroundColor = ({
     colorScheme === 'dark'
       ? backgroundLuminance >= lightColorThreshold // This filters out the light colors in the default darkSpectrum, e.g. gray70-gray100
       : backgroundLuminance < darkColorThreshold; // This filters out the dark colors in the defaut lightSpectrum, e.g. gray70-gray100
-  const underlayColor = isDisabled
-    ? themeColor.background
-    : themeColor[isHighHue ? 'background' : 'backgroundInverse'];
+  const underlayColor = isDisabled ? themeColor.bg : themeColor[isHighHue ? 'bg' : 'bgInverse'];
   const overlayColor = d3BackgroundColor.copy({ opacity });
 
   return blendColors({ underlayColor, overlayColor });

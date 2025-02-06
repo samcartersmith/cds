@@ -45,7 +45,7 @@ describe('DotStatusColor', () => {
     render(<MockDotStatusColorWithTheme testID={DOTSTATUSCOLOR_TESTID} variant="negative" />);
 
     expect(screen.getByTestId(DOTSTATUSCOLOR_INNER_CONTAINER_TESTID)).toHaveStyle({
-      backgroundColor: defaultTheme.light.textNegative,
+      backgroundColor: defaultTheme.light.fgNegative,
     });
   });
 
@@ -53,7 +53,7 @@ describe('DotStatusColor', () => {
     render(<MockDotStatusColorWithTheme testID={DOTSTATUSCOLOR_TESTID} variant="positive" />);
 
     expect(screen.getByTestId(DOTSTATUSCOLOR_INNER_CONTAINER_TESTID)).toHaveStyle({
-      backgroundColor: defaultTheme.light.textPositive,
+      backgroundColor: defaultTheme.light.fgPositive,
     });
   });
 

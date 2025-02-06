@@ -14,7 +14,7 @@ import { getTransform } from './dotStyles';
 // And spacing doesn't support such small pixel size
 // either
 const remoteImageStyle = css`
-  border-color: var(--color-backgroundSecondary);
+  border-color: var(--color-bgSecondary);
   border-width: 1px;
 `;
 
@@ -53,9 +53,9 @@ export const DotSymbol = memo(
     size = 's',
     testID,
     overlap,
-    color = 'textForegroundInverse',
-    background = 'textPrimary',
-    borderColor = 'backgroundSecondary',
+    color = 'fgInverse',
+    background = 'fgPrimary',
+    borderColor = 'bgSecondary',
     style,
     className,
     iconStyle,

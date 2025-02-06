@@ -22,35 +22,35 @@ const TextExamplesScreen = ({
         </Box>
 
         <Box>
-          <Text color="textForegroundMuted">Muted foreground</Text>
+          <Text color="fgMuted">Muted foreground</Text>
         </Box>
 
         <Box>
-          <Text color="textPrimary">Primary foreground</Text>
+          <Text color="fgPrimary">Primary foreground</Text>
         </Box>
 
-        <Box background="backgroundPrimary" padding={1}>
-          <Text color="textForegroundInverse">Foreground ON primary</Text>
+        <Box background="bgPrimary" padding={1}>
+          <Text color="fgInverse">Foreground ON primary</Text>
         </Box>
 
-        <Box background="backgroundSecondary" padding={1}>
-          <Text color="textForeground">Foreground ON secondary</Text>
-        </Box>
-
-        <Box>
-          <Text color="textPositive">Positive foreground</Text>
-        </Box>
-
-        <Box background="backgroundPositive" padding={1}>
-          <Text color="textForegroundInverse">Foreground ON positive</Text>
+        <Box background="bgSecondary" padding={1}>
+          <Text color="fg">Foreground ON secondary</Text>
         </Box>
 
         <Box>
-          <Text color="textNegative">Negative foreground</Text>
+          <Text color="fgPositive">Positive foreground</Text>
         </Box>
 
-        <Box background="backgroundNegative" padding={1}>
-          <Text color="textForegroundInverse">Foreground ON negative</Text>
+        <Box background="bgPositive" padding={1}>
+          <Text color="fgInverse">Foreground ON positive</Text>
+        </Box>
+
+        <Box>
+          <Text color="fgNegative">Negative foreground</Text>
+        </Box>
+
+        <Box background="bgNegative" padding={1}>
+          <Text color="fgInverse">Foreground ON negative</Text>
         </Box>
       </Example>
 

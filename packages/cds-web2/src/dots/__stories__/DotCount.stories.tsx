@@ -47,7 +47,7 @@ export const DotCountPressable = () => {
                 pin="top-end"
                 testID="notification-bell-badge"
               >
-                <Icon color="textForeground" name="bell" size="s" testID="notification-bell-icon" />
+                <Icon color="fg" name="bell" size="s" testID="notification-bell-icon" />
               </DotCount>
             </Box>
           </Pressable>

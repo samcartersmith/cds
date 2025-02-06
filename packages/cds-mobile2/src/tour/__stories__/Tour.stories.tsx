@@ -33,25 +33,25 @@ const TourExamples = ({
     <VStack flexGrow={1} gap={2} justifyContent="space-between">
       <NativeButton onPress={handleClick} title="Start tour" />
       <TourStep id="step1">
-        <VStack background="backgroundSecondary" padding={1}>
+        <VStack background="bgSecondary" padding={1}>
           <TextBody>Checkout the first step</TextBody>
         </VStack>
       </TourStep>
       <Box height={300} />
       <TourStep id="step2">
-        <Box ref={step2Ref} background="backgroundSecondary" padding={1} width={150}>
+        <Box ref={step2Ref} background="bgSecondary" padding={1} width={150}>
           <TextBody>Checkout the next step</TextBody>
         </Box>
       </TourStep>
       <Box height={1000} />
       <TourStep id="step3">
-        <VStack ref={step3Ref} background="backgroundSecondary" padding={1} width={150}>
+        <VStack ref={step3Ref} background="bgSecondary" padding={1} width={150}>
           <TextBody>Checkout the third step</TextBody>
         </VStack>
       </TourStep>
       <Box height={3000} />
       <TourStep id="step4">
-        <VStack ref={step4Ref} background="backgroundSecondary" padding={1} width={150}>
+        <VStack ref={step4Ref} background="bgSecondary" padding={1} width={150}>
           <TextBody>Checkout the last step</TextBody>
         </VStack>
       </TourStep>
@@ -129,7 +129,7 @@ const TourStory = () => {
               closeButtonAccessibilityLabel="Close"
               content={
                 <VStack gap={2}>
-                  <TextCaption color="textForegroundMuted">50%</TextCaption>
+                  <TextCaption color="fgMuted">50%</TextCaption>
                   <ProgressBar progress={0.5} />
                   <TextBody>
                     Add up to 3 lines of body copy. Deliver your message with clarity and impact

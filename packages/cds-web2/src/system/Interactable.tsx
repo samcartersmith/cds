@@ -20,6 +20,7 @@ import { elevation as elevationStyle } from '../styles/styles';
 
 import {
   interactableBackground,
+  interactableBorderRadius,
   interactableDisabledBackground,
   interactableHoveredBackground,
   interactableHoveredOpacity,
@@ -37,7 +38,7 @@ const focusRingStyle = css`
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 2px;
-    outline-color: var(--color-backgroundPrimary);
+    outline-color: var(--color-bgPrimary);
   }
 `;
 
@@ -60,6 +61,7 @@ const baseStyle = css`
   user-select: none;
   text-decoration: none;
   background-color: var(${interactableBackground});
+  border-radius: var(${interactableBorderRadius});
 
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
@@ -184,7 +186,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
       /**
        * Apply an interactive background style.
        * Use the corresponding state color if available;
-       * if not, blend the color with the background or backgroundInverse values
+       * if not, blend the color with the background or bgInverse values
        */
       // Hover:
       // TO DO: use 0.88 for opacity until we can get the hue value of the background color in the theme
@@ -221,7 +223,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
               colorScheme: theme.colorScheme,
               isDisabled: true,
             }),
-      borderRadius: `var(--borderRadius-${borderRadius})`,
+      [interactableBorderRadius]: `var(--borderRadius-${borderRadius})`,
       width,
       height,
       ...customStyle,

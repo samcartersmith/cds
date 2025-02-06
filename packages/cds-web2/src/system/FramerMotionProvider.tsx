@@ -1,14 +1,16 @@
 import React from 'react';
 import { type LazyProps, domAnimation, LazyMotion } from 'framer-motion';
 
-export type FramerMotionProviderProps = LazyProps;
+export type FramerMotionProviderProps = Omit<LazyProps, 'features'> & {
+  motionFeatures?: LazyProps['features'];
+};
 
 export const FramerMotionProvider = ({
   children,
-  features = domAnimation,
+  motionFeatures = domAnimation,
 }: FramerMotionProviderProps) => {
   return (
-    <LazyMotion strict features={features}>
+    <LazyMotion strict features={motionFeatures}>
       {children}
     </LazyMotion>
   );

@@ -40,14 +40,9 @@ const TabScreen = () => {
     <ExampleScreen>
       <Example overflow="visible" padding={gutter} title="Tab System">
         <TabNavigation onChange={setActiveTabOne} tabs={tabs} value={activeTabOne} />
-        <VStack
-          alignItems="center"
-          background="backgroundAlternate"
-          justifyContent="center"
-          paddingY={6}
-        >
+        <VStack alignItems="center" background="bgAlternate" justifyContent="center" paddingY={6}>
           <TextLabel1>Static preview</TextLabel1>
-          <TextTitle2 color="textPrimary">{activeTabOne}</TextTitle2>
+          <TextTitle2 color="fgPrimary">{activeTabOne}</TextTitle2>
         </VStack>
       </Example>
       <Example overflow="visible" padding={gutter} title="Tab System (Secondary)">
@@ -57,14 +52,9 @@ const TabScreen = () => {
           value={activeTabOne}
           variant="secondary"
         />
-        <VStack
-          alignItems="center"
-          background="backgroundAlternate"
-          justifyContent="center"
-          paddingY={6}
-        >
+        <VStack alignItems="center" background="bgAlternate" justifyContent="center" paddingY={6}>
           <TextLabel1>Static preview</TextLabel1>
-          <TextTitle2 color="textPrimary">{activeTabOne}</TextTitle2>
+          <TextTitle2 color="fgPrimary">{activeTabOne}</TextTitle2>
         </VStack>
       </Example>
     </ExampleScreen>

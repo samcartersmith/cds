@@ -55,7 +55,7 @@ const SwitchIcon = ({
 
   return (
     <Interactable
-      background={checked ? 'backgroundPrimary' : 'backgroundAlternate'}
+      background={checked ? 'bgPrimary' : 'bgAlternate'}
       borderRadius={400}
       disabled={disabled}
       pressed={pressed}
@@ -63,8 +63,8 @@ const SwitchIcon = ({
       testID={testID}
     >
       <Interactable
-        background={theme.colorScheme === 'dark' ? 'backgroundInverse' : 'background'}
-        borderColor="line"
+        background={theme.colorScheme === 'dark' ? 'bgInverse' : 'bg'}
+        borderColor="bgLine"
         borderRadius={1000}
         borderWidth={100}
         disabled={disabled}

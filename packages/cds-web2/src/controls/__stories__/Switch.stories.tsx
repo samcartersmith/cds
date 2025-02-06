@@ -18,7 +18,7 @@ const DarkModeWrapper = ({ children }: { children: React.ReactNode }) => {
           padding: 20px;
           /* All stories have the light story container. This offsets the light story container's padding. */
           margin: -20px;
-          background-color: var(--color-background);
+          background-color: var(--color-bg);
         `}
       >
         {children}
@@ -100,7 +100,7 @@ const customTheme: ThemeConfig = {
   ...defaultTheme,
   light: {
     ...defaultTheme.light,
-    backgroundPrimary: 'rgb(var(--pink50))',
+    bgPrimary: 'rgb(var(--pink50))',
   },
 };
 

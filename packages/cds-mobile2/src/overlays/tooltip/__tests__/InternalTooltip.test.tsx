@@ -50,7 +50,7 @@ describe('InternalTooltip.test', () => {
 
     expect(screen.getByText('test content')).toBeTruthy();
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
-      backgroundColor: defaultTheme.light.background,
+      backgroundColor: defaultTheme.light.bg,
     });
     expect(mockAnimateIn.start).toHaveBeenCalledTimes(1);
   });
@@ -91,7 +91,7 @@ describe('InternalTooltip.test', () => {
     );
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
-      backgroundColor: defaultTheme.light.background,
+      backgroundColor: defaultTheme.light.bg,
     });
   });
 });

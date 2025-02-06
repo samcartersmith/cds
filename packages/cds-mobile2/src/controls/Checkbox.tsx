@@ -23,16 +23,16 @@ const CheckboxIcon = memo(
     const theme = useTheme();
     const { checkboxSize } = theme.controlSize;
     const backgroundColor = useMemo(() => {
-      return checked || indeterminate ? 'backgroundPrimary' : 'background';
+      return checked || indeterminate ? 'bgPrimary' : 'bg';
     }, [checked, indeterminate]);
 
     const borderColor = useMemo(() => {
       // Checked/Indeterminate + Disabled buttons need a transparent border
       if (disabled) {
-        return checked || indeterminate ? 'transparent' : 'lineHeavy';
+        return checked || indeterminate ? 'transparent' : 'bgLineHeavy';
       }
 
-      return checked || indeterminate ? 'backgroundPrimary' : 'lineHeavy';
+      return checked || indeterminate ? 'bgPrimary' : 'bgLineHeavy';
     }, [checked, indeterminate, disabled]);
 
     return (
@@ -54,7 +54,7 @@ const CheckboxIcon = memo(
         <Animated.View
           style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
         >
-          <Icon color="iconForegroundInverse" name={checked ? 'checkmark' : 'minus'} size="s" />
+          <Icon color="fgInverse" name={checked ? 'checkmark' : 'minus'} size="s" />
         </Animated.View>
       </Interactable>
     );

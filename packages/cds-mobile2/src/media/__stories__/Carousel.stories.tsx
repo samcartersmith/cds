@@ -22,12 +22,7 @@ const ExampleCarouselItem = memo(({ svgId = 1 }: { svgId?: number }) => {
   return (
     <Card onPress={() => dismiss()} padding={2}>
       <TextLabel1 ellipsize="tail">Label</TextLabel1>
-      <TextHeadline
-        color="textForegroundMuted"
-        ellipsize="tail"
-        numberOfLines={2}
-        paddingBottom={0.5}
-      >
+      <TextHeadline color="fgMuted" ellipsize="tail" numberOfLines={2} paddingBottom={0.5}>
         Title
       </TextHeadline>
       <RemoteImage

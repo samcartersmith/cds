@@ -48,7 +48,7 @@ export const Cell = memo(function Cell({
   let content = (
     <HStack
       alignItems={alignItems}
-      background={selected ? 'backgroundAlternate' : undefined}
+      background={selected ? 'bgAlternate' : undefined}
       borderRadius={borderRadius}
       flexGrow={1}
       gap={2}
@@ -110,7 +110,7 @@ export const Cell = memo(function Cell({
         transparentWhileInactive
         accessibilityHint={accessibilityHint}
         accessibilityLabel={accessibilityLabel}
-        background="background"
+        background="bg"
         borderRadius={borderRadius}
         contentStyle={pressStyles}
         disabled={disabled}

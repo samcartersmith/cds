@@ -119,7 +119,7 @@ export const Text = memo(
         alignSelf,
         flexDirection,
         flexWrap,
-        color = 'textForeground',
+        color = 'fg',
         background,
         borderColor,
         borderTopLeftRadius,

@@ -12,41 +12,41 @@ const borderStyle = {
   bordered: css`
     border-width: var(--borderWidth-100);
     border-style: solid;
-    border-color: var(--color-line);
+    border-color: var(--color-bgLine);
   `,
   borderedHorizontal: css`
     border-left-width: var(--borderWidth-100);
     border-left-style: solid;
     border-right-width: var(--borderWidth-100);
     border-right-style: solid;
-    border-color: var(--color-line);
+    border-color: var(--color-bgLine);
   `,
   borderedVertical: css`
     border-top-width: var(--borderWidth-100);
     border-top-style: solid;
     border-bottom-width: var(--borderWidth-100);
     border-bottom-style: solid;
-    border-color: var(--color-line);
+    border-color: var(--color-bgLine);
   `,
   borderedStart: css`
     border-left-width: var(--borderWidth-100);
     border-left-style: solid;
-    border-color: var(--color-line);
+    border-color: var(--color-bgLine);
   `,
   borderedEnd: css`
     border-right-width: var(--borderWidth-100);
     border-right-style: solid;
-    border-color: var(--color-line);
+    border-color: var(--color-bgLine);
   `,
   borderedTop: css`
     border-top-width: var(--borderWidth-100);
     border-top-style: solid;
-    border-color: var(--color-line);
+    border-color: var(--color-bgLine);
   `,
   borderedBottom: css`
     border-bottom-width: var(--borderWidth-100);
     border-bottom-style: solid;
-    border-color: var(--color-line);
+    border-color: var(--color-bgLine);
   `,
 };
 

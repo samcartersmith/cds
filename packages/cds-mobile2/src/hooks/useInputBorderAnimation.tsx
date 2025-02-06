@@ -25,12 +25,12 @@ const borderInConfig = convertMotionConfig(animateInputBorderInConfig);
 const borderOutConfig = convertMotionConfig(animateInputBorderOutConfig);
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
-  primary: 'backgroundPrimary',
-  positive: 'backgroundPositive',
-  negative: 'backgroundNegative',
-  foreground: 'textForeground',
-  foregroundMuted: 'textForegroundMuted',
-  secondary: 'backgroundSecondary',
+  primary: 'bgPrimary',
+  positive: 'bgPositive',
+  negative: 'bgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
 };
 
 export const useInputBorderAnimation = (

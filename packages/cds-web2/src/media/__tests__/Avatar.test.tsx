@@ -23,21 +23,12 @@ describe('Avatar', () => {
   });
 
   it('has a border color', () => {
-    render(
-      <Avatar
-        alt="TestName"
-        borderColor="backgroundPositive"
-        src={src}
-        testID="avatar-component"
-      />,
-    );
+    render(<Avatar alt="TestName" borderColor="bgPositive" src={src} testID="avatar-component" />);
     const box = screen.getByTestId('avatar-component');
 
     expect(box.className).toContain('avatarStyles');
     expect(box).toHaveAttribute('data-bordered', 'true');
-    expect(box.style.getPropertyValue('--avatar-borderColor')).toBe(
-      'var(--color-backgroundPositive)',
-    );
+    expect(box.style.getPropertyValue('--avatar-borderColor')).toBe('var(--color-bgPositive)');
     expect(box.className).toContain('circle');
   });
 

@@ -76,7 +76,7 @@ export type CellMediaSource = string | number;
 export type CellMediaIconProps = {
   type: Extract<CellMediaType, 'icon'>;
   name: IconName;
-  color?: Extract<ThemeVars.Color, 'iconPrimary' | 'iconForeground' | 'iconForegroundMuted'>;
+  color?: Extract<ThemeVars.Color, 'fgPrimary' | 'fg' | 'fgMuted'>;
 } & SharedProps;
 
 export type CellMediaPictogramProps<T> = {

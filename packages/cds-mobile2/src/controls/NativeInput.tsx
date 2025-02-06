@@ -59,9 +59,9 @@ export const NativeInput = memo(
           minHeight: theme.lineHeight.body,
           padding: 0,
           margin: 0,
-          color: theme.color.textForeground,
+          color: theme.color.fg,
         }),
-        [theme.fontSize, theme.fontFamily, theme.lineHeight, theme.color.textForeground],
+        [theme.fontSize, theme.fontFamily, theme.lineHeight, theme.color.fg],
       );
 
       const containerStyle: ViewStyle = useMemo(() => {
@@ -71,7 +71,7 @@ export const NativeInput = memo(
           ...containerSpacing,
           ...(!disabled &&
             editableInputAddonProps.readOnly && {
-              backgroundColor: theme.color.backgroundSecondary,
+              backgroundColor: theme.color.bgSecondary,
             }),
         };
       }, [
@@ -104,7 +104,7 @@ export const NativeInput = memo(
           accessibilityRole="search"
           editable={!disabled}
           keyboardAppearance={theme.colorScheme}
-          placeholderTextColor={theme.color.textForegroundMuted}
+          placeholderTextColor={theme.color.fgMuted}
           style={inputRootStyles}
           testID={testID}
           textAlign={textAlign !== 'unset' ? textAlign : undefined}

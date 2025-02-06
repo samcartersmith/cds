@@ -24,7 +24,7 @@ const KBarModal = memo(function KBarModal() {
       <KBarAnimator>
         <HStack alignItems="center" gap={2} paddingX={3} paddingY={2}>
           <HStack alignItems="center" flexGrow={1} gap={1.5}>
-            <Icon color="textForeground" name="magnifyingGlass" size="s" />
+            <Icon color="fg" name="magnifyingGlass" size="s" />
             <KBarSearch className={styles.searchInput} />
           </HStack>
           <IconButton transparent aria-label="close" name="close" onClick={handleRequestClose} />

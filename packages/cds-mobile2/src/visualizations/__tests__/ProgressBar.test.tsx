@@ -127,7 +127,7 @@ describe('ProgressBar test', () => {
     render(
       <DefaultThemeProvider>
         <Box width="200">
-          <ProgressBar color="backgroundPositive" progress={0.77} testID="mock-progress-bar" />
+          <ProgressBar color="bgPositive" progress={0.77} testID="mock-progress-bar" />
         </Box>
       </DefaultThemeProvider>,
     );
