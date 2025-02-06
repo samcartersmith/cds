@@ -214,7 +214,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/feedback/spinner',
+              id: 'components/feedback/Spinner/spinner',
               label: 'Spinner',
             },
           ],

@@ -1,0 +1,53 @@
+---
+id: spinner
+title: Spinner
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+import { Spinner } from '@cbhq/cds-web2/loaders/Spinner';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { SpinnerBanner } from '@site/src/components/page/ComponentBanner/SpinnerBanner';
+import { BoxBanner } from '@site/src/components/page/ComponentBanner/BoxBanner';
+
+import webPropsToc from ':docgen/cds-web2/loaders/Spinner/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/loaders/Spinner/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="Spinner"
+    description="A component that displays a spinning animation."
+    banner={<SpinnerBanner />}
+    webMetadata={{
+      import: "import { Spinner } from '@cbhq/cds-web/loaders/Spinner'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/loaders/Spinner.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-loaders-spinner--spinner-default',
+    }}
+    mobileMetadata={{
+      import: "import { Spinner } from '@cbhq/cds-mobile/loaders/Spinner'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/loaders/Spinner.tsx',
+    }}
+    banner={<SpinnerBanner />}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>
