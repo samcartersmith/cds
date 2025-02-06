@@ -1,11 +1,11 @@
 import React, { forwardRef, memo } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Box } from '@cbhq/cds-web2/layout';
 import { TabsActiveIndicatorProps } from '@cbhq/cds-web2/tabs/Tabs';
 
 import { useAnimateTabIndicator } from './useAnimateTabIndicator';
 
-const MotionBox = motion(Box);
+const MotionBox = m(Box);
 
 export const TabIndicator = memo(
   forwardRef(
