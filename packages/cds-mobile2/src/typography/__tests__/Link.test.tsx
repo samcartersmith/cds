@@ -1,8 +1,9 @@
 import TestRenderer from 'react-test-renderer';
 import { fireEvent, render, screen } from '@testing-library/react-native';
+import { LinkTypography } from '@cbhq/cds-common2/types/LinkBaseProps';
 
 import { DefaultThemeProvider } from '../../utils/testHelpers';
-import { Link } from '../Link';
+import { Link, TYPOGRAPHY_MAP } from '../Link';
 
 const TEST_ID = 'link';
 const URL = 'www.coinbase.com';
@@ -44,20 +45,10 @@ describe('Link', () => {
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
-  it('variant prop works properly and passes a11y', () => {
-    const variants = [
-      'body',
-      'caption',
-      'headline',
-      'label1',
-      'label2',
-      'title1',
-      'title2',
-      'title3',
-      'legal',
-    ] as const;
+  const variants = Object.keys(TYPOGRAPHY_MAP) as LinkTypography[];
 
-    variants.forEach((variant) => {
+  variants.forEach((variant) => {
+    it(`variant prop: "${variant}" works properly and passess a11y`, async () => {
       const linkRenderer = TestRenderer.create(
         <DefaultThemeProvider>
           <Link testID={TEST_ID} to="/" variant={variant}>
@@ -65,7 +56,8 @@ describe('Link', () => {
           </Link>
         </DefaultThemeProvider>,
       );
-      const linkInstance = linkRenderer.root;
+
+      const linkInstance = await linkRenderer.root.findByProps({ testID: TEST_ID });
       expect(linkInstance.props.variant).toEqual(variant);
       expect(linkInstance).toBeAccessible();
     });
@@ -86,7 +78,7 @@ describe('Link', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('to prop works as expected', () => {
+  it('to prop works as expected', async () => {
     const linkRenderer = TestRenderer.create(
       <DefaultThemeProvider>
         <Link testID={TEST_ID} to={URL}>
@@ -94,11 +86,11 @@ describe('Link', () => {
         </Link>
       </DefaultThemeProvider>,
     );
-    const linkInstance = linkRenderer.root;
+    const linkInstance = await linkRenderer.root.findByProps({ testID: TEST_ID });
     expect(linkInstance.props.to).toEqual(URL);
   });
 
-  it('can set forceOpenOutsideApp to true', () => {
+  it('can set forceOpenOutsideApp to true', async () => {
     const linkRenderer = TestRenderer.create(
       <DefaultThemeProvider>
         <Link forceOpenOutsideApp testID={TEST_ID} to={URL}>
@@ -106,11 +98,11 @@ describe('Link', () => {
         </Link>
       </DefaultThemeProvider>,
     );
-    const linkInstance = linkRenderer.root;
-    expect(linkInstance.props.forceOpenOutsideApp).toBe(true);
+    const link = await linkRenderer.root.findByProps({ testID: TEST_ID });
+    expect(link.props.forceOpenOutsideApp).toBe(true);
   });
 
-  it('can set readerMode to true', () => {
+  it('can set readerMode to true', async () => {
     const linkRenderer = TestRenderer.create(
       <DefaultThemeProvider>
         <Link readerMode testID={TEST_ID} to={URL}>
@@ -118,8 +110,8 @@ describe('Link', () => {
         </Link>
       </DefaultThemeProvider>,
     );
-    const linkInstance = linkRenderer.root;
-    expect(linkInstance.props.readerMode).toBe(true);
+    const link = await linkRenderer.root.findByProps({ testID: TEST_ID });
+    expect(link.props.readerMode).toBe(true);
   });
 
   it('removes text style when inherited', () => {
@@ -130,8 +122,8 @@ describe('Link', () => {
         </Link>
       </DefaultThemeProvider>,
     );
-    // specifically test text style, check line 124 in createText.tsx
-    expect(screen.getByTestId(TEST_ID).props.style[2]).toBe(false);
+
+    expect(screen.getByTestId(TEST_ID).props.style[1][1]).toBe(false);
   });
 
   it('inherits by default', () => {
@@ -142,6 +134,6 @@ describe('Link', () => {
         </Link>
       </DefaultThemeProvider>,
     );
-    expect(screen.getByTestId(TEST_ID).props.style[2]).toBe(false);
+    expect(screen.getByTestId(TEST_ID).props.style[1][1]).toBe(false);
   });
 });

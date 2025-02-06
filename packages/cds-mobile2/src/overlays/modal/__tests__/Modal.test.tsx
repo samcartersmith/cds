@@ -8,7 +8,7 @@ import {
 } from '@cbhq/cds-common2/internal/loremIpsumBuilder';
 import { CreateModalProps, modalBuilder } from '@cbhq/cds-common2/internal/modalBuilder';
 
-import { Button } from '../../../buttons';
+import { Button, ButtonProps } from '../../../buttons';
 import { TextBody, TextLabel1 } from '../../../typography';
 import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Modal } from '../Modal';
@@ -21,13 +21,22 @@ const LoremIpsum = loremIpsumBuilder({
   TextLabel1,
 } as CreateLoremIpsumProps);
 
+/*
+  This is a wrapper for the Button component that maps the onClick event to the onPress event. Ensures
+  modalBuilder converts <Button onClick={() => setVisible(true)}>Open Modal</Button> to <Button onPress={() => setVisible(true)}>Open Modal</Button>
+*/
+const ButtonWrapperWithEventMapping = ({
+  onClick,
+  ...props
+}: { onClick?: () => void } & ButtonProps) => <Button {...props} onPress={onClick} />;
+
 const { MockModal } = modalBuilder({
   Modal,
   ModalBody,
   ModalHeader,
   ModalFooter,
   ThemeProvider: React.Fragment,
-  Button,
+  Button: ButtonWrapperWithEventMapping,
   LoremIpsum,
 } as CreateModalProps);
 

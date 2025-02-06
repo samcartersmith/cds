@@ -18,7 +18,7 @@ import { TextTitle2 } from './TextTitle2';
 import { TextTitle3 } from './TextTitle3';
 import { TextTitle4 } from './TextTitle4';
 
-const TYPOGRAPHY_MAP: Record<
+export const TYPOGRAPHY_MAP: Record<
   LinkTypography,
   React.ComponentType<React.PropsWithChildren<TextProps>>
 > = {

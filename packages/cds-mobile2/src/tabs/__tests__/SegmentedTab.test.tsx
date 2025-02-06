@@ -4,6 +4,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { TextDisplay1 } from '../../typography';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { SegmentedTab, SegmentedTabProps } from '../SegmentedTab';
@@ -57,7 +58,15 @@ describe('SegmentedTab', () => {
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('Buy')).toBeTruthy();
-    expect(screen.getByText('Buy')).toHaveAnimatedStyle({ color: 'rgba(10,11,13,1)' });
+    expect(screen.getByText('Buy')).toHaveAnimatedStyle({
+      display: 'flex',
+      color: `rgb(${defaultTheme.lightSpectrum.gray100})`,
+      fontFamily: 'CoinbaseSans-Medium',
+      fontSize: 16,
+      fontWeight: '600',
+      lineHeight: 24,
+      textAlign: 'left',
+    });
   });
 
   it('renders correct color when active', () => {
@@ -70,7 +79,13 @@ describe('SegmentedTab', () => {
     );
     jest.advanceTimersByTime(300);
     expect(screen.getByTestId(`${TEST_ID}-label`)).toHaveAnimatedStyle({
-      color: 'rgba(255,255,255,1)',
+      display: 'flex',
+      color: `rgb(${defaultTheme.lightSpectrum.gray0})`,
+      fontFamily: 'CoinbaseSans-Medium',
+      fontSize: 16,
+      fontWeight: '600',
+      lineHeight: 24,
+      textAlign: 'left',
     });
   });
 

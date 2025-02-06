@@ -23,7 +23,10 @@ const MockDarkMode: React.FC<React.PropsWithChildren<unknown>> = ({ children }) 
 const MockCustomPalette: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <ThemeProvider
     activeColorScheme="light"
-    theme={{ ...defaultTheme, light: { ...defaultTheme.light, background: 'orange' } }}
+    theme={{
+      ...defaultTheme,
+      light: { ...defaultTheme.light, background: `rgb(${defaultTheme.lightSpectrum.orange60})` },
+    }}
   >
     {children}
   </ThemeProvider>

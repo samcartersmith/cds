@@ -1,168 +1,144 @@
-/* eslint-disable react-native/no-raw-text */
-import { createRef } from 'react';
-import { Animated, StyleSheet, Text, TextStyle } from 'react-native';
+import React from 'react';
+import { Animated, Text as RNText } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
-import { entries } from '@cbhq/cds-utils';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { DefaultThemeProvider } from '../../utils/testHelpers';
-import {
-  TextBody,
-  TextCaption,
-  TextDisplay1,
-  TextDisplay2,
-  TextDisplay3,
-  TextHeadline,
-  TextLabel1,
-  TextLabel2,
-  TextLegal,
-  TextTitle1,
-  TextTitle2,
-  TextTitle3,
-  TextTitle4,
-} from '../index';
-import { TextProps } from '../Text';
+import { Text } from '../Text';
 
-const Type = {
-  TextDisplay1,
-  TextDisplay2,
-  TextDisplay3,
-  TextTitle1,
-  TextTitle2,
-  TextTitle3,
-  TextTitle4,
-  TextHeadline,
-  TextBody,
-  TextLabel1,
-  TextLabel2,
-  TextCaption,
-  TextLegal,
+const FontVariants: Record<string, ThemeVars.FontFamily> = {
+  Display1: 'display1',
+  Display2: 'display2',
+  Display3: 'display3',
+  Title1: 'title1',
+  Title2: 'title2',
+  Title3: 'title3',
+  Title4: 'title4',
+  Headline: 'headline',
+  Body: 'body',
+  Label1: 'label1',
+  Label2: 'label2',
+  Caption: 'caption',
+  Legal: 'legal',
 };
 
-const textTestRunner = (
-  testFn: (
-    type: React.ComponentType<React.PropsWithChildren<TextProps & { ref?: React.Ref<Text> }>>,
-  ) => void,
-) => {
-  entries<Record<string, React.FC<TextProps>>>(Type).forEach(async ([, TextComponent]) =>
-    testFn(TextComponent),
-  );
+const fontTestRunner = (testFn: (font: ThemeVars.FontFamily, fontName: string) => void) => {
+  Object.entries(FontVariants).forEach(([fontName, font]) => testFn(font, fontName));
 };
 
 describe('Text', () => {
-  it('renders text and passes a11y', () => {
-    textTestRunner((TextComponent) => {
+  const wrapper = ({ children }: { children: React.ReactNode }) => (
+    <DefaultThemeProvider>{children}</DefaultThemeProvider>
+  );
+
+  it('renders text and passes a11y for each font variant', () => {
+    fontTestRunner((font, fontName) => {
       render(
-        <DefaultThemeProvider>
-          <TextComponent testID="mock-text">Text</TextComponent>
-        </DefaultThemeProvider>,
+        <Text font={font} testID={`text-${fontName}`}>
+          Text
+        </Text>,
+        { wrapper },
       );
 
       expect(screen.UNSAFE_queryAllByType(Text)).toHaveLength(1);
       expect(screen.getByText('Text')).toBeTruthy();
-      expect(screen.getByTestId('mock-text')).toBeAccessible();
+      expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });
   });
 
   it('renders an Animated.Text when animated={true}', () => {
-    textTestRunner((TextComponent) => {
+    fontTestRunner((font, fontName) => {
       render(
-        <DefaultThemeProvider>
-          <TextComponent animated testID="mock-text">
-            Text
-          </TextComponent>
-        </DefaultThemeProvider>,
+        <Text animated font={font} testID={`text-${fontName}`}>
+          Sample Text
+        </Text>,
+        { wrapper },
       );
 
       expect(screen.UNSAFE_queryAllByType(Animated.Text)).toHaveLength(1);
-      expect(screen.getByTestId('mock-text')).toBeAccessible();
+      expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });
   });
 
-  it('sets forwarded ref', () => {
-    textTestRunner((TextComponent) => {
-      const ref = createRef<Text>();
+  it('sets forwarded ref for each font variant', () => {
+    fontTestRunner((font, fontName) => {
+      const ref = { current: null };
       render(
-        <DefaultThemeProvider>
-          <TextComponent ref={ref} testID="mock-text">
-            Text
-          </TextComponent>
-        </DefaultThemeProvider>,
+        <Text ref={ref} font={font} testID={`text-${fontName}`}>
+          Text
+        </Text>,
+        { wrapper },
       );
 
-      expect(ref.current).toBeInstanceOf(Text);
-      expect(screen.getByTestId('mock-text')).toBeAccessible();
+      expect(ref.current).toBeInstanceOf(RNText);
+      expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });
   });
 
-  textTestRunner((TextComponent) => {
-    it(`${TextComponent.displayName} can show tabular numbers`, async () => {
+  it('can show tabular numbers for each font variant', () => {
+    fontTestRunner(async (font, fontName) => {
       render(
-        <DefaultThemeProvider>
-          <TextComponent tabularNumbers testID="mock-text">
-            Text
-          </TextComponent>
-        </DefaultThemeProvider>,
+        <Text tabularNumbers font={font} testID={`text-${fontName}`}>
+          Text
+        </Text>,
+        { wrapper },
       );
 
-      await screen.findByText('Text');
+      const textElement = screen.getByText('Text');
 
-      expect(screen.getByText('Text')).toHaveStyle({
+      expect(textElement).toHaveStyle({
         fontVariant: ['tabular-nums'],
       });
-      expect(screen.getByTestId('mock-text')).toBeAccessible();
+      expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });
   });
 
-  textTestRunner((TextComponent) => {
-    it(`${TextComponent.displayName} can show underline`, async () => {
+  it('can show underline for each font variant', () => {
+    fontTestRunner((font, fontName) => {
       render(
-        <DefaultThemeProvider>
-          <TextComponent underline testID="mock-text">
-            Text
-          </TextComponent>
-        </DefaultThemeProvider>,
+        <Text underline font={font} testID={`text-${fontName}`}>
+          Text
+        </Text>,
+        { wrapper },
       );
 
-      await screen.findByText('Text');
-
-      expect(screen.getByText('Text')).toHaveStyle({
+      const textElement = screen.getByText('Text');
+      expect(textElement).toHaveStyle({
         textDecorationLine: 'underline',
       });
-      expect(screen.getByTestId('mock-text')).toBeAccessible();
+      expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });
   });
 
-  textTestRunner((TextComponent) => {
-    it(`${TextComponent.displayName} can be styled to not wrap`, async () => {
+  it('can be styled to not wrap for each font variant', () => {
+    fontTestRunner((font, fontName) => {
       render(
-        <DefaultThemeProvider>
-          <TextComponent noWrap testID="mock-text">
-            Text
-          </TextComponent>
-        </DefaultThemeProvider>,
+        <Text noWrap font={font} testID={`text-${fontName}`}>
+          Text
+        </Text>,
+        { wrapper },
       );
-      await screen.findByText('Text');
 
-      expect(screen.getByText('Text').props).toHaveProperty('numberOfLines', 1);
-      expect(screen.getByTestId('mock-text')).toBeAccessible();
+      const textElement = screen.getByText('Text');
+      expect(textElement.props).toHaveProperty('numberOfLines', 1);
+      expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });
   });
 
-  textTestRunner((TextComponent) => {
-    it(`${TextComponent.displayName} renders mono font`, async () => {
+  it('renders mono font for each font variant', () => {
+    fontTestRunner((font, fontName) => {
       render(
-        <DefaultThemeProvider>
-          <TextComponent mono testID="mock-text">
-            Text
-          </TextComponent>
-        </DefaultThemeProvider>,
+        <Text mono font={font} testID={`text-${fontName}`}>
+          Text
+        </Text>,
+        { wrapper },
       );
-      await screen.findByText('Text');
 
-      // StyleSheet.flatten will Flattens an array of style objects, into one aggregated style object.
-      const styles = StyleSheet.flatten(screen.getByText('Text').props?.style as TextStyle);
-      expect(styles.fontFamily).toContain('CoinbaseMono');
-      expect(screen.getByTestId('mock-text')).toBeAccessible();
+      const textElement = screen.getByText('Text');
+      expect(textElement).toHaveStyle({
+        fontFamily: expect.stringContaining('CoinbaseMono'),
+      });
+      expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });
   });
 });

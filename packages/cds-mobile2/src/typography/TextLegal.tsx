@@ -1,5 +1,8 @@
-import React, { memo } from 'react';
+import React, { forwardRef, memo } from 'react';
+import { Text as NativeText } from 'react-native';
 
 import { type TextProps, Text } from './Text';
 
-export const TextLegal = memo((props: TextProps) => <Text font="legal" {...props} />);
+export const TextLegal = memo(
+  forwardRef<NativeText, TextProps>((props, ref) => <Text ref={ref} font="legal" {...props} />),
+);

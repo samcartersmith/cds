@@ -7,7 +7,7 @@ import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Box } from '../../layout';
-import { TextDisplay1 } from '../../typography';
+import { TextDisplay1 } from '../../typography/TextDisplay1';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
 

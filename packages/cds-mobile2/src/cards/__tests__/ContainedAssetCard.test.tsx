@@ -80,7 +80,7 @@ describe('ContainedAssetCard', () => {
         <ContainedAssetCard
           description="Description"
           header={<DummyHeader />}
-          maxWidth={undefined}
+          maxWidth="none"
           minWidth={120}
           subtitle="Subtitle"
           testID="card"
