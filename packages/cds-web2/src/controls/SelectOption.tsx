@@ -7,7 +7,7 @@ import { Cell } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
 import { visibility } from '../styles/styles';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { type PressableBaseProps, Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 import { useSelectContext } from './selectContext';
@@ -98,7 +98,7 @@ export type SelectOptionProps = {
    * */
   tabIndex?: number;
 } & SelectOptionBaseProps &
-  Pick<PressableProps, 'onPress' | 'to'>;
+  Pick<PressableBaseProps, 'onPress' | 'to'>;
 
 export const SelectOption = memo(
   ({

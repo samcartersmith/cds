@@ -1,14 +1,19 @@
 import React, { forwardRef, memo } from 'react';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { IconCounterButtonBaseProps } from '@cbhq/cds-common2/types/IconCounterButtonBaseProps';
 import { formatCount } from '@cbhq/cds-common2/utils/formatCount';
 import type { UiIconName } from '@cbhq/cds-icons';
 
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { type PressableBaseProps, Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
-export type IconCounterButtonProps = IconCounterButtonBaseProps & PressableProps;
+export type IconCounterButtonProps = {
+  /** Background color of the overlay (element being interacted with). */
+  background?: ThemeVars.Color;
+} & IconCounterButtonBaseProps &
+  Omit<PressableBaseProps, 'background' | 'children'>;
 
 export const IconCounterButton = memo(
   forwardRef(function IconCounterButton(
@@ -18,12 +23,13 @@ export const IconCounterButton = memo(
       count = 0,
       color = 'fg',
       dangerouslySetColor,
+      background = 'transparent',
       ...props
     }: IconCounterButtonProps,
     ref: React.Ref<Element>,
   ) {
     return (
-      <Pressable ref={ref} background="transparent" {...props}>
+      <Pressable ref={ref} background={background} {...props}>
         <HStack alignItems="center" gap={1}>
           {typeof icon === 'string' ? (
             <Icon

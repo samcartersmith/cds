@@ -6,7 +6,7 @@ import { IllustrationPictogramNames, SharedProps, TileBaseProps } from '@cbhq/cd
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Pictogram, PictogramName } from '../illustrations/Pictogram';
-import { Pressable, PressableInternalProps } from '../system/Pressable';
+import { type PressableProps, Pressable } from '../system/Pressable';
 
 import { Tile } from './Tile';
 
@@ -24,7 +24,7 @@ const focusStyles = css`
 `;
 
 export type TileButtonProps = TileBaseProps &
-  Omit<PressableInternalProps, 'noScaleOnPress' | 'loading' | 'children' | 'background'> &
+  Omit<PressableProps<'button' | 'a'>, 'noScaleOnPress' | 'loading' | 'children' | 'background'> &
   SharedProps & {
     /** Name of illustration as defined in Figma */
     pictogram?: IllustrationPictogramNames;

@@ -295,20 +295,6 @@ export const defaultTheme = {
     bgWarning: `rgb(${lightSpectrum.orange40})`,
     bgWarningWash: `rgb(${lightSpectrum.orange0})`,
     currentColor: 'currentColor',
-    // Background states
-    backgroundPrimaryHover: `rgb(${lightSpectrum.blue70})`,
-    backgroundPrimaryPressed: `rgb(${lightSpectrum.blue80})`,
-    backgroundPrimaryDisabled: `rgb(${lightSpectrum.blue15})`,
-    backgroundSecondaryHover: `rgb(${lightSpectrum.gray10})`,
-    backgroundSecondaryPressed: `rgb(${lightSpectrum.gray15})`,
-    backgroundSecondaryDisabled: `rgb(${lightSpectrum.gray5})`,
-    backgroundNegativeHover: `rgb(${lightSpectrum.red70})`,
-    backgroundNegativePressed: `rgb(${lightSpectrum.red80})`,
-    backgroundNegativeDisabled: `rgb(${lightSpectrum.red5})`,
-    backgroundPositiveHover: `rgb(${lightSpectrum.green70})`, // TO DO: update Positive values
-    backgroundPositivePressed: `rgb(${lightSpectrum.green80})`,
-    backgroundPositiveDisabled: `rgb(${lightSpectrum.green5})`,
-
     // Line
     bgLine: `rgba(${lightSpectrum.gray60},0.2)`,
     bgLineHeavy: `rgba(${lightSpectrum.gray60},0.66)`,
@@ -363,19 +349,6 @@ export const defaultTheme = {
     bgWarning: `rgb(${darkSpectrum.yellow50})`,
     bgWarningWash: `rgb(${darkSpectrum.orange0})`,
     currentColor: 'currentColor',
-    // Background states
-    backgroundPrimaryHover: `rgb(${darkSpectrum.blue70})`,
-    backgroundPrimaryPressed: `rgb(${darkSpectrum.blue80})`, // TO DO: confirm correct colors
-    backgroundPrimaryDisabled: `rgb(${darkSpectrum.blue15})`, // TO DO: confirm correct colors
-    backgroundSecondaryHover: `rgb(${darkSpectrum.gray5})`,
-    backgroundSecondaryPressed: `rgb(${darkSpectrum.gray5})`,
-    backgroundSecondaryDisabled: `rgb(${darkSpectrum.gray5})`,
-    backgroundNegativeHover: `rgb(${darkSpectrum.red60})`,
-    backgroundNegativePressed: `rgb(${darkSpectrum.red60})`, // TO DO: confirm correct colors
-    backgroundNegativeDisabled: `rgb(${darkSpectrum.red60})`,
-    backgroundPositiveHover: `rgb(${darkSpectrum.green60})`, // TO DO: confirm correct colors
-    backgroundPositivePressed: `rgb(${darkSpectrum.green60})`, // TO DO: confirm correct colors
-    backgroundPositiveDisabled: `rgb(${darkSpectrum.green60})`,
     // Line
     bgLine: `rgba(${darkSpectrum.gray60},0.2)`,
     bgLineInverse: `rgb(${darkSpectrum.gray0})`,

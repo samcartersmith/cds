@@ -208,6 +208,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
   );
 });
 
+/** @deprecated Will be removed in Q1 2025. Use Pressable instead. */
 export const Interactable = forwardRef(function Interactable(
   { children, ...props }: InteractableProps,
   ref: React.Ref<Element>,

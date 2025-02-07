@@ -1,10 +1,8 @@
 /* eslint-disable no-bitwise */
-import * as d3Color from 'd3-color';
+import { type HSLColor, hsl } from 'd3-color';
 
 import { FallbackColor } from '../types';
 import { between } from '../utils/between';
-
-const { hsl } = d3Color;
 
 const hashFromString = (s: string): number =>
   s.split('').reduce((a, b) => {
@@ -23,7 +21,7 @@ const rgbFromHash = (hash: number): string => {
   return `rgb(${rgbValue[0]}, ${rgbValue[1]}, ${rgbValue[2]})`;
 };
 
-const isGray = (hslColor: d3Color.HSLColor) => {
+const isGray = (hslColor: HSLColor) => {
   return hslColor.s < 0.3 || Number.isNaN(hslColor.s);
 };
 

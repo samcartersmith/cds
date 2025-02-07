@@ -4,7 +4,7 @@ import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/ty
 import { useSelectContext } from '../controls/selectContext';
 import { SelectOptionProps } from '../controls/SelectOption';
 import { insetFocusRing } from '../styles/focus';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { type PressableBaseProps, Pressable } from '../system/Pressable';
 
 export type MenuItemProps = {
   children: NonNullable<React.ReactNode>;
@@ -20,7 +20,7 @@ export const MenuItem = memo(
     ({ children, value, onPress, disableCloseOnOptionChange, tabIndex, ...props }, ref) => {
       const { onChange, handleCloseMenu } = useSelectContext();
 
-      const handlePress = useCallback<Exclude<PressableProps['onPress'], undefined>>(
+      const handlePress: NonNullable<PressableBaseProps['onPress']> = useCallback(
         (event) => {
           onPress?.(event);
           onChange?.(value);

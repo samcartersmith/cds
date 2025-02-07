@@ -1,7 +1,6 @@
 import React, { createElement, forwardRef, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { getBlendedBackgroundColor } from '@cbhq/cds-common2/color/getBlendedBackgroundColor';
-import { type ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   accessibleOpacityDisabled,
   opacityHovered,
@@ -184,45 +183,34 @@ export const InteractableContent = forwardRef(function InteractableContent(
       // TODO it doesn't look like --interactable-background is used at all in cds-web2
       [interactableBackground]: `var(--color-${background})`,
       /**
-       * Apply an interactive background style.
-       * Use the corresponding state color if available;
-       * if not, blend the color with the background or bgInverse values
+       * Apply an interactive background style. Blend the color with the background or backgroundInverse values
        */
       // Hover:
       // TO DO: use 0.88 for opacity until we can get the hue value of the background color in the theme
-      [interactableHoveredBackground]:
-        `${background}Hover` in theme.color
-          ? theme.color[`${background}Hover` as ThemeVars.Color]
-          : getBlendedBackgroundColor({
-              background,
-              themeColor: theme.color,
-              opacity: opacityHovered[100],
-              colorScheme: theme.colorScheme,
-            }),
+      [interactableHoveredBackground]: getBlendedBackgroundColor({
+        background,
+        themeColor: theme.color,
+        opacity: opacityHovered[100],
+        colorScheme: theme.colorScheme,
+      }),
       [interactableHoveredOpacity]: opacityHovered[100],
       // Pressed:
       // TO DO: use 0.82 for opacity until we can get the hue value of the background color in the theme
-      [interactablePressedBackground]:
-        `${background}Pressed` in theme.color
-          ? theme.color[`${background}Pressed` as ThemeVars.Color]
-          : getBlendedBackgroundColor({
-              background,
-              themeColor: theme.color,
-              opacity: opacityPressed[100],
-              colorScheme: theme.colorScheme,
-            }),
+      [interactablePressedBackground]: getBlendedBackgroundColor({
+        background,
+        themeColor: theme.color,
+        opacity: opacityPressed[100],
+        colorScheme: theme.colorScheme,
+      }),
       [interactablePressedOpacity]: opacityPressed[100],
       // Disabled:
-      [interactableDisabledBackground]:
-        `${background}Disabled` in theme.color
-          ? theme.color[`${background}Disabled` as ThemeVars.Color]
-          : getBlendedBackgroundColor({
-              background,
-              themeColor: theme.color,
-              opacity: accessibleOpacityDisabled,
-              colorScheme: theme.colorScheme,
-              isDisabled: true,
-            }),
+      [interactableDisabledBackground]: getBlendedBackgroundColor({
+        background,
+        themeColor: theme.color,
+        opacity: accessibleOpacityDisabled,
+        colorScheme: theme.colorScheme,
+        isDisabled: true,
+      }),
       [interactableBorderRadius]: `var(--borderRadius-${borderRadius})`,
       width,
       height,
@@ -250,6 +238,7 @@ export const InteractableContent = forwardRef(function InteractableContent(
   );
 });
 
+/** @deprecated Will be removed in Q1 2025. Use Pressable instead. */
 export const Interactable = forwardRef<Element, InteractableProps>(function Interactable(
   { children, ...props },
   ref,

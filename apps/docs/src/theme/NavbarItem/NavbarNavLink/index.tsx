@@ -1,13 +1,21 @@
 import React from 'react';
+import type { Props as DocusaurusLinkProps } from '@docusaurus/Link';
 import Link from '@docusaurus/Link';
 import { isRegexpStringMatch } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import type { Props } from '@theme/NavbarItem/NavbarNavLink';
+import { type Location } from 'history';
 import { HStack } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
 import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import styles from './styles.module.css';
+
+export type NavbarNavLinkProps = Pick<
+  Props,
+  'activeBasePath' | 'activeBaseRegex' | 'label' | 'html' | 'prependBaseUrlToHref'
+> &
+  Omit<DocusaurusLinkProps, 'ref' | 'color'>;
 
 export default function NavbarNavLink({
   activeBasePath,
@@ -18,7 +26,7 @@ export default function NavbarNavLink({
   html,
   prependBaseUrlToHref,
   ...props
-}: Props): JSX.Element {
+}: NavbarNavLinkProps): JSX.Element {
   const toUrl = useBaseUrl(to);
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });

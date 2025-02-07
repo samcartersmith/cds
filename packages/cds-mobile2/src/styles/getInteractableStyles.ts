@@ -1,6 +1,5 @@
 import { ViewStyle } from 'react-native';
 import { getBlendedBackgroundColor } from '@cbhq/cds-common2/color/getBlendedBackgroundColor';
-import { type ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { accessibleOpacityDisabled, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 import { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
@@ -47,9 +46,7 @@ export const getInteractableStyles = ({
   const elevationStyles = getElevationStyles(elevation ?? 0, theme, background);
 
   /**
-   * Apply an interactive background style.
-   * Use the corresponding state color if available in theme;
-   * if not, blend the color with the theme background or bgInverse values
+   * Apply an interactive background style. Blend the color with the background or backgroundInverse values
    */
   const wrapperStyles = {
     static: {
@@ -57,35 +54,27 @@ export const getInteractableStyles = ({
       ...borderStyles,
       ...elevationStyles,
     },
-    // TO DO: use 0.82 for opacity until we can get the hue value of the background color in the theme
     pressed: {
-      backgroundColor:
-        `${background}Pressed` in theme.color
-          ? theme.color[`${background}Pressed` as ThemeVars.Color]
-          : getBlendedBackgroundColor({
-              background,
-              themeColor: theme.color,
-              opacity: opacityPressed[100],
-              colorScheme: theme.colorScheme,
-            }),
+      backgroundColor: getBlendedBackgroundColor({
+        background,
+        themeColor: theme.color,
+        opacity: opacityPressed[100],
+        colorScheme: theme.colorScheme,
+      }),
     },
     disabled: {
-      backgroundColor:
-        `${background}Disabled` in theme.color
-          ? theme.color[`${background}Disabled` as ThemeVars.Color]
-          : getBlendedBackgroundColor({
-              background,
-              themeColor: theme.color,
-              opacity: accessibleOpacityDisabled,
-              colorScheme: theme.colorScheme,
-              isDisabled: true,
-            }),
+      backgroundColor: getBlendedBackgroundColor({
+        background,
+        themeColor: theme.color,
+        opacity: accessibleOpacityDisabled,
+        colorScheme: theme.colorScheme,
+        isDisabled: true,
+      }),
     },
   };
 
   const contentStyles = {
     pressed: {
-      // TO DO: use 0.82 for opacity until we can get the hue value of the background color in the theme
       opacity: opacityPressed[100],
     },
     disabled: {

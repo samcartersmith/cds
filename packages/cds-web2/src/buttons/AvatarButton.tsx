@@ -5,11 +5,11 @@ import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight'
 import type { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
 import { type AvatarWebProps, Avatar } from '../media';
-import { type PressableProps, Pressable } from '../system';
+import { type PressableBaseProps, Pressable } from '../system';
 
 export type AvatarButtonProps = {
   as?: React.ComponentType<React.PropsWithChildren<React.HTMLAttributes<HTMLElement>>>;
-} & PressableProps &
+} & Omit<PressableBaseProps, 'background' | 'children'> &
   SharedProps &
   Omit<React.HTMLAttributes<HTMLButtonElement>, 'className' | 'style' | 'dangerouslySetInnerHTML'> &
   Pick<ButtonBaseProps, 'accessibilityLabel' | 'compact'> &

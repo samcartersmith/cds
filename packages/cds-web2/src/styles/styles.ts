@@ -175,43 +175,6 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
   currentColor: css`
     color: var(--color-currentColor);
   `,
-  // Background states
-  backgroundPrimaryHover: css`
-    color: var(--color-bgPrimaryHover);
-  `,
-  backgroundPrimaryPressed: css`
-    color: var(--color-bgPrimaryPressed);
-  `,
-  backgroundPrimaryDisabled: css`
-    color: var(--color-bgPrimaryDisabled);
-  `,
-  backgroundSecondaryHover: css`
-    color: var(--color-bgSecondaryHover);
-  `,
-  backgroundSecondaryPressed: css`
-    color: var(--color-bgSecondaryPressed);
-  `,
-  backgroundSecondaryDisabled: css`
-    color: var(--color-bgSecondaryDisabled);
-  `,
-  backgroundNegativeHover: css`
-    color: var(--color-bgNegativeHover);
-  `,
-  backgroundNegativePressed: css`
-    color: var(--color-bgNegativePressed);
-  `,
-  backgroundNegativeDisabled: css`
-    color: var(--color-bgNegativeDisabled);
-  `,
-  backgroundPositiveHover: css`
-    color: var(--color-bgPositiveHover);
-  `,
-  backgroundPositivePressed: css`
-    color: var(--color-bgPositivePressed);
-  `,
-  backgroundPositiveDisabled: css`
-    color: var(--color-bgPositiveDisabled);
-  `,
   // Line
   bgLine: css`
     color: var(--color-bgLine);
@@ -354,43 +317,6 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   currentColor: css`
     background-color: var(--color-currentColor);
-  `,
-  // Background states
-  backgroundPrimaryHover: css`
-    background-color: var(--color-bgPrimaryHover);
-  `,
-  backgroundPrimaryPressed: css`
-    background-color: var(--color-bgPrimaryPressed);
-  `,
-  backgroundPrimaryDisabled: css`
-    background-color: var(--color-bgPrimaryDisabled);
-  `,
-  backgroundSecondaryHover: css`
-    background-color: var(--color-bgSecondaryHover);
-  `,
-  backgroundSecondaryPressed: css`
-    background-color: var(--color-bgSecondaryPressed);
-  `,
-  backgroundSecondaryDisabled: css`
-    background-color: var(--color-bgSecondaryDisabled);
-  `,
-  backgroundNegativeHover: css`
-    background-color: var(--color-bgNegativeHover);
-  `,
-  backgroundNegativePressed: css`
-    background-color: var(--color-bgNegativePressed);
-  `,
-  backgroundNegativeDisabled: css`
-    background-color: var(--color-bgNegativeDisabled);
-  `,
-  backgroundPositiveHover: css`
-    background-color: var(--color-bgPositiveHover);
-  `,
-  backgroundPositivePressed: css`
-    background-color: var(--color-bgPositivePressed);
-  `,
-  backgroundPositiveDisabled: css`
-    background-color: var(--color-bgPositiveDisabled);
   `,
   // Line
   bgLine: css`
@@ -556,55 +482,6 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   currentColor: css`
     border-style: solid;
     border-color: var(--color-currentColor);
-  `,
-  // Background states
-  backgroundPrimaryHover: css`
-    border-style: solid;
-    border-color: var(--color-bgPrimaryHover);
-  `,
-  backgroundPrimaryPressed: css`
-    border-style: solid;
-    border-color: var(--color-bgPrimaryPressed);
-  `,
-  backgroundPrimaryDisabled: css`
-    border-style: solid;
-    border-color: var(--color-bgPrimaryDisabled);
-  `,
-  backgroundSecondaryHover: css`
-    border-style: solid;
-    border-color: var(--color-bgSecondaryHover);
-  `,
-  backgroundSecondaryPressed: css`
-    border-style: solid;
-    border-color: var(--color-bgSecondaryPressed);
-  `,
-  backgroundSecondaryDisabled: css`
-    border-style: solid;
-    border-color: var(--color-bgSecondaryDisabled);
-  `,
-  backgroundNegativeHover: css`
-    border-style: solid;
-    border-color: var(--color-bgNegativeHover);
-  `,
-  backgroundNegativePressed: css`
-    border-style: solid;
-    border-color: var(--color-bgNegativePressed);
-  `,
-  backgroundNegativeDisabled: css`
-    border-style: solid;
-    border-color: var(--color-bgNegativeDisabled);
-  `,
-  backgroundPositiveHover: css`
-    border-style: solid;
-    border-color: var(--color-bgPositiveHover);
-  `,
-  backgroundPositivePressed: css`
-    border-style: solid;
-    border-color: var(--color-bgPositivePressed);
-  `,
-  backgroundPositiveDisabled: css`
-    border-style: solid;
-    border-color: var(--color-bgPositiveDisabled);
   `,
   // Line
   bgLine: css`
@@ -814,67 +691,6 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   currentColor: css`
     &:hover {
       color: var(--color-currentColor);
-    }
-  `,
-  // Background states
-  backgroundPrimaryHover: css`
-    &:hover {
-      color: var(--color-bgPrimaryHover);
-    }
-  `,
-  backgroundPrimaryPressed: css`
-    &:hover {
-      color: var(--color-bgPrimaryPressed);
-    }
-  `,
-  backgroundPrimaryDisabled: css`
-    &:hover {
-      color: var(--color-bgPrimaryDisabled);
-    }
-  `,
-  backgroundSecondaryHover: css`
-    &:hover {
-      color: var(--color-bgSecondaryHover);
-    }
-  `,
-  backgroundSecondaryPressed: css`
-    &:hover {
-      color: var(--color-bgSecondaryPressed);
-    }
-  `,
-  backgroundSecondaryDisabled: css`
-    &:hover {
-      color: var(--color-bgSecondaryDisabled);
-    }
-  `,
-  backgroundNegativeHover: css`
-    &:hover {
-      color: var(--color-bgNegativeHover);
-    }
-  `,
-  backgroundNegativePressed: css`
-    &:hover {
-      color: var(--color-bgNegativePressed);
-    }
-  `,
-  backgroundNegativeDisabled: css`
-    &:hover {
-      color: var(--color-bgNegativeDisabled);
-    }
-  `,
-  backgroundPositiveHover: css`
-    &:hover {
-      color: var(--color-bgPositiveHover);
-    }
-  `,
-  backgroundPositivePressed: css`
-    &:hover {
-      color: var(--color-bgPositivePressed);
-    }
-  `,
-  backgroundPositiveDisabled: css`
-    &:hover {
-      color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
@@ -1110,67 +926,6 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
       background-color: var(--color-currentColor);
     }
   `,
-  // Background states
-  backgroundPrimaryHover: css`
-    &:hover {
-      background-color: var(--color-bgPrimaryHover);
-    }
-  `,
-  backgroundPrimaryPressed: css`
-    &:hover {
-      background-color: var(--color-bgPrimaryPressed);
-    }
-  `,
-  backgroundPrimaryDisabled: css`
-    &:hover {
-      background-color: var(--color-bgPrimaryDisabled);
-    }
-  `,
-  backgroundSecondaryHover: css`
-    &:hover {
-      background-color: var(--color-bgSecondaryHover);
-    }
-  `,
-  backgroundSecondaryPressed: css`
-    &:hover {
-      background-color: var(--color-bgSecondaryPressed);
-    }
-  `,
-  backgroundSecondaryDisabled: css`
-    &:hover {
-      background-color: var(--color-bgSecondaryDisabled);
-    }
-  `,
-  backgroundNegativeHover: css`
-    &:hover {
-      background-color: var(--color-bgNegativeHover);
-    }
-  `,
-  backgroundNegativePressed: css`
-    &:hover {
-      background-color: var(--color-bgNegativePressed);
-    }
-  `,
-  backgroundNegativeDisabled: css`
-    &:hover {
-      background-color: var(--color-bgNegativeDisabled);
-    }
-  `,
-  backgroundPositiveHover: css`
-    &:hover {
-      background-color: var(--color-bgPositiveHover);
-    }
-  `,
-  backgroundPositivePressed: css`
-    &:hover {
-      background-color: var(--color-bgPositivePressed);
-    }
-  `,
-  backgroundPositiveDisabled: css`
-    &:hover {
-      background-color: var(--color-bgPositiveDisabled);
-    }
-  `,
   // Line
   bgLine: css`
     &:hover {
@@ -1402,67 +1157,6 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   currentColor: css`
     &:hover {
       border-color: var(--color-currentColor);
-    }
-  `,
-  // Background states
-  backgroundPrimaryHover: css`
-    &:hover {
-      border-color: var(--color-bgPrimaryHover);
-    }
-  `,
-  backgroundPrimaryPressed: css`
-    &:hover {
-      border-color: var(--color-bgPrimaryPressed);
-    }
-  `,
-  backgroundPrimaryDisabled: css`
-    &:hover {
-      border-color: var(--color-bgPrimaryDisabled);
-    }
-  `,
-  backgroundSecondaryHover: css`
-    &:hover {
-      border-color: var(--color-bgSecondaryHover);
-    }
-  `,
-  backgroundSecondaryPressed: css`
-    &:hover {
-      border-color: var(--color-bgSecondaryPressed);
-    }
-  `,
-  backgroundSecondaryDisabled: css`
-    &:hover {
-      border-color: var(--color-bgSecondaryDisabled);
-    }
-  `,
-  backgroundNegativeHover: css`
-    &:hover {
-      border-color: var(--color-bgNegativeHover);
-    }
-  `,
-  backgroundNegativePressed: css`
-    &:hover {
-      border-color: var(--color-bgNegativePressed);
-    }
-  `,
-  backgroundNegativeDisabled: css`
-    &:hover {
-      border-color: var(--color-bgNegativeDisabled);
-    }
-  `,
-  backgroundPositiveHover: css`
-    &:hover {
-      border-color: var(--color-bgPositiveHover);
-    }
-  `,
-  backgroundPositivePressed: css`
-    &:hover {
-      border-color: var(--color-bgPositivePressed);
-    }
-  `,
-  backgroundPositiveDisabled: css`
-    &:hover {
-      border-color: var(--color-bgPositiveDisabled);
     }
   `,
   // Line
@@ -2145,43 +1839,6 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   currentColor: css`
     text-decoration-color: var(--color-currentColor);
-  `,
-  // Background states
-  backgroundPrimaryHover: css`
-    text-decoration-color: var(--color-bgPrimaryHover);
-  `,
-  backgroundPrimaryPressed: css`
-    text-decoration-color: var(--color-bgPrimaryPressed);
-  `,
-  backgroundPrimaryDisabled: css`
-    text-decoration-color: var(--color-bgPrimaryDisabled);
-  `,
-  backgroundSecondaryHover: css`
-    text-decoration-color: var(--color-bgSecondaryHover);
-  `,
-  backgroundSecondaryPressed: css`
-    text-decoration-color: var(--color-bgSecondaryPressed);
-  `,
-  backgroundSecondaryDisabled: css`
-    text-decoration-color: var(--color-bgSecondaryDisabled);
-  `,
-  backgroundNegativeHover: css`
-    text-decoration-color: var(--color-bgNegativeHover);
-  `,
-  backgroundNegativePressed: css`
-    text-decoration-color: var(--color-bgNegativePressed);
-  `,
-  backgroundNegativeDisabled: css`
-    text-decoration-color: var(--color-bgNegativeDisabled);
-  `,
-  backgroundPositiveHover: css`
-    text-decoration-color: var(--color-bgPositiveHover);
-  `,
-  backgroundPositivePressed: css`
-    text-decoration-color: var(--color-bgPositivePressed);
-  `,
-  backgroundPositiveDisabled: css`
-    text-decoration-color: var(--color-bgPositiveDisabled);
   `,
   // Line
   bgLine: css`

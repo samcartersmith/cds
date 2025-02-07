@@ -34,6 +34,7 @@ const accessibilityStyles = css`
   pointer-events: none;
 `;
 
+/** @deprecated Will be removed in Q1 2025. Use Pressable instead. */
 export const ButtonOrLink = memo(
   forwardRef<HTMLElement, ButtonOrLinkProps>(
     (

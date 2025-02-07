@@ -29,6 +29,7 @@ type ButtonOrLinkProps = React.AllHTMLAttributes<HTMLElement> & {
   focusable?: boolean;
 };
 
+/** @deprecated Will be removed in Q1 2025. Use Pressable instead. */
 export const ButtonOrLink = memo(
   forwardRef<HTMLElement, ButtonOrLinkProps>(
     (
