@@ -6,6 +6,9 @@ type CreateCardBodyParams<OnPressFn> = {
   Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: OnPressFn }>>;
 };
 
+/**
+ * @deprecated do not use creator patterns in CDS components
+ */
 export function createCardBodyAction<OnPressFn>({ Button }: CreateCardBodyParams<OnPressFn>) {
   const CardBodyAction = memo(function CardBodyAction({
     children,

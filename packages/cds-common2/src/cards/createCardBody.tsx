@@ -31,6 +31,9 @@ type CreateCardBodyParams<OnPressFn> = {
   platform: CdsPlatform;
 };
 
+/**
+ * @deprecated do not use creator patterns in CDS components
+ */
 export function createCardBody<OnPressFn>({
   CardBodyAction,
   CardMedia,

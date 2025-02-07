@@ -1,0 +1,104 @@
+import React from 'react';
+import { coinbaseOneLogo } from '@cbhq/cds-common2/internal/data/assets';
+
+import { Button } from '../../buttons';
+import { HStack, VStack } from '../../layout';
+import { Text } from '../../typography/Text';
+import { type UpsellCardProps, UpsellCard } from '../UpsellCard';
+
+const onPressConsole = console.log;
+
+const exampleProps = {
+  title: 'Headline',
+  description: 'Check out the most popular assets',
+  action: 'Buy Bitcoin now',
+  media: <img alt="" data-testid="media" src={coinbaseOneLogo as string} width={120} />,
+  background: 'bgPrimaryWash',
+  onActionPress: onPressConsole,
+  onDismissPress: onPressConsole,
+} satisfies UpsellCardProps;
+
+const compactProps = {
+  title: 'Headline',
+  description: 'Check out the most popular assets',
+  media: <img alt="" data-testid="media" src={coinbaseOneLogo as string} width={120} />,
+  background: 'bgPrimaryWash',
+  onPress: onPressConsole,
+} satisfies UpsellCardProps;
+
+export const Default = (): JSX.Element => <UpsellCard {...exampleProps} />;
+
+export const Compact = (): JSX.Element => <UpsellCard {...compactProps} />;
+
+export const Vertical = (): JSX.Element => (
+  <VStack gap={1.5}>
+    <UpsellCard {...exampleProps} />
+    <UpsellCard {...exampleProps} />
+  </VStack>
+);
+
+export const Horizontal = (): JSX.Element => (
+  <HStack gap={1.5}>
+    <UpsellCard {...exampleProps} />
+    <UpsellCard {...exampleProps} />
+  </HStack>
+);
+
+export const LongText = (): JSX.Element => (
+  <UpsellCard
+    {...exampleProps}
+    action="This is a really long action"
+    description="This is a really long description for the UpsellCard component"
+    title="This is a really long title."
+  />
+);
+
+export const CustomTextNodes = (): JSX.Element => {
+  return (
+    <UpsellCard
+      {...exampleProps}
+      action={
+        <Button
+          compact
+          flush="start"
+          numberOfLines={1}
+          onClick={onPressConsole}
+          variant="secondary"
+        >
+          Sign up
+        </Button>
+      }
+      dangerouslySetBackground="rgb(var(--blue80))"
+      description={
+        <Text as="p" color="fgInverse" font="label2">
+          Start your free 30 day trial of Coinbase One
+        </Text>
+      }
+      title={
+        <Text as="h3" color="fgInverse" font="headline">
+          Coinbase One
+        </Text>
+      }
+    />
+  );
+};
+
+export const CustomBackground = (): JSX.Element => {
+  return <UpsellCard {...exampleProps} dangerouslySetBackground="rgb(var(--yellow20))" />;
+};
+
+export const CustomWidth = (): JSX.Element => <UpsellCard {...exampleProps} width="100%" />;
+
+export const Carousel = (): JSX.Element => (
+  <HStack gap={2} overflow="scroll">
+    <UpsellCard {...exampleProps} />
+    <UpsellCard {...exampleProps} />
+    <UpsellCard {...exampleProps} />
+    <UpsellCard {...exampleProps} />
+  </HStack>
+);
+
+export default {
+  title: 'Core Components/Cards/UpsellCard',
+  component: UpsellCard,
+};

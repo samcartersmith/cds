@@ -19,6 +19,9 @@ type CreateCardMediaParams = {
   CardRemoteImage: React.ComponentType<React.PropsWithChildren<CardRemoteImageProps>>;
 };
 
+/**
+ * @deprecated do not use creator patterns in CDS components
+ */
 export function createCardMedia({ SpotSquare, Pictogram, CardRemoteImage }: CreateCardMediaParams) {
   const imageProps: Record<CardMediaPlacement, CardMediaImageSizeObject> = {
     start: {
