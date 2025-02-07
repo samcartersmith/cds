@@ -290,7 +290,19 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Other',
-          items: [{ type: 'doc', id: 'components/other/dot', label: 'Dot' }],
+          items: [
+            { type: 'doc', id: 'components/other/DotCount/dot-count', label: 'DotCount' },
+            {
+              type: 'doc',
+              id: 'components/other/DotStatusColor/dot-status-color',
+              label: 'DotStatusColor',
+            },
+            {
+              type: 'doc',
+              id: 'components/other/DotSymbol/dot-symbol',
+              label: 'DotSymbol',
+            },
+          ],
         },
       ],
     },

@@ -42,5 +42,16 @@ module.exports = {
   /**
    * Any source files relative to entryPoints above that you want docgen to parse.
    */
-  sourceFiles: ['layout/Box', 'buttons/Button', 'loaders/Spinner'],
+  sourceFiles: [
+    // layout
+    'layout/Box',
+    // input
+    'buttons/Button',
+    // feedback
+    'loaders/Spinner',
+    // other
+    'dots/DotCount',
+    'dots/DotStatusColor',
+    'dots/DotSymbol',
+  ],
 };
