@@ -452,7 +452,7 @@ export const control = {
 } as const;
 ```
 
-The value of a variable can be any valid CSS value, including using CSS Variables. On web, each variable creates a corresponding CSS Variable, which is rendered into an HTML `style` tag via the ThemeProvider. Each variable type may have a prefix string defined, to be used when creating the CSS Variable name. For example, the `color.backgroundPrimary` variable becomes the `--color-backgroundPrimary` CSS Variable, and the `zIndex.popoverMenu`variable becomes the `--zIndex-popoverMenu` CSS Variable.
+The value of a variable can be any valid CSS value, including using CSS Variables. On web, each variable creates a corresponding CSS Variable, which is rendered into an HTML `style` tag via the ThemeProvider. Each variable type may have a prefix string defined, to be used when creating the CSS Variable name. For example, the `color.bgPrimary` variable becomes the `--color-bgPrimary` CSS Variable, and the `zIndex.popoverMenu` variable becomes the `--zIndex-popoverMenu` CSS Variable.
 
 While you can write custom styles that use these variables, CDS components also provide StyleProps that automatically consume values from the theme. On web these StyleProps all support an optional responsive syntax, allowing you to customize values by device breakpoint. In addition to the StyleProps API, most CDS components also provide the `style` prop for inline styles. On web, most CDS components also provide the `className` prop for passing custom classnames.
 

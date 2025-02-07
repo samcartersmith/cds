@@ -153,7 +153,7 @@ Use CSS Variables directly in your custom styles:
 
 ```css
 .my-class {
-  background-color: var(--color-backgroundPrimary);
+  background-color: var(--color-bgPrimary);
   padding: var(--space-4);
 }
 ```
@@ -169,8 +169,8 @@ const MyComponent = () => {
   const theme = useTheme();
 
   return (
-    <View style={{ backgroundColor: theme.color.backgroundPrimary }}>
-      <Text style={{ color: theme.color.textPrimary }}>Hello, Theming!</Text>
+    <View style={{ backgroundColor: theme.color.bgPrimary }}>
+      <Text style={{ color: theme.color.fgPrimary }}>Hello, Theming!</Text>
     </View>
   );
 };

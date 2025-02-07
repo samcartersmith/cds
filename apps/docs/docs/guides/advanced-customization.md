@@ -25,7 +25,7 @@ CDS exposes a robust set of theme variables that control colors, typography, spa
 import { Button } from '@cbhq/cds-web';
 
 const CustomButton = () => (
-  <Button color="backgroundPrimary" style={{ '--color-backgroundPrimary': '#1E90FF' }}>
+  <Button color="bgPrimary" style={{ '--color-bgPrimary': '#1E90FF' }}>
     Custom Button
   </Button>
 );

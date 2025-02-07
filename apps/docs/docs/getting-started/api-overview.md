@@ -111,7 +111,7 @@ Example:
 
 CDS exposes theme variables that allow you to create custom styles based on the current theme. These variables include:
 
-- Colors (`color.textPrimary`, `color.backgroundPrimary`, etc.)
+- Colors (`color.fgPrimary`, `color.bgPrimary`, etc.)
 - Spacing (`space.0`, `space.1`, etc.)
 - Typography (`fontSize.body`, `lineHeight.body`, etc.)
 - And more.
@@ -120,7 +120,7 @@ For web, use CSS Variables directly:
 
 ```css
 .my-class {
-  background-color: var(--color-backgroundPrimary);
+  background-color: var(--color-bgPrimary);
 }
 ```
 

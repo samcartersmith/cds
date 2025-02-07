@@ -21,8 +21,8 @@ const docsTheme = {
   ...defaultTheme,
   dark: {
     ...defaultTheme.dark,
-    background: `rgb(${defaultTheme.darkSpectrum.gray10})`, // instead of gray0
-    backgroundSecondary: `rgb(${defaultTheme.darkSpectrum.gray20})`, // instead of gray10
+    bg: `rgb(${defaultTheme.darkSpectrum.gray10})`, // instead of gray0
+    bgSecondary: `rgb(${defaultTheme.darkSpectrum.gray20})`, // instead of gray10
   },
 };
 

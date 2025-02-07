@@ -97,7 +97,7 @@ Example:
 
 CDS exposes a robust set of theme variables that you can use to style components. These include:
 
-- **Colors**: `color.backgroundPrimary`, `color.textPrimary`, etc.
+- **Colors**: `color.bgPrimary`, `color.fgPrimary`, etc.
 - **Spacing**: `space.0`, `space.1`, etc.
 - **Typography**: `fontSize.body`, `lineHeight.body`, etc.
 
@@ -109,7 +109,7 @@ Access theme variables directly using CSS Variables:
 
 ```css
 .my-class {
-  background-color: var(--color-backgroundPrimary);
+  background-color: var(--color-bgPrimary);
   padding: var(--space-4);
 }
 ```
@@ -124,7 +124,7 @@ import { useTheme } from '@cbhq/cds-mobile';
 const MyComponent = () => {
   const theme = useTheme();
   return (
-    <View style={{ backgroundColor: theme.color.backgroundPrimary, padding: theme.space[4] }}>
+    <View style={{ backgroundColor: theme.color.bgPrimary, padding: theme.space[4] }}>
       <Text>Styled with CDS</Text>
     </View>
   );
@@ -140,8 +140,8 @@ Example:
 ```tsx
 const customTheme = {
   color: {
-    backgroundPrimary: '#000000',
-    textPrimary: '#FFFFFF',
+    bgPrimary: '#000000',
+    fgPrimary: '#FFFFFF',
   },
   space: {
     0: '0px',

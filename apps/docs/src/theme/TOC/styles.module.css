@@ -2,12 +2,12 @@
   font-family: var(--font-style-label);
   font-size: var(--font-size-label-2);
   line-height: var(--font-line-height-label-2);
-  color: var(--color-textForeground);
+  color: var(--color-fg);
 }
 
 .tableOfContentsLinkActive {
   font-size: var(--font-size-label-1);
   line-height: var(--font-line-height-label-1);
   font-weight: 500;
-  color: var(--color-textPrimary);
+  color: var(--color-fg);
 }
