@@ -131,7 +131,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       accessibilityRole={accessibilityRole}
       accessibilityState={{
         disabled: pressDisabled,
-        checked: checked || indeterminate,
+        checked: Boolean(checked || indeterminate),
       }}
       disabled={pressDisabled}
       hitSlop={hitSlop}

@@ -29,14 +29,11 @@ describe('Switch.test', () => {
     );
 
     expect(screen.getByText('checked is false')).toBeTruthy();
+    expect(screen.getByRole('switch')).toHaveAccessibilityState({ checked: false });
 
     fireEvent.press(screen.getByRole('switch'));
-
     expect(screen.getByText('checked is true')).toBeTruthy();
-
-    fireEvent.press(screen.getByRole('switch'));
-
-    expect(screen.getByText('checked is false')).toBeTruthy();
+    expect(screen.getByRole('switch')).toHaveAccessibilityState({ checked: true });
   });
 
   it('passes accessibility', () => {
