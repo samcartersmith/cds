@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { TOCItem } from '@docusaurus/mdx-loader';
-import { TabComponent } from '@site/src/components/page/TabComponent';
-import { TabIndicator } from '@site/src/components/page/TabIndicator';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
-import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { Box, Divider, VStack } from '@cbhq/cds-web2/layout';
-import { Tabs } from '@cbhq/cds-web2/tabs/Tabs';
+import { TabNavigation } from '@cbhq/cds-web2/tabs/TabNavigation';
 
 import { PropsTOCUpdater } from '../../../utils/toc/PropsTOCManager';
 import { TOCUpdater } from '../../../utils/toc/TOCManager';
@@ -36,24 +33,17 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
   webPropsToc,
   mobilePropsToc,
 }) => {
-  const [activeTab, setActiveTab] = useState<TabValue | null>(tabs[0]);
+  const [activeTab, setActiveTab] = useState<string>('examples-tab');
   const { platform } = usePlatformContext();
-  const shouldRenderExamples = activeTab?.id === 'examples-tab';
-  const shouldRenderProps = activeTab?.id === 'props-tab';
+  const shouldRenderExamples = activeTab === tabs[0].id;
+  const shouldRenderProps = activeTab === tabs[1].id;
   const isWeb = platform === 'web';
   const isMobile = platform === 'mobile';
 
   return (
     <VStack background="bgAlternate" borderRadius={500} paddingTop={3}>
       <Box paddingX={4}>
-        <Tabs
-          TabComponent={TabComponent}
-          TabsActiveIndicatorComponent={TabIndicator}
-          activeTab={activeTab}
-          gap={4}
-          onChange={setActiveTab}
-          tabs={tabs}
-        />
+        <TabNavigation onChange={setActiveTab} tabs={tabs} value={activeTab} />
       </Box>
       <Divider />
       <VStack gap={3} paddingBottom={2} paddingLeft={4} paddingRight={4} paddingTop={5}>

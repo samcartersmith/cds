@@ -68,7 +68,7 @@ const sidebars: SidebarsConfig = {
               label: 'Dropdown',
             },
             { type: 'doc', id: 'components/layout/grid', label: 'Grid' },
-            { type: 'doc', id: 'components/layout/hStack', label: 'HStack' },
+            { type: 'doc', id: 'components/layout/HStack/hStack', label: 'HStack' },
             {
               type: 'doc',
               id: 'components/layout/multiContentModule',

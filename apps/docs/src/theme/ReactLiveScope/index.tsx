@@ -8,6 +8,7 @@ import * as CDSIllustrations from '@cbhq/cds-web2/illustrations';
 import * as CDSLayout from '@cbhq/cds-web2/layout';
 import { Spinner } from '@cbhq/cds-web2/loaders/Spinner';
 import * as CDSMedia from '@cbhq/cds-web2/media';
+import * as CDSTypography from '@cbhq/cds-web2/typography';
 
 // Add react-live imports you need here
 const ReactLiveScope: Record<string, unknown> = {
@@ -20,6 +21,8 @@ const ReactLiveScope: Record<string, unknown> = {
   ...CDSLayout,
   // input
   ...CDSButtons,
+  // typography
+  ...CDSTypography,
   // loaders
   Spinner,
   // media

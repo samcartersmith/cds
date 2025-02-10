@@ -1,0 +1,46 @@
+---
+id: hStack
+title: HStack
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { HStackBanner } from '@site/src/components/page/ComponentBanner/HStackBanner';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import mobilePropsToc from ':docgen/cds-mobile2/layout/HStack/toc-props';
+import WebPropsTable from './_webPropsTable.mdx';
+import webPropsToc from ':docgen/cds-web2/layout/HStack/toc-props';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="HStack"
+    description="A specialized box that orders and aligns children on the X-axis as columns."
+    webMetadata={{
+      import: "import { HStack } from '@cbhq/cds-web/layout/HStack'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/HStack.tsx',
+      storybook: 'https://your-web-storybook-url',
+    }}
+    mobileMetadata={{
+      import: "import { HStack } from '@cbhq/cds-mobile/'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/HStack.tsx',
+    }}
+    banner={<HStackBanner />}
+  />
+
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

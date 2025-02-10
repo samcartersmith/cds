@@ -45,6 +45,7 @@ module.exports = {
   sourceFiles: [
     // layout
     'layout/Box',
+    'layout/HStack',
     // input
     'buttons/Button',
     // feedback
