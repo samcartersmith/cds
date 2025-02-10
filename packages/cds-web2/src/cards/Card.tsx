@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { HTMLAttributes, memo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
 import { cardSizes } from '@cbhq/cds-common2/tokens/card';
 import type { CardBaseProps, PinningDirection } from '@cbhq/cds-common2/types';
@@ -41,12 +41,11 @@ const pinStyle: Record<PinningDirection, LinariaClassName> = {
 };
 
 export type CardProps = CardBaseProps &
-  Omit<LinkableProps, 'onKeyUp' | 'onKeyDown'> & {
-    // keyboard handlers will be removed in an upcoming refactor of Pressable
-    /** @deprecated key event handlers are not necessary for handling press */
-    onKeyDown?: LinkableProps['onKeyDown'];
-    /** @deprecated key event handlers are not necessary for handling press */
-    onKeyUp?: LinkableProps['onKeyUp'];
+  LinkableProps & {
+    // TODO (DX-4652): These key handling props have been kept for bw compatibility since they are valid props for a dif
+    // it would be better to have Card extend the entire Box interface instead of arbitrarily picking these two
+    onKeyDown?: HTMLAttributes<HTMLElement>['onKeyDown'];
+    onKeyUp?: HTMLAttributes<HTMLElement>['onKeyUp'];
   };
 
 export const Card = memo<CardProps>(function Card({

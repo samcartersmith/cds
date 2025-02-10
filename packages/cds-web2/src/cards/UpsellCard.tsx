@@ -4,15 +4,17 @@ import type { UpsellCardBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
-import { type PressableProps, Pressable } from '../system';
+import { type PressableBaseProps, Pressable } from '../system';
 import { Text } from '../typography/Text';
 
 export type UpsellCardProps = UpsellCardBaseProps & {
   /** Callback fired when the action button is pressed */
-  onActionPress?: PressableProps['onPress'];
+  onActionPress?: PressableBaseProps['onPress'];
   /** Callback fired when the dismiss button is pressed */
-  onDismissPress?: PressableProps['onPress'];
-} & Pick<PressableProps, 'onPress'>;
+  onDismissPress?: PressableBaseProps['onPress'];
+  /** Callback fired when the card is pressed */
+  onPress?: PressableBaseProps['onPress'];
+};
 
 export const UpsellCard = memo(
   ({
