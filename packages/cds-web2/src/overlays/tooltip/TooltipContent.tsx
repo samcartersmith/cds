@@ -36,16 +36,7 @@ const textStyle = css`
 export const TooltipContent = memo(
   forwardRef(
     (
-      {
-        content,
-        elevation,
-        gap,
-        testID,
-        zIndex,
-        tooltipId,
-        placement = 'top',
-        invertSpectrum,
-      }: PopperTooltipProps,
+      { content, elevation, gap, testID, zIndex, tooltipId, placement = 'top' }: PopperTooltipProps,
       ref: ForwardedRef<HTMLDivElement>,
     ) => {
       const outerStyle = useMemo(
@@ -70,7 +61,7 @@ export const TooltipContent = memo(
         <motion.div {...motionProps} data-testid={`${testID}-motion`}>
           <Box
             ref={ref}
-            background={invertSpectrum ? 'bgInverse' : 'bg'}
+            background="bg"
             borderRadius={200}
             data-testid={testID}
             elevation={elevation}
@@ -79,12 +70,7 @@ export const TooltipContent = memo(
             paddingY={tooltipPaddingY}
           >
             {typeof content === 'string' ? (
-              <Text
-                className={textStyle}
-                color={invertSpectrum ? 'fgInverse' : 'fg'}
-                font="label2"
-                id={tooltipId}
-              >
+              <Text className={textStyle} color="fg" font="label2" id={tooltipId}>
                 {content}
               </Text>
             ) : (

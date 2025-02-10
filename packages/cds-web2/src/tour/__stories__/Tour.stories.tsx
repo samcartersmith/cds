@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useCallback, useEffect, useState } from 'react';
 import { ethBackground } from '@cbhq/cds-common2/internal/data/assets';
 import { useTourContext } from '@cbhq/cds-common2/tour/TourContext';

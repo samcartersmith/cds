@@ -19,11 +19,14 @@ const TimeseriesPath = memo(
     const pathRef = useRef<Path | null>(null);
     const { strokeColor } = timeseries;
 
-    const lineColor = getAccessibleColor({
-      background: theme.color.bg,
-      foreground: strokeColor,
-      usage: 'graphic',
-    });
+    const lineColor =
+      strokeColor !== 'auto'
+        ? strokeColor
+        : getAccessibleColor({
+            background: theme.color.bg,
+            foreground: 'auto',
+            usage: 'graphic',
+          });
 
     const newPath = useMemo(() => lineFn(timeseries.points) as string, [lineFn, timeseries.points]);
     const newArea = useMemo(

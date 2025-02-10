@@ -25,7 +25,8 @@ export const getAccessibleForegroundGradient = ({
   let color2 = color;
   // Disable gradients in dark mode
   if (colorScheme === 'dark' || color === 'auto') {
-    color1 = getAccessibleColor({ background, foreground: color, usage });
+    color1 =
+      color !== 'auto' ? color : getAccessibleColor({ background, foreground: 'auto', usage });
     color2 = color1;
   } else {
     color1 = color;

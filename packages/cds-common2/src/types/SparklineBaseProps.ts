@@ -2,9 +2,9 @@ import { ElementChildren } from './React';
 import { SharedProps } from './SharedProps';
 
 export type SparklineBaseProps = {
-  /** @danger Only use if you have a non CDS color powering the background color that a Sparkline will appear on top of. This is needed to validate the the `color` prop is an accessible color, otherwise it will pick an appropriate replacement. Accepts any valid color (hex, rgb, rgba). */
+  /** @danger Use this only if the background color beneath the Sparkline is a non-CDS color. It ensures an accessible contrast by returning either white or black when color is set to 'auto'. Accepts any valid color format (hex, RGB, RGBA). */
   background?: string;
-  /** Color of the plotted Sparkline. Accepts any valid color value. Do not pass in a CDS alias such as 'foreground' or a CSS Variable.  */
+  /** The color of the Sparkline graph's line. Accepts any raw color value (hex, rgba, hsl, etc) or 'auto'. Using 'auto' dynamically selects black or white for optimal accessibility. Does not work with CDS theme color names like 'fgPrimary' or CSS variables.  */
   color: string;
   /** Height of the Sparkline */
   height: number;

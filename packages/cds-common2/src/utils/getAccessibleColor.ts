@@ -1,8 +1,6 @@
-import { hsl, rgb } from 'd3-color';
+import { rgb } from 'd3-color';
 
-import { getContrastRatio } from '../color/getContrastRatio';
 import { isAccessibleColor } from '../color/isAccessibleColor';
-import { isGray } from '../color/isGray';
 import { type A11yColorUsage } from '../types/Color';
 
 const contrastRatio = (l1: number, l2: number) => {
@@ -13,13 +11,13 @@ type GetAccessibleColorParams = {
   /* Valid color value (hex, rgb, rgba, etc) */
   background: string;
   /* Valid color value (hex, rgb, rgba, etc) */
-  foreground?: string | 'auto';
+  foreground?: 'auto';
   /**
    * Where the foreground color is being applied.
    * @default 'normalText'
    */
   usage?: A11yColorUsage;
-  /** Use enhanced ratio. */
+  /** Use higher contrast ratio. */
   enhanced?: boolean;
 };
 
@@ -29,11 +27,8 @@ type GetAccessibleColorParams = {
  * Providing a minimum luminance contrast ratio between the text and its background can make the text more
  * readable even if the person does not see the full range of colors. It also works for the rare individuals who see no color.
  *
- * If foreground exists:
- * 1. Check if foreground color meets contrast criteria.
- * 2. If pass, return color passed in.
- * 3. If fail, check saturation.
- * 4. If gray color check if white or black have a higher contrast ratio. Return the value with the highest contrast ratio.
+ * If foreground='auto:
+ * 2. Return white or black based on contrast ratio with background.
  *
  * If foreground does not exist or doesn't meet contrast criteria:
  * 1. Check background color contrast ratios with white and black
@@ -45,31 +40,10 @@ export const getAccessibleColor = ({
   usage = 'normalText',
   enhanced,
 }: GetAccessibleColorParams) => {
-  if (foreground) {
-    if (foreground === 'auto') {
-      return isAccessibleColor({ background, foreground: 'white', usage })
-        ? 'rgb(255,255,255)'
-        : 'rgb(0,0,0)';
-    }
-    const isAccessibleForeground = isAccessibleColor({
-      background,
-      foreground,
-      usage,
-      enhanced,
-    });
-    if (isAccessibleForeground) {
-      return foreground;
-    }
-    const darkestGrayContrastRatio = getContrastRatio(background, 'rgb(0,0,0)');
-    const lightestGrayContrastRatio = getContrastRatio(background, 'rgb(255,255,255)');
-
-    // If gray foreground doesn't meet a11y, check if darkest or lightest gray have a higher ratio
-    if (isGray(hsl(foreground))) {
-      return darkestGrayContrastRatio > lightestGrayContrastRatio
-        ? 'rgb(0,0,0)'
-        : 'rgb(255,255,255)';
-    }
-  }
+  if (foreground === 'auto')
+    return isAccessibleColor({ background, foreground: 'white', usage, enhanced })
+      ? 'rgb(255,255,255)'
+      : 'rgb(0,0,0)';
 
   const { r, g, b } = rgb(background);
   const rLuminance = (r / 255) ** 2.2;

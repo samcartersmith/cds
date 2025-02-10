@@ -22,11 +22,14 @@ export const Sparkline = memo(
   }: SparklineBaseProps) => {
     const theme = useTheme();
     const patternId = useRef<string>(generateRandomId());
-    const stroke = getAccessibleColor({
-      background: background ?? theme.color.bg,
-      foreground: color,
-      usage: 'graphic',
-    });
+    const stroke =
+      color !== 'auto'
+        ? color
+        : getAccessibleColor({
+            background: background ?? theme.color.bg,
+            foreground: 'auto',
+            usage: 'graphic',
+          });
     const translateProps = getSparklineTransform(width, height, yAxisScalingFactor);
 
     const defs = children ? (

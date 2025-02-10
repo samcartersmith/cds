@@ -5,6 +5,7 @@ import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { Box } from '../../layout/Box';
+import { InvertedThemeProvider } from '../../system/ThemeProvider';
 import { FocusTrap } from '../FocusTrap';
 import { Overlay } from '../overlay/Overlay';
 import { Portal } from '../Portal';
@@ -48,8 +49,7 @@ export const Popover = memo(
     onFocus,
     onBlur,
     onMouseDown,
-    // TO DO: Add workaround support for invertedSpectrum, or consumer will need to apply inverted spectrum styles separately for the content
-    // invertPopoverSpectrum,
+    invertPopoverSpectrum,
     visible,
     accessibilityLabel = 'popoverMenu',
     testID,
@@ -148,6 +148,8 @@ export const Popover = memo(
       </Box>
     );
 
+    const Wrapper = invertPopoverSpectrum ? InvertedThemeProvider : React.Fragment;
+
     return (
       <div
         className={block ? blockStyles : undefined}
@@ -167,21 +169,23 @@ export const Popover = memo(
         <NewAnimatePresence>
           {shouldShowContent ? (
             <Portal containerId={tooltipContainerId} disablePortal={disablePortal}>
-              {showOverlay ? (
-                <Box
-                  bottom={0}
-                  left={0}
-                  position="fixed"
-                  right={0}
-                  top={0}
-                  zIndex={zIndex.portal + zIndex.modal}
-                >
-                  <Overlay animated onPress={handleClose} />
-                  {memoizedContent}
-                </Box>
-              ) : (
-                renderContent
-              )}
+              <Wrapper>
+                {showOverlay ? (
+                  <Box
+                    bottom={0}
+                    left={0}
+                    position="fixed"
+                    right={0}
+                    top={0}
+                    zIndex={zIndex.portal + zIndex.modal}
+                  >
+                    <Overlay animated onPress={handleClose} />
+                    {memoizedContent}
+                  </Box>
+                ) : (
+                  renderContent
+                )}
+              </Wrapper>
             </Portal>
           ) : undefined}
         </NewAnimatePresence>

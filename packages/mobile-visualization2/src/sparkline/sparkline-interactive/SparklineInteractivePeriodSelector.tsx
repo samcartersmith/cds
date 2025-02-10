@@ -101,10 +101,13 @@ export const SparklineInteractivePeriodSelector = <Period extends string>({
   color,
 }: SparklineInteractivePeriodSelectorProps<Period>) => {
   const theme = useTheme();
-  const accessibleForeground = getAccessibleColor({
-    background: theme.color.bg,
-    foreground: color,
-  });
+  const accessibleForeground =
+    color !== 'auto'
+      ? color
+      : getAccessibleColor({
+          background: theme.color.bg,
+          foreground: 'auto',
+        });
   const { markerOpacity } = useSparklineInteractiveContext();
   const {
     scrollRef,

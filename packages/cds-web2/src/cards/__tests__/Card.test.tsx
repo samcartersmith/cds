@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { ResponsiveProps, ResponsivePropsDevices } from '@cbhq/cds-common2';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { DefaultThemeProvider } from '../../utils/test';

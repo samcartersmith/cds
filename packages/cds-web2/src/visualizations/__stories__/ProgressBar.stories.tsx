@@ -2,7 +2,6 @@ import React from 'react';
 
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { Text } from '../../typography/Text';
 import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';

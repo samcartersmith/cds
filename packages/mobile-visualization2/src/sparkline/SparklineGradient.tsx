@@ -23,11 +23,14 @@ export const SparklineGradient = memo(
         colorScheme: theme.colorScheme,
         usage: 'graphic',
       });
-      const areaColor = getAccessibleColor({
-        background: background ?? theme.color.bg,
-        foreground: color,
-        usage: 'graphic',
-      });
+      const areaColor =
+        color !== 'auto'
+          ? color
+          : getAccessibleColor({
+              background: background ?? theme.color.bg,
+              foreground: 'auto',
+              usage: 'graphic',
+            });
 
       const hasChildren = !!children;
       const linearGradient = useMemo(() => {
