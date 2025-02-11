@@ -65,6 +65,7 @@ export const Card = memo<CardProps>(function Card({
   accessibilityHint,
   testID,
   borderRadius,
+  elevation,
   ...props
 }) {
   const width = widthProps ?? cardSizes[size].width;
@@ -75,6 +76,7 @@ export const Card = memo<CardProps>(function Card({
     <VStack
       background={linkable ? undefined : background}
       borderRadius={borderRadius}
+      elevation={linkable ? undefined : elevation}
       height={linkable ? undefined : height}
       overflow="hidden"
       pin={linkable ? undefined : pin}
@@ -94,6 +96,7 @@ export const Card = memo<CardProps>(function Card({
       background={background}
       borderRadius={borderRadius}
       className={cx(pin && pinStyle[pin])}
+      elevation={elevation}
       height={height}
       href={href}
       onKeyDown={onKeyDown}

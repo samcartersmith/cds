@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file!
 
 #### 📘 Misc
 
+- Remove deprecation mark on Interactable. [[#3580](https://github.cbhq.net/frontend/cds/pull/3580)]
+
+#### 📘 Misc
+
 - Deprecate web ButtonOrLink and Interactable. [[#3570](https://github.cbhq.net/frontend/cds/pull/3570)]
 
 ## 7.6.7 (2/4/2025 PST)

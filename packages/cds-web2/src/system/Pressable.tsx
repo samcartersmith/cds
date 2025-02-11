@@ -7,27 +7,15 @@ import React, {
   useState,
 } from 'react';
 import { css, cx } from '@linaria/core';
-import { getBlendedBackgroundColor } from '@cbhq/cds-common2/color/getBlendedBackgroundColor';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
-import {
-  accessibleOpacityDisabled,
-  opacityHovered,
-  opacityPressed,
-} from '@cbhq/cds-common2/tokens/interactable';
 import { ComponentEventHandlerProps } from '@cbhq/cds-common2/types/ComponentEventHandlerProps';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 
 import { Polymorphic } from '../core/polymorphism';
 import { useIsoEffect } from '../hooks/useIsoEffect';
-import { useTheme } from '../hooks/useTheme';
-import { type BoxBaseProps, Box } from '../layout/Box';
 
+import { type InteractableBaseProps, Interactable } from './Interactable';
 import {
-  interactableBackground,
-  interactableDisabledBackground,
-  interactableHoveredBackground,
-  interactableHoveredOpacity,
   interactablePressedBackground,
   interactablePressedOpacity,
 } from './interactableCSSProperties';
@@ -49,57 +37,16 @@ const scaledDownStyle = css`
   }
 `;
 
-const focusRingStyle = css`
-  position: relative;
-  /* if we use the focus ring we need to turn off the browser stylesheet outline */
-  &:focus {
-    outline: none;
-  }
-  &:focus-visible {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-offset: 2px;
-    outline-color: var(--color-bgPrimary);
-  }
-`;
-
 const baseStyle = css`
   padding: 0;
-  appearance: none;
-  cursor: pointer;
-  user-select: none;
-  text-decoration: none;
-  background-color: var(${interactableBackground});
 
-  /* Removes weird bonus padding in Firefox */
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
-
-  &:hover {
-    background-color: var(${interactableHoveredBackground});
-    > * {
-      opacity: var(${interactableHoveredOpacity});
-    }
-  }
-
-  &:active,
   &[data-active='true'] {
     background-color: var(${interactablePressedBackground});
     > * {
       opacity: var(${interactablePressedOpacity});
     }
   }
-  &:disabled,
-  &[data-disabled='true'] {
-    opacity: ${accessibleOpacityDisabled};
-    cursor: default;
-    pointer-events: none;
-    touch-action: none;
-    background-color: var(${interactableDisabledBackground});
-  }
+
   &[data-loading='true'] {
     opacity: 1;
     background-color: var(${interactablePressedBackground});
@@ -107,21 +54,12 @@ const baseStyle = css`
       opacity: var(${interactablePressedOpacity});
     }
   }
-  &[data-block='true'] {
-    display: block;
-    width: 100%;
-  }
 `;
 
 const transparentActiveStyle = css`
-  &:active,
   &[data-active='true'] {
     background-color: var(--color-transparent);
   }
-`;
-
-const transparentWhileInactiveStyle = css`
-  background-color: transparent;
 `;
 
 export type OnPress = React.MouseEventHandler;
@@ -138,38 +76,10 @@ export type LinkableProps = {
   >;
 
 export type PressableBaseProps = Polymorphic.ExtendableProps<
-  BoxBaseProps,
+  Omit<InteractableBaseProps, 'as'>,
   {
-    children: NonNullable<React.ReactNode>;
-    className?: string;
-    focusable?: boolean;
     /** Dont scale element on press. */
     noScaleOnPress?: boolean;
-    /** Background color of the overlay (element being interacted with). */
-    background: ThemeVars.Color;
-    /** Set element to block and expand to 100% width. */
-    block?: boolean;
-    /** Border color of the element being interacted with. */
-    borderColor?: ThemeVars.Color;
-    /** Is the element currently disabled. */
-    disabled?: boolean;
-    /**
-     * Is the element currenty loading.
-     * When set to true, will disable element from press and keyboard events
-     */
-    loading?: boolean;
-    /** Is the element being pressed. Primarily a mobile feature, but can be used on the web. */
-    pressed?: boolean;
-    /**
-     * Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc).
-     * Must be used in conjunction with the "pressed" prop
-     */
-    transparentWhileInactive?: boolean;
-    /**
-     * Mark the background and border as transparent even while element is interacted with (elevation underlay issue).
-     * Must be used in conjunction with the "pressed" prop
-     */
-    transparentWhilePressed?: boolean;
   } & LinkableProps &
     ComponentEventHandlerProps
 >;
@@ -191,10 +101,6 @@ export const Pressable: PressableComponent = forwardRef<
   <AsComponent extends React.ElementType>(
     {
       as,
-      background,
-      block,
-      borderColor = 'transparent',
-      borderWidth = 100,
       className,
       disabled,
       loading,
@@ -214,19 +120,15 @@ export const Pressable: PressableComponent = forwardRef<
       rel,
       target,
       type,
-      pressed,
-      style: customStyle,
-      transparentWhileInactive,
       transparentWhilePressed,
       ...props
     }: PressableProps<AsComponent>,
     ref?: Polymorphic.Ref<AsComponent>,
   ) => {
-    const theme = useTheme();
     const elementRef = useRef(null);
     useImperativeHandle(ref, () => elementRef.current, []); // Merges forwarded ref with internal elementRef
     const isLink = to || href;
-    const Component: React.ElementType = as ?? (isLink ? 'a' : 'button');
+    const Component = (as ?? (isLink ? 'a' : 'button')) satisfies React.ElementType;
     const defaultButtonType = Component === 'button' ? 'button' : undefined;
     const trulyDisabled = Boolean(disabled && !focusable);
     const [nativeTabbable, setNativeTabbable] = useState(true);
@@ -351,64 +253,20 @@ export const Pressable: PressableComponent = forwardRef<
       ],
     );
 
-    const style = useMemo(
-      () => ({
-        [interactableBackground]: `var(--color-${background})`,
-        /**
-         * Apply an interactive background style. Blend the color with the background or backgroundInverse values
-         */
-        // Hover:
-        [interactableHoveredBackground]: getBlendedBackgroundColor({
-          background,
-          themeColor: theme.color,
-          opacity: opacityHovered[100],
-          colorScheme: theme.colorScheme,
-        }),
-        [interactableHoveredOpacity]: opacityHovered[100],
-        // Pressed:
-        [interactablePressedBackground]: getBlendedBackgroundColor({
-          background,
-          themeColor: theme.color,
-          opacity: opacityPressed[100],
-          colorScheme: theme.colorScheme,
-        }),
-        [interactablePressedOpacity]: opacityPressed[100],
-        // Disabled:
-        [interactableDisabledBackground]: getBlendedBackgroundColor({
-          background,
-          themeColor: theme.color,
-          opacity: accessibleOpacityDisabled,
-          colorScheme: theme.colorScheme,
-          isDisabled: true,
-        }),
-        ...customStyle,
-      }),
-      [customStyle, background, theme],
-    );
-
     return (
-      <Box
+      <Interactable
         ref={elementRef}
-        aria-busy={loading}
-        aria-pressed={pressed}
         as={Component}
-        background={background}
-        borderColor={transparentWhileInactive ? 'transparent' : borderColor}
-        borderWidth={borderWidth}
         className={cx(
           baseStyle,
-          focusRingStyle,
           !noScaleOnPress && scaledDownStyle,
-          // use transparent override prop to set styles for border and background
-          transparentWhileInactive && transparentWhileInactiveStyle,
           transparentWhilePressed && transparentActiveStyle,
           className,
         )}
         data-active={active || undefined}
-        data-block={block || undefined}
-        data-disabled={shouldBeDisabled || undefined}
         data-loading={loading || undefined}
         href={to ?? href}
+        loading={loading}
         onClick={onClick}
         onClickCapture={handleOnClickCapture}
         onKeyDown={handleOnKeyDown}
@@ -416,8 +274,8 @@ export const Pressable: PressableComponent = forwardRef<
         onMouseDown={handleOnMouseDown}
         onMouseDownCapture={handleOnMouseDownCapture}
         rel={!rel && target === '_blank' ? 'noopener noreferrer' : rel}
-        style={style}
         target={target}
+        transparentWhilePressed={transparentWhilePressed}
         type={type ?? defaultButtonType}
         {...accessibilityProps}
         {...props}

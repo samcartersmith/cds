@@ -8,7 +8,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';
 import { Spacer } from '../layout/Spacer';
-import { Interactable, InteractableProps } from '../system/Interactable';
+import { Interactable, InteractableBaseProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
 import { Text } from '../typography/Text';
 import { isRtl } from '../utils/isRtl';
@@ -53,7 +53,9 @@ type ControlInternalProps<T extends string> = {
   label?: React.ReactNode;
   children: React.ReactNode;
 } & ControlProps &
-  Partial<Pick<InteractableProps, 'background' | 'borderColor' | 'borderRadius' | 'borderWidth'>>;
+  Partial<
+    Pick<InteractableBaseProps, 'background' | 'borderColor' | 'borderRadius' | 'borderWidth'>
+  >;
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   {

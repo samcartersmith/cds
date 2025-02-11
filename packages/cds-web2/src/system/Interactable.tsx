@@ -1,25 +1,19 @@
-import React, { createElement, forwardRef, useMemo } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { getBlendedBackgroundColor } from '@cbhq/cds-common2/color/getBlendedBackgroundColor';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   accessibleOpacityDisabled,
   opacityHovered,
   opacityPressed,
 } from '@cbhq/cds-common2/tokens/interactable';
-import { InteractableBaseProps } from '@cbhq/cds-common2/types/InteractableBaseProps';
-import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
-import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
+import { Polymorphic } from '../core/polymorphism';
 import { useTheme } from '../hooks/useTheme';
-import {
-  borderColor as borderColorStyles,
-  borderWidth as borderWidthStyles,
-  elevation as elevationStyle,
-} from '../styles/responsive/base';
+import { type BoxBaseProps, Box } from '../layout/Box';
 
 import {
   interactableBackground,
-  interactableBorderRadius,
   interactableDisabledBackground,
   interactableHoveredBackground,
   interactableHoveredOpacity,
@@ -41,26 +35,12 @@ const focusRingStyle = css`
   }
 `;
 
-const disabledStyle = css`
-  opacity: ${accessibleOpacityDisabled};
-  cursor: default;
-  pointer-events: none;
-  touch-action: none;
-  background-color: var(${interactableDisabledBackground});
-`;
-
-const disabledBorderStyle = css`
-  // safari specific fix to https://bugs.webkit.org/show_bug.cgi?id=238088
-  border-color: rgba(0, 0, 0, 0.005);
-`;
-
 const baseStyle = css`
   appearance: none;
   cursor: pointer;
   user-select: none;
   text-decoration: none;
   background-color: var(${interactableBackground});
-  border-radius: var(${interactableBorderRadius});
 
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
@@ -82,6 +62,20 @@ const baseStyle = css`
       opacity: var(${interactablePressedOpacity});
     }
   }
+
+  &:disabled,
+  &[data-disabled='true'] {
+    opacity: ${accessibleOpacityDisabled};
+    cursor: default;
+    pointer-events: none;
+    touch-action: none;
+    background-color: var(${interactableDisabledBackground});
+  }
+
+  &[data-block='true'] {
+    display: block;
+    width: 100%;
+  }
 `;
 
 const transparentActiveStyle = css`
@@ -90,162 +84,144 @@ const transparentActiveStyle = css`
   }
 `;
 
-const blockStyle = css`
-  display: block;
-  width: 100%;
-`;
-
 const transparentWhileInactiveStyle = css`
   background-color: transparent;
+  &:disabled {
+    background-color: transparent;
+  }
 `;
 
-export type InteractableInheritedProps = Omit<React.AllHTMLAttributes<Element>, 'as' | 'className'>;
+export type InteractableBaseProps = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  {
+    as: React.ElementType;
+    children: NonNullable<React.ReactNode>;
+    /** Apply class names to the outer container. */
+    className?: string;
+    focusable?: boolean;
+    /** Background color of the overlay (element being interacted with). */
+    background: ThemeVars.Color;
+    /** Set element to block and expand to 100% width. */
+    block?: boolean;
+    /** Is the element currently disabled. */
+    disabled?: boolean;
+    /**
+     * Is the element currenty loading.
+     * When set to true, will disable element from press and keyboard events
+     */
+    loading?: boolean;
+    /** Is the element being pressed. Primarily a mobile feature, but can be used on the web. */
+    pressed?: boolean;
+    /**
+     * Mark the background and border as transparent until the element is interacted with (hovered, pressed, etc).
+     * Must be used in conjunction with the "pressed" prop
+     */
+    transparentWhileInactive?: boolean;
+    /**
+     * Mark the background and border as transparent even while element is interacted with (elevation underlay issue).
+     * Must be used in conjunction with the "pressed" prop
+     */
+    transparentWhilePressed?: boolean;
+  }
+>;
 
-export type InteractableProps = {
-  children: NonNullable<React.ReactNode>;
-  /** Element or component to render the container as. */
-  as:
-    | 'a'
-    | 'button'
-    | 'div'
-    | 'input'
-    | 'label'
-    | 'select'
-    | 'span'
-    | 'textarea'
-    | React.ComponentType<React.PropsWithChildren<any>>;
-  /** Apply class names to the outer container. */
-  className?: string;
-  focusable?: boolean;
-} & InteractableBaseProps &
-  InteractableInheritedProps &
-  SharedProps &
-  Pick<
-    SharedAccessibilityProps,
-    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+export type InteractableProps<AsComponent extends React.ElementType> =
+  Polymorphic.InheritableElementProps<
+    AsComponent,
+    InteractableBaseProps & { as: AsComponent } & { ref?: Polymorphic.Ref<AsComponent> }
   >;
 
-export const InteractableContent = forwardRef(function InteractableContent(
-  {
-    as: Container,
-    background,
-    block,
-    borderColor = 'transparent',
-    borderRadius = 0,
-    borderWidth,
-    children,
-    className: customClassName,
-    disabled,
-    elevation,
-    // TODO - why do we need basically a second disabled prop?
-    loading,
-    pressed,
-    style: customStyle,
-    testID,
-    transparentWhileInactive,
-    transparentWhilePressed,
-    width,
-    height,
-    accessibilityLabel,
-    accessibilityLabelledBy,
-    accessibilityHint,
-    ...props
-  }: InteractableProps,
-  ref: React.Ref<Element>,
-) {
-  const theme = useTheme();
-  /**
-   * this variable should only be used when conditionally rendering the disabled DOM attribute
-   */
-  const shouldBeDisabled = loading || disabled;
+type InteractableComponent = (<AsComponent extends React.ElementType>(
+  props: InteractableProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
 
-  const className = cx(
-    baseStyle,
-    focusRingStyle,
-    disabled && disabledStyle,
-    // TODO this is a specific case for Safari, maybe remove as it sounds like its been fixed
-    disabled && borderColor === 'transparent' ? disabledBorderStyle : null,
-    // use transparent override prop to set styles for border and background
-    transparentWhileInactive ? borderColorStyles.transparent : borderColorStyles[borderColor],
-    transparentWhileInactive && transparentWhileInactiveStyle,
-    transparentWhilePressed && transparentActiveStyle,
-    // TODO - this is basically the default border width
-    borderColor && typeof borderWidth === 'undefined' && borderWidthStyles[100],
-    borderWidth && borderWidthStyles[borderWidth],
-    // TODO - could consider encouraging the use of style prop or className for setting display - the user agent styles for the element should be enough
-    block && blockStyle,
-    elevation && elevationStyle[elevation],
-    customClassName,
-  );
-
-  const style = useMemo(
-    () => ({
-      // TODO it doesn't look like --interactable-background is used at all in cds-web2
-      [interactableBackground]: `var(--color-${background})`,
-      /**
-       * Apply an interactive background style. Blend the color with the background or backgroundInverse values
-       */
-      // Hover:
-      // TO DO: use 0.88 for opacity until we can get the hue value of the background color in the theme
-      [interactableHoveredBackground]: getBlendedBackgroundColor({
-        background,
-        themeColor: theme.color,
-        opacity: opacityHovered[100],
-        colorScheme: theme.colorScheme,
-      }),
-      [interactableHoveredOpacity]: opacityHovered[100],
-      // Pressed:
-      // TO DO: use 0.82 for opacity until we can get the hue value of the background color in the theme
-      [interactablePressedBackground]: getBlendedBackgroundColor({
-        background,
-        themeColor: theme.color,
-        opacity: opacityPressed[100],
-        colorScheme: theme.colorScheme,
-      }),
-      [interactablePressedOpacity]: opacityPressed[100],
-      // Disabled:
-      [interactableDisabledBackground]: getBlendedBackgroundColor({
-        background,
-        themeColor: theme.color,
-        opacity: accessibleOpacityDisabled,
-        colorScheme: theme.colorScheme,
-        isDisabled: true,
-      }),
-      [interactableBorderRadius]: `var(--borderRadius-${borderRadius})`,
-      width,
-      height,
-      ...customStyle,
-    }),
-    [customStyle, height, width, background, borderRadius, theme],
-  );
-
-  return createElement(
-    Container,
+export const Interactable: InteractableComponent = forwardRef<
+  React.ReactElement<InteractableBaseProps>,
+  InteractableBaseProps
+>(
+  <AsComponent extends React.ElementType>(
     {
-      // TODO - if this isn't necessary on web we can cut the pressed prop from Interactable
-      'aria-pressed': pressed,
-      'data-testid': testID,
-      'aria-label': accessibilityLabel,
-      'aria-labelledby': accessibilityLabelledBy,
-      'aria-describedby': accessibilityHint,
-      ...props,
+      as,
+      background,
+      block,
+      borderColor = 'transparent',
+      borderWidth = 100,
       className,
-      disabled: shouldBeDisabled,
-      style,
-      ref,
-    },
-    children,
-  );
-});
+      disabled,
+      loading,
+      pressed,
+      style: customStyle,
+      transparentWhileInactive,
+      transparentWhilePressed,
+      ...props
+    }: InteractableProps<AsComponent>,
+    ref?: Polymorphic.Ref<AsComponent>,
+  ) => {
+    const theme = useTheme();
 
-/** @deprecated Will be removed in Q1 2025. Use Pressable instead. */
-export const Interactable = forwardRef<Element, InteractableProps>(function Interactable(
-  { children, ...props },
-  ref,
-) {
-  return (
-    <InteractableContent ref={ref} {...props}>
-      {children}
-    </InteractableContent>
-  );
-});
+    /**
+     * this variable should only be used when conditionally rendering the disabled DOM attribute
+     */
+    const shouldBeDisabled = loading || disabled;
+
+    const style = useMemo(
+      () => ({
+        [interactableBackground]: `var(--color-${background})`,
+        /**
+         * Apply an interactive background style. Blend the color with the background or backgroundInverse values
+         */
+        // Hover:
+        [interactableHoveredBackground]: getBlendedBackgroundColor({
+          background,
+          themeColor: theme.color,
+          opacity: opacityHovered[100],
+          colorScheme: theme.colorScheme,
+        }),
+        [interactableHoveredOpacity]: opacityHovered[100],
+        // Pressed:
+        [interactablePressedBackground]: getBlendedBackgroundColor({
+          background,
+          themeColor: theme.color,
+          opacity: opacityPressed[100],
+          colorScheme: theme.colorScheme,
+        }),
+        [interactablePressedOpacity]: opacityPressed[100],
+        // Disabled:
+        [interactableDisabledBackground]: getBlendedBackgroundColor({
+          background,
+          themeColor: theme.color,
+          opacity: accessibleOpacityDisabled,
+          colorScheme: theme.colorScheme,
+          isDisabled: true,
+        }),
+        ...customStyle,
+      }),
+      [customStyle, background, theme],
+    );
+
+    return (
+      <Box
+        ref={ref}
+        aria-busy={loading}
+        aria-pressed={pressed}
+        as={as satisfies React.ElementType}
+        background={background}
+        borderColor={transparentWhileInactive ? 'transparent' : borderColor}
+        borderWidth={borderWidth}
+        className={cx(
+          baseStyle,
+          focusRingStyle,
+          transparentWhileInactive && transparentWhileInactiveStyle,
+          transparentWhilePressed && transparentActiveStyle,
+          className,
+        )}
+        data-block={block || undefined}
+        data-disabled={shouldBeDisabled || undefined}
+        disabled={disabled}
+        style={style}
+        {...props}
+      />
+    );
+  },
+);
