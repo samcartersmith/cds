@@ -131,7 +131,7 @@ export const getStyles = (styleProps: StyleProps, inlineStyle?: React.CSSPropert
       // If it's an object, treat it as a responsive style: add the corresponding classnames
       if (typeof value.base !== 'undefined')
         // @ts-expect-error - Key type
-        className += ' ' + styles[styleProp][value.base];
+        className += ' ' + baseStyles[styleProp][value.base];
       if (typeof value.phone !== 'undefined')
         // @ts-expect-error - Key type
         className += ' ' + phoneStyles[styleProp][value.phone];

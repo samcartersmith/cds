@@ -254,7 +254,7 @@ export const TextNumberOfLinesCustomSpacing = () => {
         padding={{
           base: 4,
           tablet: 3,
-          desktop: 5,
+          desktop: 2,
         }}
       >
         <TextBody as="p" numberOfLines={2}>
