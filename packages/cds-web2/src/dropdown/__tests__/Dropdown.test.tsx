@@ -122,7 +122,7 @@ describe('Dropdown', () => {
 
     // look for overflow: auto
     const menu = await screen.findByRole('menu');
-    expect(menu.className).toMatch(/cds-auto/);
+    expect(menu.className).toContain('auto');
   });
 
   it('Dropdown renders as a modal when enableMobileModal is set', async () => {

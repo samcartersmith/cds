@@ -1,6 +1,13 @@
 // @ts-check
 const isTestEnv = process.env.NODE_ENV === 'test';
 
+const invalidCharacters = '-0123456789';
+
+const createClassName = (hash, title) => {
+  const needsEscaping = invalidCharacters.includes(title.charAt(0));
+  return `${needsEscaping ? '_' : ''}${title}-${hash}`;
+};
+
 /** @type {import('@babel/core').TransformOptions} */
 module.exports = {
   presets: [
@@ -18,7 +25,7 @@ module.exports = {
         sourceDir: 'packages/cds-web2/src',
         outputDir: 'packages/cds-web2/esm',
         linariaOptions: {
-          classNameSlug: (hash, title) => `cds-${title}-${hash}`,
+          classNameSlug: createClassName,
         },
       },
     ],

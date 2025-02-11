@@ -6,9 +6,6 @@
     "packageManager": "yarn"
   },
   "defaultBase": "master",
-  "affected": {
-    "defaultBase": "master"
-  },
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "packages"
@@ -23,6 +20,7 @@
   },
   "namedInputs": {
     "default": [
+      "{projectRoot}/*",
       "{projectRoot}/**/*",
       "sharedGlobals"
     ],

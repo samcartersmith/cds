@@ -63,7 +63,7 @@ CDS distinguishes between static and dynamic style props:
 Example:
 
 ```tsx
-<Box color="backgroundPrimary" padding={4} margin={{ base: 2, minTablet: 4 }} width="100%" />
+<Box color="bgPrimary" padding={4} margin={{ base: 2, minTablet: 4 }} width="100%" />
 ```
 
 ### Responsive Design

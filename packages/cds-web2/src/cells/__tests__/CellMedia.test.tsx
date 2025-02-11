@@ -112,7 +112,7 @@ describe('CellMedia', () => {
     const image = screen.getByRole('img');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
-    expect(image.className).toMatch('cds-circle');
+    expect(image.className).toMatch('circle');
   });
 
   it('renders an avatar', () => {
@@ -120,7 +120,7 @@ describe('CellMedia', () => {
     const image = screen.getByRole('img');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
-    expect(image.className).toMatch('cds-circle');
+    expect(image.className).toMatch('circle');
   });
 
   it('renders an image', () => {
@@ -128,7 +128,7 @@ describe('CellMedia', () => {
     const image = screen.getByRole('img');
 
     expect(image).toHaveAttribute('src', 'some/image/path');
-    expect(image.className).toMatch('cds-squircle');
+    expect(image.className).toMatch('squircle');
   });
 
   it('renders a pictogram', () => {

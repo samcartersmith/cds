@@ -3,13 +3,11 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Box, BoxProps } from '../Box';
 
-const DEFAULT_CLASS = 'cds-flex';
-const CLASS_PREFIX = 'cds';
+const DEFAULT_CLASS = 'flex';
 
 function expectClassName<K extends keyof BoxProps<'div'>>(
   prop: K,
   values: NonNullable<BoxProps<'div'>[K]>[],
-  classPrefix = CLASS_PREFIX,
 ) {
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe
@@ -20,7 +18,7 @@ function expectClassName<K extends keyof BoxProps<'div'>>(
 
       rerender(<Box {...{ [prop]: value }}>Child</Box>);
 
-      expect(screen.getByText('Child').className).toContain(`${classPrefix}-${value}`.trim());
+      expect(screen.getByText('Child').className).toContain(value.trim());
     });
   });
 }
@@ -97,7 +95,7 @@ describe('Box', () => {
 
       rerender(<Box bordered>Child</Box>);
 
-      expect(screen.getByText('Child').className).toContain(`${CLASS_PREFIX}-bordered`);
+      expect(screen.getByText('Child').className).toContain('bordered');
     });
 
     it(`will set border radius class name for \`borderRadius\` prop`, () => {
@@ -106,7 +104,7 @@ describe('Box', () => {
       expect(screen.getByText('Child').className).toContain(DEFAULT_CLASS);
 
       rerender(<Box borderRadius={200}>Child</Box>);
-      expect(screen.getByText('Child').className).toContain(`${CLASS_PREFIX}-200`);
+      expect(screen.getByText('Child').className).toContain('200');
     });
   });
 

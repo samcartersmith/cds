@@ -4,13 +4,11 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 import { Grid, GridProps } from '../Grid';
 import { GridColumn } from '../GridColumn';
 
-const DEFAULT_CLASS = 'cds-grid';
-const CLASS_PREFIX = 'cds';
+const DEFAULT_CLASS = 'grid';
 
 function expectClassName<K extends keyof GridProps<'div'>>(
   prop: K,
   values: NonNullable<GridProps<'div'>[K]>[],
-  classPrefix = CLASS_PREFIX,
 ) {
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe
@@ -25,7 +23,7 @@ function expectClassName<K extends keyof GridProps<'div'>>(
         </Grid>,
       );
 
-      expect(screen.getByText('Child').className).toContain(`${classPrefix}-${value}`.trim());
+      expect(screen.getByText('Child').className).toContain(value.trim());
     });
   });
 }
@@ -90,7 +88,7 @@ describe('Grid', () => {
         </Grid>,
       );
 
-      expect(screen.getByText('Child').className).toContain(`cds-bordered`);
+      expect(screen.getByText('Child').className).toContain('bordered');
     });
     it(`will set border radius class name for \`borderRadius\` prop`, () => {
       const { rerender } = render(<Grid columnMin="0px">Child</Grid>);
@@ -103,7 +101,7 @@ describe('Grid', () => {
         </Grid>,
       );
 
-      expect(screen.getByText('Child').className).toContain(`${CLASS_PREFIX}-200`);
+      expect(screen.getByText('Child').className).toContain('200');
     });
   });
 
@@ -258,7 +256,7 @@ describe('Grid', () => {
     });
   });
 
-  const DEFAULT_COLUMN_CLASS = 'cds-flex';
+  const DEFAULT_COLUMN_CLASS = 'flex';
 
   describe('GridColumn', () => {
     it('renders the colStart className', () => {

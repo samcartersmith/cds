@@ -45,7 +45,7 @@ Example:
 
 ```tsx
 <Box
-  color="backgroundPrimary"
+  color="bgPrimary"
   padding={{ base: 3, minTablet: 5 }}
   width={{ base: '100%', minDesktop: '50%' }}
 />
@@ -131,7 +131,7 @@ import { useTheme } from '@cbhq/cds-mobile';
 
 const MyComponent = () => {
   const theme = useTheme();
-  return <View style={{ backgroundColor: theme.color.backgroundPrimary }}>{/* Content */}</View>;
+  return <View style={{ backgroundColor: theme.color.bgPrimary }}>{/* Content */}</View>;
 };
 ```
 

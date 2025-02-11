@@ -21,6 +21,7 @@
 .cardWrapper:hover,
 .cardWrapper:active,
 .cardWrapper:focus {
+  /* TO DO: Fix this, this color no longer exists */
   background-color: var(--color-backgroundSecondaryHover);
   text-decoration: none;
 

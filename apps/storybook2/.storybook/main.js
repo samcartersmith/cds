@@ -93,7 +93,7 @@ const config = {
             sourceMap: !isProduction,
             babelOptions: BABEL_OPTIONS,
             // @ts-expect-error Missing linaria classNameSlug types
-            classNameSlug: (hash, title) => `cds-${title}-${hash}`,
+            classNameSlug: (hash, title) => `${title}-${hash}`,
           },
         });
       }
@@ -110,7 +110,7 @@ const config = {
       for (const use of rule.use) {
         if (
           typeof use === 'object' &&
-          typeof use.options === 'object' &&
+          typeof use?.options === 'object' &&
           use.loader?.includes('babel-loader')
         ) {
           Object.assign(use.options, BABEL_OPTIONS);

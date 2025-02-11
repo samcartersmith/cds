@@ -35,7 +35,7 @@ async function copyFontsToOut(dir: string, outputDir: string) {
     Array.from(fontFiles).map(async (fontFile) => {
       await fs.promises.writeFile(
         path.join(outputDir, path.basename(fontFile)),
-        await fs.promises.readFile(fontFile),
+        (await fs.promises.readFile(fontFile)) as any,
       );
     }),
   );

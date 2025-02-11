@@ -62,7 +62,7 @@ const MyComponent = ({ variant = 'primary', isDisabled, onClick }: MyComponentPr
   return (
     <Box
       as="button"
-      background={variant === 'primary' ? 'backgroundPrimary' : 'backgroundSecondary'}
+      background={variant === 'primary' ? 'bgPrimary' : 'bgSecondary'}
       padding={3}
       borderRadius={200}
       disabled={isDisabled}

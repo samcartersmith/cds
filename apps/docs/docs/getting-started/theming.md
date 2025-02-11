@@ -58,11 +58,11 @@ CDS provides a default theme out of the box, which includes a carefully curated 
 
 ```tsx
 const defaultColors = {
-  backgroundPrimary: 'rgb(255, 255, 255)',
-  backgroundSecondary: 'rgb(245, 245, 245)',
-  textPrimary: 'rgb(0, 0, 0)',
-  textSecondary: 'rgb(102, 102, 102)',
-  accentPrimary: 'rgb(0, 122, 255)',
+  bgPrimary: 'rgb(255, 255, 255)',
+  bgSecondary: 'rgb(245, 245, 245)',
+  fgPrimary: 'rgb(0, 0, 0)',
+  fgSecondary: 'rgb(102, 102, 102)',
+  accentPrimaryBold: 'rgb(0, 122, 255)',
 };
 ```
 
@@ -96,7 +96,7 @@ You can override the default theme by providing a custom theme to the `ThemeProv
 ```tsx
 const customTheme = {
   color: {
-    backgroundPrimary: '#000000',
+    bgPrimary: '#000000',
     textPrimary: '#FFFFFF',
     accentPrimary: '#FF5733',
   },
@@ -121,14 +121,14 @@ Dynamic theming allows your application to switch between themes at runtime. Thi
 ```tsx
 const lightTheme = {
   color: {
-    backgroundPrimary: '#FFFFFF',
+    bgPrimary: '#FFFFFF',
     textPrimary: '#000000',
   },
 };
 
 const darkTheme = {
   color: {
-    backgroundPrimary: '#000000',
+    bgPrimary: '#000000',
     textPrimary: '#FFFFFF',
   },
 };

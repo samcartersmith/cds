@@ -89,7 +89,7 @@ const ToggleButton = () => {
 
   return (
     <Button
-      background={isActive ? 'backgroundPrimary' : 'backgroundSecondary'}
+      background={isActive ? 'bgPrimary' : 'bgSecondary'}
       onClick={() => setIsActive(!isActive)}
     >
       {isActive ? 'Active' : 'Inactive'}
@@ -140,7 +140,7 @@ Building custom components from CDS primitives like `Box` and `Text` ensures con
 import { Box, Text } from '@cbhq/cds-web';
 
 const Badge = ({ label, color }) => (
-  <Box paddingX={2} paddingY={1} background={color || 'backgroundPrimary'} borderRadius={100}>
+  <Box paddingX={2} paddingY={1} background={color || 'bgPrimary'} borderRadius={100}>
     <Text color="fgInverse" fontSize="caption">
       {label}
     </Text>
