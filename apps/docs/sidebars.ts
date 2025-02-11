@@ -58,7 +58,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/layout/collapsible',
+              id: 'components/layout/Collapsible/collapsible',
               label: 'Collapsible',
             },
             { type: 'doc', id: 'components/layout/divider', label: 'Divider' },
@@ -137,6 +137,11 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Media',
           items: [
+            {
+              type: 'doc',
+              id: 'components/media/Avatar/avatar',
+              label: 'Avatar',
+            },
             {
               type: 'doc',
               id: 'components/media/heroSquare',

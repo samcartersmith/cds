@@ -41,18 +41,17 @@ module.exports = {
   watchInterval: 20,
   /**
    * Any source files relative to entryPoints above that you want docgen to parse.
+   * Plese add sourceFiles in alphabetical order.
    */
   sourceFiles: [
-    // layout
-    'layout/Box',
-    'layout/HStack',
-    // input
     'buttons/Button',
-    // feedback
-    'loaders/Spinner',
-    // other
+    'collapsible/Collapsible',
     'dots/DotCount',
     'dots/DotStatusColor',
     'dots/DotSymbol',
+    'layout/Box',
+    'layout/HStack',
+    'loaders/Spinner',
+    'media/Avatar',
   ],
 };

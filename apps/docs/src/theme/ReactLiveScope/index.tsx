@@ -1,8 +1,11 @@
 import React from 'react';
 import * as CDSDataAssets from '@cbhq/cds-common2/internal/data/assets';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common2/tokens/dot';
 import * as CDSButtons from '@cbhq/cds-web2/buttons';
+import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import * as CDSDots from '@cbhq/cds-web2/dots';
+import { useA11yControlledVisibility } from '@cbhq/cds-web2/hooks/useA11yControlledVisibility';
 import * as CDSIcons from '@cbhq/cds-web2/icons';
 import * as CDSIllustrations from '@cbhq/cds-web2/illustrations';
 import * as CDSLayout from '@cbhq/cds-web2/layout';
@@ -17,12 +20,15 @@ const ReactLiveScope: Record<string, unknown> = {
   // CDS tokens
   avatarDotSizeMap,
   avatarIconSizeMap,
+  // hooks
+  useA11yControlledVisibility,
   // layout
   ...CDSLayout,
-  // input
-  ...CDSButtons,
+  Collapsible,
   // typography
   ...CDSTypography,
+  // input
+  ...CDSButtons,
   // loaders
   Spinner,
   // media
@@ -33,6 +39,7 @@ const ReactLiveScope: Record<string, unknown> = {
   ...CDSDots,
   // utils
   ...CDSDataAssets,
+  loremIpsum,
 };
 
 export default ReactLiveScope;

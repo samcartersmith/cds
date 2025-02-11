@@ -1,0 +1,49 @@
+---
+id: avatar
+title: Avatar
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+import { Spinner } from '@cbhq/cds-web2/loaders/Spinner';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { BoxBanner } from '@site/src/components/page/ComponentBanner/BoxBanner';
+
+import webPropsToc from ':docgen/cds-web2/loaders/Spinner/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/loaders/Spinner/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="Avatar"
+    description="Avatar is a visual representation of a user, company, or entity."
+    webMetadata={{
+      import: "import { Avatar } from '@cbhq/cds-web/media/Avatar'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/media/Avatar.tsx',
+      storybook: 'https://cdsstorybook.cbhq.net/?path=/story/core-components-avatar--normal',
+    }}
+    mobileMetadata={{
+      import: "import { Avatar } from '@cbhq/cds-mobile/media/Avatar'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/media/Avatar.tsx',
+    }}
+    banner={<BoxBanner />}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>
