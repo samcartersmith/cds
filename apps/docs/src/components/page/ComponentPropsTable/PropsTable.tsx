@@ -9,7 +9,6 @@ function PropsTable({ props, sharedTypeAliases, searchTerm }: PropsTableProps) {
       style={{
         maxWidth: '100%',
         overflow: 'hidden',
-        borderRadius: 'var(--borderRadius-400)',
       }}
     >
       <table>
