@@ -6,7 +6,6 @@ import { type SelectOptionBaseProps } from '@cbhq/cds-common2/types';
 import { Cell } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
-import { visibility } from '../styles/styles';
 import { type PressableBaseProps, Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
@@ -158,12 +157,7 @@ export const SelectOption = memo(
       >
         <Cell
           {...selectCellSpacingConfig}
-          accessory={
-            <CellAccessory
-              className={selected ? visibility.visible : visibility.hidden}
-              type="selected"
-            />
-          }
+          accessory={<CellAccessory type="selected" visibility={selected ? 'visible' : 'hidden'} />}
           borderRadius={0}
           className={cx(heightStyles, multiline ? multilineStyles : undefined)}
           selected={selected}

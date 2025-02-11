@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
-import { borderRadius } from '../../styles/styles';
 import { TextBody, TextTitle4 } from '../../typography';
 import { Box } from '../Box';
 import { VStack } from '../VStack';
@@ -111,17 +110,17 @@ export const BorderedAndRounded = () => (
   </Box>
 );
 
+const borderRadii: ThemeVars.BorderRadius[] = [
+  0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000,
+] as const;
+
 export const RoundedVariations = () => (
   <VStack gap={1}>
-    {Object.entries(borderRadius).map(([key]) => {
+    {borderRadii.map((borderRadius) => {
       return (
-        <Fragment key={key}>
-          <TextTitle4 as="p">{key}</TextTitle4>
-          <Box
-            background="bgAlternate"
-            borderRadius={Number(key) as ThemeVars.BorderRadius}
-            padding={2}
-          >
+        <Fragment key={borderRadius}>
+          <TextTitle4 as="p">{borderRadius}</TextTitle4>
+          <Box background="bgAlternate" borderRadius={borderRadius} padding={2}>
             <VStack gap={1}>
               <Lipsum />
             </VStack>

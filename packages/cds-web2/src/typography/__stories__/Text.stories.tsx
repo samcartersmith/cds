@@ -253,8 +253,8 @@ export const TextNumberOfLinesCustomSpacing = () => {
         as="span"
         padding={{
           base: 4,
-          minTablet: 3,
-          minDesktop: 5,
+          tablet: 3,
+          desktop: 5,
         }}
       >
         <TextBody as="p" numberOfLines={2}>

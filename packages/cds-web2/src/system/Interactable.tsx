@@ -14,8 +14,8 @@ import { useTheme } from '../hooks/useTheme';
 import {
   borderColor as borderColorStyles,
   borderWidth as borderWidthStyles,
-} from '../styles/styles';
-import { elevation as elevationStyle } from '../styles/styles';
+  elevation as elevationStyle,
+} from '../styles/responsive/base';
 
 import {
   interactableBackground,

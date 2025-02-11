@@ -10,7 +10,6 @@ import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Avatar } from '../../media/Avatar';
-import { borderRadius } from '../../styles/styles';
 import { Link } from '../../typography/Link';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
@@ -146,13 +145,17 @@ export const Height = function Height() {
   );
 };
 
+const borderRadii: ThemeVars.BorderRadius[] = [
+  0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000,
+] as const;
+
 export const BorderRadius = () =>
-  Object.keys(borderRadius).map((localborderRadius) => (
+  borderRadii.map((borderRadius) => (
     <TextInput
-      key={`border-radius-${localborderRadius}`}
-      borderRadius={Number(localborderRadius) as TextInputProps['borderRadius']}
+      key={`border-radius-${borderRadius}`}
+      borderRadius={borderRadius}
       helperText="helperText"
-      label={`BorderRadius: ${localborderRadius}`}
+      label={`BorderRadius: ${borderRadius}`}
       placeholder="placeholder"
     />
   ));
@@ -314,7 +317,7 @@ export const RenderInputDefault = () => {
     <input
       className={nativeInputCustomCSS}
       onChange={onChange}
-      style={{ width: '100%', borderRadius: borderRadius[200] }}
+      style={{ width: '100%', borderRadius: 'var(--borderRadius-200)' }}
     />
   );
 
@@ -337,7 +340,7 @@ export const RenderInputDisabled = () => {
     <input
       className={nativeInputCustomCSS}
       onChange={onChange}
-      style={{ width: '100%', borderRadius: borderRadius[200] }}
+      style={{ width: '100%', borderRadius: 'var(--borderRadius-200)' }}
       value="Custom Input"
     />
   );
@@ -374,7 +377,7 @@ export const RenderInputCompact = () => {
     <input
       className={nativeInputCustomCSS}
       onChange={onChange}
-      style={{ width: '100%', borderRadius: borderRadius[200] }}
+      style={{ width: '100%', borderRadius: 'var(--borderRadius-200)' }}
     />
   );
 

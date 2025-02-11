@@ -5,166 +5,167 @@ import { type LinariaClassName, css } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 
-import type { DynamicStyleProps } from './styleProps';
+import { media } from '../media';
+import type { DynamicStyleProps } from '../styleProps';
 
 export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   width: css`
-    @media (min-width: 1024px) {
-      width: var(--minDesktop-width);
+    @media ${media.tablet} {
+      width: var(--tablet-width);
     }
   `,
   height: css`
-    @media (min-width: 1024px) {
-      height: var(--minDesktop-height);
+    @media ${media.tablet} {
+      height: var(--tablet-height);
     }
   `,
   minWidth: css`
-    @media (min-width: 1024px) {
-      min-width: var(--minDesktop-minWidth);
+    @media ${media.tablet} {
+      min-width: var(--tablet-minWidth);
     }
   `,
   minHeight: css`
-    @media (min-width: 1024px) {
-      min-height: var(--minDesktop-minHeight);
+    @media ${media.tablet} {
+      min-height: var(--tablet-minHeight);
     }
   `,
   maxWidth: css`
-    @media (min-width: 1024px) {
-      max-width: var(--minDesktop-maxWidth);
+    @media ${media.tablet} {
+      max-width: var(--tablet-maxWidth);
     }
   `,
   maxHeight: css`
-    @media (min-width: 1024px) {
-      max-height: var(--minDesktop-maxHeight);
+    @media ${media.tablet} {
+      max-height: var(--tablet-maxHeight);
     }
   `,
   aspectRatio: css`
-    @media (min-width: 1024px) {
-      aspect-ratio: var(--minDesktop-aspectRatio);
+    @media ${media.tablet} {
+      aspect-ratio: var(--tablet-aspectRatio);
     }
   `,
   top: css`
-    @media (min-width: 1024px) {
-      top: var(--minDesktop-top);
+    @media ${media.tablet} {
+      top: var(--tablet-top);
     }
   `,
   bottom: css`
-    @media (min-width: 1024px) {
-      bottom: var(--minDesktop-bottom);
+    @media ${media.tablet} {
+      bottom: var(--tablet-bottom);
     }
   `,
   left: css`
-    @media (min-width: 1024px) {
-      left: var(--minDesktop-left);
+    @media ${media.tablet} {
+      left: var(--tablet-left);
     }
   `,
   right: css`
-    @media (min-width: 1024px) {
-      right: var(--minDesktop-right);
+    @media ${media.tablet} {
+      right: var(--tablet-right);
     }
   `,
   transform: css`
-    @media (min-width: 1024px) {
-      transform: var(--minDesktop-transform);
+    @media ${media.tablet} {
+      transform: var(--tablet-transform);
     }
   `,
   flexBasis: css`
-    @media (min-width: 1024px) {
-      flex-basis: var(--minDesktop-flexBasis);
+    @media ${media.tablet} {
+      flex-basis: var(--tablet-flexBasis);
     }
   `,
   flexShrink: css`
-    @media (min-width: 1024px) {
-      flex-shrink: var(--minDesktop-flexShrink);
+    @media ${media.tablet} {
+      flex-shrink: var(--tablet-flexShrink);
     }
   `,
   flexGrow: css`
-    @media (min-width: 1024px) {
-      flex-grow: var(--minDesktop-flexGrow);
+    @media ${media.tablet} {
+      flex-grow: var(--tablet-flexGrow);
     }
   `,
   gridTemplateColumns: css`
-    @media (min-width: 1024px) {
-      grid-template-columns: var(--minDesktop-gridTemplateColumns);
+    @media ${media.tablet} {
+      grid-template-columns: var(--tablet-gridTemplateColumns);
     }
   `,
   gridTemplateRows: css`
-    @media (min-width: 1024px) {
-      grid-template-rows: var(--minDesktop-gridTemplateRows);
+    @media ${media.tablet} {
+      grid-template-rows: var(--tablet-gridTemplateRows);
     }
   `,
   gridTemplateAreas: css`
-    @media (min-width: 1024px) {
-      grid-template-areas: var(--minDesktop-gridTemplateAreas);
+    @media ${media.tablet} {
+      grid-template-areas: var(--tablet-gridTemplateAreas);
     }
   `,
   gridTemplate: css`
-    @media (min-width: 1024px) {
-      grid-template: var(--minDesktop-gridTemplate);
+    @media ${media.tablet} {
+      grid-template: var(--tablet-gridTemplate);
     }
   `,
   gridAutoColumns: css`
-    @media (min-width: 1024px) {
-      grid-auto-columns: var(--minDesktop-gridAutoColumns);
+    @media ${media.tablet} {
+      grid-auto-columns: var(--tablet-gridAutoColumns);
     }
   `,
   gridAutoRows: css`
-    @media (min-width: 1024px) {
-      grid-auto-rows: var(--minDesktop-gridAutoRows);
+    @media ${media.tablet} {
+      grid-auto-rows: var(--tablet-gridAutoRows);
     }
   `,
   gridAutoFlow: css`
-    @media (min-width: 1024px) {
-      grid-auto-flow: var(--minDesktop-gridAutoFlow);
+    @media ${media.tablet} {
+      grid-auto-flow: var(--tablet-gridAutoFlow);
     }
   `,
   grid: css`
-    @media (min-width: 1024px) {
-      grid: var(--minDesktop-grid);
+    @media ${media.tablet} {
+      grid: var(--tablet-grid);
     }
   `,
   gridRowStart: css`
-    @media (min-width: 1024px) {
-      grid-row-start: var(--minDesktop-gridRowStart);
+    @media ${media.tablet} {
+      grid-row-start: var(--tablet-gridRowStart);
     }
   `,
   gridColumnStart: css`
-    @media (min-width: 1024px) {
-      grid-column-start: var(--minDesktop-gridColumnStart);
+    @media ${media.tablet} {
+      grid-column-start: var(--tablet-gridColumnStart);
     }
   `,
   gridRowEnd: css`
-    @media (min-width: 1024px) {
-      grid-row-end: var(--minDesktop-gridRowEnd);
+    @media ${media.tablet} {
+      grid-row-end: var(--tablet-gridRowEnd);
     }
   `,
   gridColumnEnd: css`
-    @media (min-width: 1024px) {
-      grid-column-end: var(--minDesktop-gridColumnEnd);
+    @media ${media.tablet} {
+      grid-column-end: var(--tablet-gridColumnEnd);
     }
   `,
   gridRow: css`
-    @media (min-width: 1024px) {
-      grid-row: var(--minDesktop-gridRow);
+    @media ${media.tablet} {
+      grid-row: var(--tablet-gridRow);
     }
   `,
   gridColumn: css`
-    @media (min-width: 1024px) {
-      grid-column: var(--minDesktop-gridColumn);
+    @media ${media.tablet} {
+      grid-column: var(--tablet-gridColumn);
     }
   `,
   gridArea: css`
-    @media (min-width: 1024px) {
-      grid-area: var(--minDesktop-gridArea);
+    @media ${media.tablet} {
+      grid-area: var(--tablet-gridArea);
     }
   `,
   opacity: css`
-    @media (min-width: 1024px) {
-      opacity: var(--minDesktop-opacity);
+    @media ${media.tablet} {
+      opacity: var(--tablet-opacity);
     }
   `,
   zIndex: css`
-    @media (min-width: 768px) {
+    @media ${media.tablet} {
       z-index: var(--zIndex);
     }
   `,
@@ -173,231 +174,231 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
 export const color: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   fg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-fg);
     }
   `,
   fgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-fgInverse);
     }
   `,
   fgMuted: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-fgMuted);
     }
   `,
   fgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-fgPrimary);
     }
   `,
   fgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-fgPositive);
     }
   `,
   fgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-fgNegative);
     }
   `,
   fgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-fgWarning);
     }
   `,
   // Background
   bg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bg);
     }
   `,
   bgAlternate: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgAlternate);
     }
   `,
   bgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgInverse);
     }
   `,
   bgOverlay: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgOverlay);
     }
   `,
   bgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgPrimary);
     }
   `,
   bgPrimaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgPrimaryWash);
     }
   `,
   bgSecondary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgSecondary);
     }
   `,
   bgSecondaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgSecondaryWash);
     }
   `,
   bgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgNegative);
     }
   `,
   bgNegativeWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgNegativeWash);
     }
   `,
   bgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgPositive);
     }
   `,
   bgPositiveWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgPositiveWash);
     }
   `,
   bgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgWarning);
     }
   `,
   bgWarningWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-currentColor);
     }
   `,
   // Line
   bgLine: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgLine);
     }
   `,
   bgLineInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgLineInverse);
     }
   `,
   bgLineHeavy: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgLineHeavy);
     }
   `,
-  linePrimary: css`
-    @media (min-width: 1024px) {
+  bgLinePrimary: css`
+    @media ${media.tablet} {
       color: var(--color-bgLinePrimary);
     }
   `,
   bgLinePrimarySubtle: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
   bgElevation1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgElevation1);
     }
   `,
   bgElevation2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-bgElevation2);
     }
   `,
   // Accent
   accentSubtleGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentSubtleGreen);
     }
   `,
   accentBoldGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentBoldGreen);
     }
   `,
   accentSubtleBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentSubtleBlue);
     }
   `,
   accentBoldBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentBoldBlue);
     }
   `,
   accentSubtlePurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentSubtlePurple);
     }
   `,
   accentBoldPurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentBoldPurple);
     }
   `,
   accentSubtleYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentSubtleYellow);
     }
   `,
   accentBoldYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentBoldYellow);
     }
   `,
   accentSubtleRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentSubtleRed);
     }
   `,
   accentBoldRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentBoldRed);
     }
   `,
   accentSubtleGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentSubtleGray);
     }
   `,
   accentBoldGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-accentBoldGray);
     }
   `,
   transparent: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-transparent);
     }
   `,
   transparentHover: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-transparentHover);
     }
   `,
   transparentPressed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-transparentPressed);
     }
   `,
   transparentDisabled: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       color: var(--color-transparentDisabled);
     }
   `,
@@ -406,231 +407,231 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
 export const background: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   fg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-fg);
     }
   `,
   fgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-fgInverse);
     }
   `,
   fgMuted: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-fgMuted);
     }
   `,
   fgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-fgPrimary);
     }
   `,
   fgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-fgPositive);
     }
   `,
   fgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-fgNegative);
     }
   `,
   fgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-fgWarning);
     }
   `,
   // Background
   bg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bg);
     }
   `,
   bgAlternate: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgAlternate);
     }
   `,
   bgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgInverse);
     }
   `,
   bgOverlay: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgOverlay);
     }
   `,
   bgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgPrimary);
     }
   `,
   bgPrimaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgPrimaryWash);
     }
   `,
   bgSecondary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgSecondary);
     }
   `,
   bgSecondaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgSecondaryWash);
     }
   `,
   bgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgNegative);
     }
   `,
   bgNegativeWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgNegativeWash);
     }
   `,
   bgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgPositive);
     }
   `,
   bgPositiveWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgPositiveWash);
     }
   `,
   bgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgWarning);
     }
   `,
   bgWarningWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-currentColor);
     }
   `,
   // Line
   bgLine: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgLine);
     }
   `,
   bgLineInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgLineInverse);
     }
   `,
   bgLineHeavy: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgLineHeavy);
     }
   `,
-  linePrimary: css`
-    @media (min-width: 1024px) {
+  bgLinePrimary: css`
+    @media ${media.tablet} {
       background-color: var(--color-bgLinePrimary);
     }
   `,
   bgLinePrimarySubtle: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
   bgElevation1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgElevation1);
     }
   `,
   bgElevation2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgElevation2);
     }
   `,
   // Accent
   accentSubtleGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentSubtleGreen);
     }
   `,
   accentBoldGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentBoldGreen);
     }
   `,
   accentSubtleBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentSubtleBlue);
     }
   `,
   accentBoldBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentBoldBlue);
     }
   `,
   accentSubtlePurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentSubtlePurple);
     }
   `,
   accentBoldPurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentBoldPurple);
     }
   `,
   accentSubtleYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentSubtleYellow);
     }
   `,
   accentBoldYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentBoldYellow);
     }
   `,
   accentSubtleRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentSubtleRed);
     }
   `,
   accentBoldRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentBoldRed);
     }
   `,
   accentSubtleGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentSubtleGray);
     }
   `,
   accentBoldGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-accentBoldGray);
     }
   `,
   transparent: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-transparent);
     }
   `,
   transparentHover: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-transparentHover);
     }
   `,
   transparentPressed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-transparentPressed);
     }
   `,
   transparentDisabled: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-transparentDisabled);
     }
   `,
@@ -639,275 +640,275 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
 export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   fg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-fg);
     }
   `,
   fgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-fgInverse);
     }
   `,
   fgMuted: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-fgMuted);
     }
   `,
   fgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-fgPrimary);
     }
   `,
   fgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-fgPositive);
     }
   `,
   fgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-fgNegative);
     }
   `,
   fgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-fgWarning);
     }
   `,
   // Background
   bg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bg);
     }
   `,
   bgAlternate: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgAlternate);
     }
   `,
   bgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgInverse);
     }
   `,
   bgOverlay: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgOverlay);
     }
   `,
   bgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgPrimary);
     }
   `,
   bgPrimaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgPrimaryWash);
     }
   `,
   bgSecondary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgSecondary);
     }
   `,
   bgSecondaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgSecondaryWash);
     }
   `,
   bgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgNegative);
     }
   `,
   bgNegativeWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgNegativeWash);
     }
   `,
   bgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgPositive);
     }
   `,
   bgPositiveWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgPositiveWash);
     }
   `,
   bgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgWarning);
     }
   `,
   bgWarningWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-currentColor);
     }
   `,
   // Line
   bgLine: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgLine);
     }
   `,
   bgLineInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgLineInverse);
     }
   `,
   bgLineHeavy: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgLineHeavy);
     }
   `,
-  linePrimary: css`
-    @media (min-width: 1024px) {
+  bgLinePrimary: css`
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgLinePrimary);
     }
   `,
   bgLinePrimarySubtle: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
   bgElevation1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgElevation1);
     }
   `,
   bgElevation2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-bgElevation2);
     }
   `,
   // Accent
   accentSubtleGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentSubtleGreen);
     }
   `,
   accentBoldGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentBoldGreen);
     }
   `,
   accentSubtleBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentSubtleBlue);
     }
   `,
   accentBoldBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentBoldBlue);
     }
   `,
   accentSubtlePurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentSubtlePurple);
     }
   `,
   accentBoldPurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentBoldPurple);
     }
   `,
   accentSubtleYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentSubtleYellow);
     }
   `,
   accentBoldYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentBoldYellow);
     }
   `,
   accentSubtleRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentSubtleRed);
     }
   `,
   accentBoldRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentBoldRed);
     }
   `,
   accentSubtleGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentSubtleGray);
     }
   `,
   accentBoldGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-accentBoldGray);
     }
   `,
   transparent: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-transparent);
     }
   `,
   transparentHover: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-transparentHover);
     }
   `,
   transparentPressed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-transparentPressed);
     }
   `,
   transparentDisabled: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-style: solid;
       border-color: var(--color-transparentDisabled);
     }
@@ -917,49 +918,49 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
 export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   fg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-fg);
       }
     }
   `,
   fgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-fgInverse);
       }
     }
   `,
   fgMuted: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-fgMuted);
       }
     }
   `,
   fgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-fgPrimary);
       }
     }
   `,
   fgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-fgPositive);
       }
     }
   `,
   fgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-fgNegative);
       }
     }
   `,
   fgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-fgWarning);
       }
@@ -967,105 +968,105 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Background
   bg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bg);
       }
     }
   `,
   bgAlternate: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgAlternate);
       }
     }
   `,
   bgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgInverse);
       }
     }
   `,
   bgOverlay: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgOverlay);
       }
     }
   `,
   bgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgPrimary);
       }
     }
   `,
   bgPrimaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgPrimaryWash);
       }
     }
   `,
   bgSecondary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgSecondary);
       }
     }
   `,
   bgSecondaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgSecondaryWash);
       }
     }
   `,
   bgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgNegative);
       }
     }
   `,
   bgNegativeWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgNegativeWash);
       }
     }
   `,
   bgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgPositive);
       }
     }
   `,
   bgPositiveWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgPositiveWash);
       }
     }
   `,
   bgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgWarning);
       }
     }
   `,
   bgWarningWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgWarningWash);
       }
     }
   `,
   currentColor: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-currentColor);
       }
@@ -1073,35 +1074,35 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Line
   bgLine: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgLine);
       }
     }
   `,
   bgLineInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgLineInverse);
       }
     }
   `,
   bgLineHeavy: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgLineHeavy);
       }
     }
   `,
-  linePrimary: css`
-    @media (min-width: 1024px) {
+  bgLinePrimary: css`
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgLinePrimary);
       }
     }
   `,
   bgLinePrimarySubtle: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgLinePrimarySubtle);
       }
@@ -1109,14 +1110,14 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Elevation
   bgElevation1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgElevation1);
       }
     }
   `,
   bgElevation2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-bgElevation2);
       }
@@ -1124,112 +1125,112 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Accent
   accentSubtleGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentSubtleGreen);
       }
     }
   `,
   accentBoldGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentBoldGreen);
       }
     }
   `,
   accentSubtleBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentSubtleBlue);
       }
     }
   `,
   accentBoldBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentBoldBlue);
       }
     }
   `,
   accentSubtlePurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentSubtlePurple);
       }
     }
   `,
   accentBoldPurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentBoldPurple);
       }
     }
   `,
   accentSubtleYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentSubtleYellow);
       }
     }
   `,
   accentBoldYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentBoldYellow);
       }
     }
   `,
   accentSubtleRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentSubtleRed);
       }
     }
   `,
   accentBoldRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentBoldRed);
       }
     }
   `,
   accentSubtleGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentSubtleGray);
       }
     }
   `,
   accentBoldGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-accentBoldGray);
       }
     }
   `,
   transparent: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-transparent);
       }
     }
   `,
   transparentHover: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-transparentHover);
       }
     }
   `,
   transparentPressed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-transparentPressed);
       }
     }
   `,
   transparentDisabled: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         color: var(--color-transparentDisabled);
       }
@@ -1240,49 +1241,49 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
 export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   fg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-fg);
       }
     }
   `,
   fgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-fgInverse);
       }
     }
   `,
   fgMuted: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-fgMuted);
       }
     }
   `,
   fgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-fgPrimary);
       }
     }
   `,
   fgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-fgPositive);
       }
     }
   `,
   fgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-fgNegative);
       }
     }
   `,
   fgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-fgWarning);
       }
@@ -1290,105 +1291,105 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Background
   bg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bg);
       }
     }
   `,
   bgAlternate: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgAlternate);
       }
     }
   `,
   bgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgInverse);
       }
     }
   `,
   bgOverlay: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgOverlay);
       }
     }
   `,
   bgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgPrimary);
       }
     }
   `,
   bgPrimaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgPrimaryWash);
       }
     }
   `,
   bgSecondary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgSecondary);
       }
     }
   `,
   bgSecondaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgSecondaryWash);
       }
     }
   `,
   bgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgNegative);
       }
     }
   `,
   bgNegativeWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgNegativeWash);
       }
     }
   `,
   bgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgPositive);
       }
     }
   `,
   bgPositiveWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgPositiveWash);
       }
     }
   `,
   bgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgWarning);
       }
     }
   `,
   bgWarningWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgWarningWash);
       }
     }
   `,
   currentColor: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-currentColor);
       }
@@ -1396,35 +1397,35 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Line
   bgLine: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgLine);
       }
     }
   `,
   bgLineInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgLineInverse);
       }
     }
   `,
   bgLineHeavy: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgLineHeavy);
       }
     }
   `,
-  linePrimary: css`
-    @media (min-width: 1024px) {
+  bgLinePrimary: css`
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgLinePrimary);
       }
     }
   `,
   bgLinePrimarySubtle: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgLinePrimarySubtle);
       }
@@ -1432,14 +1433,14 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Elevation
   bgElevation1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgElevation1);
       }
     }
   `,
   bgElevation2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-bgElevation2);
       }
@@ -1447,112 +1448,112 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Accent
   accentSubtleGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentSubtleGreen);
       }
     }
   `,
   accentBoldGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentBoldGreen);
       }
     }
   `,
   accentSubtleBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentSubtleBlue);
       }
     }
   `,
   accentBoldBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentBoldBlue);
       }
     }
   `,
   accentSubtlePurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentSubtlePurple);
       }
     }
   `,
   accentBoldPurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentBoldPurple);
       }
     }
   `,
   accentSubtleYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentSubtleYellow);
       }
     }
   `,
   accentBoldYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentBoldYellow);
       }
     }
   `,
   accentSubtleRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentSubtleRed);
       }
     }
   `,
   accentBoldRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentBoldRed);
       }
     }
   `,
   accentSubtleGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentSubtleGray);
       }
     }
   `,
   accentBoldGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-accentBoldGray);
       }
     }
   `,
   transparent: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-transparent);
       }
     }
   `,
   transparentHover: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-transparentHover);
       }
     }
   `,
   transparentPressed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-transparentPressed);
       }
     }
   `,
   transparentDisabled: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         background-color: var(--color-transparentDisabled);
       }
@@ -1563,49 +1564,49 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
 export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   fg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-fg);
       }
     }
   `,
   fgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-fgInverse);
       }
     }
   `,
   fgMuted: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-fgMuted);
       }
     }
   `,
   fgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-fgPrimary);
       }
     }
   `,
   fgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-fgPositive);
       }
     }
   `,
   fgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-fgNegative);
       }
     }
   `,
   fgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-fgWarning);
       }
@@ -1613,105 +1614,105 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Background
   bg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bg);
       }
     }
   `,
   bgAlternate: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgAlternate);
       }
     }
   `,
   bgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgInverse);
       }
     }
   `,
   bgOverlay: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgOverlay);
       }
     }
   `,
   bgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgPrimary);
       }
     }
   `,
   bgPrimaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgPrimaryWash);
       }
     }
   `,
   bgSecondary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgSecondary);
       }
     }
   `,
   bgSecondaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgSecondary);
       }
     }
   `,
   bgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgNegative);
       }
     }
   `,
   bgNegativeWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgNegativeWash);
       }
     }
   `,
   bgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgPositive);
       }
     }
   `,
   bgPositiveWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgPositiveWash);
       }
     }
   `,
   bgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgWarning);
       }
     }
   `,
   bgWarningWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgWarningWash);
       }
     }
   `,
   currentColor: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-currentColor);
       }
@@ -1719,35 +1720,35 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Line
   bgLine: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgLine);
       }
     }
   `,
   bgLineInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgLineInverse);
       }
     }
   `,
   bgLineHeavy: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgLineHeavy);
       }
     }
   `,
-  linePrimary: css`
-    @media (min-width: 1024px) {
+  bgLinePrimary: css`
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgLinePrimary);
       }
     }
   `,
   bgLinePrimarySubtle: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgLinePrimarySubtle);
       }
@@ -1755,14 +1756,14 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Elevation
   bgElevation1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgElevation1);
       }
     }
   `,
   bgElevation2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-bgElevation2);
       }
@@ -1770,112 +1771,112 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   // Accent
   accentSubtleGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentSubtleGreen);
       }
     }
   `,
   accentBoldGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentBoldGreen);
       }
     }
   `,
   accentSubtleBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentSubtleBlue);
       }
     }
   `,
   accentBoldBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentBoldBlue);
       }
     }
   `,
   accentSubtlePurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentSubtlePurple);
       }
     }
   `,
   accentBoldPurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentBoldPurple);
       }
     }
   `,
   accentSubtleYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentSubtleYellow);
       }
     }
   `,
   accentBoldYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentBoldYellow);
       }
     }
   `,
   accentSubtleRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentSubtleRed);
       }
     }
   `,
   accentBoldRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentBoldRed);
       }
     }
   `,
   accentSubtleGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentSubtleGray);
       }
     }
   `,
   accentBoldGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-accentBoldGray);
       }
     }
   `,
   transparent: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-transparent);
       }
     }
   `,
   transparentHover: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-transparentHover);
       }
     }
   `,
   transparentPressed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-transparentPressed);
       }
     }
   `,
   transparentDisabled: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       &:hover {
         border-color: var(--color-transparentDisabled);
       }
@@ -1885,32 +1886,32 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const borderWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-width: var(--borderWidth-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-width: var(--borderWidth-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-width: var(--borderWidth-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-width: var(--borderWidth-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-width: var(--borderWidth-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-width: var(--borderWidth-500);
     }
   `,
@@ -1918,32 +1919,32 @@ export const borderWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
 
 export const borderTopWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-width: var(--borderWidth-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-width: var(--borderWidth-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-width: var(--borderWidth-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-width: var(--borderWidth-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-width: var(--borderWidth-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-width: var(--borderWidth-500);
     }
   `,
@@ -1951,32 +1952,32 @@ export const borderTopWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
 
 export const borderRightWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-right-width: var(--borderWidth-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-right-width: var(--borderWidth-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-right-width: var(--borderWidth-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-right-width: var(--borderWidth-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-right-width: var(--borderWidth-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-right-width: var(--borderWidth-500);
     }
   `,
@@ -1984,32 +1985,32 @@ export const borderRightWidth: Record<ThemeVars.BorderWidth, LinariaClassName> =
 
 export const borderBottomWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-width: var(--borderWidth-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-width: var(--borderWidth-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-width: var(--borderWidth-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-width: var(--borderWidth-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-width: var(--borderWidth-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-width: var(--borderWidth-500);
     }
   `,
@@ -2017,32 +2018,32 @@ export const borderBottomWidth: Record<ThemeVars.BorderWidth, LinariaClassName> 
 
 export const borderLeftWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-left-width: var(--borderWidth-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-left-width: var(--borderWidth-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-left-width: var(--borderWidth-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-left-width: var(--borderWidth-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-left-width: var(--borderWidth-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-left-width: var(--borderWidth-500);
     }
   `,
@@ -2050,57 +2051,57 @@ export const borderLeftWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = 
 
 export const borderRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-500);
     }
   `,
   '600': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-600);
     }
   `,
   '700': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-700);
     }
   `,
   '800': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-800);
     }
   `,
   '900': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-900);
     }
   `,
   '1000': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-radius: var(--borderRadius-1000);
     }
   `,
@@ -2108,57 +2109,57 @@ export const borderRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
 
 export const borderTopLeftRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-500);
     }
   `,
   '600': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-600);
     }
   `,
   '700': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-700);
     }
   `,
   '800': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-800);
     }
   `,
   '900': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-900);
     }
   `,
   '1000': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-left-radius: var(--borderRadius-1000);
     }
   `,
@@ -2166,57 +2167,57 @@ export const borderTopLeftRadius: Record<ThemeVars.BorderRadius, LinariaClassNam
 
 export const borderTopRightRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-500);
     }
   `,
   '600': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-600);
     }
   `,
   '700': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-700);
     }
   `,
   '800': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-800);
     }
   `,
   '900': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-900);
     }
   `,
   '1000': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-top-right-radius: var(--borderRadius-1000);
     }
   `,
@@ -2224,57 +2225,57 @@ export const borderTopRightRadius: Record<ThemeVars.BorderRadius, LinariaClassNa
 
 export const borderBottomLeftRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-500);
     }
   `,
   '600': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-600);
     }
   `,
   '700': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-700);
     }
   `,
   '800': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-800);
     }
   `,
   '900': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-900);
     }
   `,
   '1000': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-left-radius: var(--borderRadius-1000);
     }
   `,
@@ -2282,57 +2283,57 @@ export const borderBottomLeftRadius: Record<ThemeVars.BorderRadius, LinariaClass
 
 export const borderBottomRightRadius: Record<ThemeVars.BorderRadius, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-0);
     }
   `,
   '100': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-100);
     }
   `,
   '200': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-200);
     }
   `,
   '300': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-300);
     }
   `,
   '400': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-400);
     }
   `,
   '500': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-500);
     }
   `,
   '600': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-600);
     }
   `,
   '700': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-700);
     }
   `,
   '800': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-800);
     }
   `,
   '900': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-900);
     }
   `,
   '1000': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       border-bottom-right-radius: var(--borderRadius-1000);
     }
   `,
@@ -2340,67 +2341,67 @@ export const borderBottomRightRadius: Record<ThemeVars.BorderRadius, LinariaClas
 
 export const fontFamily: Record<ThemeVars.FontFamily, LinariaClassName> = {
   display1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-display1);
     }
   `,
   display2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-display2);
     }
   `,
   display3: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-display3);
     }
   `,
   title1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-title1);
     }
   `,
   title2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-title2);
     }
   `,
   title3: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-title3);
     }
   `,
   title4: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-title4);
     }
   `,
   headline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-headline);
     }
   `,
   body: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-body);
     }
   `,
   label1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-label1);
     }
   `,
   label2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-label2);
     }
   `,
   caption: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-caption);
     }
   `,
   legal: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-family: var(--fontFamily-legal);
     }
   `,
@@ -2408,67 +2409,67 @@ export const fontFamily: Record<ThemeVars.FontFamily, LinariaClassName> = {
 
 export const fontSize: Record<ThemeVars.FontSize, LinariaClassName> = {
   display1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-display1);
     }
   `,
   display2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-display2);
     }
   `,
   display3: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-display3);
     }
   `,
   title1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-title1);
     }
   `,
   title2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-title2);
     }
   `,
   title3: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-title3);
     }
   `,
   title4: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-title4);
     }
   `,
   headline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-headline);
     }
   `,
   body: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-body);
     }
   `,
   label1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-label1);
     }
   `,
   label2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-label2);
     }
   `,
   caption: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-caption);
     }
   `,
   legal: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-size: var(--fontSize-legal);
     }
   `,
@@ -2476,67 +2477,67 @@ export const fontSize: Record<ThemeVars.FontSize, LinariaClassName> = {
 
 export const fontWeight: Record<ThemeVars.FontWeight, LinariaClassName> = {
   display1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-display1);
     }
   `,
   display2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-display2);
     }
   `,
   display3: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-display3);
     }
   `,
   title1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-title1);
     }
   `,
   title2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-title2);
     }
   `,
   title3: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-title3);
     }
   `,
   title4: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-title4);
     }
   `,
   headline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-headline);
     }
   `,
   body: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-body);
     }
   `,
   label1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-label1);
     }
   `,
   label2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-label2);
     }
   `,
   caption: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-caption);
     }
   `,
   legal: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       font-weight: var(--fontWeight-legal);
     }
   `,
@@ -2544,67 +2545,67 @@ export const fontWeight: Record<ThemeVars.FontWeight, LinariaClassName> = {
 
 export const lineHeight: Record<ThemeVars.LineHeight, LinariaClassName> = {
   display1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-display1);
     }
   `,
   display2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-display2);
     }
   `,
   display3: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-display3);
     }
   `,
   title1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-title1);
     }
   `,
   title2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-title2);
     }
   `,
   title3: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-title3);
     }
   `,
   title4: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-title4);
     }
   `,
   headline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-headline);
     }
   `,
   body: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-body);
     }
   `,
   label1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-label1);
     }
   `,
   label2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-label2);
     }
   `,
   caption: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-caption);
     }
   `,
   legal: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       line-height: var(--lineHeight-legal);
     }
   `,
@@ -2612,32 +2613,32 @@ export const lineHeight: Record<ThemeVars.LineHeight, LinariaClassName> = {
 
 export const textDecoration = {
   none: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration: none;
     }
   `,
   underline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration: underline;
     }
   `,
   overline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration: overline;
     }
   `,
   'line-through': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration: line-through;
     }
   `,
   'underline overline': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration: underline overline;
     }
   `,
   'underline double': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration: underline double;
     }
   `,
@@ -2645,27 +2646,27 @@ export const textDecoration = {
 
 export const textDecorationThickness = {
   auto: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-thickness: auto;
     }
   `,
   'from-font': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-thickness: from-font;
     }
   `,
   thin: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-thickness: thin;
     }
   `,
   medium: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-thickness: medium;
     }
   `,
   thick: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-thickness: thick;
     }
   `,
@@ -2674,231 +2675,231 @@ export const textDecorationThickness = {
 export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   fg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-fg);
     }
   `,
   fgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-fgInverse);
     }
   `,
   fgMuted: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-fgMuted);
     }
   `,
   fgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-fgPrimary);
     }
   `,
   fgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-fgPositive);
     }
   `,
   fgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-fgNegative);
     }
   `,
   fgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-fgWarning);
     }
   `,
   // Background
   bg: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bg);
     }
   `,
   bgAlternate: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgAlternate);
     }
   `,
   bgInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgInverse);
     }
   `,
   bgOverlay: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgOverlay);
     }
   `,
   bgPrimary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgPrimary);
     }
   `,
   bgPrimaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgPrimaryWash);
     }
   `,
   bgSecondary: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgSecondary);
     }
   `,
   bgSecondaryWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgSecondaryWash);
     }
   `,
   bgNegative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgNegative);
     }
   `,
   bgNegativeWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgNegativeWash);
     }
   `,
   bgPositive: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgPositive);
     }
   `,
   bgPositiveWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgPositiveWash);
     }
   `,
   bgWarning: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgWarning);
     }
   `,
   bgWarningWash: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgWarningWash);
     }
   `,
   currentColor: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-currentColor);
     }
   `,
   // Line
   bgLine: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgLine);
     }
   `,
   bgLineInverse: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgLineInverse);
     }
   `,
   bgLineHeavy: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgLineHeavy);
     }
   `,
-  linePrimary: css`
-    @media (min-width: 1024px) {
+  bgLinePrimary: css`
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgLinePrimary);
     }
   `,
   bgLinePrimarySubtle: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgLinePrimarySubtle);
     }
   `,
   // Elevation
   bgElevation1: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgElevation1);
     }
   `,
   bgElevation2: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-bgElevation2);
     }
   `,
   // Accent
   accentSubtleGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentSubtleGreen);
     }
   `,
   accentBoldGreen: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentBoldGreen);
     }
   `,
   accentSubtleBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentSubtleBlue);
     }
   `,
   accentBoldBlue: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentBoldBlue);
     }
   `,
   accentSubtlePurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentSubtlePurple);
     }
   `,
   accentBoldPurple: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentBoldPurple);
     }
   `,
   accentSubtleYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentSubtleYellow);
     }
   `,
   accentBoldYellow: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentBoldYellow);
     }
   `,
   accentSubtleRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentSubtleRed);
     }
   `,
   accentBoldRed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentBoldRed);
     }
   `,
   accentSubtleGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentSubtleGray);
     }
   `,
   accentBoldGray: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-accentBoldGray);
     }
   `,
   transparent: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-transparent);
     }
   `,
   transparentHover: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-transparentHover);
     }
   `,
   transparentPressed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-transparentPressed);
     }
   `,
   transparentDisabled: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-decoration-color: var(--color-transparentDisabled);
     }
   `,
@@ -2906,22 +2907,22 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
 
 export const textTransform = {
   none: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-transform: none;
     }
   `,
   uppercase: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-transform: uppercase;
     }
   `,
   lowercase: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-transform: lowercase;
     }
   `,
   capitalize: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-transform: capitalize;
     }
   `,
@@ -2929,22 +2930,22 @@ export const textTransform = {
 
 export const userSelect = {
   none: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       user-select: none;
     }
   `,
   text: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       user-select: text;
     }
   `,
   all: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       user-select: all;
     }
   `,
   auto: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       user-select: auto;
     }
   `,
@@ -2952,52 +2953,52 @@ export const userSelect = {
 
 export const display = {
   none: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: none;
     }
   `,
   block: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: block;
     }
   `,
   inbgLine: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: inline;
     }
   `,
   'inline-block': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: inline-block;
     }
   `,
   flex: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: flex;
     }
   `,
   'inline-flex': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: inline-flex;
     }
   `,
   grid: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: grid;
     }
   `,
   'inline-grid': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: inline-grid;
     }
   `,
   contents: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: contents;
     }
   `,
   'flow-root': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       display: flow-root;
     }
   `,
@@ -3005,27 +3006,27 @@ export const display = {
 
 export const overflow = {
   auto: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       overflow: auto;
     }
   `,
   visible: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       overflow: visible;
     }
   `,
   hidden: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       overflow: hidden;
     }
   `,
   clip: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       overflow: clip;
     }
   `,
   scroll: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       overflow: scroll;
     }
   `,
@@ -3033,77 +3034,77 @@ export const overflow = {
 
 export const gap = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       gap: var(--space-10);
     }
   `,
@@ -3111,77 +3112,77 @@ export const gap = {
 
 export const columnGap = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       column-gap: var(--space-10);
     }
   `,
@@ -3189,77 +3190,77 @@ export const columnGap = {
 
 export const rowGap = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       row-gap: var(--space-10);
     }
   `,
@@ -3267,62 +3268,62 @@ export const rowGap = {
 
 export const justifyContent = {
   normal: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: normal;
     }
   `,
   center: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: center;
     }
   `,
   start: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: start;
     }
   `,
   end: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: end;
     }
   `,
   'flex-start': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: flex-start;
     }
   `,
   'flex-end': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: flex-end;
     }
   `,
   left: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: left;
     }
   `,
   right: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: right;
     }
   `,
   'space-between': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: space-between;
     }
   `,
   'space-around': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: space-around;
     }
   `,
   'space-evenly': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: space-evenly;
     }
   `,
   stretch: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       justify-content: stretch;
     }
   `,
@@ -3330,67 +3331,67 @@ export const justifyContent = {
 
 export const alignContent = {
   normal: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: normal;
     }
   `,
   center: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: center;
     }
   `,
   start: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: start;
     }
   `,
   end: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: end;
     }
   `,
   'flex-start': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: flex-start;
     }
   `,
   'flex-end': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: flex-end;
     }
   `,
   'space-between': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: space-between;
     }
   `,
   'space-around': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: space-around;
     }
   `,
   'space-evenly': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: space-evenly;
     }
   `,
   stretch: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: stretch;
     }
   `,
   baseline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: baseline;
     }
   `,
   'first baseline': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: first baseline;
     }
   `,
   'last baseline': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-content: last baseline;
     }
   `,
@@ -3398,62 +3399,62 @@ export const alignContent = {
 
 export const alignItems = {
   normal: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: normal;
     }
   `,
   center: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: center;
     }
   `,
   start: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: start;
     }
   `,
   end: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: end;
     }
   `,
   'flex-start': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: flex-start;
     }
   `,
   'flex-end': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: flex-end;
     }
   `,
   'self-start': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: self-start;
     }
   `,
   'self-end': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: self-end;
     }
   `,
   stretch: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: stretch;
     }
   `,
   baseline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: baseline;
     }
   `,
   'first baseline': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: first baseline;
     }
   `,
   'last baseline': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-items: last baseline;
     }
   `,
@@ -3461,67 +3462,67 @@ export const alignItems = {
 
 export const alignSelf = {
   auto: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: auto;
     }
   `,
   normal: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: normal;
     }
   `,
   center: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: center;
     }
   `,
   start: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: start;
     }
   `,
   end: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: end;
     }
   `,
   'flex-start': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: flex-start;
     }
   `,
   'flex-end': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: flex-end;
     }
   `,
   'self-start': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: self-start;
     }
   `,
   'self-end': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: self-end;
     }
   `,
   stretch: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: stretch;
     }
   `,
   baseline: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: baseline;
     }
   `,
   'first baseline': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: first baseline;
     }
   `,
   'last baseline': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       align-self: last baseline;
     }
   `,
@@ -3529,22 +3530,22 @@ export const alignSelf = {
 
 export const flexDirection = {
   row: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       flex-direction: row;
     }
   `,
   'row-reverse': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       flex-direction: row-reverse;
     }
   `,
   column: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       flex-direction: column;
     }
   `,
   'column-reverse': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       flex-direction: column-reverse;
     }
   `,
@@ -3552,17 +3553,17 @@ export const flexDirection = {
 
 export const flexWrap = {
   nowrap: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       flex-wrap: nowrap;
     }
   `,
   wrap: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       flex-wrap: wrap;
     }
   `,
   'wrap-reverse': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       flex-wrap: wrap-reverse;
     }
   `,
@@ -3570,27 +3571,27 @@ export const flexWrap = {
 
 export const position = {
   static: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       position: static;
     }
   `,
   relative: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       position: relative;
     }
   `,
   absolute: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       position: absolute;
     }
   `,
   fixed: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       position: fixed;
     }
   `,
   sticky: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       position: sticky;
     }
   `,
@@ -3598,7 +3599,7 @@ export const position = {
 
 export const padding: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0);
       padding-bottom: var(--space-0);
       padding-left: var(--space-0);
@@ -3606,7 +3607,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.25);
       padding-bottom: var(--space-0\\.25);
       padding-left: var(--space-0\\.25);
@@ -3614,7 +3615,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.5);
       padding-bottom: var(--space-0\\.5);
       padding-left: var(--space-0\\.5);
@@ -3622,7 +3623,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.75);
       padding-bottom: var(--space-0\\.75);
       padding-left: var(--space-0\\.75);
@@ -3630,7 +3631,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-1);
       padding-bottom: var(--space-1);
       padding-left: var(--space-1);
@@ -3638,7 +3639,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-1\\.5);
       padding-bottom: var(--space-1\\.5);
       padding-left: var(--space-1\\.5);
@@ -3646,7 +3647,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-2);
       padding-bottom: var(--space-2);
       padding-left: var(--space-2);
@@ -3654,7 +3655,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-3);
       padding-bottom: var(--space-3);
       padding-left: var(--space-3);
@@ -3662,7 +3663,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-4);
       padding-bottom: var(--space-4);
       padding-left: var(--space-4);
@@ -3670,7 +3671,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-5);
       padding-bottom: var(--space-5);
       padding-left: var(--space-5);
@@ -3678,7 +3679,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
       padding-left: var(--space-6);
@@ -3686,7 +3687,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-7);
       padding-bottom: var(--space-7);
       padding-left: var(--space-7);
@@ -3694,7 +3695,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-8);
       padding-bottom: var(--space-8);
       padding-left: var(--space-8);
@@ -3702,7 +3703,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-9);
       padding-bottom: var(--space-9);
       padding-left: var(--space-9);
@@ -3710,7 +3711,7 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-10);
       padding-bottom: var(--space-10);
       padding-left: var(--space-10);
@@ -3721,91 +3722,91 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
 
 export const paddingX: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-0);
       padding-right: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-0\\.25);
       padding-right: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-0\\.5);
       padding-right: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-0\\.75);
       padding-right: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-1);
       padding-right: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-1\\.5);
       padding-right: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-2);
       padding-right: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-3);
       padding-right: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-4);
       padding-right: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-5);
       padding-right: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-6);
       padding-right: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-7);
       padding-right: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-8);
       padding-right: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-9);
       padding-right: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-10);
       padding-right: var(--space-10);
     }
@@ -3814,91 +3815,91 @@ export const paddingX: Record<ThemeVars.Space, LinariaClassName> = {
 
 export const paddingY: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0);
       padding-bottom: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.25);
       padding-bottom: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.5);
       padding-bottom: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.75);
       padding-bottom: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-1);
       padding-bottom: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-1\\.5);
       padding-bottom: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-2);
       padding-bottom: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-3);
       padding-bottom: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-4);
       padding-bottom: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-5);
       padding-bottom: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-7);
       padding-bottom: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-8);
       padding-bottom: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-9);
       padding-bottom: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-10);
       padding-bottom: var(--space-10);
     }
@@ -3907,77 +3908,77 @@ export const paddingY: Record<ThemeVars.Space, LinariaClassName> = {
 
 export const paddingTop: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-top: var(--space-10);
     }
   `,
@@ -3985,77 +3986,77 @@ export const paddingTop: Record<ThemeVars.Space, LinariaClassName> = {
 
 export const paddingBottom: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-bottom: var(--space-10);
     }
   `,
@@ -4063,77 +4064,77 @@ export const paddingBottom: Record<ThemeVars.Space, LinariaClassName> = {
 
 export const paddingLeft: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-left: var(--space-10);
     }
   `,
@@ -4141,77 +4142,77 @@ export const paddingLeft: Record<ThemeVars.Space, LinariaClassName> = {
 
 export const paddingRight: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-0);
     }
   `,
   '0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-0\\.25);
     }
   `,
   '0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-0\\.5);
     }
   `,
   '0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-0\\.75);
     }
   `,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-1);
     }
   `,
   '1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-1\\.5);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-2);
     }
   `,
   '3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-3);
     }
   `,
   '4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-4);
     }
   `,
   '5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-5);
     }
   `,
   '6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-6);
     }
   `,
   '7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-7);
     }
   `,
   '8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-8);
     }
   `,
   '9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-9);
     }
   `,
   '10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       padding-right: var(--space-10);
     }
   `,
@@ -4219,7 +4220,7 @@ export const paddingRight: Record<ThemeVars.Space, LinariaClassName> = {
 
 export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0));
       margin-bottom: calc(-1 * var(--space-0));
       margin-right: calc(-1 * var(--space-0));
@@ -4227,7 +4228,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.25));
       margin-bottom: calc(-1 * var(--space-0\\.25));
       margin-right: calc(-1 * var(--space-0\\.25));
@@ -4235,7 +4236,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.5));
       margin-bottom: calc(-1 * var(--space-0\\.5));
       margin-right: calc(-1 * var(--space-0\\.5));
@@ -4243,7 +4244,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.75));
       margin-bottom: calc(-1 * var(--space-0\\.75));
       margin-right: calc(-1 * var(--space-0\\.75));
@@ -4251,7 +4252,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-1));
       margin-bottom: calc(-1 * var(--space-1));
       margin-right: calc(-1 * var(--space-1));
@@ -4259,7 +4260,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-1\\.5));
       margin-bottom: calc(-1 * var(--space-1\\.5));
       margin-right: calc(-1 * var(--space-1\\.5));
@@ -4267,7 +4268,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-2));
       margin-bottom: calc(-1 * var(--space-2));
       margin-right: calc(-1 * var(--space-2));
@@ -4275,7 +4276,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-3));
       margin-bottom: calc(-1 * var(--space-3));
       margin-right: calc(-1 * var(--space-3));
@@ -4283,7 +4284,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-4));
       margin-bottom: calc(-1 * var(--space-4));
       margin-right: calc(-1 * var(--space-4));
@@ -4291,7 +4292,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-5));
       margin-bottom: calc(-1 * var(--space-5));
       margin-right: calc(-1 * var(--space-5));
@@ -4299,7 +4300,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-6));
       margin-bottom: calc(-1 * var(--space-6));
       margin-right: calc(-1 * var(--space-6));
@@ -4307,7 +4308,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-7));
       margin-bottom: calc(-1 * var(--space-7));
       margin-right: calc(-1 * var(--space-7));
@@ -4315,7 +4316,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-8));
       margin-bottom: calc(-1 * var(--space-8));
       margin-right: calc(-1 * var(--space-8));
@@ -4323,7 +4324,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-9));
       margin-bottom: calc(-1 * var(--space-9));
       margin-right: calc(-1 * var(--space-9));
@@ -4331,7 +4332,7 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     }
   `,
   '-10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-10));
       margin-bottom: calc(-1 * var(--space-10));
       margin-right: calc(-1 * var(--space-10));
@@ -4342,91 +4343,91 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
 
 export const marginX: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-0));
       margin-left: calc(-1 * var(--space-0));
     }
   `,
   '-0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-0\\.25));
       margin-left: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-0\\.5));
       margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-0\\.75));
       margin-left: calc(-1 * var(--space-0\\.75));
     }
   `,
   '-1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-1));
       margin-left: calc(-1 * var(--space-1));
     }
   `,
   '-1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-1\\.5));
       margin-left: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-2));
       margin-left: calc(-1 * var(--space-2));
     }
   `,
   '-3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-3));
       margin-left: calc(-1 * var(--space-3));
     }
   `,
   '-4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-4));
       margin-left: calc(-1 * var(--space-4));
     }
   `,
   '-5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-5));
       margin-left: calc(-1 * var(--space-5));
     }
   `,
   '-6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-6));
       margin-left: calc(-1 * var(--space-6));
     }
   `,
   '-7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-7));
       margin-left: calc(-1 * var(--space-7));
     }
   `,
   '-8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-8));
       margin-left: calc(-1 * var(--space-8));
     }
   `,
   '-9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-9));
       margin-left: calc(-1 * var(--space-9));
     }
   `,
   '-10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-10));
       margin-left: calc(-1 * var(--space-10));
     }
@@ -4435,91 +4436,91 @@ export const marginX: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaCla
 
 export const marginY: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0));
       margin-bottom: calc(-1 * var(--space-0));
     }
   `,
   '-0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.25));
       margin-bottom: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.5));
       margin-bottom: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.75));
       margin-bottom: calc(-1 * var(--space-0\\.75));
     }
   `,
   '-1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-1));
       margin-bottom: calc(-1 * var(--space-1));
     }
   `,
   '-1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-1\\.5));
       margin-bottom: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-2));
       margin-bottom: calc(-1 * var(--space-2));
     }
   `,
   '-3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-3));
       margin-bottom: calc(-1 * var(--space-3));
     }
   `,
   '-4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-4));
       margin-bottom: calc(-1 * var(--space-4));
     }
   `,
   '-5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-5));
       margin-bottom: calc(-1 * var(--space-5));
     }
   `,
   '-6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-6));
       margin-bottom: calc(-1 * var(--space-6));
     }
   `,
   '-7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-7));
       margin-bottom: calc(-1 * var(--space-7));
     }
   `,
   '-8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-8));
       margin-bottom: calc(-1 * var(--space-8));
     }
   `,
   '-9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-9));
       margin-bottom: calc(-1 * var(--space-9));
     }
   `,
   '-10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-10));
       margin-bottom: calc(-1 * var(--space-10));
     }
@@ -4528,77 +4529,77 @@ export const marginY: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaCla
 
 export const marginTop: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0));
     }
   `,
   '-0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-0\\.75));
     }
   `,
   '-1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-1));
     }
   `,
   '-1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-2));
     }
   `,
   '-3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-3));
     }
   `,
   '-4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-4));
     }
   `,
   '-5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-5));
     }
   `,
   '-6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-6));
     }
   `,
   '-7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-7));
     }
   `,
   '-8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-8));
     }
   `,
   '-9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-9));
     }
   `,
   '-10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-top: calc(-1 * var(--space-10));
     }
   `,
@@ -4606,77 +4607,77 @@ export const marginTop: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaC
 
 export const marginBottom: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-0));
     }
   `,
   '-0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-0\\.75));
     }
   `,
   '-1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-1));
     }
   `,
   '-1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-2));
     }
   `,
   '-3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-3));
     }
   `,
   '-4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-4));
     }
   `,
   '-5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-5));
     }
   `,
   '-6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-6));
     }
   `,
   '-7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-7));
     }
   `,
   '-8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-8));
     }
   `,
   '-9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-9));
     }
   `,
   '-10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-bottom: calc(-1 * var(--space-10));
     }
   `,
@@ -4684,77 +4685,77 @@ export const marginBottom: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linar
 
 export const marginRight: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-0));
     }
   `,
   '-0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-0\\.75));
     }
   `,
   '-1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-1));
     }
   `,
   '-1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-2));
     }
   `,
   '-3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-3));
     }
   `,
   '-4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-4));
     }
   `,
   '-5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-5));
     }
   `,
   '-6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-6));
     }
   `,
   '-7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-7));
     }
   `,
   '-8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-8));
     }
   `,
   '-9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-9));
     }
   `,
   '-10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-right: calc(-1 * var(--space-10));
     }
   `,
@@ -4762,77 +4763,77 @@ export const marginRight: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linari
 
 export const marginLeft: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-0));
     }
   `,
   '-0.25': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-0\\.25));
     }
   `,
   '-0.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-0\\.5));
     }
   `,
   '-0.75': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-0\\.75));
     }
   `,
   '-1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-1));
     }
   `,
   '-1.5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-1\\.5));
     }
   `,
   '-2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-2));
     }
   `,
   '-3': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-3));
     }
   `,
   '-4': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-4));
     }
   `,
   '-5': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-5));
     }
   `,
   '-6': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-6));
     }
   `,
   '-7': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-7));
     }
   `,
   '-8': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-8));
     }
   `,
   '-9': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-9));
     }
   `,
   '-10': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       margin-left: calc(-1 * var(--space-10));
     }
   `,
@@ -4841,13 +4842,13 @@ export const marginLeft: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linaria
 export const elevation: Record<ElevationLevels, LinariaClassName> = {
   '0': css``,
   '1': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgElevation1);
       box-shadow: var(--shadow-elevation1);
     }
   `,
   '2': css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       background-color: var(--color-bgElevation2);
       box-shadow: var(--shadow-elevation2);
     }
@@ -4856,22 +4857,22 @@ export const elevation: Record<ElevationLevels, LinariaClassName> = {
 
 export const textAlign = {
   start: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-align: start;
     }
   `,
   end: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-align: end;
     }
   `,
   center: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-align: center;
     }
   `,
   justify: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       text-align: justify;
     }
   `,
@@ -4879,12 +4880,12 @@ export const textAlign = {
 
 export const visibility = {
   hidden: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       visibility: hidden;
     }
   `,
   visible: css`
-    @media (min-width: 1024px) {
+    @media ${media.tablet} {
       visibility: visible;
     }
   `,

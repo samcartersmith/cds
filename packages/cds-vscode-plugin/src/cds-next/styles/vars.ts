@@ -42,7 +42,7 @@ export const color = {
   line: 'rgba(var(--gray60),0.2)',
   lineInverse: 'rgb(var(--gray0))',
   lineHeavy: 'rgba(var(--gray60),0.66)',
-  linePrimary: 'rgb(var(--blue60))',
+  bgLinePrimary: 'rgb(var(--blue60))',
   linePrimaryLight: 'rgb(var(--blue20))',
   // Elevation
   elevation1: 'rgb(var(--gray0))',

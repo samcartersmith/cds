@@ -6,7 +6,6 @@ import { hasCellPriority } from '@cbhq/cds-common2/utils/cell';
 import { useCellSpacing } from '../hooks/useCellSpacing';
 import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { marginX } from '../styles/styles';
 import { LinkableProps, Pressable } from '../system/Pressable';
 
 const pressClassName = css`
@@ -111,7 +110,6 @@ export const Cell = memo(
     ref: React.ForwardedRef<HTMLDivElement>,
   ) {
     const spacing = useCellSpacing(spacingProps);
-    const offsetClassName = marginX[spacing.inner.marginX];
     const linkable = Boolean(onPress ?? onKeyDown ?? onKeyUp ?? to ?? href);
     const maybeTruncateClassName = cx(baseStyle, !shouldOverflow && truncateClassName);
 
@@ -186,9 +184,10 @@ export const Cell = memo(
           accessibilityLabelledBy={accessibilityLabelledBy}
           background="bg"
           borderRadius={borderRadius}
-          className={cx(pressClassName, offsetClassName, insetFocusRingStyle)}
+          className={cx(pressClassName, insetFocusRingStyle)}
           disabled={disabled}
           href={href}
+          marginX={spacing.inner.marginX}
           onKeyDown={onKeyDown}
           onKeyUp={onKeyUp}
           onPress={onPress}

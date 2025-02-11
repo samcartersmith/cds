@@ -52,9 +52,11 @@ export namespace ThemeVars {
     | 'bgLine'
     | 'bgLineHeavy'
     | 'bgLineInverse'
-    | 'linePrimary'
+    | 'bgLinePrimary'
     | 'bgLinePrimarySubtle'
     // Accent
+    | 'accentSubtleRed'
+    | 'accentBoldRed'
     | 'accentSubtleGreen'
     | 'accentBoldGreen'
     | 'accentSubtleBlue'
@@ -63,8 +65,6 @@ export namespace ThemeVars {
     | 'accentBoldPurple'
     | 'accentSubtleYellow'
     | 'accentBoldYellow'
-    | 'accentSubtleRed'
-    | 'accentBoldRed'
     | 'accentSubtleGray'
     | 'accentBoldGray'
     // Transparent

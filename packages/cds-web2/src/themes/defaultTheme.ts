@@ -300,7 +300,7 @@ export const defaultTheme = {
     bgLine: `rgba(${lightSpectrum.gray60},0.2)`,
     bgLineHeavy: `rgba(${lightSpectrum.gray60},0.66)`,
     bgLineInverse: `rgb(${lightSpectrum.gray0})`,
-    linePrimary: `rgb(${lightSpectrum.blue60})`,
+    bgLinePrimary: `rgb(${lightSpectrum.blue60})`,
     bgLinePrimarySubtle: `rgb(${lightSpectrum.blue20})`,
     // Elevation
     bgElevation1: `rgb(${lightSpectrum.gray0})`,
@@ -354,7 +354,7 @@ export const defaultTheme = {
     bgLine: `rgba(${darkSpectrum.gray60},0.2)`,
     bgLineInverse: `rgb(${darkSpectrum.gray0})`,
     bgLineHeavy: `rgba(${darkSpectrum.gray60},0.66)`,
-    linePrimary: `rgb(${darkSpectrum.blue70})`,
+    bgLinePrimary: `rgb(${darkSpectrum.blue70})`,
     bgLinePrimarySubtle: `rgb(${darkSpectrum.blue20})`,
     // Elevation
     bgElevation1: `rgb(${darkSpectrum.gray5})`,

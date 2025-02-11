@@ -5,7 +5,7 @@ import { type LinariaClassName, css } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 
-import type { DynamicStyleProps } from './styleProps';
+import type { DynamicStyleProps } from '../styleProps';
 
 export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   width: css`
@@ -185,7 +185,7 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
   bgLineHeavy: css`
     color: var(--color-bgLineHeavy);
   `,
-  linePrimary: css`
+  bgLinePrimary: css`
     color: var(--color-bgLinePrimary);
   `,
   bgLinePrimarySubtle: css`
@@ -328,7 +328,7 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   bgLineHeavy: css`
     background-color: var(--color-bgLineHeavy);
   `,
-  linePrimary: css`
+  bgLinePrimary: css`
     background-color: var(--color-bgLinePrimary);
   `,
   bgLinePrimarySubtle: css`
@@ -496,7 +496,7 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
     border-style: solid;
     border-color: var(--color-bgLineHeavy);
   `,
-  linePrimary: css`
+  bgLinePrimary: css`
     border-style: solid;
     border-color: var(--color-bgLinePrimary);
   `,
@@ -709,7 +709,7 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
       color: var(--color-bgLineHeavy);
     }
   `,
-  linePrimary: css`
+  bgLinePrimary: css`
     &:hover {
       color: var(--color-bgLinePrimary);
     }
@@ -942,7 +942,7 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
       background-color: var(--color-bgLineHeavy);
     }
   `,
-  linePrimary: css`
+  bgLinePrimary: css`
     &:hover {
       background-color: var(--color-bgLinePrimary);
     }
@@ -1175,7 +1175,7 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
       border-color: var(--color-bgLineHeavy);
     }
   `,
-  linePrimary: css`
+  bgLinePrimary: css`
     &:hover {
       border-color: var(--color-bgLinePrimary);
     }
@@ -1850,7 +1850,7 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   bgLineHeavy: css`
     text-decoration-color: var(--color-bgLineHeavy);
   `,
-  linePrimary: css`
+  bgLinePrimary: css`
     text-decoration-color: var(--color-bgLinePrimary);
   `,
   bgLinePrimarySubtle: css`
