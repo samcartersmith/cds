@@ -55,6 +55,7 @@ module.exports = {
     'dots/DotSymbol',
     'layout/Box',
     'layout/HStack',
+    'layout/Spacer',
     'loaders/Spinner',
     'media/Avatar',
   ],

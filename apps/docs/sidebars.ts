@@ -53,7 +53,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/layout/buttonGroup',
+              id: 'components/layout/ButtonGroup/buttonGroup',
               label: 'ButtonGroup',
             },
             {
@@ -74,7 +74,7 @@ const sidebars: SidebarsConfig = {
               id: 'components/layout/multiContentModule',
               label: 'MultiContentModule',
             },
-            { type: 'doc', id: 'components/layout/spacer', label: 'Spacer' },
+            { type: 'doc', id: 'components/layout/Spacer/spacer', label: 'Spacer' },
             { type: 'doc', id: 'components/layout/vStack', label: 'VStack' },
           ],
         },
@@ -91,7 +91,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Inputs',
           items: [
-            { type: 'doc', id: 'components/inputs/button', label: 'Button' },
+            { type: 'doc', id: 'components/inputs/Button/button', label: 'Button' },
             {
               type: 'doc',
               id: 'components/inputs/checkbox',

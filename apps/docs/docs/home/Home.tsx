@@ -85,7 +85,7 @@ const componentCards: ComponentCardProps[] = [
     bannerLightOverlaySrc: '/img/componentCardBanners/inputs_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/inputs_dark.svg',
     bannerDarkOverlaySrc: '/img/componentCardBanners/inputs_dark_hover.svg',
-    to: 'components/inputs/button',
+    to: 'components/inputs/Button',
   },
   {
     name: 'Media',

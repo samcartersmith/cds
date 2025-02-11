@@ -17,6 +17,7 @@
   --ifm-navbar-sidebar-width: 240px;
   --ifm-navbar-height: 74px;
   --ifm-link-hover-decoration: none;
+  --ifm-list-item-margin: unset;
   --docusaurus-highlighted-code-line-bg: #fff;
 
   /* left sidebar */
