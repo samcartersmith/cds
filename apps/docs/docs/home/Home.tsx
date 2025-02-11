@@ -103,7 +103,7 @@ const componentCards: ComponentCardProps[] = [
     bannerLightOverlaySrc: '/img/componentCardBanners/cards_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/cards_dark.svg',
     bannerDarkOverlaySrc: '/img/componentCardBanners/cards_dark_hover.svg',
-    to: 'components/cards/containedAssetCard',
+    to: 'components/cards/ContainedAssetCard',
   },
   {
     name: 'Data Display',
@@ -112,7 +112,7 @@ const componentCards: ComponentCardProps[] = [
     bannerLightOverlaySrc: '/img/componentCardBanners/data_display_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/data_display_dark.svg',
     bannerDarkOverlaySrc: '/img/componentCardBanners/data_display_dark_hover.svg',
-    to: 'components/cards/containedAssetCard',
+    to: 'components/cards/ContainedAssetCard',
   },
   {
     name: 'Feedback',

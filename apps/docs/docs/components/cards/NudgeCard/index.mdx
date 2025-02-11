@@ -1,0 +1,55 @@
+---
+id: nudgeCard
+title: NudgeCard
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+import { NudgeCard } from '@cbhq/cds-web2/cards/NudgeCard';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+
+import webPropsToc from ':docgen/cds-web2/cards/NudgeCard/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/cards/NudgeCard/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="NudgeCard"
+    description="Nudge Cards are designed to encourage users to take essential actions that will enhance their experience or gain greater benefits from the app. They should be engaging and persuasive without being intrusive."
+    banner={<DefaultBanner />}
+    webMetadata={{
+      import: "import { NudgeCard } from '@cbhq/cds-web/cards/NudgeCard'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/cards/NudgeCard.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-cards-nudgecard--default&globals=backgrounds.grid:false',
+      figma:
+        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-Components?type=design&node-id=10085%3A3191&mode=design&t=CXWB883JGKycJnlr-1',
+    }}
+    mobileMetadata={{
+      import: "import { NudgeCard } from '@cbhq/cds-mobile/cards/NudgeCard'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/cards/NudgeCard.tsx',
+      figma:
+        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-Components?type=design&node-id=10085%3A3191&mode=design&t=CXWB883JGKycJnlr-1',
+    }}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

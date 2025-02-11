@@ -177,7 +177,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'doc',
-              id: 'components/cards/containedAssetCard',
+              id: 'components/cards/ContainedAssetCard/containedAssetCard',
               label: 'ContainedAssetCard',
             },
             {
@@ -187,17 +187,17 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/cards/floatingAssetCard',
+              id: 'components/cards/FloatingAssetCard/floatingAssetCard',
               label: 'FloatingAssetCard',
             },
             {
               type: 'doc',
-              id: 'components/cards/nudgeCard',
+              id: 'components/cards/NudgeCard/nudgeCard',
               label: 'NudgeCard',
             },
             {
               type: 'doc',
-              id: 'components/cards/upsellCard',
+              id: 'components/cards/UpsellCard/upsellCard',
               label: 'UpsellCard',
             },
           ],

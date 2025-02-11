@@ -1,0 +1,55 @@
+---
+id: upsellCard
+title: UpsellCard
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+import { UpsellCard } from '@cbhq/cds-web2/cards/UpsellCard';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+
+import webPropsToc from ':docgen/cds-web2/cards/UpsellCard/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/cards/UpsellCard/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="UpsellCard"
+    description="Upsell Cards are used to promote new features, products, or actions within the app. They are part of the upsell framework and aim to drive user engagement and revenue."
+    banner={<DefaultBanner />}
+    webMetadata={{
+      import: "import { UpsellCard } from '@cbhq/cds-web/cards/UpsellCard'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/cards/UpsellCard.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-cards-upsellcard--default&globals=backgrounds.grid:false',
+      figma:
+        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-Components?type=design&node-id=10085%3A6246&mode=design&t=CXWB883JGKycJnlr-1',
+    }}
+    mobileMetadata={{
+      import: "import { UpsellCard } from '@cbhq/cds-mobile/cards/UpsellCard'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/cards/UpsellCard.tsx',
+      figma:
+        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-Components?type=design&node-id=10085%3A6246&mode=design&t=CXWB883JGKycJnlr-1',
+    }}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

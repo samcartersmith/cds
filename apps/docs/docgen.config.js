@@ -45,6 +45,10 @@ module.exports = {
    */
   sourceFiles: [
     'buttons/Button',
+    'cards/ContainedAssetCard',
+    'cards/FloatingAssetCard',
+    'cards/NudgeCard',
+    'cards/UpsellCard',
     'collapsible/Collapsible',
     'dots/DotCount',
     'dots/DotStatusColor',
