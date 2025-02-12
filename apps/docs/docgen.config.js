@@ -45,6 +45,7 @@ module.exports = {
    */
   sourceFiles: [
     'buttons/Button',
+    'buttons/ButtonGroup',
     'cards/ContainedAssetCard',
     'cards/FloatingAssetCard',
     'cards/NudgeCard',
