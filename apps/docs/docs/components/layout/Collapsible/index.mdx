@@ -9,7 +9,7 @@ import { VStack } from '@cbhq/cds-web2/layout';
 
 import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
 import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
-import { BoxBanner } from '@site/src/components/page/ComponentBanner/BoxBanner';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
 
 import webPropsToc from ':docgen/cds-web2/collapsible/Collapsible/toc-props';
 import mobilePropsToc from ':docgen/cds-mobile2/collapsible/Collapsible/toc-props';
@@ -35,7 +35,7 @@ import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
       source:
         'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/collapsible/Collapsible.tsx',
     }}
-    banner={<BoxBanner />}
+    banner={<DefaultBanner />}
   />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}
