@@ -75,7 +75,7 @@ const sidebars: SidebarsConfig = {
               label: 'MultiContentModule',
             },
             { type: 'doc', id: 'components/layout/Spacer/spacer', label: 'Spacer' },
-            { type: 'doc', id: 'components/layout/vStack', label: 'VStack' },
+            { type: 'doc', id: 'components/layout/VStack/vStack', label: 'VStack' },
           ],
         },
         {
@@ -84,7 +84,7 @@ const sidebars: SidebarsConfig = {
           items: [
             { type: 'doc', id: 'components/typography/link', label: 'Link' },
             { type: 'doc', id: 'components/typography/tag', label: 'Tag' },
-            { type: 'doc', id: 'components/typography/text', label: 'Text' },
+            { type: 'doc', id: 'components/typography/Text/text', label: 'Text' },
           ],
         },
         {
@@ -125,7 +125,7 @@ const sidebars: SidebarsConfig = {
               id: 'components/inputs/selectChip',
               label: 'SelectChip',
             },
-            { type: 'doc', id: 'components/inputs/switch', label: 'Switch' },
+            { type: 'doc', id: 'components/inputs/Switch/switch', label: 'Switch' },
             {
               type: 'doc',
               id: 'components/inputs/textInput',
@@ -236,7 +236,7 @@ const sidebars: SidebarsConfig = {
               label: 'PortalContext',
             },
             { type: 'doc', id: 'components/overlay/toast', label: 'Toast' },
-            { type: 'doc', id: 'components/overlay/tooltip', label: 'Tooltip' },
+            { type: 'doc', id: 'components/overlay/Tooltip/tooltip', label: 'Tooltip' },
           ],
         },
         {

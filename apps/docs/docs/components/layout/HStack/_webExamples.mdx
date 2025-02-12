@@ -13,7 +13,7 @@ You should use HStack when:
 If you want to lay out children in equal width columns, or with repeated rows of columns of custom sizes, you should use [Grid](/components/layout/grid) instead.
 :::
 
-#### Columns Sized to Content
+### Columns Sized to Content
 
 ```jsx live
 <HStack>
@@ -29,7 +29,7 @@ If you want to lay out children in equal width columns, or with repeated rows of
 </HStack>
 ```
 
-#### Columns with Gaps
+### Columns with Gaps
 
 ```jsx live
 <HStack gap={1}>
@@ -45,7 +45,7 @@ If you want to lay out children in equal width columns, or with repeated rows of
 </HStack>
 ```
 
-#### Columns that Fill the Available Space
+### Columns that Fill the Available Space
 
 ```jsx live
 <HStack gap={1}>
@@ -61,7 +61,7 @@ If you want to lay out children in equal width columns, or with repeated rows of
 </HStack>
 ```
 
-#### Columns that Have Proportionate Sizes
+### Columns that Have Proportionate Sizes
 
 ```jsx live
 <HStack gap={1}>
@@ -77,17 +77,17 @@ If you want to lay out children in equal width columns, or with repeated rows of
 </HStack>
 ```
 
-## A11y
+### A11y
 
 Has the same accessibility requirements as [Box](/components/layout/Box#a11y).
 
-## Responsive Styles
+### Responsive Styles
 
-**Web only** You can create responsive layouts by passing a configuration object to each supported property of box and specify unique styles for phones, tablets, or desktops.
+**Web only** You can create responsive layouts by passing a configuration object to each supported property of HStack and specify unique styles for phones, tablets, or desktops.
 
 Please note, there are no default responsive styles for Box. This is an additive feature that you will need to configure yourself.
 
-### Supported Properties
+#### Supported Properties
 
 - Padding
 - Margin
@@ -96,7 +96,7 @@ Please note, there are no default responsive styles for Box. This is an additive
 - Display
 - Visibility
 
-### Usage
+#### Usage
 
 ```jsx live
 function ResponsiveBox() {
@@ -107,13 +107,13 @@ function ResponsiveBox() {
       justifyContent={{ base: 'flex-end', minTablet: 'flex-start', minDesktop: 'center' }}
       alignItems={{ base: 'flex-end', minTablet: 'flex-start', minDesktop: 'center' }}
     >
-      <HStack spacing={1}>
+      <HStack background="bgAlternate" padding={1}>
         <Text as="p">First</Text>
       </HStack>
-      <HStack background="bgAlternate" spacing={1}>
+      <HStack background="bgSecondary" padding={1}>
         <Text as="p">Second</Text>
       </HStack>
-      <HStack background="bgOverlay" spacing={1}>
+      <HStack background="bgOverlay" padding={1}>
         <Text as="p">Third</Text>
       </HStack>
     </HStack>

@@ -1,0 +1,49 @@
+---
+id: vStack
+title: VStack
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { VStackBanner } from '@site/src/components/page/ComponentBanner/VStackBanner';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import mobilePropsToc from ':docgen/cds-mobile2/layout/VStack/toc-props';
+import WebPropsTable from './_webPropsTable.mdx';
+import webPropsToc from ':docgen/cds-web2/layout/VStack/toc-props';
+
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
+import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
+import { VStack } from '@cbhq/cds-web2/layout';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="VStack"
+    description="A Box with flexDirection='column' set by default."
+    webMetadata={{
+      import: "import { VStack } from '@cbhq/cds-web2/layout/VStack'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/VStack.tsx',
+    }}
+    mobileMetadata={{
+      import: "import { VStack } from '@cbhq/cds-mobile/layout/VStack'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/VStack.tsx',
+    }}
+    banner={<VStackBanner />}
+  />
+
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

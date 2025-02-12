@@ -1,0 +1,50 @@
+---
+id: text
+title: Text
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { TextBanner } from '@site/src/components/page/ComponentBanner/TextBanner';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import mobilePropsToc from ':docgen/cds-mobile2/typography/Text/toc-props';
+import WebPropsTable from './_webPropsTable.mdx';
+import webPropsToc from ':docgen/cds-web2/typography/Text/toc-props';
+
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
+import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
+import { VStack } from '@cbhq/cds-web2/layout';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="Text"
+    description="CDS offers 13 typography variants and they are all baked into our Text components. Each typography has its own Text component. Please do not try to modify typography styles such as font family, font size, font weight, line height, and letter spacing. If the design you received does not match one of the CDS types exactly, please check with the designer about updating to one from CDS."
+    webMetadata={{
+      import: "import { Text } from '@cbhq/cds-web2/typography/Text'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/typography/Text.tsx',
+      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-text-text--default',
+    }}
+    mobileMetadata={{
+      import: "import { Text } from '@cbhq/cds-mobile/typography/Text';",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/typography/Text.tsx',
+    }}
+    banner={<TextBanner />}
+  />
+
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>
