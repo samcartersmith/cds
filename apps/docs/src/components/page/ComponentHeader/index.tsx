@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { VStack } from '@cbhq/cds-web2/layout/VStack';
@@ -28,8 +29,9 @@ type ComponentHeaderProps = {
    * Banner to display at the top of the header.
    * Can be either a React node or image URL string.
    * Used for light mode and as fallback for dark mode if bannerDark is not provided.
+   * Defaults to <DefaultBanner /> if not provided.
    */
-  banner: React.ReactNode;
+  banner?: React.ReactNode;
   /**
    * Optional dark mode banner.
    * Can be either a React node or image URL string.
@@ -44,7 +46,7 @@ export const ComponentHeader = memo(
     description,
     webMetadata,
     mobileMetadata,
-    banner,
+    banner = <DefaultBanner />,
     bannerDark,
   }: ComponentHeaderProps) => {
     const { platform } = usePlatformContext();
