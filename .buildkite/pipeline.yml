@@ -264,3 +264,4 @@ steps:
       - tools/ci/setup.sh
       - yarn nx affected --target=publish-figma --dry-run
     soft_fail: true
+    skip: true
