@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.7.0 (2/11/2025 PST)
+
+#### 🚀 Updates
+
+- Add style prop to CheckboxGroup.
+
 ## 7.6.7 (2/4/2025 PST)
 
 #### 🐞 Fixes

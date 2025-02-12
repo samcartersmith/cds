@@ -6,7 +6,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 
 import { CheckboxProps } from './Checkbox';
 
-export type CheckboxGroupProps<T extends string> = Omit<ViewProps, 'style' | 'children'> &
+export type CheckboxGroupProps<T extends string> = Omit<ViewProps, 'children'> &
   CheckboxGroupBaseProps<T> &
   SharedProps & {
     /** Handle change events when user tap on the checkboxes */

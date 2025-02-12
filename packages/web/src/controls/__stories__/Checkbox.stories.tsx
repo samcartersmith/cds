@@ -108,7 +108,11 @@ const options = {
   'fish-taco': 'Fish tacos',
   puttanesca: 'Spaghetti alla puttanesca',
   'hamachi-salad': 'Hamachi salad',
+  'pad-thai': 'Pad Thai',
+  pizza: 'Margherita Pizza',
+  ramen: 'Tonkotsu Ramen',
 };
+
 const optionValues = Object.keys(options);
 
 export const Group = () => {
@@ -152,6 +156,35 @@ export const CustomStylesCheckboxGroup = () => {
               {label}
             </Checkbox>
           </div>
+        ))}
+      </CheckboxGroup>
+    </>
+  );
+};
+
+const gridLayout = css`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+`;
+
+export const CustomLayoutCheckboxGroup = () => {
+  const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
+  return (
+    <>
+      <TextHeadline as="h2" spacingVertical={1}>
+        Two Column Layout
+      </TextHeadline>
+      <CheckboxGroup
+        className={gridLayout}
+        name="checkbox-grid"
+        onChange={toggle}
+        selectedValues={selectedValues}
+      >
+        {Object.entries(options).map(([value, label]) => (
+          <Checkbox key={value} value={value}>
+            {label}
+          </Checkbox>
         ))}
       </CheckboxGroup>
     </>

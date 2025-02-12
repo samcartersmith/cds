@@ -3,16 +3,20 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Checkbox } from '../Checkbox';
 import { CheckboxGroup } from '../CheckboxGroup';
 
+const testStyle = { display: 'grid', gap: '16px' };
+const testClass = 'test-class';
+const testLabel = 'test label';
+
 describe('CheckboxGroup.test', () => {
   it('renders label and children', () => {
     render(
-      <CheckboxGroup label="test label" onChange={jest.fn()} selectedValues={new Set('1')}>
+      <CheckboxGroup label={testLabel} onChange={jest.fn()} selectedValues={new Set('1')}>
         <div>test children</div>
         <div>test children2</div>
       </CheckboxGroup>,
     );
 
-    expect(screen.getByText('test label')).toBeTruthy();
+    expect(screen.getByText(testLabel)).toBeTruthy();
     expect(screen.getByText('test children')).toBeTruthy();
   });
 
@@ -63,7 +67,7 @@ describe('CheckboxGroup.test', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
 
     render(
-      <CheckboxGroup label="test label" onChange={onChange} selectedValues={new Set('1')}>
+      <CheckboxGroup label={testLabel} onChange={onChange} selectedValues={new Set('1')}>
         <Checkbox>1</Checkbox>
         <Checkbox value="2">2</Checkbox>
       </CheckboxGroup>,
@@ -71,5 +75,36 @@ describe('CheckboxGroup.test', () => {
 
     expect(console.error).toHaveBeenCalledTimes(1);
     process.env.NODE_ENV = 'test';
+  });
+
+  it('applies className to fieldset', () => {
+    render(
+      <CheckboxGroup
+        className={testClass}
+        label={testLabel}
+        onChange={jest.fn()}
+        selectedValues={new Set('1')}
+      >
+        <Checkbox value="1">1</Checkbox>
+        <Checkbox value="2">2</Checkbox>
+      </CheckboxGroup>,
+    );
+
+    expect(screen.getByText(testLabel)).toHaveClass(testClass);
+  });
+  it('applies style to fieldset', () => {
+    render(
+      <CheckboxGroup
+        label={testLabel}
+        onChange={jest.fn()}
+        selectedValues={new Set('1')}
+        style={testStyle}
+      >
+        <Checkbox value="1">1</Checkbox>
+        <Checkbox value="2">2</Checkbox>
+      </CheckboxGroup>,
+    );
+
+    expect(screen.getByText(testLabel)).toHaveStyle(testStyle);
   });
 });

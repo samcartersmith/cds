@@ -12,6 +12,7 @@ import type { CheckboxGroupBaseProps } from '@cbhq/cds-common/types/CheckboxGrou
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { FilteredHTMLAttributes } from '../types';
+import { cx } from '../utils/linaria';
 
 import { Checkbox, CheckboxProps } from './Checkbox';
 
@@ -23,8 +24,10 @@ const checkboxStyles = css`
 `;
 
 export type CheckboxGroupProps<T extends string> = {
+  className?: string;
   /** Handle change event when pressing on a checkbox option. */
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  style?: React.CSSProperties;
 } & FilteredHTMLAttributes<FieldsetHTMLAttributes<HTMLFieldSetElement>, 'onChange'> &
   CheckboxGroupBaseProps<T> &
   SharedProps;
@@ -33,11 +36,13 @@ export type CheckboxGroupProps<T extends string> = {
 const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends string>(
   {
     children,
+    className,
     label,
     'aria-labelledby': ariaLabelledby,
     selectedValues,
     onChange,
     name,
+    style,
     testID,
     ...restProps
   }: CheckboxGroupProps<T>,
@@ -72,7 +77,13 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   // TODO (hannah): Update default styles once Caroline has the design ready. (Add default distance between
   // checkboxes.)
   return (
-    <fieldset ref={ref} className={checkboxStyles} data-testid={testID} {...restProps}>
+    <fieldset
+      ref={ref}
+      className={cx(checkboxStyles, className)}
+      data-testid={testID}
+      {...restProps}
+      style={style}
+    >
       {label}
       {optionCheckboxes}
     </fieldset>
