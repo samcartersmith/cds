@@ -36,11 +36,21 @@ module.exports = {
         'react/react-in-jsx-scope': 'error',
       },
     },
+    // Apps overrides
+    {
+      files: ['apps/**/*.ts', 'apps/**/*.tsx'],
+      rules: {
+        'react-perf/jsx-no-new-object-as-prop': 'off',
+        'react-perf/jsx-no-new-array-as-prop': 'off',
+      },
+    },
     // Story overrides
     {
       files: ['**/*.stories.ts', '**/*.stories.tsx'],
       rules: {
         'react-perf/jsx-no-new-function-as-prop': 'off',
+        'react-perf/jsx-no-new-object-as-prop': 'off',
+        'react-perf/jsx-no-new-array-as-prop': 'off',
       },
     },
     // Jest configs
