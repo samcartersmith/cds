@@ -1,42 +1,28 @@
 <!-- Please ensure your pull request title adheres to our [Commit Message Conventions](https://github.cbhq.net/frontend/cds/blob/develop/docs/misc.md#commit-message-conventions). -->
 
-**What changed? Why?**
+## What changed? Why?
 
-<!-- A brief overview of the change. Include UI screenshots of new screens or if major modifications are made to existing ones. -->
+### JIRA ticket
 
-**JIRA ticket**
+### Root cause (required for bugfixes)
 
-<!-- If there's a JIRA ticket for this, it's helpful to reviewers for you to link to it in the PR description, and link back to this PR from a comment on that JIRA ticket. -->
+## UI changes
 
-**Root cause (required for bugfixes)**
-
-<!-- Detailed description of the problem this bugfix is addressing, why it occurred, and how the proposed changes address the issue. This section is critical for understanding the context of the changes. -->
-
-**UI changes**
-
-<!-- screenshots if visual change -->
-
-_iOS_
-
-| Old 👴         | New 👶         |
+| iOS Old        | iOS New        |
 | -------------- | -------------- |
 | old screenshot | new screenshot |
 
-_Android_
-
-| Old 👴         | New 👶         |
+| Android Old    | Android New    |
 | -------------- | -------------- |
 | old screenshot | new screenshot |
 
-_Web_
-
-| Old 👴         | New 👶         |
+| Web Old        | Web New        |
 | -------------- | -------------- |
 | old screenshot | new screenshot |
 
-**How has it been tested?**
+## Testing
 
-<!-- Automated tests are required for all code changes. If your change cannot be tested, please describe the reason here. -->
+### How has it been tested?
 
 - [ ] Unit tests
 - [ ] Interaction tests
@@ -45,7 +31,7 @@ _Web_
 - [ ] Manual - Android (Emulator / Device)
 - [ ] Manual - iOS (Emulator / Device)
 
-<!-- If you need help writing unit tests, checkout http://go/rn-testing for examples-->
+### Testing instructions
 
 **[Change management](https://confluence.coinbase-corp.com/display/SEC/PCI+Change+Management+for+Engineers)**
 
