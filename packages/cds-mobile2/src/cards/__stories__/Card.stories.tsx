@@ -55,7 +55,6 @@ const CardScreen = () => {
       <Example title="Feed Card">
         <CardGroup>
           {feedCards.map(({ like: getLikeProps, ...item }) => (
-            // @ts-expect-error common onPress not typed
             <FeedCard {...item} like={getLikeProps()} />
           ))}
         </CardGroup>

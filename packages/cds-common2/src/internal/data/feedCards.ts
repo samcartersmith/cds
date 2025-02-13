@@ -24,9 +24,8 @@ const defaultProps = {
     liked: false,
     count: 10,
   }),
-  share: { onPress },
+  share: {},
   cta: {
-    onPress,
     children: 'View ETH',
   },
 } as const;
@@ -36,7 +35,7 @@ export const feedCards = [
     ...defaultProps,
     key: 'card1',
     title: 'Russia Values Local Crypto at $200 Billion as Rules Near',
-  },
+  } as const,
   {
     ...defaultProps,
     key: 'card2',
@@ -49,8 +48,6 @@ export const feedCards = [
       liked: true,
       count: 3,
     }),
-    comment: {
-      onPress,
-    },
-  },
-] as const;
+    comment: {},
+  } as const,
+];

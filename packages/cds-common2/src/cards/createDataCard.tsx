@@ -28,6 +28,7 @@ type CreateFeatureEntryCardParams<OnPressFn> = {
   >;
 };
 
+/** @deprecated do not use creator pattern in v8 */
 export function createDataCard<OnPressFn>({
   Card,
   CardBody,

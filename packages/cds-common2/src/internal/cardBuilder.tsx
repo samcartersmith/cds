@@ -59,6 +59,7 @@ export type CreateCardProps = {
 
 const innerSpacingConfig: CellSpacing = { paddingX: 1 };
 
+/** @deprecated don't use  creator pattern in v8 */
 export function cardBuilder({
   Box,
   Button,

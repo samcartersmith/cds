@@ -7,6 +7,7 @@ type CreateCardFooterParams = {
   HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
 };
 
+/** @deprecated do not use creator pattern in v8 */
 export function createCardFooter({ HStack }: CreateCardFooterParams) {
   const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = memo(function CardFooter({
     children,

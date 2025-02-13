@@ -6,7 +6,7 @@ import { IconButtonBaseProps } from './IconButtonBaseProps';
 import { LikeButtonBaseProps } from './LikeButtonBaseProps';
 import { SharedProps } from './SharedProps';
 
-export type FeedCardBaseProps<OnPressFn> = {
+export type FeedCardBaseProps<OnPressFn = () => void> = {
   /** Image url for Avatar */
   avatar?: string;
   /** Source of the card info. Typically this text is associated with the avatar. */

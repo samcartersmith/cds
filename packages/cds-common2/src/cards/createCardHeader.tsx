@@ -17,6 +17,7 @@ type CreateCardHeaderParams<T> = {
   >;
 };
 
+/** @deprecated do not use creator pattern in v8 */
 export function createCardHeader<T>({
   Avatar,
   HStack,

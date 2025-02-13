@@ -25,6 +25,7 @@ type CreateFeedCardParams<OnPressFn> = {
   platform: CdsPlatform;
 };
 
+/** @deprecated do not use creator pattern in v8 * */
 export function createFeedCard<OnPressFn>({
   Button,
   Card,
