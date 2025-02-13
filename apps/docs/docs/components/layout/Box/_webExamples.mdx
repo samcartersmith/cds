@@ -41,10 +41,10 @@ Please note, there are no default responsive styles for Box. This is an additive
 function ResponsiveBox() {
   return (
     <Box
-      padding={{ base: 4, minTablet: 3, minDesktop: 2 }}
-      gap={{ base: 0.5, minTablet: 2, minDesktop: 3 }}
-      justifyContent={{ base: 'flex-end', minTablet: 'flex-start', minDesktop: 'center' }}
-      alignItems={{ base: 'flex-end', minTablet: 'flex-start', minDesktop: 'center' }}
+      padding={{ base: 4, tablet: 3, desktop: 2 }}
+      gap={{ base: 0.5, tablet: 2, desktop: 3 }}
+      justifyContent={{ base: 'flex-end', tablet: 'flex-start', desktop: 'center' }}
+      alignItems={{ base: 'flex-end', tablet: 'flex-start', desktop: 'center' }}
     >
       <HStack spacing={1}>
         <Text as="p">First</Text>

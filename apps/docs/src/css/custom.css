@@ -67,6 +67,8 @@
   --font-line-height-caption: 1rem;
   --font-line-height-legal: 1rem;
   --zIndex-portal: 100001;
+
+  --table-of-content-width: 230px;
 }
 
 @media screen and (max-width: 1280px) {

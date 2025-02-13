@@ -63,7 +63,7 @@ CDS distinguishes between static and dynamic style props:
 Example:
 
 ```tsx
-<Box color="bgPrimary" padding={4} margin={{ base: 2, minTablet: 4 }} width="100%" />
+<Box color="bgPrimary" padding={4} margin={{ base: 2, tablet: 4 }} width="100%" />
 ```
 
 ### Responsive Design
@@ -73,10 +73,7 @@ CDS makes it easy to create responsive designs by supporting breakpoint-based st
 Example:
 
 ```tsx
-<Box
-  padding={{ base: 2, minTablet: 4, minDesktop: 6 }}
-  width={{ base: '100%', minDesktop: '50%' }}
-/>
+<Box padding={{ base: 2, tablet: 4, desktop: 6 }} width={{ base: '100%', desktop: '50%' }} />
 ```
 
 This eliminates the need for custom media queries in CSS.

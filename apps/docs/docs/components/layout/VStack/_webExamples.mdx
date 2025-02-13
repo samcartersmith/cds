@@ -90,10 +90,10 @@ Please note, there are no default responsive styles for VStack. This is an addit
 function ResponsiveVStack() {
   return (
     <VStack
-      padding={{ base: 4, minTablet: 3, minDesktop: 2 }}
-      gap={{ base: 0.5, minTablet: 2, minDesktop: 3 }}
-      justifyContent={{ base: 'flex-end', minTablet: 'flex-start', minDesktop: 'center' }}
-      alignItems={{ base: 'flex-end', minTablet: 'flex-start', minDesktop: 'center' }}
+      padding={{ base: 4, tablet: 3, desktop: 2 }}
+      gap={{ base: 0.5, tablet: 2, desktop: 3 }}
+      justifyContent={{ base: 'flex-end', tablet: 'flex-start', desktop: 'center' }}
+      alignItems={{ base: 'flex-end', tablet: 'flex-start', desktop: 'center' }}
     >
       <HStack background="bgAlternate" padding={1}>
         <Text as="p">First</Text>

@@ -44,6 +44,17 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
     typedFrontMatter.platform_switcher_options?.web ||
     false;
 
+  const contentMaxWidth = useMemo(
+    () => ({
+      desktop:
+        (shouldRenderPlatformSwitcher || shouldRenderToc) && isDesktop
+          ? `calc(100% - var(--table-of-content-width) - 2.5rem)`
+          : '100%',
+      base: '100%',
+    }),
+    [isDesktop, shouldRenderPlatformSwitcher, shouldRenderToc],
+  );
+
   const supportsWeb = typedFrontMatter.platform_switcher_options?.web || false;
   const supportsMobile = typedFrontMatter.platform_switcher_options?.mobile || false;
 
@@ -85,7 +96,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
 
   return (
     <>
-      <VStack flexGrow={1}>
+      <VStack maxWidth={contentMaxWidth}>
         <ContentVisibility metadata={metadata} />
         <DocVersionBanner />
         <VStack>
@@ -104,7 +115,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
       </VStack>
       {isDesktop && (shouldRenderPlatformSwitcher || shouldRenderToc) && (
         <VStack
-          flexBasis={230}
+          flexBasis="var(--table-of-content-width)"
           flexGrow={0}
           flexShrink={0}
           gap={4}

@@ -43,7 +43,7 @@ CDS components support `StyleProps`, a flexible API for applying styles directly
 import { Grid, Box } from '@cbhq/cds-web';
 
 const ResponsiveLayout = () => (
-  <Grid templateColumns={{ base: '1fr', minTablet: 'repeat(2, 1fr)' }} gap={4}>
+  <Grid templateColumns={{ base: '1fr', tablet: 'repeat(2, 1fr)' }} gap={4}>
     <Box background="bgPrimary">Item 1</Box>
     <Box background="bgPrimary">Item 2</Box>
   </Grid>

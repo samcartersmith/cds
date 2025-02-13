@@ -44,11 +44,7 @@ CDS components support a powerful `StyleProps` API that simplifies applying styl
 Example:
 
 ```tsx
-<Box
-  color="bgPrimary"
-  padding={{ base: 3, minTablet: 5 }}
-  width={{ base: '100%', minDesktop: '50%' }}
-/>
+<Box color="bgPrimary" padding={{ base: 3, tablet: 5 }} width={{ base: '100%', desktop: '50%' }} />
 ```
 
 ### Polymorphic Components
@@ -70,10 +66,7 @@ CDS supports responsive design with a declarative syntax. You can specify differ
 Example:
 
 ```tsx
-<Grid
-  templateColumns={{ base: '1fr', minTablet: 'repeat(2, 1fr)' }}
-  gap={{ base: 2, minDesktop: 4 }}
->
+<Grid templateColumns={{ base: '1fr', tablet: 'repeat(2, 1fr)' }} gap={{ base: 2, desktop: 4 }}>
   <Box>Item 1</Box>
   <Box>Item 2</Box>
 </Grid>

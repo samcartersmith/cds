@@ -114,7 +114,7 @@ export const getStyles = (styleProps: StyleProps, inlineStyle?: React.CSSPropert
         className += ' ' + tabletStyles.dynamic[styleProp as keyof DynamicStyleProps];
       }
       if (typeof value.desktop !== 'undefined') {
-        style['--minDesktop-' + styleProp] =
+        style['--desktop-' + styleProp] =
           isPixelProp && typeof value.desktop === 'number' && value.desktop !== 0
             ? value.desktop + 'px'
             : value.desktop;

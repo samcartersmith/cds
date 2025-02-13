@@ -4,16 +4,15 @@ import BackToTopButton from '@theme/BackToTopButton';
 import type { Props } from '@theme/DocRoot/Layout';
 import DocRootLayoutMain from '@theme/DocRoot/Layout/Main';
 import DocRootLayoutSidebar from '@theme/DocRoot/Layout/Sidebar';
-
-import styles from './styles.module.css';
+import { Box, HStack } from '@cbhq/cds-web2/layout';
 
 export default function DocRootLayout({ children }: Props): JSX.Element {
   const sidebar = useDocsSidebar();
   const [hiddenSidebarContainer, setHiddenSidebarContainer] = useState(false);
   return (
-    <div className={styles.docsWrapper}>
+    <Box flexGrow={1} flexShrink={0}>
       <BackToTopButton />
-      <div className={styles.docRoot}>
+      <HStack width="100%">
         {sidebar && (
           <DocRootLayoutSidebar
             hiddenSidebarContainer={hiddenSidebarContainer}
@@ -21,12 +20,10 @@ export default function DocRootLayout({ children }: Props): JSX.Element {
             sidebar={sidebar.items}
           />
         )}
-        <div className={styles.docMainAndFooterWrapper}>
-          <DocRootLayoutMain hiddenSidebarContainer={hiddenSidebarContainer}>
-            {children}
-          </DocRootLayoutMain>
-        </div>
-      </div>
-    </div>
+        <DocRootLayoutMain hiddenSidebarContainer={hiddenSidebarContainer}>
+          {children}
+        </DocRootLayoutMain>
+      </HStack>
+    </Box>
   );
 }
