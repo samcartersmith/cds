@@ -11,9 +11,8 @@
 const descriptionMap: Record<string, string[]> = {
   '1': ['layeredNetworks'],
   '2': ['layeredNetworks'],
-  margin: ['loanValue', 'margin', 'marginWarning'],
+  leverage: ['leverage', 'browserExtension'],
   trading: [
-    'loanValue',
     'leverage',
     'accessToAdvancedCharts',
     'ratDashboard',
@@ -32,9 +31,9 @@ const descriptionMap: Record<string, string[]> = {
     'readyToTrade',
     'advancedTradingUi',
     'advancedTrading',
+    'loanValue',
   ],
   add: [
-    'loanValue',
     'leverage',
     'creditCardExcitement',
     'sendingCrypto',
@@ -46,12 +45,12 @@ const descriptionMap: Record<string, string[]> = {
     'coinbaseCardLock',
     'coinbaseCardPocket',
     'addPhoneNumber',
-  ],
-  stack: ['loanValue', 'leverage', 'margin', 'marginWarning'],
-  more: ['loanValue', 'leverage', 'margin', 'marginWarning', 'staking', 'cryptoAndMore'],
-  lever: ['loanValue', 'leverage', 'margin', 'marginWarning'],
-  up: [
     'loanValue',
+  ],
+  stack: ['leverage', 'margin', 'marginWarning', 'loanValue'],
+  more: ['leverage', 'margin', 'marginWarning', 'staking', 'cryptoAndMore', 'loanValue'],
+  lever: ['leverage', 'margin', 'marginWarning', 'loanValue'],
+  up: [
     'leverage',
     'trade',
     'margin',
@@ -61,10 +60,10 @@ const descriptionMap: Record<string, string[]> = {
     'portfolioPerformance',
     'earn',
     'trendingHotAssets',
-  ],
-  buy: ['loanValue', 'leverage', 'margin', 'marginWarning', 'futures'],
-  sell: [
     'loanValue',
+  ],
+  buy: ['leverage', 'margin', 'marginWarning', 'futures', 'loanValue'],
+  sell: [
     'leverage',
     'margin',
     'marginWarning',
@@ -72,11 +71,11 @@ const descriptionMap: Record<string, string[]> = {
     'eth2SellSend',
     'wrapEth',
     'wrapEthTwo',
-  ],
-  put: ['loanValue', 'leverage', 'margin', 'marginWarning', 'futures'],
-  options: ['loanValue', 'leverage', 'margin', 'marginWarning'],
-  trade: [
     'loanValue',
+  ],
+  put: ['leverage', 'margin', 'marginWarning', 'futures', 'loanValue'],
+  options: ['leverage', 'margin', 'marginWarning', 'loanValue'],
+  trade: [
     'leverage',
     'primeOrderConfirmation',
     'margin',
@@ -84,11 +83,9 @@ const descriptionMap: Record<string, string[]> = {
     'ethWrappedStakingRewards',
     'ethStakingRewards',
     'tradeImmediately',
+    'loanValue',
   ],
-  risk: ['loanValue', 'leverage', 'margin', 'marginWarning', 'futures', 'defiRisk'],
-  clock: ['loanValue', 'marginWarning', 'futures', 'quickAndSimple', 'getStartedInMinutes'],
-  'error state': ['loanValue', 'ratMigrationerror', 'ledgerSignatureRejected', 'marginWarning'],
-  leverage: ['leverage', 'browserExtension'],
+  risk: ['leverage', 'margin', 'marginWarning', 'futures', 'defiRisk', 'loanValue'],
   coinbase: [
     'cardBoosted',
     'coinbaseOneLogo',
@@ -401,6 +398,7 @@ const descriptionMap: Record<string, string[]> = {
     'cardWaitlist',
     'bigBtc',
   ],
+  'error state': ['ratMigrationerror', 'ledgerSignatureRejected', 'marginWarning', 'loanValue'],
   invalid: ['ratMigrationerror'],
   broken: ['ratMigrationerror'],
   DeFi: ['primeDeFi', 'defiDecentralizedTradingExchange'],
@@ -968,6 +966,7 @@ const descriptionMap: Record<string, string[]> = {
   unique: ['ethAddress'],
   number: ['ethAddress', 'phoneNumber', 'addPhoneNumber'],
   code: ['ethAddress'],
+  margin: ['margin', 'marginWarning', 'loanValue'],
   switch: [
     'advancedTradeCharts',
     'switchAdvancedToSimpleTrading',
@@ -976,6 +975,7 @@ const descriptionMap: Record<string, string[]> = {
   ],
   swap: ['advancedTradeCharts', 'defiDecentralizedTradingExchange', 'tradeImmediately'],
   improved: ['advancedTradeCharts'],
+  clock: ['marginWarning', 'futures', 'quickAndSimple', 'getStartedInMinutes', 'loanValue'],
   apps: ['linkCoinbaseWallet', 'cryptoApps'],
   interaction: ['primeTradePreferences'],
   candlesticks: [

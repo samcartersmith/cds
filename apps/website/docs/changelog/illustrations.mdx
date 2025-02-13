@@ -8,6 +8,28 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.5.0 (2/12/2025 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 02/12/2025. [[#3596](https://github.cbhq.net/frontend/cds/pull/3596)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Square
+
+- coinbaseOneZero
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Square
+
+- coinbaseOneZeroPortal
+
 ## 4.4.0 (1/28/2025 PST)
 
 #### 🚀 Updates

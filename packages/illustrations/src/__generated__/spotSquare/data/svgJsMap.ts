@@ -196,9 +196,13 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseOneUSDC-0').content,
     dark: () => require('../svgJs/dark/coinbaseOneUSDC-0').content,
   },
+  coinbaseOneZero: {
+    light: () => require('../svgJs/light/coinbaseOneZero-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneZero-0').content,
+  },
   coinbaseOneZeroPortal: {
-    light: () => require('../svgJs/light/coinbaseOneZeroPortal-0').content,
-    dark: () => require('../svgJs/dark/coinbaseOneZeroPortal-0').content,
+    light: () => require('../svgJs/light/coinbaseOneZeroPortal-1').content,
+    dark: () => require('../svgJs/dark/coinbaseOneZeroPortal-1').content,
   },
   coinFifty: {
     light: () => require('../svgJs/light/coinFifty-0').content,

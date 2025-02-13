@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2025-01-28T23:07:10.874Z",
+  "lastUpdated": "2025-02-13T02:35:33.546Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -22185,22 +22185,22 @@
     "14313:91": {
       "type": "spotSquare",
       "name": "coinbaseOneZeroPortal",
-      "hash": "FH0ZF9AyyM0etpDJy6r2eyheKS9VtdXmyZq6lsd/t9g=",
+      "hash": "OMXx9Ojl5iaq3P1uVdyG/W42IJPjpxQu1M6jZsh7VKQ=",
       "width": 96,
       "height": 96,
-      "description": "",
+      "description": "coinbaseOneZero, coinbase, Zero",
       "createdAt": "2025-01-28T20:48:33.526Z",
-      "lastUpdated": "2025-01-28T20:48:33.526Z",
+      "lastUpdated": "2025-02-13T02:32:58.107Z",
       "outputs": {
-        "svgLight": "./spotSquare/svg/light/coinbaseOneZeroPortal-0.svg",
-        "svgDark": "./spotSquare/svg/dark/coinbaseOneZeroPortal-0.svg",
-        "svgThemed": "./spotSquare/svg/themeable/coinbaseOneZeroPortal-0.svg",
-        "svgJsLight": "./spotSquare/svgJs/light/coinbaseOneZeroPortal-0.js",
-        "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneZeroPortal-0.js",
-        "pngLight": "./spotSquare/png/light/coinbaseOneZeroPortal-0.png",
-        "pngDark": "./spotSquare/png/dark/coinbaseOneZeroPortal-0.png"
+        "svgLight": "./spotSquare/svg/light/coinbaseOneZeroPortal-1.svg",
+        "svgDark": "./spotSquare/svg/dark/coinbaseOneZeroPortal-1.svg",
+        "svgThemed": "./spotSquare/svg/themeable/coinbaseOneZeroPortal-1.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/coinbaseOneZeroPortal-1.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneZeroPortal-1.js",
+        "pngLight": "./spotSquare/png/light/coinbaseOneZeroPortal-1.png",
+        "pngDark": "./spotSquare/png/dark/coinbaseOneZeroPortal-1.png"
       },
-      "version": 0
+      "version": 1
     },
     "14313:92": {
       "type": "heroSquare",
@@ -22219,6 +22219,26 @@
         "svgJsDark": "./heroSquare/svgJs/dark/coinbaseOneZeroPromotion-0.js",
         "pngLight": "./heroSquare/png/light/coinbaseOneZeroPromotion-0.png",
         "pngDark": "./heroSquare/png/dark/coinbaseOneZeroPromotion-0.png"
+      },
+      "version": 0
+    },
+    "14884:18": {
+      "type": "spotSquare",
+      "name": "coinbaseOneZero",
+      "hash": "umW0ilZF5DJJKX8WoHwomTwr2GXgU9I1GtwUrf7lKEs=",
+      "width": 96,
+      "height": 96,
+      "description": "coinbaseOneZero, coinbase, Zero",
+      "createdAt": "2025-02-13T02:32:58.094Z",
+      "lastUpdated": "2025-02-13T02:32:58.094Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/coinbaseOneZero-0.svg",
+        "svgDark": "./spotSquare/svg/dark/coinbaseOneZero-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/coinbaseOneZero-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/coinbaseOneZero-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/coinbaseOneZero-0.js",
+        "pngLight": "./spotSquare/png/light/coinbaseOneZero-0.png",
+        "pngDark": "./spotSquare/png/dark/coinbaseOneZero-0.png"
       },
       "version": 0
     }

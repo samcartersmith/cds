@@ -217,7 +217,8 @@ const versionMap: Record<SpotSquareName, number> = {
   coinbaseOneConcierge: 0,
   coinbaseOneEarn: 1,
   layerThree: 0,
-  coinbaseOneZeroPortal: 0,
+  coinbaseOneZeroPortal: 1,
+  coinbaseOneZero: 0,
 };
 
 export default versionMap;
