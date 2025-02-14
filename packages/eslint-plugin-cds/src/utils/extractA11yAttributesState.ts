@@ -16,6 +16,7 @@ export const extractA11yAttributesState = (
 
   // a11y JSX attributes for checking only JSX attribute in component
   const a11yJSXAttributes = {
+    hasLabel: false,
     hasAccessibilityLabel: false,
     hasHandleBarAccessibilityLabelProps: false,
     hasHelperTextErrorIconAccessibilityLabel: false,
@@ -33,6 +34,7 @@ export const extractA11yAttributesState = (
 
   // Map attribute names to corresponding state properties for JSXAttribute non spread checks only
   const a11yAttributeMap: Record<string, keyof typeof a11yJSXAttributes> = {
+    label: 'hasLabel',
     accessibilityLabel: 'hasAccessibilityLabel',
     handleBarAccessibilityLabel: 'hasHandleBarAccessibilityLabelProps',
     helperTextErrorIconAccessibilityLabel: 'hasHelperTextErrorIconAccessibilityLabel',
@@ -49,16 +51,16 @@ export const extractA11yAttributesState = (
 
   // Identify component name based on node type
   if (node.name.type === AST_NODE_TYPES.JSXIdentifier) {
-    componentName = node.name.name as string;
+    componentName = node.name.name;
   } else if (node.name.type === AST_NODE_TYPES.JSXMemberExpression) {
-    componentName = node.name.property.name as string;
+    componentName = node.name.property.name;
   }
 
   if (!componentName) {
     throw Error('Component name not found for node');
   }
 
-  const allNodes = node.attributes as (TSESTree.JSXAttribute | TSESTree.JSXSpreadAttribute)[];
+  const allNodes = node.attributes;
 
   // Loop through all the JSX from the initial JSXOpeningElement
   allNodes.forEach((attr) => {

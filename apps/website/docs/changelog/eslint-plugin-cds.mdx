@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.6 (2/11/2025 PST)
+
+#### 🚀 Updates
+
+- Add suggested fixes to a11y label rules and update concondition for text error icon label. [[#3584](https://github.cbhq.net/frontend/cds/pull/3584)] [[DX-4649](https://jira.coinbase-corp.com/browse/DX-4649)]
+
 ## 0.0.5 (12/10/2024 PST)
 
 #### 🐞 Fixes

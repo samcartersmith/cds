@@ -7,12 +7,14 @@
  * - have props spread.
  */
 
-import { type TSESLint, TSESTree } from '@typescript-eslint/utils';
+import { type TSESLint, AST_NODE_TYPES, TSESTree } from '@typescript-eslint/utils';
 
 import { extractA11yAttributesState } from '../utils/extractA11yAttributesState';
+import { getSimpleNameFromJSX } from '../utils/getSimpleNameFromJSX';
 
 type MessageIds =
   | 'missingAccessibilityLabel'
+  | 'missingAccessibilityLabelSuggestion'
   | 'missingHandleBarAccessibilityLabel'
   | 'missingHelperTextErrorIconAccessibilityLabel'
   | 'missingCalendarIconButtonAccessibilityLabel'
@@ -24,6 +26,7 @@ type ConditionalCheckType = {
   configArray: string[];
   condition: boolean;
   messageId: MessageIds;
+  suggestedPropToAdd?: string;
 };
 
 const config = {
@@ -63,6 +66,7 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
     },
     messages: {
       missingAccessibilityLabel: `Missing 'accessibilityLabel' on <{{componentName}}>.`,
+      missingAccessibilityLabelSuggestion: `Add missing accessibility label`,
       missingHandleBarAccessibilityLabel: `Missing 'handleBarAccessibilityLabel' on <{{componentName}}>.`,
       missingHelperTextErrorIconAccessibilityLabel: `Missing 'helperTextErrorIconAccessibilityLabel' on <{{componentName}}>.`,
       missingCalendarIconButtonAccessibilityLabel: `Missing 'calendarIconButtonAccessibilityLabel' on <{{componentName}}>.`,
@@ -70,6 +74,7 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
       missingStartIconAccessibilityLabel: `Missing 'startIconAccessibilityLabel' on <{{componentName}}>.`,
       missingClearIconAccessibilityLabel: `Missing 'clearIconAccessibilityLabel' on <{{componentName}}>.`,
     },
+    hasSuggestions: true,
     fixable: 'code',
     schema: [],
   },
@@ -101,6 +106,7 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
       },
       JSXElement(node) {
         const {
+          hasLabel,
           hasAccessibilityLabel,
           hasSpreadProps,
           componentName,
@@ -113,11 +119,30 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
           hasMissingClearIconAccessibilityLabel,
         } = extractA11yAttributesState(node, node.openingElement);
 
+        let isTextInputWithNegativeVariant = true;
+        if (getSimpleNameFromJSX(node.openingElement) === 'TextInput') {
+          const attributes = node.openingElement.attributes as TSESTree.JSXAttribute[];
+          const variantAttribute = attributes.find((attr) => attr.name?.name === 'variant');
+          if (variantAttribute) {
+            const variantValue = variantAttribute.value;
+            if (variantValue && variantValue.type === AST_NODE_TYPES.Literal) {
+              isTextInputWithNegativeVariant = variantValue.value === 'negative';
+            }
+          } else {
+            // No variant attribute found
+            isTextInputWithNegativeVariant = false;
+          }
+        } else {
+          // Not a TextInput
+          isTextInputWithNegativeVariant = false;
+        }
+
         const conditionalChecks: ConditionalCheckType[] = [
           {
             configArray: config.componentsRequiringAccessibilityLabel,
-            condition: !hasAccessibilityLabel && !(hasSpreadProps || hasInnerText),
+            condition: !hasAccessibilityLabel && !(hasSpreadProps || hasInnerText || hasLabel),
             messageId: 'missingAccessibilityLabel',
+            suggestedPropToAdd: 'accessibilityLabel',
           },
           {
             configArray: config.checkForMissingHandleBarAccessibilityLabel,
@@ -126,8 +151,9 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
           },
           {
             configArray: config.checkForHelperTextErrorIconAccessibilityLabelProps,
-            condition: !hasHelperTextErrorIconAccessibilityLabel,
+            condition: !hasHelperTextErrorIconAccessibilityLabel && isTextInputWithNegativeVariant,
             messageId: 'missingHelperTextErrorIconAccessibilityLabel',
+            suggestedPropToAdd: 'helperTextErrorIconAccessibilityLabel',
           },
           {
             configArray: config.checkForCalendarIconButtonAccessibilityLabelProps,
@@ -153,7 +179,7 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
           },
         ];
 
-        conditionalChecks.forEach(({ configArray, condition, messageId }) => {
+        conditionalChecks.forEach(({ configArray, condition, messageId, suggestedPropToAdd }) => {
           if (
             importedComponents[componentName] &&
             configArray.includes(componentName) &&
@@ -163,6 +189,19 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
               node,
               messageId,
               data: { componentName },
+              suggest: suggestedPropToAdd
+                ? [
+                    {
+                      messageId: 'missingAccessibilityLabelSuggestion',
+                      fix(fixer) {
+                        return fixer.insertTextAfter(
+                          node.openingElement.name,
+                          ` ${suggestedPropToAdd}=""`,
+                        );
+                      },
+                    },
+                  ]
+                : [],
             });
           }
         });
