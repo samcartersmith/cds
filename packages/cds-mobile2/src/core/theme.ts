@@ -23,6 +23,7 @@ export type ThemeConfig = {
   fontSize: { [key in ThemeVars.FontSize]: number };
   fontWeight: { [key in ThemeVars.FontWeight]: TextStyle['fontWeight'] };
   lineHeight: { [key in ThemeVars.LineHeight]: number };
+  textTransform: { [key in ThemeVars.TextTransform]: TextStyle['textTransform'] };
   shadow: { [key in ThemeVars.Shadow]: Shadow };
   controlSize: { [key in ThemeVars.ControlSize]: number };
 };

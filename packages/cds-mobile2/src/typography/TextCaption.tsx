@@ -4,7 +4,5 @@ import { Text as NativeText } from 'react-native';
 import { type TextProps, Text } from './Text';
 
 export const TextCaption = memo(
-  forwardRef<NativeText, TextProps>((props, ref) => (
-    <Text ref={ref} font="caption" textTransform="uppercase" {...props} />
-  )),
+  forwardRef<NativeText, TextProps>((props, ref) => <Text ref={ref} font="caption" {...props} />),
 );

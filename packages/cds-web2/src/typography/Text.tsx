@@ -1,17 +1,17 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
-import { isChildrenFalsy } from '@cbhq/cds-common2/utils/isChildrenFalsy';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { type BoxBaseProps, Box } from '../layout/Box';
 
 const baseStyle = css`
   margin: 0;
+  text-transform: var(--text-textTransform);
 `;
 
 const monoStyle = css`
-  font-family: var(--cds-font-mono);
+  font-family: var(--text-fontFamilyMono);
 `;
 
 const textInherit = css`
@@ -159,6 +159,7 @@ export const Text: TextComponent = memo(
       {
         as,
         font = 'body',
+        fontFamily = font,
         color = 'fg',
         display = 'block',
         textAlign = 'start',
@@ -176,6 +177,7 @@ export const Text: TextComponent = memo(
         overflow,
         inherit,
         textDecoration = underline ? 'underline' : undefined,
+        textTransform,
         ...props
       }: TextProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
@@ -185,14 +187,15 @@ export const Text: TextComponent = memo(
         () => ({
           color: dangerouslySetColor,
           '--text-numberOfLines': numberOfLines,
+          '--text-textTransform': textTransform ?? `var(--textTransform-${fontFamily})`,
+          '--text-fontFamilyMono': mono && `var(--fontFamilyMono-${fontFamily})`,
           ...style,
         }),
-        [dangerouslySetColor, numberOfLines, style],
+        [dangerouslySetColor, numberOfLines, textTransform, mono, fontFamily, style],
       );
 
-      if (isChildrenFalsy(props.children)) {
-        return null;
-      }
+      if (!props.children) return null;
+
       return (
         <Box
           ref={ref}
@@ -213,6 +216,7 @@ export const Text: TextComponent = memo(
           color={color}
           display={display}
           font={font}
+          fontFamily={fontFamily}
           style={textStyle}
           textAlign={textAlign}
           textDecoration={textDecoration}

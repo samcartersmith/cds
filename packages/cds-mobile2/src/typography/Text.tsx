@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
-import { isChildrenFalsy } from '@cbhq/cds-common2/utils/isChildrenFalsy';
 
 import { useTextAlign } from '../hooks/useTextAlign';
 import { useTheme } from '../hooks/useTheme';
@@ -183,6 +182,7 @@ export const Text = memo(
       const theme = useTheme();
       const textAlign = useTextAlign(align);
       const monoFontFamily = mono && theme.fontFamilyMono?.[fontFamily];
+      const textTransformValue = textTransform ?? theme.textTransform[fontFamily];
       const computedNumberOfLines =
         noWrap || (ellipsize && typeof numberOfLines === 'undefined') ? 1 : numberOfLines;
 
@@ -249,7 +249,7 @@ export const Text = memo(
               textDecorationStyle,
               textDecorationColor,
               textDecorationLine,
-              textTransform,
+              textTransform: textTransformValue,
               padding,
               paddingX,
               paddingY,
@@ -324,7 +324,7 @@ export const Text = memo(
           textDecorationStyle,
           textDecorationColor,
           textDecorationLine,
-          textTransform,
+          textTransformValue,
           padding,
           paddingX,
           paddingY,
@@ -363,9 +363,7 @@ export const Text = memo(
         ],
       );
 
-      if (isChildrenFalsy(children)) {
-        return null;
-      }
+      if (!children) return null;
 
       return (
         <Component

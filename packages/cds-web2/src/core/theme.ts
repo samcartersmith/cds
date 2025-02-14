@@ -12,9 +12,11 @@ export type ThemeConfig = {
   borderWidth: { [key in ThemeVars.BorderWidth]: number };
   borderRadius: { [key in ThemeVars.BorderRadius]: number };
   fontFamily: { [key in ThemeVars.FontFamily]: Property.FontFamily };
+  fontFamilyMono?: { [key in ThemeVars.FontFamily]: Property.FontFamily };
   fontSize: { [key in ThemeVars.FontSize]: Property.FontSize };
   fontWeight: { [key in ThemeVars.FontWeight]: Property.FontWeight };
   lineHeight: { [key in ThemeVars.LineHeight]: Property.LineHeight };
+  textTransform: { [key in ThemeVars.TextTransform]: Property.TextTransform };
   shadow: { [key in ThemeVars.Shadow]: Property.BoxShadow };
   controlSize: { [key in ThemeVars.ControlSize]: number };
 };
@@ -35,9 +37,11 @@ export const styleVarPrefixes = {
   borderWidth: 'borderWidth',
   borderRadius: 'borderRadius',
   fontFamily: 'fontFamily',
+  fontFamilyMono: 'fontFamilyMono',
   fontSize: 'fontSize',
   fontWeight: 'fontWeight',
   lineHeight: 'lineHeight',
+  textTransform: 'textTransform',
   shadow: 'shadow',
   controlSize: 'controlSize',
 } as const satisfies Record<
@@ -45,6 +49,7 @@ export const styleVarPrefixes = {
   string
 >;
 
+/** Used to generate intellisense via ThemeCSSVars below. */
 type ThemeObjectCssVars = {
   spectrum: {
     [key in ThemeVars.SpectrumColor as `--${key}`]: string;
@@ -78,6 +83,9 @@ type ThemeObjectCssVars = {
   };
   lineHeight: {
     [key in ThemeVars.LineHeight as `--${typeof styleVarPrefixes.lineHeight}-${key}`]: Property.LineHeight;
+  };
+  textTransform: {
+    [key in ThemeVars.TextTransform as `--${typeof styleVarPrefixes.textTransform}-${key}`]: Property.TextTransform;
   };
   shadow: {
     [key in ThemeVars.Shadow as `--${typeof styleVarPrefixes.shadow}-${key}`]: Property.BoxShadow;

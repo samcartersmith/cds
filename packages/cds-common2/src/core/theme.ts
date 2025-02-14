@@ -118,6 +118,7 @@ export namespace ThemeVars {
   export type FontSize = Font;
   export type FontWeight = Font;
   export type LineHeight = Font;
+  export type TextTransform = Font;
 
   export type Shadow = 'elevation1' | 'elevation2';
 

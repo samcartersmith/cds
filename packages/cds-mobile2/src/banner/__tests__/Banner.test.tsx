@@ -125,8 +125,12 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgb(255,242,178)' });
-    expect(screen.getByRole('image')).toHaveStyle({ color: 'rgb(237,112,47)' });
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({
+      backgroundColor: `rgb(${defaultTheme.lightSpectrum.yellow5})`,
+    });
+    expect(screen.getByRole('image')).toHaveStyle({
+      color: `rgb(${defaultTheme.lightSpectrum.orange40})`,
+    });
   });
 
   it('renders error banner correctly on dark mode', () => {
@@ -136,8 +140,12 @@ describe('Banner testing with wide screen configurations (screen size >= 724)', 
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByTestId(TEST_ID)).toHaveStyle({ backgroundColor: 'rgb(65,27,0)' });
-    expect(screen.getByRole('image')).toHaveStyle({ color: 'rgb(248,150,86)' });
+    expect(screen.getByTestId(TEST_ID)).toHaveStyle({
+      backgroundColor: `rgb(${defaultTheme.darkSpectrum.yellow15})`,
+    });
+    expect(screen.getByRole('image')).toHaveStyle({
+      color: `rgb(${defaultTheme.darkSpectrum.orange70})`,
+    });
   });
 });
 
