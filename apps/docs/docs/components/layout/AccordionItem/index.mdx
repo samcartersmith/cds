@@ -1,0 +1,51 @@
+---
+id: accordionItem
+title: AccordionItem
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import webPropsToc from ':docgen/cds-web2/accordion/AccordionItem/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/accordion/AccordionItem/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="AccordionItem"
+    webMetadata={{
+      import: "import { AccordionItem } from '@cbhq/cds-web/accordion/AccordionItem'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/accordion/AccordionItem.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-accordion--basic-accordion',
+      figma:
+        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=61-569&t=8hgl6nX25pIzCo0y-1',
+    }}
+    mobileMetadata={{
+      import: "import { AccordionItem } from '@cbhq/cds-mobile/accordion/AccordionItem'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/accordion/AccordionItem.tsx',
+      figma:
+        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=61-569&t=8hgl6nX25pIzCo0y-1',
+    }}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

@@ -43,8 +43,13 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'doc',
-              id: 'components/layout/accordion',
+              id: 'components/layout/Accordion/accordion',
               label: 'Accordion',
+            },
+            {
+              type: 'doc',
+              id: 'components/layout/AccordionItem/accordionItem',
+              label: 'AccordionItem',
             },
             {
               type: 'doc',
@@ -61,13 +66,14 @@ const sidebars: SidebarsConfig = {
               id: 'components/layout/Collapsible/collapsible',
               label: 'Collapsible',
             },
-            { type: 'doc', id: 'components/layout/divider', label: 'Divider' },
+            { type: 'doc', id: 'components/layout/Divider/divider', label: 'Divider' },
             {
               type: 'doc',
-              id: 'components/layout/dropdown',
+              id: 'components/layout/Dropdown/dropdown',
               label: 'Dropdown',
             },
-            { type: 'doc', id: 'components/layout/grid', label: 'Grid' },
+            { type: 'doc', id: 'components/layout/Grid/grid', label: 'Grid' },
+            { type: 'doc', id: 'components/layout/gridColumn', label: 'GridColumn' },
             { type: 'doc', id: 'components/layout/HStack/hStack', label: 'HStack' },
             {
               type: 'doc',
@@ -94,12 +100,12 @@ const sidebars: SidebarsConfig = {
             { type: 'doc', id: 'components/inputs/Button/button', label: 'Button' },
             {
               type: 'doc',
-              id: 'components/inputs/checkbox',
+              id: 'components/inputs/Checkbox/checkbox',
               label: 'Checkbox',
             },
             {
               type: 'doc',
-              id: 'components/inputs/iconButton',
+              id: 'components/inputs/IconButton/iconButton',
               label: 'IconButton',
             },
             {

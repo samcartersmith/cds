@@ -1,0 +1,94 @@
+Icon buttons must have a name (which determines the icon), and can use variants to denote intent and importance.
+
+:::tip Accessibility tip
+
+To ensure your `IconButton` implementation is accessible, it must have an `accessibilityLabel` that describes the purpose of the button.
+
+<br />
+
+In cases where you're composing a button next to a label or some text that describes the buttons
+action, you can setup your system using `accessibilityLabelledBy` prop mapping to the `id` on the
+label node (See [Composed example](#composed-example)).
+
+:::
+
+```jsx live
+<HStack gap={2}>
+  <IconButton
+    name="orderHistory"
+    accessibilityLabel="View transaction history"
+    variant="primary"
+    onClick={console.log}
+  />
+  <IconButton
+    name="gear"
+    accessibilityLabel="View settings"
+    variant="secondary"
+    onClick={console.log}
+  />
+  <IconButton
+    name="checkmark"
+    accessibilityLabel="Approve transaction"
+    variant="foregroundMuted"
+    onClick={console.log}
+  />
+  <IconButton
+    name="orderHistory"
+    accessibilityLabel="View past order history"
+    variant="primary"
+    transparent
+    onClick={console.log}
+  />
+  <IconButton
+    name="gear"
+    accessibilityLabel="Update settings"
+    variant="secondary"
+    transparent
+    onClick={console.log}
+  />
+  <IconButton
+    name="checkmark"
+    accessibilityLabel="Verify your identity"
+    variant="foregroundMuted"
+    transparent
+    onClick={console.log}
+  />
+</HStack>
+```
+
+### Composed example
+
+As referenced above, if you're building a composed system, use the `accessibilityLabelledBy` prop and an `id` on the text node.
+
+```jsx live
+function composedExample() {
+  const [active, setActive] = useState(false);
+  const name = useMemo(() => (active ? 'dropsActive' : 'dropsInactive'), [active]);
+  const variant = useMemo(() => (active ? 'primary' : 'foregroundMuted'), [active]);
+  const label = useMemo(() => (active ? 'Reject drop' : 'Claim drop'), [active]);
+
+  return (
+    <HStack gap={2} alignItems="center">
+      <IconButton
+        name={name}
+        variant={variant}
+        onClick={() => setActive((active) => !active)}
+        // Accessibility props
+        id="my-icon--id"
+        accessibilityLabelledBy="my-label--id"
+      />
+      <Text font="label1" as="label" htmlFor="my-icon--id" id="my-label--id">
+        {label}
+      </Text>
+    </HStack>
+  );
+}
+```
+
+### A11y
+
+Since icon buttons have no descriptive text or children, an accessibility label must be provided.
+
+```jsx
+<IconButton name="close" accessibilityLabel="Close trade modal" />
+```

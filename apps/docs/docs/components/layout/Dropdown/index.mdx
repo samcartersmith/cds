@@ -1,0 +1,38 @@
+---
+id: dropdown
+title: Dropdown
+platform_switcher_options: { web: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { DropdownBanner } from '@site/src/components/page/ComponentBanner/DropdownBanner';
+import webPropsToc from ':docgen/cds-web2/dropdown/Dropdown/toc-props';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+import WebPropsTable from './_webPropsTable.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="Dropdown"
+    description="A dropdown is a web-only component that allows users to select one or more options from a list."
+    webMetadata={{
+      import: "import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/dropdown/Dropdown.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-dropdown-dropdown--default',
+      figma:
+        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=465-13742&t=8hgl6nX25pIzCo0y-1',
+    }}
+    banner={<DropdownBanner />}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    webExamplesToc={webExamplesToc}
+    webPropsToc={webPropsToc}
+  />
+</VStack>

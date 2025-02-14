@@ -1,0 +1,37 @@
+---
+id: grid
+title: Grid
+platform_switcher_options: { web: true }
+hide_title: true
+---
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import webPropsToc from ':docgen/cds-web2/layout/Grid/toc-props';
+
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
+import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
+import { VStack } from '@cbhq/cds-web2/layout';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="Grid"
+    description="The Grid component is a web-only container component that can be used to wrap other components."
+    webMetadata={{
+      import: "import { Grid } from '@cbhq/cds-web2/layout/Grid'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/Grid.tsx',
+      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-grid--grid-examples',
+    }}
+  />
+
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    webExamplesToc={webExamplesToc}
+    webPropsToc={webPropsToc}
+  />
+</VStack>

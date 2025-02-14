@@ -67,7 +67,7 @@ const componentCards: ComponentCardProps[] = [
     bannerLightOverlaySrc: '/img/componentCardBanners/layout_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/layout_dark.svg',
     bannerDarkOverlaySrc: '/img/componentCardBanners/layout_dark_hover.svg',
-    to: '/components/layout/accordion',
+    to: '/components/layout/Accordion',
   },
   {
     name: 'Typography',
