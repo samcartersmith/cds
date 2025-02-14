@@ -1,7 +1,6 @@
 import React, { memo, useMemo } from 'react';
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colorSchemeMap } from '@cbhq/cds-common2/tokens/avatar';
-import { shapeBorderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
 import { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 import { avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';

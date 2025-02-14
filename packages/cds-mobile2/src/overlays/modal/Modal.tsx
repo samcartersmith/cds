@@ -31,7 +31,7 @@ const overlayContentContextValue: OverlayContentContextValue = {
   isModal: true,
 };
 
-export type ModalProps = ModalBaseProps &
+export type ModalProps = Omit<ModalBaseProps, 'width'> &
   Omit<RNModalProps, 'children' | 'visible' | 'onRequestClose' | 'animationType'>;
 
 export const Modal = memo(

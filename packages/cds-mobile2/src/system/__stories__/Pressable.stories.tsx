@@ -8,7 +8,6 @@ import { VStack } from '../../layout';
 import { Box } from '../../layout/Box';
 import { TextBody } from '../../typography/TextBody';
 import { Pressable } from '../Pressable';
-import { PressableOpacity } from '../PressableOpacity';
 
 const PressableScreen = () => {
   const theme = useTheme();
