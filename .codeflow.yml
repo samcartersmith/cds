@@ -7,6 +7,7 @@ secure:
     - v6
     - 6.47.4
     - 7.0.0-rc.0
+    - 8.0.0-alpha-mobile
   auto_assign_reviewers: true
 build:
   engines:
