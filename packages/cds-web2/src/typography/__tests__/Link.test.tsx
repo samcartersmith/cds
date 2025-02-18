@@ -66,6 +66,55 @@ describe('Link', () => {
     expect(screen.getByTestId(testID)).not.toHaveAttribute('target');
   });
 
+  it('doesnt set target or rel if a button', async () => {
+    render(
+      // eslint-disable-next-line jsx-a11y/anchor-is-valid
+      <Link openInNewWindow font="body" testID={testID}>
+        Child
+      </Link>,
+    );
+    expect(screen.getByTestId(testID)).not.toHaveAttribute('target');
+    expect(screen.getByTestId(testID)).not.toHaveAttribute('rel');
+    expect(screen.getByTestId(testID)).not.toHaveAttribute('href');
+  });
+
+  it('defaults to noopener noreferrer when openInNewWindow', async () => {
+    render(
+      <Link openInNewWindow font="body" testID={testID} to="https://www.coinbase.com/">
+        Child
+      </Link>,
+    );
+    expect(screen.getByTestId(testID)).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  it('set rel to noopener', async () => {
+    render(
+      <Link font="body" rel="noopener" testID={testID} to="https://www.coinbase.com/">
+        Child
+      </Link>,
+    );
+    expect(screen.getByTestId(testID)).toHaveAttribute('rel', 'noopener');
+  });
+
+  it('set rel to noreferrer', async () => {
+    render(
+      <Link font="body" rel="noreferrer" testID={testID} to="https://www.coinbase.com/">
+        Child
+      </Link>,
+    );
+    expect(screen.getByTestId(testID)).toHaveAttribute('rel', 'noreferrer');
+  });
+
+  it('to is set correctly', async () => {
+    const url = 'https://www.google.com/';
+    render(
+      <Link font="body" testID={testID} to={url}>
+        Child
+      </Link>,
+    );
+    expect(screen.getByTestId(testID)).toHaveAttribute('href', url);
+  });
+
   it('inherits text styles', () => {
     render(
       <Link inherit testID={testID} to="/">

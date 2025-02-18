@@ -42,7 +42,7 @@ const ThemeManager = ({ display, children, theme }: ThemeManagerProps) => {
     [className, css],
   );
   return (
-    <div className={cx(className, theme.colorScheme)} style={style}>
+    <div className={cx(className, theme.colorScheme)} data-testid="theme-wrapper" style={style}>
       {styleElement}
       {children}
     </div>

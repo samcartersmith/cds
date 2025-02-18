@@ -20,6 +20,29 @@ describe('HelperText.test', () => {
     expect(screen.getByTestId('error-icon').className).toContain('fgNegative');
   });
 
+  it('renders custom color via dangerouslySetColor', () => {
+    render(<HelperText dangerouslySetColor="#FF0000">Test text</HelperText>);
+
+    expect(screen.getByText('Test text')).toHaveStyle({
+      color: '#FF0000',
+    });
+  });
+
+  it('renders custom color with error icon via dangerouslySetColor', () => {
+    render(
+      <HelperText color="fgNegative" dangerouslySetColor="#FF0000" errorIconTestID="error-icon">
+        Test text
+      </HelperText>,
+    );
+
+    expect(screen.getByText('Test text')).toHaveStyle({
+      color: '#FF0000',
+    });
+    expect(screen.getByTestId('error-icon')).toHaveStyle({
+      color: '#FF0000',
+    });
+  });
+
   it('renders custom padding', () => {
     render(
       <HelperText padding={4} testID="helper-text-test">

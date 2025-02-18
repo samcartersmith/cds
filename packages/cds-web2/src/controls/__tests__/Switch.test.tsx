@@ -96,20 +96,28 @@ describe('Switch.test', () => {
   it('has default color', () => {
     render(
       <DefaultThemeProvider>
-        <Switch onChange={jest.fn()} testID="test-test-id" />
+        <Switch onChange={jest.fn()} testID="test-switch" />
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByTestId('test-test-id')).toHaveStyle({ backgroundColor: 'gray20' });
+    const parent = screen.getByTestId('test-switch-parent');
+
+    expect(parent).toHaveStyle({
+      '--interactable-background': 'var(--color-bgAlternate)',
+    });
   });
 
-  it('has default color when it is checked', () => {
+  it('has default color when checked', () => {
     render(
       <DefaultThemeProvider>
-        <Switch checked onChange={jest.fn()} testID="test-test-id" />
+        <Switch checked onChange={jest.fn()} testID="test-switch" />
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByTestId('test-test-id')).toHaveStyle({ backgroundColor: 'primary60' });
+    const parent = screen.getByTestId('test-switch-parent');
+
+    expect(parent).toHaveStyle({
+      '--interactable-background': 'var(--color-bgPrimary)',
+    });
   });
 });

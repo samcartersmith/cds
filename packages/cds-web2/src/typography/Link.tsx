@@ -80,7 +80,17 @@ export const Link = memo(
     const mergedRef = useMergeRefs(ref, linkRef);
     const isAnchor = to || href;
 
-    const hrefProp = useMemo(() => (isAnchor ? { href: to ?? href } : {}), [href, isAnchor, to]);
+    const anchorProps = useMemo(
+      () =>
+        isAnchor
+          ? {
+              href: to ?? href,
+              rel: openInNewWindow ? 'noopener noreferrer' : rel, // Set noopener noreferrer when openInNewWindow is true
+              target: openInNewWindow ? '_blank' : undefined,
+            }
+          : {},
+      [isAnchor, to, href, openInNewWindow, rel],
+    );
 
     const enhancedProps = useMemo(
       () => ({
@@ -92,7 +102,7 @@ export const Link = memo(
         ref: mergedRef,
         href: to ?? href,
         rel,
-        target: openInNewWindow ? '_blank' : undefined,
+        ...anchorProps,
         children: (
           <Text
             color={color}
@@ -109,6 +119,7 @@ export const Link = memo(
       }),
       [
         accessibilityLabel,
+        anchorProps,
         children,
         className,
         color,
@@ -118,7 +129,6 @@ export const Link = memo(
         href,
         mergedRef,
         mono,
-        openInNewWindow,
         props,
         rel,
         testID,
@@ -154,10 +164,8 @@ export const Link = memo(
         font={font}
         inherit={!font}
         mono={mono}
-        rel={rel}
-        target={openInNewWindow ? '_blank' : undefined}
         testID={testID}
-        {...hrefProp}
+        {...anchorProps}
         {...props}
       >
         {children}

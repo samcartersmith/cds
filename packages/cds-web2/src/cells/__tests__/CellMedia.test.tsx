@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { imageSize, mediaSize } from '@cbhq/cds-common2/tokens/cell';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -139,5 +140,55 @@ describe('CellMedia', () => {
     );
 
     expect(screen.getByRole('img')).toHaveAttribute('src', expect.stringContaining('2fa'));
+  });
+
+  it('sets icon size', () => {
+    render(<CellMedia name="arrowUp" type="icon" />);
+
+    const icon = screen.getByTestId('icon-base-glyph');
+    expect(icon).toHaveAttribute('data-icon-name', 'arrowUp');
+    expect(icon.className).toContain('iconStyles');
+  });
+
+  it('sets asset size', () => {
+    render(<CellMedia source="some/image/path" type="asset" />);
+    const image = screen.getByRole('img');
+
+    expect(image).toHaveStyle({
+      '--width': `${mediaSize}px`,
+      '--height': `${mediaSize}px`,
+    });
+  });
+
+  it('sets avatar size', () => {
+    render(<CellMedia source="some/image/path" type="avatar" />);
+    const image = screen.getByRole('img');
+
+    expect(image).toHaveStyle({
+      '--width': `${mediaSize}px`,
+      '--height': `${mediaSize}px`,
+    });
+  });
+
+  it('sets image size', () => {
+    render(<CellMedia source="some/image/path" type="image" />);
+    const image = screen.getByRole('img');
+
+    expect(image).toHaveStyle({
+      '--width': `${imageSize}px`,
+      '--height': `${imageSize}px`,
+    });
+  });
+
+  it('sets pictogram size', () => {
+    render(
+      <DefaultThemeProvider>
+        <CellMedia illustration={<Pictogram name="2fa" />} type="pictogram" />
+      </DefaultThemeProvider>,
+    );
+    const image = screen.getByRole('img');
+
+    expect(image).toHaveAttribute('width', String(imageSize));
+    expect(image).toHaveAttribute('height', String(imageSize));
   });
 });

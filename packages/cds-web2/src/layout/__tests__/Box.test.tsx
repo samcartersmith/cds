@@ -283,4 +283,37 @@ describe('Box', () => {
       expect(screen.getByText('Child')).toHaveAttribute('style', 'opacity: 0.4; padding: 2px 4px;');
     });
   });
+
+  describe('responsive styles', () => {
+    it('applies flex styles for different breakpoints', () => {
+      const responsiveJustify = {
+        phone: 'flex-start',
+        tablet: 'space-around',
+        desktop: 'flex-end',
+      } as const;
+
+      render(<Box justifyContent={responsiveJustify}>Child</Box>);
+
+      const box = screen.getByText('Child');
+      const { className } = box;
+
+      expect(className).toContain('flex-start');
+      expect(className).toContain('space-around');
+      expect(className).toContain('flex-end');
+    });
+
+    it('applies visibility styles for different breakpoints', () => {
+      const responsiveVisibility = {
+        phone: 'hidden',
+        tablet: 'visible',
+      } as const;
+      render(<Box visibility={responsiveVisibility}>Child</Box>);
+
+      const box = screen.getByText('Child');
+      const { className } = box;
+
+      expect(className).toContain('hidden');
+      expect(className).toContain('visible');
+    });
+  });
 });

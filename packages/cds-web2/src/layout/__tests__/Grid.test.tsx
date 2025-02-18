@@ -256,6 +256,40 @@ describe('Grid', () => {
     });
   });
 
+  describe('responsive styles', () => {
+    it('applies flex styles for different breakpoints', () => {
+      const responsiveJustify = {
+        phone: 'flex-start',
+        tablet: 'space-around',
+        desktop: 'flex-end',
+      } as const;
+
+      render(<Grid justifyContent={responsiveJustify}>Child</Grid>);
+
+      const grid = screen.getByText('Child');
+      const { className } = grid;
+
+      expect(className).toContain('flex-start');
+      expect(className).toContain('space-around');
+      expect(className).toContain('flex-end');
+    });
+
+    it('applies visibility styles for different breakpoints', () => {
+      const responsiveVisibility = {
+        phone: 'hidden',
+        tablet: 'visible',
+      } as const;
+
+      render(<Grid visibility={responsiveVisibility}>Child</Grid>);
+
+      const grid = screen.getByText('Child');
+      const { className } = grid;
+
+      expect(className).toContain('hidden');
+      expect(className).toContain('visible');
+    });
+  });
+
   const DEFAULT_COLUMN_CLASS = 'flex';
 
   describe('GridColumn', () => {

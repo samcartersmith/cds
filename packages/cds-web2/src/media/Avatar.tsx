@@ -177,7 +177,7 @@ export const Avatar = memo(
           ? `var(--color-${borderColor})`
           : 'var(--color-transparent)',
       } as React.CSSProperties;
-    }, [style, computedSize, borderColor]);
+    }, [computedSize, style, borderColor]);
 
     const fallbackStyle = useMemo(
       () => ({
