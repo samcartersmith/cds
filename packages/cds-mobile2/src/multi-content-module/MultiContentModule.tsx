@@ -37,7 +37,6 @@ export const MultiContentModule = memo(
       <VStack
         ref={ref}
         accessibilityLabel={accessibilityLabel}
-        background="bg"
         borderRadius={400}
         bordered={bordered}
         flexGrow={1}

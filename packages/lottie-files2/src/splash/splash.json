@@ -20,7 +20,7 @@
       "ddd": 0,
       "ind": 1,
       "ty": 4,
-      "nm": "palette_primary_foreground",
+      "nm": "palette_bgPrimary_foreground",
       "parent": 3,
       "sr": 1,
       "ks": {
@@ -1619,7 +1619,7 @@
               "nm": "Transform"
             }
           ],
-          "nm": "palette_primary_foreground",
+          "nm": "palette_bgPrimary_foreground",
           "np": 15,
           "cix": 2,
           "bm": 0,

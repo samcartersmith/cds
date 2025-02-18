@@ -2,6 +2,7 @@ import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { type SharedProps } from '@cbhq/cds-common2';
 
+import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons';
 import { HStack, VStack, VStackProps } from '../layout';
 import { Pressable } from '../system';
@@ -77,7 +78,7 @@ export const Numpad = memo(
       deleteAccessibilityLabel = 'delete',
       separatorAccessibilityLabel = 'period',
       testID,
-      background = 'bg',
+      background,
       flexGrow = 0,
       flexShrink = 0,
       gap = 2,
@@ -92,7 +93,6 @@ export const Numpad = memo(
           <HStack
             key={`num_pad_item_${i}`} // eslint-disable-line react/no-array-index-key
             alignItems="stretch"
-            background="bg"
             flexGrow={1}
             flexWrap="nowrap"
             justifyContent="space-between"
@@ -154,6 +154,7 @@ const NumpadButton = memo(function NumpadButton({
   deleteAccessibilityLabel,
   feedback,
 }: NumpadButtonProps) {
+  const theme = useTheme();
   const content = useMemo(() => {
     if (value === 'DELETE') {
       return <Icon color="fg" name="backArrow" size="s" />;
@@ -204,7 +205,8 @@ const NumpadButton = memo(function NumpadButton({
       accessibilityLabel={accessibilityLabel}
       accessibilityRole="button"
       accessibilityState={{ disabled }}
-      background="bg"
+      background="transparent"
+      blendStyles={{ pressedBackground: theme.color.bg, disabledBackground: theme.color.bg }}
       borderRadius={200}
       debounceTime={100}
       disabled={disabled}

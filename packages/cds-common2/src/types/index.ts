@@ -56,7 +56,6 @@ export * from './IconSize';
 export * from './IllustrationNames';
 export * from './IllustrationProps';
 export * from './InputBaseProps';
-export * from './InteractableBaseProps';
 export * from './LikeButtonBaseProps';
 export * from './LinkBaseProps';
 export * from './LottieBaseProps';

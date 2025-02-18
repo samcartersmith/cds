@@ -106,6 +106,18 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   `,
 } as const;
 
+export const elevation: Record<ElevationLevels, LinariaClassName> = {
+  '0': css``,
+  '1': css`
+    background-color: var(--color-bgElevation1);
+    box-shadow: var(--shadow-elevation1);
+  `,
+  '2': css`
+    background-color: var(--color-bgElevation2);
+    box-shadow: var(--shadow-elevation2);
+  `,
+} as const;
+
 export const color: Record<ThemeVars.Color, LinariaClassName> = {
   // Text
   fg: css`
@@ -3165,18 +3177,6 @@ export const marginLeft: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linaria
   `,
   '-10': css`
     margin-left: calc(-1 * var(--space-10));
-  `,
-} as const;
-
-export const elevation: Record<ElevationLevels, LinariaClassName> = {
-  '0': css``,
-  '1': css`
-    background-color: var(--color-bgElevation1);
-    box-shadow: var(--shadow-elevation1);
-  `,
-  '2': css`
-    background-color: var(--color-bgElevation2);
-    box-shadow: var(--shadow-elevation2);
   `,
 } as const;
 

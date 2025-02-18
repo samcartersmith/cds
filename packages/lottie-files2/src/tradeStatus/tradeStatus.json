@@ -33554,7 +33554,7 @@
       "ddd": 0,
       "ind": 6,
       "ty": 4,
-      "nm": "palette_backgroundPrimary",
+      "nm": "palette_bgPrimary",
       "parent": 8,
       "sr": 1,
       "ks": {
@@ -33805,10 +33805,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_primary_fill",
+              "nm": ".palette_bgPrimary_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_primary_fill"
+              "cl": "palette_bgPrimary_fill"
             },
             {
               "ty": "tr",
@@ -33877,7 +33877,7 @@
       "ddd": 0,
       "ind": 7,
       "ty": 4,
-      "nm": "palette_backgroundPrimary",
+      "nm": "palette_bgPrimary",
       "parent": 8,
       "sr": 1,
       "ks": {
@@ -33971,10 +33971,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_primary_fill",
+              "nm": ".palette_bgPrimary_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_primary_fill"
+              "cl": "palette_bgPrimary_fill"
             },
             {
               "ty": "tr",
@@ -34083,10 +34083,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_primary_fill",
+              "nm": ".palette_bgPrimary_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_primary_fill"
+              "cl": "palette_bgPrimary_fill"
             },
             {
               "ty": "tr",
@@ -34195,10 +34195,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_primary_fill",
+              "nm": ".palette_bgPrimary_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_primary_fill"
+              "cl": "palette_bgPrimary_fill"
             },
             {
               "ty": "tr",
@@ -34307,10 +34307,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_primary_fill",
+              "nm": ".palette_bgPrimary_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_primary_fill"
+              "cl": "palette_bgPrimary_fill"
             },
             {
               "ty": "tr",
@@ -34379,7 +34379,7 @@
       "ddd": 0,
       "ind": 8,
       "ty": 4,
-      "nm": "palette_textForegroundInverse",
+      "nm": "palette_fgInverse",
       "parent": 9,
       "sr": 1,
       "ks": {
@@ -34510,10 +34510,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_primaryForeground_fill",
+              "nm": ".palette_fgInverse_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_primaryForeground_fill"
+              "cl": "palette_fgInverse_fill"
             },
             {
               "ty": "tr",
@@ -34582,7 +34582,7 @@
       "ddd": 0,
       "ind": 9,
       "ty": 4,
-      "nm": "palette_backgroundPrimary",
+      "nm": "palette_bgPrimary",
       "parent": 5,
       "sr": 1,
       "ks": {
@@ -34776,10 +34776,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_primary_fill",
+              "nm": ".palette_bgPrimary_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_primary_fill"
+              "cl": "palette_bgPrimary_fill"
             },
             {
               "ty": "tr",

@@ -89,6 +89,7 @@ export const Pressable = memo(
       style,
       contentStyle,
       wrapperStyles,
+      blendStyles,
       transparentWhileInactive,
       transparentWhilePressed,
       eventConfig,
@@ -166,6 +167,7 @@ export const Pressable = memo(
       >
         <Interactable
           background={background}
+          blendStyles={blendStyles}
           block={block}
           borderColor={borderColor}
           borderRadius={borderRadius}

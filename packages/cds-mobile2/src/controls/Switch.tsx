@@ -55,7 +55,7 @@ const SwitchIcon = ({
 
   return (
     <Interactable
-      background={checked ? 'bgPrimary' : 'bgAlternate'}
+      background={checked ? 'bgPrimary' : 'bgSecondary'}
       borderRadius={400}
       disabled={disabled}
       pressed={pressed}

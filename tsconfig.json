@@ -64,7 +64,13 @@
       "path": "libs/web-utils"
     },
     {
+      "path": "packages/cds-common2"
+    },
+    {
       "path": "packages/cds-migrator"
+    },
+    {
+      "path": "packages/cds-mobile2"
     },
     {
       "path": "packages/cds-vscode-plugin"
@@ -74,9 +80,6 @@
     },
     {
       "path": "packages/common"
-    },
-    {
-      "path": "packages/cds-common2"
     },
     {
       "path": "packages/eslint-plugin-cds"
@@ -110,6 +113,9 @@
     },
     {
       "path": "packages/ui-mobile-playground"
+    },
+    {
+      "path": "packages/ui-mobile-playground2"
     },
     {
       "path": "packages/ui-mobile-visreg"

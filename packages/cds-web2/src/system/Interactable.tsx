@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import { getBlendedBackgroundColor } from '@cbhq/cds-common2/color/getBlendedBackgroundColor';
+import { getBlendedColor } from '@cbhq/cds-common2/color/getBlendedColor';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   accessibleOpacityDisabled,
@@ -122,6 +122,12 @@ export type InteractableBaseProps = Polymorphic.ExtendableProps<
      * Must be used in conjunction with the "pressed" prop
      */
     transparentWhilePressed?: boolean;
+    blendStyles?: {
+      background?: string;
+      pressedBackground?: string;
+      disabledBackground?: string;
+      hoveredBackground?: string;
+    };
   }
 >;
 
@@ -152,6 +158,7 @@ export const Interactable: InteractableComponent = forwardRef<
       loading,
       pressed,
       style: customStyle,
+      blendStyles,
       transparentWhileInactive,
       transparentWhilePressed,
       ...props
@@ -165,40 +172,38 @@ export const Interactable: InteractableComponent = forwardRef<
      */
     const shouldBeDisabled = loading || disabled;
 
-    const style = useMemo(
-      () => ({
+    const style = useMemo(() => {
+      const backgroundRgb = theme.color[background];
+
+      return {
         [interactableBackground]: `var(--color-${background})`,
         /**
          * Apply an interactive background style. Blend the color with the background or backgroundInverse values
          */
         // Hover:
-        [interactableHoveredBackground]: getBlendedBackgroundColor({
-          background,
-          themeColor: theme.color,
+        [interactableHoveredBackground]: getBlendedColor({
+          color: blendStyles?.hoveredBackground ?? backgroundRgb,
           opacity: opacityHovered[100],
           colorScheme: theme.colorScheme,
         }),
         [interactableHoveredOpacity]: opacityHovered[100],
         // Pressed:
-        [interactablePressedBackground]: getBlendedBackgroundColor({
-          background,
-          themeColor: theme.color,
+        [interactablePressedBackground]: getBlendedColor({
+          color: blendStyles?.pressedBackground ?? backgroundRgb,
           opacity: opacityPressed[100],
           colorScheme: theme.colorScheme,
         }),
         [interactablePressedOpacity]: opacityPressed[100],
         // Disabled:
-        [interactableDisabledBackground]: getBlendedBackgroundColor({
-          background,
-          themeColor: theme.color,
+        [interactableDisabledBackground]: getBlendedColor({
+          color: blendStyles?.disabledBackground ?? backgroundRgb,
           opacity: accessibleOpacityDisabled,
           colorScheme: theme.colorScheme,
           isDisabled: true,
         }),
         ...customStyle,
-      }),
-      [customStyle, background, theme],
-    );
+      };
+    }, [customStyle, background, theme, blendStyles]);
 
     return (
       <Box

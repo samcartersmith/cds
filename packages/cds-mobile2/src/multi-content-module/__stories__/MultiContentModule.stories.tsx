@@ -231,7 +231,7 @@ export const WithEnd = () => {
     <VStack gap={1} paddingX={3}>
       <VStack>
         <HStack justifyContent="center" zIndex={2}>
-          <Box background="bg" paddingX={1.5}>
+          <Box background="bgElevation2" paddingX={1.5}>
             <TextBody color="fgMuted">OR</TextBody>
           </Box>
         </HStack>

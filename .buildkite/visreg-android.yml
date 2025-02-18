@@ -57,7 +57,7 @@ steps:
     commands:
       - tools/ci/setup.sh
       - echo "--- Running Android visreg tests"
-      - yarn nx run mobile-app:detox:android-release
+      - yarn nx run mobile-app2:detox:android-release
 
   - label: 'Finish Visreg (Android)'
     allow_dependency_failure: true

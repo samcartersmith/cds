@@ -44,23 +44,16 @@ export const getElevationStyles = (
   theme: Theme,
   background?: ThemeVars.Color,
 ): ViewStyle => {
-  // TODO: This is a temporary solution to apply elevation background color.
-  // Only override background color when background props is `background` or undefined.
-  // This means no custom background color is applied, so should use elevation background color.
   const elevationStyles: Record<ElevationLevels, ViewStyle> = {
     0: {},
     1: {
       elevation: 2,
-      ...(background === 'bg' || background === undefined
-        ? { backgroundColor: theme.color.bgElevation1 }
-        : {}),
+      ...(background === undefined ? { backgroundColor: theme.color.bgElevation1 } : {}),
       ...theme.shadow.elevation1,
     },
     2: {
       elevation: 8,
-      ...(background === 'bg' || background === undefined
-        ? { backgroundColor: theme.color.bgElevation2 }
-        : {}),
+      ...(background === undefined ? { backgroundColor: theme.color.bgElevation2 } : {}),
       ...theme.shadow.elevation2,
     },
   };
@@ -76,7 +69,6 @@ const getBorderedStyles = (
     borderedEnd,
     borderedTop,
     borderedBottom,
-    elevation,
   }: {
     bordered?: boolean;
     borderedHorizontal?: boolean;
@@ -85,7 +77,6 @@ const getBorderedStyles = (
     borderedEnd?: boolean;
     borderedTop?: boolean;
     borderedBottom?: boolean;
-    elevation?: ElevationLevels;
   },
   theme: Theme,
 ): (ViewStyle | false | undefined)[] => {
@@ -127,11 +118,6 @@ const getBorderedStyles = (
       borderStyle: 'solid',
       borderColor: theme.color.bgLine,
     },
-    elevation: {
-      borderWidth: theme.borderWidth[100],
-      borderStyle: 'solid',
-      borderColor: theme.color.bgLine,
-    },
   } satisfies Record<string, ViewStyle>;
   return [
     bordered && borderStyles.bordered,
@@ -141,8 +127,6 @@ const getBorderedStyles = (
     borderedEnd && borderStyles.borderedEnd,
     borderedTop && borderStyles.borderedTop,
     borderedBottom && borderStyles.borderedBottom,
-    // When elevating, always apply a border
-    !!elevation && borderStyles.elevation,
   ];
 };
 
@@ -250,7 +234,6 @@ export const Box = memo(
               borderedEnd,
               borderedTop,
               borderedBottom,
-              elevation,
             },
             theme,
           ),

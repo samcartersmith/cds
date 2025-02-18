@@ -171,6 +171,12 @@
       "@cbhq/ui-mobile-playground/*": [
         "packages/ui-mobile-playground/src/*"
       ],
+      "@cbhq/ui-mobile-playground2": [
+        "packages/ui-mobile-playground2/src"
+      ],
+      "@cbhq/ui-mobile-playground2/*": [
+        "packages/ui-mobile-playground2/src/*"
+      ],
       "@cbhq/ui-mobile-visreg": [
         "packages/ui-mobile-visreg/src"
       ],

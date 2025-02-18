@@ -7614,7 +7614,7 @@
       "ddd": 0,
       "ind": 8,
       "ty": 4,
-      "nm": "palette_lineHeavy",
+      "nm": "palette_bgLineHeavy",
       "sr": 1,
       "ks": {
         "o": {
@@ -7771,10 +7771,10 @@
                   }
                 }
               ],
-              "nm": ".palette_lineHeavy_stroke",
+              "nm": ".palette_bgLineHeavy_stroke",
               "mn": "ADBE Vector Graphic - Stroke",
               "hd": false,
-              "cl": "palette_lineHeavy_stroke"
+              "cl": "palette_bgLineHeavy_stroke"
             },
             {
               "ty": "tr",
@@ -7895,7 +7895,7 @@
       "ddd": 0,
       "ind": 9,
       "ty": 4,
-      "nm": "palette_lineHeavy",
+      "nm": "palette_bgLineHeavy",
       "sr": 1,
       "ks": {
         "o": {
@@ -8052,10 +8052,10 @@
                   }
                 }
               ],
-              "nm": ".palette_lineHeavy_stroke",
+              "nm": ".palette_bgLineHeavy_stroke",
               "mn": "ADBE Vector Graphic - Stroke",
               "hd": false,
-              "cl": "palette_lineHeavy_stroke"
+              "cl": "palette_bgLineHeavy_stroke"
             },
             {
               "ty": "tr",
@@ -8176,7 +8176,7 @@
       "ddd": 0,
       "ind": 10,
       "ty": 4,
-      "nm": "palette_lineHeavy",
+      "nm": "palette_bgLineHeavy",
       "sr": 1,
       "ks": {
         "o": {
@@ -8333,10 +8333,10 @@
                   }
                 }
               ],
-              "nm": ".palette_lineHeavy_stroke",
+              "nm": ".palette_bgLineHeavy_stroke",
               "mn": "ADBE Vector Graphic - Stroke",
               "hd": false,
-              "cl": "palette_lineHeavy_stroke"
+              "cl": "palette_bgLineHeavy_stroke"
             },
             {
               "ty": "tr",
@@ -8457,7 +8457,7 @@
       "ddd": 0,
       "ind": 11,
       "ty": 4,
-      "nm": "palette_lineHeavy",
+      "nm": "palette_bgLineHeavy",
       "sr": 1,
       "ks": {
         "o": {
@@ -8614,10 +8614,10 @@
                   }
                 }
               ],
-              "nm": ".palette_lineHeavy_stroke",
+              "nm": ".palette_bgLineHeavy_stroke",
               "mn": "ADBE Vector Graphic - Stroke",
               "hd": false,
-              "cl": "palette_lineHeavy_stroke"
+              "cl": "palette_bgLineHeavy_stroke"
             },
             {
               "ty": "tr",
@@ -14175,7 +14175,7 @@
       "ddd": 0,
       "ind": 13,
       "ty": 4,
-      "nm": "palette_lineHeavy",
+      "nm": "palette_bgLineHeavy",
       "sr": 1,
       "ks": {
         "o": {
@@ -14320,10 +14320,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_lineHeavy_fill",
+              "nm": ".palette_bgLineHeavy_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_lineHeavy_fill"
+              "cl": "palette_bgLineHeavy_fill"
             },
             {
               "ty": "tr",
@@ -14392,7 +14392,7 @@
       "ddd": 0,
       "ind": 14,
       "ty": 4,
-      "nm": "palette_lineHeavy",
+      "nm": "palette_bgLineHeavy",
       "sr": 1,
       "ks": {
         "o": {
@@ -14537,10 +14537,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_lineHeavy_fill",
+              "nm": ".palette_bgLineHeavy_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_lineHeavy_fill"
+              "cl": "palette_bgLineHeavy_fill"
             },
             {
               "ty": "tr",
@@ -14609,7 +14609,7 @@
       "ddd": 0,
       "ind": 15,
       "ty": 4,
-      "nm": "palette_lineHeavy",
+      "nm": "palette_bgLineHeavy",
       "sr": 1,
       "ks": {
         "o": {
@@ -14754,10 +14754,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_lineHeavy_fill",
+              "nm": ".palette_bgLineHeavy_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_lineHeavy_fill"
+              "cl": "palette_bgLineHeavy_fill"
             },
             {
               "ty": "tr",
@@ -14826,7 +14826,7 @@
       "ddd": 0,
       "ind": 16,
       "ty": 4,
-      "nm": "palette_lineHeavy",
+      "nm": "palette_bgLineHeavy",
       "sr": 1,
       "ks": {
         "o": {
@@ -14971,10 +14971,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_lineHeavy_fill",
+              "nm": ".palette_bgLineHeavy_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_lineHeavy_fill"
+              "cl": "palette_bgLineHeavy_fill"
             },
             {
               "ty": "tr",
@@ -16722,7 +16722,7 @@
       "ddd": 0,
       "ind": 25,
       "ty": 4,
-      "nm": "palette_backgroundOverlay",
+      "nm": "palette_bgOverlay",
       "parent": 18,
       "sr": 1,
       "ks": {
@@ -16935,10 +16935,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_backgroundOverlay_fill",
+              "nm": ".palette_bgOverlay_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_backgroundOverlay_fill"
+              "cl": "palette_bgOverlay_fill"
             },
             {
               "ty": "tr",
@@ -17007,7 +17007,7 @@
       "ddd": 0,
       "ind": 26,
       "ty": 4,
-      "nm": "palette_backgroundOverlay",
+      "nm": "palette_bgOverlay",
       "parent": 18,
       "sr": 1,
       "ks": {
@@ -17167,10 +17167,10 @@
               },
               "r": 1,
               "bm": 0,
-              "nm": ".palette_backgroundOverlay_fill",
+              "nm": ".palette_bgOverlay_fill",
               "mn": "ADBE Vector Graphic - Fill",
               "hd": false,
-              "cl": "palette_backgroundOverlay_fill"
+              "cl": "palette_bgOverlay_fill"
             },
             {
               "ty": "tr",

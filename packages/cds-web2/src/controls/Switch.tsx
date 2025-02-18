@@ -72,13 +72,13 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
 ) {
   const { outerContainerMotionProps } = useControlMotionProps({
     checked,
-    initialBackground: 'var(--color-bgAlternate)',
+    initialBackground: 'var(--color-bgSecondary)',
   });
 
   const switchNode = (
     <Control
       ref={ref}
-      background={checked ? 'bgPrimary' : 'bgAlternate'}
+      background={checked ? 'bgPrimary' : 'bgSecondary'}
       borderRadius={400}
       checked={checked}
       disabled={disabled}

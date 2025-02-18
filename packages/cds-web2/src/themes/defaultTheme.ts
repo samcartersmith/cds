@@ -278,7 +278,6 @@ export const defaultTheme = {
     fgWarning: `rgb(${lightSpectrum.orange60})`,
     fgPositive: `rgb(${lightSpectrum.green60})`,
     fgNegative: `rgb(${lightSpectrum.red60})`,
-
     // Background
     bg: `rgb(${lightSpectrum.gray0})`,
     bgAlternate: `rgb(${lightSpectrum.gray10})`,
@@ -295,7 +294,6 @@ export const defaultTheme = {
     bgWarning: `rgb(${lightSpectrum.orange40})`,
     bgWarningWash: `rgb(${lightSpectrum.orange0})`,
     currentColor: 'currentColor',
-
     // Line
     bgLine: `rgba(${lightSpectrum.gray60},0.2)`,
     bgLineHeavy: `rgba(${lightSpectrum.gray60},0.66)`,
@@ -305,7 +303,6 @@ export const defaultTheme = {
     // Elevation
     bgElevation1: `rgb(${lightSpectrum.gray0})`,
     bgElevation2: `rgb(${lightSpectrum.gray0})`,
-
     // Accent
     accentSubtleGreen: `rgb(${lightSpectrum.green0})`, // TO DO: check if correct value, if exists
     accentBoldGreen: `rgb(${lightSpectrum.green60})`, // TO DO: check if correct value, if exists
@@ -330,7 +327,7 @@ export const defaultTheme = {
     fg: `rgb(${darkSpectrum.gray100})`,
     fgInverse: `rgb(${darkSpectrum.gray0})`,
     fgMuted: `rgb(${darkSpectrum.gray60})`,
-    fgPrimary: `rgb(${darkSpectrum.blue60})`,
+    fgPrimary: `rgb(${darkSpectrum.blue70})`,
     fgPositive: `rgb(${darkSpectrum.green60})`,
     fgNegative: `rgb(${darkSpectrum.red60})`,
     fgWarning: `rgb(${darkSpectrum.orange70})`,

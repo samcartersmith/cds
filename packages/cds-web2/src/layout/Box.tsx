@@ -140,7 +140,7 @@ export const Box: BoxComponent = memo(
         testID,
         pin,
         elevation,
-        bordered = !!elevation,
+        bordered,
         borderedTop,
         borderedBottom,
         borderedStart,

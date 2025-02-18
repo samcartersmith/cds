@@ -29,10 +29,14 @@ const getWorkspaceDependencies = (dependencies) =>
  */
 const getWorkspaceDirectoryMap = (workspaceDependencies, tsconfigPaths) =>
   Object.fromEntries(
-    workspaceDependencies.map((dependency) => [
-      dependency,
-      tsconfigPaths[dependency].map((dependencyPath) => dependencyPath.replace('/*', '')),
-    ]),
+    workspaceDependencies.map((dependency) => {
+      if (!tsconfigPaths[dependency])
+        throw Error(`Missing dependency in tsconfig "paths": ${dependency}`);
+      return [
+        dependency,
+        tsconfigPaths[dependency].map((dependencyPath) => dependencyPath.replace('/*', '')),
+      ];
+    }),
   );
 
 /**

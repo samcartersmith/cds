@@ -8,6 +8,8 @@ import { useTheme } from '../hooks/useTheme';
 import { Box, BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
+import { ThemeProvider } from '../system';
+import { denseTheme } from '../themes/denseTheme';
 import { TextTitle3 } from '../typography/TextTitle3';
 
 type ExampleRenderChildren = () => NonNullable<JSX.Element>;
@@ -73,17 +75,19 @@ export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ chil
   return (
     <VStack testID="mobile-playground-screen">
       <Screen>
-        <VStack>
-          <VStack background="bg" gap={1} paddingX={gutter} paddingY={3}>
-            <Switch checked={theme.colorScheme === 'dark'} onChange={noop}>
-              Dark Spectrum
-            </Switch>
-            <Switch checked={false} onChange={noop}>
-              Dense Scale
-            </Switch>
+        <ThemeProvider activeColorScheme={theme.colorScheme} theme={denseTheme}>
+          <VStack>
+            <VStack background="bg" gap={1} paddingX={gutter} paddingY={3}>
+              <Switch checked={theme.colorScheme === 'dark'} onChange={noop}>
+                Dark Spectrum
+              </Switch>
+              <Switch checked={false} onChange={noop}>
+                Dense Scale
+              </Switch>
+            </VStack>
+            <Divider />
           </VStack>
-          <Divider />
-        </VStack>
+        </ThemeProvider>
         {children}
       </Screen>
     </VStack>

@@ -329,7 +329,7 @@ export const defaultTheme = {
     fg: `rgb(${darkSpectrum.gray100})`,
     fgInverse: `rgb(${darkSpectrum.gray0})`,
     fgMuted: `rgb(${darkSpectrum.gray60})`,
-    fgPrimary: `rgb(${darkSpectrum.blue60})`,
+    fgPrimary: `rgb(${darkSpectrum.blue70})`,
     fgPositive: `rgb(${darkSpectrum.green60})`,
     fgNegative: `rgb(${darkSpectrum.red60})`,
     fgWarning: `rgb(${darkSpectrum.orange70})`,
