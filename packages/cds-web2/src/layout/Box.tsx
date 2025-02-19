@@ -1,88 +1,13 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
+import { cx } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { PinningDirection } from '@cbhq/cds-common2/types/BoxBaseProps';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import type { Polymorphic } from '../core/polymorphism';
+import { borderStyle, pinStyle } from '../styles/booleanStyles';
 import { type ResponsiveProps, type StyleProps, getStyles } from '../styles/styleProps';
-
-const borderStyle = {
-  bordered: css`
-    border-width: var(--borderWidth-100);
-    border-style: solid;
-    border-color: var(--color-bgLine);
-  `,
-  borderedHorizontal: css`
-    border-left-width: var(--borderWidth-100);
-    border-left-style: solid;
-    border-right-width: var(--borderWidth-100);
-    border-right-style: solid;
-    border-color: var(--color-bgLine);
-  `,
-  borderedVertical: css`
-    border-top-width: var(--borderWidth-100);
-    border-top-style: solid;
-    border-bottom-width: var(--borderWidth-100);
-    border-bottom-style: solid;
-    border-color: var(--color-bgLine);
-  `,
-  borderedStart: css`
-    border-left-width: var(--borderWidth-100);
-    border-left-style: solid;
-    border-color: var(--color-bgLine);
-  `,
-  borderedEnd: css`
-    border-right-width: var(--borderWidth-100);
-    border-right-style: solid;
-    border-color: var(--color-bgLine);
-  `,
-  borderedTop: css`
-    border-top-width: var(--borderWidth-100);
-    border-top-style: solid;
-    border-color: var(--color-bgLine);
-  `,
-  borderedBottom: css`
-    border-bottom-width: var(--borderWidth-100);
-    border-bottom-style: solid;
-    border-color: var(--color-bgLine);
-  `,
-};
-
-const pinStyle: Record<PinningDirection, LinariaClassName> = {
-  top: css`
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  `,
-  bottom: css`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  `,
-  right: css`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-  `,
-  left: css`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-  `,
-  all: css`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  `,
-};
 
 export const boxDefaultElement = 'div';
 

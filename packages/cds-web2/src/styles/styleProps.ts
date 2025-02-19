@@ -1,9 +1,19 @@
 /* eslint-disable */
+/**
+ * Import order determines CSS cascade order, therefor affects specificity.
+ * Do not change the order of these imports or everything will break.
+ */
+import * as booleanStyles from './booleanStyles';
 import * as baseStyles from './responsive/base';
 import * as phoneStyles from './responsive/phone';
 import * as tabletStyles from './responsive/tablet';
 import * as desktopStyles from './responsive/desktop';
 import type { TypeOrNumber } from '@cbhq/cds-common2/types/TypeOrNumber';
+
+/**
+ * Prevents tree-shaking. Do not remove or everything will break.
+ */
+booleanStyles;
 
 /**
  * Style props that set classnames but not inline style CSS Variables.

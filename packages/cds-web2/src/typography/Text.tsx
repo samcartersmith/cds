@@ -4,6 +4,7 @@ import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable
 
 import type { Polymorphic } from '../core/polymorphism';
 import { type BoxBaseProps, Box } from '../layout/Box';
+import { textInheritStyle } from '../styles/booleanStyles';
 
 const baseStyle = css`
   margin: 0;
@@ -12,14 +13,6 @@ const baseStyle = css`
 
 const monoStyle = css`
   font-family: var(--text-fontFamilyMono);
-`;
-
-const textInherit = css`
-  font-size: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  font-weight: inherit;
-  font-family: inherit;
 `;
 
 const numberOfLinesStyle = css`
@@ -204,7 +197,7 @@ export const Text: TextComponent = memo(
             baseStyle,
             numberOfLines && numberOfLinesStyle,
             disabled && disabledStyle,
-            inherit && textInherit,
+            inherit && textInheritStyle,
             mono && monoStyle,
             tabularNumbers && tabularNumbersStyle,
             slashedZero && slashedZeroStyle,

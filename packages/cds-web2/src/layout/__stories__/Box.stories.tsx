@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
-import { TextBody, TextTitle4 } from '../../typography';
+import { Text, TextBody, TextTitle4 } from '../../typography';
 import { Box } from '../Box';
 import { VStack } from '../VStack';
+
+export default {
+  title: 'Core Components/Box (tsx)',
+  component: Box,
+};
 
 const Lipsum = ({ color }: { color?: ThemeVars.Color }) => (
   <TextBody as="p" color={color}>
@@ -235,7 +240,19 @@ export const AllPin = () => (
   </Box>
 );
 
-export default {
-  title: 'Core Components/Box (tsx)',
-  component: Box,
+export const BooleanStyleProps = () => {
+  return (
+    <Box
+      bordered
+      background="bgPrimary"
+      borderColor="accentBoldPurple"
+      borderWidth={300}
+      height={200}
+      width={200}
+    >
+      <Text inherit font="title1" fontFamily="caption" fontSize="display1">
+        HELLO WORLD
+      </Text>
+    </Box>
+  );
 };
