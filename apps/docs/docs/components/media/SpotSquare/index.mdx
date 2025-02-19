@@ -1,0 +1,54 @@
+---
+id: spotSquare
+title: SpotSquare
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+import { IllustrationSheet } from '@site/src/components/page/IllustrationSheet';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import webPropsToc from ':docgen/cds-web2/illustrations/SpotSquare/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/illustrations/SpotSquare/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="SpotSquare"
+    banner={<DefaultBanner />}
+    webMetadata={{
+      import: "import { SpotSquare } from '@cbhq/cds-web/illustratations/SpotSquare'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/illustrations/SpotSquare.tsx',
+      storybook: 'https://cds-storybook.cbhq.net/?path=/story/illustrations--spot-square',
+      figma:
+        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-400&m=dev',
+    }}
+    mobileMetadata={{
+      import: "import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/Pictogram.tsx',
+      figma:
+        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-400&m=dev',
+    }}
+  />
+  <IllustrationSheet variant="spotSquare" />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

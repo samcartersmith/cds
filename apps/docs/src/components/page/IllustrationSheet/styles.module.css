@@ -1,0 +1,17 @@
+.tile {
+  cursor: pointer;
+  position: relative;
+}
+
+.truncated {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overflow {
+  overflow: visible;
+  white-space: normal;
+  hyphens: auto;
+}

@@ -1,0 +1,55 @@
+---
+id: pictogram
+title: Pictogram
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { PictogramBanner } from '@site/src/components/page/ComponentBanner/PictogramBanner';
+import { IllustrationSheet } from '@site/src/components/page/IllustrationSheet';
+
+import webPropsToc from ':docgen/cds-web2/illustrations/Pictogram/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/illustrations/Pictogram/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="Pictogram"
+    description="Pictograms are elevated product icons. They should be literal, concise, and used for glanceability purposes but the intention here is to grab the attention of users."
+    banner={<PictogramBanner />}
+    webMetadata={{
+      import: "import { Pictogram } from '@cbhq/cds-web/illustratations/Pictogram'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/illustrations/Pictogram.tsx',
+      storybook: 'https://cds-storybook.cbhq.net/?path=/story/illustrations--pictogram',
+      figma:
+        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev',
+    }}
+    mobileMetadata={{
+      import: "import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/Pictogram.tsx',
+      figma:
+        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev',
+    }}
+  />
+  <IllustrationSheet variant="pictogram" />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

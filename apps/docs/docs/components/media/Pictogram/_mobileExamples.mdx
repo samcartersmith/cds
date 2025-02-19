@@ -1,0 +1,23 @@
+### Basic example
+
+```jsx
+<Pictogram name="shield" dimension="64x64" />
+```
+
+### ScaleMultiplier
+
+Use scaleMultiplier sparingly, and with caution. We have predefined dimension to ensure that the illustration are in the sizes it was originated for.
+
+If no dimension fits your use case, you can use scaleMultiplier to scale illustration at different size. If dimension prop is absent, it will scale based on the default size of Pictogram, which is 48 x 48. Therefore, if you set the scaleMultiplier to 1.5, the final size would be (48 _ 1.5) x (48 _ 1.5) = 72 x 72
+
+```jsx
+<Pictogram name="add" scaleMultiplier={1.5} />
+```
+
+### Dimension
+
+If dimension is provided, it will scale based on the dimension. Here, because dimension is set to 96x96, the final size would be (96 _ 1.5) x (96 _ 1.5) = 144 x 144
+
+```jsx
+<Pictogram name="add" dimension="48x48" scaleMultiplier={2.5} />
+```

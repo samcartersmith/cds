@@ -150,13 +150,13 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/media/heroSquare',
+              id: 'components/media/HeroSquare/heroSquare',
               label: 'HeroSquare',
             },
             { type: 'doc', id: 'components/media/icon', label: 'Icon' },
             {
               type: 'doc',
-              id: 'components/media/pictogram',
+              id: 'components/media/Pictogram/pictogram',
               label: 'Pictogram',
             },
             {
@@ -164,15 +164,19 @@ const sidebars: SidebarsConfig = {
               id: 'components/media/remoteImage',
               label: 'RemoteImage',
             },
-            { type: 'doc', id: 'components/media/spotIcon', label: 'SpotIcon' },
             {
               type: 'doc',
-              id: 'components/media/spotRectangle',
+              id: 'components/media/SpotIcon/spotIcon',
+              label: 'SpotIcon',
+            },
+            {
+              type: 'doc',
+              id: 'components/media/SpotRectangle/spotRectangle',
               label: 'SpotRectangle',
             },
             {
               type: 'doc',
-              id: 'components/media/spotSquare',
+              id: 'components/media/SpotSquare/spotSquare',
               label: 'SpotSquare',
             },
           ],
@@ -215,7 +219,7 @@ const sidebars: SidebarsConfig = {
             { type: 'doc', id: 'components/feedback/banner', label: 'Banner' },
             {
               type: 'doc',
-              id: 'components/feedback/fallback',
+              id: 'components/feedback/Fallback/fallback',
               label: 'Fallback',
             },
             {

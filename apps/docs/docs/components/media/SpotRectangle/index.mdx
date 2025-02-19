@@ -1,0 +1,54 @@
+---
+id: spotRectangle
+title: SpotRectangle
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { SpotRectangleBanner } from '@site/src/components/page/ComponentBanner/SpotRectangleBanner';
+import { IllustrationSheet } from '@site/src/components/page/IllustrationSheet';
+
+import webPropsToc from ':docgen/cds-web2/illustrations/SpotRectangle/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/illustrations/SpotRectangle/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="SpotRectangle"
+    banner={<SpotRectangleBanner />}
+    webMetadata={{
+      import: "import { SpotRectangle } from '@cbhq/cds-web/illustratations/SpotRectangle'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/illustrations/SpotRectangle.tsx',
+      storybook: 'https://cds-storybook.cbhq.net/?path=/story/illustrations--spot-rectangle',
+      figma:
+        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev',
+    }}
+    mobileMetadata={{
+      import: "import { SpotRectangle } from '@cbhq/cds-mobile/illustrations/SpotRectangle'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/SpotRectangle.tsx',
+      figma:
+        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev',
+    }}
+  />
+  <IllustrationSheet variant="spotRectangle" />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>
