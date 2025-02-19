@@ -103,7 +103,7 @@ describe('Switch.test', () => {
     const parent = screen.getByTestId('test-switch-parent');
 
     expect(parent).toHaveStyle({
-      '--interactable-background': 'var(--color-bgAlternate)',
+      '--interactable-background': 'var(--color-bgSecondary)',
     });
   });
 
