@@ -28,7 +28,13 @@ export default function Footer(): JSX.Element | null {
         </p>
         <div className={styles.footerLinksWrapper}>
           {(links as FooterLinkItem[]).map(({ label, href }) => (
-            <a key={label} className={cx('headline-text', styles.footerLink)} href={href}>
+            <a
+              key={label}
+              className={cx('headline-text', styles.footerLink)}
+              href={href}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               {label}
             </a>
           ))}

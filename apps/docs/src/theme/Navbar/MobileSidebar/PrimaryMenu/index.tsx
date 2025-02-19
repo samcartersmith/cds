@@ -23,7 +23,13 @@ export default function NavbarMobilePrimaryMenu(): JSX.Element {
       {parsedItems?.map(({ href, label }) => (
         <VStack key={label} as="li">
           <Pressable as="a" background="transparent" borderRadius={1000} href={href}>
-            <HStack alignItems="center" justifyContent="space-between" paddingX={2} paddingY={1}>
+            <HStack
+              alignItems="center"
+              gap={0.5}
+              justifyContent="space-between"
+              paddingX={2}
+              paddingY={1}
+            >
               <Text font="label2">{label}</Text>
               <Icon color="fg" name="externalLink" size="s" />
             </HStack>

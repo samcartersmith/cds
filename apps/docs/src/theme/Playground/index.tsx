@@ -91,7 +91,7 @@ const Playground = memo(function Playground({
                 borderRadius={400}
                 onPress={toggleCode}
               >
-                <HStack alignItems="center" gap={1} padding={1} width={112}>
+                <HStack alignItems="center" gap={1} padding={1}>
                   <Icon color="fgPrimary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
                   <Text as="p" color="fgPrimary" font="caption" transform="none">
                     {collapsed ? 'Show code' : 'Hide code'}

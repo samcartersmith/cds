@@ -161,6 +161,7 @@ export default function DocSidebarItemCategory({
         ThemeClassNames.docs.docSidebarItemCategoryLevel(level),
         'menu__list-item',
         collapsed && 'menu__list-item--collapsed',
+        styles.menuListItem,
         className,
       )}
     >
