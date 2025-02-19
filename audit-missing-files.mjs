@@ -1,6 +1,9 @@
 import path from 'node:path';
 import fs from 'node:fs';
 import { globSync } from 'glob';
+import { fileURLToPath } from 'node:url';
+
+const root = path.dirname(fileURLToPath(import.meta.url));
 
 // Edit the values below to configure the audit
 const OLD = 'web';
@@ -66,7 +69,6 @@ const WHITE_LIST = [
   '/hooks/__tests__/useElevationStyles.test.tsx',
 ];
 
-const root = import.meta.dirname;
 const oldPackagePath = path.resolve(root, `packages/${OLD}/src`);
 const newPackagePath = path.resolve(root, `packages/${NEW}/src`);
 const oldFiles = globSync(`${oldPackagePath}/**/*`);
