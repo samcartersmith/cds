@@ -1,0 +1,38 @@
+{
+  "name": "web-visualization2",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/web-visualization2/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
+    },
+    "report-disabled-eslint-rules": {
+      "executor": "@cbhq/prevent-eslint-disable:report"
+    },
+    "publish-figma": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "figma connect publish --token $FIGMA_CODE_CONNECT_TOKEN"
+        ],
+        "cwd": "packages/web-visualization"
+      }
+    }
+  }
+}

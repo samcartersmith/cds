@@ -114,6 +114,12 @@
       "@cbhq/cds-web-visualization/*": [
         "packages/web-visualization/src/*"
       ],
+      "@cbhq/cds-web-visualization2": [
+        "packages/web-visualization2/src"
+      ],
+      "@cbhq/cds-web-visualization2/*": [
+        "packages/web-visualization2/src/*"
+      ],
       "@cbhq/cds-web/*": [
         "packages/web/src/*"
       ],

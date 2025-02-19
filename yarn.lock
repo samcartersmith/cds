@@ -3796,6 +3796,38 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/cds-web-visualization2@workspace:^, @cbhq/cds-web-visualization2@workspace:packages/web-visualization2":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/cds-web-visualization2@workspace:packages/web-visualization2"
+  dependencies:
+    "@babel/core": "npm:^7.20.12"
+    "@babel/preset-env": "npm:^7.20.2"
+    "@babel/preset-react": "npm:^7.18.6"
+    "@babel/preset-typescript": "npm:^7.18.6"
+    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/cds-web2": "workspace:^"
+    "@figma/code-connect": "npm:^1.2.2"
+    "@linaria/core": "npm:^3.0.0-beta.22"
+    "@types/react": "npm:^18.3.12"
+    "@types/react-dom": "npm:^18.3.1"
+    d3-color: "npm:^3.1.0"
+    d3-interpolate: "npm:^3.0.1"
+    d3-interpolate-path: "npm:^2.3.0"
+    d3-selection: "npm:^3.0.0"
+    d3-transition: "npm:^3.0.1"
+    lodash: "npm:^4.17.21"
+  peerDependencies:
+    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/cds-web2": "workspace:^"
+    react: ^18.3.1
+    react-dom: ^18.3.1
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/cds-web-visualization@workspace:^, @cbhq/cds-web-visualization@workspace:packages/web-visualization":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-web-visualization@workspace:packages/web-visualization"
@@ -3840,7 +3872,7 @@ __metadata:
     "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-lottie-files": "workspace:^"
+    "@cbhq/cds-lottie-files2": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/cds-web-utils": "workspace:^"
     "@cbhq/ui-scorecard": "workspace:^"
@@ -4580,7 +4612,7 @@ __metadata:
     "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-web-visualization": "workspace:^"
+    "@cbhq/cds-web-visualization2": "workspace:^"
     "@juggle/resize-observer": "npm:^3.4.0"
     "@linaria/webpack-loader": "npm:^3.0.0-beta.22"
     "@percy/cli": "npm:^1.30.1"

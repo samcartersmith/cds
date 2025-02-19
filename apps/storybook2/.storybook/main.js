@@ -18,7 +18,10 @@ const config = {
     builder: 'webpack5',
     disableTelemetry: true,
   },
-  stories: [path.resolve(__dirname, `../../../packages/cds-web2/**/*.stories.@(tsx|mdx)`)],
+  stories: [
+    path.resolve(__dirname, `../../../packages/web-visualization2/**/*.stories.@(tsx|mdx)`),
+    path.resolve(__dirname, `../../../packages/cds-web2/**/*.stories.@(tsx|mdx)`),
+  ],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
@@ -131,11 +134,15 @@ const config = {
       '@cbhq/cds-common': path.resolve(__dirname, '../../../packages/common/src'),
       '@cbhq/cds-common2': path.resolve(__dirname, '../../../packages/cds-common2/src'),
       '@cbhq/cds-fonts': path.resolve(__dirname, '../../../packages/fonts/src'),
-      '@cbhq/cds-lottie-files': path.resolve(__dirname, '../../../packages/lottie-files/src'),
+      '@cbhq/cds-lottie-files2': path.resolve(__dirname, '../../../packages/lottie-files2/src'),
       '@cbhq/cds-icons': path.resolve(__dirname, '../../../packages/icons/src'),
       '@cbhq/cds-illustrations': path.resolve(__dirname, '../../../packages/illustrations/src'),
       '@cbhq/cds-utils': path.resolve(__dirname, '../../../packages/utils/src'),
       '@cbhq/cds-web2': path.resolve(__dirname, '../../../packages/cds-web2/src'),
+      '@cbhq/cds-web-visualization2': path.resolve(
+        __dirname,
+        '../../../packages/web-visualization2/src',
+      ),
     };
 
     if (!config.plugins) config.plugins = [];

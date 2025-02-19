@@ -20,22 +20,13 @@
       "path": "../../packages/cds-common2"
     },
     {
-      "path": "../../packages/fonts"
-    },
-    {
-      "path": "../../packages/icons"
-    },
-    {
-      "path": "../../packages/illustrations"
-    },
-    {
       "path": "../../packages/lottie-files2"
     },
     {
       "path": "../../packages/utils"
     },
     {
-      "path": "../../libs/web-utils"
+      "path": "../../packages/cds-web2"
     }
   ]
 }
