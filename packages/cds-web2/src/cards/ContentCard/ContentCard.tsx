@@ -1,0 +1,53 @@
+import React, { forwardRef, memo } from 'react';
+import { contentCardMaxWidth, contentCardMinWidth } from '@cbhq/cds-common2/tokens/card';
+
+import { Polymorphic } from '../../core/polymorphism';
+import { type BoxBaseProps, VStack } from '../../layout';
+
+const contentCardDefaultElement = 'div';
+export type ContentCardDefaultElement = typeof contentCardDefaultElement;
+
+export type ContentCardBaseProps = BoxBaseProps;
+
+export type ContentCardProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  ContentCardBaseProps
+>;
+
+type ContentCardComponent = (<AsComponent extends React.ElementType = ContentCardDefaultElement>(
+  props: ContentCardProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const ContentCard: ContentCardComponent = memo(
+  forwardRef(function ContentCard<AsComponent extends React.ElementType>(
+    {
+      testID,
+      children,
+      as,
+      maxWidth = contentCardMaxWidth,
+      minWidth = contentCardMinWidth,
+      paddingX = 3,
+      paddingY = 2,
+      ...props
+    }: ContentCardProps<AsComponent>,
+    ref?: Polymorphic.Ref<AsComponent>,
+  ) {
+    const Component = (as ?? contentCardDefaultElement) satisfies React.ElementType;
+    return (
+      <VStack
+        ref={ref}
+        as={Component}
+        gap={1}
+        maxWidth={maxWidth}
+        minWidth={minWidth}
+        paddingX={paddingX}
+        paddingY={paddingY}
+        testID={testID}
+        {...props}
+      >
+        {children}
+      </VStack>
+    );
+  }),
+);

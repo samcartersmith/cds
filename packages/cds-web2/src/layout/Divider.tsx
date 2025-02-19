@@ -25,18 +25,19 @@ const directionStyles: {
 } as const;
 
 export const Divider = memo(
-  ({ color, direction = 'horizontal', background = 'bgLine', ...props }: DividerProps) => {
+  ({ color, direction = 'horizontal', background = 'bgLine', ...boxProps }: DividerProps) => {
     return (
-      <Box
-        alignSelf="stretch"
-        aria-orientation={direction}
-        as="hr"
-        background={color ?? background}
-        className={cx(directionStyles[direction])}
-        margin={0}
-        role="separator"
-        {...props}
-      />
+      <Box alignItems="stretch" alignSelf="stretch" {...boxProps}>
+        <Box
+          aria-orientation={direction}
+          as="hr"
+          background={color ?? background}
+          className={cx(directionStyles[direction])}
+          flexGrow={1}
+          marginY={0}
+          role="separator"
+        />
+      </Box>
     );
   },
 );

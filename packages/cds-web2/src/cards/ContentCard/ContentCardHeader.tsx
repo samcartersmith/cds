@@ -1,0 +1,73 @@
+import React, { forwardRef, memo } from 'react';
+import type { ContentCardHeaderBaseProps as BaseProps } from '@cbhq/cds-common2/types';
+
+import { Polymorphic } from '../../core/polymorphism';
+import { type BoxBaseProps, HStack } from '../../layout';
+import { Avatar } from '../../media';
+import { Text } from '../../typography/Text';
+
+const contentCardHeaderDefaultElement = 'div';
+export type ContentCardHeaderDefaultElement = typeof contentCardHeaderDefaultElement;
+
+export type ContentCardHeaderBaseProps = Polymorphic.ExtendableProps<BoxBaseProps, BaseProps>;
+
+export type ContentCardHeaderProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  ContentCardHeaderBaseProps
+>;
+
+type ContentCardHeaderComponent = (<
+  AsComponent extends React.ElementType = ContentCardHeaderDefaultElement,
+>(
+  props: ContentCardHeaderProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const ContentCardHeader: ContentCardHeaderComponent = memo(
+  forwardRef(function ContentCardHeader<AsComponent extends React.ElementType>(
+    { as, avatar, title, meta, end, testID, ...props }: ContentCardHeaderProps<AsComponent>,
+    ref: Polymorphic.Ref<AsComponent>,
+  ) {
+    const Component = (as ?? contentCardHeaderDefaultElement) satisfies React.ElementType;
+    return (
+      <HStack
+        ref={ref}
+        alignItems="center"
+        as={Component}
+        justifyContent="space-between"
+        marginRight={-1}
+        testID={testID}
+        {...props}
+      >
+        <HStack alignItems="center" gap={1}>
+          {typeof avatar === 'string' ? (
+            <Avatar
+              alt={typeof title === 'string' ? title : undefined}
+              name={typeof title === 'string' ? title : undefined}
+              shape="circle"
+              size="l"
+              src={avatar}
+            />
+          ) : (
+            avatar
+          )}
+          {typeof title === 'string' ? (
+            <Text as="p" font="label1" numberOfLines={1}>
+              {title}
+            </Text>
+          ) : (
+            title
+          )}
+          {typeof meta === 'string' ? (
+            <Text as="span" color="fgMuted" font="label2" numberOfLines={1}>
+              {meta}
+            </Text>
+          ) : (
+            meta
+          )}
+        </HStack>
+        {end}
+      </HStack>
+    );
+  }),
+);
