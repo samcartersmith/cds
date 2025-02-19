@@ -1,9 +1,12 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
+import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { VStack } from '@cbhq/cds-web2/layout/VStack';
+import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
+import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Link } from '@cbhq/cds-web2/typography/Link';
 import { Text } from '@cbhq/cds-web2/typography/Text';
 
@@ -51,12 +54,30 @@ export const ComponentHeader = memo(
   }: ComponentHeaderProps) => {
     const { platform } = usePlatformContext();
     const { colorMode } = useColorMode();
+    const toast = useToast();
+
     const activeMetadata = platform === 'web' ? webMetadata : mobileMetadata;
     const activeBanner = colorMode === 'dark' && bannerDark ? bannerDark : banner;
 
+    const copyImport = useCallback(async () => {
+      const importText = activeMetadata?.import;
+      if (!importText) return;
+      if (navigator?.clipboard) {
+        try {
+          await navigator.clipboard.writeText(importText);
+          toast.show('Copied to clipboard');
+        } catch (error) {
+          toast.show('Failed to copy to clipboard', { variant: 'fgNegative' });
+        }
+      } else {
+        toast.show('Clipboard not supported', { variant: 'fgNegative' });
+      }
+    }, [toast, activeMetadata]);
+
     if (!activeMetadata) return null;
+
     return (
-      <VStack background="bgAlternate" borderRadius={600} overflow="hidden">
+      <VStack background="bgAlternate" borderRadius={600} overflow="hidden" width="100%">
         <VStack height={200} width="100%">
           {typeof activeBanner === 'string' ? (
             <img
@@ -75,13 +96,37 @@ export const ComponentHeader = memo(
           </VStack>
           <VStack gap={2}>
             {activeMetadata.import && (
-              <HStack alignContent="center" alignItems="flex-start" gap={2}>
+              <HStack
+                alignContent="center"
+                alignItems="center"
+                gap={2}
+                textAlign="center"
+                width="100%"
+              >
                 <Text font="label1" width={100}>
                   Import
                 </Text>
-                <Text className={styles.importText} font="body">
-                  {activeMetadata.import}
-                </Text>
+                <HStack
+                  alignItems="center"
+                  background="bg"
+                  borderRadius={400}
+                  paddingLeft={2}
+                  paddingY={0}
+                >
+                  <Text className={styles.importText} font="body">
+                    {activeMetadata.import}
+                  </Text>
+                  <Tooltip content="Copy">
+                    <IconButton
+                      compact
+                      transparent
+                      name="copy"
+                      onClick={copyImport}
+                      style={{ cursor: 'pointer' }}
+                      variant="secondary"
+                    />
+                  </Tooltip>
+                </HStack>
               </HStack>
             )}
             {activeMetadata.source && (
