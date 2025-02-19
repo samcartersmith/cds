@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useCallback } from 'react';
 import { css } from '@linaria/core';
-import { useAccordionParent } from '@cbhq/cds-common2/accordion/AccordionParentContext';
+import { useAccordionContext } from '@cbhq/cds-common2/accordion/AccordionProvider';
 import {
   accordionIconHiddenRotate,
   accordionIconVisibleRotate,
@@ -76,13 +76,13 @@ export const AccordionHeader = memo(
       { itemKey, title, subtitle, onPress, media, collapsed = false, testID }: AccordionHeaderProps,
       forwardedRef: React.ForwardedRef<HTMLButtonElement>,
     ) => {
-      const { onChange } = useAccordionParent();
+      const { setActiveKey, activeKey } = useAccordionContext();
       const spacing = useCellSpacing();
 
       const handlePress = useCallback(() => {
         onPress?.(itemKey);
-        onChange?.(itemKey);
-      }, [onPress, onChange, itemKey]);
+        setActiveKey(itemKey === activeKey ? null : itemKey);
+      }, [onPress, setActiveKey, itemKey, activeKey]);
 
       return (
         <h2 className={baseStyle}>

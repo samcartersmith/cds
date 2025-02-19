@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { useAccordionParent } from '@cbhq/cds-common2/accordion/AccordionParentContext';
+import { useAccordionContext } from '@cbhq/cds-common2/accordion/AccordionProvider';
 import { accordionMinWidth } from '@cbhq/cds-common2/tokens/accordion';
 import type { AccordionItemBaseProps } from '@cbhq/cds-common2/types/AccordionBaseProps';
 
@@ -29,7 +29,7 @@ export const AccordionItem = memo(
     maxHeight,
     style,
   }: AccordionItemProps) => {
-    const { activeKey } = useAccordionParent();
+    const { activeKey } = useAccordionContext();
     const collapsed = activeKey !== itemKey;
 
     return (

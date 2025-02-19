@@ -18,8 +18,12 @@ export type CreateAccordionProps = {
   TextInput: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>;
 };
 
-type OnPress = (key: string) => void;
+type OnPress = (key: string | null) => void;
+
 export type MockAccordionProps = {
+  activeKey?: string;
+  defaultActiveKey?: string;
+  setActiveKey?: (activeKey: string | null) => void;
   onChange?: OnPress;
   onPress1?: OnPress;
   onPress2?: OnPress;
@@ -120,9 +124,22 @@ export function accordionBuilder({
     );
   };
 
-  const MockAccordion = ({ onChange, onPress1, onPress2 }: MockAccordionProps) => {
+  const MockAccordion = ({
+    activeKey,
+    defaultActiveKey,
+    setActiveKey,
+    onChange,
+    onPress1,
+    onPress2,
+  }: MockAccordionProps) => {
     return (
-      <Accordion defaultActiveKey="2" onChange={onChange} testID="mock-accordion">
+      <Accordion
+        activeKey={activeKey}
+        defaultActiveKey={defaultActiveKey}
+        onChange={onChange}
+        setActiveKey={setActiveKey}
+        testID="mock-accordion"
+      >
         <AccordionItem
           itemKey="1"
           media={<CellMedia name="wallet" testID="mock-accordion-item1-media" type="icon" />}

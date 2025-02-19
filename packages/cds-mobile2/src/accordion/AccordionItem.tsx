@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { View, ViewProps } from 'react-native';
-import { useAccordionParent } from '@cbhq/cds-common2/accordion/AccordionParentContext';
+import { useAccordionContext } from '@cbhq/cds-common2/accordion/AccordionProvider';
 import { accordionMinWidth } from '@cbhq/cds-common2/tokens/accordion';
 import type { AccordionItemBaseProps } from '@cbhq/cds-common2/types';
 
@@ -28,7 +28,7 @@ export const AccordionItem = memo(
     panelRef,
     style,
   }: AccordionItemProps) => {
-    const { activeKey } = useAccordionParent();
+    const { activeKey } = useAccordionContext();
     const collapsed = activeKey !== itemKey;
 
     return (

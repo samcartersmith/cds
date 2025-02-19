@@ -1,5 +1,5 @@
 import React, { Children } from 'react';
-import { AccordionParentProvider } from '@cbhq/cds-common2/accordion/AccordionParentContext';
+import { AccordionProvider } from '@cbhq/cds-common2/accordion/AccordionProvider';
 import type { AccordionBaseProps } from '@cbhq/cds-common2/types/AccordionBaseProps';
 import { join } from '@cbhq/cds-common2/utils/join';
 
@@ -9,9 +9,11 @@ import { Divider, VStack } from '../layout';
 export type AccordionProps = AccordionBaseProps & { style?: React.CSSProperties };
 
 export const Accordion = ({
+  activeKey,
   children,
   defaultActiveKey,
   onChange,
+  setActiveKey,
   testID,
   style,
 }: AccordionProps) => {
@@ -19,10 +21,15 @@ export const Accordion = ({
   const dividerColor = colorScheme === 'light' ? 'bgLine' : 'bgLineHeavy';
 
   return (
-    <AccordionParentProvider defaultActiveKey={defaultActiveKey} onChange={onChange}>
+    <AccordionProvider
+      activeKey={activeKey}
+      defaultActiveKey={defaultActiveKey}
+      onChange={onChange}
+      setActiveKey={setActiveKey}
+    >
       <VStack style={style} testID={testID} width="100%">
         {join(Children.toArray(children), <Divider color={dividerColor} />)}
       </VStack>
-    </AccordionParentProvider>
+    </AccordionProvider>
   );
 };

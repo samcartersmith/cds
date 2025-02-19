@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useCallback } from 'react';
 import { View } from 'react-native';
-import { useAccordionParent } from '@cbhq/cds-common2/accordion/AccordionParentContext';
+import { useAccordionContext } from '@cbhq/cds-common2/accordion/AccordionProvider';
 import {
   accordionIconHiddenRotate,
   accordionIconVisibleRotate,
@@ -46,14 +46,14 @@ export const AccordionHeader = memo(
       { itemKey, title, subtitle, onPress, media, collapsed, testID }: AccordionHeaderProps,
       forwardedRef: React.ForwardedRef<View>,
     ) => {
-      const { onChange } = useAccordionParent();
+      const { setActiveKey, activeKey } = useAccordionContext();
       const spacing = useCellSpacing();
       const accessibilityLabel = subtitle ? `${title}, ${subtitle}` : title;
 
       const handlePress = useCallback(() => {
         onPress?.(itemKey);
-        onChange?.(itemKey);
-      }, [onPress, onChange, itemKey]);
+        setActiveKey(itemKey === activeKey ? null : itemKey);
+      }, [onPress, itemKey, setActiveKey, activeKey]);
 
       return (
         <Pressable

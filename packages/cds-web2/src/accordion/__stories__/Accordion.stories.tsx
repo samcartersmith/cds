@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   accordionBuilder,
   CreateAccordionProps,
 } from '@cbhq/cds-common2/internal/accordionBuilder';
 import { noop } from '@cbhq/cds-utils';
 
+import { Button } from '../../buttons/Button';
 import { CellMedia } from '../../cells/CellMedia';
 import { TextInput } from '../../controls/TextInput';
 import { TextBody } from '../../typography/TextBody';
@@ -14,6 +15,12 @@ export default {
   component: Accordion,
   title: 'Core Components/Accordion',
 };
+
+const STEPS = [
+  { itemKey: '1', nextKey: '2' },
+  { itemKey: '2', nextKey: '3' },
+  { itemKey: '3', nextKey: '1' },
+];
 
 const { BasicAccordion, NoMedia, NoSubtitle, TitleOnly, LongContent } = accordionBuilder({
   Accordion,
@@ -53,6 +60,26 @@ export const CustomStyle = () => {
       >
         <TextBody as="p">Accordion Content</TextBody>
       </AccordionItem>
+    </Accordion>
+  );
+};
+
+export const NestedButtons = () => {
+  const [activeKey, setActiveKey] = useState<string | null>(null);
+  return (
+    <Accordion activeKey={activeKey} setActiveKey={setActiveKey}>
+      {STEPS.map(({ itemKey, nextKey }) => (
+        <AccordionItem
+          key={itemKey}
+          itemKey={itemKey}
+          media={<CellMedia name="wallet" type="icon" />}
+          title={`Item ${itemKey}`}
+        >
+          <Button onClick={() => setActiveKey(nextKey)}>
+            <TextBody>Open Item {nextKey}</TextBody>
+          </Button>
+        </AccordionItem>
+      ))}
     </Accordion>
   );
 };

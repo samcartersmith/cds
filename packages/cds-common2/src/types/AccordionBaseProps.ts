@@ -1,8 +1,14 @@
+import { AccordionContextValue } from '../accordion/AccordionProvider';
+
 import { ListCellBaseProps } from './CellBaseProps';
 import { CollapsibleBaseProps } from './CollapsibleBaseProps';
 import { SharedProps } from './SharedProps';
 
 export type AccordionBaseProps = {
+  activeKey?: AccordionContextValue['activeKey'];
+  children:
+    | React.ReactElement<AccordionItemBaseProps>[]
+    | React.ReactElement<AccordionItemBaseProps>;
   /**
    * Default active accordion item key.
    * If not specified or does not exist in the accordion items,
@@ -12,10 +18,8 @@ export type AccordionBaseProps = {
   /**
    * Callback function fired when any of accordion items is pressed
    */
-  onChange?: (key: string) => void;
-  children:
-    | React.ReactElement<AccordionItemBaseProps>[]
-    | React.ReactElement<AccordionItemBaseProps>;
+  onChange?: AccordionContextValue['setActiveKey'];
+  setActiveKey?: AccordionContextValue['setActiveKey'];
 } & SharedProps;
 
 export type AccordionItemBaseProps = Omit<

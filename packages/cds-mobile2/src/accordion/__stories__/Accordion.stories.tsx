@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { accordionBuilder } from '@cbhq/cds-common2/internal/accordionBuilder';
 import { noop } from '@cbhq/cds-utils';
 
+import { Button } from '../../buttons/Button';
 import { CellMedia } from '../../cells';
 import { TextInput } from '../../controls';
 import { Example, ExampleProps, ExampleScreen } from '../../examples/ExampleScreen';
 import { TextBody } from '../../typography';
 import { Accordion, AccordionItem } from '..';
+
+const STEPS = [
+  { itemKey: '1', nextKey: '2' },
+  { itemKey: '2', nextKey: '3' },
+  { itemKey: '3', nextKey: '1' },
+];
 
 const { BasicAccordion, NoMedia, NoSubtitle, TitleOnly, LongContent } = accordionBuilder({
   Accordion,
@@ -25,6 +32,7 @@ const AccordionExample = ({ children, title }: ExampleProps) => {
 };
 
 const AccordionScreen = () => {
+  const [activeKey, setActiveKey] = useState<string | null>(null);
   return (
     <ExampleScreen>
       <AccordionExample title="Basic Accordion">
@@ -76,6 +84,22 @@ const AccordionScreen = () => {
           >
             <TextBody>Accordion Content</TextBody>
           </AccordionItem>
+        </Accordion>
+      </AccordionExample>
+      <AccordionExample title="Nested Buttons">
+        <Accordion activeKey={activeKey} setActiveKey={setActiveKey}>
+          {STEPS.map(({ itemKey, nextKey }) => (
+            <AccordionItem
+              key={itemKey}
+              itemKey={itemKey}
+              media={<CellMedia name="wallet" type="icon" />}
+              title={`Item ${itemKey}`}
+            >
+              <Button onPress={() => setActiveKey(nextKey)}>
+                <TextBody>Open Item {nextKey}</TextBody>
+              </Button>
+            </AccordionItem>
+          ))}
         </Accordion>
       </AccordionExample>
     </ExampleScreen>
