@@ -20,3 +20,5 @@ To deploy a git branch via Codeflow, the branch must be protected via Heimdall.
    `git push origin 8.0.0-alpha --force-with-lease`
 
 You now have a properly protected `8.0.0-alpha` branch that can be deployed via Codeflow
+
+Make changes to this new protected branch by creating a PR against it. Now that it's protected by Heimdall, pushing changes directly will trigger a merge freeze.
