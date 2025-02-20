@@ -153,7 +153,7 @@ const sidebars: SidebarsConfig = {
               id: 'components/media/HeroSquare/heroSquare',
               label: 'HeroSquare',
             },
-            { type: 'doc', id: 'components/media/icon', label: 'Icon' },
+            { type: 'doc', id: 'components/media/Icon/icon', label: 'Icon' },
             {
               type: 'doc',
               id: 'components/media/Pictogram/pictogram',
@@ -161,7 +161,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/media/remoteImage',
+              id: 'components/media/RemoteImage/remoteImage',
               label: 'RemoteImage',
             },
             {

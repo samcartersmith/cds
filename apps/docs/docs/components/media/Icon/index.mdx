@@ -1,0 +1,53 @@
+---
+id: icon
+title: Icon
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { IconBanner } from '@site/src/components/page/ComponentBanner/IconBanner';
+import { IconSheet } from '@site/src/components/page/IconSheet';
+
+import webPropsToc from ':docgen/cds-web2/icons/Icon/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/icons/Icon/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="Icon"
+    description="Icons are hand-crafted symbols for common visual actions and items."
+    webMetadata={{
+      import: "import { Icon } from '@cbhq/cds-web/icons/Icon'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/icons/Icon.tsx',
+      storybook: 'https://cds-storybook.cbhq.net/?path=/story/icon--sheet-1',
+      figma:
+        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=83-1337',
+    }}
+    mobileMetadata={{
+      import: "import { Icon } from '@cbhq/cds-mobile/icons/Icon'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/icons/Icon.tsx',
+      figma:
+        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=83-1337',
+    }}
+    banner={<IconBanner />}
+  />
+  <IconSheet />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>
