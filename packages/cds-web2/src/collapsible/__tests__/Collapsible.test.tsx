@@ -9,6 +9,7 @@ import { Button } from '../../buttons';
 import { DotCount } from '../../dots';
 import { HStack } from '../../layout';
 import { TextBody } from '../../typography/TextBody';
+import { DefaultThemeProvider } from '../../utils/test';
 import { Collapsible } from '../Collapsible';
 
 const { MockCollapsible } = collapsibleBuilder({
@@ -24,11 +25,21 @@ describe('Collapsible', () => {
     jest.spyOn(window, 'scrollTo').mockImplementation();
   });
   it('passes accessibility', async () => {
-    expect(await renderA11y(<MockCollapsible />)).toHaveNoViolations();
+    expect(
+      await renderA11y(
+        <DefaultThemeProvider>
+          <MockCollapsible />
+        </DefaultThemeProvider>,
+      ),
+    ).toHaveNoViolations();
   });
 
   it('shows and hides content', async () => {
-    render(<MockCollapsible />);
+    render(
+      <DefaultThemeProvider>
+        <MockCollapsible />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId('mock-collapse')).toHaveStyle('visibility: hidden');
     expect(screen.getByText('Collapsible Content')).not.toBeVisible();
 

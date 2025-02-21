@@ -22,7 +22,7 @@ const oldWrapperProps = {
 const newWrapperProps = {
   background: 'bg',
   alignItems: 'flex-start',
-  spacing: gutter,
+  padding: gutter,
   gap: 2,
 } as const;
 

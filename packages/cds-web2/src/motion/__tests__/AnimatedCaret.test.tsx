@@ -3,6 +3,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { Button } from '../../buttons';
 import { VStack } from '../../layout';
+import { DefaultThemeProvider } from '../../utils/test';
 import { AnimatedCaret } from '../AnimatedCaret';
 
 const rotates = [0, 90, 180, -90];
@@ -12,10 +13,12 @@ const MockAnimatedCaret = () => {
   const handleRotate = useCallback(() => setRotateIndex((prevIndex) => prevIndex + 1), []);
 
   return (
-    <VStack>
-      <Button onClick={handleRotate}>Rotate</Button>
-      <AnimatedCaret rotate={rotates[rotateIndex]} size="l" testID="mock-animated-caret" />
-    </VStack>
+    <DefaultThemeProvider>
+      <VStack>
+        <Button onClick={handleRotate}>Rotate</Button>
+        <AnimatedCaret rotate={rotates[rotateIndex]} size="l" testID="mock-animated-caret" />
+      </VStack>
+    </DefaultThemeProvider>
   );
 };
 

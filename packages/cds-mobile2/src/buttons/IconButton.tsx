@@ -38,7 +38,7 @@ const getIconStyles = memoize(function getIconStyles({
   });
   const spacingStyles = {
     marginLeft: offsetStart ? -theme.space[offsetStart] : undefined,
-    marginEnd: offsetEnd ? -theme.space[offsetEnd] : undefined,
+    marginRight: offsetEnd ? -theme.space[offsetEnd] : undefined,
   };
   const sizingStyles = {
     height: minHeight,

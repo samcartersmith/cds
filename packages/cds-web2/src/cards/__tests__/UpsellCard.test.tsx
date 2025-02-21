@@ -24,11 +24,21 @@ const compactProps: UpsellCardProps = {
 
 describe('UpsellCard', () => {
   it('passes accessibility', async () => {
-    expect(await renderA11y(<UpsellCard {...exampleProps} />)).toHaveNoViolations();
+    expect(
+      await renderA11y(
+        <DefaultThemeProvider>
+          <UpsellCard {...exampleProps} />
+        </DefaultThemeProvider>,
+      ),
+    ).toHaveNoViolations();
   });
 
   it('renders title, description, action, dismiss, and media', () => {
-    render(<UpsellCard {...exampleProps} media={<div data-testid="media" />} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} media={<div data-testid="media" />} />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByText('Test Title')).toBeInTheDocument();
     expect(screen.getByText('Test Description')).toBeInTheDocument();
     expect(screen.getByText('Test Action')).toBeInTheDocument();
@@ -37,7 +47,11 @@ describe('UpsellCard', () => {
   });
 
   it('renders dangerouslySetBackground', () => {
-    render(<UpsellCard {...exampleProps} dangerouslySetBackground="#d3d3d3" />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} dangerouslySetBackground="#d3d3d3" />
+      </DefaultThemeProvider>,
+    );
     expect(screen.getByTestId(exampleProps.testID as string)).toHaveStyle({
       backgroundColor: '#d3d3d3',
     });
@@ -45,7 +59,11 @@ describe('UpsellCard', () => {
 
   it('calls onActionPress on action button click', async () => {
     const onActionPressMock = jest.fn();
-    render(<UpsellCard {...exampleProps} onActionPress={onActionPressMock} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} onActionPress={onActionPressMock} />
+      </DefaultThemeProvider>,
+    );
     const actionButton = await screen.findByRole('button', { name: 'Test Action' });
     await actionButton.click();
     expect(onActionPressMock).toHaveBeenCalled();
@@ -53,27 +71,37 @@ describe('UpsellCard', () => {
 
   it('calls onDismissPress on dismiss button click', () => {
     const onDismissPressMock = jest.fn();
-    render(<UpsellCard {...exampleProps} onDismissPress={onDismissPressMock} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...exampleProps} onDismissPress={onDismissPressMock} />
+      </DefaultThemeProvider>,
+    );
     const dismissButton = screen.getByTestId(`${exampleProps.testID}-dismiss-button`);
     dismissButton.click();
     expect(onDismissPressMock).toHaveBeenCalled();
   });
   it('renders custom action button', () => {
     render(
-      <UpsellCard
-        {...exampleProps}
-        action={
-          <Button role="button" testID="custom-action-button">
-            Custom Action
-          </Button>
-        }
-      />,
+      <DefaultThemeProvider>
+        <UpsellCard
+          {...exampleProps}
+          action={
+            <Button role="button" testID="custom-action-button">
+              Custom Action
+            </Button>
+          }
+        />
+      </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('custom-action-button')).toBeInTheDocument();
   });
   it('does not render action button if action prop is not passed', () => {
     const { action, ...propsWithoutAction } = exampleProps;
-    render(<UpsellCard {...propsWithoutAction} />);
+    render(
+      <DefaultThemeProvider>
+        <UpsellCard {...propsWithoutAction} />
+      </DefaultThemeProvider>,
+    );
     const actionButton = screen.queryByText('Test Action');
     expect(actionButton).not.toBeInTheDocument();
   });

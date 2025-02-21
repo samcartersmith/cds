@@ -2,6 +2,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { IconButton } from '../IconButton';
 
 const name = 'arrowsHorizontal';
@@ -9,12 +10,20 @@ const name = 'arrowsHorizontal';
 describe('IconButton', () => {
   it('passes accessibility', async () => {
     expect(
-      await renderA11y(<IconButton accessibilityLabel="test-label" name={name} />),
+      await renderA11y(
+        <DefaultThemeProvider>
+          <IconButton accessibilityLabel="test-label" name={name} />
+        </DefaultThemeProvider>,
+      ),
     ).toHaveNoViolations();
   });
 
   it('renders a button by default', () => {
-    render(<IconButton name={name} />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton name={name} />
+      </DefaultThemeProvider>,
+    );
     const button = screen.getByRole('button');
 
     expect(button).toBeDefined();
@@ -23,7 +32,11 @@ describe('IconButton', () => {
 
   it('fires `onClick` when clicked', () => {
     const spy = jest.fn();
-    render(<IconButton name={name} onClick={spy} />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton name={name} onClick={spy} />
+      </DefaultThemeProvider>,
+    );
 
     fireEvent.click(screen.getByRole('button'));
 
@@ -33,7 +46,11 @@ describe('IconButton', () => {
   describe('disabled', () => {
     it('disables user interaction when disabled', () => {
       const spy = jest.fn();
-      render(<IconButton disabled name={name} onClick={spy} />);
+      render(
+        <DefaultThemeProvider>
+          <IconButton disabled name={name} onClick={spy} />
+        </DefaultThemeProvider>,
+      );
 
       fireEvent.click(screen.getByRole('button'));
 
@@ -42,7 +59,11 @@ describe('IconButton', () => {
 
     it('passes accessibility', async () => {
       expect(
-        await renderA11y(<IconButton disabled accessibilityLabel="test-label" name={name} />),
+        await renderA11y(
+          <DefaultThemeProvider>
+            <IconButton disabled accessibilityLabel="test-label" name={name} />
+          </DefaultThemeProvider>,
+        ),
       ).toHaveNoViolations();
     });
   });
@@ -50,7 +71,11 @@ describe('IconButton', () => {
   describe('loading', () => {
     it('disables user interaction when loading', () => {
       const spy = jest.fn();
-      render(<IconButton loading name={name} onClick={spy} />);
+      render(
+        <DefaultThemeProvider>
+          <IconButton loading name={name} onClick={spy} />
+        </DefaultThemeProvider>,
+      );
 
       fireEvent.click(screen.getByRole('button'));
 
@@ -59,20 +84,32 @@ describe('IconButton', () => {
 
     it('passes accessibility', async () => {
       expect(
-        await renderA11y(<IconButton loading accessibilityLabel="test-label" name={name} />),
+        await renderA11y(
+          <DefaultThemeProvider>
+            <IconButton loading accessibilityLabel="test-label" name={name} />
+          </DefaultThemeProvider>,
+        ),
       ).toHaveNoViolations();
     });
   });
 
   it('sets forwarded ref', () => {
     const ref = { current: null };
-    render(<IconButton ref={ref} name={name} />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton ref={ref} name={name} />
+      </DefaultThemeProvider>,
+    );
 
     expect(ref.current).toBeInstanceOf(HTMLElement);
   });
 
   it('passes down testID', () => {
-    render(<IconButton name={name} testID="test-test-id" />);
+    render(
+      <DefaultThemeProvider>
+        <IconButton name={name} testID="test-test-id" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('test-test-id')).toBeDefined();
   });

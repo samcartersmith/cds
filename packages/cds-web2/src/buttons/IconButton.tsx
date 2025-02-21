@@ -1,11 +1,11 @@
-import React, { forwardRef, memo, useCallback, useRef, useState } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
+import React, { forwardRef, memo } from 'react';
+import { css, cx } from '@linaria/core';
+import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
 import { IconName } from '@cbhq/cds-common2/types/IconName';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
-import { type BoxBaseProps, Box } from '../layout/Box';
-import { isNativeClick } from '../system/reakit-utils';
+import { type PressableBaseProps, Pressable } from '../system/Pressable';
 
 export const iconButtonDefaultElement = 'button';
 
@@ -14,7 +14,7 @@ export type IconButtonDefaultElement = typeof iconButtonDefaultElement;
 export type IconButtonVariant = 'primary' | 'secondary' | 'foregroundMuted';
 
 export type IconButtonBaseProps = Polymorphic.ExtendableProps<
-  BoxBaseProps,
+  Omit<PressableBaseProps, 'background' | 'children'>,
   {
     /** Reduce the inner padding within the button itself. */
     compact?: boolean;
@@ -36,19 +36,6 @@ export type IconButtonBaseProps = Polymorphic.ExtendableProps<
     disabled?: boolean;
     /** Mark the background and border as transparent until interacted with. */
     transparent?: boolean;
-    /**
-     * On web, maps to `aria-label` and defines a string value that labels an interactive element.
-     * On mobile, VoiceOver will read this string when a user selects the associated element.
-     * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
-     * @link https://reactnative.dev/docs/accessibility#accessibilitylabel
-     */
-    accessibilityLabel?: string;
-    /**
-     * Used to locate this element in unit and end-to-end tests.
-     * Under the hood, testID translates to data-testid on Web. On Mobile, testID
-     * stays the same - testID
-     */
-    testID?: string;
   }
 >;
 
@@ -57,165 +44,28 @@ export type IconButtonProps<AsComponent extends React.ElementType> = Polymorphic
   IconButtonBaseProps
 >;
 
-type IconButtonComponent = (<AsComponent extends React.ElementType = IconButtonDefaultElement>(
+type IconButtonComponent = (<AsComponent extends React.ElementType>(
   props: IconButtonProps<AsComponent>,
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
 
-const baseStyle = css`
-  min-height: 56px;
-  width: 56px;
-  border-radius: 56px;
-  color: var(--color-fg);
-  border-color: transparent;
-  display: inline-flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  appearance: none;
-  cursor: pointer;
-  user-select: none;
-  text-decoration: none;
+const flushSpaceStyle = css`
+  min-width: unset;
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+`;
+const flushStartStyle = css`
+  margin-left: calc(var(--space-2) * -1);
 
-  /* Removes weird bonus padding in Firefox */
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: default;
-    pointer-events: none;
-    touch-action: none;
+  &:dir(rtl) {
+    margin-right: calc(var(--space-2) * -1);
   }
 `;
-const compactStyle = css`
-  min-height: 40px;
-  width: 40px;
-  border-radius: 40px;
-`;
-const variantStyles: {
-  [key in NonNullable<IconButtonBaseProps['variant']>]: LinariaClassName;
-} = {
-  primary: css`
-    background-color: var(--color-bgPrimary);
-    color: var(--color-fgInverse);
-    &:hover {
-      background-color: var(--color-bgPrimaryHover);
-      opacity: 0.92;
-    }
+const flushEndStyle = css`
+  margin-right: calc(var(--space-2) * -1);
 
-    &:active {
-      background-color: var(--color-bgPrimaryPressed);
-      opacity: 0.86;
-    }
-
-    &:disabled {
-      background-color: var(--color-bgPrimaryDisabled);
-      opacity: 0.5;
-    }
-  `,
-  secondary: css`
-    background-color: var(--color-bgSecondary);
-
-    &:hover {
-      background-color: var(--color-bgSecondaryHover);
-      opacity: 0.92;
-    }
-
-    &:active {
-      background-color: var(--color-bgSecondaryPressed);
-      opacity: 0.86;
-    }
-
-    &:disabled {
-      background-color: var(--color-bgSecondaryDisabled);
-      opacity: 0.5;
-    }
-  `,
-  foregroundMuted: css`
-    background-color: var(--color-bgSecondary);
-    color: var(--color-fgMuted);
-
-    &:hover {
-      background-color: var(--color-bgSecondaryHover);
-      opacity: 0.92;
-    }
-
-    &:active {
-      background-color: var(--color-bgSecondaryPressed);
-      opacity: 0.86;
-    }
-
-    &:disabled {
-      background-color: var(--color-bgSecondaryDisabled);
-      opacity: 0.5;
-    }
-  `,
-};
-
-const transparentBaseStyle = css`
-  background-color: var(--color-transparent);
-
-  &:hover {
-    background-color: var(--color-transparentHover);
-  }
-
-  &:active {
-    background-color: var(--color-transparentPressed);
-  }
-
-  &:disabled {
-    background-color: var(--color-transparentDisabled);
-  }
-`;
-
-const transparentVariantStyle: {
-  [key in NonNullable<IconButtonBaseProps['variant']>]: LinariaClassName;
-} = {
-  primary: css`
-    color: var(--color-fgPrimary);
-  `,
-  secondary: css`
-    color: var(--color-fg);
-  `,
-  foregroundMuted: css`
-    color: var(--color-fgMuted);
-  `,
-};
-
-const loadingBaseStyle = css`
-  cursor: default;
-  pointer-events: none;
-  touch-action: none;
-`;
-
-const loadingVariantStyle: {
-  [key in NonNullable<IconButtonBaseProps['variant']>]: LinariaClassName;
-} = {
-  primary: css`
-    background-color: var(--color-bgPrimaryPressed);
-  `,
-  secondary: css`
-    background-color: var(--color-bgSecondaryPressed);
-  `,
-  foregroundMuted: css`
-    background-color: var(--color-bgSecondaryPressed);
-  `,
-};
-
-const focusRingStyle = css`
-  /* if we use the focus ring we need to turn off the browser stylesheet outline */
-  &:focus {
-    outline: none;
-  }
-  &:focus-visible {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-color: var(--color-bgPrimary);
-    outline-offset: 2px;
+  &:dir(rtl) {
+    margin-left: calc(var(--space-2) * -1);
   }
 `;
 
@@ -224,99 +74,59 @@ export const IconButton: IconButtonComponent = memo(
     <AsComponent extends React.ElementType>(
       {
         as,
-        testID,
+        alignItems = 'center',
+        background,
+        borderRadius = 1000,
+        borderWidth = 100,
+        color,
         compact = true,
+        className,
         name,
         disabled,
         transparent,
         variant = 'secondary',
-        style,
-        loading,
-        onKeyDown,
-        onKeyUp,
+        justifyContent = 'center',
         flush,
+        height = compact ? 40 : 56,
+        width = compact ? 40 : 56,
+        onPress,
         ...props
       }: IconButtonProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
     ) => {
-      const Component = (as ?? iconButtonDefaultElement) satisfies React.ElementType;
       const iconSize = compact ? 's' : 'm';
-      const color = 'currentColor';
-
-      const [active, setActive] = useState(false);
-      const isActiveRef = useRef(false);
-
-      const handleKeyDown = useCallback(
-        (event: React.KeyboardEvent<HTMLElement>) => {
-          onKeyDown?.(event);
-
-          if (
-            event.defaultPrevented ||
-            disabled ||
-            event.metaKey ||
-            event.target !== event.currentTarget
-          )
-            return;
-
-          const isEnter = event.key === 'Enter';
-          const isSpace = event.key === ' ';
-
-          if (isEnter || isSpace) {
-            if (isNativeClick(event)) return;
-            event.preventDefault();
-            // Trigger click on Enter
-            if (isEnter) event.currentTarget.click();
-            // Set active state on Space down
-            else if (isSpace && !isActiveRef.current) {
-              isActiveRef.current = true;
-              setActive(true);
-            }
-          }
-        },
-        [disabled, onKeyDown],
-      );
-
-      const handleKeyUp = useCallback(
-        (event: React.KeyboardEvent<HTMLElement>) => {
-          onKeyUp?.(event);
-
-          if (event.defaultPrevented || disabled || event.metaKey) return;
-
-          // Trigger click on Space up
-          if (isActiveRef.current && event.key === ' ') {
-            isActiveRef.current = false;
-            setActive(false);
-            event.currentTarget.click();
-          }
-        },
-        [disabled, onKeyUp],
-      );
+      const {
+        color: foregroundColor,
+        backgroundColor,
+        borderColor,
+      } = useButtonVariant(variant, transparent);
 
       return (
-        <Box
+        <Pressable
           ref={ref}
-          as={Component}
+          alignItems={alignItems}
+          as={as satisfies React.ElementType | undefined}
+          background={background ?? backgroundColor}
+          borderColor={borderColor}
+          borderRadius={borderRadius}
+          borderWidth={borderWidth}
           className={cx(
-            baseStyle,
-            focusRingStyle,
-            variantStyles[variant],
-            transparent && transparentBaseStyle,
-            transparent && transparentVariantStyle[variant],
-            compact && compactStyle,
-            loading && loadingBaseStyle,
-            loading && loadingVariantStyle[variant],
+            flush && flushSpaceStyle,
+            flush === 'start' && flushStartStyle,
+            flush === 'end' && flushEndStyle,
+            className,
           )}
-          data-active={active || undefined}
-          data-testid={testID}
-          disabled={disabled || loading}
-          onKeyDown={handleKeyDown}
-          onKeyUp={handleKeyUp}
-          style={style}
-          type="button"
+          color={color ?? foregroundColor}
+          disabled={disabled}
+          height={height}
+          justifyContent={justifyContent}
+          onPress={onPress}
+          transparentWhileInactive={transparent}
+          width={width}
           {...props}
         >
-          <Icon color={color} name={name} size={iconSize} />
-        </Box>
+          <Icon color="currentColor" name={name} size={iconSize} />
+        </Pressable>
       );
     },
   ),

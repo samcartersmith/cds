@@ -1,15 +1,18 @@
 import { render, screen } from '@testing-library/react';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 
 describe('ButtonGroup.test', () => {
   it('renders list', () => {
     render(
-      <ButtonGroup accessibilityLabel="Group">
-        <Button>Save</Button>
-        <Button variant="secondary">Cancel</Button>
-      </ButtonGroup>,
+      <DefaultThemeProvider>
+        <ButtonGroup accessibilityLabel="Group">
+          <Button>Save</Button>
+          <Button variant="secondary">Cancel</Button>
+        </ButtonGroup>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('list')).toBeTruthy();
@@ -18,10 +21,12 @@ describe('ButtonGroup.test', () => {
   });
   it('renders vertical when direction is vertical list', () => {
     render(
-      <ButtonGroup accessibilityLabel="Group" direction="vertical">
-        <Button>Save</Button>
-        <Button variant="secondary">Cancel</Button>
-      </ButtonGroup>,
+      <DefaultThemeProvider>
+        <ButtonGroup accessibilityLabel="Group" direction="vertical">
+          <Button>Save</Button>
+          <Button variant="secondary">Cancel</Button>
+        </ButtonGroup>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('list')).toBeTruthy();
@@ -31,10 +36,12 @@ describe('ButtonGroup.test', () => {
 
   it('renders block buttons', () => {
     render(
-      <ButtonGroup block accessibilityLabel="Group">
-        <Button>Save</Button>
-        <Button variant="secondary">Cancel</Button>
-      </ButtonGroup>,
+      <DefaultThemeProvider>
+        <ButtonGroup block accessibilityLabel="Group">
+          <Button>Save</Button>
+          <Button variant="secondary">Cancel</Button>
+        </ButtonGroup>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('list')).toBeTruthy();
@@ -44,10 +51,12 @@ describe('ButtonGroup.test', () => {
 
   it('renders null children', () => {
     render(
-      <ButtonGroup block accessibilityLabel="Group">
-        {null}
-        {null}
-      </ButtonGroup>,
+      <DefaultThemeProvider>
+        <ButtonGroup block accessibilityLabel="Group">
+          {null}
+          {null}
+        </ButtonGroup>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('list')).toBeTruthy();

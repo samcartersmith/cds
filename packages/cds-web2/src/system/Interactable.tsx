@@ -4,6 +4,7 @@ import { getBlendedColor } from '@cbhq/cds-common2/color/getBlendedColor';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   accessibleOpacityDisabled,
+  opacityDisabled,
   opacityHovered,
   opacityPressed,
 } from '@cbhq/cds-common2/tokens/interactable';
@@ -197,7 +198,7 @@ export const Interactable: InteractableComponent = forwardRef<
         // Disabled:
         [interactableDisabledBackground]: getBlendedColor({
           color: blendStyles?.disabledBackground ?? backgroundRgb,
-          opacity: accessibleOpacityDisabled,
+          opacity: opacityDisabled,
           colorScheme: theme.colorScheme,
           isDisabled: true,
         }),

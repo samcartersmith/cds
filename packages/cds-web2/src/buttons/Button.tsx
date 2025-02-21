@@ -1,81 +1,23 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
+import { css, cx } from '@linaria/core';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
 import { IconName } from '@cbhq/cds-common2/types/IconName';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
+import { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
-import { type BoxProps, Box } from '../layout/Box';
 import { Spinner } from '../loaders/Spinner';
+import { type PressableBaseProps, Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 export const spinnerHeight = 2.5;
 
-export type ButtonBaseProps = {
-  /** Mark the button as disabled. */
-  disabled?: boolean;
-  /** Mark the background and border as transparent until interacted with. */
-  transparent?: boolean;
-  /**
-   * Toggle design and visual variants.
-   * @default primary
-   */
-  variant?: 'primary' | 'secondary' | 'positive' | 'negative';
-  /** Change to block and expand to 100% of parent width. */
-  block?: boolean;
-  /** Children to render within the button. */
-  children: NonNullable<React.ReactNode>;
-  /** Reduce the inner padding within the button itself. */
-  compact?: boolean;
-  /**
-   * Set the end node
-   */
-  end?: React.ReactNode;
-  /** Icon to render at the end of the button. */
-  endIcon?: IconName;
-  /** Ensure the button aligns flush on the left or right.
-   * This prop will translate the entire button left/right,
-   * so take care to ensure it is not overflowing awkwardly
-   */
-  flush?: 'start' | 'end';
-  /** Mark the button as loading and display a spinner. */
-  loading?: boolean;
-  /**
-   * Set the start node
-   */
-  start?: React.ReactNode;
-  /** Icon to render at the start of the button. */
-  startIcon?: IconName;
-  /** Don't scale element on press. */
-  noScaleOnPress?: boolean;
-  /**
-   * Truncates text after wrapping to a defined number of lines.
-   * @default 1
-   */
-  numberOfLines?: number;
-  /**
-   * On web, maps to `aria-label` and defines a string value that labels an interactive element.
-   * On mobile, VoiceOver will read this string when a user selects the associated element.
-   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
-   * @link https://reactnative.dev/docs/accessibility#accessibilitylabel
-   */
-  accessibilityLabel?: string;
-  /**
-   * Used to locate this element in unit and end-to-end tests.
-   * Under the hood, testID translates to data-testid on Web. On Mobile, testID
-   * stays the same - testID
-   */
-  testID?: string;
-};
-
-export type ButtonProps = ButtonBaseProps & BoxProps<'button'>;
-
 const baseStyle = css`
-  min-height: 56px;
   min-width: 100px;
   padding-left: var(--space-4);
   padding-right: var(--space-4);
-  color: var(--color-fgInverse);
-  border-color: transparent;
-  border-radius: var(--borderRadius-900);
   text-decoration: none;
   display: inline-flex;
   text-align: center;
@@ -90,133 +32,7 @@ const baseStyle = css`
   outline: 0;
   overflow: visible;
   text-transform: none;
-  cursor: pointer;
-  user-select: none;
-
-  /* Removes weird bonus padding in Firefox */
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-    margin: 0;
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: default;
-    pointer-events: none;
-    touch-action: none;
-  }
 `;
-
-const variantStyles: {
-  [key in NonNullable<ButtonBaseProps['variant']>]: LinariaClassName;
-} = {
-  primary: css`
-    background-color: var(--color-bgPrimary);
-
-    &:hover {
-      background-color: var(--color-bgPrimaryHover);
-      opacity: 0.92;
-    }
-
-    &:active {
-      background-color: var(--color-bgPrimaryPressed);
-      opacity: 0.86;
-    }
-
-    &:disabled {
-      background-color: var(--color-bgPrimaryDisabled);
-      opacity: 1;
-    }
-  `,
-  secondary: css`
-    background-color: var(--color-bgSecondary);
-    color: var(--color-fg);
-
-    &:hover {
-      background-color: var(--color-bgSecondaryHover);
-      opacity: 0.92;
-    }
-
-    &:active {
-      background-color: var(--color-bgSecondaryPressed);
-      opacity: 0.86;
-    }
-
-    &:disabled {
-      background-color: var(--color-bgSecondaryDisabled);
-      opacity: 1;
-    }
-  `,
-  positive: css`
-    background-color: var(--color-bgPositive);
-
-    &:hover {
-      background-color: var(--color-bgPositiveHover);
-      opacity: 0.92;
-    }
-
-    &:active {
-      background-color: var(--color-bgPositivePressed);
-      opacity: 0.86;
-    }
-
-    &:disabled {
-      background-color: var(--color-bgPositiveDisabled);
-      opacity: 1;
-    }
-  `,
-  negative: css`
-    background-color: var(--color-bgNegative);
-
-    &:hover {
-      background-color: var(--color-bgNegativeHover);
-      opacity: 0.92;
-    }
-
-    &:active {
-      background-color: var(--color-bgNegativePressed);
-      opacity: 0.86;
-    }
-
-    &:disabled {
-      background-color: var(--color-bgNegativeDisabled);
-      opacity: 1;
-    }
-  `,
-};
-
-const transparentBaseStyle = css`
-  background-color: var(--color-transparent);
-
-  &:hover {
-    background-color: var(--color-transparentHover);
-  }
-  &:active {
-    background-color: var(--color-transparentPressed);
-  }
-
-  &:disabled {
-    background-color: var(--color-transparentDisabled);
-  }
-`;
-
-const transparentVariantStyle: {
-  [key in NonNullable<ButtonBaseProps['variant']>]: LinariaClassName;
-} = {
-  primary: css`
-    color: var(--color-fgPrimary);
-  `,
-  secondary: css`
-    color: var(--color-fg);
-  `,
-  positive: css`
-    color: var(--color-fgPositive);
-  `,
-  negative: css`
-    color: var(--color-fgNegative);
-  `,
-};
 
 const blockStyle = css`
   display: flex;
@@ -228,8 +44,6 @@ const compactStyle = css`
   min-width: auto;
   padding-left: var(--space-2);
   padding-right: var(--space-2);
-  min-height: 40px;
-  border-radius: var(--borderRadius-700);
 `;
 const spinnerContainerStyle = css`
   position: absolute;
@@ -270,36 +84,6 @@ const hiddenStyle = css`
 const middleNodeStyle = css`
   position: relative;
 `;
-const pressScaleStyle = css`
-  /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */
-  transform: scale(1);
-
-  &:active {
-    transform: scale(0.98);
-  }
-`;
-
-const loadingBaseStyle = css`
-  cursor: default;
-  pointer-events: none;
-  touch-action: none;
-`;
-const loadingVariantStyle: {
-  [key in NonNullable<ButtonBaseProps['variant']>]: LinariaClassName;
-} = {
-  primary: css`
-    background-color: var(--color-bgPrimaryPressed);
-  `,
-  secondary: css`
-    background-color: var(--color-bgSecondaryPressed);
-  `,
-  positive: css`
-    background-color: var(--color-bgPositivePressed);
-  `,
-  negative: css`
-    background-color: var(--color-bgNegativePressed);
-  `,
-};
 
 const flushSpaceStyle = css`
   min-width: unset;
@@ -321,112 +105,179 @@ const flushEndStyle = css`
   }
 `;
 
-const focusRingStyle = css`
-  /* if we use the focus ring we need to turn off the browser stylesheet outline */
-  &:focus {
-    outline: none;
-  }
-  &:focus-visible {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-color: var(--color-bgPrimary);
-    outline-offset: 2px;
-  }
-`;
-export const Button = memo(
-  forwardRef(function Button(
-    {
-      variant = 'primary',
-      transparent,
-      disabled,
-      block,
-      compact,
-      children,
-      numberOfLines,
-      startIcon,
-      endIcon,
-      start,
-      end,
-      loading,
-      accessibilityLabel,
-      testID,
-      noScaleOnPress,
-      flush,
-      type = 'button',
-      ...props
-    }: ButtonProps,
-    ref: React.ForwardedRef<HTMLButtonElement>,
-  ) {
-    const hasIcon = Boolean(startIcon ?? endIcon);
-    const iconSize = compact ? 's' : 'm';
-    const color = 'currentColor';
+export const buttonDefaultElement = 'button';
 
-    const spinnerStyle = useMemo(() => {
-      return {
-        width: '24px',
-        height: '24px',
-        border: '2px solid',
-        borderTopColor: 'var(--color-transparent)',
-        borderRightColor: 'var(--color-transparent)',
-        borderLeftColor: 'var(--color-transparent)',
-      };
-    }, []);
+export type ButtonDefaultElement = typeof buttonDefaultElement;
 
-    return (
-      <Box
-        ref={ref}
-        aria-busy={loading}
-        aria-label={accessibilityLabel ?? (loading ? 'Loading' : undefined)}
-        as="button"
-        className={cx(
-          baseStyle,
-          focusRingStyle,
-          variantStyles[variant],
-          !noScaleOnPress && pressScaleStyle,
-          transparent && transparentBaseStyle,
-          transparent && transparentVariantStyle[variant],
-          compact && compactStyle,
-          flush && flushSpaceStyle,
-          flush === 'start' && flushStartStyle,
-          flush === 'end' && flushEndStyle,
-          numberOfLines && unsetNoWrapStyle,
-          hasIcon && iconStyle,
-          block && blockStyle,
-          loading && loadingBaseStyle,
-          loading && loadingVariantStyle[variant],
-        )}
-        data-testid={testID}
-        disabled={disabled}
-        type={type}
-        {...props}
-      >
-        {start ? (
-          <span className={startNodeStyle}>{start}</span>
-        ) : startIcon ? (
-          <span className={startNodeStyle}>
-            <Icon color={color} name={startIcon} size={iconSize} />
-          </span>
-        ) : null}
+export type ButtonBaseProps = Polymorphic.ExtendableProps<
+  Omit<PressableBaseProps, 'background'>,
+  {
+    /** Background color of the overlay (element being interacted with). */
+    background?: ThemeVars.Color;
+    /** Mark the button as disabled. */
+    disabled?: boolean;
+    /** Mark the background and border as transparent until interacted with. */
+    transparent?: boolean;
+    /**
+     * Toggle design and visual variants.
+     * @default primary
+     */
+    variant?: 'primary' | 'secondary' | 'positive' | 'negative';
+    /** Change to block and expand to 100% of parent width. */
+    block?: boolean;
+    /** Children to render within the button. */
+    children: NonNullable<React.ReactNode>;
+    /** Reduce the inner padding within the button itself. */
+    compact?: boolean;
+    /**
+     * Set the end node
+     */
+    end?: React.ReactNode;
+    /** Icon to render at the end of the button. */
+    endIcon?: IconName;
+    /** Ensure the button aligns flush on the left or right.
+     * This prop will translate the entire button left/right,
+     * so take care to ensure it is not overflowing awkwardly
+     */
+    flush?: 'start' | 'end';
+    /** Mark the button as loading and display a spinner. */
+    loading?: boolean;
+    /** Uniquely identify the button within a form. */
+    name?: string;
+    /**
+     * Set the start node
+     */
+    start?: React.ReactNode;
+    /** Icon to render at the start of the button. */
+    startIcon?: IconName;
+    /** Don't scale element on press. */
+    noScaleOnPress?: boolean;
+    /**
+     * Truncates text after wrapping to a defined number of lines.
+     * @default 1
+     */
+    numberOfLines?: number;
+  } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
+    SharedProps
+>;
 
-        <span className={middleNodeStyle}>
-          {loading && (
-            <span className={spinnerContainerStyle}>
-              <Spinner color={color} size={spinnerHeight} style={spinnerStyle} />
-            </span>
+export type ButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  ButtonBaseProps
+>;
+
+type ButtonComponent = (<AsComponent extends React.ElementType = ButtonDefaultElement>(
+  props: ButtonProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const Button: ButtonComponent = memo(
+  forwardRef<React.ReactElement<ButtonBaseProps>, ButtonBaseProps>(
+    <AsComponent extends React.ElementType>(
+      {
+        as,
+        background,
+        color,
+        variant = 'primary',
+        transparent,
+        disabled,
+        block,
+        className,
+        compact,
+        borderRadius = compact ? 700 : 900,
+        height = compact ? 40 : 56,
+        borderWidth = 100,
+        children,
+        numberOfLines,
+        startIcon,
+        endIcon,
+        start,
+        end,
+        loading,
+        accessibilityLabel,
+        noScaleOnPress,
+        flush,
+        onPress,
+        ...props
+      }: ButtonProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const hasIcon = Boolean(startIcon ?? endIcon);
+      const iconSize = compact ? 's' : 'm';
+      const {
+        color: foregroundColor,
+        backgroundColor,
+        borderColor,
+      } = useButtonVariant(variant, transparent);
+
+      const spinnerStyle = useMemo(() => {
+        return {
+          width: '24px',
+          height: '24px',
+          border: '2px solid',
+          borderTopColor: 'var(--color-transparent)',
+          borderRightColor: 'var(--color-transparent)',
+          borderLeftColor: 'var(--color-transparent)',
+        };
+      }, []);
+
+      return (
+        <Pressable
+          ref={ref}
+          aria-label={accessibilityLabel ?? (loading ? 'Loading' : undefined)}
+          as={as satisfies React.ElementType | undefined}
+          background={background ?? backgroundColor}
+          borderColor={borderColor}
+          borderRadius={borderRadius}
+          borderWidth={borderWidth}
+          className={cx(
+            baseStyle,
+            compact && compactStyle,
+            numberOfLines && unsetNoWrapStyle,
+            hasIcon && iconStyle,
+            block && blockStyle,
+            flush && flushSpaceStyle,
+            flush === 'start' && flushStartStyle,
+            flush === 'end' && flushEndStyle,
+            className,
           )}
-          <Text color={color} font="headline" numberOfLines={numberOfLines}>
-            <span className={cx(loading && hiddenStyle)}>{children}</span>
-          </Text>
-        </span>
+          color={color ?? foregroundColor}
+          disabled={disabled}
+          height={height}
+          loading={loading}
+          noScaleOnPress={noScaleOnPress}
+          onPress={onPress}
+          transparentWhileInactive={transparent}
+          {...props}
+        >
+          {start ? (
+            <span className={startNodeStyle}>{start}</span>
+          ) : startIcon ? (
+            <span className={startNodeStyle}>
+              <Icon color="currentColor" name={startIcon} size={iconSize} />
+            </span>
+          ) : null}
 
-        {end ? (
-          <span className={endNodeStyle}>{end}</span>
-        ) : endIcon ? (
-          <span className={endNodeStyle}>
-            <Icon color={color} name={endIcon} size={iconSize} />
+          <span className={middleNodeStyle}>
+            {loading && (
+              <span className={spinnerContainerStyle}>
+                <Spinner color="currentColor" size={spinnerHeight} style={spinnerStyle} />
+              </span>
+            )}
+            <Text color="currentColor" font="headline" numberOfLines={numberOfLines}>
+              <span className={cx(loading && hiddenStyle)}>{children}</span>
+            </Text>
           </span>
-        ) : null}
-      </Box>
-    );
-  }),
+
+          {end ? (
+            <span className={endNodeStyle}>{end}</span>
+          ) : endIcon ? (
+            <span className={endNodeStyle}>
+              <Icon color="currentColor" name={endIcon} size={iconSize} />
+            </span>
+          ) : null}
+        </Pressable>
+      );
+    },
+  ),
 );

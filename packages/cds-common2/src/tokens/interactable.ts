@@ -33,3 +33,4 @@ export const opacityPressed: Record<ThemeVars.SpectrumHueStep, number> = {
 } as const;
 
 export const accessibleOpacityDisabled = 0.5;
+export const opacityDisabled = 0.75;
