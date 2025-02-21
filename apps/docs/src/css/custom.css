@@ -138,9 +138,19 @@ h6 {
   display: none;
 }
 
-.menu__list {
-  display: flex;
-  flex-direction: column;
+.menu__list .menu__list {
+  padding-left: 0;
+  margin-top: var(--space-2);
+}
+
+.menu__list .menu__list .menu__list {
+  padding-left: var(--space-1\.5);
+  padding-top: var(--space-1);
+  margin: 0;
+}
+
+.menu__link {
+  padding: var(--space-1) var(--space-2);
 }
 
 .menu__link:hover {
@@ -245,15 +255,24 @@ table thead th {
   background-color: rgb(var(--gray10));
 }
 
-.table-of-contents {
+.table-of-contents,
+.table-of-contents ul {
   display: flex;
   flex-direction: column;
   padding: 0 var(--space-0\.5);
-  gap: var(--space-2);
+  gap: var(--space-1\.5);
+}
+
+.table-of-contents ul {
+  padding-left: var(--space-1);
+  padding-right: 0;
 }
 
 .table-of-contents li {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
 .table-of-contents__left-border {

@@ -1,13 +1,16 @@
 .tableOfContentsLink {
-  font-family: var(--font-style-label);
-  font-size: var(--font-size-label-2);
-  line-height: var(--font-line-height-label-2);
+  font-family: var(--fontFamily-label2);
+  font-size: var(--fontSize-label2);
+  line-height: var(--lineHeight-label2);
+  font-weight: var(--fontWeight-label2);
   color: var(--color-fg);
+  font-optical-sizing: auto;
 }
 
 .tableOfContentsLinkActive {
-  font-size: var(--font-size-label-1);
-  line-height: var(--font-line-height-label-1);
-  font-weight: 500;
-  color: var(--color-fg);
+  color: var(--color-fgPrimary);
+}
+
+.tableOfContentsLink:hover {
+  color: var(--color-fgPrimary);
 }

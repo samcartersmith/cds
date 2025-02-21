@@ -161,7 +161,6 @@ export default function DocSidebarItemCategory({
         ThemeClassNames.docs.docSidebarItemCategoryLevel(level),
         'menu__list-item',
         collapsed && 'menu__list-item--collapsed',
-        styles.menuListItem,
         className,
       )}
     >
@@ -193,6 +192,7 @@ export default function DocSidebarItemCategory({
             justifyContent="space-between"
             paddingX={2}
             paddingY={1}
+            width="100%"
           >
             <HStack alignContent="center" alignItems="center" gap={1}>
               {typeof customProps?.icon === 'string' && (
@@ -239,14 +239,7 @@ export default function DocSidebarItemCategory({
             role={collapsible && !href ? 'button' : undefined}
             {...props}
           >
-            <HStack
-              alignContent="center"
-              alignItems="center"
-              gap={1}
-              justifyContent="space-between"
-              paddingX={0.5}
-              width="100%"
-            >
+            <HStack alignItems="center" gap={1} justifyContent="space-between" width="100%">
               <Text color="fg" font="label2">
                 {label}
               </Text>
