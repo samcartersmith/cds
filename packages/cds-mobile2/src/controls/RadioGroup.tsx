@@ -88,6 +88,9 @@ export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
 export type RadioGroupProps<T extends string> = {
   /** Handle change event when pressing on a radio option. */
   onChange?: RadioProps<T>['onChange'];
+
+  /** A11Y label to indicate order of radio buttons when focused on one button */
+  radioAccessibilityLabel?: string;
 } & Omit<AccessibilityProps, 'accessibilityLabelledBy'> &
   RadioGroupBaseProps<T> &
   SharedProps;
@@ -101,6 +104,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
     testID,
     accessibilityLabel,
     accessibilityHint,
+    radioAccessibilityLabel,
     ...restProps
   }: RadioGroupProps<T>,
   ref: React.ForwardedRef<View>,
@@ -114,6 +118,17 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
     [label, accessibilityLabel, accessibilityHint],
   );
 
+  if (
+    radioAccessibilityLabel &&
+    (!radioAccessibilityLabel.includes('{{number}}') ||
+      !radioAccessibilityLabel.includes('{{total}}'))
+  ) {
+    // eslint-disable-next-line no-console
+    console.error(
+      `radioAccessibilityLabel must include "{{number}}" and "{{total}}": ${radioAccessibilityLabel}`,
+    );
+  }
+
   return (
     <Group
       ref={ref}
@@ -123,18 +138,31 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
       {...restProps}
     >
       {label}
-      {entries<Record<T, string | React.ReactNode>>(options).map(([optionValue, option]) => (
-        <Radio<T>
-          key={optionValue}
-          accessibilityLabel={typeof option === 'string' ? option : undefined}
-          checked={value === optionValue}
-          onChange={onChange}
-          testID={testID ? `${testID}-${optionValue}` : undefined}
-          value={optionValue}
-        >
-          {option}
-        </Radio>
-      ))}
+      {entries<Record<T, string | React.ReactNode>>(options).map(([optionValue, option], index) => {
+        const checked = value === optionValue;
+
+        // RN doesn't natively support radio group length (e.g. "Radio button 1 of 3") being announced
+        // by screen readers, so we need to manually add this information to the accessibility label.
+        let accessibilityLabel: string | undefined;
+        if (typeof option === 'string') {
+          accessibilityLabel = `${option}. ${radioAccessibilityLabel
+            ?.replace('{{number}}', (index + 1).toString())
+            .replace('{{total}}', Object.keys(options).length.toString())}`;
+        }
+
+        return (
+          <Radio<T>
+            key={optionValue}
+            accessibilityLabel={accessibilityLabel}
+            checked={checked}
+            onChange={onChange}
+            testID={testID ? `${testID}-${optionValue}` : undefined}
+            value={optionValue}
+          >
+            {option}
+          </Radio>
+        );
+      })}
     </Group>
   );
   // Make forwardRef result function stay generic function type

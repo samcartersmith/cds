@@ -67,6 +67,7 @@ const RadioGroupScreen = () => {
                 accessibilityLabel="Select a currency to trade"
                 onChange={setGroup1}
                 options={options1}
+                radioAccessibilityLabel="Button {{number}} of {{total}}"
                 value={group1}
               />
               <RadioGroup<keyof typeof options2>
