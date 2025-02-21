@@ -245,7 +245,7 @@ const sidebars: SidebarsConfig = {
               id: 'components/overlay/portalContext',
               label: 'PortalContext',
             },
-            { type: 'doc', id: 'components/overlay/toast', label: 'Toast' },
+            { type: 'doc', id: 'components/overlay/Toast/toast', label: 'Toast' },
             { type: 'doc', id: 'components/overlay/Tooltip/tooltip', label: 'Tooltip' },
           ],
         },
@@ -275,7 +275,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/navigation/tabbedChips',
+              id: 'components/navigation/TabbedChips/tabbedChips',
               label: 'TabbedChips',
             },
             { type: 'doc', id: 'components/navigation/tabs', label: 'Tabs' },

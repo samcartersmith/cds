@@ -11,6 +11,7 @@ import { FloatingAssetCard } from '@cbhq/cds-web2/cards/FloatingAssetCard';
 import { NudgeCard } from '@cbhq/cds-web2/cards/NudgeCard';
 import { UpsellCard } from '@cbhq/cds-web2/cards/UpsellCard';
 import { CellMedia } from '@cbhq/cds-web2/cells/CellMedia';
+import { TabbedChips } from '@cbhq/cds-web2/chips/TabbedChips';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import * as CDSControls from '@cbhq/cds-web2/controls';
 import * as CDSDots from '@cbhq/cds-web2/dots';
@@ -24,7 +25,9 @@ import * as CDSLayout from '@cbhq/cds-web2/layout';
 import { Spinner } from '@cbhq/cds-web2/loaders/Spinner';
 import * as CDSMedia from '@cbhq/cds-web2/media';
 import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
+import { Toast } from '@cbhq/cds-web2/overlays/Toast';
 import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
+import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import * as CDSTypography from '@cbhq/cds-web2/typography';
 // Add react-live imports you need here
 const ReactLiveScope: Record<string, unknown> = {
@@ -39,6 +42,7 @@ const ReactLiveScope: Record<string, unknown> = {
   useA11yControlledVisibility,
   useCheckboxGroupState,
   useTheme,
+  useToast,
   // layout
   ...CDSLayout,
   Collapsible,
@@ -49,7 +53,10 @@ const ReactLiveScope: Record<string, unknown> = {
   CellMedia,
   // overlays
   Tooltip,
+  Toast,
   PortalProvider,
+  // navigation
+  TabbedChips,
   // typography
   ...CDSTypography,
   // input
