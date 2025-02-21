@@ -1,10 +1,9 @@
 import React from 'react';
 import { FooterLinkItem, useColorMode, useThemeConfig } from '@docusaurus/theme-common';
-import { cx } from '@linaria/core';
 import CDSLogo from '@site/static/img/logos/cds_logo.svg';
 import CDSLogoDark from '@site/static/img/logos/cds_logo_dark.svg';
-
-import styles from './styles.module.css';
+import { Box, HStack, VStack } from '@cbhq/cds-web2/layout';
+import { Link, Text } from '@cbhq/cds-web2/typography';
 
 export default function Footer(): JSX.Element | null {
   const { footer } = useThemeConfig();
@@ -17,29 +16,50 @@ export default function Footer(): JSX.Element | null {
   const { links } = footer;
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerLogoWrapper}>
-        <LogoComponent className={styles.footerLogo} />
-      </div>
-      <div className={styles.footerContent}>
-        <p className={cx(styles.footerText, 'body-text')}>
+    <Box
+      alignItems="stretch"
+      as="footer"
+      background="bgAlternate"
+      borderRadius={500}
+      flexDirection={{ base: 'column', tablet: 'row', desktop: 'row' }}
+      gap={{ base: 3, tablet: 0, desktop: 0 }}
+      padding={3}
+    >
+      <Box
+        flexShrink={0}
+        height={{ base: 80, tablet: 132, desktop: 132 }}
+        padding={{ base: 0, tablet: 2, desktop: 2 }}
+        width={{ base: 80, tablet: 132, desktop: 132 }}
+      >
+        <LogoComponent height="100%" width="100%" />
+      </Box>
+      <VStack
+        flexGrow={1}
+        gap={{ base: 5, tablet: 0, desktop: 0 }}
+        paddingLeft={{ base: 0, tablet: 3, desktop: 3 }}
+        paddingRight={{ base: 0, tablet: 5, desktop: 5 }}
+        paddingY={{ base: 0, tablet: 1, desktop: 1 }}
+      >
+        <Text flexGrow={1}>
           Coinbase Design is an open-source, adaptable system of guidelines, components, and tools
           that aid the best practices of user interface design for crypto products.
-        </p>
-        <div className={styles.footerLinksWrapper}>
+        </Text>
+        <HStack flexWrap="wrap" gap={3}>
           {(links as FooterLinkItem[]).map(({ label, href }) => (
-            <a
+            <Link
               key={label}
-              className={cx('headline-text', styles.footerLink)}
+              color="fg"
+              font="headline"
               href={href}
               rel="noopener noreferrer"
               target="_blank"
+              underline={false}
             >
               {label}
-            </a>
+            </Link>
           ))}
-        </div>
-      </div>
-    </footer>
+        </HStack>
+      </VStack>
+    </Box>
   );
 }

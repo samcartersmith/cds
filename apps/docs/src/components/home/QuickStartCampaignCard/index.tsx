@@ -2,9 +2,8 @@ import React, { useCallback } from 'react';
 import { useHistory } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
 import { Button } from '@cbhq/cds-web2/buttons';
-import { Divider } from '@cbhq/cds-web2/layout';
-
-import styles from './styles.module.css';
+import { Box, Divider, HStack, VStack } from '@cbhq/cds-web2/layout';
+import { Text } from '@cbhq/cds-web2/typography';
 
 export type QuickStartLinkProps = {
   title: string;
@@ -13,6 +12,8 @@ export type QuickStartLinkProps = {
   BannerComponentLight: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   BannerComponentDark: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
+
+const cardTitleFontConfig = { base: 'title4', desktop: 'title2' } as const;
 
 export const QuickStartCampaignCard = ({
   title,
@@ -29,14 +30,22 @@ export const QuickStartCampaignCard = ({
   }, [history, link]);
 
   return (
-    <div className={styles.cardWrapper}>
+    <VStack flexBasis="calc(50% - 16px)" gap={2}>
       <Divider />
-      <div className={styles.cardMainWrapper}>
-        <div className={styles.cardContentWrapper}>
-          <div className={styles.cardTextWrapper}>
-            <h3 className={styles.cardTitle}>{title}</h3>
-            <p className={styles.cardDescription}>{description}</p>
-          </div>
+      <HStack alignItems="flex-start" flexGrow={1} gap={2}>
+        <VStack alignSelf="stretch" flexGrow={1} gap={1}>
+          <VStack flexGrow={1} gap={{ base: 1, desktop: 1.5 }} paddingRight={2}>
+            <Text
+              as="h3"
+              fontFamily={cardTitleFontConfig}
+              fontSize={cardTitleFontConfig}
+              fontWeight={cardTitleFontConfig}
+              lineHeight={cardTitleFontConfig}
+            >
+              {title}
+            </Text>
+            <Text>{description}</Text>
+          </VStack>
           <Button
             compact
             transparent
@@ -49,11 +58,11 @@ export const QuickStartCampaignCard = ({
           >
             {link.label}
           </Button>
-        </div>
-        <div className={styles.bannerArtWrapper}>
+        </VStack>
+        <Box flexShrink={0} height={{ base: 88, desktop: 156 }} width={{ base: 88, desktop: 156 }}>
           <BannerComponent height="100%" width="100%" />
-        </div>
-      </div>
-    </div>
+        </Box>
+      </HStack>
+    </VStack>
   );
 };

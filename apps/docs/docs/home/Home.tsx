@@ -13,8 +13,16 @@ import IntroductionBannerLight from '@site/static/img/campaignCardBanners/introd
 import IntroductionBannerDark from '@site/static/img/campaignCardBanners/introduction_dark.svg';
 import ThemingBannerLight from '@site/static/img/campaignCardBanners/theming.svg';
 import ThemingBannerDark from '@site/static/img/campaignCardBanners/theming_dark.svg';
+import { Box, VStack } from '@cbhq/cds-web2/layout';
+import { Text } from '@cbhq/cds-web2/typography';
 
-import styles from './home.module.css';
+const sectionHeaderProps = {
+  as: 'h2',
+  fontFamily: { base: 'title2', desktop: 'display2' },
+  fontSize: { base: 'title2', desktop: 'display2' },
+  fontWeight: { base: 'title2', desktop: 'display2' },
+  lineHeight: { base: 'title2', desktop: 'display2' },
+} as const;
 
 const quickStartCards: QuickStartLinkProps[] = [
   {
@@ -154,24 +162,29 @@ const componentCards: ComponentCardProps[] = [
 
 export default function Home() {
   return (
-    <div className={styles.homePageWrapper}>
+    <VStack gap={8}>
       <Hero />
-      <section className={styles.sectionWrapper}>
-        <h2 className={styles.sectionHeader}>Quickstarts</h2>
-        <div className={styles.quickStartCardsWrapper}>
+      <VStack as="section" gap={4}>
+        <Text {...sectionHeaderProps}>Quickstarts</Text>
+        <Box flexDirection={{ base: 'row', phone: 'column' }} flexWrap="wrap" gap={4}>
           {quickStartCards.map((cardProps) => (
             <QuickStartCampaignCard key={cardProps.title} {...cardProps} />
           ))}
-        </div>
-      </section>
-      <section className={styles.sectionWrapper}>
-        <h2 className={styles.sectionHeader}>Components</h2>
-        <div className={styles.componentCardsWrapper}>
+        </Box>
+      </VStack>
+      <VStack as="section" gap={4}>
+        <Text {...sectionHeaderProps}>Components</Text>
+        <Box
+          columnGap={4}
+          flexDirection={{ base: 'row', phone: 'column' }}
+          flexWrap="wrap"
+          rowGap={5}
+        >
           {componentCards.map((cardProps) => (
             <ComponentCard key={cardProps.name} {...cardProps} />
           ))}
-        </div>
-      </section>
-    </div>
+        </Box>
+      </VStack>
+    </VStack>
   );
 }
