@@ -1,18 +1,18 @@
 ---
-id: switch
-title: Switch
+id: pressable
+title: Pressable
 platform_switcher_options: { web: true, mobile: true }
 hide_title: true
 ---
 
 import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
-import { SwitchBanner } from '@site/src/components/page/ComponentBanner/SwitchBanner';
 import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { PressableBanner } from '@site/src/components/page/ComponentBanner/PressableBanner';
 
 import MobilePropsTable from './_mobilePropsTable.mdx';
-import mobilePropsToc from ':docgen/cds-mobile2/controls/Switch/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/system/Pressable/toc-props';
 import WebPropsTable from './_webPropsTable.mdx';
-import webPropsToc from ':docgen/cds-web2/controls/Switch/toc-props';
+import webPropsToc from ':docgen/cds-web2/system/Pressable/toc-props';
 
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
@@ -23,20 +23,18 @@ import { VStack } from '@cbhq/cds-web2/layout';
 
 <VStack gap={5}>
   <ComponentHeader
-    title="Switch"
-    description="a control component that allows user to toggle between on and off."
+    title="Pressable"
+    description="Expands upon the Interactable component to provide press interactions with accessibility support."
     webMetadata={{
-      import: "import { Switch } from '@cbhq/cds-web/controls/Switch'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/controls/Switch.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-switch--normal',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=466-13810&t=K73gadcWiDv2aYlS-1'
+      import: "import { Pressable } from '@cbhq/cds-web/system/Pressable'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/system/Pressable.tsx',
+      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-pressable--variations',
     }}
     mobileMetadata={{
-      import: "import { Switch } from '@cbhq/cds-mobile/controls/Switch'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/controls/Switch.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=466-13810&t=K73gadcWiDv2aYlS-1'
+      import: "import { Pressable } from '@cbhq/cds-mobile/system/Pressable'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/system/Pressable.tsx',
     }}
-    banner={<SwitchBanner />}
+    banner={<PressableBanner />}
   />
 
   <ComponentTabsContainer

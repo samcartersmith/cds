@@ -1,0 +1,103 @@
+:::caution Types
+
+RadioGroup onChange fails without a string type declaration for setGroup fns.
+
+```
+const [group, setGroup] = useState<string>();
+```
+
+:::
+
+### Default
+
+```jsx live
+function RadioGroupDemo() {
+  // static values should live outside the component in product code.
+  const options = {
+    btc: 'Bitcoin',
+    eth: 'Ethereum',
+    dai: 'Dai',
+  };
+
+  const [group, setGroup] = useState('btc');
+
+  return (
+    <RadioGroup
+      aria-labelledby="choose-a-currency"
+      id="currency-radio-group"
+      label={
+        <Text as="span" font="headline" id="choose-a-currency">
+          Choose a currency
+        </Text>
+      }
+      name="radio-group1"
+      value={group}
+      onChange={setGroup}
+      options={options}
+    />
+  );
+}
+```
+
+### Custom Label
+
+```jsx live
+function RadioGroupDemo() {
+  const options = {
+    'yellow-jacket': 'Yellow Jacket',
+    bruin: 'Bruin',
+    bronco: 'Bronco',
+  };
+
+  const [group, setGroup] = useState();
+
+  return (
+    <VStack>
+      <Text as="span" font="headline" id="choose-a-mascot">
+        Choose a mascot
+      </Text>
+      <RadioGroup
+        id="mascot-radio-group"
+        aria-labelledby="choose-a-mascot"
+        name="radio-group2"
+        value={group}
+        onChange={setGroup}
+        options={options}
+      />
+    </VStack>
+  );
+}
+```
+
+### Horizontal
+
+```jsx live
+function RadioGroupDemo() {
+  // static values should live outside the component in product code.
+  const options = {
+    btc: 'Bitcoin',
+    eth: 'Ethereum',
+    dai: 'Dai',
+  };
+
+  const [group, setGroup] = useState();
+
+  return (
+    <RadioGroup
+      aria-labelledby="choose-a-currency2"
+      id="horizontal-radio-group"
+      label={
+        <Text as="span" font="headline" id="choose-a-currency2">
+          Choose a currency
+        </Text>
+      }
+      name="radio-group3"
+      value={group}
+      onChange={setGroup}
+      options={options}
+      gap={2}
+      direction="horizontal"
+    />
+  );
+}
+```

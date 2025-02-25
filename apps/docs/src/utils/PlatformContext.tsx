@@ -1,17 +1,27 @@
 import React, { createContext, useCallback, useContext, useMemo } from 'react';
+import { DocFrontMatter } from '@docusaurus/plugin-content-docs';
+import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import { useHistory } from '@docusaurus/router';
 import { useLocation } from '@docusaurus/router';
+
+type DocFrontMatterExtended = DocFrontMatter & {
+  platform_switcher_options?: { web: boolean; mobile: boolean };
+};
 
 type Platform = 'web' | 'mobile';
 
 type PlatformContextType = {
   platform: Platform;
   setPlatform: React.Dispatch<React.SetStateAction<Platform>>;
+  supportsWeb: boolean;
+  supportsMobile: boolean;
 };
 
 const PlatformContext = createContext<PlatformContextType>({
   platform: 'web',
   setPlatform: () => {},
+  supportsWeb: false,
+  supportsMobile: false,
 });
 
 const PLATFORM_SEARCH_PARAM_KEY = 'platform';
@@ -19,14 +29,24 @@ const PLATFORM_SEARCH_PARAM_KEY = 'platform';
 export const PlatformContextProvider = ({ children }: { children: React.ReactNode }) => {
   const history = useHistory();
   const { search } = useLocation();
+  const { frontMatter } = useDoc();
+  const typedFrontMatter = frontMatter as DocFrontMatterExtended;
+  const supportsWeb = typedFrontMatter.platform_switcher_options?.web || false;
+  const supportsMobile = typedFrontMatter.platform_switcher_options?.mobile || false;
 
   const platform = useMemo<Platform>(() => {
     const platform = new URLSearchParams(search).get(PLATFORM_SEARCH_PARAM_KEY);
     if (platform === 'web' || platform === 'mobile') {
       return platform;
     }
+    if (supportsWeb) {
+      return 'web';
+    }
+    if (supportsMobile) {
+      return 'mobile';
+    }
     return 'web';
-  }, [search]);
+  }, [search, supportsMobile, supportsWeb]);
 
   const setPlatform = useCallback(
     (platformUpdater: Platform | ((prevPlatform: Platform) => Platform)) => {
@@ -45,7 +65,10 @@ export const PlatformContextProvider = ({ children }: { children: React.ReactNod
     [history, search],
   );
 
-  const value = useMemo(() => ({ platform, setPlatform }), [platform, setPlatform]);
+  const value = useMemo(
+    () => ({ platform, setPlatform, supportsMobile, supportsWeb }),
+    [platform, setPlatform, supportsMobile, supportsWeb],
+  );
   return <PlatformContext.Provider value={value}>{children}</PlatformContext.Provider>;
 };
 

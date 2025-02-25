@@ -1,8 +1,9 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { DocFrontMatter } from '@docusaurus/plugin-content-docs';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import { useWindowSize } from '@docusaurus/theme-common';
-import { usePlatformContext } from '@site/src/utils/PlatformContext';
+import { PlatformSwitcher } from '@site/src/components/page/PlatformSwitcher';
+import { PlatformContextProvider } from '@site/src/utils/PlatformContext';
 import { usePropsTOC } from '@site/src/utils/toc/PropsTOCManager';
 import { useTOC } from '@site/src/utils/toc/TOCManager';
 import ContentVisibility from '@theme/ContentVisibility';
@@ -15,9 +16,7 @@ import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocVersionBadge from '@theme/DocVersionBadge';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import Footer from '@theme/Footer';
-import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { VStack } from '@cbhq/cds-web2/layout';
-import { SegmentedTabs } from '@cbhq/cds-web2/tabs/SegmentedTabs';
 import { Text } from '@cbhq/cds-web2/typography/Text';
 
 type DocFrontMatterExtended = DocFrontMatter & {
@@ -54,48 +53,8 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
     }),
     [isDesktop, shouldRenderPlatformSwitcher, shouldRenderToc],
   );
-
-  const supportsWeb = typedFrontMatter.platform_switcher_options?.web || false;
-  const supportsMobile = typedFrontMatter.platform_switcher_options?.mobile || false;
-
-  const { platform, setPlatform } = usePlatformContext();
-
-  const handlePlatformChange = useCallback(
-    (tab: TabValue | null) => {
-      setPlatform(tab?.id as 'web' | 'mobile');
-    },
-    [setPlatform],
-  );
-
-  const tabs = useMemo<TabValue[]>(
-    () => [
-      { id: 'web', label: 'Web', disabled: !typedFrontMatter.platform_switcher_options?.web },
-      {
-        id: 'mobile',
-        label: 'Mobile',
-        disabled: !typedFrontMatter.platform_switcher_options?.mobile,
-      },
-    ],
-    [
-      typedFrontMatter.platform_switcher_options?.mobile,
-      typedFrontMatter.platform_switcher_options?.web,
-    ],
-  );
-
-  const platformSwitcher = useMemo(() => {
-    const activeTab =
-      supportsWeb && supportsMobile
-        ? platform === 'web'
-          ? tabs[0]
-          : tabs[1]
-        : supportsWeb
-        ? tabs[0]
-        : tabs[1];
-    return <SegmentedTabs activeTab={activeTab} onChange={handlePlatformChange} tabs={tabs} />;
-  }, [handlePlatformChange, platform, supportsMobile, supportsWeb, tabs]);
-
   return (
-    <>
+    <PlatformContextProvider>
       <VStack maxWidth={contentMaxWidth}>
         <ContentVisibility metadata={metadata} />
         <DocVersionBanner />
@@ -104,7 +63,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
             <VStack as="article" gap={3}>
               <DocBreadcrumbs />
               <DocVersionBadge />
-              {isMobile && shouldRenderPlatformSwitcher && platformSwitcher}
+              {isMobile && shouldRenderPlatformSwitcher && <PlatformSwitcher />}
               <DocItemContent>{children}</DocItemContent>
               <DocItemFooter />
             </VStack>
@@ -123,7 +82,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
           position="sticky"
           top="calc(var(--ifm-navbar-height) + 1.5rem)"
         >
-          {shouldRenderPlatformSwitcher && platformSwitcher}
+          {shouldRenderPlatformSwitcher && <PlatformSwitcher />}
           <VStack gap={2} overflow="auto">
             {shouldRenderToc && (
               <Text font="headline" paddingX={0.5}>
@@ -134,6 +93,6 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
           </VStack>
         </VStack>
       )}
-    </>
+    </PlatformContextProvider>
   );
 }

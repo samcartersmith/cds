@@ -1,0 +1,34 @@
+:::caution Types
+
+RadioGroup onChange fails without a string type declaration for setGroup fns.
+
+```
+const [group, setGroup] = useState<string>();
+```
+
+:::
+
+### Default
+
+```jsx
+function RadioGroupDemo() {
+  const options = {
+    btc: 'Bitcoin',
+    eth: 'Ethereum',
+    dai: 'Dai',
+  };
+
+  const [group, setGroup] = useState('btc');
+
+  return (
+    <RadioGroup
+      id="currency-radio-group"
+      label="Choose a currency"
+      name="radio-group1"
+      value={group}
+      onChange={setGroup}
+      options={options}
+    />
+  );
+}
+```
