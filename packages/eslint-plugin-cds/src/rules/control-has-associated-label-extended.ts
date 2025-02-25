@@ -25,9 +25,7 @@ type MessageIds =
   | 'missingCalendarIconButtonAccessibilityLabel'
   | 'missingNextArrowAccessibilityLabel'
   | 'missingPreviousArrowAccessibilityLabel'
-  | 'missingCardDismissAccessibilityLabel'
-  | 'missingStartIconAccessibilityLabel'
-  | 'missingClearIconAccessibilityLabel';
+  | 'missingCardDismissAccessibilityLabel';
 
 type ConditionalCheckType = {
   configArray: string[];
@@ -59,7 +57,6 @@ const config = {
   checkForCalendarIconButtonAccessibilityLabelProps: ['DatePicker'],
   checkForArrowAccessibilityProps: ['DatePicker', 'Calendar', 'TabNavigation'],
   checkForCardDismissAccessibilityLabelProps: ['NudgeCard', 'UpsellCard'],
-  checkForSearchInputAccessibilityLabelProps: ['SearchInput'],
 
   allowedPackages: ['@cbhq/cds-common', '@cbhq/cds-web', '@cbhq/cds-web-visualization'],
 };
@@ -83,8 +80,6 @@ export const controlHasAssociatedLabelExtended: TSESLint.RuleModule<MessageIds> 
       missingNextArrowAccessibilityLabel: `Missing 'nextArrowAccessibilityLabel' on <{{componentName}}>.`,
       missingPreviousArrowAccessibilityLabel: `Missing 'previousArrowAccessibilityLabel' on <{{componentName}}>.`,
       missingCardDismissAccessibilityLabel: `Missing 'accessibilityLabel' on <{{componentName}}> for dismiss button.`,
-      missingStartIconAccessibilityLabel: `Missing 'startIconAccessibilityLabel' on <{{componentName}}>.`,
-      missingClearIconAccessibilityLabel: `Missing 'clearIconAccessibilityLabel' on <{{componentName}}>.`,
     },
     hasSuggestions: true,
     fixable: 'code',
@@ -129,8 +124,6 @@ export const controlHasAssociatedLabelExtended: TSESLint.RuleModule<MessageIds> 
           hasMissingNextArrowAccessibilityLabel,
           hasMissingPreviousArrowAccessibilityLabel,
           hasOnDismissPressProp,
-          hasMissingStartIconAccessibilityLabel,
-          hasMissingClearIconAccessibilityLabel,
         } = extractA11yAttributesState(node, node.openingElement);
 
         let isTextInputWithNegativeVariant = true;
@@ -199,18 +192,6 @@ export const controlHasAssociatedLabelExtended: TSESLint.RuleModule<MessageIds> 
             condition: !hasAccessibilityLabel && hasOnDismissPressProp,
             messageId: 'missingCardDismissAccessibilityLabel',
             suggestedPropToAdd: 'accessibilityLabel',
-          },
-          {
-            configArray: config.checkForSearchInputAccessibilityLabelProps,
-            condition: !hasMissingStartIconAccessibilityLabel,
-            messageId: 'missingStartIconAccessibilityLabel',
-            suggestedPropToAdd: 'startIconAccessibilityLabel',
-          },
-          {
-            configArray: config.checkForSearchInputAccessibilityLabelProps,
-            condition: !hasMissingClearIconAccessibilityLabel,
-            messageId: 'missingClearIconAccessibilityLabel',
-            suggestedPropToAdd: 'clearIconAccessibilityLabel',
           },
         ];
 

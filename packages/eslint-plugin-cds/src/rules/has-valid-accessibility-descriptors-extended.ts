@@ -18,9 +18,7 @@ type MessageIds =
   | 'missingHandleBarAccessibilityLabel'
   | 'missingHelperTextErrorIconAccessibilityLabel'
   | 'missingCalendarIconButtonAccessibilityLabel'
-  | 'missingCardDismissAccessibilityLabel'
-  | 'missingStartIconAccessibilityLabel'
-  | 'missingClearIconAccessibilityLabel';
+  | 'missingCardDismissAccessibilityLabel';
 
 type ConditionalCheckType = {
   configArray: string[];
@@ -51,7 +49,6 @@ const config = {
   checkForHelperTextErrorIconAccessibilityLabelProps: ['TextInput'],
   checkForCalendarIconButtonAccessibilityLabelProps: ['DatePicker'],
   checkForCardDismissAccessibilityLabelProps: ['NudgeCard', 'UpsellCard'],
-  checkForSearchInputAccessibilityLabelProps: ['SearchInput'],
 
   allowedPackages: ['@cbhq/cds-common', '@cbhq/cds-mobile', '@cbhq/cds-mobile-visualization'],
 };
@@ -71,8 +68,6 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
       missingHelperTextErrorIconAccessibilityLabel: `Missing 'helperTextErrorIconAccessibilityLabel' on <{{componentName}}>.`,
       missingCalendarIconButtonAccessibilityLabel: `Missing 'calendarIconButtonAccessibilityLabel' on <{{componentName}}>.`,
       missingCardDismissAccessibilityLabel: `Missing 'accessibilityLabel' on <{{componentName}}> for dismiss button.`,
-      missingStartIconAccessibilityLabel: `Missing 'startIconAccessibilityLabel' on <{{componentName}}>.`,
-      missingClearIconAccessibilityLabel: `Missing 'clearIconAccessibilityLabel' on <{{componentName}}>.`,
     },
     hasSuggestions: true,
     fixable: 'code',
@@ -115,8 +110,6 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
           hasHelperTextErrorIconAccessibilityLabel,
           hasCalendarIconButtonAccessibilityLabel,
           hasOnDismissPressProp,
-          hasMissingStartIconAccessibilityLabel,
-          hasMissingClearIconAccessibilityLabel,
         } = extractA11yAttributesState(node, node.openingElement);
 
         let isTextInputWithNegativeVariant = true;
@@ -166,16 +159,6 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
             configArray: config.checkForCardDismissAccessibilityLabelProps,
             condition: !hasAccessibilityLabel && hasOnDismissPressProp,
             messageId: 'missingCardDismissAccessibilityLabel',
-          },
-          {
-            configArray: config.checkForSearchInputAccessibilityLabelProps,
-            condition: !hasMissingStartIconAccessibilityLabel,
-            messageId: 'missingStartIconAccessibilityLabel',
-          },
-          {
-            configArray: config.checkForSearchInputAccessibilityLabelProps,
-            condition: !hasMissingClearIconAccessibilityLabel,
-            messageId: 'missingClearIconAccessibilityLabel',
           },
         ];
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.7 (2/25/2025 PST)
+
+#### 🐞 Fixes
+
+- Remove a11y labels for SearchInput icons lint rule. [[#3641](https://github.cbhq.net/frontend/cds/pull/3641)] [[DX-4461](https://jira.coinbase-corp.com/browse/DX-4461)]
+
 ## 0.0.6 (2/11/2025 PST)
 
 #### 🚀 Updates
