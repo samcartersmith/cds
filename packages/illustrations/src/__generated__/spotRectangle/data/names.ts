@@ -120,6 +120,8 @@ const names: SpotRectangleName[] = [
   'lightningNetworkSend',
   'linkCoinbaseWallet',
   'linkingYourWalletToYourCoinbaseAccount',
+  'liquidationBufferGreen',
+  'liquidationBufferRed',
   'loanValue',
   'login',
   'margin',

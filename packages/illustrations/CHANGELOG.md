@@ -8,6 +8,37 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.6.0 (2/25/2025 PST)
+
+#### 🚀 Updates
+
+- Feat: Publish illustrations 02/25/2025. [[#3642](https://github.cbhq.net/frontend/cds/pull/3642)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- coinbaseOneEarnCoinsLogo
+- sparkleCoinbaseOne
+
+#### Spot Rectangle
+
+- liquidationBufferGreen
+- liquidationBufferRed
+
+#### Hero Square
+
+- liquidationBufferGreen
+- liquidationBufferRed
+- liquidationBufferRedClose
+- refresh
+
+#### Spot Square
+
+- refresh
+
 ## 4.5.0 (2/12/2025 PST)
 
 #### 🚀 Updates

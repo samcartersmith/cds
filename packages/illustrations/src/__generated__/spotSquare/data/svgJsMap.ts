@@ -656,6 +656,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/referralsPeople-3').content,
     dark: () => require('../svgJs/dark/referralsPeople-3').content,
   },
+  refresh: {
+    light: () => require('../svgJs/light/refresh-0').content,
+    dark: () => require('../svgJs/dark/refresh-0').content,
+  },
   refreshMobileApp: {
     light: () => require('../svgJs/light/refreshMobileApp-4').content,
     dark: () => require('../svgJs/dark/refreshMobileApp-4').content,

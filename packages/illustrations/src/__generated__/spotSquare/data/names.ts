@@ -172,6 +172,7 @@ const names: SpotSquareName[] = [
   'readyToTrade',
   'recommendInvestments',
   'referralsPeople',
+  'refresh',
   'refreshMobileApp',
   'retailUSDCRewards',
   'rewardExpiring',

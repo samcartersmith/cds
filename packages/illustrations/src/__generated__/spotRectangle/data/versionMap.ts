@@ -204,6 +204,8 @@ const versionMap: Record<SpotRectangleName, number> = {
   leadingProtocol: 0,
   borrowLoan: 0,
   cb1BankTransfers: 0,
+  liquidationBufferRed: 0,
+  liquidationBufferGreen: 0,
 };
 
 export default versionMap;

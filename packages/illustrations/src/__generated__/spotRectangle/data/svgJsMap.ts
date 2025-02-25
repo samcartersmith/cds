@@ -448,6 +448,14 @@ const svgJsMap = {
     light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-4').content,
     dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-4').content,
   },
+  liquidationBufferGreen: {
+    light: () => require('../svgJs/light/liquidationBufferGreen-0').content,
+    dark: () => require('../svgJs/dark/liquidationBufferGreen-0').content,
+  },
+  liquidationBufferRed: {
+    light: () => require('../svgJs/light/liquidationBufferRed-0').content,
+    dark: () => require('../svgJs/dark/liquidationBufferRed-0').content,
+  },
   loanValue: {
     light: () => require('../svgJs/light/loanValue-1').content,
     dark: () => require('../svgJs/dark/loanValue-1').content,

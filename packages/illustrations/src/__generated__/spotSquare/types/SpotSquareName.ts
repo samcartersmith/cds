@@ -166,6 +166,7 @@ export type SpotSquareName =
   | 'readyToTrade'
   | 'recommendInvestments'
   | 'referralsPeople'
+  | 'refresh'
   | 'refreshMobileApp'
   | 'retailUSDCRewards'
   | 'rewardExpiring'

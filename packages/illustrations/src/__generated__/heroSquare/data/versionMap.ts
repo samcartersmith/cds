@@ -369,6 +369,10 @@ const versionMap: Record<HeroSquareName, number> = {
   layerThree: 0,
   coinbaseOneZeroPromotion: 0,
   coinbaseOneZeroPortal: 0,
+  liquidationBufferRedClose: 0,
+  liquidationBufferGreen: 0,
+  liquidationBufferRed: 0,
+  refresh: 0,
 };
 
 export default versionMap;

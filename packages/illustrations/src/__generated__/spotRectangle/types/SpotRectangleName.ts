@@ -114,6 +114,8 @@ export type SpotRectangleName =
   | 'lightningNetworkSend'
   | 'linkCoinbaseWallet'
   | 'linkingYourWalletToYourCoinbaseAccount'
+  | 'liquidationBufferGreen'
+  | 'liquidationBufferRed'
   | 'loanValue'
   | 'login'
   | 'margin'

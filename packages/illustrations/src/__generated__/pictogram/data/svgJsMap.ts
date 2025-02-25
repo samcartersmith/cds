@@ -260,6 +260,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/coinbaseOneEarnCoins-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneEarnCoins-2').content,
   },
+  coinbaseOneEarnCoinsLogo: {
+    light: () => require('../svgJs/light/coinbaseOneEarnCoinsLogo-0').content,
+    dark: () => require('../svgJs/dark/coinbaseOneEarnCoinsLogo-0').content,
+  },
   coinbaseOneFiat: {
     light: () => require('../svgJs/light/coinbaseOneFiat-2').content,
     dark: () => require('../svgJs/dark/coinbaseOneFiat-2').content,
@@ -1011,6 +1015,10 @@ const svgJsMap = {
   smsAuthenticate: {
     light: () => require('../svgJs/light/smsAuthenticate-2').content,
     dark: () => require('../svgJs/dark/smsAuthenticate-2').content,
+  },
+  sparkleCoinbaseOne: {
+    light: () => require('../svgJs/light/sparkleCoinbaseOne-0').content,
+    dark: () => require('../svgJs/dark/sparkleCoinbaseOne-0').content,
   },
   ssnCard: {
     light: () => require('../svgJs/light/ssnCard-2').content,

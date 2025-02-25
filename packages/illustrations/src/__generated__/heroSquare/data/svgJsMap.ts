@@ -856,6 +856,18 @@ const svgJsMap = {
     light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-3').content,
     dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-3').content,
   },
+  liquidationBufferGreen: {
+    light: () => require('../svgJs/light/liquidationBufferGreen-0').content,
+    dark: () => require('../svgJs/dark/liquidationBufferGreen-0').content,
+  },
+  liquidationBufferRed: {
+    light: () => require('../svgJs/light/liquidationBufferRed-0').content,
+    dark: () => require('../svgJs/dark/liquidationBufferRed-0').content,
+  },
+  liquidationBufferRedClose: {
+    light: () => require('../svgJs/light/liquidationBufferRedClose-0').content,
+    dark: () => require('../svgJs/dark/liquidationBufferRedClose-0').content,
+  },
   lowCost: {
     light: () => require('../svgJs/light/lowCost-0').content,
     dark: () => require('../svgJs/dark/lowCost-0').content,
@@ -1111,6 +1123,10 @@ const svgJsMap = {
   referralsWalletPhones: {
     light: () => require('../svgJs/light/referralsWalletPhones-2').content,
     dark: () => require('../svgJs/dark/referralsWalletPhones-2').content,
+  },
+  refresh: {
+    light: () => require('../svgJs/light/refresh-0').content,
+    dark: () => require('../svgJs/dark/refresh-0').content,
   },
   remittances: {
     light: () => require('../svgJs/light/remittances-3').content,

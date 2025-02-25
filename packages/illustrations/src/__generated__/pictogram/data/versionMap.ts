@@ -324,6 +324,8 @@ const versionMap: Record<PictogramName, number> = {
   premiumInvestor: 0,
   usdcLoan: 0,
   baseLogo: 0,
+  coinbaseOneEarnCoinsLogo: 0,
+  sparkleCoinbaseOne: 0,
 };
 
 export default versionMap;
