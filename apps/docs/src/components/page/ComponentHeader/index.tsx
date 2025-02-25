@@ -43,6 +43,20 @@ type ComponentHeaderProps = {
   bannerDark?: React.ReactNode;
 };
 
+type MetadataItemProps = {
+  label: string;
+  children: React.ReactNode;
+};
+
+const MetadataItem = ({ label, children }: MetadataItemProps) => (
+  <HStack alignContent="center" alignItems="center" gap={2} textAlign="center" width="100%">
+    <Text font="label1" width={100}>
+      {label}
+    </Text>
+    {children}
+  </HStack>
+);
+
 export const ComponentHeader = memo(
   ({
     title,
@@ -89,23 +103,14 @@ export const ComponentHeader = memo(
             activeBanner
           )}
         </VStack>
-        <VStack gap={4} padding={4} paddingTop={3}>
+        <VStack gap={4} padding={4} paddingTop={4}>
           <VStack gap={3}>
             <Text font="display2">{title}</Text>
             {description && <Text font="title4">{description}</Text>}
           </VStack>
-          <VStack gap={2}>
+          <VStack gap={1.5}>
             {activeMetadata.import && (
-              <HStack
-                alignContent="center"
-                alignItems="center"
-                gap={2}
-                textAlign="center"
-                width="100%"
-              >
-                <Text font="label1" width={100}>
-                  Import
-                </Text>
+              <MetadataItem label="Import">
                 <HStack
                   alignItems="center"
                   background="bg"
@@ -127,44 +132,37 @@ export const ComponentHeader = memo(
                     />
                   </Tooltip>
                 </HStack>
-              </HStack>
+              </MetadataItem>
             )}
-            {activeMetadata.source && (
-              <HStack alignContent="center" alignItems="center" gap={2}>
-                <Text font="label1" width={100}>
-                  Source
-                </Text>
-                <Text font="body">
-                  <Link href={activeMetadata.source} target="_blank">
-                    View source code
-                  </Link>
-                </Text>
-              </HStack>
-            )}
-            {activeMetadata.storybook && (
-              <HStack alignContent="center" alignItems="center" gap={2}>
-                <Text font="label1" width={100}>
-                  Storybook
-                </Text>
-                <Text font="body">
-                  <Link href={activeMetadata.storybook} target="_blank">
-                    View Storybook
-                  </Link>
-                </Text>
-              </HStack>
-            )}
-            {activeMetadata.figma && (
-              <HStack alignContent="center" alignItems="center" gap={2}>
-                <Text font="label1" width={100}>
-                  Figma
-                </Text>
-                <Text font="body">
-                  <Link href={activeMetadata.figma} target="_blank">
-                    View Figma
-                  </Link>
-                </Text>
-              </HStack>
-            )}
+            <VStack gap={2}>
+              {activeMetadata.source && (
+                <MetadataItem label="Source">
+                  <Text font="body">
+                    <Link href={activeMetadata.source} target="_blank">
+                      View source code
+                    </Link>
+                  </Text>
+                </MetadataItem>
+              )}
+              {activeMetadata.storybook && (
+                <MetadataItem label="Storybook">
+                  <Text font="body">
+                    <Link href={activeMetadata.storybook} target="_blank">
+                      View Storybook
+                    </Link>
+                  </Text>
+                </MetadataItem>
+              )}
+              {activeMetadata.figma && (
+                <MetadataItem label="Figma">
+                  <Text font="body">
+                    <Link href={activeMetadata.figma} target="_blank">
+                      View Figma
+                    </Link>
+                  </Text>
+                </MetadataItem>
+              )}
+            </VStack>
           </VStack>
         </VStack>
       </VStack>
