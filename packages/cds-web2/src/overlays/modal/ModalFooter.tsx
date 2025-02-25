@@ -8,7 +8,7 @@ import type { BoxProps } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { breakpoints } from '../../styles/media';
 
-export const baseStyle = css`
+const baseStyle = css`
   & > button,
   a {
     flex: none;

@@ -49,7 +49,7 @@ const closeButtonAccessibilityDefaults: ToastProps['closeButtonAccessibilityProp
   accessibilityLabel: 'close',
 };
 
-export const baseStyle = css`
+const baseStyle = css`
   position: fixed;
   left: 0;
   width: 100%;

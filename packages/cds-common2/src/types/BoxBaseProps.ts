@@ -110,7 +110,7 @@ export type BoxBackgroundProps = {
    * Set the background color of the box. Passing `true` will enable the default background,
    * otherwise a custom palette alias can be passed.
    */
-  background?: Exclude<ThemeVars.Color, 'divider' | 'stroke'>;
+  background?: ThemeVars.Color;
   /** @danger This is a migration escape hatch. It is not intended to be used normally. */
   dangerouslySetBackground?: string;
 };
