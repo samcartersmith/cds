@@ -7,6 +7,7 @@ import { Accordion } from '@cbhq/cds-web2/accordion/Accordion';
 import { AccordionItem } from '@cbhq/cds-web2/accordion/AccordionItem';
 import * as CDSButtons from '@cbhq/cds-web2/buttons';
 import { ContainedAssetCard } from '@cbhq/cds-web2/cards/ContainedAssetCard';
+import * as ContentCardComponents from '@cbhq/cds-web2/cards/ContentCard';
 import { FloatingAssetCard } from '@cbhq/cds-web2/cards/FloatingAssetCard';
 import { NudgeCard } from '@cbhq/cds-web2/cards/NudgeCard';
 import { UpsellCard } from '@cbhq/cds-web2/cards/UpsellCard';
@@ -77,6 +78,7 @@ const ReactLiveScope: Record<string, unknown> = {
   FloatingAssetCard,
   NudgeCard,
   UpsellCard,
+  ...ContentCardComponents,
   // other
   ...CDSDots,
   // utils

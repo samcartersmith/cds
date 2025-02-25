@@ -192,8 +192,23 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/cards/contentCard',
+              id: 'components/cards/ContentCard/contentCard',
               label: 'ContentCard',
+            },
+            {
+              type: 'doc',
+              id: 'components/cards/ContentCardHeader/contentCardHeader',
+              label: 'ContentCardHeader',
+            },
+            {
+              type: 'doc',
+              id: 'components/cards/ContentCardBody/contentCardBody',
+              label: 'ContentCardBody',
+            },
+            {
+              type: 'doc',
+              id: 'components/cards/ContentCardFooter/contentCardFooter',
+              label: 'ContentCardFooter',
             },
             {
               type: 'doc',

@@ -6,12 +6,12 @@ function DotCountBasic() {
   return (
     <VStack gap={2}>
       {counts.map((count) => (
-        <Box spacing={1} key={`DotCount-${count}`}>
+        <Box padding={1} key={`DotCount-${count}`}>
           <DotCount count={count} />
         </Box>
       ))}
       With max prop
-      <VStack alignItems="flex-start" spacing={1}>
+      <VStack alignItems="flex-start" padding={1}>
         <DotCount count={11} max={9} />
       </VStack>
     </VStack>

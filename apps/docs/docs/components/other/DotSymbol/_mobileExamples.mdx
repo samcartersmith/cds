@@ -6,7 +6,7 @@ function Placements() {
   return (
     <VStack gap={4}>
       {PIN_DIRECTIONS.map((pinDirection) => (
-        <VStack gap={4} spacing={1} key={`dotsymbol-placement-${pinDirection}`} spacingBottom={4}>
+        <VStack gap={4} padding={1} key={`dotsymbol-placement-${pinDirection}`} paddingBottom={4}>
           <DotSymbol size="m" pin={pinDirection} source={assets.btc.imageUrl}>
             <VStack bordered padding={1}>
               Child

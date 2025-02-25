@@ -1,0 +1,53 @@
+---
+id: contentCardBody
+title: ContentCardBody
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+
+import webPropsToc from ':docgen/cds-web2/cards/ContentCard/ContentCardBody/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/cards/ContentCard/ContentCardBody/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="ContentCardBody"
+    banner={<DefaultBanner />}
+    webMetadata={{
+      import: "import { ContentCardBody } from '@cbhq/cds-web/cards/ContentCard'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/cards/ContentCard/ContentCardBody.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-cards-contentcard--default',
+      figma:
+        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-CDS-Components?type=design&node-id=61%3A589&mode=design&t=VY6cW5sQK2K2giAk-1',
+    }}
+    mobileMetadata={{
+      import: "import { ContentCardBody } from '@cbhq/cds-mobile/cards/ContentCard'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/cards/ContentCard/ContentCardBody.tsx',
+      figma:
+        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-CDS-Components?type=design&node-id=61%3A589&mode=design&t=VY6cW5sQK2K2giAk-1',
+    }}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

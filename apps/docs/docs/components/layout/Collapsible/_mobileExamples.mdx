@@ -7,7 +7,7 @@ function BasicCollapsible() {
   return (
     <VStack gap={3}>
       <Button onPress={() => setCollapsed(!collapsed)}>Click me!</Button>
-      <Collapsible collapsed={collapsed} spacing={3}>
+      <Collapsible collapsed={collapsed} padding={3}>
         <VStack>Send a crypto gift! Share the gift of crypto this holiday season.</VStack>
       </Collapsible>
     </VStack>
