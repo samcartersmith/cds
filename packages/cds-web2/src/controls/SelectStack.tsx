@@ -23,7 +23,6 @@ const variantToHelperTextColor: Record<
   negative: 'fgNegative',
   primary: 'fgPrimary',
   foregroundMuted: 'fgMuted',
-  // TODO replace with new textSecondary color once it is added to the theme
   secondary: 'bgSecondary',
 };
 

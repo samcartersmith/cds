@@ -290,7 +290,7 @@ export const defaultTheme = {
     bgSecondaryWash: `rgb(${lightSpectrum.gray5})`,
     bgNegative: `rgb(${lightSpectrum.red60})`,
     bgNegativeWash: `rgb(${lightSpectrum.red0})`,
-    bgPositive: `rgb(${lightSpectrum.green60})`, // TO DO: confirm Positive values
+    bgPositive: `rgb(${lightSpectrum.green60})`,
     bgPositiveWash: `rgb(${lightSpectrum.green0})`,
     bgWarning: `rgb(${lightSpectrum.orange40})`,
     bgWarningWash: `rgb(${lightSpectrum.orange0})`,
@@ -306,16 +306,16 @@ export const defaultTheme = {
     bgElevation2: `rgb(${lightSpectrum.gray0})`,
 
     // Accent
-    accentSubtleGreen: `rgb(${lightSpectrum.green0})`, // TO DO: check if correct value, if exists
-    accentBoldGreen: `rgb(${lightSpectrum.green60})`, // TO DO: check if correct value, if exists
+    accentSubtleGreen: `rgb(${lightSpectrum.green0})`,
+    accentBoldGreen: `rgb(${lightSpectrum.green60})`,
     accentSubtleBlue: `rgb(${lightSpectrum.blue0})`,
     accentBoldBlue: `rgb(${lightSpectrum.blue60})`,
     accentSubtlePurple: `rgb(${lightSpectrum.purple0})`,
     accentBoldPurple: `rgb(${lightSpectrum.purple80})`,
     accentSubtleYellow: `rgb(${lightSpectrum.yellow0})`,
     accentBoldYellow: `rgb(${lightSpectrum.yellow30})`,
-    accentSubtleRed: `rgb(${lightSpectrum.red0})`, // TO DO: check if correct value, if exists
-    accentBoldRed: `rgb(${lightSpectrum.red60})`, // TO DO: check if correct value, if exists
+    accentSubtleRed: `rgb(${lightSpectrum.red0})`,
+    accentBoldRed: `rgb(${lightSpectrum.red60})`,
     accentSubtleGray: `rgb(${lightSpectrum.gray10})`,
     accentBoldGray: `rgb(${lightSpectrum.gray80})`,
     // Transparent
@@ -340,11 +340,11 @@ export const defaultTheme = {
     bgOverlay: `rgba(${darkSpectrum.gray80},0.33)`,
     bgPrimary: `rgb(${darkSpectrum.blue70})`,
     bgPrimaryWash: `rgb(${darkSpectrum.blue0})`,
-    bgSecondary: `rgb(${darkSpectrum.gray15})`, // TO DO: confirm correct colors. this color has same value as bgElevation2
-    bgSecondaryWash: `rgb(${darkSpectrum.gray0})`, // TO DO confirm correct colors
+    bgSecondary: `rgb(${darkSpectrum.gray15})`,
+    bgSecondaryWash: `rgb(${darkSpectrum.gray5})`,
     bgNegative: `rgb(${darkSpectrum.red60})`,
     bgNegativeWash: `rgb(${darkSpectrum.red0})`,
-    bgPositive: `rgb(${darkSpectrum.green60})`, // TO DO: confirm correct colors
+    bgPositive: `rgb(${darkSpectrum.green60})`,
     bgPositiveWash: `rgb(${darkSpectrum.green0})`,
     bgWarning: `rgb(${darkSpectrum.yellow50})`,
     bgWarningWash: `rgb(${darkSpectrum.orange0})`,
