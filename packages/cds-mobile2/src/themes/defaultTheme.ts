@@ -337,7 +337,7 @@ export const defaultTheme = {
     bg: `rgb(${darkSpectrum.gray0})`,
     bgAlternate: `rgb(${darkSpectrum.gray5})`,
     bgInverse: `rgb(${darkSpectrum.gray100})`,
-    bgOverlay: `rgba(${darkSpectrum.gray80},0.33)`,
+    bgOverlay: `rgba(${darkSpectrum.gray0},0.33)`,
     bgPrimary: `rgb(${darkSpectrum.blue70})`,
     bgPrimaryWash: `rgb(${darkSpectrum.blue0})`,
     bgSecondary: `rgb(${darkSpectrum.gray15})`,

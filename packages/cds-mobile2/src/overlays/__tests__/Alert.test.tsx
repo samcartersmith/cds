@@ -2,14 +2,23 @@ import { Animated, Modal as RNModal } from 'react-native';
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common2/internal/alertBuilder';
 
-import { Button } from '../../buttons';
+import { type ButtonProps, Button } from '../../buttons';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Alert } from '../Alert';
 import { PortalProvider } from '../PortalProvider';
 
+/*
+  This is a wrapper for the Button component that maps the onClick event to the onPress event. Ensures
+  alertBuilder converts <Button onClick> to <Button onPress>
+*/
+const ButtonWrapperWithEventMapping = ({
+  onClick,
+  ...props
+}: { onClick?: () => void } & ButtonProps) => <Button {...props} onPress={onClick} />;
+
 const { MockAlert } = alertBuilder({
   Alert,
-  Button,
+  Button: ButtonWrapperWithEventMapping,
   PortalProvider,
 } as CreateAlertProps);
 

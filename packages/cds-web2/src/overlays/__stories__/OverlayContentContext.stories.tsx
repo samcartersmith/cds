@@ -6,6 +6,7 @@ import {
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 
 import { VStack } from '../../layout/VStack';
+import { FullscreenModal } from '../modal/FullscreenModal';
 import { Modal } from '../modal/Modal';
 import { Overlay } from '../overlay/Overlay';
 
@@ -57,25 +58,24 @@ export const InModal = () => {
   );
 };
 
-// TO DO: Uncomment this when & associated disableA11yCheck below when FullscreenModal is migrated
-// export const InFullscreenModal = () => {
-//   const [show, setShow] = useState(false);
-//   return (
-//     <VStack>
-//       <button onClick={() => setShow(true)}>Show FullscreenModal</button>
-//       <FullscreenModal
-//         onRequestClose={() => setShow(false)}
-//         primaryContent={
-//           <VStack>
-//             <button onClick={() => setShow(false)}>Hide FullscreenModal</button>
-//             <ContextTest />
-//           </VStack>
-//         }
-//         visible={show}
-//       />
-//     </VStack>
-//   );
-// };
+export const InFullscreenModal = () => {
+  const [show, setShow] = useState(false);
+  return (
+    <VStack>
+      <button onClick={() => setShow(true)}>Show FullscreenModal</button>
+      <FullscreenModal
+        onRequestClose={() => setShow(false)}
+        primaryContent={
+          <VStack>
+            <button onClick={() => setShow(false)}>Hide FullscreenModal</button>
+            <ContextTest />
+          </VStack>
+        }
+        visible={show}
+      />
+    </VStack>
+  );
+};
 
 export const WithoutProvider = () => {
   return (

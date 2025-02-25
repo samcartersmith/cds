@@ -22,7 +22,7 @@ export type CreateAlertProps = {
     React.PropsWithChildren<AlertBaseProps & AlertA11yProps & { disablePortal?: boolean }>
   >;
   Button: React.ComponentType<
-    React.PropsWithChildren<ButtonBaseProps & SharedProps & { onPress?: () => void }>
+    React.PropsWithChildren<ButtonBaseProps & SharedProps & { onClick?: () => void }>
   >;
   PortalProvider: React.ComponentType<React.PropsWithChildren<unknown>>;
 };
@@ -33,7 +33,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
 
     return (
       <>
-        <Button onPress={toggleOn}>Show Alert</Button>
+        <Button onClick={toggleOn}>Show Alert</Button>
         <Alert
           body="Alert body type that can run over multiple lines, but should be kept short."
           dismissActionLabel={singleAction ? undefined : 'Cancel'}
@@ -53,7 +53,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
 
     return (
       <>
-        <Button onPress={toggleOn}>Show Alert</Button>
+        <Button onClick={toggleOn}>Show Alert</Button>
         <Alert
           body="Alert body type that can run over multiple lines, but should be kept short."
           dismissActionLabel={singleAction ? undefined : 'Cancel'}
@@ -97,7 +97,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
         return () => close();
       }, [close, showAlert]);
 
-      return <Button onPress={showAlert}>Show Alert</Button>;
+      return <Button onClick={showAlert}>Show Alert</Button>;
     }
 
     return (
@@ -125,7 +125,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
 
     return (
       <>
-        <Button onPress={toggleOn}>Show Alert</Button>
+        <Button onClick={toggleOn}>Show Alert</Button>
         <Alert
           disablePortal
           accessibilityLabel={accessibilityLabel}
