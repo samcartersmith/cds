@@ -167,8 +167,8 @@ const config: Config = {
       ],
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: { ...prismThemes.github, plain: { background: 'transparent' } },
+      darkTheme: { ...prismThemes.dracula, plain: { background: 'transparent' } },
     },
   },
 

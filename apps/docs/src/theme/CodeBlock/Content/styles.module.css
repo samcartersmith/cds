@@ -1,0 +1,30 @@
+.codeBlock {
+  margin-bottom: var(--space-4);
+}
+
+.codeBlockContent {
+  /* rtl:ignore */
+  direction: ltr;
+}
+
+.codeBlockLines {
+  float: left;
+}
+
+@media print {
+  .codeBlockLines {
+    white-space: pre-wrap;
+  }
+}
+.buttonGroup button {
+  transition: opacity var(--ifm-transition-fast) ease-in-out;
+  opacity: 0;
+}
+.codeBlock:hover .buttonGroup button {
+  opacity: 0.4;
+}
+
+.codeBlock:hover .buttonGroup button:hover,
+.codeBlock:focus-within .buttonGroup button:focus-visible {
+  opacity: 1;
+}
