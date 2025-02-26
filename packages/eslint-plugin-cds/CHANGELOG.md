@@ -4,7 +4,7 @@
 
 #### 🐞 Fixes
 
-- Remove a11y labels for SearchInput icons lint rule. [[#3641](https://github.cbhq.net/frontend/cds/pull/3641)] [[DX-4461](https://jira.coinbase-corp.com/browse/DX-4461)]
+- Add back lint rules for a11y labels needed in SearchInput component.
 
 ## 0.0.6 (2/11/2025 PST)
 

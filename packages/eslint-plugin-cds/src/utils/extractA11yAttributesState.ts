@@ -24,6 +24,8 @@ export const extractA11yAttributesState = (
     hasMissingNextArrowAccessibilityLabel: false,
     hasMissingPreviousArrowAccessibilityLabel: false,
     hasOnDismissPressProp: false,
+    hasMissingStartIconAccessibilityLabel: false,
+    hasMissingClearIconAccessibilityLabel: false,
   };
 
   // Complex checks involving spread props
@@ -40,6 +42,8 @@ export const extractA11yAttributesState = (
     nextArrowAccessibilityLabel: 'hasMissingNextArrowAccessibilityLabel',
     previousArrowAccessibilityLabel: 'hasMissingPreviousArrowAccessibilityLabel',
     onDismissPress: 'hasOnDismissPressProp',
+    startIconAccessibilityLabel: 'hasMissingStartIconAccessibilityLabel',
+    clearIconAccessibilityLabel: 'hasMissingClearIconAccessibilityLabel',
   };
 
   // Complex inner text check
