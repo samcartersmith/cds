@@ -1,0 +1,48 @@
+---
+id: tabLabel
+title: TabLabel
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+
+import webPropsToc from ':docgen/cds-web2/tabs/TabLabel/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/tabs/TabLabel/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="TabLabel"
+    webMetadata={{
+      import: "import { TabLabel } from '@cbhq/cds-web/tabs/TabLabel';",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tabs/TabLabel.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-tabs-tablabel--default',
+    }}
+    mobileMetadata={{
+      import: "import { TabLabel } from '@cbhq/cds-mobile/navigation/TabLabel'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tabs/TabLabel.tsx',
+    }}
+    banner={<DefaultBanner />}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

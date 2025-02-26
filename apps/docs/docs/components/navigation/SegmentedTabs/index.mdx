@@ -1,0 +1,54 @@
+---
+id: segmentedTabs
+title: SegmentedTabs
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+
+import webPropsToc from ':docgen/cds-web2/tabs/SegmentedTabs/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile2/tabs/SegmentedTabs/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="SegmentedTabs"
+    description="Segmented Tabs allow users to switch through different views of content on a page."
+    webMetadata={{
+      import: "import { SegmentedTabs } from '@cbhq/cds-web/tabs/SegmentedTabs';",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tabs/SegmentedTabs.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-tabs-segmented-tabs--all',
+      figma:
+        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=20859-1665',
+    }}
+    mobileMetadata={{
+      import: "import { SegmentedTabs } from '@cbhq/cds-mobile/tabs/SegmentedTabs'",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tabs/SegmentedTabs.tsx',
+      figma:
+        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=20859-1665',
+    }}
+    banner={<DefaultBanner />}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

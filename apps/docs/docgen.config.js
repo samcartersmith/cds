@@ -79,6 +79,7 @@ module.exports = {
     'layout/Box',
     'layout/Divider',
     'layout/Grid',
+    'layout/GridColumn',
     'layout/Fallback',
     'layout/HStack',
     'layout/Spacer',
@@ -91,6 +92,10 @@ module.exports = {
     'overlays/tooltip/Tooltip',
     'system/Interactable',
     'system/Pressable',
+    'tabs/SegmentedTabs',
+    'tabs/TabIndicator',
+    'tabs/TabLabel',
+    'tabs/TabNavigation',
     'typography/Text',
   ],
 };

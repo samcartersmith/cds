@@ -73,7 +73,7 @@ const sidebars: SidebarsConfig = {
               label: 'Dropdown',
             },
             { type: 'doc', id: 'components/layout/Grid/grid', label: 'Grid' },
-            { type: 'doc', id: 'components/layout/gridColumn', label: 'GridColumn' },
+            { type: 'doc', id: 'components/layout/GridColumn/gridColumn', label: 'GridColumn' },
             { type: 'doc', id: 'components/layout/HStack/hStack', label: 'HStack' },
             {
               type: 'doc',
@@ -275,7 +275,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/navigation/segmentedTabs',
+              id: 'components/navigation/SegmentedTabs/segmentedTabs',
               label: 'SegmentedTabs',
             },
             {
@@ -285,15 +285,24 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/navigation/tabNavigation',
+              id: 'components/navigation/TabNavigation/tabNavigation',
               label: 'TabNavigation',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/TabLabel/tabLabel',
+              label: 'TabLabel',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/TabIndicator/tabIndicator',
+              label: 'TabIndicator',
             },
             {
               type: 'doc',
               id: 'components/navigation/TabbedChips/tabbedChips',
               label: 'TabbedChips',
             },
-            { type: 'doc', id: 'components/navigation/tabs', label: 'Tabs' },
           ],
         },
         {

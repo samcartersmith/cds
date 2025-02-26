@@ -31,6 +31,7 @@ import { Toast } from '@cbhq/cds-web2/overlays/Toast';
 import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import * as CDSSystem from '@cbhq/cds-web2/system';
+import * as CDSTabs from '@cbhq/cds-web2/tabs';
 import * as CDSTypography from '@cbhq/cds-web2/typography';
 // Add react-live imports you need here
 const ReactLiveScope: Record<string, unknown> = {
@@ -60,6 +61,7 @@ const ReactLiveScope: Record<string, unknown> = {
   PortalProvider,
   // navigation
   TabbedChips,
+  ...CDSTabs,
   // typography
   ...CDSTypography,
   // input

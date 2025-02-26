@@ -1,0 +1,14 @@
+### Basic Example
+
+```jsx
+function Example() {
+  const tabs = [
+    { id: 'buy', label: 'Buy' },
+    { id: 'sell', label: 'Sell' },
+    { id: 'convert', label: 'Convert' },
+  ];
+  const [activeTab, updateActiveTab] = useState(tabs[0]);
+  const handleChange = useCallback((activeTab) => updateActiveTab(activeTab), []);
+  return <SegmentedTabs activeTab={activeTab} onChange={handleChange} tabs={tabs} />;
+}
+```
