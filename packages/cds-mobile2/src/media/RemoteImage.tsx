@@ -12,8 +12,7 @@ import {
 } from 'react-native';
 import Svg, { ClipPath, Defs, Image as SvgImage, Path, SvgXml } from 'react-native-svg';
 import { SvgCssUri } from 'react-native-svg/css';
-import { AspectRatio, avatarSizeMap, FixedValue, RemoteImageBaseProps } from '@cbhq/cds-common2';
-import { getRemoteImageWidthAndHeight } from '@cbhq/cds-common2/utils/getRemoteImageWidthAndHeight';
+import { AspectRatio, FixedValue, RemoteImageBaseProps } from '@cbhq/cds-common2';
 
 import { useTheme } from '../hooks/useTheme';
 
@@ -130,15 +129,17 @@ export const RemoteImage = memo(function RemoteImage({
   ...props
 }: RemoteImageProps) {
   const shapeRadius = shapeBorderRadius[shape];
-  const avatarSize = avatarSizeMap[size];
-  const { colorScheme } = useTheme();
+  const { colorScheme, avatarSize } = useTheme();
 
-  const { width: finalWidth, height: finalHeight } = getRemoteImageWidthAndHeight({
-    size,
-    width,
-    height,
-    avatarSize,
-  });
+  // If height and width are not provided, we default to avatarSize
+  const computedHeight = useMemo(
+    () => (width || height ? height : avatarSize[size]),
+    [width, height, avatarSize, size],
+  );
+  const computedWidth = useMemo(
+    () => (width || height ? width : avatarSize[size]),
+    [width, height, avatarSize, size],
+  );
 
   const useFallback = source === undefined;
   const transformedSource = useMemo(
@@ -191,9 +192,9 @@ export const RemoteImage = memo(function RemoteImage({
   const stylesWithDimensions = useMemo(
     () => [
       ...styles,
-      { width: finalWidth as DimensionValue, height: finalHeight as DimensionValue },
+      { width: computedWidth as DimensionValue, height: computedHeight as DimensionValue },
     ],
-    [finalHeight, finalWidth, styles],
+    [computedHeight, computedWidth, styles],
   );
 
   const isAccessible = props.accessible ?? !!props.accessibilityLabel;
@@ -206,8 +207,8 @@ export const RemoteImage = memo(function RemoteImage({
         style={styles}
         uri={isImageURISource(transformedSource) ? transformedSource?.uri ?? null : null}
         {...props}
-        height={finalHeight}
-        width={finalWidth}
+        height={computedHeight}
+        width={computedWidth}
       />
     );
   }
@@ -224,9 +225,9 @@ export const RemoteImage = memo(function RemoteImage({
         accessibilityLabel={fallbackAccessibilityLabel}
         accessibilityRole={props.accessibilityRole ?? 'image'}
         accessible={!!fallbackAccessibilityLabel}
-        height={finalHeight}
+        height={computedHeight}
         style={styles}
-        width={finalWidth}
+        width={computedWidth}
         xml={colorScheme === 'dark' ? darkFallback.content : lightFallback.content}
       />
     );

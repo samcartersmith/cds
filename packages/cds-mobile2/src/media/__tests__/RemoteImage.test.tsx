@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react-native';
-import { avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 
 import { defaultTheme } from '../../themes/defaultTheme';
-import { DefaultThemeProvider } from '../../utils/testHelpers';
+import { DefaultThemeProvider, theme } from '../../utils/testHelpers';
 import { RemoteImage } from '../RemoteImage';
 
 const mockSvgFetch = async () =>
@@ -76,15 +75,14 @@ describe('RemoteImage', () => {
         <RemoteImage source="https://images.coinbase.com/avatar?s=56" testID="remoteimage" />
       </DefaultThemeProvider>,
     );
-    const avatarSizeM = avatarSizeMap.m;
 
     const image = screen.queryByTestId('remoteimage');
 
     expect(image).toBeAccessible();
 
     expect(image).toHaveStyle({
-      width: avatarSizeM,
-      height: avatarSizeM,
+      width: theme.avatarSize.m,
+      height: theme.avatarSize.m,
     });
   });
 

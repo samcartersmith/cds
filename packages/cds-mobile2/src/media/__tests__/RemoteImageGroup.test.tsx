@@ -30,38 +30,38 @@ describe('RemoteImageGroup', () => {
     expect(imageWrapper).toBeAccessible();
   });
 
-  it('Margin are correctly applied for size m. First one has 0, and the following ones will have 1', () => {
+  it('Position is correctly applied for size m. The first is not positioned and the following will have increasing left positioning', () => {
     render(<MockRemoteImageGroup />);
 
     const remoteImage1 = screen.getByTestId(`${TEST_ID}-inner-box-0`);
 
     expect(remoteImage1).toHaveStyle({
-      marginRight: -0,
+      left: 'initial',
     });
 
     remoteImageIndices.slice(1).forEach((index) => {
       const imageChildren = screen.getByTestId(`${TEST_ID}-inner-box-${index}`);
 
       expect(imageChildren).toHaveStyle({
-        marginRight: -8,
+        left: -index * 8,
       });
     });
   });
 
-  it('Margin are correctly applied for size xxl. First one has 0, and the following ones will have 2', () => {
+  it('Position is correctly applied for size xxl. The first is not positioned and the following will have increasing left positioning', () => {
     render(<MockRemoteImageGroup size="xxl" />);
 
     const remoteImage1 = screen.getByTestId(`${TEST_ID}-inner-box-0`);
 
     expect(remoteImage1).toHaveStyle({
-      marginRight: -0,
+      left: 'initial',
     });
 
     remoteImageIndices.slice(1).forEach((index) => {
       const imageChildren = screen.getByTestId(`${TEST_ID}-inner-box-${index}`);
 
       expect(imageChildren).toHaveStyle({
-        marginRight: -16,
+        left: -index * 16,
       });
     });
   });

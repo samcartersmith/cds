@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react-native';
-import { AvatarSize, avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
+import type { AvatarSize } from '@cbhq/cds-common2/types';
 
-import { defaultTheme } from '../../themes/defaultTheme';
-import { DefaultThemeProvider } from '../../utils/testHelpers';
+import { DefaultThemeProvider, theme as defaultTheme } from '../../utils/testHelpers';
 import { Avatar, coloredFallbackTestID } from '../Avatar';
 
 const name = 'Test Name';
@@ -48,7 +47,7 @@ describe('Avatar', () => {
 
   it('renders different sizes', () => {
     function renderAvatar(size: AvatarSize) {
-      const px = avatarSizeMap[size];
+      const px = defaultTheme.avatarSize[size];
 
       render(
         <DefaultThemeProvider>

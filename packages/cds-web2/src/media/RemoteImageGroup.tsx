@@ -1,13 +1,32 @@
-/* eslint-disable react-native/no-unused-styles */
 import React, { Children, isValidElement, useMemo } from 'react';
-import { StyleSheet, Text, ViewStyle } from 'react-native';
-import { shapeBorderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
-import { RemoteImageGroupBaseProps, Shape } from '@cbhq/cds-common2/types';
+import { type LinariaClassName, css } from '@linaria/core';
+import type {
+  RemoteImageBaseProps,
+  RemoteImageGroupBaseProps,
+  Shape,
+} from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
+import { Text } from '../typography/Text';
 
-import type { RemoteImageProps } from './RemoteImage';
+const borderRadiusStyles: Record<Shape, LinariaClassName> = {
+  circle: css`
+    border-radius: 100%;
+  `,
+  square: css`
+    border-radius: 4px;
+  `,
+  hexagon: css`
+    border-radius: 0;
+  `,
+  squircle: css`
+    border-radius: 8px;
+  `,
+  rectangle: css`
+    border-radius: 0;
+  `,
+};
 
 export const RemoteImageGroup = ({
   children,
@@ -17,9 +36,9 @@ export const RemoteImageGroup = ({
   testID,
   ...props
 }: RemoteImageGroupBaseProps) => {
-  const { avatarSize, fontFamily, color } = useTheme();
+  const { avatarSize } = useTheme();
 
-  const shapeStyle = shapeStyles[shape];
+  const borderRadius = borderRadiusStyles[shape];
   const sizeAsNumber = typeof size === 'number' ? size : avatarSize[size];
   const overlapSpacing = sizeAsNumber <= 40 ? 8 : 16;
 
@@ -34,31 +53,15 @@ export const RemoteImageGroup = ({
     return arrayChildren;
   }, [children, excess]);
 
-  const typographyStyles = useMemo(() => {
-    return {
-      fontFamily: fontFamily.legal,
-      color: color.fg,
-      fontSize: sizeAsNumber * 0.4,
-    };
-  }, [sizeAsNumber, fontFamily, color]);
-
   return (
-    <Box
-      alignItems="center"
-      display="flex"
-      flexDirection="row"
-      position="relative"
-      testID={testID}
-      {...props}
-    >
+    <Box alignItems="center" display="flex" position="relative" testID={testID} {...props}>
       {groupChildren.map((child, index) => {
         if (!isValidElement(child)) {
           return null;
         }
 
         // dynamically apply uniform sizing and shape to all RemoteImage children elements
-        const clonedChild = React.cloneElement<RemoteImageProps>(child as React.ReactElement, {
-          testID: `${testID ? `${testID}-` : ''}image-${index}`,
+        const clonedChild = React.cloneElement<RemoteImageBaseProps>(child as React.ReactElement, {
           width: sizeAsNumber,
           height: sizeAsNumber,
           ...(child.props.shape ? undefined : { shape }),
@@ -84,17 +87,20 @@ export const RemoteImageGroup = ({
         <Box
           alignItems="center"
           background="bgOverlay"
+          className={borderRadius}
           height={sizeAsNumber}
           justifyContent="center"
           left={groupChildren.length * overlapSpacing * -1}
           position="relative"
-          style={shapeStyle}
           width={sizeAsNumber}
           zIndex={groupChildren.length * -1}
         >
           <Text
-            style={[typographyStyles, styles.centerText]}
-            testID={`${testID ? `${testID}-` : ''}excess-text`}
+            font="legal"
+            style={{
+              fontSize: sizeAsNumber * 0.4,
+            }}
+            testID={`${testID}-excess-text`}
           >
             +{excess}
           </Text>
@@ -103,27 +109,3 @@ export const RemoteImageGroup = ({
     </Box>
   );
 };
-
-const styles = StyleSheet.create({
-  centerText: {
-    textAlign: 'center',
-  },
-});
-
-export const shapeStyles = StyleSheet.create<Record<Shape, ViewStyle>>({
-  circle: {
-    borderRadius: shapeBorderRadius.circle,
-  },
-  squircle: {
-    borderRadius: shapeBorderRadius.squircle,
-  },
-  square: {
-    borderRadius: shapeBorderRadius.square,
-  },
-  rectangle: {
-    borderRadius: shapeBorderRadius.rectangle,
-  },
-  hexagon: {
-    borderRadius: shapeBorderRadius.hexagon,
-  },
-});

@@ -5,8 +5,7 @@ import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { Button, IconButton, IconCounterButton } from '../../../buttons';
 import { NativeTextArea, TextInput } from '../../../controls';
 import { Divider, HStack, VStack } from '../../../layout';
-// TODO update example with RemoteImageGroup when it is migrated
-import { RemoteImage } from '../../../media';
+import { RemoteImage, RemoteImageGroup } from '../../../media';
 import { Text } from '../../../typography/Text';
 import { LikeButton } from '../../LikeButton';
 import {
@@ -71,12 +70,12 @@ const exampleProps: {
   contentFooterProps: {
     children: (
       <>
-        {/* <RemoteImageGroup shape="circle" size={32}> */}
-        <RemoteImage source={assets.eth.imageUrl} />
-        <RemoteImage source={assets.polygon.imageUrl} />
-        <RemoteImage source={assets.uni.imageUrl} />
-        <RemoteImage source={assets.sushi.imageUrl} />
-        {/* </RemoteImageGroup> */}
+        <RemoteImageGroup shape="circle" size={32}>
+          <RemoteImage source={assets.eth.imageUrl} />
+          <RemoteImage source={assets.polygon.imageUrl} />
+          <RemoteImage source={assets.uni.imageUrl} />
+          <RemoteImage source={assets.sushi.imageUrl} />
+        </RemoteImageGroup>
         <Button compact variant="secondary">
           Share
         </Button>

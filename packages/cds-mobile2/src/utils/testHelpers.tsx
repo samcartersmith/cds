@@ -16,6 +16,8 @@ type DefaultThemeProviderProps = {
   activeColorScheme?: ColorScheme;
 };
 
+export const theme = defaultTheme;
+
 export const DefaultThemeProvider = ({
   children,
   theme = defaultTheme,

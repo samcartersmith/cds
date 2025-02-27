@@ -2,7 +2,6 @@ import React, { memo, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 import { colorSchemeMap } from '@cbhq/cds-common2/tokens/avatar';
 import { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
-import { avatarSizeMap } from '@cbhq/cds-common2/types/AvatarSize';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 
 import { useTheme } from '../hooks/useTheme';
@@ -32,8 +31,8 @@ export const Avatar = memo(
   }: AvatarBaseProps) => {
     const imgSrc = src ?? fallbackImageSrc;
     const shapeStyle = shapeStyles[shape];
-    const avatarSize = avatarSizeMap[size];
     const theme = useTheme();
+    const avatarSize = theme.avatarSize[size];
     const placeholderLetter = name?.charAt(0);
     const isLargestSize = size.includes('xx');
     const isCustomSize = typeof dangerouslySetSize !== 'undefined';

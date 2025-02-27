@@ -147,6 +147,7 @@ export const RemoteImage = memo(
           !source && fallbackStyle,
           className,
         )}
+        data-shape={shape}
         height={computedHeight}
         src={source}
         style={styles}
