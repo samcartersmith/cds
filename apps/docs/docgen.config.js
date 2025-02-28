@@ -46,6 +46,7 @@ module.exports = {
   sourceFiles: [
     'accordion/Accordion',
     'accordion/AccordionItem',
+    'buttons/AvatarButton',
     'buttons/Button',
     'buttons/ButtonGroup',
     'buttons/IconButton',
@@ -88,6 +89,8 @@ module.exports = {
     'media/Avatar',
     'media/RemoteImage',
     'numpad/Numpad',
+    'overlays/Alert',
+    'overlays/FullscreenAlert',
     'overlays/Toast',
     'overlays/tooltip/Tooltip',
     'system/Interactable',

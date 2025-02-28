@@ -138,7 +138,7 @@ const componentCards: ComponentCardProps[] = [
     bannerLightOverlaySrc: '/img/componentCardBanners/overlays_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/overlays_dark.svg',
     bannerDarkOverlaySrc: '/img/componentCardBanners/overlays_dark_hover.svg',
-    to: 'components/overlay/alert',
+    to: 'components/overlay/Alert',
   },
   {
     name: 'Navigation',

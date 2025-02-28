@@ -1,0 +1,45 @@
+### Normal AvatarButton usage
+
+```jsx
+<VStack gap={2}>
+  <HStack gap={2} alignItems="center">
+    <AvatarButton
+      alt="Sneezy"
+      src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
+    />
+    <AvatarButton
+      compact
+      alt="Sneezy"
+      src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
+    />
+  </HStack>
+  <HStack gap={2} alignItems="center">
+    <AvatarButton alt="Sneezy" />
+    <AvatarButton compact alt="Sneezy" />
+  </HStack>
+</VStack>
+```
+
+### Loading Avatar button
+
+```jsx
+<VStack gap={2}>
+  <HStack gap={2} alignItems="center">
+    <AvatarButton
+      alt="Sneezy"
+      src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
+      loading
+    />
+    <AvatarButton
+      compact
+      alt="Sneezy"
+      src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
+      loading
+    />
+  </HStack>
+  <HStack gap={2} alignItems="center">
+    <AvatarButton alt="Sneezy" loading />
+    <AvatarButton compact alt="Sneezy" loading />
+  </HStack>
+</VStack>
+```

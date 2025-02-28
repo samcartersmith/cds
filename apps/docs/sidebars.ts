@@ -97,6 +97,11 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Inputs',
           items: [
+            {
+              type: 'doc',
+              id: 'components/inputs/AvatarButton/avatarButton',
+              label: 'AvatarButton',
+            },
             { type: 'doc', id: 'components/inputs/Button/button', label: 'Button' },
             {
               type: 'doc',
@@ -253,7 +258,12 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Overlay',
           items: [
-            { type: 'doc', id: 'components/overlay/alert', label: 'Alert' },
+            { type: 'doc', id: 'components/overlay/Alert/alert', label: 'Alert' },
+            {
+              type: 'doc',
+              id: 'components/overlay/FullscreenAlert/fullscreenAlert',
+              label: 'FullscreenAlert',
+            },
             { type: 'doc', id: 'components/overlay/modal', label: 'Modal' },
             {
               type: 'doc',

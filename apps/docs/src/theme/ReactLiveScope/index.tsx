@@ -2,6 +2,8 @@ import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import * as CDSDataAssets from '@cbhq/cds-common2/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
+import { useAlert } from '@cbhq/cds-common2/overlays/useAlert';
+import { useModal } from '@cbhq/cds-common2/overlays/useModal';
 import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common2/tokens/dot';
 import { Accordion } from '@cbhq/cds-web2/accordion/Accordion';
 import { AccordionItem } from '@cbhq/cds-web2/accordion/AccordionItem';
@@ -26,9 +28,7 @@ import * as CDSIllustrations from '@cbhq/cds-web2/illustrations';
 import * as CDSLayout from '@cbhq/cds-web2/layout';
 import { Spinner } from '@cbhq/cds-web2/loaders/Spinner';
 import * as CDSMedia from '@cbhq/cds-web2/media';
-import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
-import { Toast } from '@cbhq/cds-web2/overlays/Toast';
-import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
+import * as CDSOverlays from '@cbhq/cds-web2/overlays';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import * as CDSSystem from '@cbhq/cds-web2/system';
 import * as CDSTabs from '@cbhq/cds-web2/tabs';
@@ -47,6 +47,8 @@ const ReactLiveScope: Record<string, unknown> = {
   useCheckboxGroupState,
   useTheme,
   useToast,
+  useAlert,
+  useModal,
   // layout
   ...CDSLayout,
   Collapsible,
@@ -56,9 +58,7 @@ const ReactLiveScope: Record<string, unknown> = {
   // cells
   CellMedia,
   // overlays
-  Tooltip,
-  Toast,
-  PortalProvider,
+  ...CDSOverlays,
   // navigation
   TabbedChips,
   ...CDSTabs,
