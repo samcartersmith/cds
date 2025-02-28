@@ -4,6 +4,7 @@ import { SharedProps } from '@cbhq/cds-common2';
 import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
+import { isDevelopment } from '@cbhq/cds-utils/env';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
@@ -119,6 +120,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   );
 
   if (
+    isDevelopment() &&
     radioAccessibilityLabel &&
     (!radioAccessibilityLabel.includes('{{number}}') ||
       !radioAccessibilityLabel.includes('{{total}}'))
