@@ -5,10 +5,7 @@ import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
 export type TagIntent = 'informational' | 'promotional';
-export type TagColorScheme = Extract<
-  ThemeVars.SpectrumHue,
-  'green' | 'purple' | 'blue' | 'yellow' | 'red' | 'gray'
->;
+export type TagColorScheme = 'green' | 'purple' | 'blue' | 'yellow' | 'red' | 'gray';
 
 type TagThemedProps = {
   /**
@@ -17,9 +14,9 @@ type TagThemedProps = {
    */
   colorScheme: TagColorScheme;
   /** @danger Custom background color */
-  background?: never;
+  background?: ThemeVars.SpectrumColor;
   /** @danger Custom text color */
-  color?: never;
+  color?: ThemeVars.SpectrumColor;
 };
 
 type TagWildcardProps = {
