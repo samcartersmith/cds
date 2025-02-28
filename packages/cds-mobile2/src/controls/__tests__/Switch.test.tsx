@@ -138,7 +138,7 @@ describe('Switch.test', () => {
     );
 
     expect(screen.getByTestId('test-test-id')).toHaveStyle({
-      backgroundColor: defaultTheme.light.bgAlternate,
+      backgroundColor: defaultTheme.light.bgTertiary,
     });
   });
 

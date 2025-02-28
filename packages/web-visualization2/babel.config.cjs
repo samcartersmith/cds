@@ -15,8 +15,8 @@ module.exports = {
     [
       require.resolve('@cbhq/cds-web-utils/babel/linariaPreset'),
       {
-        sourceDir: 'packages/web-visualization/src',
-        outputDir: 'packages/web-visualization/esm',
+        sourceDir: 'packages/web-visualization2/src',
+        outputDir: 'packages/web-visualization2/esm',
         linariaOptions: {
           classNameSlug: (hash, title) => (isTestEnv ? title : `cds-${title}-${hash}`),
         },

@@ -1,7 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
 import { m as motion } from 'framer-motion';
-import { curves, durations } from '@cbhq/cds-common2/motion/tokens';
 import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 
 import { useTheme } from '../hooks/useTheme';
@@ -12,27 +11,17 @@ import { useControlMotionProps } from './useControlMotionProps';
 
 const checkboxBorderWidth = 2;
 
-const FOCUS_PADDING = `calc(-1 * (4px + ${checkboxBorderWidth}px))`;
-
-const focusRing = css`
+const focusRingStyle = css`
   position: relative;
-  &::after {
-    content: '';
-    border: 2px solid var(--color-bgPrimary);
-    border-radius: 4px;
-    position: absolute;
-    left: ${FOCUS_PADDING};
-    top: ${FOCUS_PADDING};
-    right: ${FOCUS_PADDING};
-    bottom: ${FOCUS_PADDING};
-
-    opacity: 0;
-    transition: opacity ${durations.fast1}ms cubic-bezier(${curves.enterFunctional.join(',')});
+  /* if we use the focus ring we need to turn off the browser stylesheet outline */
+  &:focus {
+    outline: none;
   }
-
-  /* for control inputs */
-  .focus-visible + &::after {
-    opacity: 1;
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--color-bgPrimary);
+    outline-offset: 2px;
   }
 `;
 
@@ -72,7 +61,7 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
     >
       <motion.div
         key={colorScheme}
-        className={cx(checkbox, focusRing)}
+        className={cx(checkbox, focusRingStyle)}
         data-filled={checked || indeterminate}
         role="presentation"
         {...outerContainerMotionProps}

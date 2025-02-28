@@ -38,8 +38,6 @@ const scaledDownStyle = css`
 `;
 
 const baseStyle = css`
-  padding: 0;
-
   &[data-active='true'] {
     background-color: var(${interactablePressedBackground});
     > * {
@@ -121,6 +119,7 @@ export const Pressable: PressableComponent = forwardRef<
       target,
       type,
       transparentWhilePressed,
+      padding = 0,
       ...props
     }: PressableProps<AsComponent>,
     ref?: Polymorphic.Ref<AsComponent>,
@@ -273,6 +272,7 @@ export const Pressable: PressableComponent = forwardRef<
         onKeyUp={handleOnKeyUp}
         onMouseDown={handleOnMouseDown}
         onMouseDownCapture={handleOnMouseDownCapture}
+        padding={padding}
         rel={!rel && target === '_blank' ? 'noopener noreferrer' : rel}
         target={target}
         transparentWhilePressed={transparentWhilePressed}

@@ -295,6 +295,11 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
       color: var(--color-bgWarningWash);
     }
   `,
+  bgTertiary: css`
+    @media ${media.phone} {
+      color: var(--color-bgTertiary);
+    }
+  `,
   currentColor: css`
     @media ${media.phone} {
       color: var(--color-currentColor);
@@ -526,6 +531,11 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     @media ${media.phone} {
       background-color: var(--color-bgWarningWash);
+    }
+  `,
+  bgTertiary: css`
+    @media ${media.phone} {
+      background-color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`
@@ -780,6 +790,12 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.phone} {
       border-style: solid;
       border-color: var(--color-bgWarningWash);
+    }
+  `,
+  bgTertiary: css`
+    @media ${media.phone} {
+      border-style: solid;
+      border-color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`
@@ -1078,6 +1094,13 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.phone} {
       &:hover {
         color: var(--color-bgWarningWash);
+      }
+    }
+  `,
+  bgTertiary: css`
+    @media ${media.phone} {
+      &:hover {
+        color: var(--color-bgTertiary);
       }
     }
   `,
@@ -1404,6 +1427,13 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
       }
     }
   `,
+  bgTertiary: css`
+    @media ${media.phone} {
+      &:hover {
+        background-color: var(--color-bgTertiary);
+      }
+    }
+  `,
   currentColor: css`
     @media ${media.phone} {
       &:hover {
@@ -1724,6 +1754,13 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.phone} {
       &:hover {
         border-color: var(--color-bgWarningWash);
+      }
+    }
+  `,
+  bgTertiary: css`
+    @media ${media.phone} {
+      &:hover {
+        border-color: var(--color-bgTertiary);
       }
     }
   `,
@@ -2794,6 +2831,11 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     @media ${media.phone} {
       text-decoration-color: var(--color-bgWarningWash);
+    }
+  `,
+  bgTertiary: css`
+    @media ${media.phone} {
+      text-decoration-color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`

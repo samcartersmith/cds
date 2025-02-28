@@ -9,6 +9,13 @@ const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 
 if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
 
+const invalidCharacters = '-0123456789';
+// @ts-expect-error Missing linaria classNameSlug types
+const createClassName = (hash, title) => {
+  const needsEscaping = invalidCharacters.includes(title.charAt(0));
+  return `${needsEscaping ? '_' : ''}${title}-${hash}`;
+};
+
 /**
  * @type {import('@storybook/core-common').StorybookConfig}
  */
@@ -95,8 +102,7 @@ const config = {
             displayName: !isProduction,
             sourceMap: !isProduction,
             babelOptions: BABEL_OPTIONS,
-            // @ts-expect-error Missing linaria classNameSlug types
-            classNameSlug: (hash, title) => `${title}-${hash}`,
+            classNameSlug: createClassName,
           },
         });
       }

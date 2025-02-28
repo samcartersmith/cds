@@ -294,6 +294,7 @@ export const defaultTheme = {
     bgPositiveWash: `rgb(${lightSpectrum.green0})`,
     bgWarning: `rgb(${lightSpectrum.orange40})`,
     bgWarningWash: `rgb(${lightSpectrum.orange0})`,
+    bgTertiary: `rgb(${lightSpectrum.gray20})`,
     currentColor: 'currentColor',
     // Line
     bgLine: `rgba(${lightSpectrum.gray60},0.2)`,
@@ -348,6 +349,7 @@ export const defaultTheme = {
     bgPositiveWash: `rgb(${darkSpectrum.green0})`,
     bgWarning: `rgb(${darkSpectrum.yellow50})`,
     bgWarningWash: `rgb(${darkSpectrum.orange0})`,
+    bgTertiary: `rgb(${darkSpectrum.gray20})`,
     currentColor: 'currentColor',
     // Line
     bgLine: `rgba(${darkSpectrum.gray60},0.2)`,

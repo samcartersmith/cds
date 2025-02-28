@@ -162,7 +162,7 @@ export const HorizontalSpacing = () => (
 
 export const Offset = () => (
   <Box background="bgAlternate" padding={5}>
-    <Box margin={-3}>
+    <Box background="bg" margin={-3}>
       <TextBody as="p">All sides</TextBody>
     </Box>
   </Box>

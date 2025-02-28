@@ -1,7 +1,6 @@
 import React, { forwardRef, memo, useCallback } from 'react';
 import { css, cx } from '@linaria/core';
 import { m as motion } from 'framer-motion';
-import { curves, durations } from '@cbhq/cds-common2/motion/tokens';
 import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBaseProps';
@@ -15,33 +14,23 @@ import { useControlMotionProps } from './useControlMotionProps';
 
 const radioBorderWidth = 2;
 
-const FOCUS_PADDING = `calc(-1 * (4px + ${radioBorderWidth}px))`;
-
-const focusRing = css`
+const focusRingStyle = css`
   position: relative;
-  &::after {
-    content: '';
-    border: 2px solid var(--color-bgPrimary);
-    border-radius: var(--borderRadius-1000);
-    position: absolute;
-    left: ${FOCUS_PADDING};
-    top: ${FOCUS_PADDING};
-    right: ${FOCUS_PADDING};
-    bottom: ${FOCUS_PADDING};
-
-    opacity: 0;
-    transition: opacity ${durations.fast1}ms cubic-bezier(${curves.enterFunctional.join(',')});
+  /* if we use the focus ring we need to turn off the browser stylesheet outline */
+  &:focus {
+    outline: none;
   }
-
-  /* for control inputs */
-  .focus-visible + &::after {
-    opacity: 1;
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--color-bgPrimary);
+    outline-offset: 2px;
   }
 `;
 
 const radioSize = 20; // TO DO: This should come from theme controlSize
 
-const radio = css`
+const baseStyle = css`
   width: ${radioSize}px;
   appearance: radio;
   height: ${radioSize}px;
@@ -69,7 +58,7 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
   return (
     <Control ref={ref} background="bg" borderRadius={1000} label={children} type="radio" {...props}>
       <motion.div
-        className={cx(radio, focusRing)}
+        className={cx(baseStyle, focusRingStyle)}
         data-filled={checked}
         role="presentation"
         {...outerContainerMotionProps}

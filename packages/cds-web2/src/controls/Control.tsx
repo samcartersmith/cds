@@ -8,7 +8,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';
 import { Spacer } from '../layout/Spacer';
-import { Interactable, InteractableBaseProps } from '../system/Interactable';
+import { type InteractableBaseProps, Interactable } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
 import { Text } from '../typography/Text';
 import { isRtl } from '../utils/isRtl';
@@ -27,19 +27,27 @@ const inputBaseStyle = css`
   width: 100%;
   height: 100%;
   z-index: ${zIndex.interactable};
-  // turn off control input opacity for hidden control in interactable
-  &:active,
-  &:visited,
-  &:focus,
-  &:hover {
-    opacity: 0;
-  }
 `;
 
 const interactableStyle = css`
   height: fit-content;
   width: fit-content;
   position: relative;
+  &:focus-within {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--color-bgPrimary);
+    outline-offset: 1px;
+  }
+  // turn off control input opacity for hidden control in interactable
+  &:active,
+  &:visited,
+  &:focus,
+  &:hover {
+    .${inputBaseStyle} {
+      opacity: 0;
+    }
+  }
 `;
 
 export type ControlProps = FilteredHTMLAttributes<

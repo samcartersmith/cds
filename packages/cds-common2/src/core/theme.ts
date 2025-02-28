@@ -49,6 +49,7 @@ export namespace ThemeVars {
     | 'bgPositiveWash'
     | 'bgWarning'
     | 'bgWarningWash'
+    | 'bgTertiary'
     | 'bgLine'
     | 'bgLineHeavy'
     | 'bgLineInverse'

@@ -41,18 +41,6 @@ const thumbBackgroundStyle = css`
   background-color: rgb(255, 255, 255);
 `;
 
-const focusRingStyle = css`
-  &:focus {
-    outline: none;
-  }
-  &:focus-visible {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-color: var(--color-bgPrimary);
-    outline-offset: 2px;
-  }
-`;
-
 export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>;
 
 const MotionBox = motion(Box);
@@ -72,13 +60,13 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
 ) {
   const { outerContainerMotionProps } = useControlMotionProps({
     checked,
-    initialBackground: 'var(--color-bgSecondary)',
+    initialBackground: 'var(--color-bgTertiary)',
   });
 
   const switchNode = (
     <Control
       ref={ref}
-      background={checked ? 'bgPrimary' : 'bgSecondary'}
+      background={checked ? 'bgPrimary' : 'bgTertiary'}
       borderRadius={400}
       checked={checked}
       disabled={disabled}
@@ -87,12 +75,7 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
       type="checkbox"
       {...props}
     >
-      <motion.div
-        className={cx(track, !disabled && focusRingStyle)}
-        data-filled={checked}
-        tabIndex={disabled ? -1 : 0}
-        {...outerContainerMotionProps}
-      >
+      <motion.div className={cx(track)} data-filled={checked} {...outerContainerMotionProps}>
         <MotionBox
           animate={checked ? 'checked' : 'unchecked'}
           borderRadius={1000}
