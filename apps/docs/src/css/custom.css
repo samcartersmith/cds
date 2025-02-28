@@ -62,13 +62,6 @@ body {
   font-weight: 400;
 }
 
-.navbar {
-  padding: 0;
-  height: auto;
-  background-color: var(--color-bg);
-  box-shadow: none;
-}
-
 h1,
 h2,
 h3,
@@ -76,6 +69,22 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar {
+  padding: 0;
+  height: auto;
+  background-color: var(--color-bg);
+  box-shadow: none;
+}
+
+.navbar__logo {
+  width: var(--space-5);
+  height: var(--space-5);
 }
 
 /**
@@ -92,17 +101,6 @@ h6 {
 /* stylelint-disable-next-line a11y/no-display-none -- this one is okay */
 .pagination-nav {
   display: none;
-}
-
-.menu__list .menu__list {
-  padding-left: 0;
-  margin-top: var(--space-2);
-}
-
-.menu__list .menu__list .menu__list {
-  padding-left: var(--space-1\.5);
-  padding-top: var(--space-1);
-  margin: 0;
 }
 
 .menu__link {
@@ -192,6 +190,10 @@ table td {
   text-align: left;
 }
 
+table thead th {
+  background-color: rgb(var(--gray10));
+}
+
 table th:last-child,
 table td:last-child {
   border-right: none;
@@ -205,10 +207,6 @@ table tr:last-child td {
 table tr:nth-child(even),
 table tr:nth-child(odd) {
   background-color: transparent;
-}
-
-table thead th {
-  background-color: rgb(var(--gray10));
 }
 
 .table-of-contents,

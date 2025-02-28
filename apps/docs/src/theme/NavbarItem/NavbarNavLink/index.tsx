@@ -5,11 +5,8 @@ import { isRegexpStringMatch } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import type { Props } from '@theme/NavbarItem/NavbarNavLink';
 import { type Location } from 'history';
-import { HStack } from '@cbhq/cds-web2/layout';
+import { Box } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
-import { Text } from '@cbhq/cds-web2/typography/Text';
-
-import styles from './styles.module.css';
 
 export type NavbarNavLinkProps = Pick<
   Props,
@@ -35,23 +32,30 @@ export default function NavbarNavLink({
     return (
       <Pressable
         noScaleOnPress
+        alignItems="center"
         as={Link}
         background="bgSecondary"
-        className={styles.link}
+        borderRadius={1000}
+        color="fg"
+        font="headline"
+        hoverColor="fg"
         href={prependBaseUrlToHref ? normalizedHref : href}
       >
-        <Text font="headline">{label}</Text>
+        <Box as="span" paddingX={1.5} paddingY={0.5}>
+          {label}
+        </Box>
       </Pressable>
     );
   }
 
   return (
     <Pressable
+      bordered
       isNavLink
       noScaleOnPress
       as={Link}
       background="bgSecondary"
-      className={styles.link}
+      borderRadius={1000}
       to={toUrl}
       {...((activeBasePath || activeBaseRegex) && {
         isActive: (_: unknown, location: Location) =>
@@ -61,9 +65,9 @@ export default function NavbarNavLink({
       })}
       {...props}
     >
-      <HStack alignItems="stretch" paddingX={2} paddingY={1}>
-        <Text font="headline">{label}</Text>
-      </HStack>
+      <Box as="span" paddingX={1.5} paddingY={0.5}>
+        {label}
+      </Box>
     </Pressable>
   );
 }

@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react';
-import { useHistory } from '@docusaurus/router';
+import React from 'react';
+import Link from '@docusaurus/Link';
 import { useColorMode } from '@docusaurus/theme-common';
 import BannerArt from '@site/static/img/heroBanners/banner_art.svg';
 import BannerArtDark from '@site/static/img/heroBanners/banner_art_dark.svg';
@@ -14,10 +14,6 @@ const bannerTitleFontConfig = { base: 'title2', desktop: 'display2' } as const;
 export const Hero = () => {
   const { colorMode } = useColorMode();
   const BannerArtComponent = colorMode === 'dark' ? BannerArtDark : BannerArt;
-  const history = useHistory();
-  const navigateToGettingStarted = useCallback(() => {
-    history.push('/getting-started/introduction');
-  }, [history]);
 
   return (
     <Box
@@ -56,8 +52,11 @@ export const Hero = () => {
         <Button
           compact
           aria-label="Get started with our documentation"
+          as={Link}
           endIcon="forwardArrow"
-          onClick={navigateToGettingStarted}
+          hoverColor="fgInverse"
+          to="/getting-started/introduction"
+          variant="primary"
         >
           Get started
         </Button>

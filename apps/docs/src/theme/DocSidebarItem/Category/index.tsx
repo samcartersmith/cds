@@ -1,5 +1,5 @@
 /* eslint-disable react-perf/jsx-no-new-function-as-prop */
-import React, { type ComponentProps, useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import {
   findFirstSidebarItemLink,
@@ -7,26 +7,23 @@ import {
   useDocSidebarItemsExpandedState,
 } from '@docusaurus/plugin-content-docs/client';
 import {
-  Collapsible,
   ThemeClassNames,
   useCollapsible,
   usePrevious,
   useThemeConfig,
 } from '@docusaurus/theme-common';
 import { isSamePath } from '@docusaurus/theme-common/internal';
-import { translate } from '@docusaurus/Translate';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebarItem/Category';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import { IconName } from '@cbhq/cds-common2/types';
+import { Collapsible } from '@cbhq/cds-web2/collapsible';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
+import { Box, VStack } from '@cbhq/cds-web2/layout';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
 import { Text } from '@cbhq/cds-web2/typography/Text';
-
-import styles from './styles.module.css';
-
 // If we navigate to a category and it becomes active, it should automatically
 // expand itself
 function useAutoExpandActiveCategory({
@@ -68,44 +65,6 @@ function useCategoryHrefWithSSRFallback(item: Props['item']): string | undefined
     }
     return findFirstSidebarItemLink(item);
   }, [item, isBrowser]);
-}
-
-function CollapseButton({
-  collapsed,
-  categoryLabel,
-  onClick,
-}: {
-  collapsed: boolean;
-  categoryLabel: string;
-  onClick: ComponentProps<'button'>['onClick'];
-}) {
-  return (
-    <button
-      aria-expanded={!collapsed}
-      aria-label={
-        collapsed
-          ? translate(
-              {
-                id: 'theme.DocSidebarItem.expandCategoryAriaLabel',
-                message: "Expand sidebar category '{label}'",
-                description: 'The ARIA label to expand the sidebar category',
-              },
-              { label: categoryLabel },
-            )
-          : translate(
-              {
-                id: 'theme.DocSidebarItem.collapseCategoryAriaLabel',
-                message: "Collapse sidebar category '{label}'",
-                description: 'The ARIA label to collapse the sidebar category',
-              },
-              { label: categoryLabel },
-            )
-      }
-      className="clean-btn menu__caret"
-      onClick={onClick}
-      type="button"
-    />
-  );
 }
 
 export default function DocSidebarItemCategory({
@@ -168,6 +127,7 @@ export default function DocSidebarItemCategory({
         <Pressable
           background="bgSecondary"
           borderRadius={600}
+          borderWidth={0}
           onPress={
             collapsible
               ? (e) => {
@@ -204,22 +164,16 @@ export default function DocSidebarItemCategory({
           </HStack>
         </Pressable>
       ) : (
-        <div
-          className={cx(
-            'menu__list-item-collapsible',
-            isCurrentPage && 'menu__list-item-collapsible--active',
-            styles.menuListItemCollapsibleHover,
-          )}
-        >
-          <Link
+        <Box padding={0.5}>
+          <Pressable
+            noScaleOnPress
             aria-current={isCurrentPage ? 'page' : undefined}
             aria-expanded={collapsible && !href ? !collapsed : undefined}
-            className={cx(
-              'menu__link',
-              collapsible && 'menu__link--sublist',
-              isActive && 'menu__link--active',
-              level === 1 && 'menu__link--collapsible',
-            )}
+            as={Link}
+            background="transparent"
+            borderRadius={1000}
+            borderWidth={0}
+            flexGrow={1}
             href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
             onClick={
               collapsible
@@ -239,7 +193,14 @@ export default function DocSidebarItemCategory({
             role={collapsible && !href ? 'button' : undefined}
             {...props}
           >
-            <HStack alignItems="center" gap={1} justifyContent="space-between" width="100%">
+            <HStack
+              alignItems="center"
+              gap={1}
+              justifyContent="space-between"
+              paddingX={1.5}
+              paddingY={0.5}
+              width="100%"
+            >
               <Text color="fg" font="label2">
                 {label}
               </Text>
@@ -252,33 +213,24 @@ export default function DocSidebarItemCategory({
                 />
               )}
             </HStack>
-          </Link>
-          {href && collapsible && (
-            <CollapseButton
-              categoryLabel={label}
-              collapsed={collapsed}
-              onClick={(e) => {
-                e.preventDefault();
-                updateCollapsed();
-              }}
-            />
-          )}
-        </div>
+          </Pressable>
+        </Box>
       )}
 
       <Collapsible
-        lazy
-        as="ul"
-        className={cx('menu__list', styles.menuListCollapsible)}
         collapsed={collapsed}
+        paddingLeft={level === 1 ? 0 : 1.5}
+        paddingTop={level === 1 ? 2 : 1}
       >
-        <DocSidebarItems
-          activePath={activePath}
-          items={items}
-          level={level + 1}
-          onItemClick={onItemClick}
-          tabIndex={collapsed ? -1 : 0}
-        />
+        <VStack as="ul" gap={1} paddingLeft={0} width="100%">
+          <DocSidebarItems
+            activePath={activePath}
+            items={items}
+            level={level + 1}
+            onItemClick={onItemClick}
+            tabIndex={collapsed ? -1 : 0}
+          />
+        </VStack>
       </Collapsible>
     </li>
   );

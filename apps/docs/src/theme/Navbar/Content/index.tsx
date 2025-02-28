@@ -32,7 +32,7 @@ export default function NavbarContent(): JSX.Element {
       <HStack alignItems="center" gap={1.5}>
         {searchBarItem && <SearchBar />}
         {windowSize === 'desktop' && (
-          <HStack borderRadius={1000} gap={0} height={40} overflow="hidden">
+          <HStack background="bgSecondary" borderRadius={1000} gap={1} padding={0.5}>
             {linkItems.map((item) => (
               <NavbarItem key={item.title} {...item} />
             ))}

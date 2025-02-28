@@ -33,7 +33,6 @@ export const ComponentCard = ({
   const bannerOverlaySrc = colorMode === 'dark' ? bannerDarkOverlaySrc : bannerLightOverlaySrc;
   return (
     <VStack
-      alignItems="stretch"
       as={Link}
       background="bgSecondary"
       borderRadius={400}
@@ -61,7 +60,6 @@ export const ComponentCard = ({
           {name}
         </Text>
         <Text
-          background="bgAlternate"
           borderRadius={100}
           color="fgMuted"
           fontFamily={componentCountFontConfig}
@@ -70,6 +68,8 @@ export const ComponentCard = ({
           lineHeight={componentCountFontConfig}
           paddingX={0.5}
           paddingY={0.25}
+          // TODO: remove this once we have a new color token for this
+          style={{ backgroundColor: 'var(--color-bgTertiary)' }}
         >
           {count}
         </Text>

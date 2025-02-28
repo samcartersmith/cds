@@ -1,19 +1,11 @@
 @media (min-width: 1280px) {
   .sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
     padding-top: var(--ifm-navbar-height);
     width: var(--ifm-navbar-sidebar-width);
   }
 
   .sidebarWithHideableNavbar {
     padding-top: 0;
-  }
-
-  .sidebarHidden {
-    opacity: 0;
-    visibility: hidden;
   }
 
   .sidebarLogo {

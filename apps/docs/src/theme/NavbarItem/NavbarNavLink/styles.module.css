@@ -1,9 +1,0 @@
-.link {
-  padding: var(--space-1) var(--space-2);
-  display: flex;
-  align-items: center;
-}
-
-.link:hover {
-  text-decoration: none;
-}

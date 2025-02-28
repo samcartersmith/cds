@@ -50,6 +50,7 @@ export default function Footer(): JSX.Element | null {
               key={label}
               color="fg"
               font="headline"
+              hoverColor="fgPrimary"
               href={href}
               rel="noopener noreferrer"
               target="_blank"

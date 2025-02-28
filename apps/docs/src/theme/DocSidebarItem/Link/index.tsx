@@ -2,13 +2,11 @@ import React from 'react';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import Link from '@docusaurus/Link';
 import { isActiveSidebarItem } from '@docusaurus/plugin-content-docs/client';
-import { ThemeClassNames } from '@docusaurus/theme-common';
-import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebarItem/Link';
 import IconExternalLink from '@theme/Icon/ExternalLink';
+import { Box, HStack } from '@cbhq/cds-web2/layout';
+import { Pressable } from '@cbhq/cds-web2/system';
 import { Text } from '@cbhq/cds-web2/typography/Text';
-
-import styles from './styles.module.css';
 
 export default function DocSidebarItemLink({
   item,
@@ -18,38 +16,33 @@ export default function DocSidebarItemLink({
   index,
   ...props
 }: Props): JSX.Element {
-  const { href, label, className, autoAddBaseUrl } = item;
+  const { href, label, autoAddBaseUrl } = item;
   const isActive = isActiveSidebarItem(item, activePath);
   const isInternalLink = isInternalUrl(href);
   return (
-    <li
-      key={label}
-      className={cx(
-        ThemeClassNames.docs.docSidebarItemLink,
-        ThemeClassNames.docs.docSidebarItemLinkLevel(level),
-        'menu__list-item',
-        className,
-      )}
-    >
-      <Link
+    <Box key={label} as="li" padding={0.5}>
+      <Pressable
+        block
+        noScaleOnPress
         aria-current={isActive ? 'page' : undefined}
+        as={Link}
         autoAddBaseUrl={autoAddBaseUrl}
-        className={cx(
-          'menu__link',
-          !isInternalLink && styles.menuExternalLink,
-          isActive && 'menu__link--active',
-        )}
+        background="transparent"
+        borderRadius={1000}
+        borderWidth={0}
         to={href}
         {...(isInternalLink && {
           onClick: onItemClick ? () => onItemClick(item) : undefined,
         })}
         {...props}
       >
-        <Text color={isActive ? 'fgPrimary' : 'fg'} font={isActive ? 'label1' : 'label2'}>
-          {label}
-        </Text>
-        {!isInternalLink && <IconExternalLink />}
-      </Link>
-    </li>
+        <HStack alignItems="center" gap={1} paddingX={1.5} paddingY={0.5}>
+          <Text color={isActive ? 'fgPrimary' : 'fg'} font={isActive ? 'label1' : 'label2'}>
+            {label}
+          </Text>
+          {!isInternalLink && <IconExternalLink />}
+        </HStack>
+      </Pressable>
+    </Box>
   );
 }

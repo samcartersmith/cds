@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react';
-import { useHistory } from '@docusaurus/router';
+import React, { useMemo } from 'react';
+import Link from '@docusaurus/Link';
 import { useColorMode } from '@docusaurus/theme-common';
 import { Button } from '@cbhq/cds-web2/buttons';
 import { Box, Divider, HStack, VStack } from '@cbhq/cds-web2/layout';
@@ -24,10 +24,7 @@ export const QuickStartCampaignCard = ({
 }: QuickStartLinkProps) => {
   const { colorMode } = useColorMode();
   const BannerComponent = colorMode === 'dark' ? BannerComponentDark : BannerComponentLight;
-  const history = useHistory();
-  const navigate = useCallback(() => {
-    history.push('to' in link ? link.to : link.href);
-  }, [history, link]);
+  const destination = useMemo(() => ('to' in link ? link.to : link.href), [link]);
 
   return (
     <VStack flexBasis="calc(50% - 16px)" gap={2}>
@@ -51,9 +48,11 @@ export const QuickStartCampaignCard = ({
             transparent
             alignSelf="start"
             aria-label={`Navigate to ${link.label}`}
+            as={Link}
             endIcon="forwardArrow"
             flush="start"
-            onClick={navigate}
+            hoverColor="fgPrimary"
+            to={destination}
             variant="primary"
           >
             {link.label}
