@@ -23,7 +23,7 @@ const SearchBar = () => {
         compact
         bordered={false}
         end={
-          <HStack alignItems="center" flexShrink={0} gap={1} paddingRight={2}>
+          <HStack alignItems="center" flexShrink={0} gap={1} paddingEnd={2}>
             <Text mono as="kbd" className={styles.kbd}>
               ⌘
             </Text>

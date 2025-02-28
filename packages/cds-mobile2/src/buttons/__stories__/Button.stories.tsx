@@ -18,7 +18,7 @@ const ButtonScreen = () => {
         <Button compact endIcon="caretDown" variant="secondary">
           <HStack alignItems="center" justifyContent="center" paddingTop={0}>
             <RemoteImage height={16} resizeMode="cover" shape="circle" width={16} />
-            <TextLabel2 color="fgMuted" paddingLeft={1} testID="DexInputNetwork">
+            <TextLabel2 color="fgMuted" paddingStart={1} testID="DexInputNetwork">
               Ethereum
             </TextLabel2>
           </HStack>

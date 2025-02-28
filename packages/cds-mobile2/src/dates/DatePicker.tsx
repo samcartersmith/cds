@@ -127,7 +127,7 @@ export const DatePicker = memo(
 
       const dateInputCalendarButton = useMemo(
         () => (
-          <VStack paddingRight={0.5}>
+          <VStack paddingEnd={0.5}>
             <InputIconButton
               disableInheritFocusStyle
               transparent

@@ -32,9 +32,9 @@ export const AnimatedCaret = memo(function AnimatedCaret({
   testID,
   padding,
   paddingBottom,
-  paddingRight,
+  paddingEnd,
   paddingX,
-  paddingLeft,
+  paddingStart,
   paddingTop,
   paddingY,
   ...rest
@@ -46,9 +46,9 @@ export const AnimatedCaret = memo(function AnimatedCaret({
   const paddingProps = {
     padding,
     paddingBottom,
-    paddingRight,
+    paddingEnd,
     paddingX,
-    paddingLeft,
+    paddingStart,
     paddingTop,
     paddingY,
   };

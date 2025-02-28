@@ -17,7 +17,7 @@ const exampleProps = {
   ),
   logoMark2: <LogoMark size={32} />,
   start1: (
-    <Box style={{ marginLeft: -8 }}>
+    <Box style={{ marginStart: -8 }}>
       <IconButton
         transparent
         accessibilityLabel="Go Back"

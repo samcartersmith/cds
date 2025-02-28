@@ -41,9 +41,9 @@ export const Collapsible = memo(
         // Spacing
         padding,
         paddingBottom,
-        paddingRight,
+        paddingEnd,
         paddingX,
-        paddingLeft,
+        paddingStart,
         paddingTop,
         paddingY,
       }: CollapsibleProps,
@@ -109,8 +109,8 @@ export const Collapsible = memo(
               {...sizeProps}
               padding={padding}
               paddingBottom={paddingBottom}
-              paddingLeft={paddingLeft}
-              paddingRight={paddingRight}
+              paddingEnd={paddingEnd}
+              paddingStart={paddingStart}
               paddingX={paddingX}
               paddingY={paddingY}
             >

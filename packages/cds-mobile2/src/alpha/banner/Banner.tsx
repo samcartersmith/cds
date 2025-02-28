@@ -52,9 +52,9 @@ export const Banner = memo(
       marginX,
       marginY,
       marginTop,
-      marginRight,
+      marginEnd,
       marginBottom,
-      marginLeft,
+      marginStart,
       ...props
     }: MobileBannerProps,
     forwardedRef: ForwardedRef<View>,
@@ -122,11 +122,11 @@ export const Banner = memo(
         marginX,
         marginY,
         marginTop,
-        marginRight,
+        marginEnd,
         marginBottom,
-        marginLeft,
+        marginStart,
       }),
-      [margin, marginX, marginY, marginTop, marginRight, marginBottom, marginLeft],
+      [margin, marginX, marginY, marginTop, marginEnd, marginBottom, marginStart],
     );
 
     // The first HStack is referred to as root

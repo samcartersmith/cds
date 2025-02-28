@@ -37,7 +37,7 @@ type CarouselItemProps = {
   /** Index of the CarouselItem. This changes based on dismissedItems. */
   index: number;
   /** Determines how much padding should be between this CarouselItem and the next one. */
-  paddingRight: ThemeVars.Space;
+  paddingEnd: ThemeVars.Space;
   /** Show the dismiss IconButton in each CarouselItem.  */
   showDismiss?: boolean;
   /** x position of the Carousel scroll view. Used to interpolate opacity of dimiss button when showDismiss is true. */
@@ -62,7 +62,7 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
     children,
     id,
     index,
-    paddingRight,
+    paddingEnd,
     showDismiss,
     xOffset,
     totalItems,
@@ -159,7 +159,7 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
             ref={innerBox}
             animated
             flexShrink={0}
-            paddingRight={paddingRight}
+            paddingEnd={paddingEnd}
             position="relative"
             testID={`CarouselItemInner-${id}`}
             width={width}
@@ -168,7 +168,7 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
               <CarouselControlsWrapper
                 animated
                 justifyContent="flex-end"
-                paddingRight={0.5}
+                paddingEnd={0.5}
                 style={dismissButtonStyles}
               >
                 <IconButton

@@ -160,7 +160,7 @@ export default function DocSidebarItemCategory({
               )}
               <Text font="label1">{label}</Text>
             </HStack>
-            <Icon color="fg" name={!collapsed ? 'minus' : 'add'} paddingRight={2} size="s" />
+            <Icon color="fg" name={!collapsed ? 'minus' : 'add'} paddingEnd={2} size="s" />
           </HStack>
         </Pressable>
       ) : (
@@ -208,7 +208,7 @@ export default function DocSidebarItemCategory({
                 <Icon
                   color="fg"
                   name={expandedItem === index ? 'caretUp' : 'caretDown'}
-                  paddingRight={0}
+                  paddingEnd={0}
                   size="s"
                 />
               )}
@@ -219,10 +219,10 @@ export default function DocSidebarItemCategory({
 
       <Collapsible
         collapsed={collapsed}
-        paddingLeft={level === 1 ? 0 : 1.5}
+        paddingStart={level === 1 ? 0 : 1.5}
         paddingTop={level === 1 ? 2 : 1}
       >
-        <VStack as="ul" gap={1} paddingLeft={0} width="100%">
+        <VStack as="ul" gap={1} paddingStart={0} width="100%">
           <DocSidebarItems
             activePath={activePath}
             items={items}

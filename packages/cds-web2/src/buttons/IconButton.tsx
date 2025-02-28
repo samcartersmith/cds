@@ -51,22 +51,16 @@ type IconButtonComponent = (<AsComponent extends React.ElementType>(
 
 const flushSpaceStyle = css`
   min-width: unset;
-  padding-left: var(--space-2);
-  padding-right: var(--space-2);
+  padding-inline-start: var(--space-2);
+  padding-inline-end: var(--space-2);
 `;
+
 const flushStartStyle = css`
-  margin-left: calc(var(--space-2) * -1);
-
-  &:dir(rtl) {
-    margin-right: calc(var(--space-2) * -1);
-  }
+  margin-inline-start: calc(var(--space-2) * -1);
 `;
-const flushEndStyle = css`
-  margin-right: calc(var(--space-2) * -1);
 
-  &:dir(rtl) {
-    margin-left: calc(var(--space-2) * -1);
-  }
+const flushEndStyle = css`
+  margin-inline-end: calc(var(--space-2) * -1);
 `;
 
 export const IconButton: IconButtonComponent = memo(

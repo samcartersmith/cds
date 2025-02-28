@@ -99,13 +99,13 @@ export const ProgressBarWithFixedLabels: React.FC<
 > = memo(
   ({ startLabel, endLabel, labelPlacement = 'beside', disabled = false, children, testID }) => {
     const startLabelEl = typeof startLabel !== 'undefined' && (
-      <Box flexGrow={0} flexShrink={0} paddingRight={1}>
+      <Box flexGrow={0} flexShrink={0} paddingEnd={1}>
         <ProgressBarFixedLabelBeside label={startLabel} visuallyDisabled={disabled} />
       </Box>
     );
 
     const endLabelEl = typeof endLabel !== 'undefined' && (
-      <Box flexGrow={0} flexShrink={0} paddingLeft={1}>
+      <Box flexGrow={0} flexShrink={0} paddingStart={1}>
         <ProgressBarFixedLabelBeside label={endLabel} visuallyDisabled={disabled} />
       </Box>
     );

@@ -34,8 +34,8 @@ const DocSidebarMobileSecondaryMenu: NavbarSecondaryMenuComponent<Props> = ({
       as="ul"
       className={cx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}
       gap={3}
-      paddingLeft={2}
-      paddingRight={1.5}
+      paddingEnd={1.5}
+      paddingStart={2}
     >
       <DocSidebarItems activePath={path} items={sidebar} level={1} onItemClick={handleItemClick} />
     </VStack>

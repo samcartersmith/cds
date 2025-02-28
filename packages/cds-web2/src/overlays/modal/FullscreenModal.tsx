@@ -93,8 +93,8 @@ export type FullscreenModalProps = {
 
 const contentMaxWidth = 800;
 const secondaryContentWidth = 400;
-const paddingLeftSmall = 80;
-const paddingLeftLarge = 240;
+const paddingStartSmall = 80;
+const paddingStartLarge = 240;
 
 const containerStyles = css`
   width: 100%;
@@ -111,7 +111,7 @@ const primaryContentContainerStyles = css`
 
   @media only screen and (min-width: ${breakpoints.tablet}px) {
     padding: var(--space-4) 0;
-    margin-right: var(--space-4);
+    margin-inline-end: var(--space-4);
     margin-bottom: 0;
   }
 `;
@@ -153,7 +153,7 @@ const contentClassName = css`
   min-height: 100%;
 
   @media only screen and (min-width: ${breakpoints.phoneLandscape}px) {
-    margin-left: ${paddingLeftSmall}px;
+    margin-inline-start: ${paddingStartSmall}px;
   }
 
   @media only screen and (min-width: ${breakpoints.tablet}px) {
@@ -162,7 +162,7 @@ const contentClassName = css`
   }
 
   @media only screen and (min-width: ${breakpoints.desktop}px) {
-    margin-left: ${paddingLeftLarge}px;
+    margin-inline-start: ${paddingStartLarge}px;
   }
 `;
 
@@ -171,16 +171,16 @@ const headerLogoStyles = css`
 
   @media only screen and (min-width: ${breakpoints.phoneLandscape}px) {
     display: flex;
-    width: ${paddingLeftSmall}px;
+    width: ${paddingStartSmall}px;
   }
 
   @media only screen and (min-width: ${breakpoints.tablet}px) {
     display: flex;
-    width: ${paddingLeftSmall}px;
+    width: ${paddingStartSmall}px;
   }
 
   @media only screen and (min-width: ${breakpoints.desktop}px) {
-    width: ${paddingLeftLarge}px;
+    width: ${paddingStartLarge}px;
   }
 `;
 
@@ -251,7 +251,7 @@ export const FullscreenModal = memo(function FullscreenModal({
   const header = useMemo(
     () => (
       <HStack alignItems="center" borderedBottom={!hideDivider} paddingX={4} paddingY={2}>
-        <Box className={headerLogoStyles} paddingRight={3}>
+        <Box className={headerLogoStyles} paddingEnd={3}>
           {logo ?? <LogoMark size={32} />}
         </Box>
         <Box flexGrow={1}>

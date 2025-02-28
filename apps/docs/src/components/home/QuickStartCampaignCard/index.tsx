@@ -31,7 +31,7 @@ export const QuickStartCampaignCard = ({
       <Divider />
       <HStack alignItems="flex-start" flexGrow={1} gap={2}>
         <VStack alignSelf="stretch" flexGrow={1} gap={1}>
-          <VStack flexGrow={1} gap={{ base: 1, desktop: 1.5 }} paddingRight={2}>
+          <VStack flexGrow={1} gap={{ base: 1, desktop: 1.5 }} paddingEnd={2}>
             <Text
               as="h3"
               fontFamily={cardTitleFontConfig}

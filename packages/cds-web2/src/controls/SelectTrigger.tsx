@@ -82,14 +82,14 @@ export const SelectTrigger = memo(
           width="100%"
           {...props}
         >
-          <HStack minHeight={minHeight} minWidth={0} paddingLeft={startNode ? 0 : 2} width="100%">
+          <HStack minHeight={minHeight} minWidth={0} paddingStart={startNode ? 0 : 2} width="100%">
             {!!startNode && (
               <HStack alignItems="center" justifyContent="center" minWidth={0}>
                 {startNode}
               </HStack>
             )}
             {shouldShowCompactLabel ? (
-              <HStack alignItems="center" maxWidth="40%" paddingRight={1}>
+              <HStack alignItems="center" maxWidth="40%" paddingEnd={1}>
                 <InputLabel color="fg" id={accessibilityLabelId} overflow="truncate">
                   {label}
                 </InputLabel>

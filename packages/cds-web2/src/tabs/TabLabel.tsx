@@ -120,7 +120,7 @@ export const TabLabel = memo(
               className={variant === 'primary' ? primaryTabLabelStyles : undefined}
             />
           ))}
-        <Collapsible collapsed={!count} direction="horizontal" paddingLeft={0.5} role="status">
+        <Collapsible collapsed={!count} direction="horizontal" paddingStart={0.5} role="status">
           {/* When count is set to 0 this will fallback to prevCount
           which has the previous count value to keep the component mounted */}
           <DotCount

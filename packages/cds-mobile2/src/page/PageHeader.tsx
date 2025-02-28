@@ -25,7 +25,7 @@ export const PageHeader = memo(
         >
           {!!start && <Box paddingX={3}>{start}</Box>}
           {!isMultiRow && (
-            <Box flexGrow={1} paddingLeft={start ? 0 : 3} paddingRight={end ? 0 : 3}>
+            <Box flexGrow={1} paddingEnd={end ? 0 : 3} paddingStart={start ? 0 : 3}>
               {typeof title === 'string' ? <TextTitle1>{title}</TextTitle1> : title}
             </Box>
           )}

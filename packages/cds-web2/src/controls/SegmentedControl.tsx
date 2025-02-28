@@ -50,8 +50,8 @@ const containerStyle = css`
 
 const labelStyle = css`
   height: ${interactableHeight.regular}px;
-  padding-left: ${checkmarkSize}px;
-  padding-right: ${checkmarkSize}px;
+  padding-inline-start: ${checkmarkSize}px;
+  padding-inline-end: ${checkmarkSize}px;
 
   display: grid;
   position: relative;
@@ -75,8 +75,8 @@ const optionStyle = css`
   height: 100%;
   width: 100%;
   /* distribute gap half to both sides */
-  padding-left: calc(${checkmarkSize}px + 2px);
-  padding-right: calc(${checkmarkSize}px - 2px);
+  padding-inline-start: calc(${checkmarkSize}px + 2px);
+  padding-inline-end: calc(${checkmarkSize}px - 2px);
 
   display: flex;
   gap: var(--space-1);
@@ -92,7 +92,7 @@ const optionStyle = css`
   /* checkmark */
   > :last-child {
     visibility: hidden;
-    margin-right: -${checkmarkSize}px;
+    margin-inline-end: -${checkmarkSize}px;
   }
 `;
 
@@ -115,8 +115,8 @@ const radioStyle = css`
 
     > .${optionStyle} {
       /* distribute checkmark half to both sides */
-      padding-left: calc(${checkmarkSize}px - ${checkmarkSize}px / 2);
-      padding-right: calc(${checkmarkSize}px + ${checkmarkSize}px / 2);
+      padding-inline-start: calc(${checkmarkSize}px - ${checkmarkSize}px / 2);
+      padding-inline-end: calc(${checkmarkSize}px + ${checkmarkSize}px / 2);
 
       color: var(--color-fgPrimary);
       font-family: var(--fontFamily-headline);

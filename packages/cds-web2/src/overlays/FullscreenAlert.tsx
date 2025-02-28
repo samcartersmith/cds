@@ -35,7 +35,7 @@ const centerContentStyles = css`
   height: 100%;
   align-items: center;
   justify-content: center;
-  margin-left: 0px;
+  margin-inline-start: 0px;
 `;
 
 const actionsContainerStyles = css`

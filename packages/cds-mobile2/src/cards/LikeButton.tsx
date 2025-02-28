@@ -50,8 +50,8 @@ export const LikeButton = memo(function LikeButton({
   }, [compact, flush]);
 
   const pressableStyles = {
-    marginLeft: -theme.space[offsetStart ?? 0],
-    marginRight: -theme.space[offsetEnd ?? 0],
+    marginStart: -theme.space[offsetStart ?? 0],
+    marginEnd: -theme.space[offsetEnd ?? 0],
   };
 
   const handleOnPress = useCallback(

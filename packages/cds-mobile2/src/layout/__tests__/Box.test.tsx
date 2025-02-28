@@ -283,8 +283,8 @@ describe('Box', () => {
       expect(screen.getByTestId('parent')).toBeAccessible();
 
       expect(screen.getByTestId('parent')).toHaveStyle({
-        paddingLeft: 8,
-        paddingRight: 8,
+        paddingStart: 8,
+        paddingEnd: 8,
       });
     });
 
@@ -307,7 +307,7 @@ describe('Box', () => {
 
     it('renders start/end', async () => {
       render(
-        <Box paddingLeft={1} paddingRight={2} testID="parent">
+        <Box paddingEnd={2} paddingStart={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -317,14 +317,14 @@ describe('Box', () => {
       expect(screen.getByTestId('parent')).toBeAccessible();
 
       expect(screen.getByTestId('parent')).toHaveStyle({
-        paddingLeft: 8,
-        paddingRight: 16,
+        paddingStart: 8,
+        paddingEnd: 16,
       });
     });
 
     it('renders individual', async () => {
       render(
-        <Box paddingBottom={2} paddingLeft={3} paddingRight={4} paddingTop={1} testID="parent">
+        <Box paddingBottom={2} paddingEnd={4} paddingStart={3} paddingTop={1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -336,8 +336,8 @@ describe('Box', () => {
       expect(screen.getByTestId('parent')).toHaveStyle({
         paddingTop: 8,
         paddingBottom: 16,
-        paddingLeft: 24,
-        paddingRight: 32,
+        paddingStart: 24,
+        paddingEnd: 32,
       });
     });
   });
@@ -368,8 +368,8 @@ describe('Box', () => {
       await screen.findByTestId('parent');
 
       expect(screen.getByTestId('parent')).toHaveStyle({
-        marginLeft: -8,
-        marginRight: -8,
+        marginStart: -8,
+        marginEnd: -8,
       });
     });
 
@@ -390,7 +390,7 @@ describe('Box', () => {
 
     it('renders start/end', async () => {
       render(
-        <Box marginLeft={-1} marginRight={-2} testID="parent">
+        <Box marginEnd={-2} marginStart={-1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -398,14 +398,14 @@ describe('Box', () => {
       await screen.findByTestId('parent');
 
       expect(screen.getByTestId('parent')).toHaveStyle({
-        marginLeft: -8,
-        marginRight: -16,
+        marginStart: -8,
+        marginEnd: -16,
       });
     });
 
     it('renders individual', async () => {
       render(
-        <Box marginBottom={-2} marginLeft={-3} marginRight={-4} marginTop={-1} testID="parent">
+        <Box marginBottom={-2} marginEnd={-4} marginStart={-3} marginTop={-1} testID="parent">
           <Text>Child</Text>
         </Box>,
       );
@@ -415,8 +415,8 @@ describe('Box', () => {
       expect(screen.getByTestId('parent')).toHaveStyle({
         marginTop: -8,
         marginBottom: -16,
-        marginLeft: -24,
-        marginRight: -32,
+        marginStart: -24,
+        marginEnd: -32,
       });
     });
   });

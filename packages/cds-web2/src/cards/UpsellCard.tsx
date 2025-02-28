@@ -79,7 +79,7 @@ export const UpsellCard = memo(
               )}
             </VStack>
             {!!action && (
-              <HStack paddingLeft={2}>
+              <HStack paddingStart={2}>
                 {isValidElement(action) ? (
                   action
                 ) : (

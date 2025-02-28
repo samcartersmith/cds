@@ -57,17 +57,17 @@ describe('Carousel', () => {
     expect(onReadySpy).toHaveBeenCalled();
   });
 
-  it('does apply paddingRight if it is not the last item', () => {
+  it('does apply paddingEnd if it is not the last item', () => {
     render(<MockCarousel />);
     expect(screen.getByTestId(`CarouselItemInner-item0`)).toHaveStyle({
-      paddingRight: 24,
+      paddingEnd: 24,
     });
   });
 
-  it('does not apply paddingRight to the last item', () => {
+  it('does not apply paddingEnd to the last item', () => {
     render(<MockCarousel />);
     expect(screen.getByTestId(`CarouselItemInner-item${itemsLength - 1}`)).toHaveStyle({
-      paddingRight: 0,
+      paddingEnd: 0,
     });
   });
 });

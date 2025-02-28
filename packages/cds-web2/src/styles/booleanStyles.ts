@@ -16,9 +16,9 @@ export const borderStyle = {
     border-color: var(--color-bgLine);
   `,
   borderedHorizontal: css`
-    border-left-width: var(--borderWidth-100);
+    border-inline-start-width: var(--borderWidth-100);
     border-left-style: solid;
-    border-right-width: var(--borderWidth-100);
+    border-inline-end-width: var(--borderWidth-100);
     border-right-style: solid;
     border-color: var(--color-bgLine);
   `,
@@ -30,13 +30,13 @@ export const borderStyle = {
     border-color: var(--color-bgLine);
   `,
   borderedStart: css`
-    border-left-width: var(--borderWidth-100);
-    border-left-style: solid;
+    border-inline-start-width: var(--borderWidth-100);
+    border-inline-start-style: solid;
     border-color: var(--color-bgLine);
   `,
   borderedEnd: css`
-    border-right-width: var(--borderWidth-100);
-    border-right-style: solid;
+    border-inline-end-width: var(--borderWidth-100);
+    border-inline-end-style: solid;
     border-color: var(--color-bgLine);
   `,
   borderedTop: css`

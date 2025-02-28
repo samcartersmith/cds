@@ -52,9 +52,9 @@ export const Icon = memo(function Icon({
   paddingX,
   paddingY,
   paddingTop,
-  paddingRight,
+  paddingEnd,
   paddingBottom,
-  paddingLeft,
+  paddingStart,
   active,
   iconType,
 }: IconProps) {
@@ -70,9 +70,9 @@ export const Icon = memo(function Icon({
     () => [
       {
         paddingTop: theme.space[paddingTop ?? paddingY ?? padding ?? 0],
-        paddingRight: theme.space[paddingRight ?? paddingX ?? padding ?? 0],
+        paddingEnd: theme.space[paddingEnd ?? paddingX ?? padding ?? 0],
         paddingBottom: theme.space[paddingBottom ?? paddingY ?? padding ?? 0],
-        paddingLeft: theme.space[paddingLeft ?? paddingX ?? padding ?? 0],
+        paddingStart: theme.space[paddingStart ?? paddingX ?? padding ?? 0],
       },
       style,
     ],
@@ -83,9 +83,9 @@ export const Icon = memo(function Icon({
       paddingX,
       paddingY,
       paddingTop,
-      paddingRight,
+      paddingEnd,
       paddingBottom,
-      paddingLeft,
+      paddingStart,
     ],
   );
 

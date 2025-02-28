@@ -85,7 +85,7 @@ export const ContentCell = memo(function ContentCell({
             </Box>
 
             {!!meta && (
-              <Box justifyContent="flex-end" paddingLeft={1} paddingTop={0.5}>
+              <Box justifyContent="flex-end" paddingStart={1} paddingTop={0.5}>
                 <TextLabel2 color="fgMuted">{meta}</TextLabel2>
               </Box>
             )}

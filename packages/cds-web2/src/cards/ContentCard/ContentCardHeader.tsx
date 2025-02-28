@@ -35,7 +35,7 @@ export const ContentCardHeader: ContentCardHeaderComponent = memo(
         alignItems="center"
         as={Component}
         justifyContent="space-between"
-        marginRight={-1}
+        marginEnd={-1}
         testID={testID}
         {...props}
       >

@@ -88,8 +88,8 @@ export const Toast = memo(
             borderRadius={200}
             elevation={2}
             overflow="hidden"
-            paddingLeft={3}
-            paddingRight={1}
+            paddingEnd={1}
+            paddingStart={3}
             paddingY={1}
             style={{
               opacity,
@@ -99,7 +99,7 @@ export const Toast = memo(
           >
             <ColorSurge background={variant} />
             {/* avoid pushing contents off screen */}
-            <Box accessible flexShrink={1} paddingRight={2} paddingY={1}>
+            <Box accessible flexShrink={1} paddingEnd={2} paddingY={1}>
               <TextHeadline>{text}</TextHeadline>
             </Box>
             {!!action && (

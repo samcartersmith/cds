@@ -26,7 +26,7 @@ export * from '@cbhq/cds-common2/types/SparklineInteractiveHeaderBaseProps';
 const Trailing: FunctionComponent<React.PropsWithChildren<unknown>> = ({ children }) => {
   if (children) {
     return (
-      <VStack alignItems="center" flexShrink={0} justifyContent="center" paddingLeft={2}>
+      <VStack alignItems="center" flexShrink={0} justifyContent="center" paddingStart={2}>
         {children}
       </VStack>
     );

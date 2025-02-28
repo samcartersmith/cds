@@ -129,13 +129,13 @@ export const Toast = memo(
                 elevation={2}
                 maxWidth={550}
                 overflow="hidden"
-                paddingLeft={3}
-                paddingRight={1}
+                paddingEnd={1}
+                paddingStart={3}
                 paddingY={1}
                 position="relative"
               >
                 {/* avoid pushing contents off screen */}
-                <Box flexShrink={1} paddingRight={2} paddingY={1}>
+                <Box flexShrink={1} paddingEnd={2} paddingY={1}>
                   <Text as="p" font="headline" tabIndex={0}>
                     {text}
                   </Text>

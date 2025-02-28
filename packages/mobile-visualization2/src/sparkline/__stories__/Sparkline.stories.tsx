@@ -36,7 +36,7 @@ const SparklineExample = ({ imageUrl, name, symbol, color }: SparklineExamplePro
             alignContent="flex-end"
             alignItems="flex-end"
             justifyContent="center"
-            paddingLeft={2}
+            paddingStart={2}
           >
             <TextBody align="end" numberOfLines={1}>
               $2,874.49

@@ -24,7 +24,7 @@ const gridStylesMobileEndClassName = css`
   }
 `;
 
-export const pageHeaderStartPaddingLeft: ResponsiveProps<StaticStyleProps>['paddingLeft'] = {
+export const pageHeaderStartPaddingStart: ResponsiveProps<StaticStyleProps>['paddingStart'] = {
   phone: 3,
   tablet: 4,
   desktop: 4,
@@ -51,7 +51,7 @@ export const PageHeader = memo(
     }: PageHeaderProps,
     ref: React.ForwardedRef<HTMLDivElement>,
   ) {
-    const titleResponsivePaddingLeft: ResponsiveProps<StaticStyleProps>['paddingLeft'] = useMemo(
+    const titleResponsivePaddingLeft: ResponsiveProps<StaticStyleProps>['paddingStart'] = useMemo(
       () => ({
         phone: start && !end ? 0 : 3,
         tablet: start ? 0 : 4,
@@ -105,8 +105,8 @@ export const PageHeader = memo(
           <Box
             alignItems="center"
             height={pageHeaderHeight}
-            paddingLeft={pageHeaderStartPaddingLeft}
-            paddingRight={3}
+            paddingEnd={3}
+            paddingStart={pageHeaderStartPaddingStart}
           >
             {start}
           </Box>
@@ -116,7 +116,7 @@ export const PageHeader = memo(
             alignItems="center"
             className={start && end ? gridStylesMobileTitleClassName : undefined}
             justifyContent="flex-start"
-            paddingLeft={titleResponsivePaddingLeft}
+            paddingStart={titleResponsivePaddingLeft}
             testID="responsive-title-container"
           >
             {typeof title === 'string' ? (

@@ -34,9 +34,9 @@ export const CardBody = memo(function CardBody({
   paddingX,
   paddingY,
   paddingTop,
-  paddingRight,
+  paddingEnd,
   paddingBottom,
-  paddingLeft,
+  paddingStart,
   numberOfLines = 3,
   accessibilityLabel,
   children,
@@ -48,9 +48,9 @@ export const CardBody = memo(function CardBody({
     paddingX,
     paddingY,
     paddingTop,
-    paddingRight,
+    paddingStart,
     paddingBottom,
-    paddingLeft,
+    paddingEnd,
     compact,
   });
 
@@ -106,8 +106,8 @@ export const CardBody = memo(function CardBody({
         {mediaContent}
         <VStack
           gap={1}
-          paddingLeft={spacingProps.paddingLeft}
-          paddingRight={spacingProps.paddingRight}
+          paddingEnd={spacingProps.paddingEnd}
+          paddingStart={spacingProps.paddingStart}
         >
           <Text
             font="headline"

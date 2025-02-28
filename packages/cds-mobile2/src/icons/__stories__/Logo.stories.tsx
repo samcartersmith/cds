@@ -16,24 +16,24 @@ const LogoScreen = () => {
     <ExampleScreen>
       <Example title="LogoMark">
         <HStack>
-          <Box paddingRight={2}>
+          <Box paddingEnd={2}>
             <LogoMark size={16} />
           </Box>
-          <Box paddingRight={2}>
+          <Box paddingEnd={2}>
             <LogoMark size={24} />
           </Box>
-          <Box paddingRight={2}>
+          <Box paddingEnd={2}>
             <LogoMark size={32} />
           </Box>
         </HStack>
         <HStack>
-          <Box paddingRight={2}>
+          <Box paddingEnd={2}>
             <LogoMark foreground size={16} />
           </Box>
-          <Box paddingRight={2}>
+          <Box paddingEnd={2}>
             <LogoMark foreground size={24} />
           </Box>
-          <Box paddingRight={2}>
+          <Box paddingEnd={2}>
             <LogoMark foreground size={32} />
           </Box>
         </HStack>

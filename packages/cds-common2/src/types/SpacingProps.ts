@@ -14,11 +14,11 @@ export type MarginProps = {
   /** Apply negative margin on the top side. */
   marginTop?: NegativeSpace;
   /** Apply negative margin on the trailing side. */
-  marginRight?: NegativeSpace;
+  marginEnd?: NegativeSpace;
   /** Apply negative margin on the bottom side. */
   marginBottom?: NegativeSpace;
   /** Apply negative margin on the leading side. */
-  marginLeft?: NegativeSpace;
+  marginStart?: NegativeSpace;
 };
 
 export type PaddingProps = {
@@ -31,11 +31,11 @@ export type PaddingProps = {
   /** Apply padding on the top side. */
   paddingTop?: ThemeVars.Space;
   /** Apply padding on the trailing side. */
-  paddingRight?: ThemeVars.Space;
+  paddingEnd?: ThemeVars.Space;
   /** Apply padding on the bottom side. */
   paddingBottom?: ThemeVars.Space;
   /** Apply padding on the leading side. */
-  paddingLeft?: ThemeVars.Space;
+  paddingStart?: ThemeVars.Space;
 };
 
 export type InternalSpacingProps = {

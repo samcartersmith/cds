@@ -46,7 +46,7 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
         <TabNavigation onChange={setActiveTab} tabs={tabs} value={activeTab} />
       </Box>
       <Divider />
-      <VStack gap={3} paddingBottom={2} paddingLeft={4} paddingRight={4} paddingTop={5}>
+      <VStack gap={3} paddingBottom={2} paddingEnd={4} paddingStart={4} paddingTop={5}>
         {shouldRenderExamples && <TOCUpdater toc={isWeb ? webExamplesToc : mobileExamplesToc} />}
         {shouldRenderExamples && isWeb && webExamples}
         {shouldRenderExamples && isMobile && mobileExamples}

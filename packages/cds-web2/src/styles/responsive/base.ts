@@ -1358,24 +1358,24 @@ export const borderTopWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   `,
 } as const;
 
-export const borderRightWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
+export const borderEndWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
-    border-right-width: var(--borderWidth-0);
+    border-inline-end-width: var(--borderWidth-0);
   `,
   '100': css`
-    border-right-width: var(--borderWidth-100);
+    border-inline-end-width: var(--borderWidth-100);
   `,
   '200': css`
-    border-right-width: var(--borderWidth-200);
+    border-inline-end-width: var(--borderWidth-200);
   `,
   '300': css`
-    border-right-width: var(--borderWidth-300);
+    border-inline-end-width: var(--borderWidth-300);
   `,
   '400': css`
-    border-right-width: var(--borderWidth-400);
+    border-inline-end-width: var(--borderWidth-400);
   `,
   '500': css`
-    border-right-width: var(--borderWidth-500);
+    border-inline-end-width: var(--borderWidth-500);
   `,
 } as const;
 
@@ -1400,24 +1400,24 @@ export const borderBottomWidth: Record<ThemeVars.BorderWidth, LinariaClassName> 
   `,
 } as const;
 
-export const borderLeftWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
+export const borderStartWidth: Record<ThemeVars.BorderWidth, LinariaClassName> = {
   '0': css`
-    border-left-width: var(--borderWidth-0);
+    border-inline-start-width: var(--borderWidth-0);
   `,
   '100': css`
-    border-left-width: var(--borderWidth-100);
+    border-inline-start-width: var(--borderWidth-100);
   `,
   '200': css`
-    border-left-width: var(--borderWidth-200);
+    border-inline-start-width: var(--borderWidth-200);
   `,
   '300': css`
-    border-left-width: var(--borderWidth-300);
+    border-inline-start-width: var(--borderWidth-300);
   `,
   '400': css`
-    border-left-width: var(--borderWidth-400);
+    border-inline-start-width: var(--borderWidth-400);
   `,
   '500': css`
-    border-left-width: var(--borderWidth-500);
+    border-inline-start-width: var(--borderWidth-500);
   `,
 } as const;
 
@@ -2390,155 +2390,155 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
     padding-top: var(--space-0);
     padding-bottom: var(--space-0);
-    padding-left: var(--space-0);
-    padding-right: var(--space-0);
+    padding-inline-start: var(--space-0);
+    padding-inline-end: var(--space-0);
   `,
   '0.25': css`
     padding-top: var(--space-0\\.25);
     padding-bottom: var(--space-0\\.25);
-    padding-left: var(--space-0\\.25);
-    padding-right: var(--space-0\\.25);
+    padding-inline-start: var(--space-0\\.25);
+    padding-inline-end: var(--space-0\\.25);
   `,
   '0.5': css`
     padding-top: var(--space-0\\.5);
     padding-bottom: var(--space-0\\.5);
-    padding-left: var(--space-0\\.5);
-    padding-right: var(--space-0\\.5);
+    padding-inline-start: var(--space-0\\.5);
+    padding-inline-end: var(--space-0\\.5);
   `,
   '0.75': css`
     padding-top: var(--space-0\\.75);
     padding-bottom: var(--space-0\\.75);
-    padding-left: var(--space-0\\.75);
-    padding-right: var(--space-0\\.75);
+    padding-inline-start: var(--space-0\\.75);
+    padding-inline-end: var(--space-0\\.75);
   `,
   '1': css`
     padding-top: var(--space-1);
     padding-bottom: var(--space-1);
-    padding-left: var(--space-1);
-    padding-right: var(--space-1);
+    padding-inline-start: var(--space-1);
+    padding-inline-end: var(--space-1);
   `,
   '1.5': css`
     padding-top: var(--space-1\\.5);
     padding-bottom: var(--space-1\\.5);
-    padding-left: var(--space-1\\.5);
-    padding-right: var(--space-1\\.5);
+    padding-inline-start: var(--space-1\\.5);
+    padding-inline-end: var(--space-1\\.5);
   `,
   '2': css`
     padding-top: var(--space-2);
     padding-bottom: var(--space-2);
-    padding-left: var(--space-2);
-    padding-right: var(--space-2);
+    padding-inline-start: var(--space-2);
+    padding-inline-end: var(--space-2);
   `,
   '3': css`
     padding-top: var(--space-3);
     padding-bottom: var(--space-3);
-    padding-left: var(--space-3);
-    padding-right: var(--space-3);
+    padding-inline-start: var(--space-3);
+    padding-inline-end: var(--space-3);
   `,
   '4': css`
     padding-top: var(--space-4);
     padding-bottom: var(--space-4);
-    padding-left: var(--space-4);
-    padding-right: var(--space-4);
+    padding-inline-start: var(--space-4);
+    padding-inline-end: var(--space-4);
   `,
   '5': css`
     padding-top: var(--space-5);
     padding-bottom: var(--space-5);
-    padding-left: var(--space-5);
-    padding-right: var(--space-5);
+    padding-inline-start: var(--space-5);
+    padding-inline-end: var(--space-5);
   `,
   '6': css`
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
-    padding-left: var(--space-6);
-    padding-right: var(--space-6);
+    padding-inline-start: var(--space-6);
+    padding-inline-end: var(--space-6);
   `,
   '7': css`
     padding-top: var(--space-7);
     padding-bottom: var(--space-7);
-    padding-left: var(--space-7);
-    padding-right: var(--space-7);
+    padding-inline-start: var(--space-7);
+    padding-inline-end: var(--space-7);
   `,
   '8': css`
     padding-top: var(--space-8);
     padding-bottom: var(--space-8);
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
+    padding-inline-start: var(--space-8);
+    padding-inline-end: var(--space-8);
   `,
   '9': css`
     padding-top: var(--space-9);
     padding-bottom: var(--space-9);
-    padding-left: var(--space-9);
-    padding-right: var(--space-9);
+    padding-inline-start: var(--space-9);
+    padding-inline-end: var(--space-9);
   `,
   '10': css`
     padding-top: var(--space-10);
     padding-bottom: var(--space-10);
-    padding-left: var(--space-10);
-    padding-right: var(--space-10);
+    padding-inline-start: var(--space-10);
+    padding-inline-end: var(--space-10);
   `,
 } as const;
 
 export const paddingX: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    padding-left: var(--space-0);
-    padding-right: var(--space-0);
+    padding-inline-start: var(--space-0);
+    padding-inline-end: var(--space-0);
   `,
   '0.25': css`
-    padding-left: var(--space-0\\.25);
-    padding-right: var(--space-0\\.25);
+    padding-inline-start: var(--space-0\\.25);
+    padding-inline-end: var(--space-0\\.25);
   `,
   '0.5': css`
-    padding-left: var(--space-0\\.5);
-    padding-right: var(--space-0\\.5);
+    padding-inline-start: var(--space-0\\.5);
+    padding-inline-end: var(--space-0\\.5);
   `,
   '0.75': css`
-    padding-left: var(--space-0\\.75);
-    padding-right: var(--space-0\\.75);
+    padding-inline-start: var(--space-0\\.75);
+    padding-inline-end: var(--space-0\\.75);
   `,
   '1': css`
-    padding-left: var(--space-1);
-    padding-right: var(--space-1);
+    padding-inline-start: var(--space-1);
+    padding-inline-end: var(--space-1);
   `,
   '1.5': css`
-    padding-left: var(--space-1\\.5);
-    padding-right: var(--space-1\\.5);
+    padding-inline-start: var(--space-1\\.5);
+    padding-inline-end: var(--space-1\\.5);
   `,
   '2': css`
-    padding-left: var(--space-2);
-    padding-right: var(--space-2);
+    padding-inline-start: var(--space-2);
+    padding-inline-end: var(--space-2);
   `,
   '3': css`
-    padding-left: var(--space-3);
-    padding-right: var(--space-3);
+    padding-inline-start: var(--space-3);
+    padding-inline-end: var(--space-3);
   `,
   '4': css`
-    padding-left: var(--space-4);
-    padding-right: var(--space-4);
+    padding-inline-start: var(--space-4);
+    padding-inline-end: var(--space-4);
   `,
   '5': css`
-    padding-left: var(--space-5);
-    padding-right: var(--space-5);
+    padding-inline-start: var(--space-5);
+    padding-inline-end: var(--space-5);
   `,
   '6': css`
-    padding-left: var(--space-6);
-    padding-right: var(--space-6);
+    padding-inline-start: var(--space-6);
+    padding-inline-end: var(--space-6);
   `,
   '7': css`
-    padding-left: var(--space-7);
-    padding-right: var(--space-7);
+    padding-inline-start: var(--space-7);
+    padding-inline-end: var(--space-7);
   `,
   '8': css`
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
+    padding-inline-start: var(--space-8);
+    padding-inline-end: var(--space-8);
   `,
   '9': css`
-    padding-left: var(--space-9);
-    padding-right: var(--space-9);
+    padding-inline-start: var(--space-9);
+    padding-inline-end: var(--space-9);
   `,
   '10': css`
-    padding-left: var(--space-10);
-    padding-right: var(--space-10);
+    padding-inline-start: var(--space-10);
+    padding-inline-end: var(--space-10);
   `,
 } as const;
 
@@ -2701,99 +2701,99 @@ export const paddingBottom: Record<ThemeVars.Space, LinariaClassName> = {
   `,
 } as const;
 
-export const paddingLeft: Record<ThemeVars.Space, LinariaClassName> = {
+export const paddingStart: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    padding-left: var(--space-0);
+    padding-inline-start: var(--space-0);
   `,
   '0.25': css`
-    padding-left: var(--space-0\\.25);
+    padding-inline-start: var(--space-0\\.25);
   `,
   '0.5': css`
-    padding-left: var(--space-0\\.5);
+    padding-inline-start: var(--space-0\\.5);
   `,
   '0.75': css`
-    padding-left: var(--space-0\\.75);
+    padding-inline-start: var(--space-0\\.75);
   `,
   '1': css`
-    padding-left: var(--space-1);
+    padding-inline-start: var(--space-1);
   `,
   '1.5': css`
-    padding-left: var(--space-1\\.5);
+    padding-inline-start: var(--space-1\\.5);
   `,
   '2': css`
-    padding-left: var(--space-2);
+    padding-inline-start: var(--space-2);
   `,
   '3': css`
-    padding-left: var(--space-3);
+    padding-inline-start: var(--space-3);
   `,
   '4': css`
-    padding-left: var(--space-4);
+    padding-inline-start: var(--space-4);
   `,
   '5': css`
-    padding-left: var(--space-5);
+    padding-inline-start: var(--space-5);
   `,
   '6': css`
-    padding-left: var(--space-6);
+    padding-inline-start: var(--space-6);
   `,
   '7': css`
-    padding-left: var(--space-7);
+    padding-inline-start: var(--space-7);
   `,
   '8': css`
-    padding-left: var(--space-8);
+    padding-inline-start: var(--space-8);
   `,
   '9': css`
-    padding-left: var(--space-9);
+    padding-inline-start: var(--space-9);
   `,
   '10': css`
-    padding-left: var(--space-10);
+    padding-inline-start: var(--space-10);
   `,
 } as const;
 
-export const paddingRight: Record<ThemeVars.Space, LinariaClassName> = {
+export const paddingEnd: Record<ThemeVars.Space, LinariaClassName> = {
   '0': css`
-    padding-right: var(--space-0);
+    padding-inline-end: var(--space-0);
   `,
   '0.25': css`
-    padding-right: var(--space-0\\.25);
+    padding-inline-end: var(--space-0\\.25);
   `,
   '0.5': css`
-    padding-right: var(--space-0\\.5);
+    padding-inline-end: var(--space-0\\.5);
   `,
   '0.75': css`
-    padding-right: var(--space-0\\.75);
+    padding-inline-end: var(--space-0\\.75);
   `,
   '1': css`
-    padding-right: var(--space-1);
+    padding-inline-end: var(--space-1);
   `,
   '1.5': css`
-    padding-right: var(--space-1\\.5);
+    padding-inline-end: var(--space-1\\.5);
   `,
   '2': css`
-    padding-right: var(--space-2);
+    padding-inline-end: var(--space-2);
   `,
   '3': css`
-    padding-right: var(--space-3);
+    padding-inline-end: var(--space-3);
   `,
   '4': css`
-    padding-right: var(--space-4);
+    padding-inline-end: var(--space-4);
   `,
   '5': css`
-    padding-right: var(--space-5);
+    padding-inline-end: var(--space-5);
   `,
   '6': css`
-    padding-right: var(--space-6);
+    padding-inline-end: var(--space-6);
   `,
   '7': css`
-    padding-right: var(--space-7);
+    padding-inline-end: var(--space-7);
   `,
   '8': css`
-    padding-right: var(--space-8);
+    padding-inline-end: var(--space-8);
   `,
   '9': css`
-    padding-right: var(--space-9);
+    padding-inline-end: var(--space-9);
   `,
   '10': css`
-    padding-right: var(--space-10);
+    padding-inline-end: var(--space-10);
   `,
 } as const;
 
@@ -2801,155 +2801,155 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
   '0': css`
     margin-top: calc(-1 * var(--space-0));
     margin-bottom: calc(-1 * var(--space-0));
-    margin-right: calc(-1 * var(--space-0));
-    margin-left: calc(-1 * var(--space-0));
+    margin-inline-end: calc(-1 * var(--space-0));
+    margin-inline-start: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
     margin-top: calc(-1 * var(--space-0\\.25));
     margin-bottom: calc(-1 * var(--space-0\\.25));
-    margin-right: calc(-1 * var(--space-0\\.25));
-    margin-left: calc(-1 * var(--space-0\\.25));
+    margin-inline-end: calc(-1 * var(--space-0\\.25));
+    margin-inline-start: calc(-1 * var(--space-0\\.25));
   `,
   '-0.5': css`
     margin-top: calc(-1 * var(--space-0\\.5));
     margin-bottom: calc(-1 * var(--space-0\\.5));
-    margin-right: calc(-1 * var(--space-0\\.5));
-    margin-left: calc(-1 * var(--space-0\\.5));
+    margin-inline-end: calc(-1 * var(--space-0\\.5));
+    margin-inline-start: calc(-1 * var(--space-0\\.5));
   `,
   '-0.75': css`
     margin-top: calc(-1 * var(--space-0\\.75));
     margin-bottom: calc(-1 * var(--space-0\\.75));
-    margin-right: calc(-1 * var(--space-0\\.75));
-    margin-left: calc(-1 * var(--space-0\\.75));
+    margin-inline-end: calc(-1 * var(--space-0\\.75));
+    margin-inline-start: calc(-1 * var(--space-0\\.75));
   `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
     margin-bottom: calc(-1 * var(--space-1));
-    margin-right: calc(-1 * var(--space-1));
-    margin-left: calc(-1 * var(--space-1));
+    margin-inline-end: calc(-1 * var(--space-1));
+    margin-inline-start: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
     margin-top: calc(-1 * var(--space-1\\.5));
     margin-bottom: calc(-1 * var(--space-1\\.5));
-    margin-right: calc(-1 * var(--space-1\\.5));
-    margin-left: calc(-1 * var(--space-1\\.5));
+    margin-inline-end: calc(-1 * var(--space-1\\.5));
+    margin-inline-start: calc(-1 * var(--space-1\\.5));
   `,
   '-2': css`
     margin-top: calc(-1 * var(--space-2));
     margin-bottom: calc(-1 * var(--space-2));
-    margin-right: calc(-1 * var(--space-2));
-    margin-left: calc(-1 * var(--space-2));
+    margin-inline-end: calc(-1 * var(--space-2));
+    margin-inline-start: calc(-1 * var(--space-2));
   `,
   '-3': css`
     margin-top: calc(-1 * var(--space-3));
     margin-bottom: calc(-1 * var(--space-3));
-    margin-right: calc(-1 * var(--space-3));
-    margin-left: calc(-1 * var(--space-3));
+    margin-inline-end: calc(-1 * var(--space-3));
+    margin-inline-start: calc(-1 * var(--space-3));
   `,
   '-4': css`
     margin-top: calc(-1 * var(--space-4));
     margin-bottom: calc(-1 * var(--space-4));
-    margin-right: calc(-1 * var(--space-4));
-    margin-left: calc(-1 * var(--space-4));
+    margin-inline-end: calc(-1 * var(--space-4));
+    margin-inline-start: calc(-1 * var(--space-4));
   `,
   '-5': css`
     margin-top: calc(-1 * var(--space-5));
     margin-bottom: calc(-1 * var(--space-5));
-    margin-right: calc(-1 * var(--space-5));
-    margin-left: calc(-1 * var(--space-5));
+    margin-inline-end: calc(-1 * var(--space-5));
+    margin-inline-start: calc(-1 * var(--space-5));
   `,
   '-6': css`
     margin-top: calc(-1 * var(--space-6));
     margin-bottom: calc(-1 * var(--space-6));
-    margin-right: calc(-1 * var(--space-6));
-    margin-left: calc(-1 * var(--space-6));
+    margin-inline-end: calc(-1 * var(--space-6));
+    margin-inline-start: calc(-1 * var(--space-6));
   `,
   '-7': css`
     margin-top: calc(-1 * var(--space-7));
     margin-bottom: calc(-1 * var(--space-7));
-    margin-right: calc(-1 * var(--space-7));
-    margin-left: calc(-1 * var(--space-7));
+    margin-inline-end: calc(-1 * var(--space-7));
+    margin-inline-start: calc(-1 * var(--space-7));
   `,
   '-8': css`
     margin-top: calc(-1 * var(--space-8));
     margin-bottom: calc(-1 * var(--space-8));
-    margin-right: calc(-1 * var(--space-8));
-    margin-left: calc(-1 * var(--space-8));
+    margin-inline-end: calc(-1 * var(--space-8));
+    margin-inline-start: calc(-1 * var(--space-8));
   `,
   '-9': css`
     margin-top: calc(-1 * var(--space-9));
     margin-bottom: calc(-1 * var(--space-9));
-    margin-right: calc(-1 * var(--space-9));
-    margin-left: calc(-1 * var(--space-9));
+    margin-inline-end: calc(-1 * var(--space-9));
+    margin-inline-start: calc(-1 * var(--space-9));
   `,
   '-10': css`
     margin-top: calc(-1 * var(--space-10));
     margin-bottom: calc(-1 * var(--space-10));
-    margin-right: calc(-1 * var(--space-10));
-    margin-left: calc(-1 * var(--space-10));
+    margin-inline-end: calc(-1 * var(--space-10));
+    margin-inline-start: calc(-1 * var(--space-10));
   `,
 } as const;
 
 export const marginX: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    margin-right: calc(-1 * var(--space-0));
-    margin-left: calc(-1 * var(--space-0));
+    margin-inline-end: calc(-1 * var(--space-0));
+    margin-inline-start: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-right: calc(-1 * var(--space-0\\.25));
-    margin-left: calc(-1 * var(--space-0\\.25));
+    margin-inline-end: calc(-1 * var(--space-0\\.25));
+    margin-inline-start: calc(-1 * var(--space-0\\.25));
   `,
   '-0.5': css`
-    margin-right: calc(-1 * var(--space-0\\.5));
-    margin-left: calc(-1 * var(--space-0\\.5));
+    margin-inline-end: calc(-1 * var(--space-0\\.5));
+    margin-inline-start: calc(-1 * var(--space-0\\.5));
   `,
   '-0.75': css`
-    margin-right: calc(-1 * var(--space-0\\.75));
-    margin-left: calc(-1 * var(--space-0\\.75));
+    margin-inline-end: calc(-1 * var(--space-0\\.75));
+    margin-inline-start: calc(-1 * var(--space-0\\.75));
   `,
   '-1': css`
-    margin-right: calc(-1 * var(--space-1));
-    margin-left: calc(-1 * var(--space-1));
+    margin-inline-end: calc(-1 * var(--space-1));
+    margin-inline-start: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-right: calc(-1 * var(--space-1\\.5));
-    margin-left: calc(-1 * var(--space-1\\.5));
+    margin-inline-end: calc(-1 * var(--space-1\\.5));
+    margin-inline-start: calc(-1 * var(--space-1\\.5));
   `,
   '-2': css`
-    margin-right: calc(-1 * var(--space-2));
-    margin-left: calc(-1 * var(--space-2));
+    margin-inline-end: calc(-1 * var(--space-2));
+    margin-inline-start: calc(-1 * var(--space-2));
   `,
   '-3': css`
-    margin-right: calc(-1 * var(--space-3));
-    margin-left: calc(-1 * var(--space-3));
+    margin-inline-end: calc(-1 * var(--space-3));
+    margin-inline-start: calc(-1 * var(--space-3));
   `,
   '-4': css`
-    margin-right: calc(-1 * var(--space-4));
-    margin-left: calc(-1 * var(--space-4));
+    margin-inline-end: calc(-1 * var(--space-4));
+    margin-inline-start: calc(-1 * var(--space-4));
   `,
   '-5': css`
-    margin-right: calc(-1 * var(--space-5));
-    margin-left: calc(-1 * var(--space-5));
+    margin-inline-end: calc(-1 * var(--space-5));
+    margin-inline-start: calc(-1 * var(--space-5));
   `,
   '-6': css`
-    margin-right: calc(-1 * var(--space-6));
-    margin-left: calc(-1 * var(--space-6));
+    margin-inline-end: calc(-1 * var(--space-6));
+    margin-inline-start: calc(-1 * var(--space-6));
   `,
   '-7': css`
-    margin-right: calc(-1 * var(--space-7));
-    margin-left: calc(-1 * var(--space-7));
+    margin-inline-end: calc(-1 * var(--space-7));
+    margin-inline-start: calc(-1 * var(--space-7));
   `,
   '-8': css`
-    margin-right: calc(-1 * var(--space-8));
-    margin-left: calc(-1 * var(--space-8));
+    margin-inline-end: calc(-1 * var(--space-8));
+    margin-inline-start: calc(-1 * var(--space-8));
   `,
   '-9': css`
-    margin-right: calc(-1 * var(--space-9));
-    margin-left: calc(-1 * var(--space-9));
+    margin-inline-end: calc(-1 * var(--space-9));
+    margin-inline-start: calc(-1 * var(--space-9));
   `,
   '-10': css`
-    margin-right: calc(-1 * var(--space-10));
-    margin-left: calc(-1 * var(--space-10));
+    margin-inline-end: calc(-1 * var(--space-10));
+    margin-inline-start: calc(-1 * var(--space-10));
   `,
 } as const;
 
@@ -3112,99 +3112,99 @@ export const marginBottom: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linar
   `,
 } as const;
 
-export const marginRight: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
+export const marginEnd: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    margin-right: calc(-1 * var(--space-0));
+    margin-inline-end: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-right: calc(-1 * var(--space-0\\.25));
+    margin-inline-end: calc(-1 * var(--space-0\\.25));
   `,
   '-0.5': css`
-    margin-right: calc(-1 * var(--space-0\\.5));
+    margin-inline-end: calc(-1 * var(--space-0\\.5));
   `,
   '-0.75': css`
-    margin-right: calc(-1 * var(--space-0\\.75));
+    margin-inline-end: calc(-1 * var(--space-0\\.75));
   `,
   '-1': css`
-    margin-right: calc(-1 * var(--space-1));
+    margin-inline-end: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-right: calc(-1 * var(--space-1\\.5));
+    margin-inline-end: calc(-1 * var(--space-1\\.5));
   `,
   '-2': css`
-    margin-right: calc(-1 * var(--space-2));
+    margin-inline-end: calc(-1 * var(--space-2));
   `,
   '-3': css`
-    margin-right: calc(-1 * var(--space-3));
+    margin-inline-end: calc(-1 * var(--space-3));
   `,
   '-4': css`
-    margin-right: calc(-1 * var(--space-4));
+    margin-inline-end: calc(-1 * var(--space-4));
   `,
   '-5': css`
-    margin-right: calc(-1 * var(--space-5));
+    margin-inline-end: calc(-1 * var(--space-5));
   `,
   '-6': css`
-    margin-right: calc(-1 * var(--space-6));
+    margin-inline-end: calc(-1 * var(--space-6));
   `,
   '-7': css`
-    margin-right: calc(-1 * var(--space-7));
+    margin-inline-end: calc(-1 * var(--space-7));
   `,
   '-8': css`
-    margin-right: calc(-1 * var(--space-8));
+    margin-inline-end: calc(-1 * var(--space-8));
   `,
   '-9': css`
-    margin-right: calc(-1 * var(--space-9));
+    margin-inline-end: calc(-1 * var(--space-9));
   `,
   '-10': css`
-    margin-right: calc(-1 * var(--space-10));
+    margin-inline-end: calc(-1 * var(--space-10));
   `,
 } as const;
 
-export const marginLeft: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
+export const marginStart: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClassName> = {
   '0': css`
-    margin-left: calc(-1 * var(--space-0));
+    margin-inline-start: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-left: calc(-1 * var(--space-0\\.25));
+    margin-inline-start: calc(-1 * var(--space-0\\.25));
   `,
   '-0.5': css`
-    margin-left: calc(-1 * var(--space-0\\.5));
+    margin-inline-start: calc(-1 * var(--space-0\\.5));
   `,
   '-0.75': css`
-    margin-left: calc(-1 * var(--space-0\\.75));
+    margin-inline-start: calc(-1 * var(--space-0\\.75));
   `,
   '-1': css`
-    margin-left: calc(-1 * var(--space-1));
+    margin-inline-start: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-left: calc(-1 * var(--space-1\\.5));
+    margin-inline-start: calc(-1 * var(--space-1\\.5));
   `,
   '-2': css`
-    margin-left: calc(-1 * var(--space-2));
+    margin-inline-start: calc(-1 * var(--space-2));
   `,
   '-3': css`
-    margin-left: calc(-1 * var(--space-3));
+    margin-inline-start: calc(-1 * var(--space-3));
   `,
   '-4': css`
-    margin-left: calc(-1 * var(--space-4));
+    margin-inline-start: calc(-1 * var(--space-4));
   `,
   '-5': css`
-    margin-left: calc(-1 * var(--space-5));
+    margin-inline-start: calc(-1 * var(--space-5));
   `,
   '-6': css`
-    margin-left: calc(-1 * var(--space-6));
+    margin-inline-start: calc(-1 * var(--space-6));
   `,
   '-7': css`
-    margin-left: calc(-1 * var(--space-7));
+    margin-inline-start: calc(-1 * var(--space-7));
   `,
   '-8': css`
-    margin-left: calc(-1 * var(--space-8));
+    margin-inline-start: calc(-1 * var(--space-8));
   `,
   '-9': css`
-    margin-left: calc(-1 * var(--space-9));
+    margin-inline-start: calc(-1 * var(--space-9));
   `,
   '-10': css`
-    margin-left: calc(-1 * var(--space-10));
+    margin-inline-start: calc(-1 * var(--space-10));
   `,
 } as const;
 

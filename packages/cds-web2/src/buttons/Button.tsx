@@ -61,7 +61,7 @@ const startNodeStyle = css`
   flex-grow: 1;
   flex-shrink: 0;
   justify-content: flex-start;
-  margin-right: var(--space-1);
+  margin-inline-end: var(--space-1);
 `;
 const endNodeStyle = css`
   display: flex;
@@ -70,7 +70,7 @@ const endNodeStyle = css`
   flex-grow: 1;
   flex-shrink: 0;
   justify-content: flex-end;
-  margin-left: var(--space-1);
+  margin-inline-start: var(--space-1);
 `;
 const iconStyle = css`
   justify-content: space-between;
@@ -87,22 +87,16 @@ const middleNodeStyle = css`
 
 const flushSpaceStyle = css`
   min-width: unset;
-  padding-left: var(--space-2);
-  padding-right: var(--space-2);
+  padding-inline-start: var(--space-2);
+  padding-inline-end: var(--space-2);
 `;
+
 const flushStartStyle = css`
-  margin-left: calc(var(--space-2) * -1);
-
-  &:dir(rtl) {
-    margin-right: calc(var(--space-2) * -1);
-  }
+  margin-inline-start: calc(var(--space-2) * -1);
 `;
-const flushEndStyle = css`
-  margin-right: calc(var(--space-2) * -1);
 
-  &:dir(rtl) {
-    margin-left: calc(var(--space-2) * -1);
-  }
+const flushEndStyle = css`
+  margin-inline-end: calc(var(--space-2) * -1);
 `;
 
 export const buttonDefaultElement = 'button';

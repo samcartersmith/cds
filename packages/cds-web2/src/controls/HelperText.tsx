@@ -19,7 +19,7 @@ export type HelperTextProps = {
 
 const boxStyle = css`
   display: inline-block;
-  padding-right: var(--space-0\\.5);
+  padding-inline-end: var(--space-0\\.5);
 `;
 
 export const HelperText = memo(function HelperTex({

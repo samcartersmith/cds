@@ -115,7 +115,7 @@ export const ComponentHeader = memo(
                   alignItems="center"
                   background="bg"
                   borderRadius={400}
-                  paddingLeft={2}
+                  paddingStart={2}
                   paddingY={0}
                 >
                   <Text className={styles.importText} font="body">

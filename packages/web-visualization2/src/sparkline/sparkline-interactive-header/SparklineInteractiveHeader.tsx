@@ -160,7 +160,7 @@ const SparklineInteractiveHeaderStable = memo(
             </span>
           </Text>
           {!!defaultSubHead.accessoryText && (
-            <Text aria-hidden tabularNumbers as="span" color="fgMuted" paddingLeft={1}>
+            <Text aria-hidden tabularNumbers as="span" color="fgMuted" paddingStart={1}>
               <span ref={subHeadAccessoryRef}>{defaultSubHead.accessoryText}</span>
             </Text>
           )}
@@ -175,7 +175,7 @@ const SparklineInteractiveHeaderStable = memo(
               as="div"
               color="fg"
               font={compact ? 'title1' : 'display3'}
-              paddingRight={1}
+              paddingEnd={1}
             >
               <span ref={titleRef}>{defaultTitle}</span>
             </Text>

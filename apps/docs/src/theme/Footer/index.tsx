@@ -36,8 +36,8 @@ export default function Footer(): JSX.Element | null {
       <VStack
         flexGrow={1}
         gap={{ base: 5, tablet: 0, desktop: 0 }}
-        paddingLeft={{ base: 0, tablet: 3, desktop: 3 }}
-        paddingRight={{ base: 0, tablet: 5, desktop: 5 }}
+        paddingEnd={{ base: 0, tablet: 5, desktop: 5 }}
+        paddingStart={{ base: 0, tablet: 3, desktop: 3 }}
         paddingY={{ base: 0, tablet: 1, desktop: 1 }}
       >
         <Text flexGrow={1}>

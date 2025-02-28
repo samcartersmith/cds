@@ -19,7 +19,7 @@ export default function NavbarMobilePrimaryMenu(): JSX.Element {
   }));
 
   return (
-    <VStack as="ul" gap={1} marginBottom={0} paddingLeft={2} paddingRight={1.5}>
+    <VStack as="ul" gap={1} marginBottom={0} paddingEnd={1.5} paddingStart={2}>
       {parsedItems?.map(({ href, label }) => (
         <VStack key={label} as="li">
           <Pressable as="a" background="transparent" borderRadius={1000} href={href}>

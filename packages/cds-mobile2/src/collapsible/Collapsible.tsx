@@ -50,9 +50,9 @@ export const Collapsible = memo(
         paddingX,
         paddingY,
         paddingTop,
-        paddingRight,
+        paddingEnd,
         paddingBottom,
-        paddingLeft,
+        paddingStart,
         scrollViewProps,
       }: CollapsibleProps,
       forwardedRef: React.ForwardedRef<View>,
@@ -79,9 +79,9 @@ export const Collapsible = memo(
 
       const spacingStyles = {
         paddingTop: theme.space[paddingTop ?? paddingY ?? padding ?? 0],
-        paddingRight: theme.space[paddingRight ?? paddingX ?? padding ?? 0],
+        paddingEnd: theme.space[paddingEnd ?? paddingX ?? padding ?? 0],
         paddingBottom: theme.space[paddingBottom ?? paddingY ?? padding ?? 0],
-        paddingLeft: theme.space[paddingLeft ?? paddingX ?? padding ?? 0],
+        paddingStart: theme.space[paddingStart ?? paddingX ?? padding ?? 0],
       };
 
       const prevCollapsed = usePreviousValue(collapsed);

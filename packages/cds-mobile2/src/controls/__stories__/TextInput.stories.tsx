@@ -230,7 +230,7 @@ const InputScreen = () => {
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
               color="fgMuted"
-              paddingRight={2}
+              paddingEnd={2}
             >
               Cancel
             </TextBody>
@@ -260,7 +260,7 @@ const InputScreen = () => {
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
               color="fgMuted"
-              paddingRight={2}
+              paddingEnd={2}
             >
               Cancel
             </TextBody>

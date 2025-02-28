@@ -99,8 +99,8 @@ const BoxScreen = () => {
         <Box
           background="bgAlternate"
           paddingBottom={3}
-          paddingLeft={4}
-          paddingRight={2}
+          paddingEnd={2}
+          paddingStart={4}
           paddingTop={1}
         >
           <TextBody>Custom sides</TextBody>
@@ -123,7 +123,7 @@ const BoxScreen = () => {
         </Box>
 
         <Box background="bgAlternate" padding={5}>
-          <Box background="bg" marginBottom={-3} marginLeft={-4} marginRight={-2} marginTop={-1}>
+          <Box background="bg" marginBottom={-3} marginEnd={-2} marginStart={-4} marginTop={-1}>
             <TextBody>Custom sides</TextBody>
           </Box>
         </Box>

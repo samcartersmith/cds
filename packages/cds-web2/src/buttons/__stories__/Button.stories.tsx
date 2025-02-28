@@ -15,6 +15,7 @@ export default {
   component: Button,
   title: 'Core Components/Buttons/Button',
 };
+
 export const CustomEndIconButton = () => (
   <VStack gap={2}>
     <ButtonGroup accessibilityLabel="Group">
@@ -26,5 +27,16 @@ export const CustomEndIconButton = () => (
         Test
       </Button>
     </ButtonGroup>
+  </VStack>
+);
+
+export const FlushProps = () => (
+  <VStack background="bgSecondary" gap={4} paddingX={2}>
+    <Button block flush="start" onClick={() => {}}>
+      Flush to Start
+    </Button>
+    <Button block flush="end" onClick={() => {}} variant="negative">
+      Flush to End
+    </Button>
   </VStack>
 );

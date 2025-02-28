@@ -132,7 +132,7 @@ export const SearchInput = memo(
           end={
             end ??
             (!!value && !hideEndIcon && (
-              <Box paddingRight={0.5}>
+              <Box paddingEnd={0.5}>
                 <InputIconButton
                   accessibilityLabel={clearIconAccessibilityLabel}
                   name="close"

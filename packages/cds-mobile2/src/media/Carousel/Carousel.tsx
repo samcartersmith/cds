@@ -137,7 +137,7 @@ export const Carousel = memo(
                 key={`carousel-item-${key}`}
                 dismiss={getDismissHandler(shouldAnimateHeight)}
                 id={key}
-                paddingRight={isLastItem ? 0 : gap}
+                paddingEnd={isLastItem ? 0 : gap}
                 updateLayoutMap={updateLayoutMap}
               >
                 {child}
@@ -181,9 +181,9 @@ const styles = StyleSheet.create({
        */
       paddingVertical: 4,
       marginVertical: -4,
-      paddingLeft: 4,
-      marginLeft: -4,
-      paddingRight: 2,
+      paddingStart: 4,
+      marginStart: -4,
+      paddingEnd: 2,
     },
     default: {},
   }),

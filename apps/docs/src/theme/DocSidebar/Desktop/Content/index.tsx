@@ -41,8 +41,8 @@ export default function DocSidebarDesktopContent({ path, sidebar, className }: P
         showAnnouncementBar && styles.menuWithAnnouncementBar,
         className,
       )}
-      paddingLeft={2}
-      paddingRight={1.5}
+      paddingEnd={1.5}
+      paddingStart={2}
       paddingY={3}
     >
       <VStack as="ul" className={cx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')} gap={3}>

@@ -13,7 +13,7 @@ type CarouselItemProps = {
   /** Id of CarouselItem. Set via key prop when passing in items to parent Carousel component. */
   id: CarouselItemId;
   /** Determines how much padding should be between this CarouselItem and the next one. */
-  paddingRight: ThemeVars.Space;
+  paddingEnd: ThemeVars.Space;
   /** Save the CarouselItem x position to Carousel's layoutMap. The layoutMap is used for the snapPoints of the ScrollView. */
   updateLayoutMap: CarouselUpdateLayoutMap;
 };
@@ -25,7 +25,7 @@ type AnimatedStyles = {
 };
 
 export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> = memo(
-  ({ children, dismiss, id, paddingRight, updateLayoutMap }) => {
+  ({ children, dismiss, id, paddingEnd, updateLayoutMap }) => {
     const innerBox = useRef<View>(null);
     /** All animations go from to 1 to 0 when dismissed. Width and height are interpolated from those values. */
     const [animatedStyles, setAnimatedStyles] = useState<AnimatedStyles | undefined>();
@@ -70,7 +70,7 @@ export const CarouselItem: React.FC<React.PropsWithChildren<CarouselItemProps>> 
           <Box
             ref={innerBox}
             flexShrink={0}
-            paddingRight={paddingRight}
+            paddingEnd={paddingEnd}
             testID={`CarouselItemInner-${id}`}
           >
             {children}

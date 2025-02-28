@@ -57,7 +57,7 @@ export const DefaultTray = ({ title }: { title?: React.ReactNode }) => {
 
 const TrayFallbackContent = () => {
   return (
-    <VStack gap={2} paddingLeft={3}>
+    <VStack gap={2} paddingStart={3}>
       {lotsOfOptions.map((item, i) => (
         <Fallback key={item} height={30} rectWidthVariant={i} width={100} />
       ))}

@@ -55,8 +55,8 @@ export const Button = memo(
     const pressableStyles = useMemo(
       () => ({
         ...(block ? styles.block : styles.inline),
-        marginLeft: -theme.space[offsetStart ?? 0],
-        marginRight: -theme.space[offsetEnd ?? 0],
+        marginStart: -theme.space[offsetStart ?? 0],
+        marginEnd: -theme.space[offsetEnd ?? 0],
       }),
       [block, theme.space, offsetStart, offsetEnd],
     );
@@ -113,8 +113,8 @@ export const Button = memo(
           flexWrap="nowrap"
           justifyContent={justifyContent}
           minHeight={minHeight}
-          paddingLeft={spacingStart}
-          paddingRight={spacingEnd}
+          paddingEnd={spacingEnd}
+          paddingStart={spacingStart}
           style={block ? styles.block : styles.inline}
         >
           {loading ? (
@@ -126,7 +126,7 @@ export const Button = memo(
                   <Icon
                     color={color}
                     name={startIcon}
-                    paddingRight={1}
+                    paddingEnd={1}
                     size={iconSize}
                     style={styles.icon}
                   />
@@ -138,7 +138,7 @@ export const Button = memo(
                   <Icon
                     color={color}
                     name={endIcon}
-                    paddingLeft={1}
+                    paddingStart={1}
                     size={iconSize}
                     style={styles.icon}
                   />

@@ -59,7 +59,7 @@ const PatternDisclosureMedFrictionScreen = () => {
                     <Icon color="fg" name="checkmark" size="s" />
                     <TextHeadline style={{ flex: 1 }}>{headline}</TextHeadline>
                   </HStack>
-                  <TextBody paddingLeft={4}>{body}</TextBody>
+                  <TextBody paddingStart={4}>{body}</TextBody>
                 </VStack>
               ))}
             </VStack>

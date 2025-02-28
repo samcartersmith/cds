@@ -31,7 +31,7 @@ export const InputIconButton = memo(function InputIconButton({
   const transformedVariant = secondaryVariants.has(contextVariant) ? 'primary' : contextVariant;
 
   return (
-    <Box paddingLeft={1} paddingRight={0.5} testID={testID}>
+    <Box paddingEnd={0.5} paddingStart={1} testID={testID}>
       <IconButton
         transparent
         accessibilityHint={accessibilityHint ?? props.name}

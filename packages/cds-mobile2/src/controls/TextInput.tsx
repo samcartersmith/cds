@@ -137,7 +137,7 @@ export const TextInput = memo(
        * This is not the case when there is no startContent.
        * In normal circumstances, spacing horizontal should be 2 (16px)
        */
-      const startSpacing = { paddingLeft: theme.space[0.5] };
+      const startSpacing = { paddingStart: theme.space[0.5] };
 
       // Get the accessability label from the start node child
       const startIconA11yLabel = useMemo(() => {
@@ -189,7 +189,7 @@ export const TextInput = memo(
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
                   <HStack>
                     {suffix !== '' && (
-                      <TextLabel1 color="fgMuted" paddingRight={2}>
+                      <TextLabel1 color="fgMuted" paddingEnd={2}>
                         {suffix}
                       </TextLabel1>
                     )}
@@ -255,7 +255,7 @@ export const TextInput = memo(
                   onPress={handleNodePress}
                 >
                   <HStack>
-                    {compact && !!label && <InputLabel paddingLeft={2}>{label}</InputLabel>}
+                    {compact && !!label && <InputLabel paddingStart={2}>{label}</InputLabel>}
                     {!!start && (
                       <TextInputFocusVariantContext.Provider value={focusedVariant}>
                         {inaccessibleStart}

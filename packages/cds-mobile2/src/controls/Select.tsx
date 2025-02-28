@@ -180,7 +180,7 @@ export const Select = memo(
                     flexShrink={1}
                     justifyContent={compact ? 'flex-end' : 'flex-start'}
                     minHeight={minHeight}
-                    paddingLeft={startNode ? 0 : getSpacingStart}
+                    paddingStart={startNode ? 0 : getSpacingStart}
                     paddingY={compact ? 1 : 2}
                   >
                     <TextBody
@@ -201,7 +201,7 @@ export const Select = memo(
                 startNode={
                   <>
                     {compact && (
-                      <HStack alignItems="center" maxWidth="40%" paddingLeft={2}>
+                      <HStack alignItems="center" maxWidth="40%" paddingStart={2}>
                         <InputLabel noWrap color={labelTextColor} disabled={disabled}>
                           {label}
                         </InputLabel>

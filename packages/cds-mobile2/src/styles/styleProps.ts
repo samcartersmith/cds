@@ -16,9 +16,9 @@ export type StyleProps = {
   borderColor?: ThemeVars.Color;
   borderWidth?: ThemeVars.BorderWidth;
   borderTopWidth?: ThemeVars.BorderWidth;
-  borderRightWidth?: ThemeVars.BorderWidth;
+  borderEndWidth?: ThemeVars.BorderWidth;
   borderBottomWidth?: ThemeVars.BorderWidth;
-  borderLeftWidth?: ThemeVars.BorderWidth;
+  borderStartWidth?: ThemeVars.BorderWidth;
   borderRadius?: ThemeVars.BorderRadius;
   borderTopLeftRadius?: ThemeVars.BorderRadius;
   borderTopRightRadius?: ThemeVars.BorderRadius;
@@ -52,15 +52,15 @@ export type StyleProps = {
   paddingY?: ThemeVars.Space;
   paddingTop?: ThemeVars.Space;
   paddingBottom?: ThemeVars.Space;
-  paddingLeft?: ThemeVars.Space;
-  paddingRight?: ThemeVars.Space;
+  paddingStart?: ThemeVars.Space;
+  paddingEnd?: ThemeVars.Space;
   margin?: NegativeSpace;
   marginX?: NegativeSpace;
   marginY?: NegativeSpace;
   marginTop?: NegativeSpace;
   marginBottom?: NegativeSpace;
-  marginLeft?: NegativeSpace;
-  marginRight?: NegativeSpace;
+  marginStart?: NegativeSpace;
+  marginEnd?: NegativeSpace;
   elevation?: ElevationLevels;
   textAlign?: TextStyle['textAlign'];
   width?: DimensionValue;
@@ -99,9 +99,9 @@ export const themedStyleProps = {
   borderColor: 'color',
   borderWidth: 'borderWidth',
   borderTopWidth: 'borderWidth',
-  borderRightWidth: 'borderWidth',
+  borderEndWidth: 'borderWidth',
   borderBottomWidth: 'borderWidth',
-  borderLeftWidth: 'borderWidth',
+  borderStartWidth: 'borderWidth',
   borderRadius: 'borderRadius',
   borderTopLeftRadius: 'borderRadius',
   borderTopRightRadius: 'borderRadius',
@@ -120,23 +120,23 @@ export const themedStyleProps = {
   paddingY: 'space',
   paddingTop: 'space',
   paddingBottom: 'space',
-  paddingLeft: 'space',
-  paddingRight: 'space',
+  paddingStart: 'space',
+  paddingEnd: 'space',
   margin: 'space',
   marginX: 'space',
   marginY: 'space',
   marginTop: 'space',
   marginBottom: 'space',
-  marginLeft: 'space',
-  marginRight: 'space',
+  marginStart: 'space',
+  marginEnd: 'space',
 } as const satisfies { [key in keyof StyleProps]: keyof Theme };
 
 /** For StyleProps whose names are not keys of ViewStyle & TextStyle, this maps those StyleProp names to their ViewStyle & TextStyle keys. */
 const stylePropAliases = {
   background: ['backgroundColor'],
-  paddingX: ['paddingLeft', 'paddingRight'],
+  paddingX: ['paddingStart', 'paddingEnd'],
   paddingY: ['paddingTop', 'paddingBottom'],
-  marginX: ['marginLeft', 'marginRight'],
+  marginX: ['marginStart', 'marginEnd'],
   marginY: ['marginTop', 'marginBottom'],
 } as const satisfies { [key in keyof StyleProps]: (keyof (ViewStyle & TextStyle))[] };
 

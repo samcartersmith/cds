@@ -37,13 +37,13 @@ import { NativeInput } from './NativeInput';
 const nativeInputContainerStyle = css`
   padding-top: var(--space-2);
   padding-bottom: var(--space-2);
-  padding-left: var(--space-0\\.5);
-  padding-right: var(--space-2);
+  padding-inline-start: var(--space-0\\.5);
+  padding-inline-end: var(--space-2);
 
   &[data-compact='true'] {
     padding-top: var(--space-1);
     padding-bottom: var(--space-1);
-    padding-right: var(--space-1);
+    padding-inline-end: var(--space-1);
   }
 `;
 
@@ -268,7 +268,7 @@ export const TextInput = memo(
                 testID={testIDMap?.end ?? ''}
               >
                 {suffix !== '' && (
-                  <Text as="p" color="fgMuted" font="label1" paddingRight={2}>
+                  <Text as="p" color="fgMuted" font="label1" paddingEnd={2}>
                     {suffix}
                   </Text>
                 )}
@@ -319,7 +319,7 @@ export const TextInput = memo(
                 testID={testIDMap?.start ?? ''}
               >
                 {compact && !!label && (
-                  <InputLabel htmlFor={shouldSetLabelId ? labelId : undefined} paddingLeft={2}>
+                  <InputLabel htmlFor={shouldSetLabelId ? labelId : undefined} paddingStart={2}>
                     {label}
                   </InputLabel>
                 )}

@@ -59,9 +59,9 @@ export function createCardBody<OnPressFn>({
     paddingX,
     paddingY,
     paddingTop,
-    paddingRight,
+    paddingEnd,
     paddingBottom,
-    paddingLeft,
+    paddingStart,
     numberOfLines = 3,
     accessibilityLabel,
     children,
@@ -73,9 +73,9 @@ export function createCardBody<OnPressFn>({
       paddingX,
       paddingY,
       paddingTop,
-      paddingRight,
+      paddingEnd,
       paddingBottom,
-      paddingLeft,
+      paddingStart,
       compact,
     });
 
@@ -133,8 +133,8 @@ export function createCardBody<OnPressFn>({
           {mediaContent}
           <VStack
             gap={1}
-            paddingLeft={spacingProps.paddingLeft}
-            paddingRight={spacingProps.paddingRight}
+            paddingEnd={spacingProps.paddingEnd}
+            paddingStart={spacingProps.paddingStart}
           >
             <TextHeadline {...textProps} testID={`${testID}-title`}>
               {title}

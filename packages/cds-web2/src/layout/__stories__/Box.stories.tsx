@@ -143,7 +143,7 @@ export const Spacing = () => (
 );
 
 export const CustomSpacing = () => (
-  <Box background="bgAlternate" paddingBottom={3} paddingLeft={4} paddingRight={2} paddingTop={1}>
+  <Box background="bgAlternate" paddingBottom={3} paddingEnd={2} paddingStart={4} paddingTop={1}>
     <TextBody as="p">Custom sides</TextBody>
   </Box>
 );
@@ -170,7 +170,7 @@ export const Offset = () => (
 
 export const CustomOffset = () => (
   <Box background="bgAlternate" padding={5}>
-    <Box background="bg" marginBottom={-3} marginLeft={-4} marginRight={-2} marginTop={-1}>
+    <Box background="bg" marginBottom={-3} marginEnd={-2} marginStart={-4} marginTop={-1}>
       <TextBody as="p">Custom sides</TextBody>
     </Box>
   </Box>

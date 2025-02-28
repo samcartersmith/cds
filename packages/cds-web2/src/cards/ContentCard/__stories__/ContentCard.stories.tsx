@@ -87,7 +87,7 @@ const exampleProps: {
 export const Default = (): JSX.Element => {
   return (
     <VStack gap={1} left={0} padding={1} paddingTop={3} position="absolute" top={0}>
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example
       </Text>
       <ContentCard>
@@ -96,7 +96,7 @@ export const Default = (): JSX.Element => {
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
       <Divider paddingBottom={2} />
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example with mediaPosition bottom
       </Text>
       <ContentCard>
@@ -104,8 +104,8 @@ export const Default = (): JSX.Element => {
         <ContentCardBody {...exampleProps.contentBodyProps} mediaPosition="bottom" />
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
-      <Divider paddingBottom={2} paddingLeft={3} />
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Divider paddingBottom={2} paddingStart={3} />
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example with mediaPosition right
       </Text>
       <ContentCard>
@@ -113,8 +113,8 @@ export const Default = (): JSX.Element => {
         <ContentCardBody {...exampleProps.contentBodyProps} mediaPosition="right" />
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
-      <Divider paddingBottom={2} paddingLeft={3} />
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Divider paddingBottom={2} paddingStart={3} />
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example with mediaPosition left
       </Text>
       <ContentCard>
@@ -122,8 +122,8 @@ export const Default = (): JSX.Element => {
         <ContentCardBody {...exampleProps.contentBodyProps} mediaPosition="left" />
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
-      <Divider paddingBottom={2} paddingLeft={3} />
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Divider paddingBottom={2} paddingStart={3} />
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example with no media
       </Text>
       <ContentCard>
@@ -131,8 +131,8 @@ export const Default = (): JSX.Element => {
         <ContentCardBody {...exampleProps.contentBodyProps} media={null} />
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
-      <Divider paddingBottom={2} paddingLeft={3} />
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Divider paddingBottom={2} paddingStart={3} />
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example with product component - TextInput
       </Text>
       <ContentCard>
@@ -165,8 +165,8 @@ export const Default = (): JSX.Element => {
           </Button>
         </ContentCardFooter>
       </ContentCard>
-      <Divider paddingBottom={2} paddingLeft={3} />
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Divider paddingBottom={2} paddingStart={3} />
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example with product component - Custom Media
       </Text>
       <ContentCard>
@@ -220,7 +220,7 @@ export const Default = (): JSX.Element => {
           }
         />
       </ContentCard>
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example with IconCounterButtons
       </Text>
       <ContentCard>
@@ -241,7 +241,7 @@ export const Default = (): JSX.Element => {
 export const ProductCarousel = () => {
   return (
     <VStack>
-      <Text as="h3" font="headline" paddingLeft={3}>
+      <Text as="h3" font="headline" paddingStart={3}>
         Full Example with product component - Carousel
       </Text>
       <ContentCard maxWidth="100%">

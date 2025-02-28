@@ -25,7 +25,7 @@ export const Examples = () => {
   return (
     <ExampleScreen>
       <Example>
-        <Group gap={8} paddingRight={8}>
+        <Group gap={8} paddingEnd={8}>
           <DateInput {...sharedProps} {...props} />
           <LocaleProvider locale="ES-es">
             <DateInput {...sharedProps} {...props} />

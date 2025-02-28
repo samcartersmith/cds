@@ -214,7 +214,7 @@ export const EndContent = function EndContent() {
   return (
     <TextInput
       end={
-        <HStack paddingRight={1}>
+        <HStack paddingEnd={1}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <Link font="headline" to="">
             Hello
@@ -271,7 +271,7 @@ export const CompactInputEnd = function CompactInputEnd() {
     <TextInput
       compact
       end={
-        <HStack paddingRight={1}>
+        <HStack paddingEnd={1}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <Link font="headline" to="">
             Hello

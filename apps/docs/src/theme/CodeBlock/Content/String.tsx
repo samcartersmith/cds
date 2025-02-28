@@ -67,8 +67,8 @@ export default function CodeBlockString({
         <HStack
           alignItems="center"
           justifyContent="space-between"
-          paddingLeft={2}
-          paddingRight={0.75}
+          paddingEnd={0.75}
+          paddingStart={2}
           paddingY={0.75}
         >
           <Text font="label1">{title}</Text>
