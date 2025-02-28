@@ -1,5 +1,6 @@
 import React from 'react';
 import { css, cx } from '@linaria/core';
+import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 
 import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
@@ -40,10 +41,10 @@ const pressStyle = css`
   }
   &:active {
     transform: scale(0.98);
-    opacity: 0.82;
+    opacity: ${opacityPressed};
   }
   &:hover {
-    opacity: 0.88;
+    opacity: ${opacityHovered};
   }
 `;
 
@@ -82,6 +83,7 @@ export const ContainedAssetCard = ({
 }: ContainedAssetCardProps) => {
   return (
     <Box
+      as={onClick ? 'button' : 'div'}
       background={background}
       borderRadius={borderRadius}
       className={cx(onClick && pressStyle, focusRingStyle, className)}
@@ -91,7 +93,6 @@ export const ContainedAssetCard = ({
       minWidth={minWidth}
       onClick={onClick}
       overflow={overflow}
-      tabIndex={onClick ? 0 : undefined}
       testID={testID}
       {...props}
     >

@@ -184,17 +184,17 @@ export const Interactable: InteractableComponent = forwardRef<
         // Hover:
         [interactableHoveredBackground]: getBlendedColor({
           color: blendStyles?.hoveredBackground ?? backgroundRgb,
-          opacity: opacityHovered[100],
+          opacity: opacityHovered,
           colorScheme: theme.colorScheme,
         }),
-        [interactableHoveredOpacity]: opacityHovered[100],
+        [interactableHoveredOpacity]: opacityHovered,
         // Pressed:
         [interactablePressedBackground]: getBlendedColor({
           color: blendStyles?.pressedBackground ?? backgroundRgb,
-          opacity: opacityPressed[100],
+          opacity: opacityPressed,
           colorScheme: theme.colorScheme,
         }),
-        [interactablePressedOpacity]: opacityPressed[100],
+        [interactablePressedOpacity]: opacityPressed,
         // Disabled:
         [interactableDisabledBackground]: getBlendedColor({
           color: blendStyles?.disabledBackground ?? backgroundRgb,

@@ -163,6 +163,9 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
   bgSecondary: css`
     color: var(--color-bgSecondary);
   `,
+  bgTertiary: css`
+    color: var(--color-bgTertiary);
+  `,
   bgSecondaryWash: css`
     color: var(--color-bgSecondaryWash);
   `,
@@ -183,9 +186,6 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   bgWarningWash: css`
     color: var(--color-bgWarningWash);
-  `,
-  bgTertiary: css`
-    color: var(--color-bgTertiary);
   `,
   currentColor: css`
     color: var(--color-currentColor);
@@ -309,6 +309,9 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   bgSecondary: css`
     background-color: var(--color-bgSecondary);
   `,
+  bgTertiary: css`
+    background-color: var(--color-bgTertiary);
+  `,
   bgSecondaryWash: css`
     background-color: var(--color-bgSecondaryWash);
   `,
@@ -329,9 +332,6 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   bgWarningWash: css`
     background-color: var(--color-bgWarningWash);
-  `,
-  bgTertiary: css`
-    background-color: var(--color-bgTertiary);
   `,
   currentColor: css`
     background-color: var(--color-currentColor);
@@ -469,6 +469,10 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
     border-style: solid;
     border-color: var(--color-bgSecondary);
   `,
+  bgTertiary: css`
+    border-style: solid;
+    border-color: var(--color-bgTertiary);
+  `,
   bgSecondaryWash: css`
     border-style: solid;
     border-color: var(--color-bgSecondaryWash);
@@ -496,10 +500,6 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     border-style: solid;
     border-color: var(--color-bgWarningWash);
-  `,
-  bgTertiary: css`
-    border-style: solid;
-    border-color: var(--color-bgTertiary);
   `,
   currentColor: css`
     border-style: solid;
@@ -675,6 +675,11 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
       color: var(--color-bgSecondary);
     }
   `,
+  bgTertiary: css`
+    &:hover {
+      color: var(--color-bgTertiary);
+    }
+  `,
   bgSecondaryWash: css`
     &:hover {
       color: var(--color-bgSecondaryWash);
@@ -708,11 +713,6 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     &:hover {
       color: var(--color-bgWarningWash);
-    }
-  `,
-  bgTertiary: css`
-    &:hover {
-      color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`
@@ -913,6 +913,11 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
       background-color: var(--color-bgSecondary);
     }
   `,
+  bgTertiary: css`
+    &:hover {
+      background-color: var(--color-bgTertiary);
+    }
+  `,
   bgSecondaryWash: css`
     &:hover {
       background-color: var(--color-bgSecondaryWash);
@@ -946,11 +951,6 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     &:hover {
       background-color: var(--color-bgWarningWash);
-    }
-  `,
-  bgTertiary: css`
-    &:hover {
-      background-color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`
@@ -1151,6 +1151,11 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
       border-color: var(--color-bgSecondary);
     }
   `,
+  bgTertiary: css`
+    &:hover {
+      border-color: var(--color-bgTertiary);
+    }
+  `,
   bgSecondaryWash: css`
     &:hover {
       border-color: var(--color-bgSecondaryWash);
@@ -1184,11 +1189,6 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     &:hover {
       border-color: var(--color-bgWarningWash);
-    }
-  `,
-  bgTertiary: css`
-    &:hover {
-      border-color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`
@@ -1853,6 +1853,9 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   bgSecondary: css`
     text-decoration-color: var(--color-bgSecondary);
   `,
+  bgTertiary: css`
+    text-decoration-color: var(--color-bgTertiary);
+  `,
   bgSecondaryWash: css`
     text-decoration-color: var(--color-bgSecondaryWash);
   `,
@@ -1873,9 +1876,6 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   bgWarningWash: css`
     text-decoration-color: var(--color-bgWarningWash);
-  `,
-  bgTertiary: css`
-    text-decoration-color: var(--color-bgTertiary);
   `,
   currentColor: css`
     text-decoration-color: var(--color-currentColor);

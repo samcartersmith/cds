@@ -287,6 +287,7 @@ export const defaultTheme = {
     bgPrimary: `rgb(${lightSpectrum.blue60})`,
     bgPrimaryWash: `rgb(${lightSpectrum.blue0})`,
     bgSecondary: `rgb(${lightSpectrum.gray10})`,
+    bgTertiary: `rgb(${lightSpectrum.gray20})`,
     bgSecondaryWash: `rgb(${lightSpectrum.gray5})`,
     bgNegative: `rgb(${lightSpectrum.red60})`,
     bgNegativeWash: `rgb(${lightSpectrum.red0})`,
@@ -294,7 +295,6 @@ export const defaultTheme = {
     bgPositiveWash: `rgb(${lightSpectrum.green0})`,
     bgWarning: `rgb(${lightSpectrum.orange40})`,
     bgWarningWash: `rgb(${lightSpectrum.orange0})`,
-    bgTertiary: `rgb(${lightSpectrum.gray20})`,
     currentColor: 'currentColor',
     // Line
     bgLine: `rgba(${lightSpectrum.gray60},0.2)`,
@@ -342,6 +342,7 @@ export const defaultTheme = {
     bgPrimary: `rgb(${darkSpectrum.blue70})`,
     bgPrimaryWash: `rgb(${darkSpectrum.blue0})`,
     bgSecondary: `rgb(${darkSpectrum.gray15})`,
+    bgTertiary: `rgb(${darkSpectrum.gray20})`,
     bgSecondaryWash: `rgb(${darkSpectrum.gray5})`,
     bgNegative: `rgb(${darkSpectrum.red60})`,
     bgNegativeWash: `rgb(${darkSpectrum.red0})`,
@@ -349,7 +350,6 @@ export const defaultTheme = {
     bgPositiveWash: `rgb(${darkSpectrum.green0})`,
     bgWarning: `rgb(${darkSpectrum.yellow50})`,
     bgWarningWash: `rgb(${darkSpectrum.orange0})`,
-    bgTertiary: `rgb(${darkSpectrum.gray20})`,
     currentColor: 'currentColor',
     // Line
     bgLine: `rgba(${darkSpectrum.gray60},0.2)`,

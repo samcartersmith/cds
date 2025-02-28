@@ -1,5 +1,6 @@
 import React from 'react';
-import { css } from '@linaria/core';
+import { css, cx } from '@linaria/core';
+import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 import { type IllustrationPictogramNames } from '@cbhq/cds-common2/types/IllustrationNames';
 
 import { IconButton } from '../buttons/IconButton';
@@ -10,6 +11,30 @@ import { VStack } from '../layout/VStack';
 import { type StyleProps } from '../styles/styleProps';
 import { Text } from '../typography/Text';
 
+const pressStyle = css`
+  /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */
+  transform: scale(1);
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  padding: 0;
+
+  /* Removes weird bonus padding in Firefox */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  &:active {
+    transform: scale(0.98);
+    opacity: ${opacityPressed};
+  }
+  &:hover {
+    opacity: ${opacityHovered};
+  }
+`;
+
 const actionButtonStyle = css`
   transform: scale(1);
   appearance: none;
@@ -19,10 +44,25 @@ const actionButtonStyle = css`
 
   &:active {
     transform: scale(0.98);
-    opacity: 0.82;
+    opacity: ${opacityPressed};
   }
   &:hover {
-    opacity: 0.88;
+    opacity: ${opacityHovered};
+  }
+`;
+
+const focusRingStyle = css`
+  position: relative;
+  /* if we use the focus ring we need to turn off the browser stylesheet outline */
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--color-bgPrimary);
+    outline-offset: 2px;
+    border-radius: var(--borderRadius-500);
   }
 `;
 
@@ -105,6 +145,7 @@ export const NudgeCard = ({
   media,
   mediaPosition = 'right',
   action,
+  className,
   onActionPress,
   numberOfLines = 3,
   onDismissPress,
@@ -118,6 +159,7 @@ export const NudgeCard = ({
   minHeight,
   height,
   aspectRatio,
+  onClick,
   ...props
 }: NudgeCardProps) => {
   const hasMedia = pictogram || media;
@@ -139,12 +181,15 @@ export const NudgeCard = ({
 
   return (
     <Box
+      as={onClick ? 'button' : 'div'}
       background={background}
       borderColor="transparent"
       borderRadius={500}
+      className={cx(onClick && pressStyle, focusRingStyle, className)}
       maxHeight={maxHeight}
       maxWidth={maxWidth}
       minWidth={minWidth}
+      onClick={onClick}
       paddingEnd={onDismissPress ? 3 : 0}
       position="relative"
       width={width}

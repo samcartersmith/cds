@@ -1,5 +1,6 @@
 import React from 'react';
 import { css, cx } from '@linaria/core';
+import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 import type { FloatingAssetCardBaseProps } from '@cbhq/cds-common2/types/FloatingAssetCardBaseProps';
 
 import { type BoxProps } from '../layout/Box';
@@ -30,10 +31,10 @@ const pressStyle = css`
   }
   &:active {
     transform: scale(0.98);
-    opacity: 0.82;
+    opacity: ${opacityPressed};
   }
   &:hover {
-    opacity: 0.88;
+    opacity: ${opacityHovered};
   }
 `;
 
@@ -66,11 +67,11 @@ export const FloatingAssetCard = ({
 }: FloatingAssetCardProps) => {
   return (
     <VStack
+      as={onClick ? 'button' : 'div'}
       className={cx(onClick && pressStyle, focusRingStyle, className)}
       gap={1}
       maxWidth={width}
       onClick={onClick}
-      tabIndex={onClick ? 0 : undefined}
       testID={testID}
       {...props}
     >

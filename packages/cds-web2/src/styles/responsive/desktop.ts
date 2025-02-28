@@ -260,6 +260,11 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
       color: var(--color-bgSecondary);
     }
   `,
+  bgTertiary: css`
+    @media ${media.desktop} {
+      color: var(--color-bgTertiary);
+    }
+  `,
   bgSecondaryWash: css`
     @media ${media.desktop} {
       color: var(--color-bgSecondaryWash);
@@ -293,11 +298,6 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     @media ${media.desktop} {
       color: var(--color-bgWarningWash);
-    }
-  `,
-  bgTertiary: css`
-    @media ${media.desktop} {
-      color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`
@@ -498,6 +498,11 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
       background-color: var(--color-bgSecondary);
     }
   `,
+  bgTertiary: css`
+    @media ${media.desktop} {
+      background-color: var(--color-bgTertiary);
+    }
+  `,
   bgSecondaryWash: css`
     @media ${media.desktop} {
       background-color: var(--color-bgSecondaryWash);
@@ -531,11 +536,6 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     @media ${media.desktop} {
       background-color: var(--color-bgWarningWash);
-    }
-  `,
-  bgTertiary: css`
-    @media ${media.desktop} {
-      background-color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`
@@ -750,6 +750,12 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
       border-color: var(--color-bgSecondary);
     }
   `,
+  bgTertiary: css`
+    @media ${media.desktop} {
+      border-style: solid;
+      border-color: var(--color-bgTertiary);
+    }
+  `,
   bgSecondaryWash: css`
     @media ${media.desktop} {
       border-style: solid;
@@ -790,12 +796,6 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.desktop} {
       border-style: solid;
       border-color: var(--color-bgWarningWash);
-    }
-  `,
-  bgTertiary: css`
-    @media ${media.desktop} {
-      border-style: solid;
-      border-color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`
@@ -1048,6 +1048,13 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
       }
     }
   `,
+  bgTertiary: css`
+    @media ${media.desktop} {
+      &:hover {
+        color: var(--color-bgTertiary);
+      }
+    }
+  `,
   bgSecondaryWash: css`
     @media ${media.desktop} {
       &:hover {
@@ -1094,13 +1101,6 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.desktop} {
       &:hover {
         color: var(--color-bgWarningWash);
-      }
-    }
-  `,
-  bgTertiary: css`
-    @media ${media.desktop} {
-      &:hover {
-        color: var(--color-bgTertiary);
       }
     }
   `,
@@ -1378,6 +1378,13 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
       }
     }
   `,
+  bgTertiary: css`
+    @media ${media.desktop} {
+      &:hover {
+        background-color: var(--color-bgTertiary);
+      }
+    }
+  `,
   bgSecondaryWash: css`
     @media ${media.desktop} {
       &:hover {
@@ -1424,13 +1431,6 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.desktop} {
       &:hover {
         background-color: var(--color-bgWarningWash);
-      }
-    }
-  `,
-  bgTertiary: css`
-    @media ${media.desktop} {
-      &:hover {
-        background-color: var(--color-bgTertiary);
       }
     }
   `,
@@ -1708,6 +1708,13 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
       }
     }
   `,
+  bgTertiary: css`
+    @media ${media.desktop} {
+      &:hover {
+        border-color: var(--color-bgTertiary);
+      }
+    }
+  `,
   bgSecondaryWash: css`
     @media ${media.desktop} {
       &:hover {
@@ -1754,13 +1761,6 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.desktop} {
       &:hover {
         border-color: var(--color-bgWarningWash);
-      }
-    }
-  `,
-  bgTertiary: css`
-    @media ${media.desktop} {
-      &:hover {
-        border-color: var(--color-bgTertiary);
       }
     }
   `,
@@ -2798,6 +2798,11 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
       text-decoration-color: var(--color-bgSecondary);
     }
   `,
+  bgTertiary: css`
+    @media ${media.desktop} {
+      text-decoration-color: var(--color-bgTertiary);
+    }
+  `,
   bgSecondaryWash: css`
     @media ${media.desktop} {
       text-decoration-color: var(--color-bgSecondaryWash);
@@ -2831,11 +2836,6 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   bgWarningWash: css`
     @media ${media.desktop} {
       text-decoration-color: var(--color-bgWarningWash);
-    }
-  `,
-  bgTertiary: css`
-    @media ${media.desktop} {
-      text-decoration-color: var(--color-bgTertiary);
     }
   `,
   currentColor: css`

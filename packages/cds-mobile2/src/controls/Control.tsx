@@ -167,7 +167,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
                   outputRange: [theme.color.fgMuted, theme.color.fg],
                 }),
                 // Simplify to use opacity for default palette foreground color (i.e. gray100) hue step
-                opacity: pressed ? opacityPressed[100] : 1,
+                opacity: pressed ? opacityPressed : 1,
                 // Prevent text element from expanding beyond available width.
                 flexShrink: 1,
               }}

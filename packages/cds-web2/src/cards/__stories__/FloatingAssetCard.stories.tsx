@@ -25,7 +25,7 @@ const exampleProps = {
       width="100%"
     />
   ),
-  onPress: onPressConsole,
+  onClick: onPressConsole,
 } as const;
 
 export const Default = (): JSX.Element => {
