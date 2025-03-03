@@ -1,7 +1,7 @@
 {
   "executor": "sync",
-  "lastUpdated": "2024-11-27T20:50:20.111Z",
-  "metadata": { "lastUnicode": 63904 },
+  "lastUpdated": "2025-03-03T15:57:41.315Z",
+  "metadata": { "lastUnicode": 63910 },
   "items": {
     "2:188": {
       "type": "ui",
@@ -11005,6 +11005,30 @@
         "svg16Inactive": "./ui/svg/ui-payments-16.svg",
         "svg24Active": "./ui/svg/ui-payments-24-active.svg",
         "svg24Inactive": "./ui/svg/ui-payments-24.svg"
+      }
+    },
+    "3174:16": {
+      "type": "ui",
+      "name": "gaugeHighMid",
+      "hash": "2I7aNCj5ZvWBFrVQjLoMuWKoYfuduLgCFSHAdhQJmgc=",
+      "description": "gauge, measure, size, scope, calculate, machine, collateral, health, futures, derivatives, account, balance",
+      "components": [
+        { "props": { "size": 24, "active": false }, "metadata": { "unicode": 63909 } },
+        { "props": { "size": 24, "active": true }, "metadata": { "unicode": 63910 } },
+        { "props": { "size": 16, "active": false }, "metadata": { "unicode": 63907 } },
+        { "props": { "size": 16, "active": true }, "metadata": { "unicode": 63908 } },
+        { "props": { "size": 12, "active": false }, "metadata": { "unicode": 63905 } },
+        { "props": { "size": 12, "active": true }, "metadata": { "unicode": 63906 } }
+      ],
+      "createdAt": "2025-03-03T15:33:26.476Z",
+      "lastUpdated": "2025-03-03T15:33:26.476Z",
+      "outputs": {
+        "svg12Active": "./ui/svg/ui-gaugeHighMid-12-active.svg",
+        "svg12Inactive": "./ui/svg/ui-gaugeHighMid-12.svg",
+        "svg16Active": "./ui/svg/ui-gaugeHighMid-16-active.svg",
+        "svg16Inactive": "./ui/svg/ui-gaugeHighMid-16.svg",
+        "svg24Active": "./ui/svg/ui-gaugeHighMid-24-active.svg",
+        "svg24Inactive": "./ui/svg/ui-gaugeHighMid-24.svg"
       }
     }
   }

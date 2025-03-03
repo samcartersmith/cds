@@ -138,6 +138,7 @@ export type UiIconName =
   | 'games'
   | 'gauge'
   | 'gaugeEmpty'
+  | 'gaugeHighMid'
   | 'gaugeLow'
   | 'gaugeMedium'
   | 'gavel'

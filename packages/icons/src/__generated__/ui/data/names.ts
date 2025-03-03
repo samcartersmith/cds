@@ -306,6 +306,7 @@ const names: UiIconName[] = [
   'socialReshare',
   'calendarEmpty',
   'payments',
+  'gaugeHighMid',
 ];
 
 export default names;

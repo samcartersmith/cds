@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.2.0 (3/3/2025 PST)
+
+#### 🚀 Updates
+
+- Publish icons 03/03/25. [[#3664](https://github.cbhq.net/frontend/cds/pull/3664)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- gaugeHighMid
+
 ## 4.1.0 (11/27/2024 PST)
 
 #### 🚀 Updates

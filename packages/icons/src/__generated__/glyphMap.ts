@@ -2551,6 +2551,12 @@ const glyphMap: Record<InternalIconName, string> = {
   'ui-payments-16-active': '咽',
   'ui-payments-24': '烈',
   'ui-payments-24-active': '裂',
+  'ui-gaugeHighMid-12': '說',
+  'ui-gaugeHighMid-12-active': '廉',
+  'ui-gaugeHighMid-16': '念',
+  'ui-gaugeHighMid-16-active': '捻',
+  'ui-gaugeHighMid-24': '殮',
+  'ui-gaugeHighMid-24-active': '簾',
 };
 
 export default glyphMap;
