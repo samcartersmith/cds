@@ -19,6 +19,7 @@ export default function DocSidebarItemLink({
   const { href, label, autoAddBaseUrl } = item;
   const isActive = isActiveSidebarItem(item, activePath);
   const isInternalLink = isInternalUrl(href);
+
   return (
     <Box key={label} as="li" padding={0.5}>
       <Pressable
@@ -30,6 +31,9 @@ export default function DocSidebarItemLink({
         background="transparent"
         borderRadius={1000}
         borderWidth={0}
+        color={isActive ? 'fgPrimary' : 'fg'}
+        font={isActive ? 'label1' : 'label2'}
+        hoverColor="fgPrimary"
         to={href}
         {...(isInternalLink && {
           onClick: onItemClick ? () => onItemClick(item) : undefined,
@@ -37,9 +41,7 @@ export default function DocSidebarItemLink({
         {...props}
       >
         <HStack alignItems="center" gap={1} paddingX={1.5} paddingY={0.5}>
-          <Text color={isActive ? 'fgPrimary' : 'fg'} font={isActive ? 'label1' : 'label2'}>
-            {label}
-          </Text>
+          {label}
           {!isInternalLink && <IconExternalLink />}
         </HStack>
       </Pressable>

@@ -169,8 +169,8 @@ export const Card: React.FC<CardProps> = ({ title, description, styleProps }) =>
 
 ## Next Steps
 
-- [Component Library](#): Explore the full set of CDS components.
-- [Styling](#): Learn how to use `StyleProps` and responsive design.
-- [Theming](#): Understand how to integrate theme variables into your components.
+- [Component Library](/components/layout/Accordion/): Explore the full set of CDS components.
+- [Styling](/getting-started/styling): Learn how to use `StyleProps` and responsive design.
+- [Theming](/getting-started/theming): Understand how to integrate theme variables into your components.
 
 By following these guidelines, you can build robust, reusable components that integrate seamlessly with the Coinbase Design System!

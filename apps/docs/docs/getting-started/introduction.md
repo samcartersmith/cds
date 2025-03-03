@@ -3,14 +3,7 @@ id: introduction
 title: Introduction
 ---
 
----
-
-name: Introduction
-route: /
-
----
-
-# Coinbase Design System (CDS)
+# Coinbase Design System
 
 Welcome to the Coinbase Design System (CDS) documentation! CDS is a cross-platform component library built with TypeScript, designed to streamline the development of React and React Native applications. It empowers developers with consistent, reusable, and accessible components that adhere to Coinbase's design principles.
 
@@ -57,8 +50,8 @@ On the web, CDS components support responsive styles out of the box. Use the res
 
 ## Next Steps
 
-- [Setting Up Your Theme](#): Learn how to configure the CDS ThemeProvider.
-- [Component Basics](#): Understand how to use CDS components in your project.
-- [StyleProps and Responsive Design](#): Explore the powerful styling and responsive features of CDS.
+- [Setting Up Your Theme](/getting-started/theming#setting-up-the-themeprovider): Learn how to configure the CDS ThemeProvider.
+- [Component Basics](/getting-started/api-overview): Understand how to use CDS components in your project.
+- [StyleProps and Responsive Design](/getting-started/styling): Explore the powerful styling and responsive features of CDS.
 
 Get started now and unlock the full potential of the Coinbase Design System!
