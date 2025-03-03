@@ -34,6 +34,10 @@ build:
         path: ./apps/storybook/production.Dockerfile
         autobuild: true
     - BaldurECR:
+        name: cds-storybook-v8
+        path: ./apps/storybook2/production.Dockerfile
+        autobuild: true
+    - BaldurECR:
         name: cds-website-docs
         path: ./apps/website/production.Dockerfile
         autobuild: true
