@@ -31,7 +31,6 @@ export default function NavbarNavLink({
   if (href) {
     return (
       <Pressable
-        noScaleOnPress
         alignItems="center"
         as={Link}
         background="bgSecondary"
@@ -52,7 +51,6 @@ export default function NavbarNavLink({
     <Pressable
       bordered
       isNavLink
-      noScaleOnPress
       as={Link}
       background="bgSecondary"
       borderRadius={1000}

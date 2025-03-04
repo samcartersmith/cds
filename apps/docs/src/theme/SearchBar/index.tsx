@@ -1,47 +1,17 @@
-import React, { useCallback } from 'react';
-import { useWindowSizeWithBreakpointOverride } from '@site/src/utils/useWindowSizeWithBreakpointOverride';
+import React from 'react';
 import { useKBar } from 'kbar';
 import { IconButton } from '@cbhq/cds-web2/buttons';
-import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
-import { HStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography/Text';
-
-import styles from './styles.module.css';
-
-// temporary noop function, will remove once search modal is implemented
-const noop = () => {};
+import { Tooltip } from '@cbhq/cds-web2/overlays';
 
 const SearchBar = () => {
-  const size = useWindowSizeWithBreakpointOverride();
-  const { query } = useKBar();
-  const handleOnClick = useCallback(() => {
-    query.toggle();
-  }, [query]);
-  if (size === 'desktop') {
-    return (
-      <SearchInput
-        compact
-        bordered={false}
-        end={
-          <HStack alignItems="center" flexShrink={0} gap={1} paddingEnd={2}>
-            <Text mono as="kbd" className={styles.kbd}>
-              ⌘
-            </Text>
-            <Text mono as="kbd" className={styles.kbd}>
-              K
-            </Text>
-          </HStack>
-        }
-        onChangeText={noop}
-        onClick={handleOnClick}
-        placeholder="Search or ask a question"
-        startIcon="search"
-        value=""
-        width={375}
-      />
-    );
-  }
-  return <IconButton name="magnifyingGlass" onClick={handleOnClick} />;
+  const {
+    query: { toggle },
+  } = useKBar();
+  return (
+    <Tooltip content="Click or press ⌘ + K to search or ask a question">
+      <IconButton name="magnifyingGlass" onClick={toggle} />
+    </Tooltip>
+  );
 };
 
 export default SearchBar;

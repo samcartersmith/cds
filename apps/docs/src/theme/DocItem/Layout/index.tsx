@@ -79,6 +79,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
           flexShrink={0}
           gap={4}
           maxHeight="calc(100vh - var(--ifm-navbar-height) - 3rem)"
+          overflow="hidden"
           position="sticky"
           top="calc(var(--ifm-navbar-height) + 1.5rem)"
         >

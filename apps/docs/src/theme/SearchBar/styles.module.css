@@ -1,9 +1,0 @@
-.kbd {
-  box-shadow: none;
-  border-radius: 3px;
-  padding: var(--space-0) var(--space-0\.5);
-  margin: var(--space-0);
-  background-color: var(--color-transparent);
-  border-color: var(--color-line);
-  border-width: var(--borderWidth-100);
-}
