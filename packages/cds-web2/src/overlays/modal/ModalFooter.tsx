@@ -4,7 +4,7 @@ import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
 import type { ButtonBaseProps } from '@cbhq/cds-common2/types/ButtonBaseProps';
 
 import { Button } from '../../buttons/Button';
-import type { BoxProps } from '../../layout/Box';
+import type { BoxDefaultElement, BoxProps } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { breakpoints } from '../../styles/media';
 
@@ -40,7 +40,7 @@ type ModalFooterBaseProps = {
   /** Secondary action button */
   secondaryAction?: React.ReactElement<ButtonBaseProps & { onPress?: React.MouseEventHandler }>;
 };
-export type ModalFooterProps = ModalFooterBaseProps & BoxProps<'div'>;
+export type ModalFooterProps = ModalFooterBaseProps & BoxProps<BoxDefaultElement>;
 
 export const ModalFooter = ({
   gap = 2,

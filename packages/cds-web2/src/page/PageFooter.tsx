@@ -3,7 +3,7 @@ import { pageFooterHeight } from '@cbhq/cds-common2/tokens/page';
 import type { PageFooterBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { type BoxProps, Box } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import type { ResponsiveProps, StaticStyleProps } from '../styles/styleProps';
 
 export const pageFooterPaddingX: ResponsiveProps<StaticStyleProps>['paddingX'] = {
@@ -11,12 +11,17 @@ export const pageFooterPaddingX: ResponsiveProps<StaticStyleProps>['paddingX'] =
   tablet: 4,
   desktop: 4,
 } as const;
+
 export const pageFooterJustifyContent: ResponsiveProps<StaticStyleProps>['justifyContent'] = {
   phone: 'center',
   tablet: 'flex-end',
   desktop: 'flex-end',
 } as const;
-export type PageFooterProps = Polymorphic.ExtendableProps<BoxProps<'div'>, PageFooterBaseProps>;
+
+export type PageFooterProps = Polymorphic.ExtendableProps<
+  BoxProps<BoxDefaultElement>,
+  PageFooterBaseProps
+>;
 export const PageFooter = memo(
   forwardRef(function PageFooter(
     {

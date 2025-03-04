@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Box, BoxProps } from '../Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../Box';
 
 const DEFAULT_CLASS = 'flex';
 
-function expectClassName<K extends keyof BoxProps<'div'>>(
+function expectClassName<K extends keyof BoxProps<BoxDefaultElement>>(
   prop: K,
-  values: NonNullable<BoxProps<'div'>[K]>[],
+  values: NonNullable<BoxProps<BoxDefaultElement>[K]>[],
 ) {
   values.forEach((value) => {
     // eslint-disable-next-line jest/require-top-level-describe

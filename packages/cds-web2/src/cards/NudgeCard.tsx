@@ -1,14 +1,14 @@
 import React from 'react';
 import { css, cx } from '@linaria/core';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
-import { type IllustrationPictogramNames } from '@cbhq/cds-common2/types/IllustrationNames';
+import type { IllustrationPictogramNames } from '@cbhq/cds-common2/types/IllustrationNames';
 
 import { IconButton } from '../buttons/IconButton';
 import { Pictogram } from '../illustrations/Pictogram';
-import { type BoxProps, Box } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { type StyleProps } from '../styles/styleProps';
+import type { StyleProps } from '../styles/styleProps';
 import { Text } from '../typography/Text';
 
 const pressStyle = css`
@@ -136,7 +136,7 @@ export type NudgeCardBaseProps = {
   onDismissPress?: React.MouseEventHandler;
 };
 
-export type NudgeCardProps = NudgeCardBaseProps & Omit<BoxProps<'div'>, 'title'>;
+export type NudgeCardProps = NudgeCardBaseProps & Omit<BoxProps<BoxDefaultElement>, 'title'>;
 
 export const NudgeCard = ({
   title,

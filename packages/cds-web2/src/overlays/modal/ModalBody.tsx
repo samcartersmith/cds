@@ -1,9 +1,9 @@
 import React from 'react';
 import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
 
-import { type BoxProps, Box } from '../../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../../layout/Box';
 
-export type ModalBodyProps = BoxProps<'div'>;
+export type ModalBodyProps = BoxProps<BoxDefaultElement>;
 
 export const ModalBody = ({
   children,

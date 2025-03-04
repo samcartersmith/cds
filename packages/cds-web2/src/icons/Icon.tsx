@@ -1,15 +1,15 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { type LinariaClassName, css, cx } from '@linaria/core';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
-import { IconBaseProps } from '@cbhq/cds-common2/types/IconBaseProps';
+import type { IconBaseProps } from '@cbhq/cds-common2/types/IconBaseProps';
 import type { IconSize, IconSourcePixelSize } from '@cbhq/cds-common2/types/IconSize';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils/env';
 
-import { type BoxProps, Box } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 
 export type IconProps = IconBaseProps &
-  BoxProps<'div'> & {
+  BoxProps<BoxDefaultElement> & {
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
     dangerouslySetColor?: string;
     /**

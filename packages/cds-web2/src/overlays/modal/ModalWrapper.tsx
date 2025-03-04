@@ -3,10 +3,10 @@ import { css, cx } from '@linaria/core';
 
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
-import { type BoxProps, Box } from '../../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../../layout/Box';
 import { media } from '../../styles/media';
 import { Overlay } from '../overlay/Overlay';
-import { Portal, PortalProps } from '../Portal';
+import { type PortalProps, Portal } from '../Portal';
 import { modalContainerId } from '../PortalProvider';
 
 const modalOverlayResponsiveStyle = css`
@@ -52,7 +52,7 @@ export type ModalWrapperBaseProps = {
   onDidClose?: () => void;
 } & Pick<PortalProps, 'disablePortal'>;
 
-export type ModalWrapperProps = ModalWrapperBaseProps & BoxProps<'div'>;
+export type ModalWrapperProps = ModalWrapperBaseProps & BoxProps<BoxDefaultElement>;
 
 export const ModalWrapper = memo(
   forwardRef(

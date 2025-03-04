@@ -8,7 +8,11 @@ import React, {
 } from 'react';
 import { css } from '@linaria/core';
 import { m as motion, useAnimation } from 'framer-motion';
-import { SharedAccessibilityProps, ToastBaseProps, ToastRefBaseProps } from '@cbhq/cds-common2';
+import type {
+  SharedAccessibilityProps,
+  ToastBaseProps,
+  ToastRefBaseProps,
+} from '@cbhq/cds-common2';
 import {
   animateInBottomConfig,
   animateInOpacityConfig,
@@ -17,14 +21,15 @@ import {
 } from '@cbhq/cds-common2/animation/toast';
 import { ToastContext } from '@cbhq/cds-common2/overlays/ToastProvider';
 
-import { Button, IconButton } from '../buttons';
-import { type BoxProps, Box } from '../layout/Box';
+import { Button } from '../buttons/Button';
+import { IconButton } from '../buttons/IconButton';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { ColorSurge } from '../motion/ColorSurge';
 import { useMotionProps } from '../motion/useMotionProps';
 import { Text } from '../typography/Text';
 
-import { ModalProps } from './modal/Modal';
+import type { ModalProps } from './modal/Modal';
 import { Portal } from './Portal';
 import { toastContainerId } from './PortalProvider';
 
@@ -42,7 +47,7 @@ export type ToastProps = {
   closeButtonAccessibilityProps?: SharedAccessibilityProps;
 } & ToastBaseProps &
   Pick<ModalProps, 'disablePortal'> &
-  Omit<BoxProps<'div'>, 'children'>;
+  Omit<BoxProps<BoxDefaultElement>, 'children'>;
 
 // Note: ensure any updates here are reflected in the jsdoc above
 const closeButtonAccessibilityDefaults: ToastProps['closeButtonAccessibilityProps'] = {

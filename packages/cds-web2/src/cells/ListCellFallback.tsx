@@ -2,13 +2,14 @@ import React, { memo } from 'react';
 import type { ListCellFallbackProps as ListCellFallbackCommonProps } from '@cbhq/cds-common2/types/CellBaseProps';
 import { getRectWidthVariant } from '@cbhq/cds-common2/utils/getRectWidthVariant';
 
-import { type BoxProps, Box } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import { Fallback } from '../layout/Fallback';
 
 import { Cell } from './Cell';
 import { MediaFallback } from './MediaFallback';
 
-export type ListCellFallbackProps = ListCellFallbackCommonProps & Omit<BoxProps<'div'>, 'title'>;
+export type ListCellFallbackProps = ListCellFallbackCommonProps &
+  Omit<BoxProps<BoxDefaultElement>, 'title'>;
 
 const fullWidthStyle = { width: '100%' } as const;
 

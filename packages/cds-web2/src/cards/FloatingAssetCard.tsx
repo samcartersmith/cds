@@ -3,7 +3,7 @@ import { css, cx } from '@linaria/core';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 import type { FloatingAssetCardBaseProps } from '@cbhq/cds-common2/types/FloatingAssetCardBaseProps';
 
-import { type BoxProps } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
@@ -11,7 +11,7 @@ import { Text } from '../typography/Text';
 export const floatingAssetCardLargeWidth = 359;
 export const floatingAssetCardSmallDimension = 156;
 
-export type FloatingAssetCardProps = FloatingAssetCardBaseProps & BoxProps<'div'>;
+export type FloatingAssetCardProps = FloatingAssetCardBaseProps & BoxProps<BoxDefaultElement>;
 
 const pressStyle = css`
   /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */

@@ -166,7 +166,7 @@ export const Box: BoxComponent = memo(
       }: Polymorphic.Props<AsComponent, BoxBaseProps>,
       ref: Polymorphic.Ref<AsComponent>,
     ) => {
-      const Component = as ?? 'div';
+      const Component = as ?? boxDefaultElement;
 
       const inlineStyle = useMemo(
         () => ({

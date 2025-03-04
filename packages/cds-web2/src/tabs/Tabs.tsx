@@ -9,10 +9,10 @@ import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common2/tabs
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { type Rect, defaultRect } from '@cbhq/cds-common2/types/Rect';
 
-import { type BoxProps, Box } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import { type HStackProps, HStack } from '../layout/HStack';
 
-const MotionBox = motion<BoxProps<'div'>>(Box);
+const MotionBox = motion<BoxProps<BoxDefaultElement>>(Box);
 
 type TabContainerProps = {
   id: string;
@@ -38,7 +38,7 @@ export const tabsTransitionConfig = {
 
 export type TabsActiveIndicatorProps = {
   activeTabRect: Rect;
-} & BoxProps<'div'> &
+} & BoxProps<BoxDefaultElement> &
   MotionProps;
 
 export const TabsActiveIndicator = ({

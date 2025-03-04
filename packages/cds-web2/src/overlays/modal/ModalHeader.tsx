@@ -1,9 +1,9 @@
 import React from 'react';
 import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
-import { ModalHeaderBaseProps as SharedModalHeaderBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
+import type { ModalHeaderBaseProps as SharedModalHeaderBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
 
 import { IconButton } from '../../buttons/IconButton';
-import { type BoxProps, Box } from '../../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { Text } from '../../typography/Text';
 
@@ -12,7 +12,7 @@ type ModalHeaderBaseProps = {
   onBackButtonClick?: React.MouseEventHandler;
 } & Omit<SharedModalHeaderBaseProps, 'onRequestClose'>;
 
-export type ModalHeaderProps = ModalHeaderBaseProps & BoxProps<'div'>;
+export type ModalHeaderProps = ModalHeaderBaseProps & BoxProps<BoxDefaultElement>;
 
 export const ModalHeader = ({
   alignItems = 'center',

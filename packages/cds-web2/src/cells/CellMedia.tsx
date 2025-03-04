@@ -6,13 +6,13 @@ import type {
 } from '@cbhq/cds-common2/types';
 
 import { Icon } from '../icons/Icon';
-import { PictogramProps } from '../illustrations/Pictogram';
-import { type BoxProps, Box } from '../layout/Box';
+import type { PictogramProps } from '../illustrations/Pictogram';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
 export type CellMediaProps = CellMediaBaseProps<PictogramProps> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
-  BoxProps<'div'>;
+  BoxProps<BoxDefaultElement>;
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   let size = mediaSize;

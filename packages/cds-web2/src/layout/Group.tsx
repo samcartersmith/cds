@@ -1,14 +1,14 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { GroupBaseProps } from '@cbhq/cds-common2/types';
+import type { GroupBaseProps } from '@cbhq/cds-common2/types';
 import { flattenAndJoinNodes } from '@cbhq/cds-common2/utils/flattenAndJoinNodes';
 
-import { type BoxProps, Box } from './Box';
+import { type BoxDefaultElement, type BoxProps, Box } from './Box';
 import { Spacer } from './Spacer';
 
-export type RenderGroupItem = GroupBaseProps<BoxProps<'div'>>['renderItem'];
-export type GroupProps = GroupBaseProps<BoxProps<'div'>>;
+export type RenderGroupItem = GroupBaseProps<BoxProps<BoxDefaultElement>>['renderItem'];
+export type GroupProps = GroupBaseProps<BoxProps<BoxDefaultElement>>;
 
-const ItemWrapper: React.FC<React.PropsWithChildren<BoxProps<'div'>>> = memo(
+const ItemWrapper: React.FC<React.PropsWithChildren<BoxProps<BoxDefaultElement>>> = memo(
   ({ className, ...props }) => <Box display="contents" {...props} />,
 );
 

@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 
-import { type BoxProps, Box } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 
 export type SpinnerBaseProps = {
   /**
@@ -10,7 +10,7 @@ export type SpinnerBaseProps = {
   size: number;
 };
 
-export type SpinnerProps = SpinnerBaseProps & BoxProps<'div'>;
+export type SpinnerProps = SpinnerBaseProps & BoxProps<BoxDefaultElement>;
 
 export const baseStyle = css`
   position: relative;

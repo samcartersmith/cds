@@ -6,10 +6,10 @@ import { durations } from '@cbhq/cds-common2/motion/tokens';
 import { inputStackGap } from '@cbhq/cds-common2/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
-import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
+import type { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
-import { type BoxProps } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { ColorSurge } from '../motion/ColorSurge';
@@ -127,7 +127,7 @@ export type InputStackBaseProps = {
   enableColorSurge?: boolean;
 } & SharedProps;
 
-export type InputStackProps = InputStackBaseProps & BoxProps<'div'>;
+export type InputStackProps = InputStackBaseProps & BoxProps<BoxDefaultElement>;
 
 export const InputStack = memo(
   forwardRef<HTMLElement, InputStackProps>(

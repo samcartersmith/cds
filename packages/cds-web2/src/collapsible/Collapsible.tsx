@@ -3,7 +3,8 @@ import { m as motion } from 'framer-motion';
 import type { CollapsibleBaseProps } from '@cbhq/cds-common2/types/CollapsibleBaseProps';
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 
-import { Box, BoxProps, HStack } from '../layout';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { HStack } from '../layout/HStack';
 
 import { useCollapsibleMotionProps } from './useCollapsibleMotionProps';
 
@@ -22,7 +23,7 @@ export type CollapsibleProps = {
    */
   maxWidth?: DimensionValue;
 } & CollapsibleBaseProps &
-  Pick<BoxProps<'div'>, 'role' | 'id' | 'accessibilityLabelledBy'>;
+  Pick<BoxProps<BoxDefaultElement>, 'role' | 'id' | 'accessibilityLabelledBy'>;
 
 export const Collapsible = memo(
   forwardRef(

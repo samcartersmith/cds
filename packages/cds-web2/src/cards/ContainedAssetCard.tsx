@@ -2,7 +2,7 @@ import React from 'react';
 import { css, cx } from '@linaria/core';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 
-import { type BoxProps, Box } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
@@ -16,7 +16,7 @@ export type ContainedAssetCardBaseProps = {
   children?: React.ReactNode;
 };
 
-export type ContainedAssetCardProps = ContainedAssetCardBaseProps & BoxProps<'div'>;
+export type ContainedAssetCardProps = ContainedAssetCardBaseProps & BoxProps<BoxDefaultElement>;
 
 export const containedAssetCardHeight = 156;
 export const containedAssetCardSmallWidth = 156;
