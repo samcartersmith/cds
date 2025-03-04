@@ -17,13 +17,13 @@
   ],
   "references": [
     {
-      "path": "../../packages/common"
+      "path": "../../packages/cds-common2"
     },
     {
-      "path": "../../packages/mobile"
+      "path": "../../packages/cds-mobile2"
     },
     {
-      "path": "../../packages/mobile-visualization"
+      "path": "../../packages/mobile-visualization2"
     }
   ]
 }
