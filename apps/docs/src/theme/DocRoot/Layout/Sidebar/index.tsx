@@ -51,13 +51,14 @@ export default function DocRootLayoutSidebar({
   );
 
   return (
-    <aside
+    <div
       className={cx(
         ThemeClassNames.docs.docSidebarContainer,
         styles.docSidebarContainer,
         hiddenSidebarContainer && styles.docSidebarContainerHidden,
       )}
       onTransitionEnd={handleTransitionEnd}
+      role="complementary"
     >
       <ResetOnSidebarChange>
         <div className={cx(styles.sidebarViewport, hiddenSidebar && styles.sidebarViewportHidden)}>
@@ -70,6 +71,6 @@ export default function DocRootLayoutSidebar({
           {hiddenSidebar && <ExpandButton toggleSidebar={toggleSidebar} />}
         </div>
       </ResetOnSidebarChange>
-    </aside>
+    </div>
   );
 }

@@ -113,6 +113,8 @@ export default function DocSidebarItemCategory({
     }
   }, [collapsible, expandedItem, index, setCollapsed, autoCollapseCategories]);
 
+  const controlsId = `sidebar-item-${label}-${index}`;
+
   return (
     <li
       className={cx(
@@ -125,6 +127,8 @@ export default function DocSidebarItemCategory({
     >
       {level === 1 ? (
         <Pressable
+          aria-controls={controlsId}
+          aria-expanded={collapsible && !href ? !collapsed : undefined}
           background="bgSecondary"
           borderRadius={600}
           borderWidth={0}
@@ -222,7 +226,7 @@ export default function DocSidebarItemCategory({
         paddingStart={level === 1 ? 0 : 1.5}
         paddingTop={level === 1 ? 2 : 1}
       >
-        <VStack as="ul" gap={1} paddingStart={0} width="100%">
+        <VStack as="ul" gap={1} id={controlsId} paddingStart={0} width="100%">
           <DocSidebarItems
             activePath={activePath}
             items={items}
