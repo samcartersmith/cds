@@ -363,7 +363,8 @@ export const Text = memo(
         ],
       );
 
-      if (!children) return null;
+      if (children === null || children === undefined || children === '' || Number.isNaN(children))
+        return null;
 
       return (
         <Component

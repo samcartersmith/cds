@@ -171,6 +171,7 @@ export const Text: TextComponent = memo(
         inherit,
         textDecoration = underline ? 'underline' : undefined,
         textTransform,
+        children,
         ...props
       }: TextProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
@@ -187,7 +188,8 @@ export const Text: TextComponent = memo(
         [dangerouslySetColor, numberOfLines, textTransform, mono, fontFamily, style],
       );
 
-      if (!props.children) return null;
+      if (children === null || children === undefined || children === '' || Number.isNaN(children))
+        return null;
 
       return (
         <Box
@@ -214,7 +216,9 @@ export const Text: TextComponent = memo(
           textAlign={textAlign}
           textDecoration={textDecoration}
           {...props}
-        />
+        >
+          {children}
+        </Box>
       );
     },
   ),
