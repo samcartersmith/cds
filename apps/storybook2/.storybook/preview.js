@@ -1,6 +1,5 @@
 // @ts-check
 import './polyfills';
-import 'focus-visible';
 import '@cbhq/cds-fonts/fonts.css';
 import '@cbhq/cds-icons/fonts/web/icon-font.css';
 import { globalStyles } from '@cbhq/cds-web2/styles/global';

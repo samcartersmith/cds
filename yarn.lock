@@ -3878,6 +3878,7 @@ __metadata:
     "@cbhq/ui-scorecard": "workspace:^"
     "@floating-ui/react-dom": "npm:^2.1.1"
     "@linaria/core": "npm:^3.0.0-beta.22"
+    "@linaria/shaker": "npm:^3.0.0-beta.22"
     "@popperjs/core": "npm:^2.9.0"
     "@react-spring/web": "npm:^9.7.4"
     "@storybook/jest": "npm:^0.0.10"
