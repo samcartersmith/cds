@@ -30,6 +30,18 @@ describe('IconButton', () => {
     expect(button).toHaveAttribute('type', 'button');
   });
 
+  it('renders a link when passed `to` prop', () => {
+    render(
+      <DefaultThemeProvider>
+        <IconButton name={name} to="/" />
+      </DefaultThemeProvider>,
+    );
+    const button = screen.getByRole('link');
+
+    expect(button).toBeDefined();
+    expect(button).toHaveAttribute('href', '/');
+  });
+
   it('fires `onClick` when clicked', () => {
     const spy = jest.fn();
     render(

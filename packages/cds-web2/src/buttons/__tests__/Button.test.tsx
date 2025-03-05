@@ -76,6 +76,18 @@ describe('Button', () => {
     expect(button).toHaveAttribute('type', 'button');
   });
 
+  it('renders a link with a href', () => {
+    render(
+      <DefaultThemeProvider>
+        <Button to="/">Child</Button>
+      </DefaultThemeProvider>,
+    );
+    const button = screen.getByRole('link');
+
+    expect(button).toBeDefined();
+    expect(button).toHaveAttribute('href', '/');
+  });
+
   it('can mark as disabled', () => {
     render(
       <DefaultThemeProvider>
