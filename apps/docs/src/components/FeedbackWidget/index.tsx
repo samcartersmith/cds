@@ -1,0 +1,104 @@
+import React, { useCallback, useState } from 'react';
+import { useLocation } from '@docusaurus/router';
+import { useAnalytics } from '@site/src/utils/useAnalytics';
+import { Button } from '@cbhq/cds-web2/buttons';
+import { HStack, VStack } from '@cbhq/cds-web2/layout';
+import { Text } from '@cbhq/cds-web2/typography/Text';
+
+type FeedbackType = 'positive' | 'negative' | null;
+
+export function FeedbackWidget() {
+  const [feedback, setFeedback] = useState<FeedbackType>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const location = useLocation();
+
+  const { trackEvent } = useAnalytics();
+
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      try {
+        // Get the feedback type from the data attribute
+        const type = event.currentTarget.dataset.feedbackType as FeedbackType;
+
+        if (feedback === type) {
+          return;
+        }
+
+        setFeedback(type);
+        setSubmitted(true);
+
+        // Track the feedback event with GA4
+        trackEvent({
+          action: 'doc_feedback',
+          category: 'Documentation',
+          label: location.pathname,
+          value: type === 'positive' ? 1 : -1,
+        });
+      } catch (error) {
+        // Log the error but don't disrupt the user experience
+        console.error('Error handling feedback:', error);
+      }
+    },
+    [feedback, location.pathname, trackEvent],
+  );
+
+  // Don't show feedback widget on home page
+  const isHomePage = location.pathname === '/' || location.pathname === '/index.html';
+  if (isHomePage) {
+    return null;
+  }
+
+  return (
+    <div key={location.pathname}>
+      {submitted ? (
+        <VStack
+          aria-live="polite"
+          background="bgAlternate"
+          borderRadius={400}
+          gap={3}
+          padding={4}
+          role="status"
+        >
+          <Text font="title3">Thank you for your feedback!</Text>
+        </VStack>
+      ) : (
+        <VStack
+          aria-labelledby="feedback-heading"
+          background="bgAlternate"
+          borderRadius={400}
+          gap={3}
+          padding={4}
+          role="region"
+        >
+          <Text font="title3" id="feedback-heading">
+            Is this page useful?
+          </Text>
+          <HStack aria-label="Page feedback options" gap={2} role="group">
+            <Button
+              compact
+              accessibilityLabel="Yes, this page is useful"
+              aria-pressed={feedback === 'positive'}
+              data-feedback-type="positive"
+              onClick={handleClick}
+              startIcon="thumbsUp"
+              variant="secondary"
+            >
+              Yes
+            </Button>
+            <Button
+              compact
+              accessibilityLabel="No, this page is not useful"
+              aria-pressed={feedback === 'negative'}
+              data-feedback-type="negative"
+              onClick={handleClick}
+              startIcon="thumbsDown"
+              variant="secondary"
+            >
+              No
+            </Button>
+          </HStack>
+        </VStack>
+      )}
+    </div>
+  );
+}

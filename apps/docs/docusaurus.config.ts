@@ -103,6 +103,9 @@ const config: Config = {
     [
       '@docusaurus/preset-classic',
       {
+        gtag: {
+          trackingID: process.env.DOCUSAURUS_GOOGLE_ANALYTICS_TRACKING_ID,
+        },
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',

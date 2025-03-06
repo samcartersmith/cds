@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { DocFrontMatter } from '@docusaurus/plugin-content-docs';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import { useWindowSize } from '@docusaurus/theme-common';
+import { FeedbackWidget } from '@site/src/components/FeedbackWidget';
 import { PlatformSwitcher } from '@site/src/components/page/PlatformSwitcher';
 import { PlatformContextProvider } from '@site/src/utils/PlatformContext';
 import { usePropsTOC } from '@site/src/utils/toc/PropsTOCManager';
@@ -65,6 +66,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
               <DocVersionBadge />
               {isMobile && shouldRenderPlatformSwitcher && <PlatformSwitcher />}
               <DocItemContent>{children}</DocItemContent>
+              <FeedbackWidget />
               <DocItemFooter />
             </VStack>
             <Footer />
