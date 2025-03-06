@@ -86,16 +86,30 @@ const WHITE_LIST = [
   '/overlays/alertStyles.ts',
 ];
 
+const WHITE_LIST_LOWERCASE = WHITE_LIST.map((s) => s.toLowerCase());
+
 const oldPackagePath = path.resolve(root, `packages/${OLD}/src`);
 const newPackagePath = path.resolve(root, `packages/${NEW}/src`);
 const oldFiles = globSync(`${oldPackagePath}/**/*`, { nodir: true });
 const newFiles = globSync(`${newPackagePath}/**/*`, { nodir: true });
 const normalizedOldFiles = oldFiles.map((file) => file.replace(oldPackagePath, ''));
-const normalizedNewFiles = newFiles.map((file) => file.replace(newPackagePath, ''));
-const missingFiles = normalizedOldFiles.filter(
-  (file) =>
-    !normalizedNewFiles.includes(file) && !WHITE_LIST.includes(file) && !file.includes('__figma__'),
+const normalizedOldFilesLowerCase = oldFiles.map((file) =>
+  file.replace(oldPackagePath, '').toLowerCase(),
 );
+const normalizedNewFiles = newFiles.map((file) => file.replace(newPackagePath, ''));
+const normalizedNewFilesLowerCase = newFiles.map((file) =>
+  file.replace(newPackagePath, '').toLowerCase(),
+);
+const missingFilesIndexes = normalizedOldFilesLowerCase
+  .map((file, index) =>
+    !normalizedNewFilesLowerCase.includes(file) &&
+    !WHITE_LIST_LOWERCASE.includes(file) &&
+    !file.includes('__figma__')
+      ? index
+      : undefined,
+  )
+  .filter((item) => item !== undefined);
+const missingFiles = missingFilesIndexes.map((index) => normalizedOldFiles[index]);
 const resultsPath = path.resolve(root, 'missing-files.json');
 const results = JSON.stringify(missingFiles, null, 2);
 

@@ -6,7 +6,7 @@ import { useTheme } from '../../hooks/useTheme';
 
 export const HandleBar = (props: ViewProps) => {
   const theme = useTheme();
-  const handleBarBackgroundColor = theme.color.bgLine;
+  const handleBarBackgroundColor = theme.color.bgSecondary;
   const handleBarStyles = {
     backgroundColor: handleBarBackgroundColor,
     marginBottom: theme.space[2],
