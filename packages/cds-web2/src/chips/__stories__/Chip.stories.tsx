@@ -67,6 +67,19 @@ const ChipExamples = ({
     </Chip>
     <Chip
       {...props}
+      accessibilityLabel="a11y label"
+      end={<Icon color="fg" name="caretDown" size="s" />}
+      onPress={() => {}}
+      start={<RemoteImage {...assetIconProps} />}
+    >
+      {label ?? (
+        <Text as="span" font="headline">
+          Pressable with a11y label
+        </Text>
+      )}
+    </Chip>
+    <Chip
+      {...props}
       disabled
       end={<Icon color="fg" name="caretDown" size="s" />}
       onPress={() => {}}

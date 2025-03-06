@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.7.1 (3/4/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix aria label assignment on Chips when using accessibilityLabel prop. [[#3674](https://github.cbhq.net/frontend/cds/pull/3674)] [[DX-4702](https://jira.coinbase-corp.com/browse/DX-4702)]
+
 ## 7.7.0 (2/11/2025 PST)
 
 #### 🚀 Updates

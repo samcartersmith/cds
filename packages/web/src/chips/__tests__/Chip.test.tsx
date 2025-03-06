@@ -36,6 +36,13 @@ describe('Chip', () => {
     expect(await renderA11y(<ChipWithNodes />)).toHaveNoViolations();
   });
 
+  it('passes accessibility when accessibilityLabel is provided', async () => {
+    const onPress = jest.fn();
+    expect(
+      await renderA11y(<ChipWithNodes accessibilityLabel="a11y label" onPress={onPress} />),
+    ).toHaveNoViolations();
+  });
+
   it('renders correctly with value, start, and end props', () => {
     render(<ChipWithNodes />);
 

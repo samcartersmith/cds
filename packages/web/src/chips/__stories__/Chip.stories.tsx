@@ -49,6 +49,15 @@ const ChipExamples = ({
     </Chip>
     <Chip
       {...props}
+      accessibilityLabel="a11y label"
+      end={<Icon color="foreground" name="caretDown" size="s" />}
+      onPress={NoopFn}
+      start={<RemoteImage {...assetIconProps} />}
+    >
+      {label ?? <TextHeadline as="span">Pressable with a11y label</TextHeadline>}
+    </Chip>
+    <Chip
+      {...props}
       disabled
       end={<Icon color="foreground" name="caretDown" size="s" />}
       onPress={NoopFn}

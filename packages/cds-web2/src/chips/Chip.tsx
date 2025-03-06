@@ -45,7 +45,6 @@ export const Chip = memo(
 
     const content = (
       <HStack
-        accessibilityLabel={accessibilityLabel}
         alignItems="center"
         // need to set the background here if the content is not wrapped in a Pressable
         background={hasPressableContainer ? undefined : 'bgSecondary'}
@@ -77,6 +76,7 @@ export const Chip = memo(
         {hasPressableContainer ? (
           <Pressable
             ref={ref}
+            accessibilityLabel={accessibilityLabel}
             background="bgSecondary"
             borderRadius={500}
             className={containerClass}

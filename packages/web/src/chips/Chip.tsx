@@ -40,7 +40,6 @@ export const Chip = memo(
 
     const content = (
       <HStack
-        accessibilityLabel={accessibilityLabel}
         alignItems="center"
         background={onPress ? undefined : 'secondary'}
         borderRadius="roundedXLarge"
@@ -69,6 +68,7 @@ export const Chip = memo(
         {onPress ? (
           <Pressable
             ref={ref}
+            accessibilityLabel={accessibilityLabel}
             background="secondary"
             borderRadius="roundedXLarge"
             onPress={onPress}
