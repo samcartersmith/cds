@@ -67,19 +67,34 @@ const WHITE_LIST = [
   '/hooks/__tests__/useRemoteImageSrc.test.ts',
   '/hooks/__tests__/useFlushStyles.test.ts',
   '/hooks/__tests__/useElevationStyles.test.tsx',
+
+  '/color',
+  '/typography/useTypographyStyles.ts',
+  '/typography/textStyles.ts',
+  '/typography/createText.tsx',
+  '/tables/types/tableTypes.ts',
+  '/tables/types/tableSectionTypes.ts',
+  '/tables/types/tableRowTypes.ts',
+  '/tables/types/tableCellTypes.ts',
+  '/tables/types/tableCellFallbackTypes.ts',
+  '/tables/types/tableCaptionTypes.ts',
+  '/tables/styles/tableStyles.ts',
+  '/tables/styles/tableRowStyles.ts',
+  '/tables/styles/tableCellStyles.ts',
+  '/overlays/tooltipStyles.ts',
+  '/overlays/toastStyles.tsx',
+  '/overlays/alertStyles.ts',
 ];
 
 const oldPackagePath = path.resolve(root, `packages/${OLD}/src`);
 const newPackagePath = path.resolve(root, `packages/${NEW}/src`);
-const oldFiles = globSync(`${oldPackagePath}/**/*`);
-const newFiles = globSync(`${newPackagePath}/**/*`);
+const oldFiles = globSync(`${oldPackagePath}/**/*`, { nodir: true });
+const newFiles = globSync(`${newPackagePath}/**/*`, { nodir: true });
 const normalizedOldFiles = oldFiles.map((file) => file.replace(oldPackagePath, ''));
 const normalizedNewFiles = newFiles.map((file) => file.replace(newPackagePath, ''));
 const missingFiles = normalizedOldFiles.filter(
   (file) =>
-    !normalizedNewFiles.includes(file) &&
-    !WHITE_LIST.includes(file) &&
-    !file.includes('__figma__/'),
+    !normalizedNewFiles.includes(file) && !WHITE_LIST.includes(file) && !file.includes('__figma__'),
 );
 const resultsPath = path.resolve(root, 'missing-files.json');
 const results = JSON.stringify(missingFiles, null, 2);
