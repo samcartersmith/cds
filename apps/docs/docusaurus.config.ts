@@ -124,11 +124,6 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      logo: {
-        alt: 'Coinbase Design System Logo',
-        src: 'img/logos/cds_logo.svg',
-        srcDark: 'img/logos/cds_logo_dark.svg',
-      },
       items: [
         { type: 'search' },
         {

@@ -2,11 +2,7 @@ import React, { memo, useCallback, useState } from 'react';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
-import {
-  ErrorBoundaryErrorMessageFallback,
-  useColorMode,
-  usePrismTheme,
-} from '@docusaurus/theme-common';
+import { ErrorBoundaryErrorMessageFallback, usePrismTheme } from '@docusaurus/theme-common';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
@@ -14,8 +10,9 @@ import { VStack } from '@cbhq/cds-web2/layout/VStack';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
 import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
-import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
 import { Text } from '@cbhq/cds-web2/typography/Text';
+
+import { usePlaygroundTheme } from '../Layout/Provider/UnifiedThemeContext';
 
 import styles from './styles.module.css';
 
@@ -53,7 +50,7 @@ const Playground = memo(function Playground({
   const [collapsed, setIsCollapsed] = useState(!editorStartsExpanded);
   const toggleCode = useCallback(() => setIsCollapsed((collapsed) => !collapsed), []);
   const toast = useToast();
-  const { colorMode } = useColorMode();
+  const { colorScheme, theme } = usePlaygroundTheme();
 
   const transformCode = useCallback(
     (val: string) => transformCodeProp(val.replace(/\n$/, '')),
@@ -74,7 +71,7 @@ const Playground = memo(function Playground({
   }, [toast, code]);
 
   return (
-    <ThemeProvider activeColorScheme={colorMode === 'dark' ? 'dark' : 'light'} theme={defaultTheme}>
+    <ThemeProvider activeColorScheme={colorScheme} theme={theme}>
       <VStack gap={1} paddingBottom={3}>
         <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
           {!hidePreview && (

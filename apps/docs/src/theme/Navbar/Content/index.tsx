@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
+import NavbarThemeToggle from '@site/src/components/nav/NavbarThemeToggle';
 import { useWindowSizeWithBreakpointOverride } from '@site/src/utils/useWindowSizeWithBreakpointOverride';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarLogo from '@theme/Navbar/Logo';
@@ -38,6 +39,7 @@ export default function NavbarContent(): JSX.Element {
             ))}
           </HStack>
         )}
+        <NavbarThemeToggle />
         <NavbarColorModeToggle />
       </HStack>
     </HStack>
