@@ -16,18 +16,29 @@ runs:
   using: composite
   steps:
     - name: Fetch master
-      run: git fetch origin master:master
+      run: git fetch -f --no-tags origin master:master
       shell: bash
-    - uses: actions/setup-node@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
       with:
         node-version-file: .nvmrc
         token: ${{ env.GITHUB_API_TOKEN }}
-        cache: 'yarn'
-    - name: Setup CDS Repo
-      if: ${{ inputs.yarn-install == 'true' }}
+
+    - name: Setup Yarn
       run: |
         corepack enable
         yarn config set enableGlobalCache false
         yarn config set enableHardenedMode ${{ inputs.yarn-hardened-mode }}
-        yarn --immutable
+      shell: bash
+
+    - name: Setup Yarn Cache
+      if: ${{ inputs.yarn-install == 'true' }}
+      uses: actions/setup-node@v3
+      with:
+        cache: 'yarn'
+
+    - name: Install dependencies
+      if: ${{ inputs.yarn-install == 'true' }}
+      run: yarn --immutable
       shell: bash
