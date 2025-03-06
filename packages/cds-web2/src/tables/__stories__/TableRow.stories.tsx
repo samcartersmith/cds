@@ -1,0 +1,54 @@
+import React from 'react';
+import { Meta, Story } from '@storybook/react';
+
+import { Button } from '../../buttons/Button';
+import { Text } from '../../typography/Text';
+import { Table, TableBody, TableCell, TableRow } from '..';
+
+export default {
+  title: 'Core Components/Table/TableRow',
+  component: TableRow,
+} as Meta;
+
+// eslint-disable-next-line no-console
+const handlePress = console.log;
+
+export const TableRowExample: Story = () => {
+  return (
+    <Table bordered variant="ruled">
+      <TableBody>
+        <TableRow>
+          <TableCell direction="horizontal">
+            <Text as="h2" font="headline">
+              Sample Row 1
+            </Text>
+            <Button compact onPress={handlePress} variant="secondary">
+              Export
+            </Button>
+          </TableCell>
+        </TableRow>
+        <TableRow backgroundColor="bgAlternate">
+          <TableCell
+            direction="horizontal"
+            end={
+              <Button compact onPress={handlePress} variant="secondary">
+                Export
+              </Button>
+            }
+            title="Sample Row 2 (with background set)"
+          />
+        </TableRow>
+        <TableRow disableHoverIndicator>
+          <TableCell direction="horizontal">
+            <Text as="h2" font="headline">
+              Sample Row 3 (disable hover indicator)
+            </Text>
+            <Button compact onPress={handlePress} variant="secondary">
+              Export
+            </Button>
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  );
+};

@@ -7,6 +7,9 @@ import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { MarginProps, PaddingProps } from './SpacingProps';
 import { Visibility } from './Visibility';
 
+export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
+export type FlexAlignCommon = FlexAxisValue | 'stretch';
+export type FlexSpaceCommon = 'space-between' | 'space-around';
 export type FlexShrink = { flexShrink?: number };
 export type FlexGrow = { flexGrow?: number };
 

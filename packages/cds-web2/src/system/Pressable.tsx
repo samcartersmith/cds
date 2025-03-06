@@ -60,11 +60,9 @@ const transparentActiveStyle = css`
   }
 `;
 
-export type OnPress = React.MouseEventHandler;
-
 export type LinkableProps = {
   /** Callback fired when the element is pressed. */
-  onPress?: OnPress;
+  onPress?: React.MouseEventHandler;
   /** URL that this links to when pressed. */
   to?: string;
 } & Pick<React.AllHTMLAttributes<HTMLAnchorElement>, 'target' | 'href'> &

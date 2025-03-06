@@ -1,12 +1,12 @@
 import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
+import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
 import type { CellBaseProps } from '@cbhq/cds-common2/types/CellBaseProps';
 import { hasCellPriority } from '@cbhq/cds-common2/utils/cell';
 
-import { useCellSpacing } from '../hooks/useCellSpacing';
 import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { LinkableProps, Pressable } from '../system/Pressable';
+import { type LinkableProps, Pressable } from '../system/Pressable';
 
 const pressClassName = css`
   border-style: hidden;
@@ -36,22 +36,13 @@ const baseStyle = css`
 
 // Display and min-width are necessary for truncation to work:
 // https://css-tricks.com/flexbox-truncated-text/
-const truncate = css`
+const truncationStyle = css`
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
 `;
-
-const overflow = css`
-  overflow: auto;
-  text-overflow: unset;
-  white-space: normal;
-`;
-
-export const overflowClassName = cx(baseStyle, overflow);
-export const truncateClassName = cx(baseStyle, truncate);
 
 type CellElementTag = 'div' | 'li';
 
@@ -111,7 +102,7 @@ export const Cell = memo(
   ) {
     const spacing = useCellSpacing(spacingProps);
     const linkable = Boolean(onPress ?? onKeyDown ?? onKeyUp ?? to ?? href);
-    const maybeTruncateClassName = cx(baseStyle, !shouldOverflow && truncateClassName);
+    const contentTruncationStyle = cx(baseStyle, !shouldOverflow && truncationStyle);
 
     let content = (
       <HStack
@@ -133,7 +124,7 @@ export const Cell = memo(
         )}
 
         <Box
-          className={maybeTruncateClassName}
+          className={contentTruncationStyle}
           flexGrow={1}
           flexShrink={hasCellPriority('start', priority) ? 0 : 1}
           justifyContent="flex-start"
@@ -143,7 +134,7 @@ export const Cell = memo(
 
         {!!intermediary && (
           <Box
-            className={maybeTruncateClassName}
+            className={contentTruncationStyle}
             flexGrow={0}
             flexShrink={hasCellPriority('middle', priority) ? 0 : 1}
             justifyContent="center"
@@ -155,7 +146,7 @@ export const Cell = memo(
         {!!detail && (
           <Box
             alignItems="flex-end"
-            className={maybeTruncateClassName}
+            className={contentTruncationStyle}
             flexDirection="column"
             flexGrow={detailWidth ? undefined : 1}
             flexShrink={detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1}

@@ -2,7 +2,6 @@ import React, { forwardRef, memo, useCallback, useMemo, useRef } from 'react';
 import { css, cx } from '@linaria/core';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { SearchInputBaseProps } from '@cbhq/cds-common2/types/SearchInputBaseProps';
-import type { OnPress } from '@cbhq/cds-web2/system/Pressable';
 
 import { Box } from '../layout/Box';
 
@@ -28,12 +27,12 @@ type HTMLElementProps = React.InputHTMLAttributes<HTMLInputElement> &
 
 export type SearchInputProps = SearchInputBaseProps &
   HTMLElementProps & {
-    onClear?: OnPress;
+    onClear?: React.MouseEventHandler;
     onChangeText: (text: string) => void;
     /**
      * Callback fired when pressed/clicked
      */
-    onClick?: OnPress;
+    onClick?: React.MouseEventHandler;
     /**
      * Adds border to input
      * @default true

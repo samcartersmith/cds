@@ -1,4 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
+import { css } from '@linaria/core';
 import { compactListHeight, listHeight } from '@cbhq/cds-common2/tokens/cell';
 import type { ListCellBaseProps } from '@cbhq/cds-common2/types';
 
@@ -6,9 +7,15 @@ import { type BoxProps, Box } from '../layout/Box';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
-import { Cell, CellSharedProps, overflowClassName } from './Cell';
+import { type CellSharedProps, Cell } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
+
+const overflowStyle = css`
+  overflow: auto;
+  text-overflow: unset;
+  white-space: normal;
+`;
 
 export type ListCellProps = ListCellBaseProps &
   CellSharedProps &
@@ -68,7 +75,7 @@ export const ListCell = memo(
           {!!description && (
             <Text
               as="div"
-              className={multiline ? overflowClassName : undefined}
+              className={multiline ? overflowStyle : undefined}
               color="fgMuted"
               font="body"
               overflow={multiline ? undefined : 'truncate'}

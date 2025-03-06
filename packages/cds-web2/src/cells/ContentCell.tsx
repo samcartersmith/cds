@@ -1,4 +1,5 @@
 import React, { forwardRef, memo } from 'react';
+import { css } from '@linaria/core';
 import type { ContentCellBaseProps } from '@cbhq/cds-common2/types';
 import { isProduction } from '@cbhq/cds-utils';
 
@@ -7,8 +8,22 @@ import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
-import { Cell, CellSharedProps, overflowClassName, truncateClassName } from './Cell';
+import { type CellSharedProps, Cell } from './Cell';
 import { CellAccessory } from './CellAccessory';
+
+const overflowStyle = css`
+  overflow: auto;
+  text-overflow: unset;
+  white-space: normal;
+`;
+
+const truncationStyle = css`
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+`;
 
 export type ContentCellProps = ContentCellBaseProps &
   CellSharedProps &
@@ -51,7 +66,7 @@ export const ContentCell = memo(
       >
         {hasTitles && (
           <HStack alignItems="flex-start" justifyContent="space-between">
-            <VStack className={truncateClassName} flexGrow={1} flexShrink={1}>
+            <VStack className={truncationStyle} flexGrow={1} flexShrink={1}>
               {!!title && (
                 <Text as="div" font="headline" overflow="truncate">
                   {title}
@@ -73,7 +88,7 @@ export const ContentCell = memo(
 
             {!!meta && (
               <Box
-                className={truncateClassName}
+                className={truncationStyle}
                 flexGrow={0}
                 flexShrink={0}
                 justifyContent="flex-end"
@@ -89,7 +104,7 @@ export const ContentCell = memo(
         )}
 
         {!!description && (
-          <div className={overflowClassName}>
+          <div className={overflowStyle}>
             <Text as="div" color="fgMuted" font="body">
               {description}
             </Text>
