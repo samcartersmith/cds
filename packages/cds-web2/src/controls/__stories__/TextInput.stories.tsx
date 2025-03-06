@@ -14,7 +14,7 @@ import { Link } from '../../typography/Link';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
 import { NativeTextArea } from '../NativeTextArea';
-import { type TextInputProps, TextInput } from '../TextInput';
+import { TextInput } from '../TextInput';
 
 export default {
   title: 'Core Components/Inputs/TextInput',

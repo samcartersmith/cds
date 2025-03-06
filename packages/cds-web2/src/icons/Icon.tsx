@@ -180,26 +180,21 @@ export const Icon = memo(
       const glyphTestId = testID ? `${testID}-glyph` : 'icon-base-glyph';
 
       return (
-        <Box
-          className={cx(sizeStyles[size], bordered && borderedSizeStyles[size])}
-          color={color}
-          position="relative"
-          style={inlineStyle}
-          testID={testID}
-          {...props}
-        >
-          <span
-            ref={ref}
-            aria-hidden={!accessibilityLabel}
-            aria-label={accessibilityLabel}
-            className={iconStyles}
-            data-icon-name={name}
-            data-testid={glyphTestId}
-            role="img"
-            title={accessibilityLabel}
-          >
-            {glyph}
-          </span>
+        <Box color={color} position="relative" style={inlineStyle} testID={testID} {...props}>
+          <div className={cx(sizeStyles[size], bordered && borderedSizeStyles[size])}>
+            <span
+              ref={ref}
+              aria-hidden={!accessibilityLabel}
+              aria-label={accessibilityLabel}
+              className={iconStyles}
+              data-icon-name={name}
+              data-testid={glyphTestId}
+              role="img"
+              title={accessibilityLabel}
+            >
+              {glyph}
+            </span>
+          </div>
         </Box>
       );
     },

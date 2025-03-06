@@ -65,18 +65,18 @@ const baseStyle = css`
   }
 
   &:disabled,
-  &[data-disabled='true'] {
+  &[aria-disabled='true'] {
     opacity: ${accessibleOpacityDisabled};
     cursor: default;
     pointer-events: none;
     touch-action: none;
     background-color: var(${interactableDisabledBackground});
   }
+`;
 
-  &[data-block='true'] {
-    display: block;
-    width: 100%;
-  }
+const blockStyle = css`
+  display: block;
+  width: 100%;
 `;
 
 const transparentActiveStyle = css`
@@ -158,7 +158,7 @@ export const Interactable: InteractableComponent = forwardRef<
       disabled,
       loading,
       pressed,
-      style: customStyle,
+      style,
       blendStyles,
       transparentWhileInactive,
       transparentWhilePressed,
@@ -168,12 +168,7 @@ export const Interactable: InteractableComponent = forwardRef<
   ) => {
     const theme = useTheme();
 
-    /**
-     * this variable should only be used when conditionally rendering the disabled DOM attribute
-     */
-    const shouldBeDisabled = loading || disabled;
-
-    const style = useMemo(() => {
+    const interactableStyle = useMemo(() => {
       const backgroundRgb = theme.color[background];
 
       return {
@@ -202,14 +197,15 @@ export const Interactable: InteractableComponent = forwardRef<
           colorScheme: theme.colorScheme,
           isDisabled: true,
         }),
-        ...customStyle,
+        ...style,
       };
-    }, [customStyle, background, theme, blendStyles]);
+    }, [style, background, theme, blendStyles]);
 
     return (
       <Box
         ref={ref}
         aria-busy={loading}
+        aria-disabled={loading || disabled || undefined}
         aria-pressed={pressed}
         as={as satisfies React.ElementType}
         background={background}
@@ -218,14 +214,13 @@ export const Interactable: InteractableComponent = forwardRef<
         className={cx(
           baseStyle,
           focusRingStyle,
+          block && blockStyle,
           transparentWhileInactive && transparentWhileInactiveStyle,
           transparentWhilePressed && transparentActiveStyle,
           className,
         )}
-        data-block={block || undefined}
-        data-disabled={shouldBeDisabled || undefined}
         disabled={disabled}
-        style={style}
+        style={interactableStyle}
         {...props}
       />
     );

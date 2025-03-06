@@ -129,13 +129,11 @@ export const Pressable: PressableComponent = forwardRef<
     const isLink = to || href;
     const Component = (as ?? (isLink ? 'a' : 'button')) satisfies React.ElementType;
     const defaultButtonType = Component === 'button' ? 'button' : undefined;
-    const trulyDisabled = Boolean(disabled && !focusable);
     const [nativeTabbable, setNativeTabbable] = useState(true);
     const [supportsDisabled, setSupportsDisabled] = useState(true);
     const [active, setActive] = useState(false);
     const isActiveRef = useRef(false);
-    const shouldBeDisabled = (trulyDisabled && supportsDisabled) || loading;
-    // Evaluate element to set state values used to compute appropriate tabIndex
+    // Evaluate rendered element for computing appropriate accessibility attributes
     useIsoEffect(() => {
       const element = elementRef.current;
       if (!element) return;
@@ -237,19 +235,12 @@ export const Pressable: PressableComponent = forwardRef<
 
     const accessibilityProps = useMemo(
       () => ({
-        disabled: shouldBeDisabled ? true : undefined,
-        'aria-disabled': !supportsDisabled && (disabled || loading) ? true : undefined, // add aria-disabled for elements that don't natively support the disabled attribute
-        tabIndex: getTabIndex(trulyDisabled, nativeTabbable, supportsDisabled, tabIndex),
+        disabled: (disabled || loading) && supportsDisabled && !focusable ? true : undefined,
+        'aria-disabled':
+          (disabled || loading) && (!supportsDisabled || focusable) ? true : undefined,
+        tabIndex: getTabIndex({ disabled, focusable, supportsDisabled, nativeTabbable, tabIndex }),
       }),
-      [
-        shouldBeDisabled,
-        supportsDisabled,
-        disabled,
-        loading,
-        trulyDisabled,
-        nativeTabbable,
-        tabIndex,
-      ],
+      [disabled, loading, focusable, supportsDisabled, nativeTabbable, tabIndex],
     );
 
     return (

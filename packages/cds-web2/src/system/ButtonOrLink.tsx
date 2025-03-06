@@ -175,18 +175,22 @@ export const ButtonOrLink = memo(
 
       const accessibilityProps = useMemo(
         () => ({
-          disabled: trulyDisabled && supportsDisabled ? true : undefined,
-          'aria-disabled': disabled ? true : undefined,
-          tabIndex: getTabIndex(trulyDisabled, nativeTabbable, supportsDisabled, tabIndex),
+          disabled: disabled && supportsDisabled && !focusable ? true : undefined,
+          'aria-disabled': disabled && (!supportsDisabled || focusable) ? true : undefined,
+          tabIndex: getTabIndex({
+            disabled,
+            focusable,
+            supportsDisabled,
+            nativeTabbable,
+            tabIndex,
+          }),
         }),
-        [disabled, trulyDisabled, supportsDisabled, nativeTabbable, tabIndex],
+        [disabled, focusable, supportsDisabled, nativeTabbable, tabIndex],
       );
 
       if (isLink) {
         return (
           <a
-            {...props}
-            {...accessibilityProps}
             ref={elementRef as React.ForwardedRef<HTMLAnchorElement>}
             className={cx(disabled && accessibilityStyles, className)}
             data-active={active || undefined}
@@ -199,6 +203,8 @@ export const ButtonOrLink = memo(
             onMouseDownCapture={handleOnMouseDownCapture}
             rel={!rel && target === '_blank' ? 'noopener noreferrer' : rel}
             target={target}
+            {...accessibilityProps}
+            {...props}
           >
             {children}
           </a>
@@ -207,8 +213,6 @@ export const ButtonOrLink = memo(
 
       return (
         <button
-          {...props}
-          {...accessibilityProps}
           ref={elementRef as React.ForwardedRef<HTMLButtonElement>}
           className={cx(disabled && accessibilityStyles, className)}
           data-active={active || undefined}
@@ -220,6 +224,8 @@ export const ButtonOrLink = memo(
           onMouseDownCapture={handleOnMouseDownCapture}
           // eslint-disable-next-line react/button-has-type
           type={type as 'button'}
+          {...accessibilityProps}
+          {...props}
         >
           {children}
         </button>

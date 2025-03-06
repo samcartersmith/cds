@@ -147,13 +147,22 @@ export function supportsDisabledAttribute(element: Element) {
   return ['BUTTON', 'INPUT', 'SELECT', 'TEXTAREA'].includes(element.tagName);
 }
 
-export function getTabIndex(
-  trulyDisabled: boolean,
-  nativeTabbable: boolean,
-  supportsDisabled: boolean,
-  tabIndexProp?: number,
-) {
-  if (trulyDisabled) {
+type GetTabIndexOptions = {
+  disabled?: boolean;
+  focusable?: boolean;
+  supportsDisabled: boolean;
+  nativeTabbable: boolean;
+  tabIndex?: number;
+};
+
+export function getTabIndex({
+  disabled,
+  focusable,
+  supportsDisabled,
+  nativeTabbable,
+  tabIndex,
+}: GetTabIndexOptions) {
+  if (disabled && !focusable) {
     // Anchor, audio and video tags don't support the `disabled` attribute. We
     // must pass tabIndex={-1} so they don't receive focus on tab.
     if (nativeTabbable && !supportsDisabled) return -1;
@@ -164,9 +173,9 @@ export function getTabIndex(
 
   // If the element is enabled and it's natively tabbable, we don't need to
   // specify a tabIndex attribute unless it's explicitly set by the user.
-  if (nativeTabbable) return tabIndexProp;
+  if (nativeTabbable) return tabIndex;
 
   // If the element is enabled and is not natively tabbable, we have to fallback
   // tabIndex={0}.
-  return tabIndexProp || 0;
+  return tabIndex || 0;
 }
