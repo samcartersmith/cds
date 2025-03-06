@@ -38,6 +38,7 @@ export const HelperText = memo(function HelperTex({
       color={color}
       dangerouslySetColor={dangerouslySetColor}
       font="label2"
+      id={id}
       textAlign={textAlign}
       {...props}
     >

@@ -223,7 +223,7 @@ export const TextInput = memo(
           inputNode={
             <NativeInput
               ref={refs}
-              accessibilityHint={accessibilityLabel}
+              accessibilityHint={typeof helperText === 'string' ? helperText : undefined}
               accessibilityLabel={accessibilityLabel ?? label}
               align={align}
               compact={compact}
