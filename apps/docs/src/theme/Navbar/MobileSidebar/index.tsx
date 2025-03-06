@@ -57,11 +57,13 @@ export default function NavbarMobileSidebar(): JSX.Element | null {
       disableFocusTrap={!mobileSidebar.shown}
       onEscPress={handleEscPress}
     >
-      <NavbarMobileSidebarLayout
-        header={<NavbarMobileSidebarHeader />}
-        primaryMenu={<NavbarMobileSidebarPrimaryMenu />}
-        secondaryMenu={<NavbarMobileSidebarSecondaryMenu />}
-      />
+      <div aria-label="Navigation menu" aria-modal="true" id="mobile-sidebar" role="dialog">
+        <NavbarMobileSidebarLayout
+          header={<NavbarMobileSidebarHeader />}
+          primaryMenu={<NavbarMobileSidebarPrimaryMenu />}
+          secondaryMenu={<NavbarMobileSidebarSecondaryMenu />}
+        />
+      </div>
     </FocusTrap>
   );
 }

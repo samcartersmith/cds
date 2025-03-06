@@ -41,8 +41,6 @@ const containerStyles = css`
   align-items: center;
 `;
 const scrollContainerStyles = css`
-  overflow-y: hidden;
-  overflow-x: auto;
   &::-webkit-scrollbar {
     display: none;
   }

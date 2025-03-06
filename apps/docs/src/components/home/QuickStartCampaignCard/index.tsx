@@ -47,7 +47,6 @@ export const QuickStartCampaignCard = ({
             compact
             transparent
             alignSelf="start"
-            aria-label={`Navigate to ${link.label}`}
             as={Link}
             endIcon="forwardArrow"
             flush="start"

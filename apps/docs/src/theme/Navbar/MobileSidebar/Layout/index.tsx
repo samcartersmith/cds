@@ -8,13 +8,7 @@ export default function NavbarMobileSidebarLayout({
   secondaryMenu,
 }: Props): JSX.Element {
   return (
-    <VStack
-      aria-label="Navigation menu"
-      aria-modal="true"
-      className="navbar-sidebar"
-      id="mobile-sidebar"
-      role="dialog"
-    >
+    <VStack className="navbar-sidebar">
       {header}
       <VStack gap={2} paddingBottom={3} paddingTop={1}>
         {primaryMenu}

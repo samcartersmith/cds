@@ -49,6 +49,7 @@ export const ComponentCard = ({
       </div>
       <HStack alignItems="start" flexGrow={0} justifyContent="space-between" padding={3}>
         <Text
+          accessibilityLabel={`${name} components`}
           as="h3"
           className={styles.componentName}
           color="fg"
@@ -60,6 +61,7 @@ export const ComponentCard = ({
           {name}
         </Text>
         <Text
+          accessibilityLabel={`${count} total`}
           borderRadius={100}
           color="fgMuted"
           fontFamily={componentCountFontConfig}

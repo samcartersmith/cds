@@ -11,7 +11,7 @@ export default function MobileSidebarToggle(): JSX.Element {
       aria-expanded={shown}
       aria-label={translate({
         id: 'theme.docs.sidebar.toggleSidebarButtonAriaLabel',
-        message: 'Toggle navigation bar',
+        message: 'Navigation bar',
         description: 'The ARIA label for hamburger menu button of mobile navigation',
       })}
       name="hamburger"
