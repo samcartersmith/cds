@@ -1,23 +1,54 @@
 {
-    "extends": ["local>infra/renovate-cron"],
-    "labels": [""],
-    "assignees": ["siddharth-kulkarni", "cody-nova"],
-    "packageRules": [
-        {
-            "matchPackagePrefixes": ["^@cbhq/client-analytics", "@cbhq/client-analytics", "^@cbhq/error-vitals-mobile", "@cbhq/error-vitals-mobile", "^@cbhq/error-vitals-web", "@cbhq/error-vitals-web", "^@cbhq/client-kill-switch", "@cbhq/client-kill-switch", "^@cbhq/core-vitals-mobile", "@cbhq/core-vitals-mobile", "^@cbhq/experiments", "@cbhq/experiments" ],
-            "groupName": "DevX Excellence Guild"
-        },
-        {
-            "matchPackagePrefixes": ["^@cbhq/data-layer", "@cbhq/data-layer", "^@cbhq/instant-api-hooks-core", "@cbhq/instant-api-hooks-core"],
-            "groupName": "DevX Data Layer"
-        },
-        {
-            "matchPackagePrefixes": ["^@cbhq/cds", "@cbhq/cds"],
-            "groupName": "Devx UI Systems"
-        },
-        {
-            "matchPackagePrefixes": ["^@cbhq/mono", "@cbhq/mono"],
-            "groupName": "DevX Build"
-        }
-    ]
-  }
+  "extends": [
+    "local>infra/renovate-cron"
+  ],
+  "labels": [
+    ""
+  ],
+  "assignees": [
+    "siddharth-kulkarni",
+    "cody-nova"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePrefixes": [
+        "^@cbhq/client-analytics",
+        "@cbhq/client-analytics",
+        "^@cbhq/error-vitals-mobile",
+        "@cbhq/error-vitals-mobile",
+        "^@cbhq/error-vitals-web",
+        "@cbhq/error-vitals-web",
+        "^@cbhq/client-kill-switch",
+        "@cbhq/client-kill-switch",
+        "^@cbhq/core-vitals-mobile",
+        "@cbhq/core-vitals-mobile",
+        "^@cbhq/experiments",
+        "@cbhq/experiments"
+      ],
+      "groupName": "DevX Excellence Guild"
+    },
+    {
+      "matchPackagePrefixes": [
+        "^@cbhq/data-layer",
+        "@cbhq/data-layer",
+        "^@cbhq/instant-api-hooks-core",
+        "@cbhq/instant-api-hooks-core"
+      ],
+      "groupName": "DevX Data Layer"
+    },
+    {
+      "matchPackagePrefixes": [
+        "^@cbhq/cds",
+        "@cbhq/cds"
+      ],
+      "groupName": "Devx UI Systems"
+    },
+    {
+      "matchPackagePrefixes": [
+        "^@cbhq/mono",
+        "@cbhq/mono"
+      ],
+      "groupName": "DevX Build"
+    }
+  ]
+}

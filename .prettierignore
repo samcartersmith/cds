@@ -28,3 +28,6 @@ tsconfig.build.json
 
 # Lottie
 packages/lottie-files/**/*.json
+
+# Charts
+chart/

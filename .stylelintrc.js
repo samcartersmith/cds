@@ -8,7 +8,12 @@ module.exports = {
     // TODO (hannah): add linaria/stylelint-config back once they fix the autofix issue.
   ],
   ignoreFiles: ['**/*.native.*', 'mobile/**'],
-  plugins: ['stylelint-prettier', 'stylelint-a11y', 'stylelint-high-performance-animation', 'stylelint-no-unsupported-browser-features'],
+  plugins: [
+    'stylelint-prettier',
+    'stylelint-a11y',
+    'stylelint-high-performance-animation',
+    'stylelint-no-unsupported-browser-features',
+  ],
   rules: {
     // formatting
     'prettier/prettier': true,

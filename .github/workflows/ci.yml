@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+
+concurrency:
+  group: CI-${{github.ref_name}}-${{github.event.pull_request.number || github.sha}}
+  cancel-in-progress: ${{github.event_name == 'pull_request'}}
+
+jobs:
+  format:
+    name: Format
+    runs-on: [medium, amd64]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 100 # TODO: This needs to include the merge-base
+      - uses: ./.github/actions/setup
+      - name: Format (All)
+        if: ${{ github.event_name == 'push' }}
+        run: yarn nx format:check  --verbose --all
+      - name: Format (Affected)
+        if: ${{ github.event_name == 'pull_request' }}
+        run: yarn nx format:check --verbose

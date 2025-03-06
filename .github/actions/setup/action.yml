@@ -1,0 +1,33 @@
+name: Setup CDS
+description: Checkout code, setup cache and install yarn packages
+inputs:
+  yarn-install:
+    description: 'Whether to install yarn packages'
+    required: false
+    default: 'true'
+    type: boolean
+  yarn-hardened-mode:
+    description: 'Whether to run yarn in hardened mode'
+    required: false
+    default: 'false'
+    type: boolean
+
+runs:
+  using: composite
+  steps:
+    - name: Fetch master
+      run: git fetch origin master:master
+      shell: bash
+    - uses: actions/setup-node@v3
+      with:
+        node-version-file: .nvmrc
+        token: ${{ env.GITHUB_API_TOKEN }}
+        cache: 'yarn'
+    - name: Setup CDS Repo
+      if: ${{ inputs.yarn-install == 'true' }}
+      run: |
+        corepack enable
+        yarn config set enableGlobalCache false
+        yarn config set enableHardenedMode ${{ inputs.yarn-hardened-mode }}
+        yarn --immutable
+      shell: bash

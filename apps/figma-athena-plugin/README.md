@@ -16,9 +16,10 @@ To run the plugin in Figma you must have:
 5. In the Figma top menu, `Plugins` > `Development` > `Import plugin from manifest`
 6. Select the `manifest.json` file in `cds/apps/figma-athena-plugin/manifest.json`
 
-* to run the plugin in "production" mode use the `start` command as opposed to `dev-watch`.
+- to run the plugin in "production" mode use the `start` command as opposed to `dev-watch`.
 
 ## Local Install
+
 In order to develop locally, you will need to install the plugin from source code.
 
 1. Either build the plugin with `yarn nx run figma-athena-plugin:build` or start the dev-server with watch with `yarn nx run figma-athena-plugin:dev-watch`
@@ -26,6 +27,7 @@ In order to develop locally, you will need to install the plugin from source cod
 3. Find the manifest.json file in the app root directory. Selecting this file will install the plugin in your local Figma application.
 
 ## Deployments
+
 1. After merging changes to master, initiate the build process on [Codeflow](https://codeflow.cbhq.net/#/frontend/cds/commits). This can be done by finding the artifact, `figma-athena` in the list which should have been skipped as no auto-build is set up at this time.
 2. Once the build completes, expand the `Deploy to infra-shared-dev` dropdown and select `infra-shared-dev::figma-athena`. This will deploy the Athena server to infra-shared-dev.
 3. To publish the latest plugin to Figma, first build the plugin and React app with: `yarn nx run figma-athena-plugin:build`
