@@ -16,7 +16,9 @@ import { useRefocusTrigger } from './useRefocusTrigger';
 
 export type SelectProps = {
   children: React.ReactNode;
-} & SelectBaseProps &
+  /** Event handler for when the Select Input trigger is pressed */
+  onClick?: () => void;
+} & Omit<SelectBaseProps, 'onPress'> &
   Pick<DropdownProps, 'disablePortal'>;
 
 export const Select = memo(
@@ -28,7 +30,7 @@ export const Select = memo(
       variant = 'foregroundMuted',
       disabled = false,
       width = '100%',
-      onPress,
+      onClick,
       helperText,
       onChange,
       disablePortal,
@@ -48,10 +50,10 @@ export const Select = memo(
     const menuOffset = calculateInputStackGap + helperTextHeight;
     const triggerRef = useRefocusTrigger(menuHasClosed);
 
-    const handleOnSelectPress = useCallback(() => {
-      onPress?.();
+    const handleOnSelectClick = useCallback(() => {
+      onClick?.();
       setAnimationsEnabled(true);
-    }, [onPress]);
+    }, [onClick]);
 
     const onOpenMenu = useCallback(() => {
       setVisible(true);
@@ -75,7 +77,7 @@ export const Select = memo(
             ref={refs}
             disabled={disabled}
             helperText={helperText}
-            onPress={handleOnSelectPress}
+            onClick={handleOnSelectClick}
             triggerHasFocus={visible}
             value={valueLabel ?? value}
             variant={variant}
@@ -91,7 +93,7 @@ export const Select = memo(
         value,
         variant,
         visible,
-        handleOnSelectPress,
+        handleOnSelectClick,
         refs,
         helperText,
         animationsEnabled,

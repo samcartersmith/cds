@@ -25,9 +25,7 @@ const truncationStyle = css`
   min-width: 0;
 `;
 
-export type ContentCellProps = ContentCellBaseProps &
-  CellSharedProps &
-  Omit<BoxProps<'div' | 'li'>, 'title'>;
+export type ContentCellProps = ContentCellBaseProps & Omit<CellSharedProps, 'ref' | 'title'>;
 
 export const ContentCell = memo(
   forwardRef(function ContentCell(
@@ -40,6 +38,12 @@ export const ContentCell = memo(
       meta,
       selected,
       subtitle,
+      compact,
+      detailWidth,
+      priority,
+      innerSpacing,
+      outerSpacing,
+      alignItems = 'flex-start',
       ...props
     }: ContentCellProps,
     ref: React.ForwardedRef<HTMLDivElement>,
@@ -56,13 +60,18 @@ export const ContentCell = memo(
 
     return (
       <Cell
-        {...props}
         ref={ref}
         accessory={accessoryType && <CellAccessory paddingTop={0.5} type={accessoryType} />}
-        alignItems="flex-start"
+        alignItems={alignItems}
+        compact={compact}
+        detailWidth={detailWidth}
         disabled={disabled}
+        innerSpacing={innerSpacing}
         media={media}
+        outerSpacing={outerSpacing}
+        priority={priority}
         selected={selected}
+        {...props}
       >
         {hasTitles && (
           <HStack alignItems="flex-start" justifyContent="space-between">

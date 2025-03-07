@@ -48,7 +48,7 @@ const IconTile = ({ name, size, active }: { name: IconName; size: IconSize; acti
   }, [name, toast]);
 
   return (
-    <TileButton onPress={handleIconPress} title={name}>
+    <TileButton onClick={handleIconPress} title={name}>
       <Icon active={active} color="fg" name={name} size={size} />
     </TileButton>
   );

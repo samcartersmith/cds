@@ -139,7 +139,6 @@ export const WithCustomPaddles: Story = () => {
   return (
     <TabNavigation
       onChange={setValue}
-      // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
       paddleStyle={{ transform: 'scale(0.5)' }}
       tabs={sampleTabs}
       value={value}

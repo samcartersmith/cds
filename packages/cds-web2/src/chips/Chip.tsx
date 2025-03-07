@@ -24,7 +24,7 @@ const containerClass = css`
  * This is a basic Chip component used to create all Chip components.
  */
 export const Chip = memo(
-  forwardRef<HTMLElement, ChipProps>(function Chip(
+  forwardRef<HTMLButtonElement, ChipProps>(function Chip(
     {
       children,
       start,
@@ -33,7 +33,7 @@ export const Chip = memo(
       inverted,
       compact,
       numberOfLines = 1,
-      onPress,
+      onClick,
       testID,
       accessibilityLabel,
       contentStyle,
@@ -41,7 +41,7 @@ export const Chip = memo(
     },
     ref,
   ) {
-    const hasPressableContainer = Boolean(onPress);
+    const hasPressableContainer = Boolean(onClick);
 
     const content = (
       <HStack
@@ -80,7 +80,7 @@ export const Chip = memo(
             background="bgSecondary"
             borderRadius={500}
             className={containerClass}
-            onPress={onPress}
+            onClick={onClick}
             testID={testID}
             {...pressableProps}
           >

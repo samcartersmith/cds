@@ -3,7 +3,11 @@ import { type DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 
 import type { Polymorphic } from '../core/polymorphism';
 
-import { type BoxBaseProps, type BoxDefaultElement, Box } from './Box';
+import { type BoxBaseProps, Box, boxDefaultElement } from './Box';
+
+export const gridDefaultElement = boxDefaultElement;
+
+export type GridDefaulElement = typeof gridDefaultElement;
 
 export type GridBaseProps = Polymorphic.ExtendableProps<
   BoxBaseProps,
@@ -49,7 +53,7 @@ export type GridProps<AsComponent extends React.ElementType> = Polymorphic.Props
   GridBaseProps
 >;
 
-type GridComponent = (<AsComponent extends React.ElementType = BoxDefaultElement>(
+type GridComponent = (<AsComponent extends React.ElementType = GridDefaulElement>(
   props: GridProps<AsComponent>,
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
@@ -68,6 +72,7 @@ export const Grid: GridComponent = forwardRef<React.ReactElement<GridBaseProps>,
     }: GridProps<AsComponent>,
     ref?: Polymorphic.Ref<AsComponent>,
   ) => {
+    const Component = (as ?? gridDefaultElement) satisfies React.ElementType;
     const isImplicit = !columns && !templateColumns && !!columnMin;
 
     const templateColumnsValue = useMemo(() => {
@@ -82,7 +87,7 @@ export const Grid: GridComponent = forwardRef<React.ReactElement<GridBaseProps>,
     return (
       <Box
         ref={ref}
-        as={as satisfies React.ElementType | undefined}
+        as={Component}
         display={display}
         gridTemplateColumns={templateColumnsValue}
         gridTemplateRows={typeof rows !== 'undefined' ? `repeat(${rows}, 1fr)` : undefined}

@@ -14,7 +14,7 @@ const a11ySkipConfig = {
 };
 
 // eslint-disable-next-line no-console
-const onPressConsole = console.log;
+const onClickConsole = console.log;
 
 const exampleProps: ContainedAssetCardProps = {
   title: 'Title',
@@ -30,7 +30,7 @@ const exampleProps: ContainedAssetCardProps = {
       width="32px"
     />
   ),
-  onClick: onPressConsole,
+  onClick: onClickConsole,
 } as const;
 
 const examplePropsWithChildren: ContainedAssetCardProps = {

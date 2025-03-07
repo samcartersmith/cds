@@ -1,5 +1,4 @@
 import { measurePerformance } from 'reassure';
-import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
@@ -12,7 +11,7 @@ describe('ListCell performance test', () => {
         description="Some description of the asset"
         detail="$334,239.03"
         intermediary={<CellMedia name="chartLine" type="icon" />}
-        onPress={NoopFn}
+        onClick={() => {}}
         priority="start"
         subdetail="+4.06%"
         title="Asset with a really long name"

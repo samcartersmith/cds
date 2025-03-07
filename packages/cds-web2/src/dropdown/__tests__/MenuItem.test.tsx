@@ -20,13 +20,13 @@ describe('MenuItem', () => {
   });
 
   it('triggers on press', () => {
-    const onPress = jest.fn();
+    const onClick = jest.fn();
     const handleCloseMenu = jest.fn();
 
     render(
       <SelectProvider value={{ handleCloseMenu }}>
         <DefaultThemeProvider>
-          <MenuItem onPress={onPress} testID="test-menu-item" value="1">
+          <MenuItem onClick={onClick} testID="test-menu-item" value="1">
             <TextTitle2 as="p">Item1</TextTitle2>
           </MenuItem>
         </DefaultThemeProvider>
@@ -35,18 +35,18 @@ describe('MenuItem', () => {
 
     fireEvent.click(screen.getByTestId('test-menu-item'));
 
-    expect(onPress).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
     expect(handleCloseMenu).toHaveBeenCalledTimes(1);
   });
 
   it('disables close on option change', () => {
-    const onPress = jest.fn();
+    const onClick = jest.fn();
     const handleCloseMenu = jest.fn();
 
     render(
       <SelectProvider value={{ handleCloseMenu }}>
         <DefaultThemeProvider>
-          <MenuItem disableCloseOnOptionChange onPress={onPress} testID="test-menu-item" value="1">
+          <MenuItem disableCloseOnOptionChange onClick={onClick} testID="test-menu-item" value="1">
             <TextTitle2 as="p">Item1</TextTitle2>
           </MenuItem>
         </DefaultThemeProvider>
@@ -55,7 +55,7 @@ describe('MenuItem', () => {
 
     fireEvent.click(screen.getByTestId('test-menu-item'));
 
-    expect(onPress).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
     expect(handleCloseMenu).toHaveBeenCalledTimes(0);
   });
 });

@@ -179,7 +179,7 @@ export const Popover = memo(
                     top={0}
                     zIndex={zIndex.portal + zIndex.modal}
                   >
-                    <Overlay animated onPress={handleClose} />
+                    <Overlay animated onClick={handleClose} />
                     {memoizedContent}
                   </Box>
                 ) : (

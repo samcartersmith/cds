@@ -27,6 +27,10 @@ export const ListCell = memo(function ListCell({
   description,
   detail,
   detailWidth,
+  intermediary,
+  priority,
+  innerSpacing,
+  outerSpacing,
   disabled,
   disableSelectionAccessory,
   media,
@@ -43,7 +47,6 @@ export const ListCell = memo(function ListCell({
 
   return (
     <Cell
-      {...props}
       accessory={accessoryType ? <CellAccessory type={accessoryType} /> : undefined}
       compact={compact}
       detail={
@@ -59,10 +62,15 @@ export const ListCell = memo(function ListCell({
       }
       detailWidth={detailWidth}
       disabled={disabled}
+      innerSpacing={innerSpacing}
+      intermediary={intermediary}
       media={media}
       minHeight={minHeight}
       onPress={onPress}
+      outerSpacing={outerSpacing}
+      priority={priority}
       selected={selected}
+      {...props}
     >
       <VStack justifyContent="center">
         {!!title && (

@@ -1,25 +1,29 @@
 import React, { forwardRef, isValidElement, memo, useMemo } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
-import type { ButtonBaseProps, ComponentEventHandlerProps } from '@cbhq/cds-common2/types';
+import type { ButtonBaseProps } from '@cbhq/cds-common2/types';
 import { getButtonSizeProps } from '@cbhq/cds-common2/utils/getButtonSizeProps';
 import { getButtonSpacingProps } from '@cbhq/cds-common2/utils/getButtonSpacingProps';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { Pressable, PressableInternalProps, PressableProps } from '../system/Pressable';
+import { type PressableInternalProps, Pressable } from '../system/Pressable';
 import { TextHeadline } from '../typography/TextHeadline';
 
 export type ButtonProps = ButtonBaseProps &
-  PressableProps &
-  ComponentEventHandlerProps &
-  Pick<PressableInternalProps, 'wrapperStyles'>;
+  Omit<PressableInternalProps, 'background'> & {
+    /** Background color of the button. */
+    background?: ThemeVars.Color;
+  };
 
 export const Button = memo(
   forwardRef(function Button(
     {
       block,
+      background,
+      color: customColor,
       children,
       compact,
       endIcon,
@@ -41,7 +45,14 @@ export const Button = memo(
     ref: React.ForwardedRef<View>,
   ) {
     const theme = useTheme();
-    const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
+    const {
+      color: foregroundColor,
+      backgroundColor,
+      borderColor,
+    } = useButtonVariant(variant, transparent);
+
+    const color = customColor ?? foregroundColor;
+
     const { borderRadius, minHeight, iconSize } = useMemo(
       () => getButtonSizeProps({ compact }),
       [compact],
@@ -95,7 +106,7 @@ export const Button = memo(
         ref={ref}
         accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
         accessibilityLabel={loading ? 'loading' : accessibilityLabel}
-        background={backgroundColor}
+        background={background ?? backgroundColor}
         block={block}
         borderColor={borderColor}
         borderRadius={borderRadius}

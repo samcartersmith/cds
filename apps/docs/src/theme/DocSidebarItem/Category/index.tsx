@@ -132,7 +132,7 @@ export default function DocSidebarItemCategory({
           background="bgSecondary"
           borderRadius={600}
           borderWidth={0}
-          onPress={
+          onClick={
             collapsible
               ? (e) => {
                   onItemClick?.(item);

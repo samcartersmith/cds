@@ -191,11 +191,12 @@ export const Button: ButtonComponent = memo(
         accessibilityLabel,
         noScaleOnPress,
         flush,
-        onPress,
+        onClick,
         ...props
       }: ButtonProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
     ) => {
+      const Component = (as ?? buttonDefaultElement) satisfies React.ElementType;
       const hasIcon = Boolean(startIcon ?? endIcon);
       const iconSize = compact ? 's' : 'm';
       const {
@@ -219,7 +220,7 @@ export const Button: ButtonComponent = memo(
         <Pressable
           ref={ref}
           aria-label={accessibilityLabel ?? (loading ? 'Loading' : undefined)}
-          as={as satisfies React.ElementType | undefined}
+          as={Component}
           background={background ?? backgroundColor}
           borderColor={borderColor}
           borderRadius={borderRadius}
@@ -240,7 +241,7 @@ export const Button: ButtonComponent = memo(
           height={height}
           loading={loading}
           noScaleOnPress={noScaleOnPress}
-          onPress={onPress}
+          onClick={onClick}
           transparentWhileInactive={transparent}
           {...props}
         >

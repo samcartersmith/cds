@@ -1,27 +1,64 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import {
-  type MockAccordionProps,
-  accordionBuilder,
-  CreateAccordionProps,
-} from '@cbhq/cds-common2/internal/accordionBuilder';
 import { noop } from '@cbhq/cds-utils';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { CellMedia } from '../../cells/CellMedia';
-import { TextInput } from '../../controls/TextInput';
 import { TextBody } from '../../typography/TextBody';
 import { DefaultThemeProvider } from '../../utils/test';
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
 import { getAccordionHeaderId, getAccordionPanelId } from '../utils';
 
-const { MockAccordion } = accordionBuilder({
-  Accordion,
-  AccordionItem,
-  CellMedia,
-  TextBody,
-  TextInput,
-} as CreateAccordionProps);
+type OnClick = (key: string | null) => void;
+
+type MockAccordionProps = {
+  activeKey?: string;
+  defaultActiveKey?: string;
+  setActiveKey?: (activeKey: string | null) => void;
+  onChange?: OnClick;
+  onClick1?: OnClick;
+  onClick2?: OnClick;
+};
+
+const MockAccordion = ({
+  activeKey,
+  defaultActiveKey,
+  setActiveKey,
+  onChange,
+  onClick1,
+  onClick2,
+}: MockAccordionProps) => {
+  return (
+    <Accordion
+      activeKey={activeKey}
+      defaultActiveKey={defaultActiveKey}
+      onChange={onChange}
+      setActiveKey={setActiveKey}
+      testID="mock-accordion"
+    >
+      <AccordionItem
+        itemKey="1"
+        media={<CellMedia name="wallet" testID="mock-accordion-item1-media" type="icon" />}
+        onClick={onClick1}
+        subtitle="subtitle1"
+        testID="mock-accordion-item1"
+        title="Accordion #1"
+      >
+        <TextBody as="p">Accordion Content1</TextBody>
+      </AccordionItem>
+      <AccordionItem
+        itemKey="2"
+        media={<CellMedia name="wallet" testID="mock-accordion-item2-media" type="icon" />}
+        onClick={onClick2}
+        subtitle="subtitle2"
+        testID="mock-accordion-item2"
+        title="Accordion #2"
+      >
+        <TextBody as="p">Accordion Content2</TextBody>
+      </AccordionItem>
+    </Accordion>
+  );
+};
 
 const customAccordionStyle = { padding: '20px' };
 const customAccordionItemStyle = { padding: '30px' };
@@ -63,11 +100,11 @@ describe('Accordion', () => {
 
     it('triggers on press', () => {
       const onChange = jest.fn();
-      const onPress1 = jest.fn();
-      const onPress2 = jest.fn();
+      const onClick1 = jest.fn();
+      const onClick2 = jest.fn();
 
       render(
-        <MockAccordionWithTheme onChange={onChange} onPress1={onPress1} onPress2={onPress2} />,
+        <MockAccordionWithTheme onChange={onChange} onClick1={onClick1} onClick2={onClick2} />,
       );
 
       fireEvent.click(screen.getByTestId('mock-accordion-item1-header'));
@@ -75,16 +112,16 @@ describe('Accordion', () => {
       expect(onChange).toHaveBeenCalledTimes(1);
       expect(onChange).toHaveBeenCalledWith('1');
 
-      expect(onPress1).toHaveBeenCalledTimes(1);
-      expect(onPress1).toHaveBeenCalledWith('1');
+      expect(onClick1).toHaveBeenCalledTimes(1);
+      expect(onClick1).toHaveBeenCalledWith('1');
 
       fireEvent.click(screen.getByTestId('mock-accordion-item2-header'));
 
       expect(onChange).toHaveBeenCalledTimes(2);
       expect(onChange).toHaveBeenCalledWith('2');
 
-      expect(onPress2).toHaveBeenCalledTimes(1);
-      expect(onPress2).toHaveBeenCalledWith('2');
+      expect(onClick2).toHaveBeenCalledTimes(1);
+      expect(onClick2).toHaveBeenCalledWith('2');
     });
 
     it('renders active key by default', () => {
@@ -154,7 +191,7 @@ describe('Accordion', () => {
           >
             <AccordionItem
               itemKey="1"
-              onPress={noop}
+              onClick={noop}
               style={customAccordionItemStyle}
               subtitle="subtitle1"
               testID="mock-accordion-item1"
@@ -164,7 +201,7 @@ describe('Accordion', () => {
             </AccordionItem>
             <AccordionItem
               itemKey="2"
-              onPress={noop}
+              onClick={noop}
               subtitle="subtitle2"
               testID="mock-accordion-item2"
               title="Accordion #2"

@@ -6,13 +6,12 @@ import type { CardBodyBaseProps } from '@cbhq/cds-common2/types';
 import { Button } from '../buttons/Button';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import type { PressableBaseProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 import { CardMedia } from './CardMedia';
 
 export type CardBodyProps = CardBodyBaseProps & {
-  onActionPress?: PressableBaseProps['onPress'];
+  onActionPress?: React.MouseEventHandler;
 };
 
 /**

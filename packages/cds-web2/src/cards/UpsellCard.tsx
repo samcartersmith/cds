@@ -4,16 +4,16 @@ import type { UpsellCardBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
-import { type PressableBaseProps, Pressable } from '../system';
+import { type PressableProps, Pressable } from '../system';
 import { Text } from '../typography/Text';
 
 export type UpsellCardProps = UpsellCardBaseProps & {
   /** Callback fired when the action button is pressed */
-  onActionPress?: PressableBaseProps['onPress'];
+  onActionPress?: PressableProps<'button'>['onClick'];
   /** Callback fired when the dismiss button is pressed */
-  onDismissPress?: PressableBaseProps['onPress'];
+  onDismissPress?: PressableProps<'button'>['onClick'];
   /** Callback fired when the card is pressed */
-  onPress?: PressableBaseProps['onPress'];
+  onClick?: PressableProps<'button'>['onClick'];
 };
 
 export const UpsellCard = memo(
@@ -29,7 +29,7 @@ export const UpsellCard = memo(
     testID = 'upsell-card',
     accessibilityLabel,
     width = upsellCardDefaultWidth,
-    onPress,
+    onClick,
   }: UpsellCardProps) => {
     const content = (
       <HStack
@@ -116,8 +116,8 @@ export const UpsellCard = memo(
       </HStack>
     );
 
-    return onPress ? (
-      <Pressable background="transparent" onPress={onPress}>
+    return onClick ? (
+      <Pressable background="transparent" onClick={onClick}>
         {content}
       </Pressable>
     ) : (

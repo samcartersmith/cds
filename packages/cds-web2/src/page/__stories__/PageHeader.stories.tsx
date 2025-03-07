@@ -2,7 +2,6 @@ import React from 'react';
 import { Story } from '@storybook/react';
 import { PageHeaderBaseProps } from '@cbhq/cds-common2';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
-import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Button, ButtonGroup, IconButton } from '../../buttons';
 import { useBreakpoints } from '../../hooks/useBreakpoints';
@@ -29,7 +28,7 @@ const exampleProps = {
         transparent
         accessibilityLabel="Go Back"
         name="backArrow"
-        onPress={NoopFn}
+        onClick={() => {}}
         testID="header-back-button"
       />
     </Box>
@@ -39,7 +38,7 @@ const exampleProps = {
       <IconButton
         accessibilityLabel="Go Back"
         name="backArrow"
-        onPress={NoopFn}
+        onClick={() => {}}
         testID="header-back-button"
       />
     </Box>
@@ -79,7 +78,7 @@ const exampleProps = {
       transparent
       accessibilityLabel="Show info"
       name="info"
-      onPress={NoopFn}
+      onClick={() => {}}
       testID="header-info-button"
     />
   ),
@@ -95,14 +94,14 @@ const exampleProps = {
           transparent
           accessibilityLabel="Share"
           name="externalLink"
-          onPress={NoopFn}
+          onClick={() => {}}
           testID="header-external-link-button"
         />
         <IconButton
           transparent
           accessibilityLabel="Close"
           name="close"
-          onPress={NoopFn}
+          onClick={() => {}}
           testID="header-close-button"
         />
       </HStack>
@@ -113,7 +112,7 @@ const exampleProps = {
       transparent
       accessibilityLabel="Close"
       name="close"
-      onPress={NoopFn}
+      onClick={() => {}}
       testID="header-close-button"
     />
   ),
@@ -121,7 +120,7 @@ const exampleProps = {
     <IconButton
       accessibilityLabel="Close"
       name="close"
-      onPress={NoopFn}
+      onClick={() => {}}
       testID="header-close-button"
     />
   ),

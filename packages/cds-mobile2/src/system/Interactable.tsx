@@ -1,15 +1,13 @@
 import React, { memo, useMemo } from 'react';
 import { type StyleProp, type ViewStyle, Animated, Falsy, View } from 'react-native';
-import { ElevationLevels, SharedProps } from '@cbhq/cds-common2';
+import { ElevationLevels } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { useTheme } from '../hooks/useTheme';
-import { getElevationStyles } from '../layout/Box';
-import { getBorderStyles } from '../styles/getBorderStyles';
+import { type BoxProps, Box } from '../layout/Box';
 import { getInteractableStyles } from '../styles/getInteractableStyles';
 
-export type InteractableProps = {
-  children?: React.ReactNode;
+export type InteractableBaseProps = {
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
   /** Background color of the overlay (element being interacted with). */
@@ -56,17 +54,15 @@ export type InteractableProps = {
     pressed?: StyleProp<ViewStyle>;
     disabled?: StyleProp<ViewStyle>;
   };
-} & SharedProps;
+};
+
+export type InteractableProps = Omit<BoxProps, 'background' | 'animated'> & InteractableBaseProps;
 
 export const Interactable = memo(function Interactable({
   background,
-  borderColor,
-  borderRadius,
-  borderWidth,
   block,
   children,
   disabled,
-  elevation,
   pressed,
   style,
   contentStyle,
@@ -74,63 +70,40 @@ export const Interactable = memo(function Interactable({
   blendStyles,
   transparentWhileInactive,
   transparentWhilePressed,
-  testID,
+  ...props
 }: InteractableProps) {
   const theme = useTheme();
   const isTransparent = transparentWhileInactive && !pressed;
   const isPressedAndTransparent = transparentWhilePressed && pressed;
 
-  // TO DO: Should this component just render a Box instead of a View? Then we'd get the elevationStyles for free
-  const elevationStyles = getElevationStyles(elevation ?? 0, theme, background);
-
-  const borderStyles = getBorderStyles({
-    borderColor,
-    borderRadius,
-    borderWidth,
-    elevation,
-    theme,
-  });
-
   const { wrapperStyles: defaultWrapperStyles, contentStyles } = useMemo(() => {
-    const backgroundRgb = theme.color[background];
+    const backgroundColor = blendStyles?.background ?? theme.color[background];
     return getInteractableStyles({
       theme,
-      background: isTransparent ? 'transparent' : blendStyles?.background ?? backgroundRgb,
+      background: isTransparent ? 'transparent' : backgroundColor,
       pressedBackground:
         isTransparent || isPressedAndTransparent
           ? 'transparent'
-          : blendStyles?.pressedBackground ?? backgroundRgb,
+          : blendStyles?.pressedBackground ?? backgroundColor,
       disabledBackground: isTransparent
         ? 'transparent'
-        : blendStyles?.disabledBackground ?? backgroundRgb,
+        : blendStyles?.disabledBackground ?? backgroundColor,
     });
   }, [theme, background, isTransparent, isPressedAndTransparent, blendStyles]);
 
   const mergedWrapperStyles = useMemo(
     () => [
       block && { flexGrow: 1 },
-      ...(style ?? []),
       defaultWrapperStyles.base,
       wrapperStyles?.base,
-      borderStyles,
       isTransparent && { borderColor: 'transparent' },
-      elevationStyles,
       pressed && defaultWrapperStyles.pressed,
       pressed && wrapperStyles?.pressed,
       disabled && defaultWrapperStyles.disabled,
       disabled && wrapperStyles?.disabled,
+      ...(style ?? []),
     ],
-    [
-      block,
-      defaultWrapperStyles,
-      wrapperStyles,
-      borderStyles,
-      isTransparent,
-      elevationStyles,
-      style,
-      pressed,
-      disabled,
-    ],
+    [block, defaultWrapperStyles, wrapperStyles, isTransparent, style, pressed, disabled],
   );
 
   const mergedContentStyles = useMemo(
@@ -139,8 +112,8 @@ export const Interactable = memo(function Interactable({
   );
 
   return (
-    <Animated.View style={mergedWrapperStyles} testID={testID}>
+    <Box animated style={mergedWrapperStyles} {...props}>
       <View style={mergedContentStyles}>{children}</View>
-    </Animated.View>
+    </Box>
   );
 });

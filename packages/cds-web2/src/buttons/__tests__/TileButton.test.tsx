@@ -14,12 +14,12 @@ describe('TileButton.test', () => {
   });
 
   it('triggers press', () => {
-    const onPress = jest.fn();
+    const onClick = jest.fn();
 
     render(
       <DefaultThemeProvider>
         <TileButton
-          onPress={onPress}
+          onClick={onClick}
           pictogram="add"
           testID="test-tile-button"
           title="test title"
@@ -29,17 +29,17 @@ describe('TileButton.test', () => {
 
     fireEvent.click(screen.getByTestId('test-tile-button'));
 
-    expect(onPress).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it('logs warning in dev environment when title is empty', () => {
     process.env.NODE_ENV = 'development';
 
-    const onPress = jest.fn();
+    const onClick = jest.fn();
 
     render(
       <DefaultThemeProvider>
-        <TileButton onPress={onPress} pictogram="add" title="  " />
+        <TileButton onClick={onClick} pictogram="add" title="  " />
       </DefaultThemeProvider>,
     );
 
@@ -47,11 +47,11 @@ describe('TileButton.test', () => {
   });
 
   it('does not log warning in a non dev environment', () => {
-    const onPress = jest.fn();
+    const onClick = jest.fn();
 
     render(
       <DefaultThemeProvider>
-        <TileButton onPress={onPress} pictogram="add" title="  " />
+        <TileButton onClick={onClick} pictogram="add" title="  " />
       </DefaultThemeProvider>,
     );
 
@@ -61,11 +61,11 @@ describe('TileButton.test', () => {
   it('does not log warning when title contains text', () => {
     process.env.NODE_ENV = 'development';
 
-    const onPress = jest.fn();
+    const onClick = jest.fn();
 
     render(
       <DefaultThemeProvider>
-        <TileButton onPress={onPress} pictogram="add" title="test title" />
+        <TileButton onClick={onClick} pictogram="add" title="test title" />
       </DefaultThemeProvider>,
     );
 
@@ -73,14 +73,14 @@ describe('TileButton.test', () => {
   });
 
   it('show overflow text', async () => {
-    const onPress = jest.fn();
+    const onClick = jest.fn();
 
     const title = 'Private Client';
     render(
       <DefaultThemeProvider>
         <TileButton
           showOverflow
-          onPress={onPress}
+          onClick={onClick}
           pictogram="add"
           testID="test-tile-button"
           title={title}
@@ -93,13 +93,13 @@ describe('TileButton.test', () => {
   });
 
   it('show truncated text', async () => {
-    const onPress = jest.fn();
+    const onClick = jest.fn();
 
     const title = 'Private Client';
     render(
       <DefaultThemeProvider>
         <TileButton
-          onPress={onPress}
+          onClick={onClick}
           pictogram="add"
           showOverflow={false}
           testID="test-tile-button"

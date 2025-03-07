@@ -472,7 +472,7 @@ export const CopyTextInput = function CopyTextInput() {
   const [copied, setCopied] = useState(false);
   const [variant, setVariant] = useState<InputVariant>('foregroundMuted');
 
-  const handleOnPress = useCallback(() => {
+  const handleOnClick = useCallback(() => {
     setCopied(!copied);
     setVariant(copied ? 'foregroundMuted' : 'positive');
     console.log(variant);
@@ -489,7 +489,7 @@ export const CopyTextInput = function CopyTextInput() {
         /* eslint-disable jsx-a11y/anchor-is-valid */
         end={
           <HStack>
-            <Link color={variantColorMap[variant]} onClick={handleOnPress}>
+            <Link color={variantColorMap[variant]} onClick={handleOnClick}>
               {copied ? 'copied' : 'copy'}
             </Link>
             <InputIcon name="visibleActive" />

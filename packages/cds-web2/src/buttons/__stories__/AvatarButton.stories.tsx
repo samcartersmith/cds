@@ -13,7 +13,9 @@ const names = ['Sneezy', 'Happy', 'Sleepy', 'Doc', 'Bashful', 'Grumpy', 'Dopey',
 const FallbackColoredBase = ({
   dense = true,
   ...props
-}: Pick<AvatarButtonProps, 'shape' | 'loading' | 'compact' | 'selected'> & { dense?: boolean }) => {
+}: Pick<AvatarButtonProps<'button'>, 'shape' | 'loading' | 'compact' | 'selected'> & {
+  dense?: boolean;
+}) => {
   return (
     <HStack alignItems="center" flexWrap="wrap" gap={dense ? 0.5 : 2}>
       {names.map((name, idx) => {
@@ -49,12 +51,12 @@ export const Default = () => {
           Default
         </Text>
         <HStack alignItems="center" gap={2}>
-          <AvatarButton alt="Sneezy" onPress={handlePress} src={avatarImageUrl} />
-          <AvatarButton compact alt="Sneezy" src={avatarImageUrl} to="/" />
+          <AvatarButton alt="Sneezy" onClick={handlePress} src={avatarImageUrl} />
+          <AvatarButton compact alt="Sneezy" as="a" href="/" src={avatarImageUrl} />
         </HStack>
         <HStack alignItems="center" gap={2}>
-          <AvatarButton alt="Sneezy" onPress={handlePress} />
-          <AvatarButton compact alt="Sneezy" to="/" />
+          <AvatarButton alt="Sneezy" onClick={handlePress} />
+          <AvatarButton compact alt="Sneezy" as="a" href="/" />
         </HStack>
       </VStack>
       <VStack gap={2} paddingTop={4}>
@@ -66,7 +68,7 @@ export const Default = () => {
             loading
             accessibilityLabel="Sneezy Button"
             alt="Sneezy"
-            onPress={handlePress}
+            onClick={handlePress}
             src={avatarImageUrl}
           />
           <AvatarButton
@@ -74,8 +76,9 @@ export const Default = () => {
             loading
             accessibilityLabel="Sneezy Button"
             alt="Sneezy"
+            as="a"
+            href="/"
             src={avatarImageUrl}
-            to="/"
           />
         </HStack>
         <HStack alignItems="center" gap={2}>
@@ -83,9 +86,16 @@ export const Default = () => {
             loading
             accessibilityLabel="Sneezy Button"
             alt="Sneezy"
-            onPress={handlePress}
+            onClick={handlePress}
           />
-          <AvatarButton compact loading accessibilityLabel="Sneezy Button" alt="Sneezy" to="/" />
+          <AvatarButton
+            compact
+            loading
+            accessibilityLabel="Sneezy Button"
+            alt="Sneezy"
+            as="a"
+            href="/"
+          />
         </HStack>
       </VStack>
       <VStack gap={2} paddingTop={4}>

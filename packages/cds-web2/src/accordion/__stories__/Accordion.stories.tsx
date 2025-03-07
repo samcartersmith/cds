@@ -1,8 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import {
-  accordionBuilder,
-  CreateAccordionProps,
-} from '@cbhq/cds-common2/internal/accordionBuilder';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { noop } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons/Button';
@@ -22,17 +19,95 @@ const STEPS = [
   { itemKey: '3', nextKey: '1' },
 ];
 
-const { BasicAccordion, NoMedia, NoSubtitle, TitleOnly, LongContent } = accordionBuilder({
-  Accordion,
-  AccordionItem,
-  TextBody,
-  CellMedia,
-  TextInput,
-} as CreateAccordionProps);
+// eslint-disable-next-line no-console
+const handlePress = console.log;
 
-export { BasicAccordion, LongContent, NoMedia, NoSubtitle, TitleOnly };
+const BasicAccordion = () => {
+  return (
+    <Accordion defaultActiveKey="2" onChange={handlePress}>
+      <AccordionItem
+        itemKey="1"
+        media={<CellMedia name="wallet" type="icon" />}
+        subtitle="subtitle1"
+        title="Accordion #1"
+      >
+        <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      </AccordionItem>
+      <AccordionItem
+        itemKey="2"
+        media={<CellMedia name="wallet" type="icon" />}
+        onClick={handlePress}
+        subtitle="subtitle2"
+        title="Accordion #2"
+      >
+        <TextBody as="p">Accordion Content</TextBody>
+      </AccordionItem>
+    </Accordion>
+  );
+};
 
-export const CustomStyle = () => {
+const NoMedia = () => {
+  return (
+    <Accordion onChange={handlePress}>
+      <AccordionItem itemKey="1" subtitle="subtitle1" title="Accordion #1">
+        <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      </AccordionItem>
+      <AccordionItem itemKey="2" onClick={handlePress} subtitle="subtitle2" title="Accordion #2">
+        <TextBody as="p">Accordion Content</TextBody>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+const NoSubtitle = () => {
+  return (
+    <Accordion defaultActiveKey="1" onChange={handlePress}>
+      <AccordionItem
+        itemKey="1"
+        media={<CellMedia name="wallet" type="icon" />}
+        title="Accordion #1"
+      >
+        <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      </AccordionItem>
+      <AccordionItem
+        itemKey="2"
+        media={<CellMedia name="wallet" type="icon" />}
+        onClick={handlePress}
+        title="Accordion #2"
+      >
+        <TextBody as="p">Accordion Content</TextBody>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+const TitleOnly = () => {
+  return (
+    <Accordion defaultActiveKey="2" onChange={handlePress}>
+      <AccordionItem itemKey="1" title="Accordion #1">
+        <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      </AccordionItem>
+      <AccordionItem itemKey="2" onClick={handlePress} title="Accordion #2">
+        <TextBody as="p">Accordion Content</TextBody>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+const LongContent = () => {
+  return (
+    <Accordion defaultActiveKey="2" onChange={handlePress}>
+      <AccordionItem itemKey="1" title="Accordion #1">
+        <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
+      </AccordionItem>
+      <AccordionItem itemKey="2" onClick={handlePress} title="Accordion #2">
+        <TextBody as="p">Accordion Content</TextBody>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+const CustomStyle = () => {
   const customStyle = useMemo(
     () => ({
       paddingLeft: '20px',
@@ -53,7 +128,7 @@ export const CustomStyle = () => {
       <AccordionItem
         itemKey="2"
         media={<CellMedia name="wallet" type="icon" />}
-        onPress={noop}
+        onClick={noop}
         style={customStyle}
         subtitle="subtitle2"
         title="Accordion #2"
@@ -76,10 +151,11 @@ export const NestedButtons = () => {
           title={`Item ${itemKey}`}
         >
           <Button onClick={() => setActiveKey(nextKey)}>
-            <TextBody>Open Item {nextKey}</TextBody>
+            <TextBody color="fgInverse">Open Item {nextKey}</TextBody>
           </Button>
         </AccordionItem>
       ))}
     </Accordion>
   );
 };
+export { BasicAccordion, CustomStyle, LongContent, NoMedia, NoSubtitle, TitleOnly };

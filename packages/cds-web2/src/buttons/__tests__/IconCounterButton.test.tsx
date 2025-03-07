@@ -20,7 +20,7 @@ describe('IconCounterButton', () => {
     const handleClick = jest.fn();
     render(
       <DefaultThemeProvider>
-        <IconCounterButton icon="heart" onPress={handleClick} />
+        <IconCounterButton icon="heart" onClick={handleClick} />
       </DefaultThemeProvider>,
     );
 

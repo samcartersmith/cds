@@ -9,35 +9,36 @@ import { useTheme } from '../hooks/useTheme';
 import { pinStyles } from '../styles/pinStyles';
 import { type StyleProps, getStyles } from '../styles/styleProps';
 
-export type BoxProps = StyleProps &
-  Omit<ViewProps, 'style'> & {
-    children?: React.ReactNode;
-    style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
-    animated?: boolean;
-    /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
-    elevation?: ElevationLevels;
-    font?: ThemeVars.FontFamily;
-    /** Direction in which to absolutely pin the box. */
-    pin?: PinningDirection;
-    /** Add a border around all sides of the box. */
-    bordered?: boolean;
-    /** Add a border to the top side of the box. */
-    borderedTop?: boolean;
-    /** Add a border to the bottom side of the box. */
-    borderedBottom?: boolean;
-    /** Add a border to the leading side of the box. */
-    borderedStart?: boolean;
-    /** Add a border to the trailing side of the box. */
-    borderedEnd?: boolean;
-    /** Add a border to the leading and trailing sides of the box. */
-    borderedHorizontal?: boolean;
-    /** Add a border to the top and bottom sides of the box. */
-    borderedVertical?: boolean;
-    /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-    dangerouslySetBackground?: string;
-    /** Used to locate this element in unit and end-to-end tests. */
-    testID?: string;
-  };
+export type BoxBaseProps = {
+  children?: React.ReactNode;
+  style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
+  animated?: boolean;
+  /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
+  elevation?: ElevationLevels;
+  font?: ThemeVars.FontFamily;
+  /** Direction in which to absolutely pin the box. */
+  pin?: PinningDirection;
+  /** Add a border around all sides of the box. */
+  bordered?: boolean;
+  /** Add a border to the top side of the box. */
+  borderedTop?: boolean;
+  /** Add a border to the bottom side of the box. */
+  borderedBottom?: boolean;
+  /** Add a border to the leading side of the box. */
+  borderedStart?: boolean;
+  /** Add a border to the trailing side of the box. */
+  borderedEnd?: boolean;
+  /** Add a border to the leading and trailing sides of the box. */
+  borderedHorizontal?: boolean;
+  /** Add a border to the top and bottom sides of the box. */
+  borderedVertical?: boolean;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetBackground?: string;
+  /** Used to locate this element in unit and end-to-end tests. */
+  testID?: string;
+} & StyleProps;
+
+export type BoxProps = Omit<ViewProps, 'style'> & BoxBaseProps;
 
 export const getElevationStyles = (
   elevation: ElevationLevels,

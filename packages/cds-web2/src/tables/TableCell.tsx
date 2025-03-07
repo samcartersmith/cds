@@ -49,7 +49,7 @@ type TableCellBaseProps = TableCellSharedProps & {
    * This prop us useful for aligning the last item to the right, or top-aligning cells
    * @default 'center'
    */
-  alignItems?: CellBaseProps['alignItems'];
+  alignItems?: CellProps['alignItems'];
   /**
    * The colSpan attribute defines the number of columns a cell should span
    * @default 1
@@ -286,7 +286,7 @@ export const TableCell = memo(
           gap={cellGap}
           innerSpacing={inner}
           media={start}
-          onPress={onClick}
+          onClick={onClick}
           outerSpacing={outer}
           shouldOverflow={!overflow}
         >

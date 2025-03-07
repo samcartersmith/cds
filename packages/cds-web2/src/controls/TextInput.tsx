@@ -51,7 +51,7 @@ export type TextInputProps = {
   /**
    * Callback fired when pressed/clicked
    */
-  onPress?: React.MouseEventHandler;
+  onClick?: React.MouseEventHandler;
   /**
    * Customize the element which the input area will be rendered as. Adds ability to render the input area
    * as a `<textarea />`, `<input />` etc...

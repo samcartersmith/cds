@@ -41,7 +41,7 @@ export const useEventHandler = (
 
     /**
      * Handler can provide an actionMapping object that maps
-     * CDS events (onPress, onHover) to its event names.
+     * CDS events (onClick, onHover) to its event names.
      * If actionMapping is provided we convert CDS action into the handler one
      * if the mapping between the two values exists
      */

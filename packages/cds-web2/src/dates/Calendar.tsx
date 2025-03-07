@@ -22,7 +22,8 @@ import { Grid } from '../layout/Grid';
 import { HStack } from '../layout/HStack';
 import { type VStackProps, VStack } from '../layout/VStack';
 import { Tooltip } from '../overlays/tooltip/Tooltip';
-import { Pressable, PressableProps } from '../system/Pressable';
+import { type PressableBaseProps, Pressable } from '../system/Pressable';
+import { pressableDefaultElement } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 const pressableStyles = css`
@@ -31,15 +32,29 @@ const pressableStyles = css`
   justify-content: center;
 `;
 
-type CalendarPressableProps = (<AsComponent extends React.ElementType>(
-  props: PressableProps<AsComponent>,
+export const calendarPressableDefaultElement = pressableDefaultElement;
+
+export type CalendarPressableDefaultElement = typeof calendarPressableDefaultElement;
+
+export type CalendarPressableBaseProps = PressableBaseProps;
+
+export type CalendarPressableProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  CalendarPressableBaseProps
+>;
+
+type CalendarPressableComponent = (<
+  AsComponent extends React.ElementType = CalendarPressableDefaultElement,
+>(
+  props: CalendarPressableProps<AsComponent>,
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
 
-const CalendarPressable: CalendarPressableProps = memo(
-  forwardRef(
-    (
+const CalendarPressable: CalendarPressableComponent = memo(
+  forwardRef<React.ReactElement<CalendarPressableBaseProps>, CalendarPressableBaseProps>(
+    <AsComponent extends React.ElementType>(
       {
+        as,
         className,
         borderRadius = 1000,
         width = 40,
@@ -47,21 +62,26 @@ const CalendarPressable: CalendarPressableProps = memo(
         background = 'transparent',
         children,
         ...props
-      },
-      ref,
-    ) => (
-      <Pressable
-        ref={ref}
-        background={background}
-        borderRadius={borderRadius}
-        className={cx(pressableStyles, className)}
-        height={height}
-        width={width}
-        {...props}
-      >
-        {children}
-      </Pressable>
-    ),
+      }: CalendarPressableProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const Component = (as ?? calendarPressableDefaultElement) satisfies React.ElementType;
+
+      return (
+        <Pressable
+          ref={ref}
+          as={Component}
+          background={background}
+          borderRadius={borderRadius}
+          className={cx(pressableStyles, className)}
+          height={height}
+          width={width}
+          {...props}
+        >
+          {children}
+        </Pressable>
+      );
+    },
   ),
 );
 
@@ -69,7 +89,7 @@ export type CalendarDayProps = {
   /** Date of this CalendarDay. */
   date: Date;
   /** Callback function fired when pressing this CalendarDay. */
-  onPress?: (date: Date) => void;
+  onClick?: (date: Date) => void;
   /** Toggle active styles. */
   active?: boolean;
   /** Disables user interaction. */
@@ -94,13 +114,13 @@ const getDayAccessibilityLabel = (date: Date, locale = 'en-US') =>
   })}`;
 
 const CalendarDay = memo(
-  forwardRef<HTMLDivElement, CalendarDayProps>(
+  forwardRef<HTMLButtonElement, CalendarDayProps>(
     (
-      { date, active, disabled, highlighted, isToday, isCurrentMonth, onPress, disabledError },
+      { date, active, disabled, highlighted, isToday, isCurrentMonth, onClick, disabledError },
       ref,
     ) => {
       const { locale } = useLocale();
-      const handlePress = useCallback(() => onPress?.(date), [date, onPress]);
+      const handleClick = useCallback(() => onClick?.(date), [date, onClick]);
       const accessibilityLabel = getDayAccessibilityLabel(date, locale);
       const calendarDayButton = useMemo(
         () => (
@@ -114,7 +134,7 @@ const CalendarDay = memo(
             borderColor={isToday ? 'bgPrimary' : undefined}
             data-calendar-date={getISOStringLocal(date)}
             disabled={disabled}
-            onPress={disabled ? undefined : handlePress}
+            onClick={disabled ? undefined : handleClick}
             tabIndex={date.getDate() === 1 ? undefined : -1}
           >
             <Text as="span" color={active ? 'fgInverse' : highlighted ? 'fgPrimary' : undefined}>
@@ -122,7 +142,7 @@ const CalendarDay = memo(
             </Text>
           </CalendarPressable>
         ),
-        [date, active, disabled, highlighted, isToday, accessibilityLabel, handlePress, ref],
+        [date, active, disabled, highlighted, isToday, accessibilityLabel, handleClick, ref],
       );
       if (!isCurrentMonth) return <div />;
       if (!disabled) return calendarDayButton;
@@ -322,7 +342,7 @@ export const Calendar = memo(
                   accessibilityLabel={previousArrowAccessibilityLabel}
                   background="bg"
                   disabled={disableGoPreviousMonth}
-                  onPress={disableGoPreviousMonth ? undefined : handleGoPreviousMonth}
+                  onClick={disableGoPreviousMonth ? undefined : handleGoPreviousMonth}
                 >
                   <Icon color="fg" name="backArrow" size="s" />
                 </CalendarPressable>
@@ -330,7 +350,7 @@ export const Calendar = memo(
                   accessibilityLabel={nextArrowAccessibilityLabel}
                   background="bg"
                   disabled={disableGoNextMonth}
-                  onPress={disableGoNextMonth ? undefined : handleGoNextMonth}
+                  onClick={disableGoNextMonth ? undefined : handleGoNextMonth}
                 >
                   <Icon color="fg" name="forwardArrow" size="s" />
                 </CalendarPressable>
@@ -362,7 +382,7 @@ export const Calendar = memo(
                   highlighted={highlightedTimes.includes(time)}
                   isCurrentMonth={date.getMonth() === calendarSeedDate.getMonth()}
                   isToday={time === today.getTime()}
-                  onPress={onPressDate}
+                  onClick={onPressDate}
                 />
               );
             })}

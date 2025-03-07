@@ -1,9 +1,9 @@
 import { measurePerformance } from 'reassure';
-import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Link } from '../Link';
 
 const testHref = 'https://www.coinbase.com/';
+const NoopFn = () => {};
 
 describe('Link performance test', () => {
   it('renders', async () => {

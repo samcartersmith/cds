@@ -20,7 +20,9 @@ export type SelectTriggerProps = {
   triggerHasFocus: boolean;
   /** Select Dropdown menu is opened */
   visible?: boolean;
-} & Omit<SelectBaseProps, 'children' | 'focused' | 'width' | 'onChange'>;
+  /** Event handler for when the Select Input trigger is pressed */
+  onClick?: () => void;
+} & Omit<SelectBaseProps, 'children' | 'focused' | 'width' | 'onChange' | 'onPress'>;
 
 const pressableOverrides = css`
   padding: 0;
@@ -44,7 +46,7 @@ export const SelectTrigger = memo(
       variant,
       triggerHasFocus,
       helperText,
-      onPress,
+      onClick,
       startNode,
       visible,
       ...props
@@ -77,7 +79,7 @@ export const SelectTrigger = memo(
           noScaleOnPress
           background="transparent"
           className={pressableOverrides}
-          onPress={onPress}
+          onClick={onClick}
           tabIndex={0}
           width="100%"
           {...props}

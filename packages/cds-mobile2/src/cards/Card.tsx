@@ -78,20 +78,35 @@ export const Card = memo(function OldCard({
 
   const contentStyles = useMemo(() => [borderRadiusPinStyle, style], [borderRadiusPinStyle, style]);
 
-  const content = (
-    <VStack
-      background={onPress ? undefined : background}
-      borderRadius={borderRadius}
-      elevation={onPress ? undefined : elevation}
-      height={onPress ? undefined : height}
-      pin={onPress ? undefined : pin}
-      style={contentStyles}
-      testID={onPress ? undefined : testID}
-      width={onPress ? undefined : width}
-      {...props}
-    >
-      {children}
-    </VStack>
+  const content = useMemo(
+    () => (
+      <VStack
+        background={onPress ? undefined : background}
+        borderRadius={borderRadius}
+        elevation={onPress ? undefined : elevation}
+        height={onPress ? undefined : height}
+        pin={onPress ? undefined : pin}
+        style={contentStyles}
+        testID={onPress ? undefined : testID}
+        width={onPress ? undefined : width}
+        {...props}
+      >
+        {children}
+      </VStack>
+    ),
+    [
+      background,
+      borderRadius,
+      children,
+      contentStyles,
+      elevation,
+      height,
+      onPress,
+      pin,
+      props,
+      testID,
+      width,
+    ],
   );
 
   return onPress ? (

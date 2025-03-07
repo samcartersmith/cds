@@ -1,18 +1,18 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
-import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { TextDisplay1 } from '../../typography/TextDisplay1';
 import { SegmentedTab, SegmentedTabProps } from '../SegmentedTab';
 
 const TEST_ID = 'mock-segmented-tab';
+const NoopFn = () => {};
 
 const exampleProps: SegmentedTabProps = {
   id: 'buy',
   label: 'Buy',
-  onPress: NoopFn,
+  onClick: NoopFn,
   testID: TEST_ID,
 };
 
@@ -64,27 +64,27 @@ describe('SegmentedTab', () => {
     expect(screen.getByTestId(TEST_ID)).toHaveClass('custom-class');
   });
 
-  it('does not call onPress when disabled and clicked', () => {
-    const onPress = jest.fn();
+  it('does not call onClick when disabled and clicked', () => {
+    const onClick = jest.fn();
     render(
       <TabsContext.Provider value={mockApi}>
-        <SegmentedTab {...exampleProps} disabled onPress={onPress} />
+        <SegmentedTab {...exampleProps} disabled onClick={onClick} />
       </TabsContext.Provider>,
     );
     fireEvent.click(screen.getByTestId(TEST_ID));
-    expect(onPress).not.toHaveBeenCalled();
+    expect(onClick).not.toHaveBeenCalled();
   });
 
-  it('triggers onPress when clicking the tab', () => {
-    const onPress = jest.fn();
+  it('triggers onClick when clicking the tab', () => {
+    const onClick = jest.fn();
     render(
       <TabsContext.Provider value={mockApi}>
-        <SegmentedTab {...exampleProps} onPress={onPress} />
+        <SegmentedTab {...exampleProps} onClick={onClick} />
       </TabsContext.Provider>,
     );
     fireEvent.click(screen.getByTestId(TEST_ID));
 
-    expect(onPress).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it('renders custom node for label', () => {

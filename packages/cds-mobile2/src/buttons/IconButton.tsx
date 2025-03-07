@@ -1,5 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { type StyleProp, type ViewStyle } from 'react-native';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
 import { IconButtonBaseProps } from '@cbhq/cds-common2/types';
 import { getButtonSizeProps } from '@cbhq/cds-common2/utils/getButtonSizeProps';
@@ -9,11 +10,13 @@ import { memoize } from '@cbhq/cds-common2/utils/memoize';
 import { Theme } from '../core/theme';
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
-import { Pressable, PressableProps } from '../system/Pressable';
+import { type PressableInternalProps, Pressable } from '../system/Pressable';
 
 export type IconButtonProps = IconButtonBaseProps &
-  PressableProps & {
+  Omit<PressableInternalProps, 'background' | 'style'> & {
     style?: StyleProp<ViewStyle>;
+    /** Background color of the icon button. */
+    background?: ThemeVars.Color;
   };
 
 type GetIconStylesParams = Pick<IconButtonProps, 'compact' | 'flush'> & {
@@ -59,6 +62,8 @@ const getIconStyles = memoize(function getIconStyles({
 getCacheKey);
 
 export const IconButton = memo(function IconButton({
+  background,
+  color: customColor,
   compact = true,
   feedback = compact ? 'light' : 'normal',
   name,
@@ -69,7 +74,14 @@ export const IconButton = memo(function IconButton({
   ...props
 }: IconButtonProps) {
   const theme = useTheme();
-  const { color, backgroundColor, borderColor } = useButtonVariant(variant, transparent);
+  const {
+    color: foregroundColor,
+    backgroundColor,
+    borderColor,
+  } = useButtonVariant(variant, transparent);
+
+  const color = customColor ?? foregroundColor;
+
   const { pressableStyles, iconSize, iconStyles } = useMemo(
     () => getIconStyles({ compact, flush, compactSize: 's', theme }),
     [compact, flush, theme],
@@ -79,7 +91,7 @@ export const IconButton = memo(function IconButton({
 
   return (
     <Pressable
-      background={backgroundColor}
+      background={background ?? backgroundColor}
       borderColor={borderColor}
       borderRadius={1000}
       borderWidth={100}

@@ -33,8 +33,8 @@ export const SampleTable = () => {
     alert(`hi ${name}`);
   };
   // Only apply a press event to a few items
-  const pressEvents = (name: string) => ({
-    onPress: name === 'Ethereum' ? () => handlePress(name) : undefined,
+  const clickEvents = (name: string) => ({
+    onClick: name === 'Ethereum' ? () => handlePress(name) : undefined,
   });
 
   return (
@@ -44,7 +44,7 @@ export const SampleTable = () => {
           <Button
             key={v}
             compact
-            onPress={() => setVariant(v)}
+            onClick={() => setVariant(v)}
             variant={v === variant ? 'primary' : 'secondary'}
           >
             {v}
@@ -65,7 +65,7 @@ export const SampleTable = () => {
         </TableHeader>
         <TableBody>
           {data.map((row) => (
-            <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...pressEvents(row.name)}>
+            <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...clickEvents(row.name)}>
               {Object.entries(row)
                 .filter(([label]) => LABELS_SHORT.includes(label))
                 .map(([key, val]) => (
@@ -135,8 +135,8 @@ export const FixedLayoutExample = () => {
     alert(`hi ${name}`);
   };
   // Only apply a press event to a few items
-  const pressEvents = (name: string) => ({
-    onPress: name === 'Ethereum' ? () => handlePress(name) : undefined,
+  const clickEvents = (name: string) => ({
+    onClick: name === 'Ethereum' ? () => handlePress(name) : undefined,
   });
   const widths = ['20%', '10%', '30%', '20%', '30%'];
 
@@ -164,7 +164,7 @@ export const FixedLayoutExample = () => {
         </TableHeader>
         <TableBody>
           {data.map((row) => (
-            <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...pressEvents(row.name)}>
+            <TableRow key={`row-${row.name}--${row.appSubmittedAt}`} {...clickEvents(row.name)}>
               {Object.entries(row)
                 .filter(([label]) => LABELS.includes(label))
                 .map(([key, val]) => (

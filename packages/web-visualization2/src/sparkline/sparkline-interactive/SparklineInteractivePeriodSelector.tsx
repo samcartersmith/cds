@@ -19,7 +19,7 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
   const periodLabel = periodLabelMap[period.label] ?? period.label;
   const isSelected = period.value === selectedPeriod;
 
-  const handleOnPress = useCallback(() => {
+  const handleOnClick = useCallback(() => {
     setSelectedPeriod(period.value);
   }, [period, setSelectedPeriod]);
 
@@ -32,7 +32,7 @@ function SparklineInteractivePeriodWithGeneric<Period extends string>({
         aria-pressed={isSelected}
         background={background}
         borderRadius={200}
-        onPress={handleOnPress}
+        onClick={handleOnClick}
       >
         <TextLabel1
           noWrap

@@ -27,7 +27,7 @@ describe('ContentCell', () => {
           <ContentCell
             description="Description"
             meta="Meta"
-            onPress={noop}
+            onClick={noop}
             subtitle="Subtitle"
             title="Title"
           />
@@ -42,10 +42,10 @@ describe('ContentCell', () => {
         <DefaultThemeProvider>
           <ContentCell
             description="Description"
+            href={URL}
             meta="Meta"
             subtitle="Subtitle"
             title="Title"
-            to={URL}
           />
         </DefaultThemeProvider>,
       ),
@@ -55,7 +55,7 @@ describe('ContentCell', () => {
   it('sets an accessibile label with accessibilityLabel when pressable', () => {
     render(
       <DefaultThemeProvider>
-        <ContentCell accessibilityLabel={A11Y_TEXT} onPress={noop} />
+        <ContentCell accessibilityLabel={A11Y_TEXT} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -68,7 +68,7 @@ describe('ContentCell', () => {
     render(
       <DefaultThemeProvider>
         <span id={labelId}>{A11Y_TEXT}</span>
-        <ContentCell accessibilityLabelledBy={labelId} onPress={noop} />
+        <ContentCell accessibilityLabelledBy={labelId} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -81,7 +81,7 @@ describe('ContentCell', () => {
     render(
       <DefaultThemeProvider>
         <span id={descriptionId}>{A11Y_TEXT}</span>
-        <ContentCell accessibilityHint={descriptionId} onPress={noop} />
+        <ContentCell accessibilityHint={descriptionId} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -164,10 +164,10 @@ describe('ContentCell', () => {
     expect(screen.getByTestId('accessory')).toBeVisible();
   });
 
-  it('renders button when onPress is defined', () => {
+  it('renders button when onClick is defined', () => {
     render(
       <DefaultThemeProvider>
-        <ContentCell onPress={noop} />
+        <ContentCell onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -177,7 +177,7 @@ describe('ContentCell', () => {
   it('renders button when onKeyPress is defined', () => {
     render(
       <DefaultThemeProvider>
-        <ContentCell onPress={noop} />
+        <ContentCell onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -197,7 +197,7 @@ describe('ContentCell', () => {
   it('renders link when to is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <ContentCell to={URL} />
+        <ContentCell href={URL} />
       </DefaultThemeProvider>,
     );
 
@@ -223,7 +223,7 @@ describe('ContentCell', () => {
   it('renders link when pressable callback is defined but to is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <ContentCell onPress={noop} to={URL} />
+        <ContentCell href={URL} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -236,7 +236,7 @@ describe('ContentCell', () => {
   it('renders link when pressable callback is defined but href is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <ContentCell href={URL} onPress={noop} />
+        <ContentCell href={URL} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -251,24 +251,24 @@ describe('ContentCell', () => {
 
     render(
       <DefaultThemeProvider>
-        <ContentCell target={target} to={URL} />
+        <ContentCell href={URL} target={target} />
       </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('link')).toHaveAttribute('target', target);
   });
 
-  it('fires onPress', () => {
-    const onPressSpy = jest.fn();
+  it('fires onClick', () => {
+    const onClickSpy = jest.fn();
 
     render(
       <DefaultThemeProvider>
-        <ContentCell onPress={onPressSpy} />
+        <ContentCell onClick={onClickSpy} />
       </DefaultThemeProvider>,
     );
     fireEvent.click(screen.getByRole('button'));
 
-    expect(onPressSpy).toHaveBeenCalledTimes(1);
+    expect(onClickSpy).toHaveBeenCalledTimes(1);
   });
 
   it('fires onKeyUp', () => {

@@ -13,14 +13,19 @@ import React, {
   useState,
 } from 'react';
 import { css, cx } from '@linaria/core';
-import { type TabIndicatorProps, type TabNavigationProps, type TabProps } from '@cbhq/cds-common2';
 import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
+import type { DotCountBaseProps } from '@cbhq/cds-common2/types/DotCountBaseProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+import type {
+  CustomTabProps,
+  TabIndicatorProps,
+  TabNavigationProps as SharedTabNavigationProps,
+} from '@cbhq/cds-common2/types/TabsProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useDimensions } from '../hooks/useDimensions';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { insetFocusRing } from '../styles/focus';
 import { Pressable } from '../system/Pressable';
 
 import { Paddle, paddleWidth } from './Paddle';
@@ -56,8 +61,45 @@ const pressableCustomTabStyles = css`
   flex-shrink: 0;
 `;
 
+export const insetFocusRing = css`
+  position: relative;
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--color-bgPrimary);
+    outline-offset: -3px;
+    border-radius: 4px;
+  }
+`;
+
+export type TabProps<T extends string | undefined = string> = {
+  /** The id should be a meaningful and useful identifier like "watchlist" or "forSale" */
+  id: T;
+  /** Define a label for this Tab */
+  label: React.ReactNode;
+  /** See the Tabs TDD to understand which variant should be used.
+   *  @default 'primary'
+   */
+  variant?: 'primary' | 'secondary';
+  /** Disable interactions on the tab. */
+  disabled?: boolean;
+  /** Full length accessibility label when the child text is not descriptive enough. */
+  accessibilityLabel?: string;
+  /** Callback to fire when pressed */
+  onClick?: (id: T) => void;
+  /** Render a custom Component for the Tab */
+  Component?: (props: CustomTabProps) => React.ReactElement;
+} & Partial<Pick<DotCountBaseProps, 'count' | 'max'>> &
+  SharedProps;
+
+type TabNavigationProps = Omit<SharedTabNavigationProps, 'tabs'> & {
+  tabs: TabProps[];
+};
 type LayoutProps = { width: number; x: number };
-type TabRefs = Ref<{ id: string; ref: React.RefObject<HTMLElement> }[]>;
+type TabRefs = Ref<{ id: string; ref: React.RefObject<HTMLButtonElement> }[]>;
 const fallbackLayout: LayoutProps = { width: 0, x: 0 };
 
 export const TabNavigation = memo(
@@ -208,12 +250,12 @@ export const TabNavigation = memo(
         };
       }, []);
 
-      const getTabPressHandler = useCallback(
-        (id: string, onPress: (id: string) => void) => {
+      const getTabClickHandler = useCallback(
+        (id: string, onClick: (id: string) => void) => {
           return function handleTabPress() {
             clearTimeout(scrollTimeout);
             onChange(id);
-            onPress?.(id); // handle callback
+            onClick?.(id); // handle callback
           };
         },
         [onChange],
@@ -241,7 +283,7 @@ export const TabNavigation = memo(
             ?.map(
               ({
                 id,
-                onPress,
+                onClick,
                 label,
                 disabled,
                 accessibilityLabel = label,
@@ -275,9 +317,9 @@ export const TabNavigation = memo(
                     )}
                     disabled={disabled}
                     id={`tab--${id}`}
+                    onClick={getTabClickHandler(id, onClick as (id: string) => void)}
                     onFocus={getScrollIntoViewHandler(currentRef)}
                     onKeyDown={getTabKeydownHandler(id)}
-                    onPress={getTabPressHandler(id, onPress as (id: string) => void)}
                     role={descendantAriaRole}
                     tabIndex={isActiveTab ? undefined : -1}
                     testID={tabLabelTestID}
@@ -299,7 +341,7 @@ export const TabNavigation = memo(
           Component,
           getScrollIntoViewHandler,
           getTabKeydownHandler,
-          getTabPressHandler,
+          getTabClickHandler,
           descendantAriaRole,
           variant,
           getChildren,

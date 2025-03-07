@@ -413,8 +413,3 @@ export type PolymorphicBoxProps<
   AsComponent extends React.ElementType,
   OverrideProps,
 > = Polymorphic.Props<AsComponent, Polymorphic.ExtendableProps<BoxBaseProps, OverrideProps>>;
-
-export type ExtendedBoxProps<OverrideProps> = Polymorphic.ExtendableProps<
-  BoxBaseProps,
-  OverrideProps
->;

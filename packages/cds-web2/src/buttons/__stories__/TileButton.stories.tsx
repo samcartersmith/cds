@@ -19,38 +19,38 @@ export const TileButtonPictogram = () => {
   return (
     <VStack gap={0.5}>
       <HStack zIndex={getZIndexFromRow(1, 3)}>
-        <TileButton onPress={handlePress} pictogram="2fa" title="Coinbase" />
+        <TileButton onClick={handlePress} pictogram="2fa" title="Coinbase" />
         <TileButton
           showOverflow
-          onPress={handlePress}
+          onClick={handlePress}
           pictogram="addToWatchlist"
           title="Private Client"
         />
         <TileButton
-          onPress={handlePress}
+          onClick={handlePress}
           pictogram="authenticatorProgress"
           showOverflow={false}
           title="This Title Will Be Three Lines"
         />
       </HStack>
       <HStack zIndex={getZIndexFromRow(2, 3)}>
-        <TileButton onPress={handlePress} pictogram="addCard" title="Pro" />
-        <TileButton onPress={handlePress} pictogram="phone" title="I'm a Two Line Title" />
-        <TileButton onPress={handlePress} pictogram="bitcoinWhitePaper" title="Asset Hub" />
+        <TileButton onClick={handlePress} pictogram="addCard" title="Pro" />
+        <TileButton onClick={handlePress} pictogram="phone" title="I'm a Two Line Title" />
+        <TileButton onClick={handlePress} pictogram="bitcoinWhitePaper" title="Asset Hub" />
       </HStack>
       <HStack zIndex={getZIndexFromRow(3, 3)}>
-        <TileButton onPress={handlePress} pictogram="cardDeclined" title="Wallet" />
-        <TileButton onPress={handlePress} pictogram="coinbaseOneLogo" title="Commerce" />
-        <TileButton onPress={handlePress} pictogram="chart" title="Analytics" />
+        <TileButton onClick={handlePress} pictogram="cardDeclined" title="Wallet" />
+        <TileButton onClick={handlePress} pictogram="coinbaseOneLogo" title="Commerce" />
+        <TileButton onClick={handlePress} pictogram="chart" title="Analytics" />
       </HStack>
       <HStack zIndex={getZIndexFromRow(4, 3)}>
-        <TileButton count={0} onPress={handlePress} title="Bitcoin">
+        <TileButton count={0} onClick={handlePress} title="Bitcoin">
           <RemoteImage height={38.4} source={assets.btc.imageUrl} width={38.4} />
         </TileButton>
-        <TileButton count={1} onPress={handlePress} title="Ethereum">
+        <TileButton count={1} onClick={handlePress} title="Ethereum">
           <RemoteImage height={38.4} source={assets.eth.imageUrl} width={38.4} />
         </TileButton>
-        <TileButton count={100} onPress={handlePress} title="Sushi">
+        <TileButton count={100} onClick={handlePress} title="Sushi">
           <RemoteImage height={38.4} source={assets.sushi.imageUrl} width={38.4} />
         </TileButton>
       </HStack>

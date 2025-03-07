@@ -92,11 +92,13 @@ const transparentWhileInactiveStyle = css`
   }
 `;
 
+export const interactableDefaultElement = 'button';
+
+export type InteractableDefaultElement = typeof interactableDefaultElement;
+
 export type InteractableBaseProps = Polymorphic.ExtendableProps<
   BoxBaseProps,
   {
-    as: React.ElementType;
-    children: NonNullable<React.ReactNode>;
     /** Apply class names to the outer container. */
     className?: string;
     focusable?: boolean;
@@ -132,13 +134,12 @@ export type InteractableBaseProps = Polymorphic.ExtendableProps<
   }
 >;
 
-export type InteractableProps<AsComponent extends React.ElementType> =
-  Polymorphic.InheritableElementProps<
-    AsComponent,
-    InteractableBaseProps & { as: AsComponent } & { ref?: Polymorphic.Ref<AsComponent> }
-  >;
+export type InteractableProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  InteractableBaseProps
+>;
 
-type InteractableComponent = (<AsComponent extends React.ElementType>(
+type InteractableComponent = (<AsComponent extends React.ElementType = InteractableDefaultElement>(
   props: InteractableProps<AsComponent>,
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
@@ -163,36 +164,37 @@ export const Interactable: InteractableComponent = forwardRef<
       transparentWhileInactive,
       transparentWhilePressed,
       ...props
-    }: InteractableProps<AsComponent>,
-    ref?: Polymorphic.Ref<AsComponent>,
+    }: Polymorphic.Props<AsComponent, InteractableBaseProps>,
+    ref: Polymorphic.Ref<AsComponent>,
   ) => {
+    const Component = (as ?? interactableDefaultElement) satisfies React.ElementType;
     const theme = useTheme();
 
     const interactableStyle = useMemo(() => {
-      const backgroundRgb = theme.color[background];
+      const backgroundColor = blendStyles?.background ?? theme.color[background];
 
       return {
-        [interactableBackground]: `var(--color-${background})`,
+        [interactableBackground]: blendStyles?.background ?? `var(--color-${background})`,
         /**
          * Apply an interactive background style. Blend the color with the background or backgroundInverse values
          */
         // Hover:
         [interactableHoveredBackground]: getBlendedColor({
-          color: blendStyles?.hoveredBackground ?? backgroundRgb,
+          color: blendStyles?.hoveredBackground ?? backgroundColor,
           opacity: opacityHovered,
           colorScheme: theme.colorScheme,
         }),
         [interactableHoveredOpacity]: opacityHovered,
         // Pressed:
         [interactablePressedBackground]: getBlendedColor({
-          color: blendStyles?.pressedBackground ?? backgroundRgb,
+          color: blendStyles?.pressedBackground ?? backgroundColor,
           opacity: opacityPressed,
           colorScheme: theme.colorScheme,
         }),
         [interactablePressedOpacity]: opacityPressed,
         // Disabled:
         [interactableDisabledBackground]: getBlendedColor({
-          color: blendStyles?.disabledBackground ?? backgroundRgb,
+          color: blendStyles?.disabledBackground ?? backgroundColor,
           opacity: opacityDisabled,
           colorScheme: theme.colorScheme,
           isDisabled: true,
@@ -207,7 +209,7 @@ export const Interactable: InteractableComponent = forwardRef<
         aria-busy={loading}
         aria-disabled={loading || disabled || undefined}
         aria-pressed={pressed}
-        as={as satisfies React.ElementType}
+        as={Component}
         background={background}
         borderColor={transparentWhileInactive ? 'transparent' : borderColor}
         borderWidth={borderWidth}

@@ -8,7 +8,8 @@ import { Pictogram } from '../illustrations/Pictogram';
 import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import type { StyleProps } from '../styles/styleProps';
+import { type StyleProps } from '../styles/styleProps';
+import { Pressable } from '../system';
 import { Text } from '../typography/Text';
 
 const pressStyle = css`
@@ -26,22 +27,6 @@ const pressStyle = css`
     padding: 0;
     margin: 0;
   }
-  &:active {
-    transform: scale(0.98);
-    opacity: ${opacityPressed};
-  }
-  &:hover {
-    opacity: ${opacityHovered};
-  }
-`;
-
-const actionButtonStyle = css`
-  transform: scale(1);
-  appearance: none;
-  cursor: pointer;
-  user-select: none;
-  text-decoration: none;
-
   &:active {
     transform: scale(0.98);
     opacity: ${opacityPressed};
@@ -242,11 +227,11 @@ export const NudgeCard = ({
             </Text>
           </VStack>
           {typeof action === 'string' ? (
-            <HStack as="button" className={actionButtonStyle} onClick={onActionPress} paddingY={1}>
+            <Pressable background="transparent" onClick={onActionPress} paddingY={1}>
               <Text as="span" color="fgPrimary" font="headline" numberOfLines={1}>
                 {action}
               </Text>
-            </HStack>
+            </Pressable>
           ) : (
             action
           )}

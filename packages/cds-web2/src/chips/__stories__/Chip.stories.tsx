@@ -56,7 +56,7 @@ const ChipExamples = ({
     <Chip
       {...props}
       end={<Icon color="fg" name="caretDown" size="s" />}
-      onPress={() => {}}
+      onClick={() => {}}
       start={<RemoteImage {...assetIconProps} />}
     >
       {label ?? (
@@ -69,7 +69,7 @@ const ChipExamples = ({
       {...props}
       accessibilityLabel="a11y label"
       end={<Icon color="fg" name="caretDown" size="s" />}
-      onPress={() => {}}
+      onClick={() => {}}
       start={<RemoteImage {...assetIconProps} />}
     >
       {label ?? (
@@ -82,7 +82,7 @@ const ChipExamples = ({
       {...props}
       disabled
       end={<Icon color="fg" name="caretDown" size="s" />}
-      onPress={() => {}}
+      onClick={() => {}}
       start={<RemoteImage {...assetIconProps} />}
     >
       {label ?? (

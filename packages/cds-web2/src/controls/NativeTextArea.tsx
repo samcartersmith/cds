@@ -48,7 +48,7 @@ export type NativeTextAreaBaseProp = {
   /**
    * Callback fired when pressed/clicked
    */
-  onPress?: React.MouseEventHandler;
+  onClick?: React.MouseEventHandler;
 } & SharedProps &
   Pick<TextInputBaseProps, 'compact'>;
 
@@ -60,7 +60,7 @@ export const NativeTextArea = memo(
       font = 'body',
       testID,
       onFocus,
-      onPress,
+      onClick,
       onBlur,
       onKeyDown,
       onChange,
@@ -84,7 +84,7 @@ export const NativeTextArea = memo(
         font={font}
         onBlur={onBlur}
         onChange={onChange}
-        onClick={onPress}
+        onClick={onClick}
         onFocus={onFocus}
         onKeyDown={onKeyDown}
         tabIndex={0}

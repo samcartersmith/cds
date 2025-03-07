@@ -39,6 +39,12 @@ export const ContentCell = memo(function ContentCell({
   subtitle,
   accessibilityLabel,
   accessibilityHint,
+  compact,
+  detailWidth,
+  priority,
+  innerSpacing,
+  outerSpacing,
+  alignItems = 'flex-start',
   ...props
 }: ContentCellProps) {
   if (!isProduction()) {
@@ -60,16 +66,21 @@ export const ContentCell = memo(function ContentCell({
 
   return (
     <Cell
-      {...props}
       accessibilityHint={computedAccessibilityHint}
       accessibilityLabel={computedAccessibilityLabel}
       accessory={
         accessoryType ? <CellAccessory paddingTop={0.5} type={accessoryType} /> : undefined
       }
-      alignItems="flex-start"
+      alignItems={alignItems}
+      compact={compact}
+      detailWidth={detailWidth}
       disabled={disabled}
+      innerSpacing={innerSpacing}
       media={media}
+      outerSpacing={outerSpacing}
+      priority={priority}
       selected={selected}
+      {...props}
     >
       <VStack>
         {hasTitles && (

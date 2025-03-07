@@ -12,7 +12,11 @@ export type AccordionItemProps = {
   headerRef?: React.RefObject<HTMLButtonElement>;
   panelRef?: React.RefObject<HTMLDivElement>;
   style?: React.CSSProperties;
-} & AccordionItemBaseProps &
+  /**
+   * Callback function fired when the accordion item is pressed
+   */
+  onClick?: (key: string) => void;
+} & Omit<AccordionItemBaseProps, 'onPress'> &
   Pick<AccordionPanelProps, 'maxHeight'>;
 
 export const AccordionItem = memo(
@@ -21,7 +25,7 @@ export const AccordionItem = memo(
     title,
     subtitle,
     children,
-    onPress,
+    onClick,
     media,
     testID,
     headerRef,
@@ -39,7 +43,7 @@ export const AccordionItem = memo(
           collapsed={collapsed}
           itemKey={itemKey}
           media={media}
-          onPress={onPress}
+          onClick={onClick}
           subtitle={subtitle}
           testID={testID && `${testID}-header`}
           title={title}

@@ -9,7 +9,6 @@ import React, {
 import { css, cx } from '@linaria/core';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 import { ComponentEventHandlerProps } from '@cbhq/cds-common2/types/ComponentEventHandlerProps';
-import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 
 import { Polymorphic } from '../core/polymorphism';
 import { useIsoEffect } from '../hooks/useIsoEffect';
@@ -60,24 +59,16 @@ const transparentActiveStyle = css`
   }
 `;
 
-export type LinkableProps = {
-  /** Callback fired when the element is pressed. */
-  onPress?: React.MouseEventHandler;
-  /** URL that this links to when pressed. */
-  to?: string;
-} & Pick<React.AllHTMLAttributes<HTMLAnchorElement>, 'target' | 'href'> &
-  Pick<
-    SharedAccessibilityProps,
-    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
-  >;
+export const pressableDefaultElement = 'button';
+
+export type PressableDefaultElement = typeof pressableDefaultElement;
 
 export type PressableBaseProps = Polymorphic.ExtendableProps<
-  Omit<InteractableBaseProps, 'as'>,
+  InteractableBaseProps,
   {
     /** Dont scale element on press. */
     noScaleOnPress?: boolean;
-  } & LinkableProps &
-    ComponentEventHandlerProps
+  } & ComponentEventHandlerProps
 >;
 
 export type PressableProps<AsComponent extends React.ElementType> = Polymorphic.Props<
@@ -85,7 +76,7 @@ export type PressableProps<AsComponent extends React.ElementType> = Polymorphic.
   PressableBaseProps
 >;
 
-type PressableComponent = (<AsComponent extends React.ElementType>(
+type PressableComponent = (<AsComponent extends React.ElementType = PressableDefaultElement>(
   props: PressableProps<AsComponent>,
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
@@ -101,7 +92,7 @@ export const Pressable: PressableComponent = forwardRef<
       disabled,
       loading,
       onClickCapture,
-      onPress,
+      onClick,
       onKeyDown,
       onKeyUp,
       onMouseDown,
@@ -111,10 +102,6 @@ export const Pressable: PressableComponent = forwardRef<
       eventConfig,
       analyticsId,
       focusable,
-      to,
-      href,
-      rel,
-      target,
       type,
       transparentWhilePressed,
       padding = 0,
@@ -122,10 +109,9 @@ export const Pressable: PressableComponent = forwardRef<
     }: PressableProps<AsComponent>,
     ref?: Polymorphic.Ref<AsComponent>,
   ) => {
+    const Component = (as ?? pressableDefaultElement) satisfies React.ElementType;
     const elementRef = useRef(null);
     useImperativeHandle(ref, () => elementRef.current, []); // Merges forwarded ref with internal elementRef
-    const isLink = to || href;
-    const Component = (as ?? (isLink ? 'a' : 'button')) satisfies React.ElementType;
     const defaultButtonType = Component === 'button' ? 'button' : undefined;
     const [nativeTabbable, setNativeTabbable] = useState(true);
     const [supportsDisabled, setSupportsDisabled] = useState(true);
@@ -222,13 +208,14 @@ export const Pressable: PressableComponent = forwardRef<
       [onMouseDown],
     );
 
-    const onEventHandler = useEventHandler('Button', 'onPress', eventConfig, analyticsId);
-    const onClick = useCallback(
+    const onEventHandler = useEventHandler('Button', 'onClick', eventConfig, analyticsId);
+
+    const handleClick = useCallback(
       (event: React.MouseEvent) => {
-        onPress?.(event);
+        onClick?.(event);
         onEventHandler();
       },
-      [onPress, onEventHandler],
+      [onClick, onEventHandler],
     );
 
     const accessibilityProps = useMemo(
@@ -253,17 +240,15 @@ export const Pressable: PressableComponent = forwardRef<
         )}
         data-active={active || undefined}
         data-loading={loading || undefined}
-        href={to ?? href}
         loading={loading}
-        onClick={onClick}
+        onClick={handleClick}
         onClickCapture={handleOnClickCapture}
         onKeyDown={handleOnKeyDown}
         onKeyUp={handleOnKeyUp}
         onMouseDown={handleOnMouseDown}
         onMouseDownCapture={handleOnMouseDownCapture}
         padding={padding}
-        rel={!rel && target === '_blank' ? 'noopener noreferrer' : rel}
-        target={target}
+        rel={!props.rel && props.target === '_blank' ? 'noopener noreferrer' : props.rel}
         transparentWhilePressed={transparentWhilePressed}
         type={type ?? defaultButtonType}
         {...accessibilityProps}

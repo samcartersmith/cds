@@ -3,7 +3,7 @@ import { css } from '@linaria/core';
 import { compactListHeight, listHeight } from '@cbhq/cds-common2/tokens/cell';
 import type { ListCellBaseProps } from '@cbhq/cds-common2/types';
 
-import { type BoxProps, Box } from '../layout/Box';
+import { Box } from '../layout/Box';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
@@ -17,9 +17,7 @@ const overflowStyle = css`
   white-space: normal;
 `;
 
-export type ListCellProps = ListCellBaseProps &
-  CellSharedProps &
-  Omit<BoxProps<'div' | 'li'>, 'alignItems' | 'title'>;
+export type ListCellProps = ListCellBaseProps & Omit<CellSharedProps, 'ref' | 'title'>;
 
 export const ListCell = memo(
   forwardRef(function ListCell(
@@ -37,6 +35,11 @@ export const ListCell = memo(
       selected,
       subdetail,
       variant,
+      intermediary,
+      priority,
+      innerSpacing,
+      outerSpacing,
+      detailWidth,
       ...props
     }: ListCellProps,
     ref: React.ForwardedRef<HTMLDivElement>,
@@ -56,14 +59,19 @@ export const ListCell = memo(
 
     return (
       <Cell
-        {...props}
         ref={ref}
         accessory={accessoryType && <CellAccessory type={accessoryType} />}
         detail={end}
+        detailWidth={detailWidth}
         disabled={disabled}
+        innerSpacing={innerSpacing}
+        intermediary={intermediary}
         media={media}
         minHeight={minHeight}
+        outerSpacing={outerSpacing}
+        priority={priority}
         selected={selected}
+        {...props}
       >
         <VStack>
           {!!title && (

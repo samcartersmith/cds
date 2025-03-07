@@ -2,7 +2,7 @@ import React from 'react';
 import { announcementCards } from '@cbhq/cds-common2/internal/data/announcementCards';
 import { dataCards } from '@cbhq/cds-common2/internal/data/dataCards';
 import { featureEntryCards } from '@cbhq/cds-common2/internal/data/featureEntryCards';
-import { feedCards } from '@cbhq/cds-common2/internal/data/feedCards';
+import { feedCards as sharedFeedCards } from '@cbhq/cds-common2/internal/data/feedCards';
 import { baseConfig, storyBuilder } from '@cbhq/cds-common2/internal/utils/storyBuilder';
 import { LikeButtonBaseProps } from '@cbhq/cds-common2/types';
 import { getFigmaAccessToken } from '@cbhq/cds-utils/env';
@@ -10,7 +10,6 @@ import { getFigmaAccessToken } from '@cbhq/cds-utils/env';
 import { Button } from '../../buttons';
 import { Box, VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
-import { ThemeProvider, ThemeProviderProps } from '../../system';
 import {
   AnnouncementCard as AnnouncementCardComponent,
   AnnouncementCardProps,
@@ -86,6 +85,14 @@ export const FeatureEntryCards = featureEntryCardBuilder.buildSheet(featureEntry
 /* -------------------------------------------------------------------------- */
 /*                                 Feed Cards                                 */
 /* -------------------------------------------------------------------------- */
+const feedCards = sharedFeedCards.map((card) => ({
+  ...card,
+  headerAction: {
+    name: 'more',
+    // eslint-disable-next-line no-console
+    onClick: () => console.log('clicked'),
+  } as const,
+}));
 export const FeedCard = ({ ...props }: FeedCardProps) => {
   return (
     <FeedCardComponent
@@ -133,7 +140,7 @@ const sharedWrapperProps = {
 } as const;
 
 const sharedProps = { padding: 2 } as const;
-const sharedPressProps = { onPress: () => {}, ...sharedProps } as const;
+const sharedPressProps = { onClick: () => {}, ...sharedProps } as const;
 const pinnedSharedProps = { ...sharedProps, elevation: 2 } as const;
 const pinnedSharedWrapperProps = {
   ...sharedWrapperProps,

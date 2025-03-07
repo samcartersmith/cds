@@ -30,7 +30,7 @@ describe('AvatarButton', () => {
   it('renders a link', () => {
     render(
       <DefaultThemeProvider>
-        <AvatarButton alt="Sneezy" to="/" />
+        <AvatarButton alt="Sneezy" as="a" href="/" />
       </DefaultThemeProvider>,
     );
     const button = screen.getByRole('link');
@@ -39,11 +39,11 @@ describe('AvatarButton', () => {
     expect(button).toHaveAttribute('href', '/');
   });
 
-  it('fires `onPress` when clicked', () => {
+  it('fires `onClick` when clicked', () => {
     const spy = jest.fn();
     render(
       <DefaultThemeProvider>
-        <AvatarButton alt="Sneezy" onPress={spy} />
+        <AvatarButton alt="Sneezy" onClick={spy} />
       </DefaultThemeProvider>,
     );
 
@@ -52,14 +52,14 @@ describe('AvatarButton', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('doesnt pass `onPress` to button element', () => {
+  it('doesnt pass `onClick` to button element', () => {
     const spy = jest.fn();
     render(
       <DefaultThemeProvider>
-        <AvatarButton alt="Sneezy" onPress={spy} />
+        <AvatarButton alt="Sneezy" onClick={spy} />
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByRole('button')).not.toHaveAttribute('onPress');
+    expect(screen.getByRole('button')).not.toHaveAttribute('onClick');
   });
 });

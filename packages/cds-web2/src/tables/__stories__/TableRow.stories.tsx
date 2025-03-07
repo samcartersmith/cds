@@ -11,7 +11,7 @@ export default {
 } as Meta;
 
 // eslint-disable-next-line no-console
-const handlePress = console.log;
+const handleClick = console.log;
 
 export const TableRowExample: Story = () => {
   return (
@@ -22,7 +22,7 @@ export const TableRowExample: Story = () => {
             <Text as="h2" font="headline">
               Sample Row 1
             </Text>
-            <Button compact onPress={handlePress} variant="secondary">
+            <Button compact onClick={handleClick} variant="secondary">
               Export
             </Button>
           </TableCell>
@@ -31,7 +31,7 @@ export const TableRowExample: Story = () => {
           <TableCell
             direction="horizontal"
             end={
-              <Button compact onPress={handlePress} variant="secondary">
+              <Button compact onClick={handleClick} variant="secondary">
                 Export
               </Button>
             }
@@ -43,7 +43,7 @@ export const TableRowExample: Story = () => {
             <Text as="h2" font="headline">
               Sample Row 3 (disable hover indicator)
             </Text>
-            <Button compact onPress={handlePress} variant="secondary">
+            <Button compact onClick={handleClick} variant="secondary">
               Export
             </Button>
           </TableCell>

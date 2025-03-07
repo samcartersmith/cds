@@ -9,7 +9,7 @@ import { Text } from '../../typography/Text';
 import { FloatingAssetCard } from '../FloatingAssetCard';
 
 // eslint-disable-next-line no-console
-const onPressConsole = console.log;
+const onClickConsole = console.log;
 
 const exampleProps = {
   title: 'Title',
@@ -25,7 +25,7 @@ const exampleProps = {
       width="100%"
     />
   ),
-  onClick: onPressConsole,
+  onClick: onClickConsole,
 } as const;
 
 export const Default = (): JSX.Element => {

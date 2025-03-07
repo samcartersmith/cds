@@ -23,16 +23,16 @@ describe('Card', () => {
   });
 
   it('passes accessibility when a button', async () => {
-    expect(await renderA11y(<TestCard onPress={noop}>{CARD_TEXT}</TestCard>)).toHaveNoViolations();
+    expect(await renderA11y(<TestCard onClick={noop}>{CARD_TEXT}</TestCard>)).toHaveNoViolations();
   });
 
   it('passes accessibility when a link', async () => {
-    expect(await renderA11y(<TestCard to={URL}>{CARD_TEXT}</TestCard>)).toHaveNoViolations();
+    expect(await renderA11y(<TestCard href={URL}>{CARD_TEXT}</TestCard>)).toHaveNoViolations();
   });
 
   it('sets an accessible label with accessibilityLabel when pressable', () => {
     render(
-      <TestCard accessibilityLabel={A11Y_TEXT} onPress={noop}>
+      <TestCard accessibilityLabel={A11Y_TEXT} onClick={noop}>
         {CARD_TEXT}
       </TestCard>,
     );
@@ -46,7 +46,7 @@ describe('Card', () => {
     render(
       <>
         <span id={labelId}>{A11Y_TEXT}</span>
-        <TestCard accessibilityLabelledBy={labelId} onPress={noop}>
+        <TestCard accessibilityLabelledBy={labelId} onClick={noop}>
           {CARD_TEXT}
         </TestCard>
       </>,
@@ -61,7 +61,7 @@ describe('Card', () => {
     render(
       <>
         <span id={descriptionId}>{A11Y_TEXT}</span>
-        <TestCard accessibilityHint={descriptionId} onPress={noop}>
+        <TestCard accessibilityHint={descriptionId} onClick={noop}>
           {CARD_TEXT}
         </TestCard>
       </>,
@@ -76,8 +76,8 @@ describe('Card', () => {
     expect(screen.getByText(CARD_TEXT)).toBeVisible();
   });
 
-  it('renders button when onPress is defined', () => {
-    render(<TestCard onPress={noop}>{CARD_TEXT}</TestCard>);
+  it('renders button when onClick is defined', () => {
+    render(<TestCard onClick={noop}>{CARD_TEXT}</TestCard>);
 
     expect(screen.getByRole('button')).toBeVisible();
   });
@@ -89,7 +89,7 @@ describe('Card', () => {
   });
 
   it('renders link when to is set with a url', () => {
-    render(<TestCard to={URL}>{CARD_TEXT}</TestCard>);
+    render(<TestCard href={URL}>{CARD_TEXT}</TestCard>);
 
     const link = screen.getByRole('link');
 
@@ -108,7 +108,7 @@ describe('Card', () => {
 
   it('renders link when pressable callback is defined but to is set with a url', () => {
     render(
-      <TestCard onPress={noop} to={URL}>
+      <TestCard href={URL} onClick={noop}>
         {CARD_TEXT}
       </TestCard>,
     );
@@ -121,7 +121,7 @@ describe('Card', () => {
 
   it('renders link when pressable callback is defined but href is set with a url', () => {
     render(
-      <TestCard href={URL} onPress={noop}>
+      <TestCard href={URL} onClick={noop}>
         {CARD_TEXT}
       </TestCard>,
     );
@@ -136,7 +136,7 @@ describe('Card', () => {
     const target = '_blank';
 
     render(
-      <TestCard target={target} to={URL}>
+      <TestCard href={URL} target={target}>
         {CARD_TEXT}
       </TestCard>,
     );
@@ -144,12 +144,12 @@ describe('Card', () => {
     expect(screen.getByRole('link')).toHaveAttribute('target', target);
   });
 
-  it('fires onPress', () => {
-    const onPressSpy = jest.fn();
+  it('fires onClick', () => {
+    const onClickSpy = jest.fn();
 
-    render(<TestCard onPress={onPressSpy}>{CARD_TEXT}</TestCard>);
+    render(<TestCard onClick={onClickSpy}>{CARD_TEXT}</TestCard>);
     fireEvent.click(screen.getByRole('button'));
 
-    expect(onPressSpy).toHaveBeenCalledTimes(1);
+    expect(onClickSpy).toHaveBeenCalledTimes(1);
   });
 });

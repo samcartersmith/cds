@@ -2,7 +2,11 @@ import React, { forwardRef } from 'react';
 
 import type { Polymorphic } from '../core/polymorphism';
 
-import { type BoxBaseProps, type BoxDefaultElement, Box } from './Box';
+import { type BoxBaseProps, Box } from './Box';
+
+export const vStackDefaultElement = 'div';
+
+export type VStackDefaultElement = typeof vStackDefaultElement;
 
 export type VStackBaseProps = BoxBaseProps;
 
@@ -11,7 +15,7 @@ export type VStackProps<AsComponent extends React.ElementType> = Polymorphic.Pro
   VStackBaseProps
 >;
 
-type VStackComponent = (<AsComponent extends React.ElementType = BoxDefaultElement>(
+type VStackComponent = (<AsComponent extends React.ElementType = VStackDefaultElement>(
   props: VStackProps<AsComponent>,
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
@@ -24,14 +28,9 @@ export const VStack: VStackComponent = forwardRef<
     { as, flexDirection = 'column', ...props }: VStackProps<AsComponent>,
     ref?: Polymorphic.Ref<AsComponent>,
   ) => {
-    return (
-      <Box
-        ref={ref}
-        as={as satisfies React.ElementType | undefined}
-        flexDirection={flexDirection}
-        {...props}
-      />
-    );
+    const Component = (as ?? vStackDefaultElement) satisfies React.ElementType;
+
+    return <Box ref={ref} as={Component} flexDirection={flexDirection} {...props} />;
   },
 );
 

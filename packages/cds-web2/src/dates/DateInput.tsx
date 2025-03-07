@@ -37,7 +37,7 @@ export const DateInput = memo(
         variant,
         className,
         style,
-        onPress,
+        onClick,
         onChange,
         onBlur,
         testIDMap,
@@ -106,7 +106,7 @@ export const DateInput = memo(
             helperText={helperText || error?.message || intlDateFormat.dateStringFormat}
             onBlur={handleBlur}
             onChange={handleChange}
-            onPress={onPress}
+            onClick={onClick}
             placeholder={placeholder || defaultPlaceholder}
             start={start}
             testIDMap={testIDMap}

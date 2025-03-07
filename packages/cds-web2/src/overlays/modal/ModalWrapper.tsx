@@ -118,7 +118,7 @@ export const ModalWrapper = memo(
                       className={cx(
                         !dangerouslyDisableResponsiveness && modalOverlayResponsiveStyle,
                       )}
-                      onPress={!disableOverlayPress ? onOverlayPress : undefined}
+                      onClick={!disableOverlayPress ? onOverlayPress : undefined}
                       testID="modal-overlay"
                     />
                   )}

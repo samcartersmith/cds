@@ -86,7 +86,7 @@ const Playground = memo(function Playground({
                 transparentWhileInactive
                 background="bg"
                 borderRadius={400}
-                onPress={toggleCode}
+                onClick={toggleCode}
               >
                 <HStack alignItems="center" gap={1} padding={1}>
                   <Icon color="fgPrimary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
@@ -100,7 +100,7 @@ const Playground = memo(function Playground({
                 transparentWhileInactive
                 background="bg"
                 borderRadius={1000}
-                onPress={handleCopyToClipboard}
+                onClick={handleCopyToClipboard}
               >
                 <HStack alignItems="center" gap={1} padding={1}>
                   <Icon color="fgPrimary" name="copy" size="xs" />

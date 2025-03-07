@@ -28,7 +28,7 @@ describe('ListCell', () => {
           <ListCell
             description="Description"
             detail="Detail"
-            onPress={noop}
+            onClick={noop}
             subdetail="Subdetail"
             title="Title"
           />
@@ -44,9 +44,9 @@ describe('ListCell', () => {
           <ListCell
             description="Description"
             detail="Detail"
+            href={URL}
             subdetail="Subdetail"
             title="Title"
-            to={URL}
           />
         </DefaultThemeProvider>,
       ),
@@ -56,7 +56,7 @@ describe('ListCell', () => {
   it('sets an accessibile label with accessibilityLabel when pressable', () => {
     render(
       <DefaultThemeProvider>
-        <ListCell accessibilityLabel={A11Y_TEXT} onPress={noop} />
+        <ListCell accessibilityLabel={A11Y_TEXT} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -69,7 +69,7 @@ describe('ListCell', () => {
     render(
       <DefaultThemeProvider>
         <span id={labelId}>{A11Y_TEXT}</span>
-        <ListCell accessibilityLabelledBy={labelId} onPress={noop} />
+        <ListCell accessibilityLabelledBy={labelId} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -82,7 +82,7 @@ describe('ListCell', () => {
     render(
       <DefaultThemeProvider>
         <span id={descriptionId}>{A11Y_TEXT}</span>
-        <ListCell accessibilityHint={descriptionId} onPress={noop} />
+        <ListCell accessibilityHint={descriptionId} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -212,10 +212,10 @@ describe('ListCell', () => {
     expect(screen.getByTestId('button')).toBeVisible();
   });
 
-  it('renders button when onPress is defined', () => {
+  it('renders button when onClick is defined', () => {
     render(
       <DefaultThemeProvider>
-        <ListCell onPress={noop} />
+        <ListCell onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -245,7 +245,7 @@ describe('ListCell', () => {
   it('renders link when to is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <ListCell to={URL} />
+        <ListCell href={URL} />
       </DefaultThemeProvider>,
     );
 
@@ -271,7 +271,7 @@ describe('ListCell', () => {
   it('renders link when pressable callback is defined but to is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <ListCell onPress={noop} to={URL} />
+        <ListCell href={URL} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -284,7 +284,7 @@ describe('ListCell', () => {
   it('renders link when pressable callback is defined but href is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <ListCell href={URL} onPress={noop} />
+        <ListCell href={URL} onClick={noop} />
       </DefaultThemeProvider>,
     );
 
@@ -299,24 +299,24 @@ describe('ListCell', () => {
 
     render(
       <DefaultThemeProvider>
-        <ListCell target={target} to={URL} />
+        <ListCell href={URL} target={target} />
       </DefaultThemeProvider>,
     );
 
     expect(screen.getByRole('link')).toHaveAttribute('target', target);
   });
 
-  it('fires onPress', () => {
-    const onPressSpy = jest.fn();
+  it('fires onClick', () => {
+    const onClickSpy = jest.fn();
 
     render(
       <DefaultThemeProvider>
-        <ListCell onPress={onPressSpy} />
+        <ListCell onClick={onClickSpy} />
       </DefaultThemeProvider>,
     );
     fireEvent.click(screen.getByRole('button'));
 
-    expect(onPressSpy).toHaveBeenCalledTimes(1);
+    expect(onClickSpy).toHaveBeenCalledTimes(1);
   });
 
   it('fires onKeyUp', () => {

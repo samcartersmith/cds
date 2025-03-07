@@ -1,18 +1,19 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { NoopFn as noopFn } from '@cbhq/cds-common2/utils/mockUtils';
 import { PictogramName } from '@cbhq/cds-illustrations';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { DefaultThemeProvider } from '../../utils/test';
 import { NudgeCard as BaseNudgeCard, NudgeCardProps } from '../NudgeCard';
 
+const NoopFn = () => {};
+
 const exampleProps = {
   title: "It's Onchain Summer!",
   description: 'Stand with crypto and mint your NFT.',
   pictogram: 'ethStaking' as PictogramName,
   action: 'Join the movement',
-  onActionPress: noopFn,
+  onActionPress: NoopFn,
 };
 
 const NudgeCard = (
@@ -39,7 +40,7 @@ describe('createNudgeCard', () => {
     expect(
       await renderA11y(
         <DefaultThemeProvider>
-          <NudgeCard accessibilityLabel="Dismiss" onDismissPress={noopFn} />
+          <NudgeCard accessibilityLabel="Dismiss" onDismissPress={NoopFn} />
         </DefaultThemeProvider>,
       ),
     ).toHaveNoViolations();
@@ -85,7 +86,7 @@ describe('createNudgeCard', () => {
   it('renders the dismiss button when onDismissPress is provided', () => {
     render(
       <DefaultThemeProvider>
-        <NudgeCard onDismissPress={noopFn} />
+        <NudgeCard onDismissPress={NoopFn} />
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('nudge-card-dismiss-button')).toBeVisible();

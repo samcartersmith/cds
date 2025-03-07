@@ -150,7 +150,7 @@ const IllustrationTile = ({
       background="transparent"
       className={styles.tile}
       height={heightString}
-      onPress={handleCopyToClipboard}
+      onClick={handleCopyToClipboard}
       width={widthString}
     >
       <VStack

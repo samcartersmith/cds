@@ -2,9 +2,13 @@ import React, { forwardRef, memo, useMemo } from 'react';
 
 import type { Polymorphic } from '../core/polymorphism';
 
-import { type BoxBaseProps, type BoxDefaultElement, Box } from './Box';
+import { type BoxBaseProps, Box } from './Box';
 
 type GridColumnSpan = number | -1;
+
+export const gridColumnDefaultElement = 'div';
+
+export type GridColumnDefaultElement = typeof gridColumnDefaultElement;
 
 export type GridColumnBaseProps = Polymorphic.ExtendableProps<
   BoxBaseProps,
@@ -55,7 +59,7 @@ export type GridColumnProps<AsComponent extends React.ElementType> = Polymorphic
   GridColumnBaseProps
 >;
 
-type GridColumnComponent = (<AsComponent extends React.ElementType = BoxDefaultElement>(
+type GridColumnComponent = (<AsComponent extends React.ElementType = GridColumnDefaultElement>(
   props: GridColumnProps<AsComponent>,
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
@@ -73,6 +77,7 @@ export const GridColumn: GridColumnComponent = memo(
       }: GridColumnProps<AsComponent>,
       forwardedRef: Polymorphic.Ref<AsComponent>,
     ) => {
+      const Component = (as ?? gridColumnDefaultElement) satisfies React.ElementType;
       const gridColumnValue = useMemo(
         () => gridColumn ?? (colSpan ? `${colStart} / span ${colSpan}` : undefined),
         [colSpan, colStart, gridColumn],
@@ -81,7 +86,7 @@ export const GridColumn: GridColumnComponent = memo(
       return (
         <Box
           ref={forwardedRef}
-          as={as satisfies React.ElementType | undefined}
+          as={Component}
           gridColumn={gridColumnValue}
           gridColumnEnd={colEnd}
           gridColumnStart={colStart}

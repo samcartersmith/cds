@@ -1,22 +1,13 @@
+import { useState } from 'react';
 import useMeasure from 'react-use-measure';
 import { fireEvent, render, screen } from '@testing-library/react';
-import {
-  CreateSelectStoriesProps,
-  exampleOptions,
-  selectBuilder,
-} from '@cbhq/cds-common2/internal/selectBuilder';
+import { exampleOptions } from '@cbhq/cds-common2/internal/selectBuilder';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { DotSymbol } from '../../dots';
-import { Icon } from '../../icons/Icon';
-import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
-import { RemoteImage } from '../../media';
 import { MediaQueryProvider } from '../../system/MediaQueryProvider';
-import { ThemeProvider } from '../../system/ThemeProvider';
 import { DefaultThemeProvider } from '../../utils/test';
-import { InputIcon } from '../InputIcon';
-import { Select } from '../Select';
+import { type SelectProps, Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 
 jest.mock('react-use-measure');
@@ -37,17 +28,56 @@ const mockDimensions: Partial<ReturnType<typeof useMeasure>> = [
   },
 ];
 
-const { Default: MockSelect } = selectBuilder({
-  Select,
-  VStack,
-  SelectOption,
-  ThemeProvider,
-  Icon,
-  InputIcon,
-  Box,
-  RemoteImage,
-  DotSymbol,
-} as unknown as CreateSelectStoriesProps);
+const MockSelect = ({
+  variant,
+  placeholder = 'Choose something',
+  label,
+  accessibilityLabel,
+  testID,
+  onClick,
+  helperText,
+  width,
+}: Pick<
+  SelectProps,
+  | 'variant'
+  | 'label'
+  | 'placeholder'
+  | 'accessibilityLabel'
+  | 'testID'
+  | 'onClick'
+  | 'helperText'
+  | 'width'
+>) => {
+  const [value, setValue] = useState<string | undefined>('');
+
+  return (
+    <VStack background="bg" padding={2}>
+      <Select
+        accessibilityLabel={accessibilityLabel}
+        helperText={helperText}
+        label={label}
+        onChange={setValue}
+        onClick={onClick}
+        placeholder={placeholder}
+        testID={testID}
+        value={value}
+        variant={variant}
+        width={width}
+      >
+        <SelectOption key="Disabled" disabled description="BTC" title="Disabled" value="disabled" />
+        {exampleOptions.map((option) => (
+          <SelectOption
+            key={option}
+            description="BTC"
+            testID={`option-${option}`}
+            title={option}
+            value={option}
+          />
+        ))}
+      </Select>
+    </VStack>
+  );
+};
 
 const mockPlaceholder = 'Choose something...';
 const accessibilityLabel = 'label';
@@ -100,17 +130,17 @@ describe('Select', () => {
     expect(screen.getByTestId(mockTestID)).toBeDefined();
   });
   it('opens the Menu when the Select is pressed', async () => {
-    const onPressSpy = jest.fn();
+    const onClickSpy = jest.fn();
     render(
       <MediaQueryProvider>
         <DefaultThemeProvider>
-          <MockSelect onPress={onPressSpy} placeholder={mockPlaceholder} />
+          <MockSelect onClick={onClickSpy} placeholder={mockPlaceholder} />
         </DefaultThemeProvider>
       </MediaQueryProvider>,
     );
 
     fireEvent.click(screen.getByText(mockPlaceholder));
-    expect(onPressSpy).toHaveBeenCalled();
+    expect(onClickSpy).toHaveBeenCalled();
 
     const firstOption = await screen.findByText(exampleOptions[0]);
     // expect Menu and SelectOption to render
@@ -122,7 +152,7 @@ describe('Select', () => {
     render(
       <MediaQueryProvider>
         <DefaultThemeProvider>
-          <MockSelect onPress={onChangeSpy} placeholder={mockPlaceholder} />
+          <MockSelect onClick={onChangeSpy} placeholder={mockPlaceholder} />
         </DefaultThemeProvider>
       </MediaQueryProvider>,
     );

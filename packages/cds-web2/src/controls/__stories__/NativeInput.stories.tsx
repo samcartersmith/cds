@@ -67,9 +67,9 @@ export const NativeInputActions = function NativeInputOnFocus() {
     console.log('Key down');
   }, []);
 
-  const onPress = useCallback(() => {
+  const onClick = useCallback(() => {
     // eslint-disable-next-line no-console
-    console.log('Pressed');
+    console.log('Clicked');
   }, []);
 
   return (
@@ -78,9 +78,9 @@ export const NativeInputActions = function NativeInputOnFocus() {
         <NativeInput
           accessibilityLabel="Label"
           onBlur={onBlur}
+          onClick={onClick}
           onFocus={onFocus}
           onKeyDown={onKeyDown}
-          onPress={onPress}
         />
       }
       labelNode="Label"

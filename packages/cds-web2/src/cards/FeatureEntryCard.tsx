@@ -1,20 +1,18 @@
 import React, { memo } from 'react';
 import { FeatureEntryCardBaseProps } from '@cbhq/cds-common2/types';
 
-import { PressableBaseProps } from '../system/Pressable';
-
-import { Card } from './Card';
-import { CardBody } from './CardBody';
+import { type CardProps, Card } from './Card';
+import { type CardBodyProps, CardBody } from './CardBody';
 
 /** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export type FeatureEntryCardProps = FeatureEntryCardBaseProps & {
-  onPress?: PressableBaseProps['onPress'];
-  onActionPress?: PressableBaseProps['onPress'];
+  onClick?: CardProps['onClick'];
+  onActionPress?: CardBodyProps['onActionPress'];
 };
 
 /** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export const FeatureEntryCard = memo(function FeatureEntryCard({
-  onPress,
+  onClick,
   testID = 'feature-entry-card',
   accessibilityHint,
   accessibilityLabel,
@@ -35,7 +33,7 @@ export const FeatureEntryCard = memo(function FeatureEntryCard({
       borderRadius={borderRadius}
       elevation={elevation}
       flexShrink={0}
-      onPress={onPress}
+      onClick={onClick}
       testID={testID}
     >
       <CardBody description={description} testID={`${testID}-body`} title={title} {...props} />

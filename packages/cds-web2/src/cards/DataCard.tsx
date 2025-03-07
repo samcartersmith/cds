@@ -4,18 +4,17 @@ import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 import type { DataCardBaseProps } from '@cbhq/cds-common2/types';
 
 import { HStack } from '../layout/HStack';
-import { type PressableBaseProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 import { ProgressBar } from '../visualizations/ProgressBar';
 import { ProgressCircle } from '../visualizations/ProgressCircle';
 
-import { Card } from './Card';
+import { type CardProps, Card } from './Card';
 import { CardBody } from './CardBody';
 
-export type DataCardProps = DataCardBaseProps & { onPress?: PressableBaseProps['onPress'] };
+export type DataCardProps = DataCardBaseProps & { onClick?: CardProps['onClick'] };
 
 export const DataCard = memo(function DataCard({
-  onPress,
+  onClick,
   title,
   description,
   progressVariant,
@@ -54,7 +53,7 @@ export const DataCard = memo(function DataCard({
       borderRadius={borderRadius}
       elevation={elevation}
       gap={2}
-      onPress={onPress}
+      onClick={onClick}
       padding={gutter}
       testID={testID}
       {...cardProps}

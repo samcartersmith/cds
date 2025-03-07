@@ -105,16 +105,16 @@ describe('UpsellCard', () => {
     const actionButton = screen.queryByText('Test Action');
     expect(actionButton).not.toBeInTheDocument();
   });
-  it('calls onPress when the card is pressed', () => {
-    const onPressFn = jest.fn();
+  it('calls onClick when the card is pressed', () => {
+    const onClickFn = jest.fn();
     render(
       <DefaultThemeProvider>
-        <UpsellCard onPress={onPressFn} {...compactProps} />
+        <UpsellCard onClick={onClickFn} {...compactProps} />
       </DefaultThemeProvider>,
     );
 
     fireEvent.click(screen.getByText(`${compactProps.title}`));
 
-    expect(onPressFn).toHaveBeenCalled();
+    expect(onClickFn).toHaveBeenCalled();
   });
 });

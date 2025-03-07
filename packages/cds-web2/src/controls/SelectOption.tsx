@@ -6,7 +6,7 @@ import { type SelectOptionBaseProps } from '@cbhq/cds-common2/types';
 import { Cell } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
-import { type PressableBaseProps, Pressable } from '../system/Pressable';
+import { type PressableProps, Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 import { useSelectContext } from './selectContext';
@@ -96,8 +96,9 @@ export type SelectOptionProps = {
    * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
    * */
   tabIndex?: number;
+  onClick?: React.MouseEventHandler;
 } & SelectOptionBaseProps &
-  Pick<PressableBaseProps, 'onPress' | 'to'>;
+  Pick<PressableProps<'a'>, 'href'>;
 
 export const SelectOption = memo(
   ({
@@ -107,7 +108,7 @@ export const SelectOption = memo(
     compact,
     value,
     disableCloseOnOptionChange,
-    onPress,
+    onClick,
     tabIndex,
     accessibilityLabel,
     testID,
@@ -134,12 +135,12 @@ export const SelectOption = memo(
       }
     }, [onChange, value, disableCloseOnOptionChange, handleCloseMenu]);
 
-    const handlePress = useCallback(
+    const handleClick = useCallback(
       (event: React.MouseEvent) => {
         handleChange();
-        onPress?.(event);
+        onClick?.(event);
       },
-      [onPress, handleChange],
+      [onClick, handleChange],
     );
 
     return (
@@ -150,7 +151,7 @@ export const SelectOption = memo(
         background="bg"
         className={cx(selectOptionStaticClassName, pressableStyles)}
         disabled={disabled}
-        onPress={handlePress}
+        onClick={handleClick}
         role="menuitem"
         tabIndex={tabIndex ?? -1} // default to -1 since this is a grouped control and the parent control will have tabIndex 0
         testID={testID}

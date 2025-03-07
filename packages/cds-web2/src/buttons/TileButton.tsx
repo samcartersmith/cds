@@ -1,78 +1,94 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { css } from '@linaria/core';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 import { pictogramScaleMultiplier, tileSize } from '@cbhq/cds-common2/tokens/tile';
-import { IllustrationPictogramNames, SharedProps, TileBaseProps } from '@cbhq/cds-common2/types';
+import { IllustrationPictogramNames, TileBaseProps } from '@cbhq/cds-common2/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
+import type { Polymorphic } from '../core/polymorphism';
 import { Pictogram, PictogramName } from '../illustrations/Pictogram';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { type PressableBaseProps, Pressable } from '../system/Pressable';
 
 import { Tile } from './Tile';
 
-const focusStyles = css`
-  position: relative;
-  &:focus {
-    outline: none;
-  }
-  &:focus-visible {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-color: var(--color-bgPrimary);
-    outline-offset: 2px;
-  }
-`;
+export const tileButtonDefaultElement = 'button';
 
-export type TileButtonProps = TileBaseProps &
-  Omit<PressableProps<'button' | 'a'>, 'noScaleOnPress' | 'loading' | 'children' | 'background'> &
-  SharedProps & {
+export type TileButtonDefaultElement = typeof tileButtonDefaultElement;
+
+export type TileButtonBaseProps = Polymorphic.ExtendableProps<
+  Omit<PressableBaseProps, 'noScaleOnPress' | 'loading' | 'children' | 'background'>,
+  {
     /** Name of illustration as defined in Figma */
     pictogram?: IllustrationPictogramNames;
-  };
+  } & TileBaseProps
+>;
+export type TileButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  TileButtonBaseProps
+>;
 
-export const TileButton = memo(
-  forwardRef(function TileButton(
-    { pictogram, title, count, children, showOverflow, ...props }: TileButtonProps,
-    ref: React.ForwardedRef<HTMLButtonElement>,
-  ) {
-    if (isDevelopment() && title.trim() === '') {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'Setting an empty title in TileButton violates accessibility and CDS usage guidelines.',
-      );
-    }
+type TileButtonComponent = (<AsComponent extends React.ElementType = TileButtonDefaultElement>(
+  props: TileButtonProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
 
-    const content = useMemo(() => {
+export const TileButton: TileButtonComponent = memo(
+  forwardRef<React.ReactElement<TileButtonBaseProps>, TileButtonBaseProps>(
+    <AsComponent extends React.ElementType>(
+      {
+        as,
+        pictogram,
+        title,
+        count,
+        children,
+        showOverflow,
+        ...props
+      }: TileButtonProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const Component = (as ?? tileButtonDefaultElement) satisfies React.ElementType;
+
+      if (isDevelopment() && title.trim() === '') {
+        // eslint-disable-next-line no-console
+        console.warn(
+          'Setting an empty title in TileButton violates accessibility and CDS usage guidelines.',
+        );
+      }
+
+      const content = useMemo(() => {
+        return (
+          children || (
+            <Pictogram
+              name={pictogram as PictogramName}
+              scaleMultiplier={pictogramScaleMultiplier}
+            />
+          )
+        );
+      }, [children, pictogram]);
+
       return (
-        children || (
-          <Pictogram name={pictogram as PictogramName} scaleMultiplier={pictogramScaleMultiplier} />
-        )
-      );
-    }, [children, pictogram]);
-
-    return (
-      <div
-        // TO DO: tileSize should come from ThemeVars.ControlSize
-        style={{
-          height: `${tileSize}px`,
-          /* add gutter to account for the border added by Pressable */
-          width: `${tileSize + gutter}px`,
-        }}
-      >
-        <Pressable
-          transparentWhileInactive
-          {...props}
-          ref={ref}
-          noScaleOnPress
-          background="bg"
-          borderRadius={400}
-          className={focusStyles}
+        <div
+          // TO DO: tileSize should come from ThemeVars.ControlSize
+          style={{
+            height: `${tileSize}px`,
+            /* add gutter to account for the border added by Pressable */
+            width: `${tileSize + gutter}px`,
+          }}
         >
-          <Tile count={count} showOverflow={showOverflow} title={title}>
-            {content}
-          </Tile>
-        </Pressable>
-      </div>
-    );
-  }),
+          <Pressable
+            ref={ref}
+            noScaleOnPress
+            transparentWhileInactive
+            as={Component}
+            background="bg"
+            borderRadius={400}
+            {...props}
+          >
+            <Tile count={count} showOverflow={showOverflow} title={title}>
+              {content}
+            </Tile>
+          </Pressable>
+        </div>
+      );
+    },
+  ),
 );

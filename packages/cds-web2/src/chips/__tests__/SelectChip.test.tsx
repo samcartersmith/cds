@@ -91,23 +91,23 @@ describe('SelectChip', () => {
     expect(await renderA11y(<ExampleSelectChip />)).toHaveNoViolations();
   });
   it('opens a dropdown menu when the chip is pressed', async () => {
-    const onPress = jest.fn();
-    render(<ExampleSelectChip onPress={onPress} />);
+    const onClick = jest.fn();
+    render(<ExampleSelectChip onClick={onClick} />);
 
     fireEvent.click(screen.getByTestId(selectChipTestId));
-    expect(onPress).toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalled();
 
     const notSelectedOption = await screen.findByText(sortOptions[1]);
     expect(notSelectedOption).toBeDefined();
   });
   it('does not open the menu when disabled', () => {
-    const onPress = jest.fn();
-    render(<ExampleSelectChip disabled onPress={onPress} />);
+    const onClick = jest.fn();
+    render(<ExampleSelectChip disabled onClick={onClick} />);
 
     fireEvent.click(screen.getByTestId(selectChipTestId));
 
     expect(screen.queryByTestId(`${selectChipTestId}-dropdown`)).not.toBeInTheDocument();
-    expect(onPress).not.toHaveBeenCalled();
+    expect(onClick).not.toHaveBeenCalled();
   });
   it('renders a placeholder when no value is selected', () => {
     render(<ExampleSelectChip />);

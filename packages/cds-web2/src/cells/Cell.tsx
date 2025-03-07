@@ -1,12 +1,13 @@
-import React, { forwardRef, memo } from 'react';
+import React, { type HTMLAttributes, forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 import type { CellBaseProps } from '@cbhq/cds-common2/types/CellBaseProps';
 import { hasCellPriority } from '@cbhq/cds-common2/utils/cell';
 
 import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { type LinkableProps, Pressable } from '../system/Pressable';
+import { type PressableProps, Pressable } from '../system/Pressable';
 
 const pressClassName = css`
   border-style: hidden;
@@ -46,16 +47,23 @@ const truncationStyle = css`
 
 type CellElementTag = 'div' | 'li';
 
-export type CellSharedProps = {
-  /** The type of outer wrapping element. */
-  as?: CellElementTag;
-  onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
-} & LinkableProps;
+export type CellSharedProps = BoxProps<CellElementTag> &
+  Pick<PressableProps<'a'>, 'href' | 'target'> &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > & {
+    /** The type of outer wrapping element. */
+    as?: CellElementTag;
+    onKeyDown?: HTMLAttributes<HTMLElement>['onKeyDown'];
+    onKeyUp?: HTMLAttributes<HTMLElement>['onKeyUp'];
+    onClick?: React.MouseEventHandler;
+  };
 
 export type CellProps = Omit<CellBaseProps, 'minHeight' | 'maxHeight'> &
   CellSharedProps & {
     contentClassName?: string;
-  } & BoxProps<CellElementTag>;
+  };
 
 export const Cell = memo(
   forwardRef(function Cell(
@@ -75,13 +83,12 @@ export const Cell = memo(
       media,
       minHeight,
       maxHeight,
-      onPress,
+      onClick,
       onKeyDown,
       onKeyUp,
       priority,
       selected,
       testID,
-      to,
       target,
       href,
       tabIndex,
@@ -95,105 +102,170 @@ export const Cell = memo(
       accessibilityLabel,
       accessibilityLabelledBy,
       accessibilityHint,
-      /** Props for useCellSpacing */
-      ...spacingProps
+      innerSpacing,
+      outerSpacing,
+      compact,
+      ...props
     }: CellProps,
     ref: React.ForwardedRef<HTMLDivElement>,
   ) {
-    const spacing = useCellSpacing(spacingProps);
-    const linkable = Boolean(onPress ?? onKeyDown ?? onKeyUp ?? to ?? href);
+    const spacing = useCellSpacing({ innerSpacing, outerSpacing });
+    const isAnchor = Boolean(href);
+    const isButton = Boolean(onClick ?? onKeyDown ?? onKeyUp);
+    const linkable = isAnchor || isButton;
     const contentTruncationStyle = cx(baseStyle, !shouldOverflow && truncationStyle);
-
-    let content = (
-      <HStack
-        alignItems={alignItems}
-        background={selected ? 'bgAlternate' : undefined}
-        borderRadius={borderRadius}
-        flexGrow={1}
-        gap={gap}
-        testID={testID}
-        width="100%"
-        {...spacing.inner}
-        className={contentClassName}
-        marginX={linkable ? undefined : spacing.inner.marginX}
-      >
-        {media && (
-          <Box flexGrow={0} flexShrink={0}>
-            {media}
-          </Box>
-        )}
-
-        <Box
-          className={contentTruncationStyle}
+    const content = useMemo(
+      () => (
+        <HStack
+          alignItems={alignItems}
+          background={selected ? 'bgAlternate' : undefined}
+          borderRadius={borderRadius}
+          className={contentClassName}
           flexGrow={1}
-          flexShrink={hasCellPriority('start', priority) ? 0 : 1}
-          justifyContent="flex-start"
+          gap={gap}
+          testID={testID}
+          width="100%"
+          {...spacing.inner}
+          marginX={linkable ? undefined : spacing.inner.marginX}
         >
-          {children}
-        </Box>
+          {media && (
+            <Box flexGrow={0} flexShrink={0}>
+              {media}
+            </Box>
+          )}
 
-        {!!intermediary && (
           <Box
             className={contentTruncationStyle}
-            flexGrow={0}
-            flexShrink={hasCellPriority('middle', priority) ? 0 : 1}
-            justifyContent="center"
+            flexGrow={1}
+            flexShrink={hasCellPriority('start', priority) ? 0 : 1}
+            justifyContent="flex-start"
           >
-            {intermediary}
+            {children}
           </Box>
-        )}
 
-        {!!detail && (
-          <Box
-            alignItems="flex-end"
-            className={contentTruncationStyle}
-            flexDirection="column"
-            flexGrow={detailWidth ? undefined : 1}
-            flexShrink={detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1}
-            justifyContent="flex-end"
-            width={detailWidth}
-          >
-            {detail}
-          </Box>
-        )}
+          {!!intermediary && (
+            <Box
+              className={contentTruncationStyle}
+              flexGrow={0}
+              flexShrink={hasCellPriority('middle', priority) ? 0 : 1}
+              justifyContent="center"
+            >
+              {intermediary}
+            </Box>
+          )}
 
-        {!!accessory && (
-          <Box flexGrow={0} flexShrink={0}>
-            {accessory}
-          </Box>
-        )}
-      </HStack>
+          {!!detail && (
+            <Box
+              alignItems="flex-end"
+              className={contentTruncationStyle}
+              flexDirection="column"
+              flexGrow={detailWidth ? undefined : 1}
+              flexShrink={detailWidth ? undefined : hasCellPriority('end', priority) ? 0 : 1}
+              justifyContent="flex-end"
+              width={detailWidth}
+            >
+              {detail}
+            </Box>
+          )}
+
+          {!!accessory && (
+            <Box flexGrow={0} flexShrink={0}>
+              {accessory}
+            </Box>
+          )}
+        </HStack>
+      ),
+      [
+        accessory,
+        alignItems,
+        borderRadius,
+        children,
+        contentClassName,
+        contentTruncationStyle,
+        detail,
+        detailWidth,
+        gap,
+        intermediary,
+        linkable,
+        media,
+        priority,
+        selected,
+        spacing.inner,
+        testID,
+      ],
     );
 
-    if (linkable) {
-      content = (
-        <Pressable
-          noScaleOnPress
-          transparentWhileInactive
-          accessibilityHint={accessibilityHint}
-          accessibilityLabel={accessibilityLabel}
-          accessibilityLabelledBy={accessibilityLabelledBy}
-          background="bg"
-          borderRadius={borderRadius}
-          className={cx(pressClassName, insetFocusRingStyle)}
-          disabled={disabled}
-          href={href}
-          marginX={spacing.inner.marginX}
-          onKeyDown={onKeyDown}
-          onKeyUp={onKeyUp}
-          onPress={onPress}
-          tabIndex={tabIndex}
-          target={target}
-          testID={testID && `${testID}-cell-pressable`}
-          to={to}
-        >
-          {content}
-        </Pressable>
-      );
-    }
+    const wrappedContent = useMemo(() => {
+      if (isAnchor)
+        return (
+          <Pressable
+            noScaleOnPress
+            transparentWhileInactive
+            accessibilityHint={accessibilityHint}
+            accessibilityLabel={accessibilityLabel}
+            accessibilityLabelledBy={accessibilityLabelledBy}
+            as="a"
+            background="bg"
+            borderRadius={borderRadius}
+            className={cx(pressClassName, insetFocusRingStyle)}
+            disabled={disabled}
+            href={href}
+            marginX={spacing.inner.marginX}
+            onClick={onClick}
+            onKeyDown={onKeyDown}
+            onKeyUp={onKeyUp}
+            tabIndex={tabIndex}
+            target={target}
+            testID={testID && `${testID}-cell-pressable`}
+          >
+            {content}
+          </Pressable>
+        );
+      if (isButton)
+        return (
+          <Pressable
+            noScaleOnPress
+            transparentWhileInactive
+            accessibilityHint={accessibilityHint}
+            accessibilityLabel={accessibilityLabel}
+            accessibilityLabelledBy={accessibilityLabelledBy}
+            background="bg"
+            borderRadius={borderRadius}
+            className={cx(pressClassName, insetFocusRingStyle)}
+            disabled={disabled}
+            marginX={spacing.inner.marginX}
+            onClick={onClick}
+            onKeyDown={onKeyDown}
+            onKeyUp={onKeyUp}
+            tabIndex={tabIndex}
+            testID={testID && `${testID}-cell-pressable`}
+          >
+            {content}
+          </Pressable>
+        );
+      return content;
+    }, [
+      isButton,
+      accessibilityHint,
+      accessibilityLabel,
+      accessibilityLabelledBy,
+      borderRadius,
+      disabled,
+      spacing.inner.marginX,
+      onClick,
+      onKeyDown,
+      onKeyUp,
+      tabIndex,
+      testID,
+      content,
+      isAnchor,
+      href,
+      target,
+    ]);
 
     return (
       <Box
+        ref={ref}
         alignItems="stretch"
         as={as}
         className={className}
@@ -201,9 +273,9 @@ export const Cell = memo(
         minHeight={minHeight}
         width="100%"
         {...spacing.outer}
-        ref={ref}
+        {...props}
       >
-        {content}
+        {wrappedContent}
       </Box>
     );
   }),

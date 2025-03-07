@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-qualifier */
 /**
  * Prior art:
  * https://www.benmvp.com/blog/polymorphic-react-components-typescript/
@@ -5,24 +6,23 @@
  */
 
 export namespace Polymorphic {
-  export type PropsOf<
-    Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
-  > = React.JSX.LibraryManagedAttributes<Component, React.ComponentPropsWithoutRef<Component>>;
-
   export type ExtendableProps<BaseProps, OverrideProps> = OverrideProps &
     Omit<BaseProps, keyof OverrideProps>;
 
-  export type InheritableElementProps<Component extends React.ElementType, Props> = ExtendableProps<
-    React.ComponentPropsWithoutRef<Component>,
-    Props
-  >;
+  export type InheritableElementProps<
+    Component extends React.ElementType,
+    Props,
+  > = Polymorphic.ExtendableProps<React.ComponentPropsWithoutRef<Component>, Props>;
 
   export type Ref<AsComponent extends React.ElementType> =
     React.ComponentPropsWithRef<AsComponent>['ref'];
 
-  export type Props<AsComponent extends React.ElementType, Props> = InheritableElementProps<
+  export type Props<
+    AsComponent extends React.ElementType,
+    Props,
+  > = Polymorphic.InheritableElementProps<
     AsComponent,
-    Props & { as?: AsComponent } & { ref?: Ref<AsComponent> }
+    Props & { as?: AsComponent } & { ref?: Polymorphic.Ref<AsComponent> }
   >;
 
   export type ReactReturn = ReturnType<React.ExoticComponent>;

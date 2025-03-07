@@ -6,7 +6,7 @@ import { Chip } from './Chip';
 import type { InputChipProps } from './ChipProps';
 
 export const InputChip = memo(
-  forwardRef<HTMLElement, InputChipProps>(function InputChip(
+  forwardRef<HTMLButtonElement, InputChipProps>(function InputChip(
     { accessibilityLabel = 'input-chip', value, testID, ...props },
     ref,
   ) {

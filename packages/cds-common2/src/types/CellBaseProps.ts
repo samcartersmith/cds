@@ -31,13 +31,10 @@ export type CellCommonProps = {
 
 export type CellBaseProps = {
   accessory?: React.ReactElement<CellAccessoryProps>;
-  alignItems?: 'center' | 'flex-start' | 'flex-end';
   children: React.ReactNode;
   detail?: React.ReactNode;
   intermediary?: React.ReactNode;
   media?: React.ReactElement;
-  minHeight?: number;
-  maxHeight?: number;
   shouldOverflow?: boolean;
 } & CellCommonProps;
 

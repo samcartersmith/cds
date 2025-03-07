@@ -17,7 +17,7 @@ export const useSortableCell = <T extends string>({
     const isSorted = sortBy === key;
 
     return {
-      onPress: () => onChange(key),
+      onClick: () => onChange(key),
       color: isSorted ? 'fgPrimary' : 'fgMuted',
       end: <TableCellSortIcon direction={isSorted ? sortDirection : undefined} />,
       'aria-sort': isSorted ? sortDirection : undefined,

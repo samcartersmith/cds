@@ -25,7 +25,7 @@ describe('Cell', () => {
     expect(
       await renderA11y(
         <DefaultThemeProvider>
-          <Cell onPress={noop}>{CELL_TEXT}</Cell>
+          <Cell onClick={noop}>{CELL_TEXT}</Cell>
         </DefaultThemeProvider>,
       ),
     ).toHaveNoViolations();
@@ -35,7 +35,7 @@ describe('Cell', () => {
     expect(
       await renderA11y(
         <DefaultThemeProvider>
-          <Cell to={URL}>{CELL_TEXT}</Cell>
+          <Cell href={URL}>{CELL_TEXT}</Cell>
         </DefaultThemeProvider>,
       ),
     ).toHaveNoViolations();
@@ -44,7 +44,7 @@ describe('Cell', () => {
   it('sets an accessible label with accessibilityLabel when pressable', () => {
     render(
       <DefaultThemeProvider>
-        <Cell accessibilityLabel={A11Y_TEXT} onPress={noop}>
+        <Cell accessibilityLabel={A11Y_TEXT} onClick={noop}>
           {CELL_TEXT}
         </Cell>
       </DefaultThemeProvider>,
@@ -59,7 +59,7 @@ describe('Cell', () => {
     render(
       <DefaultThemeProvider>
         <span id={labelId}>{A11Y_TEXT}</span>
-        <Cell accessibilityLabelledBy={labelId} onPress={noop}>
+        <Cell accessibilityLabelledBy={labelId} onClick={noop}>
           {CELL_TEXT}
         </Cell>
       </DefaultThemeProvider>,
@@ -74,7 +74,7 @@ describe('Cell', () => {
     render(
       <DefaultThemeProvider>
         <span id={descriptionId}>{A11Y_TEXT}</span>
-        <Cell accessibilityHint={descriptionId} onPress={noop}>
+        <Cell accessibilityHint={descriptionId} onClick={noop}>
           {CELL_TEXT}
         </Cell>
       </DefaultThemeProvider>,
@@ -133,10 +133,10 @@ describe('Cell', () => {
     expect(screen.getByText(EXPECTED_TEXT)).toBeVisible();
   });
 
-  it('renders button when onPress is defined', () => {
+  it('renders button when onClick is defined', () => {
     render(
       <DefaultThemeProvider>
-        <Cell onPress={noop}>{CELL_TEXT}</Cell>
+        <Cell onClick={noop}>{CELL_TEXT}</Cell>
       </DefaultThemeProvider>,
     );
 
@@ -166,7 +166,7 @@ describe('Cell', () => {
   it('renders link when to is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <Cell to={URL}>{CELL_TEXT}</Cell>
+        <Cell href={URL}>{CELL_TEXT}</Cell>
       </DefaultThemeProvider>,
     );
 
@@ -192,7 +192,7 @@ describe('Cell', () => {
   it('renders link when pressable callback is defined but to is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <Cell onPress={noop} to={URL}>
+        <Cell href={URL} onClick={noop}>
           {CELL_TEXT}
         </Cell>
       </DefaultThemeProvider>,
@@ -207,7 +207,7 @@ describe('Cell', () => {
   it('renders link when pressable callback is defined but href is set with a url', () => {
     render(
       <DefaultThemeProvider>
-        <Cell href={URL} onPress={noop}>
+        <Cell href={URL} onClick={noop}>
           {CELL_TEXT}
         </Cell>
       </DefaultThemeProvider>,
@@ -224,7 +224,7 @@ describe('Cell', () => {
 
     render(
       <DefaultThemeProvider>
-        <Cell target={target} to={URL}>
+        <Cell href={URL} target={target}>
           {CELL_TEXT}
         </Cell>
       </DefaultThemeProvider>,
@@ -233,17 +233,17 @@ describe('Cell', () => {
     expect(screen.getByRole('link')).toHaveAttribute('target', target);
   });
 
-  it('fires onPress', () => {
-    const onPressSpy = jest.fn();
+  it('fires onClick', () => {
+    const onClickSpy = jest.fn();
 
     render(
       <DefaultThemeProvider>
-        <Cell onPress={onPressSpy}>{CELL_TEXT}</Cell>
+        <Cell onClick={onClickSpy}>{CELL_TEXT}</Cell>
       </DefaultThemeProvider>,
     );
     fireEvent.click(screen.getByRole('button'));
 
-    expect(onPressSpy).toHaveBeenCalledTimes(1);
+    expect(onClickSpy).toHaveBeenCalledTimes(1);
   });
 
   it('fires onKeyUp', () => {

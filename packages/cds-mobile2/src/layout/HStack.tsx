@@ -2,7 +2,7 @@ import React, { Children, forwardRef, memo } from 'react';
 import { View } from 'react-native';
 import { ForwardedRef, join, StackBaseProps } from '@cbhq/cds-common2';
 
-import { Box, BoxProps } from './Box';
+import { type BoxProps, Box } from './Box';
 import { Spacer } from './Spacer';
 
 export type HStackProps = Omit<BoxProps, 'flexDirection'> & StackBaseProps;

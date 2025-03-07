@@ -1,10 +1,10 @@
 import type { ChipBaseProps } from '@cbhq/cds-common2/types';
 
-import type { PressableBaseProps } from '../system/Pressable';
+import type { PressableProps } from '../system/Pressable';
 
 export type ChipProps = ChipBaseProps &
   Omit<
-    PressableBaseProps,
+    PressableProps<'button'>,
     | 'children'
     | 'loading'
     | 'background'

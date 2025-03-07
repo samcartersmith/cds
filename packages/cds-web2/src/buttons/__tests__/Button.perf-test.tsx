@@ -1,8 +1,9 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { measurePerformance } from 'reassure';
-import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Button } from '../Button';
+
+const NoopFn = () => {};
 
 describe('Button performance tests', () => {
   it('fires `onClick` when clicked', async () => {

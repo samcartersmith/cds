@@ -79,7 +79,9 @@ describe('Button', () => {
   it('renders a link with a href', () => {
     render(
       <DefaultThemeProvider>
-        <Button to="/">Child</Button>
+        <Button as="a" href="/">
+          Child
+        </Button>
       </DefaultThemeProvider>,
     );
     const button = screen.getByRole('link');

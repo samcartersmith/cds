@@ -6,7 +6,7 @@ import { HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { type UpsellCardProps, UpsellCard } from '../UpsellCard';
 
-const onPressConsole = console.log;
+const onClickConsole = console.log;
 
 const exampleProps = {
   title: 'Headline',
@@ -14,8 +14,8 @@ const exampleProps = {
   action: 'Buy Bitcoin now',
   media: <img alt="" data-testid="media" src={coinbaseOneLogo as string} width={120} />,
   background: 'bgPrimaryWash',
-  onActionPress: onPressConsole,
-  onDismissPress: onPressConsole,
+  onActionPress: onClickConsole,
+  onDismissPress: onClickConsole,
 } satisfies UpsellCardProps;
 
 const compactProps = {
@@ -23,7 +23,7 @@ const compactProps = {
   description: 'Check out the most popular assets',
   media: <img alt="" data-testid="media" src={coinbaseOneLogo as string} width={120} />,
   background: 'bgPrimaryWash',
-  onPress: onPressConsole,
+  onClick: onClickConsole,
 } satisfies UpsellCardProps;
 
 export const Default = (): JSX.Element => <UpsellCard {...exampleProps} />;
@@ -62,7 +62,7 @@ export const CustomTextNodes = (): JSX.Element => {
           compact
           flush="start"
           numberOfLines={1}
-          onClick={onPressConsole}
+          onClick={onClickConsole}
           variant="secondary"
         >
           Sign up

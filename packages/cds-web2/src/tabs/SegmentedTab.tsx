@@ -52,8 +52,8 @@ export type SegmentedTabProps = {
    * @default foreground
    */
   color?: ThemeVars.Color;
-  /** Callback that is fired when the SegmentedTab is pressed. */
-  onPress?: (id: string, event: React.MouseEvent) => void;
+  /** Callback that is fired when the SegmentedTab is clicked. */
+  onClick?: (id: string, event: React.MouseEvent) => void;
 } & TabValue &
   Omit<React.ComponentProps<'button'>, 'ref'> &
   SharedProps;
@@ -69,7 +69,7 @@ export const SegmentedTab = memo(
         id,
         label,
         disabled: disabledProp,
-        onPress,
+        onClick,
         color = 'fg',
         activeColor = 'fgInverse',
         className,
@@ -86,9 +86,9 @@ export const SegmentedTab = memo(
       const handlePress = useCallback(
         (event: React.MouseEvent) => {
           updateActiveTab(id);
-          onPress?.(id, event);
+          onClick?.(id, event);
         },
-        [id, updateActiveTab, onPress],
+        [id, updateActiveTab, onClick],
       );
 
       const motionProps = useMemo(

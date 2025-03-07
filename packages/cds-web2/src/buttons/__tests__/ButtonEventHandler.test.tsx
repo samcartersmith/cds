@@ -11,13 +11,13 @@ import { Button } from '../Button';
 const EVENT_HANDLER_CONFIG: EventHandlerConfig = {
   handlers: {
     Button: {
-      onPress: jest.fn(),
+      onClick: jest.fn(),
     },
   },
 };
 
 const CUSTOM_EVENT_HANDLER_WITH_MAPPING: EventHandlerConfig = {
-  actionMapping: { onPress: 'click' },
+  actionMapping: { onClick: 'click' },
   handlers: {
     Button: {
       click: jest.fn(),
@@ -39,13 +39,13 @@ describe('ButtonEventDelegation', () => {
     jest.clearAllMocks();
   });
 
-  it('EventDelegationConfig `Button.onPress` should not be called because config is not provided to EventDelegationProvider', () => {
+  it('EventDelegationConfig `Button.onClick` should not be called because config is not provided to EventDelegationProvider', () => {
     const spy = jest.fn();
 
     render(
       <DefaultThemeProvider>
         <EventHandlerProvider>
-          <Button onPress={spy}>Child</Button>
+          <Button onClick={spy}>Child</Button>
         </EventHandlerProvider>
       </DefaultThemeProvider>,
     );
@@ -54,16 +54,16 @@ describe('ButtonEventDelegation', () => {
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
-    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).not.toHaveBeenCalled();
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onClick).not.toHaveBeenCalled();
   });
 
-  it('EventDelegationConfig `Button.onPress` should not be called because eventConfig is not provided to `Button`', () => {
+  it('EventDelegationConfig `Button.onClick` should not be called because eventConfig is not provided to `Button`', () => {
     const spy = jest.fn();
 
     render(
       <DefaultThemeProvider>
         <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
-          <Button onPress={spy}>Child</Button>
+          <Button onClick={spy}>Child</Button>
         </EventHandlerProvider>
       </DefaultThemeProvider>,
     );
@@ -72,14 +72,14 @@ describe('ButtonEventDelegation', () => {
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
-    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).not.toHaveBeenCalled();
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onClick).not.toHaveBeenCalled();
   });
 
-  it('EventDelegationConfig `Button.onPress` should be called', () => {
+  it('EventDelegationConfig `Button.onClick` should be called', () => {
     const spy = jest.fn();
 
     customEventConfig = {
-      actions: ['onPress'],
+      actions: ['onClick'],
       componentName: 'place_order',
       data: { currency: 'BTC' },
     };
@@ -87,7 +87,7 @@ describe('ButtonEventDelegation', () => {
     render(
       <DefaultThemeProvider>
         <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
-          <Button eventConfig={customEventConfig} onPress={spy}>
+          <Button eventConfig={customEventConfig} onClick={spy}>
             Child
           </Button>
         </EventHandlerProvider>
@@ -98,10 +98,10 @@ describe('ButtonEventDelegation', () => {
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
-    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).toHaveBeenCalled();
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onClick).toHaveBeenCalled();
   });
 
-  it('EventDelegationConfig `Button.onPress` should not be called because onPress is not defined in action list', () => {
+  it('EventDelegationConfig `Button.onClick` should not be called because onClick is not defined in action list', () => {
     const spy = jest.fn();
 
     customEventConfig = {
@@ -113,7 +113,7 @@ describe('ButtonEventDelegation', () => {
     render(
       <DefaultThemeProvider>
         <EventHandlerProvider config={EVENT_HANDLER_CONFIG}>
-          <Button eventConfig={customEventConfig} onPress={spy}>
+          <Button eventConfig={customEventConfig} onClick={spy}>
             Child
           </Button>
         </EventHandlerProvider>
@@ -124,7 +124,7 @@ describe('ButtonEventDelegation', () => {
 
     // callback should be called
     expect(spy).toHaveBeenCalled();
-    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onPress).not.toHaveBeenCalled();
+    expect(EVENT_HANDLER_CONFIG.handlers?.Button.onClick).not.toHaveBeenCalled();
   });
 
   it('EventDelegationConfig `Button.click` should be called because of actionMapping entry', () => {
@@ -139,7 +139,7 @@ describe('ButtonEventDelegation', () => {
     render(
       <DefaultThemeProvider>
         <EventHandlerProvider config={CUSTOM_EVENT_HANDLER_WITH_MAPPING}>
-          <Button eventConfig={customEventConfig} onPress={spy}>
+          <Button eventConfig={customEventConfig} onClick={spy}>
             Child
           </Button>
         </EventHandlerProvider>

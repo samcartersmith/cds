@@ -1,7 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
 import { PageFooterBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
-import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Button, ButtonGroup, IconButton } from '../../buttons';
 import { useBreakpoints } from '../../hooks/useBreakpoints';
@@ -16,7 +15,7 @@ const exampleProps = {
       transparent
       accessibilityLabel="Go Back"
       name="backArrow"
-      onPress={NoopFn}
+      onClick={() => {}}
       testID="header-back-button"
     />
   ),
@@ -61,7 +60,7 @@ const exampleProps = {
       transparent
       accessibilityLabel="Close"
       name="close"
-      onPress={NoopFn}
+      onClick={() => {}}
       testID="header-close-button"
     />
   ),

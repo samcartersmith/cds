@@ -24,7 +24,6 @@ export const WithCustomStyle = () => (
       accessibilityLabel="Horizontal arrows"
       compact={false}
       name="arrowsHorizontal"
-      // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
       style={{ backgroundColor: 'red', transform: 'scale(0.5)' }}
     />
   </VStack>

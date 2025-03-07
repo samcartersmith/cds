@@ -1,20 +1,33 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { css } from '@linaria/core';
-import type { ButtonBaseProps, SharedProps } from '@cbhq/cds-common2';
+import { css, cx } from '@linaria/core';
+import type { ButtonBaseProps } from '@cbhq/cds-common2';
 import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
 import type { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
+import type { Polymorphic } from '../core/polymorphism';
 import { type AvatarWebProps, Avatar } from '../media';
 import { type PressableBaseProps, Pressable } from '../system';
 
-export type AvatarButtonProps = {
-  as?: React.ComponentType<React.PropsWithChildren<React.HTMLAttributes<HTMLElement>>>;
-} & Omit<PressableBaseProps, 'background' | 'children'> &
-  SharedProps &
-  Omit<React.HTMLAttributes<HTMLButtonElement>, 'className' | 'style' | 'dangerouslySetInnerHTML'> &
-  Pick<ButtonBaseProps, 'accessibilityLabel' | 'compact'> &
-  Pick<AvatarBaseProps, 'alt' | 'src' | 'colorScheme' | 'shape' | 'borderColor' | 'name'> &
-  Pick<AvatarWebProps, 'selected'>;
+export const avatarButtonDefaultElement = 'button';
+
+export type AvatarButtonDefaultElement = typeof avatarButtonDefaultElement;
+
+export type AvatarButtonBaseProps = Polymorphic.ExtendableProps<
+  Omit<PressableBaseProps, 'background' | 'children'>,
+  Pick<ButtonBaseProps, 'compact'> &
+    Pick<AvatarBaseProps, 'alt' | 'src' | 'colorScheme' | 'shape' | 'borderColor' | 'name'> &
+    Pick<AvatarWebProps, 'selected'>
+>;
+
+export type AvatarButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  AvatarButtonBaseProps
+>;
+
+type AvatarButtonComponent = (<AsComponent extends React.ElementType = AvatarButtonDefaultElement>(
+  props: AvatarButtonProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
 
 const baseStyles = css`
   display: flex;
@@ -25,14 +38,13 @@ const baseStyles = css`
   min-width: unset;
 `;
 
-export const AvatarButton = memo(
-  forwardRef(
-    (
+export const AvatarButton: AvatarButtonComponent = memo(
+  forwardRef<React.ReactElement<AvatarButtonBaseProps>, AvatarButtonBaseProps>(
+    <AsComponent extends React.ElementType>(
       {
         accessibilityLabel,
         as,
-        onPress,
-        to,
+        className,
         alt,
         src,
         compact,
@@ -41,9 +53,11 @@ export const AvatarButton = memo(
         selected,
         name,
         ...props
-      }: AvatarButtonProps,
-      ref: React.ForwardedRef<HTMLElement>,
+      }: AvatarButtonProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
     ) => {
+      const Component = (as ?? avatarButtonDefaultElement) satisfies React.ElementType;
+
       const height = compact ? interactableHeight.compact : interactableHeight.regular;
       const styles = useMemo(
         () => ({ '--interactable-height': `${height}px` } as React.CSSProperties),
@@ -52,15 +66,13 @@ export const AvatarButton = memo(
 
       return (
         <Pressable
-          aria-label={accessibilityLabel}
-          background="transparent"
-          {...props}
           ref={ref}
-          as={as}
-          className={baseStyles}
-          onPress={onPress}
+          aria-label={accessibilityLabel}
+          as={Component}
+          background="transparent"
+          className={cx(baseStyles, className)}
           style={styles}
-          to={to}
+          {...props}
         >
           <Avatar
             alt={alt}

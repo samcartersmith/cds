@@ -10,7 +10,7 @@ import { VStack, VStackProps } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 
 export type OverlayProps = {
-  onPress?: React.MouseEventHandler;
+  onClick?: React.MouseEventHandler;
   /** Animate overlay
    * @default false
    */
@@ -19,7 +19,7 @@ export type OverlayProps = {
   SharedProps;
 
 export const OverlayContent = forwardRef<HTMLDivElement, OverlayProps>(
-  ({ onPress, animated = false, ...props }, forwardedRef) => {
+  ({ onClick, animated = false, ...props }, forwardedRef) => {
     const motionProps = useMotionProps({
       enterConfigs: [animateInOpacityConfig],
       exitConfigs: [animateOutOpacityConfig],
@@ -31,7 +31,7 @@ export const OverlayContent = forwardRef<HTMLDivElement, OverlayProps>(
         background="bgOverlay"
         bottom={0}
         left={0}
-        onClick={onPress}
+        onClick={onClick}
         position="absolute"
         right={0}
         top={0}

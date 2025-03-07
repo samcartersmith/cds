@@ -1,62 +1,32 @@
-import React, { HTMLAttributes, memo } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
+import React, { type HTMLAttributes, memo, useMemo } from 'react';
 import { cardSizes } from '@cbhq/cds-common2/tokens/card';
-import type { CardBaseProps, PinningDirection } from '@cbhq/cds-common2/types';
+import type { CardBaseProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
 import { VStack } from '../layout/VStack';
-import { type LinkableProps, Pressable } from '../system/Pressable';
+import { type PressableProps, Pressable } from '../system/Pressable';
 
-const pinStyle: Record<PinningDirection, LinariaClassName> = {
-  top: css`
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  `,
-  bottom: css`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  `,
-  right: css`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-  `,
-  left: css`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-  `,
-  all: css`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  `,
-};
-
-export type CardProps = CardBaseProps &
-  LinkableProps & {
-    // TODO (DX-4652): These key handling props have been kept for bw compatibility since they are valid props for a dif
-    // it would be better to have Card extend the entire Box interface instead of arbitrarily picking these two
-    onKeyDown?: HTMLAttributes<HTMLElement>['onKeyDown'];
-    onKeyUp?: HTMLAttributes<HTMLElement>['onKeyUp'];
-  };
+export type CardProps = CardBaseProps & {
+  // TODO (DX-4652): These key handling props have been kept for bw compatibility since they are valid props for a dif
+  // it would be better to have Card extend the entire Box interface instead of arbitrarily picking these two
+  onKeyDown?: HTMLAttributes<HTMLElement>['onKeyDown'];
+  onKeyUp?: HTMLAttributes<HTMLElement>['onKeyUp'];
+  onClick?: React.MouseEventHandler;
+} & Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > &
+  Pick<PressableProps<'a'>, 'href' | 'target'>;
 
 export const Card = memo<CardProps>(function Card({
   children,
   background = 'bg',
   size = 'large',
-  onPress,
+  onClick,
   onKeyDown,
-  to,
-  target,
+  onKeyUp,
   href,
+  target,
   pin,
   width: widthProps,
   height: heightProps,
@@ -70,47 +40,77 @@ export const Card = memo<CardProps>(function Card({
 }) {
   const width = widthProps ?? cardSizes[size].width;
   const height = heightProps ?? cardSizes[size].height;
-  const linkable = Boolean(onPress ?? onKeyDown ?? to ?? href);
+  const isAnchor = Boolean(href);
+  const isButton = Boolean(onClick ?? onKeyDown ?? onKeyUp);
+  const linkable = isAnchor || isButton;
 
-  const content = (
-    <VStack
-      background={linkable ? undefined : background}
-      borderRadius={borderRadius}
-      elevation={linkable ? undefined : elevation}
-      height={linkable ? undefined : height}
-      overflow="hidden"
-      pin={linkable ? undefined : pin}
-      testID={linkable ? undefined : testID}
-      width={linkable ? undefined : width}
-      {...props}
-    >
-      {children}
-    </VStack>
+  const content = useMemo(
+    () => (
+      <VStack
+        background={linkable ? undefined : background}
+        borderRadius={borderRadius}
+        elevation={linkable ? undefined : elevation}
+        height={linkable ? undefined : height}
+        overflow="hidden"
+        pin={linkable ? undefined : pin}
+        testID={linkable ? undefined : testID}
+        width={linkable ? undefined : width}
+        {...props}
+      >
+        {children}
+      </VStack>
+    ),
+    [background, borderRadius, children, elevation, height, linkable, pin, props, testID, width],
   );
 
-  return linkable ? (
-    <Pressable
-      accessibilityHint={accessibilityHint}
-      accessibilityLabel={accessibilityLabel}
-      accessibilityLabelledBy={accessibilityLabelledBy}
-      background={background}
-      borderRadius={borderRadius}
-      className={cx(pin && pinStyle[pin])}
-      elevation={elevation}
-      height={height}
-      href={href}
-      onKeyDown={onKeyDown}
-      onPress={onPress}
-      target={target}
-      testID={testID}
-      to={to}
-      width={width}
-    >
-      {content}
-    </Pressable>
-  ) : (
-    content
-  );
+  if (isAnchor) {
+    return (
+      <Pressable
+        accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
+        accessibilityLabelledBy={accessibilityLabelledBy}
+        as="a"
+        background={background}
+        borderRadius={borderRadius}
+        elevation={elevation}
+        height={height}
+        href={href}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
+        onKeyUp={onKeyUp}
+        pin={pin}
+        target={target}
+        testID={testID}
+        width={width}
+      >
+        {content}
+      </Pressable>
+    );
+  }
+
+  if (isButton) {
+    return (
+      <Pressable
+        accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
+        accessibilityLabelledBy={accessibilityLabelledBy}
+        background={background}
+        borderRadius={borderRadius}
+        elevation={elevation}
+        height={height}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
+        onKeyUp={onKeyUp}
+        pin={pin}
+        testID={testID}
+        width={width}
+      >
+        {content}
+      </Pressable>
+    );
+  }
+
+  return content;
 });
 
 Card.displayName = 'Card';

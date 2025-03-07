@@ -44,7 +44,7 @@ export type IconButtonProps<AsComponent extends React.ElementType> = Polymorphic
   IconButtonBaseProps
 >;
 
-type IconButtonComponent = (<AsComponent extends React.ElementType>(
+type IconButtonComponent = (<AsComponent extends React.ElementType = IconButtonDefaultElement>(
   props: IconButtonProps<AsComponent>,
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
@@ -83,11 +83,12 @@ export const IconButton: IconButtonComponent = memo(
         flush,
         height = compact ? 40 : 56,
         width = compact ? 40 : 56,
-        onPress,
+        onClick,
         ...props
       }: IconButtonProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
     ) => {
+      const Component = (as ?? iconButtonDefaultElement) satisfies React.ElementType;
       const iconSize = compact ? 's' : 'm';
       const {
         color: foregroundColor,
@@ -99,7 +100,7 @@ export const IconButton: IconButtonComponent = memo(
         <Pressable
           ref={ref}
           alignItems={alignItems}
-          as={as satisfies React.ElementType | undefined}
+          as={Component}
           background={background ?? backgroundColor}
           borderColor={borderColor}
           borderRadius={borderRadius}
@@ -114,7 +115,7 @@ export const IconButton: IconButtonComponent = memo(
           disabled={disabled}
           height={height}
           justifyContent={justifyContent}
-          onPress={onPress}
+          onClick={onClick}
           transparentWhileInactive={transparent}
           width={width}
           {...props}

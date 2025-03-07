@@ -21,7 +21,6 @@ export function listCellBuilder(
     React.PropsWithChildren<
       ListCellBaseProps & {
         onPress?: () => void;
-        to?: string;
         disableMultilineTitle?: boolean;
       }
     >

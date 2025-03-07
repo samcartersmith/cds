@@ -33,7 +33,7 @@ describe('IconButton', () => {
   it('renders a link when passed `to` prop', () => {
     render(
       <DefaultThemeProvider>
-        <IconButton name={name} to="/" />
+        <IconButton as="a" href="/" name={name} />
       </DefaultThemeProvider>,
     );
     const button = screen.getByRole('link');

@@ -6,7 +6,7 @@ import { type CardBodyProps, CardBody } from './CardBody';
 
 export type AnnouncementCardProps = AnnouncementCardBaseProps & {
   onActionPress?: CardBodyProps['onActionPress'];
-  onPress?: CardProps['onPress'];
+  onClick?: CardProps['onClick'];
 };
 
 /** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
@@ -19,7 +19,7 @@ export const AnnouncementCard = memo(function AnnouncementCard({
   accessibilityHint,
   elevation = 0,
   borderRadius = 0,
-  onPress,
+  onClick,
   // TODO this is only spread on the CardBody - are we sure that there are no CardBaseProps trapped in here that never make it to that element?
   ...props
 }: AnnouncementCardProps) {
@@ -39,7 +39,7 @@ export const AnnouncementCard = memo(function AnnouncementCard({
       borderRadius={borderRadius}
       elevation={elevation}
       flexShrink={0}
-      onPress={onPress}
+      onClick={onClick}
       testID={testID}
       width={width}
     >

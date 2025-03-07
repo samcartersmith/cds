@@ -34,7 +34,7 @@ export const DotCountPressable = () => {
       {[1, 10, 20, 50, 100].map((count: number) => {
         return (
           // eslint-disable-next-line no-console
-          <Pressable noScaleOnPress background="transparent" onPress={() => console.log('pressed')}>
+          <Pressable noScaleOnPress background="transparent" onClick={() => console.log('pressed')}>
             <Box
               accessibilityLabel="test"
               position="relative"

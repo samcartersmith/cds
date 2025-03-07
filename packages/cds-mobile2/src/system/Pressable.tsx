@@ -10,17 +10,17 @@ import { ComponentEventHandlerProps } from '@cbhq/cds-common2';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
+import { type BoxBaseProps } from '../layout/Box';
 import { HapticFeedbackType } from '../types';
 import { debounce } from '../utils/debounce';
 import { Haptics } from '../utils/haptics';
 
-import { Interactable, InteractableProps } from './Interactable';
+import { type InteractableBaseProps, Interactable } from './Interactable';
 
 export type LinkableProps = Pick<
   BasePressableProps,
   'onPress' | 'accessibilityLabel' | 'accessibilityHint'
 >;
-export type OnPress = PressableProps['onPress'];
 
 export type PressableProps = {
   /**
@@ -65,33 +65,106 @@ export type PressableInternalProps = {
    */
   style?: BasePressableProps['style'];
 } & PressableProps &
-  Omit<InteractableProps, 'pressed' | 'style'>;
+  Omit<InteractableBaseProps, 'pressed' | 'style'> &
+  BoxBaseProps;
 
 export const Pressable = memo(
   forwardRef(function Pressable(
     {
+      // Interactable
       children,
       disabled,
+      background,
+      block,
+      borderColor,
+      borderRadius,
+      borderWidth,
+      elevation,
+      contentStyle,
+      wrapperStyles,
+      blendStyles,
+      transparentWhileInactive,
+      transparentWhilePressed,
+      pin,
+      bordered,
+      borderedTop,
+      borderedBottom,
+      borderedStart,
+      borderedEnd,
+      borderedHorizontal,
+      borderedVertical,
+      dangerouslySetBackground,
+      display,
+      position,
+      overflow,
+      zIndex,
+      gap,
+      columnGap,
+      rowGap,
+      justifyContent,
+      alignContent,
+      alignItems,
+      alignSelf,
+      flexDirection,
+      flexWrap,
+      color,
+      borderTopLeftRadius,
+      borderTopRightRadius,
+      borderBottomLeftRadius,
+      borderBottomRightRadius,
+      borderTopWidth,
+      borderEndWidth,
+      borderBottomWidth,
+      borderStartWidth,
+      font,
+      fontFamily,
+      fontSize,
+      fontWeight,
+      lineHeight,
+      textDecorationStyle,
+      textDecorationColor,
+      textDecorationLine,
+      textTransform,
+      padding,
+      paddingX,
+      paddingY,
+      paddingTop,
+      paddingBottom,
+      paddingStart,
+      paddingEnd,
+      margin,
+      marginX,
+      marginY,
+      marginTop,
+      marginBottom,
+      marginStart,
+      marginEnd,
+      userSelect,
+      width,
+      height,
+      minWidth,
+      minHeight,
+      maxWidth,
+      maxHeight,
+      aspectRatio,
+      top,
+      bottom,
+      left,
+      right,
+      transform,
+      flexBasis,
+      flexShrink,
+      flexGrow,
+      opacity,
+      // Pressable
+      disableDebounce,
       feedback = 'none',
       loading,
       onPress,
       onPressIn,
       onPressOut,
       noScaleOnPress,
-      // Interactable
-      background,
-      block,
-      borderColor,
-      borderRadius,
-      borderWidth,
-      disableDebounce,
-      elevation,
       style,
-      contentStyle,
-      wrapperStyles,
-      blendStyles,
-      transparentWhileInactive,
-      transparentWhilePressed,
       eventConfig,
       analyticsId,
       debounceTime,
@@ -166,20 +239,91 @@ export const Pressable = memo(
         {...props}
       >
         <Interactable
+          alignContent={alignContent}
+          alignItems={alignItems}
+          alignSelf={alignSelf}
+          aspectRatio={aspectRatio}
           background={background}
           blendStyles={blendStyles}
           block={block}
+          borderBottomLeftRadius={borderBottomLeftRadius}
+          borderBottomRightRadius={borderBottomRightRadius}
+          borderBottomWidth={borderBottomWidth}
           borderColor={borderColor}
+          borderEndWidth={borderEndWidth}
           borderRadius={borderRadius}
+          borderStartWidth={borderStartWidth}
+          borderTopLeftRadius={borderTopLeftRadius}
+          borderTopRightRadius={borderTopRightRadius}
+          borderTopWidth={borderTopWidth}
           borderWidth={borderWidth}
+          bordered={bordered}
+          borderedBottom={borderedBottom}
+          borderedEnd={borderedEnd}
+          borderedHorizontal={borderedHorizontal}
+          borderedStart={borderedStart}
+          borderedTop={borderedTop}
+          borderedVertical={borderedVertical}
+          bottom={bottom}
+          color={color}
+          columnGap={columnGap}
           contentStyle={contentStyle}
+          dangerouslySetBackground={dangerouslySetBackground}
           disabled={disabled}
+          display={display}
           elevation={elevation}
+          flexBasis={flexBasis}
+          flexDirection={flexDirection}
+          flexGrow={flexGrow}
+          flexShrink={flexShrink}
+          flexWrap={flexWrap}
+          font={font}
+          fontFamily={fontFamily}
+          fontSize={fontSize}
+          fontWeight={fontWeight}
+          gap={gap}
+          height={height}
+          justifyContent={justifyContent}
+          left={left}
+          lineHeight={lineHeight}
+          margin={margin}
+          marginBottom={marginBottom}
+          marginEnd={marginEnd}
+          marginStart={marginStart}
+          marginTop={marginTop}
+          marginX={marginX}
+          marginY={marginY}
+          maxHeight={maxHeight}
+          maxWidth={maxWidth}
+          minHeight={minHeight}
+          minWidth={minWidth}
+          opacity={opacity}
+          overflow={overflow}
+          padding={padding}
+          paddingBottom={paddingBottom}
+          paddingEnd={paddingEnd}
+          paddingStart={paddingStart}
+          paddingTop={paddingTop}
+          paddingX={paddingX}
+          paddingY={paddingY}
+          pin={pin}
+          position={position}
           pressed={pressed || loading} // loading shares the same styles as pressed
+          right={right}
+          rowGap={rowGap}
           style={!noScaleOnPress ? scaleOnPressStyle : undefined}
+          textDecorationColor={textDecorationColor}
+          textDecorationLine={textDecorationLine}
+          textDecorationStyle={textDecorationStyle}
+          textTransform={textTransform}
+          top={top}
+          transform={transform}
           transparentWhileInactive={transparentWhileInactive}
           transparentWhilePressed={transparentWhilePressed}
+          userSelect={userSelect}
+          width={width}
           wrapperStyles={wrapperStyles}
+          zIndex={zIndex}
         >
           {children}
         </Interactable>

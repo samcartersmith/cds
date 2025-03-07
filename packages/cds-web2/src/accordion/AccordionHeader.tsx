@@ -21,7 +21,12 @@ import { Text } from '../typography/Text';
 
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
 
-export type AccordionHeaderProps = AccordionHeaderBaseProps;
+export type AccordionHeaderProps = Omit<AccordionHeaderBaseProps, 'onPress'> & {
+  /**
+   * Callback function fired when the accordion item is clicked
+   */
+  onClick?: (key: string) => void;
+};
 
 const baseStyle = css`
   margin: 0;
@@ -73,16 +78,16 @@ export const AccordionIcon = memo(({ collapsed }: AccordionIconBaseProps) => {
 export const AccordionHeader = memo(
   forwardRef(
     (
-      { itemKey, title, subtitle, onPress, media, collapsed = false, testID }: AccordionHeaderProps,
+      { itemKey, title, subtitle, onClick, media, collapsed = false, testID }: AccordionHeaderProps,
       forwardedRef: React.ForwardedRef<HTMLButtonElement>,
     ) => {
       const { setActiveKey, activeKey } = useAccordionContext();
       const spacing = useCellSpacing();
 
-      const handlePress = useCallback(() => {
-        onPress?.(itemKey);
+      const handleClick = useCallback(() => {
+        onClick?.(itemKey);
         setActiveKey(itemKey === activeKey ? null : itemKey);
-      }, [onPress, setActiveKey, itemKey, activeKey]);
+      }, [onClick, setActiveKey, itemKey, activeKey]);
 
       return (
         <h2 className={baseStyle}>
@@ -94,7 +99,7 @@ export const AccordionHeader = memo(
             aria-expanded={!collapsed} // a11y guideline: https://www.w3.org/TR/wai-aria-practices/#accordion
             background="bg"
             id={getAccordionHeaderId(itemKey)}
-            onPress={handlePress}
+            onClick={handleClick}
             testID={testID}
             width="100%"
           >

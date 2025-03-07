@@ -43,9 +43,9 @@ describe('Chip', () => {
   });
 
   it('passes accessibility when accessibilityLabel is provided', async () => {
-    const onPress = jest.fn();
+    const onClick = jest.fn();
     expect(
-      await renderA11y(<ChipWithNodes accessibilityLabel="a11y label" onPress={onPress} />),
+      await renderA11y(<ChipWithNodes accessibilityLabel="a11y label" onClick={onClick} />),
     ).toHaveNoViolations();
   });
 
@@ -58,13 +58,13 @@ describe('Chip', () => {
     expect(screen.getByTestId(testID)).toBeVisible();
   });
 
-  it('calls onPress when pressed', () => {
-    const onPress = jest.fn();
-    render(<ChipWithNodes onPress={onPress} />);
+  it('calls onClick when clicked', () => {
+    const onClick = jest.fn();
+    render(<ChipWithNodes onClick={onClick} />);
 
     fireEvent.click(screen.getByText('USD'));
 
-    expect(onPress).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it('renders correctly when passing custom styles to contentStyle prop', () => {

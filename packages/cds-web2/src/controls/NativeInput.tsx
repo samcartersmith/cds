@@ -94,7 +94,7 @@ export type NativeInputProps = {
   /**
    * Callback fired when pressed/clicked
    */
-  onPress?: React.MouseEventHandler;
+  onClick?: React.MouseEventHandler;
 } & SharedProps &
   Pick<
     SharedAccessibilityProps,
@@ -109,7 +109,7 @@ export const NativeInput = memo(
       testID,
       align = 'start',
       onFocus,
-      onPress,
+      onClick,
       onBlur,
       onKeyDown,
       onChange,
@@ -144,7 +144,7 @@ export const NativeInput = memo(
         data-testid={testID}
         onBlur={onBlur}
         onChange={onChange}
-        onClick={onPress}
+        onClick={onClick}
         onFocus={onFocus}
         onKeyDown={onKeyDown}
         style={dynamicStyles}

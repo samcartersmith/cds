@@ -29,11 +29,11 @@ export const Default = () => (
         Default
       </Text>
       <HStack gap={2}>
-        <InputChip onPress={NoopFn} value="USD" />
-        <InputChip onPress={NoopFn} start={<RemoteImage {...assetIconProps} />} value="USD" />
+        <InputChip onClick={NoopFn} value="USD" />
+        <InputChip onClick={NoopFn} start={<RemoteImage {...assetIconProps} />} value="USD" />
         <InputChip
           disabled
-          onPress={NoopFn}
+          onClick={NoopFn}
           start={<RemoteImage {...assetIconProps} />}
           value="USD"
         />
@@ -42,15 +42,15 @@ export const Default = () => (
         Long text
       </Text>
       <HStack gap={2}>
-        <InputChip onPress={NoopFn} value="Lorem ipsum sit dolar" />
+        <InputChip onClick={NoopFn} value="Lorem ipsum sit dolar" />
         <InputChip
-          onPress={NoopFn}
+          onClick={NoopFn}
           start={<RemoteImage {...assetIconProps} />}
           value="Lorem ipsum sit dolar"
         />
         <InputChip
           disabled
-          onPress={NoopFn}
+          onClick={NoopFn}
           start={<RemoteImage {...assetIconProps} />}
           value="Lorem ipsum sit dolar"
         />
@@ -62,11 +62,11 @@ export const Default = () => (
           Dense
         </Text>
         <HStack gap={2}>
-          <InputChip onPress={NoopFn} value="USD" />
-          <InputChip onPress={NoopFn} start={<RemoteImage {...assetIconProps} />} value="USD" />
+          <InputChip onClick={NoopFn} value="USD" />
+          <InputChip onClick={NoopFn} start={<RemoteImage {...assetIconProps} />} value="USD" />
           <InputChip
             disabled
-            onPress={NoopFn}
+            onClick={NoopFn}
             start={<RemoteImage {...assetIconProps} />}
             value="USD"
           />
@@ -75,15 +75,15 @@ export const Default = () => (
           Long text
         </Text>
         <HStack gap={2}>
-          <InputChip onPress={NoopFn} value="Lorem ipsum sit dolar" />
+          <InputChip onClick={NoopFn} value="Lorem ipsum sit dolar" />
           <InputChip
-            onPress={NoopFn}
+            onClick={NoopFn}
             start={<RemoteImage {...assetIconProps} />}
             value="Lorem ipsum sit dolar"
           />
           <InputChip
             disabled
-            onPress={NoopFn}
+            onClick={NoopFn}
             start={<RemoteImage {...assetIconProps} />}
             value="Lorem ipsum sit dolar"
           />

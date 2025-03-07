@@ -30,27 +30,27 @@ const TestInputChip = ({ testID = chipTestID, ...props }: InputChipProps) => (
 
 describe('InputChip', () => {
   it('passes accessibility when start/end nodes are ReactElements', async () => {
-    expect(await renderA11y(<TestInputChip onPress={() => {}} value="USD" />)).toHaveNoViolations();
+    expect(await renderA11y(<TestInputChip onClick={() => {}} value="USD" />)).toHaveNoViolations();
   });
 
   it('renders correctly with value and start props and end close icon', () => {
-    render(<TestInputChip onPress={() => {}} value="USD" />);
+    render(<TestInputChip onClick={() => {}} value="USD" />);
 
     expect(screen.getByTestId(startNodeTestID)).toBeVisible();
     expect(screen.getByText('USD')).toBeVisible();
     expect(screen.getByTestId(`${chipTestID}-close-icon`)).toBeVisible();
   });
 
-  it('calls onPress when pressed', () => {
-    const onPress = jest.fn();
-    render(<TestInputChip onPress={onPress} value="USD" />);
+  it('calls onClick when pressed', () => {
+    const onClick = jest.fn();
+    render(<TestInputChip onClick={onClick} value="USD" />);
 
     fireEvent.click(screen.getByText('USD'));
 
-    expect(onPress).toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalled();
   });
   it('generates an a11y label based on the value', () => {
-    render(<TestInputChip onPress={() => {}} value="USD" />);
+    render(<TestInputChip onClick={() => {}} value="USD" />);
 
     expect(screen.getByLabelText('Remove USD')).toBeTruthy();
   });

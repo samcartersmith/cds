@@ -3,13 +3,13 @@ import useMeasure from 'react-use-measure';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
 import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
-import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { TextDisplay1 } from '../../typography/TextDisplay1';
 import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
 
 const TEST_ID = 'mock-segmented-tabs';
+const NoopFn = () => {};
 
 const tabs = [
   { id: 'buy', label: 'Buy', testID: 'buy-tab' },

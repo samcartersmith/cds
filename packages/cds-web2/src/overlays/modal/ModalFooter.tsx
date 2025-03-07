@@ -35,10 +35,10 @@ const baseStyle = css`
 type ModalFooterBaseProps = {
   /** Primary action button */
   primaryAction: NonNullable<
-    React.ReactElement<ButtonBaseProps & { onPress?: React.MouseEventHandler }>
+    React.ReactElement<ButtonBaseProps & { onClick?: React.MouseEventHandler }>
   >;
   /** Secondary action button */
-  secondaryAction?: React.ReactElement<ButtonBaseProps & { onPress?: React.MouseEventHandler }>;
+  secondaryAction?: React.ReactElement<ButtonBaseProps & { onClick?: React.MouseEventHandler }>;
 };
 export type ModalFooterProps = ModalFooterBaseProps & BoxProps<BoxDefaultElement>;
 

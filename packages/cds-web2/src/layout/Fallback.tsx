@@ -83,7 +83,7 @@ const fallbackStyle = css`
   }
 `;
 
-export const fallbackDefaultElement = 'span';
+export const fallbackDefaultElement = 'div';
 
 export type FallbackDefaultElement = typeof fallbackDefaultElement;
 

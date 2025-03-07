@@ -5,7 +5,7 @@ import { TableCellSortIcon } from '../../TableCellSortIcon';
 import { useSortableCell } from '../useSortableCell';
 
 describe('useSortableCell()', () => {
-  const onPress = expect.any(Function) as () => void;
+  const onClick = expect.any(Function) as () => void;
   const sortBy = { price: 'price', amount: 'amount.balance' };
 
   it('returns the correct active props while ascending', () => {
@@ -20,7 +20,7 @@ describe('useSortableCell()', () => {
     });
 
     const expected = {
-      onPress,
+      onClick,
       color: 'fgPrimary',
       'aria-sort': 'ascending',
       end: <TableCellSortIcon direction="ascending" />,
@@ -43,7 +43,7 @@ describe('useSortableCell()', () => {
     });
 
     const expected = {
-      onPress,
+      onClick,
       color: 'fgPrimary',
       'aria-sort': 'descending',
       end: <TableCellSortIcon direction="descending" />,
@@ -65,7 +65,7 @@ describe('useSortableCell()', () => {
       });
     });
 
-    const expected = { onPress, color: 'fgMuted', end: <TableCellSortIcon /> };
+    const expected = { onClick, color: 'fgMuted', end: <TableCellSortIcon /> };
 
     // Use the hooks return fn
     const inactiveProps = getSortableProps('amount.balance');

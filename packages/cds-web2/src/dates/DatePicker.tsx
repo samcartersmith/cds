@@ -207,7 +207,7 @@ export const DatePicker = memo(
               transparent
               accessibilityLabel={calendarIconButtonAccessibilityLabel}
               name="calendarEmpty"
-              onPress={handleOpenCalendar}
+              onClick={handleOpenCalendar}
               variant="secondary"
             />
           </VStack>
