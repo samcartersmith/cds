@@ -31,3 +31,6 @@ packages/lottie-files/**/*.json
 
 # Charts
 chart/
+
+# VSCode
+.vscode/
