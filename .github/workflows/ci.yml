@@ -16,7 +16,7 @@ env:
 jobs:
   lint:
     name: Lint
-    runs-on: [large, amd64]
+    runs-on: [xlarge, amd64]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,3 +43,22 @@ jobs:
       - name: Format (Affected)
         if: ${{ github.event_name == 'pull_request' }}
         run: yarn nx format:check --verbose
+
+  test:
+    name: Test
+    runs-on: [large, amd64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100 # TODO: This needs to include the merge-base
+      - uses: ./.github/actions/setup
+      - name: Test (All)
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          yarn nx run-many --target=test
+          yarn nx run-many --target=audit-a11y
+      - name: Test (Affected)
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          yarn nx affected --target=test
+          yarn nx affected --target=audit-a11y
