@@ -114,6 +114,11 @@ p {
   margin-bottom: 0;
 }
 
+a {
+  color: var(--color-fgPrimary);
+  text-decoration: underline;
+}
+
 .display-2 {
   font-family: var(--font-style-display);
   font-size: var(--font-size-display-2);

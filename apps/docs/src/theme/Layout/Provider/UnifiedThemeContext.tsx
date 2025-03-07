@@ -2,6 +2,7 @@ import React, { type ReactNode, createContext, useContext, useMemo, useState } f
 import { useColorMode } from '@docusaurus/theme-common';
 import { docsTheme } from '@site/src/constants';
 import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';
+import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
 
 type UnifiedThemeContextValue = {
   // Docs theme values
@@ -56,12 +57,22 @@ type UnifiedThemeProviderProps = {
 export const UnifiedThemeProvider = ({
   children,
   initialDocsTheme = docsTheme,
-  initialPlaygroundTheme = docsTheme,
+  initialPlaygroundTheme = defaultTheme,
 }: UnifiedThemeProviderProps) => {
   const { colorMode: docsColorMode, setColorMode: setDocsColorMode } = useColorMode();
   const [docsThemeState, setDocsThemeState] = useState(initialDocsTheme);
 
-  const [playgroundColorMode, setPlaygroundColorMode] = useState<'light' | 'dark'>(docsColorMode);
+  const [playgroundColorMode, setPlaygroundColorMode] = useState<'light' | 'dark'>(
+    () => docsColorMode,
+  );
+  const [previousDocsColorMode, setPreviousDocsColorMode] = useState(docsColorMode);
+
+  // If docsColorMode changes, update playground and previous state
+  if (docsColorMode !== previousDocsColorMode) {
+    setPlaygroundColorMode(docsColorMode);
+    setPreviousDocsColorMode(docsColorMode);
+  }
+
   const [playgroundThemeState, setPlaygroundThemeState] = useState(initialPlaygroundTheme);
 
   const api = useMemo(
@@ -74,8 +85,7 @@ export const UnifiedThemeProvider = ({
         setDocsTheme: setDocsThemeState,
         // Playground theme values
         playgroundColorScheme: playgroundColorMode === 'dark' ? 'dark' : 'light',
-        setPlaygroundColorScheme: (scheme: 'light' | 'dark') =>
-          setPlaygroundColorMode(scheme === 'dark' ? 'dark' : 'light'),
+        setPlaygroundColorScheme: (scheme: 'light' | 'dark') => setPlaygroundColorMode(scheme),
         playgroundTheme: playgroundThemeState,
         setPlaygroundTheme: setPlaygroundThemeState,
       } satisfies UnifiedThemeContextValue),

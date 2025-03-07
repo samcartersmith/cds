@@ -51,7 +51,7 @@ const NavbarThemeToggle = () => {
    */
   const toggleTheme = useCallback(
     (option: { lightValue: Property.Color; darkValue: Property.Color }) => {
-      const newTheme = {
+      const newDocsTheme = {
         ...docsTheme,
         light: {
           ...defaultTheme.light,
@@ -67,9 +67,22 @@ const NavbarThemeToggle = () => {
         },
       } satisfies ThemeConfig;
 
-      // Update both themes
-      setDocsTheme(newTheme);
-      setPlaygroundTheme(newTheme);
+      const newPlaygroundTheme = {
+        ...defaultTheme,
+        light: {
+          ...defaultTheme.light,
+          bgPrimary: option.lightValue,
+          fgPrimary: option.lightValue,
+        },
+        dark: {
+          ...defaultTheme.dark,
+          bgPrimary: option.darkValue,
+          fgPrimary: option.darkValue,
+        },
+      } satisfies ThemeConfig;
+
+      setDocsTheme(newDocsTheme);
+      setPlaygroundTheme(newPlaygroundTheme);
     },
     [docsTheme, setDocsTheme, setPlaygroundTheme],
   );

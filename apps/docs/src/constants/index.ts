@@ -14,8 +14,8 @@ export const docsTheme = {
   dark: {
     ...defaultTheme.dark,
     bg: `rgb(${defaultTheme.darkSpectrum.gray10})`, // instead of gray0
-    bgSecondary: `rgb(${defaultTheme.darkSpectrum.gray15})`, // instead of gray15
-    bgTertiary: `rgb(${defaultTheme.darkSpectrum.gray10})`, // instead of gray20
+    bgSecondary: `rgb(${defaultTheme.darkSpectrum.gray20})`, // instead of gray15
+    bgTertiary: `rgb(${defaultTheme.darkSpectrum.gray5})`, // instead of gray20
     // bgCode: `rgb(${defaultTheme.darkSpectrum.blue0})`, // new color
   },
 } as const satisfies ThemeConfig;
