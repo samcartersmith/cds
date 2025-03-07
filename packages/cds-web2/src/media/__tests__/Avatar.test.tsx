@@ -66,6 +66,50 @@ describe('Avatar', () => {
     expect(hexagon.className).toContain('hexagon');
   });
 
+  it('when passed a name prop and no src is provided it shows a fallback color and first letter of name prop', () => {
+    const testID = 'avatar-component';
+    render(<Avatar alt="" colorScheme="pink" name="TestName" testID={testID} />);
+
+    const wrapper = screen.getByTestId(`${testID}-wrapper`);
+    expect(wrapper).toHaveAttribute('data-colorscheme', 'pink');
+
+    const fallbackBox = screen.getByTestId(`${testID}-fallback`);
+    expect(fallbackBox).toBeTruthy();
+    expect(fallbackBox.textContent).toBe('T');
+    expect(fallbackBox).toHaveStyle({
+      background: 'currentColor',
+    });
+  });
+
+  it('when passed an empty string for src it shows a fallback image', () => {
+    const name = 'Test Name';
+    render(<Avatar alt={name} src="" />);
+
+    const imgNode = screen.queryByAltText(name);
+
+    expect(imgNode).toBeTruthy();
+    expect((imgNode as HTMLImageElement).src).toMatch(/^data:image/);
+  });
+
+  it('renders a transparent border if there is a name prop and uses the fallback color treatment', () => {
+    const testID = 'avatar-component';
+    render(
+      <Avatar alt="" borderColor="bgPositive" colorScheme="pink" name="TestName" testID={testID} />,
+    );
+
+    const box = screen.getByTestId(testID);
+    expect(box).toBeTruthy();
+    expect(box.style.getPropertyValue('--avatar-borderColor')).not.toBe('var(--color-bgPositive)');
+    expect(box.style.getPropertyValue('--avatar-borderColor')).toBe('var(--color-transparent)');
+
+    const fallbackBox = screen.getByTestId(`${testID}-fallback`);
+    expect(fallbackBox).toBeTruthy();
+    expect(fallbackBox.textContent).toBe('T');
+    expect(fallbackBox).toHaveStyle({
+      background: 'currentColor',
+    });
+  });
+
   it('capitalizes first letter of avatar name', () => {
     const name = 'testName';
     render(<Avatar alt="" name={name} testID="avatar-component" />);

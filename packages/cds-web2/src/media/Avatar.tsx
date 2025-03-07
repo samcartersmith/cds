@@ -168,16 +168,18 @@ export const Avatar = memo(
       );
     }, [name, size, dangerouslySetSize]);
 
+    const shouldShowBorder = (!!src || !name) && !!borderColor;
+
     const avatarInlineStyles = useMemo(() => {
       return {
         width: computedSize,
         height: computedSize,
         ...style,
-        '--avatar-borderColor': borderColor
+        '--avatar-borderColor': shouldShowBorder
           ? `var(--color-${borderColor})`
           : 'var(--color-transparent)',
       } as React.CSSProperties;
-    }, [computedSize, style, borderColor]);
+    }, [computedSize, style, shouldShowBorder, borderColor]);
 
     const fallbackStyle = useMemo(
       () => ({
@@ -188,11 +190,16 @@ export const Avatar = memo(
 
     return (
       // set position required to place the HexagonBorder elements properly
-      <Box className={wrapperStyles} data-colorscheme={colorSchemeProp} position="relative">
+      <Box
+        className={wrapperStyles}
+        data-colorscheme={colorSchemeProp}
+        position="relative"
+        testID={`${testID}-wrapper`}
+      >
         <Box
           alignItems="center"
           className={cx(avatarStyles, borderRadiusStyles[shape], className)}
-          data-bordered={!!borderColor}
+          data-bordered={shouldShowBorder}
           data-selected={selected}
           data-shape={shape}
           flexGrow={0}
@@ -207,7 +214,7 @@ export const Avatar = memo(
               alt={alt}
               height={computedSize}
               shape={shape}
-              source={src ?? fallbackImageSrc}
+              source={src || fallbackImageSrc}
               width={computedSize}
             />
           ) : (
