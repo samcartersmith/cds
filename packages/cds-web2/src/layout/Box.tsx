@@ -1,12 +1,12 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { cx } from '@linaria/core';
-import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { PinningDirection } from '@cbhq/cds-common2/types/BoxBaseProps';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { borderStyle, pinStyle } from '../styles/booleanStyles';
+import type { fontFamily } from '../styles/responsive/base';
 import { type ResponsiveProps, type StyleProps, getStyles } from '../styles/styleProps';
 
 export const boxDefaultElement = 'div';
@@ -20,7 +20,7 @@ export type BoxBaseProps = StyleProps &
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   > & {
     style?: React.CSSProperties;
-    font?: ResponsiveProps<ThemeVars.FontFamily>;
+    font?: ResponsiveProps<keyof typeof fontFamily>;
     /** Direction in which to absolutely pin the box. */
     pin?: PinningDirection;
     /** Add a border around all sides of the box. */

@@ -68,7 +68,7 @@ export const Link = memo(
       disabled,
       display = 'inline-flex',
       color = 'fgPrimary',
-      font,
+      font = 'inherit',
       openInNewWindow = false,
       rel,
       renderContainer,
@@ -104,14 +104,7 @@ export const Link = memo(
         rel,
         ...anchorProps,
         children: (
-          <Text
-            color={color}
-            display={display}
-            font={font}
-            inherit={!font}
-            mono={mono}
-            underline={underline}
-          >
+          <Text color={color} display={display} font={font} mono={mono} underline={underline}>
             {children}
           </Text>
         ),
@@ -162,7 +155,6 @@ export const Link = memo(
         disabled={disabled}
         display={display}
         font={font}
-        inherit={!font}
         mono={mono}
         testID={testID}
         {...anchorProps}

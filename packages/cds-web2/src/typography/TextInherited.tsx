@@ -6,4 +6,4 @@ export type TextInheritedProps<AsComponent extends React.ElementType> = TextProp
 
 export const TextInherited = <AsComponent extends React.ElementType = 'span'>(
   props: TextInheritedProps<AsComponent>,
-) => <Text inherit font="body" {...props} />;
+) => <Text inherit font="inherit" {...props} />;

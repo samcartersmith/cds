@@ -1,14 +1,6 @@
 import { type LinariaClassName, css } from '@linaria/core';
 import type { PinningDirection } from '@cbhq/cds-common2/types/BoxBaseProps';
 
-export const textInheritStyle = css`
-  font-size: inherit;
-  line-height: inherit;
-  letter-spacing: inherit;
-  font-weight: inherit;
-  font-family: inherit;
-`;
-
 export const borderStyle = {
   bordered: css`
     border-width: var(--borderWidth-100);

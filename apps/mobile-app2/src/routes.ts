@@ -512,6 +512,11 @@ export const routes = [
       require('@cbhq/cds-mobile2/typography/__stories__/TextBody.stories').default,
   },
   {
+    key: 'Text (base component)',
+    getComponent: () =>
+      require('@cbhq/cds-mobile2/typography/__stories__/TextCore.stories').default,
+  },
+  {
     key: 'TextCaption',
     getComponent: () =>
       require('@cbhq/cds-mobile2/typography/__stories__/TextCaption.stories').default,

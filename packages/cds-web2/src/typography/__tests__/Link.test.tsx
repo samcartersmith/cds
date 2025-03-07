@@ -117,11 +117,12 @@ describe('Link', () => {
 
   it('inherits text styles', () => {
     render(
-      <Link inherit testID={testID} to="/">
+      <Link font="inherit" testID={testID} to="/">
         Child
       </Link>,
     );
-    expect(screen.getByTestId(testID).className).toContain('textInherit');
+
+    expect(screen.getByTestId(testID).className).toContain('inherit');
   });
 
   it('inherits by default', () => {
@@ -131,6 +132,7 @@ describe('Link', () => {
         Child
       </Link>,
     );
-    expect(screen.getByText('Child').className).toContain('textInherit');
+
+    expect(screen.getByText('Child').className).toContain('inherit');
   });
 });

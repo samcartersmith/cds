@@ -28,9 +28,7 @@ export type TextProps = StyleProps &
      * Set text font family.
      * @default body
      */
-    font?: ThemeVars.FontFamily;
-    /** Should the Text component inherit styles of parent */
-    inherit?: boolean;
+    font?: ThemeVars.FontFamily | 'inherit';
     /**
      * Add disabled opacity style to text
      */
@@ -93,7 +91,6 @@ export const Text = memo(
         children,
         style,
         animated,
-        inherit,
         disabled,
         mono,
         underline,
@@ -181,8 +178,12 @@ export const Text = memo(
 
       const theme = useTheme();
       const textAlign = useTextAlign(align);
-      const monoFontFamily = mono && theme.fontFamilyMono?.[fontFamily];
-      const textTransformValue = textTransform ?? theme.textTransform[fontFamily];
+      const monoFontFamily = mono && fontFamily !== 'inherit' && theme.fontFamilyMono?.[fontFamily];
+      const textTransformValue =
+        textTransform ?? fontFamily !== 'inherit'
+          ? theme.textTransform[fontFamily as keyof typeof theme.textTransform]
+          : undefined;
+
       const computedNumberOfLines =
         noWrap || (ellipsize && typeof numberOfLines === 'undefined') ? 1 : numberOfLines;
 
@@ -238,14 +239,10 @@ export const Text = memo(
               borderBottomWidth,
               borderStartWidth,
               elevation,
-              ...(inherit
-                ? undefined
-                : {
-                    fontFamily,
-                    fontSize,
-                    fontWeight,
-                    lineHeight,
-                  }),
+              fontFamily,
+              fontSize,
+              fontWeight,
+              lineHeight,
               textDecorationStyle,
               textDecorationColor,
               textDecorationLine,
@@ -316,7 +313,6 @@ export const Text = memo(
           borderBottomWidth,
           borderStartWidth,
           elevation,
-          inherit,
           fontFamily,
           fontSize,
           fontWeight,

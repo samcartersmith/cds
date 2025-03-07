@@ -250,9 +250,7 @@ export const BooleanStyleProps = () => {
       height={200}
       width={200}
     >
-      <Text inherit font="title1" fontFamily="caption" fontSize="display1">
-        HELLO WORLD
-      </Text>
+      <Text>HELLO WORLD</Text>
     </Box>
   );
 };

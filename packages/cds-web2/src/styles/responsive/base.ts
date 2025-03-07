@@ -1601,7 +1601,10 @@ export const borderBottomRightRadius: Record<ThemeVars.BorderRadius, LinariaClas
   `,
 } as const;
 
-export const fontFamily: Record<ThemeVars.FontFamily, LinariaClassName> = {
+export const fontFamily: Record<ThemeVars.FontFamily | 'inherit', LinariaClassName> = {
+  inherit: css`
+    font-family: inherit;
+  `,
   display1: css`
     font-family: var(--fontFamily-display1);
   `,
@@ -1643,7 +1646,10 @@ export const fontFamily: Record<ThemeVars.FontFamily, LinariaClassName> = {
   `,
 } as const;
 
-export const fontSize: Record<ThemeVars.FontSize, LinariaClassName> = {
+export const fontSize: Record<ThemeVars.FontSize | 'inherit', LinariaClassName> = {
+  inherit: css`
+    font-size: inherit;
+  `,
   display1: css`
     font-size: var(--fontSize-display1);
   `,
@@ -1685,7 +1691,10 @@ export const fontSize: Record<ThemeVars.FontSize, LinariaClassName> = {
   `,
 } as const;
 
-export const fontWeight: Record<ThemeVars.FontWeight, LinariaClassName> = {
+export const fontWeight: Record<ThemeVars.FontWeight | 'inherit', LinariaClassName> = {
+  inherit: css`
+    font-weight: inherit;
+  `,
   display1: css`
     font-weight: var(--fontWeight-display1);
   `,
@@ -1727,7 +1736,10 @@ export const fontWeight: Record<ThemeVars.FontWeight, LinariaClassName> = {
   `,
 } as const;
 
-export const lineHeight: Record<ThemeVars.LineHeight, LinariaClassName> = {
+export const lineHeight: Record<ThemeVars.LineHeight | 'inherit', LinariaClassName> = {
+  inherit: css`
+    line-height: inherit;
+  `,
   display1: css`
     line-height: var(--lineHeight-display1);
   `,

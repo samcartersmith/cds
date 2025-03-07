@@ -4,7 +4,6 @@ import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable
 
 import type { Polymorphic } from '../core/polymorphism';
 import { type BoxBaseProps, Box } from '../layout/Box';
-import { textInheritStyle } from '../styles/booleanStyles';
 
 const baseStyle = css`
   margin: 0;
@@ -119,8 +118,6 @@ export type TextBaseProps = Polymorphic.ExtendableProps<
      * @default false
      */
     noWrap?: boolean;
-    /** Should the Text component inherit styles of parent */
-    inherit?: boolean;
     /**
      * Set select behavior.
      * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select)
@@ -168,7 +165,6 @@ export const Text: TextComponent = memo(
         noWrap,
         selectable,
         overflow,
-        inherit,
         textDecoration = underline ? 'underline' : undefined,
         textTransform,
         children,
@@ -199,7 +195,6 @@ export const Text: TextComponent = memo(
             baseStyle,
             numberOfLines && numberOfLinesStyle,
             disabled && disabledStyle,
-            inherit && textInheritStyle,
             mono && monoStyle,
             tabularNumbers && tabularNumbersStyle,
             slashedZero && slashedZeroStyle,

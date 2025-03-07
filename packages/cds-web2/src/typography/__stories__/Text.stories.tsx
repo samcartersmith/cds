@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import React from 'react';
 
 import { useTheme } from '../../hooks/useTheme';
@@ -6,6 +5,7 @@ import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import {
+  Text,
   TextBody,
   TextCaption,
   TextDisplay1,
@@ -66,6 +66,21 @@ export const Normal = () => (
     })}
   </>
 );
+
+export const TextWithInherit = () => {
+  return (
+    // parent's font size is that of a legal text
+    <Box flexDirection="column" font="display1">
+      <Text as="p">
+        The following text inherits the parent Display1 font but overrides the fontSize prop
+      </Text>
+      {/* marking this Text as inherit */}
+      <Text as="h1" font="inherit" fontSize="legal">
+        Display1
+      </Text>
+    </Box>
+  );
+};
 
 export const Dense = () => {
   const theme = useTheme();

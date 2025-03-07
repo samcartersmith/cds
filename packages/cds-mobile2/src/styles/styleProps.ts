@@ -24,10 +24,10 @@ export type StyleProps = {
   borderTopRightRadius?: ThemeVars.BorderRadius;
   borderBottomLeftRadius?: ThemeVars.BorderRadius;
   borderBottomRightRadius?: ThemeVars.BorderRadius;
-  fontFamily?: ThemeVars.FontFamily;
-  fontSize?: ThemeVars.FontSize;
-  fontWeight?: ThemeVars.FontWeight;
-  lineHeight?: ThemeVars.LineHeight;
+  fontFamily?: ThemeVars.FontFamily | 'inherit';
+  fontSize?: ThemeVars.FontSize | 'inherit';
+  fontWeight?: ThemeVars.FontWeight | 'inherit';
+  lineHeight?: ThemeVars.LineHeight | 'inherit';
   textDecorationStyle?: TextStyle['textDecorationStyle'];
   textDecorationLine?: TextStyle['textDecorationLine'];
   textDecorationColor?: ThemeVars.Color;
