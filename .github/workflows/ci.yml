@@ -18,7 +18,7 @@ jobs:
     name: Lint
     runs-on: [large, amd64]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
@@ -33,7 +33,7 @@ jobs:
     name: Format
     runs-on: [medium, amd64]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
