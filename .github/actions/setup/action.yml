@@ -20,11 +20,18 @@ runs:
       run: git fetch -f --no-tags origin master:master
       shell: bash
 
+    # Due to rate limiting, we're using the internal version that doesn't fetch every time
+    # - name: Setup Node
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version-file: .nvmrc
+    #     token: ${{ env.GITHUB_API_TOKEN }}
+
     - name: Setup Node
-      uses: actions/setup-node@v4
+      uses: infra/cb-action-setup-node@master
       with:
-        node-version-file: .nvmrc
-        token: ${{ env.GITHUB_API_TOKEN }}
+        version: 20
+        setup_yarn: 'false'
 
     - name: Setup Yarn
       run: |
