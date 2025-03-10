@@ -16,7 +16,7 @@ env:
 jobs:
   lint:
     name: Lint
-    runs-on: [xlarge, amd64]
+    runs-on: [large, amd64]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,7 +46,7 @@ jobs:
 
   test:
     name: Test
-    runs-on: [large, amd64]
+    runs-on: [xlarge, amd64]
     steps:
       - uses: actions/checkout@v4
         with:
