@@ -8,12 +8,15 @@ export const PlatformSwitcher = () => {
 
   const tabs = useMemo<TabValue[]>(
     () => [
-      { id: 'web', label: 'Web', disabled: !supportsWeb },
-      {
-        id: 'mobile',
-        label: 'Mobile',
-        disabled: !supportsMobile,
-      },
+      ...(supportsWeb ? [{ id: 'web', label: supportsMobile ? 'Web' : 'Web Only' }] : []),
+      ...(supportsMobile
+        ? [
+            {
+              id: 'mobile',
+              label: supportsWeb ? 'Mobile' : 'Mobile Only',
+            },
+          ]
+        : []),
     ],
     [supportsMobile, supportsWeb],
   );
@@ -25,6 +28,6 @@ export const PlatformSwitcher = () => {
     [setPlatform],
   );
 
-  const activeTab = platform === 'web' ? tabs[0] : tabs[1];
+  const activeTab = tabs.find(({ id }) => id === platform) ?? null;
   return <SegmentedTabs activeTab={activeTab} onChange={handlePlatformChange} tabs={tabs} />;
 };

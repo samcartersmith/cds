@@ -41,11 +41,18 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
   const isMobile = platform === 'mobile';
 
   return (
-    <VStack background="bgAlternate" borderRadius={500} paddingTop={3}>
-      <Box paddingX={4}>
-        <TabNavigation onChange={setActiveTab} tabs={tabs} value={activeTab} />
-      </Box>
-      <Divider />
+    <VStack background="bgAlternate" borderRadius={500} paddingTop={2}>
+      <VStack
+        background="bgAlternate"
+        paddingTop={1}
+        position="sticky"
+        top="var(--ifm-navbar-height)"
+        zIndex={100}
+      >
+        <TabNavigation onChange={setActiveTab} paddingX={4} tabs={tabs} value={activeTab} />
+        <Divider />
+      </VStack>
+
       <VStack gap={3} paddingBottom={2} paddingEnd={4} paddingStart={4} paddingTop={5}>
         {shouldRenderExamples && <TOCUpdater toc={isWeb ? webExamplesToc : mobileExamplesToc} />}
         {shouldRenderExamples && isWeb && webExamples}
