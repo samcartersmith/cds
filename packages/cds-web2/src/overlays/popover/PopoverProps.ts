@@ -54,8 +54,8 @@ export type PopoverProps = {
   onBlur?: (event?: React.FocusEvent) => void;
   /** Callback fired when a mouse down event is fired on the subject */
   onMouseDown?: (event: React.MouseEvent) => void;
-  /** Invert the the color spectrum for the Popover content */
-  invertPopoverSpectrum?: boolean;
+  /** Invert the theme's activeColorScheme for this component */
+  invertColorScheme?: boolean;
   /** Controls visibility of the Popover content */
   visible: boolean;
   /** Override content positioning defaults */

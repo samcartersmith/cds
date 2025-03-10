@@ -65,6 +65,8 @@ export type TextProps = StyleProps &
     dangerouslySetColor?: TextStyle['color'];
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
     dangerouslySetBackground?: TextStyle['backgroundColor'];
+    /** @deprecated This is a migration escape hatch and will be removed in the next major version of CDS. Do not use this prop. */
+    renderEmptyNode?: boolean;
     /** Used to locate this element in unit and end-to-end tests. */
     testID?: string;
   };
@@ -170,6 +172,7 @@ export const Text = memo(
         flexShrink,
         flexGrow,
         opacity,
+        renderEmptyNode = true,
         ...props
       },
       ref,
@@ -359,7 +362,10 @@ export const Text = memo(
         ],
       );
 
-      if (children === null || children === undefined || children === '' || Number.isNaN(children))
+      if (
+        !renderEmptyNode &&
+        (children === null || children === undefined || children === '' || Number.isNaN(children))
+      )
         return null;
 
       return (

@@ -130,7 +130,7 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
           <Tooltip
             content={tooltipText}
             elevation={2}
-            invertSpectrum={false}
+            invertColorScheme={false}
             placement="top"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >

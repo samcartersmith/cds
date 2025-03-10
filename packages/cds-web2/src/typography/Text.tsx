@@ -130,6 +130,8 @@ export type TextBaseProps = Polymorphic.ExtendableProps<
     overflow?: 'truncate' | 'clip' | 'wrap' | 'break';
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
     dangerouslySetColor?: string;
+    /** @deprecated This is a migration escape hatch and will be removed in the next major version of CDS. Do not use this prop. */
+    renderEmptyNode?: boolean;
   }
 >;
 
@@ -168,6 +170,7 @@ export const Text: TextComponent = memo(
         textDecoration = underline ? 'underline' : undefined,
         textTransform,
         children,
+        renderEmptyNode = true,
         ...props
       }: TextProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
@@ -184,7 +187,10 @@ export const Text: TextComponent = memo(
         [dangerouslySetColor, numberOfLines, textTransform, mono, fontFamily, style],
       );
 
-      if (children === null || children === undefined || children === '' || Number.isNaN(children))
+      if (
+        !renderEmptyNode &&
+        (children === null || children === undefined || children === '' || Number.isNaN(children))
+      )
         return null;
 
       return (

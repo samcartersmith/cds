@@ -22,7 +22,7 @@ export const Tooltip = memo(
     accessibilityLabelForContent,
     accessibilityHintForContent,
     visible,
-    invertSpectrum = true,
+    invertColorScheme = true,
     elevation,
   }: TooltipProps) => {
     const subjectRef = useRef<View | null>(null);
@@ -30,7 +30,7 @@ export const Tooltip = memo(
     const isVisible = visible !== false && isOpen;
     const [subjectLayout, setSubjectLayout] = useState<SubjectLayout>();
 
-    const WrapperComponent = invertSpectrum ? InvertedThemeProvider : Fragment;
+    const WrapperComponent = invertColorScheme ? InvertedThemeProvider : Fragment;
 
     const { opacity, translateY, animateIn, animateOut } = useTooltipAnimation(placement);
 

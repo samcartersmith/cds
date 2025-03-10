@@ -141,4 +141,64 @@ describe('Text', () => {
       expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });
   });
+
+  it('renders empty content when renderEmptyNode is true', () => {
+    render(
+      <Text renderEmptyNode testID="empty-text">
+        {null}
+      </Text>,
+      { wrapper },
+    );
+    expect(screen.getByTestId('empty-text')).toBeTruthy();
+  });
+
+  it('does not render when renderEmptyNode is false and content is empty', () => {
+    render(
+      <Text renderEmptyNode={false} testID="empty-text">
+        {null}
+      </Text>,
+      { wrapper },
+    );
+    expect(screen.queryByTestId('empty-text')).toBeNull();
+  });
+
+  it('handles different empty values when renderEmptyNode is false', () => {
+    render(
+      <>
+        <Text renderEmptyNode={false} testID="null-text">
+          {null}
+        </Text>
+        <Text renderEmptyNode={false} testID="undefined-text">
+          {undefined}
+        </Text>
+        <Text renderEmptyNode={false} testID="empty-string-text" />
+        <Text renderEmptyNode={false} testID="nan-text">
+          {NaN}
+        </Text>
+        <Text renderEmptyNode={false} testID="number-content">
+          {0}
+        </Text>
+      </>,
+      { wrapper },
+    );
+
+    expect(screen.queryByTestId('null-text')).toBeNull();
+    expect(screen.queryByTestId('undefined-text')).toBeNull();
+    expect(screen.queryByTestId('empty-string-text')).toBeNull();
+    expect(screen.queryByTestId('nan-text')).toBeNull();
+    expect(screen.getByTestId('number-content')).toBeTruthy();
+    expect(screen.getByText('0')).toBeTruthy();
+  });
+
+  it('renders content when renderEmptyNode is false and content exists', () => {
+    render(
+      <Text renderEmptyNode={false} testID="content-text">
+        Hello World
+      </Text>,
+      { wrapper },
+    );
+
+    expect(screen.getByTestId('content-text')).toBeTruthy();
+    expect(screen.getByText('Hello World')).toBeTruthy();
+  });
 });

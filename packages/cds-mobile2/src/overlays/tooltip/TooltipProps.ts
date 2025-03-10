@@ -66,7 +66,7 @@ export type InternalTooltipProps = {
   | 'gap'
   | 'testID'
   | 'yShiftByStatusBarHeight'
-  | 'invertSpectrum'
+  | 'invertColorScheme'
   | 'elevation'
 > &
   SharedAccessibilityProps;

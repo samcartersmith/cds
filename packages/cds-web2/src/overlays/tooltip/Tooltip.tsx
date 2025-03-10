@@ -22,7 +22,7 @@ export const Tooltip = ({
   zIndex,
   tooltipId: tooltipIdDefault,
   visible,
-  invertSpectrum = true,
+  invertColorScheme = true,
   disableFocusTrap,
   disableAutoFocus,
   disableTypeFocus,
@@ -82,7 +82,7 @@ export const Tooltip = ({
       disablePortal={disablePortal}
       disableTypeFocus={disableTypeFocus}
       focusTabIndexElements={focusTabIndexElements}
-      invertPopoverSpectrum={invertSpectrum}
+      invertColorScheme={invertColorScheme}
       onBlur={handleOnBlur}
       onFocus={handleOnFocus}
       onMouseDown={preventMouseDown}

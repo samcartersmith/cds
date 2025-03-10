@@ -59,6 +59,8 @@ export type TextBaseProps = {
    * Truncates text after wrapping to a defined number of lines.
    */
   numberOfLines?: number;
+  /** @deprecated This is a migration escape hatch and will be removed in the next major version of CDS. Do not use this prop. */
+  renderEmptyNode?: boolean;
 } & PaddingProps &
   TextAlignProps &
   SharedProps;

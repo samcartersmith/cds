@@ -49,7 +49,7 @@ export const Popover = memo(
     onFocus,
     onBlur,
     onMouseDown,
-    invertPopoverSpectrum,
+    invertColorScheme,
     visible,
     accessibilityLabel = 'popoverMenu',
     testID,
@@ -148,7 +148,7 @@ export const Popover = memo(
       </Box>
     );
 
-    const Wrapper = invertPopoverSpectrum ? InvertedThemeProvider : React.Fragment;
+    const Wrapper = invertColorScheme ? InvertedThemeProvider : React.Fragment;
 
     return (
       <div

@@ -22,9 +22,9 @@ export type TooltipBaseProps = {
    * @default true
    */
   visible?: boolean;
-  /** Invert the the color spectrum for the tooltip content
+  /** Invert the theme's activeColorScheme for this component
    * @default true
    */
-  invertSpectrum?: boolean;
+  invertColorScheme?: boolean;
 } & SharedProps &
   ElevationProps;
