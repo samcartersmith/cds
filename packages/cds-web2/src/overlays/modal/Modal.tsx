@@ -17,17 +17,21 @@ import type { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common2/types/
 import type { Position } from '@cbhq/cds-common2/types/Position';
 
 import { useA11yLabels } from '../../hooks/useA11yLabels';
+import { Box } from '../../layout';
 import { VStack } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
-import { breakpoints, media } from '../../styles/media';
+import { media } from '../../styles/media';
 import { FocusTrap } from '../FocusTrap';
 
 import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
 
+const modalMaxWidth = 612;
+const defaultWidthStyle = { tablet: 'auto', desktop: modalMaxWidth };
+const defaultMaxWidthStyle = { tablet: modalMaxWidth };
+
 const baseStyle = css`
   position: absolute;
   top: var(--space-10);
-  width: 612px;
   max-height: calc(100vh - var(--space-10) * 2);
   @supports (height: 100dvh) {
     max-height: calc(100dvh - var(--space-10) * 2);
@@ -39,44 +43,30 @@ const baseStyle = css`
 `;
 
 const modalDialogResponsiveStyle = css`
-  @media ${media.phonePortrait} {
+  @media ${media.phone} {
     border-radius: var(--borderRadius-0);
   }
 `;
 
 const modalResponsiveStyle = css`
-  max-height: 100vh;
-  @supports (max-height: 100dvh) {
-    max-height: 100dvh;
-  }
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin-right: 0;
-  margin-left: 0;
-  width: auto;
-
-  @media (min-width: ${breakpoints.phoneLandscape}px) {
-    max-width: 612px;
+  @media ${media.tablet} {
     margin-right: var(--space-3);
     margin-left: var(--space-3);
-    top: var(--space-10);
-    bottom: initial;
-    right: initial;
-    left: initial;
-    max-height: calc(100vh - var(--space-10) * 2);
-    @supports (height: 100dvh) {
-      max-height: calc(100dvh - var(--space-10) * 2);
-    }
   }
 
-  @media (min-width: ${breakpoints.tabletLandscape}px) {
-    width: 612px;
-    margin-left: initial;
-    margin-right: initial;
+  @media ${media.phone} {
+    max-height: 100vh;
+    max-height: 100dvh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-right: 0;
+    margin-left: 0;
   }
 `;
+
+const MotionBox = motion(Box);
 
 const overlayContentContextValue: OverlayContentContextValue = {
   isModal: true,
@@ -105,7 +95,7 @@ export type ModalProps = {
    * @default false
    */
   focusTabIndexElements?: boolean;
-} & ModalBaseProps &
+} & Omit<ModalBaseProps, 'width'> &
   Omit<ModalWrapperProps, 'onOverlayPress'>;
 
 export const Modal = memo(
@@ -127,10 +117,13 @@ export const Modal = memo(
         shouldCloseOnEscPress = true,
         hideCloseButton,
         hideDividers,
+        maxWidth,
         ...props
       },
       ref,
     ) => {
+      const defaultWidth = dangerouslyDisableResponsiveness ? modalMaxWidth : defaultWidthStyle;
+      const defaultMaxWidth = dangerouslyDisableResponsiveness ? undefined : defaultMaxWidthStyle;
       const { labelledBySource, labelledBy, label } = useA11yLabels({
         accessibilityLabelledBy,
         accessibilityLabel,
@@ -169,8 +162,8 @@ export const Modal = memo(
       const renderChildrenProps = useMemo(() => ({ closeModal: handleClose }), [handleClose]);
 
       const dialogStyles = useMemo<React.CSSProperties>(
-        () => ({ position: dangerouslySetPosition, width }),
-        [dangerouslySetPosition, width],
+        () => ({ position: dangerouslySetPosition }),
+        [dangerouslySetPosition],
       );
 
       return (
@@ -185,11 +178,13 @@ export const Modal = memo(
             visible={visible}
             {...props}
           >
-            <motion.div
+            <MotionBox
               {...motionProps}
               className={cx(baseStyle, !dangerouslyDisableResponsiveness && modalResponsiveStyle)}
-              data-testid="modal-dialog-motion"
+              maxWidth={maxWidth ?? defaultMaxWidth}
               style={dialogStyles}
+              testID="modal-dialog-motion"
+              width={width ?? defaultWidth}
             >
               <FocusTrap
                 disableFocusTrap={disableFocusTrap}
@@ -209,7 +204,7 @@ export const Modal = memo(
                   </ModalParentContext.Provider>
                 </VStack>
               </FocusTrap>
-            </motion.div>
+            </MotionBox>
           </ModalWrapper>
         </OverlayContentContext.Provider>
       );

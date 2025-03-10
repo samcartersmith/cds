@@ -9,7 +9,7 @@ import { useTheme } from '../hooks/useTheme';
 import { pinStyles } from '../styles/pinStyles';
 import { type StyleProps, getStyles } from '../styles/styleProps';
 
-export type BoxBaseProps = {
+export type BoxBaseProps = StyleProps & {
   children?: React.ReactNode;
   style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
   animated?: boolean;
@@ -36,7 +36,7 @@ export type BoxBaseProps = {
   dangerouslySetBackground?: string;
   /** Used to locate this element in unit and end-to-end tests. */
   testID?: string;
-} & StyleProps;
+};
 
 export type BoxProps = Omit<ViewProps, 'style'> & BoxBaseProps;
 

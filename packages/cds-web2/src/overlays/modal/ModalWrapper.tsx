@@ -10,7 +10,7 @@ import { type PortalProps, Portal } from '../Portal';
 import { modalContainerId } from '../PortalProvider';
 
 const modalOverlayResponsiveStyle = css`
-  @media ${media.phonePortrait} {
+  @media ${media.phone} {
     display: none;
   }
 `;

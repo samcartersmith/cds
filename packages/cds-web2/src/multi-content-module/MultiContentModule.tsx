@@ -1,0 +1,125 @@
+import React, { forwardRef, isValidElement, memo, useMemo } from 'react';
+import { defaultMaxWidth } from '@cbhq/cds-common2/tokens/multiContentModule';
+import { IllustrationPictogramNames } from '@cbhq/cds-common2/types/IllustrationNames';
+import { MultiContentModuleBaseProps as SharedMultiContentModuleBaseProps } from '@cbhq/cds-common2/types/MultiContentModuleBaseProps';
+
+import { Button } from '../buttons';
+import type { Polymorphic } from '../core/polymorphism';
+import { Pictogram } from '../illustrations';
+import { Box, VStack, VStackBaseProps } from '../layout';
+import { Text } from '../typography/Text';
+
+export const multiContentModuleDefaultElement = 'div';
+
+export type MultiContentModuleDefaultElement = typeof multiContentModuleDefaultElement;
+
+export type MultiContentModuleBaseProps = Polymorphic.ExtendableProps<
+  VStackBaseProps,
+  {
+    /** Callback fired when the action button pressed and cannot be used when `action` is a React Element */
+    onActionPress?: React.MouseEventHandler;
+  } & SharedMultiContentModuleBaseProps
+>;
+
+export type MultiContentModuleProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  MultiContentModuleBaseProps
+>;
+
+type MultiContentModuleComponent = (<
+  AsComponent extends React.ElementType = MultiContentModuleDefaultElement,
+>(
+  props: MultiContentModuleProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const MultiContentModule: MultiContentModuleComponent = memo(
+  forwardRef<React.ReactElement<MultiContentModuleBaseProps>, MultiContentModuleBaseProps>(
+    <AsComponent extends React.ElementType>(
+      {
+        as,
+        pictogram,
+        title,
+        description,
+        children,
+        action,
+        onActionPress,
+        actionAccessibilityLabel,
+        end,
+        bordered = false,
+        testID,
+        accessibilityLabel,
+        maxWidth = defaultMaxWidth,
+        style,
+        ...props
+      }: MultiContentModuleProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const Component = (as ?? multiContentModuleDefaultElement) satisfies React.ElementType;
+      const multiContentModulePaddingX = useMemo(
+        () => ({
+          phone: bordered ? 4 : 0,
+          tablet: 4,
+          desktop: 4,
+        }),
+        [bordered],
+      );
+
+      return (
+        <VStack
+          ref={ref}
+          accessibilityLabel={accessibilityLabel}
+          as={Component}
+          background="bg"
+          borderRadius={400}
+          bordered={bordered}
+          gap={2}
+          maxWidth={maxWidth}
+          paddingX={multiContentModulePaddingX}
+          paddingY={4}
+          style={style}
+          testID={testID}
+          {...props}
+        >
+          {typeof pictogram === 'string' ? (
+            <Pictogram
+              dimension="48x48"
+              name={pictogram as IllustrationPictogramNames}
+              testID={`${testID}-pictogram`}
+            />
+          ) : (
+            pictogram
+          )}
+          {typeof title === 'string' ? (
+            <Text as="h1" font="title1">
+              {title}
+            </Text>
+          ) : (
+            title
+          )}
+          {typeof description === 'string' ? (
+            <Text as="p" color="fgMuted" font="body" numberOfLines={3}>
+              {description}
+            </Text>
+          ) : (
+            description
+          )}
+          {!!children && (
+            <Box display="block" testID={`${testID}-primary-content`}>
+              {children}
+            </Box>
+          )}
+          {action &&
+            (isValidElement(action) ? (
+              action
+            ) : (
+              <Button accessibilityLabel={actionAccessibilityLabel} onClick={onActionPress}>
+                {action}
+              </Button>
+            ))}
+          {end}
+        </VStack>
+      );
+    },
+  ),
+);

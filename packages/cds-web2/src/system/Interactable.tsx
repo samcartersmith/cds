@@ -52,16 +52,10 @@ const baseStyle = css`
 
   &:hover {
     background-color: var(${interactableHoveredBackground});
-    > * {
-      opacity: var(${interactableHoveredOpacity});
-    }
   }
 
   &:active {
     background-color: var(${interactablePressedBackground});
-    > * {
-      opacity: var(${interactablePressedOpacity});
-    }
   }
 
   &:disabled,
@@ -71,6 +65,14 @@ const baseStyle = css`
     pointer-events: none;
     touch-action: none;
     background-color: var(${interactableDisabledBackground});
+  }
+`;
+const contentBaseStyle = css`
+  &:hover {
+    opacity: var(${interactableHoveredOpacity});
+  }
+  &:active {
+    opacity: var(${interactablePressedOpacity});
   }
 `;
 
@@ -101,6 +103,8 @@ export type InteractableBaseProps = Polymorphic.ExtendableProps<
   {
     /** Apply class names to the outer container. */
     className?: string;
+    /** Apply inline styles to the inner container. */
+    contentStyle?: React.CSSProperties;
     focusable?: boolean;
     /** Background color of the overlay (element being interacted with). */
     background: ThemeVars.Color;
@@ -156,6 +160,8 @@ export const Interactable: InteractableComponent = forwardRef<
       borderColor = 'transparent',
       borderWidth = 100,
       className,
+      contentStyle,
+      children,
       disabled,
       loading,
       pressed,
@@ -224,7 +230,11 @@ export const Interactable: InteractableComponent = forwardRef<
         disabled={disabled}
         style={interactableStyle}
         {...props}
-      />
+      >
+        <span className={contentBaseStyle} style={contentStyle}>
+          {children}
+        </span>
+      </Box>
     );
   },
 );

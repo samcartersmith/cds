@@ -1,3 +1,4 @@
+/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 /* eslint-disable react/boolean-prop-naming */
 import { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
@@ -14,10 +15,10 @@ import { Button } from '../../../buttons';
 import { ThemeProvider } from '../../../system/ThemeProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
 import { DefaultThemeProvider } from '../../../utils/test';
-import { Modal } from '../Modal';
+import { type ModalProps, Modal } from '../Modal';
 import { ModalBody } from '../ModalBody';
 import { ModalFooter } from '../ModalFooter';
-import { ModalHeader } from '../ModalHeader';
+import { type ModalHeaderProps, ModalHeader } from '../ModalHeader';
 
 const TITLE = 'Basic Modal';
 const LABELLED_BY = 'some-id';
@@ -69,15 +70,82 @@ const LoremIpsum = loremIpsumBuilder({
   TextLabel1,
 } as CreateLoremIpsumProps);
 
-const { MockModal } = modalBuilder({
-  Modal,
-  ModalBody,
-  ModalHeader,
-  ModalFooter,
-  ThemeProvider,
-  Button,
-  LoremIpsum,
-} as CreateModalProps);
+type MockModalProps = {
+  triggerRef?: React.RefObject<HTMLButtonElement>;
+  focusTrigger?: () => void;
+  onBackButtonClick?: () => void;
+};
+
+const MockModal = ({
+  onRequestClose,
+  onDidClose,
+  onBackButtonClick,
+  title = 'Basic Modal',
+  visible: externalVisible = false,
+  testID,
+  triggerRef,
+  focusTrigger,
+  accessibilityLabelledBy,
+  accessibilityLabel,
+  backAccessibilityLabel,
+  backAccessibilityHint,
+  closeAccessibilityLabel,
+  closeAccessibilityHint,
+}: Partial<ModalProps & MockModalProps & ModalHeaderProps>) => {
+  const [visible, setVisible] = useState(externalVisible);
+
+  const handleClose = useCallback(() => {
+    onRequestClose?.();
+    setVisible(false);
+  }, [onRequestClose]);
+
+  const handleDidClose = useCallback(() => {
+    onDidClose?.();
+    focusTrigger?.();
+  }, [onDidClose, focusTrigger]);
+
+  return (
+    <>
+      <Button ref={triggerRef} onClick={() => setVisible(true)} testID="modal-trigger">
+        Open Modal
+      </Button>
+      <Modal
+        disablePortal
+        accessibilityLabel={accessibilityLabel}
+        accessibilityLabelledBy={accessibilityLabelledBy}
+        onDidClose={handleDidClose}
+        onRequestClose={handleClose}
+        testID={testID}
+        visible={visible}
+      >
+        <ModalHeader
+          backAccessibilityHint={backAccessibilityHint}
+          backAccessibilityLabel={backAccessibilityLabel}
+          closeAccessibilityHint={closeAccessibilityHint}
+          closeAccessibilityLabel={closeAccessibilityLabel}
+          onBackButtonClick={onBackButtonClick}
+          title={title}
+        />
+        <ModalBody>
+          <LoremIpsum />
+        </ModalBody>
+        <ModalFooter
+          primaryAction={
+            <Button onClick={() => setVisible(false)} testID="modal-footer-save">
+              Save
+            </Button>
+          }
+          secondaryAction={
+            <Button onClick={() => setVisible(false)} variant="secondary">
+              Cancel
+            </Button>
+          }
+          testID="modal-footer"
+        />
+      </Modal>
+    </>
+  );
+};
 
 describe('Modal', () => {
   beforeEach(() => {
