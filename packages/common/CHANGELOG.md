@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 7.7.2 ((3/10/2025, 08:14 AM PST))
+
+#### 🐞 Fixes
+
+- Fix colorToSpectrumAlias utilty falsely transforming red to gray. [[#3702](https://github.cbhq.net/frontend/cds/pull/3702)]
+
 ## 7.7.1 ((3/4/2025, 02:45 PM PST))
 
 This is an artificial version bump with no new change.

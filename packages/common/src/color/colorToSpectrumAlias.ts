@@ -32,7 +32,7 @@ export const colorToSpectrumAlias = (
   const hslColor = hsl(color);
   const hue = Math.round(hslColor.h);
   if (isGray(hslColor)) return 'gray100';
-  if (hue === 345 || between(hue, 0, 14)) return `red${step}` as const;
+  if (hue >= 345 || between(hue, 0, 14)) return `red${step}` as const;
   if (between(hue, 15, 35)) return `orange${step}` as const;
   if (between(hue, 36, 80)) return `yellow${step}` as const;
   if (between(hue, 81, 180)) return `green${step}` as const;
