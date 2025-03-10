@@ -35,6 +35,7 @@ export default function NavbarNavLink({
         as={Link}
         background="bgSecondary"
         borderRadius={1000}
+        borderWidth={0}
         color="fg"
         font="headline"
         hoverColor="fg"
@@ -54,6 +55,7 @@ export default function NavbarNavLink({
       as={Link}
       background="bgSecondary"
       borderRadius={1000}
+      borderWidth={0}
       to={toUrl}
       {...((activeBasePath || activeBaseRegex) && {
         isActive: (_: unknown, location: Location) =>
