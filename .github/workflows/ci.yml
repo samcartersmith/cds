@@ -63,6 +63,23 @@ jobs:
           yarn nx affected --target=test
           yarn nx affected --target=audit-a11y
 
+  typecheck:
+    name: Typecheck
+    runs-on: [medium, amd64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100 # TODO: This needs to include the merge-base
+      - uses: ./.github/actions/setup
+      - name: Typecheck (All)
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          yarn nx run-many --target=typecheck
+      - name: Typecheck (Affected)
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          yarn nx affected --target=typecheck
+
   storybook-a11y:
     if: ${{ github.event_name == 'pull_request' }}
     name: Storybook a11y
