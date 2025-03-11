@@ -6,9 +6,11 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(fileURLToPath(import.meta.url));
 
 // Edit the values below to configure the audit
-const OLD = 'web';
-const NEW = 'cds-web2';
+const OLD_PACKAGE = 'web';
+const NEW_PACKAGE = 'cds-web2';
+const RESULTS_FILE = 'missing-files.json';
 
+// NOTE: Files in __figma__ directories are automatically whitelisted
 const WHITE_LIST = [
   '/typography/TextTitle4.ts',
   '/typography/TextTitle3.ts',
@@ -86,31 +88,31 @@ const WHITE_LIST = [
   '/overlays/alertStyles.ts',
 ];
 
-const WHITE_LIST_LOWERCASE = WHITE_LIST.map((s) => s.toLowerCase());
+const whitelistLowercase = WHITE_LIST.map((s) => s.toLowerCase());
 
-const oldPackagePath = path.resolve(root, `packages/${OLD}/src`);
-const newPackagePath = path.resolve(root, `packages/${NEW}/src`);
+const oldPackagePath = path.resolve(root, `packages/${OLD_PACKAGE}/src`);
 const oldFiles = globSync(`${oldPackagePath}/**/*`, { nodir: true });
+const relativeOldFiles = oldFiles.map((p) => p.replace(oldPackagePath, ''));
+const relativeOldFilesLowerCase = relativeOldFiles.map((p) => p.toLowerCase());
+
+const newPackagePath = path.resolve(root, `packages/${NEW_PACKAGE}/src`);
 const newFiles = globSync(`${newPackagePath}/**/*`, { nodir: true });
-const normalizedOldFiles = oldFiles.map((file) => file.replace(oldPackagePath, ''));
-const normalizedOldFilesLowerCase = oldFiles.map((file) =>
-  file.replace(oldPackagePath, '').toLowerCase(),
-);
-const normalizedNewFiles = newFiles.map((file) => file.replace(newPackagePath, ''));
-const normalizedNewFilesLowerCase = newFiles.map((file) =>
-  file.replace(newPackagePath, '').toLowerCase(),
-);
-const missingFilesIndexes = normalizedOldFilesLowerCase
+const relativeNewFiles = newFiles.map((p) => p.replace(newPackagePath, ''));
+const relativeNewFilesLowerCase = relativeNewFiles.map((p) => p.toLowerCase());
+
+// Finds all old filenames that are not present in the new library or whitelisted
+const missingFiles = relativeOldFilesLowerCase
   .map((file, index) =>
-    !normalizedNewFilesLowerCase.includes(file) &&
-    !WHITE_LIST_LOWERCASE.includes(file) &&
+    !relativeNewFilesLowerCase.includes(file) &&
+    !whitelistLowercase.includes(file) &&
     !file.includes('__figma__')
       ? index
       : undefined,
   )
-  .filter((item) => item !== undefined);
-const missingFiles = missingFilesIndexes.map((index) => normalizedOldFiles[index]);
-const resultsPath = path.resolve(root, 'missing-files.json');
+  .filter((item) => item !== undefined)
+  .map((index) => relativeOldFiles[index]);
+
+const resultsPath = path.resolve(root, RESULTS_FILE);
 const results = JSON.stringify(missingFiles, null, 2);
 
 fs.writeFileSync(resultsPath, results);
