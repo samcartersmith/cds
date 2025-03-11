@@ -86,6 +86,13 @@ const WHITE_LIST = [
   '/overlays/tooltipStyles.ts',
   '/overlays/toastStyles.tsx',
   '/overlays/alertStyles.ts',
+
+  '/color/useSpectrumClassName.ts',
+  '/color/usePaletteValueToRgbaString.ts',
+  '/color/usePaletteToCssVars.ts',
+  '/color/useAccessibleForegroundGradient.ts',
+  '/color/useAccessibleForeground.ts',
+  '/color/__tests__/usePaletteToCssVars.test.tsx',
 ];
 
 const whitelistLowercase = WHITE_LIST.map((s) => s.toLowerCase());

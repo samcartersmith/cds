@@ -14,4 +14,4 @@ export * from './FloatingAssetCard';
 export * from './NudgeCard';
 export * from './UpsellCard';
 // Phoenix cards
-// export * from './ContentCard';
+export * from './ContentCard';

@@ -15,7 +15,6 @@ import { NudgeCard } from '@cbhq/cds-web2/cards/NudgeCard';
 import { UpsellCard } from '@cbhq/cds-web2/cards/UpsellCard';
 import * as CDSCells from '@cbhq/cds-web2/cells';
 import * as CDSChips from '@cbhq/cds-web2/chips';
-import { TabbedChips } from '@cbhq/cds-web2/chips/TabbedChips';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import * as CDSControls from '@cbhq/cds-web2/controls';
 import * as CDSDots from '@cbhq/cds-web2/dots';
@@ -65,7 +64,6 @@ const ReactLiveScope: Record<string, unknown> = {
   // overlays
   ...CDSOverlays,
   // navigation
-  TabbedChips,
   ...CDSTabs,
   PageHeader,
   // typography

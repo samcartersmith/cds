@@ -71,11 +71,17 @@ for (const oldBarrelFile of oldFiles) {
       const message = added || nextChanged ? value.slice(0, -1) : value;
       if (added) {
         changed = true;
-        return `\n+++ ${message}`;
+        return message
+          .split('\n')
+          .map((s) => `\n+++ ${s}`)
+          .join('');
       }
       if (removed) {
         changed = true;
-        return `\n--- ${message}`;
+        return message
+          .split('\n')
+          .map((s) => `\n--- ${s}`)
+          .join('');
       }
       return `\n${message}`;
     })
