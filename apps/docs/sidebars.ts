@@ -77,7 +77,7 @@ const sidebars: SidebarsConfig = {
             { type: 'doc', id: 'components/layout/HStack/hStack', label: 'HStack' },
             {
               type: 'doc',
-              id: 'components/layout/multiContentModule',
+              id: 'components/layout/MultiContentModule/multiContentModule',
               label: 'MultiContentModule',
             },
             { type: 'doc', id: 'components/layout/Spacer/spacer', label: 'Spacer' },
@@ -88,8 +88,8 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Typography',
           items: [
-            { type: 'doc', id: 'components/typography/link', label: 'Link' },
-            { type: 'doc', id: 'components/typography/tag', label: 'Tag' },
+            { type: 'doc', id: 'components/typography/Link/link', label: 'Link' },
+            { type: 'doc', id: 'components/typography/Tag/tag', label: 'Tag' },
             { type: 'doc', id: 'components/typography/Text/text', label: 'Text' },
           ],
         },
@@ -280,7 +280,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'doc',
-              id: 'components/navigation/pageHeader',
+              id: 'components/navigation/PageHeader/pageHeader',
               label: 'PageHeader',
             },
             {

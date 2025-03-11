@@ -1,0 +1,51 @@
+---
+id: tag
+title: Tag
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import mobilePropsToc from ':docgen/cds-mobile2/tag/Tag/toc-props';
+import WebPropsTable from './_webPropsTable.mdx';
+import webPropsToc from ':docgen/cds-web2/tag/Tag/toc-props';
+
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
+import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
+import { VStack } from '@cbhq/cds-web2/layout';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="Tag"
+    webMetadata={{
+      import: "import { Tag } from '@cbhq/cds-web2/tag/Tag'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tag/Tag.tsx',
+      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-tag--default',
+      figma: "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-975"
+    }}
+    mobileMetadata={{
+      import: "import { Tag } from '@cbhq/cds-mobile/tag/Tag';",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tag/Tag.tsx',
+      figma: "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-975"
+    }}
+    banner={<DefaultBanner />}
+  />
+
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

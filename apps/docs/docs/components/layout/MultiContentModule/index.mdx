@@ -1,0 +1,52 @@
+---
+id: multiContentModule
+title: MultiContentModule
+platform_switcher_options: { web: true, mobile: true }
+hide_title: true
+---
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import mobilePropsToc from ':docgen/cds-mobile2/multi-content-module/MultiContentModule/toc-props';
+import WebPropsTable from './_webPropsTable.mdx';
+import webPropsToc from ':docgen/cds-web2/multi-content-module/MultiContentModule/toc-props';
+
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
+import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
+import { VStack } from '@cbhq/cds-web2/layout';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="MultiContentModule"
+    description="A versatile, generic container designed to streamline user experiences across critical identity-related CUJs such as Session Expired, Two-Factor Authentication (2FA) codes, Login, Account Recovery, and Registration. It is built to accommodate a range of content, including an illustration, input fields (text inputs, list cells, etc.), and an action button, ensuring a cohesive and brand-consistent user interface"
+    webMetadata={{
+      import: "import { MultiContentModule } from '@cbhq/cds-web2/multi-content-module/MultiContentModule'",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/multi-content-module/MultiContentModule.tsx',
+      storybook: "https://cds-storybook.cbhq.net/?path=/story/core-components-multicontentmodule--default",
+      figma: "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=14437-7403"
+    }}
+    mobileMetadata={{
+      import: "import { MultiContentModule } from '@cbhq/cds-mobile/multi-content-module/MultiContentModule';",
+      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/multi-content-module/MultiContentModule.tsx',
+      figma: "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=14437-7403"
+    }}
+    banner={<DefaultBanner />}
+  />
+
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    webExamplesToc={webExamplesToc}
+    mobileExamplesToc={mobileExamplesToc}
+    webPropsToc={webPropsToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>

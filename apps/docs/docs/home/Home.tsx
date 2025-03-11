@@ -84,7 +84,7 @@ const componentCards: ComponentCardProps[] = [
     bannerLightOverlaySrc: '/img/componentCardBanners/typography_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/typography_dark.svg',
     bannerDarkOverlaySrc: '/img/componentCardBanners/typography_dark_hover.svg',
-    to: '/components/typography/link',
+    to: '/components/typography/Link',
   },
   {
     name: 'Inputs',
@@ -147,7 +147,7 @@ const componentCards: ComponentCardProps[] = [
     bannerLightOverlaySrc: '/img/componentCardBanners/navigation_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/navigation_dark.svg',
     bannerDarkOverlaySrc: '/img/componentCardBanners/navigation_dark_hover.svg',
-    to: 'components/navigation/pageHeader',
+    to: 'components/navigation/PageHeader',
   },
   {
     name: 'Graphs',

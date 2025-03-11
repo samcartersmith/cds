@@ -86,6 +86,8 @@ module.exports = {
     'layout/Spacer',
     'layout/VStack',
     'loaders/Spinner',
+    'multi-content-module/MultiContentModule',
+    'page/PageHeader',
     'media/Avatar',
     'media/RemoteImage',
     'numpad/Numpad',
@@ -99,6 +101,8 @@ module.exports = {
     'tabs/TabIndicator',
     'tabs/TabLabel',
     'tabs/TabNavigation',
+    'tag/Tag',
+    'typography/Link',
     'typography/Text',
   ],
 };
