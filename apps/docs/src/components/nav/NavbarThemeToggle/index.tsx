@@ -4,6 +4,7 @@ import type { Property } from 'csstype';
 import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';
 import { Dropdown } from '@cbhq/cds-web2/dropdown';
 import { Box, VStack } from '@cbhq/cds-web2/layout';
+import { Pressable } from '@cbhq/cds-web2/system';
 import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
 
 import {
@@ -167,7 +168,7 @@ const NavbarThemeToggle = () => {
       contentPosition={{ gap: 0.5, skid: 0 }}
       value={currentColor}
     >
-      <Box
+      <Pressable
         alignContent="center"
         alignItems="center"
         aria-label="Current theme color"
@@ -180,7 +181,7 @@ const NavbarThemeToggle = () => {
         width={40}
       >
         <Box background="bgPrimary" borderRadius={1000} padding={1} />
-      </Box>
+      </Pressable>
     </Dropdown>
   );
 };
