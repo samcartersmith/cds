@@ -38,6 +38,15 @@ const interactableStyle = css`
     outline-color: var(--color-bgPrimary);
     outline-offset: 1px;
   }
+  // turn off control input opacity for hidden control in interactable
+  &:active,
+  &:visited,
+  &:focus,
+  &:hover {
+    > input:first-of-type {
+      opacity: 0;
+    }
+  }
 `;
 
 export type ControlProps = FilteredHTMLAttributes<

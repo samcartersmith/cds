@@ -3,27 +3,29 @@ import React from 'react';
 import { BrowserRouter as Router, Link as RRLink } from 'react-router-dom';
 import { noop } from '@cbhq/cds-utils';
 
-import * as Type from '../index';
 import { Link } from '../Link';
+import { Text } from '../Text';
 
 export const Default = () => (
   <div>
-    <Link to="https://www.google.com/">Default</Link>
+    <Link href="https://www.google.com/">Default</Link>
     <br />
     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-    <Link onClick={noop}>As a button</Link>
+    <Link as="button" onClick={noop}>
+      As a button
+    </Link>
   </div>
 );
 
 export const VariantBody = () => (
-  <Link font="body" to="https://www.google.com/">
+  <Link font="body" href="https://www.google.com/">
     Body
   </Link>
 );
 
 export const NegativeColor = () => (
   <div>
-    <Link color="fgNegative" font="headline" to="https://www.google.com/">
+    <Link color="fgNegative" font="headline" href="https://www.google.com/">
       Negative
     </Link>
   </div>
@@ -31,20 +33,20 @@ export const NegativeColor = () => (
 
 export const NoUnderline = () => (
   <div>
-    <Link to="https://www.google.com/" underline={false}>
+    <Link href="https://www.google.com/" underline={false}>
       Default
     </Link>
     <br />
     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-    <Link onClick={noop} underline={false}>
+    <Link as="button" onClick={noop} underline={false}>
       As a button
     </Link>
     <br />
-    <Link font="body" to="https://www.google.com/" underline={false}>
+    <Link font="body" href="https://www.google.com/" underline={false}>
       Body
     </Link>
     <br />
-    <Link color="fgNegative" font="headline" to="https://www.google.com/" underline={false}>
+    <Link color="fgNegative" font="headline" href="https://www.google.com/" underline={false}>
       Negative
     </Link>
   </div>
@@ -52,44 +54,44 @@ export const NoUnderline = () => (
 
 export const InAParagraph = () => (
   <div>
-    <Type.TextBody as="p">
+    <Text as="p" font="body">
       This is a paragraph, and we can include inline links{' '}
-      <Link to="https://www.coinbase.com">with underlines</Link> by default. You dont have to do
+      <Link href="https://www.coinbase.com">with underlines</Link> by default. You dont have to do
       anything to get them!
-    </Type.TextBody>
-    <Type.TextBody as="p">
+    </Text>
+    <Text as="p" font="body">
       {`This one however... It is a paragraph, but we can still set underline="false" to opt out of
-      the a11y support`}
-      <Link to="https://www.coinbase.com" underline={false}>
+      the a11y support `}
+      <Link href="https://www.coinbase.com" underline={false}>
         without underlines
-      </Link>
+      </Link>{' '}
       . But why? Please dont do this
-    </Type.TextBody>
+    </Text>
   </div>
 );
 
 export const InheritParentTextStyles = () => (
   <div>
-    <Type.TextBody as="span">
-      Go here: <Link to="https://www.coinbase.com">Inherited</Link>
-    </Type.TextBody>
+    <Text as="span" font="body">
+      Go here: <Link href="https://www.coinbase.com">Inherited</Link>
+    </Text>
   </div>
 );
 
 export const DifferentTextStyle = () => (
   <div>
-    <Type.TextBody as="span">
+    <Text as="span" font="body">
       Go here:{' '}
-      <Link font="title3" to="https://www.coinbase.com">
+      <Link font="title3" href="https://www.coinbase.com">
         Title3
       </Link>
-    </Type.TextBody>
+    </Text>
   </div>
 );
 
 export const OpenWindowInExistingTab = () => (
   <div>
-    <Link openInNewWindow font="title1" to="https://www.google.com/">
+    <Link font="title1" href="https://www.google.com/" target="_blank">
       Default
     </Link>
   </div>
@@ -97,7 +99,7 @@ export const OpenWindowInExistingTab = () => (
 
 export const SetsRelToNorefferer = () => (
   <div>
-    <Link font="title2" rel="noreferrer" to="https://www.google.com/">
+    <Link font="title2" href="https://www.google.com/" rel="noreferrer">
       Default
     </Link>
   </div>
@@ -105,7 +107,7 @@ export const SetsRelToNorefferer = () => (
 
 export const SetsRelToNoopener = () => (
   <div>
-    <Link font="title3" rel="noopener" to="https://www.google.com/">
+    <Link font="title3" href="https://www.google.com/" rel="noopener">
       Default
     </Link>
   </div>
@@ -113,25 +115,16 @@ export const SetsRelToNoopener = () => (
 
 export const OnClick = () => (
   <div>
-    <Link font="headline" onClick={noop} rel="noopener" to="#tagname">
+    <Link font="headline" href="#tagname" onClick={noop} rel="noopener">
       Link onClick
     </Link>
   </div>
 );
 
-const RenderContainerExample = (props: React.HTMLAttributes<HTMLAnchorElement>) => (
-  <RRLink {...props} to="/invoices" />
-);
 export const RenderContainer = () => (
   <div>
     <Router>
-      <Link
-        color="fgPrimary"
-        font="body"
-        onClick={noop}
-        renderContainer={RenderContainerExample}
-        to="#tagname"
-      >
+      <Link as={RRLink} color="fgPrimary" font="body" onClick={noop} to="/invoices">
         Test renderContainer
       </Link>
     </Router>
@@ -141,13 +134,7 @@ export const RenderContainer = () => (
 export const RenderContainerColor = () => (
   <div>
     <Router>
-      <Link
-        color="fgNegative"
-        font="label1"
-        onClick={noop}
-        renderContainer={RenderContainerExample}
-        to="#tagname"
-      >
+      <Link as={RRLink} color="fgNegative" font="label1" onClick={noop} to="/invoices">
         Test renderContainer
       </Link>
     </Router>

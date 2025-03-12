@@ -3,12 +3,12 @@ import { useToggler } from '@cbhq/cds-common2';
 import { Modal } from '@cbhq/cds-web2/overlays/modal/Modal';
 import { ModalBody } from '@cbhq/cds-web2/overlays/modal/ModalBody';
 import { ModalHeader } from '@cbhq/cds-web2/overlays/modal/ModalHeader';
-import { Link, LinkProps } from '@cbhq/cds-web2/typography/Link';
+import { type LinkBaseProps, Link } from '@cbhq/cds-web2/typography/Link';
 
 export type ModalLinkProps = {
   children: string;
   content: React.ReactElement;
-} & Omit<LinkProps, 'content'>;
+} & Omit<LinkBaseProps, 'content'>;
 
 /**
  * Gives us the ability to determine if a component is child of Modal.

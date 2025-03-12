@@ -1,167 +1,122 @@
-import React, { forwardRef, memo, useCallback, useMemo, useRef } from 'react';
+import React, { forwardRef, memo, useRef } from 'react';
 import { css, cx } from '@linaria/core';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 
-import { type TextProps, Text } from './Text';
+import type { Polymorphic } from '../core/polymorphism';
+import { type PressableBaseProps, Pressable } from '../system/Pressable';
 
-export type LinkBaseProps = {
-  /** URL that this link goes to when pressed. */
-  to?: string;
-  /**
-   * If true, it opens the link in a new window.
-   * If false, it replaces the current screen with the link
-   * @default false
-   */
-  openInNewWindow?: boolean;
-  /** Callback for custom Link component */
-  renderContainer?: (props: React.HTMLAttributes<HTMLAnchorElement>) => JSX.Element;
-  /**
-   * Set text decoration to underline.
-   * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)
-   * @default true
-   */
-  underline?: boolean;
-};
+import { Text } from './Text';
 
-export type LinkProps = LinkBaseProps & Omit<TextProps<'a'>, 'underline'>;
+export const linkDefaultElement = 'a';
 
-export const linkClassName = 'cds-link';
+export type LinkDefaultElement = typeof linkDefaultElement;
+
+export type LinkBaseProps = Polymorphic.ExtendableProps<
+  Omit<PressableBaseProps, 'background'>,
+  {
+    background?: PressableBaseProps['background'];
+    /**
+     * @deprecated Use target="_blank" instead.
+     *
+     * Determines whether the link opens in a new window.
+     * - `true`: Opens the link in a new window.
+     * - `false`: Replaces the current screen with the link.
+     *
+     * This prop is only applicable when rendering the `Link` as an anchor (`as="a"`).
+     * @default false
+     */
+    openInNewWindow?: boolean;
+    /** Use CoinbaseMono font */
+    mono?: boolean;
+    /**
+     * Set text decoration to underline.
+     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+     * @default true
+     */
+    underline?: boolean;
+  }
+>;
+
+export type LinkProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  LinkBaseProps
+>;
+
+type LinkComponent = (<AsComponent extends React.ElementType = LinkDefaultElement>(
+  props: LinkProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
 const baseStyle = css`
-  text-decoration: none;
   cursor: pointer;
-  background: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  &[data-underline='true'] {
-    text-decoration: underline;
+
+  // remove pressable opacity styles
+  &:hover,
+  &:active,
+  &[data-active='true'],
+  &[data-loading='true'] {
+    > * {
+      opacity: 1;
+    }
   }
 
   &:focus-visible {
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: var(--color-bgPrimary);
+    outline-offset: 0;
     border-radius: var(--borderRadius-100);
   }
 `;
 
-const defaultButtonStyle = css`
-  // Reset to browser defaults for button styling if font is not defined
-  font-family: revert;
-  font-size: revert;
-  line-height: revert;
-  letter-spacing: revert;
-  font-weight: revert;
-`;
+export const Link: LinkComponent = memo(
+  forwardRef<React.ReactElement<LinkBaseProps>, LinkBaseProps>(
+    <AsComponent extends React.ElementType>(
+      {
+        renderContainer,
+        // Text props
+        children,
+        color = 'fgPrimary',
+        font = 'inherit',
+        mono,
+        underline = true,
+        // Pressable props
+        as,
+        background = 'transparent',
+        className,
+        display = 'inline-flex',
+        borderWidth = 0,
+        margin = 0,
+        padding = 0,
+        noScaleOnPress = true,
+        openInNewWindow = false,
+        ...props
+      }: LinkProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const Component = (as ?? linkDefaultElement) satisfies React.ElementType;
+      const isAnchor = Component === 'a';
 
-export const Link = memo(
-  forwardRef(function Link(
-    {
-      accessibilityLabel,
-      children,
-      to,
-      testID,
-      href,
-      mono,
-      className,
-      underline = true,
-      disabled,
-      display = 'inline-flex',
-      color = 'fgPrimary',
-      font = 'inherit',
-      openInNewWindow = false,
-      rel,
-      renderContainer,
-      ...props
-    }: LinkProps,
-    ref: React.ForwardedRef<HTMLAnchorElement>,
-  ) {
-    const linkRef = useRef(null);
-    const mergedRef = useMergeRefs(ref, linkRef);
-    const isAnchor = to || href;
+      const linkRef = useRef(null);
+      const mergedRef = useMergeRefs(ref, linkRef);
 
-    const anchorProps = useMemo(
-      () =>
-        isAnchor
-          ? {
-              href: to ?? href,
-              rel: openInNewWindow ? 'noopener noreferrer' : rel, // Set noopener noreferrer when openInNewWindow is true
-              target: openInNewWindow ? '_blank' : undefined,
-            }
-          : {},
-      [isAnchor, to, href, openInNewWindow, rel],
-    );
-
-    const enhancedProps = useMemo(
-      () => ({
-        'aria-label': accessibilityLabel,
-        'data-testid': testID,
-        'data-underline': underline,
-        className: cx(baseStyle, linkClassName, className),
-        disabled,
-        ref: mergedRef,
-        href: to ?? href,
-        rel,
-        ...anchorProps,
-        children: (
-          <Text color={color} display={display} font={font} mono={mono} underline={underline}>
+      return (
+        <Pressable
+          ref={mergedRef}
+          as={Component}
+          background={background}
+          borderWidth={borderWidth}
+          className={cx(baseStyle, className)}
+          color={color}
+          display={display}
+          margin={margin}
+          noScaleOnPress={noScaleOnPress}
+          padding={padding}
+          target={isAnchor && openInNewWindow ? '_blank' : undefined}
+          {...props}
+        >
+          <Text as="span" color="currentColor" font={font} mono={mono} underline={underline}>
             {children}
           </Text>
-        ),
-        ...props,
-      }),
-      [
-        accessibilityLabel,
-        anchorProps,
-        children,
-        className,
-        color,
-        disabled,
-        display,
-        font,
-        href,
-        mergedRef,
-        mono,
-        props,
-        rel,
-        testID,
-        to,
-        underline,
-      ],
-    );
-
-    const memoizedRenderContainer = useCallback(
-      (props: React.HTMLAttributes<HTMLAnchorElement>) =>
-        renderContainer ? renderContainer(props) : undefined,
-      [renderContainer],
-    );
-
-    return renderContainer ? (
-      memoizedRenderContainer(enhancedProps)
-    ) : (
-      <Text
-        ref={ref}
-        accessibilityLabel={accessibilityLabel}
-        aria-disabled={disabled ? true : undefined}
-        as={isAnchor ? 'a' : 'button'}
-        className={cx(
-          baseStyle,
-          linkClassName,
-          !isAnchor && !font && defaultButtonStyle,
-          className,
-        )}
-        color={color}
-        data-underline={underline}
-        disabled={disabled}
-        display={display}
-        font={font}
-        mono={mono}
-        testID={testID}
-        {...anchorProps}
-        {...props}
-      >
-        {children}
-      </Text>
-    );
-  }),
+        </Pressable>
+      );
+    },
+  ),
 );

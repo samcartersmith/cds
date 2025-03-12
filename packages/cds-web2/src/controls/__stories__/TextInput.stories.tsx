@@ -216,7 +216,7 @@ export const EndContent = function EndContent() {
       end={
         <HStack paddingEnd={1}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <Link font="headline" to="">
+          <Link font="headline" href="">
             Hello
           </Link>
         </HStack>
@@ -273,7 +273,7 @@ export const CompactInputEnd = function CompactInputEnd() {
       end={
         <HStack paddingEnd={1}>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <Link font="headline" to="">
+          <Link font="headline" href="">
             Hello
           </Link>
         </HStack>
@@ -489,7 +489,7 @@ export const CopyTextInput = function CopyTextInput() {
         /* eslint-disable jsx-a11y/anchor-is-valid */
         end={
           <HStack>
-            <Link color={variantColorMap[variant]} onClick={handleOnClick}>
+            <Link as="button" color={variantColorMap[variant]} onClick={handleOnClick}>
               {copied ? 'copied' : 'copy'}
             </Link>
             <InputIcon name="visibleActive" />

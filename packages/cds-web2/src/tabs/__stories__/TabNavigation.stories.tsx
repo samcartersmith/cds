@@ -239,7 +239,7 @@ export const AccessibilityTest: Story = () => {
           This is tab one
         </TextTitle1>
         <TextBody as="p">
-          <Link to="/">This is the body</Link> of tab one. You are going to love it
+          <Link href="/">This is the body</Link> of tab one. You are going to love it
         </TextBody>
         <TextBody as="p">{loremIpsum}</TextBody>
       </MockTabPanel>
@@ -248,7 +248,7 @@ export const AccessibilityTest: Story = () => {
           Here we have tab two
         </TextTitle1>
         <TextBody as="p">
-          And look, <Link to="/">this another link</Link> in the body of tab one. You are going to
+          And look, <Link href="/">this another link</Link> in the body of tab one. You are going to
           love it
         </TextBody>
         <TextBody as="p">
@@ -260,7 +260,7 @@ export const AccessibilityTest: Story = () => {
           Heyooo, tab three!
         </TextTitle1>
         <TextBody as="p">
-          Again, we can put a link like <Link to="/">this another link</Link> in the body of tab
+          Again, we can put a link like <Link href="/">this another link</Link> in the body of tab
           one. You are going to love it
         </TextBody>
         <TextBody as="p">

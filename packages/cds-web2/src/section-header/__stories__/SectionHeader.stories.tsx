@@ -125,7 +125,7 @@ export const Examples = () => {
         balance={null}
         end={
           <Text as="label" font="headline">
-            <Link openInNewWindow to="http://www.coinbase.com">
+            <Link href="http://www.coinbase.com" target="_blank">
               See all
             </Link>
           </Text>

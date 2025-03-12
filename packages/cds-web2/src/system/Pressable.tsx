@@ -39,11 +39,17 @@ const scaledDownStyle = css`
 const baseStyle = css`
   &[data-active='true'] {
     background-color: var(${interactablePressedBackground});
+    > * {
+      opacity: var(${interactablePressedOpacity});
+    }
   }
 
   &[data-loading='true'] {
     opacity: 1;
     background-color: var(${interactablePressedBackground});
+    > * {
+      opacity: var(${interactablePressedOpacity});
+    }
   }
 `;
 
@@ -83,7 +89,6 @@ export const Pressable: PressableComponent = forwardRef<
     {
       as,
       className,
-      contentStyle,
       disabled,
       loading,
       onClickCapture,
@@ -223,14 +228,6 @@ export const Pressable: PressableComponent = forwardRef<
       [disabled, loading, focusable, supportsDisabled, nativeTabbable, tabIndex],
     );
 
-    const contentBaseStyle = useMemo(
-      () => ({
-        ...((active || loading) && { opacity: `var(${interactablePressedOpacity})` }),
-        ...contentStyle,
-      }),
-      [active, contentStyle, loading],
-    );
-
     return (
       <Interactable
         ref={elementRef}
@@ -241,7 +238,6 @@ export const Pressable: PressableComponent = forwardRef<
           transparentWhilePressed && transparentActiveStyle,
           className,
         )}
-        contentStyle={contentBaseStyle}
         data-active={active || undefined}
         data-loading={loading || undefined}
         loading={loading}

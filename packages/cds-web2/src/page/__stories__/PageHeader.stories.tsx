@@ -84,7 +84,7 @@ const exampleProps = {
   ),
   end2: (
     <HStack alignItems="center" gap={2}>
-      <Link to="https://cds.cbhq.net/components/link">
+      <Link href="https://cds.cbhq.net/components/link">
         <Text as="p" color="fgPrimary" font="headline">
           Help
         </Text>
