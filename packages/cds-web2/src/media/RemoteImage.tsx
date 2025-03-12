@@ -28,11 +28,15 @@ const hexagonOverflowClass = css`
 `;
 
 const fallbackStyle = css`
-  background-image: url(${remoteImageLightFallbackSrc});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  @media (prefers-color-scheme: dark) {
+
+  .light & {
+    background-image: url(${remoteImageLightFallbackSrc});
+  }
+
+  .dark & {
     background-image: url(${remoteImageDarkFallbackSrc});
   }
 `;
