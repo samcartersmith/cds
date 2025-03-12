@@ -147,6 +147,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       style={{
         flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
         alignItems: 'flex-start',
+        gap: theme.space[1],
       }}
       {...props}
     >
@@ -157,7 +158,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
             <View style={iconWrapperStyles}>
               <ControlIcon {...controlIconProps} pressed={pressed} />
             </View>
-            <Spacer horizontal={1} />
             <TextBody
               animated
               color={checked || indeterminate ? 'fg' : 'fgMuted'}

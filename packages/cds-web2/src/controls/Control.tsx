@@ -7,7 +7,6 @@ import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';
-import { Spacer } from '../layout/Spacer';
 import { type InteractableBaseProps, Interactable } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
 import { Text } from '../typography/Text';
@@ -134,10 +133,8 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         disabled={disabled || readOnly}
         testID={testID ? `${testID}-parent` : undefined}
       >
-        <>
-          <input className={cx(inputBaseStyle, pointerStyle)} {...inputProps} />
-          {children}
-        </>
+        <input className={cx(inputBaseStyle, pointerStyle)} {...inputProps} />
+        {children}
       </Interactable>
     ),
     [
@@ -156,12 +153,11 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   const InternalLabel = useMemo(
     () => (
       <label className={pointerStyle} htmlFor={inputId}>
-        <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
+        <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'} gap={1}>
           {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
           <Box alignItems="center" height="var(--lineHeight-body)" role="presentation">
             {iconNode}
           </Box>
-          <Spacer horizontal={1} />
           <Text
             as="span"
             color={checked ? 'fg' : 'fgMuted'}
