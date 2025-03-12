@@ -9,8 +9,6 @@ import { Icon } from '../icons/Icon';
 import { type ControlProps, Control } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
-const checkboxBorderWidth = 2;
-
 const focusRingStyle = css`
   position: relative;
   /* if we use the focus ring we need to turn off the browser stylesheet outline */
@@ -36,7 +34,8 @@ const checkbox = css`
   align-items: center;
   justify-content: center;
 
-  border: ${checkboxBorderWidth}px solid;
+  border-style: solid;
+  border-width: var(--borderWidth-100);
 `;
 
 export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps;

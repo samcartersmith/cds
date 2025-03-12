@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
+import Svg, { Path, Rect, SvgProps } from 'react-native-svg';
 import { SharedProps } from '@cbhq/cds-common2';
 import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBaseProps';
@@ -7,13 +8,22 @@ import { entries } from '@cbhq/cds-utils';
 import { isDevelopment } from '@cbhq/cds-utils/env';
 
 import { useTheme } from '../hooks/useTheme';
-import { Icon } from '../icons/Icon';
-import { Group } from '../layout';
+import { Box, Group } from '../layout';
 import { Interactable } from '../system/Interactable';
 
 import { Control, ControlIconProps, ControlProps } from './Control';
 
 export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
+
+const dotSvg = (
+  <Svg fill="none" height="20" viewBox="0 0 20 20" width="20">
+    <Rect height="19" rx="9.5" stroke="currentColor" width="19" x="0.5" y="0.5" />
+    <Path
+      d="M9.98877 16.9952C13.8548 16.9952 16.9888 13.8612 16.9888 9.99518C16.9888 6.12918 13.8548 2.99518 9.98877 2.99518C6.12278 2.99518 2.98877 6.12918 2.98877 9.99518C2.98877 13.8612 6.12278 16.9952 9.98877 16.9952Z"
+      fill="currentColor"
+    />
+  </Svg>
+);
 
 const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
   pressed,
@@ -31,7 +41,7 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
       background="bg"
       borderColor={checked ? 'bgPrimary' : 'bgLineHeavy'}
       borderRadius={1000}
-      borderWidth={200}
+      borderWidth={100}
       disabled={disabled}
       pressed={pressed}
       style={[
@@ -46,7 +56,9 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
       <Animated.View
         style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
       >
-        <Icon color="fgPrimary" name="dot" size="s" />
+        <Box alignItems="center" color="fgPrimary" justifyContent="center" testID="radio-icon">
+          {dotSvg}
+        </Box>
       </Animated.View>
     </Interactable>
   );

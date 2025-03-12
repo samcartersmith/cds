@@ -1,6 +1,5 @@
 import { Pressable } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
 import { TextLabel1 } from '../../typography';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
@@ -33,7 +32,7 @@ describe('Radio', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-dot-16']);
+    const icon = screen.getByTestId('radio-icon');
     expect(icon).toBeTruthy();
   });
 

@@ -5,14 +5,21 @@ import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/ty
 import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBaseProps';
 
-import { Icon } from '../icons/Icon';
-import { Group } from '../layout';
+import { Box, Group } from '../layout';
 import type { FilteredHTMLAttributes } from '../types';
 
 import { type ControlProps, Control } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
-const radioBorderWidth = 2;
+const dotSvg = (
+  <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+    <rect height="19" rx="9.5" stroke="currentColor" width="19" x="0.5" y="0.5" />
+    <path
+      d="M9.98877 16.9952C13.8548 16.9952 16.9888 13.8612 16.9888 9.99518C16.9888 6.12918 13.8548 2.99518 9.98877 2.99518C6.12278 2.99518 2.98877 6.12918 2.98877 9.99518C2.98877 13.8612 6.12278 16.9952 9.98877 16.9952Z"
+      fill="currentColor"
+    />
+  </svg>
+);
 
 const focusRingStyle = css`
   position: relative;
@@ -41,7 +48,8 @@ const baseStyle = css`
   justify-content: center;
 
   background-color: var(--color-bg);
-  border: ${radioBorderWidth}px solid;
+  border-style: solid;
+  border-width: var(--borderWidth-100);
   border-radius: var(--borderRadius-1000);
 `;
 
@@ -64,7 +72,11 @@ const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
         {...outerContainerMotionProps}
       >
         <motion.div {...innerContainerMotionProps}>
-          {checked && <Icon color="fgPrimary" name="dot" size="s" />}
+          {checked && (
+            <Box alignItems="center" color="fgPrimary" justifyContent="center">
+              {dotSvg}
+            </Box>
+          )}
         </motion.div>
       </motion.div>
     </Control>
