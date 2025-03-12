@@ -16,7 +16,6 @@ import {
   SparklineInteractiveSubHead,
 } from '@cbhq/cds-common2/types/SparklineInteractiveHeaderBaseProps';
 import { interpolateSubHeadText } from '@cbhq/cds-common2/visualizations/interpolateSubHeadText';
-import { fontScaleProps } from '@cbhq/cds-mobile2/controls/TextInput';
 import { HStack, VStack } from '@cbhq/cds-mobile2/layout';
 
 import { useSparklineInteractiveHeaderStyles } from './useSparklineInteractiveHeaderStyles';
@@ -152,7 +151,6 @@ const SparklineInteractiveHeaderStable = memo(
           pointerEvents="none"
           style={styles.label}
           testID="SparklineInteractiveHeaderLabel"
-          {...fontScaleProps}
         />
       );
 
@@ -167,7 +165,6 @@ const SparklineInteractiveHeaderStable = memo(
                 pointerEvents="none"
                 style={styles.title(defaultTitle)}
                 testID="SparklineInteractiveHeaderTitle"
-                {...fontScaleProps}
               />
             ) : (
               defaultTitle
@@ -182,7 +179,6 @@ const SparklineInteractiveHeaderStable = memo(
                 pointerEvents="none"
                 style={styles.subHeadIcon(defaultSubHead.variant)}
                 testID="SparklineInteractiveHeaderSubHeadIcon"
-                {...fontScaleProps}
               />
               <TextInput
                 ref={subHeadRef}
@@ -194,7 +190,6 @@ const SparklineInteractiveHeaderStable = memo(
                   defaultSubHead.accessoryText === undefined,
                 )}
                 testID="SparklineInteractiveHeaderSubHead"
-                {...fontScaleProps}
               />
               {!!defaultSubHead.accessoryText && (
                 <TextInput
@@ -204,7 +199,6 @@ const SparklineInteractiveHeaderStable = memo(
                   pointerEvents="none"
                   style={styles.subHeadAccessory()}
                   testID="SparklineInteractiveHeaderSubHead"
-                  {...fontScaleProps}
                 />
               )}
             </HStack>

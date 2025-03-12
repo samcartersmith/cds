@@ -62,7 +62,6 @@ export const HelperText = memo(function HelperText({
           accessibilityLabel={errorIconAccessibilityLabel}
           accessibilityRole="image"
           align={align}
-          allowFontScaling={false}
           color={color}
           dangerouslySetColor={dangerouslySetColor}
           style={fontStyles}

@@ -67,16 +67,6 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   secondary: 'bgSecondary',
 };
 
-/**
- * For all Text and TextInputs we set allowFontScaling={true} and maxFontSizeMultiplier={1}.
- * CDS handles everything above 1 and anything below 1 will use React Native's font scaling.
- * This is temporary until we run a scale project to sort out how we want CDS scale to work with dense device scales.
- */
-export const fontScaleProps = {
-  allowFontScaling: true,
-  maxFontSizeMultiplier: 1,
-} as const;
-
 export const TextInput = memo(
   forwardRef(
     (
@@ -231,7 +221,6 @@ export const TextInput = memo(
               disabled={disabled}
               testID={testID}
               {...editableInputAddonProps}
-              {...fontScaleProps}
             />
           }
           labelNode={

@@ -371,9 +371,7 @@ export const Text = memo(
       return (
         <Component
           ref={ref}
-          allowFontScaling
           ellipsizeMode={ellipsize}
-          maxFontSizeMultiplier={1}
           numberOfLines={computedNumberOfLines}
           style={memoizedStyles}
           testID={testID}

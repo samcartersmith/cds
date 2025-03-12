@@ -267,20 +267,4 @@ describe('TextInput', () => {
     expect(onFocus).toHaveBeenCalledTimes(1);
     expect(onBlur).toHaveBeenCalledTimes(1);
   });
-
-  it('applies device font size scaling', () => {
-    const testID = 'native-input-id';
-    render(
-      <DefaultThemeProvider>
-        <TextInput
-          accessibilityHint="Text input field"
-          accessibilityLabel="Text input field"
-          end={<TextTitle1>Hello</TextTitle1>}
-          testID={testID}
-        />
-      </DefaultThemeProvider>,
-    );
-    expect(screen.getByTestId(testID)).toHaveProp('allowFontScaling', true);
-    expect(screen.getByTestId(testID)).toHaveProp('maxFontSizeMultiplier', 1);
-  });
 });

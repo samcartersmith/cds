@@ -11,7 +11,6 @@ import { sparklineInteractiveData } from '@cbhq/cds-common2/internal/visualizati
 import { ChartScrubParams } from '@cbhq/cds-common2/types/Chart';
 import { SparklineInteractiveHeaderRef } from '@cbhq/cds-common2/types/SparklineInteractiveHeaderBaseProps';
 import { IconButton } from '@cbhq/cds-mobile2/buttons';
-import { fontScaleProps } from '@cbhq/cds-mobile2/controls/TextInput';
 import { Example, ExampleScreen } from '@cbhq/cds-mobile2/examples/ExampleScreen';
 import { Icon } from '@cbhq/cds-mobile2/icons';
 import { Box, HStack } from '@cbhq/cds-mobile2/layout';
@@ -128,7 +127,6 @@ export const SparklineInteractiveHeaderWithCustomTitle = () => {
       pointerEvents="none"
       style={defaultTitleStyle}
       testID="SparklineInteractiveHeaderTitle"
-      {...fontScaleProps}
     />
   );
 
