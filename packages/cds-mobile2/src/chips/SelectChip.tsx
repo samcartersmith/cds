@@ -16,7 +16,7 @@ import { Chip } from './Chip';
 import { ChipProps } from './ChipProps';
 
 export type SelectChipProps = {
-  children: NonNullable<React.ReactNode>;
+  children: React.ReactNode;
   /** Indicates that the control is being used to manipulate data elsewhere */
   active?: boolean;
 } & Omit<ChipProps, 'children' | 'onBlur'> &

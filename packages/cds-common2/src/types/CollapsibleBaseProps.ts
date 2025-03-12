@@ -12,7 +12,7 @@ export type CollapsibleBaseProps = {
   /**
    * Collapsible content
    */
-  children: NonNullable<React.ReactNode>;
+  children: React.ReactNode;
   /**
    * Direction the content should expand/collapse to
    * @default vertical

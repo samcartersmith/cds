@@ -5,7 +5,10 @@ import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
 
 export type TagIntent = 'informational' | 'promotional';
-export type TagColorScheme = 'green' | 'purple' | 'blue' | 'yellow' | 'red' | 'gray';
+export type TagColorScheme = Extract<
+  ThemeVars.SpectrumHue,
+  'green' | 'purple' | 'blue' | 'yellow' | 'red' | 'gray'
+>;
 
 type TagThemedProps = {
   /**
@@ -33,7 +36,7 @@ type TagWildcardProps = {
 
 export type TagBaseProps = {
   /** Children to render within the Tag. */
-  children: NonNullable<React.ReactNode>;
+  children: React.ReactNode;
   /**
    * Specify the intent of the Tag
    * @default informational

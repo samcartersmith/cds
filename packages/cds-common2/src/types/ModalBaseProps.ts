@@ -6,7 +6,7 @@ export type ModalRenderChildren = React.FC<{ closeModal: () => void }>;
 
 export type ModalBaseProps = {
   /** Component to render as the Modal content */
-  children: ModalRenderChildren | NonNullable<React.ReactNode>;
+  children: ModalRenderChildren | React.ReactNode;
   /**
    * Controls visibility of the Modal
    * @default false

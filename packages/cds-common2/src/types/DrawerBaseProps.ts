@@ -5,7 +5,7 @@ export type DrawerRenderChildren = React.FC<{ handleClose: () => void }>;
 
 export type DrawerBaseProps = {
   /** Component to render as the Modal content */
-  children: DrawerRenderChildren | NonNullable<React.ReactNode>;
+  children: DrawerRenderChildren | React.ReactNode;
   /**
    * Pin the modal to one side of the screen
    * @default bottom

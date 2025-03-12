@@ -1,22 +1,18 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { css } from '@linaria/core';
-import { horizontalSpacing, spacing, tagColorMap } from '@cbhq/cds-common2/tokens/tags';
-import { TagBaseProps } from '@cbhq/cds-common2/types/TagBaseProps';
+import {
+  tagBorderRadiusMap,
+  tagColorMap,
+  tagFontMap,
+  tagHorizontalSpacing,
+} from '@cbhq/cds-common2/tokens/tags';
+import type { TagBaseProps } from '@cbhq/cds-common2/types/TagBaseProps';
 
 import { useTheme } from '../hooks/useTheme';
-import { Box, BoxProps } from '../layout';
-import { TextCaption, TextLabel1 } from '../typography';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Text } from '../typography/Text';
 
-const tagSpacingStyles = {
-  informational: css`
-    padding: 2px ${spacing[horizontalSpacing.informational]};
-  `,
-  promotional: css`
-    padding: 2px ${spacing[horizontalSpacing.promotional]};
-  `,
-};
-
-type TagProps = TagBaseProps & Omit<BoxProps<'div'>, 'background' | 'backgroundColor' | 'children'>;
+type TagProps = TagBaseProps &
+  Omit<BoxProps<BoxDefaultElement>, 'background' | 'backgroundColor' | 'children'>;
 
 export const tagStaticClassName = 'cds-tag';
 export const Tag = memo(
@@ -36,11 +32,7 @@ export const Tag = memo(
     forwardedRef: React.ForwardedRef<HTMLDivElement>,
   ) {
     const theme = useTheme();
-    const spacingClassName = useMemo(() => tagSpacingStyles[intent], [intent]);
-    const { background, foreground } = useMemo(
-      () => tagColorMap[intent][colorScheme],
-      [colorScheme, intent],
-    );
+    const { background, foreground } = tagColorMap[intent][colorScheme];
     const boxStyles = useMemo(
       () => ({
         backgroundColor: `rgb(${theme.spectrum[customBackground ?? background]})`,
@@ -54,24 +46,29 @@ export const Tag = memo(
       [foreground, customColor, theme.spectrum],
     );
 
-    const Text = useMemo(() => (intent === 'informational' ? TextLabel1 : TextCaption), [intent]);
-    const intentBorderRadius = useMemo(() => (intent === 'informational' ? 100 : 1000), [intent]);
-
     return (
       <Box
         ref={forwardedRef}
         alignItems={alignItems}
         background="bg"
-        borderRadius={intentBorderRadius}
-        className={`${tagStaticClassName} ${spacingClassName}`}
+        borderRadius={tagBorderRadiusMap[intent]}
+        className={tagStaticClassName}
         data-testid={testID}
         display={display}
         justifyContent={justifyContent}
+        paddingX={tagHorizontalSpacing[intent]}
+        paddingY={0.25}
         style={boxStyles}
         testID={testID}
         {...props}
       >
-        <Text as="span" data-testid={`${testID}--text`} overflow="truncate" style={textStyles}>
+        <Text
+          as="span"
+          font={tagFontMap[intent]}
+          overflow="truncate"
+          style={textStyles}
+          testID={`${testID}--text`}
+        >
           {children}
         </Text>
       </Box>

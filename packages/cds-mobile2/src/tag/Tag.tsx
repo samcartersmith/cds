@@ -1,11 +1,16 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
 import { TagBaseProps } from '@cbhq/cds-common2';
-import { horizontalSpacing, tagColorMap } from '@cbhq/cds-common2/tokens/tags';
+import {
+  tagBorderRadiusMap,
+  tagColorMap,
+  tagFontMap,
+  tagHorizontalSpacing,
+} from '@cbhq/cds-common2/tokens/tags';
 
 import { useTheme } from '../hooks/useTheme';
-import { Box, BoxProps } from '../layout';
-import { TextCaption, TextLabel1 } from '../typography';
+import { type BoxProps, Box } from '../layout';
+import { Text } from '../typography/Text';
 
 export const Tag = memo(
   forwardRef(
@@ -24,31 +29,29 @@ export const Tag = memo(
       forwardedRef: React.ForwardedRef<View>,
     ) => {
       const theme = useTheme();
-      const { background, foreground } = useMemo(
-        () => tagColorMap[intent][colorScheme],
-        [colorScheme, intent],
-      );
-      const Text = useMemo(() => (intent === 'informational' ? TextLabel1 : TextCaption), [intent]);
+      const { background, foreground } = tagColorMap[intent][colorScheme];
       const backgroundColor = `rgb(${theme.spectrum[customBackground ?? background]})`;
       const color = `rgb(${theme.spectrum[customColor ?? foreground]})`;
-      const style = useMemo(
-        () => ({ paddingVertical: 2, paddingHorizontal: theme.space[horizontalSpacing[intent]] }),
-        [theme.space, intent],
-      );
 
       return (
         <Box
           ref={forwardedRef}
           alignItems={alignItems}
           background="bg"
-          borderRadius={intent === 'informational' ? 100 : 1000}
+          borderRadius={tagBorderRadiusMap[intent]}
           dangerouslySetBackground={backgroundColor}
           justifyContent={justifyContent}
-          style={style}
+          paddingX={tagHorizontalSpacing[intent]}
+          paddingY={0.25}
           testID={testID}
           {...props}
         >
-          <Text dangerouslySetColor={color} data-testid={`${testID}--text`} numberOfLines={1}>
+          <Text
+            dangerouslySetColor={color}
+            font={tagFontMap[intent]}
+            numberOfLines={1}
+            testID={`${testID}--text`}
+          >
             {children}
           </Text>
         </Box>

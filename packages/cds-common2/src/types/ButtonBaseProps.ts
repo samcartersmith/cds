@@ -10,7 +10,7 @@ export type ButtonBaseProps = {
   /** Change to block and expand to 100% of parent width. */
   block?: boolean;
   /** Children to render within the button. */
-  children: NonNullable<React.ReactNode>;
+  children: React.ReactNode;
   /** Reduce the inner padding within the button itself. */
   compact?: boolean;
   /** Mark the button as disabled. */

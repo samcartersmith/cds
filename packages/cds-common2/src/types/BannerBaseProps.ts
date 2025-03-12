@@ -21,7 +21,7 @@ export type BannerBaseProps = {
   /** Title of banner. Indicates the intent of this banner */
   title: string;
   /** Message of banner */
-  children: NonNullable<React.ReactNode>;
+  children: React.ReactNode;
   /**
    * Determines whether banner can be dismissed or not
    * @default true

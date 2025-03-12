@@ -12,7 +12,7 @@ export type LinkBaseProps = {
   /** Full length accessibility label when the child text is not descriptive enough. */
   accessibilityLabel?: string;
   /** Children to render within the link. */
-  children: NonNullable<React.ReactNode>;
+  children: React.ReactNode;
   /**
    * Specify typography of the text
    * @default inherit

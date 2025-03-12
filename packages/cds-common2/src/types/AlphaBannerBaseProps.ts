@@ -20,7 +20,7 @@ export type BannerBaseProps = {
   /** ReactNode or Text to be displayed in TextHeadline. Indicates the intent of this banner */
   title?: React.ReactNode;
   /** ReactNode or Text to be displayed in TextBody. Message of banner */
-  children?: NonNullable<React.ReactNode>;
+  children?: React.ReactNode;
   /**
    * Determines whether banner can be dismissed or not. Banner is not dismisable when styleVariant is set to global.
    * @default true
