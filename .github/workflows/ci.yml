@@ -112,3 +112,52 @@ jobs:
           command: |-
             npx playwright install --with-deps
             yarn nx affected --target=storybook-e2e-test
+
+  depcheck:
+    name: Depcheck
+    runs-on: [medium, amd64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100 # TODO: This needs to include the merge-base
+      - uses: ./.github/actions/setup
+
+      # Get the merge-base SHA for cache key (PR only)
+      - name: Get merge-base SHA
+        if: github.event_name == 'pull_request'
+        id: get-merge-base
+        run: |
+          git fetch origin ${GITHUB_BASE_REF:-master}
+          MERGE_BASE=$(git merge-base HEAD origin/${GITHUB_BASE_REF:-master})
+          echo "merge_base=$MERGE_BASE" >> $GITHUB_OUTPUT
+          echo "Using merge-base SHA: $MERGE_BASE for cache key"
+
+      # For PRs: Try to restore cache using merge-base SHA
+      - name: Restore depcheck baseline (PR)
+        if: github.event_name == 'pull_request'
+        uses: actions/cache@v4
+        id: cache-depcheck
+        with:
+          path: depcheck-results.md
+          key: depcheck-master-${{ steps.get-merge-base.outputs.merge_base }}
+
+      # For PRs: Fail with clear message if no baseline found
+      - name: Check for baseline file (PR)
+        if: github.event_name == 'pull_request' && steps.cache-depcheck.outputs.cache-hit != 'true'
+        run: |
+          echo "::error::ERROR: Depcheck baseline not found for merge-base SHA ${{ steps.get-merge-base.outputs.merge_base }}. This may happen if the merge-base commit doesn't have a cached baseline yet. Please ensure the base branch has run the depcheck job."
+          exit 1
+
+      # Run depcheck in the appropriate mode based on event type
+      - name: Run Depcheck
+        env:
+          DEPCHECK_DIFF: ${{ github.event_name == 'pull_request' }}
+        run: yarn node tools/depcheck.mjs
+
+      # For master: Cache the results with current SHA
+      - name: Cache depcheck results (Master)
+        if: github.ref_name == 'master'
+        uses: actions/cache@v4
+        with:
+          path: depcheck-results.md
+          key: depcheck-master-${{ github.sha }}
