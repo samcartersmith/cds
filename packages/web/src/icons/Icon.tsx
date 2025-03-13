@@ -145,6 +145,7 @@ export const Icon = memo(
               role="img"
               style={{ color: finalColor, fontSize: iconSize }}
               title={accessibilityLabel}
+              translate="no"
             >
               {glyph}
             </span>

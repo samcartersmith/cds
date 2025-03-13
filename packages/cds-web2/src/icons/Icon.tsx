@@ -191,6 +191,7 @@ export const Icon = memo(
               data-testid={glyphTestId}
               role="img"
               title={accessibilityLabel}
+              translate="no"
             >
               {glyph}
             </span>

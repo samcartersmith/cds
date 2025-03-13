@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.7.3 (3/13/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix: prevent icon font name translation. [[#3721](https://github.cbhq.net/frontend/cds/pull/3721)] [[DX-4576](https://jira.coinbase-corp.com/browse/DX-4576)]
+
 ## 7.7.2 ((3/10/2025, 08:34 AM PST))
 
 This is an artificial version bump with no new change.
