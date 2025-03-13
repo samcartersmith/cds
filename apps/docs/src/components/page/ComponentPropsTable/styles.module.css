@@ -1,3 +1,10 @@
 .propsTableWrapper {
   scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
 }
+
+.propsTable {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}

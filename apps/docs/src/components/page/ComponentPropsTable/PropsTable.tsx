@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PropsTableRow from './PropsTableRow';
+import styles from './styles.module.css';
 import { PropsTableProps } from './types';
 
 function PropsTable({ props, sharedTypeAliases, searchTerm }: PropsTableProps) {
@@ -11,12 +12,12 @@ function PropsTable({ props, sharedTypeAliases, searchTerm }: PropsTableProps) {
         overflow: 'hidden',
       }}
     >
-      <table>
+      <table className={styles.propsTable}>
         <thead>
           <tr>
             <th style={{ width: '40%' }}>Name</th>
             <th style={{ width: '40%' }}>Type</th>
-            <th>Default</th>
+            <th style={{ width: '20%' }}>Default</th>
           </tr>
         </thead>
         <tbody>
