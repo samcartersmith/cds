@@ -9,7 +9,7 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Text } from '../../typography/Text';
-import { Avatar, AvatarWebProps } from '../Avatar';
+import { type AvatarProps, Avatar } from '../Avatar';
 
 const avatarImageUrl =
   'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
@@ -111,7 +111,7 @@ const FallbackColoredBase = ({
   dense,
   dangerouslySetSize,
   style,
-}: Pick<AvatarWebProps, 'selected' | 'shape' | 'size' | 'dangerouslySetSize' | 'style'> & {
+}: Pick<AvatarProps, 'selected' | 'shape' | 'size' | 'dangerouslySetSize' | 'style'> & {
   dense?: boolean;
 }) => {
   return (

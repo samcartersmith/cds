@@ -5,7 +5,7 @@ import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight'
 import type { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { type AvatarWebProps, Avatar } from '../media';
+import { type AvatarProps, Avatar } from '../media';
 import { type PressableBaseProps, Pressable } from '../system';
 
 export const avatarButtonDefaultElement = 'button';
@@ -16,7 +16,7 @@ export type AvatarButtonBaseProps = Polymorphic.ExtendableProps<
   Omit<PressableBaseProps, 'background' | 'children'>,
   Pick<ButtonBaseProps, 'compact'> &
     Pick<AvatarBaseProps, 'alt' | 'src' | 'colorScheme' | 'shape' | 'borderColor' | 'name'> &
-    Pick<AvatarWebProps, 'selected'>
+    Pick<AvatarProps, 'selected'>
 >;
 
 export type AvatarButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<

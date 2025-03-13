@@ -80,7 +80,7 @@ export type FallbackColor = Extract<
   'blue' | 'purple' | 'green' | 'teal' | 'pink' | 'gray'
 >;
 
-export type AvatarWebProps = {
+export type AvatarProps = {
   /**
    * @danger Adds a className to the Avatar. If you pass in a className make sure your styles override the Avatar using the avatar class .cds-avatar like this: .my-class.cds-avatar
    */
@@ -124,7 +124,7 @@ export const Avatar = memo(
     colorScheme: colorSchemeProp = 'blue',
     name,
     style = {},
-  }: AvatarWebProps) => {
+  }: AvatarProps) => {
     const avatarSize = `var(--avatarSize-${size})`;
     const userProvidedSize = style?.width ?? style?.height ?? dangerouslySetSize;
     const computedSize = userProvidedSize ?? avatarSize;
