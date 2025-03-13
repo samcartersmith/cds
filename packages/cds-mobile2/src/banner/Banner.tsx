@@ -83,7 +83,7 @@ export const Banner = memo(
     const clonedPrimaryAction = useMemo(() => {
       if (isValidElement(primaryAction) && primaryAction?.type === Link) {
         return React.cloneElement(primaryAction, {
-          variant: 'label1',
+          font: 'label1',
           color: primaryActionColor,
           testID: `${testID}-action--primary`,
           ...(primaryAction.props as LinkProps),
@@ -101,7 +101,7 @@ export const Banner = memo(
     const clonedSecondaryAction = useMemo(() => {
       if (isValidElement(secondaryAction) && secondaryAction.type === Link) {
         return React.cloneElement(secondaryAction, {
-          variant: 'label1',
+          font: 'label1',
           color: secondaryActionColor,
           testID: `${testID}-action--secondary`,
           ...(secondaryAction.props as LinkProps),

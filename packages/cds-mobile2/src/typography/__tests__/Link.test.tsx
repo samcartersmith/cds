@@ -1,18 +1,33 @@
 import TestRenderer from 'react-test-renderer';
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { LinkTypography } from '@cbhq/cds-common2/types/LinkBaseProps';
 
 import { DefaultThemeProvider } from '../../utils/testHelpers';
-import { Link, TYPOGRAPHY_MAP } from '../Link';
+import { type LinkProps, Link } from '../Link';
 
 const TEST_ID = 'link';
 const URL = 'www.coinbase.com';
+const variants = [
+  'display1',
+  'display2',
+  'display3',
+  'title1',
+  'title2',
+  'title3',
+  'title4',
+  'headline',
+  'body',
+  'label1',
+  'label2',
+  'caption',
+  'legal',
+  'inherit',
+] as LinkProps['font'][];
 
 describe('Link', () => {
   it('passes a11y', () => {
     render(
       <DefaultThemeProvider>
-        <Link testID={TEST_ID} to="/" variant="body">
+        <Link font="body" testID={TEST_ID} to="/">
           Child
         </Link>
       </DefaultThemeProvider>,
@@ -24,7 +39,7 @@ describe('Link', () => {
   it('renders a children text', () => {
     render(
       <DefaultThemeProvider>
-        <Link to="/" variant="body">
+        <Link font="body" to="/">
           Child
         </Link>
       </DefaultThemeProvider>,
@@ -45,21 +60,17 @@ describe('Link', () => {
     expect(screen.getByTestId(TEST_ID)).toBeTruthy();
   });
 
-  const variants = Object.keys(TYPOGRAPHY_MAP) as LinkTypography[];
-
   variants.forEach((variant) => {
     it(`variant prop: "${variant}" works properly and passess a11y`, async () => {
-      const linkRenderer = TestRenderer.create(
+      render(
         <DefaultThemeProvider>
-          <Link testID={TEST_ID} to="/" variant={variant}>
+          <Link font={variant} testID={TEST_ID} to="/">
             Child
           </Link>
         </DefaultThemeProvider>,
       );
 
-      const linkInstance = await linkRenderer.root.findByProps({ testID: TEST_ID });
-      expect(linkInstance.props.variant).toEqual(variant);
-      expect(linkInstance).toBeAccessible();
+      expect(screen.getByTestId(TEST_ID)).toBeAccessible();
     });
   });
 
@@ -117,7 +128,7 @@ describe('Link', () => {
   it('removes text style when inherited', () => {
     render(
       <DefaultThemeProvider>
-        <Link testID={TEST_ID} to={URL} variant="inherit">
+        <Link font="inherit" testID={TEST_ID} to={URL}>
           Child
         </Link>
       </DefaultThemeProvider>,

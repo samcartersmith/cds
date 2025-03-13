@@ -1,39 +1,11 @@
 import React, { memo, useCallback } from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
-import { LinkBaseProps, LinkTypography } from '@cbhq/cds-common2/types/LinkBaseProps';
+import { LinkBaseProps } from '@cbhq/cds-common2/types/LinkBaseProps';
 
 import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
 
-import { TextProps } from './Text';
-import { TextBody } from './TextBody';
-import { TextCaption } from './TextCaption';
-import { TextHeadline } from './TextHeadline';
-import { TextInherited } from './TextInherited';
-import { TextLabel1 } from './TextLabel1';
-import { TextLabel2 } from './TextLabel2';
-import { TextLegal } from './TextLegal';
-import { TextTitle1 } from './TextTitle1';
-import { TextTitle2 } from './TextTitle2';
-import { TextTitle3 } from './TextTitle3';
-import { TextTitle4 } from './TextTitle4';
-
-export const TYPOGRAPHY_MAP: Record<
-  LinkTypography,
-  React.ComponentType<React.PropsWithChildren<TextProps>>
-> = {
-  body: TextBody,
-  caption: TextCaption,
-  headline: TextHeadline,
-  label1: TextLabel1,
-  label2: TextLabel2,
-  title1: TextTitle1,
-  title2: TextTitle2,
-  title3: TextTitle3,
-  title4: TextTitle4,
-  legal: TextLegal,
-  inherit: TextInherited,
-};
+import { type TextProps, Text } from './Text';
 
 export type LinkProps = {
   /** Callback to fire when pressed */
@@ -55,6 +27,11 @@ export type LinkProps = {
    * @default false
    */
   readerMode?: boolean;
+  /**
+   * Specify typography of the text
+   * @default inherit
+   */
+  font?: TextProps['font'];
 } & LinkBaseProps &
   SharedProps;
 
@@ -66,7 +43,7 @@ export const Link = memo(
     color = 'fgPrimary',
     testID,
     onPress,
-    variant = 'inherit',
+    font = 'inherit',
     forceOpenOutsideApp = false,
     preventRedirectionIntoApp = false,
     readerMode = false,
@@ -89,21 +66,20 @@ export const Link = memo(
       [openUrl, to, onPress, forceOpenOutsideApp, preventRedirectionIntoApp, readerMode],
     );
 
-    const TextComponent = TYPOGRAPHY_MAP[variant];
-
     return (
-      <TextComponent
+      <Text
         accessibilityHint={accessibilityLabel}
         accessibilityLabel={accessibilityLabel}
         accessibilityRole="link"
         color={color}
+        font={font}
         mono={mono}
         onPress={openUrlOnPress}
         testID={testID}
         underline={underline}
       >
         {children}
-      </TextComponent>
+      </Text>
     );
   },
 );

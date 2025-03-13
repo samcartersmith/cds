@@ -182,7 +182,7 @@ const BannerScreen = () => {
             title={`Inline ${shortMessage}`}
             variant="warning"
           >
-            <Link to="https://www.coinbase.com" variant="label2">
+            <Link font="label2" to="https://www.coinbase.com">
               Learn more
             </Link>
           </Banner>

@@ -1,9 +1,5 @@
 import { ThemeVars } from '../core/theme';
 
-export type LinkTypography =
-  | Exclude<ThemeVars.FontFamily, 'display1' | 'display2' | 'display3'>
-  | 'inherit';
-
 export type LinkBaseProps = {
   /** URL that this link goes to when pressed. */
   to?: string;
@@ -13,11 +9,6 @@ export type LinkBaseProps = {
   accessibilityLabel?: string;
   /** Children to render within the link. */
   children: React.ReactNode;
-  /**
-   * Specify typography of the text
-   * @default inherit
-   */
-  variant?: LinkTypography;
   /** Use CoinbaseMono font */
   mono?: boolean;
   /**
