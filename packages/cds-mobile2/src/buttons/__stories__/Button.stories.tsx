@@ -6,8 +6,7 @@ import { Icon } from '../../icons';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { RemoteImage } from '../../media/RemoteImage';
-import { TextLabel1 } from '../../typography';
-import { TextLabel2 } from '../../typography/TextLabel2';
+import { Text } from '../../typography/Text';
 import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 
@@ -18,9 +17,9 @@ const ButtonScreen = () => {
         <Button compact endIcon="caretDown" variant="secondary">
           <HStack alignItems="center" justifyContent="center" paddingTop={0}>
             <RemoteImage height={16} resizeMode="cover" shape="circle" width={16} />
-            <TextLabel2 color="fgMuted" paddingStart={1} testID="DexInputNetwork">
+            <Text color="fgMuted" font="label2" paddingStart={1} testID="DexInputNetwork">
               Ethereum
-            </TextLabel2>
+            </Text>
           </HStack>
         </Button>
       </Example>
@@ -42,17 +41,17 @@ const ButtonScreen = () => {
         <VStack gap={2}>
           <ButtonGroup accessibilityLabel="Group">
             <Button end={<Icon color="fg" name="caretRight" size="s" />}>
-              <TextLabel1>Test</TextLabel1>
+              <Text font="label1">Test</Text>
             </Button>
             <Button end={<Icon color="fg" name="add" size="s" />} variant="secondary">
-              <TextLabel1>Test</TextLabel1>
+              <Text font="label1">Test</Text>
             </Button>
             <Button
               end={<Icon color="fg" name="airdrop" size="s" />}
               endIcon="airdrop"
               variant="secondary"
             >
-              <TextLabel1>Test</TextLabel1>
+              <Text font="label1">Test</Text>
             </Button>
           </ButtonGroup>
         </VStack>

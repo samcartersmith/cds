@@ -10,7 +10,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useA11y } from '../../hooks/useA11y';
 import { HStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Modal } from '../modal/Modal';
 import { ModalBody } from '../modal/ModalBody';
 import { ModalHeader } from '../modal/ModalHeader';
@@ -94,7 +94,7 @@ const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
             return (
               <>
                 <HStack padding={3}>
-                  <TextBody>{loremIpsum.repeat(3)}</TextBody>
+                  <Text>{loremIpsum.repeat(3)}</Text>
                 </HStack>
                 <HStack justifyContent="center">
                   <Button onPress={handleClose}>More options</Button>
@@ -109,7 +109,7 @@ const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
           {() => {
             return (
               <HStack padding={3}>
-                <TextBody>{loremIpsum.repeat(3)}</TextBody>
+                <Text>{loremIpsum.repeat(3)}</Text>
               </HStack>
             );
           }}

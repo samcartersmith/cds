@@ -2,7 +2,7 @@ import React from 'react';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { Box, BoxProps } from '../Box';
 import { Divider } from '../Divider';
 import { Group, RenderGroupItem } from '../Group';
@@ -33,13 +33,13 @@ const GroupScreen = () => {
   const boxes = (
     <>
       <Box background="bgAlternate" padding={1}>
-        <TextBody>Box 1</TextBody>
+        <Text>Box 1</Text>
       </Box>
       <Box background="bgAlternate" padding={1}>
-        <TextBody>Box 2</TextBody>
+        <Text>Box 2</Text>
       </Box>
       <Box background="bgAlternate" padding={1}>
-        <TextBody>Box 3</TextBody>
+        <Text>Box 3</Text>
       </Box>
     </>
   );
@@ -63,7 +63,7 @@ const GroupScreen = () => {
         </Group>
       </Example>
       <Example title="Custom renderItem callback">
-        <TextBody>Apply borderedTop and borderedBottom to first and last items in group</TextBody>
+        <Text>Apply borderedTop and borderedBottom to first and last items in group</Text>
         <Group gap={0} renderItem={customRenderItem}>
           {boxes}
         </Group>

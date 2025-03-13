@@ -17,7 +17,7 @@ import type {
 import { Box, HStack, VStack } from '../layout';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { Pressable } from '../system/Pressable';
-import { TextBody, TextHeadline } from '../typography';
+import { Text } from '../typography/Text';
 
 export type AccordionHeaderProps = AccordionHeaderBaseProps;
 
@@ -26,8 +26,8 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => <Box>
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
   <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
-      <TextHeadline>{title}</TextHeadline>
-      {!!subtitle && <TextBody color="fgMuted">{subtitle}</TextBody>}
+      <Text font="headline">{title}</Text>
+      {!!subtitle && <Text color="fgMuted">{subtitle}</Text>}
     </VStack>
   </Box>
 ));

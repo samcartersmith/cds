@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 
-import { TextLabel1 } from '../typography';
+import { Text } from '../typography/Text';
 
 import { HelperTextProps } from './HelperText';
 
 export const InputLabel = memo(function InputLabel({ color, ...props }: HelperTextProps) {
-  return <TextLabel1 color={color} paddingY={0.5} {...props} />;
+  return <Text color={color} font="label1" paddingY={0.5} {...props} />;
 });

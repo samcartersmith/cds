@@ -6,7 +6,7 @@ import { upsellCardDefaultWidth, upsellCardMinHeight } from '@cbhq/cds-common2/t
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
 import { Pressable } from '../system/Pressable';
-import { TextHeadline, TextLabel2 } from '../typography';
+import { Text } from '../typography/Text';
 
 export type UpsellCardProps = UpsellCardBaseProps & {
   /** Callback fired when the action button is pressed */
@@ -58,9 +58,11 @@ export const UpsellCard = memo(
             width="70%"
           >
             <VStack gap={1}>
-              {typeof title === 'string' ? <TextHeadline>{title}</TextHeadline> : title}
+              {typeof title === 'string' ? <Text font="headline">{title}</Text> : title}
               {typeof description === 'string' ? (
-                <TextLabel2 numberOfLines={3}>{description}</TextLabel2>
+                <Text font="label2" numberOfLines={3}>
+                  {description}
+                </Text>
               ) : (
                 description
               )}

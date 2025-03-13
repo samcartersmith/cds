@@ -3,7 +3,7 @@ import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import { searchInputBuilder } from '@cbhq/cds-common2/internal/searchInputBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 import { InputIconButton } from '../InputIconButton';
 import { SearchInput } from '../SearchInput';
 
@@ -50,7 +50,7 @@ const OnChangeExample = () => {
         onChangeText={setText}
         value={text}
       />
-      <TextLabel1>{text}</TextLabel1>
+      <Text font="label1">{text}</Text>
     </>
   );
 };
@@ -71,7 +71,7 @@ const DisableBackArrow = () => {
         onSearch={handleOnSearch}
         value={text}
       />
-      <TextLabel1>{text}</TextLabel1>
+      <Text font="label1">{text}</Text>
     </>
   );
 };
@@ -92,7 +92,7 @@ const SetCustomSearchStartIcon = () => {
         startIcon="search"
         value={text}
       />
-      <TextLabel1>{text}</TextLabel1>
+      <Text font="label1">{text}</Text>
     </>
   );
 };
@@ -113,7 +113,7 @@ const SetCustomBackArrowStartIcon = () => {
         startIcon="backArrow"
         value={text}
       />
-      <TextLabel1>{text}</TextLabel1>
+      <Text font="label1">{text}</Text>
     </>
   );
 };

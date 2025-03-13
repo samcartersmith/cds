@@ -7,7 +7,7 @@ import { Pictogram } from '../illustrations';
 import { Box, VStack } from '../layout';
 import { VStackProps } from '../layout';
 import { type PressableProps } from '../system';
-import { TextBody, TextTitle1 } from '../typography';
+import { Text } from '../typography/Text';
 
 export type MultiContentModuleProps = MultiContentModuleBaseProps & {
   /** Callback fired when the action button pressed and cannot be used when `action` is a React Element */
@@ -55,11 +55,11 @@ export const MultiContentModule = memo(
         ) : (
           pictogram
         )}
-        {typeof title === 'string' ? <TextTitle1>{title}</TextTitle1> : title}
+        {typeof title === 'string' ? <Text font="title1">{title}</Text> : title}
         {typeof description === 'string' ? (
-          <TextBody color="fgMuted" numberOfLines={3}>
+          <Text color="fgMuted" numberOfLines={3}>
             {description}
-          </TextBody>
+          </Text>
         ) : (
           description
         )}

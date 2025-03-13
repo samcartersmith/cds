@@ -5,7 +5,7 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react-nativ
 
 import { Button } from '../../../buttons';
 import { Box } from '../../../layout';
-import { TextBody } from '../../../typography';
+import { Text } from '../../../typography/Text';
 import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Carousel } from '../Carousel';
 import { CarouselItemContext } from '../CarouselItemContext';
@@ -18,7 +18,7 @@ describe('useCarouselItem', () => {
     const { id } = useCarouselItem();
     return (
       <Box height={200} width={200}>
-        <TextBody>{id}</TextBody>
+        <Text>{id}</Text>
       </Box>
     );
   };

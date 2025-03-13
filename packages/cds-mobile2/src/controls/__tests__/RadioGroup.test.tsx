@@ -1,7 +1,7 @@
 import { Pressable } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
-import { TextLabel1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Radio } from '../RadioGroup';
 
@@ -122,7 +122,7 @@ describe('Radio', () => {
     render(
       <DefaultThemeProvider>
         <Radio>
-          <TextLabel1>Custom ReactNode</TextLabel1>
+          <Text font="label1">Custom ReactNode</Text>
         </Radio>
       </DefaultThemeProvider>,
     );

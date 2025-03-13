@@ -25,7 +25,7 @@ import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
 import { useTheme } from '../hooks/useTheme';
 import { convertMotionConfigs } from '../motion/convertMotionConfig';
 import { withMotionTiming } from '../motion/withMotionTiming';
-import { TextCaption } from '../typography/TextCaption';
+import { Text } from '../typography/Text';
 
 import { getTransform } from './dotStyles';
 import { useDotsLayout } from './useDotsLayout';
@@ -141,12 +141,13 @@ export const DotCount = memo(
         {!shouldUnmount && shouldShow && (
           <View style={pinStyles}>
             <Animated.View style={dotCountInnerContainerStyle} testID="dotcount-inner-container">
-              <TextCaption
+              <Text
                 color="fgInverse"
+                font="caption"
                 style={{ paddingHorizontal: dotTextPaddingHorizontal }}
               >
                 {parseDotCountMaxOverflow(countInternal, max)}
-              </TextCaption>
+              </Text>
             </Animated.View>
           </View>
         )}

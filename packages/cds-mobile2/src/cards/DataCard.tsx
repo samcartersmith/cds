@@ -1,7 +1,7 @@
 import { createDataCard } from '@cbhq/cds-common2/cards/createDataCard';
 
 import { HStack } from '../layout/HStack';
-import { TextBody } from '../typography/TextBody';
+import { Text } from '../typography/Text';
 import { TextHeadline } from '../typography/TextHeadline';
 import { TextLabel2 } from '../typography/TextLabel2';
 import { ProgressBar } from '../visualizations/ProgressBar';
@@ -18,7 +18,7 @@ export const DataCard = createDataCard({
   HStack,
   ProgressBar,
   ProgressCircle,
-  TextBody,
+  Text,
   TextHeadline,
   TextLabel2,
 });

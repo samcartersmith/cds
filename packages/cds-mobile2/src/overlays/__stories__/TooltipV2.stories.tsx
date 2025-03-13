@@ -7,7 +7,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useA11y } from '../../hooks/useA11y';
 import { Icon } from '../../icons/Icon';
 import { Box, HStack, VStack } from '../../layout';
-import { TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Modal as CDSModal } from '../modal/Modal';
 import { Tooltip } from '../tooltip/Tooltip';
 
@@ -54,13 +54,13 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
       <VStack background="bgAlternate" gap={8} height={800} paddingY={2}>
         <HStack justifyContent="space-around">
           <Tooltip content={tooltipText} yShiftByStatusBarHeight={yShiftByStatusBarHeight}>
-            <TextLabel2>{topTextSubject}</TextLabel2>
+            <Text font="label2">{topTextSubject}</Text>
           </Tooltip>
           <Tooltip content={tooltipText} yShiftByStatusBarHeight={yShiftByStatusBarHeight}>
-            <TextLabel2>{topTextSubject}</TextLabel2>
+            <Text font="label2">{topTextSubject}</Text>
           </Tooltip>
           <Tooltip content={tooltipText} yShiftByStatusBarHeight={yShiftByStatusBarHeight}>
-            <TextLabel2>{topTextSubject}</TextLabel2>
+            <Text font="label2">{topTextSubject}</Text>
           </Tooltip>
         </HStack>
         <HStack justifyContent="space-evenly">
@@ -83,21 +83,21 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
-            <TextLabel2>{bottomTextSubject}</TextLabel2>
+            <Text font="label2">{bottomTextSubject}</Text>
           </Tooltip>
           <Tooltip
             content={tooltipText}
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
-            <TextLabel2>{bottomTextSubject}</TextLabel2>
+            <Text font="label2">{bottomTextSubject}</Text>
           </Tooltip>
           <Tooltip
             content={tooltipText}
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
-            <TextLabel2>{bottomTextSubject}</TextLabel2>
+            <Text font="label2">{bottomTextSubject}</Text>
           </Tooltip>
         </HStack>
         <HStack justifyContent="space-evenly">
@@ -134,7 +134,7 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
             placement="top"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
-            <TextLabel2>{customTextSubject}</TextLabel2>
+            <Text font="label2">{customTextSubject}</Text>
           </Tooltip>
         </HStack>
       </VStack>
@@ -218,9 +218,9 @@ const RNModalTest = () => {
           <Button compact onPress={toggleOffShiftMeasurementByStatusBar}>
             Toggle off Status Bar Measurement Shift
           </Button>
-          <TextLabel2>CDSModal Default: statusBarTranslucent=true</TextLabel2>
-          <TextLabel2>{`statusBarTranslucent: ${statusBarTranslucent}`}</TextLabel2>
-          <TextLabel2>{`yShiftByStatusBarHeight: ${yShiftByStatusBarHeight}`}</TextLabel2>
+          <Text font="label2">CDSModal Default: statusBarTranslucent=true</Text>
+          <Text font="label2">{`statusBarTranslucent: ${statusBarTranslucent}`}</Text>
+          <Text font="label2">{`yShiftByStatusBarHeight: ${yShiftByStatusBarHeight}`}</Text>
         </VStack>
         <ModalContent
           closeModal={toggleOff}

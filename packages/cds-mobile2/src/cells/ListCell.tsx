@@ -3,7 +3,7 @@ import { ListCellBaseProps } from '@cbhq/cds-common2';
 import { compactListHeight, listHeight } from '@cbhq/cds-common2/tokens/cell';
 
 import { VStack } from '../layout/VStack';
-import { TextBody, TextHeadline } from '../typography';
+import { Text } from '../typography/Text';
 
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
@@ -74,22 +74,23 @@ export const ListCell = memo(function ListCell({
     >
       <VStack justifyContent="center">
         {!!title && (
-          <TextHeadline
+          <Text
+            font="headline"
             ellipsize="tail"
             numberOfLines={description || disableMultilineTitle ? 1 : 2}
           >
             {title}
-          </TextHeadline>
+          </Text>
         )}
 
         {!!description && (
-          <TextBody
+          <Text
             color="fgMuted"
             ellipsize={multiline ? undefined : 'tail'}
             numberOfLines={multiline ? undefined : title ? 1 : 2}
           >
             {description}
-          </TextBody>
+          </Text>
         )}
       </VStack>
     </Cell>

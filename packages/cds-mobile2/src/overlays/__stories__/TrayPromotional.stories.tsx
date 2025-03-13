@@ -7,7 +7,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { SpotRectangle } from '../../illustrations';
 import { Box, VStack } from '../../layout';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
-import { TextBody, TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 export const Default = () => {
@@ -35,13 +35,13 @@ export const Default = () => {
                 <Box alignItems="center" paddingBottom={3}>
                   <SpotRectangle name="exploreDecentralizedApps" />
                 </Box>
-                <TextTitle1 align="center" paddingBottom={2}>
+                <Text font="title1" align="center" paddingBottom={2}>
                   Earn crypto by lending, staking, and more
-                </TextTitle1>
-                <TextBody align="center" color="fgMuted">
+                </Text>
+                <Text align="center" color="fgMuted">
                   Many decentralized apps (“dapps”) let you earn yield on your crypto. Check out
                   trusted dapps like Aave and Compound without leaving Coinbaes.
-                </TextBody>
+                </Text>
               </VStack>
               <StickyFooter paddingX={3}>
                 <Button block onPress={handleClose}>

@@ -4,7 +4,7 @@ import { svgs } from '@cbhq/cds-common2/internal/data/assets';
 import { remoteImageBuilder } from '@cbhq/cds-common2/internal/remoteImageBuilder';
 
 import { HStack, VStack } from '../../layout';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { TextTitle1 } from '../../typography/TextTitle1';
 import { RemoteImage } from '../RemoteImage';
 
@@ -42,14 +42,16 @@ const {
   RemoteImage,
   VStack,
   HStack,
-  TextBody: (props) => <TextBody as="p" {...props} />,
+  Text: (props) => <Text as="p" {...props} />,
 });
 
 export const Default = () => {
   return (
     <>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Default Shape</TextTitle1>
+        <Text as="h3" font="title1">
+          Default Shape
+        </Text>
         <HStack gap={2}>
           {mockItems.map((_, idx) => {
             const key = `square-${idx}`;
@@ -58,7 +60,9 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Circle Shape</TextTitle1>
+        <Text as="h3" font="title1">
+          Circle Shape
+        </Text>
         <HStack gap={2}>
           {mockItems.map((_, idx) => {
             const key = `square-${idx}`;
@@ -67,7 +71,9 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Squircle Shape</TextTitle1>
+        <Text as="h3" font="title1">
+          Squircle Shape
+        </Text>
         <HStack gap={2}>
           {mockItems.map((_, idx) => {
             const key = `squircle-${idx}`;
@@ -76,7 +82,9 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">SVGs</TextTitle1>
+        <Text as="h3" font="title1">
+          SVGs
+        </Text>
         <HStack gap={2}>
           {svgs.map((imgURL, idx) => {
             const key = `svg-${idx}`;
@@ -85,7 +93,9 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">DangerouslySetClassName</TextTitle1>
+        <Text as="h3" font="title1">
+          DangerouslySetClassName
+        </Text>
         <HStack gap={2}>
           {svgs.map((imgURL, idx) => {
             const key = `svg-${idx}`;
@@ -102,31 +112,45 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Avatar Sizes with Circle</TextTitle1>
+        <Text as="h3" font="title1">
+          Avatar Sizes with Circle
+        </Text>
         <AvatarSizesWithCircle />
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Avatar Sizes with Squircle</TextTitle1>
+        <Text as="h3" font="title1">
+          Avatar Sizes with Squircle
+        </Text>
         <AvatarSizesWithSquircle />
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Border Color Imgs</TextTitle1>
+        <Text as="h3" font="title1">
+          Border Color Imgs
+        </Text>
         <BorderColorImg />
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Border Color Svgs</TextTitle1>
+        <Text as="h3" font="title1">
+          Border Color Svgs
+        </Text>
         <BorderColorSvgs />
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Circle Fallback</TextTitle1>
+        <Text as="h3" font="title1">
+          Circle Fallback
+        </Text>
         <CircleFallback />
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Rectangle Fallback</TextTitle1>
+        <Text as="h3" font="title1">
+          Rectangle Fallback
+        </Text>
         <RectangleFallback />
       </VStack>
       <VStack gap={2}>
-        <TextTitle1 as="h3">Square Fallback</TextTitle1>
+        <Text as="h3" font="title1">
+          Square Fallback
+        </Text>
         <SquareFallback />
       </VStack>
     </>

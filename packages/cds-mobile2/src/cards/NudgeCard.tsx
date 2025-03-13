@@ -7,7 +7,7 @@ import { IconButton } from '../buttons';
 import { Pictogram } from '../illustrations/Pictogram';
 import { Box, HStack, VStack } from '../layout';
 import { Pressable } from '../system/Pressable';
-import { TextHeadline, TextLabel2 } from '../typography';
+import { Text } from '../typography/Text';
 
 export type NudgeCardProps = NudgeCardBaseProps & {
   onDismissPress?: PressableProps['onPress'];
@@ -41,9 +41,9 @@ export const NudgeCard = memo(
       action
     ) : (
       <Pressable accessibilityRole="button" background="transparent" onPress={onActionPress}>
-        <TextHeadline color="fgPrimary" numberOfLines={1} paddingY={1}>
+        <Text color="fgPrimary" font="headline" numberOfLines={1} paddingY={1}>
           {action}
-        </TextHeadline>
+        </Text>
       </Pressable>
     );
 
@@ -95,22 +95,24 @@ export const NudgeCard = memo(
           {hasMedia && mediaPosition === 'left' ? renderMedia : null}
           <VStack alignItems="flex-start" flexGrow={1} flexShrink={1} gap={2} maxWidth={maxWidth}>
             <VStack gap={0.5} maxWidth="100%" paddingTop={hasMedia ? 0 : 2}>
-              <TextHeadline
+              <Text
                 ellipsize="tail"
+                font="headline"
                 numberOfLines={numberOfLines}
                 testID={`${testID}-title`}
                 textTransform="none"
               >
                 {title}
-              </TextHeadline>
-              <TextLabel2
+              </Text>
+              <Text
                 ellipsize="tail"
+                font="label2"
                 numberOfLines={numberOfLines}
                 testID={`${testID}-description`}
                 textTransform="none"
               >
                 {description}
-              </TextLabel2>
+              </Text>
             </VStack>
             {action ? renderAction : null}
           </VStack>

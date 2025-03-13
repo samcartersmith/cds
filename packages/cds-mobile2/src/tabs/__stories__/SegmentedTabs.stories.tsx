@@ -5,7 +5,7 @@ import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout';
-import { TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { SegmentedTab } from '../SegmentedTab';
 import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
 import type { TabComponent, TabsActiveIndicatorProps } from '../Tabs';
@@ -38,9 +38,9 @@ const AnotherCustomSegmentedTab: TabComponent = ({ id, label, disabled }) => {
     >
       <Box alignItems="center" paddingX={3} paddingY={1}>
         {typeof label === 'string' ? (
-          <TextLabel2 color={isActive ? 'fgPositive' : 'fgNegative'} ellipsize="tail">
+          <Text color={isActive ? 'fgPositive' : 'fgNegative'} ellipsize="tail" font="label2">
             {label}
-          </TextLabel2>
+          </Text>
         ) : (
           label
         )}

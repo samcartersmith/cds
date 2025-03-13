@@ -6,7 +6,7 @@ import { SelectOptionBaseProps, SharedAccessibilityProps } from '@cbhq/cds-commo
 import { Cell } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
-import { TextBody, TextHeadline } from '../typography';
+import { Text } from '../typography/Text';
 
 import { useSelectContext } from './SelectContext';
 
@@ -69,19 +69,19 @@ export const SelectOption = memo(function SelectOption({
     >
       <VStack justifyContent="center">
         {!!title && (
-          <TextHeadline ellipsize="tail" numberOfLines={description ? 1 : 2}>
+          <Text font="headline" ellipsize="tail" numberOfLines={description ? 1 : 2}>
             {title}
-          </TextHeadline>
+          </Text>
         )}
 
         {!!description && (
-          <TextBody
+          <Text
             color="fgMuted"
             ellipsize={multiline ? undefined : 'tail'}
             numberOfLines={multiline ? undefined : title ? 1 : 2}
           >
             {description}
-          </TextBody>
+          </Text>
         )}
       </VStack>
     </Cell>

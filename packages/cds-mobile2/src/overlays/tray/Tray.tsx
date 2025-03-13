@@ -15,7 +15,7 @@ import { verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView
 import { DrawerRefBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
 
 import { Box, HStack, VStack } from '../../layout';
-import { TextTitle3 } from '../../typography/TextTitle3';
+import { Text } from '../../typography/Text';
 import { Drawer } from '../drawer/Drawer';
 
 type RenderTrayProps = {
@@ -63,7 +63,7 @@ export const Tray = memo(
                 paddingTop={3}
                 paddingX={3}
               >
-                <TextTitle3>{title}</TextTitle3>
+                <Text font="title3">{title}</Text>
               </HStack>
             ) : (
               <Box onLayout={onTitleLayout}>{title}</Box>

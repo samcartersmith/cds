@@ -3,24 +3,24 @@ import { View } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 
 import { Box } from '../../layout';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { PageHeader } from '../PageHeader';
 
 const defaultProps = {
   start: (
     <Box>
-      <TextBody>Start</TextBody>
+      <Text>Start</Text>
     </Box>
   ),
   title: (
     <Box>
-      <TextBody>Title</TextBody>
+      <Text>Title</Text>
     </Box>
   ),
   end: (
     <Box>
-      <TextBody>End</TextBody>
+      <Text>End</Text>
     </Box>
   ),
   testID: 'page-header',
@@ -39,7 +39,7 @@ describe('PageHeader', () => {
   it('renders title correctly', () => {
     render(
       <DefaultThemeProvider>
-        <PageHeader title={<TextBody>Test</TextBody>} />
+        <PageHeader title={<Text>Test</Text>} />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('Test')).toBeTruthy();

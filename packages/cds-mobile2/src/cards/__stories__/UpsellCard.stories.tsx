@@ -8,7 +8,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout';
 import { Carousel } from '../../media';
-import { TextHeadline, TextLabel2, TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { UpsellCard } from '../UpsellCard';
 
 const styles = StyleSheet.create({
@@ -88,12 +88,14 @@ const UpsellCardScreen = () => {
           }
           dangerouslySetBackground={customTextNodeBackgroundColor}
           description={
-            <TextLabel2 dangerouslySetColor={customTextNodeColor}>
+            <Text dangerouslySetColor={customTextNodeColor} font="label2">
               Start your free 30 day trial of Coinbase One
-            </TextLabel2>
+            </Text>
           }
           title={
-            <TextHeadline dangerouslySetColor={customTextNodeColor}>Coinbase One</TextHeadline>
+            <Text dangerouslySetColor={customTextNodeColor} font="headline">
+              Coinbase One
+            </Text>
           }
         />
       </Example>
@@ -102,12 +104,14 @@ const UpsellCardScreen = () => {
           {...exampleProps}
           dangerouslySetBackground={customBackgroundColor}
           description={
-            <TextLabel2 dangerouslySetColor={customTextNodeColor}>
+            <Text dangerouslySetColor={customTextNodeColor} font="label2">
               Start your free 30 day trial of Coinbase One
-            </TextLabel2>
+            </Text>
           }
           title={
-            <TextHeadline dangerouslySetColor={customTextNodeColor}>Coinbase One</TextHeadline>
+            <Text dangerouslySetColor={customTextNodeColor} font="headline">
+              Coinbase One
+            </Text>
           }
         />
       </Example>
@@ -115,7 +119,7 @@ const UpsellCardScreen = () => {
         <UpsellCard {...exampleProps} dangerouslySetBackground={defaultBackground} width="100%" />
       </Example>
       <VStack gap={2} padding={3}>
-        <TextTitle3>Carousel</TextTitle3>
+        <Text font="title3">Carousel</Text>
         <Carousel
           gap={2}
           items={[

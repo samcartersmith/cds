@@ -6,7 +6,7 @@ import { IconButton } from '../buttons';
 import { useTheme } from '../hooks/useTheme';
 import { Box, HStack, VStack } from '../layout';
 import { InvertedThemeProvider } from '../system';
-import { TextBody, TextHeadline } from '../typography';
+import { Text } from '../typography/Text';
 
 export type CoachmarkProps = CoachmarkBaseProps;
 
@@ -46,11 +46,13 @@ export const Coachmark = memo(
               <VStack gap={2}>
                 <VStack gap={0.5}>
                   {typeof title === 'string' ? (
-                    <TextHeadline accessibilityRole="header">{title}</TextHeadline>
+                    <Text font="headline" accessibilityRole="header">
+                      {title}
+                    </Text>
                   ) : (
                     title
                   )}
-                  {typeof content === 'string' ? <TextBody>{content}</TextBody> : content}
+                  {typeof content === 'string' ? <Text>{content}</Text> : content}
                 </VStack>
                 <HStack
                   alignItems="center"

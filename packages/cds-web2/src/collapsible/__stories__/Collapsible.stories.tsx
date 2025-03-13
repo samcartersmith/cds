@@ -6,7 +6,7 @@ import {
 import { Button } from '../../buttons';
 import { DotCount } from '../../dots';
 import { HStack } from '../../layout';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { Collapsible } from '..';
 
 export default {
@@ -16,7 +16,7 @@ export default {
 
 const { BasicCollapsible, RevealTop, DefaultExpanded, Scroll, Horizontal } = collapsibleBuilder({
   Collapsible,
-  TextBody,
+  Text,
   Button,
   DotCount,
   HStack,

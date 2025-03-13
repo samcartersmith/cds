@@ -7,7 +7,7 @@ import { DotSymbol } from '../../dots';
 import { Box, HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
 import { Tray } from '../../overlays/tray/Tray';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../utils/testHelpers';
 import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
@@ -85,7 +85,7 @@ describe('Select Input', () => {
       <DefaultThemeProvider>
         <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
           <DefaultSelect
-            helperText={<TextBody>helper text</TextBody>}
+            helperText={<Text>helper text</Text>}
             placeholder={placeholderText}
             variant="negative"
           />

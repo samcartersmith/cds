@@ -8,14 +8,14 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 import { Button } from '../../buttons';
 import { DotCount } from '../../dots';
 import { HStack } from '../../layout';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/test';
 import { Collapsible } from '../Collapsible';
 
 const { MockCollapsible } = collapsibleBuilder({
   Collapsible,
   Button,
-  TextBody,
+  Text,
   DotCount,
   HStack,
 } as CreateCollapsibleProps);

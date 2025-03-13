@@ -3,7 +3,7 @@ import * as animations from '@cbhq/cds-lottie-files2';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { Lottie } from '../Lottie';
 
 const LottieScreen = () => {
@@ -13,7 +13,7 @@ const LottieScreen = () => {
         <Box padding={1}>
           {Object.entries(animations).map(([name, source]) => (
             <Box key={name} width={200}>
-              <TextBody>{name}</TextBody>
+              <Text>{name}</Text>
               <Lottie autoplay loop height={200} source={source} width={200} />
             </Box>
           ))}

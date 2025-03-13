@@ -15,7 +15,7 @@ type RemoteImageGroupBuilder = {
   RemoteImage: React.ComponentType<React.PropsWithChildren<RemoteImageBuilderTypes>>;
   VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & StackBaseProps>>;
   TextLabel1: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
-  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
+  Text: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
 };
 
 export const remoteImageGroupBuilder = ({
@@ -23,7 +23,7 @@ export const remoteImageGroupBuilder = ({
   RemoteImage,
   VStack,
   TextLabel1,
-  TextBody,
+  Text,
 }: RemoteImageGroupBuilder) => {
   const Circle = () => (
     <>
@@ -102,9 +102,9 @@ export const remoteImageGroupBuilder = ({
   // RemoteImageGroup
   const CircleMaxDefaultCustomSize = () => (
     <>
-      <TextBody>
+      <Text>
         RemoteImageGroup excess element defaults to m of AvatarSize when size is not specified
-      </TextBody>
+      </Text>
       <RemoteImageGroup max={2} shape="circle">
         <RemoteImage source={assets.eth.imageUrl} />
         <RemoteImage source={assets.sushi.imageUrl} />
@@ -116,7 +116,7 @@ export const remoteImageGroupBuilder = ({
 
   const MixAndMatchShapes = () => (
     <>
-      <TextBody>RemoteImage child shape takes precedence over RemoteImageGroup shape</TextBody>
+      <Text>RemoteImage child shape takes precedence over RemoteImageGroup shape</Text>
       <RemoteImageGroup shape="circle" size="xxl">
         <RemoteImage shape="squircle" source={squareAssets.human1} />
         <RemoteImage source={assets.sushi.imageUrl} />
@@ -193,9 +193,9 @@ export const remoteImageGroupBuilder = ({
   // RemoteImageGroup
   const SquircleMaxDefaultCustomSize = () => (
     <>
-      <TextBody>
+      <Text>
         RemoteImageGroup excess element defaults to m of AvatarSize when size is not specified
-      </TextBody>
+      </Text>
       <RemoteImageGroup max={2} shape="squircle">
         <RemoteImage source={squareAssets.human1} />
         <RemoteImage source={squareAssets.human2} />
@@ -207,7 +207,7 @@ export const remoteImageGroupBuilder = ({
 
   const SquircleMaxSetCustomMaxSize = () => (
     <>
-      <TextBody>Set a custom size of 36 for RemoteImageGroup excess component</TextBody>
+      <Text>Set a custom size of 36 for RemoteImageGroup excess component</Text>
       <RemoteImageGroup max={2} shape="squircle" size={36}>
         <RemoteImage source={squareAssets.human1} />
         <RemoteImage source={squareAssets.human2} />
@@ -219,7 +219,7 @@ export const remoteImageGroupBuilder = ({
 
   const HideExcessWhenExceedThreshold = () => (
     <>
-      <TextBody>Excess component when size is smaller than a certain size looks funky</TextBody>
+      <Text>Excess component when size is smaller than a certain size looks funky</Text>
       <RemoteImageGroup max={2} shape="squircle" size={19}>
         <RemoteImage source={squareAssets.human1} />
         <RemoteImage source={squareAssets.human2} />

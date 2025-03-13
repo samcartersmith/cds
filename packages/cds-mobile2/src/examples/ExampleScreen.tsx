@@ -10,7 +10,7 @@ import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
 import { ThemeProvider } from '../system';
 import { denseTheme } from '../themes/denseTheme';
-import { TextTitle3 } from '../typography/TextTitle3';
+import { Text } from '../typography/Text';
 
 type ExampleRenderChildren = () => NonNullable<JSX.Element>;
 export type ExampleProps = {
@@ -34,7 +34,11 @@ export const Example = ({ children, inline, title, titlePadding, ...props }: Exa
   const content = (
     <>
       <Box background="bg" padding={2} paddingBottom={3} {...props}>
-        {!!title && <TextTitle3 {...titlePadding}>{title}</TextTitle3>}
+        {!!title && (
+          <Text font="title3" {...titlePadding}>
+            {title}
+          </Text>
+        )}
 
         {typeof children === 'function'
           ? children()

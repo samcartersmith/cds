@@ -5,7 +5,7 @@ import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { defaultTheme } from '../../themes/defaultTheme';
-import { TextDisplay1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { SegmentedTab, SegmentedTabProps } from '../SegmentedTab';
 
@@ -104,7 +104,11 @@ describe('SegmentedTab', () => {
   });
 
   it('renders custom node for label', () => {
-    const label = <TextDisplay1 testID="custom-label">Custom label</TextDisplay1>;
+    const label = (
+      <Text font="display1" testID="custom-label">
+        Custom label
+      </Text>
+    );
     render(
       <DefaultThemeProvider>
         <TabsContext.Provider value={mockApi}>

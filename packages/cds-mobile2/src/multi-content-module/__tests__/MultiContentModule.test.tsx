@@ -7,7 +7,7 @@ import { Button } from '../../buttons';
 import { ButtonGroup } from '../../buttons/ButtonGroup';
 import { LogoMark } from '../../icons';
 import { Box, VStack } from '../../layout';
-import { TextBody, TextDisplay1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { MultiContentModule, MultiContentModuleProps } from '../MultiContentModule';
 
@@ -69,7 +69,11 @@ describe('MultiContentModule', () => {
   });
 
   it('renders custom node for title', () => {
-    const title = <TextDisplay1 testID="custom-title">Custom Title</TextDisplay1>;
+    const title = (
+      <Text font="display1" testID="custom-title">
+        Custom Title
+      </Text>
+    );
     render(
       <DefaultThemeProvider>
         <MultiContentModule {...exampleProps} title={title} />
@@ -79,7 +83,7 @@ describe('MultiContentModule', () => {
   });
 
   it('renders custom node for description', () => {
-    const description = <TextBody testID="custom-description">Custom Description</TextBody>;
+    const description = <Text testID="custom-description">Custom Description</Text>;
     render(
       <DefaultThemeProvider>
         <MultiContentModule {...exampleProps} description={description} />
@@ -92,7 +96,7 @@ describe('MultiContentModule', () => {
     render(
       <DefaultThemeProvider>
         <MultiContentModule {...exampleProps}>
-          <TextBody>primary content</TextBody>
+          <Text>primary content</Text>
         </MultiContentModule>
       </DefaultThemeProvider>,
     );

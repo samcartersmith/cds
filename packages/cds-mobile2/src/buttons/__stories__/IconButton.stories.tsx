@@ -5,7 +5,7 @@ import names from '@cbhq/cds-icons/__generated__/ui/data/names';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';
 import { Box } from '../../layout/Box';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { IconButton } from '../IconButton';
 
 function onPress(event: GestureResponderEvent) {
@@ -16,29 +16,29 @@ const iconName = 'arrowsHorizontal';
 const variants = [
   {
     component: <IconButton accessibilityLabel={iconName} name={iconName} variant="primary" />,
-    title: <TextBody>Primary</TextBody>,
+    title: <Text>Primary</Text>,
   },
   {
     component: (
       <IconButton transparent accessibilityLabel={iconName} name={iconName} variant="primary" />
     ),
-    title: <TextBody>Primary transparent</TextBody>,
+    title: <Text>Primary transparent</Text>,
   },
   {
     component: <IconButton accessibilityLabel={iconName} name={iconName} variant="secondary" />,
-    title: <TextBody>Secondary</TextBody>,
+    title: <Text>Secondary</Text>,
   },
   {
     component: (
       <IconButton transparent accessibilityLabel={iconName} name={iconName} variant="secondary" />
     ),
-    title: <TextBody>Secondary transparent</TextBody>,
+    title: <Text>Secondary transparent</Text>,
   },
   {
     component: (
       <IconButton accessibilityLabel={iconName} name={iconName} variant="foregroundMuted" />
     ),
-    title: <TextBody>ForegroundMuted</TextBody>,
+    title: <Text>ForegroundMuted</Text>,
   },
   {
     component: (
@@ -48,7 +48,7 @@ const variants = [
         style={{ padding: 10, borderRadius: 15, transform: 'scale(0.5)' }}
       />
     ),
-    title: <TextBody>Custom style</TextBody>,
+    title: <Text>Custom style</Text>,
   },
   {
     component: (
@@ -59,7 +59,7 @@ const variants = [
         variant="foregroundMuted"
       />
     ),
-    title: <TextBody>ForegroundMuted transparent</TextBody>,
+    title: <Text>ForegroundMuted transparent</Text>,
   },
 ];
 
@@ -73,12 +73,12 @@ const IconButtonScreen = () => {
       <Example inline title="States">
         <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
           <IconButton disabled accessibilityLabel={iconName} name={iconName} variant="primary" />
-          <TextBody>Disabled primary</TextBody>
+          <Text>Disabled primary</Text>
         </Box>
 
         <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
           <IconButton disabled accessibilityLabel={iconName} name={iconName} />
-          <TextBody>Disabled secondary</TextBody>
+          <Text>Disabled secondary</Text>
         </Box>
       </Example>
 

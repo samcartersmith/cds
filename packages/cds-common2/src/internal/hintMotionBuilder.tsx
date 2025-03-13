@@ -18,7 +18,7 @@ export type CreateHintMotionProps = {
   VStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps & { gap?: number }>>;
   Box: React.ComponentType<React.PropsWithChildren<BoxBaseProps & { overflow?: string }>>;
   Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: () => void }>>;
-  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
+  Text: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
   ColorSurge: React.ComponentType<
     React.PropsWithChildren<ColorSurgeBaseProps & { ref: ForwardedRef<ColorSurgeRefBaseProps> }>
   >;
@@ -37,7 +37,7 @@ export function hintMotionBuilder({
   ColorSurge: ColorSurgeComponent,
   Shake: ShakeComponent,
   Pulse: PulseComponent,
-  TextBody,
+  Text,
 }: CreateHintMotionProps) {
   const ColorSurge = () => {
     const ref = useRef<ColorSurgeRefBaseProps>(null);
@@ -50,7 +50,7 @@ export function hintMotionBuilder({
       <VStack gap={3}>
         <Box bordered borderRadius={200} overflow="hidden" padding={3} position="relative">
           <ColorSurgeComponent ref={ref} disableAnimateOnMount />
-          <TextBody as="p">Color Surge</TextBody>
+          <Text as="p">Color Surge</Text>
         </Box>
         <Button onPress={handleSurgePrimary}>Surge - Primary</Button>
         <Button onPress={handleSurgePositive}>Surge - Positive</Button>
@@ -68,7 +68,7 @@ export function hintMotionBuilder({
       <VStack gap={3}>
         <ShakeComponent ref={ref} disableAnimateOnMount>
           <Box bordered borderRadius={200} padding={3}>
-            <TextBody as="p">Shaking Box</TextBody>
+            <Text as="p">Shaking Box</Text>
           </Box>
         </ShakeComponent>
         <Button onPress={handleShake}>Shake</Button>
@@ -102,7 +102,7 @@ export function hintMotionBuilder({
         <Button onPress={handlePulseModerate}>Pulse - Moderate</Button>
         <Button onPress={handlePulseSubtle}>Pulse - Subtle</Button>
         <Button onPress={handleStop}>Stop</Button>
-        <TextBody as="p">Custom Transition</TextBody>
+        <Text as="p">Custom Transition</Text>
         <PulseComponent ref={customRef} disableAnimateOnMount motionConfig={customTransition}>
           <Box background="bgPrimary" height={50} width={50} />
           <Box background="bgNegative" height={50} width={50} />

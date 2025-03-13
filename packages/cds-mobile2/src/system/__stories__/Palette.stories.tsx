@@ -5,7 +5,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useTheme } from '../../hooks/useTheme';
 import { Box, HStack, VStack } from '../../layout';
 import { defaultTheme } from '../../themes/defaultTheme';
-import { TextCaption } from '../../typography';
+import { Text } from '../../typography/Text';
 import { ThemeProvider } from '../ThemeProvider';
 
 const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
@@ -24,9 +24,17 @@ const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
             width="50%"
           >
             <VStack background="bg">
-              <TextCaption align="center">{name}</TextCaption>
-              <TextCaption align="center">{value}</TextCaption>
-              {!!elevation && <TextCaption align="center">Elevation: {elevation}</TextCaption>}
+              <Text align="center" font="caption">
+                {name}
+              </Text>
+              <Text align="center" font="caption">
+                {value}
+              </Text>
+              {!!elevation && (
+                <Text align="center" font="caption">
+                  Elevation: {elevation}
+                </Text>
+              )}
             </VStack>
           </Box>
         );

@@ -7,8 +7,7 @@ import { Button } from '../../buttons';
 import { Card } from '../../cards';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';
-import { TextHeadline } from '../../typography/TextHeadline';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 import { Carousel } from '../Carousel/Carousel';
 import { CarouselRef } from '../Carousel/types';
 import { useCarousel } from '../Carousel/useCarousel';
@@ -21,10 +20,12 @@ const ExampleCarouselItem = memo(({ svgId = 1 }: { svgId?: number }) => {
   const { dismiss } = useCarouselItem();
   return (
     <Card onPress={() => dismiss()} padding={2}>
-      <TextLabel1 ellipsize="tail">Label</TextLabel1>
-      <TextHeadline color="fgMuted" ellipsize="tail" numberOfLines={2} paddingBottom={0.5}>
+      <Text ellipsize="tail" font="label1">
+        Label
+      </Text>
+      <Text color="fgMuted" ellipsize="tail" font="headline" numberOfLines={2} paddingBottom={0.5}>
         Title
-      </TextHeadline>
+      </Text>
       <RemoteImage
         height={120}
         resizeMode="cover"

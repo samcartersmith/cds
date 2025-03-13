@@ -7,7 +7,8 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { SpotRectangle } from '../../illustrations';
 import { Box, HStack, VStack } from '../../layout';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';
-import { Link, TextHeadline, TextLabel2, TextTitle3 } from '../../typography';
+import { Link } from '../../typography/Link';
+import { Text } from '../../typography/Text';
 
 const PatternDisclosureHighFrictionRiskScreen = () => {
   const data = useMemo(
@@ -67,15 +68,17 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
             <Box alignItems="center">
               <SpotRectangle name="accessToAdvancedCharts" />
             </Box>
-            <TextTitle3 paddingTop={4}>Title outlining risk in 1-2 lines</TextTitle3>
-            <TextLabel2 paddingTop={1}>
+            <Text font="title3" paddingTop={4}>
+              Title outlining risk in 1-2 lines
+            </Text>
+            <Text font="label2" paddingTop={1}>
               Body text saying &quot;Before you [verb], here are a few things you need to understand
               about [action].&quot;
-            </TextLabel2>
+            </Text>
             <VStack gap={3} paddingY={3}>
               {data.map(({ id, headline, checkboxLabel, linkText, linkUrl }, index) => (
                 <VStack key={id} gap={1}>
-                  <TextHeadline>{headline}</TextHeadline>
+                  <Text font="headline">{headline}</Text>
                   <HStack alignItems="center" gap={1}>
                     <Checkbox
                       accessibilityHint="Toggle acknowledgment of this risk item. All risk items must be acknowledged to proceed."
@@ -84,12 +87,12 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
                       onChange={handleCheckboxChange(index)}
                     />
                     {/* eslint-disable react-native/no-raw-text */}
-                    <TextLabel2 style={{ flex: 1 }}>
+                    <Text font="label2" style={{ flex: 1 }}>
                       {checkboxLabel}{' '}
                       <Link underline to={linkUrl}>
                         {linkText}
                       </Link>
-                    </TextLabel2>
+                    </Text>
                   </HStack>
                 </VStack>
               ))}

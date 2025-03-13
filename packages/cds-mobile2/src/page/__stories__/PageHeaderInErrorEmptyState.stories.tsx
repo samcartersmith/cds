@@ -9,14 +9,14 @@ import { LogoMark } from '../../icons';
 import { SpotSquare } from '../../illustrations';
 import { Box, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
-import { TextBody, TextTitle1, TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { PageHeader } from '../PageHeader';
 
 const exampleProps = {
   logoMark1: <RemoteImage shape="circle" size="m" source={assets.btc.imageUrl} />,
   logoMark2: <LogoMark size={32} />,
   start1: <IconButton name="backArrow" onPress={NoopFn} testID="header-back-button" />,
-  title1: <TextTitle3>Page Title</TextTitle3>,
+  title1: <Text font="title3">Page Title</Text>,
 };
 
 const PageHeaderInErrorEmptyState = () => {
@@ -37,10 +37,10 @@ const PageHeaderInErrorEmptyState = () => {
               paddingY={10}
             >
               <SpotSquare name="frameEmpty" />
-              <TextTitle1>You need to X before you Y</TextTitle1>
-              <TextBody align="center">
+              <Text font="title1">You need to X before you Y</Text>
+              <Text align="center">
                 You&apos;ll need to [add funds] before you can [complete this transaction]
-              </TextBody>
+              </Text>
             </VStack>
           </Box>
         </VStack>

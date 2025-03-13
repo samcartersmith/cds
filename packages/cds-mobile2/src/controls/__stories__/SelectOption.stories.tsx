@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { SelectOption } from '../SelectOption';
 
 export default function SelectOptionScreen() {
@@ -34,9 +34,9 @@ export default function SelectOptionScreen() {
         <SelectOption
           accessibilityHint="Hint"
           accessibilityLabel="Title"
-          description={<TextTitle1>Description</TextTitle1>}
+          description={<Text font="title1">Description</Text>}
           onPress={handleOptionPress}
-          title={<TextTitle1>Title</TextTitle1>}
+          title={<Text font="title1">Title</Text>}
           value="Title"
         />
       </Example>

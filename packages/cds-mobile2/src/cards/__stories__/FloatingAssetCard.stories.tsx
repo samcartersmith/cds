@@ -8,7 +8,7 @@ import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Carousel } from '../../media';
-import { TextHeadline, TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { FloatingAssetCard, FloatingAssetCardProps } from '../FloatingAssetCard';
 
 const styles = StyleSheet.create({
@@ -56,7 +56,11 @@ const FloatingAssetCardScreen = () => {
       <Example title="FloatingAssetCard with custom nodes">
         <FloatingAssetCard
           {...exampleProps}
-          description={<TextLabel2 color="fgMuted">Description</TextLabel2>}
+          description={
+            <Text color="fgMuted" font="label2">
+              Description
+            </Text>
+          }
           media={
             <Image
               accessibilityIgnoresInvertColors
@@ -67,7 +71,7 @@ const FloatingAssetCardScreen = () => {
             />
           }
           subtitle={null}
-          title={<TextHeadline>Title</TextHeadline>}
+          title={<Text font="headline">Title</Text>}
         />
       </Example>
       <Example title="Carousel">

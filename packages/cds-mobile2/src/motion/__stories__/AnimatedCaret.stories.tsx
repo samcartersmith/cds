@@ -3,7 +3,7 @@ import random from 'lodash/random';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { AnimatedCaret } from '../AnimatedCaret';
 
 const AnimatedCaretScreen = () => {
@@ -15,7 +15,7 @@ const AnimatedCaretScreen = () => {
     <ExampleScreen>
       <Example title="Press to rotate">
         <Button onPress={handleRotate}>Rotate</Button>
-        <TextBody>Rotate: {rotate} &#730;</TextBody>
+        <Text>Rotate: {rotate} &#730;</Text>
         <AnimatedCaret rotate={rotate} size="l" />
       </Example>
     </ExampleScreen>

@@ -3,7 +3,7 @@ import { InputStackBaseProps } from '@cbhq/cds-common2';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { InputStack } from '../InputStack';
 
 const InputStackBasic = (props: InputStackBaseProps) => {
@@ -14,7 +14,7 @@ const InputStackBasic = (props: InputStackBaseProps) => {
     <InputStack
       appendNode={
         <Box background="bgPrimary">
-          <TextBody>Append</TextBody>
+          <Text>Append</Text>
         </Box>
       }
       borderStyle={{
@@ -22,27 +22,27 @@ const InputStackBasic = (props: InputStackBaseProps) => {
       }}
       endNode={
         <Box background="bgPositive">
-          <TextBody>EndContent</TextBody>
+          <Text>EndContent</Text>
         </Box>
       }
       helperTextNode={
         <Box background="bgOverlay" height={30} width="100%">
-          <TextBody>helperText</TextBody>
+          <Text>helperText</Text>
         </Box>
       }
       labelNode={
         <Box background="bgAlternate" height={30} width="100%">
-          <TextBody>Label</TextBody>
+          <Text>Label</Text>
         </Box>
       }
       prependNode={
         <Box background="bgPrimary">
-          <TextBody>Prepend</TextBody>
+          <Text>Prepend</Text>
         </Box>
       }
       startNode={
         <Box background="bgPositive">
-          <TextBody>StartContent</TextBody>
+          <Text>StartContent</Text>
         </Box>
       }
       variant="primary"
@@ -58,7 +58,7 @@ export default function InputStackScreen() {
         <InputStackBasic
           inputNode={
             <Box background="bgAlternate" flexGrow={2}>
-              <TextBody>Input</TextBody>
+              <Text>Input</Text>
             </Box>
           }
         />
@@ -68,7 +68,7 @@ export default function InputStackScreen() {
           focused
           inputNode={
             <Box background="bgAlternate" flexGrow={2}>
-              <TextBody>Input</TextBody>
+              <Text>Input</Text>
             </Box>
           }
         />
@@ -83,32 +83,32 @@ export default function InputStackScreen() {
           }}
           endNode={
             <Box background="bgPositive">
-              <TextBody>EndContent</TextBody>
+              <Text>EndContent</Text>
             </Box>
           }
           helperTextNode={
             <Box background="bgOverlay" height={30} width="100%">
-              <TextBody>helperText</TextBody>
+              <Text>helperText</Text>
             </Box>
           }
           inputNode={
             <Box background="bgAlternate" flexGrow={2}>
-              <TextBody>Input</TextBody>
+              <Text>Input</Text>
             </Box>
           }
           labelNode={
             <Box background="bgAlternate" height={30} width="100%">
-              <TextBody>Label</TextBody>
+              <Text>Label</Text>
             </Box>
           }
           prependNode={
             <Box background="bgPrimary">
-              <TextBody>Prepend</TextBody>
+              <Text>Prepend</Text>
             </Box>
           }
           startNode={
             <Box background="bgPositive">
-              <TextBody>StartContent</TextBody>
+              <Text>StartContent</Text>
             </Box>
           }
           variant="primary"
@@ -121,7 +121,7 @@ export default function InputStackScreen() {
         <InputStack
           appendNode={
             <Box background="bgPrimary">
-              <TextBody>Append</TextBody>
+              <Text>Append</Text>
             </Box>
           }
           borderStyle={{
@@ -129,27 +129,27 @@ export default function InputStackScreen() {
           }}
           endNode={
             <Box background="bgPositive">
-              <TextBody>EndContent</TextBody>
+              <Text>EndContent</Text>
             </Box>
           }
           helperTextNode={
             <Box background="bgOverlay" height={30} width="100%">
-              <TextBody>helperText</TextBody>
+              <Text>helperText</Text>
             </Box>
           }
           inputNode={
             <Box background="bgAlternate" flexGrow={2}>
-              <TextBody>Input</TextBody>
+              <Text>Input</Text>
             </Box>
           }
           labelNode={
             <Box background="bgAlternate" height={30} width="100%">
-              <TextBody>Label</TextBody>
+              <Text>Label</Text>
             </Box>
           }
           startNode={
             <Box background="bgPositive">
-              <TextBody>StartContent</TextBody>
+              <Text>StartContent</Text>
             </Box>
           }
           variant="primary"

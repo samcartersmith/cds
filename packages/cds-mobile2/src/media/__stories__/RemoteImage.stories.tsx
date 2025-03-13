@@ -6,7 +6,7 @@ import { entries } from '@cbhq/cds-utils';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { getSource, RemoteImage } from '../RemoteImage';
 
 const sharedProps = {
@@ -38,7 +38,7 @@ const {
   RemoteImage,
   VStack,
   HStack,
-  TextBody: (props) => <TextBody {...props} />,
+  Text: (props) => <Text {...props} />,
 });
 
 const gapStyle = { gap: 16 };

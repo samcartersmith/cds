@@ -18,7 +18,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { useTheme } from '../hooks/useTheme';
 import { Spacer } from '../layout/Spacer';
 import { TextProps } from '../typography/Text';
-import { TextBody } from '../typography/TextBody';
+import { Text } from '../typography/Text';
 import { Haptics } from '../utils/haptics';
 
 import { useControlMotionProps } from './useControlMotionProps';
@@ -158,7 +158,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
             <View style={iconWrapperStyles}>
               <ControlIcon {...controlIconProps} pressed={pressed} />
             </View>
-            <TextBody
+            <Text
               animated
               color={checked || indeterminate ? 'fg' : 'fgMuted'}
               style={{
@@ -174,7 +174,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
               testID={`${testID}Label`}
             >
               {label}
-            </TextBody>
+            </Text>
           </>
         ) : (
           <ControlIcon {...controlIconProps} pressed={pressed} />

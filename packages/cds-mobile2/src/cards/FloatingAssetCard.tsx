@@ -8,7 +8,7 @@ import {
 
 import { HStack, VStack } from '../layout';
 import { Pressable } from '../system';
-import { TextHeadline, TextLabel2, TextLegal } from '../typography';
+import { Text } from '../typography/Text';
 
 export type FloatingAssetCardProps = FloatingAssetCardBaseProps & Pick<PressableProps, 'onPress'>;
 
@@ -47,21 +47,23 @@ export const FloatingAssetCard = memo(
         </HStack>
         <VStack gap={0.5} maxWidth={width}>
           {typeof subtitle === 'string' ? (
-            <TextLegal color="fgMuted" numberOfLines={1}>
+            <Text color="fgMuted" font="legal" numberOfLines={1}>
               {subtitle}
-            </TextLegal>
+            </Text>
           ) : (
             subtitle
           )}
           {typeof title === 'string' ? (
-            <TextHeadline numberOfLines={3}>{title}</TextHeadline>
+            <Text font="headline" numberOfLines={3}>
+              {title}
+            </Text>
           ) : (
             title
           )}
           {typeof description === 'string' ? (
-            <TextLabel2 color="fgMuted" numberOfLines={2}>
+            <Text color="fgMuted" font="label2" numberOfLines={2}>
               {description}
-            </TextLabel2>
+            </Text>
           ) : (
             description
           )}

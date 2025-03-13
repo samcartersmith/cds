@@ -6,7 +6,7 @@ import { Button } from '../../buttons/Button';
 import { CellMedia } from '../../cells';
 import { TextInput } from '../../controls';
 import { Example, ExampleProps, ExampleScreen } from '../../examples/ExampleScreen';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Accordion, AccordionItem } from '..';
 
 const STEPS = [
@@ -18,7 +18,7 @@ const STEPS = [
 const { BasicAccordion, NoMedia, NoSubtitle, TitleOnly, LongContent } = accordionBuilder({
   Accordion,
   AccordionItem,
-  TextBody,
+  Text,
   CellMedia,
   TextInput,
 });
@@ -82,7 +82,7 @@ const AccordionScreen = () => {
             subtitle="subtitle2"
             title="Accordion #2"
           >
-            <TextBody>Accordion Content</TextBody>
+            <Text>Accordion Content</Text>
           </AccordionItem>
         </Accordion>
       </AccordionExample>
@@ -96,7 +96,7 @@ const AccordionScreen = () => {
               title={`Item ${itemKey}`}
             >
               <Button onPress={() => setActiveKey(nextKey)}>
-                <TextBody>Open Item {nextKey}</TextBody>
+                <Text>Open Item {nextKey}</Text>
               </Button>
             </AccordionItem>
           ))}

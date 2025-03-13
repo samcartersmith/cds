@@ -27,7 +27,7 @@ export type CreateCollapsibleProps = {
       }
     >
   >;
-  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
+  Text: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
   DotCount: React.ComponentType<React.PropsWithChildren<DotCountBaseProps>>;
   HStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps>>;
 };
@@ -35,7 +35,7 @@ export type CreateCollapsibleProps = {
 export function collapsibleBuilder({
   Button,
   Collapsible,
-  TextBody,
+  Text,
   DotCount,
   HStack,
 }: CreateCollapsibleProps) {
@@ -56,7 +56,7 @@ export function collapsibleBuilder({
           Click me!
         </Button>
         <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
-          <TextBody as="p">{loremIpsum}</TextBody>
+          <Text as="p">{loremIpsum}</Text>
         </Collapsible>
       </>
     );
@@ -69,7 +69,7 @@ export function collapsibleBuilder({
     return (
       <>
         <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
-          <TextBody as="p">{loremIpsum}</TextBody>
+          <Text as="p">{loremIpsum}</Text>
         </Collapsible>
         <Button disableDebounce aria-controls={collapsibleId} id={triggerId} onClick={toggle}>
           Click me!
@@ -94,7 +94,7 @@ export function collapsibleBuilder({
           Click me!
         </Button>
         <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
-          <TextBody as="p">{loremIpsum}</TextBody>
+          <Text as="p">{loremIpsum}</Text>
         </Collapsible>
       </>
     );
@@ -121,7 +121,7 @@ export function collapsibleBuilder({
           id={collapsibleId}
           maxHeight={400}
         >
-          <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
+          <Text as="p">{loremIpsum.repeat(10)}</Text>
         </Collapsible>
       </>
     );
@@ -177,7 +177,7 @@ export function collapsibleBuilder({
           id={collapsibleId}
           testID="mock-collapse"
         >
-          <TextBody as="p">Collapsible Content</TextBody>
+          <Text as="p">Collapsible Content</Text>
         </Collapsible>
       </>
     );

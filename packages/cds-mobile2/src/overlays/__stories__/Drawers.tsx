@@ -8,7 +8,7 @@ import { Icon } from '../../icons/Icon';
 import { VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Avatar } from '../../media/Avatar';
-import { TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Drawer } from '../drawer/Drawer';
 
 export const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
@@ -74,7 +74,7 @@ export const SideDrawerContent = ({ handleClose }: SideDrawerContentProps) => {
       <VStack alignItems="center">
         <Avatar alt="CDS" size="xxl" />
         <VStack padding={2}>
-          <TextTitle3>Test User</TextTitle3>
+          <Text font="title3">Test User</Text>
         </VStack>
         <Button block compact onPress={handleClose} variant="secondary">
           Profile & Settings

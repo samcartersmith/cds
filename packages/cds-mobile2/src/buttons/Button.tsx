@@ -10,7 +10,7 @@ import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
 import { type PressableInternalProps, Pressable } from '../system/Pressable';
-import { TextHeadline } from '../typography/TextHeadline';
+import { Text } from '../typography/Text';
 
 export type ButtonProps = ButtonBaseProps &
   Omit<PressableInternalProps, 'background'> & {
@@ -87,16 +87,17 @@ export const Button = memo(
         isValidElement(children) && Boolean(children.props.children) ? (
           children
         ) : (
-          <TextHeadline
+          <Text
             align="center"
             color={color}
+            font="headline"
             numberOfLines={numberOfLines}
             selectable={false}
             style={styles.text}
             testID="text-headline"
           >
             {children}
-          </TextHeadline>
+          </Text>
         ),
       [children, color, numberOfLines],
     );

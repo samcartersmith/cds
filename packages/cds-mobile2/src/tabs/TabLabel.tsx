@@ -5,8 +5,7 @@ import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common2';
 import { DotCount } from '../dots/DotCount';
 import { useTheme } from '../hooks/useTheme';
 import { HStack } from '../layout';
-import { TextHeadline, TextTitle3, TextTitle4 } from '../typography';
-import { TextProps } from '../typography/Text';
+import { Text, TextProps } from '../typography/Text';
 
 import { useDotAnimation } from './hooks/useDotAnimation';
 
@@ -28,10 +27,10 @@ export const TabLabel = memo(
     const shouldMeasureElement = useMemo(() => !active && variant !== 'primary', [active, variant]);
     const color = useMemo(() => COLORS[variant][active ? 'active' : 'inactive'], [active, variant]);
     const TextElement = useMemo(() => {
-      if (variant === 'primary') return TextHeadline;
-      if (active) return TextTitle3;
+      if (variant === 'primary') return (props: TextProps) => <Text {...props} font="headline" />;
+      if (active) return (props: TextProps) => <Text {...props} font="title3" />;
 
-      return TextTitle4;
+      return (props: TextProps) => <Text {...props} font="title4" />;
     }, [active, variant]);
 
     // Styles
@@ -66,12 +65,12 @@ export const TabLabel = memo(
       <HStack alignItems="center">
         {shouldMeasureElement ? (
           <View>
-            <TextElement color={color} {...props} style={dynamicStyles} />
+            <TextElement {...props} color={color} style={dynamicStyles} />
             {/* This element is used to ensure the element width doesn't change when we change font-weight */}
-            <TextTitle3 aria-hidden style={styles.hiddenElement} {...props} />
+            <Text {...props} aria-hidden font="title3" style={styles.hiddenElement} />
           </View>
         ) : (
-          <TextElement color={color} {...props} style={dynamicStyles} />
+          <TextElement {...props} color={color} style={dynamicStyles} />
         )}
         <Animated.View style={dotStyles.container}>
           <Animated.View style={dotStyles.inner}>

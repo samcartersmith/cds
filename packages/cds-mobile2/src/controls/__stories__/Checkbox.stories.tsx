@@ -4,7 +4,7 @@ import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useCheckboxGroupState } from '../../hooks/useCheckboxGroupState';
-import { TextHeadline } from '../../typography/TextHeadline';
+import { Text } from '../../typography/Text';
 import { Checkbox } from '../Checkbox';
 import { CheckboxGroup } from '../CheckboxGroup';
 
@@ -63,7 +63,7 @@ const CheckboxScreen = () => {
 
           return (
             <>
-              <TextHeadline>Order Dinner</TextHeadline>
+              <Text font="headline">Order Dinner</Text>
               <CheckboxGroup<keyof typeof options>
                 accessibilityLabel="Order Dinner"
                 onChange={toggle}
@@ -89,7 +89,7 @@ const CheckboxScreen = () => {
 
           return (
             <>
-              <TextHeadline>Order Dinner</TextHeadline>
+              <Text font="headline">Order Dinner</Text>
               <CheckboxGroup<keyof typeof options>
                 accessibilityLabel="Order Dinner"
                 onChange={toggle}

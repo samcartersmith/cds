@@ -4,7 +4,7 @@ import { ContentCardHeaderBaseProps } from '@cbhq/cds-common2';
 
 import { HStack, HStackProps } from '../../layout';
 import { Avatar } from '../../media';
-import { TextLabel1, TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 
 export type ContentCardHeaderProps = ContentCardHeaderBaseProps & HStackProps;
 
@@ -34,11 +34,17 @@ export const ContentCardHeader = memo(
           ) : (
             avatar
           )}
-          {typeof title === 'string' ? <TextLabel1 numberOfLines={1}>{title}</TextLabel1> : title}
+          {typeof title === 'string' ? (
+            <Text font="label1" numberOfLines={1}>
+              {title}
+            </Text>
+          ) : (
+            title
+          )}
           {typeof meta === 'string' ? (
-            <TextLabel2 color="fgMuted" numberOfLines={1}>
+            <Text color="fgMuted" font="label2" numberOfLines={1}>
               {meta}
-            </TextLabel2>
+            </Text>
           ) : (
             meta
           )}

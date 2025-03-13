@@ -8,7 +8,7 @@ import { useTheme } from '../../hooks/useTheme';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Pressable } from '../../system/Pressable';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Icon } from '../Icon';
 import { TextIcon } from '../TextIcon';
 
@@ -65,16 +65,14 @@ const IconScreen = () => {
     <ExampleScreen>
       <Example title="Nesting icons">
         <VStack gap={1}>
-          <TextBody align="end">
+          <Text align="end">
             <TextIcon name="dot" size="xs" />
-            <TextBody>This is some text</TextBody>
-          </TextBody>
-          <TextBody align="end">
+            <Text>This is some text</Text>
+          </Text>
+          <Text align="end">
             <TextIcon name="dot" size="xs" />
-            <TextBody>
-              This is soooooooooooooome reallllllllllllllllly loooooooonnngggggg text
-            </TextBody>
-          </TextBody>
+            <Text>This is soooooooooooooome reallllllllllllllllly loooooooonnngggggg text</Text>
+          </Text>
         </VStack>
       </Example>
       <Example title="Animated Icon">

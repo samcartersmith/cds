@@ -9,7 +9,7 @@ import {
 
 import { HStack, HStackProps, VStack } from '../layout';
 import { Pressable } from '../system';
-import { TextHeadline, TextLabel2, TextLegal } from '../typography';
+import { Text } from '../typography/Text';
 
 export type ContainedAssetCardProps = ContainedAssetCardBaseProps &
   Pick<PressableProps, 'onPress'> &
@@ -68,21 +68,23 @@ export const ContainedAssetCard = memo(
           <HStack>{header}</HStack>
           <VStack gap={0.5}>
             {typeof subtitle === 'string' ? (
-              <TextLegal color="fgMuted" numberOfLines={1}>
+              <Text color="fgMuted" font="legal" numberOfLines={1}>
                 {subtitle}
-              </TextLegal>
+              </Text>
             ) : (
               subtitle
             )}
             {typeof title === 'string' ? (
-              <TextHeadline numberOfLines={1}>{title}</TextHeadline>
+              <Text font="headline" numberOfLines={1}>
+                {title}
+              </Text>
             ) : (
               title
             )}
             {typeof description === 'string' ? (
-              <TextLabel2 color="fgMuted" numberOfLines={1}>
+              <Text color="fgMuted" font="label2" numberOfLines={1}>
                 {description}
-              </TextLabel2>
+              </Text>
             ) : (
               description
             )}

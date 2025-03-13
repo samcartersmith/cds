@@ -3,7 +3,7 @@ import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useTheme } from '../../hooks/useTheme';
-import { TextBody, TextLabel1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { LinearGradient } from '../LinearGradient';
 
 const stops = [0, 0.5, 1];
@@ -14,27 +14,27 @@ const LinearGradientScreen = () => {
     <ExampleScreen>
       <Example inline title="As Background">
         <LinearGradient colors={[bgPrimary, bgPositive]}>
-          <TextBody>First example</TextBody>
+          <Text>First example</Text>
         </LinearGradient>
         <LinearGradient colors={[bgPrimary, bgPositive, bgNegative]} stops={stops}>
-          <TextBody>Second example</TextBody>
+          <Text>Second example</Text>
         </LinearGradient>
-        <TextLabel1>Horizontal gradient</TextLabel1>
+        <Text font="label1">Horizontal gradient</Text>
         <LinearGradient angle={90} colors={[bgPrimary, bgPositive, bgNegative]} stops={stops}>
-          <TextBody>Horizontal angle example</TextBody>
+          <Text>Horizontal angle example</Text>
         </LinearGradient>
       </Example>
       <Example inline title="As overlay with isBelowChildren set to false">
         <LinearGradient colors={[transparent, bg]} isBelowChildren={false}>
-          <TextBody>{loremIpsum}...</TextBody>
+          <Text>{loremIpsum}...</Text>
         </LinearGradient>
-        <TextLabel1>More</TextLabel1>
+        <Text font="label1">More</Text>
       </Example>
       <Example inline title="As overlay with elevated prop">
         <LinearGradient elevated colors={[transparent, bg]}>
-          <TextBody>{loremIpsum}...</TextBody>
+          <Text>{loremIpsum}...</Text>
         </LinearGradient>
-        <TextLabel1>More</TextLabel1>
+        <Text font="label1">More</Text>
       </Example>
     </ExampleScreen>
   );

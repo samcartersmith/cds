@@ -5,7 +5,7 @@ import { ModalHeaderBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
 
 import { IconButton } from '../../buttons';
 import { Box, HStack } from '../../layout';
-import { TextHeadline } from '../../typography';
+import { Text } from '../../typography/Text';
 
 type ModalHeaderProps = {
   /** Handles back button press */
@@ -44,7 +44,9 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
         )}
       </Box>
       <Box alignItems="center" flexBasis={0} flexGrow={6} justifyContent="center">
-        <TextHeadline align="center">{title}</TextHeadline>
+        <Text align="center" font="headline">
+          {title}
+        </Text>
       </Box>
       <Box alignItems="flex-end" flexBasis={0} flexGrow={1}>
         {!hideCloseButton && (

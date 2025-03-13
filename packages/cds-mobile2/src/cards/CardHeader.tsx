@@ -3,7 +3,7 @@ import { CardHeaderProps as CardHeaderBaseProps } from '@cbhq/cds-common2/types'
 
 import { HStack } from '../layout/HStack';
 import { RemoteImage } from '../media/RemoteImage';
-import { TextLabel1, TextLegal } from '../typography';
+import { Text } from '../typography/Text';
 
 export type CardHeaderProps = CardHeaderBaseProps;
 
@@ -21,8 +21,8 @@ export const CardHeader = memo(
           {avatar ? (
             <RemoteImage height={32} resizeMode="center" source={{ uri: avatar }} width={32} />
           ) : null}
-          {!!description && <TextLabel1>{description}</TextLabel1>}
-          {!!metaData && <TextLegal>{metaData}</TextLegal>}
+          {!!description && <Text font="label1">{description}</Text>}
+          {!!metaData && <Text font="legal">{metaData}</Text>}
         </HStack>
         {action}
       </HStack>

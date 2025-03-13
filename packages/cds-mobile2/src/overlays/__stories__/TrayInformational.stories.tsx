@@ -7,7 +7,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';
 import { SectionHeader } from '../../section-header/SectionHeader';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
-import { TextBody, TextHeadline, TextLabel2, TextLegal } from '../../typography';
+import { Text } from '../../typography/Text';
 import { ProgressBar } from '../../visualizations/ProgressBar';
 import { Tray, TrayStickyFooter } from '../tray/Tray';
 
@@ -34,17 +34,19 @@ export const Default = () => {
           {({ handleClose }) => (
             <TrayStickyFooter>
               <VStack paddingBottom={1} paddingX={3}>
-                <TextBody color="fgMuted" paddingBottom={3}>
+                <Text color="fgMuted" paddingBottom={3}>
                   The percentage of Coinbase customers who increased or decreased their net position
                   in 00 over the past 24 hours through trading. What this means: Increased buying
                   activity can signal that the asset is gaining popularity. Last updated on May 2,
                   2023.
-                </TextBody>
-                <TextHeadline>What this means:</TextHeadline>
-                <TextBody color="fgMuted" paddingBottom={3}>
+                </Text>
+                <Text font="headline">What this means:</Text>
+                <Text color="fgMuted" paddingBottom={3}>
                   Increased buying activity can signal that the asset is gaining popularity.
-                </TextBody>
-                <TextLegal color="fgMuted">Last updated on May 2, 2023.</TextLegal>
+                </Text>
+                <Text color="fgMuted" font="legal">
+                  Last updated on May 2, 2023.
+                </Text>
               </VStack>
               <StickyFooter paddingX={3}>
                 <Button block onPress={handleClose} variant="secondary">
@@ -82,11 +84,11 @@ export const WithProgressBar = () => {
           {({ handleClose }) => (
             <TrayStickyFooter>
               <VStack paddingBottom={1} paddingX={3}>
-                <TextBody color="fgMuted" paddingBottom={3}>
+                <Text color="fgMuted" paddingBottom={3}>
                   The percentage of this asset currently being held in cold storage. In order to
                   trade these funds, you will need to first unlock them from your cold storage
                   vault.
-                </TextBody>
+                </Text>
                 <ProgressBar
                   accessibilityLabel="default progressbar"
                   color="bgInverse"
@@ -94,12 +96,16 @@ export const WithProgressBar = () => {
                 />
                 <HStack justifyContent="space-between" paddingTop={1.5}>
                   <VStack>
-                    <TextLabel2>$1,863.90 · 50%</TextLabel2>
-                    <TextLabel2 color="fgMuted">Stored in vault</TextLabel2>
+                    <Text font="label2">$1,863.90 · 50%</Text>
+                    <Text color="fgMuted" font="label2">
+                      Stored in vault
+                    </Text>
                   </VStack>
                   <VStack>
-                    <TextLabel2>$1,863.90</TextLabel2>
-                    <TextLabel2 color="fgMuted">Eligible</TextLabel2>
+                    <Text font="label2">$1,863.90</Text>
+                    <Text color="fgMuted" font="label2">
+                      Eligible
+                    </Text>
                   </VStack>
                 </HStack>
               </VStack>

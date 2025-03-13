@@ -8,7 +8,7 @@ import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';
 import { Carousel } from '../../media/Carousel/Carousel';
-import { TextBody, TextHeadline, TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { NudgeCard, NudgeCardProps } from '../NudgeCard';
 
 const styles = StyleSheet.create({
@@ -114,7 +114,7 @@ const NudgeCardScreen = () => {
         <NudgeCard {...longProps} />
       </Example>
       <VStack gap={2} padding={3}>
-        <TextTitle3>Carousel</TextTitle3>
+        <Text font="title3">Carousel</Text>
         <Carousel
           gap={1}
           items={[
@@ -159,8 +159,12 @@ const NudgeCardScreen = () => {
               </Button>
             </HStack>
           }
-          description={<TextBody color="fgMuted">Custom description</TextBody>}
-          title={<TextHeadline color="fgPrimary">Custom title</TextHeadline>}
+          description={<Text color="fgMuted">Custom description</Text>}
+          title={
+            <Text color="fgPrimary" font="headline">
+              Custom title
+            </Text>
+          }
         />
       </Example>
     </ExampleScreen>

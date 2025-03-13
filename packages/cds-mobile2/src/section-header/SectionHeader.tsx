@@ -5,7 +5,7 @@ import { UiIconName } from '@cbhq/cds-icons';
 
 import { Icon } from '../icons';
 import { HStack, VStack } from '../layout';
-import { TextBody, TextTitle3 } from '../typography';
+import { Text } from '../typography/Text';
 
 export const SectionHeader = memo(
   forwardRef(function SectionHeader(
@@ -38,7 +38,9 @@ export const SectionHeader = memo(
           <HStack alignItems="center" gap={1}>
             {!!start && start}
             {typeof title === 'string' ? (
-              <TextTitle3 accessibilityRole="header">{title}</TextTitle3>
+              <Text font="title3" accessibilityRole="header">
+                {title}
+              </Text>
             ) : (
               title
             )}
@@ -48,11 +50,11 @@ export const SectionHeader = memo(
               icon
             )}
           </HStack>
-          {typeof balance === 'string' ? <TextTitle3>{balance}</TextTitle3> : balance}
+          {typeof balance === 'string' ? <Text font="title3">{balance}</Text> : balance}
           {typeof description === 'string' ? (
-            <TextBody color="fgMuted" numberOfLines={2}>
+            <Text color="fgMuted" numberOfLines={2}>
               {description}
-            </TextBody>
+            </Text>
           ) : (
             description
           )}

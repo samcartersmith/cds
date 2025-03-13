@@ -7,7 +7,7 @@ import { Icon } from '../../icons';
 import { SpotRectangle } from '../../illustrations';
 import { Box, HStack, VStack } from '../../layout';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';
-import { TextBody, TextHeadline, TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 
 const PatternDisclosureMedFrictionScreen = () => {
   const [visible, { toggleOn, toggleOff }] = useToggler(true);
@@ -51,15 +51,19 @@ const PatternDisclosureMedFrictionScreen = () => {
             <Box alignItems="center">
               <SpotRectangle name="accessToAdvancedCharts" />
             </Box>
-            <TextTitle3 paddingTop={4}>Title outlining the benefit in 1-2 lines</TextTitle3>
+            <Text font="title3" paddingTop={4}>
+              Title outlining the benefit in 1-2 lines
+            </Text>
             <VStack gap={3} paddingY={3}>
               {data.map(({ id, headline, body }) => (
                 <VStack key={id} gap={1}>
                   <HStack alignItems="center" gap={2}>
                     <Icon color="fg" name="checkmark" size="s" />
-                    <TextHeadline style={{ flex: 1 }}>{headline}</TextHeadline>
+                    <Text font="headline" style={{ flex: 1 }}>
+                      {headline}
+                    </Text>
                   </HStack>
-                  <TextBody paddingStart={4}>{body}</TextBody>
+                  <Text paddingStart={4}>{body}</Text>
                 </VStack>
               ))}
             </VStack>

@@ -4,7 +4,8 @@ import { NoopFn as noopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Spacer, VStack } from '../../layout';
-import { Link, TextLabel2, TextTitle1 } from '../../typography';
+import { Link } from '../../typography/Link';
+import { Text } from '../../typography/Text';
 import { Banner, MobileBannerProps } from '../Banner';
 
 const primaryAction = <Link to="https://www.coinbase.com">Primary</Link>;
@@ -74,15 +75,15 @@ const styleProps: MobileBannerProps[] = [
 const Banners = ({ title, props }: { title: string; props: MobileBannerProps }) => {
   return (
     <VStack gap={2}>
-      <TextTitle1>{title}</TextTitle1>
+      <Text font="title1">{title}</Text>
       <Banner {...props} />
-      <TextTitle1>{title} with showDismiss</TextTitle1>
+      <Text font="title1">{title} with showDismiss</Text>
       <Banner {...props} showDismiss onClose={noopFn} title={`${title} with showDismiss`} />
-      <TextTitle1>{title} with Action</TextTitle1>
+      <Text font="title1">{title} with Action</Text>
       <Banner {...props} primaryAction={primaryAction} />
-      <TextTitle1>{title} with multiple Actions</TextTitle1>
+      <Text font="title1">{title} with multiple Actions</Text>
       <Banner {...props} primaryAction={primaryAction} secondaryAction={secondaryAction} />
-      <TextTitle1>{title} Long Text with Action</TextTitle1>
+      <Text font="title1">{title} Long Text with Action</Text>
       <Banner
         {...props}
         primaryAction={primaryAction}
@@ -90,7 +91,7 @@ const Banners = ({ title, props }: { title: string; props: MobileBannerProps }) 
       >
         {longMessage}
       </Banner>
-      <TextTitle1>{title} with Action and showDismiss</TextTitle1>
+      <Text font="title1">{title} with Action and showDismiss</Text>
       <Banner
         {...props}
         showDismiss
@@ -98,7 +99,7 @@ const Banners = ({ title, props }: { title: string; props: MobileBannerProps }) 
         primaryAction={primaryAction}
         title={`${title} with Action and showDismiss`}
       />
-      <TextTitle1>{title} Long Text and showDismiss</TextTitle1>
+      <Text font="title1">{title} Long Text and showDismiss</Text>
       <Banner
         {...props}
         showDismiss
@@ -107,7 +108,7 @@ const Banners = ({ title, props }: { title: string; props: MobileBannerProps }) 
       >
         {longMessage}
       </Banner>
-      <TextTitle1>{title} Long Text with Action and showDismiss</TextTitle1>
+      <Text font="title1">{title} Long Text with Action and showDismiss</Text>
       <Banner
         {...props}
         showDismiss
@@ -152,7 +153,7 @@ const BannerScreen = () => {
       </Example>
       <Example title="With Link">
         <VStack gap={2}>
-          <TextTitle1>Global</TextTitle1>
+          <Text font="title1">Global</Text>
           <Banner
             showDismiss
             closeAccessibilityLabel="Close"
@@ -164,12 +165,12 @@ const BannerScreen = () => {
             title={`Global ${shortMessage}`}
             variant="error"
           >
-            <TextLabel2>
+            <Text font="label2">
               {shortMessage}
               <Link to="https://www.coinbase.com"> Learn more</Link>
-            </TextLabel2>
+            </Text>
           </Banner>
-          <TextTitle1>Inline</TextTitle1>
+          <Text font="title1">Inline</Text>
           <Banner
             showDismiss
             closeAccessibilityLabel="Close"
@@ -185,7 +186,7 @@ const BannerScreen = () => {
               Learn more
             </Link>
           </Banner>
-          <TextTitle1>Contextual</TextTitle1>
+          <Text font="title1">Contextual</Text>
           <Banner
             showDismiss
             closeAccessibilityLabel="Close"
@@ -196,17 +197,17 @@ const BannerScreen = () => {
             startIconAccessibilityLabel="Information"
             variant="promotional"
           >
-            <TextLabel2>
+            <Text font="label2">
               {shortMessage}
               <Link to="https://www.coinbase.com"> Learn more</Link>
-            </TextLabel2>
+            </Text>
           </Banner>
         </VStack>
       </Example>
       <Example title="Custom Offset">
         <VStack gap={2}>
           <Spacer />
-          <TextTitle1>Global</TextTitle1>
+          <Text font="title1">Global</Text>
           <Banner
             {...examplePropsWithOffset}
             showDismiss
@@ -231,7 +232,7 @@ const BannerScreen = () => {
 
           <Banner {...examplePropsWithOffset} styleVariant="global" variant="error" />
           <Spacer />
-          <TextTitle1>Inline</TextTitle1>
+          <Text font="title1">Inline</Text>
           <Banner
             {...examplePropsWithOffset}
             showDismiss
@@ -257,7 +258,7 @@ const BannerScreen = () => {
         </VStack>
       </Example>
       <Example>
-        <TextTitle1>Vertical Align</TextTitle1>
+        <Text font="title1">Vertical Align</Text>
         <VStack gap={2}>
           <Banner
             {...exampleProps}

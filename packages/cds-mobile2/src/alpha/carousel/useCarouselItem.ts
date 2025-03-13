@@ -8,7 +8,7 @@ import { CarouselItemContext, CarouselItemContextValue } from './CarouselItem';
  * ```
  * const MyCarouselItem = () => {
  * const { id, dismiss } = useCarouselItem()
- *  return <Card onPress={dismiss}><TextBody>{`Carousel item ${id}`}</TextBody></Card>
+ *  return <Card onPress={dismiss}><Text>{`Carousel item ${id}`}</Text></Card>
  * }
  *
  * const MyCarousel = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Box } from '../Box';
 import { HStack } from '../HStack';
 import { Spacer } from '../Spacer';
@@ -18,7 +18,7 @@ const SpacerScreen = () => {
           justifyContent="center"
           width="100%"
         >
-          <TextBody>Top Content</TextBody>
+          <Text>Top Content</Text>
         </Box>
         <Spacer vertical={3} />
         <Box
@@ -28,7 +28,7 @@ const SpacerScreen = () => {
           justifyContent="center"
           width="100%"
         >
-          <TextBody>Bottom Content</TextBody>
+          <Text>Bottom Content</Text>
         </Box>
       </Example>
 
@@ -41,7 +41,7 @@ const SpacerScreen = () => {
             justifyContent="center"
             width={150}
           >
-            <TextBody>Left Content</TextBody>
+            <Text>Left Content</Text>
           </Box>
           <Spacer horizontal={3} />
           <Box
@@ -51,7 +51,7 @@ const SpacerScreen = () => {
             justifyContent="center"
             width={150}
           >
-            <TextBody>Right Content</TextBody>
+            <Text>Right Content</Text>
           </Box>
         </HStack>
       </Example>
@@ -59,11 +59,11 @@ const SpacerScreen = () => {
       <Example title="Fluid space">
         <VStack background="bgPrimaryWash" height={150}>
           <Box bordered alignItems="center" height={50} justifyContent="center" width="100%">
-            <TextBody>Top Content</TextBody>
+            <Text>Top Content</Text>
           </Box>
           <Spacer />
           <Box bordered alignItems="center" height={50} justifyContent="center" width="100%">
-            <TextBody>Bottom Content</TextBody>
+            <Text>Bottom Content</Text>
           </Box>
         </VStack>
 
@@ -75,7 +75,7 @@ const SpacerScreen = () => {
             justifyContent="center"
             width={150}
           >
-            <TextBody>Left Content</TextBody>
+            <Text>Left Content</Text>
           </Box>
           <Spacer />
           <Box
@@ -85,7 +85,7 @@ const SpacerScreen = () => {
             justifyContent="center"
             width={150}
           >
-            <TextBody>Right Content</TextBody>
+            <Text>Right Content</Text>
           </Box>
         </HStack>
       </Example>

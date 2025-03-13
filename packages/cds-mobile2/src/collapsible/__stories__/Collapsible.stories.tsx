@@ -5,12 +5,12 @@ import { Button } from '../../buttons';
 import { DotCount } from '../../dots';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Collapsible } from '../Collapsible';
 
 const { BasicCollapsible, RevealTop, DefaultExpanded, Scroll, Horizontal } = collapsibleBuilder({
   Collapsible,
-  TextBody,
+  Text,
   Button,
   DotCount,
   HStack,

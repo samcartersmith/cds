@@ -7,7 +7,7 @@ import { Button, ButtonGroup } from '../../buttons';
 import { ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons';
 import { VStack } from '../../layout';
-import { TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { PageFooter } from '../PageFooter';
 
 const exampleProps = {
@@ -51,7 +51,7 @@ const PageFooterInPageScreen = () => {
           left={0}
           padding={10}
         >
-          <TextTitle1>Primary Content</TextTitle1>
+          <Text font="title1">Primary Content</Text>
         </VStack>
       </ExampleScreen>
       <View style={{ position: 'absolute', bottom: inset.bottom / 2, left: 0, right: 0 }}>

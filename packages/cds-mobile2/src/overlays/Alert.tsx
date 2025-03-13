@@ -5,7 +5,7 @@ import type { AlertBaseProps, AlertRefBaseProps } from '@cbhq/cds-common2';
 import { Button } from '../buttons';
 import { Pictogram } from '../illustrations';
 import { Box, HStack, VStack } from '../layout';
-import { TextBody, TextTitle3 } from '../typography';
+import { Text } from '../typography/Text';
 
 import { Overlay } from './overlay/Overlay';
 import { useAlertAnimation } from './useAlertAnimation';
@@ -130,12 +130,12 @@ export const Alert = memo(
                     />
                   </Box>
                 )}
-                <TextTitle3 align="center" paddingBottom={0.5}>
+                <Text align="center" font="title3" paddingBottom={0.5}>
                   {title}
-                </TextTitle3>
-                <TextBody align="center" color="fgMuted">
+                </Text>
+                <Text align="center" color="fgMuted">
                   {body}
-                </TextBody>
+                </Text>
               </Box>
               <ActionsContainer gap={2} paddingX={3} paddingY={2}>
                 {actions}

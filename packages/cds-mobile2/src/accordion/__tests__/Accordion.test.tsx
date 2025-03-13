@@ -7,7 +7,7 @@ import { noop } from '@cbhq/cds-utils';
 
 import { CellMedia } from '../../cells/CellMedia';
 import { TextInput } from '../../controls';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
@@ -16,7 +16,7 @@ const { MockAccordion } = accordionBuilder({
   Accordion,
   AccordionItem,
   CellMedia,
-  TextBody,
+  Text,
   TextInput,
 });
 
@@ -109,7 +109,7 @@ describe('Accordion', () => {
               testID="mock-accordion-item1"
               title="Accordion #1"
             >
-              <TextBody>Accordion Content1</TextBody>
+              <Text>Accordion Content1</Text>
             </AccordionItem>
             <AccordionItem
               itemKey="2"
@@ -118,7 +118,7 @@ describe('Accordion', () => {
               testID="mock-accordion-item2"
               title="Accordion #2"
             >
-              <TextBody>Accordion Content2</TextBody>
+              <Text>Accordion Content2</Text>
             </AccordionItem>
           </Accordion>
         </DefaultThemeProvider>,

@@ -8,7 +8,8 @@ import { ExampleScreen } from '../../examples/ExampleScreen';
 import { LogoMark } from '../../icons';
 import { Box, Divider, HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
-import { Link, TextBody, TextHeadline, TextTitle1 } from '../../typography';
+import { Link } from '../../typography/Link';
+import { Text } from '../../typography/Text';
 import { PageHeader } from '../PageHeader';
 
 const exampleProps = {
@@ -27,21 +28,21 @@ const exampleProps = {
       />
     </Box>
   ),
-  title1: <TextTitle1>Page Title</TextTitle1>,
+  title1: <Text font="title1">Page Title</Text>,
   title2: (
     <Box alignItems="center" flexGrow={1} justifyContent="center" width="100%">
-      <TextTitle1 ellipsizeMode="tail" numberOfLines={1} style={{ textAlign: 'center' }}>
+      <Text ellipsizeMode="tail" font="title1" numberOfLines={1} style={{ textAlign: 'center' }}>
         Very Very Long Centered Title
-      </TextTitle1>
+      </Text>
     </Box>
   ),
-  intermediary1: <TextHeadline>Intermediary Content</TextHeadline>,
+  intermediary1: <Text font="headline">Intermediary Content</Text>,
   intermediary2: (
     <Box dangerouslySetBackground="red">
-      <TextBody>
+      <Text>
         Hello there. This is a rather long text sentence since I do not have lorem ipsum handy.
         Hello there. This is a rather long text sentence since I do not have lorem ipsum handy.
-      </TextBody>
+      </Text>
     </Box>
   ),
   end1: (
@@ -56,7 +57,9 @@ const exampleProps = {
   end2: (
     <HStack alignItems="center" gap={1}>
       <Link to="https://cds.cbhq.net/components/link">
-        <TextHeadline color="fgPrimary">Help</TextHeadline>
+        <Text color="fgPrimary" font="headline">
+          Help
+        </Text>
       </Link>
       <HStack gap={0}>
         <IconButton

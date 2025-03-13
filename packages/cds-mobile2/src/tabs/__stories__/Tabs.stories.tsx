@@ -4,7 +4,7 @@ import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
-import { TextLabel1, TextTitle2 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { TabNavigation } from '../TabNavigation';
 
 const tabs: TabProps[] = [
@@ -41,8 +41,10 @@ const TabScreen = () => {
       <Example overflow="visible" padding={gutter} title="Tab System">
         <TabNavigation onChange={setActiveTabOne} tabs={tabs} value={activeTabOne} />
         <VStack alignItems="center" background="bgAlternate" justifyContent="center" paddingY={6}>
-          <TextLabel1>Static preview</TextLabel1>
-          <TextTitle2 color="fgPrimary">{activeTabOne}</TextTitle2>
+          <Text font="label1">Static preview</Text>
+          <Text color="fgPrimary" font="title2">
+            {activeTabOne}
+          </Text>
         </VStack>
       </Example>
       <Example overflow="visible" padding={gutter} title="Tab System (Secondary)">
@@ -53,8 +55,10 @@ const TabScreen = () => {
           variant="secondary"
         />
         <VStack alignItems="center" background="bgAlternate" justifyContent="center" paddingY={6}>
-          <TextLabel1>Static preview</TextLabel1>
-          <TextTitle2 color="fgPrimary">{activeTabOne}</TextTitle2>
+          <Text font="label1">Static preview</Text>
+          <Text color="fgPrimary" font="title2">
+            {activeTabOne}
+          </Text>
         </VStack>
       </Example>
     </ExampleScreen>

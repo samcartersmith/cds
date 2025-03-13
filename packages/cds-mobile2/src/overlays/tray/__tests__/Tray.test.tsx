@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { Text } from 'react-native';
+import { Text as RNText } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { render, screen } from '@testing-library/react-native';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
-import { TextBody, TextTitle2 } from '../../../typography';
+import { Text } from '../../../typography/Text';
 import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../../utils/testHelpers';
 import { Tray, TrayContext } from '../Tray';
 
@@ -17,7 +17,7 @@ describe('Tray', () => {
       <DefaultThemeProvider>
         <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
           <Tray onCloseComplete={onCloseCompleteSpy} testID="mock-tray">
-            <TextBody>{loremIpsum}</TextBody>
+            <Text>{loremIpsum}</Text>
           </Tray>
         </SafeAreaProvider>
       </DefaultThemeProvider>,
@@ -42,7 +42,11 @@ describe('Tray', () => {
 
   it('renders a custom node for title', () => {
     const onCloseCompleteSpy = jest.fn();
-    const customTitle = <TextTitle2 testID="test-title">Test Title</TextTitle2>;
+    const customTitle = (
+      <Text font="title2" testID="test-title">
+        Test Title
+      </Text>
+    );
     render(
       <DefaultThemeProvider>
         <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
@@ -94,7 +98,7 @@ describe('Tray', () => {
     // Create a test component that will consume the context value and render it
     const TestComponent = () => {
       const contextValue = useContext(TrayContext);
-      return <Text testID="context-value">{JSON.stringify(contextValue)}</Text>;
+      return <RNText testID="context-value">{JSON.stringify(contextValue)}</RNText>;
     };
 
     render(

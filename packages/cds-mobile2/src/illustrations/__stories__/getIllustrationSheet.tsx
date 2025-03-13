@@ -18,7 +18,7 @@ import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSqua
 import { Divider, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
-import { TextLegal } from '../../typography';
+import { Text } from '../../typography/Text';
 import {
   HeroSquare,
   HeroSquareName,
@@ -154,7 +154,9 @@ export function getIllustrationSheet<Type extends IllustrationVariant>(type: Typ
             />
           )}
 
-          <TextLegal ellipsize="tail">{item.name}</TextLegal>
+          <Text ellipsize="tail" font="legal">
+            {item.name}
+          </Text>
         </VStack>
       </ThemeProvider>
     );

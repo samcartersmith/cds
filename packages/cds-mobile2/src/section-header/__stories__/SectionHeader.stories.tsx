@@ -11,7 +11,8 @@ import { ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons';
 import { Divider, HStack } from '../../layout';
 import { RemoteImage } from '../../media';
-import { Link, TextBody, TextHeadline, TextTitle3 } from '../../typography';
+import { Link } from '../../typography/Link';
+import { Text } from '../../typography/Text';
 import { SectionHeader } from '../SectionHeader';
 
 const defaultProps: SectionHeaderProps = {
@@ -20,10 +21,10 @@ const defaultProps: SectionHeaderProps = {
   icon: <Icon color="fg" name="info" size="xs" />,
   balance: (
     <HStack alignItems="flex-end" flexWrap="wrap" gap={0.5}>
-      <TextTitle3 color="fgMuted" numberOfLines={1}>
+      <Text color="fgMuted" font="title3" numberOfLines={1}>
         $3,9081.01
-      </TextTitle3>
-      <TextBody color="fgPositive">↗ 6.37%</TextBody>
+      </Text>
+      <Text color="fgPositive">↗ 6.37%</Text>
     </HStack>
   ),
   description: 'Add up to 2 lines of text.',
@@ -96,9 +97,9 @@ const SectionHeaderScreen = () => {
           {...defaultProps}
           balance={null}
           end={
-            <TextHeadline>
+            <Text font="headline">
               <Link to="http://www.coinbase.com">See all</Link>
-            </TextHeadline>
+            </Text>
           }
         />
         <Divider />

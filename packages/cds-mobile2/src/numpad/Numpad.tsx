@@ -7,7 +7,7 @@ import { Icon } from '../icons';
 import { HStack, VStack, VStackProps } from '../layout';
 import { Pressable } from '../system';
 import { HapticFeedbackType } from '../types';
-import { TextTitle2 } from '../typography';
+import { Text } from '../typography/Text';
 
 export const SEPARATOR = 'SEPARATOR';
 export const DELETE = 'DELETE';
@@ -160,9 +160,9 @@ const NumpadButton = memo(function NumpadButton({
       return <Icon color="fg" name="backArrow" size="s" />;
     }
     return (
-      <TextTitle2 align="center" padding={0}>
+      <Text align="center" font="title2" padding={0}>
         {value === 'SEPARATOR' ? separator : value}
-      </TextTitle2>
+      </Text>
     );
   }, [separator, value]);
 

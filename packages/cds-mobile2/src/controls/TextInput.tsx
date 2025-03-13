@@ -27,7 +27,7 @@ import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { TextLabel1 } from '../typography/TextLabel1';
+import { Text } from '../typography/Text';
 
 import { TextInputFocusVariantContext } from './context';
 import { HelperText } from './HelperText';
@@ -179,9 +179,9 @@ export const TextInput = memo(
                 <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
                   <HStack>
                     {suffix !== '' && (
-                      <TextLabel1 color="fgMuted" paddingEnd={2}>
+                      <Text color="fgMuted" font="label1" paddingEnd={2}>
                         {suffix}
-                      </TextLabel1>
+                      </Text>
                     )}
                     {!!end && (
                       <TextInputFocusVariantContext.Provider value={focusedVariant}>

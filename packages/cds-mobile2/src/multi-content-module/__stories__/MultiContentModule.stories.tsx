@@ -16,7 +16,7 @@ import { Box } from '../../layout';
 import { Avatar } from '../../media';
 import { Modal, ModalBody, ModalHeader } from '../../overlays';
 import { Pressable } from '../../system/Pressable';
-import { TextBody, TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { MultiContentModuleProps } from '../MultiContentModule';
 import { MultiContentModule } from '../MultiContentModule';
 
@@ -232,7 +232,7 @@ export const WithEnd = () => {
       <VStack>
         <HStack justifyContent="center" zIndex={2}>
           <Box background="bgElevation2" paddingX={1.5}>
-            <TextBody color="fgMuted">OR</TextBody>
+            <Text color="fgMuted">OR</Text>
           </Box>
         </HStack>
         <Divider marginTop={-1.5} paddingBottom={1.5} />
@@ -251,9 +251,9 @@ export const WithEnd = () => {
             >
               <Box padding={2}>{icon}</Box>
             </Pressable>
-            <TextLabel2 color="fgMuted" paddingTop={1}>
+            <Text font="label2" color="fgMuted" paddingTop={1}>
               {name}
-            </TextLabel2>
+            </Text>
           </VStack>
         ))}
       </HStack>

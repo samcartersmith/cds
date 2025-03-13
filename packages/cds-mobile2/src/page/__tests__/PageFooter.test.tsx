@@ -3,14 +3,14 @@ import { View } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 
 import { Box } from '../../layout';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { PageFooter } from '../PageFooter';
 
 const defaultProps = {
   action: (
     <Box>
-      <TextBody>Action</TextBody>
+      <Text>Action</Text>
     </Box>
   ),
   testID: 'page-footer',
@@ -29,7 +29,7 @@ describe('PageFooter', () => {
   it('renders action correctly', () => {
     render(
       <DefaultThemeProvider>
-        <PageFooter action={<TextBody>Test</TextBody>} />
+        <PageFooter action={<Text>Test</Text>} />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('Test')).toBeTruthy();

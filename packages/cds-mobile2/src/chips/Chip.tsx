@@ -4,7 +4,7 @@ import { chipMaxWidth } from '@cbhq/cds-common2/tokens/chip';
 
 import { HStack } from '../layout';
 import { InvertedThemeProvider, Pressable } from '../system';
-import { TextHeadline } from '../typography';
+import { Text } from '../typography/Text';
 
 import { ChipProps } from './ChipProps';
 
@@ -46,7 +46,9 @@ export const Chip = memo(
         {start}
         <HStack flexShrink={1}>
           {typeof children === 'string' ? (
-            <TextHeadline numberOfLines={numberOfLines}>{children}</TextHeadline>
+            <Text font="headline" numberOfLines={numberOfLines}>
+              {children}
+            </Text>
           ) : (
             children
           )}

@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
-import { TextBody, TextLabel1 } from '../../typography';
+import { Text } from '../../typography/Text';
 
 export type LoremIpsumProps = {
   title?: string;
@@ -14,13 +14,13 @@ export type LoremIpsumProps = {
 export const LoremIpsum = ({ color, concise, title, repeat }: LoremIpsumProps) => {
   return (
     <>
-      <TextLabel1 color={color} paddingBottom={1}>
+      <Text font="label1" color={color} paddingBottom={1}>
         {title}
-      </TextLabel1>
+      </Text>
       {concise ? null : (
-        <TextBody color={color} paddingBottom={3}>
+        <Text color={color} paddingBottom={3}>
           {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
-        </TextBody>
+        </Text>
       )}
     </>
   );

@@ -13,7 +13,7 @@ import { loremIpsum } from './data/loremIpsum';
 export type CreateAccordionProps = {
   Accordion: React.ComponentType<React.PropsWithChildren<AccordionBaseProps>>;
   AccordionItem: React.ComponentType<React.PropsWithChildren<AccordionItemBaseProps>>;
-  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
+  Text: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
   CellMedia: React.ComponentType<React.PropsWithChildren<CellMediaProps>>;
   TextInput: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>;
 };
@@ -32,7 +32,7 @@ export type MockAccordionProps = {
 export function accordionBuilder({
   Accordion,
   AccordionItem,
-  TextBody,
+  Text,
   CellMedia,
   TextInput,
 }: CreateAccordionProps) {
@@ -57,7 +57,7 @@ export function accordionBuilder({
           subtitle="subtitle2"
           title="Accordion #2"
         >
-          <TextBody as="p">Accordion Content</TextBody>
+          <Text as="p">Accordion Content</Text>
         </AccordionItem>
       </Accordion>
     );
@@ -70,7 +70,7 @@ export function accordionBuilder({
           <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
         </AccordionItem>
         <AccordionItem itemKey="2" onPress={handlePress} subtitle="subtitle2" title="Accordion #2">
-          <TextBody as="p">Accordion Content</TextBody>
+          <Text as="p">Accordion Content</Text>
         </AccordionItem>
       </Accordion>
     );
@@ -92,7 +92,7 @@ export function accordionBuilder({
           onPress={handlePress}
           title="Accordion #2"
         >
-          <TextBody as="p">Accordion Content</TextBody>
+          <Text as="p">Accordion Content</Text>
         </AccordionItem>
       </Accordion>
     );
@@ -105,7 +105,7 @@ export function accordionBuilder({
           <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
         </AccordionItem>
         <AccordionItem itemKey="2" onPress={handlePress} title="Accordion #2">
-          <TextBody as="p">Accordion Content</TextBody>
+          <Text as="p">Accordion Content</Text>
         </AccordionItem>
       </Accordion>
     );
@@ -115,10 +115,10 @@ export function accordionBuilder({
     return (
       <Accordion defaultActiveKey="2" onChange={handlePress}>
         <AccordionItem itemKey="1" title="Accordion #1">
-          <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
+          <Text as="p">{loremIpsum.repeat(10)}</Text>
         </AccordionItem>
         <AccordionItem itemKey="2" onPress={handlePress} title="Accordion #2">
-          <TextBody as="p">Accordion Content</TextBody>
+          <Text as="p">Accordion Content</Text>
         </AccordionItem>
       </Accordion>
     );
@@ -148,7 +148,7 @@ export function accordionBuilder({
           testID="mock-accordion-item1"
           title="Accordion #1"
         >
-          <TextBody as="p">Accordion Content1</TextBody>
+          <Text as="p">Accordion Content1</Text>
         </AccordionItem>
         <AccordionItem
           itemKey="2"
@@ -158,7 +158,7 @@ export function accordionBuilder({
           testID="mock-accordion-item2"
           title="Accordion #2"
         >
-          <TextBody as="p">Accordion Content2</TextBody>
+          <Text as="p">Accordion Content2</Text>
         </AccordionItem>
       </Accordion>
     );

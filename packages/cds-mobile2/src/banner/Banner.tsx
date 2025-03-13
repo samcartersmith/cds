@@ -11,7 +11,7 @@ import { Icon } from '../icons';
 import { Box, HStack, HStackProps, VStack } from '../layout';
 import { Pressable } from '../system/Pressable';
 import { Link, LinkProps } from '../typography';
-import { TextLabel1, TextLabel2, TextLegal } from '../typography';
+import { Text } from '../typography/Text';
 
 const variantStyleProps: Record<BannerStyleVariant, HStackProps> = {
   contextual: {
@@ -184,24 +184,24 @@ export const Banner = memo(
             <VStack gap={2} testID={`${testID}-content-box`}>
               <VStack gap={0.5}>
                 {typeof title === 'string' ? (
-                  <TextLabel1 color={textColor} numberOfLines={2}>
+                  <Text color={textColor} font="label1" numberOfLines={2}>
                     {title}
-                  </TextLabel1>
+                  </Text>
                 ) : (
                   title
                 )}
                 {typeof children === 'string' ? (
-                  <TextLabel2 color={textColor} numberOfLines={numberOfLines}>
+                  <Text color={textColor} font="label2" numberOfLines={numberOfLines}>
                     {children}
-                  </TextLabel2>
+                  </Text>
                 ) : (
                   children
                 )}
               </VStack>
               {typeof label === 'string' ? (
-                <TextLegal color="fgMuted" numberOfLines={1}>
+                <Text color="fgMuted" font="legal" numberOfLines={1}>
                   {label}
-                </TextLegal>
+                </Text>
               ) : (
                 label
               )}

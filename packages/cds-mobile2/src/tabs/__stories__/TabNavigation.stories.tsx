@@ -8,12 +8,12 @@ import { Button } from '../../buttons';
 import { Chip } from '../../chips/Chip';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';
-import { TextHeadline } from '../../typography';
+import { Text } from '../../typography/Text';
 import { TabNavigation } from '../TabNavigation';
 
 const renderCustomTab = ({ label, ...props }: CustomTabProps) => (
   <HStack bordered background="bg" borderRadius={100} paddingX={2} paddingY={1} {...props}>
-    <TextHeadline>{label}</TextHeadline>
+    <Text font="headline">{label}</Text>
   </HStack>
 );
 

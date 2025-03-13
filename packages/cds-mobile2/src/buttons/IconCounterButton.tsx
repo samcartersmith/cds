@@ -7,7 +7,7 @@ import { UiIconName } from '@cbhq/cds-icons';
 import { Icon } from '../icons';
 import { HStack } from '../layout';
 import { Pressable, PressableProps } from '../system';
-import { TextLabel1 } from '../typography';
+import { Text } from '../typography/Text';
 
 export type IconCounterButtonProps = IconCounterButtonBaseProps & PressableProps;
 
@@ -36,7 +36,11 @@ export const IconCounterButton = memo(
           ) : (
             icon
           )}
-          {count > 0 ? <TextLabel1 mono>{formatCount(count)}</TextLabel1> : null}
+          {count > 0 ? (
+            <Text mono font="label1">
+              {formatCount(count)}
+            </Text>
+          ) : null}
         </HStack>
       </Pressable>
     );

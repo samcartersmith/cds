@@ -5,7 +5,7 @@ import { usePreviousValues } from '@cbhq/cds-common2/hooks/usePreviousValues';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
 import { ProgressTextLabelProps } from '@cbhq/cds-common2/types/ProgressBarBaseProps';
 
-import { TextLabel2 } from '../typography';
+import { Text } from '../typography/Text';
 
 import { Counter } from './Counter';
 
@@ -23,16 +23,17 @@ export const ProgressTextLabel = memo(
         // if the user supplied value returns a string use default formatting
         if (typeof textValue === 'string') {
           return (
-            <TextLabel2
+            <Text
               noWrap
               tabularNumbers
               accessibilityState={accessibilityState}
               align="end"
               color={color ?? 'fg'}
               disabled={disabled}
+              font="label2"
             >
               {textValue}
-            </TextLabel2>
+            </Text>
           );
         }
 

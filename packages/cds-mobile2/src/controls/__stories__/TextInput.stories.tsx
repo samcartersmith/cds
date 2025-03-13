@@ -7,7 +7,7 @@ import { Icon } from '../../icons';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { InputIcon } from '../InputIcon';
 import { InputIconButton } from '../InputIconButton';
 import { TextInput, TextInputProps } from '../TextInput';
@@ -233,14 +233,14 @@ const InputScreen = () => {
       <Example inline title="TextInput start/end Node">
         <MockTextInput
           end={
-            <TextBody
+            <Text
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
               color="fgMuted"
               paddingEnd={2}
             >
               Cancel
-            </TextBody>
+            </Text>
           }
           helperText="Search for assets here"
           label="Search"
@@ -263,14 +263,14 @@ const InputScreen = () => {
           disabled
           editable={false}
           end={
-            <TextBody
+            <Text
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
               color="fgMuted"
               paddingEnd={2}
             >
               Cancel
-            </TextBody>
+            </Text>
           }
           label="One Time Password"
           placeholder="189-280-1111"
@@ -294,7 +294,7 @@ const InputScreen = () => {
           placeholder="189-280-1111"
           start={
             <HStack accessibilityHint="Start Node" accessibilityLabel="Start Node">
-              <TextBody>Start Node</TextBody>
+              <Text>Start Node</Text>
             </HStack>
           }
           variant="foregroundMuted"
@@ -311,9 +311,9 @@ const InputScreen = () => {
       <Example inline title="CompactTextInput with End Node">
         <MockCompactTextInput
           end={
-            <TextBody accessibilityHint="Cancel" accessibilityLabel="Cancel">
+            <Text accessibilityHint="Cancel" accessibilityLabel="Cancel">
               End Node
-            </TextBody>
+            </Text>
           }
           label="Compact Suffix"
           placeholder="189-280-1111"

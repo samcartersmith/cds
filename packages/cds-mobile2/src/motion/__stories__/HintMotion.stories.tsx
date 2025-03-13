@@ -7,7 +7,7 @@ import {
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box, VStack } from '../../layout';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { ColorSurge as ColorSurgeComponent } from '../ColorSurge';
 import { Pulse as PulseComponent } from '../Pulse';
 import { Shake as ShakeComponent } from '../Shake';
@@ -16,7 +16,7 @@ const { ColorSurge, Shake, Pulse } = hintMotionBuilder({
   VStack,
   Button,
   Box,
-  TextBody,
+  Text,
   ColorSurge: ColorSurgeComponent,
   Shake: ShakeComponent,
   Pulse: PulseComponent,

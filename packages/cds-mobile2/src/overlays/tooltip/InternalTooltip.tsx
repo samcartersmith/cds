@@ -9,7 +9,7 @@ import {
 import { useLayout } from '../../hooks/useLayout';
 import { useTheme } from '../../hooks/useTheme';
 import { Box } from '../../layout/Box';
-import { TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 
 import { InternalTooltipProps } from './TooltipProps';
 import { useTooltipPosition } from './useTooltipPosition';
@@ -87,7 +87,13 @@ export const InternalTooltip = memo(function InternalTooltip({
         testID={testID}
         {...props}
       >
-        {typeof content === 'string' ? <TextLabel2 color="fg">{content}</TextLabel2> : content}
+        {typeof content === 'string' ? (
+          <Text color="fg" font="label2">
+            {content}
+          </Text>
+        ) : (
+          content
+        )}
       </Box>
     </View>
   );

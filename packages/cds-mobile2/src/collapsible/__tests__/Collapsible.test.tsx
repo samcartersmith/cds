@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 import { useToggler } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Collapsible } from '../Collapsible';
 
@@ -26,7 +26,7 @@ const MockCollapsible = ({ defaultCollapsed = true }: { defaultCollapsed?: boole
         Click me!
       </Button>
       <Collapsible collapsed={collapsed} testID="mock-collapse">
-        <TextBody>Collapsible Content</TextBody>
+        <Text>Collapsible Content</Text>
       </Collapsible>
     </DefaultThemeProvider>
   );

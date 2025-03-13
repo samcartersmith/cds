@@ -4,7 +4,7 @@ import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 import { Icon } from '../../icons';
 import { RemoteImage } from '../../media';
-import { TextHeadline } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Chip } from '../Chip';
 import { ChipProps } from '../ChipProps';
@@ -29,7 +29,7 @@ const TestChip = (props: Omit<ChipProps, 'children'>) => (
       testID={chipTestID}
       {...props}
     >
-      <TextHeadline>USD</TextHeadline>
+      <Text font="headline">USD</Text>
     </Chip>
   </DefaultThemeProvider>
 );

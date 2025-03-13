@@ -4,7 +4,7 @@ import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout/VStack';
-import { TextCaption } from '../../typography/TextCaption';
+import { Text } from '../../typography/Text';
 
 const hueNames = [
   'blue',
@@ -35,9 +35,9 @@ const SpectrumScreen = () => {
                 const foreground = getAccessibleColor({ background });
                 return (
                   <VStack key={paletteValue} dangerouslySetBackground={background}>
-                    <TextCaption align="center" dangerouslySetColor={foreground}>
+                    <Text align="center" dangerouslySetColor={foreground} font="caption">
                       {paletteValue}
-                    </TextCaption>
+                    </Text>
                   </VStack>
                 );
               })}

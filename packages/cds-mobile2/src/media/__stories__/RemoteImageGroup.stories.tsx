@@ -3,7 +3,7 @@ import { remoteImageGroupBuilder } from '@cbhq/cds-common2/internal/remoteImageG
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { TextLabel1 } from '../../typography/TextLabel1';
 import { RemoteImage } from '../RemoteImage';
 import { RemoteImageGroup } from '../RemoteImageGroup';
@@ -13,7 +13,7 @@ const { All } = remoteImageGroupBuilder({
   RemoteImage,
   VStack,
   TextLabel1,
-  TextBody,
+  Text,
 });
 
 export { All };

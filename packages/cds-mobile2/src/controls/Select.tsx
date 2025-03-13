@@ -23,7 +23,7 @@ import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { useA11y } from '../hooks/useA11y';
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { HStack } from '../layout/HStack';
-import { TextBody } from '../typography/TextBody';
+import { Text } from '../typography/Text';
 
 import { TextInputFocusVariantContext } from './context';
 import { HelperText } from './HelperText';
@@ -183,7 +183,7 @@ export const Select = memo(
                     paddingStart={startNode ? 0 : getSpacingStart}
                     paddingY={compact ? 1 : 2}
                   >
-                    <TextBody
+                    <Text
                       accessibilityState={accessibilityState}
                       align={compact ? 'end' : 'start'}
                       color="fgMuted"
@@ -191,7 +191,7 @@ export const Select = memo(
                       ellipsize="tail"
                     >
                       {valueLabel ?? value ?? placeholder ?? (!compact && label)}
-                    </TextBody>
+                    </Text>
                   </HStack>
                 }
                 labelNode={

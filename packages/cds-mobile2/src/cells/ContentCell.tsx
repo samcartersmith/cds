@@ -3,7 +3,7 @@ import { ContentCellBaseProps } from '@cbhq/cds-common2';
 import { isProduction } from '@cbhq/cds-utils';
 
 import { Box, HStack, VStack } from '../layout';
-import { TextBody, TextHeadline, TextLabel2 } from '../typography';
+import { Text } from '../typography/Text';
 
 import { Cell, CellSharedProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
@@ -86,24 +86,30 @@ export const ContentCell = memo(function ContentCell({
         {hasTitles && (
           <HStack alignItems="flex-start" justifyContent="space-between">
             <Box flexShrink={1}>
-              {!!title && <TextHeadline>{title}</TextHeadline>}
+              {!!title && <Text font="headline">{title}</Text>}
 
               {!!subtitle && (
-                <TextLabel2 paddingBottom={description ? 0.5 : 0} paddingTop={title ? 0.5 : 0}>
+                <Text
+                  font="label2"
+                  paddingBottom={description ? 0.5 : 0}
+                  paddingTop={title ? 0.5 : 0}
+                >
                   {subtitle}
-                </TextLabel2>
+                </Text>
               )}
             </Box>
 
             {!!meta && (
               <Box justifyContent="flex-end" paddingStart={1} paddingTop={0.5}>
-                <TextLabel2 color="fgMuted">{meta}</TextLabel2>
+                <Text color="fgMuted" font="label2">
+                  {meta}
+                </Text>
               </Box>
             )}
           </HStack>
         )}
 
-        {!!description && <TextBody color="fgMuted">{description}</TextBody>}
+        {!!description && <Text color="fgMuted">{description}</Text>}
       </VStack>
     </Cell>
   );

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { ContentCardBodyBaseProps } from '@cbhq/cds-common2';
 
 import { Box, HStack, VStack, VStackProps } from '../../layout';
-import { TextBody, TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 
 export type ContentCardBodyProps = ContentCardBodyBaseProps & VStackProps;
 
@@ -29,8 +29,8 @@ export const ContentCardBody = memo(
         >
           {(mediaPosition === 'top' || mediaPosition === 'left') && mediaBox}
           <VStack gap={1} maxWidth={isHorizontal ? '70%' : '100%'}>
-            {typeof body === 'string' ? <TextBody>{body}</TextBody> : body}
-            {typeof label === 'string' ? <TextLabel2>{label}</TextLabel2> : label}
+            {typeof body === 'string' ? <Text>{body}</Text> : body}
+            {typeof label === 'string' ? <Text font="label2">{label}</Text> : label}
           </VStack>
           {(mediaPosition === 'bottom' || mediaPosition === 'right') && mediaBox}
         </Stack>

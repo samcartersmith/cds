@@ -4,7 +4,7 @@ import { sampleTabs as tabs } from '@cbhq/cds-common2/internal/data/tabs';
 import { type CustomTabProps, type TabProps } from '@cbhq/cds-common2/types/TabsProps';
 
 import { HStack } from '../../layout';
-import { TextHeadline } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { TabNavigation } from '../TabNavigation';
 
@@ -29,7 +29,7 @@ const customTestID = 'custom-test-id';
 
 const renderCustomTab = ({ label, id, ...props }: CustomTabProps) => (
   <HStack testID={`${customTestID}-${id}`} {...props}>
-    <TextHeadline>{label}</TextHeadline>
+    <Text font="headline">{label}</Text>
   </HStack>
 );
 

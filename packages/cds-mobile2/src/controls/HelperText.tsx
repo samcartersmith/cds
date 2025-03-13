@@ -4,7 +4,7 @@ import { IconSize, IconSourcePixelSize } from '@cbhq/cds-common2/types/IconSize'
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
 import { useTheme } from '../hooks/useTheme';
-import { TextLabel2, TextProps } from '../typography';
+import { Text, TextProps } from '../typography/Text';
 
 export type HelperTextProps = {
   /**
@@ -55,22 +55,29 @@ export const HelperText = memo(function HelperText({
   );
 
   return (
-    <TextLabel2 align={align} color={color} dangerouslySetColor={dangerouslySetColor} {...props}>
+    <Text
+      align={align}
+      color={color}
+      dangerouslySetColor={dangerouslySetColor}
+      font="label2"
+      {...props}
+    >
       {color === 'fgNegative' && (
-        <TextLabel2
+        <Text
           accessible
           accessibilityLabel={errorIconAccessibilityLabel}
           accessibilityRole="image"
           align={align}
           color={color}
           dangerouslySetColor={dangerouslySetColor}
+          font="label2"
           style={fontStyles}
           testID={errorIconTestID}
         >
           {glyph}
-        </TextLabel2>
+        </Text>
       )}
       {children}
-    </TextLabel2>
+    </Text>
   );
 });

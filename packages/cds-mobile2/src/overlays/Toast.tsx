@@ -7,7 +7,7 @@ import { useA11y } from '../hooks/useA11y';
 import { useTheme } from '../hooks/useTheme';
 import { Box, HStack } from '../layout';
 import { ColorSurge } from '../motion/ColorSurge';
-import { TextHeadline } from '../typography';
+import { Text } from '../typography/Text';
 
 import { useToastAnimation } from './useToastAnimation';
 import { useToastPanResponder } from './useToastPanResponder';
@@ -100,7 +100,7 @@ export const Toast = memo(
             <ColorSurge background={variant} />
             {/* avoid pushing contents off screen */}
             <Box accessible flexShrink={1} paddingEnd={2} paddingY={1}>
-              <TextHeadline>{text}</TextHeadline>
+              <Text font="headline">{text}</Text>
             </Box>
             {!!action && (
               <Button

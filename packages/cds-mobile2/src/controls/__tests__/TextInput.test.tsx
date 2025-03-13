@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
-import { TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { TextInput } from '../TextInput';
 
@@ -12,11 +12,11 @@ describe('TextInput', () => {
         <TextInput
           accessibilityHint="Text"
           accessibilityLabel="Text"
-          end={<TextTitle1>Node</TextTitle1>}
+          end={<Text font="title1">Node</Text>}
           helperText="Text"
           label="Text"
           placeholder="Text"
-          start={<TextTitle1>Node</TextTitle1>}
+          start={<Text font="title1">Node</Text>}
           testID={testID}
         />
       </DefaultThemeProvider>,
@@ -30,11 +30,11 @@ describe('TextInput', () => {
     render(
       <DefaultThemeProvider>
         <MockTextInput
-          end={<TextTitle1>Node</TextTitle1>}
+          end={<Text font="title1">Node</Text>}
           helperText="Text"
           label="Text"
           placeholder="Text"
-          start={<TextTitle1>Node</TextTitle1>}
+          start={<Text font="title1">Node</Text>}
           testID={testID}
         />
       </DefaultThemeProvider>,
@@ -145,7 +145,7 @@ describe('TextInput', () => {
           compact
           accessibilityHint="Text input field"
           accessibilityLabel="Text input field"
-          helperText={<TextTitle1>{helperText}</TextTitle1>}
+          helperText={<Text font="title1">{helperText}</Text>}
           testIDMap={{
             helperText: testID,
           }}
@@ -178,7 +178,7 @@ describe('TextInput', () => {
         <TextInput
           accessibilityHint="Text input field"
           accessibilityLabel="Text input field"
-          start={<TextTitle1>{startNodeText}</TextTitle1>}
+          start={<Text font="title1">{startNodeText}</Text>}
           testIDMap={{
             start: testID,
           }}
@@ -196,7 +196,7 @@ describe('TextInput', () => {
         <TextInput
           accessibilityHint="Text input field"
           accessibilityLabel="Text input field"
-          start={<TextTitle1>{endNodeText}</TextTitle1>}
+          start={<Text font="title1">{endNodeText}</Text>}
           testIDMap={{
             start: testID,
           }}

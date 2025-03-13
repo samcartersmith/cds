@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { Box } from '../../layout';
 import { HStack } from '../../layout/HStack';
-import { TextTitle1, TextTitle2 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { debounce } from '../../utils/debounce';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Button } from '../Button';
@@ -80,8 +80,8 @@ describe('Button', () => {
       <DefaultThemeProvider>
         <Button>
           <HStack gap={1}>
-            <TextTitle1>Title</TextTitle1>
-            <TextTitle2>Subtitle</TextTitle2>
+            <Text font="title1">Title</Text>
+            <Text font="title2">Subtitle</Text>
           </HStack>
         </Button>
       </DefaultThemeProvider>,
@@ -93,13 +93,13 @@ describe('Button', () => {
   it('renders a button with a ReactNode as endIcon', () => {
     const CustomIcon = () => (
       <Box testID="custom-react-node">
-        <TextTitle1>Custom Icon</TextTitle1>
+        <Text font="title1">Custom Icon</Text>
       </Box>
     );
     render(
       <DefaultThemeProvider>
         <Button end={<CustomIcon />}>
-          <TextTitle1>Child</TextTitle1>
+          <Text font="title1">Child</Text>
         </Button>
       </DefaultThemeProvider>,
     );

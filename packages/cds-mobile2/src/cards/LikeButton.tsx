@@ -15,7 +15,7 @@ import { useTheme } from '../hooks/useTheme';
 import { TextIcon } from '../icons/TextIcon';
 import { HStack } from '../layout/HStack';
 import { Pressable, PressableProps } from '../system/Pressable';
-import { TextLabel1 } from '../typography/TextLabel1';
+import { Text } from '../typography/Text';
 
 export type LikeButtonProps = LikeButtonBaseProps & PressableProps;
 
@@ -103,7 +103,11 @@ export const LikeButton = memo(function LikeButton({
           size={iconSize}
           style={iconStyles}
         />
-        {count > 0 ? <TextLabel1 mono>{count}</TextLabel1> : null}
+        {count > 0 ? (
+          <Text mono font="label1">
+            {count}
+          </Text>
+        ) : null}
       </HStack>
     </Pressable>
   );

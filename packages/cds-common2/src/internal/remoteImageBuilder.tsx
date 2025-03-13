@@ -13,7 +13,7 @@ export type RemoteImageBuilderProps = {
   RemoteImage: React.ComponentType<React.PropsWithChildren<RemoteImageBuilderTypes>>;
   VStack: React.ComponentType<React.PropsWithChildren<StackBaseProps>>;
   HStack: React.ComponentType<React.PropsWithChildren<StackBaseProps>>;
-  TextBody: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
+  Text: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
 };
 
 export const borderColors = [
@@ -32,7 +32,7 @@ export const remoteImageBuilder = ({
   RemoteImage,
   VStack,
   HStack,
-  TextBody,
+  Text,
 }: RemoteImageBuilderProps) => {
   const AvatarSizesWithSquircle = () => (
     <HStack gap={2}>
@@ -40,7 +40,7 @@ export const remoteImageBuilder = ({
         const key = `squircle-${idx}`;
         return (
           <VStack key={key}>
-            <TextBody>{size}</TextBody>
+            <Text>{size}</Text>
             <RemoteImage key={key} shape="squircle" size={size} source={imageURL} />
           </VStack>
         );
@@ -54,7 +54,7 @@ export const remoteImageBuilder = ({
         const key = `circle-${idx}`;
         return (
           <VStack key={key}>
-            <TextBody>{size}</TextBody>
+            <Text>{size}</Text>
             <RemoteImage shape="circle" size={size} source={imageURL} />
           </VStack>
         );
@@ -103,7 +103,7 @@ export const remoteImageBuilder = ({
           const key = `circle-fallback-${idx}`;
           return (
             <VStack key={key}>
-              <TextBody>{size}</TextBody>
+              <Text>{size}</Text>
               <RemoteImage shape="circle" size={size} />
             </VStack>
           );
@@ -119,7 +119,7 @@ export const remoteImageBuilder = ({
           const key = `square-fallback-${idx}`;
           return (
             <VStack key={key}>
-              <TextBody>{size}</TextBody>
+              <Text>{size}</Text>
               <RemoteImage shape="square" size={size} />
             </VStack>
           );

@@ -7,7 +7,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { SpotSquare } from '../../illustrations';
 import { Box, VStack } from '../../layout';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
-import { TextBody, TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 export const Default = () => {
@@ -35,12 +35,12 @@ export const Default = () => {
                 <Box alignItems="center" paddingBottom={4}>
                   <SpotSquare name="borrowWallet" />
                 </Box>
-                <TextTitle1 align="center" paddingBottom={1}>
+                <Text align="center" font="title1" paddingBottom={1}>
                   You’re ready to explore
-                </TextTitle1>
-                <TextBody align="center" color="fgMuted">
+                </Text>
+                <Text align="center" color="fgMuted">
                   You don’t have any dapps open right now. Here’s one you might like: [dapp]
-                </TextBody>
+                </Text>
               </VStack>
               <StickyFooter paddingX={3}>
                 <Button block onPress={handleClose}>

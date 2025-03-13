@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { TextHeadline } from '../../typography/TextHeadline';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 import { Radio, RadioGroup } from '../RadioGroup';
 
 const RadioGroupScreen = () => {
@@ -49,7 +48,7 @@ const RadioGroupScreen = () => {
           const options3 = {
             taco: 'tacos',
             puttanesca: 'Spaghetti',
-            'hamachi-salad': <TextLabel1>Hamachi salad</TextLabel1>,
+            'hamachi-salad': <Text font="label1">Hamachi salad</Text>,
           };
 
           /* eslint-disable react-hooks/rules-of-hooks */
@@ -62,7 +61,7 @@ const RadioGroupScreen = () => {
 
           return (
             <>
-              <TextHeadline>Select a Currency</TextHeadline>
+              <Text font="headline">Select a Currency</Text>
               <RadioGroup<keyof typeof options1>
                 accessibilityLabel="Select a currency to trade"
                 onChange={setGroup1}
@@ -72,12 +71,12 @@ const RadioGroupScreen = () => {
               />
               <RadioGroup<keyof typeof options2>
                 accessibilityLabel="Choose as mascot for your team"
-                label={<TextHeadline>Choose a Mascot</TextHeadline>}
+                label={<Text font="headline">Choose a Mascot</Text>}
                 onChange={setGroup2}
                 options={options2}
                 value={group2}
               />
-              <TextHeadline>Select a Currency</TextHeadline>
+              <Text font="headline">Select a Currency</Text>
               <RadioGroup<keyof typeof options1>
                 accessibilityLabel="Select a currency to trade"
                 direction="horizontal"
@@ -86,7 +85,7 @@ const RadioGroupScreen = () => {
                 options={options1}
                 value={group3}
               />
-              <TextHeadline>Select a dish to order</TextHeadline>
+              <Text font="headline">Select a dish to order</Text>
               <RadioGroup<keyof typeof options3>
                 accessibilityLabel="Select a dish to order"
                 direction="horizontal"

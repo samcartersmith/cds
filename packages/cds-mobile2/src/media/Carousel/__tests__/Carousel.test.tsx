@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
 import { Box } from '../../../layout';
-import { TextBody } from '../../../typography';
+import { Text } from '../../../typography/Text';
 import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Carousel } from '../Carousel';
 
@@ -14,7 +14,7 @@ describe('Carousel', () => {
     const items = Array.from({ length: itemsLength }).map((_, index) => (
       // eslint-disable-next-line react/no-array-index-key
       <Box key={`item${index}`} height={itemSize} width={itemSize}>
-        <TextBody>CarouselItem</TextBody>
+        <Text>CarouselItem</Text>
       </Box>
     ));
     return (

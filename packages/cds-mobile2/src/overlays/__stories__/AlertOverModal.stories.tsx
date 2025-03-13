@@ -4,7 +4,7 @@ import { useModal } from '@cbhq/cds-common2/overlays/useModal';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { Alert } from '../Alert';
 import { Modal } from '../modal/Modal';
 import { ModalBody } from '../modal/ModalBody';
@@ -34,7 +34,7 @@ const AlertOnModal = () => {
     openModal(
       <Modal visible onRequestClose={closeModal}>
         <ModalBody>
-          <TextBody>Test Modal</TextBody>
+          <Text>Test Modal</Text>
         </ModalBody>
         <ModalFooter
           primaryAction={<Button onPress={showAlert}>Show Alert</Button>}

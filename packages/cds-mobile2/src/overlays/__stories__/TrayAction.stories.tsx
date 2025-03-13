@@ -10,7 +10,8 @@ import { CellMedia } from '../../cells/CellMedia';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { SectionHeader } from '../../section-header/SectionHeader';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
-import { Link, TextBody } from '../../typography';
+import { Link } from '../../typography/Link';
+import { Text } from '../../typography/Text';
 import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 type Option = {
@@ -67,14 +68,12 @@ export const Default = (props: Partial<TrayBaseProps>) => {
   }, []);
 
   const description = (
-    <TextBody>
-      <TextBody color="fgMuted">
-        Select the network you want your swapped asset to be stored on.{' '}
-      </TextBody>
+    <Text>
+      <Text color="fgMuted">Select the network you want your swapped asset to be stored on. </Text>
       <Link to="https://www.coinbase.com/" variant="body">
         Learn more
       </Link>
-    </TextBody>
+    </Text>
   );
 
   return (

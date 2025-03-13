@@ -7,7 +7,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons';
 import { VStack } from '../../layout';
 import { RemoteImage, RemoteImageProps } from '../../media';
-import { TextHeadline } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Chip } from '../Chip';
 
 const assetIconProps: RemoteImageProps = {
@@ -22,19 +22,19 @@ const ChipExamples = ({
   ...props
 }: { label?: string } & Omit<ChipBaseProps, 'children'>) => (
   <VStack gap={1}>
-    <Chip {...props}>{label ?? <TextHeadline>Base</TextHeadline>}</Chip>
+    <Chip {...props}>{label ?? <Text font="headline">Base</Text>}</Chip>
     <Chip {...props} start={<RemoteImage {...assetIconProps} />}>
-      {label ?? <TextHeadline>Start</TextHeadline>}
+      {label ?? <Text font="headline">Start</Text>}
     </Chip>
     <Chip
       {...props}
       end={<Icon color="fg" name="caretDown" size="s" />}
       start={<RemoteImage {...assetIconProps} />}
     >
-      {label ?? <TextHeadline>End & Start</TextHeadline>}
+      {label ?? <Text font="headline">End & Start</Text>}
     </Chip>
     <Chip {...props} end={<Icon color="fg" name="filter" size="s" />}>
-      <TextHeadline>Filter 2</TextHeadline>
+      <Text font="headline">Filter 2</Text>
     </Chip>
     <Chip
       {...props}
@@ -42,7 +42,7 @@ const ChipExamples = ({
       onPress={NoopFn}
       start={<RemoteImage {...assetIconProps} />}
     >
-      {label ?? <TextHeadline>Pressable</TextHeadline>}
+      {label ?? <Text font="headline">Pressable</Text>}
     </Chip>
     <Chip
       {...props}
@@ -51,7 +51,7 @@ const ChipExamples = ({
       onPress={NoopFn}
       start={<RemoteImage {...assetIconProps} />}
     >
-      {label ?? <TextHeadline>Disabled</TextHeadline>}
+      {label ?? <Text font="headline">Disabled</Text>}
     </Chip>
   </VStack>
 );

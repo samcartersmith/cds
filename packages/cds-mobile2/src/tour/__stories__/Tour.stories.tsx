@@ -12,7 +12,7 @@ import { Coachmark } from '../../coachmark/Coachmark';
 import { Checkbox } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box, HStack, VStack } from '../../layout';
-import { TextBody, TextCaption } from '../../typography';
+import { Text } from '../../typography/Text';
 import { ProgressBar } from '../../visualizations';
 import { Tour } from '../Tour';
 import { TourStep } from '../TourStep';
@@ -34,25 +34,25 @@ const TourExamples = ({
       <NativeButton onPress={handleClick} title="Start tour" />
       <TourStep id="step1">
         <VStack background="bgSecondary" padding={1}>
-          <TextBody>Checkout the first step</TextBody>
+          <Text>Checkout the first step</Text>
         </VStack>
       </TourStep>
       <Box height={300} />
       <TourStep id="step2">
         <Box ref={step2Ref} background="bgSecondary" padding={1} width={150}>
-          <TextBody>Checkout the next step</TextBody>
+          <Text>Checkout the next step</Text>
         </Box>
       </TourStep>
       <Box height={1000} />
       <TourStep id="step3">
         <VStack ref={step3Ref} background="bgSecondary" padding={1} width={150}>
-          <TextBody>Checkout the third step</TextBody>
+          <Text>Checkout the third step</Text>
         </VStack>
       </TourStep>
       <Box height={3000} />
       <TourStep id="step4">
         <VStack ref={step4Ref} background="bgSecondary" padding={1} width={150}>
-          <TextBody>Checkout the last step</TextBody>
+          <Text>Checkout the last step</Text>
         </VStack>
       </TourStep>
     </VStack>
@@ -129,11 +129,13 @@ const TourStory = () => {
               closeButtonAccessibilityLabel="Close"
               content={
                 <VStack gap={2}>
-                  <TextCaption color="fgMuted">50%</TextCaption>
+                  <Text font="caption" color="fgMuted">
+                    50%
+                  </Text>
                   <ProgressBar progress={0.5} />
-                  <TextBody>
+                  <Text>
                     Add up to 3 lines of body copy. Deliver your message with clarity and impact
-                  </TextBody>
+                  </Text>
                 </VStack>
               }
               media={

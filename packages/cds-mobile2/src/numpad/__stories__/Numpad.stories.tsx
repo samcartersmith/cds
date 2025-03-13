@@ -10,7 +10,7 @@ import { useSafeBottomPadding } from '../../hooks/useSafeBottomPadding';
 import { useTheme } from '../../hooks/useTheme';
 import { Box, HStack, VStack } from '../../layout';
 import { Modal, ModalBody, ModalHeader } from '../../overlays';
-import { TextBody, TextHeadline } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DELETE, Numpad, NumpadValue, SEPARATOR } from '../Numpad';
 
 const VALUE_MAX = 1000000;
@@ -66,7 +66,7 @@ const NumpadExample1 = () => {
           title="Invalid Input"
           variant="warning"
         >
-          <TextBody>Enter an amount greater than zero.</TextBody>
+          <Text>Enter an amount greater than zero.</Text>
         </Banner>
       );
     if (parseFloat(value) >= VALUE_MAX) {
@@ -78,7 +78,7 @@ const NumpadExample1 = () => {
           title="You've reached the maximum value"
           variant="warning"
         >
-          <TextBody>Max ${VALUE_MAX}</TextBody>
+          <Text>Max ${VALUE_MAX}</Text>
         </Banner>
       );
     }
@@ -191,7 +191,7 @@ const NumpadExample2 = () => {
                 />
               ))}
             </HStack>
-            <TextHeadline>Unlock with your PIN</TextHeadline>
+            <Text font="headline">Unlock with your PIN</Text>
           </VStack>
         </ModalBody>
         <Box bottom={0} position="absolute" style={{ paddingBottom: safeBottomPadding }}>

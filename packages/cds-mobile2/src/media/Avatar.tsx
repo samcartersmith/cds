@@ -6,7 +6,7 @@ import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout';
-import { TextBody, TextCaption, TextTitle2 } from '../typography';
+import { Text } from '../typography/Text';
 
 import { RemoteImage } from './RemoteImage';
 import { shapeStyles } from './RemoteImageGroup';
@@ -52,31 +52,33 @@ export const Avatar = memo(
     const avatarText = useMemo(() => {
       if (isLargestSize || (isCustomSize && !isCustomSizeAndSmall)) {
         return (
-          <TextTitle2
+          <Text
             align="center"
             dangerouslySetColor={fallbackTextColor}
+            font="title2"
             textTransform="uppercase"
           >
             {placeholderLetter}
-          </TextTitle2>
+          </Text>
         );
       }
       if (size === 'm' || isCustomSizeAndSmall) {
         return (
-          <TextCaption
+          <Text
             align="center"
             dangerouslySetColor={fallbackTextColor}
+            font="caption"
             textTransform="uppercase"
           >
             {placeholderLetter}
-          </TextCaption>
+          </Text>
         );
       }
 
       return (
-        <TextBody align="center" dangerouslySetColor={fallbackTextColor} textTransform="uppercase">
+        <Text align="center" dangerouslySetColor={fallbackTextColor} textTransform="uppercase">
           {placeholderLetter}
-        </TextBody>
+        </Text>
       );
     }, [
       isLargestSize,

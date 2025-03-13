@@ -6,7 +6,7 @@ import { TextInput } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack, VStack } from '../../layout';
 import { Carousel, RemoteImage, RemoteImageGroup } from '../../media';
-import { TextCaption, TextHeadline, TextLabel2, TextLegal, TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 import {
   ContentCard,
   ContentCardBody,
@@ -57,10 +57,12 @@ const exampleProps: {
     body: 'Ethereum Network Shatters Records With Hashrate Climbing to 464 EH/s',
     label: (
       <HStack alignItems="flex-end" flexWrap="wrap" gap={0.5}>
-        <TextLabel2 color="fgMuted" numberOfLines={1}>
+        <Text color="fgMuted" font="label2" numberOfLines={1}>
           $9,9081.01
-        </TextLabel2>
-        <TextLabel2 color="fgPositive">↗ 6.37%</TextLabel2>
+        </Text>
+        <Text color="fgPositive" font="label2">
+          ↗ 6.37%
+        </Text>
       </HStack>
     ),
     media: (
@@ -106,8 +108,12 @@ const CarouselItem = () => (
       }}
     />
     <VStack bottom={16} gap={1} left={16} position="absolute">
-      <TextHeadline color="bgSecondary">Break the cycle</TextHeadline>
-      <TextLegal color="bgSecondary">24M views</TextLegal>
+      <Text color="bgSecondary" font="headline">
+        Break the cycle
+      </Text>
+      <Text color="bgSecondary" font="legal">
+        24M views
+      </Text>
     </VStack>
   </VStack>
 );
@@ -116,7 +122,9 @@ const ContentCardScreen = () => {
   return (
     <ExampleScreen>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example
+        </Text>
         <ContentCard>
           <ContentCardHeader {...exampleProps.contentHeaderProps} />
           <ContentCardBody {...exampleProps.contentBodyProps} />
@@ -124,7 +132,9 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example with mediaPosition bottom</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example with mediaPosition bottom
+        </Text>
         <ContentCard>
           <ContentCardHeader {...exampleProps.contentHeaderProps} />
           <ContentCardBody {...exampleProps.contentBodyProps} mediaPosition="bottom" />
@@ -132,7 +142,9 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example with mediaPosition right</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example with mediaPosition right
+        </Text>
         <ContentCard>
           <ContentCardHeader {...exampleProps.contentHeaderProps} />
           <ContentCardBody
@@ -152,7 +164,9 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example with mediaPosition left</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example with mediaPosition left
+        </Text>
         <ContentCard>
           <ContentCardHeader {...exampleProps.contentHeaderProps} />
           <ContentCardBody
@@ -172,7 +186,9 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example with no media</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example with no media
+        </Text>
         <ContentCard>
           <ContentCardHeader {...exampleProps.contentHeaderProps} />
           <ContentCardBody {...exampleProps.contentBodyProps} media={null} />
@@ -180,7 +196,9 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example with product component</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example with product component
+        </Text>
         <ContentCard>
           <ContentCardHeader {...exampleProps.contentHeaderProps} />
           <ContentCardBody {...exampleProps.contentBodyProps} label={null} media={null}>
@@ -205,14 +223,20 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example with product component - Custom Media</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example with product component - Custom Media
+        </Text>
         <ContentCard>
           <ContentCardHeader
             {...exampleProps.contentHeaderProps}
             avatar={null}
-            end={<TextLegal color="fgMuted">Updated 1hr ago</TextLegal>}
+            end={
+              <Text color="fgMuted" font="legal">
+                Updated 1hr ago
+              </Text>
+            }
             meta={null}
-            title={<TextTitle3>Today&apos;s briefing</TextTitle3>}
+            title={<Text font="title3">Today&apos;s briefing</Text>}
           />
           <ContentCardBody
             {...exampleProps.contentBodyProps}
@@ -238,8 +262,10 @@ const ContentCardScreen = () => {
                   position="absolute"
                   top={16}
                 >
-                  <TextCaption>ETH</TextCaption>
-                  <TextLabel2 color="fgPositive">↗ 6.37%</TextLabel2>
+                  <Text font="caption">ETH</Text>
+                  <Text color="fgPositive" font="label2">
+                    ↗ 6.37%
+                  </Text>
                 </HStack>
               </HStack>
             }
@@ -247,14 +273,16 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example with product component - Carousel</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example with product component - Carousel
+        </Text>
         <ContentCard>
           <ContentCardHeader
             {...exampleProps.contentHeaderProps}
             avatar={null}
             end={null}
             meta={null}
-            title={<TextTitle3>Crypto moves money forward</TextTitle3>}
+            title={<Text font="title3">Crypto moves money forward</Text>}
           />
           <ContentCardBody {...exampleProps.contentBodyProps} label={null} media={null}>
             <Carousel
@@ -269,7 +297,9 @@ const ContentCardScreen = () => {
         </ContentCard>
       </Example>
       <Example paddingX={0}>
-        <TextTitle3 paddingX={3}>Full Example with IconCounterButton</TextTitle3>
+        <Text font="title3" paddingX={3}>
+          Full Example with IconCounterButton
+        </Text>
         <ContentCard>
           <ContentCardHeader {...exampleProps.contentHeaderProps} />
           <ContentCardBody {...exampleProps.contentBodyProps} media={null} />

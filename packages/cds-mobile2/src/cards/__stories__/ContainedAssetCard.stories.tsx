@@ -8,7 +8,7 @@ import { DotStatusColor } from '../../dots';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useTheme } from '../../hooks/useTheme';
 import { Carousel } from '../../media';
-import { TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { ContainedAssetCard, ContainedAssetCardProps } from '../ContainedAssetCard';
 
 const styles = StyleSheet.create({
@@ -85,9 +85,13 @@ const ContainedAssetCardScreen = () => {
         <ContainedAssetCard
           {...exampleProps}
           description={
-            <TextLabel2 accessibilityLabel="Up 6.37%" dangerouslySetColor={customUpwardTrendColor}>
+            <Text
+              accessibilityLabel="Up 6.37%"
+              dangerouslySetColor={customUpwardTrendColor}
+              font="label2"
+            >
               {subheadIconSignMap.upwardTrend}6.37%
-            </TextLabel2>
+            </Text>
           }
           header={
             <Image

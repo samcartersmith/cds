@@ -2,19 +2,22 @@ import React from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
-import { TextLabel1 } from '../../typography/TextLabel1';
-import { TextLabel2 } from '../../typography/TextLabel2';
+import { Text } from '../../typography/Text';
 import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
 const renderStartLabelNum = (num: number) => {
-  return <TextLabel1>${num.toLocaleString()}</TextLabel1>;
+  return <Text font="label1">${num.toLocaleString()}</Text>;
 };
 
 const renderEndLabelNum = (num: number) => {
-  return <TextLabel2 align="end">${num.toLocaleString()}&nbsp;left</TextLabel2>;
+  return (
+    <Text align="end" font="label2">
+      ${num.toLocaleString()}&nbsp;left
+    </Text>
+  );
 };
 
 const renderCustomStringLabel: (num: number) => string = (num: number) => {

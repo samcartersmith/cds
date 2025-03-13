@@ -6,7 +6,7 @@ import { PageHeaderBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { TextTitle1 } from '../typography/TextTitle1';
+import { Text } from '../typography/Text';
 
 export const PageHeader = memo(
   forwardRef(function PageHeader(
@@ -26,14 +26,14 @@ export const PageHeader = memo(
           {!!start && <Box paddingX={3}>{start}</Box>}
           {!isMultiRow && (
             <Box flexGrow={1} paddingEnd={end ? 0 : 3} paddingStart={start ? 0 : 3}>
-              {typeof title === 'string' ? <TextTitle1>{title}</TextTitle1> : title}
+              {typeof title === 'string' ? <Text font="title1">{title}</Text> : title}
             </Box>
           )}
           {!!end && <Box paddingX={3}>{end}</Box>}
         </HStack>
         {isMultiRow && (
           <Box paddingX={3}>
-            {typeof title === 'string' ? <TextTitle1>{title}</TextTitle1> : title}
+            {typeof title === 'string' ? <Text font="title1">{title}</Text> : title}
           </Box>
         )}
       </VStack>

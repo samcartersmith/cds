@@ -16,7 +16,7 @@ const { All } = remoteImageGroupBuilder({
   RemoteImage,
   VStack,
   TextLabel1: (props) => <Text as="p" font="label1" {...props} />,
-  TextBody: (props) => <Text as="p" font="body" {...props} />,
+  Text: (props) => <Text as="p" font="body" {...props} />,
 });
 
 export { All };

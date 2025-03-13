@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Banner, MobileBannerProps } from '../Banner';
 
@@ -17,7 +17,7 @@ const MockBanner = ({
 }: Partial<MobileBannerProps>) => (
   <DefaultThemeProvider>
     <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
-      <TextBody>Banner content</TextBody>
+      <Text>Banner content</Text>
     </Banner>
   </DefaultThemeProvider>
 );
@@ -79,7 +79,7 @@ describe('Banner actions', () => {
           title="Banner title"
           variant="warning"
         >
-          <TextBody>Content</TextBody>
+          <Text>Content</Text>
         </Banner>
       </DefaultThemeProvider>,
     );

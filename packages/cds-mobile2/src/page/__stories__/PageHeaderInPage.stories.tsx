@@ -6,13 +6,13 @@ import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 import { Button, ButtonGroup, IconButton } from '../../buttons';
 import { ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout';
-import { TextTitle1, TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { PageFooter } from '../PageFooter';
 import { PageHeader } from '../PageHeader';
 
 const exampleProps = {
   start: <IconButton name="backArrow" onPress={NoopFn} testID="header-back-button" />,
-  title: <TextTitle3>Page Title</TextTitle3>,
+  title: <Text font="title3">Page Title</Text>,
   endButtons: (
     <ButtonGroup block accessibilityLabel="Group">
       <Button variant="secondary">Back</Button>
@@ -45,7 +45,7 @@ const PageHeaderInPage = () => {
             justifyContent="center"
             padding={10}
           >
-            <TextTitle1>Primary Content</TextTitle1>
+            <Text font="title1">Primary Content</Text>
           </VStack>
         </VStack>
       </ExampleScreen>

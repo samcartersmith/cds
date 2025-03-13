@@ -7,7 +7,7 @@ import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Box } from '../../layout';
-import { TextDisplay1 } from '../../typography/TextDisplay1';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
 
@@ -138,7 +138,11 @@ describe('SegmentedTabs', () => {
 
   it('renders custom tab component', () => {
     // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-    const Component = () => <TextDisplay1 testID="custom-tab">Custom tab</TextDisplay1>;
+    const Component = () => (
+      <Text font="display1" testID="custom-tab">
+        Custom tab
+      </Text>
+    );
     render(
       <DefaultThemeProvider>
         <TabsContext.Provider value={mockApi}>
