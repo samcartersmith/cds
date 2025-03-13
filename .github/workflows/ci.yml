@@ -121,6 +121,9 @@ jobs:
           image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
           command: |-
             yarn nx affected --target=a11y-web
+          environment: |-
+            STORYBOOK_SKIP_ANIMATION=true
+            CI=true
 
   storybook-e2e:
     if: ${{ github.event_name == 'pull_request' }}
@@ -139,6 +142,9 @@ jobs:
           command: |-
             npx playwright install --with-deps
             yarn nx affected --target=storybook-e2e-test
+          environment: |-
+            STORYBOOK_SKIP_ANIMATION=true
+            CI=true
 
   depcheck:
     name: Depcheck
@@ -188,3 +194,46 @@ jobs:
         with:
           path: depcheck-results.md
           key: depcheck-master-${{ github.sha }}
+
+  visreg-web:
+    name: Visreg Web
+    runs-on: [large, amd64]
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 0
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100 # TODO: This needs to include the merge-base
+      - uses: infra/cb-action-config-service@master
+        with: { scope: 'actions-context/cds/percy-web-' }
+      - uses: ./.github/actions/setup
+      - name: Visreg Web (All)
+        if: ${{ github.event_name == 'push' }}
+        uses: infra/cb-action-docker@master
+        with:
+          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
+          command: |-
+            yarn mono-pipeline run-percy storybook
+          propagate-environment: true
+      - name: Evaluate Visreg Should Run
+        id: visreg-should-run
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          if yarn workspace @cds/storybook should-run-visreg; then
+            echo "Package changes detected, running Visreg Web Percy run"
+            echo "SHOULD_RUN_VISREG=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No package changes detected, skipping Visreg Web Percy run"
+            echo "SHOULD_RUN_VISREG=false" >> "$GITHUB_OUTPUT"
+          fi
+        shell: bash
+      - name: Visreg Web (Affected)
+        if: ${{ github.event_name == 'pull_request' && steps.visreg-should-run.outputs.SHOULD_RUN_VISREG == 'true'}}
+        uses: infra/cb-action-docker@master
+        with:
+          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
+          command: yarn mono-pipeline run-percy storybook
+          environment: |-
+            STORYBOOK_SKIP_ANIMATION=true
+            PERCY_TOKEN="${{ env.PERCY_TOKEN }}"
+            CI=true
