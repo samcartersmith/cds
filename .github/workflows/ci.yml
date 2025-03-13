@@ -14,6 +14,33 @@ env:
   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
 
 jobs:
+  validate:
+    name: Validate
+    runs-on: [medium, amd64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100 # TODO: This needs to include the merge-base
+      - uses: ./.github/actions/setup
+      - name: Validate Codeflow
+        run: yarn mono-pipeline validate-codeflow
+      - name: Validate Codeowners
+        run: yarn mono-pipeline validate-codeowners
+      - name: Validate Lockfile
+        run: yarn mono-pipeline validate-lockfile
+      - name: Validate Package JSONs
+        run: yarn mono-pipeline validate-package-jsons
+      - name: Validate Patches
+        run: yarn mono-pipeline validate-patches
+      - name: Validate Versioned
+        run: yarn mono-pipeline validate-versioned
+      - name: Validate CDS Versions
+        run: yarn tsx ./tools/validateCDSVersions.ts
+      - name: Validate Website Changelog Updates
+        run: yarn tsx ./tools/validateWebsiteChangelogUpdates.ts
+      - name: Validate Constraints
+        run: yarn constraints || exit 1
+
   lint:
     name: Lint
     runs-on: [large, amd64]
