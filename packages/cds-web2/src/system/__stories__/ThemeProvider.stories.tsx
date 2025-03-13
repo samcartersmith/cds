@@ -12,7 +12,7 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
   const theme = useTheme();
   const { className } = useThemeProviderStyles(theme);
   return (
-    <VStack>
+    <VStack background="bg">
       <VStack gap={3} padding={1}>
         <VStack>
           <Button variant="secondary">Secondary button</Button>
@@ -21,12 +21,12 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
             Secondary text
           </TextBody>
         </VStack>
-        <VStack bordered borderRadius={400} elevation={1} gap={1} padding={2}>
+        <VStack bordered background="bg" borderRadius={400} elevation={1} gap={1} padding={2}>
           <TextBody as="p">Elevation 1</TextBody>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
-        <VStack bordered borderRadius={400} elevation={2} gap={1} padding={2}>
+        <VStack bordered background="bg" borderRadius={400} elevation={2} gap={1} padding={2}>
           <TextBody as="p">Elevation 2</TextBody>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
@@ -65,15 +65,15 @@ const customTheme: ThemeConfig = {
   ...defaultTheme,
   light: {
     ...defaultTheme.light,
-    bg: 'rgb(var(--orange50))',
-    bgPrimary: 'rgb(var(--red20))',
-    bgSecondary: 'rgb(var(--blue50))',
+    bg: `rgb(${defaultTheme.lightSpectrum.orange50})`,
+    bgPrimary: `rgb(${defaultTheme.lightSpectrum.red20})`,
+    bgSecondary: `rgb(${defaultTheme.lightSpectrum.blue50})`,
   },
   dark: {
     ...defaultTheme.dark,
-    bg: 'rgb(var(--orange50))',
-    bgPrimary: 'rgb(var(--red20))',
-    bgSecondary: 'rgb(var(--blue50))',
+    bg: `rgb(${defaultTheme.darkSpectrum.orange50})`,
+    bgPrimary: `rgb(${defaultTheme.darkSpectrum.red20})`,
+    bgSecondary: `rgb(${defaultTheme.darkSpectrum.blue50})`,
   },
 };
 
