@@ -19,7 +19,7 @@ function ToastExample() {
 
     const handleShowToast = useCallback(() => {
       toast.show(toastText, {
-        action: { label: 'Action', onPress: () => console.log('action pressed') },
+        action: { label: 'Action', onClick: () => console.log('action pressed') },
         onWillHide: () => {
           console.log('toast hiding');
         },
@@ -33,7 +33,7 @@ function ToastExample() {
 
     const handleNoClose = () =>
       toast.show(toastText, {
-        action: { label: 'Action', onPress: () => console.log('action pressed') },
+        action: { label: 'Action', onClick: () => console.log('action pressed') },
         hideCloseButton: true,
       });
 
@@ -62,12 +62,12 @@ function ToastExample() {
           />
         </Box>
         <HStack gap={1} flexWrap="wrap">
-          <Button onPress={handleShowToast}>Show Toast</Button>
-          <Button onPress={handleNoAction}>No Action</Button>
-          <Button onPress={handleNoClose}>No Close</Button>
-          <Button onPress={handleTextOnly}>Text Only</Button>
-          <Button onPress={handleBottomOffset}>Bottom Offset</Button>
-          <Button onPress={handleVariant}>Variant</Button>
+          <Button onClick={handleShowToast}>Show Toast</Button>
+          <Button onClick={handleNoAction}>No Action</Button>
+          <Button onClick={handleNoClose}>No Close</Button>
+          <Button onClick={handleTextOnly}>Text Only</Button>
+          <Button onClick={handleBottomOffset}>Bottom Offset</Button>
+          <Button onClick={handleVariant}>Variant</Button>
         </HStack>
       </>
     );

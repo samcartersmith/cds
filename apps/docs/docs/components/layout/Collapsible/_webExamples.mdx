@@ -19,7 +19,7 @@ function BasicCollapsible() {
 
   return (
     <VStack gap={3}>
-      <Button onPress={() => setCollapsed(!collapsed)} {...triggerAccessibilityProps}>
+      <Button onClick={() => setCollapsed(!collapsed)} {...triggerAccessibilityProps}>
         Click me!
       </Button>
       <Collapsible collapsed={collapsed} padding={3} {...controlledElementAccessibilityProps}>
@@ -42,7 +42,7 @@ function ExpandTop() {
       <Collapsible collapsed={collapsed}>
         <VStack>Send a crypto gift! Share the gift of crypto this holiday season.</VStack>
       </Collapsible>
-      <Button onPress={() => setCollapsed(!collapsed)}>Click me!</Button>
+      <Button onClick={() => setCollapsed(!collapsed)}>Click me!</Button>
     </VStack>
   );
 }
@@ -58,7 +58,7 @@ function Scroll() {
 
   return (
     <VStack gap={3}>
-      <Button onPress={() => setCollapsed(!collapsed)}>Click me!</Button>
+      <Button onClick={() => setCollapsed(!collapsed)}>Click me!</Button>
       <Collapsible collapsed={collapsed} maxHeight={400}>
         <Text font="body" as="p">
           {loremIpsum.repeat(50)}
@@ -79,7 +79,7 @@ function Horizontal() {
 
   return (
     <HStack gap={2} alignItems="center">
-      <Button onPress={() => setCollapsed(!collapsed)}>Click me!</Button>
+      <Button onClick={() => setCollapsed(!collapsed)}>Click me!</Button>
       <Collapsible collapsed={collapsed} direction="horizontal">
         <DotCount count={100} />
         <DotCount count={1} />

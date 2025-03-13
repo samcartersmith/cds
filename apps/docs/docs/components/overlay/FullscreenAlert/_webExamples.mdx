@@ -17,7 +17,7 @@ function DefaultAlert() {
 
   return (
     <PortalProvider>
-      <Button onPress={handleOpen}>Open Alert</Button>
+      <Button onClick={handleOpen}>Open Alert</Button>
       <FullscreenAlert
         visible={visible}
         onRequestClose={handleClose}

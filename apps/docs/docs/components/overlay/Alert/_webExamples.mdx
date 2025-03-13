@@ -18,7 +18,7 @@ function DefaultAlertExample() {
   return (
     <PortalProvider>
       <ButtonGroup>
-        <Button onPress={toggleOn}>Show Alert</Button>
+        <Button onClick={toggleOn}>Show Alert</Button>
       </ButtonGroup>
       <Alert
         title="Alert title"
@@ -64,7 +64,7 @@ function PortalAlertExample() {
         />,
       );
 
-    return <Button onPress={showAlert}>Show Alert</Button>;
+    return <Button onClick={showAlert}>Show Alert</Button>;
   }
 
   return (
@@ -108,14 +108,14 @@ function AlertOnModalExample() {
             <TextBody as="p">{loremIpsum}</TextBody>
           </ModalBody>
           <ModalFooter
-            primaryAction={<Button onPress={closeModal}>Save</Button>}
-            secondaryAction={<Button onPress={showAlert}>Cancel</Button>}
+            primaryAction={<Button onClick={closeModal}>Save</Button>}
+            secondaryAction={<Button onClick={showAlert}>Cancel</Button>}
           />
         </Modal>,
       );
     };
 
-    return <Button onPress={handlePress}>Open Modal</Button>;
+    return <Button onClick={handlePress}>Open Modal</Button>;
   }
 
   return (

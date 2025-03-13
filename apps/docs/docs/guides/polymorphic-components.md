@@ -102,7 +102,7 @@ In React Native, polymorphic components can wrap native views or third-party com
 ```tsx
 import { Pressable } from 'react-native';
 
-<Box as={Pressable} onPress={() => console.log('Pressed')} padding={4}>
+<Box as={Pressable} onClick={() => console.log('Pressed')} padding={4}>
   Press Me
 </Box>;
 ```

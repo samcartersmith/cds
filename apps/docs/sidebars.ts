@@ -264,7 +264,15 @@ const sidebars: SidebarsConfig = {
               id: 'components/overlay/FullscreenAlert/fullscreenAlert',
               label: 'FullscreenAlert',
             },
-            { type: 'doc', id: 'components/overlay/modal', label: 'Modal' },
+            {
+              type: 'doc',
+              id: 'components/overlay/FullscreenModal/fullScreenModal',
+              label: 'FullscreenModal',
+            },
+            { type: 'doc', id: 'components/overlay/Modal/modal', label: 'Modal' },
+            { type: 'doc', id: 'components/overlay/ModalHeader/modalHeader', label: 'ModalHeader' },
+            { type: 'doc', id: 'components/overlay/ModalBody/modalBody', label: 'ModalBody' },
+            { type: 'doc', id: 'components/overlay/ModalFooter/modalFooter', label: 'ModalFooter' },
             {
               type: 'doc',
               id: 'components/overlay/portalContext',

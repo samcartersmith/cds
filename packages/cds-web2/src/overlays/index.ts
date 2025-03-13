@@ -1,6 +1,6 @@
-// export * from './modal/FullscreenModal';
 export * from './Alert';
 export * from './FullscreenAlert';
+export * from './modal/FullscreenModal';
 export * from './modal/Modal';
 export * from './modal/ModalBody';
 export * from './modal/ModalFooter';

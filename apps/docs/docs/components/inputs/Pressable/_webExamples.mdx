@@ -1,10 +1,10 @@
 ### Basic Pressable
 
-Pressables support an `onPress` prop for handling click/press interactions. When being pressed, the element will scale down to mimic a real-world button press. If this functionality is not desired, pass the `noScaleOnPress` prop.
+Pressables support an `onClick` prop for handling click/press interactions. When being pressed, the element will scale down to mimic a real-world button press. If this functionality is not desired, pass the `noScaleOnPress` prop.
 
 ```jsx live
 <Pressable
-  onPress={console.log}
+  onClick={console.log}
   as="button"
   background="bgAlternate"
   borderColor="lineHeavy"
@@ -23,7 +23,7 @@ Pressables support an `onPress` prop for handling click/press interactions. When
 
 ```jsx live
 <Pressable
-  onPress={console.log}
+  onClick={console.log}
   as="button"
   background="transparent"
   borderColor="lineHeavy"
@@ -46,7 +46,7 @@ Pressables expand to 100% width when the `block` prop is passed.
 <Pressable
   block
   as="button"
-  onPress={console.log}
+  onClick={console.log}
   background="bgAlternate"
   borderColor="lineHeavy"
   borderWidth={100}

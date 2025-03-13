@@ -320,7 +320,7 @@ function PasswordInput() {
       end={
         <InputIconButton
           name={isVisible ? 'visibleActive' : 'visibleInactive'}
-          onPress={() => setIsVisible((isVisible) => !setIsVisible)}
+          onClick={() => setIsVisible((isVisible) => !setIsVisible)}
           accessibilityLabel={isVisible ? 'Hide password' : 'Show password'}
         />
       }
@@ -359,7 +359,7 @@ function CopyTextField() {
     <TextInput
       end={
         <HStack>
-          <Link onPress={() => setCopied(true)} variant="caption" color={variant}>
+          <Link onClick={() => setCopied(true)} variant="caption" color={variant}>
             {copied ? 'copied' : 'copy'}
           </Link>
           <InputIcon color="primary" name="visibleActive" />
