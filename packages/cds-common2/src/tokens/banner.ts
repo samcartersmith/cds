@@ -1,27 +1,36 @@
 import { ThemeVars } from '../core/theme';
 import { BannerVariant } from '../types/BannerBaseProps';
 
-type BannerVariantStyle = {
+export type BannerVariantStyle = {
   background: ThemeVars.Color | undefined;
   iconColor: ThemeVars.Color;
   textColor: ThemeVars.Color;
   primaryActionColor: ThemeVars.Color;
   secondaryActionColor: ThemeVars.Color;
   iconButtonColor: ThemeVars.Color;
-  borderColor: ThemeVars.Color | undefined;
+  borderColor: ThemeVars.Color;
 };
 
 export type BannerVariantConfig = Record<BannerVariant, BannerVariantStyle>;
 
 export const variants: BannerVariantConfig = {
+  danger: {
+    background: 'bgNegative',
+    iconColor: 'fgNegative',
+    textColor: 'fgNegative',
+    primaryActionColor: 'fgNegative',
+    secondaryActionColor: 'fgNegative',
+    iconButtonColor: 'fgNegative',
+    borderColor: 'bgNegative',
+  },
   informational: {
-    background: 'bg',
+    background: 'bgSecondary',
     iconColor: 'fgPrimary',
     textColor: 'fg',
     primaryActionColor: 'fgPrimary',
     secondaryActionColor: 'fg',
-    iconButtonColor: 'fgMuted',
-    borderColor: 'bgLine',
+    iconButtonColor: 'fg',
+    borderColor: 'bgPrimary',
   },
   promotional: {
     background: 'bgPrimaryWash',
@@ -29,34 +38,27 @@ export const variants: BannerVariantConfig = {
     textColor: 'fg',
     primaryActionColor: 'fgPrimary',
     secondaryActionColor: 'fg',
-    iconButtonColor: 'fgMuted',
-    borderColor: undefined,
-  },
-  danger: {
-    background: 'bgNegative',
-    iconColor: 'fgInverse',
-    textColor: 'fgInverse',
-    primaryActionColor: 'fgInverse',
-    secondaryActionColor: 'fgInverse',
-    iconButtonColor: 'fgInverse',
-    borderColor: 'bgNegative',
+    iconButtonColor: 'fg',
+    borderColor: 'bgPrimary',
   },
   warning: {
-    background: 'bg',
-    iconColor: 'fgNegative',
+    background: 'bgWarningWash',
+    iconColor: 'fgWarning',
     textColor: 'fg',
-    primaryActionColor: 'fg',
+    primaryActionColor: 'fgPrimary',
     secondaryActionColor: 'fg',
-    iconButtonColor: 'fgMuted',
-    borderColor: undefined,
+    iconButtonColor: 'fg',
+    borderColor: 'bgWarning',
   },
   error: {
-    background: undefined,
+    background: 'bgNegativeWash',
     iconColor: 'fgNegative',
     textColor: 'fg',
     primaryActionColor: 'fgPrimary',
     secondaryActionColor: 'fg',
     iconButtonColor: 'fg',
-    borderColor: undefined,
+    borderColor: 'bgNegative',
   },
 };
+
+export const bannerMinWidth = 320;

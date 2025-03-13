@@ -162,7 +162,7 @@ export const WithStickyFooter = () => {
   );
 };
 
-const NonDimissable = () => {
+const NonDismissable = () => {
   return <Default hideHandleBar preventDismissGestures preventHardwareBackBehaviorAndroid />;
 };
 
@@ -175,8 +175,8 @@ export const ActionTrayScreen = () => {
       <Example title="With Sticky Footer">
         <WithStickyFooter />
       </Example>
-      <Example title="Non-dimissable">
-        <NonDimissable />
+      <Example title="Non-dismissable">
+        <NonDismissable />
       </Example>
     </ExampleScreen>
   );

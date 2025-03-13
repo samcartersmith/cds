@@ -1,74 +1,34 @@
 import React, { forwardRef, isValidElement, memo, useCallback, useMemo, useState } from 'react';
-import { Animated, StyleProp, useWindowDimensions, View, ViewStyle } from 'react-native';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import { View, ViewStyle } from 'react-native';
 import { variants } from '@cbhq/cds-common2/tokens/banner';
-import { BannerBaseProps } from '@cbhq/cds-common2/types/BannerBaseProps';
+import { BannerBaseProps, BannerStyleVariant } from '@cbhq/cds-common2/types/BannerBaseProps';
 import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Collapsible } from '../collapsible/Collapsible';
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons';
-import { Box } from '../layout/Box';
-import { HStack } from '../layout/HStack';
-import { VStack } from '../layout/VStack';
+import { Box, HStack, HStackProps, VStack } from '../layout';
 import { Pressable } from '../system/Pressable';
 import { Link, LinkProps } from '../typography';
-import { TextBody } from '../typography/TextBody';
-import { TextHeadline } from '../typography/TextHeadline';
+import { TextLabel1, TextLabel2, TextLegal } from '../typography';
 
-// This custom spacing is necessary so that
-// the iconButton and the icon can horizontally
-// align with the text
-const customSpacing = { paddingTop: 4 };
-
-// TODO use a system like tokens/tags.ts#tagColorMap
-const stylesForVariant: Record<
-  Exclude<BannerProps['variant'], 'danger' | 'informational'>,
-  {
-    light: {
-      backgroundColor?: ThemeVars.SpectrumColor;
-      borderColor: ThemeVars.SpectrumColor;
-    };
-    dark: {
-      backgroundColor?: ThemeVars.SpectrumColor;
-      borderColor: ThemeVars.SpectrumColor;
-    };
-  }
-> = {
-  warning: {
-    light: {
-      backgroundColor: 'red0',
-      borderColor: 'red10',
-    },
-    dark: {
-      backgroundColor: 'red0',
-      borderColor: 'red10',
-    },
+const variantStyleProps: Record<BannerStyleVariant, HStackProps> = {
+  contextual: {
+    paddingX: 2,
+    borderRadius: 400,
   },
-  promotional: {
-    light: {
-      borderColor: 'blue10',
-    },
-    dark: {
-      borderColor: 'blue10',
-    },
+  global: {
+    paddingX: 3,
+    borderRadius: undefined,
   },
-  error: {
-    light: {
-      backgroundColor: 'yellow5',
-      borderColor: 'yellow10',
-    },
-    dark: {
-      backgroundColor: 'yellow15',
-      borderColor: 'yellow10',
-    },
+  inline: {
+    paddingX: 3,
+    borderRadius: undefined,
   },
-} as const;
-
-export type BannerProps = BannerBaseProps & {
-  style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
 };
+
+export type MobileBannerProps = BannerBaseProps & Omit<HStackProps, 'children'>;
 
 export const Banner = memo(
   forwardRef(function Banner(
@@ -81,40 +41,32 @@ export const Banner = memo(
       title,
       children,
       showDismiss = false,
-      bordered = true,
-      borderRadius = 200,
       testID,
       numberOfLines = 3,
       style,
-    }: BannerProps,
+      label,
+      styleVariant = 'contextual',
+      startIconAccessibilityLabel,
+      closeAccessibilityLabel,
+      margin,
+      marginX,
+      marginY,
+      marginTop,
+      marginEnd,
+      marginBottom,
+      marginStart,
+      ...props
+    }: MobileBannerProps,
     forwardedRef: ForwardedRef<View>,
   ) {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const theme = useTheme();
-
-    // Measure and configure layout
-    const { width } = useWindowDimensions();
-    const isWide = useMemo(() => width > 724, [width]);
-    const shouldUseVStack = useMemo(() => !isWide || showDismiss, [isWide, showDismiss]);
-    // The nested Stack is referred to as Stack
-    const Stack = useMemo(() => (shouldUseVStack ? VStack : HStack), [shouldUseVStack]);
-    const stackGap = useMemo(() => (isWide && primaryAction ? 3 : 1), [isWide, primaryAction]);
-    const stackAlignment = useMemo(
-      () => (shouldUseVStack ? 'flex-start' : 'center'),
-      [shouldUseVStack],
-    );
 
     // Events
     const handleOnDismiss = useCallback(() => {
       setIsCollapsed(true);
       onClose?.();
     }, [onClose]);
-
-    // Padding for a few regions is dynamic - we need dynamic configs
-    const paddingBottom = useMemo(
-      () => (!isWide && primaryAction ? 1 : 2),
-      [primaryAction, isWide],
-    );
 
     // Setup color configs
     const {
@@ -131,10 +83,9 @@ export const Banner = memo(
     const clonedPrimaryAction = useMemo(() => {
       if (isValidElement(primaryAction) && primaryAction?.type === Link) {
         return React.cloneElement(primaryAction, {
-          variant: 'headline',
+          variant: 'label1',
           color: primaryActionColor,
           testID: `${testID}-action--primary`,
-          underline: variant === 'error',
           ...(primaryAction.props as LinkProps),
         });
       }
@@ -146,11 +97,11 @@ export const Banner = memo(
       }
 
       return primaryAction;
-    }, [primaryAction, primaryActionColor, testID, variant]);
+    }, [primaryAction, primaryActionColor, testID]);
     const clonedSecondaryAction = useMemo(() => {
       if (isValidElement(secondaryAction) && secondaryAction.type === Link) {
         return React.cloneElement(secondaryAction, {
-          variant: 'headline',
+          variant: 'label1',
           color: secondaryActionColor,
           testID: `${testID}-action--secondary`,
           ...(secondaryAction.props as LinkProps),
@@ -165,104 +116,134 @@ export const Banner = memo(
       return secondaryAction;
     }, [secondaryAction, secondaryActionColor, testID]);
 
-    // The first HStack is referred to as root
-    const rootStyle = useMemo(() => {
-      const shouldOverride =
-        variant === 'warning' || variant === 'promotional' || variant === 'error';
-      if (shouldOverride) {
-        const { backgroundColor, borderColor } = stylesForVariant[variant][theme.colorScheme];
-        return {
-          ...(backgroundColor && { backgroundColor: `rgb(${theme.spectrum[backgroundColor]})` }),
-          borderColor: `rgb(${theme.spectrum[borderColor]})`,
-          ...(style as ViewStyle),
-        };
-      }
-
-      return style;
-    }, [variant, style, theme.colorScheme, theme.spectrum]);
-
-    // temporary fix for error banner
-    const customIconColor = useMemo(
-      () =>
-        variant === 'error'
-          ? {
-              dangerouslySetColor: `rgb(${
-                theme.spectrum[theme.colorScheme === 'light' ? 'orange40' : 'orange70']
-              })`,
-            }
-          : {},
-      [variant, theme.colorScheme, theme.spectrum],
+    const marginStyles = useMemo(
+      () => ({
+        margin,
+        marginX,
+        marginY,
+        marginTop,
+        marginEnd,
+        marginBottom,
+        marginStart,
+      }),
+      [margin, marginX, marginY, marginTop, marginEnd, marginBottom, marginStart],
     );
 
-    return (
-      <Collapsible ref={forwardedRef} collapsed={isCollapsed} testID={`${testID}-collapsible`}>
+    // The first HStack is referred to as root
+    const rootStyle = useMemo(() => {
+      return {
+        // todo: remove this override when token is available
+        ...(variant === 'warning'
+          ? {
+              backgroundColor: `rgb(${theme.spectrum.orange0})`,
+            }
+          : {}),
+        ...(style as ViewStyle),
+      };
+    }, [theme.spectrum, variant, style]);
+
+    const borderBox = (
+      <Box dangerouslySetBackground={theme.color[borderColor]} pin="left" width={4} />
+    );
+
+    const content = (
+      <Box {...(showDismiss ? {} : marginStyles)}>
         <HStack
-          // Consistent props
+          ref={forwardedRef}
           background={background}
-          borderColor={borderColor}
-          borderRadius={borderRadius}
-          bordered={bordered}
-          flexShrink={1}
-          gap={2}
-          padding={2}
-          paddingBottom={paddingBottom}
+          borderRadius={400}
+          gap={1}
+          paddingY={2}
           style={rootStyle}
           testID={testID}
+          {...variantStyleProps[styleVariant]}
+          {...props}
         >
           {/** Start */}
-          <Icon
-            accessibilityLabel={startIcon}
-            color={iconColor}
-            name={startIcon}
-            size="s"
-            style={customSpacing}
-            testID={`${testID}-icon`}
-            {...customIconColor}
-          />
-          <Stack
-            alignItems={stackAlignment}
+          <Box
+            accessibilityLabel={startIconAccessibilityLabel}
+            accessibilityRole="image"
+            accessible={!!startIconAccessibilityLabel}
+          >
+            <Icon
+              color={iconColor}
+              name={startIcon}
+              padding={0.5}
+              size="s"
+              testID={`${testID}-icon`}
+            />
+          </Box>
+          <VStack
             flexGrow={1}
             flexShrink={1}
-            gap={stackGap}
+            gap={2}
             justifyContent="space-between"
             testID={`${testID}-inner-end-box`}
           >
             {/** Middle */}
-            <VStack gap={0.5} testID={`${testID}-content-box`}>
-              <TextHeadline color={textColor} numberOfLines={2}>
-                {title}
-              </TextHeadline>
-              <TextBody color={textColor} numberOfLines={numberOfLines}>
-                {children}
-              </TextBody>
+            <VStack gap={2} testID={`${testID}-content-box`}>
+              <VStack gap={0.5}>
+                {typeof title === 'string' ? (
+                  <TextLabel1 color={textColor} numberOfLines={2}>
+                    {title}
+                  </TextLabel1>
+                ) : (
+                  title
+                )}
+                {typeof children === 'string' ? (
+                  <TextLabel2 color={textColor} numberOfLines={numberOfLines}>
+                    {children}
+                  </TextLabel2>
+                ) : (
+                  children
+                )}
+              </VStack>
+              {typeof label === 'string' ? (
+                <TextLegal color="fgMuted" numberOfLines={1}>
+                  {label}
+                </TextLegal>
+              ) : (
+                label
+              )}
             </VStack>
             {/** Actions */}
             {(!!clonedPrimaryAction || !!clonedSecondaryAction) && (
-              <HStack alignItems="center" gap={4} paddingY={1} testID={`${testID}-action`}>
+              <HStack alignItems="center" gap={2} testID={`${testID}-action`}>
                 {clonedPrimaryAction}
                 {clonedSecondaryAction}
               </HStack>
             )}
-          </Stack>
+          </VStack>
           {/** Dismissable action */}
           {showDismiss && (
-            <Box alignItems="flex-start" style={customSpacing}>
+            <Box alignItems="flex-start" padding={0.5}>
               <Pressable
-                accessibilityHint="close banner"
-                accessibilityLabel="close"
+                accessibilityLabel={closeAccessibilityLabel}
                 accessibilityRole="button"
                 background="transparent"
                 borderRadius={1000}
                 hitSlop={{ top: 15, left: 15, bottom: 15, right: 15 }}
                 onPress={handleOnDismiss}
-                testID={`${testID}-dimiss-btn`}
+                testID={`${testID}-dismiss-btn`}
               >
                 <Icon color={iconButtonColor} name="close" size="s" />
               </Pressable>
             </Box>
           )}
         </HStack>
-      </Collapsible>
+        {styleVariant === 'global' && !showDismiss && borderBox}
+      </Box>
+    );
+
+    return showDismiss ? (
+      <Box {...marginStyles}>
+        <Collapsible collapsed={isCollapsed} testID={`${testID}-collapsible`}>
+          {content}
+        </Collapsible>
+        {styleVariant === 'global' && borderBox}
+      </Box>
+    ) : (
+      content
     );
   }),
 );

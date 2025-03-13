@@ -40,7 +40,7 @@ type CarouselItemProps = {
   paddingEnd: ThemeVars.Space;
   /** Show the dismiss IconButton in each CarouselItem.  */
   showDismiss?: boolean;
-  /** x position of the Carousel scroll view. Used to interpolate opacity of dimiss button when showDismiss is true. */
+  /** x position of the Carousel scroll view. Used to interpolate opacity of dismiss button when showDismiss is true. */
   xOffset: Animated.Value;
   /** The total number of slides in a Carousel. Is used to understand certain conditions such as if is the last or only item. */
   totalItems: number;
