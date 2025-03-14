@@ -14,6 +14,13 @@ export function FeedbackWidget() {
 
   const { trackEvent } = useAnalytics();
 
+  // Callback ref to focus the confirmation message when it's rendered
+  const confirmationRef = useCallback((node: HTMLDivElement | null) => {
+    if (node) {
+      node.focus();
+    }
+  }, []);
+
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
       try {
@@ -52,12 +59,12 @@ export function FeedbackWidget() {
     <div key={location.pathname}>
       {submitted ? (
         <VStack
-          aria-live="polite"
+          ref={confirmationRef}
           background="bgAlternate"
           borderRadius={400}
           gap={3}
           padding={4}
-          role="status"
+          tabIndex={-1} // Makes the element focusable without keyboard navigation
         >
           <Text font="title3">Thank you for your feedback!</Text>
         </VStack>
@@ -70,14 +77,13 @@ export function FeedbackWidget() {
           padding={4}
           role="region"
         >
-          <Text font="title3" id="feedback-heading">
+          <Text as="h3" font="title3" id="feedback-heading">
             Is this page useful?
           </Text>
           <HStack aria-label="Page feedback options" gap={2} role="group">
             <Button
               compact
               accessibilityLabel="Yes, this page is useful"
-              aria-pressed={feedback === 'positive'}
               data-feedback-type="positive"
               onClick={handleClick}
               startIcon="thumbsUp"
@@ -88,7 +94,6 @@ export function FeedbackWidget() {
             <Button
               compact
               accessibilityLabel="No, this page is not useful"
-              aria-pressed={feedback === 'negative'}
               data-feedback-type="negative"
               onClick={handleClick}
               startIcon="thumbsDown"
