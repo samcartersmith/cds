@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useCallback, useState } from 'react';
 import { css, cx } from '@linaria/core';
-import { ForwardedRef, IconButtonVariant, NavigationIconName } from '@cbhq/cds-common2';
+import { IconButtonVariant, NavigationIconName } from '@cbhq/cds-common2';
 import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
 
 import { NavigationIcon } from '../icons/NavigationIcon';
@@ -48,7 +48,7 @@ export const NavigationIconButton = memo(
       variant = 'secondary',
       ...props
     }: NavigationButtonProps,
-    ref: ForwardedRef<HTMLButtonElement>,
+    ref: React.ForwardedRef<HTMLButtonElement>,
   ) {
     const [isActive, setIsActive] = useState(active);
     const { backgroundColor, borderColor } = useButtonVariant(variant as IconButtonVariant, false);

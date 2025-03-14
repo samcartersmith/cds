@@ -1,6 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import type { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import type { TextAlignProps } from '@cbhq/cds-common2/types/TextBaseProps';
@@ -120,7 +119,7 @@ export const NativeInput = memo(
       style,
       ...props
     }: NativeInputProps,
-    ref: ForwardedRef<HTMLInputElement>,
+    ref: React.ForwardedRef<HTMLInputElement>,
   ) {
     const { colorScheme } = useTheme();
     const defaultContainerPadding = compact

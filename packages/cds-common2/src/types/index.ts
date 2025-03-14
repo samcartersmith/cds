@@ -42,7 +42,6 @@ export * from './FallbackBaseProps';
 export * from './FeatureEntryCardBaseProps';
 export * from './FeedCardBaseProps';
 export * from './FloatingAssetCardBaseProps';
-export * from './ForwardedRef';
 export * from './Grid';
 export * from './GridBaseProps';
 export * from './GridColumnBaseProps';

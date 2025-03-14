@@ -1,6 +1,5 @@
 import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, I18nManager, LayoutChangeEvent, View } from 'react-native';
-import { ForwardedRef } from '@cbhq/cds-common2';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common2/hooks/usePreviousValues';
 import { ProgressBaseProps } from '@cbhq/cds-common2/types/ProgressBaseProps';
@@ -22,7 +21,7 @@ export const ProgressBar = memo(
         testID,
         accessibilityLabel = 'progress bar',
       }: ProgressBaseProps,
-      forwardedRef: ForwardedRef<View>,
+      forwardedRef: React.ForwardedRef<View>,
     ) => {
       const theme = useTheme();
       const height = useProgressSize(weight);

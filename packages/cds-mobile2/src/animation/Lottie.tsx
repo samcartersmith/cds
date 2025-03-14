@@ -1,14 +1,13 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, DimensionValue } from 'react-native';
 import LottieView from 'lottie-react-native';
-import { ForwardedRef } from '@cbhq/cds-common2';
 
 import { Box } from '../layout/Box';
 
 import { LottieProps } from './LottieProps';
 import { useLottieColorFilters } from './useLottieColorFilters';
 
-export type LottieMobileRef = ForwardedRef<LottieView>;
+export type LottieMobileRef = React.ForwardedRef<LottieView>;
 
 const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
 
@@ -58,7 +57,7 @@ const LottieContent = memo(
 );
 
 export const Lottie = memo(
-  forwardRef((props: LottieProps, forwardedRef: ForwardedRef<LottieView>) => {
+  forwardRef((props: LottieProps, forwardedRef: React.ForwardedRef<LottieView>) => {
     const colorFilters = useLottieColorFilters(props.source, props.colorFilters);
     return <LottieContent ref={forwardedRef} {...props} colorFilters={colorFilters} />;
   }),

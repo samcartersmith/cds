@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useEffect, useRef } from 'react';
 import { Animated, View } from 'react-native';
 import Svg, { Circle, CircleProps, G } from 'react-native-svg';
-import { ForwardedRef, SharedProps } from '@cbhq/cds-common2';
+import { SharedProps } from '@cbhq/cds-common2';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
 import {
   ProgressCircleBaseProps,
@@ -85,7 +85,7 @@ export const ProgressCircle = memo(
         hideText,
         size,
       }: ProgressCircleBaseProps,
-      forwardedRef: ForwardedRef<View>,
+      forwardedRef: React.ForwardedRef<View>,
     ) => {
       const theme = useTheme();
       const strokeWidth = useProgressSize(weight);

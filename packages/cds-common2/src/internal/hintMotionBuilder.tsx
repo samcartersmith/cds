@@ -5,7 +5,6 @@ import {
   ButtonBaseProps,
   ColorSurgeBaseProps,
   ColorSurgeRefBaseProps,
-  ForwardedRef,
   MotionTransition,
   PulseBaseProps,
   PulseRefBaseProps,
@@ -20,13 +19,15 @@ export type CreateHintMotionProps = {
   Button: React.ComponentType<React.PropsWithChildren<ButtonBaseProps & { onPress?: () => void }>>;
   Text: React.ComponentType<React.PropsWithChildren<TextBaseProps & { as?: string }>>;
   ColorSurge: React.ComponentType<
-    React.PropsWithChildren<ColorSurgeBaseProps & { ref: ForwardedRef<ColorSurgeRefBaseProps> }>
+    React.PropsWithChildren<
+      ColorSurgeBaseProps & { ref: React.ForwardedRef<ColorSurgeRefBaseProps> }
+    >
   >;
   Shake: React.ComponentType<
-    React.PropsWithChildren<ShakeBaseProps & { ref: ForwardedRef<ShakeRefBaseProps> }>
+    React.PropsWithChildren<ShakeBaseProps & { ref: React.ForwardedRef<ShakeRefBaseProps> }>
   >;
   Pulse: React.ComponentType<
-    React.PropsWithChildren<PulseBaseProps & { ref: ForwardedRef<PulseRefBaseProps> }>
+    React.PropsWithChildren<PulseBaseProps & { ref: React.ForwardedRef<PulseRefBaseProps> }>
   >;
 };
 

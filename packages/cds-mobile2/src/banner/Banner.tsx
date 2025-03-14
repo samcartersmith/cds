@@ -2,7 +2,6 @@ import React, { forwardRef, isValidElement, memo, useCallback, useMemo, useState
 import { View, ViewStyle } from 'react-native';
 import { variants } from '@cbhq/cds-common2/tokens/banner';
 import { BannerBaseProps, BannerStyleVariant } from '@cbhq/cds-common2/types/BannerBaseProps';
-import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Collapsible } from '../collapsible/Collapsible';
@@ -57,7 +56,7 @@ export const Banner = memo(
       marginStart,
       ...props
     }: MobileBannerProps,
-    forwardedRef: ForwardedRef<View>,
+    forwardedRef: React.ForwardedRef<View>,
   ) {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const theme = useTheme();

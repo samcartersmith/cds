@@ -12,7 +12,6 @@ import { css } from '@linaria/core';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { usePrefixedId } from '@cbhq/cds-common2/hooks/usePrefixedId';
-import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import type { InputVariant, SharedInputProps } from '@cbhq/cds-common2/types/InputBaseProps';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
@@ -147,7 +146,7 @@ export const TextInput = memo(
       helperTextErrorIconAccessibilityLabel = 'error',
       ...htmlInputElmProps
     }: TextInputProps,
-    ref: ForwardedRef<HTMLInputElement>,
+    ref: React.ForwardedRef<HTMLInputElement>,
   ) {
     const [focused, setFocused] = useState(false);
     const focusedVariant = useInputVariant(focused, variant);

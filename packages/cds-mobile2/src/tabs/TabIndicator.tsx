@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import { Animated, View } from 'react-native';
-import { ForwardedRef, TabIndicatorProps } from '@cbhq/cds-common2';
+import { TabIndicatorProps } from '@cbhq/cds-common2';
 
 import { Box } from '../layout';
 
@@ -10,7 +10,7 @@ export const TabIndicator = memo(
   forwardRef(
     (
       { width, x, background = 'bg', testID, ...props }: TabIndicatorProps,
-      forwardedRef: ForwardedRef<View>,
+      forwardedRef: React.ForwardedRef<View>,
     ) => {
       const { widthStyle, xStyle } = useTabIndicatorStyles({ width, x });
 

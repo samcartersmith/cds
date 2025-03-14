@@ -1,6 +1,5 @@
 import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
-import { ForwardedRef } from '@cbhq/cds-common2/types/ForwardedRef';
 import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { TextInputBaseProps } from '@cbhq/cds-common2/types/TextInputBaseProps';
 
@@ -71,7 +70,7 @@ export const NativeTextArea = memo(
       className,
       ...props
     }: NativeTextAreaProp,
-    ref: ForwardedRef<HTMLTextAreaElement>,
+    ref: React.ForwardedRef<HTMLTextAreaElement>,
   ) {
     return (
       <Box
