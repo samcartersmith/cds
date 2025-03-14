@@ -18,7 +18,7 @@ export default {
     '.perf-test',
   ],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
-  displayName: 'mobile',
+  displayName: 'cds-mobile',
   preset: '@cbhq/jest-preset-mobile',
   // https://docs.swmansion.com/react-native-gesture-handler/docs/guides/testing
   setupFiles: [

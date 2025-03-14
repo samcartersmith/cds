@@ -3,7 +3,7 @@ const d3 = ['d3', 'd3-.+', 'internmap'];
 const esModules = ['@cbhq', ...d3];
 
 export default {
-  displayName: 'web',
+  displayName: 'cds-web',
   preset: '@cbhq/jest-preset',
   setupFiles: ['<rootDir>/jest/setup.js'],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],

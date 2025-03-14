@@ -70,10 +70,16 @@
       "path": "packages/cds-migrator"
     },
     {
+      "path": "packages/cds-mobile-themes"
+    },
+    {
       "path": "packages/cds-mobile2"
     },
     {
       "path": "packages/cds-vscode-plugin"
+    },
+    {
+      "path": "packages/cds-web-themes"
     },
     {
       "path": "packages/cds-web2"
