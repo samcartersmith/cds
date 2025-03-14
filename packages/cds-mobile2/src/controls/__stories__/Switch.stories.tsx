@@ -1,5 +1,4 @@
-import React from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
+import React, { useState } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { ThemeProvider } from '../../system';
@@ -7,15 +6,16 @@ import { defaultTheme } from '../../themes/defaultTheme';
 import { Switch } from '../Switch';
 
 const SwitchScreen = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(true);
+
   return (
     <ExampleScreen>
       <Example inline title="Default">
         {() => {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          const [isChecked, { toggle }] = useToggler();
-
+          const toggleChecked = () => setIsChecked((prevChecked) => !prevChecked);
           return (
-            <Switch checked={isChecked} onChange={toggle}>
+            <Switch checked={isChecked} onChange={toggleChecked}>
               Default
             </Switch>
           );
@@ -37,8 +37,7 @@ const SwitchScreen = () => {
       </Example>
       <Example inline title="Custom Palette">
         {() => {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          const [isChecked, { toggle }] = useToggler(true);
+          const toggleChecked = () => setIsChecked2((prevChecked) => !prevChecked);
           return (
             <ThemeProvider
               activeColorScheme="light"
@@ -47,7 +46,7 @@ const SwitchScreen = () => {
                 light: { ...defaultTheme.light, bgPrimary: 'pink' },
               }}
             >
-              <Switch checked={isChecked} onChange={toggle}>
+              <Switch checked={isChecked2} onChange={toggleChecked}>
                 Default
               </Switch>
             </ThemeProvider>

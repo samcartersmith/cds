@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { FlatList } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { DrawerRefBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
 
@@ -45,8 +44,9 @@ const exampleOptions: ListCellProps[] = Array.from({ length: 10 }).map((_, idx) 
 }));
 
 export const Default = (props: Partial<TrayBaseProps>) => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(false);
+  const [isTrayVisible, setIsTrayVisible] = useState(false);
+  const setIsTrayVisibleToFalse = useCallback(() => setIsTrayVisible(false), []);
+  const setIsTrayVisibleToTrue = useCallback(() => setIsTrayVisible(true), []);
   const [items, setItems] = useState<Option[]>(defaultOptions);
   const trayRef = useRef<DrawerRefBaseProps>(null);
 
@@ -78,12 +78,12 @@ export const Default = (props: Partial<TrayBaseProps>) => {
 
   return (
     <>
-      <Button onPress={handleOpenTray}>Open</Button>
+      <Button onPress={setIsTrayVisibleToTrue}>Open</Button>
       {isTrayVisible && (
         <Tray
           ref={trayRef}
           handleBarAccessibilityLabel="Dismiss"
-          onCloseComplete={handleCloseTray}
+          onCloseComplete={setIsTrayVisibleToFalse}
           onVisibilityChange={handleTrayVisibilityChange}
           title={<SectionHeader description={description} paddingX={3} title="Change network" />}
           {...props}
@@ -103,8 +103,9 @@ export const Default = (props: Partial<TrayBaseProps>) => {
 };
 
 export const WithStickyFooter = () => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(false);
+  const [isTrayVisible, setIsTrayVisible] = useState(false);
+  const setIsTrayVisibleToFalse = useCallback(() => setIsTrayVisible(false), []);
+  const setIsTrayVisibleToTrue = useCallback(() => setIsTrayVisible(true), []);
   const trayRef = useRef<DrawerRefBaseProps>(null);
   const [items, setItems] = useState<ListCellProps[]>(exampleOptions);
 
@@ -135,13 +136,13 @@ export const WithStickyFooter = () => {
 
   return (
     <>
-      <Button onPress={handleOpenTray}>Open</Button>
+      <Button onPress={setIsTrayVisibleToTrue}>Open</Button>
       {isTrayVisible && (
         <Tray
           ref={trayRef}
           disableCapturePanGestureToDismiss
           handleBarAccessibilityLabel="Dismiss"
-          onCloseComplete={handleCloseTray}
+          onCloseComplete={setIsTrayVisibleToFalse}
           onVisibilityChange={handleTrayVisibilityChange}
           title={<SectionHeader paddingX={3} title="Section header" />}
         >

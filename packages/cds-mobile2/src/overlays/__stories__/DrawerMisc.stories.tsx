@@ -1,5 +1,4 @@
-import React, { useCallback, useRef } from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
+import React, { useCallback, useRef, useState } from 'react';
 import type { DrawerBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
@@ -10,19 +9,20 @@ import { Drawer } from '../drawer/Drawer';
 import { SideDrawerContent } from './Drawers';
 
 const SideDrawerWithA11y = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
-  const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const setIsVisibleToOn = useCallback(() => setIsVisible(true), []);
   const triggerRef = useRef(null);
   const { setA11yFocus } = useA11y();
 
   const handleCloseDrawer = useCallback(() => {
-    toggleOff();
+    setIsVisible(false);
     // return a11y focus to trigger
     setA11yFocus(triggerRef);
-  }, [toggleOff, setA11yFocus]);
+  }, [setA11yFocus]);
 
   return (
     <>
-      <Button ref={triggerRef} onPress={toggleOn}>
+      <Button ref={triggerRef} onPress={setIsVisibleToOn}>
         Open
       </Button>
       {isVisible && (

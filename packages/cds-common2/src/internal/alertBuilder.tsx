@@ -1,6 +1,5 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import { useToggler } from '../hooks/useToggler';
 import { useAlert } from '../overlays/useAlert';
 import type {
   AlertBaseProps,
@@ -29,16 +28,18 @@ export type CreateAlertProps = {
 
 export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps) {
   const BasicAlert = ({ singleAction = false }) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler(true);
+    const [visible, setVisible] = useState(true);
+    const setVisibleOn = useCallback(() => setVisible(true), [setVisible]);
+    const setVisibleOff = useCallback(() => setVisible(false), [setVisible]);
 
     return (
       <>
-        <Button onClick={toggleOn}>Show Alert</Button>
+        <Button onClick={setVisibleOn}>Show Alert</Button>
         <Alert
           body="Alert body type that can run over multiple lines, but should be kept short."
           dismissActionLabel={singleAction ? undefined : 'Cancel'}
           onPreferredActionPress={onPressConsole}
-          onRequestClose={toggleOff}
+          onRequestClose={setVisibleOff}
           pictogram="warning"
           preferredActionLabel="Primary"
           title="Alert title"
@@ -49,16 +50,18 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   };
 
   const LongTitleAlert = ({ singleAction = false }) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler(true);
+    const [visible, setVisible] = useState(true);
+    const setVisibleOn = useCallback(() => setVisible(true), [setVisible]);
+    const setVisibleOff = useCallback(() => setVisible(false), [setVisible]);
 
     return (
       <>
-        <Button onClick={toggleOn}>Show Alert</Button>
+        <Button onClick={setVisibleOn}>Show Alert</Button>
         <Alert
           body="Alert body type that can run over multiple lines, but should be kept short."
           dismissActionLabel={singleAction ? undefined : 'Cancel'}
           onPreferredActionPress={onPressConsole}
-          onRequestClose={toggleOff}
+          onRequestClose={setVisibleOff}
           pictogram="warning"
           preferredActionLabel="Primary"
           title="Multiline title should be centered"
@@ -121,11 +124,12 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
     accessibilityLabelledBy,
     accessibilityLabel,
   }: Partial<AlertBaseProps> & AlertA11yProps) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler(false);
+    const [visible, setVisible] = useState(false);
+    const setVisibleOn = useCallback(() => setVisible(true), [setVisible]);
 
     return (
       <>
-        <Button onClick={toggleOn}>Show Alert</Button>
+        <Button onClick={setVisibleOn}>Show Alert</Button>
         <Alert
           disablePortal
           accessibilityLabel={accessibilityLabel}
@@ -135,7 +139,7 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
           }
           dismissActionLabel={dismissActionLabel}
           onPreferredActionPress={onPreferredActionPress ?? onPressConsole}
-          onRequestClose={onRequestClose ?? toggleOff}
+          onRequestClose={onRequestClose ?? setVisibleOn}
           pictogram={pictogram ?? 'warning'}
           preferredActionLabel={preferredActionLabel ?? 'Save'}
           testID={testID}

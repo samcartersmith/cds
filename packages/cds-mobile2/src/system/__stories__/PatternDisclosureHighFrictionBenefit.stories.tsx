@@ -1,5 +1,4 @@
-import React, { useMemo } from 'react';
-import { useToggler } from '@cbhq/cds-common2';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -10,7 +9,9 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';
 import { Text } from '../../typography/Text';
 
 const PatternDisclosureHighFrictionBenefitScreen = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
 
   const data = useMemo(
     () => [
@@ -31,12 +32,12 @@ const PatternDisclosureHighFrictionBenefitScreen = () => {
   return (
     <ExampleScreen>
       <Example title="Pattern - High-Friction Benefit Disclosure">
-        <Button onPress={toggleOn}>View HFB Disclosure</Button>
+        <Button onPress={setVisibleToTrue}>View HFB Disclosure</Button>
         <Modal
           hideDividers
           accessibilityHint="Hint providing more context about the disclosure. Close this dialog to continue."
           accessibilityLabel="Title outlining the benefit in 1-2 lines"
-          onRequestClose={toggleOff}
+          onRequestClose={setVisibleToFalse}
           visible={visible}
         >
           <ModalHeader
@@ -67,7 +68,7 @@ const PatternDisclosureHighFrictionBenefitScreen = () => {
               ))}
             </VStack>
           </ModalBody>
-          <ModalFooter primaryAction={<Button onPress={toggleOff}>[CTA]</Button>} />
+          <ModalFooter primaryAction={<Button onPress={setVisibleToFalse}>[CTA]</Button>} />
         </Modal>
       </Example>
     </ExampleScreen>

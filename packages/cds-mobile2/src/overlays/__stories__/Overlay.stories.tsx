@@ -1,6 +1,5 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Modal } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -8,19 +7,21 @@ import { Overlay } from '../overlay/Overlay';
 import { useOverlayAnimation } from '../overlay/useOverlayAnimation';
 
 const OverlayScreen = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(false);
+  const [visible, setVisible] = useState(false);
+  const setVisibleToOn = useCallback(() => setVisible(true), []);
+  const setVisibleToOff = useCallback(() => setVisible(false), []);
   const [opacity, animateOverlayIn, animateOverlayOut] = useOverlayAnimation();
 
   const openModal = useCallback(() => {
-    toggleOn();
+    setVisibleToOn();
     animateOverlayIn.start();
-  }, [animateOverlayIn, toggleOn]);
+  }, [animateOverlayIn, setVisibleToOn]);
 
   const closeModal = useCallback(() => {
     animateOverlayOut.start(({ finished }) => {
-      if (finished) toggleOff();
+      if (finished) setVisibleToOff();
     });
-  }, [animateOverlayOut, toggleOff]);
+  }, [animateOverlayOut, setVisibleToOff]);
 
   useEffect(() => {
     openModal();

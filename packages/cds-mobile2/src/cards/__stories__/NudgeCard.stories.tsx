@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Image, StyleSheet, useWindowDimensions } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2';
 import { squareAssets } from '@cbhq/cds-common2/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
@@ -77,7 +76,8 @@ const handleDismiss = () => {
 };
 
 const NudgeCardScreen = () => {
-  const [dismissed, { toggleOff }] = useToggler(false);
+  const [dismissed, setDismissed] = useState(false);
+  const setDismissedToOff = useCallback(() => setDismissed(true), [setDismissed]);
   const windowWidth = useWindowDimensions().width;
   const carouselCardWidth = windowWidth - 48;
   return (
@@ -85,10 +85,10 @@ const NudgeCardScreen = () => {
       <Example title="Nudge Card">
         <VStack gap={2}>
           <NudgeCard {...exampleProps} />
-          {!dismissed && <NudgeCard {...exampleProps} onDismissPress={toggleOff} />}
+          {!dismissed && <NudgeCard {...exampleProps} onDismissPress={setDismissedToOff} />}
           <NudgeCard {...exampleProps} mediaPosition="left" />
           {!dismissed && (
-            <NudgeCard {...exampleProps} mediaPosition="left" onDismissPress={toggleOff} />
+            <NudgeCard {...exampleProps} mediaPosition="left" onDismissPress={setDismissedToOff} />
           )}
         </VStack>
       </Example>
@@ -102,7 +102,7 @@ const NudgeCardScreen = () => {
         <VStack gap={2}>
           <NudgeCard {...exampleMediaProps} />
           <NudgeCard {...exampleMediaProps} mediaPosition="left" />
-          {!dismissed && <NudgeCard {...exampleMediaProps} onDismissPress={toggleOff} />}
+          {!dismissed && <NudgeCard {...exampleMediaProps} onDismissPress={setDismissedToOff} />}
           <NudgeCard {...compactMediaProps} />
           <NudgeCard {...compactMediaProps} onDismissPress={handleDismiss} />
         </VStack>

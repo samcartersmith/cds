@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { FlatList, ScrollView } from 'react-native';
-import { DrawerRefBaseProps, useToggler } from '@cbhq/cds-common2';
+import { DrawerRefBaseProps } from '@cbhq/cds-common2';
 import { prices } from '@cbhq/cds-common2/internal/data/prices';
 
 import { Button } from '../../buttons/Button';
@@ -14,8 +14,9 @@ import { StickyFooter } from '../StickyFooter';
 const options: string[] = prices.slice(0, 20);
 
 const StickyFooterWithTray = ({ title }: { title?: string }) => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(true);
+  const [isTrayVisible, setIsTrayVisible] = useState(true);
+  const setIsTrayVisibleToFalse = useCallback(() => setIsTrayVisible(false), []);
+  const setIsTrayVisibleToTrue = useCallback(() => setIsTrayVisible(true), []);
   const [value, setValue] = useState<string>();
   const trayRef = useRef<DrawerRefBaseProps>(null);
 
@@ -40,12 +41,12 @@ const StickyFooterWithTray = ({ title }: { title?: string }) => {
 
   return (
     <>
-      <Button onPress={handleOpenTray}>Open</Button>
+      <Button onPress={setIsTrayVisibleToTrue}>Open</Button>
       {isTrayVisible && (
         <Tray
           ref={trayRef}
           disableCapturePanGestureToDismiss
-          onCloseComplete={handleCloseTray}
+          onCloseComplete={setIsTrayVisibleToFalse}
           title={title}
           verticalDrawerPercentageOfView={0.75}
         >

@@ -1,7 +1,7 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { SharedAccessibilityProps, useToggler } from '@cbhq/cds-common2';
+import { SharedAccessibilityProps } from '@cbhq/cds-common2';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { DefaultThemeProvider } from '../../utils/test';
@@ -27,12 +27,12 @@ const FullscreenAlertExample = ({
   accessibilityLabel,
   closeAccessibilityLabel,
 }: Options) => {
-  const [visible, { toggleOff }] = useToggler(externalVisible);
+  const [visible, setVisible] = useState(externalVisible);
 
   const handleClose = useCallback(() => {
     onRequestCloseSpy();
-    toggleOff();
-  }, [toggleOff]);
+    setVisible(false);
+  }, [setVisible]);
 
   return (
     <DefaultThemeProvider>

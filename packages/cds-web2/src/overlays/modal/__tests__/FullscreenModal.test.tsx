@@ -1,7 +1,7 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { SharedAccessibilityProps, useToggler } from '@cbhq/cds-common2';
+import { SharedAccessibilityProps } from '@cbhq/cds-common2';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { Text } from '../../../typography/Text';
@@ -33,15 +33,15 @@ const FullscreenModalExample = ({
   accessibilityLabel,
   closeAccessibilityLabel,
 }: Options) => {
-  const [visible, { toggleOff }] = useToggler(externalVisible);
+  const [visible, setVisible] = useState(externalVisible);
 
   const primaryContent = <Text as="p">{PRIMARY_CONTENT}</Text>;
   const secondaryContent = <Text as="p">{SECONDARY_CONTENT}</Text>;
 
   const handleClose = useCallback(() => {
     onRequestCloseSpy();
-    toggleOff();
-  }, [toggleOff]);
+    setVisible(false);
+  }, [setVisible]);
 
   return (
     <DefaultThemeProvider>

@@ -1,5 +1,4 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
@@ -19,7 +18,8 @@ import { Tray } from '../tray/Tray';
 import { options } from './Trays';
 
 const AccessibleTray = ({ title }: { title?: React.ReactNode }) => {
-  const [isTrayVisible, { toggleOff, toggleOn: handleOpenTray }] = useToggler(false);
+  const [isTrayVisible, setIsTrayVisible] = useState(false);
+  const setIsTrayVisibleToTrue = useCallback(() => setIsTrayVisible(true), []);
   const [value, setValue] = useState<string>();
   const trayRef = useRef<DrawerRefBaseProps>(null);
   const triggerRef = useRef(null);
@@ -30,14 +30,14 @@ const AccessibleTray = ({ title }: { title?: React.ReactNode }) => {
   };
 
   const handleCloseTray = useCallback(() => {
-    toggleOff();
+    setIsTrayVisible(false);
     // return a11y focus to trigger
     setA11yFocus(triggerRef);
-  }, [toggleOff, setA11yFocus]);
+  }, [setA11yFocus]);
 
   return (
     <>
-      <Button ref={triggerRef} onPress={handleOpenTray}>
+      <Button ref={triggerRef} onPress={setIsTrayVisibleToTrue}>
         Open
       </Button>
       {isTrayVisible && (
@@ -65,21 +65,20 @@ const AccessibleTray = ({ title }: { title?: React.ReactNode }) => {
 };
 
 const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(false);
-  const [
-    isInceptionTrayVisible,
-    { toggleOff: handleCloseInceptionTray, toggleOn: handleOpenInceptionTray },
-  ] = useToggler(false);
+  const [isTrayVisible, setIsTrayVisible] = useState(false);
+  const setIsTrayVisibleToTrue = useCallback(() => setIsTrayVisible(true), []);
+
+  const [isInceptionTrayVisible, setIsInceptionTrayVisible] = useState(false);
+  const setIsInceptionTrayVisibleToFalse = useCallback(() => setIsInceptionTrayVisible(false), []);
   const isBlurred = useRef<boolean>(false);
 
   const onTrayClose = useCallback(() => {
-    handleCloseTray();
+    setIsTrayVisible(false);
     if (!isBlurred.current) {
-      handleOpenInceptionTray();
+      setIsInceptionTrayVisible(true);
     }
     isBlurred.current = false;
-  }, [handleOpenInceptionTray, handleCloseTray, isBlurred]);
+  }, [isBlurred]);
 
   const handleBlur = useCallback(() => {
     isBlurred.current = true;
@@ -87,7 +86,7 @@ const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
 
   return (
     <>
-      <Button onPress={handleOpenTray}>Open</Button>
+      <Button onPress={setIsTrayVisibleToTrue}>Open</Button>
       {isTrayVisible && (
         <Tray onBlur={handleBlur} onCloseComplete={onTrayClose} title={title}>
           {({ handleClose }) => {
@@ -105,7 +104,7 @@ const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
         </Tray>
       )}
       {isInceptionTrayVisible && (
-        <Tray onCloseComplete={handleCloseInceptionTray} title={title}>
+        <Tray onCloseComplete={setIsInceptionTrayVisibleToFalse} title={title}>
           {() => {
             return (
               <HStack padding={3}>
@@ -120,19 +119,19 @@ const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
 };
 
 const TrayToModalFlow = ({ title }: { title?: React.ReactNode }) => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(false);
-  const [isModalVisible, { toggleOff: handleCloseModal, toggleOn: handleOpenModal }] =
-    useToggler(false);
+  const [isTrayVisible, setIsTrayVisible] = useState(false);
+  const setIsTrayVisibleToTrue = useCallback(() => setIsTrayVisible(true), []);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const setIsModalVisibleToFalse = useCallback(() => setIsModalVisible(false), []);
 
   const handleTrayCloseComplete = useCallback(() => {
-    handleCloseTray();
-    handleOpenModal();
-  }, [handleCloseTray, handleOpenModal]);
+    setIsTrayVisible(false);
+    setIsModalVisible(true);
+  }, []);
 
   return (
     <>
-      <Button onPress={handleOpenTray}>Open Tray</Button>
+      <Button onPress={setIsTrayVisibleToTrue}>Open Tray</Button>
       {isTrayVisible && (
         <Tray onCloseComplete={handleTrayCloseComplete} title={title}>
           {({ handleClose }) => {
@@ -149,11 +148,11 @@ const TrayToModalFlow = ({ title }: { title?: React.ReactNode }) => {
           }}
         </Tray>
       )}
-      <Modal onRequestClose={handleCloseModal} visible={isModalVisible}>
+      <Modal onRequestClose={setIsModalVisibleToFalse} visible={isModalVisible}>
         <ModalHeader title="I am a Modal" />
         <ModalBody>
           <LoremIpsum />
-          <Button onPress={handleCloseModal}>Close</Button>
+          <Button onPress={setIsModalVisibleToFalse}>Close</Button>
         </ModalBody>
       </Modal>
     </>

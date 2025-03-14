@@ -1,6 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
 import React, { View } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2';
 
 import { Banner } from '../../banner/Banner';
 import { Button, ButtonGroup } from '../../buttons';
@@ -16,7 +15,10 @@ import { DELETE, Numpad, NumpadValue, SEPARATOR } from '../Numpad';
 const VALUE_MAX = 1000000;
 
 const NumpadExample1 = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(false);
+  const [visible, setVisible] = useState(false);
+  const setVisibleToOn = useCallback(() => setVisible(true), []);
+  const setVisibleToOff = useCallback(() => setVisible(false), []);
+
   const [value, setValue] = useState('100');
   const safeBottomPadding = useSafeBottomPadding();
 
@@ -102,8 +104,8 @@ const NumpadExample1 = () => {
 
   return (
     <VStack>
-      <Button onPress={toggleOn}>Example 1</Button>
-      <Modal onRequestClose={toggleOff} visible={visible}>
+      <Button onPress={setVisibleToOn}>Example 1</Button>
+      <Modal onRequestClose={setVisibleToOff} visible={visible}>
         <ModalHeader title="BuyAsset Entry" />
         <ModalBody>
           <TextInput
@@ -125,7 +127,7 @@ const NumpadExample1 = () => {
             accessory={accessory}
             action={
               <VStack paddingX={2}>
-                <Button onPress={toggleOff}>Review order</Button>
+                <Button onPress={setVisibleToOff}>Review order</Button>
               </VStack>
             }
             deleteAccessibilityLabel="delete"
@@ -141,7 +143,9 @@ const NumpadExample1 = () => {
 
 const NumpadExample2 = () => {
   // localState
-  const [visible, { toggleOn, toggleOff }] = useToggler(false);
+  const [visible, setVisible] = useState(false);
+  const setVisibleToOn = useCallback(() => setVisible(true), []);
+  const setViisbleToOff = useCallback(() => setVisible(false), []);
   const [value, setValue] = useState('');
 
   // hooks
@@ -167,8 +171,8 @@ const NumpadExample2 = () => {
 
   return (
     <VStack>
-      <Button onPress={toggleOn}>Example 2</Button>
-      <Modal onRequestClose={toggleOff} visible={visible}>
+      <Button onPress={setVisibleToOn}>Example 2</Button>
+      <Modal onRequestClose={setViisbleToOff} visible={visible}>
         <ModalHeader title="PinCode Entry" />
         <ModalBody>
           <VStack alignItems="center" gap={2} paddingTop={8}>

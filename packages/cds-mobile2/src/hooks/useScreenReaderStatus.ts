@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { AccessibilityInfo } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2';
 
 /**
  * Hook to track screen reader status and update when changed.
@@ -9,22 +8,22 @@ import { useToggler } from '@cbhq/cds-common2';
  */
 
 export const useScreenReaderStatus = () => {
-  const [isScreenReaderEnabled, { toggleOn, toggleOff }] = useToggler(false);
+  const [isScreenReaderEnabled, setIsScreenReaderEnabled] = useState(false);
 
   // initialize accessibility info on mount
   useEffect(() => {
     const initScreenReaderStatus = async () => {
       const enabled = await AccessibilityInfo.isScreenReaderEnabled();
-      if (enabled) toggleOn();
+      if (enabled) setIsScreenReaderEnabled(true);
 
       AccessibilityInfo.addEventListener('screenReaderChanged', (_isScreenReaderEnabled) => {
-        if (_isScreenReaderEnabled) toggleOn();
-        else toggleOff();
+        if (_isScreenReaderEnabled) setIsScreenReaderEnabled(true);
+        else setIsScreenReaderEnabled(false);
       });
     };
 
     void initScreenReaderStatus();
-  }, [toggleOff, toggleOn]);
+  }, []);
 
   return isScreenReaderEnabled;
 };

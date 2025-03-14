@@ -1,14 +1,14 @@
+import { useState } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { usePreviousValue } from '../usePreviousValue';
-import { useToggler } from '../useToggler';
 
 describe('usePreviousValue', () => {
   const useMockPreviousValue = () => {
-    const [currentValue, toggles] = useToggler();
+    const [currentValue, setCurrentValue] = useState(false);
     const previousValue = usePreviousValue(currentValue);
     return {
-      ...toggles,
+      setCurrentValue,
       previousValue,
       currentValue,
     };
@@ -18,13 +18,13 @@ describe('usePreviousValue', () => {
     const { result } = renderHook(() => useMockPreviousValue());
     expect(result.current.previousValue).toBeUndefined();
     expect(result.current.currentValue).toBe(false);
-    result.current.toggleOn();
+    result.current.setCurrentValue(true);
     expect(result.current.previousValue).toBe(false);
     expect(result.current.currentValue).toBe(true);
-    result.current.toggleOff();
+    result.current.setCurrentValue(false);
     expect(result.current.previousValue).toBe(true);
     expect(result.current.currentValue).toBe(false);
-    result.current.toggleOff();
+    result.current.setCurrentValue(false);
     expect(result.current.previousValue).toBe(false);
     expect(result.current.currentValue).toBe(false);
   });

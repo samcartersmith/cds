@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Text } from '../../typography/Text';
 import { Radio, RadioGroup } from '../RadioGroup';
 
 const RadioGroupScreen = () => {
+  const [checked, setChecked] = useState(false);
+
   return (
     <ExampleScreen>
       <Example inline title="Default">
         {() => {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          const [checked, { toggle }] = useToggler();
+          const toggleChecked = () => setChecked((prevChecked) => !prevChecked);
           return (
-            <Radio checked={checked} onChange={toggle}>
+            <Radio checked={checked} onChange={toggleChecked}>
               Default
             </Radio>
           );

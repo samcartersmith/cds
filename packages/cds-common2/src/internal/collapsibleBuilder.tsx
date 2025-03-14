@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { usePrefixedId } from '../hooks/usePrefixedId';
-import { useToggler } from '../hooks/useToggler';
 import type {
   BoxBaseProps,
   ButtonBaseProps,
@@ -40,7 +39,11 @@ export function collapsibleBuilder({
   HStack,
 }: CreateCollapsibleProps) {
   const BasicCollapsible = () => {
-    const [collapsed, { toggle }] = useToggler(true);
+    const [collapsed, setCollapsed] = useState(true);
+    const toggleCollapsed = useCallback(
+      () => setCollapsed((collapsed) => !collapsed),
+      [setCollapsed],
+    );
     // Use the useA11yControlledVisibility to setup the collapsible a11y props more easily
     const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
@@ -51,7 +54,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onClick={toggle}
+          onClick={toggleCollapsed}
         >
           Click me!
         </Button>
@@ -63,7 +66,11 @@ export function collapsibleBuilder({
   };
 
   const RevealTop = () => {
-    const [collapsed, { toggle }] = useToggler(true);
+    const [collapsed, setCollapsed] = useState(true);
+    const toggleCollapsed = useCallback(
+      () => setCollapsed((collapsed) => !collapsed),
+      [setCollapsed],
+    );
     const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
@@ -71,7 +78,12 @@ export function collapsibleBuilder({
         <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
           <Text as="p">{loremIpsum}</Text>
         </Collapsible>
-        <Button disableDebounce aria-controls={collapsibleId} id={triggerId} onClick={toggle}>
+        <Button
+          disableDebounce
+          aria-controls={collapsibleId}
+          id={triggerId}
+          onClick={toggleCollapsed}
+        >
           Click me!
         </Button>
       </>
@@ -79,7 +91,11 @@ export function collapsibleBuilder({
   };
 
   const DefaultExpanded = () => {
-    const [collapsed, { toggle }] = useToggler(false);
+    const [collapsed, setCollapsed] = useState(false);
+    const toggleCollapsed = useCallback(
+      () => setCollapsed((collapsed) => !collapsed),
+      [setCollapsed],
+    );
     const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
@@ -89,7 +105,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onClick={toggle}
+          onClick={toggleCollapsed}
         >
           Click me!
         </Button>
@@ -101,7 +117,11 @@ export function collapsibleBuilder({
   };
 
   const Scroll = () => {
-    const [collapsed, { toggle }] = useToggler(true);
+    const [collapsed, setCollapsed] = useState(true);
+    const toggleCollapsed = useCallback(
+      () => setCollapsed((collapsed) => !collapsed),
+      [setCollapsed],
+    );
     const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
@@ -111,7 +131,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onClick={toggle}
+          onClick={toggleCollapsed}
         >
           Click me!
         </Button>
@@ -128,7 +148,11 @@ export function collapsibleBuilder({
   };
 
   const Horizontal = () => {
-    const [collapsed, { toggle }] = useToggler(true);
+    const [collapsed, setCollapsed] = useState(true);
+    const toggleCollapsed = useCallback(
+      () => setCollapsed((collapsed) => !collapsed),
+      [setCollapsed],
+    );
     const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
@@ -138,7 +162,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onClick={toggle}
+          onClick={toggleCollapsed}
         >
           Click me!
         </Button>
@@ -158,7 +182,11 @@ export function collapsibleBuilder({
   };
 
   const MockCollapsible = () => {
-    const [collapsed, { toggle }] = useToggler(true);
+    const [collapsed, setCollapsed] = useState(true);
+    const toggleCollapsed = useCallback(
+      () => setCollapsed((collapsed) => !collapsed),
+      [setCollapsed],
+    );
     const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
     return (
@@ -167,7 +195,7 @@ export function collapsibleBuilder({
           aria-controls={collapsibleId}
           aria-expanded={!collapsed}
           id={triggerId}
-          onClick={toggle}
+          onClick={toggleCollapsed}
         >
           Click me!
         </Button>

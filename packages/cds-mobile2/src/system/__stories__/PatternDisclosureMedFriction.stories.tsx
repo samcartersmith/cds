@@ -1,5 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
-import { useToggler } from '@cbhq/cds-common2';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -10,7 +9,9 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';
 import { Text } from '../../typography/Text';
 
 const PatternDisclosureMedFrictionScreen = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
 
   const data = useMemo(
     () => [
@@ -35,12 +36,12 @@ const PatternDisclosureMedFrictionScreen = () => {
   return (
     <ExampleScreen>
       <Example title="Pattern - Medium-Friction Disclosure">
-        <Button onPress={toggleOn}>View MF Disclosure</Button>
+        <Button onPress={setVisibleToTrue}>View MF Disclosure</Button>
         <Modal
           hideDividers
           accessibilityHint="Hint providing more context about the disclosure. Close this dialog to continue."
           accessibilityLabel="Title outlining the benefit in 1-2 lines"
-          onRequestClose={toggleOff}
+          onRequestClose={setVisibleToFalse}
           visible={visible}
         >
           <ModalHeader
@@ -70,7 +71,7 @@ const PatternDisclosureMedFrictionScreen = () => {
           </ModalBody>
           <ModalFooter
             direction="vertical"
-            primaryAction={<Button onPress={toggleOff}>[Affirmative CTA]</Button>}
+            primaryAction={<Button onPress={setVisibleToFalse}>[Affirmative CTA]</Button>}
             secondaryAction={
               <Button onPress={handleSecondaryPress} variant="secondary">
                 Terms and conditions

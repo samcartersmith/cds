@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Image } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2';
 import { ethBackground } from '@cbhq/cds-common2/internal/data/assets';
 import { noop } from '@cbhq/cds-utils';
 
@@ -13,7 +12,8 @@ import { ProgressBar } from '../../visualizations';
 import { Coachmark } from '../Coachmark';
 
 const CoachmarkExamples = () => {
-  const [checked, { toggle }] = useToggler();
+  const [checked, setChecked] = useState(false);
+  const toggleChecked = useCallback(() => setChecked((prevChecked) => !prevChecked), []);
 
   return (
     <VStack gap={3}>
@@ -25,7 +25,7 @@ const CoachmarkExamples = () => {
       <Coachmark
         action={<Button>Next</Button>}
         checkbox={
-          <Checkbox checked={checked} onChange={toggle}>
+          <Checkbox checked={checked} onChange={toggleChecked}>
             Don&apos;t show again
           </Checkbox>
         }

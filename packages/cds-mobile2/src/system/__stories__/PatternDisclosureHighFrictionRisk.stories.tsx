@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
@@ -32,7 +31,9 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
   );
   const initialCheckboxesState = useMemo(() => data.map(() => false), [data]);
 
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
   const [checkboxes, setCheckboxes] = useState(initialCheckboxesState);
 
   const isCtaDisabled = useMemo(() => checkboxes.some((checked) => !checked), [checkboxes]);
@@ -49,12 +50,12 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
   return (
     <ExampleScreen>
       <Example title="Pattern - High-Friction Risk Disclosure">
-        <Button onPress={toggleOn}>View HFR Disclosure</Button>
+        <Button onPress={setVisibleToTrue}>View HFR Disclosure</Button>
         <Modal
           hideDividers
           accessibilityHint="Hint providing more context about the disclosure. Close this dialog to continue."
           accessibilityLabel="Title outlining risk in 1-2 lines"
-          onRequestClose={toggleOff}
+          onRequestClose={setVisibleToFalse}
           visible={visible}
         >
           <ModalHeader
@@ -62,7 +63,7 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
             backAccessibilityLabel="Back"
             closeAccessibilityHint="Close this dialog to continue"
             closeAccessibilityLabel="Close"
-            onBackButtonClick={toggleOff}
+            onBackButtonClick={setVisibleToFalse}
           />
           <ModalBody>
             <Box alignItems="center">
@@ -100,7 +101,7 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
           </ModalBody>
           <ModalFooter
             primaryAction={
-              <Button disabled={isCtaDisabled} onPress={toggleOff}>
+              <Button disabled={isCtaDisabled} onPress={setVisibleToFalse}>
                 {`[${isCtaDisabled ? 'Disabled' : 'Enabled'} CTA]`}
               </Button>
             }

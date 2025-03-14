@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { useToggler } from '@cbhq/cds-common2';
+import React, { useCallback, useRef, useState } from 'react';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Accordion, AccordionItem } from '../../accordion';
@@ -39,7 +38,9 @@ const useTriggerFocus = () => {
 const contentStyle = { justifyContent: 'center', marginLeft: 'auto' };
 
 export const Basic = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
@@ -56,13 +57,13 @@ export const Basic = () => {
 
   return (
     <>
-      <Button ref={triggerRef} onClick={toggleOn}>
+      <Button ref={triggerRef} onClick={setVisibleToTrue}>
         Open Modal
       </Button>
       <FullscreenModal
         closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
-        onRequestClose={toggleOff}
+        onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         title="Modal title"
@@ -73,7 +74,9 @@ export const Basic = () => {
 };
 
 export const NoTitle = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
@@ -90,14 +93,14 @@ export const NoTitle = () => {
 
   return (
     <>
-      <Button ref={triggerRef} onClick={toggleOn}>
+      <Button ref={triggerRef} onClick={setVisibleToTrue}>
         Open Modal
       </Button>
       <FullscreenModal
         accessibilityLabel="Modal context info"
         closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
-        onRequestClose={toggleOff}
+        onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         visible={visible}
@@ -107,7 +110,9 @@ export const NoTitle = () => {
 };
 
 export const NoSecondary = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
@@ -118,13 +123,13 @@ export const NoSecondary = () => {
 
   return (
     <>
-      <Button ref={triggerRef} onClick={toggleOn}>
+      <Button ref={triggerRef} onClick={setVisibleToTrue}>
         Open Modal
       </Button>
       <FullscreenModal
         closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
-        onRequestClose={toggleOff}
+        onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         title="Modal title"
         visible={visible}
@@ -134,7 +139,9 @@ export const NoSecondary = () => {
 };
 
 export const Example = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const feedCard = (
@@ -191,13 +198,13 @@ export const Example = () => {
 
   return (
     <>
-      <Button ref={triggerRef} onClick={toggleOn}>
+      <Button ref={triggerRef} onClick={setVisibleToTrue}>
         Open Modal
       </Button>
       <FullscreenModal
         closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
-        onRequestClose={toggleOff}
+        onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         title="Modal title"
@@ -208,7 +215,9 @@ export const Example = () => {
 };
 
 export const SecondaryContentDivider = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
@@ -225,14 +234,14 @@ export const SecondaryContentDivider = () => {
 
   return (
     <>
-      <Button ref={triggerRef} onClick={toggleOn}>
+      <Button ref={triggerRef} onClick={setVisibleToTrue}>
         Open Modal
       </Button>
       <FullscreenModal
         showSecondaryContentDivider
         closeAccessibilityLabel="Close modal"
         onDidClose={focusTrigger}
-        onRequestClose={toggleOff}
+        onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
         title="Modal title"
@@ -243,7 +252,9 @@ export const SecondaryContentDivider = () => {
 };
 
 export const CenterPrimary = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
   const { triggerRef, focusTrigger } = useTriggerFocus();
 
   const primaryContent = (
@@ -254,14 +265,14 @@ export const CenterPrimary = () => {
 
   return (
     <>
-      <Button ref={triggerRef} onClick={toggleOn}>
+      <Button ref={triggerRef} onClick={setVisibleToTrue}>
         Open Modal
       </Button>
       <FullscreenModal
         closeAccessibilityLabel="Close modal"
         contentStyle={contentStyle}
         onDidClose={focusTrigger}
-        onRequestClose={toggleOff}
+        onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         title="Modal title"
         visible={visible}

@@ -1,6 +1,5 @@
-import { useId } from 'react';
+import { useCallback, useId, useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { useToggler } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { Text } from '../../typography/Text';
@@ -12,15 +11,16 @@ jest.mock('../../hooks/useContentSize', () => ({
 }));
 
 const MockCollapsible = ({ defaultCollapsed = true }: { defaultCollapsed?: boolean }) => {
-  const [collapsed, { toggle }] = useToggler(defaultCollapsed);
+  const [collapsed, setCollapsed] = useState(defaultCollapsed);
   const collapsibleId = useId();
+  const toggleCollapsed = useCallback(() => setCollapsed((prev) => !prev), [setCollapsed]);
   return (
     <DefaultThemeProvider>
       <Button
         disableDebounce
         aria-controls={collapsibleId}
         aria-expanded={!collapsed}
-        onPress={toggle}
+        onPress={toggleCollapsed}
         testID="mock-collapse-trigger"
       >
         Click me!

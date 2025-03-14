@@ -1,6 +1,5 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { Modal as RNModal, ScrollView, View } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -171,12 +170,14 @@ const ModalContent = ({
 };
 
 const CDSModalTest = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler();
+  const [visible, setVisible] = useState(false);
+  const setVisibleToOn = useCallback(() => setVisible(true), []);
+  const setVisibleToOff = useCallback(() => setVisible(false), []);
 
   return (
     <>
-      <Button onPress={toggleOn}>Open CDS Modal Test</Button>
-      <CDSModal onRequestClose={toggleOff} visible={visible}>
+      <Button onPress={setVisibleToOn}>Open CDS Modal Test</Button>
+      <CDSModal onRequestClose={setVisibleToOff} visible={visible}>
         {({ closeModal }) => (
           <ModalContent closeModal={closeModal} openModalText="Close CDS Modal Test" />
         )}
@@ -186,24 +187,27 @@ const CDSModalTest = () => {
 };
 
 const RNModalTest = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler();
+  const [visible, setVisible] = useState(false);
+  const setVisibleToOn = useCallback(() => setVisible(true), []);
+  const setVisibleToOff = useCallback(() => setVisible(false), []);
   // This is an important edge case that needs to be known. statusBarTranslucent impacts measurement on Android.
-  const [
-    statusBarTranslucent,
-    { toggleOn: toggleOnStatusBarTranslucent, toggleOff: toggleOffStatusBarTranslucent },
-  ] = useToggler(true);
+  const [statusBarTranslucent, setStatusBarTranslucent] = useState(true);
+  const toggleOnStatusBarTranslucent = useCallback(() => setStatusBarTranslucent(true), []);
+  const toggleOffStatusBarTranslucent = useCallback(() => setStatusBarTranslucent(false), []);
 
-  const [
-    yShiftByStatusBarHeight,
-    {
-      toggleOn: toggleOnShiftMeasurementByStatusBar,
-      toggleOff: toggleOffShiftMeasurementByStatusBar,
-    },
-  ] = useToggler(true);
+  const [yShiftByStatusBarHeight, setYShiftByStatusBarHeight] = useState(true);
+  const toggleOnShiftMeasurementByStatusBar = useCallback(
+    () => setYShiftByStatusBarHeight(true),
+    [],
+  );
+  const toggleOffShiftMeasurementByStatusBar = useCallback(
+    () => setYShiftByStatusBarHeight(false),
+    [],
+  );
 
   return (
     <>
-      <Button onPress={toggleOn}>Open RN Modal Test 2</Button>
+      <Button onPress={setVisibleToOn}>Open RN Modal Test 2</Button>
       <RNModal statusBarTranslucent={statusBarTranslucent} visible={visible}>
         <VStack paddingTop={6} width="100%">
           <Button compact onPress={toggleOnStatusBarTranslucent}>
@@ -223,7 +227,7 @@ const RNModalTest = () => {
           <Text font="label2">{`yShiftByStatusBarHeight: ${yShiftByStatusBarHeight}`}</Text>
         </VStack>
         <ModalContent
-          closeModal={toggleOff}
+          closeModal={setVisibleToOff}
           openModalText="Close RN Modal Test"
           yShiftByStatusBarHeight={yShiftByStatusBarHeight}
         />

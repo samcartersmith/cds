@@ -73,7 +73,7 @@ describe('Modal', () => {
   it('show modal on press', () => {
     render(
       <DefaultThemeProvider>
-        <MockModal />
+        <MockModal visible={false} />
       </DefaultThemeProvider>,
     );
 

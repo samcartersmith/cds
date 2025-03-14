@@ -6,13 +6,13 @@ import React, {
   useEffect,
   useMemo,
   useRef,
+  useState,
 } from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common2/animation/select';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import {
   selectTriggerCompactMinHeight,
   selectTriggerMinHeight,
@@ -67,7 +67,9 @@ export const Select = memo(
     ) => {
       const { rotateAnimation, animateRotateIn, animateRotateOut, rotateAnimationStyles } =
         useRotateAnimation(animateCaretInConfig, animateCaretOutConfig, 180);
-      const [isSelectTrayOpen, toggleSelectTray] = useToggler(false);
+      const [isSelectTrayOpen, toggleSelectTray] = useState(false);
+      const toggleSelecTrayOff = useCallback(() => toggleSelectTray(false), [toggleSelectTray]);
+      const toggleSelecTrayOn = useCallback(() => toggleSelectTray(true), [toggleSelectTray]);
       const focusedVariant = useInputVariant(!!isSelectTrayOpen, variant);
       const sanitizedValue = defaultValue === '' ? undefined : defaultValue;
       const internalRef = useRef(null);
@@ -105,20 +107,20 @@ export const Select = memo(
             handleA11y();
           }
         });
-        toggleSelectTray.toggleOff();
+        toggleSelecTrayOff();
       }, [
         animateRotateIn,
         animateRotateOut,
         children,
         rotateAnimation,
-        toggleSelectTray,
+        toggleSelecTrayOff,
         handleA11y,
       ]);
 
       const handleOnSubjectPress = useCallback(() => {
         onPress?.();
-        toggleSelectTray.toggleOn();
-      }, [onPress, toggleSelectTray]);
+        toggleSelecTrayOn();
+      }, [onPress, toggleSelecTrayOn]);
 
       const accessibilityState = useMemo(() => ({ disabled: !!disabled }), [disabled]);
 

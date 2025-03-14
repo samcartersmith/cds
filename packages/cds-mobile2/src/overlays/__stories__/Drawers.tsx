@@ -1,5 +1,4 @@
-import React from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
+import React, { useCallback, useState } from 'react';
 import type { DrawerBaseProps, IconName } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
@@ -12,12 +11,14 @@ import { Text } from '../../typography/Text';
 import { Drawer } from '../drawer/Drawer';
 
 export const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
-  const [isVisible, { toggleOn, toggleOff }] = useToggler(true);
+  const [isVisible, setIsVisible] = useState(true);
+  const setIsVisibleOff = useCallback(() => setIsVisible(false), [setIsVisible]);
+  const setIsVisibleOn = useCallback(() => setIsVisible(true), [setIsVisible]);
   return (
     <>
-      <Button onPress={toggleOn}>Open</Button>
+      <Button onPress={setIsVisibleOn}>Open</Button>
       {isVisible && (
-        <Drawer onCloseComplete={toggleOff} pin={pin}>
+        <Drawer onCloseComplete={setIsVisibleOff} pin={pin}>
           {({ handleClose }) => (
             <VStack padding={2}>
               <LoremIpsum />
@@ -99,12 +100,14 @@ export const SideDrawerContent = ({ handleClose }: SideDrawerContentProps) => {
 };
 
 export const SideDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
-  const [isVisible, { toggleOn, toggleOff }] = useToggler(true);
+  const [isVisible, setIsVisible] = useState(true);
+  const setIsVisibleOff = useCallback(() => setIsVisible(false), [setIsVisible]);
+  const setIsVisibleOn = useCallback(() => setIsVisible(true), [setIsVisible]);
   return (
     <>
-      <Button onPress={toggleOn}>Open</Button>
+      <Button onPress={setIsVisibleOn}>Open</Button>
       {isVisible && (
-        <Drawer onCloseComplete={toggleOff} pin={pin}>
+        <Drawer onCloseComplete={setIsVisibleOff} pin={pin}>
           {({ handleClose }) => <SideDrawerContent handleClose={handleClose} />}
         </Drawer>
       )}

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useCheckboxGroupState } from '../../hooks/useCheckboxGroupState';
@@ -24,14 +23,14 @@ const options = {
 };
 
 const CheckboxScreen = () => {
+  const [checked, setChecked] = useState(false);
+  const toggleChecked = () => setChecked((prevChecked) => !prevChecked);
   return (
     <ExampleScreen>
       <Example inline title="Default">
         {() => {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          const [checked, { toggle }] = useToggler();
           return (
-            <Checkbox checked={checked} onChange={toggle}>
+            <Checkbox checked={checked} onChange={toggleChecked}>
               Default
             </Checkbox>
           );

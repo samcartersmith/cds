@@ -1,5 +1,4 @@
-import React from 'react';
-import { useToggler } from '@cbhq/cds-common2';
+import React, { useCallback, useState } from 'react';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -9,18 +8,20 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';
 import { Text } from '../../typography/Text';
 
 const PatternTagErrorScreen = () => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(true);
+  const [visible, setVisible] = useState(true);
+  const setVisibleToFalse = useCallback(() => setVisible(false), []);
+  const setVisibleToTrue = useCallback(() => setVisible(true), []);
 
   return (
     <ExampleScreen>
       <Example title="Pattern - Error">
-        <Button onPress={toggleOn}>View Error</Button>
+        <Button onPress={setVisibleToTrue}>View Error</Button>
         <Modal
           hideDividers
           accessibilityHint="The requested page was not found. Close this dialog to continue."
           accessibilityLabel="Page not found"
           accessibilityRole="alert"
-          onRequestClose={toggleOff}
+          onRequestClose={setVisibleToFalse}
           visible={visible}
         >
           <ModalHeader
@@ -38,7 +39,9 @@ const PatternTagErrorScreen = () => {
               </Text>
             </VStack>
           </ModalBody>
-          <ModalFooter primaryAction={<Button onPress={toggleOff}>Back to Coinbase</Button>} />
+          <ModalFooter
+            primaryAction={<Button onPress={setVisibleToFalse}>Back to Coinbase</Button>}
+          />
         </Modal>
       </Example>
     </ExampleScreen>

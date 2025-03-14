@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FlatList } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import { prices } from '@cbhq/cds-common2/internal/data/prices';
 import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
@@ -15,8 +14,9 @@ export const options: string[] = prices.slice(0, 4);
 const lotsOfOptions: string[] = prices.slice(0, 30);
 
 export const DefaultTray = ({ title }: { title?: React.ReactNode }) => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(true);
+  const [isTrayVisible, setIsTrayVisible] = useState(true);
+  const setIsTrayVisibleOff = useCallback(() => setIsTrayVisible(false), [setIsTrayVisible]);
+  const setIsTrayVisibleOn = useCallback(() => setIsTrayVisible(true), [setIsTrayVisible]);
   const [value, setValue] = useState<string>();
   const trayRef = useRef<DrawerRefBaseProps>(null);
 
@@ -30,11 +30,11 @@ export const DefaultTray = ({ title }: { title?: React.ReactNode }) => {
 
   return (
     <>
-      <Button onPress={handleOpenTray}>Open</Button>
+      <Button onPress={setIsTrayVisibleOn}>Open</Button>
       {isTrayVisible && (
         <Tray
           ref={trayRef}
-          onCloseComplete={handleCloseTray}
+          onCloseComplete={setIsTrayVisibleOff}
           onVisibilityChange={handleTrayVisibilityChange}
           title={title}
         >
@@ -74,18 +74,19 @@ export const ScrollableTray = ({
   fallbackEnabled?: boolean;
   verticalDrawerPercentageOfView?: number;
 }) => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(true);
+  const [isTrayVisible, setIsTrayVisible] = useState(true);
+  const setIsTrayVisibleOff = useCallback(() => setIsTrayVisible(false), [setIsTrayVisible]);
+  const setIsTrayVisibleOn = useCallback(() => setIsTrayVisible(true), [setIsTrayVisible]);
   const [value, setValue] = useState<string>();
   const trayRef = useRef<DrawerRefBaseProps>(null);
-  const [isLoading, toggleIsLoading] = useToggler(fallbackEnabled);
+  const [isLoading, setIsLoading] = useState(fallbackEnabled);
 
   useEffect(() => {
     if (isTrayVisible && fallbackEnabled) {
-      toggleIsLoading.toggleOn();
-      setTimeout(() => toggleIsLoading.toggleOff(), __DEV__ ? 2000 : 20000);
+      setIsLoading(true);
+      setTimeout(() => setIsLoading(false), __DEV__ ? 2000 : 20000);
     }
-  }, [toggleIsLoading, isTrayVisible, fallbackEnabled]);
+  }, [isTrayVisible, fallbackEnabled]);
 
   const spacingStyles = useMemo(
     () => ({
@@ -115,12 +116,12 @@ export const ScrollableTray = ({
 
   return (
     <>
-      <Button onPress={handleOpenTray}>Open</Button>
+      <Button onPress={setIsTrayVisibleOn}>Open</Button>
       {isTrayVisible && (
         <Tray
           ref={trayRef}
           disableCapturePanGestureToDismiss
-          onCloseComplete={handleCloseTray}
+          onCloseComplete={setIsTrayVisibleOff}
           title={title}
           verticalDrawerPercentageOfView={verticalDrawerPercentageOfView}
         >

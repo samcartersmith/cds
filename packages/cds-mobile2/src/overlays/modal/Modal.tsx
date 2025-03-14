@@ -5,6 +5,7 @@ import React, {
   useEffect,
   useImperativeHandle,
   useMemo,
+  useState,
 } from 'react';
 import {
   Modal as RNModal,
@@ -14,7 +15,6 @@ import {
   StatusBar,
   StyleSheet,
 } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2';
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
 import { ModalParentContext } from '@cbhq/cds-common2/overlays/ModalParentContext';
 import {
@@ -46,26 +46,26 @@ export const Modal = memo(
       ...restProps
     } = props;
     const [{ opacity, scale }, animateIn, animateOut] = useModalAnimation();
-    const [internalVisible, toggleInternalVisible] = useToggler(visible);
+    const [internalVisible, setInternalVisible] = useState(visible);
     const prevVisible = usePreviousValue(visible);
 
     const handleClose = useCallback(() => {
       animateOut.start(({ finished }) => {
         if (finished) {
-          toggleInternalVisible.toggleOff();
+          setInternalVisible(false);
           onDidClose?.();
         }
       });
-    }, [animateOut, toggleInternalVisible, onDidClose]);
+    }, [animateOut, onDidClose]);
 
     useEffect(() => {
       if (!prevVisible && visible) {
         animateIn.start();
-        toggleInternalVisible.toggleOn();
+        setInternalVisible(true);
       } else if (prevVisible && !visible) {
         handleClose();
       }
-    }, [toggleInternalVisible, visible, handleClose, onRequestClose, prevVisible, animateIn]);
+    }, [visible, handleClose, onRequestClose, prevVisible, animateIn]);
 
     useImperativeHandle(
       ref,

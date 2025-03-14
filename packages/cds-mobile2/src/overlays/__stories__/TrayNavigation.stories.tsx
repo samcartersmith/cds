@@ -1,5 +1,4 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import { navigationOptions } from '@cbhq/cds-common2/internal/data/navigation';
 import { DrawerRefBaseProps, IllustrationPictogramNames } from '@cbhq/cds-common2/types';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
@@ -13,8 +12,8 @@ import { HStack } from '../../layout';
 import { Tray } from '../tray/Tray';
 
 const NavigationTray = () => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(true);
+  const [isTrayVisible, setIsTrayVisible] = useState(true);
+  const setIsTrayVisibleToFalse = useCallback(() => setIsTrayVisible(false), []);
   const [value, setValue] = useState<string>();
   const trayRef = useRef<DrawerRefBaseProps>(null);
 
@@ -22,8 +21,8 @@ const NavigationTray = () => {
     trayRef.current?.handleClose();
   }, []);
   const handleAppSwitcherPress = useCallback(() => {
-    handleOpenTray();
-  }, [handleOpenTray]);
+    setIsTrayVisible(true);
+  }, []);
 
   return (
     <>
@@ -32,7 +31,7 @@ const NavigationTray = () => {
         <IconButton name="profile" onPress={NoopFn} />
       </HStack>
       {isTrayVisible && (
-        <Tray ref={trayRef} onCloseComplete={handleCloseTray}>
+        <Tray ref={trayRef} onCloseComplete={setIsTrayVisibleToFalse}>
           <Menu onChange={setValue} value={value}>
             {navigationOptions.map(({ name, value: optionValue, description, mediaName }) => (
               <SelectOption

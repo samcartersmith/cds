@@ -1,8 +1,8 @@
+import { useCallback, useState } from 'react';
 import { Modal } from 'react-native';
 import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { drawerAnimationDefaultDuration } from '@cbhq/cds-common2/animation/drawer';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import {
   CreateLoremIpsumProps,
   loremIpsum,
@@ -31,17 +31,18 @@ const MockDrawer = ({
   pin = 'bottom',
   preventDismissGestures,
 }: Partial<DrawerBaseProps>) => {
-  const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const setIsVisibleOn = useCallback(() => setIsVisible(true), [setIsVisible]);
 
   // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
   const handleRequestClose = () => {
     onCloseComplete?.();
-    toggleOff();
+    setIsVisible(false);
   };
 
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-      <Button onPress={toggleOn} testID="open-drawer-button">
+      <Button onPress={setIsVisibleOn} testID="open-drawer-button">
         Open Drawer
       </Button>
       {isVisible ? (

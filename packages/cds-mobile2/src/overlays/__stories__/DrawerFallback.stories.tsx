@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
+import React, { useCallback, useEffect, useState } from 'react';
 import type { DrawerBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
@@ -29,21 +28,23 @@ const SidebarDrawerContentFallback = () => {
 };
 
 const SideDrawerWithFallback = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
-  const [isVisible, { toggleOn, toggleOff }] = useToggler(true);
-  const [isLoading, toggleIsLoading] = useToggler(true);
+  const [isVisible, setIsVisible] = useState(true);
+  const setIsVisibleToOn = useCallback(() => setIsVisible(true), []);
+  const setIsVisibleToOff = useCallback(() => setIsVisible(false), []);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (isVisible) {
-      toggleIsLoading.toggleOn();
-      setTimeout(() => toggleIsLoading.toggleOff(), __DEV__ ? 2000 : 20000);
+      setIsLoading(true);
+      setTimeout(() => setIsLoading(false), __DEV__ ? 2000 : 20000);
     }
-  }, [toggleIsLoading, isVisible]);
+  }, [isVisible]);
 
   return (
     <>
-      <Button onPress={toggleOn}>Open</Button>
+      <Button onPress={setIsVisibleToOn}>Open</Button>
       {isVisible && (
-        <Drawer onCloseComplete={toggleOff} pin={pin}>
+        <Drawer onCloseComplete={setIsVisibleToOff} pin={pin}>
           {({ handleClose }) =>
             isLoading ? (
               <SidebarDrawerContentFallback />

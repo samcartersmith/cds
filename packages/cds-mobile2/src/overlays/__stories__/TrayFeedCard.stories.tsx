@@ -1,5 +1,4 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
 import { FeedCard } from '../../cards/FeedCard';
@@ -11,8 +10,9 @@ import { Tray } from '../tray/Tray';
 const simpleOptions: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'];
 
 const FeedCardTray = () => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(true);
+  const [isTrayVisible, setIsTrayVisible] = useState(false);
+  const setIsTrayVisbleToFalse = useCallback(() => setIsTrayVisible(false), []);
+  const setIsTrayVisibleToTrue = useCallback(() => setIsTrayVisible(true), []);
   const [value, setValue] = useState<string>();
   const trayRef = useRef<DrawerRefBaseProps>(null);
 
@@ -21,8 +21,8 @@ const FeedCardTray = () => {
   }, []);
 
   const handleFeedCardHeaderButtonPress = useCallback(() => {
-    handleOpenTray();
-  }, [handleOpenTray]);
+    setIsTrayVisibleToTrue();
+  }, [setIsTrayVisibleToTrue]);
 
   return (
     <>
@@ -39,7 +39,7 @@ const FeedCardTray = () => {
         title="LEARN AMP. EARN $3 IN AMP."
       />
       {isTrayVisible && (
-        <Tray ref={trayRef} onCloseComplete={handleCloseTray}>
+        <Tray ref={trayRef} onCloseComplete={setIsTrayVisbleToFalse}>
           <Menu onChange={setValue} value={value}>
             {simpleOptions.map((option: string) => (
               <SelectOption

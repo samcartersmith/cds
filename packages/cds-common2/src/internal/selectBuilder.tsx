@@ -1,6 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 
-import { useToggler } from '../hooks/useToggler';
 import type {
   BoxBaseProps,
   DotSymbolBaseProps,
@@ -398,14 +397,17 @@ export const selectBuilderMobile = ({
     hideHandleBar,
     ...props
   }: DefaultSelectTypes) => {
-    const [isTrayVisible, { toggleOff, toggleOn }] = useToggler(false);
+    const [isTrayVisible, setIsTrayVisible] = useState(false);
     const [selectedValue, setValue] = useState<string | undefined>();
+    const setIsTrayVisibleOn = useCallback(() => setIsTrayVisible(true), [setIsTrayVisible]);
+    const setIsTrayVisibleOff = useCallback(() => setIsTrayVisible(false), [setIsTrayVisible]);
+
     return (
-      <Select onChange={setValue} onPress={toggleOn} value={selectedValue} {...props}>
+      <Select onChange={setValue} onPress={setIsTrayVisibleOn} value={selectedValue} {...props}>
         {isTrayVisible && (
           <Tray
             hideHandleBar={hideHandleBar}
-            onCloseComplete={toggleOff}
+            onCloseComplete={setIsTrayVisibleOff}
             testID="select-input-tray"
             title={trayTitle}
           >
@@ -434,14 +436,17 @@ export const selectBuilderMobile = ({
     hideHandleBar,
     ...props
   }: DefaultSelectTypes) => {
-    const [isTrayVisible, { toggleOff, toggleOn }] = useToggler(false);
+    const [isTrayVisible, setIsTrayVisible] = useState(false);
+    const setIsTrayVisibleOn = useCallback(() => setIsTrayVisible(true), [setIsTrayVisible]);
+    const setIsTrayVisibleOff = useCallback(() => setIsTrayVisible(false), [setIsTrayVisible]);
+
     const [selectedValue, setValue] = useState<string | undefined>(exampleLongOptions[0]);
     return (
-      <Select onChange={setValue} onPress={toggleOn} value={selectedValue} {...props}>
+      <Select onChange={setValue} onPress={setIsTrayVisibleOn} value={selectedValue} {...props}>
         {isTrayVisible && (
           <Tray
             hideHandleBar={hideHandleBar}
-            onCloseComplete={toggleOff}
+            onCloseComplete={setIsTrayVisibleOff}
             testID="select-input-tray"
             title={trayTitle}
           >
@@ -465,7 +470,10 @@ export const selectBuilderMobile = ({
   };
 
   const AssetSelect = () => {
-    const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
+    const [isTrayVisible, setIsTrayVisible] = useState(false);
+    const setIsTrayVisibleOn = useCallback(() => setIsTrayVisible(true), [setIsTrayVisible]);
+    const setIsTrayVisibleOff = useCallback(() => setIsTrayVisible(false), [setIsTrayVisible]);
+
     const [asset, setAsset] = useState<string | undefined>('btc');
     const assetConfig = assets[(asset as AssetKey) ?? 'btc'];
     const ethLogo = assets.eth.imageUrl;
@@ -474,7 +482,7 @@ export const selectBuilderMobile = ({
       <Select
         label="Select Asset"
         onChange={setAsset}
-        onPress={toggleOn}
+        onPress={setIsTrayVisibleOn}
         startNode={
           <Box paddingX={2}>
             <DotSymbol overlap="circular" pin="bottom-end" size="s" source={ethLogo}>
@@ -486,7 +494,7 @@ export const selectBuilderMobile = ({
         valueLabel={assetConfig.name}
       >
         {isTrayVisible && (
-          <Tray onCloseComplete={toggleOff}>
+          <Tray onCloseComplete={setIsTrayVisibleOff}>
             {({ handleClose }) =>
               Object.values(assets).map(({ name, imageUrl }, idx) => (
                 <SelectOption
@@ -511,12 +519,19 @@ export const selectBuilderMobile = ({
   };
 
   const ScrollableSelect = ({ trayTitle, hasDescription, ...props }: DefaultSelectTypes) => {
-    const [isTrayVisible, { toggleOn, toggleOff }] = useToggler(false);
+    const [isTrayVisible, setIsTrayVisible] = useState(false);
+    const setIsTrayVisibleOn = useCallback(() => setIsTrayVisible(true), [setIsTrayVisible]);
+    const setIsTrayVisibleOff = useCallback(() => setIsTrayVisible(false), [setIsTrayVisible]);
+
     const [selectedValue, setValue] = useState<string | undefined>(exampleOptions[2]);
     return (
-      <Select onChange={setValue} onPress={toggleOn} value={selectedValue} {...props}>
+      <Select onChange={setValue} onPress={setIsTrayVisibleOn} value={selectedValue} {...props}>
         {isTrayVisible && (
-          <Tray disableCapturePanGestureToDismiss onCloseComplete={toggleOff} title={trayTitle}>
+          <Tray
+            disableCapturePanGestureToDismiss
+            onCloseComplete={setIsTrayVisibleOff}
+            title={trayTitle}
+          >
             {({ handleClose }) => (
               <ScrollView>
                 {exampleOptions.map((option) => {
@@ -541,8 +556,25 @@ export const selectBuilderMobile = ({
   const SelectFilter = () => {
     const [year, setYear] = useState<string | undefined>();
     const [asset, setAsset] = useState<string | undefined>();
-    const [yearTrayVisible, handleYearTrayVisibility] = useToggler(false);
-    const [assetTrayVisible, handleAssetTrayVisibility] = useToggler(false);
+
+    const [yearTrayVisible, setYearTrayVisible] = useState(false);
+    const toggleYearTrayVisible = useCallback(
+      () => setYearTrayVisible((prev) => !prev),
+      [setYearTrayVisible],
+    );
+    const setYearTrayVisibleOff = useCallback(
+      () => setYearTrayVisible(false),
+      [setYearTrayVisible],
+    );
+    const [assetTrayVisible, setAssetTrayVisible] = useState(false);
+    const toggleAssetTrayVisible = useCallback(
+      () => setAssetTrayVisible((prev) => !prev),
+      [setAssetTrayVisible],
+    );
+    const setAssetTrayVisibleOff = useCallback(
+      () => setAssetTrayVisible(false),
+      [setAssetTrayVisible],
+    );
 
     const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021'];
 
@@ -550,13 +582,13 @@ export const selectBuilderMobile = ({
       <HStack gap={1} width="100%">
         <Select
           onChange={setYear}
-          onPress={handleYearTrayVisibility.toggle}
+          onPress={toggleYearTrayVisible}
           placeholder="All years"
           value={year}
           width="48%"
         >
           {yearTrayVisible && (
-            <Tray onCloseComplete={handleYearTrayVisibility.toggleOff}>
+            <Tray onCloseComplete={setYearTrayVisibleOff}>
               {({ handleClose }) =>
                 years.map((option) => {
                   return (
@@ -574,13 +606,13 @@ export const selectBuilderMobile = ({
         </Select>
         <Select
           onChange={setAsset}
-          onPress={handleAssetTrayVisibility.toggle}
+          onPress={toggleAssetTrayVisible}
           placeholder="All assets"
           value={asset}
           width="48%"
         >
           {assetTrayVisible && (
-            <Tray onCloseComplete={handleAssetTrayVisibility.toggleOff}>
+            <Tray onCloseComplete={setAssetTrayVisibleOff}>
               {({ handleClose }) =>
                 Object.values(assets).map(({ name: option }) => {
                   return (
@@ -603,7 +635,9 @@ export const selectBuilderMobile = ({
     const accountTypeOptions = ['Savings Account', 'Checking Account'];
 
     const [accountType, setAccountType] = useState<string | undefined>(accountTypeOptions[0]);
-    const [visible, handleTrayVisibility] = useToggler(false);
+    const [visible, setVisible] = useState(false);
+    const toggleVisible = useCallback(() => setVisible((prev) => !prev), [setVisible]);
+    const setVisibleOff = useCallback(() => setVisible(false), [setVisible]);
 
     return (
       <VStack background="bg" gap={2} minHeight={400}>
@@ -613,11 +647,11 @@ export const selectBuilderMobile = ({
           accessibilityHint="Enter account number"
           accessibilityLabel="Account number"
           onChange={setAccountType}
-          onPress={handleTrayVisibility.toggle}
+          onPress={toggleVisible}
           value={accountType}
         >
           {visible && (
-            <Tray onCloseComplete={handleTrayVisibility.toggleOff}>
+            <Tray onCloseComplete={setVisibleOff}>
               {({ handleClose }) =>
                 accountTypeOptions.map((option) => {
                   return (

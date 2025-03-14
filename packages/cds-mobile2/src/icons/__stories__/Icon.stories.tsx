@@ -1,6 +1,5 @@
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Animated } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { convertMotionConfig } from '../../animation/convertMotionConfig';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -42,12 +41,14 @@ export const useAnimation = (): [
 
 const IconScreen = () => {
   const theme = useTheme();
-  const [isToggled, { toggle }] = useToggler();
+  const [isToggled, setIsToggled] = useState(false);
   const animationRef = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.timing(animationRef, isToggled ? animateInConfig : animateOutConfig).start();
   }, [isToggled, animationRef]);
+
+  const toggle = useCallback(() => setIsToggled((prevIsToggled) => !prevIsToggled), []);
 
   const animatedIcon = (
     <Icon

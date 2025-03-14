@@ -1,6 +1,5 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import { useToggler } from '../hooks/useToggler';
 import { useModal } from '../overlays/useModal';
 import type {
   ButtonBaseProps,
@@ -82,11 +81,13 @@ export function modalBuilder({
     width,
     focusTabIndexElements,
   }) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler(defaultVisible ?? true);
+    const [visible, setVisible] = useState(defaultVisible ?? true);
+    const setVisibleOn = useCallback(() => setVisible(true), [setVisible]);
+    const setVisibleOff = useCallback(() => setVisible(false), [setVisible]);
 
     return (
       <>
-        <Button ref={triggerRef} onClick={toggleOn}>
+        <Button ref={triggerRef} onClick={setVisibleOn}>
           Open Modal
         </Button>
         <Modal
@@ -94,22 +95,22 @@ export function modalBuilder({
           focusTabIndexElements={focusTabIndexElements}
           hideDividers={hideDividers}
           onDidClose={focusTrigger}
-          onRequestClose={toggleOff}
+          onRequestClose={setVisibleOff}
           visible={visible}
           width={width}
         >
           <ModalHeader
             backAccessibilityLabel="Back"
             closeAccessibilityLabel="Close"
-            onBackButtonClick={enableBackButton ? toggleOff : undefined}
+            onBackButtonClick={enableBackButton ? setVisibleOff : undefined}
             testID="Basic Modal Test ID"
             title="Basic Modal"
           />
           <ModalBody testID="modal-body">{children}</ModalBody>
           <ModalFooter
-            primaryAction={<Button onClick={toggleOff}>Save</Button>}
+            primaryAction={<Button onClick={setVisibleOff}>Save</Button>}
             secondaryAction={
-              <Button onClick={toggleOff} variant="secondary">
+              <Button onClick={setVisibleOff} variant="secondary">
                 Cancel
               </Button>
             }
@@ -163,7 +164,7 @@ export function modalBuilder({
     onDidClose,
     onBackButtonClick,
     title = 'Basic Modal',
-    visible: externalVisible,
+    visible: externalVisible = false,
     testID,
     triggerRef,
     focusTrigger,
@@ -175,12 +176,14 @@ export function modalBuilder({
     closeAccessibilityHint,
   }: Partial<ModalBaseProps & ModalHeaderBaseProps & { onBackButtonClick?: () => void }> &
     ModalA11yProps) => {
-    const [visible, { toggleOn, toggleOff }] = useToggler(externalVisible);
+    const [visible, setVisible] = useState(externalVisible);
+    const setVisibleOn = useCallback(() => setVisible(true), [setVisible]);
+    const setVisibleOff = useCallback(() => setVisible(false), [setVisible]);
 
     const handleClose = useCallback(() => {
       onRequestClose?.();
-      toggleOff();
-    }, [onRequestClose, toggleOff]);
+      setVisibleOff();
+    }, [onRequestClose, setVisibleOff]);
 
     const handleDidClose = useCallback(() => {
       onDidClose?.();
@@ -189,7 +192,7 @@ export function modalBuilder({
 
     return (
       <>
-        <Button ref={triggerRef} onClick={toggleOn} testID="modal-trigger">
+        <Button ref={triggerRef} onClick={setVisibleOn} testID="modal-trigger">
           Open Modal
         </Button>
         <Modal
@@ -214,12 +217,12 @@ export function modalBuilder({
           </ModalBody>
           <ModalFooter
             primaryAction={
-              <Button onClick={toggleOff} testID="modal-footer-save">
+              <Button onClick={setVisibleOff} testID="modal-footer-save">
                 Save
               </Button>
             }
             secondaryAction={
-              <Button onClick={toggleOff} variant="secondary">
+              <Button onClick={setVisibleOff} variant="secondary">
                 Cancel
               </Button>
             }

@@ -2,7 +2,6 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Button as NativeButton, Image, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { useToggler } from '@cbhq/cds-common2';
 import { ethBackground } from '@cbhq/cds-common2/internal/data/assets';
 import { useTourContext } from '@cbhq/cds-common2/tour/TourContext';
 import { TourStepValue } from '@cbhq/cds-common2/tour/useTour';
@@ -60,7 +59,8 @@ const TourExamples = ({
 };
 
 const StepOne = () => {
-  const [checked, { toggle }] = useToggler();
+  const [checked, setChecked] = useState(false);
+  const toggleChecked = useCallback(() => setChecked((prev) => !prev), []);
 
   const { goNextTourStep, stopTour } = useTourContext();
   return (
@@ -71,7 +71,7 @@ const StepOne = () => {
         </Button>
       }
       checkbox={
-        <Checkbox checked={checked} onChange={toggle}>
+        <Checkbox checked={checked} onChange={toggleChecked}>
           Don&apos;t show again
         </Checkbox>
       }

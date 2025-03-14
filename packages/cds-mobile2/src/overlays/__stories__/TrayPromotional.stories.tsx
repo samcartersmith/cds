@@ -1,5 +1,4 @@
-import React, { useCallback, useRef } from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
+import React, { useCallback, useRef, useState } from 'react';
 import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
@@ -11,8 +10,9 @@ import { Text } from '../../typography/Text';
 import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 export const Default = () => {
-  const [isTrayVisible, { toggleOff: handleCloseTray, toggleOn: handleOpenTray }] =
-    useToggler(false);
+  const [isTrayVisible, setIsTrayVisible] = useState(false);
+  const setIsTrayVisibleToFalse = useCallback(() => setIsTrayVisible(false), []);
+  const setIsTrayVisibleToTrue = useCallback(() => setIsTrayVisible(true), []);
   const trayRef = useRef<DrawerRefBaseProps>(null);
 
   const handleTrayVisibilityChange = useCallback((e: 'visible' | 'hidden') => {
@@ -21,12 +21,12 @@ export const Default = () => {
 
   return (
     <>
-      <Button onPress={handleOpenTray}>Open</Button>
+      <Button onPress={setIsTrayVisibleToTrue}>Open</Button>
       {isTrayVisible && (
         <Tray
           ref={trayRef}
           handleBarAccessibilityLabel="Dismiss"
-          onCloseComplete={handleCloseTray}
+          onCloseComplete={setIsTrayVisibleToFalse}
           onVisibilityChange={handleTrayVisibilityChange}
         >
           {({ handleClose }) => (

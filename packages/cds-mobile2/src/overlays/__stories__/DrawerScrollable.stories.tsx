@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { FlatList, ScrollView } from 'react-native';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import { prices } from '@cbhq/cds-common2/internal/data/prices';
 import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
@@ -20,7 +19,9 @@ type RenderItemProps = {
 };
 
 const SideDrawerScrollableContent = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
-  const [isVisible, { toggleOn, toggleOff }] = useToggler(true);
+  const [isVisible, setIsVisible] = useState(true);
+  const setIsVisibleToOn = useCallback(() => setIsVisible(true), []);
+  const setIsVisibleToOff = useCallback(() => setIsVisible(false), []);
   const drawerRef = useRef<DrawerRefBaseProps>(null);
   const [value, setValue] = useState<string>();
 
@@ -45,12 +46,12 @@ const SideDrawerScrollableContent = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pi
 
   return (
     <>
-      <Button onPress={toggleOn}>Open</Button>
+      <Button onPress={setIsVisibleToOn}>Open</Button>
       {isVisible && (
         <Drawer
           ref={drawerRef}
           disableCapturePanGestureToDismiss
-          onCloseComplete={toggleOff}
+          onCloseComplete={setIsVisibleToOff}
           pin={pin}
         >
           <VStack height={120} paddingBottom={1} paddingX={3}>

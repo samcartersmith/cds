@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { css } from '@linaria/core';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 
 import { ThemeConfig } from '../../core/theme';
 import { useTheme } from '../../hooks/useTheme';
@@ -28,19 +27,19 @@ const DarkModeWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const Normal = () => {
-  const [checked, { toggle }] = useToggler();
+  const [checked, setChecked] = useState(false);
   return (
-    <Switch checked={checked} onChange={toggle}>
+    <Switch checked={checked} onChange={() => setChecked((prevChecked) => !prevChecked)}>
       Normal
     </Switch>
   );
 };
 
 export const DarkNormal = () => {
-  const [checked, { toggle }] = useToggler();
+  const [checked, setChecked] = useState(false);
   return (
     <DarkModeWrapper>
-      <Switch checked={checked} onChange={toggle}>
+      <Switch checked={checked} onChange={() => setChecked((prevChecked) => !prevChecked)}>
         Normal
       </Switch>
     </DarkModeWrapper>
@@ -48,8 +47,8 @@ export const DarkNormal = () => {
 };
 
 export const NoLabel = () => {
-  const [checked, { toggle }] = useToggler();
-  return <Switch checked={checked} onChange={toggle} />;
+  const [checked, setChecked] = useState(false);
+  return <Switch checked={checked} onChange={() => setChecked((prevChecked) => !prevChecked)} />;
 };
 // This is intention to check the view of Switch without any text
 NoLabel.parameters = {
@@ -105,10 +104,10 @@ const customTheme: ThemeConfig = {
 };
 
 export const CustomPalette = () => {
-  const [checked, { toggle }] = useToggler(true);
+  const [checked, setChecked] = useState(true);
   return (
     <ThemeProvider activeColorScheme="light" theme={customTheme}>
-      <Switch checked={checked} onChange={toggle}>
+      <Switch checked={checked} onChange={() => setChecked((prevChecked) => !prevChecked)}>
         Custom Palette
       </Switch>
     </ThemeProvider>

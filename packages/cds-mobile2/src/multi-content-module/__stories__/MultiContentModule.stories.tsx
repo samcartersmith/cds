@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import Svg, { Path } from 'react-native-svg';
 import type { IconName, ModalRenderChildren } from '@cbhq/cds-common2';
-import { useToggler } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { ButtonGroup } from '../../buttons/ButtonGroup';
@@ -146,11 +145,13 @@ const socialMediaItems: SocialMediaItem[] = [
 ];
 
 const BasicModal = ({ children }: { children: ModalRenderChildren }) => {
-  const [visible, { toggleOn, toggleOff }] = useToggler(false);
+  const [visible, setVisible] = useState(false);
+  const setVisibleToOn = useCallback(() => setVisible(true), []);
+  const setVisibleToOff = useCallback(() => setVisible(false), []);
   return (
     <>
-      <Button onPress={toggleOn}>Open Modal</Button>
-      <Modal hideDividers onRequestClose={toggleOff} visible={visible}>
+      <Button onPress={setVisibleToOn}>Open Modal</Button>
+      <Modal hideDividers onRequestClose={setVisibleToOff} visible={visible}>
         {children}
       </Modal>
     </>

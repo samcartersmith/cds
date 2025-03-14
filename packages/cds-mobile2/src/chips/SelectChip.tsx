@@ -1,8 +1,7 @@
-import React, { forwardRef, memo, useCallback, useEffect, useRef } from 'react';
+import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } from 'react';
 import { GestureResponderEvent, View } from 'react-native';
 import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common2/animation/select';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
 import { DrawerRefBaseProps, SelectBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
 
 import { useRotateAnimation } from '../animation/useRotateAnimation';
@@ -49,8 +48,7 @@ export const SelectChip = memo(
       }: SelectChipProps,
       ref: React.ForwardedRef<View>,
     ) => {
-      const [isSelectTrayOpen, { toggleOn: handleOpen, toggleOff: handleClose }] =
-        useToggler(false);
+      const [isSelectTrayOpen, setIsSelectTrayOpen] = useState(false);
       const { animateRotateIn, animateRotateOut, rotateAnimationStyles } = useRotateAnimation(
         animateCaretInConfig,
         animateCaretOutConfig,
@@ -93,19 +91,19 @@ export const SelectChip = memo(
       const handleChipPress = useCallback(
         (event: GestureResponderEvent) => {
           onPress?.(event);
-          handleOpen();
+          setIsSelectTrayOpen(true);
           animateRotateIn.start();
         },
-        [animateRotateIn, handleOpen, onPress],
+        [animateRotateIn, onPress],
       );
 
       const onCloseComplete = useCallback(() => {
-        handleClose();
+        setIsSelectTrayOpen(false);
         // bring a11y focus back to the trigger
         setA11yFocus(internalRef);
         // announce select value to screen reader
         announceForA11y(`${value} selected`);
-      }, [announceForA11y, handleClose, setA11yFocus, value]);
+      }, [announceForA11y, setA11yFocus, value]);
 
       return (
         <SelectProvider value={context}>
