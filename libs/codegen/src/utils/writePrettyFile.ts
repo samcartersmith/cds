@@ -14,7 +14,7 @@ export async function writePrettyFile({
   logInfo?: string | boolean;
 }): Promise<string> {
   const prettierOptions = await prettier.resolveConfig('@cbhq/eslint-plugin/prettierConfig.json');
-  const prettiered = prettier.format(contents, {
+  const prettiered = await prettier.format(contents, {
     ...prettierOptions,
     parser: parser ?? 'typescript',
   });

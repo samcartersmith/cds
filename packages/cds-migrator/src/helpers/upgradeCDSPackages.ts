@@ -30,7 +30,6 @@ export function addDependenciesToPackageJson(
       const currVersion = json[type][pkg] as string;
       if (currVersion && version) {
         if (checkRequiresUpgrade(currVersion, version)) {
-          // eslint-disable-next-line no-param-reassign
           json[type][pkg] = version;
         }
       }

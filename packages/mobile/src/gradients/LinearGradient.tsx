@@ -51,7 +51,7 @@ type LinearGradientProps = {
    * @default true
    */
   // TODO: will be fixed during API Alignment Q3 2022
-  // eslint-disable-next-line react/boolean-prop-naming
+
   isBelowChildren?: boolean;
   /**
    * @default false

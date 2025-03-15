@@ -8,7 +8,6 @@ import { HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { FloatingAssetCard } from '../FloatingAssetCard';
 
-// eslint-disable-next-line no-console
 const onClickConsole = console.log;
 
 const exampleProps = {

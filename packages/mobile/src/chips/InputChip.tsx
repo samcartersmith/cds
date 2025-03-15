@@ -1,5 +1,4 @@
-import React from 'react';
-import { forwardRef, memo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
 
 import { Icon } from '../icons';

@@ -14,7 +14,6 @@ import type {
 
 import { assets } from './data/assets';
 
-// eslint-disable-next-line no-console
 const onPressConsole = () => console.log('onPress');
 
 export function listCellBuilder(

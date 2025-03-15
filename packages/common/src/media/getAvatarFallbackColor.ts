@@ -1,4 +1,3 @@
-/* eslint-disable no-bitwise */
 import * as d3Color from 'd3-color';
 
 import { isGray } from '../color/isGray';
@@ -9,7 +8,6 @@ const { hsl } = d3Color;
 
 const hashFromString = (s: string): number =>
   s.split('').reduce((a, b) => {
-    // eslint-disable-next-line no-param-reassign
     a = (a << 5) - a + b.charCodeAt(0);
     return a & a;
   }, 0);

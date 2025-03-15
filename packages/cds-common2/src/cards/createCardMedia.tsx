@@ -5,8 +5,9 @@ import {
   defaultMediaSize,
   defaultPictogramMediaDimension,
 } from '../tokens/card';
-import type { PictogramProps, SpotSquareProps } from '../types';
 import type {
+  PictogramProps,
+  SpotSquareProps,
   CardMediaImageSizeObject,
   CardMediaPlacement,
   CardMediaProps,

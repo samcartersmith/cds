@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop, react-perf/jsx-no-new-object-as-prop */
 import { useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';

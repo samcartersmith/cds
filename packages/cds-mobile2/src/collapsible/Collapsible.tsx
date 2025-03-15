@@ -124,7 +124,7 @@ export const Collapsible = memo(
                 _collapsed
                   ? animateOutMaxSize
                   : // Using object spread here will crash react-native-reanimated with the resulting transpiled code
-                    // eslint-disable-next-line prefer-object-spread
+
                     Object.assign({}, animateInMaxSize, { toValue: animateToSize }),
               );
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-bitwise */
 import { type HSLColor, hsl } from 'd3-color';
 
 import { FallbackColor } from '../types';
@@ -6,7 +5,6 @@ import { between } from '../utils/between';
 
 const hashFromString = (s: string): number =>
   s.split('').reduce((a, b) => {
-    // eslint-disable-next-line no-param-reassign
     a = (a << 5) - a + b.charCodeAt(0);
     return a & a;
   }, 0);

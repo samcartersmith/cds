@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useMemo } from 'react';
 import { getAvatarFallbackColor } from '@cbhq/cds-common2/media/getAvatarFallbackColor';
 import { AvatarSize } from '@cbhq/cds-common2/types/AvatarSize';

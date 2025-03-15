@@ -25,7 +25,7 @@ const ModalLink = memo(function ModalLink({ children, content, ...props }: Modal
       <Link onPress={toggleOn} {...props}>
         {children}
       </Link>
-      {/* eslint-disable-next-line react/jsx-boolean-value */}
+      {}
       <ModalChildContext.Provider value={true}>
         <Modal onRequestClose={toggleOff} visible={visible}>
           <ModalHeader title={children} />

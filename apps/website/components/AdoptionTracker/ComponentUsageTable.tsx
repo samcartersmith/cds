@@ -17,7 +17,6 @@ type UsageData = {
   totalInstances: number;
 };
 const cmptsUsageAndImportData =
-  // eslint-disable-next-line global-require
   require(`@site/static/data/__generated__/adoption/componentsUsageAndImportData.json`) as UsageData[];
 
 export const ComponentUsageTable = memo(() => {

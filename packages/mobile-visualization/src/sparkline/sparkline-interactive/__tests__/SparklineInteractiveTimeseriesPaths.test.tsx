@@ -7,7 +7,6 @@ describe('SparklineInteractiveTimeseriesPaths.test', () => {
   it('renders', () => {
     const onRender = jest.fn();
 
-    // eslint-disable-next-line react-perf/jsx-no-new-array-as-prop
     const data: ChartTimeseries[] = [
       {
         points: [{ value: 48994.25, date: new Date() }],

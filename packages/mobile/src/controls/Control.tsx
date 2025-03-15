@@ -69,7 +69,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   ref: React.ForwardedRef<View>,
 ) {
   if (isDevelopment() && props.accessible && !label && !accessibilityLabel) {
-    // eslint-disable-next-line no-console
     console.warn(
       `Please specify an accessibility label for the ${accessibilityRole} control with value ${value}.`,
     );

@@ -1,14 +1,12 @@
-/* eslint-disable no-await-in-loop */
 import React, { useCallback, useMemo } from 'react';
 import { type Coords, type Placement } from '@floating-ui/react-dom';
 
 export type TourStepArrowComponentProps = {
   /* The `@floating-ui` `arrow` coordinates and offsets https://floating-ui.com/docs/arrow#data */
-  arrow?:
-    | Partial<Coords> & {
-        centerOffset: number;
-        alignmentOffset?: number;
-      };
+  arrow?: Partial<Coords> & {
+    centerOffset: number;
+    alignmentOffset?: number;
+  };
   /* The `@floating-ui` `arrow` placement https://floating-ui.com/docs/arrow#placement */
   placement: Placement;
   style?: Record<string, string | number>;

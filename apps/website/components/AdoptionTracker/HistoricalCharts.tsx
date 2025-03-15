@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import { useCallback } from 'react';
 import { Button, ButtonGroup } from '@cbhq/cds-web/buttons';
 import { HStack, VStack } from '@cbhq/cds-web/layout';

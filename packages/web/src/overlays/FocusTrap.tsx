@@ -345,7 +345,6 @@ export const FocusTrap = memo(function FocusTrap({
   const onlyChild = React.Children.only(children);
 
   if (!onlyChild) {
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{children}</>;
   }
 

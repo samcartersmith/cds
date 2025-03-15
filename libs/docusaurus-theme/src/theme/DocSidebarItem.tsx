@@ -136,9 +136,7 @@ function CollapsibleCategory({
       <Collapsible collapsed={collapsed} lazy={false}>
         <VStack spacingHorizontal={parentLevel} width="100%">
           {item.items.map((val, index) => (
-            // eslint-disable-next-line @typescript-eslint/no-use-before-define
             <DocSidebarItem
-              // eslint-disable-next-line react/no-array-index-key
               key={`${level}-${index}`}
               activePath={activePath}
               index={index}

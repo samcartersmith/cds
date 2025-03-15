@@ -110,7 +110,7 @@ export const openWebBrowser = async (url: string, options: OpenWebBrowserOptions
     }
   } catch (err) {
     // TODO: Should output this to Bugsnag
-    // eslint-disable-next-line no-console
+
     console.error(`An error occurred: ${err}`);
     InAppBrowser.close();
   }

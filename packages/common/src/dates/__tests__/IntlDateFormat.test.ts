@@ -1,4 +1,3 @@
-/* eslint-disable prefer-regex-literals */
 import { IntlDateFormat } from '../IntlDateFormat';
 
 describe('IntlDateFormat', () => {

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-qualifier */
 /**
  * Prior art:
  * https://www.benmvp.com/blog/polymorphic-react-components-typescript/

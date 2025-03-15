@@ -12,7 +12,6 @@ const mockedStart = jest.fn();
 jest.mock('../../layout', () => {
   const { forwardRef }: { forwardRef: typeof React.forwardRef } = jest.requireActual('react');
   return {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     Box: forwardRef((props, ref) => {
       return (
         <div>
@@ -44,7 +43,6 @@ jest.mock('../useMotionProps', () => ({
 
 const TestWrapper = (props: ColorSurgeTypes) => {
   const ref = useRef({
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     play: async (background: ColorSurgeBackground | undefined) => {},
   });
 

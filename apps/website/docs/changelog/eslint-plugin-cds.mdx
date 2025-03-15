@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.8 (3/14/2025 PST)
+
+#### 🐞 Fixes
+
+- Formatting and linting. [[#3735](https://github.cbhq.net/frontend/cds/pull/3735)]
+
 ## 0.0.7 (2/25/2025 PST)
 
 #### 🐞 Fixes

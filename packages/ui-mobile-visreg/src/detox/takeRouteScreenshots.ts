@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import { findElementById, sleep } from '@cbhq/detox-utils';
 
 import {

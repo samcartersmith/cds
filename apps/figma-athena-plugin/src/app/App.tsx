@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-constructed-context-values */
 import './styles.css';
 
 import { useEffect, useState } from 'react';

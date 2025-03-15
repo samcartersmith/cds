@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';

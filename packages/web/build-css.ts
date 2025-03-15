@@ -100,7 +100,6 @@ export default async function buildCss() {
       copyFontsToOut(webOutputDir, outputDir),
     ]);
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.log(`Error with packages/web build-css.ts script: ${e}`);
   }
 }

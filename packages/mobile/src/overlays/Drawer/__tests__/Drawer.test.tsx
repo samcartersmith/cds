@@ -33,7 +33,6 @@ const MockDrawer = ({
 }: Partial<DrawerBaseProps>) => {
   const [isVisible, { toggleOn, toggleOff }] = useToggler(false);
 
-  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
   const handleRequestClose = () => {
     onCloseComplete?.();
     toggleOff();

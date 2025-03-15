@@ -19,12 +19,10 @@ const queryMinWidth = (query) => {
   return parseInt(q[1].split('px')[0]);
 };
 
-// eslint-disable-next-line no-undef
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: jest.fn().mockImplementation((query) => {
     return {
-      // eslint-disable-next-line no-undef
       matches: query ? window.innerWidth >= queryMinWidth(query) : false,
       media: query,
       onchange: null,
@@ -41,5 +39,5 @@ Object.defineProperty(window, 'matchMedia', {
 /*                              getComputedStyle                              */
 /* -------------------------------------------------------------------------- */
 const { getComputedStyle } = global.window;
-// eslint-disable-next-line no-undef
+
 window.getComputedStyle = (eletm, select) => getComputedStyle(eletm, select);

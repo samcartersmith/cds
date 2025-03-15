@@ -14,8 +14,6 @@ export default {
   title: 'Core Components/ProgressBar',
 };
 
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
-
 export const Default = () => {
   return (
     <ProgressContainerWithButtons>

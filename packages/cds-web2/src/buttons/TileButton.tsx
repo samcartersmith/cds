@@ -48,7 +48,6 @@ export const TileButton: TileButtonComponent = memo(
       const Component = (as ?? tileButtonDefaultElement) satisfies React.ElementType;
 
       if (isDevelopment() && title.trim() === '') {
-        // eslint-disable-next-line no-console
         console.warn(
           'Setting an empty title in TileButton violates accessibility and CDS usage guidelines.',
         );

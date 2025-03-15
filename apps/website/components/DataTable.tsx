@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import { TableBody, TableCell, TableRow } from '@cbhq/cds-web/tables';
 import { Table } from '@cbhq/cds-web/tables/Table';
 import { TextBody, TextHeadline } from '@cbhq/cds-web/typography';

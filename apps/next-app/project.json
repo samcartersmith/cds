@@ -20,10 +20,7 @@
       }
     },
     "lint": {
-      "command": "next lint",
-      "options": {
-        "cwd": "apps/next-app"
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@cbhq/mono-tasks:test"

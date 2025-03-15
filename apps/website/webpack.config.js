@@ -1,6 +1,5 @@
 const path = require('path');
 
-/* eslint-disable no-param-reassign */
 function configureForDocusaurus(config) {
   const isProduction = config.mode === 'production';
 

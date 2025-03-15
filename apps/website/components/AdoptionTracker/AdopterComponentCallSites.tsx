@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { memo, useCallback } from 'react';
 import orderBy from 'lodash/orderBy';
 import toPairs from 'lodash/toPairs';

@@ -1,5 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import { BrowserRouter as Router, Link as RRLink } from 'react-router-dom';
 import { noop } from '@cbhq/cds-utils';
 
@@ -10,7 +10,7 @@ export const Default = () => (
   <div>
     <Link href="https://www.google.com/">Default</Link>
     <br />
-    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+    {}
     <Link as="button" onClick={noop}>
       As a button
     </Link>
@@ -37,7 +37,7 @@ export const NoUnderline = () => (
       Default
     </Link>
     <br />
-    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+    {}
     <Link as="button" onClick={noop} underline={false}>
       As a button
     </Link>

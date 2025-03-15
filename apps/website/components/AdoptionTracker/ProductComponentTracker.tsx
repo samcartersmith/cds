@@ -1,6 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
-
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { ModalBaseProps, useToggler } from '@cbhq/cds-common';
 import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
@@ -386,7 +383,6 @@ export const ProductComponentTracker = ({ data }: { data: ProductComponentData }
         </HStack>
         <Dropdown
           content={libraryOptions}
-          // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
           contentPosition={{ placement: 'bottom-end', gap: 1 }}
           onCloseMenu={closeFilterMenu}
           width={300}

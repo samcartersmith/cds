@@ -9,7 +9,6 @@ export const Default = () => (
   <div>
     <Link to="https://www.google.com/">Default</Link>
     <br />
-    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
     <Link onClick={onClick}>As a button</Link>
   </div>
 );
@@ -34,7 +33,6 @@ export const Underline = () => (
       Default
     </Link>
     <br />
-    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
     <Link underline onClick={onClick}>
       As a button
     </Link>

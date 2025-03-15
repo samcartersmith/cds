@@ -34,7 +34,6 @@ const svgoConfig: Config = {
                 if (colorsProps.includes(key)) {
                   const hex = colorTo6DigitUppercaseHex(value);
                   if (hex) {
-                    // eslint-disable-next-line no-param-reassign
                     node.attributes[key] = hex; // we have to re-assign to apply change
                   }
                 }

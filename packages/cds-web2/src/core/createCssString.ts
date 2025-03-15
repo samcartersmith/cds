@@ -1,4 +1,3 @@
-/* eslint-disable */
 export const createCssString = (cssProperties: React.CSSProperties) => {
   let string = '';
   for (const key in cssProperties) {

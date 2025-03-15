@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
 import startCase from 'lodash/startCase';

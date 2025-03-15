@@ -51,7 +51,6 @@ const checkSpacing = ({
   withAction?: boolean;
   customStyle?: Record<string, unknown>;
 } & InternalSpacingProps) => {
-  // eslint-disable-next-line jest/require-top-level-describe
   it(`${testID} has correct spacings ${stringify(spacings as never, ', ')}`, () => {
     render(<MockBanner primaryAction={withAction ? action : undefined} />);
     // The above is the spacing that the test requires

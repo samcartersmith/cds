@@ -16,7 +16,6 @@ export default {
   component: TableCell,
 } as Meta;
 
-// eslint-disable-next-line no-console
 const handleClick = console.log;
 
 const spacingConfig = {

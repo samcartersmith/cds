@@ -35,7 +35,6 @@ const checkSpacing = ({
   withAction?: boolean;
 } & InternalSpacingProps &
   Pick<MobileBannerProps, 'styleVariant'>) => {
-  // eslint-disable-next-line jest/require-top-level-describe
   it(`${testID} has correct spacings ${stringify(spacings as never, ', ')}`, () => {
     render(
       <MockBanner primaryAction={withAction ? action : undefined} styleVariant={styleVariant} />,

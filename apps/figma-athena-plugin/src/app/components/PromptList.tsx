@@ -34,7 +34,6 @@ const PromptListItem = (props: PromptListItemProps) => {
       onMouseLeave={() => setShowIcons(false)}
       width="100%"
     >
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link onPress={handlePressLink} variant="title4">
         {props.name || <span>&nbsp;</span>}
       </Link>

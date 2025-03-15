@@ -127,7 +127,6 @@ describe('Search', () => {
               accessibilityHint="Warning text"
               accessibilityLabel="Warning text"
               name="warning"
-              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
               onClick={() => console.log()}
               testID="custom-end-iconbtn"
             />

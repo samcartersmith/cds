@@ -20,7 +20,6 @@ export const CellDetail = memo(function CellDetail({
     <VStack alignContent="flex-end" alignItems="flex-end" justifyContent="center">
       {!!detail && (
         <TextBody
-          // eslint-disable-next-line react/forbid-component-props
           adjustsFontSizeToFit={adjustsFontSizeToFit}
           numberOfLines={1}
           style={largeTextStyle}
@@ -31,7 +30,6 @@ export const CellDetail = memo(function CellDetail({
 
       {!!subdetail && (
         <TextBody
-          // eslint-disable-next-line react/forbid-component-props
           adjustsFontSizeToFit={adjustsFontSizeToFit}
           color={variant}
           numberOfLines={1}

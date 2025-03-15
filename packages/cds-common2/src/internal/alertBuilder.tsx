@@ -8,7 +8,6 @@ import type {
   SharedProps,
 } from '../types';
 
-// eslint-disable-next-line no-console
 const onPressConsole = () => console.log('pressed');
 
 type AlertA11yProps = Pick<
@@ -72,7 +71,6 @@ export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps
   };
 
   const PortalAlert = () => {
-    // eslint-disable-next-line react/no-unstable-nested-components
     function AlertExample() {
       const { open, close } = useAlert();
 

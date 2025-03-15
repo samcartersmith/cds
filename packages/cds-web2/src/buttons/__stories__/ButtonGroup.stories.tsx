@@ -5,7 +5,6 @@ import { Button } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 import { IconButton } from '../IconButton';
 
-// eslint-disable-next-line no-console
 const onClick = console.log;
 
 export const Default = () => (

@@ -24,6 +24,5 @@ export const Route = ({ path, children, requireCredentials = false }: RouteProps
     return <SetCbGptCredentials />;
   }
 
-  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{children}</>;
 };

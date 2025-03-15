@@ -137,7 +137,6 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
     (!radioAccessibilityLabel.includes('{{number}}') ||
       !radioAccessibilityLabel.includes('{{total}}'))
   ) {
-    // eslint-disable-next-line no-console
     console.error(
       `radioAccessibilityLabel must include "{{number}}" and "{{total}}": ${radioAccessibilityLabel}`,
     );

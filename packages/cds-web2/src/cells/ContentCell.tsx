@@ -50,7 +50,6 @@ export const ContentCell = memo(
   ) {
     if (!isProduction()) {
       if (meta && !title && !subtitle) {
-        // eslint-disable-next-line no-console
         console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
       }
     }

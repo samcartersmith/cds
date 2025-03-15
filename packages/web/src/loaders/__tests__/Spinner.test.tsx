@@ -19,7 +19,6 @@ describe('Spinner', () => {
   });
 
   it('accepts custom styles', () => {
-    // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
     render(<Spinner color="primary" size={60} style={{ color: 'red' }} testID="div-spinner" />);
     expect(screen.getByTestId('div-spinner')).toHaveStyle({ color: 'red' });
   });

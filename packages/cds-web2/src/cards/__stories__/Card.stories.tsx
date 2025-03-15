@@ -89,7 +89,7 @@ const feedCards = sharedFeedCards.map((card) => ({
   ...card,
   headerAction: {
     name: 'more',
-    // eslint-disable-next-line no-console
+
     onClick: () => console.log('clicked'),
   } as const,
 }));

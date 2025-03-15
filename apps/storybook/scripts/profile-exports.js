@@ -1,10 +1,7 @@
-/* eslint-disable no-console */
 const path = require('node:path');
 const fs = require('node:fs');
 const { fork } = require('node:child_process');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { globSync } = require('glob');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { diffLines } = require('diff');
 
 const isDiffReport = process.env.PROFILE_EXPORTS_DIFF === 'true';
@@ -218,7 +215,6 @@ const profileExport = async (exportPath) => {
 
   for (let i = 0; i < 5; i++) {
     const childProcess = fork(FORK_FILE, [moduleName]);
-    // eslint-disable-next-line no-await-in-loop
     await new Promise((resolve) => {
       childProcess.on('message', (elapsedTimeInMs) => {
         timesInMs.push(elapsedTimeInMs);
@@ -247,7 +243,6 @@ const main = async () => {
   const exportStatsMessages = [];
 
   for (const webExport of WEB_EXPORTS) {
-    // eslint-disable-next-line no-await-in-loop
     const message = await profileExport(webExport);
     exportStatsMessages.push(message);
   }

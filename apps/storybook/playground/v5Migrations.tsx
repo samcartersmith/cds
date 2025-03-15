@@ -1,5 +1,4 @@
 // THIS FILE IS FOR TESTING THE CDS MIGRATOR AND SHOULD NEVER BE BUILT
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { useCellSpacing } from '@cbhq/cds-common/hooks/useCellSpacing';
 // should update to '@cbhq-common/motion/tokens'

@@ -1,6 +1,3 @@
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable global-require */
-
 import { useMemo } from 'react';
 
 import { cujs } from '../../data/__generated__/adoption/cujs';

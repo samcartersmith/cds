@@ -6,7 +6,6 @@ import { RootScalePreferenceContext } from './context';
 export const useRootScalePreference = () => {
   const context = useContext(RootScalePreferenceContext);
   if (!isProduction() && !context) {
-    // eslint-disable-next-line no-console
     console.error('Cannot use `useRootScalePreference` outside of RootScalePreferenceProvider');
   }
   return context ?? 'system';

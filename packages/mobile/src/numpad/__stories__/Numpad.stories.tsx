@@ -176,7 +176,6 @@ const NumpadExample2 = () => {
             <HStack>
               {Array.from({ length: 4 }).map((_, index) => (
                 <View
-                  // eslint-disable-next-line react/no-array-index-key
                   key={index}
                   style={{
                     width: 16,

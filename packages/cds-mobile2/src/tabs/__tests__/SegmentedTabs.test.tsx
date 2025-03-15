@@ -137,7 +137,6 @@ describe('SegmentedTabs', () => {
   });
 
   it('renders custom tab component', () => {
-    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const Component = () => (
       <Text font="display1" testID="custom-tab">
         Custom tab
@@ -154,7 +153,6 @@ describe('SegmentedTabs', () => {
   });
 
   it('renders custom tab indicator', () => {
-    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const ActiveIndicatorComponent = () => <AnimatedBox animated testID="custom-indicator" />;
     render(
       <DefaultThemeProvider>

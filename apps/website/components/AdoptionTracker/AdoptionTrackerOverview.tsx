@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
-/* eslint-disable import/no-dynamic-require, global-require */
+
 import Link from '@docusaurus/Link';
 import { css } from '@linaria/core';
 import getFirst from 'lodash/first';

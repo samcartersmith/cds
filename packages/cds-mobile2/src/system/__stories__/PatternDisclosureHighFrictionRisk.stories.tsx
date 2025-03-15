@@ -87,7 +87,7 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
                       checked={checkboxes[index]}
                       onChange={handleCheckboxChange(index)}
                     />
-                    {/* eslint-disable react-native/no-raw-text */}
+                    {}
                     <Text font="label2" style={{ flex: 1 }}>
                       {checkboxLabel}{' '}
                       <Link underline to={linkUrl}>

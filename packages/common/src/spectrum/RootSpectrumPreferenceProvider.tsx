@@ -18,7 +18,6 @@ export const RootSpectrumPreferenceProvider: React.FC<
 
   /** Guarantee we only have a single RootScaleContext  */
   if (!isProduction() && context) {
-    // eslint-disable-next-line no-console
     console.error(
       'Multiple RootSpectrumPreferenceProviders were rendered and there should only be one. Ensure there is a single RootSpectrumPreferenceProvider to resolve.',
     );

@@ -26,7 +26,6 @@ export const useCarouselItem = (): CarouselItemContextValue => {
   const context = useContext(CarouselItemContext);
   if (context === undefined) {
     if (!isProduction()) {
-      // eslint-disable-next-line no-console
       console.error('useCarouselItem: Cannot use `useCarouselItem` outside of Carousel component.');
     }
     return { id: '-1', dismiss: noop };

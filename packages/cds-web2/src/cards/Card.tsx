@@ -1,7 +1,6 @@
 import React, { type HTMLAttributes, memo, useMemo } from 'react';
 import { cardSizes } from '@cbhq/cds-common2/tokens/card';
-import type { CardBaseProps } from '@cbhq/cds-common2/types';
-import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
+import type { CardBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
 import { VStack } from '../layout/VStack';
 import { type PressableProps, Pressable } from '../system/Pressable';

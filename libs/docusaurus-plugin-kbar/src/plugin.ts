@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import docsPlugin from '@docusaurus/plugin-content-docs';
 import { DEFAULT_OPTIONS } from '@docusaurus/plugin-content-docs/lib/options.js';
 import type { LoadContext, Plugin } from '@docusaurus/types';

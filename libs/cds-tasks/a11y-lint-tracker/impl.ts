@@ -9,7 +9,6 @@ import { cleanup, getTempRepos, info, success } from '../podium/utils';
 import { a11yLintConfig } from './config';
 import { A11yLintConfig } from './types';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
@@ -58,7 +57,6 @@ async function runSetupCommands(config: A11yLintConfig, repoPath: string) {
   // Run custom setup commands or default to 'yarn' if none are specified
   if (config.customSetupCommands && config.customSetupCommands.length > 0) {
     for (const command of config.customSetupCommands) {
-      // eslint-disable-next-line no-await-in-loop
       await execPromise(command, { cwd: repoPath });
       info(`Executed custom setup command: ${command} for ${repoPath}`);
     }

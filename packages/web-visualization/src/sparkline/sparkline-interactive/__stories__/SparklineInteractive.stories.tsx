@@ -391,7 +391,6 @@ export const NoDataInSelectedPeriod = () => {
   return (
     <React.StrictMode>
       <SparklineInteractiveBuild
-        // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
         data={{ ...sparklineInteractiveData, hour: [] }}
         strokeColor={strokeColor}
       />

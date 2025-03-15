@@ -34,7 +34,6 @@ export const ProjectGroup = ({
     const active = activeComponentId === componentId;
 
     // refactor into separate component
-    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const handlePress = () => {
       setActiveComponentId(active ? null : componentId);
       setSelectedEntry(matchingEntries);

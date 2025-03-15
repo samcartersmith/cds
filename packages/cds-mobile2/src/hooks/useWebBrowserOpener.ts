@@ -23,7 +23,7 @@ export const useWebBrowserOpener = () => {
         await Linking.openURL(url);
       } catch (err) {
         // TODO: replace these with Bugsnag one day
-        // eslint-disable-next-line no-console
+
         console.error(`Cannot open URL ${url}`, err);
       }
     },

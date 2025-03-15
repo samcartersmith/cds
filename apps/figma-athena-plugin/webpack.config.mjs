@@ -1,5 +1,5 @@
 // @ts-check
-/* eslint-disable import/no-extraneous-dependencies, import/extensions */
+
 import InlineChunkHtmlPlugin from 'react-dev-utils/InlineChunkHtmlPlugin.js';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'node:path';

@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useCallback } from 'react';
 import type { Property } from 'csstype';
 import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';

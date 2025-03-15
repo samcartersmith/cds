@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference types="@cbhq/docusaurus-theme/types" />
 /// <reference types="@cbhq/docusaurus-plugin-docgen/module-declarations" />
 

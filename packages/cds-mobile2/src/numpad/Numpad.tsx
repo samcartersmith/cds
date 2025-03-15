@@ -91,7 +91,7 @@ export const Numpad = memo(
       return buttonValues.map((values, i) => {
         return (
           <HStack
-            key={`num_pad_item_${i}`} // eslint-disable-line react/no-array-index-key
+            key={`num_pad_item_${i}`}
             alignItems="stretch"
             flexGrow={1}
             flexWrap="nowrap"

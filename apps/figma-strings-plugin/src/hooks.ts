@@ -73,7 +73,6 @@ export const useFilteredStrings = (strings?: Content[], localeOption?: string) =
           str.key.en.toLowerCase().includes(lowerCaseSearchTerm),
         );
       } catch {
-        // eslint-disable-next-line no-console
         console.error('Something went wrong, please revise your search.');
       }
     }

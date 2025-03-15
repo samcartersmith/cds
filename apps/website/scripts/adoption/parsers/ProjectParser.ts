@@ -561,7 +561,6 @@ export class ProjectParser {
           const absolutePathForProject = getMatchingDirectory(absoluteAliases, projectTsAlias);
           if (absolutePathForProject) {
             projectFilePaths.push({
-              // eslint-disable-next-line no-await-in-loop
               filePaths: await getProjectFiles(
                 absolutePathForProject,
                 this.ignoreDirs,

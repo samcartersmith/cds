@@ -30,8 +30,8 @@ import {
   ModalBody,
   ModalFooter,
   ModalHeader,
+  Tooltip,
 } from '@cbhq/cds-web/overlays';
-import { Tooltip } from '@cbhq/cds-web/overlays';
 import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
 import { useModal } from '@cbhq/cds-web/overlays/useModal';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
@@ -79,7 +79,6 @@ const { name, avatar } = mocks.users[1];
 
 const sidebarItems = mocks.product.navigationItems;
 function createSidebarItem(activeIndex: number, setActiveIndex: SetState<number>) {
-  // eslint-disable-next-line react/display-name
   return ({ title, icon }: { title: string; icon: string }, index: number) => {
     const handlePress = () => setActiveIndex(index);
 
@@ -111,7 +110,6 @@ const options = [
 ] as const;
 
 function createMenuOption() {
-  // eslint-disable-next-line react/display-name
   return (item: (typeof options)[number]) => (
     <SelectOption
       key={item.name}
@@ -169,9 +167,7 @@ function FeedCardWithPopover() {
         <Alert
           visible
           body="Alert body type that can run over multiple lines, but should be kept short."
-          // eslint-disable-next-line react/jsx-handler-names
           onPreferredActionPress={alert.close}
-          // eslint-disable-next-line react/jsx-handler-names
           onRequestClose={alert.close}
           pictogram="warning"
           preferredActionLabel="Save"
@@ -285,7 +281,6 @@ function FullScreenModalAmp() {
   const [visible, { toggleOn, toggleOff }] = useToggler();
 
   const handleClose = useCallback(() => {
-    // eslint-disable-next-line no-console
     console.log('modal closing');
     toggleOff();
   }, [toggleOff]);
@@ -530,7 +525,7 @@ function AppContent() {
         <NavigationBar
           end={
             <HStack alignItems="center" gap={1}>
-              {/* eslint-disable-next-line react/jsx-handler-names */}
+              {}
               <Checkbox checked={showOverlay} onChange={toggleOverlay.toggle} value="hyped">
                 Show overlay
               </Checkbox>

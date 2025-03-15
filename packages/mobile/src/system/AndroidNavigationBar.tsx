@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { memo, useCallback, useLayoutEffect, useRef } from 'react';
 import { Platform } from 'react-native';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';

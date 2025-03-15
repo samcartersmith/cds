@@ -14,7 +14,6 @@ function expectClassName<K extends keyof GridProps>(
   classPrefix = DEFAULT_CLASS,
 ) {
   values.forEach((value) => {
-    // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" class name for \`${prop}\` prop`, () => {
       const { rerender } = render(<Grid columnMin="0px">Child</Grid>);
 
@@ -52,7 +51,7 @@ describe('Grid', () => {
 
       // Using DOM traversing for this test is imperative to confirm that correct HTML elements are created with the Grid `as` prop.
       // - Emily Seibert, 10/25/2022
-      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+      // eslint-disable-next-line testing-library/no-container
       expect(container.querySelectorAll(tag)).toHaveLength(1);
     });
   });

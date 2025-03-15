@@ -3,7 +3,6 @@
  * Generated from scripts/codegen/main.ts
  */
 import { css } from '@linaria/core';
-// eslint-disable-next-line no-restricted-imports
 import { borderRadius as borderRadiusTokens } from '@cbhq/cds-common/tokens/borderRadius';
 
 import { borderRadius } from '../tokens';

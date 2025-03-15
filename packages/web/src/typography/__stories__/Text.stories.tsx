@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import { useMemo } from 'react';
 import { ResponsiveProps } from '@cbhq/cds-common/types';
 

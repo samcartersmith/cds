@@ -5,7 +5,6 @@ import { AdopterStatsContext, statsFallback } from '../context/AdopterStatsProvi
 export const useAdopterStats = () => {
   const data = useContext(AdopterStatsContext);
   if (!data) {
-    // eslint-disable-next-line no-console
     console.error('Cannot use `useAdopterStats` outside of AdopterStatsProvider');
   }
   return data ?? statsFallback;

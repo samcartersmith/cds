@@ -1,4 +1,3 @@
-/* eslint-disable react/boolean-prop-naming */
 import { useCallback, useEffect, useRef } from 'react';
 import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 

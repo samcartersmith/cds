@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-handler-names */
 import { css } from '@linaria/core';
 import { Meta, Story } from '@storybook/react';
 

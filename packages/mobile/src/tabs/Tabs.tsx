@@ -21,8 +21,8 @@ import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable'
 import type { PaletteBackground } from '@cbhq/cds-common/types';
 import { type Rect, defaultRect } from '@cbhq/cds-common/types/Rect';
 
-import type { BoxProps } from '../layout';
-import { type HStackProps, Box, HStack } from '../layout';
+import type { BoxProps, HStackProps } from '../layout';
+import { Box, HStack } from '../layout';
 
 const AnimatedBox = Animated.createAnimatedComponent(Box);
 

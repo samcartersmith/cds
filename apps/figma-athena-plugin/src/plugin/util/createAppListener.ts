@@ -41,11 +41,9 @@ export const createAppListener = () => {
     const { messageId, message } = messageData;
     for (const callback of listeners[messageData.message.type]) {
       console.log(`[Figma]: Message received - ${messageData.message.type}`);
-      // eslint-disable-next-line no-await-in-loop
       await callback(
         { data: message.data, messageId },
         {
-          // eslint-disable-next-line @typescript-eslint/no-loop-func
           send: (responseData: ResponsesToApp['data']) =>
             figma.ui.postMessage({
               messageId,

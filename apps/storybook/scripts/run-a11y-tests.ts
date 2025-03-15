@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { A11yTestRunner } from '@shopify/storybook-a11y-test';
 import path from 'node:path';
 

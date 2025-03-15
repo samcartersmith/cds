@@ -13,7 +13,6 @@ const addNode = (graph: DescriptionType, description: string, name: string) => {
   // Need this if statement, otherwise duplicated names would
   // be considered a new node
   if (!(description in graph)) {
-    /* eslint-disable no-param-reassign */
     graph[description] = [name];
   }
 };

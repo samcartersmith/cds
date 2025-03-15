@@ -13,7 +13,6 @@ export const Rules = () => {
 
   // Open the modal when the page mounts
   useEffect(() => {
-    // eslint-disable-next-line no-console
     console.log(
       `%c
 

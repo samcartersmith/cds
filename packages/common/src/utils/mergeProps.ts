@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-
 export type UnknownProps = Record<string, unknown>;
 
 export function mergeProps<T>(prev: UnknownProps, next: UnknownProps): T {
@@ -7,7 +5,6 @@ export function mergeProps<T>(prev: UnknownProps, next: UnknownProps): T {
 
   Object.entries(next).forEach(([key, value]) => {
     if (key === 'className' && typeof prev[key] === 'string' && typeof next[key] === 'string') {
-      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
       result[key] += ` ${value}`;
     } else if (
       /^on[A-Z]/.test(key) &&

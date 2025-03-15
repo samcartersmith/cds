@@ -21,8 +21,8 @@ import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common2/tabs
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { type Rect, defaultRect } from '@cbhq/cds-common2/types/Rect';
 
-import type { BoxProps } from '../layout';
-import { type HStackProps, Box, HStack } from '../layout';
+import type { BoxProps, HStackProps } from '../layout';
+import { Box, HStack } from '../layout';
 
 const AnimatedBox = Animated.createAnimatedComponent(Box);
 

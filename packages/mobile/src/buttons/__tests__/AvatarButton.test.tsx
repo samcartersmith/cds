@@ -35,11 +35,6 @@ describe('AvatarButton', () => {
     );
 
     expect(
-      // This is a false positive due to Aggressive Reporting for the linter. This is a valid, non-promise function on https://reactjs.org/docs/test-renderer.html#testinstancefindbyprops
-      // however, the 'findBy*' linter from testing-library thinks this is a promise query. We should keep the aggressive reporting enabled, and just
-      // disable the few functions that are 'false positives'.
-      // - Emily Seibert, 10/24/2022
-      // eslint-disable-next-line testing-library/await-async-query
       screen.getByTestId('avatar-button').findByProps({
         src: 'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg',
       }),

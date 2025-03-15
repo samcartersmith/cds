@@ -4,20 +4,17 @@ import type { IconName, ModalRenderChildren } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { ButtonGroup } from '../../buttons/ButtonGroup';
-import { CellMedia } from '../../cells';
-import { ListCell } from '../../cells';
+import { CellMedia, ListCell } from '../../cells';
 import { TextInput } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons';
-import { Divider, HStack, VStack } from '../../layout';
-import { Box } from '../../layout';
+import { Divider, HStack, VStack, Box } from '../../layout';
 import { Avatar } from '../../media';
 import { Modal, ModalBody, ModalHeader } from '../../overlays';
 import { Pressable } from '../../system/Pressable';
 import { Text } from '../../typography/Text';
-import { MultiContentModuleProps } from '../MultiContentModule';
-import { MultiContentModule } from '../MultiContentModule';
+import { MultiContentModuleProps, MultiContentModule } from '../MultiContentModule';
 
 type ListItem = {
   icon: IconName;
@@ -173,7 +170,6 @@ const Default = () => (
             >
               {listItems.map(({ icon, title, description }, index) => (
                 <ListCell
-                  // eslint-disable-next-line react/no-array-index-key
                   key={index}
                   multiline
                   description={description}
@@ -306,7 +302,6 @@ export const WithLongContent = () => {
                 {[...listItems, ...listItems, ...listItems].map(
                   ({ icon, title, description }, index) => (
                     <ListCell
-                      // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       multiline
                       description={description}

@@ -205,7 +205,6 @@ export function bannerBuilder(
 
   const OnClose = () => {
     const handleOnClose = useCallback(() => {
-      // eslint-disable-next-line no-console
       console.log('dismissing banner');
     }, []);
 

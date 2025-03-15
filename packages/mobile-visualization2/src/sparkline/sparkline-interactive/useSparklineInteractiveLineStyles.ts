@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
-import { borderWidth } from '@cbhq/cds-common2/tokens/sparkline';
-import { lineDashArray, lineOpacity } from '@cbhq/cds-common2/tokens/sparkline';
+import { borderWidth, lineDashArray, lineOpacity } from '@cbhq/cds-common2/tokens/sparkline';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 
 const staticLineProps = {

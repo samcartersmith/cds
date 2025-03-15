@@ -84,7 +84,6 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
   return (
     <Animated.View pointerEvents="none" style={rootStyle}>
       {times(numberOfLabels).map((_, i) => {
-        // eslint-disable-next-line react/no-array-index-key
         return <SparklineInteractiveMarkerDate key={i} getFormattedDate={getFormattedDate} />;
       })}
     </Animated.View>

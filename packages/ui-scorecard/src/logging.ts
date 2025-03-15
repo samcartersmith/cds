@@ -11,7 +11,6 @@ const filteredKeywords = ['password', 'keyPass'];
 
 function filterKeys(object: Record<string, unknown>) {
   filteredKeywords.forEach((key) => {
-    // eslint-disable-next-line no-param-reassign
     delete object[key];
   });
 }

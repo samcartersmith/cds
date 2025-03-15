@@ -71,7 +71,6 @@ describe('Box', () => {
 
   it('can dangerously override styles', async () => {
     render(
-      // eslint-disable-next-line react-native/no-color-literals
       <Box style={{ backgroundColor: '#000' }} testID="parent">
         <Text>Child</Text>
       </Box>,

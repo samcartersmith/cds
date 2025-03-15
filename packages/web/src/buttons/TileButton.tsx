@@ -40,7 +40,6 @@ export const TileButton = memo(
     ref: React.ForwardedRef<HTMLButtonElement>,
   ) {
     if (isDevelopment() && title.trim() === '') {
-      // eslint-disable-next-line no-console
       console.warn(
         'Setting an empty title in TileButton violates accessibility and CDS usage guidelines.',
       );

@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { useMemo } from 'react';
 import get from 'lodash/get';
 

@@ -159,7 +159,6 @@ export const Chat = () => {
         >
           {responses.map((response, index) => (
             <VStack
-              // eslint-disable-next-line react/no-array-index-key
               key={index}
               bordered
               background="secondary"

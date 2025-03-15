@@ -57,7 +57,6 @@ export const TabNavigation = memo(
 
       useEffect(() => {
         if (isDevelopment() && variant === 'secondary') {
-          // eslint-disable-next-line no-console
           console.warn(
             'Deprecation Warning: Secondary tabs are deprecated, please migrate to primary tabs. In the case of nested tabs, consider using TabbedChips',
           );

@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-raw-text, jsx-a11y/anchor-is-valid  */
 import React, { useCallback } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';

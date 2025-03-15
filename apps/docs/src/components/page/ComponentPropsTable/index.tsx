@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
 import { VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography/Text';
-import { SharedTypeAliases } from '@cbhq/docusaurus-plugin-docgen';
-import { SharedParentTypes } from '@cbhq/docusaurus-plugin-docgen';
+import { SharedTypeAliases, SharedParentTypes } from '@cbhq/docusaurus-plugin-docgen';
 import { ProcessedPropItem } from '@cbhq/docusaurus-plugin-docgen/types';
 
 import ParentTypesList from './ParentTypesList';

@@ -131,7 +131,6 @@ describe('SegmentedTabs', () => {
   });
 
   it('renders custom tab component', () => {
-    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const TabComponent = () => (
       <TextDisplay1 as="span" testID="custom-tab">
         Custom tab
@@ -146,7 +145,6 @@ describe('SegmentedTabs', () => {
   });
 
   it('renders custom tab indicator', () => {
-    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const TabsActiveIndicatorComponent = () => <div data-testid="custom-indicator" />;
     render(
       <TabsContext.Provider value={mockApi}>

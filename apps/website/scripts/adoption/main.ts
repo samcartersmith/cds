@@ -222,7 +222,7 @@ async function generateProductComponentData(
       .map(
         (config) =>
           Object.values(componentsData)
-            // eslint-disable-next-line array-callback-return
+
             .map((components) => {
               const component = components.find(
                 (component) =>
@@ -322,7 +322,7 @@ async function addCDSVersionToProductComponentsData(): Promise<void> {
       const { packagePath } = config;
 
       // Fetch CDS version information for the component's package
-      // eslint-disable-next-line no-await-in-loop
+
       const cdsVersionResult = await getCDSVersionFromComponentPatternPackage(packagePath);
 
       // Add CDS version info to the component's data

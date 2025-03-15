@@ -127,7 +127,6 @@ const DynamicItemsExample = () => {
 
   const items = useMemo(() => {
     return Array.from({ length: itemsLength }).map((_, index) => {
-      // eslint-disable-next-line react/no-array-index-key
       return <ExampleCarouselItem key={`add-item-example-${index}`} />;
     });
   }, [itemsLength]);

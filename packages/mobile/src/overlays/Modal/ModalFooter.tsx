@@ -36,7 +36,7 @@ export const ModalFooter = ({
       <ButtonGroup block={!isVertical} direction={direction}>
         {actions.map((action, i) => (
           // actions are stable so should be fine to use index as key
-          // eslint-disable-next-line react/no-array-index-key
+
           <Fragment key={i}>{action}</Fragment>
         ))}
       </ButtonGroup>

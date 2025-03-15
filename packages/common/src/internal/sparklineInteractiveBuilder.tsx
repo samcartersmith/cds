@@ -105,7 +105,6 @@ const periods = [
 ];
 
 const getFormattingConfigForPeriod = (period: SparklinePeriod) => {
-  // eslint-disable-next-line default-case
   switch (period) {
     case 'hour':
     case 'day':

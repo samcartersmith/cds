@@ -215,7 +215,7 @@ export const EndContent = function EndContent() {
     <TextInput
       end={
         <HStack spacingEnd={1}>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          {}
           <Link to="" variant="headline">
             Hello
           </Link>
@@ -272,7 +272,7 @@ export const CompactInputEnd = function CompactInputEnd() {
       compact
       end={
         <HStack spacingEnd={1}>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          {}
           <Link to="" variant="headline">
             Hello
           </Link>
@@ -481,7 +481,6 @@ export const CopyTextInput = function CopyTextInput() {
   return (
     <div>
       <TextInput
-        /* eslint-disable jsx-a11y/anchor-is-valid */
         end={
           <HStack>
             <Link color={variant} onPress={handleOnPress}>

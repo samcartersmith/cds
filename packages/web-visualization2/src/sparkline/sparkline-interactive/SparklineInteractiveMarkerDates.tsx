@@ -57,7 +57,6 @@ function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
 
   const markers = useMemo(() => {
     return times(numberOfLabels).map((_, i) => {
-      // eslint-disable-next-line react/no-array-index-key
       return <SparklineInteractiveMarkerDate key={i} getFormattedDate={getFormattedDate} />;
     });
   }, [getFormattedDate, numberOfLabels]);

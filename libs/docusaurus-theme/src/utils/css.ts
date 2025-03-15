@@ -21,7 +21,6 @@ export default function css(strings: TemplateStringsArray, ...expr: unknown[]) {
   });
 
   strings.forEach((string, i) => {
-    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     str += string + (expr[i] || '');
   });
   return str;

@@ -221,7 +221,6 @@ export const ButtonOrLink = memo(
           onMouseDown={handleOnMouseDown}
           onMouseDownCapture={handleOnMouseDownCapture}
           style={accessibilityStyles}
-          // eslint-disable-next-line react/button-has-type
           type={type as 'button'}
         >
           {children}

@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import { memo } from 'react';
 import ModalLink from '@theme/ModalLink';
 import PropsTable from '@theme/PropsTable';

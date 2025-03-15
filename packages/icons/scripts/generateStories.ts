@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import chalk from 'chalk';
 import { writePrettyFile } from '@cbhq/script-utils/fs/writePrettyFile';
 

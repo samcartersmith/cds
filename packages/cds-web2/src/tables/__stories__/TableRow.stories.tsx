@@ -10,7 +10,6 @@ export default {
   component: TableRow,
 } as Meta;
 
-// eslint-disable-next-line no-console
 const handleClick = console.log;
 
 export const TableRowExample: Story = () => {

@@ -209,9 +209,8 @@ export const RemoteImage = memo(function RemoteImage({
   }
 
   if (useFallback) {
-    // eslint-disable-next-line global-require
     const darkFallback = require('./RemoteImageFallbackXmls/dark') as XmlReturnType;
-    // eslint-disable-next-line global-require
+
     const lightFallback = require('./RemoteImageFallbackXmls/light') as XmlReturnType;
 
     return (

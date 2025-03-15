@@ -111,7 +111,6 @@ export const TextIcon = memo(function TextIcon({
 
   if (iconName === undefined) {
     if (isDevelopment()) {
-      // eslint-disable-next-line no-console
       console.error(
         `Unable to find Icon with name: ${name}. Full internal lookup name is ${iconName}`,
       );

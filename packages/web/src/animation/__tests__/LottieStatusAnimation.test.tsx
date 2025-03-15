@@ -23,7 +23,6 @@ jest.mock('../Lottie', () => {
   const { forwardRef }: { forwardRef: typeof React.forwardRef } = jest.requireActual('react');
   return {
     Lottie: forwardRef(
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       ({ onAnimationFinish, testID }: { onAnimationFinish?: () => void; testID?: string }, ref) => {
         if (onAnimationFinish) {
           setTimeout(onAnimationFinish, 1000);

@@ -1,6 +1,3 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-dynamic-require */
-
 import { a11yLintRepos } from ':cds-website/data/__generated__/a11yLintConfig/a11yLintRepos';
 
 // flag for toggling module to show eslint warnings in complex repo by project

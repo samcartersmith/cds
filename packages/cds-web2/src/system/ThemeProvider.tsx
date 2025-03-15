@@ -10,7 +10,6 @@ import { type FramerMotionProviderProps, FramerMotionProvider } from './FramerMo
 
 /* Augments csstype's Properties by adding all our theme CSS variable names. Effectively adds all theme CSS variable names as valid keys to React.CSSProperties. */
 declare module 'csstype' {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions, @typescript-eslint/no-empty-interface
   interface Properties extends Partial<ThemeCSSVars> {}
 }
 

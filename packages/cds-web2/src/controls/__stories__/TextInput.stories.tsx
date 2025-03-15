@@ -1,6 +1,4 @@
-/* eslint-disable no-console */
-import React from 'react';
-import { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { css } from '@linaria/core';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
@@ -215,7 +213,7 @@ export const EndContent = function EndContent() {
     <TextInput
       end={
         <HStack paddingEnd={1}>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          {}
           <Link font="headline" href="">
             Hello
           </Link>
@@ -272,7 +270,7 @@ export const CompactInputEnd = function CompactInputEnd() {
       compact
       end={
         <HStack paddingEnd={1}>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          {}
           <Link font="headline" href="">
             Hello
           </Link>
@@ -486,7 +484,6 @@ export const CopyTextInput = function CopyTextInput() {
   return (
     <div>
       <TextInput
-        /* eslint-disable jsx-a11y/anchor-is-valid */
         end={
           <HStack>
             <Link as="button" color={variantColorMap[variant]} onClick={handleOnClick}>

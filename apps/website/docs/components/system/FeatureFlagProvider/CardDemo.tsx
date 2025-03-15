@@ -4,7 +4,6 @@ import { CardGroup, FeedCard } from '@cbhq/cds-web/cards';
 import { ResponsiveExample } from ':cds-website/components/ResponsiveExample';
 
 export function CardDemo() {
-  // eslint-disable-next-line no-console
   const onPressConsole = () => console.log('press');
 
   const demoCard = useMemo(() => {
@@ -13,7 +12,6 @@ export function CardDemo() {
         author="Earn crypto"
         avatar="https://images.coinbase.com/avatar?s=350"
         description="Amp is an Ethereum token that can be used as collateral to provide instant settlement assurance any time value is transferred."
-        // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
         headerAction={{
           name: 'more',
           variant: 'foregroundMuted',

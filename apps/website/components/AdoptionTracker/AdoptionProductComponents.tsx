@@ -1,4 +1,3 @@
-/* eslint-disable global-require, react/no-array-index-key, react-perf/jsx-no-new-function-as-prop */
 import { memo, useCallback, useState } from 'react';
 import { ListCell } from '@cbhq/cds-web/cells';
 import { Icon } from '@cbhq/cds-web/icons';

@@ -216,7 +216,6 @@ export const Content = ({ onStepChange, currentStep }: ContentProps) => {
             Button with label maybe we’re starting to get in the right direction
           </Button>
           <Button
-            // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
             onPress={() => {
               setIsCollapsed(!isCollapsed);
               setStepReadyToComplete(currentStep);

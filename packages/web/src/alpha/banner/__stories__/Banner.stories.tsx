@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import { useMemo } from 'react';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { ResponsiveProps } from '@cbhq/cds-common/types';
@@ -6,8 +5,7 @@ import { NoopFn as noopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { VStack } from '../../../layout';
 import { ThemeProvider } from '../../../system';
-import { Link } from '../../../typography';
-import { TextLabel2, TextTitle1 } from '../../../typography';
+import { Link, TextLabel2, TextTitle1 } from '../../../typography';
 import { Banner, WebBannerProps } from '../Banner';
 
 const primaryAction = <Link to="https://www.coinbase.com">Primary</Link>;

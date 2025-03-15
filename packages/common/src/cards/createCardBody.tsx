@@ -1,8 +1,10 @@
 import React, { memo, useMemo } from 'react';
 
 import { defaultMediaSize } from '../tokens/card';
-import type { PaletteForeground, SharedProps, TextBaseProps } from '../types';
 import type {
+  PaletteForeground,
+  SharedProps,
+  TextBaseProps,
   ButtonBaseProps,
   CardBodyBaseProps,
   CardBoxProps,

@@ -4,7 +4,6 @@ import { ThemeProvider } from '../../system/ThemeProvider';
 import { usePaletteToCssVars } from '../usePaletteToCssVars';
 
 const MockCustomPalette: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
-  // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
   <ThemeProvider palette={{ background: 'orange60' }}>{children}</ThemeProvider>
 );
 

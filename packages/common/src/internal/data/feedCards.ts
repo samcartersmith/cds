@@ -5,7 +5,6 @@ import { feedImages } from './feedImages';
 import { loremIpsum } from './loremIpsum';
 
 const onPress = () => {
-  // eslint-disable-next-line no-console
   console.log('pressed');
 };
 

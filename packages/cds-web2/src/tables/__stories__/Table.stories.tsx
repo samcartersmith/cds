@@ -1,5 +1,4 @@
-import React from 'react';
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Meta } from '@storybook/react';
 import startCase from 'lodash/startCase';
 import { useSort } from '@cbhq/cds-common2/hooks/useSort';
@@ -29,7 +28,6 @@ export const SampleTable = () => {
   const variants: TableVariant[] = ['default', 'graph', 'ruled'];
 
   const handlePress = (name: string) => {
-    // eslint-disable-next-line no-alert
     alert(`hi ${name}`);
   };
   // Only apply a press event to a few items
@@ -131,7 +129,6 @@ export const FixedLayoutExample = () => {
 
   const data = assetHubMock.slice(0, 6);
   const handlePress = (name: string) => {
-    // eslint-disable-next-line no-alert
     alert(`hi ${name}`);
   };
   // Only apply a press event to a few items

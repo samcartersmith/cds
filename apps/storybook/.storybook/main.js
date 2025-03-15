@@ -1,6 +1,6 @@
 // @ts-check
 const path = require('path');
-// @ts-ignore No types for webpack-bundle-analyzer
+// @ts-expect-error No types for webpack-bundle-analyzer
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const BABEL_OPTIONS = { configFile: true };

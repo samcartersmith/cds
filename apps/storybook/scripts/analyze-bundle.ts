@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { diffLines } from 'diff';
 import fs from 'node:fs';
 import path from 'node:path';

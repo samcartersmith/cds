@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { Fragment, memo, useCallback, useState } from 'react';
 import { Icon } from '@cbhq/cds-web/icons';
 import { Divider, VStack } from '@cbhq/cds-web/layout';

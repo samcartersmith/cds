@@ -3,7 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 import { css } from '@linaria/core';
-// eslint-disable-next-line no-restricted-imports
+
 import { borderWidth as borderWidthTokens } from '@cbhq/cds-common/tokens/borderWidth';
 
 import { borderWidth } from '../tokens';

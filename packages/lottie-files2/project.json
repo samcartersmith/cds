@@ -12,7 +12,7 @@
       "executor": "@cbhq/mono-tasks:format"
     },
     "lint": {
-      "executor": "@cbhq/mono-tasks:lint"
+      "executor": "@nx/eslint:lint"
     },
     "typecheck": {
       "executor": "nx:run-commands",

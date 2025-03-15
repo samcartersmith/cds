@@ -1,5 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import figma from '@figma/code-connect';
 

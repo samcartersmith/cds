@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React, { useCallback, useEffect, useMemo } from 'react';
 import Link from '@docusaurus/Link';
 import {

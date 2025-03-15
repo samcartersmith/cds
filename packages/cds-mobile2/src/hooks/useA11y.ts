@@ -1,5 +1,4 @@
 import { useCallback, useMemo } from 'react';
-// eslint-disable-next-line @cbhq/react-native-no-fabric-incompatible-apis
 import { AccessibilityInfo, findNodeHandle } from 'react-native';
 
 /*

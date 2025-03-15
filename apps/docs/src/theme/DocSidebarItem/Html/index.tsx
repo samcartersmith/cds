@@ -9,7 +9,6 @@ export default function DocSidebarItemHtml({ item, level, index }: Props): JSX.E
   const { value, defaultStyle, className } = item;
   return (
     <li
-      // eslint-disable-next-line react/no-danger, react-perf/jsx-no-new-object-as-prop
       dangerouslySetInnerHTML={{ __html: value }}
       key={index}
       className={cx(

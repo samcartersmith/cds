@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useCallback } from 'react';
 
 import { Button } from '../../buttons/Button';

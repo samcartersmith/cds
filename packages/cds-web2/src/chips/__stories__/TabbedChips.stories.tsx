@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import React, { useState } from 'react';
 import { longTextTabs, sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
 import type { TabNavigationProps, TabProps } from '@cbhq/cds-common2/types';

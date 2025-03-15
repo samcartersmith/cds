@@ -1,4 +1,3 @@
-/* eslint-disable prefer-template */
 export const createCssVars = <Vars extends Record<string, unknown>, Prefix extends string>(
   vars: Vars,
   prefix: Prefix,

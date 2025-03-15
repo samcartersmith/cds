@@ -1,5 +1,4 @@
-import React from 'react';
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 import { Button, IconButton } from '../../buttons';

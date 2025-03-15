@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unstable-nested-components */
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Button as NativeButton, Image, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';

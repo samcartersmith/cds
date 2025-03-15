@@ -15,7 +15,6 @@ const PLUGIN_ID = '@cbhq/docusaurus-plugin-docgen';
  * Because of this, we can't use state in the plugin or module scope.
  */
 declare module global {
-  // eslint-disable-next-line import/no-mutable-exports
   export let docgenBuild: {
     lastRun: Date | undefined;
     isRunning: boolean;

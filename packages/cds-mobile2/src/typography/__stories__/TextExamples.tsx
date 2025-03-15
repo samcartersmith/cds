@@ -18,7 +18,7 @@ const TextExamplesScreen = ({
       </Example>
       <Example title="Inherited Font">
         <Box>
-          {/* eslint-disable-next-line react-native/no-raw-text */}
+          {}
           <Text font="title1">
             This Text element uses one font family and the inner Text element - Hello World inherits
             it but overrides the font size

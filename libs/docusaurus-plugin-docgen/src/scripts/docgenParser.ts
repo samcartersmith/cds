@@ -49,8 +49,7 @@ function getDocExample(doc: Doc) {
   if (!doc.tags?.example) return undefined;
   return doc.tags.example.includes('tsx')
     ? doc.tags.example.replaceAll('tsx', 'tsx live')
-    : // eslint-disable-next-line prefer-template
-      '```tsx live\n' + doc.tags.example + '\n```';
+    : '```tsx live\n' + doc.tags.example + '\n```';
 }
 
 function formatPropItemType(value: string) {
@@ -111,7 +110,6 @@ function preProcessDoc(doc: Doc): PreProcessedDoc {
 /*                                   Process                                  */
 /* -------------------------------------------------------------------------- */
 function processPropItem(prop: PreProcessedPropItem | ProcessedPropItem): ProcessedPropItem {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const { declarations: _declarations, tags: _tags, ...restOfProp } = prop;
   return {
     ...restOfProp,

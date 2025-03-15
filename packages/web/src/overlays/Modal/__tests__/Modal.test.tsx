@@ -1,4 +1,3 @@
-/* eslint-disable react/boolean-prop-naming */
 import { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';

@@ -44,7 +44,7 @@ export type PaletteCssVariable = { [key in `--${PaletteAlias}`]?: string };
 
 declare module 'react' {
   // Required for interface merging
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+
   interface CSSProperties extends PaletteCssVariable {
     '--interactable-height'?: string;
     '--interactable-hovered-opacity'?: (typeof opacityHovered)[keyof typeof opacityHovered];

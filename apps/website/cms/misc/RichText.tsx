@@ -42,10 +42,7 @@ const defaultOptions: Options = {
       const { content, data } = node as Inline;
       const contentCopy = content as Text[];
 
-      return (
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <Link label={contentCopy?.[0].value} url={data.uri as string} />
-      );
+      return <Link label={contentCopy?.[0].value} url={data.uri as string} />;
     },
     table: (_node, children) => {
       const [tableHeaderRow, ...tableBodyRows] = children as React.ReactElement[];

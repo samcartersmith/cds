@@ -29,7 +29,6 @@ export function Header(props: {
       spacing={1}
       width="100%"
     >
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link onPress={props.onPressPrompt} variant="title4">
         {props.promptName}
       </Link>

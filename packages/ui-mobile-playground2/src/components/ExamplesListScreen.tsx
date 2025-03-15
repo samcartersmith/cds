@@ -22,7 +22,6 @@ export function ExamplesListScreen() {
 
   const renderItem: ListRenderItem<string> = useCallback(
     ({ item }) => {
-      // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       const handlePress = () => {
         setFilter('');
         // typing not clean due to dynamic routes

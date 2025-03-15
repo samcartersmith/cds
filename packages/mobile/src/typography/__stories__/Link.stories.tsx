@@ -1,5 +1,3 @@
-/* eslint-disable react-native/no-raw-text */
-/* eslint-disable jsx-a11y/anchor-is-valid  */
 import React, { useCallback } from 'react';
 import { capitalize } from '@cbhq/cds-utils';
 

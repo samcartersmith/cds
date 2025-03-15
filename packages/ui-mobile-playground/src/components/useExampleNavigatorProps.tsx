@@ -1,5 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
-
 import React, { useContext, useMemo } from 'react';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { $, argv, glob } from 'zx'; // https://github.com/google/zx
 
-import credentials from '../../credentials.json' assert { type: 'json' };
+import credentials from '../../credentials.json' with { type: 'json' };
 
 $.verbose = true;
 

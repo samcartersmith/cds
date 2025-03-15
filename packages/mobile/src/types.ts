@@ -1,7 +1,6 @@
 import { Animated, StyleProp } from 'react-native';
 
 type ComponentProps = {
-  // eslint-disable-next-line @typescript-eslint/ban-types
   style?: StyleProp<{}>;
 };
 

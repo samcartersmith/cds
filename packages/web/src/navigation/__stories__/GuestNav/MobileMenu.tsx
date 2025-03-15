@@ -78,7 +78,6 @@ export const MobileMenu = () => {
             {primaryTabs.map(({ tabs, label }) => (
               <ListCell
                 accessory={tabs && tabs?.length > 0 ? 'arrow' : undefined}
-                // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
                 onPress={tabs?.length ? () => setCurrentTab(label) : undefined}
                 // media={
                 //   <CellMedia

@@ -58,7 +58,6 @@ export function createIllustration<Variant extends IllustrationVariant>(
 
     if (version === undefined) {
       if (isDevelopment()) {
-        // eslint-disable-next-line no-console
         console.error(`Unable to find illustration with name: ${name}`);
       }
       return fallback;

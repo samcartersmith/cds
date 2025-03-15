@@ -17,7 +17,6 @@ export const useToast = <T,>(
 
   const showToast = useCallback(
     (text: ToastText, options?: ToastOptions & T) => {
-      // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
       const onDidHide = () => {
         options?.onDidHide?.();
         // unmount toast when using gesture or close button

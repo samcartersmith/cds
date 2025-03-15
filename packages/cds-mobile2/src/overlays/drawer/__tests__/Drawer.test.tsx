@@ -34,7 +34,6 @@ const MockDrawer = ({
   const [isVisible, setIsVisible] = useState(false);
   const setIsVisibleOn = useCallback(() => setIsVisible(true), [setIsVisible]);
 
-  // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
   const handleRequestClose = () => {
     onCloseComplete?.();
     setIsVisible(false);

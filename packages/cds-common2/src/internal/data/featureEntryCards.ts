@@ -1,6 +1,5 @@
 import { SpotSquareName } from '../../types/IllustrationProps';
 
-// eslint-disable-next-line no-console
 const onPress = () => console.log('pressed');
 export const featureEntryCards = [
   {

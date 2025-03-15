@@ -101,7 +101,6 @@ export const ResponsiveBox = ({
 };
 
 export const ResponsiveBoxUnmemoizedPerformance = () => {
-  // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
   const responsiveConfig: ResponsiveProps = {
     phone: {
       spacing: 4,

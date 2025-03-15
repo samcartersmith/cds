@@ -14,7 +14,7 @@ const setRef = <T>(ref: AnyRef<T>, value: RefElementOrNull<T>) => {
   } else if (ref) {
     // React types assume ref is readonly
     // @ts-expect-error https://github.com/facebook/react/issues/13029#issuecomment-410002316
-    // eslint-disable-next-line no-param-reassign
+
     ref.current = value;
   }
 };

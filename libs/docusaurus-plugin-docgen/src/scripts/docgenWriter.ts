@@ -43,7 +43,7 @@ export async function writeFile<T>({ dest, data }: WriteFileParams<T>) {
   // If directory doesn't already exist, create it.
   await fs.promises.mkdir(dirForFile, { recursive: true });
   const prettierOptions = await prettier.resolveConfig('@cbhq/eslint-plugin/prettierConfig.json');
-  const prettiered = prettier.format(content, {
+  const prettiered = await prettier.format(content, {
     ...prettierOptions,
     parser: getParser(dest),
   });

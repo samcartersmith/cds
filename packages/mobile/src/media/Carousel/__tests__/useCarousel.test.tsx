@@ -28,7 +28,6 @@ describe('useCarousel', () => {
     const items = useMemo(
       () =>
         Array.from({ length }).map((_, i) => (
-          // eslint-disable-next-line react/no-array-index-key
           <Box key={`carousel-item-${i}`} height={200} width={200} />
         )),
       [length],

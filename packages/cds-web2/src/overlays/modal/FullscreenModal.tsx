@@ -1,6 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { cx } from '@linaria/core';
-import { css } from '@linaria/core';
+import { cx, css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 import {
   animateInOpacityConfig,

@@ -13,7 +13,6 @@ const a11ySkipConfig = {
   },
 };
 
-// eslint-disable-next-line no-console
 const onClickConsole = console.log;
 
 const exampleProps: ContainedAssetCardProps = {

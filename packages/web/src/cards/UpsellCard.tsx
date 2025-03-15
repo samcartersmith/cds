@@ -44,9 +44,7 @@ export const UpsellCard = memo(
         minHeight={density === 'dense' ? upsellCardMinHeightDense : upsellCardMinHeight}
         testID={testID}
         width={width}
-        // eslint-disable-next-line react/jsx-sort-props
         dangerouslySetBackground={dangerouslySetBackground}
-        // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop, react/jsx-sort-props
         style={{ border: 'none' }}
       >
         <HStack

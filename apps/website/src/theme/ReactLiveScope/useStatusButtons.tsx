@@ -19,7 +19,6 @@ export const useStatusButtons = (
     // between an array of React components
     return join(
       statuses.map((item) => (
-        // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
         <Button key={item} onPress={() => setStatus(item)}>
           {item}
         </Button>

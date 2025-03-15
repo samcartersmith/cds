@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-array-as-prop */
 import { useState } from 'react';
 
 import { Box } from '../../layout/Box';

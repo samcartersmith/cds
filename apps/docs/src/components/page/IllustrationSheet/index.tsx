@@ -8,8 +8,10 @@ import {
   PictogramDimension,
   SpotIconDimension,
 } from '@cbhq/cds-common2';
-import { illustrationDimensionDefaults } from '@cbhq/cds-common2/tokens/illustrations';
-import { illustrationDimensions } from '@cbhq/cds-common2/tokens/illustrations';
+import {
+  illustrationDimensionDefaults,
+  illustrationDimensions,
+} from '@cbhq/cds-common2/tokens/illustrations';
 import heroSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/descriptionMap';
 import heroSquareNames from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
 import pictogramDescriptionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/descriptionMap';

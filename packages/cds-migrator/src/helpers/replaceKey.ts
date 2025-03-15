@@ -14,9 +14,8 @@ export function replaceKey<T>({
   newKey: keyof T;
 }) {
   if (Object.getOwnPropertyDescriptor(obj, oldKey)) {
-    // eslint-disable-next-line no-param-reassign
     obj[newKey] = obj[oldKey];
-    // eslint-disable-next-line no-param-reassign
+
     delete obj[oldKey];
   }
   return obj;

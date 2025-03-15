@@ -4,8 +4,7 @@ import { IllustrationPictogramNames, MultiContentModuleBaseProps } from '@cbhq/c
 
 import { Button } from '../buttons';
 import { Pictogram } from '../illustrations';
-import { Box, VStack } from '../layout';
-import { VStackProps } from '../layout';
+import { Box, VStack, VStackProps } from '../layout';
 import { type PressableProps } from '../system';
 import { TextBody, TextTitle1 } from '../typography';
 

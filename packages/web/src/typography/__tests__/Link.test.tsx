@@ -39,7 +39,6 @@ describe('Link', () => {
 
   it('should render with button element if no href', async () => {
     render(
-      // eslint-disable-next-line jsx-a11y/anchor-is-valid
       <Link onPress={handlePress} variant="body">
         Child
       </Link>,
@@ -68,7 +67,6 @@ describe('Link', () => {
 
   it('doesnt set target or rel if a button', async () => {
     render(
-      // eslint-disable-next-line jsx-a11y/anchor-is-valid
       <Link openInNewWindow testID={testID} variant="body">
         Child
       </Link>,

@@ -55,7 +55,6 @@ export function createIllustration<
 
     if (!xml) {
       if (isDevelopment()) {
-        // eslint-disable-next-line no-console
         console.error(`Unable to find illustration with name: ${name}`);
       }
       return fallback;

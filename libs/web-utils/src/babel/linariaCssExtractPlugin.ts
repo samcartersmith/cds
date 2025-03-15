@@ -144,7 +144,6 @@ export function linariaCssExtractPlugin(): PluginObj {
               node.type === 'ImportDeclaration' &&
               (node.source.value === 'linaria' || node.source.value === '@linaria/core')
             ) {
-              // eslint-disable-next-line no-param-reassign
               node.specifiers = node.specifiers.filter((spec) => spec.local.name !== 'css');
 
               // Only `css` used, replace linaria

@@ -128,7 +128,6 @@ export const AdopterComponentsList = memo(
       return <AdopterComponentsEmptyState />;
     }
 
-    // eslint-disable-next-line react/no-unstable-nested-components
     const Row = ({ index, style }: ListRowProps) => {
       const item = otherComponents[index];
       const { name, sourceFile, totalCallSites, totalInstances } = item;

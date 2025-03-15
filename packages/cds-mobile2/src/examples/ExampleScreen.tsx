@@ -43,7 +43,6 @@ export const Example = ({ children, inline, title, titlePadding, ...props }: Exa
         {typeof children === 'function'
           ? children()
           : React.Children.map(children, (item, index) => (
-              // eslint-disable-next-line react/no-array-index-key
               <View key={index} style={childStyles}>
                 {item}
               </View>

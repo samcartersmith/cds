@@ -1,5 +1,4 @@
-import React from 'react';
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { css } from '@linaria/core';
 
 import { InputStack } from '../InputStack';
@@ -53,22 +52,18 @@ export const NativeInputTextAlign = function NativeInputTextAlign() {
 
 export const NativeInputActions = function NativeInputOnFocus() {
   const onFocus = useCallback(() => {
-    // eslint-disable-next-line no-console
     console.log('Focusing');
   }, []);
 
   const onBlur = useCallback(() => {
-    // eslint-disable-next-line no-console
     console.log('Blurring');
   }, []);
 
   const onKeyDown = useCallback(() => {
-    // eslint-disable-next-line no-console
     console.log('Key down');
   }, []);
 
   const onClick = useCallback(() => {
-    // eslint-disable-next-line no-console
     console.log('Clicked');
   }, []);
 

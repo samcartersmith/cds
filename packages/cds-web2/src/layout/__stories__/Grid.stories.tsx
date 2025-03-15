@@ -28,7 +28,6 @@ const GridBase = (props: GridProps<'div' | 'ul'>) => {
   return (
     <Grid gap={responsiveGapConfig} {...props}>
       {Array.from({ length: 12 }).map((_, idx) => (
-        // eslint-disable-next-line react/no-array-index-key
         <Item key={idx} as={props.as === 'ul' ? 'li' : 'div'}>
           <TextTitle1 as="h3">{idx + 1}</TextTitle1>
         </Item>
@@ -41,7 +40,6 @@ const ImplicitGrid = (props: GridProps<'div'>) => {
   return (
     <Grid {...props} gap={0.5}>
       {Array.from({ length: 12 }).map((_, idx) => (
-        // eslint-disable-next-line react/no-array-index-key
         <Item key={idx}>
           <TextTitle1 as="h3">{idx + 1}</TextTitle1>
         </Item>
@@ -98,7 +96,6 @@ const ColumnExamples = ({ responsive }: GridColumnProps) => {
     <Grid columns={12} gap={0.5}>
       {Array.from({ length: 12 }).map((_, idx) => (
         <GridColumn
-          // eslint-disable-next-line react/no-array-index-key
           key={idx}
           background="bgPrimary"
           gridColumnEnd={responsive ? responsiveColEndConfig(idx) : idx + 2}

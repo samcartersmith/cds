@@ -10,8 +10,7 @@ import { MediaQueryProvider } from '../../system/MediaQueryProvider';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { Text } from '../../typography/Text';
-import { SelectChipProps } from '../SelectChip';
-import { SelectChip } from '../SelectChip';
+import { SelectChipProps, SelectChip } from '../SelectChip';
 
 jest.mock('react-use-measure');
 const mockUseMeasure = (mocks: Partial<ReturnType<typeof useMeasure>>) => {

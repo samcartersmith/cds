@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-raw-text */
 import { Animated, StyleSheet, Text, TextStyle } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 import { entries } from '@cbhq/cds-utils';

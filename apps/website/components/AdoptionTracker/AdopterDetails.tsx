@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';

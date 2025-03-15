@@ -6,7 +6,6 @@ import type {
   SidebarItemDoc as SidebarItemDocOriginal,
   SidebarItemHtml as SidebarItemHtmlOriginal,
   SidebarItemLink as SidebarItemLinkOriginal,
-  // eslint-disable-next-line import/extensions
 } from '@docusaurus/plugin-content-docs/lib/sidebars/types.js';
 import { Options as PresetClassicOptions } from '@docusaurus/preset-classic';
 import type { SetOptional } from 'type-fest';

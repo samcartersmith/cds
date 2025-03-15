@@ -103,8 +103,7 @@
     "lint": {
       "inputs": [
         "default",
-        "^production",
-        "{workspaceRoot}/.eslintignore"
+        "^production"
       ],
       "outputs": [
         "{options.outputFile}"

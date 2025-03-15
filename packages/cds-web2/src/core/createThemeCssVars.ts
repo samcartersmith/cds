@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { type CSSProperties } from '@linaria/core';
 import { type Theme, styleVarPrefixes } from './theme';
 import { createCssVars } from './createCssVars';

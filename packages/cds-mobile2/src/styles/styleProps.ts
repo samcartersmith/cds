@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { ViewStyle, TextStyle } from 'react-native';
 import type { Theme } from '../core/theme';

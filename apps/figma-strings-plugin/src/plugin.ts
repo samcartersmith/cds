@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { DEFAULT_LOCALE } from './configs';
 import type { Content, FigmaMessage } from './types';
 

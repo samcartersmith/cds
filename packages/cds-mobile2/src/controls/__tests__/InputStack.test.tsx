@@ -14,7 +14,6 @@ function expectAttribute<
   const input = <RNTextInput value="15" />;
 
   values.forEach((value) => {
-    // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" for \`${prop}\` prop`, async () => {
       const inputRenderer = TestRenderer.create(
         <DefaultThemeProvider>

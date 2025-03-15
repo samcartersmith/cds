@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
 import { Button } from '@cbhq/cds-web/buttons';
@@ -139,7 +138,6 @@ const ShowA11yWarningsBreakDown = memo(
                         const formattedFilePath = formatFilePath(item.filePath);
                         return (
                           <AccordionItem
-                            // eslint-disable-next-line react/no-array-index-key
                             key={formattedFilePath + repoDataOverview.id + index}
                             itemKey={formattedFilePath}
                             title={formattedFilePath}

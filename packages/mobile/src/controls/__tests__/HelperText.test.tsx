@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-raw-text */
 import { render, screen } from '@testing-library/react-native';
 
 import { HelperText } from '../HelperText';

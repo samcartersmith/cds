@@ -1,6 +1,5 @@
 import { useFonts as useFontsOriginal } from 'expo-font';
 
-/* eslint-disable global-require */
 const fonts = {
   CoinbaseIcons: require('../../assets/fonts/CoinbaseIcons.ttf') as string,
   'CoinbaseDisplay-Medium': require('../../assets/fonts/CoinbaseDisplay-Medium.otf') as string,

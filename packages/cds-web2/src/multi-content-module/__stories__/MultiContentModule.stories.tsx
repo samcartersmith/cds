@@ -3,19 +3,16 @@ import { IconName } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { ButtonGroup } from '../../buttons/ButtonGroup';
-import { CellMedia } from '../../cells';
-import { ListCell } from '../../cells';
+import { CellMedia, ListCell } from '../../cells';
 import { TextInput } from '../../controls';
 import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons';
-import { Divider, HStack, VStack } from '../../layout';
-import { Box } from '../../layout';
+import { Divider, HStack, VStack, Box } from '../../layout';
 import { Avatar } from '../../media';
 import { FullscreenModal } from '../../overlays/modal/FullscreenModal';
 import { Pressable } from '../../system/Pressable';
 import { TextBody, TextLabel2 } from '../../typography';
-import { MultiContentModuleBaseProps } from '../MultiContentModule';
-import { MultiContentModule } from '../MultiContentModule';
+import { MultiContentModuleBaseProps, MultiContentModule } from '../MultiContentModule';
 
 type ListItem = {
   icon: IconName;
@@ -192,7 +189,6 @@ export const Default = () => {
       >
         {listItems.map(({ icon, title, description }, index) => (
           <ListCell
-            // eslint-disable-next-line react/no-array-index-key
             key={index}
             multiline
             description={description}
@@ -237,7 +233,6 @@ export const WithBorder = () => {
       >
         {listItems.map(({ icon, title, description }, index) => (
           <ListCell
-            // eslint-disable-next-line react/no-array-index-key
             key={index}
             multiline
             description={description}
@@ -399,7 +394,6 @@ export const WithLongContent = () => {
       >
         {[...listItems, ...listItems, ...listItems].map(({ icon, title, description }, index) => (
           <ListCell
-            // eslint-disable-next-line react/no-array-index-key
             key={index}
             multiline
             description={description}

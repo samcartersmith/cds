@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import { ThemeProviderBaseProps } from '@cbhq/cds-common';
 import { getAvatarFallbackColor } from '@cbhq/cds-common/media/getAvatarFallbackColor';
 import { AvatarSize } from '@cbhq/cds-common/types/AvatarSize';

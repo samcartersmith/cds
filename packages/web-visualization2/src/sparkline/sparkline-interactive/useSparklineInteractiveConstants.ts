@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { borderWidth } from '@cbhq/cds-common2/tokens/sparkline';
 import {
+  borderWidth,
   chartCompactHeight,
   chartHeight as chartHeightToken,
 } from '@cbhq/cds-common2/tokens/sparkline';

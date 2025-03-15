@@ -26,7 +26,6 @@ export default {
   },
 };
 
-// eslint-disable-next-line no-console
 const onClickConsole = () => console.log('onClick');
 
 export const withA11yVStack = () => {

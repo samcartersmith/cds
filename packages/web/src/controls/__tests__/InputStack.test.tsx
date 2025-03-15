@@ -10,7 +10,6 @@ function expectAttribute<
   const input = <input required id="name" name="name" type="text" />;
 
   values.forEach((value) => {
-    // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" for \`${prop}\` prop`, () => {
       const inputRenderer = TestRenderer.create(
         <InputStack testID={TEST_ID} {...{ [prop]: value }} inputNode={input} />,

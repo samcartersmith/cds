@@ -143,7 +143,7 @@ export const Avatar = memo(
             color="fgInverse"
             font="title2"
             // scope is already memoized
-            // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
+
             style={{ transform: `scale(${dangerouslySetSize * 0.02})` }}
             textAlign="center"
             transform="uppercase"

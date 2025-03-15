@@ -7,8 +7,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { css } from '@linaria/core';
-import { cx } from '@linaria/core';
+import { css, cx } from '@linaria/core';
 import { bannerMinWidth, BannerVariantStyle, variants } from '@cbhq/cds-common2/tokens/banner';
 import { BannerBaseProps, BannerStyleVariant } from '@cbhq/cds-common2/types/BannerBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
@@ -124,7 +123,6 @@ export const Banner = memo(
         }
 
         if (isValidElement(primaryAction) && isDevelopment()) {
-          // eslint-disable-next-line no-console
           console.error('Banner primaryAction needs to be a CDS Link component');
         }
 
@@ -145,7 +143,6 @@ export const Banner = memo(
         }
 
         if (isValidElement(secondaryAction) && isDevelopment()) {
-          // eslint-disable-next-line no-console
           console.error('Banner secondaryAction needs to be a CDS Link component');
         }
 

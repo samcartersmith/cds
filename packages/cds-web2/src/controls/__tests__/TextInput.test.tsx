@@ -1,5 +1,5 @@
 // Disabling this because its just testing
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
+
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 

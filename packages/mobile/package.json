@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-mobile",
-  "version": "7.7.3",
+  "version": "7.7.4",
   "description": "Coinbase Design System - Mobile Native",
   "repository": {
     "type": "git",
@@ -152,7 +152,7 @@
     "@testing-library/react-native": "^11.3.0",
     "@types/react": "^18.3.12",
     "@types/react-test-renderer": "^18.3.0",
-    "eslint-plugin-reanimated": "^2.0.0",
+    "eslint-plugin-reanimated": "^2.0.1",
     "lottie-react-native": "6.7.0",
     "react-native-accessibility-engine": "^3.2.0",
     "react-native-date-picker": "4.4.2",

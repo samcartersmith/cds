@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-exports */
-
 /**
  * Following two lines are a workaround to make hot-reloading work for CDS repo.
  * Linaria global styling needs to be exported and since globalStyle.ts has

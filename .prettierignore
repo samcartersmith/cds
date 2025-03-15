@@ -34,3 +34,9 @@ chart/
 
 # VSCode
 .vscode/
+
+# Prettier v2 doesn't support import with { type: 'json' }
+apps/mobile-app/scripts/utils/getAffectedRoutes.mjs
+apps/mobile-app2/scripts/utils/getAffectedRoutes.mjs
+apps/mobile-app/scripts/utils/getBuildInfo.mjs
+apps/mobile-app2/scripts/utils/getBuildInfo.mjs

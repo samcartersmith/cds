@@ -41,7 +41,6 @@ function DocSidebarItems({ items, ...props }: DocSidebarItemsProps): JSX.Element
         spacingVertical={1}
       >
         {filteredItems.map((item, index) => (
-          // eslint-disable-next-line react/no-array-index-key
           <DocSidebarItem key={index} index={index} item={item} {...props} />
         ))}
       </Group>

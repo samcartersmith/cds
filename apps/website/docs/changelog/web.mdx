@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.7.4 (3/14/2025 PST)
+
+#### 🐞 Fixes
+
+- Formatting and linting. [[#3735](https://github.cbhq.net/frontend/cds/pull/3735)]
+
 ## 7.7.3 (3/13/2025 PST)
 
 #### 🐞 Fixes

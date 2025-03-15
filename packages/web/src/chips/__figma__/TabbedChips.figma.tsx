@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-array-as-prop */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from 'react';
 import figma from '@figma/code-connect';

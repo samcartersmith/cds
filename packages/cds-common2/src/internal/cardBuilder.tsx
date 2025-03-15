@@ -17,7 +17,6 @@ import {
 
 import { assets } from './data/assets';
 
-// eslint-disable-next-line no-console
 const onPressConsole = () => console.log('pressed');
 
 const sharedWrapperProps = {
@@ -77,7 +76,6 @@ export function cardBuilder({
           {Array.from({ length: 4 }).map((_, i) => {
             return (
               <ListCell
-                // eslint-disable-next-line react/no-array-index-key
                 key={`card-cell-${i}`}
                 description="Description"
                 detail="$942,103"

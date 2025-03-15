@@ -23,7 +23,6 @@ const svgoConfig: Config = {
             enter: (node) => {
               Object.entries(node.attributes).forEach(([key]) => {
                 if (colorsProps.includes(key)) {
-                  // eslint-disable-next-line no-param-reassign
                   node.attributes[key] = '#1652F0'; // we have to re-assign to apply change
                 }
               });

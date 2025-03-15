@@ -28,7 +28,6 @@ function addDependencyToProject(depCheck: CheckHasCdsDependencyReturnType, tree:
       if (checkRequiresUpgrade(framerMotionDep, '10.18.0')) {
         // update framer motion to 10.18.0
         updateJson(tree, packageJsonPath, (json) => {
-          // eslint-disable-next-line no-param-reassign
           json[typeOfDep as string]['framer-motion'] = '10.18.0';
           return json;
         });
@@ -37,7 +36,6 @@ function addDependencyToProject(depCheck: CheckHasCdsDependencyReturnType, tree:
     } else {
       // add framer motion as same type of dependency
       updateJson(tree, packageJsonPath, (json) => {
-        // eslint-disable-next-line no-param-reassign
         json[typeOfDep as string]['framer-motion'] = '10.18.0';
 
         return json;

@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-object-as-prop */
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
@@ -114,7 +113,6 @@ describe('TableCaption', () => {
         }}
       />,
     );
-    // eslint-disable-next-line testing-library/no-node-access
     expect(screen.getByTestId(CAPTION_TEST_ID).firstChild).toHaveClass(responsiveClassName);
   });
 });

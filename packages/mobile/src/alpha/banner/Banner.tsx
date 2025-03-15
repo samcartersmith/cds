@@ -12,8 +12,7 @@ import { usePalette } from '../../hooks/usePalette';
 import { Icon } from '../../icons';
 import { Box, HStack, HStackProps, VStack } from '../../layout';
 import { Pressable } from '../../system/Pressable';
-import { Link, LinkProps } from '../../typography';
-import { TextLabel1, TextLabel2, TextLegal } from '../../typography';
+import { Link, LinkProps, TextLabel1, TextLabel2, TextLegal } from '../../typography';
 
 const variantStyleProps: Record<BannerStyleVariant, HStackProps> = {
   contextual: {
@@ -96,7 +95,6 @@ export const Banner = memo(
 
       // Throw warning in dev
       if (isValidElement(primaryAction) && isDevelopment()) {
-        // eslint-disable-next-line no-console
         console.error('Banner primaryAction needs to be a CDS Link component');
       }
 
@@ -113,7 +111,6 @@ export const Banner = memo(
       }
 
       if (isValidElement(secondaryAction) && isDevelopment()) {
-        // eslint-disable-next-line no-console
         console.error('Banner secondaryAction needs to be a CDS Link component');
       }
 

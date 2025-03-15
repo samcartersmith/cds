@@ -19,7 +19,6 @@ export function useComposePage<T>(slug?: string) {
   const handleError = useCallback((error: Error | string) => {
     // TODO: replace with Bugsnag
     if (!isProduction()) {
-      // eslint-disable-next-line no-console
       console.error(`Contentful error: ${error}`);
     }
   }, []);
@@ -31,7 +30,6 @@ export function useComposePage<T>(slug?: string) {
       const composePageResult = await getComposePage<T>(
         route,
         {
-          // eslint-disable-next-line no-console
           onError: (error) => console.error(error),
           locale: 'en',
           spaceId: space,

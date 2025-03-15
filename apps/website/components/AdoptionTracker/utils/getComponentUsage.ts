@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-dynamic-require */
 import { camelCase, upperFirst } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import toPairs from 'lodash/toPairs';

@@ -19,7 +19,6 @@ export const ModalFooter = ({ primaryAction, secondaryAction, testID }: ModalFoo
   const { hideDividers } = useModalParent();
 
   if (primaryAction.type !== Button || (secondaryAction && primaryAction.type !== Button)) {
-    // eslint-disable-next-line no-console
     console.error('Modal footer actions need to be CDS Button component');
 
     return null;

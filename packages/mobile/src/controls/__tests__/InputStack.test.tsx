@@ -13,7 +13,6 @@ function expectAttribute<
   const input = <RNTextInput value="15" />;
 
   values.forEach((value) => {
-    // eslint-disable-next-line jest/require-top-level-describe
     it(`will set "${value}" for \`${prop}\` prop`, () => {
       const inputRenderer = TestRenderer.create(
         <InputStack testID={TEST_ID} {...{ [prop]: value }} inputNode={input} />,

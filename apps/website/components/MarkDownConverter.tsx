@@ -59,7 +59,6 @@ export const MarkDownConverter: React.FC = () => {
         value={markdown}
       />
       <div
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={htmlOutput}
         style={{
           width: '80%',

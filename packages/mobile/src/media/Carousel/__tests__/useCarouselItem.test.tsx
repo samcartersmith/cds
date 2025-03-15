@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-constructed-context-values */
 import { useCallback } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
@@ -24,7 +23,6 @@ describe('useCarouselItem', () => {
 
   const MockCarousel = () => {
     const items = Array.from({ length: 4 }).map((_, i) => (
-      // eslint-disable-next-line react/no-array-index-key
       <MockCarouselItem key={`carousel-item-${i}`} />
     ));
 

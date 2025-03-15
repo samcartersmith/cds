@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import { useState } from 'react';
 import { Text, View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';

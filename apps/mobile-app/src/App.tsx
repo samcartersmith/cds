@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import React, { memo, StrictMode, useCallback, useMemo } from 'react';
 import { Platform } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -33,7 +32,6 @@ const CdsSafeAreaProvider: React.FC<React.PropsWithChildren<unknown>> = memo(({ 
 
 const LocalStrictMode = ({ children }: { children: React.ReactNode }) => {
   const strict = process.env.CI !== 'true';
-  // eslint-disable-next-line react/jsx-no-useless-fragment
   return strict ? <StrictMode>{children}</StrictMode> : <>{children}</>;
 };
 

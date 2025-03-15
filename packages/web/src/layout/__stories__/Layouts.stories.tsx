@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { PaletteBorder, ResponsiveGridProps, SpacingScale } from '@cbhq/cds-common';
 

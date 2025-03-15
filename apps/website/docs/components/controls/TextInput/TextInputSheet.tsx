@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useCallback, useEffect, useState } from 'react';
 import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
 import { InputVariant } from '@cbhq/cds-common/types';
@@ -53,9 +52,9 @@ export const FormInputsExample = () => {
 
   const onSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
-    // eslint-disable-next-line no-console
+
     console.log(e.currentTarget.nodeValue);
-    // eslint-disable-next-line no-alert
+
     alert('Submitted');
   }, []);
 

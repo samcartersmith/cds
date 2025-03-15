@@ -5,7 +5,6 @@ import React, { Fragment } from 'react';
  */
 export const join = (arr: unknown[], node: React.ReactNode) =>
   (arr as React.ReactNode[]).map((item, index) => (
-    // eslint-disable-next-line react/no-array-index-key
     <Fragment key={index}>
       <>
         {item}

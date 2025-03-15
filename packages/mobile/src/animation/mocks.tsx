@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect } from 'react';
 import { Animated } from 'react-native';
 import { noop } from '@cbhq/cds-utils';

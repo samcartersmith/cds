@@ -33,7 +33,6 @@ export const useTableContext = ({ skipAsValidation }: UseTableContext = {}) => {
   const { cellSpacing, compact } = useContext(TableContext);
 
   if (!skipAsValidation && !as) {
-    // eslint-disable-next-line no-console
     console.error('This component must be wrapped in a TableHeader, TableBody or TableFooter.');
   }
 

@@ -1,4 +1,3 @@
-/* eslint-disable react-native-a11y/has-valid-accessibility-ignores-invert-colors */
 import React from 'react';
 import { Image } from 'react-native';
 import figma from '@figma/code-connect';

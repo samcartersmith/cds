@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { forwardRef, memo } from 'react';
 import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';

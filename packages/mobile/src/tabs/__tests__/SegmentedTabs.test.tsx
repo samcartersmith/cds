@@ -128,7 +128,6 @@ describe('SegmentedTabs', () => {
   });
 
   it('renders custom tab component', () => {
-    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const Component = () => <TextDisplay1 testID="custom-tab">Custom tab</TextDisplay1>;
     render(
       <TabsContext.Provider value={mockApi}>
@@ -139,7 +138,6 @@ describe('SegmentedTabs', () => {
   });
 
   it('renders custom tab indicator', () => {
-    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
     const ActiveIndicatorComponent = () => <AnimatedBox animated testID="custom-indicator" />;
     render(
       <TabsContext.Provider value={mockApi}>

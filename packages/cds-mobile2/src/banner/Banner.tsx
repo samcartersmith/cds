@@ -91,7 +91,6 @@ export const Banner = memo(
 
       // Throw warning in dev
       if (isValidElement(primaryAction) && isDevelopment()) {
-        // eslint-disable-next-line no-console
         console.error('Banner primaryAction needs to be a CDS Link component');
       }
 
@@ -108,7 +107,6 @@ export const Banner = memo(
       }
 
       if (isValidElement(secondaryAction) && isDevelopment()) {
-        // eslint-disable-next-line no-console
         console.error('Banner secondaryAction needs to be a CDS Link component');
       }
 

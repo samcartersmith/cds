@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 import type { ColorSurgeBackground } from '@cbhq/cds-common';

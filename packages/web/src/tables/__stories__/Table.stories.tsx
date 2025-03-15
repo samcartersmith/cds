@@ -28,7 +28,6 @@ export const SampleTable = () => {
   const variants: TableVariant[] = ['default', 'graph', 'ruled'];
 
   const handlePress = (name: string) => {
-    // eslint-disable-next-line no-alert
     alert(`hi ${name}`);
   };
   // Only apply a press event to a few items
@@ -130,7 +129,6 @@ export const FixedLayoutExample = () => {
 
   const data = assetHubMock.slice(0, 6);
   const handlePress = (name: string) => {
-    // eslint-disable-next-line no-alert
     alert(`hi ${name}`);
   };
   // Only apply a press event to a few items

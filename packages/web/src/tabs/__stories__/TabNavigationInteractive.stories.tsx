@@ -119,7 +119,6 @@ export const Story: ComponentStoryObj<typeof MockTabNavigation> = {
         // Tab again and expect the paddle to be in focus
         fireEvent.keyDown(tabButton, { key: 'ArrowRight' });
       }
-      // eslint-disable-next-line no-await-in-loop
       await pauseStory(WAIT);
     }
   },

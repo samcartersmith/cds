@@ -88,7 +88,7 @@ export const useDimensions = <T extends HTMLElement>({
   updateOnBreakpointChange,
   shouldUpdate,
   onResize,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   polyfill,
 }: Options<T> = {}): Return<T> => {
   const [state, setState] = useState<State>({
@@ -139,7 +139,6 @@ export const useDimensions = <T extends HTMLElement>({
     if (!ref.current) return () => null;
     const window = typeof globalThis.window !== 'undefined' && globalThis.window;
     if (!window) {
-      // eslint-disable-next-line no-console
       console.error(observerErr);
       return () => null;
     }
@@ -154,7 +153,6 @@ export const useDimensions = <T extends HTMLElement>({
         if (borderBoxSize) {
           boxSize = borderBoxSize;
         } else if (!warnedRef.current) {
-          // eslint-disable-next-line no-console
           console.warn(borderBoxWarn);
           warnedRef.current = true;
         }

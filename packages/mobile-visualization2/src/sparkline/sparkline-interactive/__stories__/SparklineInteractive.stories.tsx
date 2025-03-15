@@ -246,7 +246,6 @@ const SparklineInteractiveScreen = () => {
             No Data In SelectedPeriod
           </TextTitle3>
           <SparklineInteractiveBuild
-            // eslint-disable-next-line react-perf/jsx-no-new-object-as-prop
             data={{ ...sparklineInteractiveData, hour: [] }}
             strokeColor={rgbaStrokeColor}
           />

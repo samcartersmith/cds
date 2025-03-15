@@ -1,7 +1,6 @@
-import 'react-native';
+import { Text, View } from 'react-native';
 
 import { createRef } from 'react';
-import { Text, View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 

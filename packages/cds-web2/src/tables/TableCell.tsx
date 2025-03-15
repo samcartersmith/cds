@@ -199,7 +199,6 @@ export const TableCell = memo(
     ...props
   }: TableCellProps) => {
     if (isDevelopment() && children && (title || subtitle)) {
-      // eslint-disable-next-line no-console
       console.error('TableCell: Cannot use `title` or `subtitle` with `children`.');
     }
 

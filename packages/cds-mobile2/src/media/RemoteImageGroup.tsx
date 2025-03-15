@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-unused-styles */
 import React, { Children, isValidElement, useMemo } from 'react';
 import { StyleSheet, Text, ViewStyle } from 'react-native';
 import { shapeBorderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
@@ -69,7 +68,6 @@ export const RemoteImageGroup = ({
 
         return (
           <Box
-            // eslint-disable-next-line react/no-array-index-key
             key={index}
             left={index === 0 ? 'initial' : overlapSpacing * zIndex}
             position="relative"

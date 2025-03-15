@@ -24,7 +24,6 @@ export const fetchFigma = async <T extends MessagesToPlugin['type']>(
   return new Promise((resolve, reject) => {
     messageId++;
     messages[messageId] = { resolve, reject };
-    // eslint-disable-next-line no-restricted-globals
     parent.postMessage(
       {
         pluginMessage: {

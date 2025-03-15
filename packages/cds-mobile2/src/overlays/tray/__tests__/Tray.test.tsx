@@ -109,7 +109,6 @@ describe('Tray', () => {
 
     const contextValueElement = screen.getByTestId('context-value');
 
-    // eslint-disable-next-line testing-library/no-node-access
     expect(contextValueElement.props.children).toBe(
       JSON.stringify({ verticalDrawerPercentageOfView, titleHeight }),
     );

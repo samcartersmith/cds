@@ -1,6 +1,12 @@
 import React, { forwardRef, memo, useCallback, useMemo, useRef, useState } from 'react';
-import { type StyleProp, type TextInput, type ViewStyle, View } from 'react-native';
-import { type NativeSyntheticEvent, type TextInputChangeEventData } from 'react-native';
+import {
+  type StyleProp,
+  type TextInput,
+  type ViewStyle,
+  View,
+  type NativeSyntheticEvent,
+  type TextInputChangeEventData,
+} from 'react-native';
 import NativeDatePicker from 'react-native-date-picker';
 import { type DateInputValidationError } from '@cbhq/cds-common/dates/DateInputValidationError';
 

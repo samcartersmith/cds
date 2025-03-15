@@ -1,6 +1,6 @@
 import React, { memo, StrictMode, useMemo } from 'react';
 import { css } from '@linaria/core';
-/* eslint-disable import/no-extraneous-dependencies */
+
 import { Story } from '@storybook/react';
 import merge from 'lodash/merge';
 import { useDarkMode } from 'storybook-dark-mode';
@@ -31,7 +31,7 @@ const newWrapperProps = {
 
 const LocalStrictMode = ({ children }: { children: React.ReactNode }) => {
   const strict = process.env.CI !== 'true';
-  // eslint-disable-next-line react/jsx-no-useless-fragment
+
   return strict ? <StrictMode>{children}</StrictMode> : <>{children}</>;
 };
 
@@ -44,7 +44,6 @@ export function StoryContainer<Props>(
 
   const scale = context?.globals?.density === 'dense' ? 'xSmall' : 'large';
 
-  // eslint-disable-next-line react/no-unstable-nested-components
   const Container = memo(() => {
     const contents = useMemo(() => {
       if (stories) {

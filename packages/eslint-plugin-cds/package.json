@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/eslint-plugin-cds",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "ESLint plugin for CDS",
   "repository": {
     "type": "git",
@@ -44,8 +44,8 @@
     "@typescript-eslint/types": "^7.18.0",
     "@typescript-eslint/utils": "^7.18.0",
     "eslint-plugin-airbnb": "^0.0.1-security",
-    "eslint-plugin-jsx-a11y": "^6",
-    "eslint-plugin-react-native-a11y": "^3",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-native-a11y": "^3.5.1",
     "rollup": "^4.22.4",
     "tslib": "^2",
     "typescript": "~5.7.2"

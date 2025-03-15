@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { Fragment, memo, useCallback, useContext, useState } from 'react';
 import orderBy from 'lodash/orderBy';
 import sumBy from 'lodash/sumBy';

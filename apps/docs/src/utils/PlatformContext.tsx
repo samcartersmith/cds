@@ -1,8 +1,7 @@
 import React, { createContext, useCallback, useContext, useMemo } from 'react';
 import { DocFrontMatter } from '@docusaurus/plugin-content-docs';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
-import { useHistory } from '@docusaurus/router';
-import { useLocation } from '@docusaurus/router';
+import { useHistory, useLocation } from '@docusaurus/router';
 
 type DocFrontMatterExtended = DocFrontMatter & {
   platform_switcher_options?: { web: boolean; mobile: boolean };

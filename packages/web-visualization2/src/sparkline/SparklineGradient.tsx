@@ -38,7 +38,6 @@ export const SparklineGradient = memo(
           <defs>
             <linearGradient id={gradientId} x1="0%" x2="100%" y1="0%" y2="0%">
               {gradient.map((item, i) => (
-                // eslint-disable-next-line react/no-array-index-key
                 <stop key={`${i}_${item}`} offset={item.offset} stopColor={item.color} />
               ))}
             </linearGradient>
