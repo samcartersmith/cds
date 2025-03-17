@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { ViewProps } from 'react-native';
-import { CellBaseProps } from '@cbhq/cds-common2';
+import { CellBaseProps as SharedCellBaseProps } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
 import { hasCellPriority } from '@cbhq/cds-common2/utils/cell';
@@ -10,13 +10,12 @@ import { type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { LinkableProps, Pressable } from '../system/Pressable';
 
-export type CellSharedProps = BoxProps &
+export type CellBaseProps = SharedCellBaseProps &
   LinkableProps & {
     /** Measure the dimensions of the cell. */
     onLayout?: ViewProps['onLayout'];
   };
-
-export type CellProps = CellBaseProps & CellSharedProps;
+export type CellProps = BoxProps & CellBaseProps;
 
 export const Cell = memo(function Cell({
   accessory,

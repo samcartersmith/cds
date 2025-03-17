@@ -5,12 +5,12 @@ import { compactListHeight, listHeight } from '@cbhq/cds-common2/tokens/cell';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
-import { Cell, CellSharedProps } from './Cell';
+import { type CellProps, Cell } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 
-export type ListCellProps = ListCellBaseProps &
-  CellSharedProps & {
+export type ListCellProps = Omit<CellProps, 'accessory' | 'children'> &
+  ListCellBaseProps & {
     /**
      *  @default false
      *  When there is no description the title will take up two lines by default. When this is set to true multiline title behavior is overwritten and regardless of description text state the title will take up a single line truncating with ellipses.
@@ -75,8 +75,8 @@ export const ListCell = memo(function ListCell({
       <VStack justifyContent="center">
         {!!title && (
           <Text
-            font="headline"
             ellipsize="tail"
+            font="headline"
             numberOfLines={description || disableMultilineTitle ? 1 : 2}
           >
             {title}

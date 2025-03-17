@@ -6,14 +6,14 @@ import type { UiIconName } from '@cbhq/cds-icons';
 
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { type PressableDefaultElement, type PressableProps, Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 export type IconCounterButtonProps = {
   /** Background color of the overlay (element being interacted with). */
   background?: ThemeVars.Color;
 } & IconCounterButtonBaseProps &
-  Omit<PressableProps<'button'>, 'background'>;
+  Omit<PressableProps<PressableDefaultElement>, 'background'>;
 
 export const IconCounterButton = memo(
   forwardRef(function IconCounterButton(

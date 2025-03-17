@@ -3,9 +3,9 @@ import { type DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 
 import type { Polymorphic } from '../core/polymorphism';
 
-import { type BoxBaseProps, Box, boxDefaultElement } from './Box';
+import { type BoxBaseProps, Box } from './Box';
 
-export const gridDefaultElement = boxDefaultElement;
+export const gridDefaultElement = 'div';
 
 export type GridDefaulElement = typeof gridDefaultElement;
 

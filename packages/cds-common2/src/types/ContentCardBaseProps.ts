@@ -4,7 +4,7 @@ type ContentCardHeaderBaseProps = {
   /** A media object like an image, avatar, illustration, or cryptocurrency asset. */
   avatar?: React.ReactNode;
   /** Name of the publisher */
-  title?: React.ReactNode;
+  title: React.ReactNode;
   /** Includes data like content category type and time */
   meta?: React.ReactNode;
   /** Typically an Icon Button or Tag */

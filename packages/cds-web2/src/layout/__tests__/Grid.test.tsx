@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { Grid, GridProps } from '../Grid';
+import { type GridDefaulElement, type GridProps, Grid } from '../Grid';
 import { GridColumn } from '../GridColumn';
 
 const DEFAULT_CLASS = 'grid';
 
-function expectClassName<K extends keyof GridProps<'div'>>(
+function expectClassName<K extends keyof GridProps<GridDefaulElement>>(
   prop: K,
-  values: NonNullable<GridProps<'div'>[K]>[],
+  values: NonNullable<GridProps<GridDefaulElement>[K]>[],
 ) {
   values.forEach((value) => {
     it(`will set "${value}" class name for \`${prop}\` prop`, () => {

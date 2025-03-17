@@ -8,19 +8,22 @@ import { RemoteImage, RemoteImageGroup } from '../../../media';
 import { Text } from '../../../typography/Text';
 import { LikeButton } from '../../LikeButton';
 import {
+  type ContentCardBodyDefaultElement,
+  type ContentCardBodyProps,
+  type ContentCardFooterDefaultElement,
+  type ContentCardFooterProps,
+  type ContentCardHeaderDefaultElement,
+  type ContentCardHeaderProps,
   ContentCard,
   ContentCardBody,
-  ContentCardBodyProps,
   ContentCardFooter,
-  ContentCardFooterProps,
   ContentCardHeader,
-  ContentCardHeaderProps,
 } from '..';
 
 const exampleProps: {
-  contentHeaderProps: ContentCardHeaderProps<'div'>;
-  contentBodyProps: ContentCardBodyProps<'div'>;
-  contentFooterProps: ContentCardFooterProps<'div'>;
+  contentHeaderProps: ContentCardHeaderProps<ContentCardHeaderDefaultElement>;
+  contentBodyProps: ContentCardBodyProps<ContentCardBodyDefaultElement>;
+  contentFooterProps: ContentCardFooterProps<ContentCardFooterDefaultElement>;
 } = {
   contentHeaderProps: {
     avatar: assets.eth.imageUrl,

@@ -1,7 +1,12 @@
 import React, { forwardRef, memo, useContext } from 'react';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
-import { type IconButtonVariant, IconButton, IconButtonProps } from '../buttons/IconButton';
+import {
+  type IconButtonDefaultElement,
+  type IconButtonProps,
+  type IconButtonVariant,
+  IconButton,
+} from '../buttons/IconButton';
 import { Box } from '../layout/Box';
 
 import { TextInputFocusVariantContext } from './context';
@@ -21,7 +26,7 @@ export type InputIconButtonProps = {
    * @default false
    * */
   disableInheritFocusStyle?: boolean;
-} & IconButtonProps<'button'>;
+} & IconButtonProps<IconButtonDefaultElement>;
 
 export const InputIconButton = memo(
   forwardRef(function InputIconButton(

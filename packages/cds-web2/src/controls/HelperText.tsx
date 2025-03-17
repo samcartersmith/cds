@@ -4,7 +4,7 @@ import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
-import { Text, TextProps } from '../typography/Text';
+import { type TextDefaultElement, type TextProps, Text } from '../typography/Text';
 
 export type HelperTextProps = {
   /** Color of helper text. negative color will render an icon */
@@ -15,7 +15,7 @@ export type HelperTextProps = {
   errorIconAccessibilityLabel?: string;
   /** Test ID for the error icon */
   errorIconTestID?: string;
-} & TextProps<'span'>;
+} & TextProps<TextDefaultElement>;
 
 const boxStyle = css`
   display: inline-block;

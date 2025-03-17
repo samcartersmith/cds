@@ -10,7 +10,7 @@ import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable
 import { type Rect, defaultRect } from '@cbhq/cds-common2/types/Rect';
 
 import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
-import { type HStackProps, HStack } from '../layout/HStack';
+import { type HStackDefaultElement, type HStackProps, HStack } from '../layout/HStack';
 
 const MotionBox = motion<BoxProps<BoxDefaultElement>>(Box);
 
@@ -77,7 +77,7 @@ export type TabsProps = {
   /** Background color passed to the TabsActiveIndicatorComponent. */
   activeBackground?: ThemeVars.Color;
 } & Omit<TabsOptions, 'tabs'> &
-  Omit<HStackProps<'div'>, 'onChange'>;
+  Omit<HStackProps<HStackDefaultElement>, 'onChange'>;
 
 export const Tabs = memo(
   forwardRef(

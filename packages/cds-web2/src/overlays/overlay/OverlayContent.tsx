@@ -6,7 +6,7 @@ import {
 } from '@cbhq/cds-common2/animation/overlay';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
-import { VStack, VStackProps } from '../../layout/VStack';
+import { type VStackDefaultElement, type VStackProps, VStack } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 
 export type OverlayProps = {
@@ -15,7 +15,7 @@ export type OverlayProps = {
    * @default false
    */
   animated?: boolean;
-} & VStackProps<'div'> &
+} & VStackProps<VStackDefaultElement> &
   SharedProps;
 
 export const OverlayContent = forwardRef<HTMLDivElement, OverlayProps>(

@@ -3,7 +3,7 @@ import type { UiIconName } from '@cbhq/cds-icons';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons';
-import { type HStackProps, HStack } from '../layout/HStack';
+import { type HStackDefaultElement, type HStackProps, HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
@@ -23,7 +23,7 @@ export type SectionHeaderBaseProps = {
 };
 
 export type SectionHeaderProps = Polymorphic.ExtendableProps<
-  HStackProps<'div'>,
+  HStackProps<HStackDefaultElement>,
   SectionHeaderBaseProps
 >;
 

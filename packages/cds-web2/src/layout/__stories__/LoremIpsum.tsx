@@ -1,11 +1,11 @@
 import React from 'react';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
-import { Text, TextProps } from '../../typography/Text';
+import { type TextBaseProps, Text } from '../../typography/Text';
 
 export type LoremIpsumProps = {
   title?: string;
-  color?: TextProps<'span'>['color'];
+  color?: TextBaseProps['color'];
   concise?: boolean;
   repeat?: number;
 };

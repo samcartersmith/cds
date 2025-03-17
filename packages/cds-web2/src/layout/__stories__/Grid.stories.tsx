@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { TextBody, TextTitle1, TextTitle3 } from '../../typography';
-import { Grid, GridProps } from '../Grid';
+import { type GridDefaulElement, type GridProps, Grid } from '../Grid';
 import { GridColumn } from '../GridColumn';
-import { HStack, HStackProps } from '../HStack';
+import { type HStackProps, HStack } from '../HStack';
 import { VStack } from '../VStack';
 
 import { LoremIpsum } from './LoremIpsum';
@@ -36,7 +36,7 @@ const GridBase = (props: GridProps<'div' | 'ul'>) => {
   );
 };
 
-const ImplicitGrid = (props: GridProps<'div'>) => {
+const ImplicitGrid = (props: GridProps<GridDefaulElement>) => {
   return (
     <Grid {...props} gap={0.5}>
       {Array.from({ length: 12 }).map((_, idx) => (
@@ -48,7 +48,7 @@ const ImplicitGrid = (props: GridProps<'div'>) => {
   );
 };
 
-const ImplicitGridClamped = (props: GridProps<'div'>) => {
+const ImplicitGridClamped = (props: GridProps<GridDefaulElement>) => {
   return (
     <Grid {...props} gap={0.5}>
       <Item>

@@ -2,13 +2,12 @@ import React, { memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { FlexAxisValue, FlexSpaceCommon } from '@cbhq/cds-common2/types/BoxBaseProps';
-import type { CellBaseProps } from '@cbhq/cds-common2/types/CellBaseProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { type CellProps, Cell } from '../cells/Cell';
+import { type CellBaseProps, Cell } from '../cells/Cell';
 import { Box } from '../layout/Box';
-import { type TextProps, Text } from '../typography/Text';
+import { type TextBaseProps, Text } from '../typography/Text';
 
 import {
   useTableCellSpacing,
@@ -49,7 +48,7 @@ type TableCellBaseProps = TableCellSharedProps & {
    * This prop us useful for aligning the last item to the right, or top-aligning cells
    * @default 'center'
    */
-  alignItems?: CellProps['alignItems'];
+  alignItems?: CellBaseProps['alignItems'];
   /**
    * The colSpan attribute defines the number of columns a cell should span
    * @default 1
@@ -68,7 +67,7 @@ type TableCellBaseProps = TableCellSharedProps & {
    * Should the title/subtitle text truncate
    * @default false
    */
-  overflow?: TextProps<'div'>['overflow'];
+  overflow?: TextBaseProps['overflow'];
   /**
    * Direction provides content flow control.
    * Use vertical to inherit a VStask, horizontal for an HStack
@@ -90,12 +89,12 @@ type TableCellBaseProps = TableCellSharedProps & {
   /**
    * The spacing to use on the parent wrapper of Cell
    */
-  outerSpacing?: CellProps['outerSpacing'];
+  outerSpacing?: CellBaseProps['outerSpacing'];
   /**
    * The spacing to use on the inner content of Cell
    * @default { spacingHorizontal: 0 }
    */
-  innerSpacing?: CellProps['innerSpacing'];
+  innerSpacing?: CellBaseProps['innerSpacing'];
   /**
    * Use as="th" to mark this cell as a header for screen readers
    * @example: https://go/cds-table-cell-a11y

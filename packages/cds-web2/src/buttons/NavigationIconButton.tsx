@@ -6,13 +6,13 @@ import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
 import { NavigationIcon } from '../icons/NavigationIcon';
 import { Pressable } from '../system/Pressable';
 
-import { IconButtonProps } from './IconButton';
+import { type IconButtonDefaultElement, IconButtonProps } from './IconButton';
 
 type NavigationButtonProps = {
   active?: boolean;
   name: NavigationIconName;
   variant?: Omit<IconButtonVariant, 'primary'>;
-} & Omit<IconButtonProps<'button'>, 'name' | 'variant' | 'transparent'>;
+} & Omit<IconButtonProps<IconButtonDefaultElement>, 'name' | 'variant' | 'transparent'>;
 
 const baseStyle = css`
   min-width: unset;

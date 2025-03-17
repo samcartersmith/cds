@@ -4,7 +4,11 @@ import { getAvatarFallbackColor } from '@cbhq/cds-common2/media/getAvatarFallbac
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Text } from '../../typography/Text';
-import { AvatarButton, AvatarButtonProps } from '../AvatarButton';
+import {
+  type AvatarButtonDefaultElement,
+  type AvatarButtonProps,
+  AvatarButton,
+} from '../AvatarButton';
 
 const avatarImageUrl =
   'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
@@ -13,7 +17,10 @@ const names = ['Sneezy', 'Happy', 'Sleepy', 'Doc', 'Bashful', 'Grumpy', 'Dopey',
 const FallbackColoredBase = ({
   dense = true,
   ...props
-}: Pick<AvatarButtonProps<'button'>, 'shape' | 'loading' | 'compact' | 'selected'> & {
+}: Pick<
+  AvatarButtonProps<AvatarButtonDefaultElement>,
+  'shape' | 'loading' | 'compact' | 'selected'
+> & {
   dense?: boolean;
 }) => {
   return (

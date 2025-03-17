@@ -5,7 +5,12 @@ import { useSelectContext } from '../controls/selectContext';
 import { SelectOptionProps } from '../controls/SelectOption';
 import type { Polymorphic } from '../core/polymorphism';
 import { insetFocusRing } from '../styles/focus';
-import { type PressableBaseProps, type PressableProps, Pressable } from '../system/Pressable';
+import {
+  type PressableBaseProps,
+  type PressableDefaultElement,
+  type PressableProps,
+  Pressable,
+} from '../system/Pressable';
 
 export const menuitemDefaultElement = 'button';
 
@@ -49,16 +54,17 @@ export const MenuItem: MenuitemComponent = memo(
 
       const { onChange, handleCloseMenu } = useSelectContext();
 
-      const handleClick: NonNullable<PressableProps<'button'>['onClick']> = useCallback(
-        (event) => {
-          onClick?.(event);
-          onChange?.(value);
-          if (!disableCloseOnOptionChange) {
-            handleCloseMenu?.();
-          }
-        },
-        [disableCloseOnOptionChange, handleCloseMenu, onChange, onClick, value],
-      );
+      const handleClick: NonNullable<PressableProps<PressableDefaultElement>['onClick']> =
+        useCallback(
+          (event) => {
+            onClick?.(event);
+            onChange?.(value);
+            if (!disableCloseOnOptionChange) {
+              handleCloseMenu?.();
+            }
+          },
+          [disableCloseOnOptionChange, handleCloseMenu, onChange, onClick, value],
+        );
       return (
         <Pressable
           ref={ref}

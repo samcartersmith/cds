@@ -5,10 +5,10 @@ import { isProduction } from '@cbhq/cds-utils';
 import { Box, HStack, VStack } from '../layout';
 import { Text } from '../typography/Text';
 
-import { Cell, CellSharedProps } from './Cell';
+import { Cell, CellProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
-export type ContentCellProps = ContentCellBaseProps & CellSharedProps;
+export type ContentCellProps = Omit<CellProps, 'children' | 'accessory'> & ContentCellBaseProps;
 
 function generateAccessibilityLabels(
   userLabel?: string,

@@ -3,6 +3,8 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { DefaultThemeProvider } from '../../utils/test';
 import {
+  type TextDefaultElement,
+  type TextProps,
   TextBody,
   TextCaption,
   TextDisplay1,
@@ -12,7 +14,6 @@ import {
   TextLabel1,
   TextLabel2,
   TextLegal,
-  TextProps,
   TextTitle1,
   TextTitle2,
   TextTitle3,
@@ -35,7 +36,9 @@ const textComponents = [
   TextLegal,
 ] as const;
 
-const textTestRunner = (testFn: (type: React.ComponentType<TextProps<'span'>>) => void) => {
+const textTestRunner = (
+  testFn: (type: React.ComponentType<TextProps<TextDefaultElement>>) => void,
+) => {
   textComponents.forEach(async (TextComponent) => {
     testFn(TextComponent);
   });

@@ -20,10 +20,9 @@ import { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
 import { Grid } from '../layout/Grid';
 import { HStack } from '../layout/HStack';
-import { type VStackProps, VStack } from '../layout/VStack';
+import { type VStackDefaultElement, type VStackProps, VStack } from '../layout/VStack';
 import { Tooltip } from '../overlays/tooltip/Tooltip';
 import { type PressableBaseProps, Pressable } from '../system/Pressable';
-import { pressableDefaultElement } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 const pressableStyles = css`
@@ -32,7 +31,7 @@ const pressableStyles = css`
   justify-content: center;
 `;
 
-export const calendarPressableDefaultElement = pressableDefaultElement;
+export const calendarPressableDefaultElement = 'button';
 
 export type CalendarPressableDefaultElement = typeof calendarPressableDefaultElement;
 
@@ -182,7 +181,7 @@ export type CalendarProps = {
   previousArrowAccessibilityLabel?: string;
   className?: string;
   style?: React.CSSProperties;
-} & Omit<VStackProps<'div'>, 'children' | 'ref'>;
+} & Omit<VStackProps<VStackDefaultElement>, 'children' | 'ref'>;
 
 // These could be dynamically generated, but our Calendar and DatePicker aren't localized so there's no point
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
