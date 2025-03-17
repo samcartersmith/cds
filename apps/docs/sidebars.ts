@@ -236,7 +236,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Feedback',
           items: [
-            { type: 'doc', id: 'components/feedback/banner', label: 'Banner' },
+            { type: 'doc', id: 'components/feedback/Banner/banner', label: 'Banner' },
             {
               type: 'doc',
               id: 'components/feedback/Fallback/fallback',
@@ -288,6 +288,16 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'doc',
+              id: 'components/navigation/NavigationBar/navigationBar',
+              label: 'NavigationBar',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/NavigationTitle/navigationTitle',
+              label: 'NavigationTitle',
+            },
+            {
+              type: 'doc',
               id: 'components/navigation/PageHeader/pageHeader',
               label: 'PageHeader',
             },
@@ -298,8 +308,18 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
-              id: 'components/navigation/sidebar',
+              id: 'components/navigation/Sidebar/sidebar',
               label: 'Sidebar',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/SidebarItem/sidebarItem',
+              label: 'SidebarItem',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/SidebarMoreMenu/sidebarMoreMenu',
+              label: 'SidebarMoreMenu',
             },
             {
               type: 'doc',
@@ -329,18 +349,23 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'doc',
-              id: 'components/graphs/sparkline',
+              id: 'components/graphs/Sparkline/sparkline',
               label: 'Sparkline',
             },
             {
               type: 'doc',
-              id: 'components/graphs/sparklineGradient',
+              id: 'components/graphs/SparklineGradient/sparklineGradient',
               label: 'SparklineGradient',
             },
             {
               type: 'doc',
-              id: 'components/graphs/sparklineInteractive',
+              id: 'components/graphs/SparklineInteractive/sparklineInteractive',
               label: 'SparklineInteractive',
+            },
+            {
+              type: 'doc',
+              id: 'components/graphs/SparklineInteractiveHeader/sparklineInteractiveHeader',
+              label: 'SparklineInteractiveHeader',
             },
           ],
         },

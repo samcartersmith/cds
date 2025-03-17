@@ -4,3 +4,4 @@ export * from './ButtonGroup';
 export * from './IconButton';
 export * from './IconCounterButton';
 export * from './TileButton';
+export * from './NavigationIconButton';

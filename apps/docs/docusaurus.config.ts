@@ -15,9 +15,9 @@ const webpackPlugin = () => {
             : {
                 '@cbhq/cds-common2': path.resolve(__dirname, '../../packages/cds-common2/src'),
                 '@cbhq/cds-fonts': path.resolve(__dirname, '../../packages/fonts/src'),
-                '@cbhq/cds-lottie-files': path.resolve(
+                '@cbhq/cds-lottie-files2': path.resolve(
                   __dirname,
-                  '../../packages/lottie-files/src',
+                  '../../packages/lottie-files2/src',
                 ),
                 '@cbhq/cds-icons': path.resolve(__dirname, '../../packages/icons/src'),
                 '@cbhq/cds-illustrations': path.resolve(
@@ -26,9 +26,9 @@ const webpackPlugin = () => {
                 ),
                 '@cbhq/cds-utils': path.resolve(__dirname, '../../packages/utils/src'),
                 '@cbhq/cds-web2': path.resolve(__dirname, '../../packages/cds-web2/src'),
-                '@cbhq/cds-web-visualization': path.resolve(
+                '@cbhq/cds-web-visualization2': path.resolve(
                   __dirname,
-                  '../../packages/web-visualization/src',
+                  '../../packages/web-visualization2/src',
                 ),
               }),
         },
@@ -36,10 +36,10 @@ const webpackPlugin = () => {
       module: {
         rules: [
           config.mode === 'production'
-            ? // Supports extensionless imports with ESM in cds-web2, cds-common2 and cds-utils package
+            ? // Supports extensionless imports with ESM in all packages
               {
                 test: /\.(js|ts)x?$/,
-                include: /packages\/(cds-[^\\/]+|utils)/,
+                include: /packages\//,
                 resolve: {
                   fullySpecified: false,
                 },

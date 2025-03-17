@@ -2,6 +2,7 @@ import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import * as CDSDataAssets from '@cbhq/cds-common2/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
+import { prices } from '@cbhq/cds-common2/internal/data/prices';
 import { useAlert } from '@cbhq/cds-common2/overlays/useAlert';
 import { useModal } from '@cbhq/cds-common2/overlays/useModal';
 import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common2/tokens/dot';
@@ -36,6 +37,33 @@ import * as CDSTabs from '@cbhq/cds-web2/tabs';
 import { Tag } from '@cbhq/cds-web2/tag/Tag';
 import * as CDSTypography from '@cbhq/cds-web2/typography';
 import * as CDSVisualizations from '@cbhq/cds-web2/visualizations';
+import { Banner } from '@cbhq/cds-web2/banner/Banner';
+import * as CDSNavigation from '@cbhq/cds-web2/navigation';
+import * as CDSSparklineComponents from '@cbhq/cds-web-visualization2/sparkline';
+import { useSparklinePath } from '@cbhq/cds-common2/visualizations/useSparklinePath';
+import { useSparklineArea } from '@cbhq/cds-common2/visualizations/useSparklineArea';
+import {
+  sparklineInteractiveBuilder,
+  sparklineInteractiveWithHeaderBuilder,
+} from '@cbhq/cds-common2/internal/sparklineInteractiveBuilder';
+import {
+  sparklineInteractiveData,
+  sparklineInteractiveHoverData,
+} from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
+import { SparklineInteractive } from '@cbhq/cds-web-visualization2/sparkline/sparkline-interactive/SparklineInteractive';
+import { SparklineInteractiveHeader } from '@cbhq/cds-web-visualization2/sparkline/sparkline-interactive-header/SparklineInteractiveHeader';
+
+const SparklineInteractivePrice = sparklineInteractiveBuilder({
+  SparklineInteractive,
+  isMobile: false,
+});
+
+const SparklineInteractivePriceWithHeader = sparklineInteractiveWithHeaderBuilder({
+  SparklineInteractive,
+  SparklineInteractiveHeader,
+  isMobile: false,
+});
+
 // Add react-live imports you need here
 const ReactLiveScope: Record<string, unknown> = {
   React,
@@ -64,6 +92,7 @@ const ReactLiveScope: Record<string, unknown> = {
   // overlays
   ...CDSOverlays,
   // navigation
+  ...CDSNavigation,
   ...CDSTabs,
   PageHeader,
   // typography
@@ -88,11 +117,20 @@ const ReactLiveScope: Record<string, unknown> = {
   ...ContentCardComponents,
   // visualizations
   ...CDSVisualizations,
+  ...CDSSparklineComponents,
+  useSparklinePath,
+  useSparklineArea,
+  SparklineInteractivePrice,
+  SparklineInteractivePriceWithHeader,
+  sparklineInteractiveData,
+  sparklineInteractiveHoverData,
   // other
   ...CDSDots,
+  Banner,
   // utils
   ...CDSDataAssets,
   loremIpsum,
+  prices,
 };
 
 export default ReactLiveScope;

@@ -1,0 +1,39 @@
+---
+id: navigationTitle
+title: NavigationTitle
+platform_switcher_options: { web: true, mobile: false }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
+
+import webPropsToc from ':docgen/cds-web2/navigation/NavigationTitle/toc-props';
+
+import WebPropsTable from './_webPropsTable.mdx';
+import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+
+<VStack gap={5}>
+  <ComponentHeader
+    title="NavigationTitle"
+    webMetadata={{
+      import: "import { NavigationTitle } from '@cbhq/cds-web/navigation/NavigationTitle';",
+      source:
+        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/navigation/NavigationTitle.tsx',
+      storybook:
+        'https://cds-storybook.cbhq.net/?path=/story/core-components-navigation-navigationbar--navigation-bar-full-example-default',
+      figma:
+        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=1221-19383&t=Ft617xh0NaW6tQPU-0',
+    }}
+    banner={<DefaultBanner />}
+  />
+  <ComponentTabsContainer
+    webPropsTable={<WebPropsTable />}
+    webExamples={<WebExamples />}
+    webExamplesToc={webExamplesToc}
+    webPropsToc={webPropsToc}
+  />
+</VStack>
