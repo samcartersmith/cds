@@ -214,7 +214,10 @@ jobs:
           image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
           command: |-
             yarn mono-pipeline run-percy storybook
-          propagate-environment: true
+          environment: |-
+            STORYBOOK_SKIP_ANIMATION=true
+            PERCY_TOKEN="${{ env.PERCY_TOKEN }}"
+            CI=true
       - name: Evaluate Visreg Should Run
         id: visreg-should-run
         if: ${{ github.event_name == 'pull_request' }}
