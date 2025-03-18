@@ -157,8 +157,8 @@ CDS components integrate seamlessly with third-party libraries, such as:
 
 ## Next Steps
 
-- [Component Library](#): Explore all the components available in CDS.
-- [Theming](#): Learn how to customize your application's theme.
-- [StyleProps Guide](#): Dive deeper into the powerful StyleProps API.
+- [Component Library](/components/layout/Accordion): Explore all the components available in CDS.
+- [Theming](/getting-started/theming#setting-up-the-themeprovider): Learn how to customize your application's theme.
+- [StyleProps Guide](/getting-started/styling): Dive deeper into the powerful StyleProps API.
 
 Unlock the full potential of the Coinbase Design System and start building high-quality applications today!

@@ -90,7 +90,7 @@ const Playground = memo(function Playground({
               >
                 <HStack alignItems="center" gap={1} padding={1}>
                   <Icon color="fgPrimary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
-                  <Text as="p" color="fgPrimary" font="caption" transform="none">
+                  <Text as="p" color="fgPrimary" font="label1" transform="none">
                     {collapsed ? 'Show code' : 'Hide code'}
                   </Text>
                 </HStack>
@@ -104,7 +104,7 @@ const Playground = memo(function Playground({
               >
                 <HStack alignItems="center" gap={1} padding={1}>
                   <Icon color="fgPrimary" name="copy" size="xs" />
-                  <Text color="fgPrimary" font="caption" transform="none">
+                  <Text color="fgPrimary" font="label1" transform="none">
                     Copy code
                   </Text>
                 </HStack>

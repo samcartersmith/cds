@@ -117,8 +117,10 @@ export const ComponentHeader = memo(
                   borderRadius={400}
                   paddingStart={2}
                   paddingY={0}
+                  maxWidth="100%"
+                  overflow="hidden"
                 >
-                  <Text className={styles.importText} font="body">
+                  <Text className={styles.importText} font="label2" title={activeMetadata.import}>
                     {activeMetadata.import}
                   </Text>
                   <Tooltip content="Copy">
@@ -126,6 +128,7 @@ export const ComponentHeader = memo(
                       compact
                       transparent
                       name="copy"
+                      flexShrink={0}
                       onClick={copyImport}
                       style={{ cursor: 'pointer' }}
                       variant="secondary"

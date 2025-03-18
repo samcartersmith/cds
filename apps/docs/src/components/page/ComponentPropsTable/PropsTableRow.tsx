@@ -114,9 +114,9 @@ function PropsTableRow({ prop, sharedTypeAliases, searchTerm = '' }: PropsTableR
   }, [sharedTypeAliases, type]);
   return (
     <tr>
-      <td>{nameContent}</td>
-      <td>{typeContent}</td>
-      <td>
+      <td className={styles.propsTableCell}>{nameContent}</td>
+      <td className={styles.propsTableCell}>{typeContent}</td>
+      <td className={styles.propsTableCell}>
         <TextBody mono as="span">
           {defaultValue ?? '--'}
         </TextBody>

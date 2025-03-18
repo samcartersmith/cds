@@ -8,3 +8,7 @@
   border-spacing: 0;
   overflow: hidden;
 }
+
+.propsTableCell {
+  vertical-align: top;
+}

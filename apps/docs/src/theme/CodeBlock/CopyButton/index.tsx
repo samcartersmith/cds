@@ -2,6 +2,7 @@ import React, { type ReactNode, useCallback, useEffect, useRef, useState } from 
 import { translate } from '@docusaurus/Translate';
 import type { Props } from '@theme/CodeBlock/CopyButton';
 import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
+import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
 
 async function copyTextToClipboard(text: string): Promise<boolean> {
@@ -17,53 +18,38 @@ async function copyTextToClipboard(text: string): Promise<boolean> {
 }
 
 export default function CopyButton({ code }: Props): ReactNode {
-  const [isCopied, setIsCopied] = useState(false);
-  const copyTimeout = useRef<number | undefined>(undefined);
+  const toast = useToast();
   const handleCopyCode = useCallback(async () => {
     const success = await copyTextToClipboard(code);
     if (success) {
-      setIsCopied(true);
-      copyTimeout.current = window.setTimeout(() => {
-        setIsCopied(false);
-      }, 1000);
+      toast.show(
+        translate({
+          id: 'theme.CodeBlock.copied',
+          message: 'Copied',
+          description: 'The copied button label on code blocks',
+        }),
+      );
     }
-  }, [code]);
-
-  useEffect(() => () => window.clearTimeout(copyTimeout.current), []);
+  }, [code, toast]);
 
   return (
     <Tooltip
-      content={
-        isCopied
-          ? translate({
-              id: 'theme.CodeBlock.copied',
-              message: 'Copied',
-              description: 'The copied button label on code blocks',
-            })
-          : translate({
-              id: 'theme.CodeBlock.copyButtonAriaLabel',
-              message: 'Copy code to clipboard',
-              description: 'The ARIA label for copy code blocks button',
-            })
-      }
+      placement="top"
+      content={translate({
+        id: 'theme.CodeBlock.copyButtonAriaLabel',
+        message: 'Copy code to clipboard',
+        description: 'The ARIA label for copy code blocks button',
+      })}
     >
       <IconButton
         compact
         transparent
-        aria-label={
-          isCopied
-            ? translate({
-                id: 'theme.CodeBlock.copied',
-                message: 'Copied',
-                description: 'The copied button label on code blocks',
-              })
-            : translate({
-                id: 'theme.CodeBlock.copyButtonAriaLabel',
-                message: 'Copy code to clipboard',
-                description: 'The ARIA label for copy code blocks button',
-              })
-        }
-        name={isCopied ? 'checkmark' : 'copy'}
+        aria-label={translate({
+          id: 'theme.CodeBlock.copyButtonAriaLabel',
+          message: 'Copy code to clipboard',
+          description: 'The ARIA label for copy code blocks button',
+        })}
+        name="copy"
         onClick={handleCopyCode}
       />
     </Tooltip>

@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import decreasePriorityIfCategory from '@site/src/utils/decreasePriorityIfCategory';
-import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 
 export default function useKBarThemeActions() {
   const { setColorMode } = useColorMode();
-  const toast = useToast();
+
   return useMemo(
     () =>
       [
@@ -21,14 +20,6 @@ export default function useKBarThemeActions() {
           keywords: 'dark mode',
           parent: 'spectrumPreference',
           perform: () => {
-            toast.show('Dark mode enabled', {
-              action: {
-                label: 'Undo',
-                onPress: () => {
-                  setColorMode('light');
-                },
-              },
-            });
             setColorMode('dark');
           },
         },
@@ -38,18 +29,10 @@ export default function useKBarThemeActions() {
           keywords: 'light mode',
           parent: 'spectrumPreference',
           perform: () => {
-            toast.show('Light mode enabled', {
-              action: {
-                label: 'Undo',
-                onPress: () => {
-                  setColorMode('dark');
-                },
-              },
-            });
             setColorMode('light');
           },
         },
       ].map(decreasePriorityIfCategory),
-    [setColorMode, toast],
+    [setColorMode],
   );
 }

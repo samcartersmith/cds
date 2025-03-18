@@ -2,4 +2,13 @@
   word-break: break-all;
   flex: 1;
   min-width: 0;
+  margin: 0;
+  overflow: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.importText::-webkit-scrollbar {
+  display: none;
 }

@@ -163,7 +163,7 @@ export default function DocSidebarItemCategory({
               )}
               <Text font="label1">{label}</Text>
             </HStack>
-            <Icon color="fg" name={!collapsed ? 'minus' : 'add'} paddingEnd={2} size="s" />
+            <Icon color="fg" name={!collapsed ? 'minus' : 'add'} paddingEnd={0} size="s" />
           </HStack>
         </Pressable>
       ) : (

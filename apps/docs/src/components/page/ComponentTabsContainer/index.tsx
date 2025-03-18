@@ -64,6 +64,7 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
         paddingEnd={4}
         paddingStart={4}
         paddingTop={5}
+        zIndex={3}
       >
         {shouldRenderExamples && <TOCUpdater toc={isWeb ? webExamplesToc : mobileExamplesToc} />}
         {shouldRenderExamples && isWeb && webExamples}
