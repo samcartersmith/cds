@@ -3,6 +3,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
+import { Divider } from '@cbhq/cds-web2/layout/Divider';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { VStack } from '@cbhq/cds-web2/layout/VStack';
 import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
@@ -17,6 +18,13 @@ type MetadataType = {
   source: string;
   storybook?: string;
   figma?: string;
+};
+
+type RelatedComponent = {
+  /** The URL that the related component links to */
+  url: string;
+  /** The display label for the related component */
+  label: string;
 };
 
 type ComponentHeaderProps = {
@@ -41,6 +49,8 @@ type ComponentHeaderProps = {
    * Will be shown instead of banner when in dark mode.
    */
   bannerDark?: React.ReactNode;
+  /** Optional array of related components */
+  relatedComponents?: RelatedComponent[];
 };
 
 type MetadataItemProps = {
@@ -65,6 +75,7 @@ export const ComponentHeader = memo(
     mobileMetadata,
     banner = <DefaultBanner />,
     bannerDark,
+    relatedComponents,
   }: ComponentHeaderProps) => {
     const { platform } = usePlatformContext();
     const { colorMode } = useColorMode();
@@ -168,6 +179,34 @@ export const ComponentHeader = memo(
             </VStack>
           </VStack>
         </VStack>
+
+        {relatedComponents && relatedComponents.length > 0 && (
+          <>
+            <Divider />
+            <VStack gap={1} padding={4}>
+              <Text font="label1">Related components</Text>
+              <HStack
+                gap={1}
+                as="ul"
+                padding={0}
+                margin={0}
+                flexWrap="wrap"
+                style={{
+                  listStyleType: 'none',
+                }}
+              >
+                {relatedComponents.map((component, index) => (
+                  <li key={component.url}>
+                    <Text font="label2">
+                      <Link href={component.url}>{component.label}</Link>
+                      {index < relatedComponents.length - 1 && ', '}
+                    </Text>
+                  </li>
+                ))}
+              </HStack>
+            </VStack>
+          </>
+        )}
       </VStack>
     );
   },
