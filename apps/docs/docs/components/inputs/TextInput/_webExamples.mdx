@@ -251,6 +251,23 @@ function StartContentExamples() {
 }
 ```
 
+### Read Only
+
+TextInput supports a read-only state which is visually distinct from the disabled state. Read-only inputs have a secondary background color and can still be focused.
+
+```jsx live
+<VStack gap={3}>
+  <TextInput label="Read Only Input" readOnly value="This value cannot be edited" />
+  <TextInput label="Read Only with Suffix" readOnly value="1234.56" suffix="USD" />
+  <TextInput
+    label="Read Only with Start Content"
+    readOnly
+    value="BTC Address"
+    start={<InputIconButton name="search" />}
+  />
+</VStack>
+```
+
 ## Example of Input Objects placed at the End
 
 Here are some examples and best practices when using end content in a TextField.
@@ -285,7 +302,7 @@ Here are some examples and best practices when using end content in a TextField.
 
   <VStack>
     <Text as="p">
-      You can add a Text Button object at the end of an Input. “Copy” is a great example of this.
+      You can add a Text Button object at the end of an Input. "Copy" is a great example of this.
     </Text>
     <TextInput
       label="API Access Token"

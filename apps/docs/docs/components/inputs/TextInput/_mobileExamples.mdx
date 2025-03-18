@@ -251,6 +251,21 @@ function StartContentExamples() {
 }
 ```
 
+### Read only
+
+```jsx
+<VStack gap={3}>
+  <TextInput label="Read Only Input" readOnly value="This value cannot be edited" />
+  <TextInput label="Read Only with Suffix" readOnly value="1234.56" suffix="USD" />
+  <TextInput
+    label="Read Only with Start Content"
+    readOnly
+    value="BTC Address"
+    start={<InputIconButton name="search" />}
+  />
+</VStack>
+```
+
 ## Example of Input Objects placed at the End
 
 Here are some examples and best practices when using end content in a TextField.
