@@ -1,7 +1,6 @@
-import {
-  collapsibleBuilder,
-  CreateCollapsibleProps,
-} from '@cbhq/cds-common2/internal/collapsibleBuilder';
+import React, { useCallback, useState } from 'react';
+import { usePrefixedId } from '@cbhq/cds-common2/hooks/usePrefixedId';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Button } from '../../buttons';
 import { DotCount } from '../../dots';
@@ -14,12 +13,140 @@ export default {
   title: 'Core Components/Collapsible',
 };
 
-const { BasicCollapsible, RevealTop, DefaultExpanded, Scroll, Horizontal } = collapsibleBuilder({
-  Collapsible,
-  Text,
-  Button,
-  DotCount,
-  HStack,
-} as CreateCollapsibleProps);
+export const BasicCollapsible = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
 
-export { BasicCollapsible, DefaultExpanded, Horizontal, RevealTop, Scroll };
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <>
+      <Button
+        aria-controls={collapsibleId}
+        aria-expanded={!collapsed}
+        id={triggerId}
+        onClick={toggleCollapsed}
+      >
+        Click me!
+      </Button>
+      <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
+        <Text>{loremIpsum}</Text>
+      </Collapsible>
+    </>
+  );
+};
+
+export const DefaultExpanded = () => {
+  const [collapsed, setCollapsed] = useState(false);
+  const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
+
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <>
+      <Button
+        aria-controls={collapsibleId}
+        aria-expanded={!collapsed}
+        id={triggerId}
+        onClick={toggleCollapsed}
+      >
+        Click me!
+      </Button>
+      <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
+        <Text>{loremIpsum}</Text>
+      </Collapsible>
+    </>
+  );
+};
+
+export const Horizontal = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
+
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <HStack alignItems="center">
+      <Button
+        aria-controls={collapsibleId}
+        aria-expanded={!collapsed}
+        id={triggerId}
+        onClick={toggleCollapsed}
+      >
+        Click me!
+      </Button>
+      <Collapsible
+        accessibilityLabelledBy={triggerId}
+        collapsed={collapsed}
+        direction="horizontal"
+        id={collapsibleId}
+        maxHeight={400}
+      >
+        <DotCount count={100} />
+        <DotCount count={1} />
+        <DotCount count={99} />
+      </Collapsible>
+    </HStack>
+  );
+};
+
+export const RevealTop = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
+
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <>
+      <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
+        <Text>{loremIpsum}</Text>
+      </Collapsible>
+      <Button aria-controls={collapsibleId} id={triggerId} onClick={toggleCollapsed}>
+        Click me!
+      </Button>
+    </>
+  );
+};
+
+export const Scroll = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const [triggerId, collapsibleId] = usePrefixedId(['trigger', 'collapsible']);
+
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <>
+      <Button
+        aria-controls={collapsibleId}
+        aria-expanded={!collapsed}
+        id={triggerId}
+        onClick={toggleCollapsed}
+      >
+        Click me!
+      </Button>
+      <Collapsible
+        accessibilityLabelledBy={triggerId}
+        collapsed={collapsed}
+        id={collapsibleId}
+        maxHeight={400}
+      >
+        <Text>{loremIpsum.repeat(10)}</Text>
+      </Collapsible>
+    </>
+  );
+};

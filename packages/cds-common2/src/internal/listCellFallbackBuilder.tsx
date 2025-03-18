@@ -10,6 +10,8 @@ const outerSpacing: CellSpacing = {
   paddingX: 10,
   paddingY: 8,
 };
+
+/** @deprecated don't use creator pattern in v8 */
 export function listCellFallbackBuilder(
   ListCellFallback: React.ComponentType<React.PropsWithChildren<ListCellFallbackProps>>,
 ) {

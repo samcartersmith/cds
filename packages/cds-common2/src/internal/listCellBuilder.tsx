@@ -15,6 +15,7 @@ import { assets } from './data/assets';
 
 const onPressConsole = () => console.log('onPress');
 
+/** @deprecated don't use creator pattern in v8 */
 export function listCellBuilder(
   ListCell: React.ComponentType<
     React.PropsWithChildren<

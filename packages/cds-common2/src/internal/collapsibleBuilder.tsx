@@ -31,6 +31,7 @@ export type CreateCollapsibleProps = {
   HStack: React.ComponentType<React.PropsWithChildren<BoxBaseProps>>;
 };
 
+/** @deprecated don't use creator pattern in v8 */
 export function collapsibleBuilder({
   Button,
   Collapsible,

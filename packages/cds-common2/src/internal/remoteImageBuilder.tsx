@@ -28,6 +28,7 @@ export const borderColors = [
   'bgWarning',
 ] as const satisfies ThemeVars.Color[];
 
+/** @deprecated don't use creator pattern in v8 */
 export const remoteImageBuilder = ({
   RemoteImage,
   VStack,

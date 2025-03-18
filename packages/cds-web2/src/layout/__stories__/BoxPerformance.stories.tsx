@@ -1,6 +1,5 @@
 import React from 'react';
 import { withPerformance } from 'storybook-addon-performance';
-import { performanceBenchmarkBuilder } from '@cbhq/cds-common2/internal/performanceBenchmarkBuilder';
 
 import { Box } from '../Box';
 
@@ -31,7 +30,26 @@ export const SingleDiv = () => (
   </div>
 );
 
-const { HundredCDSComponents, HundredHTMLComponent, ThousandCDSComponents, ThousandHTMLComponent } =
-  performanceBenchmarkBuilder(CDSBox, SingleDiv);
+function generateComponents(Component: React.ComponentType, count: number) {
+  const components = [];
+  for (let i = 0; i < count; i += 1) {
+    components.push(<Component key={i} />);
+  }
+  return components;
+}
 
-export { HundredCDSComponents, HundredHTMLComponent, ThousandCDSComponents, ThousandHTMLComponent };
+export const HundredCDSComponents = () => {
+  return generateComponents(CDSBox, 100);
+};
+
+export const HundredHTMLComponent = () => {
+  return generateComponents(SingleDiv, 100);
+};
+
+export const ThousandCDSComponents = () => {
+  return generateComponents(CDSBox, 1000);
+};
+
+export const ThousandHTMLComponent = () => {
+  return generateComponents(SingleDiv, 1000);
+};

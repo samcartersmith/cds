@@ -1,21 +1,62 @@
+import React, { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common2/internal/alertBuilder';
+import type { AlertBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../buttons';
 import { DefaultThemeProvider } from '../../utils/test';
 import { Alert } from '../Alert';
-import { PortalProvider } from '../PortalProvider';
 
 const TITLE = 'Alert title';
 const LABELLED_BY = 'some-id';
 const LABEL = 'A label';
 
-const { MockAlert } = alertBuilder({
-  Alert,
-  Button,
-  PortalProvider,
-} as CreateAlertProps);
+const onPressConsole = () => console.log('pressed');
+
+// Create type for the MockAlert props
+type AlertA11yProps = Pick<
+  SharedAccessibilityProps,
+  'accessibilityLabelledBy' | 'accessibilityLabel'
+>;
+
+const MockAlert = ({
+  visible: externalVisible,
+  onRequestClose,
+  title,
+  body,
+  pictogram,
+  preferredActionLabel,
+  onPreferredActionPress,
+  dismissActionLabel,
+  testID,
+  accessibilityLabelledBy,
+  accessibilityLabel,
+}: Partial<AlertBaseProps> & AlertA11yProps) => {
+  const [visible, setVisible] = useState(false);
+
+  const toggleOn = useCallback(() => setVisible(true), []);
+  const toggleOff = useCallback(() => setVisible(false), []);
+
+  return (
+    <>
+      <Button onClick={toggleOn}>Show Alert</Button>
+      <Alert
+        disablePortal
+        accessibilityLabel={accessibilityLabel}
+        accessibilityLabelledBy={accessibilityLabelledBy}
+        body={body ?? 'Alert body type that can run over multiple lines, but should be kept short.'}
+        dismissActionLabel={dismissActionLabel}
+        onPreferredActionPress={onPreferredActionPress ?? onPressConsole}
+        onRequestClose={onRequestClose ?? toggleOff}
+        pictogram={pictogram ?? 'warning'}
+        preferredActionLabel={preferredActionLabel ?? 'Save'}
+        testID={testID}
+        title={title ?? 'Alert title'}
+        visible={externalVisible ?? visible}
+      />
+    </>
+  );
+};
 
 describe('Alert', () => {
   it('passes a11y', async () => {

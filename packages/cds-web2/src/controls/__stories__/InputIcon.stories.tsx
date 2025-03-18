@@ -1,5 +1,6 @@
 import React from 'react';
-import { inputIconBuilder } from '@cbhq/cds-common2/internal/inputIconBuilder';
+import { InputVariant } from '@cbhq/cds-common2';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Box } from '../../layout/Box';
 import { InputIcon } from '../InputIcon';
@@ -10,22 +11,66 @@ export default {
   component: InputIcon,
 };
 
-const {
-  Basic,
-  DefaultsToForeground,
-  SetColorAndInheritFocusStyle,
-  BasicEnd,
-  AddCustomColor,
-  AddCustomColorEnd,
-  InvalidPlacement,
-} = inputIconBuilder(TextInput, InputIcon, (props) => <Box {...props} background="bgAlternate" />);
+const variants = ['foreground', 'foregroundMuted', 'primary', 'negative', 'positive'] as const;
 
-export {
-  AddCustomColor,
-  AddCustomColorEnd,
-  Basic,
-  BasicEnd,
-  DefaultsToForeground,
-  InvalidPlacement,
-  SetColorAndInheritFocusStyle,
+const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
+  primary: 'fgPrimary',
+  positive: 'fgPositive',
+  negative: 'fgNegative',
+  foreground: 'fg',
+  foregroundMuted: 'fgMuted',
+  secondary: 'bgSecondary',
+};
+
+export const AddCustomColor = () => {
+  return (
+    <TextInput label="Label" start={<InputIcon disableInheritFocusStyle color="fg" name="add" />} />
+  );
+};
+
+export const AddCustomColorEnd = () => {
+  return (
+    <TextInput end={<InputIcon disableInheritFocusStyle color="fg" name="add" />} label="Label" />
+  );
+};
+
+export const Basic = () => {
+  return (
+    <>
+      {variants.map((variant) => (
+        <TextInput
+          key={`${variant}-inputicon`}
+          label={variant}
+          start={<InputIcon color={variantColorMap[variant]} name="add" />}
+          variant={variant}
+        />
+      ))}
+    </>
+  );
+};
+
+export const BasicEnd = () => {
+  return <TextInput end={<InputIcon name="add" />} label="Label" />;
+};
+
+export const DefaultsToForeground = () => {
+  return <TextInput label="Search" start={<InputIcon name="search" />} variant="foregroundMuted" />;
+};
+
+export const InvalidPlacement = () => {
+  return (
+    <Box background="bgAlternate">
+      <InputIcon name="add" />
+    </Box>
+  );
+};
+
+export const SetColorAndInheritFocusStyle = () => {
+  return (
+    <TextInput
+      label="Search"
+      start={<InputIcon color="fgPositive" name="search" />}
+      variant="foregroundMuted"
+    />
+  );
 };

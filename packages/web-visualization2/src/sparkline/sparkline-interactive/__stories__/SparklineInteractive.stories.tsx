@@ -1,12 +1,14 @@
-import React from 'react';
-import {
-  sparklineInteractiveBuilder,
-  sparklineInteractiveWithHeaderBuilder,
-} from '@cbhq/cds-common2/internal/sparklineInteractiveBuilder';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import {
   sparklineInteractiveData,
   sparklineInteractiveHoverData,
 } from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
+import type {
+  ChartDataPoint,
+  ChartScrubParams,
+  SparklineInteractiveHeaderRef,
+  SparklineInteractiveSubHead,
+} from '@cbhq/cds-common2';
 import { Box, VStack } from '@cbhq/cds-web2/layout';
 
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
@@ -17,24 +19,141 @@ export default {
   title: 'Visualization/SparklineInteractive',
 };
 
-const SparklineInteractiveBuild = sparklineInteractiveBuilder({
-  SparklineInteractive,
-  isMobile: false,
-});
+type SparklinePeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
+const DEFAULT_PERIOD = 'day';
 
-const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
-  SparklineInteractive,
-  SparklineInteractiveHeader,
-  isMobile: false,
-});
+const periods = [
+  { label: '1H', value: 'hour' as const },
+  { label: '1D', value: 'day' as const },
+  { label: '1W', value: 'week' as const },
+  { label: '1M', value: 'month' as const },
+  { label: '1Y', value: 'year' as const },
+  { label: 'All', value: 'all' as const },
+];
+
+const getFormattingConfigForPeriod = (period: SparklinePeriod) => {
+  switch (period) {
+    case 'hour':
+    case 'day':
+      return {
+        hour: 'numeric',
+        minute: 'numeric',
+      } as const;
+
+    case 'week':
+    case 'month':
+      return {
+        month: 'numeric',
+        day: 'numeric',
+      } as const;
+
+    case 'year':
+    case 'all':
+      return {
+        month: 'numeric',
+        year: 'numeric',
+      } as const;
+    default:
+      return {
+        month: 'numeric',
+        day: 'numeric',
+      } as const;
+  }
+};
+
+const getDateHoverOptions = (period: SparklinePeriod) => {
+  switch (period) {
+    case 'hour':
+    case 'day':
+    case 'week':
+    case 'month':
+      return {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      } as const;
+    default:
+      return {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      } as const;
+  }
+};
+
+function numToLocaleString(num: number) {
+  return num.toLocaleString('en-US', {
+    maximumFractionDigits: 2,
+  });
+}
+
+function generateSubHead(
+  point: ChartDataPoint,
+  period: SparklinePeriod,
+  sparklineInteractiveData: Record<SparklinePeriod, ChartDataPoint[]>,
+): SparklineInteractiveSubHead {
+  const data = sparklineInteractiveData[period];
+  const firstPoint = data[0];
+
+  const increase = point.value > firstPoint.value;
+  return {
+    percent: `${numToLocaleString(
+      Math.abs((point.value - firstPoint.value) / firstPoint.value) * 100,
+    )}%`,
+    sign: increase ? 'upwardTrend' : 'downwardTrend',
+    variant: increase ? 'positive' : 'negative',
+    accessibilityLabel: `on ${new Intl.DateTimeFormat('en-US').format(point?.date)}, ${
+      increase ? 'up' : 'down'
+    }`,
+    priceChange: `$${numToLocaleString(Math.abs(point.value - firstPoint.value))}`,
+  };
+}
 
 const strokeColor = '#F7931A';
 const rgbaStrokeColor = 'rgba(123, 1, 1, 5)';
 const rgbStrokeColor = 'rgb(123, 1, 121)';
 
+const SparklineInteractiveWrapper = (props: any) => {
+  const timezoneObj = useMemo(() => ({ timeZone: 'America/New_York' }), []);
+
+  const formatDateWithConfig = useCallback(
+    (value: Date, period: SparklinePeriod) => {
+      const config = getFormattingConfigForPeriod(period);
+      return value.toLocaleString('en-US', {
+        ...timezoneObj,
+        ...config,
+      });
+    },
+    [timezoneObj],
+  );
+
+  const formatHoverDate = useCallback(
+    (date: Date, period: SparklinePeriod) => {
+      return date.toLocaleString('en-US', {
+        ...timezoneObj,
+        ...getDateHoverOptions(period),
+      });
+    },
+    [timezoneObj],
+  );
+
+  return (
+    <SparklineInteractive
+      formatDate={formatDateWithConfig}
+      formatHoverDate={!props.hideHoverDate ? formatHoverDate : undefined}
+      periods={periods}
+      defaultPeriod={props.defaultPeriod ?? DEFAULT_PERIOD}
+      {...props}
+    />
+  );
+};
+
 export const Default = () => (
   <React.StrictMode>
-    <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
+    <SparklineInteractiveWrapper data={sparklineInteractiveData} strokeColor={strokeColor} />
   </React.StrictMode>
 );
 Default.bind({});
@@ -48,7 +167,7 @@ Default.parameters = {
 };
 
 export const Compact = () => (
-  <SparklineInteractiveBuild compact data={sparklineInteractiveData} strokeColor={strokeColor} />
+  <SparklineInteractiveWrapper compact data={sparklineInteractiveData} strokeColor={strokeColor} />
 );
 
 Compact.bind({});
@@ -64,7 +183,7 @@ Compact.parameters = {
 export const Contained = () => (
   <React.StrictMode>
     <VStack borderColor="bgNegative" borderWidth={100}>
-      <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
+      <SparklineInteractiveWrapper data={sparklineInteractiveData} strokeColor={strokeColor} />
     </VStack>
   </React.StrictMode>
 );
@@ -80,7 +199,7 @@ Contained.parameters = {
 };
 
 export const DisableScrubbing = () => (
-  <SparklineInteractiveBuild
+  <SparklineInteractiveWrapper
     disableScrubbing
     data={sparklineInteractiveData}
     strokeColor={strokeColor}
@@ -98,7 +217,7 @@ DisableScrubbing.parameters = {
 };
 
 export const HidePeriodSelector = () => (
-  <SparklineInteractiveBuild
+  <SparklineInteractiveWrapper
     hidePeriodSelector
     data={sparklineInteractiveData}
     strokeColor={strokeColor}
@@ -116,7 +235,7 @@ HidePeriodSelector.parameters = {
 };
 
 export const yAxisScaling = () => (
-  <SparklineInteractiveBuild
+  <SparklineInteractiveWrapper
     data={sparklineInteractiveData}
     strokeColor={strokeColor}
     yAxisScalingFactor={0.1}
@@ -135,7 +254,7 @@ yAxisScaling.parameters = {
 
 export const CustomRGBStrokeColor = () => (
   <React.StrictMode>
-    <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={rgbStrokeColor} />
+    <SparklineInteractiveWrapper data={sparklineInteractiveData} strokeColor={rgbStrokeColor} />
   </React.StrictMode>
 );
 
@@ -151,7 +270,7 @@ CustomRGBStrokeColor.parameters = {
 
 export const CustomRGBAStrokeColor = () => (
   <React.StrictMode>
-    <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={rgbaStrokeColor} />
+    <SparklineInteractiveWrapper data={sparklineInteractiveData} strokeColor={rgbaStrokeColor} />
   </React.StrictMode>
 );
 
@@ -167,7 +286,7 @@ CustomRGBAStrokeColor.parameters = {
 
 export const FillDisabled = () => (
   <React.StrictMode>
-    <SparklineInteractiveBuild
+    <SparklineInteractiveWrapper
       data={sparklineInteractiveData}
       fill={false}
       strokeColor={strokeColor}
@@ -183,7 +302,7 @@ FillDisabled.parameters = {
   },
 };
 
-export const FallbackPositive = () => <SparklineInteractiveBuild strokeColor={strokeColor} />;
+export const FallbackPositive = () => <SparklineInteractiveWrapper strokeColor={strokeColor} />;
 
 FallbackPositive.bind({});
 FallbackPositive.parameters = {
@@ -196,7 +315,7 @@ FallbackPositive.parameters = {
 };
 
 export const FallbackNegative = () => (
-  <SparklineInteractiveBuild fallbackType="negative" strokeColor={strokeColor} />
+  <SparklineInteractiveWrapper fallbackType="negative" strokeColor={strokeColor} />
 );
 
 FallbackNegative.bind({});
@@ -210,7 +329,7 @@ FallbackNegative.parameters = {
 };
 
 export const FallbackCompact = () => (
-  <SparklineInteractiveBuild compact strokeColor={strokeColor} />
+  <SparklineInteractiveWrapper compact strokeColor={strokeColor} />
 );
 
 FallbackCompact.bind({});
@@ -229,7 +348,7 @@ const formatHoverPrice = (price: number) => {
 
 export const HoverPrice = () => {
   return (
-    <SparklineInteractiveBuild
+    <SparklineInteractiveWrapper
       fill
       data={sparklineInteractiveData}
       formatHoverPrice={formatHoverPrice}
@@ -249,7 +368,7 @@ HoverPrice.parameters = {
 };
 
 export const NoHoverDate = () => (
-  <SparklineInteractiveBuild
+  <SparklineInteractiveWrapper
     fill
     hideHoverDate
     data={sparklineInteractiveData}
@@ -268,8 +387,80 @@ NoHoverDate.parameters = {
 };
 
 export const WithHeaderNode = () => {
+  const [currentPeriod, setCurrentPeriod] = useState<SparklinePeriod>(DEFAULT_PERIOD);
+  const headerRef = useRef<SparklineInteractiveHeaderRef>(null);
+  const data = sparklineInteractiveData[currentPeriod];
+  const lastPoint = data[data.length - 1];
+  const timezoneObj = useMemo(() => ({ timeZone: 'America/New_York' }), []);
+
+  const formatDateWithConfig = useCallback(
+    (value: Date, period: SparklinePeriod) => {
+      const config = getFormattingConfigForPeriod(period);
+      return value.toLocaleString('en-US', {
+        ...timezoneObj,
+        ...config,
+      });
+    },
+    [timezoneObj],
+  );
+
+  const formatHoverDate = useCallback(
+    (date: Date, period: SparklinePeriod) => {
+      return date.toLocaleString('en-US', {
+        ...timezoneObj,
+        ...getDateHoverOptions(period),
+      });
+    },
+    [timezoneObj],
+  );
+
+  const handleScrub = useCallback(({ point, period }: ChartScrubParams<SparklinePeriod>) => {
+    headerRef.current?.update({
+      title: `$${point.value.toLocaleString('en-US')}`,
+      subHead: generateSubHead(point, period, sparklineInteractiveData),
+    });
+  }, []);
+
+  const handleScrubEnd = useCallback(() => {
+    headerRef.current?.update({
+      title: `$${numToLocaleString(lastPoint.value)}`,
+      subHead: generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData),
+    });
+  }, [currentPeriod, lastPoint]);
+
+  const handleOnPeriodChanged = useCallback((period: SparklinePeriod) => {
+    setCurrentPeriod(period);
+    const newData = sparklineInteractiveData[period];
+    const newLastPoint = newData[newData.length - 1];
+
+    headerRef.current?.update({
+      title: `$${numToLocaleString(newLastPoint.value)}`,
+      subHead: generateSubHead(newLastPoint, period, sparklineInteractiveData),
+    });
+  }, []);
+
+  const header = (
+    <SparklineInteractiveHeader
+      ref={headerRef}
+      defaultLabel="Bitcoin Price"
+      defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
+      defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
+    />
+  );
+
   return (
-    <SparklineInteractiveWithHeaderBuild data={sparklineInteractiveData} strokeColor="#F7931A" />
+    <SparklineInteractive
+      data={sparklineInteractiveData}
+      defaultPeriod={DEFAULT_PERIOD}
+      formatDate={formatDateWithConfig}
+      formatHoverDate={formatHoverDate}
+      headerNode={header}
+      onPeriodChanged={handleOnPeriodChanged}
+      onScrub={handleScrub}
+      onScrubEnd={handleScrubEnd}
+      periods={periods}
+      strokeColor="#F7931A"
+    />
   );
 };
 
@@ -285,7 +476,7 @@ WithHeaderNode.parameters = {
 
 export const TimePeriodGutter = () => {
   return (
-    <SparklineInteractiveBuild
+    <SparklineInteractiveWrapper
       data={sparklineInteractiveData}
       strokeColor={strokeColor}
       timePeriodGutter={3}
@@ -305,7 +496,7 @@ TimePeriodGutter.parameters = {
 
 export const HoverData = () => {
   return (
-    <SparklineInteractiveBuild
+    <SparklineInteractiveWrapper
       data={sparklineInteractiveData}
       hoverData={sparklineInteractiveHoverData}
       strokeColor={strokeColor}
@@ -325,7 +516,7 @@ HoverData.parameters = {
 
 export const HoverDataWithFill = () => {
   return (
-    <SparklineInteractiveBuild
+    <SparklineInteractiveWrapper
       fill
       data={sparklineInteractiveData}
       hoverData={sparklineInteractiveHoverData}
@@ -346,7 +537,7 @@ HoverDataWithFill.parameters = {
 
 export const BottomPeriodSelector = () => {
   return (
-    <SparklineInteractiveBuild
+    <SparklineInteractiveWrapper
       data={sparklineInteractiveData}
       periodSelectorPlacement="below"
       strokeColor={strokeColor}
@@ -368,7 +559,7 @@ export const VStackedSparkline = () => {
   return (
     <VStack width="100%">
       <Box width="100%">
-        <SparklineInteractiveBuild data={sparklineInteractiveData} strokeColor={strokeColor} />
+        <SparklineInteractiveWrapper data={sparklineInteractiveData} strokeColor={strokeColor} />
       </Box>
       <Box background="bgSecondary" height={20} paddingTop={8} width="100%">
         This is an element below the sparkline
@@ -390,7 +581,7 @@ VStackedSparkline.parameters = {
 export const NoDataInSelectedPeriod = () => {
   return (
     <React.StrictMode>
-      <SparklineInteractiveBuild
+      <SparklineInteractiveWrapper
         data={{ ...sparklineInteractiveData, hour: [] }}
         strokeColor={strokeColor}
       />

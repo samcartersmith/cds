@@ -21,6 +21,7 @@ export const VARIANTS = ['positive', 'negative', 'primary', 'foregroundMuted', '
 export const PIN_DIRECTIONS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'] as const;
 export const SIZES = ['s', 'm', 'l'] as const;
 
+/** @deprecated don't use creator pattern in v8 */
 export function dotBuilder(
   DotCount: React.ComponentType<React.PropsWithChildren<DotCountBaseProps>>,
   DotStatusColor: React.ComponentType<React.PropsWithChildren<DotBaseProps>>,

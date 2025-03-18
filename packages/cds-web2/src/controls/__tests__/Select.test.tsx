@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import useMeasure from 'react-use-measure';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { exampleOptions } from '@cbhq/cds-common2/internal/selectBuilder';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { VStack } from '../../layout/VStack';
@@ -27,6 +26,8 @@ const mockDimensions: Partial<ReturnType<typeof useMeasure>> = [
     bottom: 0,
   },
 ];
+
+const exampleOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
 
 const MockSelect = ({
   variant,

@@ -1,30 +1,6 @@
 import startCase from 'lodash/startCase';
-import { getFigmaAccessToken } from '@cbhq/cds-utils/env';
 
 import { TagBaseProps } from '../types/TagBaseProps';
-
-import { storyBuilder } from './utils/storyBuilder';
-
-const accessToken = getFigmaAccessToken();
-
-const config = {
-  argTypes: {
-    children: {
-      control: 'text',
-    },
-  },
-  args: {
-    scale: 'large',
-    spectrum: 'light',
-  },
-  parameters: {
-    design: {
-      type: 'figspec',
-      url: 'https://www.figma.com/file/9TCCKTO5uxbuJsnrircede/CDS-Design-Intent-Library?node-id=2436%3A34236',
-      accessToken,
-    },
-  },
-} as const;
 
 type TagPropConfig = {
   intent: TagBaseProps['intent'][];
@@ -73,6 +49,3 @@ export const tagStories = {
     },
   ],
 } as const;
-
-// @ts-expect-error children are dynamic, so I'm not setting them
-export const tagBuilder = storyBuilder(config);

@@ -14,6 +14,7 @@ type SearchInputProps = Omit<TextInputBaseProps, 'helperText' | 'suffix' | 'star
   bordered?: boolean;
 } & SearchInputBaseProps;
 
+/** @deprecated don't use creator pattern in v8 */
 export function searchInputBuilder(
   SearchInput: React.ComponentType<React.PropsWithChildren<SearchInputProps>>,
 ) {

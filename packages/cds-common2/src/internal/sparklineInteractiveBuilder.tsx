@@ -174,6 +174,7 @@ export function numToLocaleString(num: number) {
   });
 }
 
+/** @deprecated do not use creator pattern in v8 */
 export const sparklineInteractiveBuilder = ({
   SparklineInteractive,
   isMobile,
@@ -278,6 +279,7 @@ type SparklineInteractiveWithHeaderBuilderProps = SparklineInteractiveBuilderPro
   >;
 };
 
+/** @deprecated do not use creator pattern in v8 */
 export const sparklineInteractiveWithHeaderBuilder = ({
   SparklineInteractive,
   SparklineInteractiveHeader,

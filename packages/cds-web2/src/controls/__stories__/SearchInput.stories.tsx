@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import { searchInputBuilder } from '@cbhq/cds-common2/internal/searchInputBuilder';
 
 import { VStack } from '../../layout';
 import { InputIconButton } from '../InputIconButton';
@@ -10,8 +9,89 @@ export default {
   component: SearchInput,
 };
 
-const { Basic, Disabled, Compact, HideStartIcon, HideEndIcon, CustomEndNode } =
-  searchInputBuilder(SearchInput);
+const Basic = () => {
+  const [text, setText] = useState('Value');
+
+  return (
+    <SearchInput
+      accessibilityLabel="Search"
+      onChangeText={setText}
+      onClear={() => {}}
+      placeholder="Placeholder"
+      value={text}
+    />
+  );
+};
+
+const HideStartIcon = () => {
+  const [text, setText] = useState('');
+
+  return (
+    <SearchInput
+      hideStartIcon
+      accessibilityLabel="Search"
+      onChangeText={setText}
+      onClear={() => {}}
+      value={text}
+    />
+  );
+};
+
+const HideEndIcon = () => {
+  const [text, setText] = useState('');
+
+  return (
+    <SearchInput
+      hideEndIcon
+      accessibilityLabel="Search"
+      onChangeText={setText}
+      onClear={() => {}}
+      value={text}
+    />
+  );
+};
+
+const Compact = () => {
+  const [text, setText] = useState('');
+
+  return (
+    <SearchInput
+      compact
+      accessibilityLabel="searchbox"
+      onChangeText={setText}
+      onClear={() => {}}
+      value={text}
+    />
+  );
+};
+
+const Disabled = () => {
+  const [text, setText] = useState('');
+
+  return (
+    <SearchInput
+      disabled
+      accessibilityLabel="Search"
+      onChangeText={setText}
+      onClear={() => {}}
+      value={text}
+    />
+  );
+};
+
+const CustomEndNode = ({ end }: { end: React.ReactNode }) => {
+  const [text, setText] = useState('');
+
+  return (
+    <SearchInput
+      accessibilityLabel="Search"
+      end={end}
+      onChangeText={setText}
+      onClear={() => {}}
+      value={text}
+    />
+  );
+};
 
 export const Default = () => (
   <VStack gap={2}>

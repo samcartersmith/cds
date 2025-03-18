@@ -1,20 +1,56 @@
 import React from 'react';
-import { buttonBuilder, buttonStories } from '@cbhq/cds-common2/internal/buttonBuilder';
 
 import { Icon } from '../../icons/Icon';
 import { VStack } from '../../layout';
-import { Button } from '../Button';
+import { Button, type ButtonBaseProps } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
-
-const { build, buildSheet } = buttonBuilder(Button);
-build();
-
-export const createButtonStories = buildSheet([...buttonStories]);
 
 export default {
   component: Button,
   title: 'Core Components/Buttons/Button',
 };
+
+const buttonStories: Omit<ButtonBaseProps, 'children'>[] = [
+  { variant: 'secondary' },
+  { variant: 'positive' },
+  { variant: 'negative' },
+  { variant: 'secondary', transparent: true },
+  { variant: 'positive', transparent: true },
+  { variant: 'negative', transparent: true },
+  { block: true },
+  { compact: true },
+  { compact: true, block: true },
+  { transparent: true },
+  { disabled: true },
+  { loading: true },
+  { loading: true, compact: true },
+  { startIcon: 'backArrow' },
+  { endIcon: 'backArrow' },
+  { startIcon: 'backArrow', endIcon: 'forwardArrow' },
+  { startIcon: 'backArrow', endIcon: 'forwardArrow', block: true },
+  { transparent: true, flush: 'start', compact: true, endIcon: 'forwardArrow' },
+  { transparent: true, flush: 'end', compact: true, endIcon: 'forwardArrow' },
+  { flush: 'start', endIcon: 'forwardArrow' },
+  { flush: 'end', endIcon: 'forwardArrow' },
+  { startIcon: 'backArrow', endIcon: 'forwardArrow', compact: true },
+  { startIcon: 'backArrow', compact: true },
+  { endIcon: 'forwardArrow', compact: true },
+];
+
+const onClickConsole = () => console.log('clicked');
+
+export const CreateButtonStories = () => (
+  <VStack alignItems="flex-start" gap={4}>
+    {buttonStories.map((props, idx) => {
+      const key = `button-${idx}`;
+      return (
+        <Button key={key} onClick={onClickConsole} {...props}>
+          Button
+        </Button>
+      );
+    })}
+  </VStack>
+);
 
 export const CustomEndIconButton = () => (
   <VStack gap={2}>

@@ -2,6 +2,7 @@ import React from 'react';
 
 import type { BoxBaseProps, IconButtonBaseProps, TextInputBaseProps } from '../types';
 
+/** @deprecated don't use creator pattern in v8 */
 export function inputIconButtonBuilder(
   TextInput: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>,
   InputIconButton: React.ComponentType<

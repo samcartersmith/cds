@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import sample from 'lodash/sample';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
-import { loremIpsum } from '@cbhq/cds-common2/internal/loremIpsumBuilder';
 import { CustomTabProps, TabNavigationProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';

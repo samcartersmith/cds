@@ -61,6 +61,7 @@ export type CreateModalProps = {
   TextInput?: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>;
 };
 
+/** @deprecated don't use creator pattern in v8 */
 export function modalBuilder({
   Modal,
   ModalBody,

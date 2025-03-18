@@ -1,16 +1,10 @@
 import { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import {
-  CreateLoremIpsumProps,
-  loremIpsum,
-  loremIpsumBuilder,
-} from '@cbhq/cds-common2/internal/loremIpsumBuilder';
-import { CreateModalProps, modalBuilder } from '@cbhq/cds-common2/internal/modalBuilder';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../../buttons';
-import { ThemeProvider } from '../../../system/ThemeProvider';
 import { TextBody, TextLabel1 } from '../../../typography';
 import { DefaultThemeProvider } from '../../../utils/test';
 import { type ModalProps, Modal } from '../Modal';
@@ -63,10 +57,26 @@ const ExampleModalScreen = ({
 };
 /** END YUBIKEY EDGE CASE CONFIG */
 
-const LoremIpsum = loremIpsumBuilder({
-  TextBody,
-  TextLabel1,
-} as CreateLoremIpsumProps);
+type LoremIpsumProps = {
+  title?: string;
+  concise?: boolean;
+  repeat?: number;
+};
+
+const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
+  return (
+    <>
+      <TextLabel1 as="p" paddingBottom={1} renderEmptyNode={false}>
+        {title}
+      </TextLabel1>
+      {concise ? null : (
+        <TextBody as="p" paddingBottom={3}>
+          {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
+        </TextBody>
+      )}
+    </>
+  );
+};
 
 type MockModalProps = {
   triggerRef?: React.RefObject<HTMLButtonElement>;

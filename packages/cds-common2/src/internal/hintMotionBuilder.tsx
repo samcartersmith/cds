@@ -31,6 +31,7 @@ export type CreateHintMotionProps = {
   >;
 };
 
+/** @deprecated don't use creator pattern in v8 */
 export function hintMotionBuilder({
   VStack,
   Button,

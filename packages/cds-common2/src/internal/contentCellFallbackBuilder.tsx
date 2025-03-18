@@ -2,6 +2,7 @@ import React from 'react';
 
 import type { ContentCellFallbackProps } from '../types';
 
+/** @deprecated don't use creator pattern in v8 */
 export function contentCellFallbackBuilder(
   ContentCellFallback: React.ComponentType<React.PropsWithChildren<ContentCellFallbackProps>>,
 ) {

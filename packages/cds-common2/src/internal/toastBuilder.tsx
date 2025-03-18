@@ -21,6 +21,7 @@ type UseToastProps = {
   disablePortal?: boolean;
 };
 
+/** @deprecated don't use creator pattern in v8 */
 export function toastBuilder({ Toast, Button, PortalProvider, Stack }: CreateToastProps) {
   const BasicToast = () => {
     const toast = useToast<UseToastProps>(Toast);

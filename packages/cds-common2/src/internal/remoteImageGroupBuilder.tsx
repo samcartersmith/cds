@@ -18,6 +18,7 @@ type RemoteImageGroupBuilder = {
   Text: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
 };
 
+/** @deprecated don't use creator pattern in v8 */
 export const remoteImageGroupBuilder = ({
   RemoteImageGroup,
   RemoteImage,

@@ -20,6 +20,7 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   secondary: 'bgSecondary',
 };
 
+/** @deprecated don't use creator pattern in v8 */
 export function inputIconBuilder(
   TextInput: React.ComponentType<React.PropsWithChildren<TextInputBaseProps>>,
   InputIcon: React.ComponentType<

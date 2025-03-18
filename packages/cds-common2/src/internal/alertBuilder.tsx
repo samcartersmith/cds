@@ -25,6 +25,7 @@ export type CreateAlertProps = {
   PortalProvider: React.ComponentType<React.PropsWithChildren<unknown>>;
 };
 
+/** @deprecated don't use creator pattern in v8 */
 export function alertBuilder({ Alert, Button, PortalProvider }: CreateAlertProps) {
   const BasicAlert = ({ singleAction = false }) => {
     const [visible, setVisible] = useState(true);

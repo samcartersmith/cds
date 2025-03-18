@@ -1,5 +1,4 @@
 import React from 'react';
-import { inputIconButtonBuilder } from '@cbhq/cds-common2/internal/inputIconButtonBuilder';
 
 import { Box } from '../../layout/Box';
 import { InputIconButton } from '../InputIconButton';
@@ -10,24 +9,84 @@ export default {
   component: InputIconButton,
 };
 
-const {
-  Basic,
-  SetColorAndInheritFocusStyle,
-  DefaultsToPrimary,
-  BasicEnd,
-  AddCustomColor,
-  AddCustomColorEnd,
-  InvalidPlacement,
-} = inputIconButtonBuilder(TextInput, InputIconButton, (props) => (
-  <Box {...props} background="bgAlternate" />
-));
+const variants = ['foreground', 'foregroundMuted', 'primary', 'negative', 'positive'] as const;
 
-export {
-  AddCustomColor,
-  AddCustomColorEnd,
-  Basic,
-  BasicEnd,
-  DefaultsToPrimary,
-  InvalidPlacement,
-  SetColorAndInheritFocusStyle,
+export const AddCustomColor = () => {
+  return (
+    <TextInput
+      label="Label"
+      start={
+        <InputIconButton
+          disableInheritFocusStyle
+          accessibilityLabel="Add"
+          name="add"
+          variant="foregroundMuted"
+        />
+      }
+    />
+  );
+};
+
+export const AddCustomColorEnd = () => {
+  return (
+    <TextInput
+      end={
+        <InputIconButton
+          disableInheritFocusStyle
+          transparent
+          accessibilityLabel="Add"
+          name="add"
+          variant="foregroundMuted"
+        />
+      }
+      label="Label"
+    />
+  );
+};
+
+export const Basic = () => {
+  return (
+    <>
+      {variants.map((variant) => (
+        <TextInput
+          key={`${variant}-input-iconbutton`}
+          label={variant}
+          start={<InputIconButton accessibilityLabel="Add" name="add" variant="foregroundMuted" />}
+          variant={variant}
+        />
+      ))}
+    </>
+  );
+};
+
+export const BasicEnd = () => {
+  return <TextInput end={<InputIconButton accessibilityLabel="Add" name="add" />} label="Label" />;
+};
+
+export const DefaultsToPrimary = () => {
+  return (
+    <TextInput
+      label="Label"
+      start={<InputIconButton accessibilityLabel="Search" name="search" />}
+      variant="foregroundMuted"
+    />
+  );
+};
+
+export const InvalidPlacement = () => {
+  return (
+    <Box background="bgAlternate">
+      <InputIconButton accessibilityLabel="Add" name="add" variant="foregroundMuted" />
+    </Box>
+  );
+};
+
+export const SetColorAndInheritFocusStyle = () => {
+  return (
+    <TextInput
+      label="Search"
+      start={<InputIconButton accessibilityLabel="Search" name="search" variant="secondary" />}
+      variant="foregroundMuted"
+    />
+  );
 };

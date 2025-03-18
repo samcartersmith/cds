@@ -1,16 +1,95 @@
 import React from 'react';
-import { tagBuilder, tagStories } from '@cbhq/cds-common2/internal/tagBuilder';
+import startCase from 'lodash/startCase';
+import { TagBaseProps } from '@cbhq/cds-common2';
 
 import { Tag } from '../Tag';
+import { VStack } from '../../layout';
 
-const { build, buildSheet } = tagBuilder(Tag);
+export default {
+  title: 'Core Components/Tag',
+  component: Tag,
+};
 
-export const Default = build(tagStories.default[0]);
-export const All = buildSheet(tagStories.all);
-export const Wildcard = buildSheet(tagStories.wildcard);
-export const Truncated = buildSheet(tagStories.truncated);
+type TagPropConfig = {
+  intent: TagBaseProps['intent'][];
+  colorScheme: TagBaseProps['colorScheme'][];
+};
+const tagProps: TagPropConfig = {
+  intent: ['informational', 'promotional'],
+  colorScheme: ['green', 'purple', 'blue', 'yellow', 'red', 'gray'],
+};
 
-// Let's ensure CDS Tag is as performant as the raw HTML setup
+const tagMap = tagProps.intent
+  .map((intent) => {
+    return tagProps.colorScheme.map((colorScheme) => ({
+      intent,
+      colorScheme,
+      children: `${startCase(intent)} ${colorScheme}`,
+    }));
+  })
+  .flat();
+
+const tagStories = {
+  default: [{ children: 'Default tag', colorScheme: 'blue' }],
+  all: tagMap,
+  wildcard: [
+    {
+      children: 'Atlanta',
+      background: 'blue100',
+      color: 'red10',
+    },
+    {
+      children: 'Los Angeles',
+      intent: 'promotional',
+      background: 'yellow30',
+      color: 'purple80',
+    },
+  ],
+  truncated: [
+    {
+      children: 'Truncate this long long tag',
+      colorScheme: 'green',
+      maxWidth: 150,
+    },
+    {
+      children: "Don't truncate this long long tag",
+      colorScheme: 'green',
+    },
+  ],
+} as const;
+
+export const Default = () => <Tag {...tagStories.default[0]} />;
+
+export const All = () => (
+  <VStack padding={0.5} gap={2} flexWrap="nowrap" alignItems="flex-start">
+    {tagStories.all.map((props) => (
+      <Tag key={`tag-${props.intent}-${props.colorScheme}-${props.children}`} {...props} />
+    ))}
+  </VStack>
+);
+
+export const Wildcard = () => (
+  <VStack padding={0.5} gap={2} flexWrap="nowrap" alignItems="flex-start">
+    {tagStories.wildcard.map((props) => (
+      <Tag
+        key={`tag-wildcard-${props.children}-${props.background || ''}-${props.color || ''}`}
+        {...props}
+      />
+    ))}
+  </VStack>
+);
+
+export const Truncated = () => (
+  <VStack padding={0.5} gap={2} flexWrap="nowrap" alignItems="flex-start">
+    {tagStories.truncated.map((props) => {
+      const keyString = `tag-truncated-${props.children}-${
+        'maxWidth' in props ? props.maxWidth : 'full'
+      }`;
+      return <Tag key={keyString} {...props} />;
+    })}
+  </VStack>
+);
+
 const textStyles = {
   padding: 0,
   margin: 0,
@@ -19,9 +98,9 @@ const textStyles = {
   fontWeight: 'var(--label1-font-weight)',
   fontFamily: 'var(--label1-font-family)',
 };
-const TagBaseline = (props: React.ReactElement<HTMLDivElement>) => (
+
+export const HtmlTag = () => (
   <div
-    {...props}
     style={{
       background: 'rgb(var(--blue0))',
       color: 'rgb(var(--blue60))',
@@ -32,9 +111,3 @@ const TagBaseline = (props: React.ReactElement<HTMLDivElement>) => (
     <span style={textStyles}>HTML tag</span>
   </div>
 );
-export const HtmlTag = tagBuilder(TagBaseline).build();
-
-export default {
-  title: 'Core Components/Tag',
-  component: Tag,
-};
