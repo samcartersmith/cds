@@ -28,6 +28,9 @@ const ignores = [
   '**/esm/**',
   '**/lib/**',
   '**/templates/**',
+  // These files use assert { type: 'json' } syntax that breaks eslint and must be fully ignored
+  '**/getAffectedRoutes.mjs',
+  '**/getBuildInfo.mjs',
 ];
 
 const typescriptRules = {
