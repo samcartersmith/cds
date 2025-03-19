@@ -1,18 +1,36 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
-import { searchInputBuilder } from '@cbhq/cds-common2/internal/searchInputBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Text } from '../../typography/Text';
 import { InputIconButton } from '../InputIconButton';
 import { SearchInput } from '../SearchInput';
 
-const { Basic, Compact, HideStartIcon, HideEndIcon, CustomEndNode } = searchInputBuilder(
-  (props) => <SearchInput editable={__DEV__} {...props} />,
-);
+const Basic = () => {
+  const [text, setText] = useState('');
+  return <SearchInput editable={__DEV__} onChangeText={setText} value={text} />;
+};
 
-// can't use `Disabled` variant from searchInputBuilder because we can't set mobile specifc props,
-// and we want `editable` to always be `false` or `undefined` here
+const Compact = () => {
+  const [text, setText] = useState('');
+  return <SearchInput compact editable={__DEV__} onChangeText={setText} value={text} />;
+};
+
+const HideStartIcon = () => {
+  const [text, setText] = useState('');
+  return <SearchInput editable={__DEV__} hideStartIcon onChangeText={setText} value={text} />;
+};
+
+const HideEndIcon = () => {
+  const [text, setText] = useState('');
+  return <SearchInput editable={__DEV__} hideEndIcon onChangeText={setText} value={text} />;
+};
+
+const CustomEndNode = ({ end }: { end: React.ReactNode }) => {
+  const [text, setText] = useState('');
+  return <SearchInput editable={__DEV__} end={end} onChangeText={setText} value={text} />;
+};
+
 const Disabled = () => {
   const [text, setText] = useState('');
 
@@ -151,7 +169,6 @@ const SearchInputScreen = () => {
       <Example title="Custom Start Icon - Back arrow">
         <SetCustomBackArrowStartIcon />
       </Example>
-
       <Example title="Custom End Node">
         <CustomEndNode
           end={

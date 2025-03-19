@@ -1,24 +1,60 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import {
-  type MockAccordionProps,
-  accordionBuilder,
-} from '@cbhq/cds-common2/internal/accordionBuilder';
 import { noop } from '@cbhq/cds-utils';
 
 import { CellMedia } from '../../cells/CellMedia';
-import { TextInput } from '../../controls';
 import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
 
-const { MockAccordion } = accordionBuilder({
-  Accordion,
-  AccordionItem,
-  CellMedia,
-  Text,
-  TextInput,
-});
+type MockAccordionProps = {
+  activeKey?: string;
+  defaultActiveKey?: string;
+  setActiveKey?: (activeKey: string | null) => void;
+  onChange?: (key: string | null) => void;
+  onPress1?: (key: string | null) => void;
+  onPress2?: (key: string | null) => void;
+};
+
+const MockAccordion = ({
+  activeKey,
+  defaultActiveKey,
+  setActiveKey,
+  onChange,
+  onPress1,
+  onPress2,
+}: MockAccordionProps) => {
+  return (
+    <Accordion
+      activeKey={activeKey}
+      defaultActiveKey={defaultActiveKey}
+      onChange={onChange}
+      setActiveKey={setActiveKey}
+      testID="mock-accordion"
+    >
+      <AccordionItem
+        itemKey="1"
+        media={<CellMedia name="wallet" testID="mock-accordion-item1-media" type="icon" />}
+        onPress={onPress1}
+        subtitle="subtitle1"
+        testID="mock-accordion-item1"
+        title="Accordion #1"
+      >
+        <Text>Accordion Content1</Text>
+      </AccordionItem>
+      <AccordionItem
+        itemKey="2"
+        media={<CellMedia name="wallet" testID="mock-accordion-item2-media" type="icon" />}
+        onPress={onPress2}
+        subtitle="subtitle2"
+        testID="mock-accordion-item2"
+        title="Accordion #2"
+      >
+        <Text>Accordion Content2</Text>
+      </AccordionItem>
+    </Accordion>
+  );
+};
 
 const customAccordionStyle = { padding: 20 };
 const customAccordionItemStyle = { padding: 30 };

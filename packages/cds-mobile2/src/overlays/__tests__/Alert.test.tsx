@@ -1,26 +1,49 @@
+import React, { useState, useCallback } from 'react';
 import { Animated, Modal as RNModal } from 'react-native';
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
-import { alertBuilder, CreateAlertProps } from '@cbhq/cds-common2/internal/alertBuilder';
 
-import { type ButtonProps, Button } from '../../buttons';
+import { Button } from '../../buttons';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Alert } from '../Alert';
-import { PortalProvider } from '../PortalProvider';
+import type { AlertBaseProps } from '@cbhq/cds-common2';
 
-/*
-  This is a wrapper for the Button component that maps the onClick event to the onPress event. Ensures
-  alertBuilder converts <Button onClick> to <Button onPress>
-*/
-const ButtonWrapperWithEventMapping = ({
-  onClick,
-  ...props
-}: { onClick?: () => void } & ButtonProps) => <Button {...props} onPress={onClick} />;
+const MockAlert = ({
+  visible: externalVisible,
+  onRequestClose,
+  title,
+  body,
+  pictogram,
+  preferredActionLabel,
+  onPreferredActionPress,
+  dismissActionLabel,
+  testID,
+}: Partial<AlertBaseProps>) => {
+  const [visible, setVisible] = useState(false);
+  const setVisibleOn = useCallback(() => setVisible(true), []);
 
-const { MockAlert } = alertBuilder({
-  Alert,
-  Button: ButtonWrapperWithEventMapping,
-  PortalProvider,
-} as CreateAlertProps);
+  const defaultTitle = 'Alert title';
+  const defaultBody = 'Alert body type that can run over multiple lines, but should be kept short.';
+  const defaultPictogram = 'warning';
+  const defaultPreferredActionLabel = 'Save';
+  const defaultOnPreferredActionPress = () => console.log('pressed');
+
+  return (
+    <>
+      <Button onPress={setVisibleOn}>Show Alert</Button>
+      <Alert
+        body={body ?? defaultBody}
+        dismissActionLabel={dismissActionLabel}
+        onPreferredActionPress={onPreferredActionPress ?? defaultOnPreferredActionPress}
+        onRequestClose={onRequestClose ?? setVisibleOn}
+        pictogram={pictogram ?? defaultPictogram}
+        preferredActionLabel={preferredActionLabel ?? defaultPreferredActionLabel}
+        testID={testID}
+        title={title ?? defaultTitle}
+        visible={externalVisible ?? visible}
+      />
+    </>
+  );
+};
 
 const animationParallelSpy = jest.spyOn(Animated, 'parallel');
 const animationTimingSpy = jest.spyOn(Animated, 'timing');

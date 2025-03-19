@@ -29,6 +29,7 @@ export type MockAccordionProps = {
   onPress2?: OnPress;
 };
 
+/** @deprecated do not use creator pattern in v8 */
 export function accordionBuilder({
   Accordion,
   AccordionItem,

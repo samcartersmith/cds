@@ -1,28 +1,30 @@
-import React from 'react';
-import { dotBuilder } from '@cbhq/cds-common2/internal/dotBuilder';
+import React, { useEffect, useState } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons/Icon';
 import { Box } from '../../layout/Box';
-import { HStack } from '../../layout/HStack';
-import { VStack } from '../../layout/VStack';
-import { Avatar } from '../../media/Avatar';
-import { TextLabel1 } from '../../typography/TextLabel1';
 import { DotCount } from '../DotCount';
-import { DotStatusColor } from '../DotStatusColor';
-import { DotSymbol } from '../DotSymbol';
 
-const { DotCountDynamic } = dotBuilder(
-  DotCount,
-  DotStatusColor,
-  DotSymbol,
-  Box,
-  Avatar,
-  TextLabel1,
-  Icon,
-  VStack,
-  HStack,
-);
+const DotCountDynamic = () => {
+  const [count, setCount] = useState<number>(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((prev) => (prev === 0 ? Math.floor(Math.random() * 99) : 0));
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <Box alignItems="flex-start" minHeight={100} padding={1}>
+      <DotCount count={count}>
+        <Icon name="airdrop" size="m" />
+      </DotCount>
+    </Box>
+  );
+};
 
 const DotMiscScreen = () => {
   return (

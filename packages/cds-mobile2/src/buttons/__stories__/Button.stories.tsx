@@ -1,5 +1,4 @@
 import React from 'react';
-import { buttonStories } from '@cbhq/cds-common2/internal/buttonBuilder';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons';
@@ -7,8 +6,35 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { RemoteImage } from '../../media/RemoteImage';
 import { Text } from '../../typography/Text';
-import { Button } from '../Button';
+import { Button, type ButtonProps } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
+
+const buttonStories: Omit<ButtonProps, 'children'>[] = [
+  { variant: 'secondary' },
+  { variant: 'positive' },
+  { variant: 'negative' },
+  { variant: 'secondary', transparent: true },
+  { variant: 'positive', transparent: true },
+  { variant: 'negative', transparent: true },
+  { block: true },
+  { compact: true },
+  { compact: true, block: true },
+  { transparent: true },
+  { disabled: true },
+  { loading: true },
+  { loading: true, compact: true },
+  { startIcon: 'backArrow' },
+  { endIcon: 'backArrow' },
+  { startIcon: 'backArrow', endIcon: 'forwardArrow' },
+  { startIcon: 'backArrow', endIcon: 'forwardArrow', block: true },
+  { transparent: true, flush: 'start', compact: true, endIcon: 'forwardArrow' },
+  { transparent: true, flush: 'end', compact: true, endIcon: 'forwardArrow' },
+  { flush: 'start', endIcon: 'forwardArrow' },
+  { flush: 'end', endIcon: 'forwardArrow' },
+  { startIcon: 'backArrow', endIcon: 'forwardArrow', compact: true },
+  { startIcon: 'backArrow', compact: true },
+  { endIcon: 'forwardArrow', compact: true },
+];
 
 const ButtonScreen = () => {
   return (

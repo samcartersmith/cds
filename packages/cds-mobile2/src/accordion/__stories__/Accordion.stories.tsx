@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { accordionBuilder } from '@cbhq/cds-common2/internal/accordionBuilder';
 import { noop } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons/Button';
@@ -8,6 +7,7 @@ import { TextInput } from '../../controls';
 import { Example, ExampleProps, ExampleScreen } from '../../examples/ExampleScreen';
 import { Text } from '../../typography/Text';
 import { Accordion, AccordionItem } from '..';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 const STEPS = [
   { itemKey: '1', nextKey: '2' },
@@ -15,13 +15,92 @@ const STEPS = [
   { itemKey: '3', nextKey: '1' },
 ];
 
-const { BasicAccordion, NoMedia, NoSubtitle, TitleOnly, LongContent } = accordionBuilder({
-  Accordion,
-  AccordionItem,
-  Text,
-  CellMedia,
-  TextInput,
-});
+const handlePress = console.log;
+
+const BasicAccordion = () => {
+  return (
+    <Accordion defaultActiveKey="2" onChange={handlePress}>
+      <AccordionItem
+        itemKey="1"
+        media={<CellMedia name="wallet" type="icon" />}
+        subtitle="subtitle1"
+        title="Accordion #1"
+      >
+        <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      </AccordionItem>
+      <AccordionItem
+        itemKey="2"
+        media={<CellMedia name="wallet" type="icon" />}
+        onPress={handlePress}
+        subtitle="subtitle2"
+        title="Accordion #2"
+      >
+        <Text>Accordion Content</Text>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+const NoMedia = () => {
+  return (
+    <Accordion onChange={handlePress}>
+      <AccordionItem itemKey="1" subtitle="subtitle1" title="Accordion #1">
+        <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      </AccordionItem>
+      <AccordionItem itemKey="2" onPress={handlePress} subtitle="subtitle2" title="Accordion #2">
+        <Text>Accordion Content</Text>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+const NoSubtitle = () => {
+  return (
+    <Accordion defaultActiveKey="1" onChange={handlePress}>
+      <AccordionItem
+        itemKey="1"
+        media={<CellMedia name="wallet" type="icon" />}
+        title="Accordion #1"
+      >
+        <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      </AccordionItem>
+      <AccordionItem
+        itemKey="2"
+        media={<CellMedia name="wallet" type="icon" />}
+        onPress={handlePress}
+        title="Accordion #2"
+      >
+        <Text>Accordion Content</Text>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+const TitleOnly = () => {
+  return (
+    <Accordion defaultActiveKey="2" onChange={handlePress}>
+      <AccordionItem itemKey="1" title="Accordion #1">
+        <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
+      </AccordionItem>
+      <AccordionItem itemKey="2" onPress={handlePress} title="Accordion #2">
+        <Text>Accordion Content</Text>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+const LongContent = () => {
+  return (
+    <Accordion defaultActiveKey="2" onChange={handlePress}>
+      <AccordionItem itemKey="1" title="Accordion #1">
+        <Text>{loremIpsum.repeat(10)}</Text>
+      </AccordionItem>
+      <AccordionItem itemKey="2" onPress={handlePress} title="Accordion #2">
+        <Text>Accordion Content</Text>
+      </AccordionItem>
+    </Accordion>
+  );
+};
 
 const AccordionExample = ({ children, title }: ExampleProps) => {
   return (

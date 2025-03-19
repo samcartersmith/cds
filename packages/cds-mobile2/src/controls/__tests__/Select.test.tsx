@@ -1,30 +1,47 @@
-import { ScrollView } from 'react-native';
+import React, { useCallback, useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { CreateSelectProps, selectBuilderMobile } from '@cbhq/cds-common2/internal/selectBuilder';
 
-import { DotSymbol } from '../../dots';
-import { Box, HStack, VStack } from '../../layout';
-import { RemoteImage } from '../../media';
 import { Tray } from '../../overlays/tray/Tray';
 import { Text } from '../../typography/Text';
 import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../utils/testHelpers';
 import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
-import { TextInput } from '../TextInput';
 
-const { DefaultSelect } = selectBuilderMobile({
-  Tray,
-  Select,
-  SelectOption,
-  ScrollView,
-  HStack,
-  VStack,
-  TextInput,
-  Box,
-  RemoteImage,
-  DotSymbol,
-} as CreateSelectProps);
+const DefaultSelect = ({ trayTitle, hasDescription, hideHandleBar, ...props }: any) => {
+  const [isTrayVisible, setIsTrayVisible] = useState(false);
+  const [selectedValue, setValue] = useState<string | undefined>();
+
+  const openTray = useCallback(() => setIsTrayVisible(true), []);
+  const closeTray = useCallback(() => setIsTrayVisible(false), []);
+
+  const exampleOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
+
+  return (
+    <Select onChange={setValue} onPress={openTray} value={selectedValue} {...props}>
+      {isTrayVisible && (
+        <Tray
+          hideHandleBar={hideHandleBar}
+          onCloseComplete={closeTray}
+          testID="select-input-tray"
+          title={trayTitle}
+        >
+          {({ handleClose }) =>
+            exampleOptions.map((option) => (
+              <SelectOption
+                key={option}
+                description={hasDescription ? 'Description' : undefined}
+                onPress={handleClose}
+                title={option}
+                value={option}
+              />
+            ))
+          }
+        </Tray>
+      )}
+    </Select>
+  );
+};
 
 const placeholderText = 'Choose something';
 

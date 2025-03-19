@@ -1,7 +1,8 @@
 import React from 'react';
 import { assets, squareAssets, svgs } from '@cbhq/cds-common2/internal/data/assets';
-import { remoteImageBuilder } from '@cbhq/cds-common2/internal/remoteImageBuilder';
+import { avatars, avatarSizes } from '@cbhq/cds-common2/internal/data/avatars';
 import { entries } from '@cbhq/cds-utils';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
@@ -26,20 +27,118 @@ const wideLogoSource =
 
 const mockItems = Array.from({ length: 4 });
 const images = entries(assets).map(([, { imageUrl }]) => imageUrl);
-const {
-  AvatarSizesWithCircle,
-  AvatarSizesWithSquircle,
-  BorderColorImg,
-  BorderColorSvgs,
-  CircleFallback,
-  RectangleFallback,
-  SquareFallback,
-} = remoteImageBuilder({
-  RemoteImage,
-  VStack,
-  HStack,
-  Text: (props) => <Text {...props} />,
-});
+
+const borderColors = [
+  'bgPrimary',
+  'bgPrimaryWash',
+  'bgSecondary',
+  'bgPositive',
+  'bgNegative',
+  'bgLine',
+  'bgLineHeavy',
+  'transparent',
+  'bgWarning',
+] as const satisfies ThemeVars.Color[];
+
+const imageURL = avatars[0];
+
+const AvatarSizesWithSquircle = () => (
+  <HStack gap={2}>
+    {avatarSizes.map((size, idx) => {
+      const key = `squircle-${idx}`;
+      return (
+        <VStack key={key}>
+          <Text>{size}</Text>
+          <RemoteImage key={key} shape="squircle" size={size} source={imageURL} />
+        </VStack>
+      );
+    })}
+  </HStack>
+);
+
+const AvatarSizesWithCircle = () => (
+  <HStack gap={2}>
+    {avatarSizes.map((size, idx) => {
+      const key = `circle-${idx}`;
+      return (
+        <VStack key={key}>
+          <Text>{size}</Text>
+          <RemoteImage shape="circle" size={size} source={imageURL} />
+        </VStack>
+      );
+    })}
+  </HStack>
+);
+
+const BorderColorImg = () => (
+  <VStack gap={2}>
+    {borderColors.map((borderColor, idx) => {
+      const key = `border-imgs-${idx}`;
+      return (
+        <RemoteImage
+          key={key}
+          borderColor={borderColor}
+          shape="circle"
+          size="xxl"
+          source={imageURL}
+        />
+      );
+    })}
+  </VStack>
+);
+
+const BorderColorSvgs = () => (
+  <VStack gap={1}>
+    {borderColors.map((borderColor, idx) => {
+      const key = `border-svgs-${idx}`;
+      return (
+        <RemoteImage
+          key={key}
+          borderColor={borderColor}
+          shape="circle"
+          size="xxl"
+          source={svgs[0]}
+        />
+      );
+    })}
+  </VStack>
+);
+
+const CircleFallback = () => {
+  return (
+    <VStack gap={1}>
+      {avatarSizes.map((size, idx) => {
+        const key = `circle-fallback-${idx}`;
+        return (
+          <VStack key={key}>
+            <Text>{size}</Text>
+            <RemoteImage shape="circle" size={size} />
+          </VStack>
+        );
+      })}
+    </VStack>
+  );
+};
+
+const SquareFallback = () => {
+  return (
+    <VStack gap={1}>
+      {avatarSizes.map((size, idx) => {
+        const key = `square-fallback-${idx}`;
+        return (
+          <VStack key={key}>
+            <Text>{size}</Text>
+            <RemoteImage shape="square" size={size} />
+          </VStack>
+        );
+      })}
+    </VStack>
+  );
+};
+
+const RectangleFallback = () => {
+  return <RemoteImage height={10} shape="rectangle" width={30} />;
+};
 
 const gapStyle = { gap: 16 };
 

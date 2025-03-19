@@ -1,5 +1,4 @@
-import React from 'react';
-import { collapsibleBuilder } from '@cbhq/cds-common2/internal/collapsibleBuilder';
+import React, { useCallback, useState } from 'react';
 
 import { Button } from '../../buttons';
 import { DotCount } from '../../dots';
@@ -7,14 +6,104 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { Collapsible } from '../Collapsible';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
-const { BasicCollapsible, RevealTop, DefaultExpanded, Scroll, Horizontal } = collapsibleBuilder({
-  Collapsible,
-  Text,
-  Button,
-  DotCount,
-  HStack,
-});
+const BasicCollapsible = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <>
+      <Button disableDebounce onPress={toggleCollapsed}>
+        Click me!
+      </Button>
+      <Collapsible collapsed={collapsed}>
+        <Text>{loremIpsum}</Text>
+      </Collapsible>
+    </>
+  );
+};
+
+const RevealTop = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <>
+      <Collapsible collapsed={collapsed}>
+        <Text>{loremIpsum}</Text>
+      </Collapsible>
+      <Button disableDebounce onPress={toggleCollapsed}>
+        Click me!
+      </Button>
+    </>
+  );
+};
+
+const DefaultExpanded = () => {
+  const [collapsed, setCollapsed] = useState(false);
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <>
+      <Button disableDebounce onPress={toggleCollapsed}>
+        Click me!
+      </Button>
+      <Collapsible collapsed={collapsed}>
+        <Text>{loremIpsum}</Text>
+      </Collapsible>
+    </>
+  );
+};
+
+const Scroll = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <>
+      <Button disableDebounce onPress={toggleCollapsed}>
+        Click me!
+      </Button>
+      <Collapsible collapsed={collapsed} maxHeight={400}>
+        <Text>{loremIpsum.repeat(10)}</Text>
+      </Collapsible>
+    </>
+  );
+};
+
+const Horizontal = () => {
+  const [collapsed, setCollapsed] = useState(true);
+  const toggleCollapsed = useCallback(
+    () => setCollapsed((collapsed) => !collapsed),
+    [setCollapsed],
+  );
+
+  return (
+    <HStack alignItems="center">
+      <Button disableDebounce onPress={toggleCollapsed}>
+        Click me!
+      </Button>
+      <Collapsible collapsed={collapsed} direction="horizontal" maxHeight={400}>
+        <DotCount count={100} />
+        <DotCount count={1} />
+        <DotCount count={99} />
+      </Collapsible>
+    </HStack>
+  );
+};
 
 const CollapseScreen = () => {
   return (
