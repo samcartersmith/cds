@@ -51,11 +51,6 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/banner/__stories__/Banner.stories').default,
   },
   {
-    key: 'BannerAlpha',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/alpha/banner/__stories__/BannerAlpha.stories').default,
-  },
-  {
     key: 'Box',
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Box.stories').default,
   },

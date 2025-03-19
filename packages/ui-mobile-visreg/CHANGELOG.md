@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.1.0 (3/19/2025 PST)
+
+#### 🚀 Updates
+
+- Remove BannerAlpha route. [[#3775](https://github.cbhq.net/frontend/cds/pull/3775)]
+
 ## 3.0.1 (3/14/2025 PST)
 
 #### 🐞 Fixes
