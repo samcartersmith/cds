@@ -49,12 +49,8 @@ jobs:
         with:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
-      - name: Lint (All)
-        if: ${{ github.event_name == 'push' }}
-        run: yarn nx run-many --target=lint
-      - name: Lint (Affected)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: yarn nx affected --target=lint
+      - name: Lint
+        run: yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD
 
   format:
     name: Format
@@ -64,12 +60,8 @@ jobs:
         with:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
-      - name: Format (All)
-        if: ${{ github.event_name == 'push' }}
-        run: yarn nx format:check  --verbose --all
-      - name: Format (Affected)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: yarn nx format:check --verbose
+      - name: Format
+        run: yarn nx format:check  --verbose --base=$NX_BASE --head=$NX_HEAD
 
   test:
     name: Test
@@ -79,16 +71,10 @@ jobs:
         with:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
-      - name: Test (All)
-        if: ${{ github.event_name == 'push' }}
+      - name: Test
         run: |
-          yarn nx run-many --target=test
-          yarn nx run-many --target=audit-a11y
-      - name: Test (Affected)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          yarn nx affected --target=test
-          yarn nx affected --target=audit-a11y
+          yarn nx affected --target=test --base=$NX_BASE --head=$NX_HEAD
+          yarn nx affected --target=audit-a11y --base=$NX_BASE --head=$NX_HEAD
 
   typecheck:
     name: Typecheck
@@ -98,14 +84,8 @@ jobs:
         with:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
-      - name: Typecheck (All)
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          yarn nx run-many --target=typecheck
-      - name: Typecheck (Affected)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          yarn nx affected --target=typecheck
+      - name: Typecheck
+        run: yarn nx affected --target=typecheck --base=$NX_BASE --head=$NX_HEAD
 
   storybook-a11y:
     if: ${{ github.event_name == 'pull_request' }}
