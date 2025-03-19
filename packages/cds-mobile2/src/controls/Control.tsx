@@ -11,12 +11,11 @@ import {
 } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
+import { opacityPressed, accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useTheme } from '../hooks/useTheme';
-import { Spacer } from '../layout/Spacer';
 import { TextProps, Text } from '../typography/Text';
 import { Haptics } from '../utils/haptics';
 
@@ -165,7 +164,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
                   outputRange: [theme.color.fgMuted, theme.color.fg],
                 }),
                 // Simplify to use opacity for default palette foreground color (i.e. gray100) hue step
-                opacity: pressed ? opacityPressed : 1,
+                opacity: pressed ? opacityPressed : pressDisabled ? accessibleOpacityDisabled : 1,
                 // Prevent text element from expanding beyond available width.
                 flexShrink: 1,
               }}
