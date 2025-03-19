@@ -25,7 +25,13 @@ export default function NavbarContent(): JSX.Element {
   const searchBarItem = useMemo(() => items.find((item) => item.type === 'search'), [items]);
 
   return (
-    <HStack flexGrow={1} justifyContent="space-between" paddingX={4} paddingY={2}>
+    <HStack
+      flexGrow={1}
+      justifyContent="space-between"
+      paddingEnd={{ base: 4, phone: 3 }}
+      paddingStart={{ base: 4, phone: 2 }}
+      paddingY={2}
+    >
       <HStack gap={1.5}>
         {windowSize === 'mobile' && <NavbarMobileSidebarToggle />}
         <NavbarLogo />

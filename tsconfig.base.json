@@ -72,6 +72,12 @@
       "@cbhq/cds-mobile": [
         "packages/mobile/src"
       ],
+      "@cbhq/cds-mobile-themes": [
+        "packages/cds-mobile-themes/src"
+      ],
+      "@cbhq/cds-mobile-themes/*": [
+        "packages/cds-mobile-themes/src/*"
+      ],
       "@cbhq/cds-mobile-visualization": [
         "packages/mobile-visualization/src"
       ],
@@ -87,12 +93,6 @@
       "@cbhq/cds-mobile/*": [
         "packages/mobile/src/*"
       ],
-      "@cbhq/cds-mobile-themes": [
-        "packages/cds-mobile-themes/src"
-      ],
-      "@cbhq/cds-mobile-themes/*": [
-        "packages/cds-mobile-themes/src/*"
-      ],
       "@cbhq/cds-mobile2": [
         "packages/cds-mobile2/src"
       ],
@@ -107,6 +107,12 @@
       ],
       "@cbhq/cds-web": [
         "packages/web/src"
+      ],
+      "@cbhq/cds-web-themes": [
+        "packages/cds-web-themes/src"
+      ],
+      "@cbhq/cds-web-themes/*": [
+        "packages/cds-web-themes/src/*"
       ],
       "@cbhq/cds-web-utils": [
         "libs/web-utils/src"
@@ -128,12 +134,6 @@
       ],
       "@cbhq/cds-web/*": [
         "packages/web/src/*"
-      ],
-      "@cbhq/cds-web-themes": [
-        "packages/cds-web-themes/src"
-      ],
-      "@cbhq/cds-web-themes/*": [
-        "packages/cds-web-themes/src/*"
       ],
       "@cbhq/cds-web2": [
         "packages/cds-web2/src"

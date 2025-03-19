@@ -54,7 +54,7 @@ export default function CodeBlockString({
   return (
     <VStack
       as="div"
-      background="accentSubtleBlue"
+      background="bg"
       borderRadius={400}
       className={cx(
         styles.codeBlock,

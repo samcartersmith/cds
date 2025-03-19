@@ -2,6 +2,12 @@ import React, { useCallback, useMemo } from 'react';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { SegmentedTabs } from '@cbhq/cds-web2/tabs/SegmentedTabs';
+import { TabsActiveIndicator } from '@cbhq/cds-web2/tabs';
+import { SegmentedTabsActiveIndicatorProps } from '@cbhq/cds-web2/tabs/SegmentedTabsActiveIndicator';
+
+const SegmentedTabsActiveIndicator = ({ ...props }: SegmentedTabsActiveIndicatorProps) => {
+  return <TabsActiveIndicator borderRadius={300} {...props} />;
+};
 
 export const PlatformSwitcher = () => {
   const { supportsWeb, supportsMobile, platform, setPlatform } = usePlatformContext();
@@ -29,5 +35,13 @@ export const PlatformSwitcher = () => {
   );
 
   const activeTab = tabs.find(({ id }) => id === platform) ?? null;
-  return <SegmentedTabs activeTab={activeTab} onChange={handlePlatformChange} tabs={tabs} />;
+  return (
+    <SegmentedTabs
+      activeTab={activeTab}
+      onChange={handlePlatformChange}
+      tabs={tabs}
+      borderRadius={300}
+      TabsActiveIndicatorComponent={SegmentedTabsActiveIndicator}
+    />
+  );
 };

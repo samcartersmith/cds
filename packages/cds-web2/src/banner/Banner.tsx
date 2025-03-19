@@ -49,7 +49,8 @@ const variantStyleProps: Record<BannerStyleVariant, HStackProps<React.ElementTyp
   },
 };
 
-export type BannerProps = BannerBaseProps & Omit<HStackProps<BoxDefaultElement>, 'children'>;
+export type BannerProps = BannerBaseProps &
+  Omit<HStackProps<BoxDefaultElement>, 'children' | 'title'>;
 
 export const Banner = memo(
   forwardRef(

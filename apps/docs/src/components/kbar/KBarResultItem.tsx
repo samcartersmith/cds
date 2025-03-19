@@ -45,10 +45,12 @@ const KBarResultItem = memo(
                 </Text>
               </Fragment>
             ))}
-            <Text as="span">{action.name}</Text>
+            <Text as="span" color={active ? 'fgPrimary' : 'fg'}>
+              {action.name}
+            </Text>
           </HStack>
         );
-      }, [action.name, ancestors]);
+      }, [action.name, ancestors, active]);
 
       const media = useMemo(() => {
         if (action.pictogram) {
@@ -56,33 +58,32 @@ const KBarResultItem = memo(
         }
         return (
           <HStack alignItems="center" height={24}>
-            <Icon color="fg" name="compass" size="s" />
+            <Icon name="compass" size="s" color={active ? 'fgPrimary' : 'fg'} />
           </HStack>
         );
-      }, [action]);
+      }, [action, active]);
 
       return (
-        <Cell
+        <HStack
+          gap={1.5}
+          background={active ? 'bgSecondary' : 'bg'}
+          paddingX={3}
+          paddingY={1}
           ref={ref}
-          compact
-          alignItems="flex-start"
-          media={media}
-          selected={active}
-          {...cellSpacingProps}
+          style={{
+            cursor: 'pointer',
+          }}
         >
+          {media}
           <VStack>
-            {!!title && (
-              <Text as="div" font="body" overflow="truncate">
-                {title}
-              </Text>
-            )}
+            {title}
             {!!action.subtitle && (
               <Text as="div" color="fgMuted" font="body" overflow="truncate">
                 {action.subtitle}
               </Text>
             )}
           </VStack>
-        </Cell>
+        </HStack>
       );
     },
   ),

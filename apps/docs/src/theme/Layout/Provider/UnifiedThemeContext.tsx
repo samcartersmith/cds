@@ -57,7 +57,7 @@ type UnifiedThemeProviderProps = {
 export const UnifiedThemeProvider = ({
   children,
   initialDocsTheme = docsTheme,
-  initialPlaygroundTheme = defaultTheme,
+  initialPlaygroundTheme = docsTheme,
 }: UnifiedThemeProviderProps) => {
   const { colorMode: docsColorMode, setColorMode: setDocsColorMode } = useColorMode();
   const [docsThemeState, setDocsThemeState] = useState(initialDocsTheme);

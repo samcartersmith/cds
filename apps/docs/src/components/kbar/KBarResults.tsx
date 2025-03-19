@@ -11,7 +11,7 @@ const KBarResults = memo(function KBarResults() {
     ({ item, active }) => {
       if (typeof item === 'string') {
         return (
-          <Box paddingBottom={2} paddingTop={3} paddingX={3}>
+          <Box paddingBottom={1} paddingTop={3} paddingX={3}>
             <Text font="headline">{item}</Text>
           </Box>
         );
