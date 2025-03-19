@@ -32,11 +32,13 @@ const interactableStyle = css`
   height: fit-content;
   width: fit-content;
   position: relative;
-  &:focus-within {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-color: var(--color-bgPrimary);
-    outline-offset: 1px;
+  @supports selector(:has(:focus-visible)) {
+    &:has(:focus-visible) {
+      outline-style: solid;
+      outline-width: 2px;
+      outline-color: var(--color-bgPrimary);
+      outline-offset: 1px;
+    }
   }
   // turn off control input opacity for hidden control in interactable
   &:active,
