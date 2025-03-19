@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 
-import pkg from '../../package.json' with { type: 'json' };
+import pkg from '../../package.json' assert { type: 'json' };
 
 import { routes } from './routes.mjs';
 
