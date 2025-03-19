@@ -212,8 +212,8 @@ export const IllustrationSheet = ({ variant }: { variant: IllustrationVariant })
   }, 1000);
 
   return (
-    <VStack paddingBottom={0}>
-      <Grid gap={2} paddingTop={0} templateColumns="3fr 1fr">
+    <VStack>
+      <Grid gap={2} templateColumns="3fr 1fr">
         <SearchInput
           compact
           onChangeText={searchOnChange}

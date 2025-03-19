@@ -127,7 +127,6 @@ export const ComponentHeader = memo(
                   background="bg"
                   borderRadius={400}
                   paddingStart={2}
-                  paddingY={0}
                   maxWidth="100%"
                   overflow="hidden"
                 >

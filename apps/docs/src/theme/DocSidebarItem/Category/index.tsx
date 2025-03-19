@@ -163,7 +163,7 @@ export default function DocSidebarItemCategory({
               )}
               <Text font="label1">{label}</Text>
             </HStack>
-            <Icon color="fg" name={!collapsed ? 'minus' : 'add'} paddingEnd={0} size="s" />
+            <Icon color="fg" name={!collapsed ? 'minus' : 'add'} size="s" />
           </HStack>
         </Pressable>
       ) : (
@@ -208,12 +208,7 @@ export default function DocSidebarItemCategory({
                 {label}
               </Text>
               {level !== 1 && (
-                <Icon
-                  color="fg"
-                  name={expandedItem === index ? 'caretUp' : 'caretDown'}
-                  paddingEnd={0}
-                  size="s"
-                />
+                <Icon color="fg" name={expandedItem === index ? 'caretUp' : 'caretDown'} size="s" />
               )}
             </HStack>
           </Pressable>
