@@ -33,7 +33,7 @@ export const BasicCollapsible = () => {
         Click me!
       </Button>
       <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
-        <Text>{loremIpsum}</Text>
+        <Text font="body">{loremIpsum}</Text>
       </Collapsible>
     </>
   );
@@ -59,7 +59,7 @@ export const DefaultExpanded = () => {
         Click me!
       </Button>
       <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
-        <Text>{loremIpsum}</Text>
+        <Text font="body">{loremIpsum}</Text>
       </Collapsible>
     </>
   );
@@ -111,7 +111,7 @@ export const RevealTop = () => {
   return (
     <>
       <Collapsible accessibilityLabelledBy={triggerId} collapsed={collapsed} id={collapsibleId}>
-        <Text>{loremIpsum}</Text>
+        <Text font="body">{loremIpsum}</Text>
       </Collapsible>
       <Button aria-controls={collapsibleId} id={triggerId} onClick={toggleCollapsed}>
         Click me!
@@ -145,7 +145,7 @@ export const Scroll = () => {
         id={collapsibleId}
         maxHeight={400}
       >
-        <Text>{loremIpsum.repeat(10)}</Text>
+        <Text font="body">{loremIpsum.repeat(10)}</Text>
       </Collapsible>
     </>
   );

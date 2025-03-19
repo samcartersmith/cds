@@ -34,7 +34,7 @@ const PatternTagErrorScreen = () => {
               <Text font="title3" align="center" paddingTop={3}>
                 Page not found
               </Text>
-              <Text align="center" color="fgMuted" paddingTop={1}>
+              <Text align="center" color="fgMuted" paddingTop={1} font="body">
                 Sorry we couldn&apos;t find what you were looking for.
               </Text>
             </VStack>

@@ -10,7 +10,7 @@ import { PageFooter } from '../PageFooter';
 const defaultProps = {
   action: (
     <Box>
-      <Text>Action</Text>
+      <Text font="body">Action</Text>
     </Box>
   ),
   testID: 'page-footer',
@@ -29,7 +29,7 @@ describe('PageFooter', () => {
   it('renders action correctly', () => {
     render(
       <DefaultThemeProvider>
-        <PageFooter action={<Text>Test</Text>} />
+        <PageFooter action={<Text font="body">Test</Text>} />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('Test')).toBeTruthy();

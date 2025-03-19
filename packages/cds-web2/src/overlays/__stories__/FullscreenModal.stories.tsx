@@ -45,13 +45,17 @@ export const Basic = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text as="p">Primary Content {loremIpsum}</Text>
+      <Text font="body" as="p">
+        Primary Content {loremIpsum}
+      </Text>
     </Box>
   );
 
   const secondaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text as="p">Secondary Content {loremIpsum}</Text>
+      <Text font="body" as="p">
+        Secondary Content {loremIpsum}
+      </Text>
     </Box>
   );
 
@@ -81,13 +85,17 @@ export const NoTitle = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text as="p">Primary Content {loremIpsum}</Text>
+      <Text font="body" as="p">
+        Primary Content {loremIpsum}
+      </Text>
     </Box>
   );
 
   const secondaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text as="p">Secondary Content {loremIpsum}</Text>
+      <Text font="body" as="p">
+        Secondary Content {loremIpsum}
+      </Text>
     </Box>
   );
 
@@ -117,7 +125,9 @@ export const NoSecondary = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text as="p">Primary Content {loremIpsum}</Text>
+      <Text font="body" as="p">
+        Primary Content {loremIpsum}
+      </Text>
     </Box>
   );
 
@@ -175,7 +185,9 @@ export const Example = () => {
       <Text as="h1" font="title1">
         Fullscreen Modal
       </Text>
-      <Text as="p">This is a test Fullscreen Modal with components composition.</Text>
+      <Text font="body" as="p">
+        This is a test Fullscreen Modal with components composition.
+      </Text>
       {feedCard}
       {listcell}
       {listcell}
@@ -187,10 +199,14 @@ export const Example = () => {
     <Box borderRadius={200} elevation={1} overflow="hidden">
       <Accordion defaultActiveKey="2">
         <AccordionItem itemKey="1" subtitle="subtitle1" title="Accordion #1">
-          <Text as="p">{loremIpsum}</Text>
+          <Text font="body" as="p">
+            {loremIpsum}
+          </Text>
         </AccordionItem>
         <AccordionItem itemKey="2" subtitle="subtitle2" title="Accordion #2">
-          <Text as="p">{loremIpsum}</Text>
+          <Text font="body" as="p">
+            {loremIpsum}
+          </Text>
         </AccordionItem>
       </Accordion>
     </Box>
@@ -222,13 +238,17 @@ export const SecondaryContentDivider = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text as="p">Primary Content {loremIpsum}</Text>
+      <Text font="body" as="p">
+        Primary Content {loremIpsum}
+      </Text>
     </Box>
   );
 
   const secondaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text as="p">Secondary Content {loremIpsum}</Text>
+      <Text font="body" as="p">
+        Secondary Content {loremIpsum}
+      </Text>
     </Box>
   );
 
@@ -259,7 +279,9 @@ export const CenterPrimary = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text as="p">Primary Content {loremIpsum}</Text>
+      <Text font="body" as="p">
+        Primary Content {loremIpsum}
+      </Text>
     </Box>
   );
 

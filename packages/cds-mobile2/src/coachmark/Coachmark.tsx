@@ -52,7 +52,7 @@ export const Coachmark = memo(
                   ) : (
                     title
                   )}
-                  {typeof content === 'string' ? <Text>{content}</Text> : content}
+                  {typeof content === 'string' ? <Text font="body">{content}</Text> : content}
                 </VStack>
                 <HStack
                   alignItems="center"

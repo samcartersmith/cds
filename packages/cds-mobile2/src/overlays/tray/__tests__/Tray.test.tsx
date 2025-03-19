@@ -17,7 +17,7 @@ describe('Tray', () => {
       <DefaultThemeProvider>
         <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
           <Tray onCloseComplete={onCloseCompleteSpy} testID="mock-tray">
-            <Text>{loremIpsum}</Text>
+            <Text font="body">{loremIpsum}</Text>
           </Tray>
         </SafeAreaProvider>
       </DefaultThemeProvider>,

@@ -14,25 +14,25 @@ const LinearGradientScreen = () => {
     <ExampleScreen>
       <Example inline title="As Background">
         <LinearGradient colors={[bgPrimary, bgPositive]}>
-          <Text>First example</Text>
+          <Text font="body">First example</Text>
         </LinearGradient>
         <LinearGradient colors={[bgPrimary, bgPositive, bgNegative]} stops={stops}>
-          <Text>Second example</Text>
+          <Text font="body">Second example</Text>
         </LinearGradient>
         <Text font="label1">Horizontal gradient</Text>
         <LinearGradient angle={90} colors={[bgPrimary, bgPositive, bgNegative]} stops={stops}>
-          <Text>Horizontal angle example</Text>
+          <Text font="body">Horizontal angle example</Text>
         </LinearGradient>
       </Example>
       <Example inline title="As overlay with isBelowChildren set to false">
         <LinearGradient colors={[transparent, bg]} isBelowChildren={false}>
-          <Text>{loremIpsum}...</Text>
+          <Text font="body">{loremIpsum}...</Text>
         </LinearGradient>
         <Text font="label1">More</Text>
       </Example>
       <Example inline title="As overlay with elevated prop">
         <LinearGradient elevated colors={[transparent, bg]}>
-          <Text>{loremIpsum}...</Text>
+          <Text font="body">{loremIpsum}...</Text>
         </LinearGradient>
         <Text font="label1">More</Text>
       </Example>

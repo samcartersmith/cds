@@ -14,7 +14,7 @@ const InputStackBasic = (props: InputStackBaseProps) => {
     <InputStack
       appendNode={
         <Box background="bgPrimary">
-          <Text>Append</Text>
+          <Text font="body">Append</Text>
         </Box>
       }
       borderStyle={{
@@ -22,27 +22,27 @@ const InputStackBasic = (props: InputStackBaseProps) => {
       }}
       endNode={
         <Box background="bgPositive">
-          <Text>EndContent</Text>
+          <Text font="body">EndContent</Text>
         </Box>
       }
       helperTextNode={
         <Box background="bgOverlay" height={30} width="100%">
-          <Text>helperText</Text>
+          <Text font="body">helperText</Text>
         </Box>
       }
       labelNode={
         <Box background="bgAlternate" height={30} width="100%">
-          <Text>Label</Text>
+          <Text font="body">Label</Text>
         </Box>
       }
       prependNode={
         <Box background="bgPrimary">
-          <Text>Prepend</Text>
+          <Text font="body">Prepend</Text>
         </Box>
       }
       startNode={
         <Box background="bgPositive">
-          <Text>StartContent</Text>
+          <Text font="body">StartContent</Text>
         </Box>
       }
       variant="primary"
@@ -58,7 +58,7 @@ export default function InputStackScreen() {
         <InputStackBasic
           inputNode={
             <Box background="bgAlternate" flexGrow={2}>
-              <Text>Input</Text>
+              <Text font="body">Input</Text>
             </Box>
           }
         />
@@ -68,7 +68,7 @@ export default function InputStackScreen() {
           focused
           inputNode={
             <Box background="bgAlternate" flexGrow={2}>
-              <Text>Input</Text>
+              <Text font="body">Input</Text>
             </Box>
           }
         />
@@ -83,32 +83,32 @@ export default function InputStackScreen() {
           }}
           endNode={
             <Box background="bgPositive">
-              <Text>EndContent</Text>
+              <Text font="body">EndContent</Text>
             </Box>
           }
           helperTextNode={
             <Box background="bgOverlay" height={30} width="100%">
-              <Text>helperText</Text>
+              <Text font="body">helperText</Text>
             </Box>
           }
           inputNode={
             <Box background="bgAlternate" flexGrow={2}>
-              <Text>Input</Text>
+              <Text font="body">Input</Text>
             </Box>
           }
           labelNode={
             <Box background="bgAlternate" height={30} width="100%">
-              <Text>Label</Text>
+              <Text font="body">Label</Text>
             </Box>
           }
           prependNode={
             <Box background="bgPrimary">
-              <Text>Prepend</Text>
+              <Text font="body">Prepend</Text>
             </Box>
           }
           startNode={
             <Box background="bgPositive">
-              <Text>StartContent</Text>
+              <Text font="body">StartContent</Text>
             </Box>
           }
           variant="primary"
@@ -121,7 +121,7 @@ export default function InputStackScreen() {
         <InputStack
           appendNode={
             <Box background="bgPrimary">
-              <Text>Append</Text>
+              <Text font="body">Append</Text>
             </Box>
           }
           borderStyle={{
@@ -129,27 +129,27 @@ export default function InputStackScreen() {
           }}
           endNode={
             <Box background="bgPositive">
-              <Text>EndContent</Text>
+              <Text font="body">EndContent</Text>
             </Box>
           }
           helperTextNode={
             <Box background="bgOverlay" height={30} width="100%">
-              <Text>helperText</Text>
+              <Text font="body">helperText</Text>
             </Box>
           }
           inputNode={
             <Box background="bgAlternate" flexGrow={2}>
-              <Text>Input</Text>
+              <Text font="body">Input</Text>
             </Box>
           }
           labelNode={
             <Box background="bgAlternate" height={30} width="100%">
-              <Text>Label</Text>
+              <Text font="body">Label</Text>
             </Box>
           }
           startNode={
             <Box background="bgPositive">
-              <Text>StartContent</Text>
+              <Text font="body">StartContent</Text>
             </Box>
           }
           variant="primary"

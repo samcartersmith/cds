@@ -10,17 +10,17 @@ import { PageHeader } from '../PageHeader';
 const defaultProps = {
   start: (
     <Box>
-      <Text>Start</Text>
+      <Text font="body">Start</Text>
     </Box>
   ),
   title: (
     <Box>
-      <Text>Title</Text>
+      <Text font="body">Title</Text>
     </Box>
   ),
   end: (
     <Box>
-      <Text>End</Text>
+      <Text font="body">End</Text>
     </Box>
   ),
   testID: 'page-header',
@@ -39,7 +39,7 @@ describe('PageHeader', () => {
   it('renders title correctly', () => {
     render(
       <DefaultThemeProvider>
-        <PageHeader title={<Text>Test</Text>} />
+        <PageHeader title={<Text font="body">Test</Text>} />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('Test')).toBeTruthy();

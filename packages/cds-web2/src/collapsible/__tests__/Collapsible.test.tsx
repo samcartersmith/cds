@@ -33,7 +33,7 @@ const TestCollapsible = () => {
         id={collapsibleId}
         testID="mock-collapse"
       >
-        <Text>Collapsible Content</Text>
+        <Text font="body">Collapsible Content</Text>
       </Collapsible>
     </>
   );

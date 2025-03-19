@@ -33,13 +33,13 @@ const GroupScreen = () => {
   const boxes = (
     <>
       <Box background="bgAlternate" padding={1}>
-        <Text>Box 1</Text>
+        <Text font="body">Box 1</Text>
       </Box>
       <Box background="bgAlternate" padding={1}>
-        <Text>Box 2</Text>
+        <Text font="body">Box 2</Text>
       </Box>
       <Box background="bgAlternate" padding={1}>
-        <Text>Box 3</Text>
+        <Text font="body">Box 3</Text>
       </Box>
     </>
   );
@@ -63,7 +63,9 @@ const GroupScreen = () => {
         </Group>
       </Example>
       <Example title="Custom renderItem callback">
-        <Text>Apply borderedTop and borderedBottom to first and last items in group</Text>
+        <Text font="body">
+          Apply borderedTop and borderedBottom to first and last items in group
+        </Text>
         <Group gap={0} renderItem={customRenderItem}>
           {boxes}
         </Group>

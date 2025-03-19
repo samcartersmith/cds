@@ -29,7 +29,7 @@ export const ContentCardBody = memo(
         >
           {(mediaPosition === 'top' || mediaPosition === 'left') && mediaBox}
           <VStack gap={1} maxWidth={isHorizontal ? '70%' : '100%'}>
-            {typeof body === 'string' ? <Text>{body}</Text> : body}
+            {typeof body === 'string' ? <Text font="body">{body}</Text> : body}
             {typeof label === 'string' ? <Text font="label2">{label}</Text> : label}
           </VStack>
           {(mediaPosition === 'bottom' || mediaPosition === 'right') && mediaBox}

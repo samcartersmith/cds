@@ -35,8 +35,16 @@ const FullscreenModalExample = ({
 }: Options) => {
   const [visible, setVisible] = useState(externalVisible);
 
-  const primaryContent = <Text as="p">{PRIMARY_CONTENT}</Text>;
-  const secondaryContent = <Text as="p">{SECONDARY_CONTENT}</Text>;
+  const primaryContent = (
+    <Text font="body" as="p">
+      {PRIMARY_CONTENT}
+    </Text>
+  );
+  const secondaryContent = (
+    <Text font="body" as="p">
+      {SECONDARY_CONTENT}
+    </Text>
+  );
 
   const handleClose = useCallback(() => {
     onRequestCloseSpy();

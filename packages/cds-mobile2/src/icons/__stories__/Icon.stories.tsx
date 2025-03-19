@@ -66,13 +66,15 @@ const IconScreen = () => {
     <ExampleScreen>
       <Example title="Nesting icons">
         <VStack gap={1}>
-          <Text align="end">
+          <Text align="end" font="body">
             <TextIcon name="dot" size="xs" />
-            <Text>This is some text</Text>
+            <Text font="body">This is some text</Text>
           </Text>
-          <Text align="end">
+          <Text align="end" font="body">
             <TextIcon name="dot" size="xs" />
-            <Text>This is soooooooooooooome reallllllllllllllllly loooooooonnngggggg text</Text>
+            <Text font="body">
+              This is soooooooooooooome reallllllllllllllllly loooooooonnngggggg text
+            </Text>
           </Text>
         </VStack>
       </Example>

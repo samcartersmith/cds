@@ -16,13 +16,13 @@ const PressableScreen = () => {
       <Example title="Pressable">
         <Box padding={1}>
           <Pressable accessibilityRole="button" background="bg">
-            <Text>Default background</Text>
+            <Text font="body">Default background</Text>
           </Pressable>
         </Box>
 
         <Box background="bgOverlay" padding={1}>
           <Pressable accessibilityRole="button" background="bgAlternate">
-            <Text>Other background</Text>
+            <Text font="body">Other background</Text>
           </Pressable>
         </Box>
 
@@ -34,7 +34,7 @@ const PressableScreen = () => {
             borderRadius={400}
             borderWidth={100}
           >
-            <Text>With border</Text>
+            <Text font="body">With border</Text>
           </Pressable>
         </Box>
         <Box padding={1}>
@@ -44,7 +44,9 @@ const PressableScreen = () => {
             borderRadius={400}
             borderWidth={100}
           >
-            <Text color="fgInverse">Primary</Text>
+            <Text font="body" color="fgInverse">
+              Primary
+            </Text>
           </Pressable>
         </Box>
         <Box padding={1}>
@@ -55,7 +57,9 @@ const PressableScreen = () => {
             borderRadius={400}
             borderWidth={100}
           >
-            <Text color="fgInverse">Primary + Loading</Text>
+            <Text font="body" color="fgInverse">
+              Primary + Loading
+            </Text>
           </Pressable>
         </Box>
       </Example>
@@ -63,26 +67,26 @@ const PressableScreen = () => {
       <Example title="Pressable (opacity only)">
         <Box padding={1}>
           <Pressable accessibilityRole="button" background="transparent">
-            <Text>Default background</Text>
+            <Text font="body">Default background</Text>
           </Pressable>
         </Box>
 
         <Box background="bgOverlay" padding={1}>
           <Pressable accessibilityRole="button" background="transparent">
-            <Text>Other background</Text>
+            <Text font="body">Other background</Text>
           </Pressable>
         </Box>
       </Example>
       <Example title="Pressable transparentWhileInactive">
         <Box padding={1}>
           <Pressable transparentWhileInactive accessibilityRole="button" background="bgPrimary">
-            <Text>Default background</Text>
+            <Text font="body">Default background</Text>
           </Pressable>
         </Box>
 
         <Box background="bgOverlay" padding={1}>
           <Pressable transparentWhileInactive accessibilityRole="button" background="bgPrimary">
-            <Text>Other background</Text>
+            <Text font="body">Other background</Text>
           </Pressable>
         </Box>
       </Example>
@@ -98,7 +102,7 @@ const PressableScreen = () => {
                 accessibilityRole="button"
                 background={color as ThemeVars.Color}
               >
-                <Text dangerouslySetColor={textColor} padding={1}>
+                <Text dangerouslySetColor={textColor} padding={1} font="body">
                   {color}
                 </Text>
               </Pressable>
@@ -119,7 +123,7 @@ const PressableScreen = () => {
                 accessibilityRole="button"
                 background={color as ThemeVars.Color}
               >
-                <Text dangerouslySetColor={textColor} padding={1}>
+                <Text dangerouslySetColor={textColor} padding={1} font="body">
                   {color}
                 </Text>
               </Pressable>

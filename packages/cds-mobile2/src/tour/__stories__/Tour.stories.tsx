@@ -32,25 +32,25 @@ const TourExamples = ({
       <NativeButton onPress={handleClick} title="Start tour" />
       <TourStep id="step1">
         <VStack background="bgSecondary" padding={1}>
-          <Text>Checkout the first step</Text>
+          <Text font="body">Checkout the first step</Text>
         </VStack>
       </TourStep>
       <Box height={300} />
       <TourStep id="step2">
         <Box ref={step2Ref} background="bgSecondary" padding={1} width={150}>
-          <Text>Checkout the next step</Text>
+          <Text font="body">Checkout the next step</Text>
         </Box>
       </TourStep>
       <Box height={1000} />
       <TourStep id="step3">
         <VStack ref={step3Ref} background="bgSecondary" padding={1} width={150}>
-          <Text>Checkout the third step</Text>
+          <Text font="body">Checkout the third step</Text>
         </VStack>
       </TourStep>
       <Box height={3000} />
       <TourStep id="step4">
         <VStack ref={step4Ref} background="bgSecondary" padding={1} width={150}>
-          <Text>Checkout the last step</Text>
+          <Text font="body">Checkout the last step</Text>
         </VStack>
       </TourStep>
     </VStack>
@@ -132,7 +132,7 @@ const TourStory = () => {
                     50%
                   </Text>
                   <ProgressBar progress={0.5} />
-                  <Text>
+                  <Text font="body">
                     Add up to 3 lines of body copy. Deliver your message with clarity and impact
                   </Text>
                 </VStack>

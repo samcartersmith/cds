@@ -13,7 +13,7 @@ describe('Carousel', () => {
   const MockCarousel = () => {
     const items = Array.from({ length: itemsLength }).map((_, index) => (
       <Box key={`item${index}`} height={itemSize} width={itemSize}>
-        <Text>CarouselItem</Text>
+        <Text font="body">CarouselItem</Text>
       </Box>
     ));
     return (

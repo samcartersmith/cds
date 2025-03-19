@@ -71,7 +71,7 @@ export const TextWithInherit = () => {
   return (
     // parent's font size is that of a legal text
     <Box flexDirection="column" font="display1">
-      <Text as="p">
+      <Text font="body" as="p">
         The following text inherits the parent Display1 font but overrides the fontSize prop
       </Text>
       {/* marking this Text as inherit */}

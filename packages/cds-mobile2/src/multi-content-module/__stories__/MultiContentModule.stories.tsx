@@ -229,7 +229,9 @@ export const WithEnd = () => {
       <VStack>
         <HStack justifyContent="center" zIndex={2}>
           <Box background="bgElevation2" paddingX={1.5}>
-            <Text color="fgMuted">OR</Text>
+            <Text font="body" color="fgMuted">
+              OR
+            </Text>
           </Box>
         </HStack>
         <Divider marginTop={-1.5} paddingBottom={1.5} />

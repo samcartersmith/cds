@@ -38,7 +38,7 @@ const PageHeaderInErrorEmptyState = () => {
             >
               <SpotSquare name="frameEmpty" />
               <Text font="title1">You need to X before you Y</Text>
-              <Text align="center">
+              <Text align="center" font="body">
                 You&apos;ll need to [add funds] before you can [complete this transaction]
               </Text>
             </VStack>

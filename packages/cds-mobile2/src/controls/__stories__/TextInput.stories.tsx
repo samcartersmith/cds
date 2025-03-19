@@ -238,6 +238,7 @@ const InputScreen = () => {
               accessibilityLabel="Cancel"
               color="fgMuted"
               paddingEnd={2}
+              font="body"
             >
               Cancel
             </Text>
@@ -268,6 +269,7 @@ const InputScreen = () => {
               accessibilityLabel="Cancel"
               color="fgMuted"
               paddingEnd={2}
+              font="body"
             >
               Cancel
             </Text>
@@ -294,7 +296,7 @@ const InputScreen = () => {
           placeholder="189-280-1111"
           start={
             <HStack accessibilityHint="Start Node" accessibilityLabel="Start Node">
-              <Text>Start Node</Text>
+              <Text font="body">Start Node</Text>
             </HStack>
           }
           variant="foregroundMuted"

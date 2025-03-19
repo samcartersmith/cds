@@ -48,7 +48,7 @@ const AvatarSizesWithSquircle = () => (
       const key = `squircle-${idx}`;
       return (
         <VStack key={key}>
-          <Text>{size}</Text>
+          <Text font="body">{size}</Text>
           <RemoteImage key={key} shape="squircle" size={size} source={imageURL} />
         </VStack>
       );
@@ -62,7 +62,7 @@ const AvatarSizesWithCircle = () => (
       const key = `circle-${idx}`;
       return (
         <VStack key={key}>
-          <Text>{size}</Text>
+          <Text font="body">{size}</Text>
           <RemoteImage shape="circle" size={size} source={imageURL} />
         </VStack>
       );
@@ -111,7 +111,7 @@ const CircleFallback = () => {
         const key = `circle-fallback-${idx}`;
         return (
           <VStack key={key}>
-            <Text>{size}</Text>
+            <Text font="body">{size}</Text>
             <RemoteImage shape="circle" size={size} />
           </VStack>
         );
@@ -127,7 +127,7 @@ const SquareFallback = () => {
         const key = `square-fallback-${idx}`;
         return (
           <VStack key={key}>
-            <Text>{size}</Text>
+            <Text font="body">{size}</Text>
             <RemoteImage shape="square" size={size} />
           </VStack>
         );

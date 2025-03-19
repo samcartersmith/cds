@@ -38,7 +38,7 @@ export const Default = () => {
                 <Text font="title1" align="center" paddingBottom={2}>
                   Earn crypto by lending, staking, and more
                 </Text>
-                <Text align="center" color="fgMuted">
+                <Text align="center" color="fgMuted" font="body">
                   Many decentralized apps (“dapps”) let you earn yield on your crypto. Check out
                   trusted dapps like Aave and Compound without leaving Coinbaes.
                 </Text>

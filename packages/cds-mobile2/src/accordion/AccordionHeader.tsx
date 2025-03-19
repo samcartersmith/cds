@@ -27,7 +27,11 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
   <Box flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
       <Text font="headline">{title}</Text>
-      {!!subtitle && <Text color="fgMuted">{subtitle}</Text>}
+      {!!subtitle && (
+        <Text font="body" color="fgMuted">
+          {subtitle}
+        </Text>
+      )}
     </VStack>
   </Box>
 ));

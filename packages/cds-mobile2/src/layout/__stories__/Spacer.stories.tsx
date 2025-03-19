@@ -18,7 +18,7 @@ const SpacerScreen = () => {
           justifyContent="center"
           width="100%"
         >
-          <Text>Top Content</Text>
+          <Text font="body">Top Content</Text>
         </Box>
         <Spacer vertical={3} />
         <Box
@@ -28,7 +28,7 @@ const SpacerScreen = () => {
           justifyContent="center"
           width="100%"
         >
-          <Text>Bottom Content</Text>
+          <Text font="body">Bottom Content</Text>
         </Box>
       </Example>
 
@@ -41,7 +41,7 @@ const SpacerScreen = () => {
             justifyContent="center"
             width={150}
           >
-            <Text>Left Content</Text>
+            <Text font="body">Left Content</Text>
           </Box>
           <Spacer horizontal={3} />
           <Box
@@ -51,7 +51,7 @@ const SpacerScreen = () => {
             justifyContent="center"
             width={150}
           >
-            <Text>Right Content</Text>
+            <Text font="body">Right Content</Text>
           </Box>
         </HStack>
       </Example>
@@ -59,11 +59,11 @@ const SpacerScreen = () => {
       <Example title="Fluid space">
         <VStack background="bgPrimaryWash" height={150}>
           <Box bordered alignItems="center" height={50} justifyContent="center" width="100%">
-            <Text>Top Content</Text>
+            <Text font="body">Top Content</Text>
           </Box>
           <Spacer />
           <Box bordered alignItems="center" height={50} justifyContent="center" width="100%">
-            <Text>Bottom Content</Text>
+            <Text font="body">Bottom Content</Text>
           </Box>
         </VStack>
 
@@ -75,7 +75,7 @@ const SpacerScreen = () => {
             justifyContent="center"
             width={150}
           >
-            <Text>Left Content</Text>
+            <Text font="body">Left Content</Text>
           </Box>
           <Spacer />
           <Box
@@ -85,7 +85,7 @@ const SpacerScreen = () => {
             justifyContent="center"
             width={150}
           >
-            <Text>Right Content</Text>
+            <Text font="body">Right Content</Text>
           </Box>
         </HStack>
       </Example>

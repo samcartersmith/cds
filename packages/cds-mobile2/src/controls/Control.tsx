@@ -170,6 +170,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
                 flexShrink: 1,
               }}
               testID={`${testID}Label`}
+              font="body"
             >
               {label}
             </Text>

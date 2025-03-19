@@ -133,7 +133,7 @@ export const Alert = memo(
                 <Text align="center" font="title3" paddingBottom={0.5}>
                   {title}
                 </Text>
-                <Text align="center" color="fgMuted">
+                <Text align="center" color="fgMuted" font="body">
                   {body}
                 </Text>
               </Box>

@@ -84,7 +84,7 @@ const CircleMax = () => {
 
 const CircleMaxDefaultCustomSize = () => (
   <>
-    <Text>
+    <Text font="body">
       RemoteImageGroup excess element defaults to m of AvatarSize when size is not specified
     </Text>
     <RemoteImageGroup max={2} shape="circle">
@@ -98,7 +98,7 @@ const CircleMaxDefaultCustomSize = () => (
 
 const MixAndMatchShapes = () => (
   <>
-    <Text>RemoteImage child shape takes precedence over RemoteImageGroup shape</Text>
+    <Text font="body">RemoteImage child shape takes precedence over RemoteImageGroup shape</Text>
     <RemoteImageGroup shape="circle" size="xxl">
       <RemoteImage shape="squircle" source={squareAssets.human1} />
       <RemoteImage source={assets.sushi.imageUrl} />
@@ -173,7 +173,7 @@ const SquircleMax = () => {
 
 const SquircleMaxDefaultCustomSize = () => (
   <>
-    <Text>
+    <Text font="body">
       RemoteImageGroup excess element defaults to m of AvatarSize when size is not specified
     </Text>
     <RemoteImageGroup max={2} shape="squircle">
@@ -187,7 +187,7 @@ const SquircleMaxDefaultCustomSize = () => (
 
 const SquircleMaxSetCustomMaxSize = () => (
   <>
-    <Text>Set a custom size of 36 for RemoteImageGroup excess component</Text>
+    <Text font="body">Set a custom size of 36 for RemoteImageGroup excess component</Text>
     <RemoteImageGroup max={2} shape="squircle" size={36}>
       <RemoteImage source={squareAssets.human1} />
       <RemoteImage source={squareAssets.human2} />
@@ -199,7 +199,7 @@ const SquircleMaxSetCustomMaxSize = () => (
 
 const HideExcessWhenExceedThreshold = () => (
   <>
-    <Text>Excess component when size is smaller than a certain size looks funky</Text>
+    <Text font="body">Excess component when size is smaller than a certain size looks funky</Text>
     <RemoteImageGroup max={2} shape="squircle" size={19}>
       <RemoteImage source={squareAssets.human1} />
       <RemoteImage source={squareAssets.human2} />

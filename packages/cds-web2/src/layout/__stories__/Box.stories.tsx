@@ -250,7 +250,7 @@ export const BooleanStyleProps = () => {
       height={200}
       width={200}
     >
-      <Text>HELLO WORLD</Text>
+      <Text font="body">HELLO WORLD</Text>
     </Box>
   );
 };

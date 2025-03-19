@@ -191,6 +191,7 @@ export const Select = memo(
                       color="fgMuted"
                       disabled={disabled}
                       ellipsize="tail"
+                      font="body"
                     >
                       {valueLabel ?? value ?? placeholder ?? (!compact && label)}
                     </Text>

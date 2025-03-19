@@ -34,7 +34,7 @@ const AlertOnModal = () => {
     openModal(
       <Modal visible onRequestClose={closeModal}>
         <ModalBody>
-          <Text>Test Modal</Text>
+          <Text font="body">Test Modal</Text>
         </ModalBody>
         <ModalFooter
           primaryAction={<Button onPress={showAlert}>Show Alert</Button>}

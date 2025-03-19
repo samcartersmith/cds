@@ -68,8 +68,10 @@ export const Default = (props: Partial<TrayBaseProps>) => {
   }, []);
 
   const description = (
-    <Text>
-      <Text color="fgMuted">Select the network you want your swapped asset to be stored on. </Text>
+    <Text font="body">
+      <Text font="body" color="fgMuted">
+        Select the network you want your swapped asset to be stored on.{' '}
+      </Text>
       <Link font="body" to="https://www.coinbase.com/">
         Learn more
       </Link>

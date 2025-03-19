@@ -14,7 +14,9 @@ const TextExamplesScreen = ({
   return (
     <ExampleScreen>
       <Example accessibilityRole="header" title="Mono">
-        <Text mono>Mono font</Text>
+        <Text font="body" mono>
+          Mono font
+        </Text>
       </Example>
       <Example title="Inherited Font">
         <Box>
@@ -31,98 +33,128 @@ const TextExamplesScreen = ({
       </Example>
       <Example title="Colors">
         <Box>
-          <Text>Default foreground</Text>
+          <Text font="body">Default foreground</Text>
         </Box>
 
         <Box>
-          <Text color="fgMuted">Muted foreground</Text>
+          <Text font="body" color="fgMuted">
+            Muted foreground
+          </Text>
         </Box>
 
         <Box>
-          <Text color="fgPrimary">Primary foreground</Text>
+          <Text font="body" color="fgPrimary">
+            Primary foreground
+          </Text>
         </Box>
 
         <Box background="bgPrimary" padding={1}>
-          <Text color="fgInverse">Foreground ON primary</Text>
+          <Text font="body" color="fgInverse">
+            Foreground ON primary
+          </Text>
         </Box>
 
         <Box background="bgSecondary" padding={1}>
-          <Text color="fg">Foreground ON secondary</Text>
+          <Text font="body" color="fg">
+            Foreground ON secondary
+          </Text>
         </Box>
 
         <Box>
-          <Text color="fgPositive">Positive foreground</Text>
+          <Text font="body" color="fgPositive">
+            Positive foreground
+          </Text>
         </Box>
 
         <Box background="bgPositive" padding={1}>
-          <Text color="fgInverse">Foreground ON positive</Text>
+          <Text font="body" color="fgInverse">
+            Foreground ON positive
+          </Text>
         </Box>
 
         <Box>
-          <Text color="fgNegative">Negative foreground</Text>
+          <Text font="body" color="fgNegative">
+            Negative foreground
+          </Text>
         </Box>
 
         <Box background="bgNegative" padding={1}>
-          <Text color="fgInverse">Foreground ON negative</Text>
+          <Text font="body" color="fgInverse">
+            Foreground ON negative
+          </Text>
         </Box>
       </Example>
 
       <Example title="Alignment">
         <Box>
-          <Text align="start">Align start</Text>
+          <Text font="body" align="start">
+            Align start
+          </Text>
         </Box>
 
         <Box>
-          <Text align="center">Align center</Text>
+          <Text font="body" align="center">
+            Align center
+          </Text>
         </Box>
 
         <Box>
-          <Text align="end">Align end</Text>
+          <Text font="body" align="end">
+            Align end
+          </Text>
         </Box>
 
         <Box>
-          <Text align="justify">Align justify (iOS only, will start align on Android)</Text>
+          <Text font="body" align="justify">
+            Align justify (iOS only, will start align on Android)
+          </Text>
         </Box>
       </Example>
 
       <Example title="Casing">
         <Box>
-          <Text textTransform="uppercase">Uppercased text</Text>
+          <Text font="body" textTransform="uppercase">
+            Uppercased text
+          </Text>
         </Box>
 
         <Box>
-          <Text textTransform="lowercase">Lowercased text</Text>
+          <Text font="body" textTransform="lowercase">
+            Lowercased text
+          </Text>
         </Box>
 
         <Box>
-          <Text textTransform="capitalize">Capitalized text</Text>
+          <Text font="body" textTransform="capitalize">
+            Capitalized text
+          </Text>
         </Box>
       </Example>
 
       <Example title="Ellipsize">
         <Box>
-          <Text ellipsize="head">
+          <Text font="body" ellipsize="head">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
           </Text>
         </Box>
 
         <Box>
-          <Text ellipsize="middle">
+          <Text font="body" ellipsize="middle">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
           </Text>
         </Box>
 
         <Box>
-          <Text ellipsize="tail">
+          <Text font="body" ellipsize="tail">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
           </Text>
         </Box>
 
         <Box>
-          <Text ellipsize="clip">
+          <Text font="body" ellipsize="clip">
             Clip. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo nulla.
             Nam eu blandit dui, a dignissim mi.
           </Text>
@@ -131,20 +163,26 @@ const TextExamplesScreen = ({
 
       <Example title="Slashed zeros">
         <Box>
-          <Text>$1,305.00</Text>
+          <Text font="body">$1,305.00</Text>
         </Box>
       </Example>
 
       <Example title="Tabular numbers">
         <Box>
-          <Text tabularNumbers>91.23450</Text>
-          <Text tabularNumbers>11.98762</Text>
+          <Text font="body" tabularNumbers>
+            91.23450
+          </Text>
+          <Text font="body" tabularNumbers>
+            11.98762
+          </Text>
         </Box>
       </Example>
 
       <Example title="Disabled">
         <Box>
-          <Text disabled>Hello</Text>
+          <Text font="body" disabled>
+            Hello
+          </Text>
         </Box>
       </Example>
       {extraExample}

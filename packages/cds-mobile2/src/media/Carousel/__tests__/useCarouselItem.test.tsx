@@ -17,7 +17,7 @@ describe('useCarouselItem', () => {
     const { id } = useCarouselItem();
     return (
       <Box height={200} width={200}>
-        <Text>{id}</Text>
+        <Text font="body">{id}</Text>
       </Box>
     );
   };

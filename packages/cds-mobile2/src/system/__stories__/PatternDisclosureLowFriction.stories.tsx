@@ -64,7 +64,9 @@ const PatternDisclosureLowFrictionScreen = () => {
                       {headline}
                     </Text>
                   </HStack>
-                  <Text paddingStart={4}>{body}</Text>
+                  <Text font="body" paddingStart={4}>
+                    {body}
+                  </Text>
                 </VStack>
               ))}
             </VStack>

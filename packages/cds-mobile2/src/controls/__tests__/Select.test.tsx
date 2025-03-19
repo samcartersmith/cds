@@ -102,7 +102,7 @@ describe('Select Input', () => {
       <DefaultThemeProvider>
         <SafeAreaProvider initialMetrics={SAFE_AREA_METRICS}>
           <DefaultSelect
-            helperText={<Text>helper text</Text>}
+            helperText={<Text font="body">helper text</Text>}
             placeholder={placeholderText}
             variant="negative"
           />

@@ -15,7 +15,7 @@ const AnimatedCaretScreen = () => {
     <ExampleScreen>
       <Example title="Press to rotate">
         <Button onPress={handleRotate}>Rotate</Button>
-        <Text>Rotate: {rotate} &#730;</Text>
+        <Text font="body">Rotate: {rotate} &#730;</Text>
         <AnimatedCaret rotate={rotate} size="l" />
       </Example>
     </ExampleScreen>

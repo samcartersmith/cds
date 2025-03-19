@@ -35,7 +35,7 @@ const BasicAccordion = () => {
         subtitle="subtitle2"
         title="Accordion #2"
       >
-        <Text>Accordion Content</Text>
+        <Text font="body">Accordion Content</Text>
       </AccordionItem>
     </Accordion>
   );
@@ -48,7 +48,7 @@ const NoMedia = () => {
         <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
       </AccordionItem>
       <AccordionItem itemKey="2" onPress={handlePress} subtitle="subtitle2" title="Accordion #2">
-        <Text>Accordion Content</Text>
+        <Text font="body">Accordion Content</Text>
       </AccordionItem>
     </Accordion>
   );
@@ -70,7 +70,7 @@ const NoSubtitle = () => {
         onPress={handlePress}
         title="Accordion #2"
       >
-        <Text>Accordion Content</Text>
+        <Text font="body">Accordion Content</Text>
       </AccordionItem>
     </Accordion>
   );
@@ -83,7 +83,7 @@ const TitleOnly = () => {
         <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
       </AccordionItem>
       <AccordionItem itemKey="2" onPress={handlePress} title="Accordion #2">
-        <Text>Accordion Content</Text>
+        <Text font="body">Accordion Content</Text>
       </AccordionItem>
     </Accordion>
   );
@@ -93,10 +93,10 @@ const LongContent = () => {
   return (
     <Accordion defaultActiveKey="2" onChange={handlePress}>
       <AccordionItem itemKey="1" title="Accordion #1">
-        <Text>{loremIpsum.repeat(10)}</Text>
+        <Text font="body">{loremIpsum.repeat(10)}</Text>
       </AccordionItem>
       <AccordionItem itemKey="2" onPress={handlePress} title="Accordion #2">
-        <Text>Accordion Content</Text>
+        <Text font="body">Accordion Content</Text>
       </AccordionItem>
     </Accordion>
   );
@@ -161,7 +161,7 @@ const AccordionScreen = () => {
             subtitle="subtitle2"
             title="Accordion #2"
           >
-            <Text>Accordion Content</Text>
+            <Text font="body">Accordion Content</Text>
           </AccordionItem>
         </Accordion>
       </AccordionExample>
@@ -175,7 +175,7 @@ const AccordionScreen = () => {
               title={`Item ${itemKey}`}
             >
               <Button onPress={() => setActiveKey(nextKey)}>
-                <Text>Open Item {nextKey}</Text>
+                <Text font="body">Open Item {nextKey}</Text>
               </Button>
             </AccordionItem>
           ))}

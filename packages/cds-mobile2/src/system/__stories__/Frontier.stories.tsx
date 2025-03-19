@@ -38,11 +38,15 @@ const FrontierExampleScreen = () => (
           <IconButton transparent name="add" variant="secondary" />
         </VStack>
         <VStack bordered borderRadius={400} padding={2}>
-          <Text paddingBottom={3}>Display 2 font size and line height are larger.</Text>
+          <Text font="body" paddingBottom={3}>
+            Display 2 font size and line height are larger.
+          </Text>
           <Text font="display2">Display 2</Text>
         </VStack>
         <VStack bordered borderRadius={400} padding={2}>
-          <Text paddingBottom={3}>Primary blue is lighter in dark mode</Text>
+          <Text font="body" paddingBottom={3}>
+            Primary blue is lighter in dark mode
+          </Text>
           <Button variant="primary">Primary</Button>
         </VStack>
       </VStack>

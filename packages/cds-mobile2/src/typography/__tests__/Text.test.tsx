@@ -144,7 +144,7 @@ describe('Text', () => {
 
   it('renders empty content when renderEmptyNode is true', () => {
     render(
-      <Text renderEmptyNode testID="empty-text">
+      <Text renderEmptyNode testID="empty-text" font="body">
         {null}
       </Text>,
       { wrapper },
@@ -154,7 +154,7 @@ describe('Text', () => {
 
   it('does not render when renderEmptyNode is false and content is empty', () => {
     render(
-      <Text renderEmptyNode={false} testID="empty-text">
+      <Text renderEmptyNode={false} testID="empty-text" font="body">
         {null}
       </Text>,
       { wrapper },
@@ -165,17 +165,17 @@ describe('Text', () => {
   it('handles different empty values when renderEmptyNode is false', () => {
     render(
       <>
-        <Text renderEmptyNode={false} testID="null-text">
+        <Text font="body" renderEmptyNode={false} testID="null-text">
           {null}
         </Text>
-        <Text renderEmptyNode={false} testID="undefined-text">
+        <Text font="body" renderEmptyNode={false} testID="undefined-text">
           {undefined}
         </Text>
-        <Text renderEmptyNode={false} testID="empty-string-text" />
-        <Text renderEmptyNode={false} testID="nan-text">
+        <Text font="body" renderEmptyNode={false} testID="empty-string-text" />
+        <Text font="body" renderEmptyNode={false} testID="nan-text">
           {NaN}
         </Text>
-        <Text renderEmptyNode={false} testID="number-content">
+        <Text font="body" renderEmptyNode={false} testID="number-content">
           {0}
         </Text>
       </>,
@@ -192,7 +192,7 @@ describe('Text', () => {
 
   it('renders content when renderEmptyNode is false and content exists', () => {
     render(
-      <Text renderEmptyNode={false} testID="content-text">
+      <Text font="body" renderEmptyNode={false} testID="content-text">
         Hello World
       </Text>,
       { wrapper },

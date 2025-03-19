@@ -21,7 +21,7 @@ const BasicCollapsible = () => {
         Click me!
       </Button>
       <Collapsible collapsed={collapsed}>
-        <Text>{loremIpsum}</Text>
+        <Text font="body">{loremIpsum}</Text>
       </Collapsible>
     </>
   );
@@ -37,7 +37,7 @@ const RevealTop = () => {
   return (
     <>
       <Collapsible collapsed={collapsed}>
-        <Text>{loremIpsum}</Text>
+        <Text font="body">{loremIpsum}</Text>
       </Collapsible>
       <Button disableDebounce onPress={toggleCollapsed}>
         Click me!
@@ -59,7 +59,7 @@ const DefaultExpanded = () => {
         Click me!
       </Button>
       <Collapsible collapsed={collapsed}>
-        <Text>{loremIpsum}</Text>
+        <Text font="body">{loremIpsum}</Text>
       </Collapsible>
     </>
   );
@@ -78,7 +78,7 @@ const Scroll = () => {
         Click me!
       </Button>
       <Collapsible collapsed={collapsed} maxHeight={400}>
-        <Text>{loremIpsum.repeat(10)}</Text>
+        <Text font="body">{loremIpsum.repeat(10)}</Text>
       </Collapsible>
     </>
   );

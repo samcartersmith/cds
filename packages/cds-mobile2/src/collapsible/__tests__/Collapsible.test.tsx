@@ -26,7 +26,7 @@ const MockCollapsible = ({ defaultCollapsed = true }: { defaultCollapsed?: boole
         Click me!
       </Button>
       <Collapsible collapsed={collapsed} testID="mock-collapse">
-        <Text>Collapsible Content</Text>
+        <Text font="body">Collapsible Content</Text>
       </Collapsible>
     </DefaultThemeProvider>
   );

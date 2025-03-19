@@ -108,7 +108,11 @@ export const ContentCell = memo(function ContentCell({
           </HStack>
         )}
 
-        {!!description && <Text color="fgMuted">{description}</Text>}
+        {!!description && (
+          <Text font="body" color="fgMuted">
+            {description}
+          </Text>
+        )}
       </VStack>
     </Cell>
   );

@@ -93,7 +93,7 @@ const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
             return (
               <>
                 <HStack padding={3}>
-                  <Text>{loremIpsum.repeat(3)}</Text>
+                  <Text font="body">{loremIpsum.repeat(3)}</Text>
                 </HStack>
                 <HStack justifyContent="center">
                   <Button onPress={handleClose}>More options</Button>
@@ -108,7 +108,7 @@ const TrayWithinTray = ({ title }: { title?: React.ReactNode }) => {
           {() => {
             return (
               <HStack padding={3}>
-                <Text>{loremIpsum.repeat(3)}</Text>
+                <Text font="body">{loremIpsum.repeat(3)}</Text>
               </HStack>
             );
           }}

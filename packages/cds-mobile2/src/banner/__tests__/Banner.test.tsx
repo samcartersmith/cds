@@ -17,7 +17,7 @@ const MockBanner = ({
 }: Partial<MobileBannerProps>) => (
   <DefaultThemeProvider>
     <Banner startIcon={startIcon} testID={testID} title={title} variant={variant} {...props}>
-      <Text>Banner content</Text>
+      <Text font="body">Banner content</Text>
     </Banner>
   </DefaultThemeProvider>
 );
@@ -79,7 +79,7 @@ describe('Banner actions', () => {
           title="Banner title"
           variant="warning"
         >
-          <Text>Content</Text>
+          <Text font="body">Content</Text>
         </Banner>
       </DefaultThemeProvider>,
     );

@@ -16,29 +16,29 @@ const iconName = 'arrowsHorizontal';
 const variants = [
   {
     component: <IconButton accessibilityLabel={iconName} name={iconName} variant="primary" />,
-    title: <Text>Primary</Text>,
+    title: <Text font="body">Primary</Text>,
   },
   {
     component: (
       <IconButton transparent accessibilityLabel={iconName} name={iconName} variant="primary" />
     ),
-    title: <Text>Primary transparent</Text>,
+    title: <Text font="body">Primary transparent</Text>,
   },
   {
     component: <IconButton accessibilityLabel={iconName} name={iconName} variant="secondary" />,
-    title: <Text>Secondary</Text>,
+    title: <Text font="body">Secondary</Text>,
   },
   {
     component: (
       <IconButton transparent accessibilityLabel={iconName} name={iconName} variant="secondary" />
     ),
-    title: <Text>Secondary transparent</Text>,
+    title: <Text font="body">Secondary transparent</Text>,
   },
   {
     component: (
       <IconButton accessibilityLabel={iconName} name={iconName} variant="foregroundMuted" />
     ),
-    title: <Text>ForegroundMuted</Text>,
+    title: <Text font="body">ForegroundMuted</Text>,
   },
   {
     component: (
@@ -48,7 +48,7 @@ const variants = [
         style={{ padding: 10, borderRadius: 15, transform: 'scale(0.5)' }}
       />
     ),
-    title: <Text>Custom style</Text>,
+    title: <Text font="body">Custom style</Text>,
   },
   {
     component: (
@@ -59,7 +59,7 @@ const variants = [
         variant="foregroundMuted"
       />
     ),
-    title: <Text>ForegroundMuted transparent</Text>,
+    title: <Text font="body">ForegroundMuted transparent</Text>,
   },
 ];
 
@@ -73,12 +73,12 @@ const IconButtonScreen = () => {
       <Example inline title="States">
         <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
           <IconButton disabled accessibilityLabel={iconName} name={iconName} variant="primary" />
-          <Text>Disabled primary</Text>
+          <Text font="body">Disabled primary</Text>
         </Box>
 
         <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
           <IconButton disabled accessibilityLabel={iconName} name={iconName} />
-          <Text>Disabled secondary</Text>
+          <Text font="body">Disabled secondary</Text>
         </Box>
       </Example>
 

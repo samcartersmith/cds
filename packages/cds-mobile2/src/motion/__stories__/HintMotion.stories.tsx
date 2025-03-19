@@ -25,7 +25,7 @@ const ColorSurge = () => {
     <VStack gap={3}>
       <Box bordered borderRadius={200} overflow="hidden" padding={3} position="relative">
         <ColorSurgeComponent ref={ref} disableAnimateOnMount />
-        <Text>Color Surge</Text>
+        <Text font="body">Color Surge</Text>
       </Box>
       <Button onPress={handleSurgePrimary}>Surge - Primary</Button>
       <Button onPress={handleSurgePositive}>Surge - Positive</Button>
@@ -43,7 +43,7 @@ const Shake = () => {
     <VStack gap={3}>
       <ShakeComponent ref={ref} disableAnimateOnMount>
         <Box bordered borderRadius={200} padding={3}>
-          <Text>Shaking Box</Text>
+          <Text font="body">Shaking Box</Text>
         </Box>
       </ShakeComponent>
       <Button onPress={handleShake}>Shake</Button>
@@ -77,7 +77,7 @@ const Pulse = () => {
       <Button onPress={handlePulseModerate}>Pulse - Moderate</Button>
       <Button onPress={handlePulseSubtle}>Pulse - Subtle</Button>
       <Button onPress={handleStop}>Stop</Button>
-      <Text>Custom Transition</Text>
+      <Text font="body">Custom Transition</Text>
       <PulseComponent ref={customRef} disableAnimateOnMount motionConfig={customTransition}>
         <Box background="bgPrimary" height={50} width={50} />
         <Box background="bgNegative" height={50} width={50} />

@@ -68,7 +68,7 @@ const NumpadExample1 = () => {
           title="Invalid Input"
           variant="warning"
         >
-          <Text>Enter an amount greater than zero.</Text>
+          <Text font="body">Enter an amount greater than zero.</Text>
         </Banner>
       );
     if (parseFloat(value) >= VALUE_MAX) {
@@ -80,7 +80,7 @@ const NumpadExample1 = () => {
           title="You've reached the maximum value"
           variant="warning"
         >
-          <Text>Max ${VALUE_MAX}</Text>
+          <Text font="body">Max ${VALUE_MAX}</Text>
         </Banner>
       );
     }

@@ -40,7 +40,7 @@ const MockAccordion = ({
         testID="mock-accordion-item1"
         title="Accordion #1"
       >
-        <Text>Accordion Content1</Text>
+        <Text font="body">Accordion Content1</Text>
       </AccordionItem>
       <AccordionItem
         itemKey="2"
@@ -50,7 +50,7 @@ const MockAccordion = ({
         testID="mock-accordion-item2"
         title="Accordion #2"
       >
-        <Text>Accordion Content2</Text>
+        <Text font="body">Accordion Content2</Text>
       </AccordionItem>
     </Accordion>
   );
@@ -145,7 +145,7 @@ describe('Accordion', () => {
               testID="mock-accordion-item1"
               title="Accordion #1"
             >
-              <Text>Accordion Content1</Text>
+              <Text font="body">Accordion Content1</Text>
             </AccordionItem>
             <AccordionItem
               itemKey="2"
@@ -154,7 +154,7 @@ describe('Accordion', () => {
               testID="mock-accordion-item2"
               title="Accordion #2"
             >
-              <Text>Accordion Content2</Text>
+              <Text font="body">Accordion Content2</Text>
             </AccordionItem>
           </Accordion>
         </DefaultThemeProvider>,
