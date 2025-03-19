@@ -45,7 +45,7 @@ export default function DocSidebarDesktopContent({ path, sidebar, className }: P
       paddingStart={2}
       paddingY={3}
     >
-      <VStack as="ul" className={cx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')} gap={3}>
+      <VStack as="ul" className={cx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')} gap={2}>
         <DocSidebarItems activePath={path} items={sidebar} level={1} />
       </VStack>
     </VStack>

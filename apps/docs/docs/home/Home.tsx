@@ -18,10 +18,10 @@ import { Text } from '@cbhq/cds-web2/typography';
 
 const sectionHeaderProps = {
   as: 'h2',
-  fontFamily: { base: 'title2', desktop: 'display2' },
-  fontSize: { base: 'title2', desktop: 'display2' },
-  fontWeight: { base: 'title2', desktop: 'display2' },
-  lineHeight: { base: 'title2', desktop: 'display2' },
+  fontFamily: { base: 'title2', desktop: 'display3' },
+  fontSize: { base: 'title2', desktop: 'display3' },
+  fontWeight: { base: 'title2', desktop: 'display3' },
+  lineHeight: { base: 'title2', desktop: 'display3' },
 } as const;
 
 const quickStartCards: QuickStartLinkProps[] = [

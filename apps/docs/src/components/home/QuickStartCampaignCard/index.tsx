@@ -57,7 +57,7 @@ export const QuickStartCampaignCard = ({
             {link.label}
           </Button>
         </VStack>
-        <Box flexShrink={0} height={{ base: 88, desktop: 156 }} width={{ base: 88, desktop: 156 }}>
+        <Box flexShrink={0} height={{ base: 88, desktop: 140 }} width={{ base: 88, desktop: 140 }}>
           <BannerComponent height="100%" width="100%" />
         </Box>
       </HStack>

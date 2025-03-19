@@ -6,8 +6,8 @@ import { Text } from '@cbhq/cds-web2/typography';
 
 import styles from './styles.module.css';
 
-const componentNameFontConfig = { base: 'title4', desktop: 'title2' } as const;
-const componentCountFontConfig = { base: 'headline', desktop: 'title3' } as const;
+const componentNameFontConfig = { base: 'title4', desktop: 'title4' } as const;
+const componentCountFontConfig = { base: 'headline', desktop: 'headline' } as const;
 
 export type ComponentCardProps = {
   name: string;
@@ -47,7 +47,13 @@ export const ComponentCard = ({
       <div className={styles.cardBannerArt} style={{ backgroundImage: `url(${bannerSrc})` }}>
         <img alt="" className={styles.cardBannerArtOverlay} src={bannerOverlaySrc} />
       </div>
-      <HStack alignItems="start" flexGrow={0} justifyContent="space-between" padding={3}>
+      <HStack
+        alignItems="start"
+        flexGrow={0}
+        justifyContent="space-between"
+        paddingX={2}
+        paddingY={1.5}
+      >
         <Text
           accessibilityLabel={`${name} components`}
           as="h3"
