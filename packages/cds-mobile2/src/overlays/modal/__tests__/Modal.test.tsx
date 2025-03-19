@@ -1,12 +1,7 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Animated, Modal as RNModal } from 'react-native';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react-native';
-import {
-  CreateLoremIpsumProps,
-  loremIpsum,
-  loremIpsumBuilder,
-} from '@cbhq/cds-common2/internal/loremIpsumBuilder';
-import { CreateModalProps, modalBuilder } from '@cbhq/cds-common2/internal/modalBuilder';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Button, ButtonProps } from '../../../buttons';
 import { TextBody, TextLabel1 } from '../../../typography';
@@ -16,10 +11,24 @@ import { ModalBody } from '../ModalBody';
 import { ModalFooter } from '../ModalFooter';
 import { ModalHeader } from '../ModalHeader';
 
-const LoremIpsum = loremIpsumBuilder({
-  TextBody,
-  TextLabel1,
-} as CreateLoremIpsumProps);
+type LoremIpsumProps = {
+  title?: string;
+  concise?: boolean;
+  repeat?: number;
+};
+
+const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
+  return (
+    <>
+      <TextLabel1 paddingBottom={1} renderEmptyNode={false}>
+        {title}
+      </TextLabel1>
+      {concise ? null : (
+        <TextBody paddingBottom={3}>{repeat ? loremIpsum.repeat(repeat) : loremIpsum}</TextBody>
+      )}
+    </>
+  );
+};
 
 /*
   This is a wrapper for the Button component that maps the onClick event to the onPress event. Ensures
@@ -30,15 +39,98 @@ const ButtonWrapperWithEventMapping = ({
   ...props
 }: { onClick?: () => void } & ButtonProps) => <Button {...props} onPress={onClick} />;
 
-const { MockModal } = modalBuilder({
-  Modal,
-  ModalBody,
-  ModalHeader,
-  ModalFooter,
-  ThemeProvider: React.Fragment,
-  Button: ButtonWrapperWithEventMapping,
-  LoremIpsum,
-} as CreateModalProps);
+type ModalA11yProps = {
+  accessibilityLabelledBy?: string;
+  accessibilityLabel?: string;
+};
+
+type ModalHeaderProps = {
+  title?: string;
+  backAccessibilityLabel?: string;
+  backAccessibilityHint?: string;
+  closeAccessibilityLabel?: string;
+  closeAccessibilityHint?: string;
+  onBackButtonClick?: () => void;
+};
+
+const MockModal = ({
+  onRequestClose,
+  onDidClose,
+  onBackButtonClick,
+  title = 'Basic Modal',
+  visible: externalVisible = false,
+  testID,
+  accessibilityLabelledBy,
+  accessibilityLabel,
+  backAccessibilityLabel,
+  backAccessibilityHint,
+  closeAccessibilityLabel,
+  closeAccessibilityHint,
+  hideDividers,
+}: Partial<{
+  onRequestClose?: () => void;
+  onDidClose?: () => void;
+  visible?: boolean;
+  testID?: string;
+  hideDividers?: boolean;
+}> &
+  ModalA11yProps &
+  ModalHeaderProps) => {
+  const [visible, setVisible] = useState(externalVisible);
+  const setVisibleOn = useCallback(() => setVisible(true), [setVisible]);
+  const setVisibleOff = useCallback(() => setVisible(false), [setVisible]);
+
+  const handleClose = useCallback(() => {
+    onRequestClose?.();
+    setVisibleOff();
+  }, [onRequestClose, setVisibleOff]);
+
+  const handleDidClose = useCallback(() => {
+    onDidClose?.();
+  }, [onDidClose]);
+
+  return (
+    <>
+      <ButtonWrapperWithEventMapping onClick={setVisibleOn} testID="modal-trigger">
+        Open Modal
+      </ButtonWrapperWithEventMapping>
+      <Modal
+        accessibilityLabel={accessibilityLabel}
+        accessibilityLabelledBy={accessibilityLabelledBy}
+        onDidClose={handleDidClose}
+        onRequestClose={handleClose}
+        testID={testID}
+        visible={visible}
+        hideDividers={hideDividers}
+      >
+        <ModalHeader
+          backAccessibilityHint={backAccessibilityHint}
+          backAccessibilityLabel={backAccessibilityLabel}
+          closeAccessibilityHint={closeAccessibilityHint}
+          closeAccessibilityLabel={closeAccessibilityLabel}
+          onBackButtonClick={onBackButtonClick}
+          title={title}
+        />
+        <ModalBody>
+          <LoremIpsum />
+        </ModalBody>
+        <ModalFooter
+          primaryAction={
+            <ButtonWrapperWithEventMapping onClick={setVisibleOff} testID="modal-footer-save">
+              Save
+            </ButtonWrapperWithEventMapping>
+          }
+          secondaryAction={
+            <ButtonWrapperWithEventMapping onClick={setVisibleOff} variant="secondary">
+              Cancel
+            </ButtonWrapperWithEventMapping>
+          }
+          testID="modal-footer"
+        />
+      </Modal>
+    </>
+  );
+};
 
 describe('Modal', () => {
   beforeEach(() => {

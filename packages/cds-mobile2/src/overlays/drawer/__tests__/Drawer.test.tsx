@@ -3,11 +3,7 @@ import { Modal } from 'react-native';
 import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { drawerAnimationDefaultDuration } from '@cbhq/cds-common2/animation/drawer';
-import {
-  CreateLoremIpsumProps,
-  loremIpsum,
-  loremIpsumBuilder,
-} from '@cbhq/cds-common2/internal/loremIpsumBuilder';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
 import { DrawerBaseProps } from '@cbhq/cds-common2/types';
 import { delay } from '@cbhq/cds-common2/utils/delay';
@@ -21,10 +17,24 @@ import { Drawer } from '../Drawer';
 // We're using the drawers animation time here just to be extra close to the implementation
 const DURATION: number = Number(durations[drawerAnimationDefaultDuration ?? 'moderate3']) + 10;
 
-const LoremIpsum = loremIpsumBuilder({
-  TextBody,
-  TextLabel1,
-} as CreateLoremIpsumProps);
+type LoremIpsumProps = {
+  title?: string;
+  concise?: boolean;
+  repeat?: number;
+};
+
+const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
+  return (
+    <>
+      <TextLabel1 paddingBottom={1} renderEmptyNode={false}>
+        {title}
+      </TextLabel1>
+      {concise ? null : (
+        <TextBody paddingBottom={3}>{repeat ? loremIpsum.repeat(repeat) : loremIpsum}</TextBody>
+      )}
+    </>
+  );
+};
 
 const MockDrawer = ({
   onCloseComplete,
