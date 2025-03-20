@@ -59,7 +59,7 @@ export const Chip = memo(
       >
         {start}
         {typeof children === 'string' ? (
-          <Text as="span" font="headline" numberOfLines={numberOfLines}>
+          <Text font="headline" numberOfLines={numberOfLines}>
             {children}
           </Text>
         ) : (

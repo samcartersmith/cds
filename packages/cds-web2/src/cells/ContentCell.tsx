@@ -125,7 +125,7 @@ export const ContentCell: ContentCellComponent = memo(
                   paddingStart={2}
                   paddingTop={0.5}
                 >
-                  <Text as="span" color="fgMuted" font="label2" overflow="truncate">
+                  <Text color="fgMuted" font="label2" overflow="truncate">
                     {meta}
                   </Text>
                 </Box>

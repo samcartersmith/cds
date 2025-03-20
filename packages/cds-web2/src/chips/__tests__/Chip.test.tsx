@@ -30,9 +30,7 @@ const ChipWithNodes = (props: Omit<ChipProps, 'children'>) => (
       testID={testID}
       {...props}
     >
-      <Text as="span" font="headline">
-        USD
-      </Text>
+      <Text font="headline">USD</Text>
     </Chip>
   </ThemeProvider>
 );

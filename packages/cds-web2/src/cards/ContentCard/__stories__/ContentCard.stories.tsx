@@ -176,7 +176,7 @@ export const Default = (): JSX.Element => {
           {...exampleProps.contentHeaderProps}
           avatar={null}
           end={
-            <Text as="span" color="fgMuted" font="legal">
+            <Text color="fgMuted" font="legal">
               Updated 1hr ago
             </Text>
           }

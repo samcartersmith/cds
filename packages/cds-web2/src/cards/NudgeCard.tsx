@@ -228,7 +228,7 @@ export const NudgeCard = ({
           </VStack>
           {typeof action === 'string' ? (
             <Pressable background="transparent" onClick={onActionPress} paddingY={1}>
-              <Text as="span" color="fgPrimary" font="headline" numberOfLines={1}>
+              <Text color="fgPrimary" font="headline" numberOfLines={1}>
                 {action}
               </Text>
             </Pressable>

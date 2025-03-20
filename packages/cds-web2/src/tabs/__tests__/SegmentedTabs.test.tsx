@@ -131,11 +131,7 @@ describe('SegmentedTabs', () => {
   });
 
   it('renders custom tab component', () => {
-    const TabComponent = () => (
-      <TextDisplay1 as="span" testID="custom-tab">
-        Custom tab
-      </TextDisplay1>
-    );
+    const TabComponent = () => <TextDisplay1 testID="custom-tab">Custom tab</TextDisplay1>;
     render(
       <TabsContext.Provider value={mockApi}>
         <SegmentedTabs {...exampleProps} TabComponent={TabComponent} />

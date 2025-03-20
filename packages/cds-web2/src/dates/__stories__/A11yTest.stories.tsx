@@ -76,7 +76,7 @@ export const A11yTest = () => {
     <>
       <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
         <Group background="bg" gap={8} margin={-2} padding={2}>
-          <TextTitle1 as="span">DateInput</TextTitle1>
+          <TextTitle1>DateInput</TextTitle1>
           <DateInput {...dateInputSharedProps} {...stateProps} />
           <DateInput disabled {...dateInputSharedProps} {...stateProps} />
           <DateInput
@@ -85,10 +85,10 @@ export const A11yTest = () => {
             error={error2}
             onErrorDate={setError2}
           />
-          <TextTitle1 as="span">Calendar</TextTitle1>
+          <TextTitle1>Calendar</TextTitle1>
           <Calendar selectedDate={date} {...calendarSharedProps} />
           <Calendar disabled selectedDate={date} {...calendarSharedProps} />
-          <TextTitle1 as="span">DatePicker</TextTitle1>
+          <TextTitle1>DatePicker</TextTitle1>
           <DatePicker {...datePickerSharedProps} {...stateProps} />
           <DatePicker disabled {...datePickerSharedProps} {...stateProps} />
           <DatePicker
@@ -104,7 +104,7 @@ export const A11yTest = () => {
       <Box paddingTop={8} />
       <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <Group background="bg" gap={8} margin={-2} padding={2}>
-          <TextTitle1 as="span">DateInput</TextTitle1>
+          <TextTitle1>DateInput</TextTitle1>
           <DateInput {...dateInputSharedProps} {...stateProps} />
           <DateInput disabled {...dateInputSharedProps} {...stateProps} />
           <DateInput
@@ -113,10 +113,10 @@ export const A11yTest = () => {
             error={error2}
             onErrorDate={setError2}
           />
-          <TextTitle1 as="span">Calendar</TextTitle1>
+          <TextTitle1>Calendar</TextTitle1>
           <Calendar selectedDate={date} {...calendarSharedProps} />
           <Calendar disabled selectedDate={date} {...calendarSharedProps} />
-          <TextTitle1 as="span">DatePicker</TextTitle1>
+          <TextTitle1>DatePicker</TextTitle1>
           <DatePicker {...datePickerSharedProps} {...stateProps} />
           <DatePicker disabled {...datePickerSharedProps} {...stateProps} />
           <DatePicker

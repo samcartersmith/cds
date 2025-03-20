@@ -88,11 +88,7 @@ describe('SegmentedTab', () => {
   });
 
   it('renders custom node for label', () => {
-    const label = (
-      <TextDisplay1 as="span" testID="custom-label">
-        Custom label
-      </TextDisplay1>
-    );
+    const label = <TextDisplay1 testID="custom-label">Custom label</TextDisplay1>;
     render(
       <TabsContext.Provider value={mockApi}>
         <SegmentedTab {...exampleProps} label={label} />

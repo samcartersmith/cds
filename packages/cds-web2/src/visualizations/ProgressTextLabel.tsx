@@ -25,7 +25,6 @@ export const ProgressTextLabel = memo(
             <Text
               noWrap
               tabularNumbers
-              as="span"
               color={color ?? 'fg'}
               disabled={disabled}
               font="label2"

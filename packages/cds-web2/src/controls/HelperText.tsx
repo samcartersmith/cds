@@ -34,7 +34,6 @@ export const HelperText = memo(function HelperTex({
 }: HelperTextProps) {
   return (
     <Text
-      as="span"
       color={color}
       dangerouslySetColor={dangerouslySetColor}
       font="label2"

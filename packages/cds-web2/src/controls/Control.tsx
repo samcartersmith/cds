@@ -169,7 +169,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
             {iconNode}
           </Box>
           <Text
-            as="span"
             color={checked ? 'fg' : 'fgMuted'}
             disabled={disabled || readOnly}
             font="body"

@@ -245,16 +245,12 @@ export const Colors = () => {
 Colors.parameters = { percy: { enableJavaScript: true } };
 
 const renderStartLabelNum = (num: number) => {
-  return (
-    <Text as="span" font="title3">
-      ${num.toLocaleString()}
-    </Text>
-  );
+  return <Text font="title3">${num.toLocaleString()}</Text>;
 };
 
 const renderEndLabelNum = (num: number) => {
   return (
-    <Text noWrap as="span" font="label2" textAlign="end">
+    <Text noWrap font="label2" textAlign="end">
       ${num.toLocaleString()} left
     </Text>
   );

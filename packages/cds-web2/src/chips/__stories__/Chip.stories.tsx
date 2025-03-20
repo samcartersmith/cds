@@ -25,30 +25,16 @@ const ChipExamples = ({
   ...props
 }: { label?: string } & Omit<ChipBaseProps, 'children'>) => (
   <HStack gap={2}>
-    <Chip {...props}>
-      {label ?? (
-        <Text as="span" font="headline">
-          Base
-        </Text>
-      )}
-    </Chip>
+    <Chip {...props}>{label ?? <Text font="headline">Base</Text>}</Chip>
     <Chip {...props} start={<RemoteImage {...assetIconProps} />}>
-      {label ?? (
-        <Text as="span" font="headline">
-          Start
-        </Text>
-      )}
+      {label ?? <Text font="headline">Start</Text>}
     </Chip>
     <Chip
       {...props}
       end={<Icon color="fg" name="caretDown" size="s" />}
       start={<RemoteImage {...assetIconProps} />}
     >
-      {label ?? (
-        <Text as="span" font="headline">
-          End & Start
-        </Text>
-      )}
+      {label ?? <Text font="headline">End & Start</Text>}
     </Chip>
     <Chip {...props} end={<Icon color="fg" name="filter" size="s" />}>
       Filter 2
@@ -59,11 +45,7 @@ const ChipExamples = ({
       onClick={() => {}}
       start={<RemoteImage {...assetIconProps} />}
     >
-      {label ?? (
-        <Text as="span" font="headline">
-          Pressable
-        </Text>
-      )}
+      {label ?? <Text font="headline">Pressable</Text>}
     </Chip>
     <Chip
       {...props}
@@ -72,11 +54,7 @@ const ChipExamples = ({
       onClick={() => {}}
       start={<RemoteImage {...assetIconProps} />}
     >
-      {label ?? (
-        <Text as="span" font="headline">
-          Pressable with a11y label
-        </Text>
-      )}
+      {label ?? <Text font="headline">Pressable with a11y label</Text>}
     </Chip>
     <Chip
       {...props}
@@ -85,11 +63,7 @@ const ChipExamples = ({
       onClick={() => {}}
       start={<RemoteImage {...assetIconProps} />}
     >
-      {label ?? (
-        <Text as="span" font="headline">
-          Disabled
-        </Text>
-      )}
+      {label ?? <Text font="headline">Disabled</Text>}
     </Chip>
   </HStack>
 );

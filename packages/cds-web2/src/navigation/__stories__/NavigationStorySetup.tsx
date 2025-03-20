@@ -254,7 +254,7 @@ const renderCustomSidebarItem: SidebarItemProps['Component'] = ({
     {isCollapsed ? (
       <Icon active={active} name={icon} size="m" />
     ) : (
-      <Text as="span" color={color} font="headline">
+      <Text color={color} font="headline">
         {title}
       </Text>
     )}
@@ -264,7 +264,7 @@ const renderCustomSidebarItem: SidebarItemProps['Component'] = ({
 const renderAnotherCustomItem: SidebarItemProps['Component'] = ({ color, title, active, icon }) => (
   <VStack alignItems="center" gap={0.5} padding={2}>
     <Icon active={active} name={icon} size="m" />
-    <Text as="span" color={color} font="label1">
+    <Text color={color} font="label1">
       {title}
     </Text>
   </VStack>
@@ -289,9 +289,7 @@ const renderCB1 = (isCollapsed: boolean) => {
         <Pictogram dimension="48x48" name="coinbaseOneLogo" scaleMultiplier={0.8} />
         {!isCollapsed && (
           <VStack>
-            <Text as="span" font="headline">
-              Coinbase One
-            </Text>
+            <Text font="headline">Coinbase One</Text>
             <Text as="p" color="fgMuted" font="legal">
               Zero trading fees
             </Text>

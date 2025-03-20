@@ -33,7 +33,7 @@ const AnotherCustomSegmentedTab: TabComponent = ({ id, label, disabled }) => {
   const { activeTab } = useTabsContext();
   const isActive = activeTab?.id === id;
   const renderedLabel = (
-    <TextLabel2 as="span" color={isActive ? 'fgPositive' : 'fgNegative'} overflow="truncate">
+    <TextLabel2 color={isActive ? 'fgPositive' : 'fgNegative'} overflow="truncate">
       {label}
     </TextLabel2>
   );

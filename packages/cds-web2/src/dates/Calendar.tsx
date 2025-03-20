@@ -136,11 +136,7 @@ const CalendarDay = memo(
             onClick={disabled ? undefined : handleClick}
             tabIndex={date.getDate() === 1 ? undefined : -1}
           >
-            <Text
-              font="body"
-              as="span"
-              color={active ? 'fgInverse' : highlighted ? 'fgPrimary' : undefined}
-            >
+            <Text font="body" color={active ? 'fgInverse' : highlighted ? 'fgPrimary' : undefined}>
               {date.getDate()}
             </Text>
           </CalendarPressable>
@@ -363,7 +359,7 @@ export const Calendar = memo(
           <Grid gap={1} justifyContent="space-between" templateColumns="repeat(7, 40px)">
             {daysOfWeek.map((day) => (
               <VStack key={day} alignItems="center" height={40} justifyContent="center" width={40}>
-                <Text font="body" as="span" selectable="none">
+                <Text font="body" selectable="none">
                   {day.charAt(0)}
                 </Text>
               </VStack>

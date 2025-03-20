@@ -71,7 +71,7 @@ export const InAParagraph = () => (
 
 export const InheritParentTextStyles = () => (
   <div>
-    <Text as="span" font="body">
+    <Text font="body">
       Go here: <Link href="https://www.coinbase.com">Inherited</Link>
     </Text>
   </div>
@@ -79,7 +79,7 @@ export const InheritParentTextStyles = () => (
 
 export const DifferentTextStyle = () => (
   <div>
-    <Text as="span" font="body">
+    <Text font="body">
       Go here:{' '}
       <Link font="title3" href="https://www.coinbase.com">
         Title3

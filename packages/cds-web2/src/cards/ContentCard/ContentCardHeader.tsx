@@ -60,7 +60,7 @@ export const ContentCardHeader: ContentCardHeaderComponent = memo(
               title
             )}
             {typeof meta === 'string' ? (
-              <Text as="span" color="fgMuted" font="label2" numberOfLines={1}>
+              <Text color="fgMuted" font="label2" numberOfLines={1}>
                 {meta}
               </Text>
             ) : (

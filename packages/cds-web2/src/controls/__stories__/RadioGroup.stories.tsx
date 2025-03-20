@@ -43,11 +43,7 @@ const options2 = {
 const options3 = {
   taco: 'tacos',
   puttanesca: 'Spaghetti',
-  'hamachi-salad': (
-    <Text as="span" font="label1">
-      Hamachi salad
-    </Text>
-  ),
+  'hamachi-salad': <Text font="label1">Hamachi salad</Text>,
 };
 
 export const Group = () => {
@@ -62,7 +58,7 @@ export const Group = () => {
         aria-labelledby="choose-a-currency"
         id="currency-radio-group"
         label={
-          <Text as="span" font="headline" id="choose-a-currency">
+          <Text font="headline" id="choose-a-currency">
             Choose a currency
           </Text>
         }
@@ -71,7 +67,7 @@ export const Group = () => {
         options={options1}
         value={group1}
       />
-      <Text as="span" font="headline" id="choose-a-mascot">
+      <Text font="headline" id="choose-a-mascot">
         Choose a mascot
       </Text>
       <RadioGroup
@@ -88,7 +84,7 @@ export const Group = () => {
         gap={2}
         id="horizontal-radio-group"
         label={
-          <Text as="span" font="headline" id="choose-a-currency2">
+          <Text font="headline" id="choose-a-currency2">
             Choose a currency
           </Text>
         }
@@ -97,7 +93,7 @@ export const Group = () => {
         options={options1}
         value={group3}
       />
-      <Text as="span" font="headline" id="select-dish-to-order">
+      <Text font="headline" id="select-dish-to-order">
         Select a dish to order
       </Text>
       <RadioGroup
