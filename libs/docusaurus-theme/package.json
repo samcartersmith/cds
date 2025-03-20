@@ -36,7 +36,7 @@
     "@cbhq/cds-web": "workspace:^",
     "@cbhq/docusaurus-plugin-docgen": "workspace:^",
     "@cbhq/docusaurus-plugin-kbar": "workspace:^",
-    "kbar": "^0.1.0-beta.35",
+    "kbar": "^0.1.0-beta.45",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
