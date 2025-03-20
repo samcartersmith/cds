@@ -138,12 +138,15 @@ export const useDimensions = <T extends HTMLElement>({
   useEffect(() => {
     if (!ref.current) return () => null;
     const window = typeof globalThis.window !== 'undefined' && globalThis.window;
-    if (!window) {
+    if (
+      !window ||
+      ((!('ResizeObserver' in window) || !('ResizeObserverEntry' in window)) && !polyfill)
+    ) {
       console.error(observerErr);
       return () => null;
     }
 
-    const Observer = window.ResizeObserver;
+    const Observer = (polyfill || window.ResizeObserver) as typeof window.ResizeObserver;
 
     observerRef.current = new Observer(([entry]) => {
       const { contentBoxSize, borderBoxSize, contentRect } = entry;

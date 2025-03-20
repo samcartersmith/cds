@@ -1,0 +1,249 @@
+import React, { useMemo } from 'react';
+import { css } from '@linaria/core';
+import type { ResponsiveCellSpacingProps, ResponsiveProps } from '@cbhq/cds-common2/types';
+
+import { Button } from '../../buttons';
+import { IconButton } from '../../buttons/IconButton';
+import { CardHeader } from '../../cards';
+import { Card } from '../../cards/Card';
+import { CellMedia, ContentCell, ListCell } from '../../cells';
+import { Table, TableBody, TableCell, TableRow } from '../../tables';
+import { Text } from '../../typography/Text';
+import { TextHeadline } from '../../typography/TextHeadline';
+import { Box, type BoxBaseProps } from '../Box';
+import { Divider } from '../Divider';
+import { HStack } from '../HStack';
+import { VStack } from '../VStack';
+
+const animationStyles = css`
+  transition: ease all 0.4s;
+`;
+
+const responsiveProps: BoxBaseProps = {
+  padding: { phone: 4, tablet: 3, desktop: 2 },
+  gap: { phone: 0.5, tablet: 2, desktop: 3 },
+  justifyContent: { phone: 'flex-end', tablet: 'flex-start', desktop: 'space-between' },
+  alignItems: { phone: 'flex-end', tablet: 'flex-start', desktop: 'center' },
+};
+
+const itemProps: BoxBaseProps = {
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: 100,
+  background: 'bgAlternate',
+  paddingX: 3,
+};
+
+export const ResponsiveBox = (props: BoxBaseProps) => {
+  return (
+    <VStack gap={2}>
+      <Text font="display2" as="h2">
+        Responsive Flex Props
+      </Text>
+      <Box
+        borderColor="bgLine"
+        borderWidth={100}
+        className={animationStyles}
+        minHeight={200}
+        {...responsiveProps}
+        {...props}
+      >
+        <HStack {...itemProps}>
+          <TextHeadline as="h3">Item 1</TextHeadline>
+        </HStack>
+        <HStack {...itemProps}>
+          <TextHeadline as="h3">Item 2</TextHeadline>
+        </HStack>
+        <HStack {...itemProps}>
+          <TextHeadline as="h3">Item 3</TextHeadline>
+        </HStack>
+      </Box>
+      <Text font="display2" as="h2">
+        Responsive Ratio Layout
+      </Text>
+      <HStack borderColor="bgLine" borderWidth={100} gap={1} padding={1}>
+        <HStack
+          background="bgAlternate"
+          flexGrow={{ phone: 1, tablet: 2, desktop: 3 }}
+          {...itemProps}
+        >
+          <TextHeadline as="h3">Item 1</TextHeadline>
+        </HStack>
+        <HStack background="bgAlternate" flexGrow={1} {...itemProps}>
+          <TextHeadline as="h3">Item 2</TextHeadline>
+        </HStack>
+      </HStack>
+    </VStack>
+  );
+};
+
+export const ResponsiveBoxHoistedPerformance = () => <ResponsiveBox {...responsiveProps} />;
+
+export const HideOnMobile = () => (
+  <ResponsiveBox visibility={{ phone: 'hidden', tablet: 'visible' }} />
+);
+
+export const ResponsiveStacks = () => (
+  <HStack {...responsiveProps}>
+    <VStack background="bgAlternate" borderRadius={200} {...responsiveProps}>
+      <ListCell description="Description" title="Title" />
+      <ListCell description="Description" title="Title" />
+      <ListCell description="Description" title="Title" />
+    </VStack>
+    <VStack background="bgAlternate" borderRadius={200} {...responsiveProps}>
+      <ListCell description="Description" title="Title" />
+      <ListCell description="Description" title="Title" />
+      <ListCell description="Description" title="Title" />
+    </VStack>
+  </HStack>
+);
+
+// TO DO: fix responsive Card
+// const cardResponsiveProps: Pick<BoxBaseProps, 'paddingX' | 'paddingY'> = {
+//   paddingX: { phone: 2, tablet: 3 },
+//   paddingY: { phone: 1, tablet: 3 },
+// };
+
+// export const ResponsiveCard = () => {
+//   return (
+//     <Card {...cardResponsiveProps}>
+//       <CardHeader
+//         action={
+//           <IconButton transparent accessibilityLabel="More" name="more" variant="foregroundMuted" />
+//         }
+//         avatar="https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png"
+//         description="Earn crypto"
+//         metaData="Dec 18"
+//       />
+//     </Card>
+//   );
+// };
+
+// const responsiveCellSpacing: BoxBaseProps = {
+//   phone: {
+//     innerSpacing: {
+//       spacingHorizontal: 2,
+//     },
+//     outerSpacing: {
+//       spacingVertical: 1,
+//     },
+//   },
+//   tablet: {
+//     innerSpacing: {
+//       spacingHorizontal: 4,
+//     },
+//     outerSpacing: {
+//       spacingVertical: 2,
+//     },
+//   },
+// };
+// TO DO: fix responsive Cell / ListCell / Table
+// export const ResponsiveCells = () => {
+//   return (
+//     <>
+//       <ListCell
+//         description="Description"
+//         onClick={() => {}}
+//         responsiveConfig={responsiveCellSpacing}
+//         title="Title"
+//       />
+//       <ListCell
+//         description="Description"
+//         onClick={() => {}}
+//         responsiveConfig={responsiveCellSpacing}
+//         title="Title"
+//       />
+//       <ListCell
+//         description="Description"
+//         onClick={() => {}}
+//         responsiveConfig={responsiveCellSpacing}
+//         title="Title"
+//       />
+//       <Divider />
+//       <ContentCell
+//         description="On this episode of The Scoop, Ethereum 2.0 developer and Prysmatic Labs founder Preston Van Loon and Joe Sticco broke down Cryptex. The post A deep dive into Eth 2.0, scaling and a project that lets users buy the entire crypto market appeared first on The Block."
+//         media={
+//           <CellMedia
+//             source="https://dynamic-assets.coinbase.com/2954170d91149bea19e2d2eab8acc2f50ff4446b4b6fb09a7983ad7a481c636e6b29c5e09cf90f49f57dcef30ef7ff50bb99ad4fc068cf43265ad135c590fa7d/news_article_images/28216c10d33e3f2147fe05aa8a27bf4b9620dd658ce0be6c482b5629176e52e4.png"
+//             type="image"
+//           />
+//         }
+//         meta="March 2nd, 2021"
+//         onClick={() => {}}
+//         responsiveConfig={responsiveCellSpacing}
+//         subtitle="The Block - Ethereum 2"
+//         title="A deep dive into Eth 2.0, scaling that lets users buy the entire crypto market"
+//       />
+//     </>
+//   );
+// };
+
+// export const ResponsiveTable = () => {
+//   return (
+//     <Table bordered variant="ruled">
+//       <TableBody>
+//         <TableRow>
+//           <TableCell direction="horizontal" responsiveConfig={responsiveCellSpacing}>
+//             <TextHeadline as="h2">Sample Row 1</TextHeadline>
+//             <Button compact onClick={() => {}} variant="secondary">
+//               Export
+//             </Button>
+//           </TableCell>
+//         </TableRow>
+//         <TableRow
+//           fullWidth
+//           backgroundColor="bgAlternate"
+//           responsiveConfig={responsiveCellSpacing}
+//         >
+//           <TableCell
+//             direction="horizontal"
+//             end={
+//               <Button compact onClick={() => {}} variant="secondary">
+//                 Export
+//               </Button>
+//             }
+//             title="Sample Row 2 (with background set)"
+//           />
+//         </TableRow>
+//         <TableRow disableHoverIndicator>
+//           <TableCell direction="horizontal" responsiveConfig={responsiveCellSpacing}>
+//             <TextHeadline as="h2">Sample Row 3</TextHeadline>
+//             <Button compact onClick={() => {}} variant="secondary">
+//               Export
+//             </Button>
+//           </TableCell>
+//         </TableRow>
+//       </TableBody>
+//     </Table>
+//   );
+// };
+
+const typographyResponsiveProps: Pick<BoxBaseProps, 'display' | 'padding'> = {
+  display: { phone: 'block', tablet: 'inline-block' },
+  padding: { phone: 4, tablet: 2 },
+};
+
+export const ResponsiveTypography = () => {
+  return (
+    <VStack>
+      <Text font="display1" as="h1" {...typographyResponsiveProps}>
+        Headline
+      </Text>
+      <Text font="title1" as="h2" {...typographyResponsiveProps}>
+        Headline
+      </Text>
+      <Text font="headline" as="h3" {...typographyResponsiveProps}>
+        Headline
+      </Text>
+      <Text font="body" as="p" {...typographyResponsiveProps}>
+        Headline
+      </Text>
+    </VStack>
+  );
+};
+
+export default {
+  title: 'Core Components/Responsive Props',
+  component: ResponsiveBox,
+  excludeStories: /.*Performance$/,
+};

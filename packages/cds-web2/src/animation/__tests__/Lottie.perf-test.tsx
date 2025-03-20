@@ -1,0 +1,10 @@
+import { measurePerformance } from 'reassure';
+import { nux } from '@cbhq/cds-lottie-files2/nux';
+
+import { Lottie } from '../Lottie';
+
+describe('Lottie performance tests', () => {
+  it('renders', async () => {
+    await measurePerformance(<Lottie source={nux} />);
+  });
+});

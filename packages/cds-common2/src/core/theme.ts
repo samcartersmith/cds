@@ -69,10 +69,7 @@ export namespace ThemeVars {
     | 'accentSubtleGray'
     | 'accentBoldGray'
     // Transparent
-    | 'transparent'
-    | 'transparentHover'
-    | 'transparentPressed'
-    | 'transparentDisabled';
+    | 'transparent';
 
   export type IllustrationColor =
     | 'primary'

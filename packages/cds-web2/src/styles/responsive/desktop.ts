@@ -408,21 +408,6 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
       color: var(--color-transparent);
     }
   `,
-  transparentHover: css`
-    @media ${media.desktop} {
-      color: var(--color-transparentHover);
-    }
-  `,
-  transparentPressed: css`
-    @media ${media.desktop} {
-      color: var(--color-transparentPressed);
-    }
-  `,
-  transparentDisabled: css`
-    @media ${media.desktop} {
-      color: var(--color-transparentDisabled);
-    }
-  `,
 } as const;
 
 export const background: Record<ThemeVars.Color, LinariaClassName> = {
@@ -644,21 +629,6 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   transparent: css`
     @media ${media.desktop} {
       background-color: var(--color-transparent);
-    }
-  `,
-  transparentHover: css`
-    @media ${media.desktop} {
-      background-color: var(--color-transparentHover);
-    }
-  `,
-  transparentPressed: css`
-    @media ${media.desktop} {
-      background-color: var(--color-transparentPressed);
-    }
-  `,
-  transparentDisabled: css`
-    @media ${media.desktop} {
-      background-color: var(--color-transparentDisabled);
     }
   `,
 } as const;
@@ -925,24 +895,6 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.desktop} {
       border-style: solid;
       border-color: var(--color-transparent);
-    }
-  `,
-  transparentHover: css`
-    @media ${media.desktop} {
-      border-style: solid;
-      border-color: var(--color-transparentHover);
-    }
-  `,
-  transparentPressed: css`
-    @media ${media.desktop} {
-      border-style: solid;
-      border-color: var(--color-transparentPressed);
-    }
-  `,
-  transparentDisabled: css`
-    @media ${media.desktop} {
-      border-style: solid;
-      border-color: var(--color-transparentDisabled);
     }
   `,
 } as const;
@@ -1251,27 +1203,6 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.desktop} {
       &:hover {
         color: var(--color-transparent);
-      }
-    }
-  `,
-  transparentHover: css`
-    @media ${media.desktop} {
-      &:hover {
-        color: var(--color-transparentHover);
-      }
-    }
-  `,
-  transparentPressed: css`
-    @media ${media.desktop} {
-      &:hover {
-        color: var(--color-transparentPressed);
-      }
-    }
-  `,
-  transparentDisabled: css`
-    @media ${media.desktop} {
-      &:hover {
-        color: var(--color-transparentDisabled);
       }
     }
   `,
@@ -1584,27 +1515,6 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
       }
     }
   `,
-  transparentHover: css`
-    @media ${media.desktop} {
-      &:hover {
-        background-color: var(--color-transparentHover);
-      }
-    }
-  `,
-  transparentPressed: css`
-    @media ${media.desktop} {
-      &:hover {
-        background-color: var(--color-transparentPressed);
-      }
-    }
-  `,
-  transparentDisabled: css`
-    @media ${media.desktop} {
-      &:hover {
-        background-color: var(--color-transparentDisabled);
-      }
-    }
-  `,
 } as const;
 
 export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
@@ -1911,27 +1821,6 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
     @media ${media.desktop} {
       &:hover {
         border-color: var(--color-transparent);
-      }
-    }
-  `,
-  transparentHover: css`
-    @media ${media.desktop} {
-      &:hover {
-        border-color: var(--color-transparentHover);
-      }
-    }
-  `,
-  transparentPressed: css`
-    @media ${media.desktop} {
-      &:hover {
-        border-color: var(--color-transparentPressed);
-      }
-    }
-  `,
-  transparentDisabled: css`
-    @media ${media.desktop} {
-      &:hover {
-        border-color: var(--color-transparentDisabled);
       }
     }
   `,
@@ -2964,21 +2853,6 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   transparent: css`
     @media ${media.desktop} {
       text-decoration-color: var(--color-transparent);
-    }
-  `,
-  transparentHover: css`
-    @media ${media.desktop} {
-      text-decoration-color: var(--color-transparentHover);
-    }
-  `,
-  transparentPressed: css`
-    @media ${media.desktop} {
-      text-decoration-color: var(--color-transparentPressed);
-    }
-  `,
-  transparentDisabled: css`
-    @media ${media.desktop} {
-      text-decoration-color: var(--color-transparentDisabled);
     }
   `,
 } as const;

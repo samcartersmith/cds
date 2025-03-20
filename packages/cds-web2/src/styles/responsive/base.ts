@@ -253,15 +253,6 @@ export const color: Record<ThemeVars.Color, LinariaClassName> = {
   transparent: css`
     color: var(--color-transparent);
   `,
-  transparentHover: css`
-    color: var(--color-transparentHover);
-  `,
-  transparentPressed: css`
-    color: var(--color-transparentPressed);
-  `,
-  transparentDisabled: css`
-    color: var(--color-transparentDisabled);
-  `,
 } as const;
 
 export const background: Record<ThemeVars.Color, LinariaClassName> = {
@@ -398,15 +389,6 @@ export const background: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   transparent: css`
     background-color: var(--color-transparent);
-  `,
-  transparentHover: css`
-    background-color: var(--color-transparentHover);
-  `,
-  transparentPressed: css`
-    background-color: var(--color-transparentPressed);
-  `,
-  transparentDisabled: css`
-    background-color: var(--color-transparentDisabled);
   `,
 } as const;
 
@@ -587,18 +569,6 @@ export const borderColor: Record<ThemeVars.Color, LinariaClassName> = {
   transparent: css`
     border-style: solid;
     border-color: var(--color-transparent);
-  `,
-  transparentHover: css`
-    border-style: solid;
-    border-color: var(--color-transparentHover);
-  `,
-  transparentPressed: css`
-    border-style: solid;
-    border-color: var(--color-transparentPressed);
-  `,
-  transparentDisabled: css`
-    border-style: solid;
-    border-color: var(--color-transparentDisabled);
   `,
 } as const;
 
@@ -821,21 +791,6 @@ export const hoverColor: Record<ThemeVars.Color, LinariaClassName> = {
   transparent: css`
     &:hover {
       color: var(--color-transparent);
-    }
-  `,
-  transparentHover: css`
-    &:hover {
-      color: var(--color-transparentHover);
-    }
-  `,
-  transparentPressed: css`
-    &:hover {
-      color: var(--color-transparentPressed);
-    }
-  `,
-  transparentDisabled: css`
-    &:hover {
-      color: var(--color-transparentDisabled);
     }
   `,
 } as const;
@@ -1061,21 +1016,6 @@ export const hoverBackground: Record<ThemeVars.Color, LinariaClassName> = {
       background-color: var(--color-transparent);
     }
   `,
-  transparentHover: css`
-    &:hover {
-      background-color: var(--color-transparentHover);
-    }
-  `,
-  transparentPressed: css`
-    &:hover {
-      background-color: var(--color-transparentPressed);
-    }
-  `,
-  transparentDisabled: css`
-    &:hover {
-      background-color: var(--color-transparentDisabled);
-    }
-  `,
 } as const;
 
 export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
@@ -1297,21 +1237,6 @@ export const hoverBorderColor: Record<ThemeVars.Color, LinariaClassName> = {
   transparent: css`
     &:hover {
       border-color: var(--color-transparent);
-    }
-  `,
-  transparentHover: css`
-    &:hover {
-      border-color: var(--color-transparentHover);
-    }
-  `,
-  transparentPressed: css`
-    &:hover {
-      border-color: var(--color-transparentPressed);
-    }
-  `,
-  transparentDisabled: css`
-    &:hover {
-      border-color: var(--color-transparentDisabled);
     }
   `,
 } as const;
@@ -1954,15 +1879,6 @@ export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
   `,
   transparent: css`
     text-decoration-color: var(--color-transparent);
-  `,
-  transparentHover: css`
-    text-decoration-color: var(--color-transparentHover);
-  `,
-  transparentPressed: css`
-    text-decoration-color: var(--color-transparentPressed);
-  `,
-  transparentDisabled: css`
-    text-decoration-color: var(--color-transparentDisabled);
   `,
 } as const;
 

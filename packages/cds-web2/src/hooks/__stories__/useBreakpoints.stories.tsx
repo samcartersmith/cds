@@ -49,11 +49,11 @@ const Example = () => {
 
 export const DefaultToDevice = () => {
   return (
-    <VStack gap={2}>
-      <MediaQueryProvider>
+    <MediaQueryProvider>
+      <VStack gap={2}>
         <Example />
-      </MediaQueryProvider>
-    </VStack>
+      </VStack>
+    </MediaQueryProvider>
   );
 };
 DefaultToDevice.parameters = { percy: { enableJavaScript: true } };

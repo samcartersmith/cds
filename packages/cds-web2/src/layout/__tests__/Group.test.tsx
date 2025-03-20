@@ -1,0 +1,15 @@
+import { render, screen } from '@testing-library/react';
+import { renderA11y } from '@cbhq/cds-web-utils/jest';
+
+import { Group } from '../Group';
+
+describe('Group', () => {
+  it('passes accessibility', async () => {
+    expect(await renderA11y(<Group>Child</Group>)).toHaveNoViolations();
+  });
+
+  it('defaults to role=group', () => {
+    render(<Group>Child</Group>);
+    expect(screen.getByRole('group')).not.toBeNull();
+  });
+});

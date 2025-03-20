@@ -69,3 +69,8 @@ export type DropdownProps = {
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   >;
+
+export type DropdownRefProps = {
+  openMenu: () => void;
+  closeMenu: () => void;
+};

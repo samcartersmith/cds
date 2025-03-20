@@ -1,0 +1,21 @@
+import { measurePerformance } from 'reassure';
+import { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
+
+import { Box } from '../Box';
+
+describe('Box performance test', () => {
+  it('renders', async () => {
+    await measurePerformance(<Box />);
+  });
+  it('renders with elevation', async () => {
+    await measurePerformance(<Box elevation={2 as ElevationLevels} />);
+  });
+  it('renders with a responsive props', async () => {
+    await measurePerformance(
+      <Box
+        padding={{ phone: 5, tablet: 3, desktop: 1 }}
+        justifyContent={{ phone: 'flex-start', tablet: 'space-around', desktop: 'flex-end' }}
+      />,
+    );
+  });
+});

@@ -321,9 +321,6 @@ export const defaultTheme = {
     accentBoldGray: `rgb(${lightSpectrum.gray80})`,
     // Transparent
     transparent: `rgba(${lightSpectrum.gray0},0)`,
-    transparentHover: `rgba(${lightSpectrum.gray0},0)`,
-    transparentPressed: `rgba(${lightSpectrum.gray0},0)`,
-    transparentDisabled: `rgba(${lightSpectrum.gray0},0)`,
   },
   dark: {
     // Text
@@ -375,9 +372,6 @@ export const defaultTheme = {
     accentBoldGray: `rgb(${darkSpectrum.gray80})`,
     // Transparent
     transparent: `rgba(${darkSpectrum.gray0},0)`,
-    transparentHover: `rgba(${darkSpectrum.gray0},0)`,
-    transparentPressed: `rgba(${darkSpectrum.gray0},0)`,
-    transparentDisabled: `rgba(${darkSpectrum.gray0},0)`,
   },
   space: {
     '0': 0,
