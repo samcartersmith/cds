@@ -11,12 +11,12 @@ import {
 } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { opacityPressed, accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
+import { accessibleOpacityDisabled, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useTheme } from '../hooks/useTheme';
-import { TextProps, Text } from '../typography/Text';
+import { Text, TextProps } from '../typography/Text';
 import { Haptics } from '../utils/haptics';
 
 import { useControlMotionProps } from './useControlMotionProps';

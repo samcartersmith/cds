@@ -6,7 +6,7 @@ import type { UiIconName } from '@cbhq/cds-icons';
 
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { type PressableDefaultElement, type PressableProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableDefaultElement, type PressableProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 export type IconCounterButtonProps = {

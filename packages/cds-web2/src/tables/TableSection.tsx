@@ -1,7 +1,7 @@
 import React, { Children, memo, useMemo } from 'react';
 import type { SharedProps } from '@cbhq/cds-common2';
 
-import { type TableSectionContextValue, TableSectionContext } from './context/TableSectionContext';
+import { TableSectionContext, type TableSectionContextValue } from './context/TableSectionContext';
 
 export type TableSectionTag = 'thead' | 'tbody' | 'tfoot' | 'div';
 

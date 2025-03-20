@@ -3,6 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 import { LottieSource } from '../LottieSource';
+
 import activityIndicatorJson from './activityIndicator.json';
 
 export type ActivityIndicatorLottie = LottieSource;

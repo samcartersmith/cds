@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { ThemeVars } from '../core/theme';
 import { gutter } from '../tokens/sizing';
-import type { AvatarBaseProps, TextBaseProps, CardBoxProps, CardHeaderProps } from '../types';
+import type { AvatarBaseProps, CardBoxProps, CardHeaderProps, TextBaseProps } from '../types';
 
 type CreateCardHeaderParams<T> = {
   HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;

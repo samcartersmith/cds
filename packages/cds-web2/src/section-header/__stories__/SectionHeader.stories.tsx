@@ -10,7 +10,7 @@ import { Divider, HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
 import { Tooltip } from '../../overlays';
 import { Link, Text } from '../../typography';
-import { type SectionHeaderProps, SectionHeader } from '../SectionHeader';
+import { SectionHeader, type SectionHeaderProps } from '../SectionHeader';
 
 const assetOptions: AssetOption[] = [
   { title: 'Polygon', value: 'polygon', imageUrl: assets.polygon.imageUrl },

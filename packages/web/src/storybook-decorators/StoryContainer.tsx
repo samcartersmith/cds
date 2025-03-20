@@ -1,6 +1,5 @@
 import React, { memo, StrictMode, useMemo } from 'react';
 import { css } from '@linaria/core';
-
 import { Story } from '@storybook/react';
 import merge from 'lodash/merge';
 import { useDarkMode } from 'storybook-dark-mode';

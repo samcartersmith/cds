@@ -11,7 +11,7 @@ import {
 
 import { Polymorphic } from '../core/polymorphism';
 import { useTheme } from '../hooks/useTheme';
-import { type BoxBaseProps, Box } from '../layout/Box';
+import { Box, type BoxBaseProps } from '../layout/Box';
 
 import {
   interactableBackground,

@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useRef } from 'react';
+import type { MotionTransition, PulseRefBaseProps, ShakeRefBaseProps } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { Box, VStack } from '../../layout';
@@ -6,7 +7,6 @@ import { Text } from '../../typography/Text';
 import { ColorSurge as ColorSurgeComponent, type ColorSurgeRefBaseProps } from '../ColorSurge';
 import { Pulse as PulseComponent } from '../Pulse';
 import { Shake as ShakeComponent } from '../Shake';
-import type { MotionTransition, PulseRefBaseProps, ShakeRefBaseProps } from '@cbhq/cds-common2';
 
 export default {
   title: 'Core Components/Motion/HintMotion',

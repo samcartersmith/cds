@@ -1,8 +1,8 @@
 import React from 'react';
 import type { NavIconName } from '@cbhq/cds-icons';
 
-import { NavigationIconButton } from '../NavigationIconButton';
 import { VStack } from '../../layout';
+import { NavigationIconButton } from '../NavigationIconButton';
 
 export default {
   title: 'Core Components/Buttons/NavigationIconButton',

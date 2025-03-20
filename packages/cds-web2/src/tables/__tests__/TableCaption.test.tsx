@@ -3,7 +3,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Text } from '../../typography/Text';
 import { Table } from '../Table';
-import { type TableCaptionProps, TableCaption } from '../TableCaption';
+import { TableCaption, type TableCaptionProps } from '../TableCaption';
 
 const DEFAULT_CAPTION = 'Table Caption';
 const TABLE_TEST_ID = 'mock-table';

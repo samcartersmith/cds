@@ -6,7 +6,7 @@ import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
 import { hasCellPriority } from '@cbhq/cds-common2/utils/cell';
 
 import { useTheme } from '../hooks/useTheme';
-import { type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { LinkableProps, Pressable } from '../system/Pressable';
 

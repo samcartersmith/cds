@@ -1,5 +1,5 @@
 import React from 'react';
-import { type LazyProps, domAnimation, LazyMotion } from 'framer-motion';
+import { domAnimation, LazyMotion, type LazyProps } from 'framer-motion';
 
 export type FramerMotionProviderProps = Omit<LazyProps, 'features'> & {
   motionFeatures?: LazyProps['features'];

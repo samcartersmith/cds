@@ -1,7 +1,7 @@
 /**
  * These styles are used to power component style props.
  */
-import { type LinariaClassName, css } from '@linaria/core';
+import { css, type LinariaClassName } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 

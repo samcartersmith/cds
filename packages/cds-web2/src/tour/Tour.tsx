@@ -1,21 +1,21 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import {
-  type AutoPlacementOptions,
-  type OffsetOptions,
-  type ShiftOptions,
   arrow as arrowMiddleware,
   autoPlacement,
+  type AutoPlacementOptions,
   autoUpdate,
   offset,
+  type OffsetOptions,
   shift,
+  type ShiftOptions,
   useFloating,
 } from '@floating-ui/react-dom';
 import { css } from '@linaria/core';
 import { animated, config as springConfig, useSpring } from '@react-spring/web';
 import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 import { RefMapContext } from '@cbhq/cds-common2/system/RefMapContext';
 import { TourContext } from '@cbhq/cds-common2/tour/TourContext';

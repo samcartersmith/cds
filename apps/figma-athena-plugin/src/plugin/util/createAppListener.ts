@@ -1,8 +1,8 @@
 import {
+  isMessageData,
   type MessagesToPlugin,
   type PostMessageData,
   type ResponsesToApp,
-  isMessageData,
 } from '../../shared/Messages';
 
 type Req<T> = {

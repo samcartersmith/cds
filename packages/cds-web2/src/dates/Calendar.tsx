@@ -20,9 +20,9 @@ import { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
 import { Grid } from '../layout/Grid';
 import { HStack } from '../layout/HStack';
-import { type VStackDefaultElement, type VStackProps, VStack } from '../layout/VStack';
+import { VStack, type VStackDefaultElement, type VStackProps } from '../layout/VStack';
 import { Tooltip } from '../overlays/tooltip/Tooltip';
-import { type PressableBaseProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableBaseProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 const pressableStyles = css`

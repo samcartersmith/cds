@@ -2,7 +2,7 @@ import React, { forwardRef, memo } from 'react';
 import type { ContentCardBodyBaseProps as BaseProps } from '@cbhq/cds-common2/types';
 
 import { Polymorphic } from '../../core/polymorphism';
-import { type BoxBaseProps, Box, HStack, VStack } from '../../layout';
+import { Box, type BoxBaseProps, HStack, VStack } from '../../layout';
 import { TextBody, TextLabel2 } from '../../typography';
 
 export const contentCardBodyDefaultElement = 'div';

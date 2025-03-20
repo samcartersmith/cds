@@ -3,6 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 import { LottieSource } from '../LottieSource';
+
 import splashJson from './splash.json';
 
 export type SplashLottie = LottieSource<

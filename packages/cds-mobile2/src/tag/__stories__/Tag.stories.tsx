@@ -1,9 +1,9 @@
 import React from 'react';
 import startCase from 'lodash/startCase';
+import type { TagBaseProps } from '@cbhq/cds-common2';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Tag } from '../Tag';
-import type { TagBaseProps } from '@cbhq/cds-common2';
 
 type TagPropConfig = {
   intent: TagBaseProps['intent'][];

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { type ThemeContextValue, ThemeContext } from '../system/ThemeProvider';
+import { ThemeContext, type ThemeContextValue } from '../system/ThemeProvider';
 
 /**
  * Fetches the ThemeContextValue and verifies it is defined, so it must be used inside a ThemeProvider.

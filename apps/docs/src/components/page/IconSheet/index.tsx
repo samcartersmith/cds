@@ -11,7 +11,7 @@ import navIconNames from '@cbhq/cds-icons/__generated__/nav/data/names';
 import uiIconDescriptionMap from '@cbhq/cds-icons/__generated__/ui/data/descriptionMap';
 import uiIconNames from '@cbhq/cds-icons/__generated__/ui/data/names';
 import { TileButton } from '@cbhq/cds-web2/buttons/TileButton';
-import { TextInput, Switch } from '@cbhq/cds-web2/controls';
+import { Switch, TextInput } from '@cbhq/cds-web2/controls';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { Box, Grid } from '@cbhq/cds-web2/layout';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';

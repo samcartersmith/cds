@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { type TableCellSortIconProps, TableCellSortIcon } from '../TableCellSortIcon';
+import { TableCellSortIcon, type TableCellSortIconProps } from '../TableCellSortIcon';
 
 export type UseSortableCellProps<T extends string = string> = {
   sortBy: T;

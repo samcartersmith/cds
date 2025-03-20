@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { ScrollView } from 'react-native';
+import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 import { DotSymbol } from '../../dots';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -10,7 +11,6 @@ import { InputIcon } from '../InputIcon';
 import { Select } from '../Select';
 import { SelectOption } from '../SelectOption';
 import { TextInput } from '../TextInput';
-import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 type AssetKey = keyof typeof assets;
 const assetKeys = Object.keys(assets) as AssetKey[];

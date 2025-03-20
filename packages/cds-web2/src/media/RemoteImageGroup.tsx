@@ -1,5 +1,5 @@
 import React, { Children, isValidElement, useMemo } from 'react';
-import { type LinariaClassName, css } from '@linaria/core';
+import { css, type LinariaClassName } from '@linaria/core';
 import type {
   RemoteImageBaseProps,
   RemoteImageGroupBaseProps,

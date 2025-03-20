@@ -18,8 +18,8 @@ import {
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
 import { ModalParentContext } from '@cbhq/cds-common2/overlays/ModalParentContext';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common2/types';
 

@@ -2,14 +2,14 @@ import React, { memo, useMemo } from 'react';
 
 import { defaultMediaSize } from '../tokens/card';
 import type {
-  PaletteForeground,
-  SharedProps,
-  TextBaseProps,
   ButtonBaseProps,
   CardBodyBaseProps,
   CardBoxProps,
   CardMediaProps,
   CdsPlatform,
+  PaletteForeground,
+  SharedProps,
+  TextBaseProps,
 } from '../types';
 
 import { getCardBodySpacingProps } from './getCardBodySpacingProps';

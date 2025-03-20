@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { type TourContextValue, TourContext, useTourContext } from '../TourContext';
+import { TourContext, type TourContextValue, useTourContext } from '../TourContext';
 
 const MOCK_API: TourContextValue = {
   steps: [],

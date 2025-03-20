@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { Animated } from 'react-native';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 
 import { useTheme } from '../../hooks/useTheme';

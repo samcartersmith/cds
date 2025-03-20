@@ -1,11 +1,11 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Animated, Modal as RNModal } from 'react-native';
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import type { AlertBaseProps } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Alert } from '../Alert';
-import type { AlertBaseProps } from '@cbhq/cds-common2';
 
 const MockAlert = ({
   visible: externalVisible,

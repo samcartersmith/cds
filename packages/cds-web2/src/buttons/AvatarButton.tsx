@@ -5,8 +5,8 @@ import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight'
 import type { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { type AvatarProps, Avatar } from '../media';
-import { type PressableBaseProps, Pressable } from '../system';
+import { Avatar, type AvatarProps } from '../media';
+import { Pressable, type PressableBaseProps } from '../system';
 
 export const avatarButtonDefaultElement = 'button';
 

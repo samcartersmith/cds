@@ -1,7 +1,7 @@
 import React from 'react';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
-import { type TextBaseProps, Text } from '../../typography/Text';
+import { Text, type TextBaseProps } from '../../typography/Text';
 
 export type LoremIpsumProps = {
   title?: string;

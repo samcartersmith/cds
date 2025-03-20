@@ -7,7 +7,7 @@ import { VStack } from '../../layout';
 import { ThemeProvider } from '../../system';
 import { TextLabel2, TextTitle4 } from '../../typography';
 import { SegmentedTab } from '../SegmentedTab';
-import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
+import { SegmentedTabs, type SegmentedTabsProps } from '../SegmentedTabs';
 import type { TabComponent, TabsActiveIndicatorProps } from '../Tabs';
 import { TabsActiveIndicator } from '../Tabs';
 

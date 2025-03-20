@@ -1,10 +1,10 @@
 import React, { memo, useMemo } from 'react';
-import { type StyleProp, type ViewStyle, Animated, Falsy, View } from 'react-native';
+import { Animated, Falsy, type StyleProp, View, type ViewStyle } from 'react-native';
 import { ElevationLevels } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { useTheme } from '../hooks/useTheme';
-import { type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxProps } from '../layout/Box';
 import { getInteractableStyles } from '../styles/getInteractableStyles';
 
 export type InteractableBaseProps = {

@@ -3,7 +3,7 @@ import { pageFooterHeight } from '@cbhq/cds-common2/tokens/page';
 import type { PageFooterBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import type { ResponsiveProps, StaticStyleProps } from '../styles/styleProps';
 
 export const pageFooterPaddingX: ResponsiveProps<StaticStyleProps>['paddingX'] = {

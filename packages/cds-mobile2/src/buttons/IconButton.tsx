@@ -10,7 +10,7 @@ import { memoize } from '@cbhq/cds-common2/utils/memoize';
 import { Theme } from '../core/theme';
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
-import { type PressableInternalProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableInternalProps } from '../system/Pressable';
 
 export type IconButtonProps = IconButtonBaseProps &
   Omit<PressableInternalProps, 'background' | 'style'> & {

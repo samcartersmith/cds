@@ -9,7 +9,7 @@ import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 import { Box } from '../../layout';
 import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
-import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
+import { SegmentedTabs, type SegmentedTabsProps } from '../SegmentedTabs';
 
 const TEST_ID = 'mock-segmented-tabs';
 

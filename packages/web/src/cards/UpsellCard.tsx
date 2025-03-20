@@ -9,7 +9,7 @@ import {
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
-import { type PressableProps, PressableOpacity } from '../system';
+import { PressableOpacity, type PressableProps } from '../system';
 import { TextHeadline, TextLabel2 } from '../typography';
 
 export type UpsellCardProps = UpsellCardBaseProps & {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
 
-import { type BoxDefaultElement, type BoxProps, Box } from '../../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../../layout/Box';
 
 export type ModalBodyProps = BoxProps<BoxDefaultElement>;
 

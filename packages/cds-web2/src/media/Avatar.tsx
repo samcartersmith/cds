@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
+import { css, cx, type LinariaClassName } from '@linaria/core';
 import type { AvatarSize } from '@cbhq/cds-common2';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { AvatarBaseProps, AvatarShape } from '@cbhq/cds-common2/types/AvatarBaseProps';

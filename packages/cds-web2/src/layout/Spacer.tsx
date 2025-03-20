@@ -3,7 +3,7 @@ import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import type { Polymorphic } from '../core/polymorphism';
 
-import { type BoxBaseProps, Box } from './Box';
+import { Box, type BoxBaseProps } from './Box';
 
 export const spacerDefaultElement = 'span';
 

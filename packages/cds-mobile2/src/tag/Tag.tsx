@@ -9,7 +9,7 @@ import {
 } from '@cbhq/cds-common2/tokens/tags';
 
 import { useTheme } from '../hooks/useTheme';
-import { type BoxProps, Box } from '../layout';
+import { Box, type BoxProps } from '../layout';
 import { Text } from '../typography/Text';
 
 export const Tag = memo(

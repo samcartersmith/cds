@@ -3,7 +3,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { useTourContext } from '@cbhq/cds-common/tour/TourContext';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { type TourProps, Tour } from '../Tour';
+import { Tour, type TourProps } from '../Tour';
 
 const StepOne = () => {
   const { goNextTourStep } = useTourContext();

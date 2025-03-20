@@ -9,8 +9,8 @@ import {
   animateOutTranslateYConfig,
 } from '@cbhq/cds-common/animation/fullscreenModal';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common/overlays/OverlayContentContext';
 
 import { IconButton } from '../../buttons';

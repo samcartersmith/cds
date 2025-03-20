@@ -4,7 +4,7 @@ import { coinbaseOneLogo } from '@cbhq/cds-common2/internal/data/assets';
 import { Button } from '../../buttons';
 import { HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
-import { type UpsellCardProps, UpsellCard } from '../UpsellCard';
+import { UpsellCard, type UpsellCardProps } from '../UpsellCard';
 
 const onClickConsole = console.log;
 

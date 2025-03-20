@@ -1,6 +1,6 @@
 import React from 'react';
-import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import type { CellSpacing } from '@cbhq/cds-common2';
+import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';

@@ -10,8 +10,8 @@ import {
 } from '@cbhq/cds-common/animation/modal';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common/overlays/OverlayContentContext';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types/ModalBaseProps';
 

@@ -2,10 +2,10 @@ import React, { forwardRef, memo, useContext } from 'react';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 
 import {
+  IconButton,
   type IconButtonDefaultElement,
   type IconButtonProps,
   type IconButtonVariant,
-  IconButton,
 } from '../buttons/IconButton';
 import { Box } from '../layout/Box';
 

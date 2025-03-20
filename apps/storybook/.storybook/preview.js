@@ -3,12 +3,13 @@ import './polyfills';
 import 'focus-visible';
 import '@cbhq/cds-fonts/fonts.css';
 import '@cbhq/cds-icons/fonts/web/icon-font.css';
-import { globalStyles } from '@cbhq/cds-web/styles/global';
+
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { themes } from '@storybook/theming';
+import { withDesign } from 'storybook-addon-designs';
 import { withPerformance } from 'storybook-addon-performance';
 import { StoryContainer } from '@cbhq/cds-web/storybook-decorators/StoryContainer';
-import { withDesign } from 'storybook-addon-designs';
-import { themes } from '@storybook/theming';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { globalStyles } from '@cbhq/cds-web/styles/global';
 
 /** @type {(import('@storybook/react').DecoratorFn)[]} */
 export const decorators = [StoryContainer, withPerformance, withDesign];

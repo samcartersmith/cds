@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { SegmentedTab } from './SegmentedTab';
 import { SegmentedTabsActiveIndicator } from './SegmentedTabsActiveIndicator';
-import { type TabsProps, Tabs } from './Tabs';
+import { Tabs, type TabsProps } from './Tabs';
 
 export type SegmentedTabsProps = Partial<
   Pick<TabsProps, 'TabComponent' | 'TabsActiveIndicatorComponent'>

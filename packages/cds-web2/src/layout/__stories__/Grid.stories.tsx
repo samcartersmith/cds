@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { TextBody, TextTitle1, TextTitle3 } from '../../typography';
-import { type GridDefaulElement, type GridProps, Grid } from '../Grid';
+import { Grid, type GridDefaulElement, type GridProps } from '../Grid';
 import { GridColumn } from '../GridColumn';
-import { type HStackProps, HStack } from '../HStack';
+import { HStack, type HStackProps } from '../HStack';
 import { VStack } from '../VStack';
 
 import { LoremIpsum } from './LoremIpsum';

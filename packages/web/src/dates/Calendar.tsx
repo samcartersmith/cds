@@ -18,7 +18,7 @@ import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable'
 import { Icon } from '../icons/Icon';
 import { Grid } from '../layout/Grid';
 import { HStack } from '../layout/HStack';
-import { type VStackProps, VStack } from '../layout/VStack';
+import { VStack, type VStackProps } from '../layout/VStack';
 import { Tooltip } from '../overlays/Tooltip/Tooltip';
 import { display } from '../styles/display';
 import { alignItems, justifyContent } from '../styles/flex';

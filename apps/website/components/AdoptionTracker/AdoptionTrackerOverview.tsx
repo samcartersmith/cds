@@ -1,5 +1,4 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
-
 import Link from '@docusaurus/Link';
 import { css } from '@linaria/core';
 import getFirst from 'lodash/first';

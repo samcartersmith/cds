@@ -5,7 +5,7 @@ import { execute } from '../repo/execute.js';
 
 import { closePR } from './closePR';
 import { createInstallationAccessToken } from './createInstallationAccessToken';
-import { type CreatePRArgs, createPR } from './createPR';
+import { createPR, type CreatePRArgs } from './createPR';
 import { getOpenPRs } from './getOpenPRs';
 
 export type RepoData = Awaited<ReturnType<RestEndpointMethods['repos']['get']>>['data'];

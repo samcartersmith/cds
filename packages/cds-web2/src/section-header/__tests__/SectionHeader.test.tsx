@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { type SectionHeaderProps, SectionHeader } from '../SectionHeader';
+import { SectionHeader, type SectionHeaderProps } from '../SectionHeader';
 
 const defaultProps: SectionHeaderProps = {
   title: 'Title',

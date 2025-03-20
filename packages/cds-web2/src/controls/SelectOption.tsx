@@ -6,7 +6,7 @@ import { type SelectOptionBaseProps } from '@cbhq/cds-common2/types';
 import { Cell } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
 import { VStack } from '../layout/VStack';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 import { useSelectContext } from './selectContext';

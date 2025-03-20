@@ -8,7 +8,7 @@ import { AvatarButton, IconButton, NavigationIconButton } from '../../buttons';
 import { SelectOption } from '../../controls';
 import { LogoMark, NavigationIcon, SubBrandLogoMark } from '../../icons';
 import { Pictogram } from '../../illustrations';
-import { HStack, VStack, Box } from '../../layout';
+import { Box, HStack, VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { PortalProvider } from '../../overlays/PortalProvider';
 import { Pressable } from '../../system';

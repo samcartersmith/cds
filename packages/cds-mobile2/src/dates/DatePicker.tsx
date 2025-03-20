@@ -1,11 +1,11 @@
 import React, { forwardRef, memo, useCallback, useMemo, useRef, useState } from 'react';
 import {
+  type NativeSyntheticEvent,
   type StyleProp,
   type TextInput,
-  type ViewStyle,
-  View,
-  type NativeSyntheticEvent,
   type TextInputChangeEventData,
+  View,
+  type ViewStyle,
 } from 'react-native';
 import NativeDatePicker from 'react-native-date-picker';
 import { type DateInputValidationError } from '@cbhq/cds-common2/dates/DateInputValidationError';
@@ -13,7 +13,7 @@ import { type DateInputValidationError } from '@cbhq/cds-common2/dates/DateInput
 import { InputIconButton } from '../controls/InputIconButton';
 import { VStack } from '../layout/VStack';
 
-import { type DateInputProps, DateInput } from './DateInput';
+import { DateInput, type DateInputProps } from './DateInput';
 
 export type DatePickerProps = {
   /** Control the date value of the DatePicker. */

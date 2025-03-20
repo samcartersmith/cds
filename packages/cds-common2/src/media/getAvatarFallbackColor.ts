@@ -1,4 +1,4 @@
-import { type HSLColor, hsl } from 'd3-color';
+import { hsl, type HSLColor } from 'd3-color';
 
 import { FallbackColor } from '../types';
 import { between } from '../utils/between';

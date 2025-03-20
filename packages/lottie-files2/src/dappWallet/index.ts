@@ -3,6 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 import { LottieSource } from '../LottieSource';
+
 import dappWalletJson from './dappWallet.json';
 
 export type DappWalletLottie = LottieSource<

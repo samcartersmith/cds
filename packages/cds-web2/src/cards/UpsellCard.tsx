@@ -4,7 +4,7 @@ import type { UpsellCardBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
-import { type PressableDefaultElement, type PressableProps, Pressable } from '../system';
+import { Pressable, type PressableDefaultElement, type PressableProps } from '../system';
 import { Text } from '../typography/Text';
 
 export type UpsellCardProps = UpsellCardBaseProps & {

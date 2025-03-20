@@ -1,11 +1,11 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { TextInput } from 'react-native';
 import {
-  type SparklinePeriod,
   generateSubHead,
   numToLocaleString,
   sparklineInteractiveBuilder,
   sparklineInteractiveWithHeaderBuilder,
+  type SparklinePeriod,
 } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
 import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
 import { ChartScrubParams } from '@cbhq/cds-common/types/Chart';

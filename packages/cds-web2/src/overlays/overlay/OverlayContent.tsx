@@ -6,7 +6,7 @@ import {
 } from '@cbhq/cds-common2/animation/overlay';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
-import { type VStackDefaultElement, type VStackProps, VStack } from '../../layout/VStack';
+import { VStack, type VStackDefaultElement, type VStackProps } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 
 export type OverlayProps = {

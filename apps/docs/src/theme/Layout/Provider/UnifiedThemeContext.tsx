@@ -1,4 +1,4 @@
-import React, { type ReactNode, createContext, useContext, useMemo, useState } from 'react';
+import React, { createContext, type ReactNode, useContext, useMemo, useState } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { docsTheme } from '@site/src/constants';
 import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';

@@ -1,15 +1,15 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import useMeasure from 'react-use-measure';
-import { type Transition, m as motion } from 'framer-motion';
+import { m as motion, type Transition } from 'framer-motion';
 import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
 import { useRefMap } from '@cbhq/cds-common/hooks/useRefMap';
 import { TabsContext } from '@cbhq/cds-common/tabs/TabsContext';
 import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common/tabs/useTabs';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import type { PaletteBackground } from '@cbhq/cds-common/types';
-import { type Rect, defaultRect } from '@cbhq/cds-common/types/Rect';
+import { defaultRect, type Rect } from '@cbhq/cds-common/types/Rect';
 
-import { type HStackProps, Box, BoxElement, HStack } from '../layout';
+import { Box, BoxElement, HStack, type HStackProps } from '../layout';
 
 const MotionBox = motion(Box);
 

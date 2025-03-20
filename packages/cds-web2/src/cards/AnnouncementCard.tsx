@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
 import type { AnnouncementCardBaseProps } from '@cbhq/cds-common2/types';
 
-import { type CardProps, Card } from './Card';
-import { type CardBodyProps, CardBody } from './CardBody';
+import { Card, type CardProps } from './Card';
+import { CardBody, type CardBodyProps } from './CardBody';
 
 export type AnnouncementCardProps = AnnouncementCardBaseProps & {
   onActionPress?: CardBodyProps['onActionPress'];

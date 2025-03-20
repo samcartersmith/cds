@@ -3,7 +3,7 @@ import type { UiIconName } from '@cbhq/cds-icons';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons';
-import { type HStackDefaultElement, type HStackProps, HStack } from '../layout/HStack';
+import { HStack, type HStackDefaultElement, type HStackProps } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 

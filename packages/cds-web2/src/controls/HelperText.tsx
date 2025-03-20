@@ -4,7 +4,7 @@ import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
-import { type TextDefaultElement, type TextProps, Text } from '../typography/Text';
+import { Text, type TextDefaultElement, type TextProps } from '../typography/Text';
 
 export type HelperTextProps = {
   /** Color of helper text. negative color will render an icon */

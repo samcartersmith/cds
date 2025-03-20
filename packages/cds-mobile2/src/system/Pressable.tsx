@@ -15,7 +15,7 @@ import { HapticFeedbackType } from '../types';
 import { debounce } from '../utils/debounce';
 import { Haptics } from '../utils/haptics';
 
-import { type InteractableBaseProps, Interactable } from './Interactable';
+import { Interactable, type InteractableBaseProps } from './Interactable';
 
 export type LinkableProps = Pick<
   BasePressableProps,

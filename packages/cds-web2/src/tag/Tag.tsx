@@ -8,7 +8,7 @@ import {
 import type { TagBaseProps } from '@cbhq/cds-common2/types/TagBaseProps';
 
 import { useTheme } from '../hooks/useTheme';
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { Text } from '../typography/Text';
 
 type TagProps = TagBaseProps &

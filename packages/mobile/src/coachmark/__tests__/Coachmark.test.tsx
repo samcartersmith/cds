@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
 import { RemoteImage } from '../../media';
-import { type CoachmarkProps, Coachmark } from '../Coachmark';
+import { Coachmark, type CoachmarkProps } from '../Coachmark';
 
 const exampleProps: CoachmarkProps = {
   title: 'Title',

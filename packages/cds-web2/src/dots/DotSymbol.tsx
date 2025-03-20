@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { css, cx } from '@linaria/core';
 import type { DotSymbolBaseProps } from '@cbhq/cds-common2/types/DotSymbolBaseProps';
 
-import { type IconProps, Icon } from '../icons/Icon';
+import { Icon, type IconProps } from '../icons/Icon';
 import { Box } from '../layout';
 import { RemoteImage } from '../media/RemoteImage';
 import { handlePreventPropagation } from '../utils/eventHandlers';

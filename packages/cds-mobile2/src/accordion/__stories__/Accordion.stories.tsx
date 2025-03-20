@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { noop } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons/Button';
@@ -7,7 +8,6 @@ import { TextInput } from '../../controls';
 import { Example, ExampleProps, ExampleScreen } from '../../examples/ExampleScreen';
 import { Text } from '../../typography/Text';
 import { Accordion, AccordionItem } from '..';
-import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 const STEPS = [
   { itemKey: '1', nextKey: '2' },

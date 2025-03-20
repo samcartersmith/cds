@@ -2,11 +2,11 @@ import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
-import { type IconProps, Icon } from '../icons';
+import { Icon, type IconProps } from '../icons';
 import { Box } from '../layout';
 import { Tooltip } from '../overlays/tooltip/Tooltip';
 import type { TooltipProps } from '../overlays/tooltip/TooltipProps';
-import { type PressableDefaultElement, type PressableProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableDefaultElement, type PressableProps } from '../system/Pressable';
 import { Text } from '../typography';
 
 import { useSidebarContext } from './SidebarContext';

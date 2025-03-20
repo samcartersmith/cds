@@ -1,5 +1,5 @@
 import React from 'react';
-import { ethBackground, assets } from '@cbhq/cds-common2/internal/data/assets';
+import { assets, ethBackground } from '@cbhq/cds-common2/internal/data/assets';
 
 import { Button, IconButton, IconCounterButton } from '../../../buttons';
 import { NativeTextArea, TextInput } from '../../../controls';
@@ -8,16 +8,16 @@ import { RemoteImage, RemoteImageGroup } from '../../../media';
 import { Text } from '../../../typography/Text';
 import { LikeButton } from '../../LikeButton';
 import {
-  type ContentCardBodyDefaultElement,
-  type ContentCardBodyProps,
-  type ContentCardFooterDefaultElement,
-  type ContentCardFooterProps,
-  type ContentCardHeaderDefaultElement,
-  type ContentCardHeaderProps,
   ContentCard,
   ContentCardBody,
+  type ContentCardBodyDefaultElement,
+  type ContentCardBodyProps,
   ContentCardFooter,
+  type ContentCardFooterDefaultElement,
+  type ContentCardFooterProps,
   ContentCardHeader,
+  type ContentCardHeaderDefaultElement,
+  type ContentCardHeaderProps,
 } from '..';
 
 const exampleProps: {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { gutter } from '@cbhq/cds-common2/tokens/sizing';
+import type { CellPriority, CellSpacing } from '@cbhq/cds-common2';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { selectCellSpacingConfig } from '@cbhq/cds-common2/tokens/select';
-import type { CellPriority, CellSpacing } from '@cbhq/cds-common2';
+import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
 import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';

@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useMemo, useState } from 'react';
 import { Defs, Mask, Rect as NativeRect, Svg } from 'react-native-svg';
 import { usePaletteConfig } from '@cbhq/cds-common';
-import { type Rect, defaultRect } from '@cbhq/cds-common/types/Rect';
+import { defaultRect, type Rect } from '@cbhq/cds-common/types/Rect';
 
 import { usePaletteValueToRgbaString } from '../color/usePaletteValueToRgbaString';
 import { useSpacingValue } from '../hooks/useSpacingValue';

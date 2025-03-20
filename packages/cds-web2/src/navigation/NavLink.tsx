@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { css, cx } from '@linaria/core';
 
-import { type LinkDefaultElement, type LinkProps, Link } from '../typography/Link';
+import { Link, type LinkDefaultElement, type LinkProps } from '../typography/Link';
 
 export type NavLinkProps = {
   /** Boolean to indicate if the Link represents the current route. */

@@ -22752,6 +22752,7 @@ __metadata:
     eslint-plugin-jest: "npm:^28.11.0"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-react-perf: "npm:^3.3.3"
+    eslint-plugin-simple-import-sort: "npm:^12.1.1"
     eslint-plugin-testing-library: "npm:^7.1.1"
     execa: "npm:^5.1.1"
     fast-glob: "npm:^3.2.11"
@@ -25031,6 +25032,15 @@ __metadata:
   dependencies:
     graphql: "npm:^14.0.0 || ^15.0.0"
   checksum: 10c0/96b92c5fcf07e601d45cb3ae69571b7ec62e97d9faf9b20cb959d1fbc70e084cf831dc980521f478dd26db5654d00d4f7ac473ebab9111c25e46abd4376f86f1
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-simple-import-sort@npm:^12.1.1":
+  version: 12.1.1
+  resolution: "eslint-plugin-simple-import-sort@npm:12.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Feslint-plugin-simple-import-sort%2F-%2Feslint-plugin-simple-import-sort-12.1.1.tgz"
+  peerDependencies:
+    eslint: ">=5.0.0"
+  checksum: 10c0/0ad1907ad9ddbadd1db655db0a9d0b77076e274b793a77b982c8525d808d868e6ecfce24f3a411e8a1fa551077387f9ebb38c00956073970ebd7ee6a029ce2b3
   languageName: node
   linkType: hard
 

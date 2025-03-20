@@ -7,7 +7,7 @@ import { useIsBrowser } from '../hooks/useIsBrowser';
 
 import { useTableSectionTag } from './hooks/useTable';
 import { useTableRowListener } from './hooks/useTableRowListener';
-import { type TableCellProps, TableCell } from './TableCell';
+import { TableCell, type TableCellProps } from './TableCell';
 
 export type TableRowRef = React.MutableRefObject<HTMLTableRowElement | null>;
 

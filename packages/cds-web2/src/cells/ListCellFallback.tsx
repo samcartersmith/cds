@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import type { ListCellFallbackProps as ListCellFallbackCommonProps } from '@cbhq/cds-common2/types/CellBaseProps';
 import { getRectWidthVariant } from '@cbhq/cds-common2/utils/getRectWidthVariant';
 
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { Fallback } from '../layout/Fallback';
 
 import { Cell } from './Cell';

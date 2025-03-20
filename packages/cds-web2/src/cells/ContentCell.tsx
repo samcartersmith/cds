@@ -9,7 +9,7 @@ import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
-import { type CellBaseProps, Cell } from './Cell';
+import { Cell, type CellBaseProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 
 const overflowStyle = css`
@@ -71,7 +71,6 @@ export const ContentCell: ContentCellComponent = memo(
       const Component = (as ?? contentCellDefaultElement) satisfies React.ElementType;
       if (!isProduction()) {
         if (meta && !title && !subtitle) {
-          // eslint-disable-next-line no-console
           console.error('ContentCell: Cannot use `meta` without a `title` or `subtitle`.');
         }
       }

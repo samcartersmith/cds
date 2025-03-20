@@ -7,7 +7,7 @@ import type {
 
 import { Icon } from '../icons/Icon';
 import type { PictogramProps } from '../illustrations/Pictogram';
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
 export type CellMediaProps = CellMediaBaseProps<PictogramProps> &

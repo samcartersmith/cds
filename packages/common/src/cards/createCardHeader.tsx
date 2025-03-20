@@ -3,10 +3,10 @@ import React, { memo } from 'react';
 import { gutter } from '../tokens/sizing';
 import type {
   AvatarBaseProps,
-  PaletteForeground,
-  TextBaseProps,
   CardBoxProps,
   CardHeaderProps,
+  PaletteForeground,
+  TextBaseProps,
 } from '../types';
 
 type CreateCardHeaderParams<T> = {

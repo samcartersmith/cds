@@ -9,12 +9,12 @@ import { TextInput } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons';
-import { Divider, HStack, VStack, Box } from '../../layout';
+import { Box, Divider, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media';
 import { Modal, ModalBody, ModalHeader } from '../../overlays';
 import { Pressable } from '../../system/Pressable';
 import { Text } from '../../typography/Text';
-import { MultiContentModuleProps, MultiContentModule } from '../MultiContentModule';
+import { MultiContentModule, MultiContentModuleProps } from '../MultiContentModule';
 
 type ListItem = {
   icon: IconName;

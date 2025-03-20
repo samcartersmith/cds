@@ -5,7 +5,7 @@ import type { IllustrationPictogramNames } from '@cbhq/cds-common2/types/Illustr
 
 import { IconButton } from '../buttons/IconButton';
 import { Pictogram } from '../illustrations/Pictogram';
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { type StyleProps } from '../styles/styleProps';

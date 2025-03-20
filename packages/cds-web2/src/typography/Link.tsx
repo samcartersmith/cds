@@ -3,7 +3,7 @@ import { css, cx } from '@linaria/core';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { type PressableBaseProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
 import { Text } from './Text';
 

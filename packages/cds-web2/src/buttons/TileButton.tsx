@@ -6,7 +6,7 @@ import { isDevelopment } from '@cbhq/cds-utils';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Pictogram, PictogramName } from '../illustrations/Pictogram';
-import { type PressableBaseProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
 import { Tile } from './Tile';
 

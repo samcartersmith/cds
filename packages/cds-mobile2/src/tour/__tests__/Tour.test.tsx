@@ -4,7 +4,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react-nativ
 import { useTourContext } from '@cbhq/cds-common2/tour/TourContext';
 
 import { DefaultThemeProvider } from '../../utils/testHelpers';
-import { type TourProps, Tour } from '../Tour';
+import { Tour, type TourProps } from '../Tour';
 
 const StepOne = () => {
   const { goNextTourStep } = useTourContext();

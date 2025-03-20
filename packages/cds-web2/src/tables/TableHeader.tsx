@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { css, cx } from '@linaria/core';
 import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 
-import { type TableSectionProps, TableSection } from './TableSection';
+import { TableSection, type TableSectionProps } from './TableSection';
 
 export type TableHeaderProps = TableSectionProps & {
   /**

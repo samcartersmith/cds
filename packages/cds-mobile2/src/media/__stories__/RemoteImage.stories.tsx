@@ -1,8 +1,8 @@
 import React from 'react';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { assets, squareAssets, svgs } from '@cbhq/cds-common2/internal/data/assets';
 import { avatars, avatarSizes } from '@cbhq/cds-common2/internal/data/avatars';
 import { entries } from '@cbhq/cds-utils';
-import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';

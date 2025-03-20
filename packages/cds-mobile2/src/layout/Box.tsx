@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { type StyleProp, type ViewProps, type ViewStyle, Animated, View } from 'react-native';
+import { Animated, type StyleProp, View, type ViewProps, type ViewStyle } from 'react-native';
 import { PinningDirection } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
@@ -7,7 +7,7 @@ import type { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 import type { Theme } from '../core/theme';
 import { useTheme } from '../hooks/useTheme';
 import { pinStyles } from '../styles/pinStyles';
-import { type StyleProps, getStyles } from '../styles/styleProps';
+import { getStyles, type StyleProps } from '../styles/styleProps';
 
 export type BoxBaseProps = StyleProps & {
   children?: React.ReactNode;

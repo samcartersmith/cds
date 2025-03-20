@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { cx, css } from '@linaria/core';
+import { css, cx } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 import {
   animateInOpacityConfig,
@@ -10,8 +10,8 @@ import {
   animateOutTranslateYConfig,
 } from '@cbhq/cds-common2/animation/fullscreenModal';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 
 import { IconButton } from '../../buttons';

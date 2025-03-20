@@ -7,7 +7,7 @@ import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
 import { RemoteImage } from '../../media';
 import { InputIcon } from '../InputIcon';
-import { type SelectProps, Select } from '../Select';
+import { Select, type SelectProps } from '../Select';
 import { SelectOption } from '../SelectOption';
 
 const exampleOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];

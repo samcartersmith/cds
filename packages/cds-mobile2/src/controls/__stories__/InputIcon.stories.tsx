@@ -1,6 +1,6 @@
 import React from 'react';
-import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import type { InputVariant } from '@cbhq/cds-common2';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';

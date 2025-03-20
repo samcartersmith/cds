@@ -1,4 +1,4 @@
-import { ethBackground, assets } from '@cbhq/cds-common/internal/data/assets';
+import { assets, ethBackground } from '@cbhq/cds-common/internal/data/assets';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
 
 import { Button, IconButton, IconCounterButton } from '../../../buttons';

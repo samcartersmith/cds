@@ -7,7 +7,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout';
 import { Text } from '../../typography/Text';
 import { SegmentedTab } from '../SegmentedTab';
-import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
+import { SegmentedTabs, type SegmentedTabsProps } from '../SegmentedTabs';
 import type { TabComponent, TabsActiveIndicatorProps } from '../Tabs';
 import { TabsActiveIndicator } from '../Tabs';
 

@@ -6,7 +6,7 @@ import { createCssString } from '../core/createCssString';
 import { createThemeCssVars } from '../core/createThemeCssVars';
 import type { Theme, ThemeConfig, ThemeCSSVars } from '../core/theme';
 
-import { type FramerMotionProviderProps, FramerMotionProvider } from './FramerMotionProvider';
+import { FramerMotionProvider, type FramerMotionProviderProps } from './FramerMotionProvider';
 
 /* Augments csstype's Properties by adding all our theme CSS variable names. Effectively adds all theme CSS variable names as valid keys to React.CSSProperties. */
 declare module 'csstype' {

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { type TableSectionProps, TableSection } from './TableSection';
+import { TableSection, type TableSectionProps } from './TableSection';
 
 export type TableBodyProps = TableSectionProps;
 

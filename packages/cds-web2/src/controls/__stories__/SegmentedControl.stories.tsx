@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { VStack } from '../../layout';
-import { type IconOptions, type TextOptions, SegmentedControl } from '../SegmentedControl';
+import { type IconOptions, SegmentedControl, type TextOptions } from '../SegmentedControl';
 
 export default {
   title: 'Core Components/Segmented Control',

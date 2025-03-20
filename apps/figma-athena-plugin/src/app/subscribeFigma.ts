@@ -1,7 +1,7 @@
 import {
+  isSubscriptionData,
   type PostSubscriptionData,
   type SubscriptionsToPlugin,
-  isSubscriptionData,
 } from '../shared/Subscriptions';
 
 import type { FigmaMessageEvent } from './fetchFigma';

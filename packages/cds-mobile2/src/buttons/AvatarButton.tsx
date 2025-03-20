@@ -4,7 +4,7 @@ import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight'
 import { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
 import { Avatar } from '../media';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableProps } from '../system/Pressable';
 
 export type AvatarButtonProps = PressableProps &
   SharedProps &

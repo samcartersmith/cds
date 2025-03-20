@@ -19,8 +19,8 @@ import {
 import { useSpectrum } from '@cbhq/cds-common';
 import { drawerAnimationDefaultDuration, MAX_OVER_DRAG } from '@cbhq/cds-common/animation/drawer';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common/overlays/OverlayContentContext';
 import {
   horizontalDrawerPercentageOfView,

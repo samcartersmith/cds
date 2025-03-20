@@ -2,7 +2,7 @@ import React from 'react';
 import { css, cx } from '@linaria/core';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
 
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';

@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { Animated } from 'react-native';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common/overlays/OverlayContentContext';
 import { overlayPalette } from '@cbhq/cds-common/palette/constants';
 

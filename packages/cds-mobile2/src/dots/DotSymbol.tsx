@@ -1,16 +1,16 @@
 import React, { memo, useMemo } from 'react';
 import {
+  ImageSourcePropType,
   type ImageStyle,
   type StyleProp,
-  type ViewStyle,
-  ImageSourcePropType,
   View,
+  type ViewStyle,
 } from 'react-native';
 import { DotSymbolBaseProps } from '@cbhq/cds-common2';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
 import { useTheme } from '../hooks/useTheme';
-import { type IconProps, Icon } from '../icons/Icon';
+import { Icon, type IconProps } from '../icons/Icon';
 import { Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 

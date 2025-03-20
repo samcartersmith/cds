@@ -3,6 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 import { LottieSource } from '../LottieSource';
+
 import watchListStarJson from './watchListStar.json';
 
 export type WatchListStarLottie = LottieSource;

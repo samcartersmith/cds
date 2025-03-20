@@ -5,9 +5,9 @@ import type { CellBaseProps as SharedCellBaseProps } from '@cbhq/cds-common2/typ
 import { hasCellPriority } from '@cbhq/cds-common2/utils/cell';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { type BoxBaseProps, Box } from '../layout/Box';
+import { Box, type BoxBaseProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableProps } from '../system/Pressable';
 
 const pressClassName = css`
   border-style: hidden;

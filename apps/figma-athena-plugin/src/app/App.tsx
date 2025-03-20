@@ -10,7 +10,7 @@ import { Layout } from './components/Layout';
 import { PromptList } from './components/PromptList';
 import { Route } from './components/Router';
 import { GlobalStateContextProvider } from './hooks/useGlobalState';
-import { type Routes, RouterContext } from './hooks/useRouter';
+import { RouterContext, type Routes } from './hooks/useRouter';
 import { FigmaNodeList } from './views/FigmaNodeSelection/FigmaNodeList';
 
 export const App = () => {

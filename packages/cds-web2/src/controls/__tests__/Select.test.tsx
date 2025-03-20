@@ -6,7 +6,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 import { VStack } from '../../layout/VStack';
 import { MediaQueryProvider } from '../../system/MediaQueryProvider';
 import { DefaultThemeProvider } from '../../utils/test';
-import { type SelectProps, Select } from '../Select';
+import { Select, type SelectProps } from '../Select';
 import { SelectOption } from '../SelectOption';
 
 jest.mock('react-use-measure');

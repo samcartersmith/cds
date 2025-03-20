@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { type TabsActiveIndicatorProps, TabsActiveIndicator } from './Tabs';
+import { TabsActiveIndicator, type TabsActiveIndicatorProps } from './Tabs';
 
 export type SegmentedTabsActiveIndicatorProps = TabsActiveIndicatorProps;
 

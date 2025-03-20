@@ -9,17 +9,17 @@ import React, {
 } from 'react';
 import { View } from 'react-native';
 import Animated, {
-  type WithSpringConfig,
   useAnimatedStyle,
   useSharedValue,
   withSpring,
+  type WithSpringConfig,
 } from 'react-native-reanimated';
 import { useRefMap } from '@cbhq/cds-common/hooks/useRefMap';
 import { TabsContext } from '@cbhq/cds-common/tabs/TabsContext';
 import { type TabsOptions, type TabValue, useTabs } from '@cbhq/cds-common/tabs/useTabs';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common/tokens/interactable';
 import type { PaletteBackground } from '@cbhq/cds-common/types';
-import { type Rect, defaultRect } from '@cbhq/cds-common/types/Rect';
+import { defaultRect, type Rect } from '@cbhq/cds-common/types/Rect';
 
 import type { BoxProps, HStackProps } from '../layout';
 import { Box, HStack } from '../layout';

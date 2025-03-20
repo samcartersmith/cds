@@ -8,7 +8,7 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { Text } from '../../typography/Text';
-import { type AvatarProps, Avatar } from '../Avatar';
+import { Avatar, type AvatarProps } from '../Avatar';
 
 const avatarImageUrl =
   'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';

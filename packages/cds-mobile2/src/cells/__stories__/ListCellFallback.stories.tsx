@@ -1,8 +1,8 @@
 import React from 'react';
+import type { CellSpacing } from '@cbhq/cds-common2';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { ListCellFallback } from '../ListCellFallback';
-import type { CellSpacing } from '@cbhq/cds-common2';
 
 const innerSpacing: CellSpacing = {
   paddingX: 2,

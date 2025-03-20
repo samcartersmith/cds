@@ -9,7 +9,7 @@ import { getButtonSpacingProps } from '@cbhq/cds-common2/utils/getButtonSpacingP
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { type PressableInternalProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableInternalProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 export type ButtonProps = ButtonBaseProps &

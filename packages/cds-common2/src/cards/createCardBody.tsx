@@ -3,13 +3,13 @@ import React, { memo, useMemo } from 'react';
 import { ThemeVars } from '../core/theme';
 import { defaultMediaSize } from '../tokens/card';
 import type {
-  SharedProps,
-  TextBaseProps,
   ButtonBaseProps,
   CardBodyBaseProps,
   CardBoxProps,
   CardMediaProps,
   CdsPlatform,
+  SharedProps,
+  TextBaseProps,
 } from '../types';
 
 import { getCardBodySpacingProps } from './getCardBodySpacingProps';

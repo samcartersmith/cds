@@ -23,7 +23,7 @@ import { ToastContext } from '@cbhq/cds-common2/overlays/ToastProvider';
 
 import { Button } from '../buttons/Button';
 import { IconButton } from '../buttons/IconButton';
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { ColorSurge } from '../motion/ColorSurge';
 import { useMotionProps } from '../motion/useMotionProps';

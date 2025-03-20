@@ -1,16 +1,15 @@
 import React, { memo, StrictMode, useMemo } from 'react';
+import { css } from '@linaria/core';
 import { Story } from '@storybook/react';
 import merge from 'lodash/merge';
 import { useDarkMode } from 'storybook-dark-mode';
 import { sanitizeProps, StoryBuilderConfig } from '@cbhq/cds-common2/internal/utils/storyBuilder';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
-
+import { Group } from '@cbhq/cds-web2/layout/Group';
 import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
 import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
 import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
 import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
-import { Group } from '@cbhq/cds-web2/layout/Group';
-import { css } from '@linaria/core';
 
 const oldWrapperProps = {
   className: css`

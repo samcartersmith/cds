@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { css, cx } from '@linaria/core';
 import { DotSymbolBaseProps, useIconSize } from '@cbhq/cds-common';
 
-import { type IconProps, Icon } from '../icons';
+import { Icon, type IconProps } from '../icons';
 import { Box } from '../layout';
 import { RemoteImage } from '../media/RemoteImage';
 import { palette } from '../tokens';

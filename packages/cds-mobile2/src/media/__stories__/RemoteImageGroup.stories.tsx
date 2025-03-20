@@ -1,4 +1,6 @@
 import React from 'react';
+import { assets, squareAssets } from '@cbhq/cds-common2/internal/data/assets';
+import { avatarSizes } from '@cbhq/cds-common2/internal/data/avatars';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
@@ -6,8 +8,6 @@ import { Text } from '../../typography/Text';
 import { TextLabel1 } from '../../typography/TextLabel1';
 import { RemoteImage } from '../RemoteImage';
 import { RemoteImageGroup } from '../RemoteImageGroup';
-import { assets, squareAssets } from '@cbhq/cds-common2/internal/data/assets';
-import { avatarSizes } from '@cbhq/cds-common2/internal/data/avatars';
 
 const Circle = () => (
   <>

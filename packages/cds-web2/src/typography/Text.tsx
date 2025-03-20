@@ -1,9 +1,9 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
+import { css, cx, type LinariaClassName } from '@linaria/core';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { type BoxBaseProps, Box } from '../layout/Box';
+import { Box, type BoxBaseProps } from '../layout/Box';
 
 const baseStyle = css`
   margin: 0;

@@ -7,7 +7,7 @@ import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import type { Polymorphic } from '../core/polymorphism';
 import { borderStyle, pinStyle } from '../styles/booleanStyles';
 import type { fontFamily } from '../styles/responsive/base';
-import { type ResponsiveProps, type StyleProps, getStyles } from '../styles/styleProps';
+import { getStyles, type ResponsiveProps, type StyleProps } from '../styles/styleProps';
 
 export const boxDefaultElement = 'div';
 

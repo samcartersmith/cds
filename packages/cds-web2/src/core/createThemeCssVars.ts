@@ -1,6 +1,7 @@
 import { type CSSProperties } from '@linaria/core';
-import { type Theme, styleVarPrefixes } from './theme';
+
 import { createCssVars } from './createCssVars';
+import { styleVarPrefixes, type Theme } from './theme';
 
 export const createThemeCssVars = (theme: Partial<Theme>) => {
   const themeCss: Record<string, CSSProperties> = {};

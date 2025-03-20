@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
+import { css, cx, type LinariaClassName } from '@linaria/core';
 import type { CellSpacing } from '@cbhq/cds-common2/types/CellBaseProps';
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';

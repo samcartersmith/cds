@@ -5,9 +5,9 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Text } from '../../typography/Text';
 import {
+  AvatarButton,
   type AvatarButtonDefaultElement,
   type AvatarButtonProps,
-  AvatarButton,
 } from '../AvatarButton';
 
 const avatarImageUrl =

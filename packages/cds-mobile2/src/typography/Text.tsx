@@ -1,18 +1,18 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import {
-  type StyleProp,
-  type TextProps as NativeTextProps,
-  type TextStyle,
   Animated,
+  type StyleProp,
   StyleSheet,
   Text as NativeText,
+  type TextProps as NativeTextProps,
+  type TextStyle,
 } from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 
 import { useTextAlign } from '../hooks/useTextAlign';
 import { useTheme } from '../hooks/useTheme';
-import { type StyleProps, getStyles } from '../styles/styleProps';
+import { getStyles, type StyleProps } from '../styles/styleProps';
 
 export type TextProps = StyleProps &
   Omit<NativeTextProps, 'style'> & {

@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 import type { Polymorphic } from '../core/polymorphism';
 
-import { type PressableBaseProps, Pressable } from './Pressable';
+import { Pressable, type PressableBaseProps } from './Pressable';
 
 export const pressableOpacityDefaultElement = 'button';
 

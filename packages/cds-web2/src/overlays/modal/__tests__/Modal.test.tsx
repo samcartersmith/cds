@@ -7,10 +7,10 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 import { Button } from '../../../buttons';
 import { TextBody, TextLabel1 } from '../../../typography';
 import { DefaultThemeProvider } from '../../../utils/test';
-import { type ModalProps, Modal } from '../Modal';
+import { Modal, type ModalProps } from '../Modal';
 import { ModalBody } from '../ModalBody';
 import { ModalFooter } from '../ModalFooter';
-import { type ModalHeaderProps, ModalHeader } from '../ModalHeader';
+import { ModalHeader, type ModalHeaderProps } from '../ModalHeader';
 
 const TITLE = 'Basic Modal';
 const LABELLED_BY = 'some-id';

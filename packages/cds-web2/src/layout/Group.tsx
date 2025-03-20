@@ -2,7 +2,7 @@ import React, { forwardRef, memo, useMemo } from 'react';
 import type { GroupBaseProps } from '@cbhq/cds-common2/types';
 import { flattenAndJoinNodes } from '@cbhq/cds-common2/utils/flattenAndJoinNodes';
 
-import { type BoxDefaultElement, type BoxProps, Box } from './Box';
+import { Box, type BoxDefaultElement, type BoxProps } from './Box';
 import { Spacer } from './Spacer';
 
 export type RenderGroupItem = GroupBaseProps<BoxProps<BoxDefaultElement>>['renderItem'];

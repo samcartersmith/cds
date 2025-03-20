@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { DefaultThemeProvider } from '../../utils/test';
-import { type CoachmarkProps, Coachmark } from '../Coachmark';
+import { Coachmark, type CoachmarkProps } from '../Coachmark';
 
 const exampleProps: CoachmarkProps = {
   title: 'Title',

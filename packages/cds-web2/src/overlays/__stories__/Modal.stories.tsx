@@ -3,7 +3,7 @@ import { useModal } from '@cbhq/cds-common2/overlays/useModal';
 
 import { Button } from '../../buttons/Button';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
-import { type ModalProps, Modal } from '../modal/Modal';
+import { Modal, type ModalProps } from '../modal/Modal';
 import { ModalBody } from '../modal/ModalBody';
 import { ModalFooter } from '../modal/ModalFooter';
 import { ModalHeader } from '../modal/ModalHeader';

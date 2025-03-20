@@ -5,7 +5,7 @@ import type { PageHeaderBaseProps } from '@cbhq/cds-common2/types/PageBaseProps'
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Box } from '../layout/Box';
-import { type GridDefaulElement, type GridProps, Grid } from '../layout/Grid';
+import { Grid, type GridDefaulElement, type GridProps } from '../layout/Grid';
 import { media } from '../styles/media';
 import type { ResponsiveProps, StaticStyleProps } from '../styles/styleProps';
 import { Text } from '../typography/Text';

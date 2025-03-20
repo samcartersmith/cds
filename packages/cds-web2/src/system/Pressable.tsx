@@ -13,7 +13,7 @@ import { ComponentEventHandlerProps } from '@cbhq/cds-common2/types/ComponentEve
 import { Polymorphic } from '../core/polymorphism';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 
-import { type InteractableBaseProps, Interactable } from './Interactable';
+import { Interactable, type InteractableBaseProps } from './Interactable';
 import {
   interactablePressedBackground,
   interactablePressedOpacity,

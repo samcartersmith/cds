@@ -4,7 +4,7 @@ import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { useDimensions } from '../hooks/useDimensions';
-import { type BoxBaseProps, Box, VStack } from '../layout';
+import { Box, type BoxBaseProps, VStack } from '../layout';
 import { breakpoints } from '../styles/media';
 
 import { SidebarProvider } from './SidebarContext';

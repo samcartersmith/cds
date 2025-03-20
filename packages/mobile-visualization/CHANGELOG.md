@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 2.1.5 (3/19/2025 PST)
+
+#### 🐞 Fixes
+
+- Linting and formatting. [[#3770](https://github.cbhq.net/frontend/cds/pull/3770)]
+
 ## 2.1.4 (3/14/2025 PST)
 
 #### 🐞 Fixes

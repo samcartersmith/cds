@@ -10,12 +10,12 @@ import { CellMedia, ListCell } from '../../cells';
 import { TextInput } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons';
-import { Divider, HStack, VStack, Box } from '../../layout';
+import { Box, Divider, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media';
 import { Modal, ModalBody, ModalHeader } from '../../overlays';
 import { Pressable } from '../../system/Pressable';
 import { TextBody, TextLabel2 } from '../../typography';
-import { MultiContentModuleProps, MultiContentModule } from '../MultiContentModule';
+import { MultiContentModule, MultiContentModuleProps } from '../MultiContentModule';
 
 type ListItem = {
   icon: IconName;

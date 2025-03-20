@@ -8,7 +8,7 @@ import { Box } from '../layout/Box';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
-import { type CellBaseProps, Cell } from './Cell';
+import { Cell, type CellBaseProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 

@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Button } from '../../buttons';
 import { DotCount } from '../../dots';
@@ -6,7 +7,6 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { Collapsible } from '../Collapsible';
-import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 const BasicCollapsible = () => {
   const [collapsed, setCollapsed] = useState(true);

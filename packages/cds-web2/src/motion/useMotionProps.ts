@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import {
-  type MotionProps as FramerMotionProps,
   AnimationControls,
+  type MotionProps as FramerMotionProps,
   Target,
   TargetAndTransition,
 } from 'framer-motion';

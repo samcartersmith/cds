@@ -1,8 +1,8 @@
 import React, { forwardRef, memo } from 'react';
 import { OverlayProvider } from '@cbhq/cds-common/context/OverlayProvider';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common/overlays/OverlayContentContext';
 
 import { OverlayContent, OverlayProps } from './OverlayContent';

@@ -2,7 +2,7 @@ import React, { forwardRef, memo } from 'react';
 import type { CellAccessoryProps as CellAccessoryCommonProps } from '@cbhq/cds-common2/types/CellBaseProps';
 
 import { Icon } from '../icons/Icon';
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { isRtl } from '../utils/isRtl';
 
 export const cellAccessoryTestId = 'accessory';

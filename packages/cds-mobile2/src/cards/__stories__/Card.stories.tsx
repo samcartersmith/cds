@@ -1,10 +1,10 @@
 import React from 'react';
+import type { CellSpacing } from '@cbhq/cds-common2';
 import { announcementCards } from '@cbhq/cds-common2/internal/data/announcementCards';
+import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { dataCards } from '@cbhq/cds-common2/internal/data/dataCards';
 import { featureEntryCards } from '@cbhq/cds-common2/internal/data/featureEntryCards';
 import { feedCards } from '@cbhq/cds-common2/internal/data/feedCards';
-import { assets } from '@cbhq/cds-common2/internal/data/assets';
-import type { CellSpacing } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons/Button';
 import { CellMedia } from '../../cells/CellMedia';

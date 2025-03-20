@@ -1,4 +1,4 @@
-import { type ColorCommonInstance, type RGBColor, rgb } from 'd3-color';
+import { type ColorCommonInstance, rgb, type RGBColor } from 'd3-color';
 
 export type ColorValue =
   | string

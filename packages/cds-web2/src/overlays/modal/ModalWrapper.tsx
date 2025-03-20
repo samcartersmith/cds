@@ -3,10 +3,10 @@ import { css, cx } from '@linaria/core';
 
 import { NewAnimatePresence } from '../../animation/NewAnimatePresence';
 import { useScrollBlocker } from '../../hooks/useScrollBlocker';
-import { type BoxDefaultElement, type BoxProps, Box } from '../../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../../layout/Box';
 import { media } from '../../styles/media';
 import { Overlay } from '../overlay/Overlay';
-import { type PortalProps, Portal } from '../Portal';
+import { Portal, type PortalProps } from '../Portal';
 import { modalContainerId } from '../PortalProvider';
 
 const modalOverlayResponsiveStyle = css`

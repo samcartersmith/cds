@@ -16,8 +16,8 @@ import { animated, config as springConfig, useSpring } from '@react-spring/nativ
 import { SharedProps } from '@cbhq/cds-common';
 import { useRefMap } from '@cbhq/cds-common/hooks/useRefMap';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common/overlays/OverlayContentContext';
 import { RefMapContext } from '@cbhq/cds-common/system/RefMapContext';
 import { TourContext } from '@cbhq/cds-common/tour/TourContext';

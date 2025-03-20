@@ -19,8 +19,8 @@ import {
   type PopoverProps,
 } from '../overlays/popover/PopoverProps';
 
-import { type CalendarProps, Calendar } from './Calendar';
-import { type DateInputProps, DateInput } from './DateInput';
+import { Calendar, type CalendarProps } from './Calendar';
+import { DateInput, type DateInputProps } from './DateInput';
 
 const MotionVStack = m(VStack);
 

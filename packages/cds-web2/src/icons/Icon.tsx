@@ -1,12 +1,12 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { type LinariaClassName, css, cx } from '@linaria/core';
+import { css, cx, type LinariaClassName } from '@linaria/core';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
 import type { IconBaseProps } from '@cbhq/cds-common2/types/IconBaseProps';
 import type { IconSize, IconSourcePixelSize } from '@cbhq/cds-common2/types/IconSize';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils/env';
 
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 
 export type IconProps = IconBaseProps &
   BoxProps<BoxDefaultElement> & {

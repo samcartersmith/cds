@@ -6,10 +6,10 @@ import { SelectOptionProps } from '../controls/SelectOption';
 import type { Polymorphic } from '../core/polymorphism';
 import { insetFocusRing } from '../styles/focus';
 import {
+  Pressable,
   type PressableBaseProps,
   type PressableDefaultElement,
   type PressableProps,
-  Pressable,
 } from '../system/Pressable';
 
 export const menuitemDefaultElement = 'button';

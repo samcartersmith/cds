@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { type BoxDefaultElement, type BoxProps, Box } from '../Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../Box';
 
 const DEFAULT_CLASS = 'flex';
 

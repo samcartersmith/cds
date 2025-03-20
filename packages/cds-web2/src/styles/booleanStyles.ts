@@ -1,4 +1,4 @@
-import { type LinariaClassName, css } from '@linaria/core';
+import { css, type LinariaClassName } from '@linaria/core';
 import type { PinningDirection } from '@cbhq/cds-common2/types/BoxBaseProps';
 
 export const borderStyle = {

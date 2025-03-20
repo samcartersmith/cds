@@ -3,7 +3,6 @@
  * Generated from scripts/codegen/main.ts
  */
 import { css } from '@linaria/core';
-
 import { borderWidth as borderWidthTokens } from '@cbhq/cds-common/tokens/borderWidth';
 
 import { borderWidth } from '../tokens';

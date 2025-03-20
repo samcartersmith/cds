@@ -3,6 +3,7 @@ const globals = require('globals');
 const tseslint = require('typescript-eslint');
 const eslintJs = require('@eslint/js');
 const eslintImport = require('eslint-plugin-import');
+const eslintSimpleImportSort = require('eslint-plugin-simple-import-sort');
 const eslintReact = require('eslint-plugin-react');
 const eslintReactHooks = require('eslint-plugin-react-hooks');
 const eslintReactPerf = require('eslint-plugin-react-perf');
@@ -11,6 +12,8 @@ const eslintTestingLibrary = require('eslint-plugin-testing-library');
 const eslintJsxA11y = require('eslint-plugin-jsx-a11y');
 const eslintReactNativeA11y = require('eslint-plugin-react-native-a11y');
 const eslintReactNative = require('eslint-plugin-react-native');
+
+const eslintImportAutofixRule = require('./eslint.autofix.cjs');
 
 const ignores = [
   '*.md',
@@ -48,6 +51,25 @@ const reactRules = {
   'import/named': 'off',
   'import/namespace': 'off',
   'import/no-unresolved': 'off',
+  'import/order': 'off',
+  'simple-import-sort/exports': 'error',
+  'simple-import-sort/imports': [
+    'error',
+    {
+      groups: [
+        // Side effect imports first
+        ['^\\u0000'],
+        // React and react-native imports, npm imports, then coinbase imports
+        ['^react$', '^react-native$', '^react', '^@?\\w', '^@cb.*'],
+        // Shared code imports
+        ['^:.*'],
+        // Parent imports. Put `..` last.
+        ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+        // Other relative imports. Put same-folder imports and `.` last.
+        ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$', '^\\.'],
+      ],
+    },
+  ],
   'react-perf/jsx-no-new-array-as-prop': 'off',
   'react-perf/jsx-no-new-function-as-prop': 'off',
   'react-perf/jsx-no-new-object-as-prop': 'off',
@@ -68,6 +90,15 @@ const testRules = {
   'testing-library/render-result-naming-convention': 'off',
 };
 
+const importPlugins = {
+  'simple-import-sort': eslintSimpleImportSort,
+  coinbase: {
+    rules: {
+      'import-autofix': eslintImportAutofixRule,
+    },
+  },
+};
+
 module.exports = tseslint.config(
   { ignores },
   {
@@ -79,6 +110,9 @@ module.exports = tseslint.config(
         ...globals.node,
         ...globals.browser,
       },
+    },
+    plugins: {
+      ...importPlugins,
     },
     extends: [
       eslintJs.configs.recommended,
@@ -106,6 +140,9 @@ module.exports = tseslint.config(
       eslintReactPerf.configs.flat.recommended,
       eslintJsxA11y.flatConfigs.recommended,
     ],
+    plugins: {
+      ...importPlugins,
+    },
     rules: {
       ...typescriptRules,
       ...reactRules,
@@ -127,6 +164,7 @@ module.exports = tseslint.config(
     plugins: {
       'react-native': eslintReactNative,
       'react-native-a11y': eslintReactNativeA11y,
+      ...importPlugins,
     },
     rules: {
       ...typescriptRules,
@@ -156,6 +194,7 @@ module.exports = tseslint.config(
     plugins: {
       'react-native': eslintReactNative,
       'react-native-a11y': eslintReactNativeA11y,
+      ...importPlugins,
     },
     rules: {
       ...typescriptRules,

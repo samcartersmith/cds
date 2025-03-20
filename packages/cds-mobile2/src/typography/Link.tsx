@@ -5,7 +5,7 @@ import { LinkBaseProps } from '@cbhq/cds-common2/types/LinkBaseProps';
 
 import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
 
-import { type TextProps, Text } from './Text';
+import { Text, type TextProps } from './Text';
 
 export type LinkProps = {
   /** Callback to fire when pressed */

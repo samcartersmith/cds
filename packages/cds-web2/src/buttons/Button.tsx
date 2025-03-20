@@ -9,7 +9,7 @@ import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
 import { Spinner } from '../loaders/Spinner';
-import { type PressableBaseProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableBaseProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 export const spinnerHeight = 2.5;

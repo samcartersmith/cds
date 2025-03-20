@@ -1,4 +1,3 @@
-/* eslint-disable react-perf/jsx-no-new-function-as-prop */
 import React from 'react';
 import { renderHook } from '@testing-library/react';
 import { useOverlayContentContext } from '@cbhq/cds-common2/overlays/OverlayContentContext';
@@ -23,7 +22,7 @@ describe('useOverlayContentContext', () => {
       wrapper: ({ children }) => (
         <DefaultThemeProvider>
           <Modal visible onRequestClose={() => void false}>
-            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
+            {}
             <>{children}</>
           </Modal>
         </DefaultThemeProvider>
@@ -41,7 +40,6 @@ describe('useOverlayContentContext', () => {
           <FullscreenModal
             visible
             onRequestClose={() => void false}
-            // eslint-disable-next-line react/jsx-no-useless-fragment
             primaryContent={<>{children}</>}
           />
         </DefaultThemeProvider>

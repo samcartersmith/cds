@@ -8,7 +8,7 @@ import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBase
 import { Box, Group } from '../layout';
 import type { FilteredHTMLAttributes } from '../types';
 
-import { type ControlProps, Control } from './Control';
+import { Control, type ControlProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
 const dotSvg = (

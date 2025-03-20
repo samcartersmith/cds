@@ -1,7 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 
-import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 
 export type SpinnerBaseProps = {
   /**

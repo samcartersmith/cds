@@ -5,7 +5,7 @@ import { compactListHeight, listHeight } from '@cbhq/cds-common2/tokens/cell';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
-import { type CellProps, Cell } from './Cell';
+import { Cell, type CellProps } from './Cell';
 import { CellAccessory } from './CellAccessory';
 import { CellDetail } from './CellDetail';
 

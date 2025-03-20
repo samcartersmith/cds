@@ -4,7 +4,7 @@ import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
 import { RemoteImage } from '../../media';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
-import { type CoachmarkProps, Coachmark } from '../Coachmark';
+import { Coachmark, type CoachmarkProps } from '../Coachmark';
 
 const exampleProps: CoachmarkProps = {
   title: 'Title',

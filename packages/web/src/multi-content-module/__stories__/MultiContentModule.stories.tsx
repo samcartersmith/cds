@@ -7,13 +7,13 @@ import { CellMedia, ListCell } from '../../cells';
 import { TextInput } from '../../controls';
 import { useTriggerFocus } from '../../hooks/useTriggerFocus';
 import { Icon } from '../../icons';
-import { Divider, HStack, VStack, Box } from '../../layout';
+import { Box, Divider, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media';
 import { FullscreenModal } from '../../overlays/Modal/FullscreenModal';
 import { Pressable } from '../../system/Pressable';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { TextBody, TextLabel2 } from '../../typography';
-import { MultiContentModuleProps, MultiContentModule } from '../MultiContentModule';
+import { MultiContentModule, MultiContentModuleProps } from '../MultiContentModule';
 
 type ListItem = {
   icon: IconName;

@@ -4,7 +4,7 @@ import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { Button } from '../../buttons/Button';
 import { DefaultThemeProvider } from '../../utils/test';
-import { type UpsellCardProps, UpsellCard } from '../UpsellCard';
+import { UpsellCard, type UpsellCardProps } from '../UpsellCard';
 
 const exampleProps: UpsellCardProps = {
   title: 'Test Title',

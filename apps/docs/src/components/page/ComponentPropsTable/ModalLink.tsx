@@ -3,7 +3,7 @@ import { useToggler } from '@cbhq/cds-common2';
 import { Modal } from '@cbhq/cds-web2/overlays/modal/Modal';
 import { ModalBody } from '@cbhq/cds-web2/overlays/modal/ModalBody';
 import { ModalHeader } from '@cbhq/cds-web2/overlays/modal/ModalHeader';
-import { type LinkBaseProps, Link } from '@cbhq/cds-web2/typography/Link';
+import { Link, type LinkBaseProps } from '@cbhq/cds-web2/typography/Link';
 
 export type ModalLinkProps = {
   children: string;

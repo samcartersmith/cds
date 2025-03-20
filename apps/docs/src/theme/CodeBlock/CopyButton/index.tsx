@@ -2,8 +2,8 @@ import React, { type ReactNode, useCallback, useEffect, useRef, useState } from 
 import { translate } from '@docusaurus/Translate';
 import type { Props } from '@theme/CodeBlock/CopyButton';
 import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
-import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
+import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 
 async function copyTextToClipboard(text: string): Promise<boolean> {
   if (navigator.clipboard) {

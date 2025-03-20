@@ -12,7 +12,7 @@ import { DotCount } from '../dots/DotCount';
 import { useDimensions } from '../hooks/useDimensions';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 import { HStack } from '../layout';
-import { type TextProps, Text } from '../typography/Text';
+import { Text, type TextProps } from '../typography/Text';
 
 export const primaryTabLabelStyles = css`
   padding-top: var(--space-2);

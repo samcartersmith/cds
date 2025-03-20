@@ -3,7 +3,7 @@ import { IntlDateFormat } from '@cbhq/cds-common2/dates/IntlDateFormat';
 import { type DateInputOptions, useDateInput } from '@cbhq/cds-common2/dates/useDateInput';
 import { useLocale } from '@cbhq/cds-common2/system/LocaleProvider';
 
-import { type TextInputProps, TextInput } from '../controls/TextInput';
+import { TextInput, type TextInputProps } from '../controls/TextInput';
 import { VStack } from '../layout/VStack';
 
 export type DateInputProps = {

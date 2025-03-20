@@ -5,9 +5,9 @@ import type { FlexAxisValue, FlexSpaceCommon } from '@cbhq/cds-common2/types/Box
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
-import { type CellBaseProps, Cell } from '../cells/Cell';
+import { Cell, type CellBaseProps } from '../cells/Cell';
 import { Box } from '../layout/Box';
-import { type TextBaseProps, Text } from '../typography/Text';
+import { Text, type TextBaseProps } from '../typography/Text';
 
 import {
   useTableCellSpacing,

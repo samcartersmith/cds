@@ -3,7 +3,7 @@ import { cardSizes } from '@cbhq/cds-common2/tokens/card';
 import type { CardBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
 import { VStack } from '../layout/VStack';
-import { type PressableProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableProps } from '../system/Pressable';
 
 export type CardProps = CardBaseProps & {
   // TODO (DX-4652): These key handling props have been kept for bw compatibility since they are valid props for a dif

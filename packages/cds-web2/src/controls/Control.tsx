@@ -7,7 +7,7 @@ import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';
-import { type InteractableBaseProps, Interactable } from '../system/Interactable';
+import { Interactable, type InteractableBaseProps } from '../system/Interactable';
 import { FilteredHTMLAttributes } from '../types';
 import { Text } from '../typography/Text';
 import { isRtl } from '../utils/isRtl';

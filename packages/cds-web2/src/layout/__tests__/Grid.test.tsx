@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { type GridDefaulElement, type GridProps, Grid } from '../Grid';
+import { Grid, type GridDefaulElement, type GridProps } from '../Grid';
 import { GridColumn } from '../GridColumn';
 
 const DEFAULT_CLASS = 'grid';

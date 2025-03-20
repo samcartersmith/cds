@@ -2,12 +2,14 @@
 import './polyfills';
 import '@cbhq/cds-fonts/fonts.css';
 import '@cbhq/cds-icons/fonts/web/icon-font.css';
-import { globalStyles } from '@cbhq/cds-web2/styles/global';
-import { withPerformance } from 'storybook-addon-performance';
-import { StoryContainer } from './StoryContainer';
-import { withDesign } from 'storybook-addon-designs';
-import { themes } from '@storybook/theming';
+
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { themes } from '@storybook/theming';
+import { withDesign } from 'storybook-addon-designs';
+import { withPerformance } from 'storybook-addon-performance';
+import { globalStyles } from '@cbhq/cds-web2/styles/global';
+
+import { StoryContainer } from './StoryContainer';
 
 /** @type {(import('@storybook/react').DecoratorFn)[]} */
 export const decorators = [StoryContainer, withPerformance, withDesign];

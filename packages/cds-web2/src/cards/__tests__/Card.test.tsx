@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { DefaultThemeProvider } from '../../utils/test';
-import { type CardProps, Card } from '../Card';
+import { Card, type CardProps } from '../Card';
 
 const noop = () => {};
 const CARD_TEXT = 'Some cell text';

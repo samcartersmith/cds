@@ -4,7 +4,7 @@ import { css } from '@linaria/core';
 import type { Polymorphic } from '../core/polymorphism';
 import { Shape } from '../types/Shape';
 
-import { type BoxBaseProps, Box } from './Box';
+import { Box, type BoxBaseProps } from './Box';
 
 const WIDTH_MODIFIERS = [0.5, 0, 0.6, 0.8, 0.1, 0.9, 0.4, 0.2, 0.7, 0.3];
 

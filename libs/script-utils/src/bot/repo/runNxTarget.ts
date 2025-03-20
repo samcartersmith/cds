@@ -1,5 +1,5 @@
 import { execute } from './execute.js';
-import { type SpawnOptions, spawn } from './spawn.js';
+import { spawn, type SpawnOptions } from './spawn.js';
 
 export const runNxTarget = async (nxTarget: string, options?: SpawnOptions) =>
   execute(`Running Nx target ${nxTarget}`, async () => {

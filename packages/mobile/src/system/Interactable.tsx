@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { type StyleProp, type ViewStyle, Animated, Falsy, View } from 'react-native';
+import { Animated, Falsy, type StyleProp, View, type ViewStyle } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common';
 import { InteractableBaseProps } from '@cbhq/cds-common/types/InteractableBaseProps';
 import { emptyArray } from '@cbhq/cds-utils';

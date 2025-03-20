@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useMemo, useState } from 'react';
 import { Defs, Mask, Rect as NativeRect, Svg } from 'react-native-svg';
-import { type Rect, defaultRect } from '@cbhq/cds-common2/types/Rect';
+import { defaultRect, type Rect } from '@cbhq/cds-common2/types/Rect';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout';

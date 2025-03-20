@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { type TabsContextValue, TabsContext, useTabsContext } from '../TabsContext';
+import { TabsContext, type TabsContextValue, useTabsContext } from '../TabsContext';
 
 const MOCK_API: TabsContextValue = {
   tabs: [],

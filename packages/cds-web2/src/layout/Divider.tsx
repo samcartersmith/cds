@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { css, cx } from '@linaria/core';
 
-import { type BoxProps, Box } from './Box';
+import { Box, type BoxProps } from './Box';
 
 export type DividerBaseProps = {
   /**

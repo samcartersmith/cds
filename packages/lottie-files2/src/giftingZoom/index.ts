@@ -3,6 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 import { LottieSource } from '../LottieSource';
+
 import giftingZoomJson from './giftingZoom.json';
 
 export type GiftingZoomLottie = LottieSource;

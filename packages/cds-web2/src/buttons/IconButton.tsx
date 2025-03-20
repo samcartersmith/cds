@@ -5,7 +5,7 @@ import { IconName } from '@cbhq/cds-common2/types/IconName';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
-import { type PressableBaseProps, Pressable } from '../system/Pressable';
+import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
 export const iconButtonDefaultElement = 'button';
 

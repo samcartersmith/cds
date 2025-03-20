@@ -8,7 +8,7 @@ import { Text } from '../typography/Text';
 import { ProgressBar } from '../visualizations/ProgressBar';
 import { ProgressCircle } from '../visualizations/ProgressCircle';
 
-import { type CardProps, Card } from './Card';
+import { Card, type CardProps } from './Card';
 import { CardBody } from './CardBody';
 
 export type DataCardProps = DataCardBaseProps & { onClick?: CardProps['onClick'] };

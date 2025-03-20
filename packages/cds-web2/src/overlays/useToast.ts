@@ -1,6 +1,6 @@
 import { useToast as useToastCommon } from '@cbhq/cds-common2/overlays/useToast';
 
-import { type ToastProps, Toast } from './Toast';
+import { Toast, type ToastProps } from './Toast';
 
 export const useToast = () => {
   return useToastCommon<

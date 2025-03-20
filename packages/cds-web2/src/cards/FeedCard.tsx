@@ -11,7 +11,7 @@ import { Button } from '../buttons/Button';
 import { IconButton } from '../buttons/IconButton';
 import { HStack } from '../layout/HStack';
 
-import { type CardProps, Card } from './Card';
+import { Card, type CardProps } from './Card';
 import { CardBody } from './CardBody';
 import { CardFooter } from './CardFooter';
 import { CardHeader } from './CardHeader';

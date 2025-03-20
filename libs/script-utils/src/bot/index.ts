@@ -1,5 +1,5 @@
 import * as git from './git';
-import { type OctokitBot, type OctokitConfig, initializeOctokit } from './octokit';
+import { initializeOctokit, type OctokitBot, type OctokitConfig } from './octokit';
 import * as repo from './repo';
 
 type Bot = typeof repo & {

@@ -7,7 +7,7 @@ import { SelectOption } from '../../controls/SelectOption';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { TextCaption } from '../../typography/TextCaption';
-import { SelectChipProps, SelectChip } from '../SelectChip';
+import { SelectChip, SelectChipProps } from '../SelectChip';
 
 jest.mock('react-use-measure');
 const mockUseMeasure = (mocks: Partial<ReturnType<typeof useMeasure>>) => {

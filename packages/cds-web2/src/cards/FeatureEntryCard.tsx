@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { FeatureEntryCardBaseProps } from '@cbhq/cds-common2/types';
 
-import { type CardProps, Card } from './Card';
-import { type CardBodyProps, CardBody } from './CardBody';
+import { Card, type CardProps } from './Card';
+import { CardBody, type CardBodyProps } from './CardBody';
 
 /** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export type FeatureEntryCardProps = FeatureEntryCardBaseProps & {

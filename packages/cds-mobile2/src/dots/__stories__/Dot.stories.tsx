@@ -1,5 +1,8 @@
 import React from 'react';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
+import { avatarSizes } from '@cbhq/cds-common2/internal/data/avatars';
+import { iconSizes } from '@cbhq/cds-common2/internal/data/iconData';
+import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common2/tokens/dot';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Icon } from '../../icons/Icon';
@@ -8,12 +11,9 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Avatar } from '../../media/Avatar';
 import { TextLabel1 } from '../../typography/TextLabel1';
-import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common2/tokens/dot';
 import { DotCount } from '../DotCount';
 import { DotStatusColor } from '../DotStatusColor';
 import { DotSymbol } from '../DotSymbol';
-import { avatarSizes } from '@cbhq/cds-common2/internal/data/avatars';
-import { iconSizes } from '@cbhq/cds-common2/internal/data/iconData';
 
 const VARIANTS = ['positive', 'negative', 'primary', 'foregroundMuted', 'warning'] as const;
 const PIN_DIRECTIONS = ['top-start', 'top-end', 'bottom-start', 'bottom-end'] as const;

@@ -3,6 +3,7 @@
  * Generated from scripts/codegen/main.ts
  */
 import { LottieSource } from '../LottieSource';
+
 import tradeStatusJson from './tradeStatus.json';
 
 export type TradeStatusLottie = LottieSource<

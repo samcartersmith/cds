@@ -3,7 +3,7 @@ import { Button, Text } from 'react-native';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { useTourContext } from '@cbhq/cds-common/tour/TourContext';
 
-import { type TourProps, Tour } from '../Tour';
+import { Tour, type TourProps } from '../Tour';
 
 const StepOne = () => {
   const { goNextTourStep } = useTourContext();

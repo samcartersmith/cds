@@ -18,8 +18,8 @@ import { useToggler } from '@cbhq/cds-common';
 import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 import { ModalParentContext } from '@cbhq/cds-common/overlays/ModalParentContext';
 import {
-  type OverlayContentContextValue,
   OverlayContentContext,
+  type OverlayContentContextValue,
 } from '@cbhq/cds-common/overlays/OverlayContentContext';
 import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common/types';
 

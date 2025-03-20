@@ -6,7 +6,7 @@ import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { TextDisplay1 } from '../../typography/TextDisplay1';
-import { type SegmentedTabsProps, SegmentedTabs } from '../SegmentedTabs';
+import { SegmentedTabs, type SegmentedTabsProps } from '../SegmentedTabs';
 
 const TEST_ID = 'mock-segmented-tabs';
 const NoopFn = () => {};

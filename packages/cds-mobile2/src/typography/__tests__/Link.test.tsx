@@ -2,7 +2,7 @@ import TestRenderer from 'react-test-renderer';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { DefaultThemeProvider } from '../../utils/testHelpers';
-import { type LinkProps, Link } from '../Link';
+import { Link, type LinkProps } from '../Link';
 
 const TEST_ID = 'link';
 const URL = 'www.coinbase.com';

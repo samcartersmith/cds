@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 import type { Polymorphic } from '../core/polymorphism';
 
-import { type BoxBaseProps, Box } from './Box';
+import { Box, type BoxBaseProps } from './Box';
 
 export const hStackDefaultElement = 'div';
 

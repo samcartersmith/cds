@@ -6,7 +6,7 @@ import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps'
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 
-import { type ControlProps, Control } from './Control';
+import { Control, type ControlProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
 const focusRingStyle = css`

@@ -1,5 +1,5 @@
 import reactRefresh from '@vitejs/plugin-react-refresh';
-import { type UserConfig, defineConfig } from 'vite';
+import { defineConfig, type UserConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import yargs from 'yargs';
 
