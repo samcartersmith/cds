@@ -137,7 +137,6 @@ export function linariaCssExtractPlugin(): PluginObj {
             [],
             t.stringLiteral(`./${path.basename(outputFile)}`),
           );
-          let replacedLinaria = false;
 
           nodePath.node.body.forEach((node, index) => {
             if (
@@ -145,19 +144,14 @@ export function linariaCssExtractPlugin(): PluginObj {
               (node.source.value === 'linaria' || node.source.value === '@linaria/core')
             ) {
               node.specifiers = node.specifiers.filter((spec) => spec.local.name !== 'css');
-
-              // Only `css` used, replace linaria
-              if (node.specifiers.length === 0) {
-                (nodePath.get(`body.${index}`) as NodePath).replaceWith(cssImport);
-                replacedLinaria = true;
-              }
+              // Only `css` was imported from Linaria, so we can delete the Linaria import
+              if (node.specifiers.length === 0)
+                (nodePath.get(`body.${index}`) as NodePath).remove();
             }
           });
 
-          // Other linaria imports being used, add sibling import
-          if (!replacedLinaria) {
-            nodePath.node.body.unshift(cssImport);
-          }
+          // Add the CSS import to the end of the file
+          nodePath.node.body.push(cssImport);
         },
       },
     },
