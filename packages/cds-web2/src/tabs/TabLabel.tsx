@@ -14,7 +14,7 @@ import { useIsoEffect } from '../hooks/useIsoEffect';
 import { HStack } from '../layout';
 import { Text, type TextProps } from '../typography/Text';
 
-export const primaryTabLabelStyles = css`
+const primaryTabLabelStyles = css`
   padding-top: var(--space-2);
   padding-bottom: calc(var(--space-2) - 2px); // Account for the 2px TabIndicator
 `;

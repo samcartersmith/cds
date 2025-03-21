@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useCallback, useMemo, useRef, useState } from 'react';
-import { type AnimationProps, m } from 'framer-motion';
+import { type AnimationProps, m as motion } from 'framer-motion';
 import {
   animateDropdownOpacityInConfig,
   animateDropdownOpacityOutConfig,
@@ -22,7 +22,7 @@ import {
 import { Calendar, type CalendarProps } from './Calendar';
 import { DateInput, type DateInputProps } from './DateInput';
 
-const MotionVStack = m(VStack);
+const MotionVStack = motion(VStack);
 
 export type DatePickerProps = {
   /** Control the date value of the DatePicker. */

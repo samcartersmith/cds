@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 import {
@@ -37,7 +37,7 @@ export const TooltipContent = memo(
   forwardRef(
     (
       { content, elevation, gap, testID, zIndex, tooltipId, placement = 'top' }: PopperTooltipProps,
-      ref: ForwardedRef<HTMLDivElement>,
+      ref: React.ForwardedRef<HTMLDivElement>,
     ) => {
       const outerStyle = useMemo(
         () => ({

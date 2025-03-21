@@ -61,7 +61,7 @@ const pressableCustomTabStyles = css`
   flex-shrink: 0;
 `;
 
-export const insetFocusRing = css`
+const insetFocusRing = css`
   position: relative;
   &:focus {
     outline: none;

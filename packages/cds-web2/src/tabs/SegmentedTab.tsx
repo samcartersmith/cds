@@ -58,7 +58,7 @@ export type SegmentedTabProps = {
   Omit<React.ComponentProps<'button'>, 'ref'> &
   SharedProps;
 
-export const disabledStyle = css`
+const disabledStyle = css`
   opacity: 0.5;
 `;
 

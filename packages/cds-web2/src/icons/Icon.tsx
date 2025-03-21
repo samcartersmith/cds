@@ -18,7 +18,7 @@ export type IconProps = IconBaseProps &
     iconType?: string;
   };
 
-export const iconStyles = css`
+const iconStyles = css`
   color: currentColor;
   font-family: 'CoinbaseIcons';
   font-weight: 400;

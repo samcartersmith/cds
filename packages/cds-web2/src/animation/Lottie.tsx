@@ -19,7 +19,7 @@ const defaultFilterSize = {
   y: '-50%',
 };
 
-export const lottieStyles = css`
+const lottieStyles = css`
   .palette_fg {
     &_stroke {
       stroke: var(--color-fg);

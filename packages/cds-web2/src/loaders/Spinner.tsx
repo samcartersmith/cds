@@ -12,7 +12,7 @@ export type SpinnerBaseProps = {
 
 export type SpinnerProps = SpinnerBaseProps & BoxProps<BoxDefaultElement>;
 
-export const baseStyle = css`
+const baseStyle = css`
   position: relative;
   border: 1.1em solid;
   border-radius: 50%;
@@ -32,7 +32,7 @@ export const baseStyle = css`
   }
 `;
 
-export const spinnerStatusStyle = css`
+const spinnerStatusStyle = css`
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
