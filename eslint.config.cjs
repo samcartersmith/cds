@@ -42,6 +42,8 @@ const ignores = [
   // These files use assert { type: 'json' } syntax that breaks eslint and must be fully ignored
   '**/getAffectedRoutes.mjs',
   '**/getBuildInfo.mjs',
+  'apps/mobile-app/prebuilds',
+  'apps/mobile-app2/prebuilds',
 ];
 
 const typescriptRules = {

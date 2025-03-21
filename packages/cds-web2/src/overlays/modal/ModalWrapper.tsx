@@ -68,10 +68,7 @@ export const ModalWrapper = memo(
         height = '100vh',
         justifyContent = 'center',
         position = 'fixed',
-        top = 0,
-        bottom = 0,
-        left = 0,
-        right = 0,
+        pin = 'all',
         onOverlayPress,
         onDidClose,
         hideOverlay = false,
@@ -100,14 +97,11 @@ export const ModalWrapper = memo(
                 ref={ref}
                 alignItems={alignItems}
                 aria-modal={ariaModal ?? 'true'}
-                bottom={bottom}
+                pin={pin}
                 height={height}
                 justifyContent={justifyContent}
-                left={left}
                 position={position}
-                right={right}
                 role={role}
-                top={top}
                 width={width}
                 {...props}
               >

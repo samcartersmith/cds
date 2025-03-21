@@ -76,12 +76,8 @@ export const ColorSurge = memo(
       <MotionBox
         animate={controls}
         background={backgroundState}
-        bottom={0}
         initial={disableAnimateOnMount ? 'exit' : 'enter'}
-        left={0}
-        position="absolute"
-        right={0}
-        top={0}
+        pin="all"
         variants={motionProps.variants}
       />
     );

@@ -135,13 +135,10 @@ export const Popover = memo(
       <Box
         aria-label={accessibilityLabel}
         aria-modal="true"
-        bottom={0}
-        left={0}
         onClick={handleClose}
+        pin="all"
         position="fixed"
-        right={0}
         role="dialog"
-        top={0}
         zIndex={zIndex.portal + zIndex.modal}
       >
         {memoizedContent}
@@ -171,14 +168,7 @@ export const Popover = memo(
             <Portal containerId={tooltipContainerId} disablePortal={disablePortal}>
               <Wrapper>
                 {showOverlay ? (
-                  <Box
-                    bottom={0}
-                    left={0}
-                    position="fixed"
-                    right={0}
-                    top={0}
-                    zIndex={zIndex.portal + zIndex.modal}
-                  >
+                  <Box pin="all" position="fixed" zIndex={zIndex.portal + zIndex.modal}>
                     <Overlay animated onClick={handleClose} />
                     {memoizedContent}
                   </Box>

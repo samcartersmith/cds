@@ -3,6 +3,7 @@ import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Button, IconButton } from '../../buttons';
 import { SelectOption } from '../../controls/SelectOption';
+import { DotCount } from '../../dots/DotCount';
 import { useA11yControlledVisibility } from '../../hooks/useA11yControlledVisibility';
 import { Icon } from '../../icons/Icon';
 import { HStack } from '../../layout';
@@ -151,7 +152,9 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
         onChange={setValue}
         value={value}
       >
-        <IconButton transparent accessibilityLabel="More" name="more" variant="secondary" />
+        <DotCount count={4} pin="top-end">
+          <IconButton transparent accessibilityLabel="More" name="more" variant="secondary" />
+        </DotCount>
       </Dropdown>
     </HStack>
   );

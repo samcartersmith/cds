@@ -150,7 +150,7 @@ export const Text: TextComponent = memo(
     <AsComponent extends React.ElementType>(
       {
         as,
-        font = 'body',
+        font = 'inherit',
         fontFamily = font,
         color = 'fg',
         display = 'block',

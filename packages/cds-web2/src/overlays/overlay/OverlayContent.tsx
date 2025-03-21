@@ -27,17 +27,7 @@ export const OverlayContent = forwardRef<HTMLDivElement, OverlayProps>(
     });
 
     const content = (
-      <VStack
-        background="bgOverlay"
-        bottom={0}
-        left={0}
-        onClick={onClick}
-        position="absolute"
-        right={0}
-        top={0}
-        {...props}
-        ref={forwardedRef}
-      />
+      <VStack background="bgOverlay" onClick={onClick} pin="all" {...props} ref={forwardedRef} />
     );
 
     return animated ? (
