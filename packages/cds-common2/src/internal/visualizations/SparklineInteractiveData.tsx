@@ -1,6 +1,7 @@
 import { ChartDataPoint, ChartTimeseries } from '../../types/Chart';
 import assetJSON from '../data/asset';
-import { SparklinePeriod } from '../sparklineInteractiveBuilder';
+
+export type SparklinePeriod = 'hour' | 'day' | 'week' | 'month' | 'year' | 'all';
 
 const transformAndFilterPrices = (
   data?: readonly {

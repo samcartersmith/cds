@@ -1,31 +1,241 @@
-import React from 'react';
-import {
-  sparklineInteractiveBuilder,
-  sparklineInteractiveWithHeaderBuilder,
-} from '@cbhq/cds-common2/internal/sparklineInteractiveBuilder';
+import React, { memo, useCallback, useMemo, useRef, useState } from 'react';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   sparklineInteractiveData,
   sparklineInteractiveHoverData,
+  type SparklinePeriod,
   strokeColor,
 } from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
+import type {
+  ChartData,
+  ChartDataPoint,
+  ChartScrubParams,
+  SparklineInteractiveHeaderRef,
+  SparklineInteractiveSubHead,
+} from '@cbhq/cds-common2/types';
 import { Example, ExampleScreen } from '@cbhq/cds-mobile2/examples/ExampleScreen';
 import { Box } from '@cbhq/cds-mobile2/layout';
 import { TextTitle3 } from '@cbhq/cds-mobile2/typography/TextTitle3';
 
 import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
-import { SparklineInteractive } from '../SparklineInteractive';
+import { SparklineInteractive, type SparklineInteractiveBaseProps } from '../SparklineInteractive';
 
-const SparklineInteractiveBuild = sparklineInteractiveBuilder({
-  SparklineInteractive,
-  isMobile: true,
-  disableScrubbing: !__DEV__,
+const DEFAULT_PERIOD = 'day';
+
+function numToLocaleString(num: number) {
+  return num.toLocaleString('en-US', {
+    maximumFractionDigits: 2,
+  });
+}
+
+const getFormattingConfigForPeriod = (period: SparklinePeriod) => {
+  switch (period) {
+    case 'hour':
+    case 'day':
+      return {
+        hour: 'numeric',
+        minute: 'numeric',
+      } as const;
+
+    case 'week':
+    case 'month':
+      return {
+        month: 'numeric',
+        day: 'numeric',
+      } as const;
+
+    case 'year':
+    case 'all':
+      return {
+        month: 'numeric',
+        year: 'numeric',
+      } as const;
+  }
+};
+
+const getDateHoverOptions = (period: SparklinePeriod) => {
+  switch (period) {
+    case 'hour':
+    case 'day':
+    case 'week':
+    case 'month':
+      return {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      } as const;
+    default:
+      return {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      } as const;
+  }
+};
+
+const periods = [
+  {
+    label: '1H',
+    value: 'hour' as const,
+  },
+  {
+    label: '1D',
+    value: 'day' as const,
+  },
+  {
+    label: '1W',
+    value: 'week' as const,
+  },
+  {
+    label: '1M',
+    value: 'month' as const,
+  },
+  {
+    label: '1Y',
+    value: 'year' as const,
+  },
+  {
+    label: 'All',
+    value: 'all' as const,
+  },
+];
+
+type SparklineInteractivePriceProps = Omit<
+  SparklineInteractiveBaseProps<SparklinePeriod>,
+  'periods' | 'defaultPeriod' | 'formatMinMaxLabel' | 'formatDate'
+> &
+  Partial<Pick<SparklineInteractiveBaseProps<SparklinePeriod>, 'defaultPeriod'>> & {
+    hideHoverDate?: boolean;
+    hideMinMaxLabel?: boolean;
+    trailing?: React.ReactNode;
+    gutter?: ThemeVars.Space;
+    disableHorizontalPadding?: boolean;
+    timePeriodGutter?: ThemeVars.Space;
+    labelNode?: React.ReactNode;
+    allowOverflowGestures?: boolean;
+  };
+
+const SparklineInteractiveBuild = memo((props: SparklineInteractivePriceProps) => {
+  const formatDateWithConfig = useCallback((value: Date, period: SparklinePeriod) => {
+    const config = getFormattingConfigForPeriod(period);
+
+    return value.toLocaleString('en-US', {
+      ...config,
+    });
+  }, []);
+
+  const formatHoverDate = useCallback((date: Date, period: SparklinePeriod) => {
+    return date.toLocaleString('en-US', {
+      ...getDateHoverOptions(period),
+    });
+  }, []);
+
+  const formatMinMaxLabel = useCallback((amount: number | string) => {
+    return `$${numToLocaleString(parseInt(amount as string, 10))}`;
+  }, []);
+
+  return (
+    <SparklineInteractive
+      disableScrubbing={!__DEV__}
+      {...props}
+      defaultPeriod={props.defaultPeriod ?? DEFAULT_PERIOD}
+      formatDate={formatDateWithConfig}
+      formatHoverDate={!props.hideHoverDate ? formatHoverDate : undefined}
+      formatMinMaxLabel={formatMinMaxLabel}
+      periods={periods}
+    />
+  );
 });
 
-const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
-  SparklineInteractive,
-  SparklineInteractiveHeader,
-  isMobile: true,
-  disableScrubbing: !__DEV__,
+const generateSubHead = (
+  point: ChartDataPoint,
+  period: SparklinePeriod,
+  sparklineInteractiveData: Record<SparklinePeriod, ChartData>,
+): SparklineInteractiveSubHead => {
+  const data = sparklineInteractiveData[period];
+  const firstPoint = data[0];
+
+  const increase = point.value > firstPoint.value;
+  return {
+    percent: `${numToLocaleString(
+      Math.abs((point.value - firstPoint.value) / firstPoint.value) * 100,
+    )}%`,
+    sign: increase ? 'upwardTrend' : 'downwardTrend',
+    variant: increase ? 'positive' : 'negative',
+    accessibilityLabel: `${increase ? 'up' : 'down'}`,
+    priceChange: `$${numToLocaleString(Math.abs(point.value - firstPoint.value))}`,
+  };
+};
+
+const SparklineInteractiveWithHeaderBuild = memo((props: SparklineInteractivePriceProps) => {
+  const { data: sparklineData, trailing, labelNode, compact } = props;
+  const sparklineInteractiveData = sparklineData as Record<SparklinePeriod, ChartData>;
+  const headerRef = useRef<SparklineInteractiveHeaderRef>(null);
+  const [currentPeriod, setCurrentPeriod] = useState<SparklinePeriod>(
+    props.defaultPeriod ?? DEFAULT_PERIOD,
+  );
+  const data = sparklineInteractiveData[currentPeriod];
+  const lastPoint = data[data.length - 1];
+
+  const handleScrub = useCallback(
+    ({ point, period }: ChartScrubParams<SparklinePeriod>) => {
+      headerRef.current?.update({
+        title: `$${point.value.toLocaleString('en-US')}`,
+        subHead: generateSubHead(point, period, sparklineInteractiveData),
+      });
+    },
+    [sparklineInteractiveData, headerRef],
+  );
+
+  const handleScrubEnd = useCallback(() => {
+    headerRef.current?.update({
+      title: `$${numToLocaleString(lastPoint.value)}`,
+      subHead: generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData),
+    });
+  }, [currentPeriod, sparklineInteractiveData, lastPoint, headerRef]);
+
+  const handleOnPeriodChanged = useCallback(
+    (period: SparklinePeriod) => {
+      setCurrentPeriod(period);
+
+      const newData = sparklineInteractiveData[period];
+      const newLastPoint = newData[newData.length - 1];
+
+      headerRef.current?.update({
+        title: `$${numToLocaleString(newLastPoint.value)}`,
+        subHead: generateSubHead(newLastPoint, period, sparklineInteractiveData),
+      });
+    },
+    [sparklineInteractiveData, headerRef],
+  );
+
+  const header = useMemo(
+    () => (
+      <SparklineInteractiveHeader
+        ref={headerRef}
+        compact={compact}
+        defaultLabel={labelNode ? 'CustomHeader' : 'Bitcoin Price'}
+        defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
+        defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
+        labelNode={labelNode}
+        trailing={trailing}
+      />
+    ),
+    [compact, labelNode, lastPoint, currentPeriod, sparklineInteractiveData, trailing],
+  );
+
+  return (
+    <SparklineInteractiveBuild
+      {...props}
+      headerNode={header}
+      onPeriodChanged={handleOnPeriodChanged}
+      onScrub={handleScrub}
+      onScrubEnd={handleScrubEnd}
+    />
+  );
 });
 
 const rgbaStrokeColor = 'rgba(123, 1, 1, 5)';
