@@ -41,7 +41,7 @@ export default function NavbarContent(): JSX.Element {
         {windowSize === 'desktop' && (
           <HStack background="bgSecondary" borderRadius={1000} gap={1} padding={0.5}>
             {linkItems.map((item) => (
-              <NavbarItem key={item.title} {...item} />
+              <NavbarItem key={item.href} {...item} />
             ))}
           </HStack>
         )}

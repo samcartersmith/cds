@@ -123,6 +123,17 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    metadata: [
+      {
+        name: 'description',
+        content:
+          'Documentation for the Coinbase Design System - A comprehensive collection of components, patterns, and guidelines for building crypto products.',
+      },
+      {
+        name: 'keywords',
+        content: 'design system, coinbase, components, documentation, ui, ux',
+      },
+    ],
     navbar: {
       items: [
         { type: 'search' },

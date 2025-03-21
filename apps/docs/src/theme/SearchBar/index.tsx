@@ -9,7 +9,7 @@ const SearchBar = () => {
   } = useKBar();
   return (
     <Tooltip content="Click or press ⌘ + K to search or ask a question">
-      <IconButton name="magnifyingGlass" onClick={toggle} />
+      <IconButton accessibilityLabel="Search" name="magnifyingGlass" onClick={toggle} />
     </Tooltip>
   );
 };
