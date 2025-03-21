@@ -12,6 +12,7 @@ const eslintTestingLibrary = require('eslint-plugin-testing-library');
 const eslintJsxA11y = require('eslint-plugin-jsx-a11y');
 const eslintReactNativeA11y = require('eslint-plugin-react-native-a11y');
 const eslintReactNative = require('eslint-plugin-react-native');
+const eslintCodegen = require('eslint-plugin-codegen');
 
 const eslintImportAutofixRule = require('./eslint.autofix.cjs');
 
@@ -157,6 +158,7 @@ module.exports = tseslint.config(
     ],
     plugins: {
       ...importPlugins,
+      codegen: eslintCodegen,
     },
     settings: commonSettings,
     rules: {
@@ -164,6 +166,7 @@ module.exports = tseslint.config(
       ...reactRules,
       'no-loss-of-precision': 'off',
       'jsx-a11y/label-has-associated-control': 'off',
+      'codegen/codegen': 'error',
     },
   },
   {
