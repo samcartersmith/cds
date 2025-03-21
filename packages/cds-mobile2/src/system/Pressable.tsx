@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useCallback, useMemo, useState } from 'react';
+import React, { forwardRef, memo, useCallback, useMemo, useRef, useState } from 'react';
 import {
   AccessibilityProps,
   GestureResponderEvent,
@@ -12,7 +12,6 @@ import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { type BoxBaseProps } from '../layout/Box';
 import { HapticFeedbackType } from '../types';
-import { debounce } from '../utils/debounce';
 import { Haptics } from '../utils/haptics';
 
 import { Interactable, type InteractableBaseProps } from './Interactable';
@@ -174,11 +173,12 @@ export const Pressable = memo(
   ) {
     const [pressIn, pressOut, pressScale] = usePressAnimation();
     const [pressed, setPressed] = useState(false);
+    const lastPressedTimeStampRef = useRef<number | null>(null);
 
     const onEventHandler = useEventHandler('Button', 'onPress', eventConfig, analyticsId);
 
-    const onPressHandler = useMemo(
-      () => (event: GestureResponderEvent) => {
+    const onPressHandler = useCallback(
+      (event: GestureResponderEvent) => {
         if (feedback === 'light') void Haptics.lightImpact();
         else if (feedback === 'normal') void Haptics.normalImpact();
         else if (feedback === 'heavy') void Haptics.heavyImpact();
@@ -187,18 +187,23 @@ export const Pressable = memo(
       },
       [feedback, onEventHandler, onPress],
     );
-
-    const debouncedOnPressHandler = useMemo(
-      () => debounce(onPressHandler, debounceTime),
-      [debounceTime, onPressHandler],
-    );
-
     const handlePress = useCallback(
       (event: GestureResponderEvent) => {
-        if (!disableDebounce) debouncedOnPressHandler(event);
-        else onPressHandler(event);
+        const now = Date.now();
+        if (disableDebounce || debounceTime === undefined) {
+          onPressHandler(event);
+          lastPressedTimeStampRef.current = now;
+          return;
+        }
+        if (
+          lastPressedTimeStampRef.current === null ||
+          now - lastPressedTimeStampRef.current >= debounceTime
+        ) {
+          onPressHandler(event);
+        }
+        lastPressedTimeStampRef.current = now;
       },
-      [disableDebounce, debouncedOnPressHandler, onPressHandler],
+      [debounceTime, disableDebounce, onPressHandler],
     );
 
     const handlePressIn = useCallback(

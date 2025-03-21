@@ -1,10 +1,10 @@
 import { Animated, Pressable } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
+import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 
 import { Box } from '../../layout';
 import { HStack } from '../../layout/HStack';
 import { Text } from '../../typography/Text';
-import { debounce } from '../../utils/debounce';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Button } from '../Button';
 
@@ -53,7 +53,8 @@ describe('Button', () => {
 
   it('fires `onPress` when pressed', () => {
     const spy = jest.fn();
-    (debounce as jest.Mock).mockImplementation(() => spy);
+    const onEventHandlerMock = jest.fn();
+    (useEventHandler as jest.Mock).mockReturnValue(onEventHandlerMock);
     render(
       <DefaultThemeProvider>
         <Button onPress={spy}>Child</Button>
@@ -63,6 +64,80 @@ describe('Button', () => {
     fireEvent.press(screen.getByText('Child'));
 
     expect(spy).toHaveBeenCalled();
+  });
+
+  it('debounce with onPress', () => {
+    const spy = jest.fn();
+    const onEventHandlerMock = jest.fn();
+    (useEventHandler as jest.Mock).mockReturnValue(onEventHandlerMock);
+    render(
+      <DefaultThemeProvider>
+        <Button debounceTime={500} onPress={spy}>
+          Child
+        </Button>
+      </DefaultThemeProvider>,
+    );
+    fireEvent.press(screen.getByText('Child'));
+    fireEvent.press(screen.getByText('Child'));
+    fireEvent.press(screen.getByText('Child'));
+    expect(spy).toHaveBeenCalledTimes(1);
+
+    jest.advanceTimersByTime(500);
+
+    fireEvent.press(screen.getByText('Child'));
+    fireEvent.press(screen.getByText('Child'));
+    fireEvent.press(screen.getByText('Child'));
+    expect(spy).toHaveBeenCalledTimes(2);
+  });
+
+  it('debounce with changing onPress and disableDebounce', () => {
+    const spy1 = jest.fn();
+    const spy2 = jest.fn();
+    const onEventHandlerMock = jest.fn();
+    (useEventHandler as jest.Mock).mockReturnValue(onEventHandlerMock);
+    const { rerender } = render(
+      <DefaultThemeProvider>
+        <Button debounceTime={500} onPress={spy1}>
+          Child
+        </Button>
+      </DefaultThemeProvider>,
+    );
+    const button = screen.getByText('Child');
+    fireEvent.press(button);
+    fireEvent.press(button);
+    fireEvent.press(button);
+    expect(spy1).toHaveBeenCalledTimes(1);
+
+    rerender(
+      <DefaultThemeProvider>
+        <Button debounceTime={500} onPress={spy2}>
+          Child
+        </Button>
+      </DefaultThemeProvider>,
+    );
+    fireEvent.press(button);
+    fireEvent.press(button);
+    fireEvent.press(button);
+    expect(spy2).not.toHaveBeenCalled();
+
+    jest.advanceTimersByTime(500);
+
+    fireEvent.press(button);
+    fireEvent.press(button);
+    fireEvent.press(button);
+    expect(spy2).toHaveBeenCalledTimes(1);
+
+    rerender(
+      <DefaultThemeProvider>
+        <Button disableDebounce debounceTime={500} onPress={spy2}>
+          Child
+        </Button>
+      </DefaultThemeProvider>,
+    );
+    fireEvent.press(button);
+    fireEvent.press(button);
+    fireEvent.press(button);
+    expect(spy2).toHaveBeenCalledTimes(4);
   });
 
   it('Wraps children with a text component when using a string as children', () => {
