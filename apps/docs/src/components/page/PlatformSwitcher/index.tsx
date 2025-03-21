@@ -37,11 +37,11 @@ export const PlatformSwitcher = () => {
   const activeTab = tabs.find(({ id }) => id === platform) ?? null;
   return (
     <SegmentedTabs
+      TabsActiveIndicatorComponent={SegmentedTabsActiveIndicator}
       activeTab={activeTab}
+      borderRadius={300}
       onChange={handlePlatformChange}
       tabs={tabs}
-      borderRadius={300}
-      TabsActiveIndicatorComponent={SegmentedTabsActiveIndicator}
     />
   );
 };

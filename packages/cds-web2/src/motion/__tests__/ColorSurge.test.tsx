@@ -1,8 +1,8 @@
 import React, { useCallback, useRef } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { createMotionConfig } from '@cbhq/cds-common2/motion/tokens';
 
-import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { ColorSurge, ColorSurgeTypes } from '../ColorSurge';
 import { useMotionProps } from '../useMotionProps';
 

@@ -28,8 +28,8 @@ export default function NavbarMobilePrimaryMenu(): JSX.Element {
             background="transparent"
             borderRadius={1000}
             href={href}
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <HStack
               alignItems="center"

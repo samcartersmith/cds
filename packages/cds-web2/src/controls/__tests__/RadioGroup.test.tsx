@@ -2,8 +2,8 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { TextHeadline, TextLabel1 } from '../../typography';
-import { Radio, RadioGroup } from '../RadioGroup';
 import { DefaultThemeProvider } from '../../utils/test';
+import { Radio, RadioGroup } from '../RadioGroup';
 
 const options = {
   btc: 'Bitcoin',

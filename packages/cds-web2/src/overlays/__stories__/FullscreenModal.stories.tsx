@@ -45,7 +45,7 @@ export const Basic = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         Primary Content {loremIpsum}
       </Text>
     </Box>
@@ -53,7 +53,7 @@ export const Basic = () => {
 
   const secondaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         Secondary Content {loremIpsum}
       </Text>
     </Box>
@@ -85,7 +85,7 @@ export const NoTitle = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         Primary Content {loremIpsum}
       </Text>
     </Box>
@@ -93,7 +93,7 @@ export const NoTitle = () => {
 
   const secondaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         Secondary Content {loremIpsum}
       </Text>
     </Box>
@@ -125,7 +125,7 @@ export const NoSecondary = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         Primary Content {loremIpsum}
       </Text>
     </Box>
@@ -185,7 +185,7 @@ export const Example = () => {
       <Text as="h1" font="title1">
         Fullscreen Modal
       </Text>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         This is a test Fullscreen Modal with components composition.
       </Text>
       {feedCard}
@@ -199,12 +199,12 @@ export const Example = () => {
     <Box borderRadius={200} elevation={1} overflow="hidden">
       <Accordion defaultActiveKey="2">
         <AccordionItem itemKey="1" subtitle="subtitle1" title="Accordion #1">
-          <Text font="body" as="p">
+          <Text as="p" font="body">
             {loremIpsum}
           </Text>
         </AccordionItem>
         <AccordionItem itemKey="2" subtitle="subtitle2" title="Accordion #2">
-          <Text font="body" as="p">
+          <Text as="p" font="body">
             {loremIpsum}
           </Text>
         </AccordionItem>
@@ -238,7 +238,7 @@ export const SecondaryContentDivider = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         Primary Content {loremIpsum}
       </Text>
     </Box>
@@ -246,7 +246,7 @@ export const SecondaryContentDivider = () => {
 
   const secondaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         Secondary Content {loremIpsum}
       </Text>
     </Box>
@@ -279,7 +279,7 @@ export const CenterPrimary = () => {
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         Primary Content {loremIpsum}
       </Text>
     </Box>

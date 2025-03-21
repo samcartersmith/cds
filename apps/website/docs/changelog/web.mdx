@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.7.6 (3/21/2025 PST)
+
+#### 🐞 Fixes
+
+- Enforce props alphabetical sorting (react/jsx-sort-props). [[#3787](https://github.cbhq.net/frontend/cds/pull/3787)]
+
 ## 7.7.5 (3/19/2025 PST)
 
 #### 🐞 Fixes

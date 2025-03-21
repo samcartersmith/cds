@@ -38,7 +38,7 @@ export const SectionHeader = memo(
           <HStack alignItems="center" gap={1}>
             {!!start && start}
             {typeof title === 'string' ? (
-              <Text font="title3" accessibilityRole="header">
+              <Text accessibilityRole="header" font="title3">
                 {title}
               </Text>
             ) : (

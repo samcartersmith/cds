@@ -44,7 +44,7 @@ const PressableScreen = () => {
             borderRadius={400}
             borderWidth={100}
           >
-            <Text font="body" color="fgInverse">
+            <Text color="fgInverse" font="body">
               Primary
             </Text>
           </Pressable>
@@ -57,7 +57,7 @@ const PressableScreen = () => {
             borderRadius={400}
             borderWidth={100}
           >
-            <Text font="body" color="fgInverse">
+            <Text color="fgInverse" font="body">
               Primary + Loading
             </Text>
           </Pressable>
@@ -102,7 +102,7 @@ const PressableScreen = () => {
                 accessibilityRole="button"
                 background={color as ThemeVars.Color}
               >
-                <Text dangerouslySetColor={textColor} padding={1} font="body">
+                <Text dangerouslySetColor={textColor} font="body" padding={1}>
                   {color}
                 </Text>
               </Pressable>
@@ -123,7 +123,7 @@ const PressableScreen = () => {
                 accessibilityRole="button"
                 background={color as ThemeVars.Color}
               >
-                <Text dangerouslySetColor={textColor} padding={1} font="body">
+                <Text dangerouslySetColor={textColor} font="body" padding={1}>
                   {color}
                 </Text>
               </Pressable>

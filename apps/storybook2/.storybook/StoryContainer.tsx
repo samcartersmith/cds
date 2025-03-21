@@ -60,8 +60,8 @@ export function StoryContainer<Props>(
       <LocalStrictMode>
         <MediaQueryProvider>
           <ThemeProvider
-            display="contents"
             activeColorScheme={isDarkMode ? 'dark' : 'light'}
+            display="contents"
             theme={defaultTheme}
           >
             <PortalProvider>

@@ -87,8 +87,8 @@ export const ListCell = memo(function ListCell({
           <Text
             color="fgMuted"
             ellipsize={multiline ? undefined : 'tail'}
-            numberOfLines={multiline ? undefined : title ? 1 : 2}
             font="body"
+            numberOfLines={multiline ? undefined : title ? 1 : 2}
           >
             {description}
           </Text>

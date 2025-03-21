@@ -31,10 +31,10 @@ const PatternTagErrorScreen = () => {
           <ModalBody contentContainerStyle={{ flex: 1 }}>
             <VStack alignItems="center" flexGrow={1} justifyContent="center">
               <HeroSquare name="errorWeb404" />
-              <Text font="title3" align="center" paddingTop={3}>
+              <Text align="center" font="title3" paddingTop={3}>
                 Page not found
               </Text>
-              <Text align="center" color="fgMuted" paddingTop={1} font="body">
+              <Text align="center" color="fgMuted" font="body" paddingTop={1}>
                 Sorry we couldn&apos;t find what you were looking for.
               </Text>
             </VStack>

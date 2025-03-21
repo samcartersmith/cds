@@ -144,7 +144,7 @@ describe('Text', () => {
 
   it('renders empty content when renderEmptyNode is true', () => {
     render(
-      <Text renderEmptyNode testID="empty-text" font="body">
+      <Text renderEmptyNode font="body" testID="empty-text">
         {null}
       </Text>,
       { wrapper },
@@ -154,7 +154,7 @@ describe('Text', () => {
 
   it('does not render when renderEmptyNode is false and content is empty', () => {
     render(
-      <Text renderEmptyNode={false} testID="empty-text" font="body">
+      <Text font="body" renderEmptyNode={false} testID="empty-text">
         {null}
       </Text>,
       { wrapper },

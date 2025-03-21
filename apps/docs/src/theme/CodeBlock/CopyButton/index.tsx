@@ -34,12 +34,12 @@ export default function CopyButton({ code }: Props): ReactNode {
 
   return (
     <Tooltip
-      placement="top"
       content={translate({
         id: 'theme.CodeBlock.copyButtonAriaLabel',
         message: 'Copy code to clipboard',
         description: 'The ARIA label for copy code blocks button',
       })}
+      placement="top"
     >
       <IconButton
         compact

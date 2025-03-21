@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { media } from '../../styles/media';
-import { useBreakpoints } from '../useBreakpoints';
 import { MediaQueryContext } from '../../system/MediaQueryProvider';
+import { useBreakpoints } from '../useBreakpoints';
 
 const mockSubscribe = jest.fn();
 const mockGetSnapshot = jest.fn();

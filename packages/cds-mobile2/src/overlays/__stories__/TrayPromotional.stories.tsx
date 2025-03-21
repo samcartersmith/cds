@@ -35,7 +35,7 @@ export const Default = () => {
                 <Box alignItems="center" paddingBottom={3}>
                   <SpotRectangle name="exploreDecentralizedApps" />
                 </Box>
-                <Text font="title1" align="center" paddingBottom={2}>
+                <Text align="center" font="title1" paddingBottom={2}>
                   Earn crypto by lending, staking, and more
                 </Text>
                 <Text align="center" color="fgMuted" font="body">

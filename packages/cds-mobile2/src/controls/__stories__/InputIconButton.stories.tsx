@@ -20,10 +20,10 @@ const Basic = () => {
       {variants.map((variant) => (
         <TextInput
           key={`${variant}-input-iconbutton`}
+          editable={__DEV__}
           label={variant}
           start={<InputIconButton accessibilityLabel="Add" name="add" variant="foregroundMuted" />}
           variant={variant}
-          editable={__DEV__}
         />
       ))}
     </>
@@ -33,10 +33,10 @@ const Basic = () => {
 const DefaultsToPrimary = () => {
   return (
     <TextInput
+      editable={__DEV__}
       label="Label"
       start={<InputIconButton accessibilityLabel="Search" name="search" />}
       variant="foregroundMuted"
-      editable={__DEV__}
     />
   );
 };
@@ -44,10 +44,10 @@ const DefaultsToPrimary = () => {
 const SetColorAndInheritFocusStyle = () => {
   return (
     <TextInput
+      editable={__DEV__}
       label="Search"
       start={<InputIconButton accessibilityLabel="Search" name="search" variant="secondary" />}
       variant="foregroundMuted"
-      editable={__DEV__}
     />
   );
 };
@@ -55,9 +55,9 @@ const SetColorAndInheritFocusStyle = () => {
 const BasicEnd = () => {
   return (
     <TextInput
+      editable={__DEV__}
       end={<InputIconButton accessibilityLabel="Add" name="add" />}
       label="Label"
-      editable={__DEV__}
     />
   );
 };
@@ -65,6 +65,7 @@ const BasicEnd = () => {
 const AddCustomColor = () => {
   return (
     <TextInput
+      editable={__DEV__}
       label="Label"
       start={
         <InputIconButton
@@ -74,7 +75,6 @@ const AddCustomColor = () => {
           variant="foregroundMuted"
         />
       }
-      editable={__DEV__}
     />
   );
 };
@@ -82,6 +82,7 @@ const AddCustomColor = () => {
 const AddCustomColorEnd = () => {
   return (
     <TextInput
+      editable={__DEV__}
       end={
         <InputIconButton
           disableInheritFocusStyle
@@ -92,7 +93,6 @@ const AddCustomColorEnd = () => {
         />
       }
       label="Label"
-      editable={__DEV__}
     />
   );
 };

@@ -34,14 +34,14 @@ export const Default = () => {
           {({ handleClose }) => (
             <TrayStickyFooter>
               <VStack paddingBottom={1} paddingX={3}>
-                <Text color="fgMuted" paddingBottom={3} font="body">
+                <Text color="fgMuted" font="body" paddingBottom={3}>
                   The percentage of Coinbase customers who increased or decreased their net position
                   in 00 over the past 24 hours through trading. What this means: Increased buying
                   activity can signal that the asset is gaining popularity. Last updated on May 2,
                   2023.
                 </Text>
                 <Text font="headline">What this means:</Text>
-                <Text color="fgMuted" paddingBottom={3} font="body">
+                <Text color="fgMuted" font="body" paddingBottom={3}>
                   Increased buying activity can signal that the asset is gaining popularity.
                 </Text>
                 <Text color="fgMuted" font="legal">
@@ -85,7 +85,7 @@ export const WithProgressBar = () => {
           {({ handleClose }) => (
             <TrayStickyFooter>
               <VStack paddingBottom={1} paddingX={3}>
-                <Text color="fgMuted" paddingBottom={3} font="body">
+                <Text color="fgMuted" font="body" paddingBottom={3}>
                   The percentage of this asset currently being held in cold storage. In order to
                   trade these funds, you will need to first unlock them from your cold storage
                   vault.

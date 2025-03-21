@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { LogoMark } from '../LogoMark';
 import { DefaultThemeProvider } from '../../utils/test';
+import { LogoMark } from '../LogoMark';
 
 describe('LogoMark', () => {
   it('renders', () => {

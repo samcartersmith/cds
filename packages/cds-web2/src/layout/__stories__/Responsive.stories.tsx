@@ -37,7 +37,7 @@ const itemProps: BoxBaseProps = {
 export const ResponsiveBox = (props: BoxBaseProps) => {
   return (
     <VStack gap={2}>
-      <Text font="display2" as="h2">
+      <Text as="h2" font="display2">
         Responsive Flex Props
       </Text>
       <Box
@@ -58,7 +58,7 @@ export const ResponsiveBox = (props: BoxBaseProps) => {
           <TextHeadline as="h3">Item 3</TextHeadline>
         </HStack>
       </Box>
-      <Text font="display2" as="h2">
+      <Text as="h2" font="display2">
         Responsive Ratio Layout
       </Text>
       <HStack borderColor="bgLine" borderWidth={100} gap={1} padding={1}>
@@ -226,16 +226,16 @@ const typographyResponsiveProps: Pick<BoxBaseProps, 'display' | 'padding'> = {
 export const ResponsiveTypography = () => {
   return (
     <VStack>
-      <Text font="display1" as="h1" {...typographyResponsiveProps}>
+      <Text as="h1" font="display1" {...typographyResponsiveProps}>
         Headline
       </Text>
-      <Text font="title1" as="h2" {...typographyResponsiveProps}>
+      <Text as="h2" font="title1" {...typographyResponsiveProps}>
         Headline
       </Text>
-      <Text font="headline" as="h3" {...typographyResponsiveProps}>
+      <Text as="h3" font="headline" {...typographyResponsiveProps}>
         Headline
       </Text>
-      <Text font="body" as="p" {...typographyResponsiveProps}>
+      <Text as="p" font="body" {...typographyResponsiveProps}>
         Headline
       </Text>
     </VStack>

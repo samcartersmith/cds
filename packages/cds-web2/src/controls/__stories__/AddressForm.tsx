@@ -34,7 +34,7 @@ export const AddressForm = ({ ...props }) => {
           Save
         </Button>
         {onClick && (
-          <Text font="title1" as="h1">
+          <Text as="h1" font="title1">
             Submit button was clicked
           </Text>
         )}

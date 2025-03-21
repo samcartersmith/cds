@@ -14,7 +14,7 @@ export type LoremIpsumProps = {
 export const LoremIpsum = ({ color, concise, title, repeat }: LoremIpsumProps) => {
   return (
     <>
-      <Text font="label1" color={color} paddingBottom={1}>
+      <Text color={color} font="label1" paddingBottom={1}>
         {title}
       </Text>
       {concise ? null : (

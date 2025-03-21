@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { LogoWordmark } from '../LogoWordmark';
 import { DefaultThemeProvider } from '../../utils/test';
+import { LogoWordmark } from '../LogoWordmark';
 
 describe('LogoWordmark', () => {
   it('renders', () => {

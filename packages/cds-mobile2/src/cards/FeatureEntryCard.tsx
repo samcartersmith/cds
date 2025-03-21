@@ -41,9 +41,9 @@ export const FeatureEntryCard = memo(function FeatureEntryCard({
     >
       <CardBody
         description={description}
+        onActionPress={onActionPress}
         testID={`${testID}-body`}
         title={title}
-        onActionPress={onActionPress}
         {...props}
       />
     </Card>

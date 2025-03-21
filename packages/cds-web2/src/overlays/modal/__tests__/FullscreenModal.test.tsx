@@ -36,12 +36,12 @@ const FullscreenModalExample = ({
   const [visible, setVisible] = useState(externalVisible);
 
   const primaryContent = (
-    <Text font="body" as="p">
+    <Text as="p" font="body">
       {PRIMARY_CONTENT}
     </Text>
   );
   const secondaryContent = (
-    <Text font="body" as="p">
+    <Text as="p" font="body">
       {SECONDARY_CONTENT}
     </Text>
   );

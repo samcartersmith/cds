@@ -42,7 +42,7 @@ const innerSpacingConfig: CellSpacing = {
 const ListCellCard = () => (
   <React.Fragment>
     <VStack gap={2} {...sharedWrapperProps}>
-      <Card elevation={1} accessibilityHint="Card" accessibilityLabel="Card">
+      <Card accessibilityHint="Card" accessibilityLabel="Card" elevation={1}>
         {Array.from({ length: 4 }).map((_, i) => {
           return (
             <ListCell
@@ -68,39 +68,39 @@ const ListCellCard = () => (
 const PressableCards = () => (
   <React.Fragment>
     <VStack gap={2} {...sharedWrapperProps}>
-      <Card {...sharedPressProps} elevation={0} accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...sharedPressProps} accessibilityHint="Card" accessibilityLabel="Card" elevation={0}>
         <LoremIpsum title="Elevation 0" />
       </Card>
-      <Card {...sharedPressProps} elevation={1} accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...sharedPressProps} accessibilityHint="Card" accessibilityLabel="Card" elevation={1}>
         <LoremIpsum title="Elevation 1" />
       </Card>
-      <Card {...sharedPressProps} elevation={2} accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...sharedPressProps} accessibilityHint="Card" accessibilityLabel="Card" elevation={2}>
         <LoremIpsum title="Elevation 2" />
       </Card>
       <Card
         {...sharedPressProps}
-        elevation={2}
-        width="50%"
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        elevation={2}
+        width="50%"
       >
         <LoremIpsum title="Half width" />
       </Card>
       <Card
         {...sharedPressProps}
-        elevation={2}
-        size="medium"
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        elevation={2}
+        size="medium"
       >
         <LoremIpsum title="Medium size" />
       </Card>
       <Card
         {...sharedPressProps}
-        borderRadius={400}
-        elevation={1}
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        borderRadius={400}
+        elevation={1}
       >
         <LoremIpsum title="With Border Radius" />
       </Card>
@@ -113,27 +113,27 @@ const PressableColoredCards = () => (
     <VStack gap={2} {...sharedWrapperProps}>
       <Card
         {...sharedPressProps}
-        background="bgPrimary"
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        background="bgPrimary"
       >
         <LoremIpsum color="fgInverse" title="Primary" />
       </Card>
 
       <Card
         {...sharedPressProps}
-        background="bgPositive"
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        background="bgPositive"
       >
         <LoremIpsum color="fgInverse" title="Positive" />
       </Card>
 
       <Card
         {...sharedPressProps}
-        background="bgNegative"
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        background="bgNegative"
       >
         <LoremIpsum color="fgInverse" title="Negative" />
       </Card>
@@ -144,12 +144,12 @@ const PressableColoredCards = () => (
 const NonClickableCards = () => (
   <React.Fragment>
     <VStack gap={2} {...sharedWrapperProps}>
-      <Card {...sharedProps} elevation={1} accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...sharedProps} accessibilityHint="Card" accessibilityLabel="Card" elevation={1}>
         <LoremIpsum title="Elevation 1" />
         <Button variant="secondary">Secondary button</Button>
       </Card>
 
-      <Card {...sharedProps} elevation={2} accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...sharedProps} accessibilityHint="Card" accessibilityLabel="Card" elevation={2}>
         <LoremIpsum title="Elevation 2" />
         <Button variant="secondary">Secondary button</Button>
       </Card>
@@ -162,27 +162,27 @@ const NonClickableColoredCards = () => (
     <VStack gap={2} {...sharedWrapperProps}>
       <Card
         {...sharedProps}
-        background="bgPrimary"
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        background="bgPrimary"
       >
         <LoremIpsum color="fgInverse" title="Primary" />
       </Card>
 
       <Card
         {...sharedProps}
-        background="bgPositive"
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        background="bgPositive"
       >
         <LoremIpsum color="fgInverse" title="Positive" />
       </Card>
 
       <Card
         {...sharedProps}
-        background="bgNegative"
         accessibilityHint="Card"
         accessibilityLabel="Card"
+        background="bgNegative"
       >
         <LoremIpsum color="fgInverse" title="Negative" />
       </Card>
@@ -193,7 +193,7 @@ const NonClickableColoredCards = () => (
 const PinnedTopCard = () => (
   <React.Fragment>
     <Box {...pinnedSharedWrapperProps} background="bgAlternate">
-      <Card {...pinnedSharedProps} pin="top" accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...pinnedSharedProps} accessibilityHint="Card" accessibilityLabel="Card" pin="top">
         <LoremIpsum concise title="Top" />
       </Card>
     </Box>
@@ -203,7 +203,7 @@ const PinnedTopCard = () => (
 const PinnedRightCard = () => (
   <React.Fragment>
     <Box {...pinnedSharedWrapperProps} background="bgAlternate">
-      <Card {...pinnedSharedProps} pin="right" accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...pinnedSharedProps} accessibilityHint="Card" accessibilityLabel="Card" pin="right">
         <LoremIpsum concise title="Right" />
       </Card>
     </Box>
@@ -213,7 +213,7 @@ const PinnedRightCard = () => (
 const PinnedBottomCard = () => (
   <React.Fragment>
     <Box {...pinnedSharedWrapperProps} background="bgAlternate">
-      <Card {...pinnedSharedProps} pin="bottom" accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...pinnedSharedProps} accessibilityHint="Card" accessibilityLabel="Card" pin="bottom">
         <LoremIpsum concise title="Bottom" />
       </Card>
     </Box>
@@ -223,7 +223,7 @@ const PinnedBottomCard = () => (
 const PinnedLeftCard = () => (
   <React.Fragment>
     <Box {...pinnedSharedWrapperProps} background="bgAlternate">
-      <Card {...pinnedSharedProps} pin="left" accessibilityHint="Card" accessibilityLabel="Card">
+      <Card {...pinnedSharedProps} accessibilityHint="Card" accessibilityLabel="Card" pin="left">
         <LoremIpsum concise title="Left" />
       </Card>
     </Box>

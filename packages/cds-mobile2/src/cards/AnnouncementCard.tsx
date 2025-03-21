@@ -49,8 +49,8 @@ export const AnnouncementCard = memo(function AnnouncementCard({
       <CardBody
         alignItems="flex-start"
         description={description}
-        title={title}
         onActionPress={onActionPress}
+        title={title}
         {...props}
       />
     </Card>

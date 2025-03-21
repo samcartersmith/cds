@@ -126,9 +126,9 @@ export const ComponentHeader = memo(
                   alignItems="center"
                   background="bg"
                   borderRadius={400}
-                  paddingStart={2}
                   maxWidth="100%"
                   overflow="hidden"
+                  paddingStart={2}
                 >
                   <Text className={styles.importText} font="label2" title={activeMetadata.import}>
                     {activeMetadata.import}
@@ -137,8 +137,8 @@ export const ComponentHeader = memo(
                     <IconButton
                       compact
                       transparent
-                      name="copy"
                       flexShrink={0}
+                      name="copy"
                       onClick={copyImport}
                       style={{ cursor: 'pointer' }}
                       variant="secondary"
@@ -185,11 +185,11 @@ export const ComponentHeader = memo(
             <VStack gap={1} padding={4}>
               <Text font="label1">Related components</Text>
               <HStack
-                gap={1}
                 as="ul"
-                padding={0}
-                margin={0}
                 flexWrap="wrap"
+                gap={1}
+                margin={0}
+                padding={0}
                 style={{
                   listStyleType: 'none',
                 }}

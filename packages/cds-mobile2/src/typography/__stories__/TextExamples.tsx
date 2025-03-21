@@ -14,7 +14,7 @@ const TextExamplesScreen = ({
   return (
     <ExampleScreen>
       <Example accessibilityRole="header" title="Mono">
-        <Text font="body" mono>
+        <Text mono font="body">
           Mono font
         </Text>
       </Example>
@@ -37,49 +37,49 @@ const TextExamplesScreen = ({
         </Box>
 
         <Box>
-          <Text font="body" color="fgMuted">
+          <Text color="fgMuted" font="body">
             Muted foreground
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" color="fgPrimary">
+          <Text color="fgPrimary" font="body">
             Primary foreground
           </Text>
         </Box>
 
         <Box background="bgPrimary" padding={1}>
-          <Text font="body" color="fgInverse">
+          <Text color="fgInverse" font="body">
             Foreground ON primary
           </Text>
         </Box>
 
         <Box background="bgSecondary" padding={1}>
-          <Text font="body" color="fg">
+          <Text color="fg" font="body">
             Foreground ON secondary
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" color="fgPositive">
+          <Text color="fgPositive" font="body">
             Positive foreground
           </Text>
         </Box>
 
         <Box background="bgPositive" padding={1}>
-          <Text font="body" color="fgInverse">
+          <Text color="fgInverse" font="body">
             Foreground ON positive
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" color="fgNegative">
+          <Text color="fgNegative" font="body">
             Negative foreground
           </Text>
         </Box>
 
         <Box background="bgNegative" padding={1}>
-          <Text font="body" color="fgInverse">
+          <Text color="fgInverse" font="body">
             Foreground ON negative
           </Text>
         </Box>
@@ -87,25 +87,25 @@ const TextExamplesScreen = ({
 
       <Example title="Alignment">
         <Box>
-          <Text font="body" align="start">
+          <Text align="start" font="body">
             Align start
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" align="center">
+          <Text align="center" font="body">
             Align center
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" align="end">
+          <Text align="end" font="body">
             Align end
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" align="justify">
+          <Text align="justify" font="body">
             Align justify (iOS only, will start align on Android)
           </Text>
         </Box>
@@ -133,28 +133,28 @@ const TextExamplesScreen = ({
 
       <Example title="Ellipsize">
         <Box>
-          <Text font="body" ellipsize="head">
+          <Text ellipsize="head" font="body">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" ellipsize="middle">
+          <Text ellipsize="middle" font="body">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" ellipsize="tail">
+          <Text ellipsize="tail" font="body">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
           </Text>
         </Box>
 
         <Box>
-          <Text font="body" ellipsize="clip">
+          <Text ellipsize="clip" font="body">
             Clip. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo nulla.
             Nam eu blandit dui, a dignissim mi.
           </Text>
@@ -169,10 +169,10 @@ const TextExamplesScreen = ({
 
       <Example title="Tabular numbers">
         <Box>
-          <Text font="body" tabularNumbers>
+          <Text tabularNumbers font="body">
             91.23450
           </Text>
-          <Text font="body" tabularNumbers>
+          <Text tabularNumbers font="body">
             11.98762
           </Text>
         </Box>
@@ -180,7 +180,7 @@ const TextExamplesScreen = ({
 
       <Example title="Disabled">
         <Box>
-          <Text font="body" disabled>
+          <Text disabled font="body">
             Hello
           </Text>
         </Box>

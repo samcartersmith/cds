@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import { SubBrandLogoWordmark } from '../SubBrandLogoWordmark';
 import { DefaultThemeProvider } from '../../utils/test';
+import { SubBrandLogoWordmark } from '../SubBrandLogoWordmark';
 
 describe('SubBrandLogoWordmark', () => {
   it('renders title by type', () => {

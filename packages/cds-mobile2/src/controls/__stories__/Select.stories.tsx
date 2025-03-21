@@ -233,8 +233,8 @@ const SelectForm = () => {
 
   return (
     <VStack background="bg" gap={2} minHeight={400}>
-      <TextInput label="Account number" editable={__DEV__} />
-      <TextInput label="Re-enter account number" editable={__DEV__} />
+      <TextInput editable={__DEV__} label="Account number" />
+      <TextInput editable={__DEV__} label="Re-enter account number" />
       <Select
         accessibilityHint="Enter account number"
         accessibilityLabel="Account number"

@@ -90,7 +90,7 @@ export const DisclosureLowFriction = () => {
         <ModalFooter
           primaryAction={<Button onClick={() => setVisible(false)}>[Affirmative CTA]</Button>}
           secondaryAction={
-            <Button as="a" target="_blank" href="https://www.coinbase.com" variant="secondary">
+            <Button as="a" href="https://www.coinbase.com" target="_blank" variant="secondary">
               Terms and conditions
             </Button>
           }
@@ -153,7 +153,7 @@ export const DisclosureMediumFriction = () => {
         <ModalFooter
           primaryAction={<Button onClick={() => setVisible(false)}>[Affirmative CTA]</Button>}
           secondaryAction={
-            <Button as="a" target="_blank" href="https://www.coinbase.com" variant="secondary">
+            <Button as="a" href="https://www.coinbase.com" target="_blank" variant="secondary">
               Terms and conditions
             </Button>
           }

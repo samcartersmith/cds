@@ -1,10 +1,10 @@
 import { Box, HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { LogoMark } from '../LogoMark';
 import { LogoWordmark } from '../LogoWordmark';
 import { SubBrandLogoMark } from '../SubBrandLogoMark';
 import { SubBrandLogoWordmark } from '../SubBrandLogoWordmark';
-import { defaultTheme } from '../../themes/defaultTheme';
 
 export default {
   title: 'Core Components/Logo Sheet',

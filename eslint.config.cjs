@@ -15,6 +15,12 @@ const eslintReactNative = require('eslint-plugin-react-native');
 
 const eslintImportAutofixRule = require('./eslint.autofix.cjs');
 
+const commonSettings = {
+  react: {
+    version: 'detect', // Automatically detect the React version
+  },
+};
+
 const ignores = [
   '*.md',
   'dist/',
@@ -31,6 +37,7 @@ const ignores = [
   '**/esm/**',
   '**/lib/**',
   '**/templates/**',
+  '**/.next/**',
   // These files use assert { type: 'json' } syntax that breaks eslint and must be fully ignored
   '**/getAffectedRoutes.mjs',
   '**/getBuildInfo.mjs',
@@ -75,6 +82,13 @@ const reactRules = {
   'react-perf/jsx-no-new-object-as-prop': 'off',
   'react/display-name': 'off',
   'react/jsx-key': 'off',
+  'react/jsx-sort-props': [
+    'warn',
+    {
+      shorthandFirst: true,
+      reservedFirst: true,
+    },
+  ],
   'react/prop-types': 'off',
   'react/react-in-jsx-scope': 'off',
 };
@@ -114,6 +128,7 @@ module.exports = tseslint.config(
     plugins: {
       ...importPlugins,
     },
+    settings: commonSettings,
     extends: [
       eslintJs.configs.recommended,
       eslintImport.flatConfigs.recommended,
@@ -143,6 +158,7 @@ module.exports = tseslint.config(
     plugins: {
       ...importPlugins,
     },
+    settings: commonSettings,
     rules: {
       ...typescriptRules,
       ...reactRules,
@@ -166,6 +182,7 @@ module.exports = tseslint.config(
       'react-native-a11y': eslintReactNativeA11y,
       ...importPlugins,
     },
+    settings: commonSettings,
     rules: {
       ...typescriptRules,
       ...reactRules,
@@ -196,6 +213,7 @@ module.exports = tseslint.config(
       'react-native-a11y': eslintReactNativeA11y,
       ...importPlugins,
     },
+    settings: commonSettings,
     rules: {
       ...typescriptRules,
       ...reactRules,

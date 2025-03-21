@@ -46,7 +46,7 @@ export const Coachmark = memo(
               <VStack gap={2}>
                 <VStack gap={0.5}>
                   {typeof title === 'string' ? (
-                    <Text font="headline" accessibilityRole="header">
+                    <Text accessibilityRole="header" font="headline">
                       {title}
                     </Text>
                   ) : (

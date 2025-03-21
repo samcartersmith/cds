@@ -58,18 +58,18 @@ const KBarResultItem = memo(
         }
         return (
           <HStack alignItems="center" height={24}>
-            <Icon name="compass" size="s" color={active ? 'fgPrimary' : 'fg'} />
+            <Icon color={active ? 'fgPrimary' : 'fg'} name="compass" size="s" />
           </HStack>
         );
       }, [action, active]);
 
       return (
         <HStack
-          gap={1.5}
+          ref={ref}
           background={active ? 'bgSecondary' : 'bg'}
+          gap={1.5}
           paddingX={3}
           paddingY={1}
-          ref={ref}
           style={{
             cursor: 'pointer',
           }}

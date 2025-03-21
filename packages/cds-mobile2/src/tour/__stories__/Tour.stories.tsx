@@ -128,7 +128,7 @@ const TourStory = () => {
               closeButtonAccessibilityLabel="Close"
               content={
                 <VStack gap={2}>
-                  <Text font="caption" color="fgMuted">
+                  <Text color="fgMuted" font="caption">
                     50%
                   </Text>
                   <ProgressBar progress={0.5} />

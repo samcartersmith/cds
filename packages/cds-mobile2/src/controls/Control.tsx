@@ -158,6 +158,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
             <Text
               animated
               color={checked || indeterminate ? 'fg' : 'fgMuted'}
+              font="body"
               style={{
                 color: animatedBoxValue.interpolate({
                   inputRange: [0, 1],
@@ -169,7 +170,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
                 flexShrink: 1,
               }}
               testID={`${testID}Label`}
-              font="body"
             >
               {label}
             </Text>

@@ -160,7 +160,7 @@ const NudgeCardScreen = () => {
             </HStack>
           }
           description={
-            <Text font="body" color="fgMuted">
+            <Text color="fgMuted" font="body">
               Custom description
             </Text>
           }

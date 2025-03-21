@@ -109,7 +109,7 @@ export const ContentCell = memo(function ContentCell({
         )}
 
         {!!description && (
-          <Text font="body" color="fgMuted">
+          <Text color="fgMuted" font="body">
             {description}
           </Text>
         )}

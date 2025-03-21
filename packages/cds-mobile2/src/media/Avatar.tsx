@@ -79,8 +79,8 @@ export const Avatar = memo(
         <Text
           align="center"
           dangerouslySetColor={fallbackTextColor}
-          textTransform="uppercase"
           font="body"
+          textTransform="uppercase"
         >
           {placeholderLetter}
         </Text>

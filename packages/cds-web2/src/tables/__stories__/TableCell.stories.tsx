@@ -63,7 +63,7 @@ export const VerticallyAlignedTableCell: Story = () => {
           <TableCell>
             <Accordion>
               <AccordionItem itemKey="1" title="Accordion Item">
-                <Text font="body" as="p">
+                <Text as="p" font="body">
                   <LoremIpsum repeat={3} />
                 </Text>
               </AccordionItem>
@@ -78,7 +78,7 @@ export const VerticallyAlignedTableCell: Story = () => {
 export const ComplexSpacingOverride: Story = () => {
   return (
     <VStack gap={2}>
-      <Text font="body" as="p">
+      <Text as="p" font="body">
         This story is complex on purpose - it is intended to provide visgreg testing to ensure crazy
         spacing configs do what they are supposed to do:
       </Text>

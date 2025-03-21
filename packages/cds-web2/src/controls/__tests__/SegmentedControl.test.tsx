@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { IconOptions, SegmentedControl, TextOptions } from '../SegmentedControl';
 import { DefaultThemeProvider } from '../../utils/test';
+import { IconOptions, SegmentedControl, TextOptions } from '../SegmentedControl';
 
 const TEXT_OPTIONS: TextOptions = [
   {

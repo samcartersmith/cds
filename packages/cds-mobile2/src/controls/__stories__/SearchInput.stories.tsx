@@ -18,12 +18,12 @@ const Compact = () => {
 
 const HideStartIcon = () => {
   const [text, setText] = useState('');
-  return <SearchInput editable={__DEV__} hideStartIcon onChangeText={setText} value={text} />;
+  return <SearchInput hideStartIcon editable={__DEV__} onChangeText={setText} value={text} />;
 };
 
 const HideEndIcon = () => {
   const [text, setText] = useState('');
-  return <SearchInput editable={__DEV__} hideEndIcon onChangeText={setText} value={text} />;
+  return <SearchInput hideEndIcon editable={__DEV__} onChangeText={setText} value={text} />;
 };
 
 const CustomEndNode = ({ end }: { end: React.ReactNode }) => {

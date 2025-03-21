@@ -44,7 +44,7 @@ function App() {
 
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-    <div className="App" tabIndex={-1} onClick={handleClickOutside}>
+    <div className="App" onClick={handleClickOutside} tabIndex={-1}>
       <Title size="large" weight="bold">
         Library
       </Title>
@@ -53,18 +53,18 @@ function App() {
         <button
           key="normal-selector"
           ref={normalSelector}
-          type="button"
           className={cx(`button-reset`, densitySelection === 'normal' && 'active-selection')}
           onClick={handleDensitySelection('normal')}
+          type="button"
         >
           <Text>Normal components</Text>
         </button>
         <button
           key="dense-selector"
           ref={denseSelector}
-          type="button"
           className={cx(`button-reset`, densitySelection === 'dense' && 'active-selection')}
           onClick={handleDensitySelection('dense')}
+          type="button"
         >
           <Text>Dense components</Text>
         </button>

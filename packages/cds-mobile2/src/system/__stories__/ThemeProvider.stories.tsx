@@ -18,7 +18,7 @@ const Child = ({ expectedColorScheme }: { expectedColorScheme: string }) => {
         <VStack>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
-          <Text font="body" color="bgSecondary">
+          <Text color="bgSecondary" font="body">
             Secondary text
           </Text>
         </VStack>

@@ -136,7 +136,7 @@ const CalendarDay = memo(
             onClick={disabled ? undefined : handleClick}
             tabIndex={date.getDate() === 1 ? undefined : -1}
           >
-            <Text font="body" color={active ? 'fgInverse' : highlighted ? 'fgPrimary' : undefined}>
+            <Text color={active ? 'fgInverse' : highlighted ? 'fgPrimary' : undefined} font="body">
               {date.getDate()}
             </Text>
           </CalendarPressable>

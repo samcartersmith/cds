@@ -237,8 +237,8 @@ const InputScreen = () => {
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
               color="fgMuted"
-              paddingEnd={2}
               font="body"
+              paddingEnd={2}
             >
               Cancel
             </Text>
@@ -268,8 +268,8 @@ const InputScreen = () => {
               accessibilityHint="Cancel"
               accessibilityLabel="Cancel"
               color="fgMuted"
-              paddingEnd={2}
               font="body"
+              paddingEnd={2}
             >
               Cancel
             </Text>

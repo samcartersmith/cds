@@ -69,7 +69,7 @@ export const SelectOption = memo(function SelectOption({
     >
       <VStack justifyContent="center">
         {!!title && (
-          <Text font="headline" ellipsize="tail" numberOfLines={description ? 1 : 2}>
+          <Text ellipsize="tail" font="headline" numberOfLines={description ? 1 : 2}>
             {title}
           </Text>
         )}
@@ -78,8 +78,8 @@ export const SelectOption = memo(function SelectOption({
           <Text
             color="fgMuted"
             ellipsize={multiline ? undefined : 'tail'}
-            numberOfLines={multiline ? undefined : title ? 1 : 2}
             font="body"
+            numberOfLines={multiline ? undefined : title ? 1 : 2}
           >
             {description}
           </Text>

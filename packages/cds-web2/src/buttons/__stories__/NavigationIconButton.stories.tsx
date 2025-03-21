@@ -28,7 +28,7 @@ const navigationIconButtonVariants = [
 ];
 
 export const All = () => (
-  <VStack padding={0.5} gap={2} flexWrap="nowrap" alignItems="flex-start">
+  <VStack alignItems="flex-start" flexWrap="nowrap" gap={2} padding={0.5}>
     {navigationIconButtonVariants.map((props, idx) => {
       const key = `nav-icon-${idx}`;
       return (

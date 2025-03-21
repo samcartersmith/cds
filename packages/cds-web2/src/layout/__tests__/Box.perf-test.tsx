@@ -13,8 +13,8 @@ describe('Box performance test', () => {
   it('renders with a responsive props', async () => {
     await measurePerformance(
       <Box
-        padding={{ phone: 5, tablet: 3, desktop: 1 }}
         justifyContent={{ phone: 'flex-start', tablet: 'space-around', desktop: 'flex-end' }}
+        padding={{ phone: 5, tablet: 3, desktop: 1 }}
       />,
     );
   });

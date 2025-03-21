@@ -28,7 +28,7 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
     <VStack>
       <Text font="headline">{title}</Text>
       {!!subtitle && (
-        <Text font="body" color="fgMuted">
+        <Text color="fgMuted" font="body">
           {subtitle}
         </Text>
       )}

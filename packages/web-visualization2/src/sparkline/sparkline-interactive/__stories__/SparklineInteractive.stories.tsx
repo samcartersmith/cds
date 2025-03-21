@@ -142,10 +142,10 @@ const SparklineInteractiveWrapper = (props: any) => {
 
   return (
     <SparklineInteractive
+      defaultPeriod={props.defaultPeriod ?? DEFAULT_PERIOD}
       formatDate={formatDateWithConfig}
       formatHoverDate={!props.hideHoverDate ? formatHoverDate : undefined}
       periods={periods}
-      defaultPeriod={props.defaultPeriod ?? DEFAULT_PERIOD}
       {...props}
     />
   );

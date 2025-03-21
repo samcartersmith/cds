@@ -61,7 +61,7 @@ const tagStories = {
 export const Default = () => <Tag {...tagStories.default[0]} />;
 
 export const All = () => (
-  <VStack padding={0.5} gap={2} flexWrap="nowrap" alignItems="flex-start">
+  <VStack alignItems="flex-start" flexWrap="nowrap" gap={2} padding={0.5}>
     {tagStories.all.map((props) => (
       <Tag key={`tag-${props.intent}-${props.colorScheme}-${props.children}`} {...props} />
     ))}
@@ -69,7 +69,7 @@ export const All = () => (
 );
 
 export const Wildcard = () => (
-  <VStack padding={0.5} gap={2} flexWrap="nowrap" alignItems="flex-start">
+  <VStack alignItems="flex-start" flexWrap="nowrap" gap={2} padding={0.5}>
     {tagStories.wildcard.map((props) => (
       <Tag
         key={`tag-wildcard-${props.children}-${props.background || ''}-${props.color || ''}`}
@@ -80,7 +80,7 @@ export const Wildcard = () => (
 );
 
 export const Truncated = () => (
-  <VStack padding={0.5} gap={2} flexWrap="nowrap" alignItems="flex-start">
+  <VStack alignItems="flex-start" flexWrap="nowrap" gap={2} padding={0.5}>
     {tagStories.truncated.map((props) => {
       const keyString = `tag-truncated-${props.children}-${
         'maxWidth' in props ? props.maxWidth : 'full'

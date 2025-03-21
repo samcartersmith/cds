@@ -117,8 +117,8 @@ const SearchInputMenuRecipe = () => {
         accessibilityLabel="search-input"
         onChangeText={setSearchValue}
         onClear={handleClear}
-        onKeyDown={handleKeyDown}
         onClick={handleSearchInputPress}
+        onKeyDown={handleKeyDown}
         value={selectedValue ?? searchValue ?? ''}
         width="100%"
       />

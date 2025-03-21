@@ -24,7 +24,7 @@ const defaultProps: SectionHeaderProps = {
       <Text color="fgMuted" font="title3" numberOfLines={1}>
         $3,9081.01
       </Text>
-      <Text font="body" color="fgPositive">
+      <Text color="fgPositive" font="body">
         ↗ 6.37%
       </Text>
     </HStack>

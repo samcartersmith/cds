@@ -37,11 +37,11 @@ export const UpsellCard = memo(
         background={background}
         borderColor="transparent"
         borderRadius={500}
+        dangerouslySetBackground={dangerouslySetBackground}
         minHeight={upsellCardMinHeight}
+        style={{ border: 'none' }}
         testID={testID}
         width={width}
-        dangerouslySetBackground={dangerouslySetBackground}
-        style={{ border: 'none' }}
       >
         <HStack
           alignContent="space-between"

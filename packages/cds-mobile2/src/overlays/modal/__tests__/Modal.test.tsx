@@ -97,11 +97,11 @@ const MockModal = ({
       <Modal
         accessibilityLabel={accessibilityLabel}
         accessibilityLabelledBy={accessibilityLabelledBy}
+        hideDividers={hideDividers}
         onDidClose={handleDidClose}
         onRequestClose={handleClose}
         testID={testID}
         visible={visible}
-        hideDividers={hideDividers}
       >
         <ModalHeader
           backAccessibilityHint={backAccessibilityHint}

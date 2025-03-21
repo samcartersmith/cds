@@ -1,15 +1,15 @@
 import { memo } from 'react';
-import { type LinariaClassName, css } from '@linaria/core';
+import { css, type LinariaClassName } from '@linaria/core';
 import { sortNamesByOldOrder } from '@cbhq/cds-common2/internal/utils/sortIconsForVisReg';
+import type { IconSize } from '@cbhq/cds-common2/types/IconSize';
 import { NavIconName } from '@cbhq/cds-icons';
 import names from '@cbhq/cds-icons/__generated__/nav/data/names';
 import namesOld from '@cbhq/cds-icons/__generated__/nav/data/names-old';
 
 import { HStack, VStack } from '../../layout';
 import { TextLegal } from '../../typography';
-import { NavigationIcon, NavigationIconName } from '../NavigationIcon';
 import { sourceSizeMap } from '../Icon';
-import type { IconSize } from '@cbhq/cds-common2/types/IconSize';
+import { NavigationIcon, NavigationIconName } from '../NavigationIcon';
 
 type SvgFromFigmaProps = { name: NavigationIconName; size: IconSize; active?: boolean };
 
@@ -46,7 +46,7 @@ function SvgFromFigma({ name, size, active }: SvgFromFigmaProps) {
 
   const activeSuffix = active ? 'active' : 'inactive';
   const svgPath = `@cbhq/cds-icons/__generated__/nav/svg/nav-${name}-${sourceSize}-${activeSuffix}.svg`;
-  return <img alt={name} src={svgPath} className={sizeStyles[size]} />;
+  return <img alt={name} className={sizeStyles[size]} src={svgPath} />;
 }
 
 function DisclaimerText() {
