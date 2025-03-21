@@ -1943,6 +1943,9 @@ export const display = {
   'flow-root': css`
     display: flow-root;
   `,
+  revert: css`
+    display: revert;
+  `,
 } as const;
 
 export const overflow = {

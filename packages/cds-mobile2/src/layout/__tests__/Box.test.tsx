@@ -265,7 +265,6 @@ describe('Box', () => {
       expect(screen.getByTestId('parent')).toBeAccessible();
 
       expect(screen.getByTestId('parent')).toHaveStyle({
-        display: 'flex',
         padding: 8,
       });
     });
@@ -352,7 +351,6 @@ describe('Box', () => {
       await screen.findByTestId('parent');
 
       expect(screen.getByTestId('parent')).toHaveStyle({
-        display: 'flex',
         margin: -8,
       });
     });

@@ -5,7 +5,7 @@ import { LinkBaseProps } from '@cbhq/cds-common2/types/LinkBaseProps';
 
 import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
 
-import { Text, type TextProps } from './Text';
+import { type TextProps, Text } from './Text';
 
 export type LinkProps = {
   /** Callback to fire when pressed */
@@ -27,13 +27,9 @@ export type LinkProps = {
    * @default false
    */
   readerMode?: boolean;
-  /**
-   * Specify typography of the text
-   * @default inherit
-   */
-  font?: TextProps['font'];
 } & LinkBaseProps &
-  SharedProps;
+  SharedProps &
+  Pick<TextProps, 'font'>;
 
 export const Link = memo(
   ({

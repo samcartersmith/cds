@@ -22,7 +22,6 @@ describe('useOverlayContentContext', () => {
       wrapper: ({ children }) => (
         <DefaultThemeProvider>
           <Modal visible onRequestClose={() => void false}>
-            {}
             <>{children}</>
           </Modal>
         </DefaultThemeProvider>

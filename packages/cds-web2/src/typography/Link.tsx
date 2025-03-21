@@ -12,12 +12,19 @@ export const linkDefaultElement = 'a';
 export type LinkDefaultElement = typeof linkDefaultElement;
 
 export type LinkBaseProps = Polymorphic.ExtendableProps<
-  Omit<PressableBaseProps, 'background'>,
+  Omit<PressableBaseProps, 'color' | 'background'>,
   {
+    /**
+     * Color of the Link
+     * @default 'fgPrimary'
+     */
+    color?: PressableBaseProps['color'];
+    /**
+     * Background color of the Link
+     * @default 'transparent'
+     */
     background?: PressableBaseProps['background'];
     /**
-     * @deprecated Use target="_blank" instead.
-     *
      * Determines whether the link opens in a new window.
      * - `true`: Opens the link in a new window.
      * - `false`: Replaces the current screen with the link.
@@ -50,7 +57,7 @@ type LinkComponent = (<AsComponent extends React.ElementType = LinkDefaultElemen
 const baseStyle = css`
   cursor: pointer;
 
-  // remove pressable opacity styles
+  // remove Pressable opacity styles
   &:hover,
   &:active,
   &[data-active='true'],

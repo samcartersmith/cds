@@ -149,7 +149,7 @@ export const Box = memo(
         borderedVertical,
         dangerouslySetBackground,
         // Begin style props
-        display = 'flex',
+        display,
         position,
         overflow,
         zIndex,

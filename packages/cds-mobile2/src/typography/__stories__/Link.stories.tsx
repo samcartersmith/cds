@@ -6,6 +6,9 @@ import { Link } from '../Link';
 import { Text } from '../Text';
 
 const typographies = [
+  'display1',
+  'display2',
+  'display3',
   'title1',
   'title2',
   'title3',

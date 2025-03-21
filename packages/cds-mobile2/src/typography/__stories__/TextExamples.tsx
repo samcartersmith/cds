@@ -20,7 +20,6 @@ const TextExamplesScreen = ({
       </Example>
       <Example title="Inherited Font">
         <Box>
-          {}
           <Text font="title1">
             This Text element uses one font family and the inner Text element - Hello World inherits
             it but overrides the font size

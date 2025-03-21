@@ -87,7 +87,6 @@ const PatternDisclosureHighFrictionRiskScreen = () => {
                       checked={checkboxes[index]}
                       onChange={handleCheckboxChange(index)}
                     />
-                    {}
                     <Text font="label2" style={{ flex: 1 }}>
                       {checkboxLabel}{' '}
                       <Link underline to={linkUrl}>

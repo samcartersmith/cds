@@ -10,14 +10,35 @@ export const globalStyles = css`
       border-width: 0;
     }
 
-    body {
+    * {
       margin: 0;
-      padding: 0;
     }
 
     html {
-      -webkit-text-size-adjust: 100%; /* 2 */
-      -webkit-tap-highlight-color: transparent; /* 3*/
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      padding: 0;
+    }
+
+    button {
+      padding: 0;
+      cursor: pointer;
+      background-color: transparent;
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      font-variant: inherit;
+      font-style: inherit;
+      font-stretch: inherit;
+    }
+
+    a {
+      cursor: pointer;
     }
   }
 `;

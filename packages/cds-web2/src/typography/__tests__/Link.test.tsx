@@ -47,7 +47,6 @@ describe('Link', () => {
   it('should render with button element if no href', async () => {
     render(
       <DefaultThemeProvider>
-        {}
         <Link as="button" font="body" onClick={handlePress}>
           Child
         </Link>
@@ -82,7 +81,6 @@ describe('Link', () => {
   it('doesnt set target or rel if a button', async () => {
     render(
       <DefaultThemeProvider>
-        {}
         <Link openInNewWindow as="button" font="body" testID={testID}>
           Child
         </Link>

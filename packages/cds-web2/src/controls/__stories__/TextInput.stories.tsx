@@ -213,7 +213,6 @@ export const EndContent = function EndContent() {
     <TextInput
       end={
         <HStack paddingEnd={1}>
-          {}
           <Link font="headline" href="">
             Hello
           </Link>
@@ -270,7 +269,6 @@ export const CompactInputEnd = function CompactInputEnd() {
       compact
       end={
         <HStack paddingEnd={1}>
-          {}
           <Link font="headline" href="">
             Hello
           </Link>

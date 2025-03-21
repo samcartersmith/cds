@@ -59,7 +59,6 @@ describe('SegmentedTab', () => {
     );
     expect(screen.getByText('Buy')).toBeTruthy();
     expect(screen.getByText('Buy')).toHaveAnimatedStyle({
-      display: 'flex',
       color: `rgb(${defaultTheme.lightSpectrum.gray100})`,
       fontFamily: 'CoinbaseSans-Medium',
       fontSize: 16,
@@ -79,7 +78,6 @@ describe('SegmentedTab', () => {
     );
     jest.advanceTimersByTime(300);
     expect(screen.getByTestId(`${TEST_ID}-label`)).toHaveAnimatedStyle({
-      display: 'flex',
       color: `rgb(${defaultTheme.lightSpectrum.gray0})`,
       fontFamily: 'CoinbaseSans-Medium',
       fontSize: 16,

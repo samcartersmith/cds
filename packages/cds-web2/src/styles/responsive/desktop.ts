@@ -2954,6 +2954,11 @@ export const display = {
       display: flow-root;
     }
   `,
+  revert: css`
+    @media ${media.desktop} {
+      display: revert;
+    }
+  `,
 } as const;
 
 export const overflow = {

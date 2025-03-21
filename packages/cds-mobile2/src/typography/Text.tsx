@@ -104,7 +104,7 @@ export const Text = memo(
         dangerouslySetColor,
         dangerouslySetBackground,
         // Begin style props
-        display = 'flex',
+        display,
         position,
         overflow,
         zIndex,
@@ -131,7 +131,7 @@ export const Text = memo(
         elevation,
         borderWidth,
         borderRadius,
-        font = 'body',
+        font = 'inherit',
         fontFamily = font,
         fontSize = font,
         fontWeight = font,
