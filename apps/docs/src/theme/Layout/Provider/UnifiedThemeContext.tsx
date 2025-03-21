@@ -1,8 +1,7 @@
-import React, { createContext, type ReactNode, useContext, useMemo, useState } from 'react';
+import React, { createContext, useContext, useMemo, useState } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { docsTheme } from '@site/src/constants';
 import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';
-import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
 
 type UnifiedThemeContextValue = {
   // Docs theme values
@@ -49,7 +48,7 @@ export const usePlaygroundTheme = () => {
 };
 
 type UnifiedThemeProviderProps = {
-  children: ReactNode;
+  children: React.ReactNode;
   initialDocsTheme?: ThemeConfig;
   initialPlaygroundTheme?: ThemeConfig;
 };

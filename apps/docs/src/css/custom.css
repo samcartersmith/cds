@@ -215,6 +215,7 @@ table tr:nth-child(odd) {
 .table-of-contents ul {
   padding-left: var(--space-1);
   padding-right: 0;
+  border-left: var(--borderWidth-100) solid var(--color-bgLine);
 }
 
 .table-of-contents li {

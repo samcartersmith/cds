@@ -19,23 +19,32 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarCustomAction[
     return getDocInfo(id)?.slug;
   }
 
-  function flatten(item: SidebarItem, parent?: string): KBarCustomAction[] {
+  function flatten(
+    item: SidebarItem,
+    parent?: string,
+    defaultProps?: Pick<KBarCustomAction, 'pictogram' | 'spotSquare' | 'subtitle' | 'icon'>,
+  ): KBarCustomAction[] {
     if (item.type === 'category') {
       const name = item.label;
       const kebabCaseId = kebabCase(name);
       const id = parent ? path.join(parent, kebabCaseId) : kebabCaseId;
+
+      const {
+        customProps: { icon, kbar: { spotSquare, pictogram, priority, subtitle } = {} } = {},
+      } = item;
       return item.items.flatMap((next) => {
         return [
           {
             parent,
             name,
             id,
-            pictogram: item.customProps?.kbar?.pictogram,
-            spotSquare: item.customProps?.kbar?.spotSquare,
-            subtitle: item.customProps?.kbar?.description,
-            priority: item.customProps?.kbar?.priority,
+            pictogram: pictogram ?? defaultProps?.pictogram,
+            spotSquare: spotSquare ?? defaultProps?.spotSquare,
+            subtitle: subtitle ?? defaultProps?.subtitle,
+            icon: icon ?? defaultProps?.icon,
+            priority,
           },
-          ...flatten(next, id),
+          ...flatten(next, id, { icon }),
         ];
       });
     }
@@ -44,7 +53,17 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarCustomAction[
       const name = getNameForDoc(item.id);
       const subtitle = item.customProps?.kbar?.description;
       const priority = item.customProps?.kbar?.priority;
-      return [{ parent, id: item.id, name, subtitle, priority }];
+      const icon = item.customProps?.icon;
+      return [
+        {
+          parent,
+          id: item.id,
+          name,
+          priority,
+          subtitle: subtitle ?? defaultProps?.subtitle,
+          icon: icon ?? defaultProps?.icon,
+        },
+      ];
     }
 
     if (item.type === 'ref') {
@@ -57,7 +76,7 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarCustomAction[
           parent,
           subtitle,
           priority,
-        }),
+        }) as unknown as KBarCustomAction,
       ];
     }
 
@@ -67,12 +86,12 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarCustomAction[
       const priority = item.customProps?.kbar?.priority;
       return [
         {
-          ...createAction({
+          ...(createAction({
             name,
             parent,
             subtitle,
             priority,
-          }),
+          }) as unknown as KBarCustomAction),
           slug: item.href,
         },
       ];
@@ -83,7 +102,7 @@ export function getKBarActions(currentVersion: LoadedVersion): KBarCustomAction[
       createAction({
         name,
         parent,
-      }),
+      }) as unknown as KBarCustomAction,
     ];
   }
 

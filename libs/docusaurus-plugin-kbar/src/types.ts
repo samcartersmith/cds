@@ -1,5 +1,5 @@
 import type { SetOptional } from 'type-fest';
-import type { PictogramName, SpotSquareName } from '@cbhq/cds-common';
+import type { IconName, PictogramName, SpotSquareName } from '@cbhq/cds-common';
 
 export type Plugin = import('@docusaurus/types').Plugin;
 export type DocsPluginOptions = import('@docusaurus/plugin-content-docs').PluginOptions;
@@ -14,6 +14,7 @@ export type KBarCustomAction = KBarAction & {
 };
 
 export type SidebarItemCustomProps = {
+  icon?: IconName;
   kbar?: SetOptional<KBarCustomAction, 'id' | 'name'> & {
     description?: string;
   };

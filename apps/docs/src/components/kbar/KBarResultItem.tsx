@@ -1,7 +1,6 @@
 import React, { forwardRef, Fragment, memo, useMemo } from 'react';
 import { ActionImpl } from 'kbar';
-import { PictogramName } from '@cbhq/cds-common2';
-import { Cell } from '@cbhq/cds-web2/cells/Cell';
+import { IconName, PictogramName } from '@cbhq/cds-common2';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { Pictogram } from '@cbhq/cds-web2/illustrations/Pictogram';
 import { HStack, VStack } from '@cbhq/cds-web2/layout';
@@ -10,15 +9,11 @@ import { Text } from '@cbhq/cds-web2/typography/Text';
 type KBarResultItemProps = {
   action: ActionImpl & {
     pictogram?: PictogramName;
+    iconName?: string;
   };
   active: boolean;
   currentRootActionId?: string | null | undefined;
 };
-
-const cellSpacingProps = {
-  innerSpacing: { paddingX: 2, paddingY: 1 },
-  outerSpacing: { paddingX: 1, paddingBottom: 1, paddingTop: 0 },
-} as const;
 
 const KBarResultItem = memo(
   forwardRef(
@@ -58,7 +53,11 @@ const KBarResultItem = memo(
         }
         return (
           <HStack alignItems="center" height={24}>
-            <Icon color={active ? 'fgPrimary' : 'fg'} name="compass" size="s" />
+            <Icon
+              color={active ? 'fgPrimary' : 'fg'}
+              name={(action.icon as IconName) ?? 'compass'}
+              size="s"
+            />
           </HStack>
         );
       }, [action, active]);

@@ -1,5 +1,9 @@
 .codeBlock {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.codeBlock:last-child {
+  margin-bottom: 0;
 }
 
 .codeBlockContent {
@@ -27,4 +31,10 @@
 .codeBlock:hover .buttonGroup button:hover,
 .codeBlock:focus-within .buttonGroup button:focus-visible {
   opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .codeBlock {
+    margin-bottom: var(--space-2);
+  }
 }

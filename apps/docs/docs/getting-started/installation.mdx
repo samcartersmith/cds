@@ -1,12 +1,22 @@
 ---
 id: installation
 title: Installation
+hide_title: true
 ---
 
-# Installation
+import { MDXSection } from '@site/src/components/page/MDXSection';
+import { MDXArticle } from '@site/src/components/page/MDXArticle';
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { GettingStartedBanner } from '@site/src/components/page/ComponentBanner/GettingStartedBanner';
 
-This guide will help you get started with installing the Coinbase Design System (CDS) in your React or React Native project. Follow the instructions below to set up CDS and start building with our cross-platform components.
+<ComponentHeader
+  title="Installation"
+  description="This guide will help you get started with installing the Coinbase Design System (CDS) in your React or React Native project. Follow the instructions below to set up CDS and start building with our cross-platform components."
+  banner={<GettingStartedBanner />}
+/>
 
+<MDXSection>
+<MDXArticle>
 ## Prerequisites
 
 Before you begin, make sure your development environment meets the following requirements:
@@ -17,6 +27,9 @@ Before you begin, make sure your development environment meets the following req
 
 For web projects, ensure your build system supports importing CSS files.
 
+</MDXArticle>
+
+<MDXArticle>
 ## Installing CDS
 
 ### For Web Applications
@@ -49,6 +62,9 @@ yarn add @cbhq/cds-mobile
 
 > **Note:** For React Native projects, ensure you have set up your environment for React Native development. Refer to the [React Native Environment Setup Guide](https://reactnative.dev/docs/environment-setup) if needed.
 
+</MDXArticle>
+
+<MDXArticle>
 ## Setting Up the ThemeProvider
 
 CDS requires a `ThemeProvider` at the root of your application to provide consistent theming. The setup process differs slightly for web and mobile platforms.
@@ -92,6 +108,9 @@ export default function Main() {
 }
 ```
 
+</MDXArticle>
+
+<MDXArticle hideDivider>
 ## Verifying the Installation
 
 To ensure everything is set up correctly, try importing and using a simple CDS component. For example:
@@ -125,6 +144,11 @@ export default function App() {
 
 If the button renders correctly, you're all set!
 
+</MDXArticle>
+</MDXSection>
+
+<MDXSection>
+<MDXArticle hideDivider>
 ## Next Steps
 
 - [Theming](#): Learn how to customize your application's theme.
@@ -132,3 +156,6 @@ If the button renders correctly, you're all set!
 - [Responsive Design](#): Understand how to leverage responsive StyleProps in your project.
 
 Start building with CDS today and create amazing applications with ease!
+
+</MDXArticle>
+</MDXSection>

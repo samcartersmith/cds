@@ -47,7 +47,7 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
           background="bgAlternate"
           borderTopLeftRadius={500}
           borderTopRightRadius={500}
-          paddingTop={3}
+          paddingTop={1}
           paddingX={4}
         >
           <TabNavigation onChange={setActiveTab} tabs={tabs} value={activeTab} />

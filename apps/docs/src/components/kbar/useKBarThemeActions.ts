@@ -12,6 +12,7 @@ export default function useKBarThemeActions() {
           id: 'spectrumPreference',
           name: 'Change color mode…',
           keywords: 'spectrum color dark light',
+          icon: 'gear',
           section: 'Preferences',
         },
         {
@@ -19,6 +20,7 @@ export default function useKBarThemeActions() {
           name: 'Dark',
           keywords: 'dark mode',
           parent: 'spectrumPreference',
+          icon: 'moon',
           perform: () => {
             setColorMode('dark');
           },
@@ -28,6 +30,7 @@ export default function useKBarThemeActions() {
           name: 'Light',
           keywords: 'light mode',
           parent: 'spectrumPreference',
+          icon: 'light',
           perform: () => {
             setColorMode('light');
           },

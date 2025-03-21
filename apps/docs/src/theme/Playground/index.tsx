@@ -72,7 +72,7 @@ const Playground = memo(function Playground({
 
   return (
     <ThemeProvider activeColorScheme={colorScheme} theme={theme}>
-      <VStack gap={1} paddingBottom={3}>
+      <VStack gap={1}>
         <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
           {!hidePreview && (
             <VStack background="bg" borderRadius={400} padding={3}>

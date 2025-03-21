@@ -1,5 +1,8 @@
 .playgroundEditor {
   font-family: var(--cds-font-mono);
+  font-size: var(--fontSize-label2);
+  font-weight: var(--fontWeight-label2);
+  line-height: var(--lineHeight-label2);
 }
 
 .playgroundEditor pre {

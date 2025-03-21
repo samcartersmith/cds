@@ -21,5 +21,5 @@ export default function Admonition(unprocessedProps: Props): React.ReactNode {
           return { variant: 'informational', title: title ?? 'Note', children, startIcon: 'info' };
       }
     }, [title, children, type]);
-  return <Banner {...bannerProps} />;
+  return <Banner minWidth={0} {...bannerProps} />;
 }

@@ -99,8 +99,6 @@ export const ComponentHeader = memo(
       }
     }, [toast, activeMetadata]);
 
-    if (!activeMetadata) return null;
-
     return (
       <VStack background="bgAlternate" borderRadius={600} overflow="hidden" width="100%">
         <VStack height={200} width="100%">
@@ -119,64 +117,66 @@ export const ComponentHeader = memo(
             <Text font="display2">{title}</Text>
             {description && <Text font="title4">{description}</Text>}
           </VStack>
-          <VStack gap={1.5}>
-            {activeMetadata.import && (
-              <MetadataItem label="Import">
-                <HStack
-                  alignItems="center"
-                  background="bg"
-                  borderRadius={400}
-                  maxWidth="100%"
-                  overflow="hidden"
-                  paddingStart={2}
-                >
-                  <Text className={styles.importText} font="label2" title={activeMetadata.import}>
-                    {activeMetadata.import}
-                  </Text>
-                  <Tooltip content="Copy">
-                    <IconButton
-                      compact
-                      transparent
-                      flexShrink={0}
-                      name="copy"
-                      onClick={copyImport}
-                      style={{ cursor: 'pointer' }}
-                      variant="secondary"
-                    />
-                  </Tooltip>
-                </HStack>
-              </MetadataItem>
-            )}
-            <VStack gap={2}>
-              {activeMetadata.source && (
-                <MetadataItem label="Source">
-                  <Text font="body">
-                    <Link href={activeMetadata.source} target="_blank">
-                      View source code
-                    </Link>
-                  </Text>
+          {activeMetadata && (
+            <VStack gap={1.5}>
+              {activeMetadata.import && (
+                <MetadataItem label="Import">
+                  <HStack
+                    alignItems="center"
+                    background="bg"
+                    borderRadius={400}
+                    maxWidth="100%"
+                    overflow="hidden"
+                    paddingStart={2}
+                  >
+                    <Text className={styles.importText} font="label2" title={activeMetadata.import}>
+                      {activeMetadata.import}
+                    </Text>
+                    <Tooltip content="Copy">
+                      <IconButton
+                        compact
+                        transparent
+                        flexShrink={0}
+                        name="copy"
+                        onClick={copyImport}
+                        style={{ cursor: 'pointer' }}
+                        variant="secondary"
+                      />
+                    </Tooltip>
+                  </HStack>
                 </MetadataItem>
               )}
-              {activeMetadata.storybook && (
-                <MetadataItem label="Storybook">
-                  <Text font="body">
-                    <Link href={activeMetadata.storybook} target="_blank">
-                      View Storybook
-                    </Link>
-                  </Text>
-                </MetadataItem>
-              )}
-              {activeMetadata.figma && (
-                <MetadataItem label="Figma">
-                  <Text font="body">
-                    <Link href={activeMetadata.figma} target="_blank">
-                      View Figma
-                    </Link>
-                  </Text>
-                </MetadataItem>
-              )}
+              <VStack gap={2}>
+                {activeMetadata.source && (
+                  <MetadataItem label="Source">
+                    <Text font="body">
+                      <Link href={activeMetadata.source} target="_blank">
+                        View source code
+                      </Link>
+                    </Text>
+                  </MetadataItem>
+                )}
+                {activeMetadata.storybook && (
+                  <MetadataItem label="Storybook">
+                    <Text font="body">
+                      <Link href={activeMetadata.storybook} target="_blank">
+                        View Storybook
+                      </Link>
+                    </Text>
+                  </MetadataItem>
+                )}
+                {activeMetadata.figma && (
+                  <MetadataItem label="Figma">
+                    <Text font="body">
+                      <Link href={activeMetadata.figma} target="_blank">
+                        View Figma
+                      </Link>
+                    </Text>
+                  </MetadataItem>
+                )}
+              </VStack>
             </VStack>
-          </VStack>
+          )}
         </VStack>
 
         {relatedComponents && relatedComponents.length > 0 && (
