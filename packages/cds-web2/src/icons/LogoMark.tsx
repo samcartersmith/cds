@@ -27,7 +27,7 @@ export const LogoMark = memo(({ size, foreground }: Omit<LogoMarkParams, 'colorS
 
   return (
     <svg
-      aria-labelledby="logo-mark-title"
+      aria-label="Coinbase logo"
       className={iconStyles}
       height={height}
       role="img"
@@ -35,7 +35,7 @@ export const LogoMark = memo(({ size, foreground }: Omit<LogoMarkParams, 'colorS
       width={width}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title id="logo-mark-title">Coinbase logo</title>
+      <title>Coinbase logo</title>
       <path className={transition} d={path} fill={color} />
     </svg>
   );

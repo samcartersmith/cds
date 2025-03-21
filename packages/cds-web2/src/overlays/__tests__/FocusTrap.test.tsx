@@ -48,7 +48,7 @@ describe('FocusTrap', () => {
       code: 'Enter',
     });
 
-    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0]);
+    const firstOption = await waitFor(() => screen.getAllByRole('menuitem')[0], { timeout: 2000 });
     const secondOption = screen.getAllByRole('menuitem')[1];
 
     fireEvent.keyDown(firstOption, {

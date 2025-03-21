@@ -120,13 +120,13 @@ steps:
     <<: *k8s_large
     commands:
       - tools/ci/setup.sh
-      - yarn nx affected --target=build --exclude=mobile-app,mobile-app2 --verbose
+      - yarn nx run-many --target=build --exclude=mobile-app,mobile-app2 --verbose
 
   - label: Lint
     <<: *k8s_large
     commands:
       - tools/ci/setup.sh
-      - yarn nx affected --target=lint --verbose
+      - yarn nx run-many --target=lint --verbose
 
   - label: Format
     <<: *k8s_medium
@@ -138,8 +138,8 @@ steps:
     <<: *k8s_large
     commands:
       - tools/ci/setup.sh
-      - yarn nx affected --target=test --verbose
-      - yarn nx affected --target=audit-a11y --verbose
+      - yarn nx run-many --target=test --verbose
+      - yarn nx run-many --target=audit-a11y --verbose
     retry:
       automatic:
         limit: 1
@@ -148,7 +148,7 @@ steps:
     <<: *k8s_medium
     commands:
       - tools/ci/setup.sh
-      - yarn nx affected --target=typecheck --verbose
+      - yarn nx run-many --target=typecheck --verbose
 
   - label: 'Visreg (Web - All)'
     <<: *k8s_large_chrome
@@ -190,7 +190,7 @@ steps:
     <<: *k8s_medium_chrome
     commands:
       - tools/ci/setup.sh
-      - yarn nx affected --target=a11y-web
+      - yarn nx run-many --target=a11y-web
     retry:
       automatic:
         limit: 1
@@ -199,7 +199,7 @@ steps:
     <<: *k8s_medium_chrome
     commands:
       - tools/ci/setup.sh
-      - yarn nx affected --target=storybook-e2e-test
+      - yarn nx run-many --target=storybook-e2e-test
     retry:
       automatic:
         limit: 1
@@ -257,11 +257,11 @@ steps:
       - tools/ci/setup.sh
       - yarn node tools/depcheck.mjs || echo 'Failed to run depcheck'
 
-  - label: 'Figma Code Connect validation'
+  - label: 'Figma Code Connect'
     <<: *k8s_medium
     if: build.branch != 'master'
     commands:
       - tools/ci/setup.sh
-      - yarn nx affected --target=publish-figma --dry-run
+      - yarn nx run-many --target=publish-figma --dry-run
     soft_fail: true
     skip: true

@@ -14,6 +14,7 @@ async function runA11yTests() {
     // Run tests on all stories in `storyIds`
     const results = await testRunner.testStories({
       storyIds,
+      concurrentCount: 15,
 
       // Optional: maximum time in milliseconds to wait for the browser instance to start.
       // Defaults to 30000 (30 seconds). Pass 0 to disable timeout.

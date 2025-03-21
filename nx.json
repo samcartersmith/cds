@@ -68,6 +68,9 @@
       "cache": true
     },
     "typecheck": {
+      "dependsOn": [
+        "^build"
+      ],
       "options": {
         "cwd": "{projectRoot}"
       },

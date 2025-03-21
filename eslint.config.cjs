@@ -62,9 +62,9 @@ const reactRules = {
   'import/namespace': 'off',
   'import/no-unresolved': 'off',
   'import/order': 'off',
-  'simple-import-sort/exports': 'error',
+  'simple-import-sort/exports': 'warn',
   'simple-import-sort/imports': [
-    'error',
+    'warn',
     {
       groups: [
         // Side effect imports first

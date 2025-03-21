@@ -403,32 +403,6 @@ describe('Modal', () => {
     });
   });
 
-  it('Yubikey entry automatically disables the focus trap', async () => {
-    const user = userEvent.setup();
-    const spy = jest.spyOn(console, 'log').mockImplementation();
-    render(
-      <DefaultThemeProvider>
-        <ExampleModalScreen />
-      </DefaultThemeProvider>,
-    );
-
-    const modalButton = screen.getByText(YUBIKEY_BUTTON);
-
-    // Sanity check
-    await waitFor(() => expect(screen.queryByText(YUBIKEY_TITLE)).not.toBeInTheDocument());
-
-    // Open the modal
-    fireEvent.click(modalButton);
-
-    // Make sure the modal is open before simulating a yubikey tap
-    await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
-
-    // Simulate yubikey tap
-    await user.keyboard(`${YUBIKEY_STRING}{Enter}`);
-    await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
-    expect(spy).not.toHaveBeenCalled();
-  });
-
   it('disableFocusTrap allows tabbing away from the modal', async () => {
     const user = userEvent.setup();
     const spy = jest.spyOn(console, 'log').mockImplementation();

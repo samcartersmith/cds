@@ -113,35 +113,6 @@ export const FocusTrap = memo(function FocusTrap({
   );
   /** END KEYSTROKE HISTORY */
 
-  /** START FOCUS STATE HISTORY
-   * Track focus state so whe know where to return to after yubikey input */
-  const focusHistory = useRef<HTMLElement>();
-  const debouncedFocusReset = useMemo(
-    () =>
-      debounce(() => {
-        if (maybeYubikeyString(keystrokeHistory.current) && focusHistory.current) {
-          focusHistory.current.focus();
-          focusHistory.current = undefined;
-        }
-      }, DEBOUNCE_MS),
-    [],
-  );
-  const resetFocus = useCallback(() => {
-    // Update the keystroke history
-    const document = getBrowserGlobals()?.document;
-    const activeElement = document?.activeElement as HTMLElement;
-    // Don't track the body (aka blur)
-    if (activeElement !== document?.body) {
-      focusHistory.current = activeElement;
-    }
-    // We need to blur to prevent the "enter" event from triggering something in the modal
-    activeElement.blur();
-
-    // Return to whence ye came
-    debouncedFocusReset();
-  }, [debouncedFocusReset]);
-  /** END FOCUS STATE HISTORY */
-
   // trap focus for accessibility
   const handleKeyboardNavigation = useCallback(
     (event: KeyboardEvent, element: RefObject<HTMLElement>['current']) => {
@@ -171,14 +142,6 @@ export const FocusTrap = memo(function FocusTrap({
       const activeElementIndex = activeElement
         ? focusableElements.indexOf(activeElement)
         : undefined;
-
-      /** BAIL ON ENTRIES THAT LOOK LIKE YUBIKEY STRINGS
-       * @link https://support.yubico.com/hc/en-us/articles/360013712639--Testing-Yubico-OTP
-       */
-      if (maybeYubikeyString(keystrokeHistory.current) && activeElement) {
-        resetFocus();
-        return;
-      }
 
       // bring focus inside modal
       if (
@@ -284,7 +247,7 @@ export const FocusTrap = memo(function FocusTrap({
         focusPrevElement();
       }
     },
-    [focusTabIndexElements, disableTypeFocus, resetFocus, respectNegativeTabIndex],
+    [focusTabIndexElements, disableTypeFocus, respectNegativeTabIndex],
   );
 
   const handleKeyDown = useCallback(
