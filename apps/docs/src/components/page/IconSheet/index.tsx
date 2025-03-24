@@ -1,7 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import { sortByAlphabet } from '@site/src/utils/sortByAlphabet';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
 import { throttle } from 'lodash';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { IconSize } from '@cbhq/cds-common2/types';
@@ -11,10 +9,14 @@ import navIconNames from '@cbhq/cds-icons/__generated__/nav/data/names';
 import uiIconDescriptionMap from '@cbhq/cds-icons/__generated__/ui/data/descriptionMap';
 import uiIconNames from '@cbhq/cds-icons/__generated__/ui/data/names';
 import { TileButton } from '@cbhq/cds-web2/buttons/TileButton';
-import { Switch, TextInput } from '@cbhq/cds-web2/controls';
+import { SearchInput, Switch } from '@cbhq/cds-web2/controls';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { Box, Grid } from '@cbhq/cds-web2/layout';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
+import { Text } from '@cbhq/cds-web2/typography';
+
+import { SheetTabs } from '../SheetTabs';
+
 // use a set to dedupe the icons that existed in both the navigation icons set and the ui icons set
 const names = [...new Set([...navIconNames, ...uiIconNames])];
 const descriptionMap = { ...uiIconDescriptionMap, ...navIconDescriptionMap };
@@ -46,7 +48,7 @@ const IconTile = ({ name, size, active }: { name: IconName; size: IconSize; acti
   }, [name, toast]);
 
   return (
-    <TileButton onClick={handleIconPress} title={name}>
+    <TileButton showOverflow onClick={handleIconPress} title={name}>
       <Icon active={active} color="fg" name={name} size={size} />
     </TileButton>
   );
@@ -61,51 +63,79 @@ export const IconSheet = () => {
     setShowIconActive((active) => !active);
   }, []);
 
-  const searchOnChange = throttle((event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
+  const searchOnChange = throttle((text: string) => {
+    setQuery(text);
   }, 1000);
 
+  const tabs = iconSizes.map((size) => ({ id: size, label: size }));
+
+  const handleTabChange = useCallback((tab: TabValue | null) => {
+    setActiveTab(tab);
+  }, []);
+
   return (
-    <>
+    <Box background="bgAlternate" borderRadius={500} flexDirection="column" gap={2} padding={4}>
       <Box flexWrap="wrap">
-        <TextInput
-          label="Filter Icons"
-          onChange={searchOnChange}
+        <SearchInput
+          compact
+          accessibilityLabel="Filter icons by name"
+          onChangeText={searchOnChange}
           placeholder="Icon name"
           type="text"
+          value={query}
         />
       </Box>
-      <Box flexDirection="column" position="relative">
-        <Tabs defaultValue="m" values={iconSizes.map((sz) => ({ label: sz, value: sz }))}>
-          {iconSizes.map((sz) => {
-            return (
-              <TabItem key={sz} value={sz}>
-                <Grid
-                  columnMin="106px"
-                  gap={1}
-                  maxHeight={600}
-                  overflow="scroll"
-                  padding={1}
+      <Box flexDirection="column" gap={2} position="relative">
+        <SheetTabs
+          accessibilityLabel="Select icon size"
+          activeTab={activeTab}
+          onChange={handleTabChange}
+          tabs={tabs}
+        />
+
+        {iconSizes.map((size) => {
+          const filteredNames = alphabeticallySortedNames.filter((name) =>
+            queryMatchesName(query, name),
+          );
+          const hasResults = filteredNames.length > 0;
+
+          return (
+            <Box
+              key={size}
+              background="bg"
+              borderRadius={500}
+              display={activeTab?.id === size ? 'block' : 'none'}
+              padding={1}
+            >
+              {hasResults ? (
+                <Grid columnMin="106px" gap={1} maxHeight={600} overflow="scroll" width="100%">
+                  {filteredNames.map((name) => (
+                    <IconTile key={name} active={showIconActive} name={name} size={size} />
+                  ))}
+                </Grid>
+              ) : (
+                <Box
+                  alignItems="center"
+                  display="flex"
+                  justifyContent="center"
+                  padding={4}
                   width="100%"
                 >
-                  {alphabeticallySortedNames
-                    .filter((name) => {
-                      return queryMatchesName(query, name);
-                    })
-                    .map((name) => (
-                      <IconTile active={showIconActive} name={name} size={sz} />
-                    ))}
-                </Grid>
-              </TabItem>
-            );
-          })}
-        </Tabs>
-        <Box paddingTop={2} style={{ position: 'absolute', right: 0, top: 0 }}>
+                  <Text color="fg" font="legal">
+                    No results found
+                  </Text>
+                </Box>
+              )}
+            </Box>
+          );
+        })}
+
+        <Box paddingTop={0.5} style={{ position: 'absolute', right: 0, top: 0 }}>
           <Switch checked={showIconActive} onChange={handleActiveCheck} size={8}>
             active?
           </Switch>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };

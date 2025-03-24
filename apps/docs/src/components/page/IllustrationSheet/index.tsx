@@ -1,6 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
 import throttle from 'lodash/throttle';
 import {
   HeroSquareDimension,
@@ -8,6 +6,7 @@ import {
   PictogramDimension,
   SpotIconDimension,
 } from '@cbhq/cds-common2';
+import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import {
   illustrationDimensionDefaults,
   illustrationDimensions,
@@ -37,10 +36,12 @@ import {
   SpotSquare,
   SpotSquareName,
 } from '@cbhq/cds-web2/illustrations';
-import { Grid, VStack } from '@cbhq/cds-web2/layout';
+import { Box, Grid, VStack } from '@cbhq/cds-web2/layout';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Pressable } from '@cbhq/cds-web2/system';
 import { TextLegal } from '@cbhq/cds-web2/typography';
+
+import { SheetTabs } from '../SheetTabs';
 
 import styles from './styles.module.css';
 
@@ -205,17 +206,31 @@ export const IllustrationSheet = ({ variant }: { variant: IllustrationVariant })
 
   const names = variantToNamesMap[variant];
   const dimensions = illustrationDimensions[variant];
-  const defaultVal = illustrationDimensionDefaults[variant];
+  const defaultValue = illustrationDimensionDefaults[variant];
+  const [activeTab, setActiveTab] = useState<TabValue | null>({
+    id: defaultValue,
+    label: defaultValue,
+  });
 
   const searchOnChange = throttle((text: string) => {
     setQuery(text);
   }, 1000);
 
+  const tabs = dimensions.map((dimension) => ({
+    id: dimension,
+    label: dimension,
+  }));
+
+  const handleTabChange = useCallback((tab: TabValue | null) => {
+    setActiveTab(tab);
+  }, []);
+
   return (
-    <VStack>
+    <VStack background="bgAlternate" borderRadius={500} gap={2} padding={4}>
       <Grid gap={2} templateColumns="3fr 1fr">
         <SearchInput
           compact
+          accessibilityLabel="Filter illustrations by name"
           onChangeText={searchOnChange}
           placeholder="Illustration name"
           type="text"
@@ -232,13 +247,16 @@ export const IllustrationSheet = ({ variant }: { variant: IllustrationVariant })
           ))}
         </Select>
       </Grid>
+      <VStack gap={2}>
+        <SheetTabs
+          accessibilityLabel="Select illustration dimension"
+          activeTab={activeTab}
+          onChange={handleTabChange}
+          tabs={tabs}
+        />
 
-      <Tabs
-        defaultValue={defaultVal}
-        values={dimensions.map((dim) => ({ label: dim, value: dim }))}
-      >
-        {dimensions.map((dim) => {
-          const width = parseInt(dim.split('x')[0]);
+        {dimensions.map((dimension) => {
+          const width = parseInt(dimension.split('x')[0]);
           const filteredNames = names
             .map((item) => item)
             .filter((name) => {
@@ -251,13 +269,19 @@ export const IllustrationSheet = ({ variant }: { variant: IllustrationVariant })
             });
 
           return (
-            <TabItem key={dim} value={dim}>
+            <Box
+              key={dimension}
+              background="bg"
+              borderRadius={500}
+              display={activeTab?.id === dimension ? 'block' : 'none'}
+              padding={2}
+            >
               {filteredNames.length > 0 ? (
                 <Grid columnMin={`${width}px`} gap={2} maxHeight={700} overflow="scroll">
                   {filteredNames.map((filteredName, idx) => (
                     <IllustrationTile
                       key={filteredName}
-                      dimension={dim}
+                      dimension={dimension}
                       idx={idx}
                       name={filteredName}
                       variant={variant}
@@ -270,10 +294,10 @@ export const IllustrationSheet = ({ variant }: { variant: IllustrationVariant })
                   <TextLegal color="fg">No results found</TextLegal>
                 </VStack>
               )}
-            </TabItem>
+            </Box>
           );
         })}
-      </Tabs>
+      </VStack>
     </VStack>
   );
 };
