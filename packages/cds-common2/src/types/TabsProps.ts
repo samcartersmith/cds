@@ -69,7 +69,9 @@ export type CustomTabProps = {
    * When true, used to surface an active state for the currently selected tab
    */
   active?: boolean;
-} & Pick<TabProps, 'label' | 'id'>;
+  /** Define a label for this Tab */
+  label?: React.ReactNode;
+} & Pick<TabProps, 'id'>;
 
 export type TabNavigationProps<T extends string | undefined = string> = {
   /** The active tabId

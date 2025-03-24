@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { longTextTabs, sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
 import type { TabNavigationProps, TabProps } from '@cbhq/cds-common2/types';
 
-import { VStack } from '../../layout';
+import { Box, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { TabbedChips } from '../TabbedChips';
 
