@@ -22,7 +22,7 @@ export const convertMotionConfig = ({
   oneOffDuration,
 }: MotionSpec): Animated.TimingAnimationConfig => {
   if (typeof toValue === 'string') {
-    throw new Error(
+    throw Error(
       'RN Animation methods does not work with string values. Please use interpolation instead.',
     );
   }

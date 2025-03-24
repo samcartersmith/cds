@@ -13,6 +13,6 @@ export const RefMapContext = createContext({} as RefMapContextValue<any>);
 
 export const useRefMapContext = <T,>() => {
   const context = useContext<RefMapContextValue<T>>(RefMapContext);
-  if (!context.refs) throw new Error('useRefMapContext must be called inside a RefMapProvider');
+  if (!context.refs) throw Error('useRefMapContext must be called inside a RefMapProvider');
   return context;
 };

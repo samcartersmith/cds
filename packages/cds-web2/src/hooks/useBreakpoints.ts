@@ -38,8 +38,7 @@ const deviceKeys = Object.keys(media) as DeviceBreakpoint[];
  */
 export const useBreakpoints = (): BreakpointRecord => {
   const mediaQueryContext = useContext(MediaQueryContext);
-  if (!mediaQueryContext)
-    throw new Error('useBreakpoints must be used within a MediaQueryProvider');
+  if (!mediaQueryContext) throw Error('useBreakpoints must be used within a MediaQueryProvider');
   const { subscribe, getSnapshot } = mediaQueryContext;
   const matchesMediaQuery = useCallback((mediaQuery: string) => {
     return getBrowserGlobals()?.window?.matchMedia(mediaQuery);

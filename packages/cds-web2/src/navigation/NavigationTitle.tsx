@@ -14,7 +14,7 @@ export type NavigationTitleProps = {
 export const NavigationTitle = memo((props: NavigationTitleProps) => {
   if (!isProduction()) {
     if (typeof props.children !== 'string') {
-      throw new Error('NavigationTitle: Children must be a string');
+      throw Error('NavigationTitle: Children must be a string');
     }
   }
 

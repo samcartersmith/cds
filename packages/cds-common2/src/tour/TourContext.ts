@@ -8,6 +8,6 @@ export const TourContext = createContext<TourContextValue | undefined>(undefined
 
 export const useTourContext = (): TourContextValue => {
   const context = useContext(TourContext);
-  if (!context) throw new Error('useTourContext must be called inside a Tour');
+  if (!context) throw Error('useTourContext must be called inside a Tour');
   return context;
 };
