@@ -18,25 +18,14 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="AccordionItem"
-    webMetadata={{
-      import: "import { AccordionItem } from '@cbhq/cds-web/accordion/AccordionItem'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/accordion/AccordionItem.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-accordion--basic-accordion',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=61-569&t=8hgl6nX25pIzCo0y-1',
-    }}
-    mobileMetadata={{
-      import: "import { AccordionItem } from '@cbhq/cds-mobile/accordion/AccordionItem'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/accordion/AccordionItem.tsx',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=61-569&t=8hgl6nX25pIzCo0y-1',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}

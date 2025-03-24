@@ -1,0 +1,6 @@
+{
+  "import": "import { TextInput } from '@cbhq/cds-mobile/controls/TextInput'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/controls/TextInput.tsx",
+  "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=466-13810&t=K73gadcWiDv2aYlS-1",
+  "description": "`TextInput` is a control component that allows users to enter text."
+}

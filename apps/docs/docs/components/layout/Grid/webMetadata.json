@@ -1,0 +1,6 @@
+{
+  "import": "import { Grid } from '@cbhq/cds-web2/layout/Grid'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/Grid.tsx",
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-grid--grid-examples",
+  "description": "Grid is essentially a specialized Box that lets you use the CSS grid API."
+}

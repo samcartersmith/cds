@@ -19,26 +19,15 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="ContentCardFooter"
     banner={<DefaultBanner />}
-    webMetadata={{
-      import: "import { ContentCardFooter } from '@cbhq/cds-web/cards/ContentCard'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/cards/ContentCard/ContentCardFooter.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-cards-contentcard--default',
-      figma:
-        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-CDS-Components?type=design&node-id=61%3A589&mode=design&t=VY6cW5sQK2K2giAk-1',
-    }}
-    mobileMetadata={{
-      import: "import { ContentCardFooter } from '@cbhq/cds-mobile/cards/ContentCard'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/cards/ContentCard/ContentCardFooter.tsx',
-      figma:
-        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-CDS-Components?type=design&node-id=61%3A589&mode=design&t=VY6cW5sQK2K2giAk-1',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}

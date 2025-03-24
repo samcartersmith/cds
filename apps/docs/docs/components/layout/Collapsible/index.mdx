@@ -19,22 +19,14 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Collapsible"
-    description="Collapsible is a component that allows you to collapse and expand content."
-    webMetadata={{
-      import: "import { Collapsible } from '@cbhq/cds-web/collapsible/Collapsible'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/collapsible/Collapsible.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-collapsible--basic-collapsible',
-    }}
-    mobileMetadata={{
-      import: "import { Collapsible } from '@cbhq/cds-mobile/collapsible/Collapsible'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/collapsible/Collapsible.tsx',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<DefaultBanner />}
   />
   <ComponentTabsContainer

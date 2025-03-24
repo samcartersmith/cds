@@ -1,0 +1,6 @@
+{
+  "import": "import { Spinner } from '@cbhq/cds-web/loaders/Spinner'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/loaders/Spinner.tsx",
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-loaders-spinner--spinner-default",
+  "description": "A component that displays a spinning animation."
+}

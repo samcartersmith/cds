@@ -19,27 +19,14 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="DotStatusColor"
-    description="Dots are component adornments, typically used to communicate a numerical value or indicate the status or identity of a component to the end-user."
-    webMetadata={{
-      import: "import { DotStatusColor } from '@cbhq/cds-web/dots/DotStatusColor'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/dots/DotStatusColor.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-dots-dotstatuscolor--all-dot-status-color',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-10245',
-    }}
-    mobileMetadata={{
-      import: "import { DotStatusColor } from '@cbhq/cds-mobile/dots/DotStatusColor'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/dots/DotStatusColor.tsx',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-10245',
-    }}
-    banner={<DefaultBanner />}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}

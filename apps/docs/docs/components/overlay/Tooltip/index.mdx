@@ -20,22 +20,14 @@ import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
 
 <VStack gap={5}>
   <ComponentHeader
     title="Tooltip"
-    description="The Tooltip component is used to display additional information when a user hovers over an element"
-    webMetadata={{
-      import: "import { Tooltip } from '@cbhq/cds-web2/overlays/Tooltip'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/Tooltip/Tooltip.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-tooltip-tooltip--default',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=276-12450&t=DUt8mdNXuSP7tZkd-1'
-    }}
-    mobileMetadata={{
-      import: "import { Tooltip } from '@cbhq/cds-mobile/overlays/Tooltip'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/overlays/Tooltip/Tooltip.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=276-12450&t=DUt8mdNXuSP7tZkd-1'
-    }}
+    webMetadata={ webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<TooltipBanner />}
   />
 

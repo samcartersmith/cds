@@ -1,0 +1,6 @@
+{
+  "import": "import { GridColumn } from '@cbhq/cds-web2/layout/GridColumn'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/GridColumn.tsx",
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-grid--grid-examples",
+  "description": "GridColumns can be used to explicitly place children of a Grid between specified grid lines (the vertical and horizontal lines that make up a Grid)."
+}

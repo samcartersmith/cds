@@ -19,25 +19,14 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Checkbox"
-    description="Checkbox is a type of control component that allows user to select one or more options from a set. They can also be used alone to switch between on and off."
-    webMetadata={{
-      import: "import { Checkbox } from '@cbhq/cds-web/controls/Checkbox'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/controls/Checkbox.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-checkbox--normal',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=415-14028&t=8hgl6nX25pIzCo0y-1',
-    }}
-    mobileMetadata={{
-      import: "import { Checkbox } from '@cbhq/cds-mobile/controls/Checkbox'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/controls/Checkbox.tsx',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=415-14028&t=8hgl6nX25pIzCo0y-1',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<DefaultBanner />}
   />
   <ComponentTabsContainer

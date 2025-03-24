@@ -16,15 +16,12 @@ import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
+import webMetadata from './webMetadata.json';
 
 <VStack gap={5}>
   <ComponentHeader
     title="GridColumn"
-    webMetadata={{
-      import: "import { GridColumn } from '@cbhq/cds-web2/layout/GridColumn'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/GridColumn.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-grid--grid-examples',
-    }}
+    webMetadata={webMetadata}
   />
 
   <ComponentTabsContainer

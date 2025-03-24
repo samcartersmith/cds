@@ -17,19 +17,14 @@ import webPropsToc from ':docgen/cds-web2/layout/HStack/toc-props';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="HStack"
-    description='A Box with flexDirection="row" set by default.'
-    webMetadata={{
-      import: "import { HStack } from '@cbhq/cds-web/layout/HStack'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/HStack.tsx',
-      storybook: 'https://your-web-storybook-url',
-    }}
-    mobileMetadata={{
-      import: "import { HStack } from '@cbhq/cds-mobile/'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/HStack.tsx',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<HStackBanner />}
   />
 

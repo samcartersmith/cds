@@ -18,24 +18,11 @@ import WebPropsTable from './_webPropsTable.mdx';
 import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
 
 <VStack gap={5}>
-  <ComponentHeader
-    title="TabIndicator"
-    webMetadata={{
-      import: "import { TabIndicator } from '@cbhq/cds-web/tabs/TabIndicator';",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tabs/TabIndicator.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-tabs-tabindicator--default',
-    }}
-    mobileMetadata={{
-      import: "import { TabIndicator } from '@cbhq/cds-mobile/navigation/TabIndicator'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tabs/TabIndicator.tsx',
-    }}
-    banner={<DefaultBanner />}
-  />
+  <ComponentHeader title="TabIndicator" webMetadata={webMetadata} mobileMetadata={mobileMetadata} />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}
     webExamples={<WebExamples />}

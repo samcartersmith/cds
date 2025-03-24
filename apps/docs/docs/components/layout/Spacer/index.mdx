@@ -20,19 +20,14 @@ import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
 
-<VStack gap={5}>
+<VStack gap={5}>  
   <ComponentHeader
     title="Spacer"
-    description="The Spacer component is layout component that can be used to create space between components."
-    webMetadata={{
-      import: "import { Spacer } from '@cbhq/cds-web2/layout/Spacer'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/Spacer.tsx',
-    }}
-    mobileMetadata={{
-      import: "import { Spacer } from '@cbhq/cds-mobile/layout/Spacer';",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/Spacer.tsx',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<SpacerBanner />}
   />
 

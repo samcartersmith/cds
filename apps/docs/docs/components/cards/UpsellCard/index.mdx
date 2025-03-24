@@ -20,27 +20,15 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="UpsellCard"
-    description="Upsell Cards are used to promote new features, products, or actions within the app. They are part of the upsell framework and aim to drive user engagement and revenue."
     banner={<DefaultBanner />}
-    webMetadata={{
-      import: "import { UpsellCard } from '@cbhq/cds-web/cards/UpsellCard'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/cards/UpsellCard.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-cards-upsellcard--default&globals=backgrounds.grid:false',
-      figma:
-        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-Components?type=design&node-id=10085%3A6246&mode=design&t=CXWB883JGKycJnlr-1',
-    }}
-    mobileMetadata={{
-      import: "import { UpsellCard } from '@cbhq/cds-mobile/cards/UpsellCard'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/cards/UpsellCard.tsx',
-      figma:
-        'https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-Components?type=design&node-id=10085%3A6246&mode=design&t=CXWB883JGKycJnlr-1',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}

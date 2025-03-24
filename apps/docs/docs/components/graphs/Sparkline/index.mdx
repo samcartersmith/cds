@@ -19,27 +19,11 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
-  <ComponentHeader
-    title="Sparkline"
-    banner={<DefaultBanner />}
-    webMetadata={{
-      import: "import { Sparkline } from '@cbhq/cds-web-visualization'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web-visualization/src/sparkline/Sparkline.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/visualization-sparklineinteractive--default',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-12194',
-    }}
-    mobileMetadata={{
-      import: "import { Sparkline } from '@cbhq/cds-mobile-visualization'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile-visualization/src/sparkline/Sparkline.tsx',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-12194',
-    }}
-  />
+  <ComponentHeader title="Sparkline" webMetadata={webMetadata} mobileMetadata={mobileMetadata} />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}
     webExamples={<WebExamples />}

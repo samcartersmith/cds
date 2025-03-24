@@ -20,27 +20,15 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Fallback"
-    description="A component that displays a fallback animation."
     banner={<FallbackBanner />}
-    webMetadata={{
-      import: "import { Fallback } from '@cbhq/cds-web/layout/Fallback'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/Fallback.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-feedback-fallback--fallback-default',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=731-14933',
-    }}
-    mobileMetadata={{
-      import: "import { Fallback } from '@cbhq/cds-mobile/layout/Fallback'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/Fallback.tsx',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=731-14933',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}

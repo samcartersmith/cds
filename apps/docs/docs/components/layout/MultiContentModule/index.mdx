@@ -20,23 +20,14 @@ import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
 
 <VStack gap={5}>
   <ComponentHeader
     title="MultiContentModule"
-    description="A versatile, generic container designed to streamline user experiences across critical identity-related CUJs such as Session Expired, Two-Factor Authentication (2FA) codes, Login, Account Recovery, and Registration. It is built to accommodate a range of content, including an illustration, input fields (text inputs, list cells, etc.), and an action button, ensuring a cohesive and brand-consistent user interface"
-    webMetadata={{
-      import: "import { MultiContentModule } from '@cbhq/cds-web2/multi-content-module/MultiContentModule'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/multi-content-module/MultiContentModule.tsx',
-      storybook: "https://cds-storybook.cbhq.net/?path=/story/core-components-multicontentmodule--default",
-      figma: "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=14437-7403"
-    }}
-    mobileMetadata={{
-      import: "import { MultiContentModule } from '@cbhq/cds-mobile/multi-content-module/MultiContentModule';",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/multi-content-module/MultiContentModule.tsx',
-      figma: "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=14437-7403"
-    }}
-    banner={<DefaultBanner />}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
 
   <ComponentTabsContainer

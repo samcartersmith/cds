@@ -1,0 +1,6 @@
+{
+  "import": "import { Pressable } from '@cbhq/cds-web/system/Pressable'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/system/Pressable.tsx",
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-pressable--variations",
+  "description": "Expands upon the Interactable component to provide press interactions with accessibility support."
+}

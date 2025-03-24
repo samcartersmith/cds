@@ -10,21 +10,23 @@ import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Link } from '@cbhq/cds-web2/typography/Link';
 import { Text } from '@cbhq/cds-web2/typography/Text';
-
+import { Grid } from '@cbhq/cds-web2/layout';
 import styles from './styles.module.css';
-
-type MetadataType = {
-  import: string;
-  source: string;
-  storybook?: string;
-  figma?: string;
-};
 
 type RelatedComponent = {
   /** The URL that the related component links to */
   url: string;
   /** The display label for the related component */
   label: string;
+};
+
+type MetadataType = {
+  import: string;
+  source: string;
+  storybook?: string;
+  figma?: string;
+  description?: string;
+  relatedComponents?: RelatedComponent[];
 };
 
 type ComponentHeaderProps = {
@@ -49,8 +51,6 @@ type ComponentHeaderProps = {
    * Will be shown instead of banner when in dark mode.
    */
   bannerDark?: React.ReactNode;
-  /** Optional array of related components */
-  relatedComponents?: RelatedComponent[];
 };
 
 type MetadataItemProps = {
@@ -59,23 +59,19 @@ type MetadataItemProps = {
 };
 
 const MetadataItem = ({ label, children }: MetadataItemProps) => (
-  <HStack alignContent="center" alignItems="center" gap={2} textAlign="center" width="100%">
-    <Text font="label1" width={100}>
-      {label}
-    </Text>
+  <>
+    <Text font="label1">{label}</Text>
     {children}
-  </HStack>
+  </>
 );
 
 export const ComponentHeader = memo(
   ({
     title,
-    description,
     webMetadata,
     mobileMetadata,
     banner = <DefaultBanner />,
     bannerDark,
-    relatedComponents,
   }: ComponentHeaderProps) => {
     const { platform } = usePlatformContext();
     const { colorMode } = useColorMode();
@@ -99,6 +95,15 @@ export const ComponentHeader = memo(
       }
     }, [toast, activeMetadata]);
 
+    const {
+      import: importText,
+      source,
+      storybook,
+      figma,
+      description,
+      relatedComponents,
+    } = activeMetadata || {};
+
     return (
       <VStack background="bgAlternate" borderRadius={600} overflow="hidden" width="100%">
         <VStack height={200} width="100%">
@@ -118,25 +123,24 @@ export const ComponentHeader = memo(
             {description && <Text font="title4">{description}</Text>}
           </VStack>
           {activeMetadata && (
-            <VStack gap={1.5}>
-              {activeMetadata.import && (
+            <Grid rowGap={1.5} columnGap={2} columns={2} gridTemplateColumns="100px 1fr">
+              {importText && (
                 <MetadataItem label="Import">
                   <HStack
                     alignItems="center"
                     background="bg"
                     borderRadius={400}
-                    maxWidth="100%"
-                    overflow="hidden"
                     paddingStart={2}
+                    paddingY={0}
+                    overflow="hidden"
                   >
-                    <Text className={styles.importText} font="label2" title={activeMetadata.import}>
-                      {activeMetadata.import}
+                    <Text flexGrow={1} minWidth={0} font="body" className={styles.importText}>
+                      {importText}
                     </Text>
                     <Tooltip content="Copy">
                       <IconButton
                         compact
                         transparent
-                        flexShrink={0}
                         name="copy"
                         onClick={copyImport}
                         style={{ cursor: 'pointer' }}
@@ -146,36 +150,34 @@ export const ComponentHeader = memo(
                   </HStack>
                 </MetadataItem>
               )}
-              <VStack gap={2}>
-                {activeMetadata.source && (
-                  <MetadataItem label="Source">
-                    <Text font="body">
-                      <Link href={activeMetadata.source} target="_blank">
-                        View source code
-                      </Link>
-                    </Text>
-                  </MetadataItem>
-                )}
-                {activeMetadata.storybook && (
-                  <MetadataItem label="Storybook">
-                    <Text font="body">
-                      <Link href={activeMetadata.storybook} target="_blank">
-                        View Storybook
-                      </Link>
-                    </Text>
-                  </MetadataItem>
-                )}
-                {activeMetadata.figma && (
-                  <MetadataItem label="Figma">
-                    <Text font="body">
-                      <Link href={activeMetadata.figma} target="_blank">
-                        View Figma
-                      </Link>
-                    </Text>
-                  </MetadataItem>
-                )}
-              </VStack>
-            </VStack>
+              {source && (
+                <MetadataItem label="Source">
+                  <Text font="body">
+                    <Link href={source} target="_blank">
+                      View source code
+                    </Link>
+                  </Text>
+                </MetadataItem>
+              )}
+              {storybook && (
+                <MetadataItem label="Storybook">
+                  <Text font="body">
+                    <Link href={storybook} target="_blank">
+                      View Storybook
+                    </Link>
+                  </Text>
+                </MetadataItem>
+              )}
+              {figma && (
+                <MetadataItem label="Figma">
+                  <Text font="body">
+                    <Link href={figma} target="_blank">
+                      View Figma
+                    </Link>
+                  </Text>
+                </MetadataItem>
+              )}
+            </Grid>
           )}
         </VStack>
 

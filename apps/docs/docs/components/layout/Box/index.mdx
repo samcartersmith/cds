@@ -21,19 +21,14 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Box"
-    description="The Box component is a container component that can be used to wrap other components."
-    webMetadata={{
-      import: "import { Box } from '@cbhq/cds-web/layout/Box'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/Box.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-box-tsx--default',
-    }}
-    mobileMetadata={{
-      import: "import { Box } from '@cbhq/cds-mobile/layout/Box';",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/Box.tsx',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<BoxBanner />}
   />
 

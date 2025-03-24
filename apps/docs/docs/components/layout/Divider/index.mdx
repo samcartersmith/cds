@@ -16,27 +16,14 @@ import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebPropsTable from './_webPropsTable.mdx';
 import MobilePropsTable from './_mobilePropsTable.mdx';
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
 
 <VStack gap={5}>
   <ComponentHeader
     title="Divider"
-    description="A divider is a component that separates content into sections."
-    webMetadata={{
-      import: "import { Divider } from '@cbhq/cds-web/layout/Divider'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/Divider.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-layout-divider--default',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=419-16182',
-    }}
-    mobileMetadata={{
-      import: "import { Divider } from '@cbhq/cds-mobile/layout/Divider'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/Divider.tsx',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=419-16182',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<DividerBanner />}
   />
   <ComponentTabsContainer
@@ -50,3 +37,4 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
     mobilePropsToc={mobilePropsToc}
   />
 </VStack>
+;

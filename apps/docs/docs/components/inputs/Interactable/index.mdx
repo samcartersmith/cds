@@ -20,18 +20,14 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Interactable"
-    description="A low-level composable component for interactable elements, like buttons and input fields. It provides a consistent pattern for handling hovered, pressed, and disabled interactive states."
-    webMetadata={{
-      import: "import { Interactable } from '@cbhq/cds-web/system/Interactable'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/system/Interactable.tsx',
-    }}
-    mobileMetadata={{
-      import: "import { Interactable } from '@cbhq/cds-mobile/system/Interactable'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/system/Interactable.tsx',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
 
   <ComponentTabsContainer

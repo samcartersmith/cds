@@ -18,20 +18,10 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+
 <VStack gap={5}>
-  <ComponentHeader
-    title="FullscreenModal"
-    webMetadata={{
-      import: "import { FullscreenModal } from '@cbhq/cds-web/overlays/modal/FullscreenModal'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/modal/FullscreenModal.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-fullscreenmodal--basic',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-12185',
-    }}
-    banner={<ModalBanner />}
-  />
+  <ComponentHeader title="FullscreenModal" webMetadata={webMetadata} banner={<ModalBanner />} />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}
     webExamples={<WebExamples />}

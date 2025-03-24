@@ -21,22 +21,14 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Alert"
-    description="Alert dialogs are specific types of modal overlay that communicate critical information and block the user from completing a task until a specific action is taken."
-    webMetadata={{
-      import: "import { Alert } from '@cbhq/cds-web/overlays/Alert'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/Alert.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-alert--basic-alert',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=7-6'
-    }}
-    mobileMetadata={{
-      import: "import { Alert } from '@cbhq/cds-mobile/overlays/Alert'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/overlays/Alert.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=7-6'
-    }}
-    banner={<DefaultBanner />}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
 
   <ComponentTabsContainer

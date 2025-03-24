@@ -21,21 +21,14 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Button"
-    description="The Button component is a basic button component that can be used to trigger actions in your app."
-    webMetadata={{
-      import: "import { Button } from '@cbhq/cds-web2/buttons/Button'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/buttons/Button.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-buttons-button--create-button-stories',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=50-618&t=04zdd4GyupBRPqUz-1'
-    }}
-    mobileMetadata={{
-      import: "import { Button } from '@cbhq/cds-mobile2/buttons/Button'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/buttons/Button.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=50-618&t=K73gadcWiDv2aYlS-1'
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<ButtonBanner />}
   />
 

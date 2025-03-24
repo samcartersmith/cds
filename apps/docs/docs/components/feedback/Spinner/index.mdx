@@ -21,23 +21,15 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Spinner"
-    description="A component that displays a spinning animation."
     banner={<SpinnerBanner />}
-    webMetadata={{
-      import: "import { Spinner } from '@cbhq/cds-web/loaders/Spinner'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/loaders/Spinner.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-loaders-spinner--spinner-default',
-    }}
-    mobileMetadata={{
-      import: "import { Spinner } from '@cbhq/cds-mobile/loaders/Spinner'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/loaders/Spinner.tsx',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}

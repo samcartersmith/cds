@@ -20,25 +20,15 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="SpotRectangle"
     banner={<SpotRectangleBanner />}
-    webMetadata={{
-      import: "import { SpotRectangle } from '@cbhq/cds-web/illustratations/SpotRectangle'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/illustrations/SpotRectangle.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/illustrations--spot-rectangle',
-      figma:
-        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev',
-    }}
-    mobileMetadata={{
-      import: "import { SpotRectangle } from '@cbhq/cds-mobile/illustrations/SpotRectangle'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/SpotRectangle.tsx',
-      figma:
-        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
   <IllustrationSheet variant="spotRectangle" />
   <ComponentTabsContainer

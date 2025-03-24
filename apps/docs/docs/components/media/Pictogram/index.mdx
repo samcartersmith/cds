@@ -20,26 +20,15 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Pictogram"
-    description="Pictograms are elevated product icons. They should be literal, concise, and used for glanceability purposes but the intention here is to grab the attention of users."
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<PictogramBanner />}
-    webMetadata={{
-      import: "import { Pictogram } from '@cbhq/cds-web/illustratations/Pictogram'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/illustrations/Pictogram.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/illustrations--pictogram',
-      figma:
-        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev',
-    }}
-    mobileMetadata={{
-      import: "import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/Pictogram.tsx',
-      figma:
-        'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev',
-    }}
   />
   <IllustrationSheet variant="pictogram" />
   <ComponentTabsContainer

@@ -21,22 +21,14 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Modal"
-    description="Modal is a component that disables the main window (but keeps it visible) and presents the user with a window that they must interact with before they can return to the parent application.
-This avoids interrupting the workflow on the main window and presents temporary information that’s separate from the user’s current context, while requiring an explicit action to exit."
-    webMetadata={{
-      import: "import { Modal } from '@cbhq/cds-web/overlays/modal/Modal'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/Modal/Modal.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-modal--basic-modal',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-1053'
-    }}
-    mobileMetadata={{
-      import: "import { Modal } from '@cbhq/cds-mobile/overlays/modal/Modal'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/overlays/Modal/Modal.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-1053'
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<ModalBanner />}
   />
 

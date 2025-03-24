@@ -20,21 +20,14 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="SelectChip"
-    description="`SelectChip` is a control component that allows users to select one or more options from a list."
-    webMetadata={{
-      import: "import { SelectChip } from '@cbhq/cds-web/controls/SelectChip'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/controls/SelectChip.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-chips-selectchip--default',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=10177-4849&t=6hbCJmIQxCsPCzeU-1'
-    }}
-    mobileMetadata={{
-      import: "import { SelectChip } from '@cbhq/cds-mobile/controls/SelectChip'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/controls/SelectChip.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=10177-4849&t=6hbCJmIQxCsPCzeU-1'
-    }}  
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
 
   <ComponentTabsContainer

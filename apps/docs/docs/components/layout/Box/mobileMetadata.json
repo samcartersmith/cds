@@ -1,0 +1,5 @@
+{
+  "import": "import { Box } from '@cbhq/cds-mobile/layout/Box';",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/Box.tsx",
+  "description": "The Box component is a container component that can be used to wrap other components."
+}

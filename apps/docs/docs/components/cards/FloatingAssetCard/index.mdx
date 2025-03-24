@@ -20,27 +20,15 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="FloatingAssetCard"
-    description="Asset Cards display current and potential future assets, offering a straightforward method to view and manage a customer's holdings. They provide a clear visual and informative overview, simplifying asset management and investment considerations."
     banner={<DefaultBanner />}
-    webMetadata={{
-      import: "import { FloatingAssetCard } from '@cbhq/cds-web/cards/FloatingAssetCard'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/cards/FloatingAssetCard.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-cards-floatingassetcard--default',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=10085-2951&t=DIcYU9WAXkBUimkN-0',
-    }}
-    mobileMetadata={{
-      import: "import { Spinner } from '@cbhq/cds-mobile/loaders/Spinner'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/loaders/Spinner.tsx',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=10085-2951&t=DIcYU9WAXkBUimkN-0',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}

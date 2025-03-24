@@ -19,22 +19,11 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
-  <ComponentHeader
-    title="Avatar"
-    description="Avatar is a visual representation of a user, company, or entity."
-    webMetadata={{
-      import: "import { Avatar } from '@cbhq/cds-web/media/Avatar'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/media/Avatar.tsx',
-      storybook: 'https://cdsstorybook.cbhq.net/?path=/story/core-components-avatar--normal',
-    }}
-    mobileMetadata={{
-      import: "import { Avatar } from '@cbhq/cds-mobile/media/Avatar'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/media/Avatar.tsx',
-    }}
-    banner={<DefaultBanner />}
-  />
+  <ComponentHeader title="Avatar" webMetadata={webMetadata} mobileMetadata={mobileMetadata} />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}
     webExamples={<WebExamples />}

@@ -21,22 +21,15 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="Toast"
     description="Toasts inform users of a process that an app has performed or will perform. They appear temporarily, towards the bottom of the screen. They shouldn’t interrupt the user experience, and they don’t require user input to disappear."
-    webMetadata={{
-      import: "import { Toast } from '@cbhq/cds-web/overlays/Toast'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/Toast.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-toast--basic-toast',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-12198'
-    }}
-    mobileMetadata={{
-      import: "import { Toast } from '@cbhq/cds-mobile/overlays/Toast'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/overlays/Toast.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-12198'
-    }}
-    banner={<DefaultBanner />}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
 
   <ComponentTabsContainer

@@ -20,24 +20,15 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="HeroSquare"
-    description="HeroSquares are story driven, compelling, and inspirational illustrations."
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<HeroSquareBanner />}
-    webMetadata={{
-      import: "import { HeroSquare } from '@cbhq/cds-web/illustratations/HeroSquare'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/illustrations/HeroSquare.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/illustrations--hero-square',
-      figma: 'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?m=dev',
-    }}
-    mobileMetadata={{
-      import: "import { HeroSquare } from '@cbhq/cds-mobile/illustrations/HeroSquare'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/HeroSquare.tsx',
-      figma: 'https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?m=dev',
-    }}
   />
   <IllustrationSheet variant="heroSquare" />
   <ComponentTabsContainer

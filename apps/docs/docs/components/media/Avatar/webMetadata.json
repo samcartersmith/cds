@@ -1,0 +1,6 @@
+{
+  "import": "import { Avatar } from '@cbhq/cds-web/media/Avatar'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/media/Avatar.tsx",
+  "storybook": "https://cdsstorybook.cbhq.net/?path=/story/core-components-avatar--normal",
+  "description": "Avatar is a visual representation of a user, company, or entity."
+}

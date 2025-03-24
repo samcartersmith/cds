@@ -21,21 +21,14 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="AvatarButton"
-    description="Avatars allow the user to display a profile picture that represents them. The AvatarButton provides an Avatar that responds to user presses."
-    webMetadata={{
-      import: "import { AvatarButton } from '@cbhq/cds-web2/buttons/AvatarButton'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/buttons/AvatarButton.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-buttons-avatarbutton--default',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=419-15517&t=9DVu24xHrsG2aEcn-0'
-    }}
-    mobileMetadata={{
-      import: "import { AvatarButton } from '@cbhq/cds-mobile2/buttons/AvatarButton'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/buttons/AvatarButton.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=419-15517&t=9DVu24xHrsG2aEcn-0'
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<DefaultBanner />}
   />
 

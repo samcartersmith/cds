@@ -20,20 +20,14 @@ import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
 
 <VStack gap={5}>
   <ComponentHeader
     title="Text"
-    description="CDS offers 13 typography variants and they are all baked into our Text components. Each typography has its own Text component. Please do not try to modify typography styles such as font family, font size, font weight, line height, and letter spacing. If the design you received does not match one of the CDS types exactly, please check with the designer about updating to one from CDS."
-    webMetadata={{
-      import: "import { Text } from '@cbhq/cds-web2/typography/Text'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/typography/Text.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-text-text--default',
-    }}
-    mobileMetadata={{
-      import: "import { Text } from '@cbhq/cds-mobile/typography/Text';",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/typography/Text.tsx',
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
     banner={<TextBanner />}
   />
 

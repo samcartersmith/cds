@@ -19,28 +19,11 @@ import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
-  <ComponentHeader
-    title="DotSymbol"
-    description="Dots are component adornments, typically used to communicate a numerical value or indicate the status or identity of a component to the end-user."
-    webMetadata={{
-      import: "import { DotSymbol } from '@cbhq/cds-web/dots/DotSymbol'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/dots/DotSymbol.tsx',
-      storybook:
-        'https://cds-storybook.cbhq.net/?path=/story/core-components-dots-dotsymbol--all-dot-symbol',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-10245',
-    }}
-    mobileMetadata={{
-      import: "import { DotSymbol } from '@cbhq/cds-mobile/dots/DotSymbol'",
-      source:
-        'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/dots/DotSymbol.tsx',
-      figma:
-        'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-10245',
-    }}
-    banner={<DefaultBanner />}
-  />
+  <ComponentHeader title="DotSymbol" webMetadata={webMetadata} mobileMetadata={mobileMetadata} />
   <ComponentTabsContainer
     webPropsTable={<WebPropsTable />}
     webExamples={<WebExamples />}

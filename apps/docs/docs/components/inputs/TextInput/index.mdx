@@ -20,21 +20,14 @@ import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 import { VStack } from '@cbhq/cds-web2/layout';
 
+import webMetadata from './webMetadata.json';
+import mobileMetadata from './mobileMetadata.json';
+
 <VStack gap={5}>
   <ComponentHeader
     title="TextInput"
-    description="TextInput is a control component that allows users to enter text."
-    webMetadata={{
-      import: "import { TextInput } from '@cbhq/cds-web/controls/TextInput'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/controls/TextInput.tsx',
-      storybook: 'https://cds-storybook.cbhq.net/?path=/story/core-components-inputs-textinput--basic',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=466-13810&t=K73gadcWiDv2aYlS-1'
-    }}
-    mobileMetadata={{
-      import: "import { TextInput } from '@cbhq/cds-mobile/controls/TextInput'",
-      source: 'https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/controls/TextInput.tsx',
-      figma: 'https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=466-13810&t=K73gadcWiDv2aYlS-1'
-    }}
+    webMetadata={webMetadata}
+    mobileMetadata={mobileMetadata}
   />
 
   <ComponentTabsContainer
