@@ -51,7 +51,7 @@ function SvgFromFigma({ name, size, active }: SvgFromFigmaProps) {
 
 function DisclaimerText() {
   return (
-    <Text as="p" font="legal">
+    <Text as="p" display="block" font="legal">
       The blue icons are icons loaded originally from Figma. This way you can see if the font
       generated icon differs from how the icon looks in Figma.
     </Text>

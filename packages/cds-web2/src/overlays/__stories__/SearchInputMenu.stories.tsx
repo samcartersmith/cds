@@ -85,7 +85,7 @@ const SearchInputMenuRecipe = () => {
           renderOptions
         ) : (
           <HStack padding={3}>
-            <Text as="p" font="caption">
+            <Text as="p" display="block" font="caption">
               No options were found.{' '}
             </Text>
           </HStack>
@@ -93,7 +93,7 @@ const SearchInputMenuRecipe = () => {
         {shouldShowAllResultsButton ? (
           <Pressable block noScaleOnPress background="bg" onClick={handleClear}>
             <HStack alignItems="center" gap={1} paddingX={2} paddingY={2}>
-              <Text as="p" font="label1">
+              <Text as="p" display="block" font="label1">
                 View all results
               </Text>
               <Icon color="fg" name="forwardArrow" size="xs" />

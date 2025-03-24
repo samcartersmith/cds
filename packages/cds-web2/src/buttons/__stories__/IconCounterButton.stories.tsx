@@ -14,7 +14,7 @@ export default {
 export const IconCounterButtonExample = () => {
   return (
     <VStack gap={2}>
-      <Text as="h3" font="title3">
+      <Text as="h3" display="block" font="title3">
         Normal
       </Text>
       <HStack gap={4}>
@@ -23,7 +23,7 @@ export const IconCounterButtonExample = () => {
         <IconCounterButton count={9900000} icon="arrowsHorizontal" />
       </HStack>
       <Divider />
-      <Text as="h3" font="title3">
+      <Text as="h3" display="block" font="title3">
         Colored
       </Text>
       <HStack gap={4}>
@@ -32,7 +32,7 @@ export const IconCounterButtonExample = () => {
         <IconCounterButton count={69000000} dangerouslySetColor="orange" icon="arrowsHorizontal" />
       </HStack>
       <Divider />
-      <Text as="h3" font="title3">
+      <Text as="h3" display="block" font="title3">
         Custom Icon
       </Text>
       <HStack gap={4}>

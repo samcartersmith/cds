@@ -77,23 +77,23 @@ const styleProps: BannerProps[] = [
 const Banners = ({ title, props }: { title: string; props: BannerProps }) => {
   return (
     <>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         {title}
       </Text>
       <Banner {...props} />
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         {title} with showDismiss
       </Text>
       <Banner {...props} showDismiss onClose={noopFn} title={`${title} with showDismiss`} />
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         {title} with Action
       </Text>
       <Banner {...props} primaryAction={primaryAction} />
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         {title} with multiple Actions
       </Text>
       <Banner {...props} primaryAction={primaryAction} secondaryAction={secondaryAction} />
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         {title} Long Text with Action
       </Text>
       <Banner
@@ -103,7 +103,7 @@ const Banners = ({ title, props }: { title: string; props: BannerProps }) => {
       >
         {longMessage}
       </Banner>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         {title} with Action and showDismiss
       </Text>
       <Banner
@@ -113,7 +113,7 @@ const Banners = ({ title, props }: { title: string; props: BannerProps }) => {
         primaryAction={primaryAction}
         title={`${title} with Action and showDismiss`}
       />
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         {title} Long Text and showDismiss
       </Text>
       <Banner
@@ -124,7 +124,7 @@ const Banners = ({ title, props }: { title: string; props: BannerProps }) => {
       >
         {longMessage}
       </Banner>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         {title} Long Text with Action and showDismiss
       </Text>
       <Banner
@@ -171,7 +171,7 @@ export const Dense = () => {
 export const BannerWithLink = () => {
   return (
     <VStack gap={2}>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Global
       </Text>
       <Banner
@@ -185,11 +185,11 @@ export const BannerWithLink = () => {
         title={`Global ${shortMessage}`}
         variant="error"
       >
-        <Text as="p" font="label2">
+        <Text as="p" display="block" font="label2">
           {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
         </Text>
       </Banner>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Inline
       </Text>
       <Banner
@@ -207,7 +207,7 @@ export const BannerWithLink = () => {
           Learn more
         </Link>
       </Banner>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Contextual
       </Text>
       <Banner
@@ -220,7 +220,7 @@ export const BannerWithLink = () => {
         startIconAccessibilityLabel="Information"
         variant="promotional"
       >
-        <Text as="p" font="label2">
+        <Text as="p" display="block" font="label2">
           {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
         </Text>
       </Banner>
@@ -231,7 +231,7 @@ export const BannerWithLink = () => {
 export const CustomMargin = () => {
   return (
     <VStack gap={2} marginX={-0.5}>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Global
       </Text>
       <Banner
@@ -266,7 +266,7 @@ export const CustomMargin = () => {
       <Banner {...examplePropsWithMargin} styleVariant="global" variant="error">
         {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
       </Banner>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Inline
       </Text>
       <Banner
@@ -308,7 +308,7 @@ export const CustomMargin = () => {
 export const CustomAlignment = () => {
   return (
     <VStack gap={2}>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Vertical Align
       </Text>
       <Banner

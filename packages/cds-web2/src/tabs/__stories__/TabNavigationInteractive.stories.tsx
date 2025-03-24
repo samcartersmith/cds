@@ -76,7 +76,7 @@ const MockTabNavigation = () => {
         padding={2}
         role="tabpanel"
       >
-        <Text as="h2" font="title1">
+        <Text as="h2" display="block" font="title1">
           This is tab {activeTab}
         </Text>
       </VStack>

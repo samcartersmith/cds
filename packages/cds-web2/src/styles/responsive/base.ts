@@ -1919,7 +1919,7 @@ export const display = {
   block: css`
     display: block;
   `,
-  inbgLine: css`
+  inline: css`
     display: inline;
   `,
   'inline-block': css`
@@ -1945,6 +1945,9 @@ export const display = {
   `,
   revert: css`
     display: revert;
+  `,
+  'list-item': css`
+    display: list-item;
   `,
 } as const;
 

@@ -19,7 +19,7 @@ export const CellDetail = memo(function CellDetail({
   return (
     <>
       {!!detail && (
-        <Text as="div" font="body" overflow="truncate" textAlign="end">
+        <Text as="div" display="block" font="body" overflow="truncate" textAlign="end">
           {detail}
         </Text>
       )}

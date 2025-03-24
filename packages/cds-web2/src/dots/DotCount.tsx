@@ -83,7 +83,7 @@ export const DotCount = memo(
               data-testid="dotcount-outer-container"
               style={styles}
             >
-              <Text as="p" color="fgInverse" font="caption" textAlign="center">
+              <Text as="p" color="fgInverse" display="block" font="caption" textAlign="center">
                 {parseDotCountMaxOverflow(count, max)}
               </Text>
             </motion.div>

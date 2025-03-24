@@ -17,28 +17,28 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
         <VStack>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
-          <Text as="p" color="bgSecondary" font="body">
+          <Text as="p" display="block" color="bgSecondary" font="body">
             Secondary text
           </Text>
         </VStack>
         <VStack bordered background="bg" borderRadius={400} elevation={1} gap={1} padding={2}>
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             Elevation 1
           </Text>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
         <VStack bordered background="bg" borderRadius={400} elevation={2} gap={1} padding={2}>
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             Elevation 2
           </Text>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           ClassName value at nested ThemeProvider parent level: {className}
         </Text>
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           Should be {expectedSpectrum}
         </Text>
       </VStack>
@@ -87,7 +87,7 @@ const ChildThemeWithOverrides = () => {
   const theme = useTheme();
   return (
     <ThemeProvider activeColorScheme={theme.colorScheme} theme={customTheme}>
-      <Text as="p" font="body">
+      <Text as="p" display="block" font="body">
         With theme overrides
       </Text>
       <Child expectedSpectrum="light" />
@@ -98,7 +98,7 @@ const ChildThemeWithOverrides = () => {
 const ChildThemeWithOverridesDark = () => {
   return (
     <ThemeProvider activeColorScheme="dark" theme={customTheme}>
-      <Text as="p" font="body">
+      <Text as="p" display="block" font="body">
         With theme overrides
       </Text>
       <Child expectedSpectrum="dark" />
@@ -111,7 +111,7 @@ const ChildThemeWithNestedOverrides = () => {
   return (
     <ThemeProvider activeColorScheme={theme.colorScheme} theme={customTheme}>
       <ThemeProvider activeColorScheme="light" theme={theme}>
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           With nested theme overrides
         </Text>
         <Child expectedSpectrum="light" />
@@ -125,7 +125,7 @@ const ChildThemeWithNestedOverridesDark = () => {
   return (
     <ThemeProvider activeColorScheme="dark" theme={customTheme}>
       <ThemeProvider activeColorScheme="dark" theme={theme}>
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           With nested theme overrides
         </Text>
         <Child expectedSpectrum="dark" />

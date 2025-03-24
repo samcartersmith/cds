@@ -15,25 +15,25 @@ export const Stories = () => {
     <SelectProvider value={defaultContext}>
       <VStack gap={3} width={200}>
         <VStack role="menu">
-          <Text as="p" font="label1">
+          <Text as="p" display="block" font="label1">
             Title and Description
           </Text>
           <SelectOption description="Description" title="Title" value="test" />
         </VStack>
         <VStack role="menu">
-          <Text as="p" font="label1">
+          <Text as="p" display="block" font="label1">
             Disabled
           </Text>
           <SelectOption disabled description="Description" title="Title" value="test" />
         </VStack>
         <VStack role="menu">
-          <Text as="p" font="label1">
+          <Text as="p" display="block" font="label1">
             Compact
           </Text>
           <SelectOption compact description="Description" title="Title" value="test" />
         </VStack>
         <VStack role="menu">
-          <Text as="p" font="label1">
+          <Text as="p" display="block" font="label1">
             Multiline
           </Text>
           <SelectOption

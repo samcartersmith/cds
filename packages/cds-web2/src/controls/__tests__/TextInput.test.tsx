@@ -16,7 +16,7 @@ describe('TextInput', () => {
             accessibilityHint="Text"
             accessibilityLabel="Text"
             end={
-              <Text as="h1" font="title1">
+              <Text as="h1" display="block" font="title1">
                 Node
               </Text>
             }
@@ -24,7 +24,7 @@ describe('TextInput', () => {
             label="Text"
             placeholder="Text"
             start={
-              <Text as="h1" font="title1">
+              <Text as="h1" display="block" font="title1">
                 Node
               </Text>
             }
@@ -117,7 +117,7 @@ describe('TextInput', () => {
       <DefaultThemeProvider>
         <TextInput
           helperText={
-            <Text as="p" font="title1">
+            <Text as="p" display="block" font="title1">
               {helperText}
             </Text>
           }
@@ -148,7 +148,7 @@ describe('TextInput', () => {
       <DefaultThemeProvider>
         <TextInput
           start={
-            <Text as="h1" font="title1">
+            <Text as="h1" display="block" font="title1">
               {startNodeText}
             </Text>
           }
@@ -168,7 +168,7 @@ describe('TextInput', () => {
       <DefaultThemeProvider>
         <TextInput
           start={
-            <Text as="h1" font="title1">
+            <Text as="h1" display="block" font="title1">
               {endNodeText}
             </Text>
           }
@@ -240,7 +240,7 @@ describe('TextInput', () => {
         <TextInput
           onFocus={onFocus}
           start={
-            <Text as="h1" font="title1">
+            <Text as="h1" display="block" font="title1">
               {startNodeText}
             </Text>
           }
@@ -259,7 +259,7 @@ describe('TextInput', () => {
       <DefaultThemeProvider>
         <TextInput
           end={
-            <Text as="h1" font="title1">
+            <Text as="h1" display="block" font="title1">
               {endNodeText}
             </Text>
           }

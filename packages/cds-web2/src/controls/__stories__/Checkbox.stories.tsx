@@ -110,7 +110,7 @@ export const Group = () => {
   const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
   return (
     <>
-      <Text as="h1" font="headline" id="order-dinner-label-no-select-all">
+      <Text as="h1" display="block" font="headline" id="order-dinner-label-no-select-all">
         Checkbox Group Default
       </Text>
       <CheckboxGroup
@@ -133,7 +133,7 @@ export const CustomStylesCheckboxGroup = () => {
   const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
   return (
     <>
-      <Text as="h1" font="headline" id="custom-styles-checkbox-group">
+      <Text as="h1" display="block" font="headline" id="custom-styles-checkbox-group">
         Custom checkbox group
       </Text>
       <CheckboxGroup
@@ -163,7 +163,7 @@ export const CustomLayoutCheckboxGroup = () => {
   const [selectedValues, { toggle }] = useCheckboxGroupState(optionValues);
   return (
     <>
-      <Text as="h2" font="headline" paddingY={1}>
+      <Text as="h2" display="block" font="headline" paddingY={1}>
         Two Column Layout
       </Text>
       <CheckboxGroup

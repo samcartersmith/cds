@@ -25,7 +25,7 @@ const NoopFn = () => {};
 export const Default = () => (
   <VStack gap={3}>
     <VStack gap={2}>
-      <Text as="h2" font="display2">
+      <Text as="h2" display="block" font="display2">
         Default
       </Text>
       <HStack gap={2}>
@@ -38,7 +38,7 @@ export const Default = () => (
           value="USD"
         />
       </HStack>
-      <Text as="h3" font="headline" paddingTop={3}>
+      <Text as="h3" display="block" font="headline" paddingTop={3}>
         Long text
       </Text>
       <HStack gap={2}>
@@ -58,7 +58,7 @@ export const Default = () => (
     </VStack>
     <ThemeProvider activeColorScheme="light" theme={{ ...denseTheme }}>
       <VStack gap={2}>
-        <Text as="h2" font="display2">
+        <Text as="h2" display="block" font="display2">
           Dense
         </Text>
         <HStack gap={2}>
@@ -71,7 +71,7 @@ export const Default = () => (
             value="USD"
           />
         </HStack>
-        <Text as="h3" font="headline" paddingTop={3}>
+        <Text as="h3" display="block" font="headline" paddingTop={3}>
           Long text
         </Text>
         <HStack gap={2}>

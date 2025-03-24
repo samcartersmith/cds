@@ -44,24 +44,24 @@ const exampleProps = {
     </Box>
   ),
   title1: (
-    <Text as="h1" font="title1">
+    <Text as="h1" display="block" font="title1">
       Page Title
     </Text>
   ),
   title2: (
     <Box flexGrow={1} flexShrink={1} justifyContent="center">
-      <Text as="h1" font="title1" numberOfLines={1}>
+      <Text as="h1" display="block" font="title1" numberOfLines={1}>
         Centered Title
       </Text>
     </Box>
   ),
   title3: (
-    <Text as="h3" font="title1" numberOfLines={1}>
+    <Text as="h3" display="block" font="title1" numberOfLines={1}>
       Title
     </Text>
   ),
   intermediary1: (
-    <Text as="h1" font="headline">
+    <Text as="h1" display="block" font="headline">
       Intermediary Content
     </Text>
   ),
@@ -85,7 +85,7 @@ const exampleProps = {
   end2: (
     <HStack alignItems="center" gap={2}>
       <Link href="https://cds.cbhq.net/components/link">
-        <Text as="p" color="fgPrimary" font="headline">
+        <Text as="p" color="fgPrimary" display="block" font="headline">
           Help
         </Text>
       </Link>
@@ -270,7 +270,7 @@ export const PageHeaderInErrorEmptyState = () => {
           paddingY={10}
         >
           <HeroSquare name="bigWarning" />
-          <Text as="h3" font="title1">
+          <Text as="h3" display="block" font="title1">
             You need to X before you Y
           </Text>
           <Text as="sub" font="title1" textAlign="center">
@@ -313,7 +313,7 @@ export const PageHeaderInPage = () => {
         justifyContent="center"
         padding={3}
       >
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Primary Content
         </Text>
       </VStack>
@@ -378,7 +378,7 @@ export default {
         title2: exampleProps.title2,
         title3: exampleProps.title3,
         title4: (
-          <Text as="h3" font="title1" numberOfLines={1}>
+          <Text as="h3" display="block" font="title1" numberOfLines={1}>
             Very Very Very Very Very Very Very Very Long Long Long Long Long Long Long Long Title
           </Text>
         ),

@@ -26,7 +26,7 @@ export const Normal = () => {
   return (
     <div>
       <VStack gap={2}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Default
         </Text>
         <HStack alignItems="center" gap={2}>
@@ -46,7 +46,7 @@ export const Normal = () => {
         </HStack>
       </VStack>
       <VStack gap={2} paddingTop={2}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           With borderColor prop
         </Text>
         <HStack alignItems="center" gap={2}>
@@ -80,7 +80,7 @@ export const Normal = () => {
         </HStack>
       </VStack>
       <VStack gap={2} paddingTop={2}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           With Selected prop
         </Text>
         <HStack alignItems="center" gap={2}>
@@ -139,13 +139,13 @@ export const FallbackColored = () => {
   return (
     <div>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Default
         </Text>
         <FallbackColoredBase />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Sizes
         </Text>
         {sizes.map((size, i) => {
@@ -153,31 +153,31 @@ export const FallbackColored = () => {
         })}
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Selected
         </Text>
         <FallbackColoredBase selected />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Square
         </Text>
         <FallbackColoredBase shape="square" />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Square Selected
         </Text>
         <FallbackColoredBase selected shape="square" />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Hexagon
         </Text>
         <FallbackColoredBase shape="hexagon" />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Hexagon Selected
         </Text>
         <FallbackColoredBase selected shape="hexagon" />
@@ -192,13 +192,13 @@ export const FallbackColoredDense = () => {
   return (
     <ThemeProvider activeColorScheme={theme.colorScheme} theme={newTheme}>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Default
         </Text>
         <FallbackColoredBase />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Sizes
         </Text>
         {sizes.map((size, i) => {
@@ -206,31 +206,31 @@ export const FallbackColoredDense = () => {
         })}
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Selected
         </Text>
         <FallbackColoredBase selected />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Square
         </Text>
         <FallbackColoredBase shape="square" />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Square Selected
         </Text>
         <FallbackColoredBase selected shape="square" />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Hexagon
         </Text>
         <FallbackColoredBase shape="hexagon" />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Hexagon Selected
         </Text>
         <FallbackColoredBase selected shape="hexagon" />
@@ -243,7 +243,7 @@ export const FallbackImage = () => {
   return (
     <div>
       <VStack gap={2}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Default
         </Text>
         <HStack alignItems="center" gap={2}>
@@ -263,7 +263,7 @@ export const FallbackImage = () => {
         </HStack>
       </VStack>
       <VStack gap={2} paddingTop={2}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           With borderColor prop
         </Text>
         <HStack alignItems="center" gap={2}>
@@ -283,7 +283,7 @@ export const FallbackImage = () => {
         </HStack>
       </VStack>
       <VStack gap={2} paddingTop={2}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           With Selected prop
         </Text>
         <HStack alignItems="center" gap={2}>

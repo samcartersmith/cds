@@ -31,7 +31,7 @@ const DotSymbolPlacements = () => {
           padding={1}
           paddingBottom={4}
         >
-          <Text as="p" font="label1">
+          <Text as="p" display="block" font="label1">
             {pinDirection}
           </Text>
           <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
@@ -73,7 +73,7 @@ const DotSymbolIcon = () => {
             padding={1}
             paddingBottom={4}
           >
-            <Text as="p" font="label1">
+            <Text as="p" display="block" font="label1">
               Pin Direction: {pinDirection} Avatar Size: {avatarSize} Icon Size:{' '}
               {avatarIconSizeMap[avatarSize]}
             </Text>
@@ -104,7 +104,7 @@ const DotSymbolOverlap = () => {
             padding={1}
             paddingBottom={4}
           >
-            <Text as="p" font="label1">
+            <Text as="p" display="block" font="label1">
               {pinDirection}, dot-size: {size}
             </Text>
             <DotSymbol
@@ -138,22 +138,22 @@ const DotSymbolComplex = () => {
         <Avatar alt="Sneezy" shape="square" size="xxl" />
       </DotSymbol>
       <VStack>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
       </VStack>

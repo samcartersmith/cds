@@ -91,14 +91,14 @@ export const MultiContentModule: MultiContentModuleComponent = memo(
             pictogram
           )}
           {typeof title === 'string' ? (
-            <Text as="h1" font="title1">
+            <Text as="h1" display="block" font="title1">
               {title}
             </Text>
           ) : (
             title
           )}
           {typeof description === 'string' ? (
-            <Text as="p" color="fgMuted" font="body" numberOfLines={3}>
+            <Text as="p" color="fgMuted" display="block" font="body" numberOfLines={3}>
               {description}
             </Text>
           ) : (

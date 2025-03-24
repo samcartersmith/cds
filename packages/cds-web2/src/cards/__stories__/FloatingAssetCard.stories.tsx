@@ -72,7 +72,7 @@ export const Custom = (): JSX.Element => {
       <FloatingAssetCard
         {...exampleProps}
         description={
-          <Text as="p" color="fgMuted" font="label2">
+          <Text as="p" color="fgMuted" display="block" font="label2">
             2 min read
           </Text>
         }

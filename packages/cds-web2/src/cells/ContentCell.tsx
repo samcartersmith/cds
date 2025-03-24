@@ -98,7 +98,7 @@ export const ContentCell: ContentCellComponent = memo(
             <HStack alignItems="flex-start" justifyContent="space-between">
               <VStack className={truncationStyle} flexGrow={1} flexShrink={1}>
                 {!!title && (
-                  <Text as="div" font="headline" overflow="truncate">
+                  <Text as="div" display="block" font="headline" overflow="truncate">
                     {title}
                   </Text>
                 )}
@@ -135,7 +135,7 @@ export const ContentCell: ContentCellComponent = memo(
 
           {!!description && (
             <div className={overflowStyle}>
-              <Text as="div" color="fgMuted" font="body">
+              <Text as="div" display="block" color="fgMuted" font="body">
                 {description}
               </Text>
             </div>

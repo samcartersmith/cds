@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-import { Text, TextProps } from './Text';
+import type { Polymorphic } from '../core/polymorphism';
 
-export type TextInheritedProps<AsComponent extends React.ElementType> = TextProps<AsComponent>;
+import { Text, type TextBaseProps } from './Text';
 
-export const TextInherited = <AsComponent extends React.ElementType = 'span'>(
-  props: TextInheritedProps<AsComponent>,
-) => <Text inherit font="inherit" {...props} />;
+export const textInheritDefaultElement = 'span';
+
+export type TextInheritDefaultElement = typeof textInheritDefaultElement;
+
+export type TextInheritBaseProps = TextBaseProps;
+
+export type TextInheritProps<AsComponent extends React.ElementType> = Polymorphic.Props<
+  AsComponent,
+  TextInheritBaseProps
+>;
+
+type TextInheritComponent = (<AsComponent extends React.ElementType = TextInheritDefaultElement>(
+  props: TextInheritProps<AsComponent>,
+) => Polymorphic.ReactReturn) &
+  Polymorphic.ReactNamed;
+
+export const TextInherit: TextInheritComponent = forwardRef<
+  React.ReactElement<TextInheritBaseProps>,
+  TextInheritBaseProps
+>(
+  <AsComponent extends React.ElementType>(
+    { as, font = 'inherit', ...props }: TextInheritProps<AsComponent>,
+    ref?: Polymorphic.Ref<AsComponent>,
+  ) => {
+    const Component = (as ?? textInheritDefaultElement) satisfies React.ElementType;
+    return <Text ref={ref} as={Component} font={font} {...props} />;
+  },
+);
+
+TextInherit.displayName = 'TextInherit';

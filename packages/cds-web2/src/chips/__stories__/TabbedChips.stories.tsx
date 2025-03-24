@@ -27,19 +27,19 @@ const Demo = ({
 export const Default = () => {
   return (
     <VStack gap={2}>
-      <Text as="p" font="headline">
+      <Text as="p" display="block" font="headline">
         Default
       </Text>
       <Demo />
-      <Text as="p" font="headline">
+      <Text as="p" display="block" font="headline">
         With paddles
       </Text>
       <Demo tabs={sampleTabs} />
-      <Text as="p" font="headline">
+      <Text as="p" display="block" font="headline">
         With custom sized paddles
       </Text>
       <Demo style={{ transform: 'scale(0.5)' }} tabs={sampleTabs} />
-      <Text as="p" font="headline">
+      <Text as="p" display="block" font="headline">
         With long text
       </Text>
       <Demo tabs={longTextTabs} />

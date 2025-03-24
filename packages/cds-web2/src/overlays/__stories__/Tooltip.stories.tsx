@@ -92,7 +92,7 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
 
         <VStack gap={4} padding={2}>
           <Tooltip content={content}>
-            <Text as="p" font="label1">
+            <Text as="p" display="block" font="label1">
               Default
             </Text>
           </Tooltip>
@@ -100,7 +100,7 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
             <VStack padding={2}>
               <DotSymbol pin="top-end" size="s" source={assets.ada.imageUrl}>
                 <VStack padding={2}>
-                  <Text as="p" font="label1">
+                  <Text as="p" display="block" font="label1">
                     left
                   </Text>
                 </VStack>
@@ -109,14 +109,14 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
           </Tooltip>
           <Tooltip content={content} placement="right">
             <VStack padding={2}>
-              <Text as="p" font="label1">
+              <Text as="p" display="block" font="label1">
                 right
               </Text>
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="bottom">
             <VStack padding={2}>
-              <Text as="p" font="label1">
+              <Text as="p" display="block" font="label1">
                 bottom
               </Text>
             </VStack>

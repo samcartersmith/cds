@@ -55,11 +55,18 @@ export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => (
 export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
   <Box className={titleStyle} flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
-      <Text as="div" font="headline" overflow="wrap">
+      <Text as="div" display="block" font="headline" overflow="wrap">
         {title}
       </Text>
       {!!subtitle && (
-        <Text as="div" className={subtitleStyle} color="fgMuted" font="body" overflow="wrap">
+        <Text
+          as="div"
+          className={subtitleStyle}
+          color="fgMuted"
+          display="block"
+          font="body"
+          overflow="wrap"
+        >
           {subtitle}
         </Text>
       )}

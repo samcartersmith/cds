@@ -52,12 +52,12 @@ export const NoUnderline = () => (
 
 export const InAParagraph = () => (
   <div>
-    <Text as="p" font="body">
+    <Text as="p" display="block" font="body">
       This is a paragraph, and we can include inline links{' '}
       <Link href="https://www.coinbase.com">with underlines</Link> by default. You dont have to do
       anything to get them!
     </Text>
-    <Text as="p" font="body">
+    <Text as="p" display="block" font="body">
       {`This one however... It is a paragraph, but we can still set underline="false" to opt out of
       the a11y support `}
       <Link href="https://www.coinbase.com" underline={false}>

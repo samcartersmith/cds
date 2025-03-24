@@ -12,7 +12,7 @@ export default {
 export const SpinnerDefault = () => {
   return (
     <VStack>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Spinner Default Color
       </Text>
       <Spacer vertical={3} />
@@ -24,7 +24,7 @@ export const SpinnerDefault = () => {
 export const SpinnerPrimary = () => {
   return (
     <VStack>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Spinner Primary Color
       </Text>
       <Spacer vertical={3} />
@@ -44,10 +44,10 @@ export const SpinnerWithAccessibility = () => {
 
   return (
     <VStack>
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Spinner With Accessibility Label Update
       </Text>
-      <Text as="p" font="body">
+      <Text as="p" display="block" font="body">
         Accessibility label will be updated from &quot;Loading&quot; to &quot;Complete&quot; after
         10 seconds.
       </Text>

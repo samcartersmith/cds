@@ -2914,7 +2914,7 @@ export const display = {
       display: block;
     }
   `,
-  inbgLine: css`
+  inline: css`
     @media ${media.phone} {
       display: inline;
     }
@@ -2957,6 +2957,11 @@ export const display = {
   revert: css`
     @media ${media.phone} {
       display: revert;
+    }
+  `,
+  'list-item': css`
+    @media ${media.phone} {
+      display: list-item;
     }
   `,
 } as const;

@@ -46,7 +46,7 @@ describe('Table', () => {
   it('has an accessible name when accessibilityLabelledBy is set', () => {
     render(
       <>
-        <Text as="h2" font="title2" id="table-title">
+        <Text as="h2" display="block" font="title2" id="table-title">
           {A11Y_LABEL}
         </Text>
         <TableMock accessibilityLabelledBy="table-title" />

@@ -83,7 +83,7 @@ const DotCountPlacements = () => {
       padding={1}
       paddingBottom={4}
     >
-      <Text as="p" font="label1">
+      <Text as="p" display="block" font="label1">
         top-end
       </Text>
       <DotCount count={30} pin="top-end">
@@ -96,7 +96,7 @@ const DotCountPlacements = () => {
         <Icon name="calendar" size="m" />
       </DotCount>
       <DotCount count={0} pin="top-end">
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Count = 0. Dot should not show up
         </Text>
         <Icon name="calendar" size="m" />
@@ -116,22 +116,22 @@ const DotCountComplex = () => {
         <Avatar alt="Sneezy" shape="circle" size="xxxl" />
       </DotCount>
       <VStack>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
-        <Text as="p" font="label1">
+        <Text as="p" display="block" font="label1">
           Hello Hello
         </Text>
       </VStack>

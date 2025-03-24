@@ -109,21 +109,21 @@ export const ContainedAssetCard = ({
           {typeof subtitle !== 'string' ? (
             subtitle
           ) : (
-            <Text as="p" color="fgMuted" font="legal" numberOfLines={1}>
+            <Text as="p" color="fgMuted" display="block" font="legal" numberOfLines={1}>
               {subtitle}
             </Text>
           )}
           {typeof title !== 'string' ? (
             title
           ) : (
-            <Text as="h3" font="headline" numberOfLines={1}>
+            <Text as="h3" display="block" font="headline" numberOfLines={1}>
               {title}
             </Text>
           )}
           {typeof description !== 'string' ? (
             description
           ) : (
-            <Text as="p" color="fgMuted" font="label2" numberOfLines={1}>
+            <Text as="p" color="fgMuted" display="block" font="label2" numberOfLines={1}>
               {description}
             </Text>
           )}

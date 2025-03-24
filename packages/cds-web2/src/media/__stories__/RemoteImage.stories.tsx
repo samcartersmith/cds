@@ -144,7 +144,7 @@ export const Default = () => {
   return (
     <>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Default Shape
         </Text>
         <HStack gap={2}>
@@ -155,7 +155,7 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Circle Shape
         </Text>
         <HStack gap={2}>
@@ -166,7 +166,7 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Squircle Shape
         </Text>
         <HStack gap={2}>
@@ -177,7 +177,7 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           SVGs
         </Text>
         <HStack gap={2}>
@@ -188,7 +188,7 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           DangerouslySetClassName
         </Text>
         <HStack gap={2}>
@@ -207,43 +207,43 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Avatar Sizes with Circle
         </Text>
         <AvatarSizesWithCircle />
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Avatar Sizes with Squircle
         </Text>
         <AvatarSizesWithSquircle />
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Border Color Imgs
         </Text>
         <BorderColorImg />
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Border Color Svgs
         </Text>
         <BorderColorSvgs />
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Circle Fallback
         </Text>
         <CircleFallback />
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Rectangle Fallback
         </Text>
         <RectangleFallback />
       </VStack>
       <VStack gap={2}>
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Square Fallback
         </Text>
         <SquareFallback />

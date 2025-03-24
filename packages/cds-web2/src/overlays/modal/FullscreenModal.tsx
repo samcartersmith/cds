@@ -255,7 +255,7 @@ export const FullscreenModal = memo(function FullscreenModal({
         </Box>
         <Box flexGrow={1}>
           {title ? (
-            <Text as="h1" font="title1" id={labelledBySource}>
+            <Text as="h1" display="block" font="title1" id={labelledBySource}>
               {title}
             </Text>
           ) : (

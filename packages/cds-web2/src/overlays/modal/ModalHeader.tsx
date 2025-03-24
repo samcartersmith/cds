@@ -52,7 +52,13 @@ export const ModalHeader = ({
         </Box>
       )}
       <Box alignItems="center" flexGrow={1} justifyContent="center" paddingX={2}>
-        <Text as="h2" font="headline" id={accessibilityLabelledBy} textAlign="center">
+        <Text
+          as="h2"
+          display="block"
+          font="headline"
+          id={accessibilityLabelledBy}
+          textAlign="center"
+        >
           {title}
         </Text>
       </Box>

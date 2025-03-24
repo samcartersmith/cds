@@ -65,7 +65,7 @@ const exampleProps = {
     />
   ),
   intermediary1: (
-    <Text as="h1" font="headline">
+    <Text as="h1" display="block" font="headline">
       Page Title
     </Text>
   ),
@@ -126,7 +126,7 @@ export const PageFooterInPage = () => {
         height="400px"
         justifyContent="center"
       >
-        <Text as="h3" font="title1">
+        <Text as="h3" display="block" font="title1">
           Primary Content
         </Text>
       </VStack>

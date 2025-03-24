@@ -87,7 +87,7 @@ const CircleMax = () => {
 
 const CircleMaxDefaultCustomSize = () => (
   <>
-    <Text as="p" font="body">
+    <Text as="p" display="block" font="body">
       RemoteImageGroup excess element defaults to m of AvatarSize when size is not specified
     </Text>
     <RemoteImageGroup max={2} shape="circle">

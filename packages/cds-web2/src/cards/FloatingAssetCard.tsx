@@ -88,21 +88,21 @@ export const FloatingAssetCard = ({
       </HStack>
       <VStack gap={0.5}>
         {typeof subtitle === 'string' ? (
-          <Text as="p" color="fgMuted" font="legal" numberOfLines={1}>
+          <Text as="p" color="fgMuted" display="block" font="legal" numberOfLines={1}>
             {subtitle}
           </Text>
         ) : (
           subtitle
         )}
         {typeof title === 'string' ? (
-          <Text as="h3" font="headline" numberOfLines={3}>
+          <Text as="h3" display="block" font="headline" numberOfLines={3}>
             {title}
           </Text>
         ) : (
           title
         )}
         {typeof description === 'string' ? (
-          <Text as="p" color="fgMuted" font="label2" numberOfLines={2}>
+          <Text as="p" color="fgMuted" display="block" font="label2" numberOfLines={2}>
             {description}
           </Text>
         ) : (

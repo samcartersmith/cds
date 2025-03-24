@@ -70,19 +70,19 @@ const ChipExamples = ({
 
 export const Default = () => (
   <VStack gap={2}>
-    <Text as="h3" font="headline">
+    <Text as="h3" display="block" font="headline">
       Default
     </Text>
     <ChipExamples />
-    <Text as="h3" font="headline" paddingTop={3}>
+    <Text as="h3" display="block" font="headline" paddingTop={3}>
       Inverted
     </Text>
     <ChipExamples inverted />
-    <Text as="h3" font="headline">
+    <Text as="h3" display="block" font="headline">
       Compact
     </Text>
     <ChipExamples compact />
-    <Text as="h3" font="headline" paddingTop={3}>
+    <Text as="h3" display="block" font="headline" paddingTop={3}>
       Long text
     </Text>
     <ChipExamples label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget" />

@@ -133,12 +133,12 @@ export const CustomTextNodes = () => (
       </HStack>
     }
     description={
-      <Text as="p" color="fgMuted" font="body">
+      <Text as="p" color="fgMuted" display="block" font="body">
         Custom description
       </Text>
     }
     title={
-      <Text as="h3" color="fgPrimary" font="headline">
+      <Text as="h3" color="fgPrimary" display="block" font="headline">
         Custom title
       </Text>
     }

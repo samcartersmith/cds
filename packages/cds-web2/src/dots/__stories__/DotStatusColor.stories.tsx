@@ -55,7 +55,7 @@ const DotStatusColorPlacements = () => {
           padding={1}
           paddingBottom={4}
         >
-          <Text as="p" font="label1">
+          <Text as="p" display="block" font="label1">
             {pinDirection}
           </Text>
           <DotStatusColor pin={pinDirection} variant="positive">
@@ -85,7 +85,7 @@ const DotStatusColorOverlap = () => {
             padding={1}
             paddingBottom={4}
           >
-            <Text as="p" font="label1">
+            <Text as="p" display="block" font="label1">
               {pinDirection}, avatarSize: {avatarSize}
             </Text>
             <DotStatusColor overlap="circular" pin={pinDirection} variant="positive">

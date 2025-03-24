@@ -59,7 +59,7 @@ export const SectionHeader = memo(
           <HStack alignItems="center" gap={1}>
             {!!start && start}
             {typeof title === 'string' ? (
-              <Text as="h3" font="title3">
+              <Text as="h3" display="block" font="title3">
                 {title}
               </Text>
             ) : (
@@ -72,14 +72,14 @@ export const SectionHeader = memo(
             )}
           </HStack>
           {typeof balance === 'string' ? (
-            <Text as="h3" font="title3">
+            <Text as="h3" display="block" font="title3">
               {balance}
             </Text>
           ) : (
             balance
           )}
           {typeof description === 'string' ? (
-            <Text as="p" color="fgMuted" font="body" numberOfLines={2}>
+            <Text as="p" color="fgMuted" display="block" font="body" numberOfLines={2}>
               {description}
             </Text>
           ) : (

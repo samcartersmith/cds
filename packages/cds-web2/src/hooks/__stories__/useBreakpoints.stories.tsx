@@ -40,7 +40,7 @@ const Example = () => {
 
   return (
     <HStack background="bgAlternate" borderColor="bgLine" borderRadius={200} padding={3}>
-      <Text as="h3" font="headline">
+      <Text as="h3" display="block" font="headline">
         I am as wide as {deviceName()}
       </Text>
     </HStack>

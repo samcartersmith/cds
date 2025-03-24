@@ -37,7 +37,7 @@ const TourExample = ({
       <Button onClick={handleClick}>Start tour</Button>
       <TourStep id="step1">
         <Box background="bgSecondary" padding={1}>
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             This is step 1
           </Text>
         </Box>
@@ -47,7 +47,7 @@ const TourExample = ({
         <Box flexShrink={0} width={spacerWidthIncrement} />
         <TourStep id="step2">
           <Box background="bgSecondary" padding={1} width={150}>
-            <Text as="p" font="body">
+            <Text as="p" display="block" font="body">
               This is step 2
             </Text>
           </Box>
@@ -58,7 +58,7 @@ const TourExample = ({
         <Box flexShrink={0} width={spacerWidthIncrement * 2} />
         <TourStep id="step3">
           <VStack background="bgSecondary" padding={1} width={150}>
-            <Text as="p" font="body">
+            <Text as="p" display="block" font="body">
               This is step 3
             </Text>
           </VStack>
@@ -69,7 +69,7 @@ const TourExample = ({
         <Box flexShrink={0} width={spacerWidthIncrement * 3} />
         <TourStep id="step4">
           <VStack background="bgSecondary" padding={1} width={150}>
-            <Text as="p" font="body">
+            <Text as="p" display="block" font="body">
               This is step 4
             </Text>
           </VStack>
@@ -116,11 +116,11 @@ const StepTwo = () => {
       closeButtonAccessibilityLabel="Close"
       content={
         <VStack gap={2}>
-          <Text as="p" color="fgMuted" font="caption">
+          <Text as="p" display="block" color="fgMuted" font="caption">
             50%
           </Text>
           <ProgressBar progress={0.5} />
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             Add up to 3 lines of body copy. Deliver your message with clarity and impact
           </Text>
         </VStack>

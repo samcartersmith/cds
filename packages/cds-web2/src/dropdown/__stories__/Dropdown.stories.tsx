@@ -84,7 +84,7 @@ export const Default = ({
   const content = (
     <>
       <HStack paddingX={2} paddingY={2} role="separator">
-        <Text as="h2" color="fgMuted" font="caption">
+        <Text as="h2" color="fgMuted" display="block" font="caption">
           Section Heading
         </Text>
       </HStack>
@@ -134,7 +134,7 @@ const BaseWrapped = ({ enableMobileModal }: { enableMobileModal?: boolean }) => 
   const content = (
     <>
       <HStack padding={2}>
-        <Text as="h2" color="fgMuted" font="caption">
+        <Text as="h2" color="fgMuted" display="block" font="caption">
           Section Heading
         </Text>
       </HStack>
@@ -199,7 +199,7 @@ export const SubMenu = () => {
     () => (
       <>
         <HStack padding={2}>
-          <Text as="h2" color="fgMuted" font="caption">
+          <Text as="h2" color="fgMuted" display="block" font="caption">
             Section Heading
           </Text>
         </HStack>
@@ -223,7 +223,7 @@ export const SubMenu = () => {
               paddingY={1}
               width="100%"
             >
-              <Text as="p" font="headline">
+              <Text as="p" display="block" font="headline">
                 More
               </Text>
               <Icon color="fg" name="caretRight" size="s" />
@@ -256,7 +256,7 @@ export const SubMenu = () => {
         justifyContent="center"
         padding={3}
       >
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           You chose: {subMenuValue ?? menuValue}
         </Text>
       </HStack>
@@ -295,14 +295,14 @@ export const CustomOptions = () => {
     () => (
       <>
         <HStack paddingX={2} paddingY={2}>
-          <Text as="h2" color="fgMuted" font="caption">
+          <Text as="h2" color="fgMuted" display="block" font="caption">
             Section Heading
           </Text>
         </HStack>
         <HStack flexWrap="wrap" gap={1} paddingBottom={2} paddingX={2}>
           {emojiMap.map(({ label, glyph }) => (
             <MenuItem value={label}>
-              <Text as="p" font="title2">
+              <Text as="p" display="block" font="title2">
                 {glyph}
               </Text>
             </MenuItem>
@@ -316,7 +316,7 @@ export const CustomOptions = () => {
   return (
     <Dropdown content={content} maxWidth={190} onChange={onChange} value={value}>
       <Pressable background="transparent">
-        <Text as="p" font="title2">
+        <Text as="p" display="block" font="title2">
           {currentGlyph}
         </Text>
       </Pressable>
@@ -341,7 +341,7 @@ export const LongText = () => {
 
   const content = (
     <HStack maxWidth="95vw" padding={2} role="separator">
-      <Text as="h2" color="fgMuted" font="caption" overflow="truncate">
+      <Text as="h2" color="fgMuted" display="block" font="caption" overflow="truncate">
         {loremIpsum}
       </Text>
     </HStack>

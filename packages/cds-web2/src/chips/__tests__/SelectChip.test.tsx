@@ -51,7 +51,7 @@ const ExampleSelectChip = ({
   const content = (
     <VStack>
       <HStack paddingX={2} paddingY={2} role="separator">
-        <Text as="h2" color="fgMuted" font="caption">
+        <Text as="h2" display="block" color="fgMuted" font="caption">
           Section Heading
         </Text>
       </HStack>

@@ -57,7 +57,7 @@ export const ContentCardBody: ContentCardBodyComponent = memo(
             {(mediaPosition === 'top' || mediaPosition === 'left') && mediaBox}
             <VStack gap={1} maxWidth="100%">
               {typeof body === 'string' ? (
-                <Text as="p" font="body">
+                <Text as="p" display="block" font="body">
                   {body}
                 </Text>
               ) : (

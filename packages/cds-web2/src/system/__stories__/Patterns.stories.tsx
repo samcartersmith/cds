@@ -71,7 +71,7 @@ export const DisclosureLowFriction = () => {
           <Box justifyContent="center">
             <SpotRectangle name="accessToAdvancedCharts" />
           </Box>
-          <Text as="h2" font="title3" id="dlf-title" paddingTop={4}>
+          <Text as="h2" display="block" font="title3" id="dlf-title" paddingTop={4}>
             Title outlining the action and benefit in 1-2 lines
           </Text>
           <VStack as="ul" gap={3} paddingY={3}>
@@ -79,11 +79,11 @@ export const DisclosureLowFriction = () => {
               <VStack key={id} as="li" gap={1}>
                 <HStack alignItems="center" gap={2}>
                   <Icon color="fg" name="checkmark" size="s" />
-                  <Text as="h3" font="headline">
+                  <Text as="h3" display="block" font="headline">
                     {headline}
                   </Text>
                 </HStack>
-                <Text as="p" font="body" paddingStart={4}>
+                <Text as="p" display="block" font="body" paddingStart={4}>
                   {body}
                 </Text>
               </VStack>
@@ -136,7 +136,7 @@ export const DisclosureMediumFriction = () => {
           <Box justifyContent="center">
             <SpotRectangle name="accessToAdvancedCharts" />
           </Box>
-          <Text as="h2" font="title3" id="dmf-title" paddingTop={4}>
+          <Text as="h2" display="block" font="title3" id="dmf-title" paddingTop={4}>
             Title outlining the benefit in 1-2 lines
           </Text>
           <VStack as="ul" gap={3} paddingY={3}>
@@ -144,11 +144,11 @@ export const DisclosureMediumFriction = () => {
               <VStack key={id} as="li" gap={1}>
                 <HStack alignItems="center" gap={2}>
                   <Icon color="fg" name="checkmark" size="s" />
-                  <Text as="h3" font="headline">
+                  <Text as="h3" display="block" font="headline">
                     {headline}
                   </Text>
                 </HStack>
-                <Text as="p" font="body" paddingStart={4}>
+                <Text as="p" display="block" font="body" paddingStart={4}>
                   {body}
                 </Text>
               </VStack>
@@ -201,10 +201,10 @@ export const DisclosureHighFrictionBenefit = () => {
           <Box justifyContent="center">
             <SpotRectangle name="accessToAdvancedCharts" />
           </Box>
-          <Text as="h2" font="title3" id="dhfb-title" paddingTop={4}>
+          <Text as="h2" display="block" font="title3" id="dhfb-title" paddingTop={4}>
             Title outlining the benefit in 1-2 lines
           </Text>
-          <Text as="p" font="label2" paddingTop={1}>
+          <Text as="p" display="block" font="label2" paddingTop={1}>
             Body text saying &quot;By verbing, you will get X, Y, Z.&quot;
           </Text>
           <VStack as="ul" gap={3} paddingY={3}>
@@ -212,11 +212,11 @@ export const DisclosureHighFrictionBenefit = () => {
               <VStack key={id} as="li" gap={1}>
                 <HStack alignItems="center" gap={2}>
                   <Icon color="fg" name="checkmark" size="s" />
-                  <Text as="h3" font="headline">
+                  <Text as="h3" display="block" font="headline">
                     {headline}
                   </Text>
                 </HStack>
-                <Text as="p" font="body" paddingStart={4}>
+                <Text as="p" display="block" font="body" paddingStart={4}>
                   {body}
                 </Text>
               </VStack>
@@ -284,17 +284,17 @@ export const DisclosureHighFrictionRisk = () => {
           <Box justifyContent="center">
             <SpotRectangle name="accessToAdvancedCharts" />
           </Box>
-          <Text as="h2" font="title3" id="dhfr-title" paddingTop={4}>
+          <Text as="h2" display="block" font="title3" id="dhfr-title" paddingTop={4}>
             Title outlining risk in 1-2 lines
           </Text>
-          <Text as="p" font="label2" paddingTop={1}>
+          <Text as="p" display="block" font="label2" paddingTop={1}>
             Body text saying &quot;Before you [verb], here are a few things you need to understand
             about [action].&quot;
           </Text>
           <VStack as="ul" gap={3} paddingY={3}>
             {data.map(({ id, headline, checkboxLabel, linkText, linkUrl }, index) => (
               <VStack key={id} as="li" gap={1}>
-                <Text as="h3" font="headline">
+                <Text as="h3" display="block" font="headline">
                   {headline}
                 </Text>
                 <HStack alignItems="center" as="label" gap={1} style={checkboxLabelStyles}>

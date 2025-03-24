@@ -10,7 +10,7 @@ describe('MenuItem', () => {
     render(
       <DefaultThemeProvider>
         <MenuItem value="1">
-          <Text as="p" font="title2">
+          <Text as="p" display="block" font="title2">
             Item1
           </Text>
         </MenuItem>
@@ -28,7 +28,7 @@ describe('MenuItem', () => {
       <SelectProvider value={{ handleCloseMenu }}>
         <DefaultThemeProvider>
           <MenuItem onClick={onClick} testID="test-menu-item" value="1">
-            <Text as="p" font="title2">
+            <Text as="p" display="block" font="title2">
               Item1
             </Text>
           </MenuItem>
@@ -50,7 +50,7 @@ describe('MenuItem', () => {
       <SelectProvider value={{ handleCloseMenu }}>
         <DefaultThemeProvider>
           <MenuItem disableCloseOnOptionChange onClick={onClick} testID="test-menu-item" value="1">
-            <Text as="p" font="title2">
+            <Text as="p" display="block" font="title2">
               Item1
             </Text>
           </MenuItem>

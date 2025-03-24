@@ -67,7 +67,7 @@ describe('MultiContentModule', () => {
 
   it('renders custom node for title', () => {
     const title = (
-      <Text as="h1" font="display1" testID="custom-title">
+      <Text as="h1" display="block" font="display1" testID="custom-title">
         Custom Title
       </Text>
     );
@@ -81,7 +81,7 @@ describe('MultiContentModule', () => {
 
   it('renders custom node for description', () => {
     const description = (
-      <Text as="p" font="body" testID="custom-description">
+      <Text as="p" display="block" font="body" testID="custom-description">
         Custom Description
       </Text>
     );
@@ -97,7 +97,7 @@ describe('MultiContentModule', () => {
     render(
       <DefaultThemeProvider>
         <MultiContentModule {...exampleProps}>
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             primary content
           </Text>
         </MultiContentModule>

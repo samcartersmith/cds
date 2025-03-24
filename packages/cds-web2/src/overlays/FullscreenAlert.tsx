@@ -85,11 +85,11 @@ export const FullscreenAlert = memo(function FullscreenAlert({
         <VStack alignItems="center" paddingBottom={4}>
           {!!heroSquare && <HeroSquare name={heroSquare} />}
           <Box paddingBottom={1} paddingTop={3}>
-            <Text as="h3" font="title3" id={labelledBySource} textAlign="center">
+            <Text as="h3" display="block" font="title3" id={labelledBySource} textAlign="center">
               {title}
             </Text>
           </Box>
-          <Text as="p" color="fgMuted" textAlign="center">
+          <Text as="p" color="fgMuted" display="block" textAlign="center">
             {body}
           </Text>
         </VStack>

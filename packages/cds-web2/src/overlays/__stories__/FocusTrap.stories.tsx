@@ -16,7 +16,7 @@ export const Playground = () => {
       <Button>Submit</Button>
       <FocusTrap>
         <VStack background="bgPrimaryWash" gap={1} padding={3}>
-          <Text as="h1" font="headline">
+          <Text as="h1" display="block" font="headline">
             These components are trapped
           </Text>
           <TextInput label="Test 1" />

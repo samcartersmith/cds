@@ -12,7 +12,7 @@ export default {
 export const MaterialSpinnerDefault = () => {
   return (
     <VStack alignItems="flex-start">
-      <Text as="h1" font="title1">
+      <Text as="h1" display="block" font="title1">
         Material Spinner
       </Text>
       <Spacer />

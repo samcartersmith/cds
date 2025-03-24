@@ -62,14 +62,14 @@ export const UpsellCard = memo(
           >
             <VStack gap={1}>
               {typeof title === 'string' ? (
-                <Text as="h3" font="headline">
+                <Text as="h3" display="block" font="headline">
                   {title}
                 </Text>
               ) : (
                 title
               )}
               {typeof description === 'string' ? (
-                <Text as="p" font="label2" numberOfLines={3}>
+                <Text as="p" display="block" font="label2" numberOfLines={3}>
                   {description}
                 </Text>
               ) : (

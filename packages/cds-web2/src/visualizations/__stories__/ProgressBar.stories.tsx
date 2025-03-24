@@ -144,7 +144,7 @@ export const LabelAtBoundsBelow = () => {
           </VStack>
         )}
       </ProgressContainerWithButtons>
-      <Text as="p" font="label1">
+      <Text as="p" display="block" font="label1">
         Wrapped in HStack
       </Text>
       <ProgressContainerWithButtons>

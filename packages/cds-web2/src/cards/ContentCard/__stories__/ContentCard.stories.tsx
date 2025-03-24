@@ -50,10 +50,10 @@ const exampleProps: {
     body: 'Ethereum Network Shatters Records With Hashrate Climbing to 464 EH/s',
     label: (
       <HStack alignItems="flex-end" flexWrap="wrap" gap={0.5}>
-        <Text as="p" color="fgMuted" font="label2" numberOfLines={1}>
+        <Text as="p" color="fgMuted" display="block" font="label2" numberOfLines={1}>
           $9,9081.01
         </Text>
-        <Text as="p" color="fgPositive" font="label2">
+        <Text as="p" color="fgPositive" display="block" font="label2">
           ↗ 6.37%
         </Text>
       </HStack>
@@ -89,7 +89,7 @@ const exampleProps: {
 export const Default = (): JSX.Element => {
   return (
     <VStack gap={1} left={0} padding={1} paddingTop={3} position="absolute" top={0}>
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example
       </Text>
       <ContentCard>
@@ -98,7 +98,7 @@ export const Default = (): JSX.Element => {
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
       <Divider paddingBottom={2} />
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example with mediaPosition bottom
       </Text>
       <ContentCard>
@@ -107,7 +107,7 @@ export const Default = (): JSX.Element => {
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
       <Divider paddingBottom={2} paddingStart={3} />
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example with mediaPosition right
       </Text>
       <ContentCard>
@@ -116,7 +116,7 @@ export const Default = (): JSX.Element => {
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
       <Divider paddingBottom={2} paddingStart={3} />
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example with mediaPosition left
       </Text>
       <ContentCard>
@@ -125,7 +125,7 @@ export const Default = (): JSX.Element => {
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
       <Divider paddingBottom={2} paddingStart={3} />
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example with no media
       </Text>
       <ContentCard>
@@ -134,7 +134,7 @@ export const Default = (): JSX.Element => {
         <ContentCardFooter {...exampleProps.contentFooterProps} />
       </ContentCard>
       <Divider paddingBottom={2} paddingStart={3} />
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example with product component - TextInput
       </Text>
       <ContentCard>
@@ -168,7 +168,7 @@ export const Default = (): JSX.Element => {
         </ContentCardFooter>
       </ContentCard>
       <Divider paddingBottom={2} paddingStart={3} />
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example with product component - Custom Media
       </Text>
       <ContentCard>
@@ -182,7 +182,7 @@ export const Default = (): JSX.Element => {
           }
           meta={null}
           title={
-            <Text as="h2" font="title3">
+            <Text as="h2" display="block" font="title3">
               Today&apos;s briefing
             </Text>
           }
@@ -204,10 +204,10 @@ export const Default = (): JSX.Element => {
                 position="absolute"
                 top={16}
               >
-                <Text as="p" font="caption">
+                <Text as="p" display="block" font="caption">
                   ETH
                 </Text>
-                <Text as="p" color="fgPositive" font="label2">
+                <Text as="p" color="fgPositive" display="block" font="label2">
                   ↗ 6.37%
                 </Text>
               </HStack>
@@ -222,7 +222,7 @@ export const Default = (): JSX.Element => {
           }
         />
       </ContentCard>
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example with IconCounterButtons
       </Text>
       <ContentCard>
@@ -243,7 +243,7 @@ export const Default = (): JSX.Element => {
 export const ProductCarousel = () => {
   return (
     <VStack>
-      <Text as="h3" font="headline" paddingStart={3}>
+      <Text as="h3" display="block" font="headline" paddingStart={3}>
         Full Example with product component - Carousel
       </Text>
       <ContentCard maxWidth="100%">
@@ -253,7 +253,7 @@ export const ProductCarousel = () => {
           end={null}
           meta={null}
           title={
-            <Text as="h3" font="title3">
+            <Text as="h3" display="block" font="title3">
               Crypto moves money forward
             </Text>
           }
@@ -271,10 +271,10 @@ export const ProductCarousel = () => {
                   width={259}
                 />
                 <VStack bottom={16} gap={1} left={16} position="absolute">
-                  <Text as="h3" font="headline">
+                  <Text as="h3" display="block" font="headline">
                     Break the cycle
                   </Text>
-                  <Text as="p" font="legal">
+                  <Text as="p" display="block" font="legal">
                     24M views
                   </Text>
                 </VStack>

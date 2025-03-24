@@ -66,11 +66,11 @@ type LoremIpsumProps = {
 const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
   return (
     <>
-      <Text as="p" font="label1" paddingBottom={1} renderEmptyNode={false}>
+      <Text as="p" display="block" font="label1" paddingBottom={1} renderEmptyNode={false}>
         {title}
       </Text>
       {concise ? null : (
-        <Text as="p" font="body" paddingBottom={3}>
+        <Text as="p" display="block" font="body" paddingBottom={3}>
           {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
         </Text>
       )}

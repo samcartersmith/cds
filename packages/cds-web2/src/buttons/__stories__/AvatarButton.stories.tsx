@@ -54,7 +54,7 @@ export const Default = () => {
   return (
     <>
       <VStack gap={2}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Default
         </Text>
         <HStack alignItems="center" gap={2}>
@@ -67,7 +67,7 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Loading
         </Text>
         <HStack alignItems="center" gap={2}>
@@ -106,43 +106,43 @@ export const Default = () => {
         </HStack>
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Colored Fallback
         </Text>
         <FallbackColoredBase />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Colored Fallback Loading
         </Text>
         <FallbackColoredBase loading />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Colored Fallback Compact
         </Text>
         <FallbackColoredBase compact />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Colored Fallback Compact Loading
         </Text>
         <FallbackColoredBase compact loading />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Colored Fallback Selected
         </Text>
         <FallbackColoredBase selected />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Colored Fallback Square
         </Text>
         <FallbackColoredBase shape="square" />
       </VStack>
       <VStack gap={2} paddingTop={4}>
-        <Text as="h3" font="headline">
+        <Text as="h3" display="block" font="headline">
           Square Selected
         </Text>
         <FallbackColoredBase selected shape="square" />

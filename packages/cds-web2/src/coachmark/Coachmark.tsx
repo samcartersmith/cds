@@ -41,14 +41,14 @@ export const Coachmark = memo(
               <VStack gap={2}>
                 <VStack gap={0.5}>
                   {typeof title === 'string' ? (
-                    <Text as="h2" font="headline">
+                    <Text as="h2" display="block" font="headline">
                       {title}
                     </Text>
                   ) : (
                     title
                   )}
                   {typeof content === 'string' ? (
-                    <Text as="p" font="body">
+                    <Text as="p" display="block" font="body">
                       {content}
                     </Text>
                   ) : (

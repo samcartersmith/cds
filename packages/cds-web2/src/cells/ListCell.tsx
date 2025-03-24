@@ -97,7 +97,7 @@ export const ListCell: ListCellComponent = memo(
         >
           <VStack>
             {!!title && (
-              <Text as="div" font="headline" overflow="truncate">
+              <Text as="div" display="block" font="headline" overflow="truncate">
                 {title}
               </Text>
             )}

@@ -19,7 +19,7 @@ export const BasicAnimatedCaret = () => {
   return (
     <VStack>
       <Button onClick={handleRotate}>Rotate</Button>
-      <Text as="p" font="body">
+      <Text as="p" display="block" font="body">
         Rotate: {rotate} &#730;
       </Text>
       <AnimatedCaret rotate={rotate} size="l" />

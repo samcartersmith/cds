@@ -204,7 +204,7 @@ export const ComposedSystem = () => {
 
             return (
               <MockTabPanel id={id} isActive={isActive}>
-                <Text as="h2" font="display2" paddingBottom={1}>
+                <Text as="h2" display="block" font="display2" paddingBottom={1}>
                   {activeTabTitle}
                 </Text>
                 <LoremIpsum repeat={1 * (idx + 1)} />
@@ -290,7 +290,7 @@ const renderCB1 = (isCollapsed: boolean) => {
         {!isCollapsed && (
           <VStack>
             <Text font="headline">Coinbase One</Text>
-            <Text as="p" color="fgMuted" font="legal">
+            <Text as="p" color="fgMuted" display="block" font="legal">
               Zero trading fees
             </Text>
           </VStack>
@@ -356,7 +356,7 @@ export const DefaultSidebarExample = ({ children, ...props }: SidebarExampleProp
           </SidebarMoreMenu>
         </Sidebar>
         <VStack flexGrow={1} gap={1} justifyContent="space-between" padding={2}>
-          <Text as="h2" font="headline">
+          <Text as="h2" display="block" font="headline">
             Active Page: {[...items, ...moreMenuOptions][activeIndex].title}
           </Text>
           <HStack alignItems="center" flexGrow={1} justifyContent="center" padding={3}>
@@ -421,7 +421,7 @@ export const CondensedSidebarExample = ({ children, ...props }: SidebarExamplePr
           </SidebarMoreMenu>
         </Sidebar>
         <VStack flexGrow={1} gap={1} justifyContent="space-between" padding={2}>
-          <Text as="h2" font="headline">
+          <Text as="h2" display="block" font="headline">
             Active Page: {[...items, ...moreMenuOptions][activeIndex].title}
           </Text>
           <HStack alignItems="center" flexGrow={1} justifyContent="center" padding={3}>
@@ -500,7 +500,7 @@ export const CustomSidebarExample = ({ children, ...props }: SidebarExampleProps
           </SidebarMoreMenu>
         </Sidebar>
         <VStack flexGrow={1} gap={1} justifyContent="space-between" padding={2}>
-          <Text as="h2" font="headline">
+          <Text as="h2" display="block" font="headline">
             Active Page: {[...items, ...moreMenuOptions][activeIndex].title}
           </Text>
           <HStack alignItems="center" flexGrow={1} justifyContent="center" padding={3}>

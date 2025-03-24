@@ -329,7 +329,7 @@ export const Calendar = memo(
             paddingBottom={2}
             paddingX={1.5}
           >
-            <Text as="h3" font="headline">
+            <Text as="h3" display="block" font="headline">
               {calendarSeedDate.toLocaleDateString('en-US', {
                 month: 'long',
                 year: 'numeric',

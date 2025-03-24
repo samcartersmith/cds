@@ -55,7 +55,7 @@ const renderHeaderComponents = (props?: TextProps<'h1' | 'h2' | 'h3' | 'h4'>) =>
 
 export const Normal = () => (
   <>
-    {renderHeaderComponents()}
+    {renderHeaderComponents({ display: 'block' })}
     {textComponents.map((Component) => {
       const name = (Component as { displayName?: string }).displayName?.slice(4);
       return (
@@ -71,11 +71,11 @@ export const TextWithInherit = () => {
   return (
     // parent's font size is that of a legal text
     <Box flexDirection="column" font="display1">
-      <Text as="p" font="body">
+      <Text as="p" display="block" font="body">
         The following text inherits the parent Display1 font but overrides the fontSize prop
       </Text>
       {/* marking this Text as inherit */}
-      <Text as="h1" font="inherit" fontSize="legal">
+      <Text as="h1" display="block" font="inherit" fontSize="legal">
         Display1
       </Text>
     </Box>
@@ -103,11 +103,11 @@ export const Dense = () => {
 
 export const MonoFont = () => (
   <>
-    {renderHeaderComponents({ mono: true })}
+    {renderHeaderComponents({ mono: true, display: 'block' })}
     {textComponents.map((Component) => {
       const name = (Component as { displayName?: string }).displayName?.slice(4);
       return (
-        <Component key={name} mono as="p">
+        <Component key={name} mono as="p" display="block">
           {name}
         </Component>
       );
@@ -123,40 +123,44 @@ export const SlashedZero = () => (
 
 export const TabularNumbers = () => (
   <>
-    <TextBody tabularNumbers as="p" textAlign="end">
+    <TextBody tabularNumbers as="p" display="block" textAlign="end">
       91.23450
     </TextBody>
-    <TextBody tabularNumbers as="p" textAlign="end">
+    <TextBody tabularNumbers as="p" display="block" textAlign="end">
       11.98762
     </TextBody>
   </>
 );
 
 export const SelectableNone = () => (
-  <TextBody as="p" userSelect="none">
+  <TextBody as="p" display="block" userSelect="none">
     BTC
   </TextBody>
 );
 
 export const SelectableText = () => (
-  <TextBody as="p" userSelect="text">
+  <TextBody as="p" display="block" userSelect="text">
     Balance: 1,820,29.56
   </TextBody>
 );
 
 export const SelectableAll = () => (
-  <TextBody slashedZero as="p" userSelect="all">
+  <TextBody slashedZero as="p" display="block" userSelect="all">
     bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
   </TextBody>
 );
 
 export const Underline = () => (
-  <TextBody underline as="p">
+  <TextBody underline as="p" display="block">
     Learn more
   </TextBody>
 );
 
-export const Strikethrough = () => <TextBody as="s">Manual verification</TextBody>;
+export const Strikethrough = () => (
+  <TextBody as="s" textDecoration="line-through">
+    Manual verification
+  </TextBody>
+);
 
 const MediumContainer = ({ children }: { children?: React.ReactNode }) => (
   <div style={{ width: '35%', height: '50px', backgroundColor: 'var(--color-bgAlternate)' }}>
@@ -166,7 +170,7 @@ const MediumContainer = ({ children }: { children?: React.ReactNode }) => (
 
 export const NoWrap = () => (
   <MediumContainer>
-    <TextBody noWrap as="p">
+    <TextBody noWrap as="p" display="block">
       As with any asset, the value of Digital Currencies can
     </TextBody>
   </MediumContainer>
@@ -174,7 +178,7 @@ export const NoWrap = () => (
 
 export const TextOverflowEllipsis = () => (
   <MediumContainer>
-    <TextBody as="p" overflow="truncate">
+    <TextBody as="p" display="block" overflow="truncate">
       As with any asset, the value of Digital Currencies can go up or down and there can be a
       substantial risk that you lose money buying, selling, holding, or investing in digital
       currencies. You should carefully consider whether trading or holding Digital Currencies is
@@ -187,7 +191,7 @@ export const TextOverflowEllipsis = () => (
 
 export const TextOverflowClip = () => (
   <MediumContainer>
-    <TextBody as="p" overflow="clip">
+    <TextBody as="p" display="block" overflow="clip">
       Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
       Digital Currencies can go up or down and there can be a substantial risk that you lose money
       buying, selling, holding, or investing in digital currencies. You should carefully consider
@@ -200,7 +204,7 @@ export const TextOverflowClip = () => (
 
 export const TextNumberOfLines = () => (
   <VStack maxWidth={300}>
-    <TextBody as="p" numberOfLines={2}>
+    <TextBody as="p" display="block" numberOfLines={2}>
       Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
       Digital Currencies can go up or down and there can be a substantial risk that you lose money
       buying, selling, holding, or investing in digital currencies. You should carefully consider
@@ -213,7 +217,7 @@ export const TextNumberOfLines = () => (
 
 export const TextNumberOfLinesSiblings = () => (
   <VStack gap={3} maxWidth={300}>
-    <TextBody as="p" numberOfLines={1} overflow="break">
+    <TextBody as="p" display="block" numberOfLines={1} overflow="break">
       Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
       Digital Currencies can go up or down and there can be a substantial risk that you lose money
       buying, selling, holding, or investing in digital currencies. You should carefully consider
@@ -221,7 +225,7 @@ export const TextNumberOfLinesSiblings = () => (
       condition. Coinbase is not registered with the U.S. Securities and Exchange Commission and
       does not offer securities services in the United States or to U.S. persons.
     </TextBody>
-    <TextBody as="p" numberOfLines={2} overflow="break">
+    <TextBody as="p" display="block" numberOfLines={2} overflow="break">
       Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
       Digital Currencies can go up or down and there can be a substantial risk that you lose money
       buying, selling, holding, or investing in digital currencies. You should carefully consider
@@ -229,7 +233,7 @@ export const TextNumberOfLinesSiblings = () => (
       condition. Coinbase is not registered with the U.S. Securities and Exchange Commission and
       does not offer securities services in the United States or to U.S. persons.
     </TextBody>
-    <TextBody as="p" numberOfLines={3} overflow="break">
+    <TextBody as="p" display="block" numberOfLines={3} overflow="break">
       Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
       Digital Currencies can go up or down and there can be a substantial risk that you lose money
       buying, selling, holding, or investing in digital currencies. You should carefully consider
@@ -242,8 +246,8 @@ export const TextNumberOfLinesSiblings = () => (
 
 export const TextNumberOfLinesNested = () => (
   <VStack gap={3} maxWidth={300}>
-    <TextBody as="p" numberOfLines={2}>
-      <TextBody as="p" numberOfLines={3}>
+    <TextBody as="p" display="block" numberOfLines={2}>
+      <TextBody as="p" display="block" numberOfLines={3}>
         The parent Text says this should only wrap to 2 lines, but the child which actually renders
         this text says it should wrap up to 3 lines.
       </TextBody>
@@ -255,7 +259,7 @@ export const TextNumberOfLinesCustomSpacing = () => {
   return (
     <VStack gap={3} maxWidth={300}>
       <Box as="span" padding={2}>
-        <TextBody as="p" numberOfLines={2}>
+        <TextBody as="p" display="block" numberOfLines={2}>
           Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
           Digital Currencies can go up or down and there can be a substantial risk that you lose
           money buying, selling, holding, or investing in digital currencies. You should carefully
@@ -272,7 +276,7 @@ export const TextNumberOfLinesCustomSpacing = () => {
           desktop: 2,
         }}
       >
-        <TextBody as="p" numberOfLines={2}>
+        <TextBody as="p" display="block" numberOfLines={2}>
           Crypto address 0xf847047c69726b4049a5b866c8fa37cfe4ed614f. As with any asset, the value of
           Digital Currencies can go up or down and there can be a substantial risk that you lose
           money buying, selling, holding, or investing in digital currencies. You should carefully
@@ -286,19 +290,19 @@ export const TextNumberOfLinesCustomSpacing = () => {
 };
 
 export const Uppercase = () => (
-  <TextBody as="p" textTransform="uppercase">
+  <TextBody as="p" display="block" textTransform="uppercase">
     uppercase
   </TextBody>
 );
 
 export const Lowercase = () => (
-  <TextBody as="p" textTransform="lowercase">
+  <TextBody as="p" display="block" textTransform="lowercase">
     Lowercase
   </TextBody>
 );
 
 export const Capitalize = () => (
-  <TextBody as="p" textTransform="capitalize">
+  <TextBody as="p" display="block" textTransform="capitalize">
     capitalize
   </TextBody>
 );
@@ -307,15 +311,27 @@ export const Sub = () => <TextBody as="sub">sub</TextBody>;
 
 export const Strong = () => <TextBody as="strong">strong</TextBody>;
 
-export const Bold = () => <TextBody as="p">b</TextBody>;
+export const Bold = () => (
+  <TextBody as="p" display="block">
+    b
+  </TextBody>
+);
 
 export const DescriptionDlDd = () => (
   <dl>
-    <TextBody as="dt">Coffee</TextBody>
-    <TextBody as="dd">Black hot drink</TextBody>
+    <TextBody as="dt" display="block">
+      Coffee
+    </TextBody>
+    <TextBody as="dd" display="block">
+      Black hot drink
+    </TextBody>
     <div>
-      <TextBody as="dt">Milk</TextBody>
-      <TextBody as="dd">White cold drink</TextBody>
+      <TextBody as="dt" display="block">
+        Milk
+      </TextBody>
+      <TextBody as="dd" display="block">
+        White cold drink
+      </TextBody>
     </div>
   </dl>
 );
@@ -328,7 +344,7 @@ export const Time = () => (
 
 export const CustomStyle = () => (
   <>
-    {renderHeaderComponents({ style: { background: 'coral' } })}
+    {renderHeaderComponents({ style: { background: 'coral', display: 'block' } })}
     {textComponents.map((Component) => {
       const name = (Component as { displayName?: string }).displayName?.slice(4);
       return (

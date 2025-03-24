@@ -11,7 +11,7 @@ describe('Tag', () => {
     render(
       <DefaultThemeProvider>
         <Tag colorScheme="blue">
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             Tag
           </Text>
         </Tag>
@@ -24,7 +24,7 @@ describe('Tag', () => {
     render(
       <DefaultThemeProvider>
         <Tag colorScheme="blue" testID={TEST_ID}>
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             Tag
           </Text>
         </Tag>
@@ -37,7 +37,7 @@ describe('Tag', () => {
     const TagMock = () => (
       <DefaultThemeProvider>
         <Tag colorScheme="blue" testID={TEST_ID}>
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             Tag
           </Text>
         </Tag>
@@ -75,7 +75,7 @@ describe('Tag', () => {
     render(
       <DefaultThemeProvider>
         <Tag colorScheme="red" testID={TEST_ID}>
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             Tag
           </Text>
         </Tag>

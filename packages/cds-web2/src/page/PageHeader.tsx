@@ -123,7 +123,7 @@ export const PageHeader = memo(
             testID="responsive-title-container"
           >
             {typeof title === 'string' ? (
-              <Text as="h1" font="title1">
+              <Text as="h1" display="block" font="title1">
                 {title}
               </Text>
             ) : (

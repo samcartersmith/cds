@@ -66,7 +66,7 @@ export const LoadingStateExample: Story = () => {
       <TableBody>
         <VStack alignItems="center" justifyContent="center" minHeight={500}>
           <Spinner color="bgPrimary" size={4} />
-          <Text as="p" color="fgMuted" font="headline" paddingTop={2}>
+          <Text as="p" color="fgMuted" display="block" font="headline" paddingTop={2}>
             Loading content...
           </Text>
         </VStack>

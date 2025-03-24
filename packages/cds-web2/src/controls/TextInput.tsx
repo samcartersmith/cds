@@ -266,7 +266,7 @@ export const TextInput = memo(
                 testID={testIDMap?.end ?? ''}
               >
                 {suffix !== '' && (
-                  <Text as="p" color="fgMuted" font="label1" paddingEnd={2}>
+                  <Text as="p" color="fgMuted" display="block" font="label1" paddingEnd={2}>
                     {suffix}
                   </Text>
                 )}

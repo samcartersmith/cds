@@ -18,7 +18,7 @@ export const TableRowExample: Story = () => {
       <TableBody>
         <TableRow>
           <TableCell direction="horizontal">
-            <Text as="h2" font="headline">
+            <Text as="h2" display="block" font="headline">
               Sample Row 1
             </Text>
             <Button compact onClick={handleClick} variant="secondary">
@@ -39,7 +39,7 @@ export const TableRowExample: Story = () => {
         </TableRow>
         <TableRow disableHoverIndicator>
           <TableCell direction="horizontal">
-            <Text as="h2" font="headline">
+            <Text as="h2" display="block" font="headline">
               Sample Row 3 (disable hover indicator)
             </Text>
             <Button compact onClick={handleClick} variant="secondary">

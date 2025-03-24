@@ -141,7 +141,7 @@ export const Toast = memo(
               >
                 {/* avoid pushing contents off screen */}
                 <Box flexShrink={1} paddingEnd={2} paddingY={1}>
-                  <Text as="p" font="headline" tabIndex={0}>
+                  <Text as="p" display="block" font="headline" tabIndex={0}>
                     {text}
                   </Text>
                 </Box>

@@ -38,7 +38,7 @@ describe('TableCaption', () => {
 
     render(
       <TableCaptionMock>
-        <Text as="h2" font="display2">
+        <Text as="h2" display="block" font="display2">
           {caption}
         </Text>
       </TableCaptionMock>,

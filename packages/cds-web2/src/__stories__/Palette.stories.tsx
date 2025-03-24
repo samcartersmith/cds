@@ -22,11 +22,11 @@ const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
             width={200}
           >
             <VStack background="bg">
-              <Text as="p" font="caption" textAlign="center">
+              <Text as="p" display="block" font="caption" textAlign="center">
                 {name}
               </Text>
               {!!elevation && (
-                <Text as="p" font="caption" textAlign="center">
+                <Text as="p" display="block" font="caption" textAlign="center">
                   Elevation: {elevation}
                 </Text>
               )}

@@ -39,7 +39,7 @@ const BasicAccordion = () => {
         subtitle="subtitle2"
         title="Accordion #2"
       >
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           Accordion Content
         </Text>
       </AccordionItem>
@@ -54,7 +54,7 @@ const NoMedia = () => {
         <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
       </AccordionItem>
       <AccordionItem itemKey="2" onClick={handlePress} subtitle="subtitle2" title="Accordion #2">
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           Accordion Content
         </Text>
       </AccordionItem>
@@ -78,7 +78,7 @@ const NoSubtitle = () => {
         onClick={handlePress}
         title="Accordion #2"
       >
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           Accordion Content
         </Text>
       </AccordionItem>
@@ -93,7 +93,7 @@ const TitleOnly = () => {
         <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
       </AccordionItem>
       <AccordionItem itemKey="2" onClick={handlePress} title="Accordion #2">
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           Accordion Content
         </Text>
       </AccordionItem>
@@ -105,12 +105,12 @@ const LongContent = () => {
   return (
     <Accordion defaultActiveKey="2" onChange={handlePress}>
       <AccordionItem itemKey="1" title="Accordion #1">
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           {loremIpsum.repeat(10)}
         </Text>
       </AccordionItem>
       <AccordionItem itemKey="2" onClick={handlePress} title="Accordion #2">
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           Accordion Content
         </Text>
       </AccordionItem>
@@ -144,7 +144,7 @@ const CustomStyle = () => {
         subtitle="subtitle2"
         title="Accordion #2"
       >
-        <Text as="p" font="body">
+        <Text as="p" display="block" font="body">
           Accordion Content
         </Text>
       </AccordionItem>

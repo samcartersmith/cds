@@ -20,7 +20,7 @@ export const Basic = () => {
     <VStack gap={3}>
       {sizes.map(([width, height]) => (
         <>
-          <Text as="p" font="body">
+          <Text as="p" display="block" font="body">
             Width: {width}, Height: {height}
           </Text>
           <Fallback disableRandomRectWidth height={height} width={width} />

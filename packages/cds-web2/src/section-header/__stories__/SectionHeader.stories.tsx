@@ -34,10 +34,10 @@ const exampleProps: SectionHeaderProps = {
   ),
   balance: (
     <HStack alignItems="flex-end" flexWrap="wrap" gap={0.5}>
-      <Text as="h3" color="fgMuted" font="title3" numberOfLines={1}>
+      <Text as="h3" color="fgMuted" display="block" font="title3" numberOfLines={1}>
         $3,9081.01
       </Text>
-      <Text as="p" color="fgPositive" font="body">
+      <Text as="p" color="fgPositive" display="block" font="body">
         ↗ 6.37%
       </Text>
     </HStack>
@@ -141,10 +141,10 @@ export const Examples = () => {
         {...exampleProps}
         balance={
           <VStack>
-            <Text as="h3" color="fgMuted" font="title3">
+            <Text as="h3" color="fgMuted" display="block" font="title3">
               $3908.01
             </Text>
-            <Text as="p" color="fgPositive" font="body">
+            <Text as="p" color="fgPositive" display="block" font="body">
               ↗ 6.37%
             </Text>
           </VStack>
@@ -158,7 +158,7 @@ export const Examples = () => {
         icon={null}
         start={null}
         title={
-          <Text as="p" font="label1">
+          <Text as="p" display="block" font="label1">
             SectionHeader
           </Text>
         }
@@ -171,7 +171,7 @@ export const Examples = () => {
             <Text as="sub" color="fgMuted" font="display3">
               $3908.01
             </Text>
-            <Text as="p" color="fgNegative" font="body">
+            <Text as="p" color="fgNegative" display="block" font="body">
               ↘ 6.37%
             </Text>
           </HStack>
@@ -185,7 +185,7 @@ export const Examples = () => {
         icon={null}
         start={null}
         title={
-          <Text as="p" font="label1">
+          <Text as="p" display="block" font="label1">
             SectionHeader
           </Text>
         }

@@ -81,7 +81,7 @@ const SegmentedTabsExample = ({ title, defaultActiveTab, ...props }: SegmentedTa
 
   return (
     <VStack gap={2}>
-      <Text as="h2" font="title4">
+      <Text as="h2" display="block" font="title4">
         {title}
       </Text>
       <SegmentedTabs

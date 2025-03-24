@@ -42,11 +42,11 @@ export const CoachmarkExamples = () => {
         closeButtonAccessibilityLabel="Close"
         content={
           <VStack gap={2}>
-            <Text as="p" color="fgMuted" font="caption">
+            <Text as="p" display="block" color="fgMuted" font="caption">
               50%
             </Text>
             <ProgressBar progress={0.5} />
-            <Text as="p" font="body">
+            <Text as="p" display="block" font="body">
               Add up to 3 lines of body copy. Deliver your message with clarity and impact
             </Text>
           </VStack>

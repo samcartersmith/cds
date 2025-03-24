@@ -29,7 +29,7 @@ export const TableCellFallbackExample: Story = () => {
         <TableHeader>
           <TableRow fullWidth>
             <HStack alignItems="center" flexGrow={1} justifyContent="space-between">
-              <Text as="h2" font="display2">
+              <Text as="h2" display="block" font="display2">
                 Sample Table
               </Text>
               <Switch checked={loading} onChange={toggle}>

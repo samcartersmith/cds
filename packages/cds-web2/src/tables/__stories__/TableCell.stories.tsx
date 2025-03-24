@@ -63,7 +63,7 @@ export const VerticallyAlignedTableCell: Story = () => {
           <TableCell>
             <Accordion>
               <AccordionItem itemKey="1" title="Accordion Item">
-                <Text as="p" font="body">
+                <Text as="p" display="block" font="body">
                   <LoremIpsum repeat={3} />
                 </Text>
               </AccordionItem>
@@ -78,7 +78,7 @@ export const VerticallyAlignedTableCell: Story = () => {
 export const ComplexSpacingOverride: Story = () => {
   return (
     <VStack gap={2}>
-      <Text as="p" font="body">
+      <Text as="p" display="block" font="body">
         This story is complex on purpose - it is intended to provide visgreg testing to ensure crazy
         spacing configs do what they are supposed to do:
       </Text>
@@ -168,7 +168,7 @@ export const SampleCells: Story = () => {
           <TableRow backgroundColor="bgAlternate">
             <TableCell title="First Header" />
             <TableCell>
-              <Text as="p" color="currentColor" font="headline">
+              <Text as="p" color="currentColor" display="block" font="headline">
                 Second Header
               </Text>
             </TableCell>
@@ -191,10 +191,10 @@ export const SampleCells: Story = () => {
             />
             <TableCell subtitle="0.11882557" title="$2,475.68" />
             <TableCell>
-              <Text as="h2" color="currentColor" font="headline">
+              <Text as="h2" color="currentColor" display="block" font="headline">
                 $2,221.01
               </Text>
-              <Text as="p" color="fgMuted" font="label2">
+              <Text as="p" color="fgMuted" display="block" font="label2">
                 0.1519581 BTC
               </Text>
             </TableCell>
@@ -220,7 +220,7 @@ export const SampleFixedLayout: Story = () => {
           <TableRow backgroundColor="bgAlternate">
             <TableCell title="First Header" width="20%" />
             <TableCell>
-              <Text as="p" color="currentColor" font="headline">
+              <Text as="p" color="currentColor" display="block" font="headline">
                 Second Header
               </Text>
             </TableCell>
@@ -243,10 +243,10 @@ export const SampleFixedLayout: Story = () => {
             />
             <TableCell subtitle="0.11882557" title="$2,475.68" />
             <TableCell>
-              <Text as="h2" color="currentColor" font="headline">
+              <Text as="h2" color="currentColor" display="block" font="headline">
                 $2,221.01
               </Text>
-              <Text as="p" color="fgMuted" font="label2">
+              <Text as="p" color="fgMuted" display="block" font="label2">
                 0.1519581 BTC
               </Text>
             </TableCell>
