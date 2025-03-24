@@ -15,7 +15,7 @@ import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout';
-import { TextHeadline } from '../typography';
+import { Text } from '../typography/Text';
 
 import { tabsSpringConfig } from './Tabs';
 
@@ -36,7 +36,7 @@ export type SegmentedTabProps = {
 } & TabValue &
   Omit<PressableProps, 'children' | 'disabled' | 'onPress' | 'style'>;
 
-const AnimatedTextHeadline = Animated.createAnimatedComponent(TextHeadline);
+const AnimatedTextHeadline = Animated.createAnimatedComponent(Text);
 
 export const SegmentedTab = memo(
   forwardRef(
@@ -106,7 +106,12 @@ export const SegmentedTab = memo(
         >
           <Box alignItems="center" paddingX={2} paddingY={1}>
             {typeof label === 'string' ? (
-              <AnimatedTextHeadline animated style={animatedTextStyles} testID={`${testID}-label`}>
+              <AnimatedTextHeadline
+                animated
+                font="headline"
+                style={animatedTextStyles}
+                testID={`${testID}-label`}
+              >
                 {label}
               </AnimatedTextHeadline>
             ) : (

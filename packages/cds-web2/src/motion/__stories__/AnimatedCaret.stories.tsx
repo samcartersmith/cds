@@ -3,7 +3,7 @@ import random from 'lodash/random';
 
 import { Button } from '../../buttons';
 import { VStack } from '../../layout/VStack';
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { AnimatedCaret } from '../AnimatedCaret';
 
 export default {
@@ -19,7 +19,9 @@ export const BasicAnimatedCaret = () => {
   return (
     <VStack>
       <Button onClick={handleRotate}>Rotate</Button>
-      <TextBody as="p">Rotate: {rotate} &#730;</TextBody>
+      <Text as="p" font="body">
+        Rotate: {rotate} &#730;
+      </Text>
       <AnimatedCaret rotate={rotate} size="l" />
     </VStack>
   );

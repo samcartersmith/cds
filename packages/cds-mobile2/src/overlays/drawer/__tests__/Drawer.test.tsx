@@ -10,7 +10,7 @@ import { delay } from '@cbhq/cds-common2/utils/delay';
 
 import { Button } from '../../../buttons';
 import { VStack } from '../../../layout/VStack';
-import { TextBody, TextLabel1 } from '../../../typography';
+import { Text } from '../../../typography/Text';
 import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../../utils/testHelpers';
 import { Drawer } from '../Drawer';
 
@@ -26,11 +26,13 @@ type LoremIpsumProps = {
 const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
   return (
     <>
-      <TextLabel1 paddingBottom={1} renderEmptyNode={false}>
+      <Text font="label1" paddingBottom={1} renderEmptyNode={false}>
         {title}
-      </TextLabel1>
+      </Text>
       {concise ? null : (
-        <TextBody paddingBottom={3}>{repeat ? loremIpsum.repeat(repeat) : loremIpsum}</TextBody>
+        <Text font="body" paddingBottom={3}>
+          {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
+        </Text>
       )}
     </>
   );

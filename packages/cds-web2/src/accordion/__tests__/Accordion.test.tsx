@@ -3,7 +3,7 @@ import { noop } from '@cbhq/cds-utils';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { CellMedia } from '../../cells/CellMedia';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/test';
 import { Accordion } from '../Accordion';
 import { AccordionItem } from '../AccordionItem';
@@ -44,7 +44,9 @@ const MockAccordion = ({
         testID="mock-accordion-item1"
         title="Accordion #1"
       >
-        <TextBody as="p">Accordion Content1</TextBody>
+        <Text as="p" font="body">
+          Accordion Content1
+        </Text>
       </AccordionItem>
       <AccordionItem
         itemKey="2"
@@ -54,7 +56,9 @@ const MockAccordion = ({
         testID="mock-accordion-item2"
         title="Accordion #2"
       >
-        <TextBody as="p">Accordion Content2</TextBody>
+        <Text as="p" font="body">
+          Accordion Content2
+        </Text>
       </AccordionItem>
     </Accordion>
   );
@@ -197,7 +201,9 @@ describe('Accordion', () => {
               testID="mock-accordion-item1"
               title="Accordion #1"
             >
-              <TextBody as="p">Accordion Content1</TextBody>
+              <Text as="p" font="body">
+                Accordion Content1
+              </Text>
             </AccordionItem>
             <AccordionItem
               itemKey="2"
@@ -206,7 +212,9 @@ describe('Accordion', () => {
               testID="mock-accordion-item2"
               title="Accordion #2"
             >
-              <TextBody as="p">Accordion Content2</TextBody>
+              <Text as="p" font="body">
+                Accordion Content2
+              </Text>
             </AccordionItem>
           </Accordion>
         </DefaultThemeProvider>,

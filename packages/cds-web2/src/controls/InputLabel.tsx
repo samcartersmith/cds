@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 
-import { TextProps } from '../typography/Text';
-import { TextLabel1 } from '../typography/TextLabel1';
+import { Text, type TextProps } from '../typography/Text';
 
 export type InputLabelProps = TextProps<'label'>;
 
@@ -10,5 +9,7 @@ export const InputLabel = memo(function InputLabel({
   disabled = false,
   ...props
 }: InputLabelProps) {
-  return <TextLabel1 as="label" color={color} disabled={disabled} paddingY={0.5} {...props} />;
+  return (
+    <Text as="label" color={color} disabled={disabled} font="label1" paddingY={0.5} {...props} />
+  );
 });

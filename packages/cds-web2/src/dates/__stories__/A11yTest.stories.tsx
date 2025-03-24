@@ -5,7 +5,7 @@ import { Box } from '../../layout/Box';
 import { Group } from '../../layout/Group';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
-import { TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Calendar } from '../Calendar';
 import { DateInput } from '../DateInput';
 import { DatePicker } from '../DatePicker';
@@ -76,7 +76,7 @@ export const A11yTest = () => {
     <>
       <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
         <Group background="bg" gap={8} margin={-2} padding={2}>
-          <TextTitle1>DateInput</TextTitle1>
+          <Text font="title1">DateInput</Text>
           <DateInput {...dateInputSharedProps} {...stateProps} />
           <DateInput disabled {...dateInputSharedProps} {...stateProps} />
           <DateInput
@@ -85,10 +85,10 @@ export const A11yTest = () => {
             error={error2}
             onErrorDate={setError2}
           />
-          <TextTitle1>Calendar</TextTitle1>
+          <Text font="title1">Calendar</Text>
           <Calendar selectedDate={date} {...calendarSharedProps} />
           <Calendar disabled selectedDate={date} {...calendarSharedProps} />
-          <TextTitle1>DatePicker</TextTitle1>
+          <Text font="title1">DatePicker</Text>
           <DatePicker {...datePickerSharedProps} {...stateProps} />
           <DatePicker disabled {...datePickerSharedProps} {...stateProps} />
           <DatePicker
@@ -104,7 +104,7 @@ export const A11yTest = () => {
       <Box paddingTop={8} />
       <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <Group background="bg" gap={8} margin={-2} padding={2}>
-          <TextTitle1>DateInput</TextTitle1>
+          <Text font="title1">DateInput</Text>
           <DateInput {...dateInputSharedProps} {...stateProps} />
           <DateInput disabled {...dateInputSharedProps} {...stateProps} />
           <DateInput
@@ -113,10 +113,10 @@ export const A11yTest = () => {
             error={error2}
             onErrorDate={setError2}
           />
-          <TextTitle1>Calendar</TextTitle1>
+          <Text font="title1">Calendar</Text>
           <Calendar selectedDate={date} {...calendarSharedProps} />
           <Calendar disabled selectedDate={date} {...calendarSharedProps} />
-          <TextTitle1>DatePicker</TextTitle1>
+          <Text font="title1">DatePicker</Text>
           <DatePicker {...datePickerSharedProps} {...stateProps} />
           <DatePicker disabled {...datePickerSharedProps} {...stateProps} />
           <DatePicker

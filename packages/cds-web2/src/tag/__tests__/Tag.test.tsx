@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { TextBody } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/test';
 import { Tag } from '../Tag';
 
@@ -11,7 +11,9 @@ describe('Tag', () => {
     render(
       <DefaultThemeProvider>
         <Tag colorScheme="blue">
-          <TextBody as="p">Tag</TextBody>
+          <Text as="p" font="body">
+            Tag
+          </Text>
         </Tag>
       </DefaultThemeProvider>,
     );
@@ -22,7 +24,9 @@ describe('Tag', () => {
     render(
       <DefaultThemeProvider>
         <Tag colorScheme="blue" testID={TEST_ID}>
-          <TextBody as="p">Tag</TextBody>
+          <Text as="p" font="body">
+            Tag
+          </Text>
         </Tag>
       </DefaultThemeProvider>,
     );
@@ -33,7 +37,9 @@ describe('Tag', () => {
     const TagMock = () => (
       <DefaultThemeProvider>
         <Tag colorScheme="blue" testID={TEST_ID}>
-          <TextBody as="p">Tag</TextBody>
+          <Text as="p" font="body">
+            Tag
+          </Text>
         </Tag>
       </DefaultThemeProvider>
     );
@@ -44,7 +50,7 @@ describe('Tag', () => {
     render(
       <DefaultThemeProvider>
         <Tag colorScheme="blue" testID={TEST_ID}>
-          <TextBody>Tag</TextBody>
+          <Text font="body">Tag</Text>
         </Tag>
       </DefaultThemeProvider>,
     );
@@ -57,7 +63,7 @@ describe('Tag', () => {
     render(
       <DefaultThemeProvider>
         <Tag colorScheme="blue" intent="promotional" testID={TEST_ID}>
-          <TextBody>Tag</TextBody>
+          <Text font="body">Tag</Text>
         </Tag>
       </DefaultThemeProvider>,
     );
@@ -69,7 +75,9 @@ describe('Tag', () => {
     render(
       <DefaultThemeProvider>
         <Tag colorScheme="red" testID={TEST_ID}>
-          <TextBody as="p">Tag</TextBody>
+          <Text as="p" font="body">
+            Tag
+          </Text>
         </Tag>
       </DefaultThemeProvider>,
     );

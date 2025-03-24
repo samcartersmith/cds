@@ -1,7 +1,7 @@
 import { Button } from '../../buttons';
 import { TextInput } from '../../controls/TextInput';
 import { VStack } from '../../layout/VStack';
-import { TextHeadline } from '../../typography/TextHeadline';
+import { Text } from '../../typography/Text';
 import { FocusTrap } from '../FocusTrap';
 
 export default {
@@ -16,7 +16,9 @@ export const Playground = () => {
       <Button>Submit</Button>
       <FocusTrap>
         <VStack background="bgPrimaryWash" gap={1} padding={3}>
-          <TextHeadline as="h1">These components are trapped</TextHeadline>
+          <Text as="h1" font="headline">
+            These components are trapped
+          </Text>
           <TextInput label="Test 1" />
           <TextInput label="Test 2" />
           <TextInput label="Test 3" />

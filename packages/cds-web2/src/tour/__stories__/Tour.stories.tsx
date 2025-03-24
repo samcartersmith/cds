@@ -9,7 +9,7 @@ import { Checkbox } from '../../controls/Checkbox';
 import { HStack, VStack } from '../../layout';
 import { Box } from '../../layout/Box';
 import { RemoteImage } from '../../media';
-import { TextBody, TextCaption } from '../../typography';
+import { Text } from '../../typography/Text';
 import { ProgressBar } from '../../visualizations';
 import { Tour } from '../Tour';
 import { TourStep } from '../TourStep';
@@ -37,7 +37,9 @@ const TourExample = ({
       <Button onClick={handleClick}>Start tour</Button>
       <TourStep id="step1">
         <Box background="bgSecondary" padding={1}>
-          <TextBody as="p">This is step 1</TextBody>
+          <Text as="p" font="body">
+            This is step 1
+          </Text>
         </Box>
       </TourStep>
       <Box height={spacerHeightIncrement} />
@@ -45,7 +47,9 @@ const TourExample = ({
         <Box flexShrink={0} width={spacerWidthIncrement} />
         <TourStep id="step2">
           <Box background="bgSecondary" padding={1} width={150}>
-            <TextBody as="p">This is step 2</TextBody>
+            <Text as="p" font="body">
+              This is step 2
+            </Text>
           </Box>
         </TourStep>
       </HStack>
@@ -54,7 +58,9 @@ const TourExample = ({
         <Box flexShrink={0} width={spacerWidthIncrement * 2} />
         <TourStep id="step3">
           <VStack background="bgSecondary" padding={1} width={150}>
-            <TextBody as="p">This is step 3</TextBody>
+            <Text as="p" font="body">
+              This is step 3
+            </Text>
           </VStack>
         </TourStep>
       </HStack>
@@ -63,7 +69,9 @@ const TourExample = ({
         <Box flexShrink={0} width={spacerWidthIncrement * 3} />
         <TourStep id="step4">
           <VStack background="bgSecondary" padding={1} width={150}>
-            <TextBody as="p">This is step 4</TextBody>
+            <Text as="p" font="body">
+              This is step 4
+            </Text>
           </VStack>
         </TourStep>
       </HStack>
@@ -108,13 +116,13 @@ const StepTwo = () => {
       closeButtonAccessibilityLabel="Close"
       content={
         <VStack gap={2}>
-          <TextCaption as="p" color="fgMuted">
+          <Text as="p" color="fgMuted" font="caption">
             50%
-          </TextCaption>
+          </Text>
           <ProgressBar progress={0.5} />
-          <TextBody as="p">
+          <Text as="p" font="body">
             Add up to 3 lines of body copy. Deliver your message with clarity and impact
-          </TextBody>
+          </Text>
         </VStack>
       }
       media={<RemoteImage height={150} source={ethBackground} width="100%" />}

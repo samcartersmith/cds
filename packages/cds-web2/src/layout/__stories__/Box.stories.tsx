@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
-import { Text, TextBody, TextTitle4 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Box } from '../Box';
 import { VStack } from '../VStack';
 
@@ -11,14 +11,14 @@ export default {
 };
 
 const Lipsum = ({ color }: { color?: ThemeVars.Color }) => (
-  <TextBody as="p" color={color}>
+  <Text as="p" color={color} font="body">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie tellus quis sem
     suscipit molestie. In tincidunt hendrerit lectus fermentum euismod. Fusce interdum mollis
     sodales. Aenean ac nibh eu velit condimentum laoreet quis in enim. Sed ut massa at purus auctor
     convallis. Donec imperdiet posuere felis non luctus. Duis molestie at leo ac commodo. Fusce
     facilisis lacus ac urna tempus, a dictum nibh ornare. In facilisis ipsum tempus velit consequat
     lobortis.
-  </TextBody>
+  </Text>
 );
 
 export const Default = () => (
@@ -124,7 +124,9 @@ export const RoundedVariations = () => (
     {borderRadii.map((borderRadius) => {
       return (
         <Fragment key={borderRadius}>
-          <TextTitle4 as="p">{borderRadius}</TextTitle4>
+          <Text as="p" font="title4">
+            {borderRadius}
+          </Text>
           <Box background="bgAlternate" borderRadius={borderRadius} padding={2}>
             <VStack gap={1}>
               <Lipsum />
@@ -138,32 +140,42 @@ export const RoundedVariations = () => (
 
 export const Spacing = () => (
   <Box background="bgAlternate" padding={3}>
-    <TextBody as="p">All sides</TextBody>
+    <Text as="p" font="body">
+      All sides
+    </Text>
   </Box>
 );
 
 export const CustomSpacing = () => (
   <Box background="bgAlternate" paddingBottom={3} paddingEnd={2} paddingStart={4} paddingTop={1}>
-    <TextBody as="p">Custom sides</TextBody>
+    <Text as="p" font="body">
+      Custom sides
+    </Text>
   </Box>
 );
 
 export const VerticalSpacing = () => (
   <Box background="bgAlternate" paddingY={3}>
-    <TextBody as="p">Vertical only</TextBody>
+    <Text as="p" font="body">
+      Vertical only
+    </Text>
   </Box>
 );
 
 export const HorizontalSpacing = () => (
   <Box background="bgAlternate" paddingX={3}>
-    <TextBody as="p">Horizontal only</TextBody>
+    <Text as="p" font="body">
+      Horizontal only
+    </Text>
   </Box>
 );
 
 export const Offset = () => (
   <Box background="bgAlternate" padding={5}>
     <Box background="bg" margin={-3}>
-      <TextBody as="p">All sides</TextBody>
+      <Text as="p" font="body">
+        All sides
+      </Text>
     </Box>
   </Box>
 );
@@ -171,7 +183,9 @@ export const Offset = () => (
 export const CustomOffset = () => (
   <Box background="bgAlternate" padding={5}>
     <Box background="bg" marginBottom={-3} marginEnd={-2} marginStart={-4} marginTop={-1}>
-      <TextBody as="p">Custom sides</TextBody>
+      <Text as="p" font="body">
+        Custom sides
+      </Text>
     </Box>
   </Box>
 );
@@ -179,7 +193,9 @@ export const CustomOffset = () => (
 export const VerticalOffset = () => (
   <Box background="bgAlternate" padding={5}>
     <Box background="bg" marginY={-3}>
-      <TextBody as="p">Vertical only</TextBody>
+      <Text as="p" font="body">
+        Vertical only
+      </Text>
     </Box>
   </Box>
 );
@@ -187,7 +203,9 @@ export const VerticalOffset = () => (
 export const HorizontalOffset = () => (
   <Box background="bgAlternate" padding={5}>
     <Box background="bg" marginX={-3}>
-      <TextBody as="p">Horizontal only</TextBody>
+      <Text as="p" font="body">
+        Horizontal only
+      </Text>
     </Box>
   </Box>
 );
@@ -203,7 +221,9 @@ export const Positioned = () => (
 export const TopPin = () => (
   <Box background="bgAlternate" height={250} position="relative" width="100%">
     <Box background="bgOverlay" left={0} pin="top">
-      <TextBody as="p">Top from left to right</TextBody>
+      <Text as="p" font="body">
+        Top from left to right
+      </Text>
     </Box>
   </Box>
 );
@@ -211,7 +231,10 @@ export const TopPin = () => (
 export const RightPin = () => (
   <Box background="bgAlternate" height={250} position="relative" width="100%">
     <Box background="bgOverlay" pin="right">
-      <TextBody as="p"> Right from top to bottom</TextBody>
+      <Text as="p" font="body">
+        {' '}
+        Right from top to bottom
+      </Text>
     </Box>
   </Box>
 );
@@ -219,7 +242,9 @@ export const RightPin = () => (
 export const BottomPin = () => (
   <Box background="bgAlternate" height={250} position="relative" width="100%">
     <Box background="bgOverlay" pin="bottom">
-      <TextBody as="p">Bottom from left to right</TextBody>
+      <Text as="p" font="body">
+        Bottom from left to right
+      </Text>
     </Box>
   </Box>
 );
@@ -227,7 +252,9 @@ export const BottomPin = () => (
 export const LeftPin = () => (
   <Box background="bgAlternate" height={250} position="relative" width="100%">
     <Box background="bgOverlay" pin="left">
-      <TextBody as="p">Left from top to bottom</TextBody>
+      <Text as="p" font="body">
+        Left from top to bottom
+      </Text>
     </Box>
   </Box>
 );
@@ -235,7 +262,9 @@ export const LeftPin = () => (
 export const AllPin = () => (
   <Box background="bgAlternate" height={250} position="relative" width="100%">
     <Box background="bgOverlay" pin="all">
-      <TextBody as="p">To all corners</TextBody>
+      <Text as="p" font="body">
+        To all corners
+      </Text>
     </Box>
   </Box>
 );

@@ -12,16 +12,9 @@ export default {
   title: 'Core Components/RemoteImage/RemoteImageGroup',
 };
 
-const TextLabel1 = (props: React.PropsWithChildren<TextBaseProps>) => (
-  <Text as="p" font="label1" {...props} />
-);
-const TextBody = (props: React.PropsWithChildren<TextBaseProps>) => (
-  <Text as="p" font="body" {...props} />
-);
-
 const Circle = () => (
   <>
-    <TextLabel1>Circle Custom Size: 32x32. Test that default max = 4.</TextLabel1>
+    <Text font="label1">Circle Custom Size: 32x32. Test that default max = 4.</Text>
     <RemoteImageGroup shape="circle" size={32}>
       <RemoteImage source={assets.eth.imageUrl} />
       <RemoteImage source={assets.btc.imageUrl} />
@@ -35,7 +28,7 @@ const Circle = () => (
 
 const CircleCustomSize = () => (
   <>
-    <TextLabel1>Circle Custom Size: 60x60</TextLabel1>
+    <Text font="label1">Circle Custom Size: 60x60</Text>
     <RemoteImageGroup shape="circle" size={60}>
       <RemoteImage source={assets.eth.imageUrl} />
       <RemoteImage source={assets.btc.imageUrl} />
@@ -48,7 +41,7 @@ const CircleAvatarSize = () => (
   <>
     {avatarSizes.map((size) => (
       <VStack key={`circle-avatar-size-${size}`}>
-        <TextLabel1>Circle Avatar Size: {size}</TextLabel1>
+        <Text font="label1">Circle Avatar Size: {size}</Text>
         <RemoteImageGroup shape="circle" size={size}>
           <RemoteImage source={assets.eth.imageUrl} />
           <RemoteImage source={assets.btc.imageUrl} />
@@ -68,9 +61,9 @@ const CircleMax = () => {
         <VStack key={`circle-max-${avatarSize}`}>
           {maxSizes.map((maxSize) => (
             <VStack key={`remote-image-group-circle-max-size-${maxSize}-${avatarSize}`}>
-              <TextLabel1>
+              <Text font="label1">
                 Max Size to Truncate: {maxSize}, RemoteImage size: {avatarSize}
-              </TextLabel1>
+              </Text>
               <RemoteImageGroup max={maxSize} shape="circle" size={avatarSize}>
                 <RemoteImage source={assets.eth.imageUrl} />
                 <RemoteImage source={assets.dai.imageUrl} />
@@ -94,9 +87,9 @@ const CircleMax = () => {
 
 const CircleMaxDefaultCustomSize = () => (
   <>
-    <TextBody>
+    <Text as="p" font="body">
       RemoteImageGroup excess element defaults to m of AvatarSize when size is not specified
-    </TextBody>
+    </Text>
     <RemoteImageGroup max={2} shape="circle">
       <RemoteImage source={assets.eth.imageUrl} />
       <RemoteImage source={assets.sushi.imageUrl} />
@@ -108,7 +101,7 @@ const CircleMaxDefaultCustomSize = () => (
 
 const MixAndMatchShapes = () => (
   <>
-    <TextBody>RemoteImage child shape takes precedence over RemoteImageGroup shape</TextBody>
+    <Text font="body">RemoteImage child shape takes precedence over RemoteImageGroup shape</Text>
     <RemoteImageGroup shape="circle" size="xxl">
       <RemoteImage shape="squircle" source={squareAssets.human1} />
       <RemoteImage source={assets.sushi.imageUrl} />
@@ -120,7 +113,7 @@ const MixAndMatchShapes = () => (
 
 const Squircle = () => (
   <>
-    <TextLabel1>Sqcircle Custom Size: 32x32</TextLabel1>
+    <Text font="label1">Sqcircle Custom Size: 32x32</Text>
     <RemoteImageGroup shape="squircle" size={32}>
       <RemoteImage source={squareAssets.human1} />
       <RemoteImage source={squareAssets.human2} />
@@ -131,7 +124,7 @@ const Squircle = () => (
 
 const SquircleCustomSize = () => (
   <>
-    <TextLabel1>Sqcircle Custom Size: 80x80</TextLabel1>
+    <Text font="label1">Sqcircle Custom Size: 80x80</Text>
     <RemoteImageGroup shape="squircle" size={80}>
       <RemoteImage source={squareAssets.human1} />
       <RemoteImage source={squareAssets.human2} />
@@ -144,7 +137,7 @@ const SquircleAvatarSize = () => (
   <>
     {avatarSizes.map((size) => (
       <VStack key={`squircle-avatar-size-${size}`}>
-        <TextLabel1>Sqcircle Avatar Size: {size}</TextLabel1>
+        <Text font="label1">Sqcircle Avatar Size: {size}</Text>
         <RemoteImageGroup shape="squircle" size={size}>
           <RemoteImage source={squareAssets.human1} />
           <RemoteImage source={squareAssets.human2} />
@@ -164,9 +157,9 @@ const SquircleMax = () => {
         <VStack key={`squircle-max-${avatarSize}`}>
           {maxSizes.map((maxSize) => (
             <VStack key={`remote-image-group-squircle-max-size-${maxSize}-${avatarSize}`}>
-              <TextLabel1>
+              <Text font="label1">
                 Max Size to Truncate: {maxSize}, RemoteImage size: {avatarSize}
-              </TextLabel1>
+              </Text>
               <RemoteImageGroup max={maxSize} shape="squircle" size={avatarSize}>
                 <RemoteImage source={squareAssets.human2} />
                 <RemoteImage source={squareAssets.human1} />
@@ -183,9 +176,9 @@ const SquircleMax = () => {
 
 const SquircleMaxDefaultCustomSize = () => (
   <>
-    <TextBody>
+    <Text font="body">
       RemoteImageGroup excess element defaults to m of AvatarSize when size is not specified
-    </TextBody>
+    </Text>
     <RemoteImageGroup max={2} shape="squircle">
       <RemoteImage source={squareAssets.human1} />
       <RemoteImage source={squareAssets.human2} />
@@ -197,7 +190,7 @@ const SquircleMaxDefaultCustomSize = () => (
 
 const SquircleMaxSetCustomMaxSize = () => (
   <>
-    <TextBody>Set a custom size of 36 for RemoteImageGroup excess component</TextBody>
+    <Text font="body">Set a custom size of 36 for RemoteImageGroup excess component</Text>
     <RemoteImageGroup max={2} shape="squircle" size={36}>
       <RemoteImage source={squareAssets.human1} />
       <RemoteImage source={squareAssets.human2} />
@@ -209,7 +202,7 @@ const SquircleMaxSetCustomMaxSize = () => (
 
 const HideExcessWhenExceedThreshold = () => (
   <>
-    <TextBody>Excess component when size is smaller than a certain size looks funky</TextBody>
+    <Text font="body">Excess component when size is smaller than a certain size looks funky</Text>
     <RemoteImageGroup max={2} shape="squircle" size={19}>
       <RemoteImage source={squareAssets.human1} />
       <RemoteImage source={squareAssets.human2} />

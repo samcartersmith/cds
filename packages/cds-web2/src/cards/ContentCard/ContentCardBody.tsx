@@ -3,7 +3,7 @@ import type { ContentCardBodyBaseProps as BaseProps } from '@cbhq/cds-common2/ty
 
 import { Polymorphic } from '../../core/polymorphism';
 import { Box, type BoxBaseProps, HStack, VStack } from '../../layout';
-import { TextBody, TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 
 export const contentCardBodyDefaultElement = 'div';
 export type ContentCardBodyDefaultElement = typeof contentCardBodyDefaultElement;
@@ -56,8 +56,14 @@ export const ContentCardBody: ContentCardBodyComponent = memo(
           >
             {(mediaPosition === 'top' || mediaPosition === 'left') && mediaBox}
             <VStack gap={1} maxWidth="100%">
-              {typeof body === 'string' ? <TextBody as="p">{body}</TextBody> : body}
-              {typeof label === 'string' ? <TextLabel2>{label}</TextLabel2> : label}
+              {typeof body === 'string' ? (
+                <Text as="p" font="body">
+                  {body}
+                </Text>
+              ) : (
+                body
+              )}
+              {typeof label === 'string' ? <Text font="label2">{label}</Text> : label}
             </VStack>
             {(mediaPosition === 'bottom' || mediaPosition === 'right') && mediaBox}
           </Stack>

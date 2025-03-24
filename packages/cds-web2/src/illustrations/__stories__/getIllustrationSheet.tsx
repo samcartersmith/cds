@@ -11,7 +11,7 @@ import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSqua
 import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
-import { TextLegal } from '../../typography/TextLegal';
+import { Text } from '../../typography/Text';
 
 type TypeMap = {
   [K in IllustrationVariant]: {
@@ -136,9 +136,9 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
             name={name}
             version={versionMap[name]}
           />
-          <TextLegal noWrap as="p">
+          <Text noWrap as="p" font="legal">
             {name}
-          </TextLegal>
+          </Text>
         </VStack>
       </ThemeProvider>
     );

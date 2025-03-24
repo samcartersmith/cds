@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Spacer, VStack } from '../../layout';
-import { TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { NavLink } from '../NavLink';
 
 import { NavLinkExample } from './NavigationStorySetup';
@@ -14,7 +14,9 @@ export default {
 export const NavLinkExampleDefault = () => {
   return (
     <VStack alignItems="flex-start">
-      <TextTitle1 as="h1">Nav link example</TextTitle1>
+      <Text font="title1" as="h1">
+        Nav link example
+      </Text>
       <Spacer />
       <NavLinkExample />
     </VStack>

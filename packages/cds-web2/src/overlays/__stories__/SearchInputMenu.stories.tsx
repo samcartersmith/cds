@@ -7,8 +7,7 @@ import { DropdownRefProps } from '../../dropdown/DropdownProps';
 import { Icon } from '../../icons/Icon';
 import { HStack } from '../../layout/HStack';
 import { Pressable } from '../../system/Pressable';
-import { TextCaption } from '../../typography/TextCaption';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 
 const options = [
   'Option 1',
@@ -86,13 +85,17 @@ const SearchInputMenuRecipe = () => {
           renderOptions
         ) : (
           <HStack padding={3}>
-            <TextCaption as="p">No options were found. </TextCaption>
+            <Text as="p" font="caption">
+              No options were found.{' '}
+            </Text>
           </HStack>
         )}
         {shouldShowAllResultsButton ? (
           <Pressable block noScaleOnPress background="bg" onClick={handleClear}>
             <HStack alignItems="center" gap={1} paddingX={2} paddingY={2}>
-              <TextLabel1 as="p">View all results</TextLabel1>
+              <Text as="p" font="label1">
+                View all results
+              </Text>
               <Icon color="fg" name="forwardArrow" size="xs" />
             </HStack>
           </Pressable>

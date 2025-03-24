@@ -4,7 +4,7 @@ import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 
 import { useTheme } from '../../hooks/useTheme';
 import { Box, Grid, VStack } from '../../layout';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { Pressable } from '../Pressable';
 
 export default {
@@ -37,16 +37,16 @@ const Default = () => {
       </Box>
       <Box>
         <Pressable block as="button" background="bgPrimary">
-          <TextBody as="p" color="fgInverse">
+          <Text as="p" color="fgInverse" font="body">
             Pressable full-width
-          </TextBody>
+          </Text>
         </Pressable>
       </Box>
       <Box>
         <Pressable loading as="button" background="bgPrimary">
-          <TextBody as="p" color="fgInverse">
+          <Text as="p" color="fgInverse" font="body">
             loading
-          </TextBody>
+          </Text>
         </Pressable>
       </Box>
     </VStack>
@@ -57,24 +57,24 @@ const Transparent = () => {
   return (
     <Grid columnMin={200} gap={2}>
       <Pressable as="button" background="transparent">
-        <TextBody as="p" padding={1}>
+        <Text as="p" font="body" padding={1}>
           transparent
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable transparentWhileInactive as="button" background="bgPrimary">
-        <TextBody as="p" color="fgInverse" padding={1}>
+        <Text as="p" color="fgInverse" font="body" padding={1}>
           transparentWhileInactive
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable disabled as="button" background="transparent">
-        <TextBody as="p" padding={1}>
+        <Text as="p" font="body" padding={1}>
           transparent
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable disabled transparentWhileInactive as="button" background="bgPrimary">
-        <TextBody as="p" color="fgInverse" padding={1}>
+        <Text as="p" color="fgInverse" font="body" padding={1}>
           transparentWhileInactive
-        </TextBody>
+        </Text>
       </Pressable>
     </Grid>
   );
@@ -84,9 +84,9 @@ const Borders = () => {
   return (
     <Grid columnMin={200} gap={2}>
       <Pressable as="button" background="transparent" borderColor="bgPositive">
-        <TextBody as="p" padding={1}>
+        <Text as="p" font="body" padding={1}>
           transparent with borders
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable
         transparentWhileInactive
@@ -94,14 +94,14 @@ const Borders = () => {
         background="bgPrimary"
         borderColor="bgPositive"
       >
-        <TextBody as="p" padding={1}>
+        <Text as="p" font="body" padding={1}>
           transparentWhileInactive with borders
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable disabled as="button" background="transparent" borderColor="bgPositive">
-        <TextBody as="p" padding={1}>
+        <Text as="p" font="body" padding={1}>
           transparent with borders
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable
         disabled
@@ -110,34 +110,34 @@ const Borders = () => {
         background="bgPrimary"
         borderColor="bgPositive"
       >
-        <TextBody as="p" padding={1}>
+        <Text as="p" font="body" padding={1}>
           transparentWhileInactive with borders
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable as="button" background="bg" borderColor="bgPrimary" borderRadius={100}>
-        <TextBody as="p" padding={1}>
+        <Text as="p" font="body" padding={1}>
           primary + compact
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable as="button" background="bgAlternate" borderColor="bgNegative">
-        <TextBody as="p" padding={1}>
+        <Text as="p" font="body" padding={1}>
           negative
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable as="button" background="bgPrimary" borderColor="bgPositive" borderRadius={200}>
-        <TextBody as="p" color="fgInverse" padding={1}>
+        <Text as="p" color="fgInverse" font="body" padding={1}>
           positive + standard
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable as="button" background="bgSecondary" borderColor="bgLineHeavy" borderRadius={200}>
-        <TextBody as="p" color="fg" padding={1}>
+        <Text as="p" color="fg" font="body" padding={1}>
           bgLineHeavy + tooltip
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable as="button" background="bgPositive" borderColor="bgLine" borderRadius={400}>
-        <TextBody as="p" color="fgInverse" padding={1}>
+        <Text as="p" color="fgInverse" font="body" padding={1}>
           line + pill
-        </TextBody>
+        </Text>
       </Pressable>
       <Pressable
         as="button"
@@ -145,9 +145,9 @@ const Borders = () => {
         borderColor="bgPrimaryWash"
         borderRadius={1000}
       >
-        <TextBody as="p" color="fgInverse" padding={1}>
+        <Text as="p" color="fgInverse" font="body" padding={1}>
           primaryWash + round
-        </TextBody>
+        </Text>
       </Pressable>
     </Grid>
   );
@@ -178,9 +178,9 @@ export const ThemeColors = () => {
             borderColor="bgLine"
             borderWidth={100}
           >
-            <TextBody as="p" dangerouslySetColor={textColor} padding={1}>
+            <Text as="p" dangerouslySetColor={textColor} font="body" padding={1}>
               {color}
-            </TextBody>
+            </Text>
           </Pressable>
         );
       })}
@@ -204,9 +204,9 @@ export const ThemeColorsWithDisabled = () => {
             borderColor="bgLine"
             borderWidth={100}
           >
-            <TextBody as="p" dangerouslySetColor={textColor} padding={1}>
+            <Text as="p" dangerouslySetColor={textColor} font="body" padding={1}>
               {color}
-            </TextBody>
+            </Text>
           </Pressable>
         );
       })}

@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { TextDisplay1 } from '../../typography/TextDisplay1';
+import { Text } from '../../typography/Text';
 import { SegmentedTab, SegmentedTabProps } from '../SegmentedTab';
 
 const TEST_ID = 'mock-segmented-tab';
@@ -88,7 +88,11 @@ describe('SegmentedTab', () => {
   });
 
   it('renders custom node for label', () => {
-    const label = <TextDisplay1 testID="custom-label">Custom label</TextDisplay1>;
+    const label = (
+      <Text font="display1" testID="custom-label">
+        Custom label
+      </Text>
+    );
     render(
       <TabsContext.Provider value={mockApi}>
         <SegmentedTab {...exampleProps} label={label} />

@@ -4,7 +4,7 @@ import { CoachmarkBaseProps } from '@cbhq/cds-common2';
 import { IconButton } from '../buttons/IconButton';
 import { Box, HStack, VStack } from '../layout';
 import { InvertedThemeProvider } from '../system';
-import { TextBody, TextHeadline } from '../typography';
+import { Text } from '../typography/Text';
 
 export type CoachmarkProps = CoachmarkBaseProps;
 
@@ -40,8 +40,20 @@ export const Coachmark = memo(
             <VStack padding={2}>
               <VStack gap={2}>
                 <VStack gap={0.5}>
-                  {typeof title === 'string' ? <TextHeadline as="h2">{title}</TextHeadline> : title}
-                  {typeof content === 'string' ? <TextBody as="p">{content}</TextBody> : content}
+                  {typeof title === 'string' ? (
+                    <Text as="h2" font="headline">
+                      {title}
+                    </Text>
+                  ) : (
+                    title
+                  )}
+                  {typeof content === 'string' ? (
+                    <Text as="p" font="body">
+                      {content}
+                    </Text>
+                  ) : (
+                    content
+                  )}
                 </VStack>
                 <HStack
                   alignItems="center"

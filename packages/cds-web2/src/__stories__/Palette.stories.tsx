@@ -3,7 +3,7 @@ import { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box, Grid, VStack } from '../layout';
-import { TextCaption } from '../typography';
+import { Text } from '../typography/Text';
 
 const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
   const theme = useTheme();
@@ -22,13 +22,13 @@ const Palette = ({ elevation }: { elevation?: ElevationLevels }) => {
             width={200}
           >
             <VStack background="bg">
-              <TextCaption as="p" textAlign="center">
+              <Text as="p" font="caption" textAlign="center">
                 {name}
-              </TextCaption>
+              </Text>
               {!!elevation && (
-                <TextCaption as="p" textAlign="center">
+                <Text as="p" font="caption" textAlign="center">
                   Elevation: {elevation}
-                </TextCaption>
+                </Text>
               )}
             </VStack>
           </Box>

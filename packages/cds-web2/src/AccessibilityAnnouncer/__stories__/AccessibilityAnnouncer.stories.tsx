@@ -3,7 +3,7 @@ import { ComponentStoryObj } from '@storybook/react';
 
 import { Button } from '../../buttons';
 import { VStack } from '../../layout/VStack';
-import { TextBody, TextHeadline } from '../../typography';
+import { Text } from '../../typography/Text';
 import { AccessibilityAnnouncer, AccessibilityAnnouncerProps } from '../AccessibilityAnnouncer';
 
 const DEFAULT_MESSAGE =
@@ -20,11 +20,13 @@ const MockAppScreen = ({ message, ...rest }: AccessibilityAnnouncerProps) => {
 
   return (
     <VStack gap={2}>
-      <TextHeadline as="h2">Open VoiceOver and update the Message field 👀</TextHeadline>
+      <Text as="h2" font="headline">
+        Open VoiceOver and update the Message field 👀
+      </Text>
       <>
-        <TextBody aria-hidden as="p">
+        <Text aria-hidden as="p" font="body">
           {message}
-        </TextBody>
+        </Text>
         <AccessibilityAnnouncer message={internalMessage} {...rest} />
       </>
       <Button onClick={handleMessageChange}>Update message</Button>

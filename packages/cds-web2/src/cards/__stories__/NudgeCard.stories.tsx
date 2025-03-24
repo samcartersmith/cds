@@ -4,7 +4,7 @@ import { squareAssets } from '@cbhq/cds-common2/internal/data/assets';
 import { Button } from '../../buttons/Button';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { TextBody, TextHeadline } from '../../typography';
+import { Text } from '../../typography/Text';
 import { NudgeCard, NudgeCardProps } from '../NudgeCard';
 
 const exampleProps: NudgeCardProps = {
@@ -133,14 +133,14 @@ export const CustomTextNodes = () => (
       </HStack>
     }
     description={
-      <TextBody as="p" color="fgMuted">
+      <Text as="p" color="fgMuted" font="body">
         Custom description
-      </TextBody>
+      </Text>
     }
     title={
-      <TextHeadline as="h3" color="fgPrimary">
+      <Text as="h3" color="fgPrimary" font="headline">
         Custom title
-      </TextHeadline>
+      </Text>
     }
   />
 );

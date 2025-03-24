@@ -8,7 +8,7 @@ import { Icon } from '../../icons/Icon';
 import { HStack, VStack } from '../../layout';
 import { Spinner } from '../../loaders/Spinner';
 import { Avatar } from '../../media/Avatar';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 import { DotSymbol } from '..';
 
 export default {
@@ -31,7 +31,9 @@ const DotSymbolPlacements = () => {
           padding={1}
           paddingBottom={4}
         >
-          <TextLabel1 as="p">{pinDirection}</TextLabel1>
+          <Text as="p" font="label1">
+            {pinDirection}
+          </Text>
           <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
             <Avatar alt="Sneezy" shape="square" size="xxxl" />
           </DotSymbol>
@@ -71,10 +73,10 @@ const DotSymbolIcon = () => {
             padding={1}
             paddingBottom={4}
           >
-            <TextLabel1 as="p">
+            <Text as="p" font="label1">
               Pin Direction: {pinDirection} Avatar Size: {avatarSize} Icon Size:{' '}
               {avatarIconSizeMap[avatarSize]}
-            </TextLabel1>
+            </Text>
             <DotSymbol
               iconName="safe"
               overlap="circular"
@@ -102,9 +104,9 @@ const DotSymbolOverlap = () => {
             padding={1}
             paddingBottom={4}
           >
-            <TextLabel1 as="p">
+            <Text as="p" font="label1">
               {pinDirection}, dot-size: {size}
-            </TextLabel1>
+            </Text>
             <DotSymbol
               overlap="circular"
               pin={pinDirection}
@@ -136,12 +138,24 @@ const DotSymbolComplex = () => {
         <Avatar alt="Sneezy" shape="square" size="xxl" />
       </DotSymbol>
       <VStack>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
       </VStack>
     </HStack>
   );

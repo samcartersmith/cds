@@ -10,7 +10,7 @@ import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { Avatar } from '../../media/Avatar';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 import { DotCount } from '../DotCount';
 import { DotStatusColor } from '../DotStatusColor';
 import { DotSymbol } from '../DotSymbol';
@@ -52,7 +52,7 @@ const DotCountPlacements = () => {
       padding={1}
       paddingBottom={4}
     >
-      <TextLabel1>top-end</TextLabel1>
+      <Text font="label1">top-end</Text>
       <DotCount count={30} pin="top-end">
         <Avatar alt="Sneezy" shape="square" size="xl" />
       </DotCount>
@@ -63,7 +63,7 @@ const DotCountPlacements = () => {
         <Icon name="calendar" size="m" />
       </DotCount>
       <DotCount count={0} pin="top-end">
-        <TextLabel1>Count = 0. Dot should not show up</TextLabel1>
+        <Text font="label1">Count = 0. Dot should not show up</Text>
         <Icon name="calendar" size="m" />
       </DotCount>
     </VStack>
@@ -96,12 +96,12 @@ const DotCountComplex = () => {
         <Avatar alt="Sneezy" shape="circle" size="xxxl" />
       </DotCount>
       <VStack>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
       </VStack>
     </HStack>
   );
@@ -146,7 +146,7 @@ const DotStatusColorPlacements = () => {
           padding={1}
           paddingBottom={4}
         >
-          <TextLabel1>{pinDirection}</TextLabel1>
+          <Text font="label1">{pinDirection}</Text>
           <DotStatusColor pin={pinDirection} variant="positive">
             <Avatar alt="Sneezy" shape="square" size="l" />
           </DotStatusColor>
@@ -174,9 +174,9 @@ const DotStatusColorOverlap = () => {
             padding={1}
             paddingBottom={4}
           >
-            <TextLabel1>
+            <Text font="label1">
               {pinDirection}, avatarSize: {avatarSize}
-            </TextLabel1>
+            </Text>
             <DotStatusColor overlap="circular" pin={pinDirection} variant="positive">
               <Avatar alt="Unknown avatar circle" shape="circle" size={avatarSize} />
             </DotStatusColor>
@@ -198,7 +198,7 @@ const DotSymbolPlacements = () => {
           padding={1}
           paddingBottom={4}
         >
-          <TextLabel1>{pinDirection}</TextLabel1>
+          <Text font="label1">{pinDirection}</Text>
           <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
             <Avatar alt="Sneezy" shape="square" size="xxxl" />
           </DotSymbol>
@@ -238,10 +238,10 @@ const DotSymbolIcon = () => {
             padding={1}
             paddingBottom={4}
           >
-            <TextLabel1>
+            <Text font="label1">
               Pin Direction: {pinDirection} Avatar Size: {avatarSize} Icon Size:{' '}
               {avatarIconSizeMap[avatarSize]}
-            </TextLabel1>
+            </Text>
             <DotSymbol
               iconName="safe"
               overlap="circular"
@@ -269,9 +269,9 @@ const DotSymbolOverlap = () => {
             padding={1}
             paddingBottom={4}
           >
-            <TextLabel1>
+            <Text font="label1">
               {pinDirection}, dot-size: {size}
-            </TextLabel1>
+            </Text>
             <DotSymbol
               overlap="circular"
               pin={pinDirection}
@@ -299,12 +299,12 @@ const DotSymbolComplex = () => {
         <Avatar alt="Sneezy" shape="square" size="xxl" />
       </DotSymbol>
       <VStack>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
-        <TextLabel1>Hello Hello</TextLabel1>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
+        <Text font="label1">Hello Hello</Text>
       </VStack>
     </HStack>
   );

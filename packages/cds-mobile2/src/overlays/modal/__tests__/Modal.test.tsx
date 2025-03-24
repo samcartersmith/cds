@@ -4,7 +4,7 @@ import { act, cleanup, fireEvent, render, screen } from '@testing-library/react-
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Button, ButtonProps } from '../../../buttons';
-import { TextBody, TextLabel1 } from '../../../typography';
+import { Text } from '../../../typography/Text';
 import { DefaultThemeProvider } from '../../../utils/testHelpers';
 import { Modal } from '../Modal';
 import { ModalBody } from '../ModalBody';
@@ -20,11 +20,13 @@ type LoremIpsumProps = {
 const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
   return (
     <>
-      <TextLabel1 paddingBottom={1} renderEmptyNode={false}>
+      <Text font="label1" paddingBottom={1} renderEmptyNode={false}>
         {title}
-      </TextLabel1>
+      </Text>
       {concise ? null : (
-        <TextBody paddingBottom={3}>{repeat ? loremIpsum.repeat(repeat) : loremIpsum}</TextBody>
+        <Text font="body" paddingBottom={3}>
+          {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
+        </Text>
       )}
     </>
   );

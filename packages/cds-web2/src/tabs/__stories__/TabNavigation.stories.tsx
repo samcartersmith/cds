@@ -13,7 +13,8 @@ import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
-import { Link, TextBody, TextHeadline, TextTitle1 } from '../../typography';
+import { Link } from '../../typography/Link';
+import { Text } from '../../typography/Text';
 import { TabNavigation } from '../TabNavigation';
 
 import { MockTabPanel } from './MockTabPanel';
@@ -47,17 +48,23 @@ export const Default: Story = () => {
     <>
       <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
         <VStack background="bg" gap={2} padding={2}>
-          <TextHeadline as="p">Default (Normal)</TextHeadline>
+          <Text as="p" font="headline">
+            Default (Normal)
+          </Text>
           <TabNavigation onChange={setValue} tabs={tabs} value={value} />
         </VStack>
         <VStack background="bgAlternate" gap={2} padding={2}>
-          <TextHeadline as="p">Custom background</TextHeadline>
+          <Text as="p" font="headline">
+            Custom background
+          </Text>
           <TabNavigation background="bgAlternate" onChange={setValue} tabs={tabs} value={value} />
         </VStack>
       </ThemeProvider>
       <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <VStack background="bg" gap={2} padding={2}>
-          <TextHeadline as="p">Dark</TextHeadline>
+          <Text as="p" font="headline">
+            Dark
+          </Text>
           <TabNavigation onChange={setValue} tabs={tabs} value={value} />
         </VStack>
       </ThemeProvider>
@@ -71,7 +78,9 @@ Default.parameters = {
 
 const renderCustomTab = ({ label, ...props }: CustomTabProps) => (
   <HStack bordered background="bg" borderRadius={100} paddingX={2} paddingY={1} {...props}>
-    <TextHeadline as="p">{label}</TextHeadline>
+    <Text as="p" font="headline">
+      {label}
+    </Text>
   </HStack>
 );
 
@@ -94,7 +103,9 @@ export const CustomTab: Story = () => {
 
   return (
     <VStack gap={2}>
-      <TextHeadline as="p">Custom tab</TextHeadline>
+      <Text as="p" font="headline">
+        Custom tab
+      </Text>
       <TabNavigation
         Component={renderCustomTab}
         gap={1}
@@ -102,7 +113,9 @@ export const CustomTab: Story = () => {
         tabs={tabs}
         value={value}
       />
-      <TextHeadline as="p">Custom tab with paddles</TextHeadline>
+      <Text as="p" font="headline">
+        Custom tab with paddles
+      </Text>
       <TabNavigation
         Component={renderCustomTab}
         gap={1}
@@ -110,9 +123,13 @@ export const CustomTab: Story = () => {
         tabs={sampleTabs}
         value={value}
       />
-      <TextHeadline as="p">Only one custom tab</TextHeadline>
+      <Text as="p" font="headline">
+        Only one custom tab
+      </Text>
       <TabNavigation gap={1} onChange={setValue} tabs={someCustomTabs} value={value} />
-      <TextHeadline as="p">All the custom things</TextHeadline>
+      <Text as="p" font="headline">
+        All the custom things
+      </Text>
       <TabNavigation
         Component={renderAnotherCustomTab}
         gap={1}
@@ -167,19 +184,25 @@ export const WithDotCountChange: Story = () => {
             ))}
           </Select>
           <Button onClick={updateCount}>Randomize dot count</Button>
-          <TextHeadline as="p">Default (Normal)</TextHeadline>
+          <Text as="p" font="headline">
+            Default (Normal)
+          </Text>
           <TabNavigation onChange={setValue} tabs={tabsWithDot} value={value} />
         </VStack>
       </ThemeProvider>
       <ThemeProvider activeColorScheme="dark" theme={defaultTheme}>
         <VStack background="bg" gap={2} padding={2}>
-          <TextHeadline as="p">Dark</TextHeadline>
+          <Text as="p" font="headline">
+            Dark
+          </Text>
           <TabNavigation onChange={setValue} tabs={tabsWithDot} value={value} />
         </VStack>
       </ThemeProvider>
       <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
         <VStack background="bgAlternate" gap={2} padding={2}>
-          <TextHeadline as="p">Custom background</TextHeadline>
+          <Text as="p" font="headline">
+            Custom background
+          </Text>
           <TabNavigation
             background="bgAlternate"
             onChange={setValue}
@@ -235,37 +258,39 @@ export const AccessibilityTest: Story = () => {
         value={currentTab}
       />
       <MockTabPanel id={tabs[0].id} isActive={currentTab === tabs[0].id}>
-        <TextTitle1 as="h2" paddingBottom={2}>
+        <Text as="h2" font="title1" paddingBottom={2}>
           This is tab one
-        </TextTitle1>
-        <TextBody as="p">
+        </Text>
+        <Text as="p" font="body">
           <Link href="/">This is the body</Link> of tab one. You are going to love it
-        </TextBody>
-        <TextBody as="p">{loremIpsum}</TextBody>
+        </Text>
+        <Text as="p" font="body">
+          {loremIpsum}
+        </Text>
       </MockTabPanel>
       <MockTabPanel id={tabs[1].id} isActive={currentTab === tabs[1].id}>
-        <TextTitle1 as="h2" paddingBottom={2}>
+        <Text as="h2" font="title1" paddingBottom={2}>
           Here we have tab two
-        </TextTitle1>
-        <TextBody as="p">
+        </Text>
+        <Text as="p" font="body">
           And look, <Link href="/">this another link</Link> in the body of tab one. You are going to
           love it
-        </TextBody>
-        <TextBody as="p">
+        </Text>
+        <Text as="p" font="body">
           {loremIpsum} {loremIpsum}
-        </TextBody>
+        </Text>
       </MockTabPanel>
       <MockTabPanel id={tabs[2].id} isActive={currentTab === tabs[2].id}>
-        <TextTitle1 as="h2" paddingBottom={2}>
+        <Text as="h2" font="title1" paddingBottom={2}>
           Heyooo, tab three!
-        </TextTitle1>
-        <TextBody as="p">
+        </Text>
+        <Text as="p" font="body">
           Again, we can put a link like <Link href="/">this another link</Link> in the body of tab
           one. You are going to love it
-        </TextBody>
-        <TextBody as="p">
+        </Text>
+        <Text as="p" font="body">
           {loremIpsum} {loremIpsum}
-        </TextBody>
+        </Text>
       </MockTabPanel>
     </VStack>
   );

@@ -10,7 +10,7 @@ import { IconButton } from '../../buttons/IconButton';
 import { DotSymbol } from '../../dots/DotSymbol';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 import { PortalProvider } from '../PortalProvider';
 import { Tooltip } from '../tooltip/Tooltip';
 import { TooltipProps } from '../tooltip/TooltipProps';
@@ -92,25 +92,33 @@ const BasicTooltip = ({ content }: BasicTooltipProps) => {
 
         <VStack gap={4} padding={2}>
           <Tooltip content={content}>
-            <TextLabel1 as="p">Default</TextLabel1>
+            <Text as="p" font="label1">
+              Default
+            </Text>
           </Tooltip>
           <Tooltip content={content} placement="left">
             <VStack padding={2}>
               <DotSymbol pin="top-end" size="s" source={assets.ada.imageUrl}>
                 <VStack padding={2}>
-                  <TextLabel1 as="p">left</TextLabel1>
+                  <Text as="p" font="label1">
+                    left
+                  </Text>
                 </VStack>
               </DotSymbol>
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="right">
             <VStack padding={2}>
-              <TextLabel1 as="p">right</TextLabel1>
+              <Text as="p" font="label1">
+                right
+              </Text>
             </VStack>
           </Tooltip>
           <Tooltip content={content} placement="bottom">
             <VStack padding={2}>
-              <TextLabel1 as="p">bottom</TextLabel1>
+              <Text as="p" font="label1">
+                bottom
+              </Text>
             </VStack>
           </Tooltip>
         </VStack>

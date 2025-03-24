@@ -5,7 +5,7 @@ import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
 import { TabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { TextDisplay1 } from '../../typography/TextDisplay1';
+import { Text } from '../../typography/Text';
 import { SegmentedTabs, type SegmentedTabsProps } from '../SegmentedTabs';
 
 const TEST_ID = 'mock-segmented-tabs';
@@ -131,7 +131,11 @@ describe('SegmentedTabs', () => {
   });
 
   it('renders custom tab component', () => {
-    const TabComponent = () => <TextDisplay1 testID="custom-tab">Custom tab</TextDisplay1>;
+    const TabComponent = () => (
+      <Text font="display1" testID="custom-tab">
+        Custom tab
+      </Text>
+    );
     render(
       <TabsContext.Provider value={mockApi}>
         <SegmentedTabs {...exampleProps} TabComponent={TabComponent} />

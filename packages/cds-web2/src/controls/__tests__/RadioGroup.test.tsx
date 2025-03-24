@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { TextHeadline, TextLabel1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/test';
 import { Radio, RadioGroup } from '../RadioGroup';
 
@@ -9,7 +9,11 @@ const options = {
   btc: 'Bitcoin',
   eth: 'Ethereum',
   dai: 'Dai',
-  usdc: <TextLabel1 as="span">Custom ReactNode</TextLabel1>,
+  usdc: (
+    <Text as="span" font="label1">
+      Custom ReactNode
+    </Text>
+  ),
 };
 
 const onChange = jest.fn();
@@ -52,7 +56,11 @@ describe('RadioGroup.test', () => {
     render(
       <DefaultThemeProvider>
         <RadioGroup
-          label={<TextHeadline as="span">Choose a currency</TextHeadline>}
+          label={
+            <Text as="span" font="headline">
+              Choose a currency
+            </Text>
+          }
           name="radio-group"
           onChange={onChange}
           options={options}
@@ -68,7 +76,11 @@ describe('RadioGroup.test', () => {
     render(
       <DefaultThemeProvider>
         <RadioGroup
-          label={<TextHeadline as="span">Choose a currency</TextHeadline>}
+          label={
+            <Text as="span" font="headline">
+              Choose a currency
+            </Text>
+          }
           name="radio-group"
           onChange={onChange}
           options={options}
@@ -91,9 +103,9 @@ describe('RadioGroup.test', () => {
           <RadioGroup
             aria-labelledby="choose-a-currency"
             label={
-              <TextHeadline as="span" id="choose-a-currency">
+              <Text as="span" font="headline" id="choose-a-currency">
                 Choose a currency
-              </TextHeadline>
+              </Text>
             }
             name="radio-group"
             onChange={onChange}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Story } from '@storybook/react';
 
 import { Spacer, VStack } from '../../layout';
-import { TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { NavigationBar } from '../NavigationBar';
 
 import { NavigationBarFullExample, NavigationBarTitle } from './NavigationStorySetup';
@@ -26,7 +26,9 @@ const a11ySkipConfig = {
 export const NavigationBarFullExampleDefault: Story = () => {
   return (
     <VStack alignItems="flex-start">
-      <TextTitle1 as="h1">Navigation full example</TextTitle1>
+      <Text font="title1" as="h1">
+        Navigation full example
+      </Text>
       <Spacer />
       <NavigationBarFullExample />
     </VStack>
@@ -40,7 +42,9 @@ NavigationBarFullExampleDefault.parameters = {
 export const NavigationBarTitleExample = () => {
   return (
     <VStack alignItems="flex-start">
-      <TextTitle1 as="h1">NavigationBar title example</TextTitle1>
+      <Text font="title1" as="h1">
+        NavigationBar title example
+      </Text>
       <Spacer />
       <NavigationBarTitle />
     </VStack>

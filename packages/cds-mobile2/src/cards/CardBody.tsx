@@ -7,8 +7,7 @@ import type { CardBodyBaseProps } from '@cbhq/cds-common2/types';
 import { Button, type ButtonProps } from '../buttons/Button';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
-import { TextHeadline } from '../typography/TextHeadline';
-import { TextLabel2 } from '../typography/TextLabel2';
+import { Text } from '../typography/Text';
 
 import { CardMedia } from './CardMedia';
 
@@ -133,12 +132,12 @@ export const CardBody = memo(function CardBody({
           paddingEnd={spacingProps.paddingEnd}
           paddingStart={spacingProps.paddingStart}
         >
-          <TextHeadline {...textProps} testID={`${testID}-title`}>
+          <Text font="headline" {...textProps} testID={`${testID}-title`}>
             {title}
-          </TextHeadline>
-          <TextLabel2 color="fgMuted" {...textProps} testID={`${testID}-description`}>
+          </Text>
+          <Text color="fgMuted" font="label2" {...textProps} testID={`${testID}-description`}>
             {description}
-          </TextLabel2>
+          </Text>
           {action}
         </VStack>
       </VStack>
@@ -158,12 +157,12 @@ export const CardBody = memo(function CardBody({
     >
       <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
         <VStack gap={1} maxWidth="100%" paddingTop={mediaContent ? 0 : 2}>
-          <TextHeadline {...textProps} testID={`${testID}-title`}>
+          <Text font="headline" {...textProps} testID={`${testID}-title`}>
             {title}
-          </TextHeadline>
-          <TextLabel2 color="fgMuted" {...textProps} testID={`${testID}-description`}>
+          </Text>
+          <Text color="fgMuted" font="label2" {...textProps} testID={`${testID}-description`}>
             {description}
-          </TextLabel2>
+          </Text>
         </VStack>
         {children}
         {action}

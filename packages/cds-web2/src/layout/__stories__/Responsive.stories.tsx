@@ -9,7 +9,6 @@ import { Card } from '../../cards/Card';
 import { CellMedia, ContentCell, ListCell } from '../../cells';
 import { Table, TableBody, TableCell, TableRow } from '../../tables';
 import { Text } from '../../typography/Text';
-import { TextHeadline } from '../../typography/TextHeadline';
 import { Box, type BoxBaseProps } from '../Box';
 import { Divider } from '../Divider';
 import { HStack } from '../HStack';
@@ -49,13 +48,19 @@ export const ResponsiveBox = (props: BoxBaseProps) => {
         {...props}
       >
         <HStack {...itemProps}>
-          <TextHeadline as="h3">Item 1</TextHeadline>
+          <Text as="h3" font="headline">
+            Item 1
+          </Text>
         </HStack>
         <HStack {...itemProps}>
-          <TextHeadline as="h3">Item 2</TextHeadline>
+          <Text as="h3" font="headline">
+            Item 2
+          </Text>
         </HStack>
         <HStack {...itemProps}>
-          <TextHeadline as="h3">Item 3</TextHeadline>
+          <Text as="h3" font="headline">
+            Item 3
+          </Text>
         </HStack>
       </Box>
       <Text as="h2" font="display2">
@@ -67,10 +72,14 @@ export const ResponsiveBox = (props: BoxBaseProps) => {
           flexGrow={{ phone: 1, tablet: 2, desktop: 3 }}
           {...itemProps}
         >
-          <TextHeadline as="h3">Item 1</TextHeadline>
+          <Text as="h3" font="headline">
+            Item 1
+          </Text>
         </HStack>
         <HStack background="bgAlternate" flexGrow={1} {...itemProps}>
-          <TextHeadline as="h3">Item 2</TextHeadline>
+          <Text as="h3" font="headline">
+            Item 2
+          </Text>
         </HStack>
       </HStack>
     </VStack>
@@ -184,7 +193,7 @@ export const ResponsiveStacks = () => (
 //       <TableBody>
 //         <TableRow>
 //           <TableCell direction="horizontal" responsiveConfig={responsiveCellSpacing}>
-//             <TextHeadline as="h2">Sample Row 1</TextHeadline>
+//             <Text font="headline" as="h2">Sample Row 1</Text>
 //             <Button compact onClick={() => {}} variant="secondary">
 //               Export
 //             </Button>
@@ -207,7 +216,7 @@ export const ResponsiveStacks = () => (
 //         </TableRow>
 //         <TableRow disableHoverIndicator>
 //           <TableCell direction="horizontal" responsiveConfig={responsiveCellSpacing}>
-//             <TextHeadline as="h2">Sample Row 3</TextHeadline>
+//             <Text font="headline" as="h2">Sample Row 3</Text>
 //             <Button compact onClick={() => {}} variant="secondary">
 //               Export
 //             </Button>

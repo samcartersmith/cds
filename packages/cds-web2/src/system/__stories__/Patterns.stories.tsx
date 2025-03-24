@@ -6,7 +6,8 @@ import { Icon } from '../../icons/Icon';
 import { SpotRectangle } from '../../illustrations';
 import { Box, HStack, VStack } from '../../layout';
 import { FullscreenAlert, Modal, ModalBody, ModalFooter, ModalHeader } from '../../overlays';
-import { Link, TextBody, TextHeadline, TextLabel2, TextTitle3 } from '../../typography';
+import { Link } from '../../typography/Link';
+import { Text } from '../../typography/Text';
 
 export default {
   title: 'Core Components/Patterns',
@@ -70,19 +71,21 @@ export const DisclosureLowFriction = () => {
           <Box justifyContent="center">
             <SpotRectangle name="accessToAdvancedCharts" />
           </Box>
-          <TextTitle3 as="h2" id="dlf-title" paddingTop={4}>
+          <Text as="h2" font="title3" id="dlf-title" paddingTop={4}>
             Title outlining the action and benefit in 1-2 lines
-          </TextTitle3>
+          </Text>
           <VStack as="ul" gap={3} paddingY={3}>
             {data.map(({ id, headline, body }) => (
               <VStack key={id} as="li" gap={1}>
                 <HStack alignItems="center" gap={2}>
                   <Icon color="fg" name="checkmark" size="s" />
-                  <TextHeadline as="h3">{headline}</TextHeadline>
+                  <Text as="h3" font="headline">
+                    {headline}
+                  </Text>
                 </HStack>
-                <TextBody as="p" paddingStart={4}>
+                <Text as="p" font="body" paddingStart={4}>
                   {body}
-                </TextBody>
+                </Text>
               </VStack>
             ))}
           </VStack>
@@ -133,19 +136,21 @@ export const DisclosureMediumFriction = () => {
           <Box justifyContent="center">
             <SpotRectangle name="accessToAdvancedCharts" />
           </Box>
-          <TextTitle3 as="h2" id="dmf-title" paddingTop={4}>
+          <Text as="h2" font="title3" id="dmf-title" paddingTop={4}>
             Title outlining the benefit in 1-2 lines
-          </TextTitle3>
+          </Text>
           <VStack as="ul" gap={3} paddingY={3}>
             {data.map(({ id, headline, body }) => (
               <VStack key={id} as="li" gap={1}>
                 <HStack alignItems="center" gap={2}>
                   <Icon color="fg" name="checkmark" size="s" />
-                  <TextHeadline as="h3">{headline}</TextHeadline>
+                  <Text as="h3" font="headline">
+                    {headline}
+                  </Text>
                 </HStack>
-                <TextBody as="p" paddingStart={4}>
+                <Text as="p" font="body" paddingStart={4}>
                   {body}
-                </TextBody>
+                </Text>
               </VStack>
             ))}
           </VStack>
@@ -196,22 +201,24 @@ export const DisclosureHighFrictionBenefit = () => {
           <Box justifyContent="center">
             <SpotRectangle name="accessToAdvancedCharts" />
           </Box>
-          <TextTitle3 as="h2" id="dhfb-title" paddingTop={4}>
+          <Text as="h2" font="title3" id="dhfb-title" paddingTop={4}>
             Title outlining the benefit in 1-2 lines
-          </TextTitle3>
-          <TextLabel2 as="p" paddingTop={1}>
+          </Text>
+          <Text as="p" font="label2" paddingTop={1}>
             Body text saying &quot;By verbing, you will get X, Y, Z.&quot;
-          </TextLabel2>
+          </Text>
           <VStack as="ul" gap={3} paddingY={3}>
             {data.map(({ id, headline, body }) => (
               <VStack key={id} as="li" gap={1}>
                 <HStack alignItems="center" gap={2}>
                   <Icon color="fg" name="checkmark" size="s" />
-                  <TextHeadline as="h3">{headline}</TextHeadline>
+                  <Text as="h3" font="headline">
+                    {headline}
+                  </Text>
                 </HStack>
-                <TextBody as="p" paddingStart={4}>
+                <Text as="p" font="body" paddingStart={4}>
                   {body}
-                </TextBody>
+                </Text>
               </VStack>
             ))}
           </VStack>
@@ -277,25 +284,27 @@ export const DisclosureHighFrictionRisk = () => {
           <Box justifyContent="center">
             <SpotRectangle name="accessToAdvancedCharts" />
           </Box>
-          <TextTitle3 as="h2" id="dhfr-title" paddingTop={4}>
+          <Text as="h2" font="title3" id="dhfr-title" paddingTop={4}>
             Title outlining risk in 1-2 lines
-          </TextTitle3>
-          <TextLabel2 as="p" paddingTop={1}>
+          </Text>
+          <Text as="p" font="label2" paddingTop={1}>
             Body text saying &quot;Before you [verb], here are a few things you need to understand
             about [action].&quot;
-          </TextLabel2>
+          </Text>
           <VStack as="ul" gap={3} paddingY={3}>
             {data.map(({ id, headline, checkboxLabel, linkText, linkUrl }, index) => (
               <VStack key={id} as="li" gap={1}>
-                <TextHeadline as="h3">{headline}</TextHeadline>
+                <Text as="h3" font="headline">
+                  {headline}
+                </Text>
                 <HStack alignItems="center" as="label" gap={1} style={checkboxLabelStyles}>
                   <Checkbox checked={checkboxes[index]} onChange={handleCheckboxChange(index)} />
-                  <TextLabel2 as="span">
+                  <Text as="span" font="label2">
                     {checkboxLabel}{' '}
                     <Link openInNewWindow underline href={linkUrl}>
                       {linkText}
                     </Link>
-                  </TextLabel2>
+                  </Text>
                 </HStack>
               </VStack>
             ))}

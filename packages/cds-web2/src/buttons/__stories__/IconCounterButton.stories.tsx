@@ -3,7 +3,7 @@ import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 import { DotSymbol } from '../../dots/DotSymbol';
 import { Divider, HStack, VStack } from '../../layout';
-import { TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { IconCounterButton } from '../IconCounterButton';
 
 export default {
@@ -14,21 +14,27 @@ export default {
 export const IconCounterButtonExample = () => {
   return (
     <VStack gap={2}>
-      <TextTitle3 as="h3">Normal</TextTitle3>
+      <Text as="h3" font="title3">
+        Normal
+      </Text>
       <HStack gap={4}>
         <IconCounterButton count={99} icon="heartInactive" />
         <IconCounterButton count={4200} icon="comment" />
         <IconCounterButton count={9900000} icon="arrowsHorizontal" />
       </HStack>
       <Divider />
-      <TextTitle3 as="h3">Colored</TextTitle3>
+      <Text as="h3" font="title3">
+        Colored
+      </Text>
       <HStack gap={4}>
         <IconCounterButton color="fgNegative" count={99} icon="heartActive" />
         <IconCounterButton color="fgPrimary" count={4200} icon="comment" />
         <IconCounterButton count={69000000} dangerouslySetColor="orange" icon="arrowsHorizontal" />
       </HStack>
       <Divider />
-      <TextTitle3 as="h3">Custom Icon</TextTitle3>
+      <Text as="h3" font="title3">
+        Custom Icon
+      </Text>
       <HStack gap={4}>
         <IconCounterButton count={99} icon={<DotSymbol size="m" source={assets.btc.imageUrl} />} />
         <IconCounterButton

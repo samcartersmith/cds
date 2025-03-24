@@ -5,7 +5,7 @@ import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../../buttons';
-import { TextBody, TextLabel1 } from '../../../typography';
+import { Text } from '../../../typography/Text';
 import { DefaultThemeProvider } from '../../../utils/test';
 import { Modal, type ModalProps } from '../Modal';
 import { ModalBody } from '../ModalBody';
@@ -66,13 +66,13 @@ type LoremIpsumProps = {
 const LoremIpsum = ({ title, concise, repeat }: LoremIpsumProps) => {
   return (
     <>
-      <TextLabel1 as="p" paddingBottom={1} renderEmptyNode={false}>
+      <Text as="p" font="label1" paddingBottom={1} renderEmptyNode={false}>
         {title}
-      </TextLabel1>
+      </Text>
       {concise ? null : (
-        <TextBody as="p" paddingBottom={3}>
+        <Text as="p" font="body" paddingBottom={3}>
           {repeat ? loremIpsum.repeat(repeat) : loremIpsum}
-        </TextBody>
+        </Text>
       )}
     </>
   );

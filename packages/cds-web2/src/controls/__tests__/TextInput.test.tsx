@@ -3,7 +3,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
-import { TextTitle1 } from '../../typography/TextTitle1';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/test';
 import { TextInput } from '../TextInput';
 
@@ -15,11 +15,19 @@ describe('TextInput', () => {
           <TextInput
             accessibilityHint="Text"
             accessibilityLabel="Text"
-            end={<TextTitle1 as="h1">Node</TextTitle1>}
+            end={
+              <Text as="h1" font="title1">
+                Node
+              </Text>
+            }
             helperText="Text"
             label="Text"
             placeholder="Text"
-            start={<TextTitle1 as="h1">Node</TextTitle1>}
+            start={
+              <Text as="h1" font="title1">
+                Node
+              </Text>
+            }
           />
         </DefaultThemeProvider>,
       ),
@@ -108,7 +116,11 @@ describe('TextInput', () => {
     render(
       <DefaultThemeProvider>
         <TextInput
-          helperText={<TextTitle1 as="p">{helperText}</TextTitle1>}
+          helperText={
+            <Text as="p" font="title1">
+              {helperText}
+            </Text>
+          }
           testIDMap={{
             helperText: testID,
           }}
@@ -135,7 +147,11 @@ describe('TextInput', () => {
     render(
       <DefaultThemeProvider>
         <TextInput
-          start={<TextTitle1 as="h1">{startNodeText}</TextTitle1>}
+          start={
+            <Text as="h1" font="title1">
+              {startNodeText}
+            </Text>
+          }
           testIDMap={{
             start: testID,
           }}
@@ -151,7 +167,11 @@ describe('TextInput', () => {
     render(
       <DefaultThemeProvider>
         <TextInput
-          start={<TextTitle1 as="h1">{endNodeText}</TextTitle1>}
+          start={
+            <Text as="h1" font="title1">
+              {endNodeText}
+            </Text>
+          }
           testIDMap={{
             start: testID,
           }}
@@ -217,7 +237,14 @@ describe('TextInput', () => {
     const startNodeText = 'Start';
     render(
       <DefaultThemeProvider>
-        <TextInput onFocus={onFocus} start={<TextTitle1 as="h1">{startNodeText}</TextTitle1>} />
+        <TextInput
+          onFocus={onFocus}
+          start={
+            <Text as="h1" font="title1">
+              {startNodeText}
+            </Text>
+          }
+        />
       </DefaultThemeProvider>,
     );
     expect(onFocus).not.toHaveBeenCalled();
@@ -230,7 +257,14 @@ describe('TextInput', () => {
     const endNodeText = 'End';
     render(
       <DefaultThemeProvider>
-        <TextInput end={<TextTitle1 as="h1">{endNodeText}</TextTitle1>} onFocus={onFocus} />
+        <TextInput
+          end={
+            <Text as="h1" font="title1">
+              {endNodeText}
+            </Text>
+          }
+          onFocus={onFocus}
+        />
       </DefaultThemeProvider>,
     );
     expect(onFocus).not.toHaveBeenCalled();

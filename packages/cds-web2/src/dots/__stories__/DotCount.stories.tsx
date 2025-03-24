@@ -4,7 +4,7 @@ import { Icon } from '../../icons/Icon';
 import { Box, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
 import { Pressable } from '../../system/Pressable';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 import { DotCount } from '..';
 
 export default {
@@ -83,7 +83,9 @@ const DotCountPlacements = () => {
       padding={1}
       paddingBottom={4}
     >
-      <TextLabel1 as="p">top-end</TextLabel1>
+      <Text as="p" font="label1">
+        top-end
+      </Text>
       <DotCount count={30} pin="top-end">
         <Avatar alt="Sneezy" shape="square" size="xl" />
       </DotCount>
@@ -94,7 +96,9 @@ const DotCountPlacements = () => {
         <Icon name="calendar" size="m" />
       </DotCount>
       <DotCount count={0} pin="top-end">
-        <TextLabel1 as="p">Count = 0. Dot should not show up</TextLabel1>
+        <Text as="p" font="label1">
+          Count = 0. Dot should not show up
+        </Text>
         <Icon name="calendar" size="m" />
       </DotCount>
     </VStack>
@@ -112,12 +116,24 @@ const DotCountComplex = () => {
         <Avatar alt="Sneezy" shape="circle" size="xxxl" />
       </DotCount>
       <VStack>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
-        <TextLabel1 as="p">Hello Hello</TextLabel1>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
+        <Text as="p" font="label1">
+          Hello Hello
+        </Text>
       </VStack>
     </HStack>
   );

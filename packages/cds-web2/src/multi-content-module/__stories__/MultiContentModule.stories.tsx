@@ -11,7 +11,7 @@ import { Box, Divider, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media';
 import { FullscreenModal } from '../../overlays/modal/FullscreenModal';
 import { Pressable } from '../../system/Pressable';
-import { TextBody, TextLabel2 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { MultiContentModule, MultiContentModuleBaseProps } from '../MultiContentModule';
 
 type ListItem = {
@@ -319,7 +319,9 @@ export const WithEnd = () => {
       <VStack>
         <HStack justifyContent="center" zIndex={1}>
           <Box background="bg" paddingX={1.5}>
-            <TextBody color="fgMuted">OR</TextBody>
+            <Text color="fgMuted" font="body">
+              OR
+            </Text>
           </Box>
         </HStack>
         <Divider marginTop={-1.5} paddingBottom={1.5} />
@@ -337,9 +339,9 @@ export const WithEnd = () => {
             >
               <Box padding={2}>{icon}</Box>
             </Pressable>
-            <TextLabel2 color="fgMuted" paddingTop={1}>
+            <Text color="fgMuted" font="label2" paddingTop={1}>
               {name}
-            </TextLabel2>
+            </Text>
           </VStack>
         ))}
       </HStack>

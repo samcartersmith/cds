@@ -4,7 +4,7 @@ import { avatarSizes } from '@cbhq/cds-common2/internal/data/avatars';
 import { Icon } from '../../icons/Icon';
 import { VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
-import { TextLabel1 } from '../../typography/TextLabel1';
+import { Text } from '../../typography/Text';
 import { DotStatusColor } from '..';
 
 export default {
@@ -55,7 +55,9 @@ const DotStatusColorPlacements = () => {
           padding={1}
           paddingBottom={4}
         >
-          <TextLabel1 as="p">{pinDirection}</TextLabel1>
+          <Text as="p" font="label1">
+            {pinDirection}
+          </Text>
           <DotStatusColor pin={pinDirection} variant="positive">
             <Avatar alt="Sneezy" shape="square" size="l" />
           </DotStatusColor>
@@ -83,9 +85,9 @@ const DotStatusColorOverlap = () => {
             padding={1}
             paddingBottom={4}
           >
-            <TextLabel1 as="p">
+            <Text as="p" font="label1">
               {pinDirection}, avatarSize: {avatarSize}
-            </TextLabel1>
+            </Text>
             <DotStatusColor overlap="circular" pin={pinDirection} variant="positive">
               <Avatar alt="Unknown avatar circle" shape="circle" size={avatarSize} />
             </DotStatusColor>

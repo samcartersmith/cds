@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { SelectProvider } from '../../controls/selectContext';
-import { TextTitle2 } from '../../typography/TextTitle2';
+import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/test';
 import { MenuItem } from '../MenuItem';
 
@@ -10,7 +10,9 @@ describe('MenuItem', () => {
     render(
       <DefaultThemeProvider>
         <MenuItem value="1">
-          <TextTitle2 as="p">Item1</TextTitle2>
+          <Text as="p" font="title2">
+            Item1
+          </Text>
         </MenuItem>
       </DefaultThemeProvider>,
     );
@@ -26,7 +28,9 @@ describe('MenuItem', () => {
       <SelectProvider value={{ handleCloseMenu }}>
         <DefaultThemeProvider>
           <MenuItem onClick={onClick} testID="test-menu-item" value="1">
-            <TextTitle2 as="p">Item1</TextTitle2>
+            <Text as="p" font="title2">
+              Item1
+            </Text>
           </MenuItem>
         </DefaultThemeProvider>
       </SelectProvider>,
@@ -46,7 +50,9 @@ describe('MenuItem', () => {
       <SelectProvider value={{ handleCloseMenu }}>
         <DefaultThemeProvider>
           <MenuItem disableCloseOnOptionChange onClick={onClick} testID="test-menu-item" value="1">
-            <TextTitle2 as="p">Item1</TextTitle2>
+            <Text as="p" font="title2">
+              Item1
+            </Text>
           </MenuItem>
         </DefaultThemeProvider>
       </SelectProvider>,

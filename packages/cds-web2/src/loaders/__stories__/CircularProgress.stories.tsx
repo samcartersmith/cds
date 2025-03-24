@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Spacer, VStack } from '../../layout';
-import { TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { CircularProgress } from '../CircularProgress';
 
 export default {
@@ -12,7 +12,9 @@ export default {
 export const Determinate = () => {
   return (
     <VStack alignItems="flex-start">
-      <TextTitle1 as="h1">Determinate</TextTitle1>
+      <Text font="title1" as="h1">
+        Determinate
+      </Text>
       <Spacer />
       <CircularProgress indeterminate={false} progress={80} radius={30} strokeWidth={4} />
     </VStack>

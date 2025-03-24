@@ -7,7 +7,7 @@ import names from '@cbhq/cds-icons/__generated__/nav/data/names';
 import namesOld from '@cbhq/cds-icons/__generated__/nav/data/names-old';
 
 import { HStack, VStack } from '../../layout';
-import { TextLegal } from '../../typography';
+import { Text } from '../../typography/Text';
 import { sourceSizeMap } from '../Icon';
 import { NavigationIcon, NavigationIconName } from '../NavigationIcon';
 
@@ -51,10 +51,10 @@ function SvgFromFigma({ name, size, active }: SvgFromFigmaProps) {
 
 function DisclaimerText() {
   return (
-    <TextLegal as="p">
+    <Text as="p" font="legal">
       The blue icons are icons loaded originally from Figma. This way you can see if the font
       generated icon differs from how the icon looks in Figma.
-    </TextLegal>
+    </Text>
   );
 }
 

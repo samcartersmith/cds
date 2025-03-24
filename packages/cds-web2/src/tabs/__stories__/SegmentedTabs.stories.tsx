@@ -4,7 +4,7 @@ import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 
 import { VStack } from '../../layout';
-import { TextLabel2, TextTitle4 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { SegmentedTab } from '../SegmentedTab';
 import { SegmentedTabs, type SegmentedTabsProps } from '../SegmentedTabs';
 import type { TabComponent, TabsActiveIndicatorProps } from '../Tabs';
@@ -33,9 +33,9 @@ const AnotherCustomSegmentedTab: TabComponent = ({ id, label, disabled }) => {
   const { activeTab } = useTabsContext();
   const isActive = activeTab?.id === id;
   const renderedLabel = (
-    <TextLabel2 color={isActive ? 'fgPositive' : 'fgNegative'} overflow="truncate">
+    <Text color={isActive ? 'fgPositive' : 'fgNegative'} font="label2" overflow="truncate">
       {label}
-    </TextLabel2>
+    </Text>
   );
 
   return <SegmentedTab className={buttonStyle} disabled={disabled} id={id} label={renderedLabel} />;
@@ -81,7 +81,9 @@ const SegmentedTabsExample = ({ title, defaultActiveTab, ...props }: SegmentedTa
 
   return (
     <VStack gap={2}>
-      <TextTitle4 as="h2">{title}</TextTitle4>
+      <Text as="h2" font="title4">
+        {title}
+      </Text>
       <SegmentedTabs
         {...props}
         accessibilityLabel="Switch token action views"

@@ -6,7 +6,7 @@ import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
 import { VStack } from '../../layout';
 import { RemoteImage } from '../../media';
-import { TextBody, TextCaption } from '../../typography';
+import { Text } from '../../typography/Text';
 import { ProgressBar } from '../../visualizations';
 import { Coachmark } from '../Coachmark';
 
@@ -42,13 +42,13 @@ export const CoachmarkExamples = () => {
         closeButtonAccessibilityLabel="Close"
         content={
           <VStack gap={2}>
-            <TextCaption as="p" color="fgMuted">
+            <Text as="p" color="fgMuted" font="caption">
               50%
-            </TextCaption>
+            </Text>
             <ProgressBar progress={0.5} />
-            <TextBody as="p">
+            <Text as="p" font="body">
               Add up to 3 lines of body copy. Deliver your message with clarity and impact
-            </TextBody>
+            </Text>
           </VStack>
         }
         media={<RemoteImage height={150} source={ethBackground} width="100%" />}

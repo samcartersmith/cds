@@ -5,7 +5,7 @@ import { noop } from '@cbhq/cds-utils';
 import { Button } from '../../buttons/Button';
 import { CellMedia } from '../../cells/CellMedia';
 import { TextInput } from '../../controls/TextInput';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { Accordion, AccordionItem } from '..';
 
 export default {
@@ -39,7 +39,9 @@ const BasicAccordion = () => {
         subtitle="subtitle2"
         title="Accordion #2"
       >
-        <TextBody as="p">Accordion Content</TextBody>
+        <Text as="p" font="body">
+          Accordion Content
+        </Text>
       </AccordionItem>
     </Accordion>
   );
@@ -52,7 +54,9 @@ const NoMedia = () => {
         <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
       </AccordionItem>
       <AccordionItem itemKey="2" onClick={handlePress} subtitle="subtitle2" title="Accordion #2">
-        <TextBody as="p">Accordion Content</TextBody>
+        <Text as="p" font="body">
+          Accordion Content
+        </Text>
       </AccordionItem>
     </Accordion>
   );
@@ -74,7 +78,9 @@ const NoSubtitle = () => {
         onClick={handlePress}
         title="Accordion #2"
       >
-        <TextBody as="p">Accordion Content</TextBody>
+        <Text as="p" font="body">
+          Accordion Content
+        </Text>
       </AccordionItem>
     </Accordion>
   );
@@ -87,7 +93,9 @@ const TitleOnly = () => {
         <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
       </AccordionItem>
       <AccordionItem itemKey="2" onClick={handlePress} title="Accordion #2">
-        <TextBody as="p">Accordion Content</TextBody>
+        <Text as="p" font="body">
+          Accordion Content
+        </Text>
       </AccordionItem>
     </Accordion>
   );
@@ -97,10 +105,14 @@ const LongContent = () => {
   return (
     <Accordion defaultActiveKey="2" onChange={handlePress}>
       <AccordionItem itemKey="1" title="Accordion #1">
-        <TextBody as="p">{loremIpsum.repeat(10)}</TextBody>
+        <Text as="p" font="body">
+          {loremIpsum.repeat(10)}
+        </Text>
       </AccordionItem>
       <AccordionItem itemKey="2" onClick={handlePress} title="Accordion #2">
-        <TextBody as="p">Accordion Content</TextBody>
+        <Text as="p" font="body">
+          Accordion Content
+        </Text>
       </AccordionItem>
     </Accordion>
   );
@@ -132,7 +144,9 @@ const CustomStyle = () => {
         subtitle="subtitle2"
         title="Accordion #2"
       >
-        <TextBody as="p">Accordion Content</TextBody>
+        <Text as="p" font="body">
+          Accordion Content
+        </Text>
       </AccordionItem>
     </Accordion>
   );
@@ -150,7 +164,9 @@ export const NestedButtons = () => {
           title={`Item ${itemKey}`}
         >
           <Button onClick={() => setActiveKey(nextKey)}>
-            <TextBody color="fgInverse">Open Item {nextKey}</TextBody>
+            <Text color="fgInverse" font="body">
+              Open Item {nextKey}
+            </Text>
           </Button>
         </AccordionItem>
       ))}

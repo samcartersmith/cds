@@ -5,7 +5,7 @@ import { ThemeConfig } from '../../core/theme';
 import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout/VStack';
 import { defaultTheme } from '../../themes/defaultTheme';
-import { TextBody } from '../../typography/TextBody';
+import { Text } from '../../typography/Text';
 import { ThemeProvider, useThemeProviderStyles } from '../ThemeProvider';
 
 const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
@@ -17,24 +17,30 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
         <VStack>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
-          <TextBody as="p" color="bgSecondary">
+          <Text as="p" color="bgSecondary" font="body">
             Secondary text
-          </TextBody>
+          </Text>
         </VStack>
         <VStack bordered background="bg" borderRadius={400} elevation={1} gap={1} padding={2}>
-          <TextBody as="p">Elevation 1</TextBody>
+          <Text as="p" font="body">
+            Elevation 1
+          </Text>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
         <VStack bordered background="bg" borderRadius={400} elevation={2} gap={1} padding={2}>
-          <TextBody as="p">Elevation 2</TextBody>
+          <Text as="p" font="body">
+            Elevation 2
+          </Text>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
-        <TextBody as="p">
+        <Text as="p" font="body">
           ClassName value at nested ThemeProvider parent level: {className}
-        </TextBody>
-        <TextBody as="p">Should be {expectedSpectrum}</TextBody>
+        </Text>
+        <Text as="p" font="body">
+          Should be {expectedSpectrum}
+        </Text>
       </VStack>
     </VStack>
   );
@@ -81,7 +87,9 @@ const ChildThemeWithOverrides = () => {
   const theme = useTheme();
   return (
     <ThemeProvider activeColorScheme={theme.colorScheme} theme={customTheme}>
-      <TextBody as="p">With theme overrides</TextBody>
+      <Text as="p" font="body">
+        With theme overrides
+      </Text>
       <Child expectedSpectrum="light" />
     </ThemeProvider>
   );
@@ -90,7 +98,9 @@ const ChildThemeWithOverrides = () => {
 const ChildThemeWithOverridesDark = () => {
   return (
     <ThemeProvider activeColorScheme="dark" theme={customTheme}>
-      <TextBody as="p">With theme overrides</TextBody>
+      <Text as="p" font="body">
+        With theme overrides
+      </Text>
       <Child expectedSpectrum="dark" />
     </ThemeProvider>
   );
@@ -101,7 +111,9 @@ const ChildThemeWithNestedOverrides = () => {
   return (
     <ThemeProvider activeColorScheme={theme.colorScheme} theme={customTheme}>
       <ThemeProvider activeColorScheme="light" theme={theme}>
-        <TextBody as="p">With nested theme overrides</TextBody>
+        <Text as="p" font="body">
+          With nested theme overrides
+        </Text>
         <Child expectedSpectrum="light" />
       </ThemeProvider>
     </ThemeProvider>
@@ -113,7 +125,9 @@ const ChildThemeWithNestedOverridesDark = () => {
   return (
     <ThemeProvider activeColorScheme="dark" theme={customTheme}>
       <ThemeProvider activeColorScheme="dark" theme={theme}>
-        <TextBody as="p">With nested theme overrides</TextBody>
+        <Text as="p" font="body">
+          With nested theme overrides
+        </Text>
         <Child expectedSpectrum="dark" />
       </ThemeProvider>
     </ThemeProvider>

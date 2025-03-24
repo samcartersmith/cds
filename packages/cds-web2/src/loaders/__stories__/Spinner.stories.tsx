@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Spacer, VStack } from '../../layout';
-import { TextBody, TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Spinner } from '../Spinner';
 
 export default {
@@ -12,7 +12,9 @@ export default {
 export const SpinnerDefault = () => {
   return (
     <VStack>
-      <TextTitle1 as="h1">Spinner Default Color</TextTitle1>
+      <Text as="h1" font="title1">
+        Spinner Default Color
+      </Text>
       <Spacer vertical={3} />
       <Spinner accessibilityLabel="Loading" size={10} />
     </VStack>
@@ -22,7 +24,9 @@ export const SpinnerDefault = () => {
 export const SpinnerPrimary = () => {
   return (
     <VStack>
-      <TextTitle1 as="h1">Spinner Primary Color</TextTitle1>
+      <Text as="h1" font="title1">
+        Spinner Primary Color
+      </Text>
       <Spacer vertical={3} />
       <Spinner accessibilityLabel="Loading" color="bgPrimary" size={10} />
     </VStack>
@@ -40,11 +44,13 @@ export const SpinnerWithAccessibility = () => {
 
   return (
     <VStack>
-      <TextTitle1 as="h1">Spinner With Accessibility Label Update</TextTitle1>
-      <TextBody as="p">
+      <Text as="h1" font="title1">
+        Spinner With Accessibility Label Update
+      </Text>
+      <Text as="p" font="body">
         Accessibility label will be updated from &quot;Loading&quot; to &quot;Complete&quot; after
         10 seconds.
-      </TextBody>
+      </Text>
       <Spacer vertical={3} />
       <Spinner accessibilityLabel={loading ? 'Loading' : 'Complete'} color="bgPrimary" size={10} />
     </VStack>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Spacer } from '../../layout';
-import { TextTitle1 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Sidebar } from '../Sidebar';
 
 import {
@@ -18,7 +18,9 @@ export default {
 export const Default = () => {
   return (
     <>
-      <TextTitle1 as="h1">Default Sidebar Example</TextTitle1>
+      <Text font="title1" as="h1">
+        Default Sidebar Example
+      </Text>
       <Spacer as="div" vertical={1} />
       <DefaultSidebarExample />
     </>
@@ -28,7 +30,9 @@ export const Default = () => {
 export const Condensed = () => {
   return (
     <>
-      <TextTitle1 as="h1">Condensed Sidebar Example</TextTitle1>
+      <Text font="title1" as="h1">
+        Condensed Sidebar Example
+      </Text>
       <Spacer as="div" vertical={1} />
       <CondensedSidebarExample />
     </>
@@ -38,7 +42,9 @@ export const Condensed = () => {
 export const Custom = () => {
   return (
     <>
-      <TextTitle1 as="h1">Custom Sidebar Example</TextTitle1>
+      <Text font="title1" as="h1">
+        Custom Sidebar Example
+      </Text>
       <Spacer as="div" vertical={1} />
       <CustomSidebarExample />
     </>

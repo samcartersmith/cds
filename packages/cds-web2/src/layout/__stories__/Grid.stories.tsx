@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextBody, TextTitle1, TextTitle3 } from '../../typography';
+import { Text } from '../../typography/Text';
 import { Grid, type GridDefaulElement, type GridProps } from '../Grid';
 import { GridColumn } from '../GridColumn';
 import { HStack, type HStackProps } from '../HStack';
@@ -29,7 +29,9 @@ const GridBase = (props: GridProps<'div' | 'ul'>) => {
     <Grid gap={responsiveGapConfig} {...props}>
       {Array.from({ length: 12 }).map((_, idx) => (
         <Item key={idx} as={props.as === 'ul' ? 'li' : 'div'}>
-          <TextTitle1 as="h3">{idx + 1}</TextTitle1>
+          <Text as="h3" font="title1">
+            {idx + 1}
+          </Text>
         </Item>
       ))}
     </Grid>
@@ -41,7 +43,9 @@ const ImplicitGrid = (props: GridProps<GridDefaulElement>) => {
     <Grid {...props} gap={0.5}>
       {Array.from({ length: 12 }).map((_, idx) => (
         <Item key={idx}>
-          <TextTitle1 as="h3">{idx + 1}</TextTitle1>
+          <Text as="h3" font="title1">
+            {idx + 1}
+          </Text>
         </Item>
       ))}
     </Grid>
@@ -58,13 +62,17 @@ const ImplicitGridClamped = (props: GridProps<GridDefaulElement>) => {
         <LoremIpsum repeat={3} />
       </Item>
       <Item>
-        <TextBody as="p">Small</TextBody>
+        <Text as="p" font="body">
+          Small
+        </Text>
       </Item>
       <Item>
         <LoremIpsum />
       </Item>
       <Item>
-        <TextBody as="p">1</TextBody>
+        <Text as="p" font="body">
+          1
+        </Text>
       </Item>
       <Item>
         <LoremIpsum repeat={2} />
@@ -111,16 +119,24 @@ const FullBleedExample = () => {
   return (
     <Grid gap={0.5} templateColumns="100px 1fr 100px">
       <Item background="bg">
-        <TextBody as="p">Gutter</TextBody>
+        <Text as="p" font="body">
+          Gutter
+        </Text>
       </Item>
       <Item>
-        <TextBody as="p">Body</TextBody>
+        <Text as="p" font="body">
+          Body
+        </Text>
       </Item>
       <Item background="bg">
-        <TextBody as="p">Gutter</TextBody>
+        <Text as="p" font="body">
+          Gutter
+        </Text>
       </Item>
       <GridColumn background="bgAlternate" gridColumn="1 / -1" justifyContent="center" padding={2}>
-        <TextBody as="p">Full Bleed</TextBody>
+        <Text as="p" font="body">
+          Full Bleed
+        </Text>
       </GridColumn>
     </Grid>
   );
@@ -136,36 +152,54 @@ export const GridExamples = () => {
   return (
     <VStack gap={4}>
       <VStack gap={1}>
-        <TextTitle1 as="h2">Twelve Column Grid</TextTitle1>
+        <Text as="h2" font="title1">
+          Twelve Column Grid
+        </Text>
         <GridBase gridTemplateColumns={responsiveGridColumnConfig} />
       </VStack>
       <VStack gap={1}>
-        <TextTitle1 as="h2">Columns as String</TextTitle1>
-        <TextTitle3 as="h3">100px 20% 1fr</TextTitle3>
+        <Text as="h2" font="title1">
+          Columns as String
+        </Text>
+        <Text as="h3" font="title3">
+          100px 20% 1fr
+        </Text>
         <GridBase templateColumns="100px 20% 1fr" />
       </VStack>
       <VStack gap={1}>
-        <TextTitle1 as="h2">As a List</TextTitle1>
+        <Text as="h2" font="title1">
+          As a List
+        </Text>
         <GridBase as="ul" gridTemplateColumns={responsiveGridColumnConfig} />
       </VStack>
       <VStack gap={1}>
-        <TextTitle1 as="h2">Implicit Grid</TextTitle1>
+        <Text as="h2" font="title1">
+          Implicit Grid
+        </Text>
         <ImplicitGrid columnMin="100px" />
       </VStack>
       <VStack gap={1}>
-        <TextTitle1 as="h2">Implicit Grid with Clamps</TextTitle1>
+        <Text as="h2" font="title1">
+          Implicit Grid with Clamps
+        </Text>
         <ImplicitGridClamped columnMax="200px" columnMin="min-content" />
       </VStack>
       <VStack gap={1}>
-        <TextTitle1 as="h2">Column Span</TextTitle1>
+        <Text as="h2" font="title1">
+          Column Span
+        </Text>
         <ColumnExamples />
       </VStack>
       <VStack gap={1}>
-        <TextTitle1 as="h2">Responsive Column Span</TextTitle1>
+        <Text as="h2" font="title1">
+          Responsive Column Span
+        </Text>
         <ColumnExamples responsive />
       </VStack>
       <VStack gap={1}>
-        <TextTitle1 as="h2">Full Bleed</TextTitle1>
+        <Text as="h2" font="title1">
+          Full Bleed
+        </Text>
         <FullBleedExample />
       </VStack>
     </VStack>
