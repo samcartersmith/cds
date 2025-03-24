@@ -5,7 +5,7 @@ import { Box } from '../../layout/Box';
 import { TextProps } from '../Text';
 
 const TextExamplesScreen = ({
-  component: Text,
+  component: TextComponent,
   extraExample,
 }: {
   component: React.ComponentType<React.PropsWithChildren<TextProps>>;
@@ -14,174 +14,135 @@ const TextExamplesScreen = ({
   return (
     <ExampleScreen>
       <Example accessibilityRole="header" title="Mono">
-        <Text mono font="body">
-          Mono font
-        </Text>
+        <TextComponent mono>Mono font</TextComponent>
       </Example>
       <Example title="Inherited Font">
         <Box>
-          <Text font="title1">
+          <TextComponent>
             This Text element uses one font family and the inner Text element - Hello World inherits
             it but overrides the font size
-            <Text font="inherit" fontSize="legal">
-              {' '}
-              Hello World
-            </Text>
-          </Text>
+            <TextComponent fontSize="legal"> Hello World</TextComponent>
+          </TextComponent>
         </Box>
       </Example>
       <Example title="Colors">
         <Box>
-          <Text font="body">Default foreground</Text>
+          <TextComponent>Default foreground</TextComponent>
         </Box>
 
         <Box>
-          <Text color="fgMuted" font="body">
-            Muted foreground
-          </Text>
+          <TextComponent color="fgMuted">Muted foreground</TextComponent>
         </Box>
 
         <Box>
-          <Text color="fgPrimary" font="body">
-            Primary foreground
-          </Text>
+          <TextComponent color="fgPrimary">Primary foreground</TextComponent>
         </Box>
 
         <Box background="bgPrimary" padding={1}>
-          <Text color="fgInverse" font="body">
-            Foreground ON primary
-          </Text>
+          <TextComponent color="fgInverse">Foreground ON primary</TextComponent>
         </Box>
 
         <Box background="bgSecondary" padding={1}>
-          <Text color="fg" font="body">
-            Foreground ON secondary
-          </Text>
+          <TextComponent color="fg">Foreground ON secondary</TextComponent>
         </Box>
 
         <Box>
-          <Text color="fgPositive" font="body">
-            Positive foreground
-          </Text>
+          <TextComponent color="fgPositive">Positive foreground</TextComponent>
         </Box>
 
         <Box background="bgPositive" padding={1}>
-          <Text color="fgInverse" font="body">
-            Foreground ON positive
-          </Text>
+          <TextComponent color="fgInverse">Foreground ON positive</TextComponent>
         </Box>
 
         <Box>
-          <Text color="fgNegative" font="body">
-            Negative foreground
-          </Text>
+          <TextComponent color="fgNegative">Negative foreground</TextComponent>
         </Box>
 
         <Box background="bgNegative" padding={1}>
-          <Text color="fgInverse" font="body">
-            Foreground ON negative
-          </Text>
+          <TextComponent color="fgInverse">Foreground ON negative</TextComponent>
         </Box>
       </Example>
 
       <Example title="Alignment">
         <Box>
-          <Text align="start" font="body">
-            Align start
-          </Text>
+          <TextComponent align="start">Align start</TextComponent>
         </Box>
 
         <Box>
-          <Text align="center" font="body">
-            Align center
-          </Text>
+          <TextComponent align="center">Align center</TextComponent>
         </Box>
 
         <Box>
-          <Text align="end" font="body">
-            Align end
-          </Text>
+          <TextComponent align="end">Align end</TextComponent>
         </Box>
 
         <Box>
-          <Text align="justify" font="body">
+          <TextComponent align="justify">
             Align justify (iOS only, will start align on Android)
-          </Text>
+          </TextComponent>
         </Box>
       </Example>
 
       <Example title="Casing">
         <Box>
-          <Text font="body" textTransform="uppercase">
-            Uppercased text
-          </Text>
+          <TextComponent textTransform="uppercase">Uppercased text</TextComponent>
         </Box>
 
         <Box>
-          <Text font="body" textTransform="lowercase">
-            Lowercased text
-          </Text>
+          <TextComponent textTransform="lowercase">Lowercased text</TextComponent>
         </Box>
 
         <Box>
-          <Text font="body" textTransform="capitalize">
-            Capitalized text
-          </Text>
+          <TextComponent textTransform="capitalize">Capitalized text</TextComponent>
         </Box>
       </Example>
 
       <Example title="Ellipsize">
         <Box>
-          <Text ellipsize="head" font="body">
+          <TextComponent ellipsize="head">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
-          </Text>
+          </TextComponent>
         </Box>
 
         <Box>
-          <Text ellipsize="middle" font="body">
+          <TextComponent ellipsize="middle">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
-          </Text>
+          </TextComponent>
         </Box>
 
         <Box>
-          <Text ellipsize="tail" font="body">
+          <TextComponent ellipsize="tail">
             Truncate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo
             nulla. Nam eu blandit dui, a dignissim mi.
-          </Text>
+          </TextComponent>
         </Box>
 
         <Box>
-          <Text ellipsize="clip" font="body">
+          <TextComponent ellipsize="clip">
             Clip. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu justo nulla.
             Nam eu blandit dui, a dignissim mi.
-          </Text>
+          </TextComponent>
         </Box>
       </Example>
 
       <Example title="Slashed zeros">
         <Box>
-          <Text font="body">$1,305.00</Text>
+          <TextComponent>$1,305.00</TextComponent>
         </Box>
       </Example>
 
       <Example title="Tabular numbers">
         <Box>
-          <Text tabularNumbers font="body">
-            91.23450
-          </Text>
-          <Text tabularNumbers font="body">
-            11.98762
-          </Text>
+          <TextComponent tabularNumbers>91.23450</TextComponent>
+          <TextComponent tabularNumbers>11.98762</TextComponent>
         </Box>
       </Example>
 
       <Example title="Disabled">
         <Box>
-          <Text disabled font="body">
-            Hello
-          </Text>
+          <TextComponent disabled>Hello</TextComponent>
         </Box>
       </Example>
       {extraExample}

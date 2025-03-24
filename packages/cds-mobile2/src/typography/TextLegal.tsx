@@ -4,5 +4,7 @@ import { Text as NativeText } from 'react-native';
 import { Text, type TextProps } from './Text';
 
 export const TextLegal = memo(
-  forwardRef<NativeText, TextProps>((props, ref) => <Text ref={ref} font="legal" {...props} />),
+  forwardRef<NativeText, TextProps>(({ font = 'legal', ...props }, ref) => (
+    <Text ref={ref} font={font} {...props} />
+  )),
 );

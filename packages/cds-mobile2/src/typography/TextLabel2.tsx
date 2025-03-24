@@ -4,5 +4,7 @@ import { Text as NativeText } from 'react-native';
 import { Text, type TextProps } from './Text';
 
 export const TextLabel2 = memo(
-  forwardRef<NativeText, TextProps>((props, ref) => <Text ref={ref} font="label2" {...props} />),
+  forwardRef<NativeText, TextProps>(({ font = 'label2', ...props }, ref) => (
+    <Text ref={ref} font={font} {...props} />
+  )),
 );

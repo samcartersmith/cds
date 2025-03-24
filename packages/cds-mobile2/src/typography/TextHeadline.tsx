@@ -4,5 +4,7 @@ import { Text as NativeText } from 'react-native';
 import { Text, type TextProps } from './Text';
 
 export const TextHeadline = memo(
-  forwardRef<NativeText, TextProps>((props, ref) => <Text ref={ref} font="headline" {...props} />),
+  forwardRef<NativeText, TextProps>(({ font = 'headline', ...props }, ref) => (
+    <Text ref={ref} font={font} {...props} />
+  )),
 );
