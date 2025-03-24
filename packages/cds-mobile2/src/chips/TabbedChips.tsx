@@ -4,6 +4,8 @@ import { TabbedChipsBaseProps } from '@cbhq/cds-common2';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 
+import { useHorizontallyScrollingPressables } from '../hooks/useHorizontallyScrollingPressables';
+import { Box, OverflowGradient } from '../layout';
 import { Tabs } from '../tabs';
 
 import { Chip } from './Chip';
@@ -25,7 +27,14 @@ const TabsActiveIndicatorComponent = () => {
 
 export const TabbedChips = memo(
   forwardRef(function TabbedChips(
-    { tabs, value, onChange, Component = TabComponent, ...props }: TabbedChipsBaseProps,
+    {
+      tabs,
+      value = tabs[0].id,
+      testID = 'tabbed-chips',
+      onChange,
+      Component = TabComponent,
+      ...props
+    }: TabbedChipsBaseProps,
     ref: React.ForwardedRef<View>,
   ) {
     const activeTab = useMemo(() => tabs.find((tab) => tab.id === value), [tabs, value]);
@@ -36,21 +45,45 @@ export const TabbedChips = memo(
       },
       [onChange],
     );
+    const {
+      scrollRef,
+      isScrollContentOverflowing,
+      isScrollContentOffscreenRight,
+      handleScroll,
+      handleScrollContainerLayout,
+      handleScrollContentSizeChange,
+    } = useHorizontallyScrollingPressables(value);
 
     return (
-      <ScrollView horizontal scrollEventThrottle={1} showsHorizontalScrollIndicator={false}>
-        <Tabs
-          ref={ref}
-          TabComponent={Component}
-          TabsActiveIndicatorComponent={TabsActiveIndicatorComponent}
-          activeTab={activeTab || null}
-          gap={1}
-          onChange={handleChange}
-          role="radiogroup"
-          tabs={tabs}
-          {...props}
-        />
-      </ScrollView>
+      <Box
+        ref={ref}
+        overflow={
+          isScrollContentOverflowing && isScrollContentOffscreenRight ? undefined : 'visible'
+        }
+        testID={testID}
+        {...props}
+      >
+        <ScrollView
+          ref={scrollRef}
+          horizontal
+          onContentSizeChange={handleScrollContentSizeChange}
+          onLayout={handleScrollContainerLayout}
+          onScroll={handleScroll}
+          scrollEventThrottle={1}
+          showsHorizontalScrollIndicator={false}
+        >
+          <Tabs
+            TabComponent={Component}
+            TabsActiveIndicatorComponent={TabsActiveIndicatorComponent}
+            activeTab={activeTab || null}
+            gap={1}
+            onChange={handleChange}
+            role="radiogroup"
+            tabs={tabs}
+          />
+        </ScrollView>
+        {isScrollContentOverflowing && isScrollContentOffscreenRight ? <OverflowGradient /> : null}
+      </Box>
     );
   }),
 );
