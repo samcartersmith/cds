@@ -136,15 +136,21 @@ export const ComponentHeader = memo(
             {description && <Text font="title4">{description}</Text>}
           </VStack>
           {activeMetadata && (
-            <Grid columnGap={2} columns={2} gridTemplateColumns="100px 1fr" rowGap={1.5}>
+            <Grid
+              alignItems="center"
+              columnGap={2}
+              columns={2}
+              gridTemplateColumns="100px 1fr"
+              rowGap={1.5}
+            >
               {importText && (
                 <MetadataItem label="Import">
                   <HStack
                     alignItems="center"
                     background="bg"
-                    borderRadius={400}
+                    borderRadius={200}
                     overflow="hidden"
-                    paddingStart={2}
+                    paddingStart={1.5}
                     paddingY={0}
                   >
                     <Text className={styles.importText} flexGrow={1} font="body" minWidth={0}>
