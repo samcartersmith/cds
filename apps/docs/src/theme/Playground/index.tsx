@@ -112,14 +112,7 @@ const Playground = memo(function Playground({
             </HStack>
           )}
           <Collapsible collapsed={collapsed}>
-            <VStack
-              background="bg"
-              borderRadius={400}
-              overflow="hidden"
-              paddingX={3}
-              paddingY={2}
-              width="100%"
-            >
+            <VStack background="bg" borderRadius={400} overflow="hidden" width="100%">
               <LiveEditor className={styles.playgroundEditor} />
             </VStack>
           </Collapsible>

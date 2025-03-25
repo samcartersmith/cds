@@ -93,6 +93,7 @@ export default function CodeBlockString({
                 mono
                 as="code"
                 className={styles.codeBlockLines}
+                display="block"
                 font="label2"
                 minWidth="100%"
                 paddingX={2}

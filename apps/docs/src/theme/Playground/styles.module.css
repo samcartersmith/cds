@@ -1,11 +1,13 @@
 .playgroundEditor {
   font-family: var(--cds-font-mono);
-  font-size: var(--fontSize-label2);
-  font-weight: var(--fontWeight-label2);
-  line-height: var(--lineHeight-label2);
 }
 
 .playgroundEditor pre {
-  padding: 0 !important;
   background-color: transparent !important;
+  white-space: pre !important;
+  padding: var(--space-2) !important;
+  scrollbar-width: thin;
+  font-size: var(--fontSize-label2);
+  font-weight: var(--fontWeight-label2);
+  line-height: var(--lineHeight-label2);
 }
