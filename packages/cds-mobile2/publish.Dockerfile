@@ -12,6 +12,8 @@ RUN yarn --immutable
 # Build the package with nx
 RUN yarn nx run cds-mobile2:typecheck:prod
 RUN yarn nx run cds-mobile2:build
+RUN node rewrite-alpha.mjs cds-mobile2
+RUN rm -rf packages/mobile/
 
 # Prepare the package for publish
 RUN cd /repo/packages/cds-mobile2 && yarn pack

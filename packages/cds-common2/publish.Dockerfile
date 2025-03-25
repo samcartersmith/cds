@@ -12,6 +12,8 @@ RUN yarn --immutable
 # Build the package with nx
 RUN yarn nx run cds-common2:typecheck:prod
 RUN yarn nx run cds-common2:build
+RUN node rewrite-alpha.mjs cds-common2
+RUN rm -rf packages/common/
 
 # Prepare the package for publish
 RUN cd /repo/packages/cds-common2 && yarn pack

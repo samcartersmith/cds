@@ -1,6 +1,6 @@
-import path from 'node:path';
-import fs from 'node:fs';
 import { globSync } from 'glob';
+import fs from 'node:fs';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -9,7 +9,15 @@ const pkg = process.argv[2];
 
 if (!pkg) throw Error('Missing package argument!!!!!!!!!');
 
-const dependencies = ['cds-common', 'cds-mobile', 'cds-mobile-visualization', 'cds-lottie-files'];
+const dependencies = [
+  'cds-common',
+  'cds-mobile',
+  'cds-web',
+  'cds-mobile-visualization',
+  'cds-web-visualization',
+  'cds-lottie-files',
+  'ui-mobile-playground',
+];
 
 const dts = globSync(`${root}/packages/${pkg}/dts/**/*`, { nodir: true });
 const esm = globSync(`${root}/packages/${pkg}/esm/**/*`, { nodir: true });

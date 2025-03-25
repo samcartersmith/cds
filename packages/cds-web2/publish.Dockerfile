@@ -12,6 +12,8 @@ RUN yarn --immutable
 # Build the package with nx
 RUN yarn nx run cds-web2:typecheck:prod
 RUN yarn nx run cds-web2:build
+RUN node rewrite-alpha.mjs cds-web2
+RUN rm -rf packages/web/
 
 # Prepare the package for publish
 RUN cd /repo/packages/cds-web2 && yarn pack

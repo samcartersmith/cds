@@ -12,6 +12,8 @@ RUN yarn --immutable
 # Build the package with nx
 RUN yarn nx run web-visualization2:typecheck:prod
 RUN yarn nx run web-visualization2:build
+RUN node rewrite-alpha.mjs web-visualization2
+RUN rm -rf packages/web-visualization/
 
 # Prepare the package for publish
 RUN cd /repo/packages/web-visualization2 && yarn pack

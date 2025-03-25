@@ -10,11 +10,13 @@ COPY . .
 RUN yarn --immutable
 
 # Build the package with nx
-RUN yarn nx run lottie-files:typecheck:prod
-RUN yarn nx run lottie-files:build
+RUN yarn nx run lottie-files2:typecheck:prod
+RUN yarn nx run lottie-files2:build
+RUN node rewrite-alpha.mjs lottie-files2
+RUN rm -rf packages/lottie-files/
 
 # Prepare the package for publish
-RUN cd /repo/packages/lottie-files && yarn pack
-RUN mv /repo/packages/lottie-files /shared
+RUN cd /repo/packages/lottie-files2 && yarn pack
+RUN mv /repo/packages/lottie-files2 /shared
 
 WORKDIR /shared

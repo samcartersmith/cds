@@ -12,6 +12,8 @@ RUN yarn --immutable
 # Build the package with nx
 RUN yarn nx run ui-mobile-playground2:typecheck:prod
 RUN yarn nx run ui-mobile-playground2:build
+RUN node rewrite-alpha.mjs ui-mobile-playground2
+RUN rm -rf packages/ui-mobile-playground/
 
 # Prepare the package for publish
 RUN cd /repo/packages/ui-mobile-playground2 && yarn pack
