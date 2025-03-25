@@ -1,5 +1,6 @@
 import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
+import { DateInputValidationError } from '@cbhq/cds-common2/dates/DateInputValidationError';
 import * as CDSDataAssets from '@cbhq/cds-common2/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { prices } from '@cbhq/cds-common2/internal/data/prices';
@@ -9,6 +10,7 @@ import {
 } from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
 import { useAlert } from '@cbhq/cds-common2/overlays/useAlert';
 import { useModal } from '@cbhq/cds-common2/overlays/useModal';
+import { LocaleProvider } from '@cbhq/cds-common2/system/LocaleProvider';
 import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common2/tokens/dot';
 import { useSparklineArea } from '@cbhq/cds-common2/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common2/visualizations/useSparklinePath';
@@ -26,6 +28,7 @@ import * as CDSCells from '@cbhq/cds-web2/cells';
 import * as CDSChips from '@cbhq/cds-web2/chips';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import * as CDSControls from '@cbhq/cds-web2/controls';
+import { DatePicker } from '@cbhq/cds-web2/dates/DatePicker';
 import * as CDSDots from '@cbhq/cds-web2/dots';
 import { Dropdown } from '@cbhq/cds-web2/dropdown/Dropdown';
 import { useA11yControlledVisibility } from '@cbhq/cds-web2/hooks/useA11yControlledVisibility';
@@ -111,6 +114,9 @@ const ReactLiveScope: Record<string, unknown> = {
   sparklineInteractiveHoverData,
   // other
   ...CDSDots,
+  DatePicker,
+  LocaleProvider,
+  DateInputValidationError,
   Banner,
   // utils
   ...CDSDataAssets,

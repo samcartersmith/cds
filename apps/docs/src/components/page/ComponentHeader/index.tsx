@@ -3,6 +3,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
+import { Grid } from '@cbhq/cds-web2/layout';
 import { Divider } from '@cbhq/cds-web2/layout/Divider';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { VStack } from '@cbhq/cds-web2/layout/VStack';
@@ -10,7 +11,7 @@ import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Link } from '@cbhq/cds-web2/typography/Link';
 import { Text } from '@cbhq/cds-web2/typography/Text';
-import { Grid } from '@cbhq/cds-web2/layout';
+
 import styles from './styles.module.css';
 
 type RelatedComponent = {
@@ -20,6 +21,15 @@ type RelatedComponent = {
   label: string;
 };
 
+type Dependency = {
+  /** The name of the dependency package */
+  name: string;
+  /** Optional version requirement */
+  version?: string;
+  /** Optional URL to the package */
+  url?: string;
+};
+
 type MetadataType = {
   import: string;
   source: string;
@@ -27,6 +37,8 @@ type MetadataType = {
   figma?: string;
   description?: string;
   relatedComponents?: RelatedComponent[];
+  /** Dependencies required by this component */
+  dependencies?: Dependency[];
 };
 
 type ComponentHeaderProps = {
@@ -102,6 +114,7 @@ export const ComponentHeader = memo(
       figma,
       description,
       relatedComponents,
+      dependencies,
     } = activeMetadata || {};
 
     return (
@@ -123,18 +136,18 @@ export const ComponentHeader = memo(
             {description && <Text font="title4">{description}</Text>}
           </VStack>
           {activeMetadata && (
-            <Grid rowGap={1.5} columnGap={2} columns={2} gridTemplateColumns="100px 1fr">
+            <Grid columnGap={2} columns={2} gridTemplateColumns="100px 1fr" rowGap={1.5}>
               {importText && (
                 <MetadataItem label="Import">
                   <HStack
                     alignItems="center"
                     background="bg"
                     borderRadius={400}
+                    overflow="hidden"
                     paddingStart={2}
                     paddingY={0}
-                    overflow="hidden"
                   >
-                    <Text flexGrow={1} minWidth={0} font="body" className={styles.importText}>
+                    <Text className={styles.importText} flexGrow={1} font="body" minWidth={0}>
                       {importText}
                     </Text>
                     <Tooltip content="Copy">
@@ -180,6 +193,41 @@ export const ComponentHeader = memo(
             </Grid>
           )}
         </VStack>
+
+        {dependencies && dependencies.length > 0 && (
+          <>
+            <Divider />
+            <VStack gap={1} padding={4}>
+              <Text font="label1">Dependencies</Text>
+              <HStack
+                as="ul"
+                flexWrap="wrap"
+                gap={1}
+                margin={0}
+                padding={0}
+                style={{
+                  listStyleType: 'none',
+                }}
+              >
+                {dependencies.map((dependency, index) => (
+                  <li key={dependency.name}>
+                    <Text font="label2">
+                      {dependency.url ? (
+                        <Link href={dependency.url} target="_blank">
+                          {dependency.name}
+                        </Link>
+                      ) : (
+                        dependency.name
+                      )}
+                      {dependency.version && <span>{`@${dependency.version}`}</span>}
+                      {index < dependencies.length - 1 && ', '}
+                    </Text>
+                  </li>
+                ))}
+              </HStack>
+            </VStack>
+          </>
+        )}
 
         {relatedComponents && relatedComponents.length > 0 && (
           <>

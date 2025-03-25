@@ -68,6 +68,7 @@ module.exports = {
     'controls/Select',
     'controls/TextInput',
     'controls/SelectOption',
+    'dates/DatePicker',
     'dots/DotCount',
     'dots/DotStatusColor',
     'dots/DotSymbol',

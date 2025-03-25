@@ -373,6 +373,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Other',
           items: [
+            { type: 'doc', id: 'components/other/DatePicker/date-picker', label: 'DatePicker' },
             { type: 'doc', id: 'components/other/DotCount/dot-count', label: 'DotCount' },
             {
               type: 'doc',
