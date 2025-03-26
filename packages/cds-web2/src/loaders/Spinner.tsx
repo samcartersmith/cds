@@ -43,7 +43,15 @@ const spinnerStatusStyle = css`
 `;
 
 export const Spinner = memo(
-  ({ color, size, style, className, accessibilityLabel, testID, ...props }: SpinnerProps) => {
+  ({
+    color = 'fgMuted',
+    size,
+    style,
+    className,
+    accessibilityLabel,
+    testID,
+    ...props
+  }: SpinnerProps) => {
     const spinnerStyle = useMemo(
       () => ({
         fontSize: `${size}px`,
