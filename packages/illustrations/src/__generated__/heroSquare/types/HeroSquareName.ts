@@ -344,6 +344,7 @@ export type HeroSquareName =
   | 'videoRequest'
   | 'videoReview'
   | 'videoUpload'
+  | 'vipBadge'
   | 'vote'
   | 'walletAsset'
   | 'walletConfirmation'

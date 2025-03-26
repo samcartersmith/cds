@@ -350,6 +350,7 @@ const names: HeroSquareName[] = [
   'videoRequest',
   'videoReview',
   'videoUpload',
+  'vipBadge',
   'vote',
   'walletAsset',
   'walletConfirmation',
