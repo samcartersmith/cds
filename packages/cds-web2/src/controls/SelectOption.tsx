@@ -176,6 +176,7 @@ export const SelectOption = memo(
                 as="div"
                 className={multiline ? multilineTextStyles : undefined}
                 color="fgMuted"
+                display="block"
                 font="body"
                 overflow={multiline ? undefined : 'truncate'}
               >

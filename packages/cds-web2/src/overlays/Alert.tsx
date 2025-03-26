@@ -131,6 +131,7 @@ export const Alert = memo(
               )}
               <Text
                 as="h3"
+                display="block"
                 font="title3"
                 id={labelledBySource}
                 paddingBottom={0.5}

@@ -98,6 +98,7 @@ export const TabLabel = memo(
                 <Text
                   as="h2"
                   color={color}
+                  display="block"
                   font={font}
                   {...props}
                   aria-hidden="true"
@@ -114,6 +115,7 @@ export const TabLabel = memo(
             <Text
               as="h2"
               color={color}
+              display="block"
               font={font}
               id={accessibilityLabelId}
               {...props}

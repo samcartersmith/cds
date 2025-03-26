@@ -107,6 +107,7 @@ export const ListCell: ListCellComponent = memo(
                 as="div"
                 className={multiline ? overflowStyle : undefined}
                 color="fgMuted"
+                display="block"
                 font="body"
                 overflow={multiline ? undefined : 'truncate'}
               >

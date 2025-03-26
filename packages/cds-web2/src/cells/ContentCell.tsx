@@ -106,6 +106,7 @@ export const ContentCell: ContentCellComponent = memo(
                 {!!subtitle && (
                   <Text
                     as="div"
+                    display="block"
                     font="label2"
                     overflow="truncate"
                     paddingBottom={description ? 0.5 : 0}

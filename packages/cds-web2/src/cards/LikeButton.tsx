@@ -42,7 +42,7 @@ export const LikeButton = memo(function LikeButton({
           size={iconSize}
         />
         {count > 0 ? (
-          <Text mono as="p" font="label1">
+          <Text mono as="p" display="block" font="label1">
             {count}
           </Text>
         ) : null}

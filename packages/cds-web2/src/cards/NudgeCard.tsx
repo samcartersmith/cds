@@ -209,6 +209,7 @@ export const NudgeCard = ({
           <VStack gap={0.5} maxWidth="100%" paddingTop={hasMedia ? 0 : 2}>
             <Text
               as="p"
+              display="block"
               font="headline"
               numberOfLines={numberOfLines}
               testID={`${testID}-title`}
@@ -218,6 +219,7 @@ export const NudgeCard = ({
             </Text>
             <Text
               as="p"
+              display="block"
               font="label2"
               numberOfLines={numberOfLines}
               testID={`${testID}-description`}

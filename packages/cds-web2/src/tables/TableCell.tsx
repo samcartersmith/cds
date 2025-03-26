@@ -292,6 +292,7 @@ export const TableCell = memo(
             <Text
               as="div"
               color={color}
+              display="block"
               font={textComponentFont}
               noWrap={!!overflow}
               overflow={overflow}
@@ -319,6 +320,7 @@ export const TableCell = memo(
               <Text
                 as="div"
                 color={smartTitleColor}
+                display="block"
                 font={textComponentFont}
                 noWrap={!!overflow}
                 overflow={overflow}
@@ -329,6 +331,7 @@ export const TableCell = memo(
                 <Text
                   as="div"
                   color={subtitleColor}
+                  display="block"
                   font="label2"
                   overflow={overflow}
                   paddingTop={textPaddingTop}

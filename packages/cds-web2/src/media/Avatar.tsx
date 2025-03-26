@@ -141,12 +141,13 @@ export const Avatar = memo(
           <Text
             as="p"
             color="fgInverse"
+            display="block"
+            textAlign="center"
+            transform="uppercase"
             font="title2"
             // scope is already memoized
 
             style={{ transform: `scale(${dangerouslySetSize * 0.02})` }}
-            textAlign="center"
-            transform="uppercase"
           >
             {placeholderLetter}
           </Text>
@@ -159,6 +160,7 @@ export const Avatar = memo(
         <Text
           as="p"
           color="fgInverse"
+          display="block"
           font={showLargerFont ? 'title2' : 'body'}
           textAlign="center"
           transform="uppercase"

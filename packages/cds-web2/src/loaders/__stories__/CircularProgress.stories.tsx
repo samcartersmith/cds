@@ -12,7 +12,7 @@ export default {
 export const Determinate = () => {
   return (
     <VStack alignItems="flex-start">
-      <Text font="title1" as="h1">
+      <Text as="h1" display="block" font="title1">
         Determinate
       </Text>
       <Spacer />

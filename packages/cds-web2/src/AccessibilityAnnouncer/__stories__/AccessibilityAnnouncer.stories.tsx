@@ -24,7 +24,7 @@ const MockAppScreen = ({ message, ...rest }: AccessibilityAnnouncerProps) => {
         Open VoiceOver and update the Message field 👀
       </Text>
       <>
-        <Text aria-hidden as="p" font="body">
+        <Text aria-hidden as="p" display="block" font="body">
           {message}
         </Text>
         <AccessibilityAnnouncer message={internalMessage} {...rest} />

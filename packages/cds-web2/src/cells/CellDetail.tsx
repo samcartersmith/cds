@@ -28,6 +28,7 @@ export const CellDetail = memo(function CellDetail({
         <Text
           as="div"
           color={variantColorMap[variant]}
+          display="block"
           font="body"
           overflow="truncate"
           textAlign="end"

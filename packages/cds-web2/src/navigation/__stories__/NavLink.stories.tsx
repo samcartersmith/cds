@@ -14,7 +14,7 @@ export default {
 export const NavLinkExampleDefault = () => {
   return (
     <VStack alignItems="flex-start">
-      <Text font="title1" as="h1">
+      <Text as="h1" display="block" font="title1">
         Nav link example
       </Text>
       <Spacer />

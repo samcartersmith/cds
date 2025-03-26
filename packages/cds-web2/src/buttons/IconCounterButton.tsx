@@ -42,7 +42,7 @@ export const IconCounterButton = memo(
             icon
           )}
           {count > 0 ? (
-            <Text mono as="p" font="label1">
+            <Text mono as="p" display="block" font="label1">
               {formatCount(count)}
             </Text>
           ) : null}

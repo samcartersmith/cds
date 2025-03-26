@@ -114,6 +114,7 @@ export const SelectTrigger = memo(
                 <Text
                   as="p"
                   color={sanitizedValue ? 'fg' : 'fgMuted'}
+                  display="block"
                   font="body"
                   overflow="truncate"
                   textAlign={shouldShowCompactLabel ? 'end' : 'start'}

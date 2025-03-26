@@ -18,7 +18,7 @@ export default {
 export const Default = () => {
   return (
     <>
-      <Text font="title1" as="h1">
+      <Text as="h1" display="block" font="title1">
         Default Sidebar Example
       </Text>
       <Spacer as="div" vertical={1} />
@@ -30,7 +30,7 @@ export const Default = () => {
 export const Condensed = () => {
   return (
     <>
-      <Text font="title1" as="h1">
+      <Text as="h1" display="block" font="title1">
         Condensed Sidebar Example
       </Text>
       <Spacer as="div" vertical={1} />
@@ -42,7 +42,7 @@ export const Condensed = () => {
 export const Custom = () => {
   return (
     <>
-      <Text font="title1" as="h1">
+      <Text as="h1" display="block" font="title1">
         Custom Sidebar Example
       </Text>
       <Spacer as="div" vertical={1} />

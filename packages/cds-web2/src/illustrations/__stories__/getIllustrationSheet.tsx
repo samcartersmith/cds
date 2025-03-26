@@ -136,7 +136,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
             name={name}
             version={versionMap[name]}
           />
-          <Text noWrap as="p" font="legal">
+          <Text noWrap as="p" display="block" font="legal">
             {name}
           </Text>
         </VStack>

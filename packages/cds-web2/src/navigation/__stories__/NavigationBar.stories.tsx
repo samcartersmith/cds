@@ -26,7 +26,7 @@ const a11ySkipConfig = {
 export const NavigationBarFullExampleDefault: Story = () => {
   return (
     <VStack alignItems="flex-start">
-      <Text font="title1" as="h1">
+      <Text as="h1" display="block" font="title1">
         Navigation full example
       </Text>
       <Spacer />
@@ -42,7 +42,7 @@ NavigationBarFullExampleDefault.parameters = {
 export const NavigationBarTitleExample = () => {
   return (
     <VStack alignItems="flex-start">
-      <Text font="title1" as="h1">
+      <Text as="h1" display="block" font="title1">
         NavigationBar title example
       </Text>
       <Spacer />
