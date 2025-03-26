@@ -50,7 +50,13 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
           paddingTop={1}
           paddingX={4}
         >
-          <TabNavigation onChange={setActiveTab} tabs={tabs} value={activeTab} />
+          <TabNavigation
+            accessibilityLabel="Component documentation sections"
+            aria-controls={`tabpanel--${activeTab}`}
+            onChange={setActiveTab}
+            tabs={tabs}
+            value={activeTab}
+          />
         </Box>
         <Divider />
       </VStack>
@@ -66,13 +72,29 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
         paddingTop={5}
         zIndex={0}
       >
-        {shouldRenderExamples && <TOCUpdater toc={isWeb ? webExamplesToc : mobileExamplesToc} />}
-        {shouldRenderExamples && isWeb && webExamples}
-        {shouldRenderExamples && isMobile && mobileExamples}
+        <VStack
+          accessibilityLabelledBy="tab--examples-tab"
+          gap={3}
+          hidden={!shouldRenderExamples}
+          id="tabpanel--examples-tab"
+          role="tabpanel"
+        >
+          {shouldRenderExamples && <TOCUpdater toc={isWeb ? webExamplesToc : mobileExamplesToc} />}
+          {shouldRenderExamples && isWeb && webExamples}
+          {shouldRenderExamples && isMobile && mobileExamples}
+        </VStack>
 
-        {shouldRenderProps && <PropsTOCUpdater toc={isWeb ? webPropsToc : mobilePropsToc} />}
-        {shouldRenderProps && isWeb && webPropsTable}
-        {shouldRenderProps && isMobile && mobilePropsTable}
+        <VStack
+          accessibilityLabelledBy="tab--props-tab"
+          gap={3}
+          hidden={!shouldRenderProps}
+          id="tabpanel--props-tab"
+          role="tabpanel"
+        >
+          {shouldRenderProps && <PropsTOCUpdater toc={isWeb ? webPropsToc : mobilePropsToc} />}
+          {shouldRenderProps && isWeb && webPropsTable}
+          {shouldRenderProps && isMobile && mobilePropsTable}
+        </VStack>
       </VStack>
     </VStack>
   );

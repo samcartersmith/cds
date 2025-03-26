@@ -160,6 +160,7 @@ export const ComponentHeader = memo(
                       <IconButton
                         compact
                         transparent
+                        accessibilityLabel="Copy import statement"
                         name="copy"
                         onClick={copyImport}
                         style={{ cursor: 'pointer' }}
