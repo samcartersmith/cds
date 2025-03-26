@@ -11,7 +11,7 @@ export type InteractableBaseProps = {
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
   /** Background color of the overlay (element being interacted with). */
-  background: ThemeVars.Color;
+  background?: ThemeVars.Color;
   /** Set element to block and expand to 100% width. */
   block?: boolean;
   /** Border color of the element being interacted with. */
@@ -59,7 +59,7 @@ export type InteractableBaseProps = {
 export type InteractableProps = Omit<BoxProps, 'background' | 'animated'> & InteractableBaseProps;
 
 export const Interactable = memo(function Interactable({
-  background,
+  background = 'transparent',
   block,
   children,
   disabled,
