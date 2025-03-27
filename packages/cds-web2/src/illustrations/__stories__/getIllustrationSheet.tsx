@@ -127,7 +127,7 @@ export function getIllustrationSheet<Type extends IllustrationVariant>({
           alignItems="flex-start"
           background="bg"
           gap={1}
-          height={height + 20}
+          height={height + 24}
           overflow="hidden"
           width={width}
         >
