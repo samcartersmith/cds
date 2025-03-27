@@ -6,7 +6,6 @@ import type { Props } from '@theme/DocSidebarItem/Link';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import { Box, HStack } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system';
-import { Text } from '@cbhq/cds-web2/typography/Text';
 
 export default function DocSidebarItemLink({
   item,

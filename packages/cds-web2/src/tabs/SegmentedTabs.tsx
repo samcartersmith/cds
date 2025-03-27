@@ -2,7 +2,7 @@ import React, { forwardRef, memo } from 'react';
 
 import { SegmentedTab } from './SegmentedTab';
 import { SegmentedTabsActiveIndicator } from './SegmentedTabsActiveIndicator';
-import { Tabs, type TabsProps } from './Tabs';
+import { type TabsProps, Tabs } from './Tabs';
 
 export type SegmentedTabsProps = Partial<
   Pick<TabsProps, 'TabComponent' | 'TabsActiveIndicatorComponent'>

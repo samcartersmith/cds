@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import type { Property } from 'csstype';
 import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';
 import { Dropdown } from '@cbhq/cds-web2/dropdown';
@@ -11,11 +11,13 @@ import {
   usePlaygroundTheme,
 } from '../../../theme/Layout/Provider/UnifiedThemeContext';
 
-const COLOR_OPTIONS: {
+type ThemeOption = {
   label: string;
   lightValue: Property.Color;
   darkValue: Property.Color;
-}[] = [
+};
+
+const themeOptions: ThemeOption[] = [
   {
     label: 'Green theme',
     lightValue: `rgb(${defaultTheme.lightSpectrum.green50})`,
@@ -41,29 +43,23 @@ const COLOR_OPTIONS: {
 const NavbarThemeToggle = () => {
   const { theme: docsTheme, setTheme: setDocsTheme, colorScheme } = useDocsTheme();
   const { setTheme: setPlaygroundTheme } = usePlaygroundTheme();
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  /**
-   * Core theme update function that handles updating both the docs and playground themes.
-   * Takes a color option containing both light and dark values and updates the respective
-   * theme configurations with those colors.
-   *
-   * @param option Object containing lightValue and darkValue for the selected color
-   */
-  const toggleTheme = useCallback(
-    (option: { lightValue: Property.Color; darkValue: Property.Color }) => {
+  const updateTheme = useCallback(
+    (themeOption: ThemeOption) => {
       const newDocsTheme = {
         ...docsTheme,
         light: {
           ...defaultTheme.light,
           ...docsTheme.light,
-          bgPrimary: option.lightValue,
-          fgPrimary: option.lightValue,
+          bgPrimary: themeOption.lightValue,
+          fgPrimary: themeOption.lightValue,
         },
         dark: {
           ...defaultTheme.dark,
           ...docsTheme.dark,
-          bgPrimary: option.darkValue,
-          fgPrimary: option.darkValue,
+          bgPrimary: themeOption.darkValue,
+          fgPrimary: themeOption.darkValue,
         },
       } satisfies ThemeConfig;
 
@@ -71,13 +67,13 @@ const NavbarThemeToggle = () => {
         ...defaultTheme,
         light: {
           ...defaultTheme.light,
-          bgPrimary: option.lightValue,
-          fgPrimary: option.lightValue,
+          bgPrimary: themeOption.lightValue,
+          fgPrimary: themeOption.lightValue,
         },
         dark: {
           ...defaultTheme.dark,
-          bgPrimary: option.darkValue,
-          fgPrimary: option.darkValue,
+          bgPrimary: themeOption.darkValue,
+          fgPrimary: themeOption.darkValue,
         },
       } satisfies ThemeConfig;
 
@@ -88,41 +84,25 @@ const NavbarThemeToggle = () => {
   );
 
   /**
-   * Handles direct clicks on the radio buttons in the dropdown content.
-   * Converts a color option to the appropriate color value based on the current
-   * color scheme and passes it to handleDropdownChange to maintain consistency
-   * with the dropdown's value.
-   *
-   * @param option The color option object from COLOR_OPTIONS
-   */
-  const handleClick = useCallback(
-    (option: (typeof COLOR_OPTIONS)[number]) => {
-      const value = colorScheme === 'light' ? option.lightValue : option.darkValue;
-      const selectedOption = COLOR_OPTIONS.find(
-        (option) => option[colorScheme === 'light' ? 'lightValue' : 'darkValue'] === value,
-      );
-      if (selectedOption) toggleTheme(selectedOption);
-    },
-    [colorScheme, toggleTheme],
-  );
-
-  /**
    * Handles keyboard interactions (Enter/Space) for accessibility.
    * When a valid key is pressed, prevents default behavior and
-   * triggers the same flow as clicking the radio button.
-   *
-   * @param option The color option object from COLOR_OPTIONS
-   * @returns Event handler for keydown events
+   * triggers the same flow as clicking the theme option.
    */
   const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent, option: (typeof COLOR_OPTIONS)[number]) => {
+    (event: React.KeyboardEvent, themeOption: ThemeOption) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
-        handleClick(option);
+        updateTheme(themeOption);
       }
     },
-    [handleClick],
+    [updateTheme],
   );
+
+  const handleOpen = () => {
+    setTimeout(() => {
+      containerRef.current?.querySelector<HTMLElement>('button')?.focus();
+    }, 1);
+  };
 
   const currentColor = docsTheme[colorScheme]?.bgPrimary;
 
@@ -131,6 +111,7 @@ const NavbarThemeToggle = () => {
       aria-label="Open theme color selector"
       content={
         <VStack
+          ref={containerRef}
           alignItems="center"
           alignSelf="center"
           aria-label="Theme color options"
@@ -139,26 +120,26 @@ const NavbarThemeToggle = () => {
           padding={1.5}
           role="radiogroup"
         >
-          {COLOR_OPTIONS.map((option) => {
-            const value = colorScheme === 'light' ? option.lightValue : option.darkValue;
+          {themeOptions.map((themeOption) => {
+            const color = colorScheme === 'light' ? themeOption.lightValue : themeOption.darkValue;
             return (
               <Box
-                key={option.label}
-                aria-checked={currentColor === value}
-                aria-label={option.label}
+                key={themeOption.label}
+                aria-label={themeOption.label}
+                aria-checked={currentColor === color}
                 as="button"
                 borderRadius={1000}
                 height={16}
-                onClick={() => handleClick(option)}
-                onKeyDown={(event) => handleKeyDown(event, option)}
-                role="radio"
+                onClick={() => updateTheme(themeOption)}
+                onKeyDown={(event) => handleKeyDown(event, themeOption)}
                 style={{
-                  background: value,
+                  background: color,
                   cursor: 'pointer',
-                  border: currentColor === value ? '2px solid currentColor' : 'none',
+                  border: currentColor === color ? '2px solid currentColor' : 'none',
                 }}
                 tabIndex={0}
                 width={16}
+                role="radio"
               />
             );
           })}
@@ -178,6 +159,7 @@ const NavbarThemeToggle = () => {
         justifyContent="center"
         style={{ cursor: 'pointer' }}
         width={40}
+        onClick={handleOpen}
       >
         <Box background="bgPrimary" borderRadius={1000} padding={1} />
       </Pressable>

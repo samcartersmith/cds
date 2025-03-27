@@ -72,6 +72,7 @@ export default function DocSidebarItemCategory({
   activePath,
   level,
   index,
+  tabIndex,
   ...props
 }: Props): JSX.Element {
   const { items, label, collapsible, className, href, customProps } = item;
@@ -178,6 +179,7 @@ export default function DocSidebarItemCategory({
             borderWidth={0}
             flexGrow={1}
             href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
+            tabIndex={tabIndex}
             onClick={
               collapsible
                 ? (e) => {
@@ -226,7 +228,7 @@ export default function DocSidebarItemCategory({
             items={items}
             level={level + 1}
             onItemClick={onItemClick}
-            tabIndex={collapsed ? -1 : 0}
+            tabIndex={collapsed ? -1 : tabIndex ?? 0}
           />
         </VStack>
       </Collapsible>

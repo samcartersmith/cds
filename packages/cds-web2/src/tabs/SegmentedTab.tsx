@@ -113,6 +113,7 @@ export const SegmentedTab = memo(
           )}
           data-testid={testID}
           disabled={isDisabled}
+          id={id}
           onClick={handlePress}
           type="button"
           {...props}

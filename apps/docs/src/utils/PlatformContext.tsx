@@ -7,16 +7,16 @@ type DocFrontMatterExtended = DocFrontMatter & {
   platform_switcher_options?: { web: boolean; mobile: boolean };
 };
 
-type Platform = 'web' | 'mobile';
+export type Platform = 'web' | 'mobile';
 
-type PlatformContextType = {
+export type PlatformContextValue = {
   platform: Platform;
   setPlatform: React.Dispatch<React.SetStateAction<Platform>>;
   supportsWeb: boolean;
   supportsMobile: boolean;
 };
 
-const PlatformContext = createContext<PlatformContextType>({
+const PlatformContext = createContext<PlatformContextValue>({
   platform: 'web',
   setPlatform: () => {},
   supportsWeb: false,

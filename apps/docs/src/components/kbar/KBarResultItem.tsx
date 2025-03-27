@@ -32,7 +32,7 @@ const KBarResultItem = memo(
           <HStack gap={1}>
             {ancestors?.map((ancestor) => (
               <Fragment key={ancestor.id}>
-                <Text as="span" color="fgMuted">
+                <Text accessibilityLabel={`${ancestor.name},`} as="span" color="fgMuted">
                   {ancestor.name}
                 </Text>
                 <Text as="span" color="fgMuted">
@@ -40,7 +40,11 @@ const KBarResultItem = memo(
                 </Text>
               </Fragment>
             ))}
-            <Text as="span" color={active ? 'fgPrimary' : 'fg'}>
+            <Text
+              accessibilityLabel={`${action.name},`}
+              as="span"
+              color={active ? 'fgPrimary' : 'fg'}
+            >
               {action.name}
             </Text>
           </HStack>

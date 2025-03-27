@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo } from 'react';
-import { usePlatformContext } from '@site/src/utils/PlatformContext';
+import React, { useCallback, useMemo, useRef } from 'react';
+import { type Platform, usePlatformContext } from '@site/src/utils/PlatformContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 import { TabsActiveIndicator } from '@cbhq/cds-web2/tabs';
 import { SegmentedTabs } from '@cbhq/cds-web2/tabs/SegmentedTabs';
@@ -11,6 +11,7 @@ const SegmentedTabsActiveIndicator = ({ ...props }: SegmentedTabsActiveIndicator
 
 export const PlatformSwitcher = () => {
   const { supportsWeb, supportsMobile, platform, setPlatform } = usePlatformContext();
+  const segmentedTabsRef = useRef<HTMLElement>(null);
 
   const tabs = useMemo<TabValue[]>(
     () => [
@@ -27,16 +28,24 @@ export const PlatformSwitcher = () => {
     [supportsMobile, supportsWeb],
   );
 
+  const activeTab = tabs.find(({ id }) => id === platform) ?? null;
+
   const handlePlatformChange = useCallback(
     (tab: TabValue | null) => {
-      setPlatform(tab?.id as 'web' | 'mobile');
+      if (!tab) return;
+      const platform = tab.id as Platform;
+      setPlatform(platform);
+      setTimeout(
+        () => segmentedTabsRef.current?.querySelector<HTMLElement>(`#${platform}`)?.focus(),
+        1,
+      );
     },
     [setPlatform],
   );
 
-  const activeTab = tabs.find(({ id }) => id === platform) ?? null;
   return (
     <SegmentedTabs
+      ref={segmentedTabsRef}
       TabsActiveIndicatorComponent={SegmentedTabsActiveIndicator}
       activeTab={activeTab}
       borderRadius={300}
