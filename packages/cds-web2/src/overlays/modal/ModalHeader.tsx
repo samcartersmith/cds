@@ -1,5 +1,6 @@
 import React from 'react';
 import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
+import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
 import type { ModalHeaderBaseProps as SharedModalHeaderBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
 
 import { IconButton } from '../../buttons/IconButton';
@@ -31,6 +32,11 @@ export const ModalHeader = ({
 
   if (!title && !onBackButtonClick && !onRequestClose) return null;
 
+  // use empty placeholder which has the same size as IconButton to maintain horizontal position
+  const emptyPlaceholder = (
+    <Box height={interactableHeight.compact} width={interactableHeight.compact} />
+  );
+
   return (
     <HStack
       alignItems={alignItems}
@@ -39,7 +45,7 @@ export const ModalHeader = ({
       paddingY={paddingY}
       {...props}
     >
-      {!!onBackButtonClick && (
+      {onBackButtonClick ? (
         <Box>
           <IconButton
             transparent
@@ -50,6 +56,8 @@ export const ModalHeader = ({
             testID="modal-back-button"
           />
         </Box>
+      ) : (
+        emptyPlaceholder
       )}
       <Box alignItems="center" flexGrow={1} justifyContent="center" paddingX={2}>
         <Text

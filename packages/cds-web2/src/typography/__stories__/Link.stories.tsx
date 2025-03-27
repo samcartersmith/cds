@@ -30,21 +30,21 @@ export const NegativeColor = () => (
   </div>
 );
 
-export const NoUnderline = () => (
+export const Underline = () => (
   <div>
-    <Link href="https://www.google.com/" underline={false}>
+    <Link underline href="https://www.google.com/">
       Default
     </Link>
     <br />
-    <Link as="button" onClick={noop} underline={false}>
+    <Link underline as="button" onClick={noop}>
       As a button
     </Link>
     <br />
-    <Link font="body" href="https://www.google.com/" underline={false}>
+    <Link underline font="body" href="https://www.google.com/">
       Body
     </Link>
     <br />
-    <Link color="fgNegative" font="headline" href="https://www.google.com/" underline={false}>
+    <Link underline color="fgNegative" font="headline" href="https://www.google.com/">
       Negative
     </Link>
   </div>
@@ -54,16 +54,15 @@ export const InAParagraph = () => (
   <div>
     <Text as="p" display="block" font="body">
       This is a paragraph, and we can include inline links{' '}
-      <Link href="https://www.coinbase.com">with underlines</Link> by default. You dont have to do
-      anything to get them!
+      <Link underline href="https://www.coinbase.com">
+        with underlines
+      </Link>{' '}
+      by default. You dont have to do anything to get them!
     </Text>
     <Text as="p" display="block" font="body">
       {`This one however... It is a paragraph, but we can still set underline="false" to opt out of
       the a11y support `}
-      <Link href="https://www.coinbase.com" underline={false}>
-        without underlines
-      </Link>{' '}
-      . But why? Please dont do this
+      <Link href="https://www.coinbase.com">without underlines</Link> . But why? Please dont do this
     </Text>
   </div>
 );
@@ -78,7 +77,7 @@ export const InheritParentTextStyles = () => (
 
 export const DifferentTextStyle = () => (
   <div>
-    <Text font="body">
+    <Text display="inline" font="body">
       Go here:{' '}
       <Link font="title3" href="https://www.coinbase.com">
         Title3

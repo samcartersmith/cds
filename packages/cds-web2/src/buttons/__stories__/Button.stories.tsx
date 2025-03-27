@@ -40,7 +40,7 @@ const buttonStories: Omit<ButtonBaseProps, 'children'>[] = [
 const onClickConsole = () => console.log('clicked');
 
 export const CreateButtonStories = () => (
-  <VStack alignItems="flex-start" gap={4}>
+  <VStack alignItems="flex-start" gap={2}>
     {buttonStories.map((props, idx) => {
       const key = `button-${idx}`;
       return (
@@ -68,6 +68,9 @@ export const CustomEndIconButton = () => (
 
 export const FlushProps = () => (
   <VStack background="bgSecondary" gap={4} paddingX={2}>
+    <Button onClick={() => {}} variant="positive">
+      No Flush
+    </Button>
     <Button block flush="start" onClick={() => {}}>
       Flush to Start
     </Button>

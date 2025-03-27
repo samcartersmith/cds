@@ -35,7 +35,7 @@ const baseStyle = css`
 `;
 
 const blockStyle = css`
-  display: flex;
+  display: block;
   width: 100%;
   max-width: 100%;
   white-space: normal;
@@ -87,8 +87,8 @@ const middleNodeStyle = css`
 
 const flushSpaceStyle = css`
   min-width: unset;
-  padding-inline-start: var(--space-2);
-  padding-inline-end: var(--space-2);
+  margin-inline-start: var(--space-2);
+  margin-inline-end: var(--space-2);
 `;
 
 const flushStartStyle = css`

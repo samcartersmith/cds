@@ -134,7 +134,7 @@ describe('Link', () => {
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByTestId(TEST_ID).props.style[1][1]).toBe(false);
+    expect(screen.getByTestId(TEST_ID).props.style[1][1]).toBe(undefined);
   });
 
   it('inherits by default', () => {
@@ -145,6 +145,6 @@ describe('Link', () => {
         </Link>
       </DefaultThemeProvider>,
     );
-    expect(screen.getByTestId(TEST_ID).props.style[1][1]).toBe(false);
+    expect(screen.getByTestId(TEST_ID).props.style[1][1]).toBe(undefined);
   });
 });

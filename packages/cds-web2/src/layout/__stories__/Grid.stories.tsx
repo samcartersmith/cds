@@ -23,7 +23,7 @@ const Item: React.FC<React.PropsWithChildren<HStackProps<'div' | 'li'>>> = ({
   </HStack>
 );
 
-const responsiveGapConfig = { base: 2, minTablet: 1, minDesktop: 0.5 } as const;
+const responsiveGapConfig = { phone: 2, tablet: 1, desktop: 0.5 } as const;
 const GridBase = (props: GridProps<'div' | 'ul'>) => {
   return (
     <Grid gap={responsiveGapConfig} {...props}>
@@ -89,14 +89,14 @@ type GridColumnProps = {
 };
 
 const responsiveColStartConfig = (idx: number) => ({
-  base: idx + 1,
-  minTablet: idx + 1,
-  minDesktop: 1,
+  phone: idx + 1,
+  tablet: idx + 1,
+  desktop: 1,
 });
 const responsiveColEndConfig = (idx: number) => ({
-  base: idx + 6 > 13 ? -1 : idx + 6,
-  minTablet: idx + 4 > 13 ? -1 : idx + 4,
-  minDesktop: idx + 2,
+  phone: idx + 6 > 13 ? -1 : idx + 6,
+  tablet: idx + 4 > 13 ? -1 : idx + 4,
+  desktop: idx + 2,
 });
 
 const ColumnExamples = ({ responsive }: GridColumnProps) => {
@@ -143,9 +143,9 @@ const FullBleedExample = () => {
 };
 
 const responsiveGridColumnConfig = {
-  base: 'repeat(3, 1fr)',
-  minTablet: 'repeat(6, 1fr)',
-  minDesktop: 'repeat(12, 1fr)',
+  phone: 'repeat(3, 1fr)',
+  tablet: 'repeat(6, 1fr)',
+  desktop: 'repeat(12, 1fr)',
 } as const;
 
 export const GridExamples = () => {

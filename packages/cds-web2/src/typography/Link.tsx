@@ -38,7 +38,6 @@ export type LinkBaseProps = Polymorphic.ExtendableProps<
     /**
      * Set text decoration to underline.
      * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
-     * @default true
      */
     underline?: boolean;
   }
@@ -83,7 +82,7 @@ export const Link: LinkComponent = memo(
         color = 'fgPrimary',
         font = 'inherit',
         mono,
-        underline = true,
+        underline,
         // Pressable props
         as,
         background = 'transparent',

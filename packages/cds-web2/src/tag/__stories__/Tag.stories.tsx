@@ -93,10 +93,10 @@ export const Truncated = () => (
 const textStyles = {
   padding: 0,
   margin: 0,
-  fontSize: 'var(--label1-font-size)',
-  lineHeight: 'var(--label1-line-height)',
-  fontWeight: 'var(--label1-font-weight)',
-  fontFamily: 'var(--label1-font-family)',
+  fontSize: 'var(--fontSize-label1)',
+  lineHeight: 'var(--lineHeight-label1)',
+  fontWeight: 'var(--fontWeight-label1)',
+  fontFamily: 'var(--fontFamily-label1)',
 };
 
 export const HtmlTag = () => (

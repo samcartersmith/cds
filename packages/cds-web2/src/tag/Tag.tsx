@@ -63,6 +63,7 @@ export const Tag = memo(
         {...props}
       >
         <Text
+          display="inline"
           font={tagFontMap[intent]}
           overflow="truncate"
           style={textStyles}

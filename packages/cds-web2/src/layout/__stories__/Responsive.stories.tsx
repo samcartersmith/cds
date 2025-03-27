@@ -33,7 +33,7 @@ const itemProps: BoxBaseProps = {
   paddingX: 3,
 };
 
-export const ResponsiveBox = (props: BoxBaseProps) => {
+const ExampleBox = (props: BoxBaseProps) => {
   return (
     <VStack gap={2}>
       <Text as="h2" display="block" font="display2">
@@ -44,7 +44,6 @@ export const ResponsiveBox = (props: BoxBaseProps) => {
         borderWidth={100}
         className={animationStyles}
         minHeight={200}
-        {...responsiveProps}
         {...props}
       >
         <HStack {...itemProps}>
@@ -86,10 +85,12 @@ export const ResponsiveBox = (props: BoxBaseProps) => {
   );
 };
 
-export const ResponsiveBoxHoistedPerformance = () => <ResponsiveBox {...responsiveProps} />;
+export const ResponsiveBox = () => <ExampleBox {...responsiveProps} />;
+
+export const ResponsiveBoxHoistedPerformance = () => <ExampleBox {...responsiveProps} />;
 
 export const HideOnMobile = () => (
-  <ResponsiveBox visibility={{ phone: 'hidden', tablet: 'visible' }} />
+  <ExampleBox visibility={{ phone: 'hidden', tablet: 'visible' }} />
 );
 
 export const ResponsiveStacks = () => (

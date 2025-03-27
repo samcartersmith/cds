@@ -273,7 +273,7 @@ export const PageHeaderInErrorEmptyState = () => {
           <Text as="h3" display="block" font="title1">
             You need to X before you Y
           </Text>
-          <Text as="sub" font="title1" textAlign="center">
+          <Text as="sub" font="body" textAlign="center">
             You&apos;ll need to [add funds] before you can [complete this transaction]
           </Text>
         </VStack>

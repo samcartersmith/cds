@@ -14,7 +14,7 @@ export default {
 };
 
 export const Error = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   return (
     <>
@@ -34,7 +34,7 @@ export const Error = () => {
 };
 
 export const DisclosureLowFriction = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const data = useMemo(
     () => [
@@ -104,7 +104,7 @@ export const DisclosureLowFriction = () => {
 };
 
 export const DisclosureMediumFriction = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const data = useMemo(
     () => [
@@ -169,7 +169,7 @@ export const DisclosureMediumFriction = () => {
 };
 
 export const DisclosureHighFrictionBenefit = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const data = useMemo(
     () => [
@@ -251,7 +251,7 @@ export const DisclosureHighFrictionRisk = () => {
   );
   const initialCheckboxesState = useMemo(() => data.map(() => false), [data]);
 
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [checkboxes, setCheckboxes] = useState(initialCheckboxesState);
 
   const checkboxLabelStyles = useMemo(() => ({ cursor: 'pointer' }), []);
