@@ -1,5 +1,5 @@
 export default {
   displayName: 'utils',
-  preset: '@cbhq/jest-preset',
+  preset: '../../jest.preset.js',
   coverageReporters: ['text-summary', 'text', 'json-summary'],
 };

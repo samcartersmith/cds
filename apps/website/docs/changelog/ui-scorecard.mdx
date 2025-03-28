@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.4 (3/26/2025 PST)
+
+#### 🐞 Fixes
+
+- Remove @cbhq/jest-preset-mobile. [[#3738](https://github.cbhq.net/frontend/cds/pull/3738)]
+
 ## 0.2.3 (3/14/2025 PST)
 
 #### 🐞 Fixes

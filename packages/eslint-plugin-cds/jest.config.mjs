@@ -1,5 +1,5 @@
 export default {
-  preset: '@cbhq/jest-preset',
+  preset: '../../jest.preset.js',
   moduleNameMapper: {
     // Temporarily required for ESLint v8
     // https://github.com/facebook/jest/issues/11100#issuecomment-967161978

@@ -1,4 +1,4 @@
 export default {
   displayName: 'codegen',
-  preset: '@cbhq/jest-preset',
+  preset: '../../libs/jest.preset.js',
 };

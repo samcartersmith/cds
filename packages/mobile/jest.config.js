@@ -19,7 +19,7 @@ export default {
   ],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
   displayName: 'mobile',
-  preset: '@cbhq/jest-preset-mobile',
+  preset: '../../jest.preset-mobile.js',
   // https://docs.swmansion.com/react-native-gesture-handler/docs/guides/testing
   setupFiles: [
     '<rootDir>/../../node_modules/react-native-gesture-handler/jestSetup.js',

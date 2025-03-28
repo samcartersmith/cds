@@ -4,7 +4,7 @@ const esModules = ['@cbhq', ...d3];
 
 export default {
   displayName: 'web',
-  preset: '@cbhq/jest-preset',
+  preset: '../../jest.preset.js',
   setupFiles: ['<rootDir>/jest/setup.js'],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
   coveragePathIgnorePatterns: [

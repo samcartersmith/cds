@@ -6,6 +6,6 @@ export default {
   coveragePathIgnorePatterns: ['<rootDir>/src/tokens'],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
   displayName: 'common',
-  preset: '@cbhq/jest-preset',
+  preset: '../../jest.preset.js',
   transformIgnorePatterns: [`node_modules/(?!(${esModules.join('|')}))`],
 };

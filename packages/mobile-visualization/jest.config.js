@@ -14,7 +14,7 @@ export default {
   coveragePathIgnorePatterns: ['<rootDir>/src/illustrations/images', '.stories.tsx', '__stories__'],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
   displayName: 'mobile-visualization',
-  preset: '@cbhq/jest-preset-mobile',
+  preset: '../../jest.preset-mobile.js',
   // https://docs.swmansion.com/react-native-gesture-handler/docs/guides/testing
   setupFiles: ['<rootDir>/../../node_modules/react-native-gesture-handler/jestSetup.js'],
   testMatch: ['**//**/*.test.(ts|tsx)'],

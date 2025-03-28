@@ -9,7 +9,10 @@
       "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
     "test": {
-      "executor": "@cbhq/mono-tasks:test"
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{projectRoot}/jest.config.js"
+      }
     },
     "lint": {
       "executor": "@nx/eslint:lint"

@@ -21,7 +21,11 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@cbhq/mono-tasks:test"
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "jest",
+        "cwd": "{projectRoot}"
+      }
     },
     "typecheck": {
       "executor": "nx:run-commands",

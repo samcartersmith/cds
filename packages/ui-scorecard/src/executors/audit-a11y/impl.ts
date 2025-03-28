@@ -202,7 +202,7 @@ function handleJestConfig(args: string[], task: Task): void {
   if (projectConfig.exists()) {
     args.unshift('--config', './jest.config.js');
   } else {
-    args.unshift('--preset', '@cbhq/jest-preset-mobile');
+    args.unshift('--preset', './jest.preset-mobile.js');
   }
 }
 

@@ -17,7 +17,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adobe/css-tools@npm:^4.0.1, @adobe/css-tools@npm:^4.4.0":
+"@adobe/css-tools@npm:^4.0.1":
   version: 4.4.0
   resolution: "@adobe/css-tools@npm:4.4.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40adobe%2Fcss-tools%2F-%2Fcss-tools-4.4.0.tgz"
   checksum: 10c0/d65ddc719389bf469097df80fb16a8af48a973dea4b57565789d70ac8e7ab4987e6dc0095da3ed5dc16c1b6f8960214a7590312eeda8abd543d91fd0f59e6c94
@@ -4218,41 +4218,6 @@ __metadata:
     "@nx/devkit": ">=15.0.0"
   languageName: unknown
   linkType: soft
-
-"@cbhq/jest-preset-mobile@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@cbhq/jest-preset-mobile@npm:0.5.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fjest-preset-mobile%2F-%2F%40cbhq%2Fjest-preset-mobile-0.5.0.tgz"
-  dependencies:
-    "@testing-library/jest-native": "npm:^5.0.0"
-    identity-obj-proxy: "npm:^3.0.0"
-    jest-circus: "npm:>=28.0.0"
-    jest-extended: "npm:^4.0.2"
-  peerDependencies:
-    jest: ">=28.0.0"
-  checksum: 10c0/d21bc4259bd3b6d3a1cd54d001fc9959af8fedec0f1111a48e1ec516bd449ce593d654fe30104cd4b0c955f597a521708962f9909dc3a7567d3d58583850e290
-  languageName: node
-  linkType: hard
-
-"@cbhq/jest-preset@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@cbhq/jest-preset@npm:0.4.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fjest-preset%2F-%2F%40cbhq%2Fjest-preset-0.4.0.tgz"
-  dependencies:
-    "@graphql-tools/jest-transform": "npm:^2.0.0"
-    "@testing-library/jest-dom": "npm:^6.1.4"
-    eventsourcemock: "npm:^2.0.0"
-    graphql-tag: "npm:^2.12.6"
-    identity-obj-proxy: "npm:^3.0.0"
-    jest-canvas-mock: "npm:^2.4.0"
-    jest-circus: "npm:^29.3.0"
-    jest-environment-jsdom: "npm:^29.3.0"
-    jest-extended: "npm:^3.1.0"
-    node-fetch: "npm:^2.6.7"
-    text-encoding: "npm:^0.7.0"
-  peerDependencies:
-    jest: ">=28.0.0"
-  checksum: 10c0/916e39a52e96361dc787edb5174d956833e2815a25516f7baf473c78ae31387bbe324e45d1c17fb5670a35f791ab2984a293e3166767a898a7e594615ba443d5
-  languageName: node
-  linkType: hard
 
 "@cbhq/metro-config@npm:^0.1.2":
   version: 0.1.2
@@ -14822,22 +14787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^6.1.4":
-  version: 6.5.0
-  resolution: "@testing-library/jest-dom@npm:6.5.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40testing-library%2Fjest-dom%2F-%2Fjest-dom-6.5.0.tgz"
-  dependencies:
-    "@adobe/css-tools": "npm:^4.4.0"
-    aria-query: "npm:^5.0.0"
-    chalk: "npm:^3.0.0"
-    css.escape: "npm:^1.5.1"
-    dom-accessibility-api: "npm:^0.6.3"
-    lodash: "npm:^4.17.21"
-    redent: "npm:^3.0.0"
-  checksum: 10c0/fd5936a547f04608d8de15a7de3ae26516f21023f8f45169b10c8c8847015fd20ec259b7309f08aa1031bcbc37c6e5e6f532d1bb85ef8f91bad654193ec66a4c
-  languageName: node
-  linkType: hard
-
-"@testing-library/jest-native@npm:^5.0.0":
+"@testing-library/jest-native@npm:^5.4.3":
   version: 5.4.3
   resolution: "@testing-library/jest-native@npm:5.4.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40testing-library%2Fjest-native%2F-%2Fjest-native-5.4.3.tgz"
   dependencies:
@@ -15728,12 +15678,12 @@ __metadata:
   linkType: hard
 
 "@types/node-fetch@npm:^2.5.7":
-  version: 2.6.11
-  resolution: "@types/node-fetch@npm:2.6.11::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fnode-fetch%2F-%2Fnode-fetch-2.6.11.tgz"
+  version: 2.6.12
+  resolution: "@types/node-fetch@npm:2.6.12::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40types%2Fnode-fetch%2F-%2Fnode-fetch-2.6.12.tgz"
   dependencies:
     "@types/node": "npm:*"
     form-data: "npm:^4.0.0"
-  checksum: 10c0/5283d4e0bcc37a5b6d8e629aee880a4ffcfb33e089f4b903b2981b19c623972d1e64af7c3f9540ab990f0f5c89b9b5dda19c5bcb37a8e177079e93683bfd2f49
+  checksum: 10c0/7693acad5499b7df2d1727d46cff092a63896dc04645f36b973dd6dd754a59a7faba76fcb777bdaa35d80625c6a9dd7257cca9c401a4bab03b04480cda7fd1af
   languageName: node
   linkType: hard
 
@@ -22125,7 +22075,7 @@ __metadata:
 
 "cssfontparser@npm:^1.2.1":
   version: 1.2.1
-  resolution: "cssfontparser@npm:1.2.1"
+  resolution: "cssfontparser@npm:1.2.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcssfontparser%2F-%2Fcssfontparser-1.2.1.tgz"
   checksum: 10c0/ceb9b2976d503dbff3ac2aff0229b263affb4fb221a6947b357682cd8a952f6995253646ca5f820020d2fe05b5e29b56dbdd2343388c32203e8dd0ed15bdc1ca
   languageName: node
   linkType: hard
@@ -23011,12 +22961,11 @@ __metadata:
     "@babel/runtime": "npm:^7.20.13"
     "@babel/template": "npm:^7.20.7"
     "@babel/types": "npm:^7.20.7"
-    "@cbhq/jest-preset": "npm:^0.4.0"
-    "@cbhq/jest-preset-mobile": "npm:^0.5.0"
     "@cbhq/mono-env": "npm:^0.3.1"
     "@cbhq/mono-pipeline": "npm:^1.6.0"
     "@cbhq/mono-tasks": "npm:^1.16.0"
     "@cbhq/nx-tasks-runner": "npm:^1.0.2"
+    "@graphql-tools/jest-transform": "npm:^2.0.0"
     "@joshcena/docusaurus-plugin-utils": "npm:^0.1.3"
     "@nx/eslint": "npm:20.5.0"
     "@nx/jest": "npm:20.5.0"
@@ -23024,6 +22973,7 @@ __metadata:
     "@parcel/css-cli": "npm:^1.9.0"
     "@storybook/jest": "npm:^0.0.10"
     "@storybook/testing-library": "npm:^0.0.13"
+    "@testing-library/jest-native": "npm:^5.4.3"
     "@testing-library/react": "npm:^16.0.1"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.0.4"
@@ -23080,7 +23030,9 @@ __metadata:
     inquirer: "npm:^12.1.0"
     jest: "npm:^29.7.0"
     jest-axe: "npm:^10.0.0"
+    jest-canvas-mock: "npm:^2.5.2"
     jest-environment-jsdom: "npm:^29.5.0"
+    jest-extended: "npm:^4.0.2"
     nx: "npm:20.5.0"
     postcss-cli: "npm:^9.1.0"
     postcss-nested: "npm:^5.0.6"
@@ -23471,13 +23423,6 @@ __metadata:
   version: 0.5.14
   resolution: "dom-accessibility-api@npm:0.5.14::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-feature%2Fdom-accessibility-api%2F-%2Fdom-accessibility-api-0.5.14.tgz"
   checksum: 10c0/fbeacecad9acb15c723bd2c6d946578cff861d2bd622e7483c06b0f3641b435f4f4f37b6e1df65ea410462c72a0e9ec7d96e0a106becfcc51ba54cfaa7ff669b
-  languageName: node
-  linkType: hard
-
-"dom-accessibility-api@npm:^0.6.3":
-  version: 0.6.3
-  resolution: "dom-accessibility-api@npm:0.6.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fdom-accessibility-api%2F-%2Fdom-accessibility-api-0.6.3.tgz"
-  checksum: 10c0/10bee5aa514b2a9a37c87cd81268db607a2e933a050074abc2f6fa3da9080ebed206a320cbc123567f2c3087d22292853bdfdceaffdd4334ffe2af9510b29360
   languageName: node
   linkType: hard
 
@@ -25612,13 +25557,6 @@ __metadata:
   version: 3.3.0
   resolution: "events@npm:3.3.0"
   checksum: 10c0/d6b6f2adbccbcda74ddbab52ed07db727ef52e31a61ed26db9feb7dc62af7fc8e060defa65e5f8af9449b86b52cc1a1f6a79f2eafcf4e62add2b7a1fa4a432f6
-  languageName: node
-  linkType: hard
-
-"eventsourcemock@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "eventsourcemock@npm:2.0.0"
-  checksum: 10c0/7c8bb48a0edec7f8e0e6da4328fcde2fb2781374e3307bd67e8bf3585b6a2953dd31f89526976723ad272d84f43b1a8a54415c146cfab1ac2ab2b2e2865dc617
   languageName: node
   linkType: hard
 
@@ -28108,7 +28046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-tag@npm:2.12.6, graphql-tag@npm:^2.10.1, graphql-tag@npm:^2.12.6":
+"graphql-tag@npm:2.12.6, graphql-tag@npm:^2.10.1":
   version: 2.12.6
   resolution: "graphql-tag@npm:2.12.6::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fgraphql-tag%2F-%2Fgraphql-tag-2.12.6.tgz"
   dependencies:
@@ -29323,7 +29261,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"identity-obj-proxy@npm:3.0.0, identity-obj-proxy@npm:^3.0.0":
+"identity-obj-proxy@npm:3.0.0":
   version: 3.0.0
   resolution: "identity-obj-proxy@npm:3.0.0"
   dependencies:
@@ -30971,13 +30909,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-canvas-mock@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "jest-canvas-mock@npm:2.4.0"
+"jest-canvas-mock@npm:^2.5.2":
+  version: 2.5.2
+  resolution: "jest-canvas-mock@npm:2.5.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-canvas-mock%2F-%2Fjest-canvas-mock-2.5.2.tgz"
   dependencies:
     cssfontparser: "npm:^1.2.1"
     moo-color: "npm:^1.0.2"
-  checksum: 10c0/f0bfa05505cca1bcc7169745898bb075ab30b5cd29c3da2f90b289e4c853ac0cfb8d888d8bd3ac2a23d5f558fa9c2171b24cfe0bfad10344cc85e95d2b404b12
+  checksum: 10c0/6a4190354b1e9aedcb3045273f13f6f1d2d1efb00cfe6458707fae538a8f91f6afdf72b9e201b653666863054edc783428bdc0c1a2c71d66d9ac364b4893f6d6
   languageName: node
   linkType: hard
 
@@ -30999,34 +30937,6 @@ __metadata:
     jest-util: "npm:^29.7.0"
     p-limit: "npm:^3.1.0"
   checksum: 10c0/e071384d9e2f6bb462231ac53f29bff86f0e12394c1b49ccafbad225ce2ab7da226279a8a94f421949920bef9be7ef574fd86aee22e8adfa149be73554ab828b
-  languageName: node
-  linkType: hard
-
-"jest-circus@npm:>=28.0.0, jest-circus@npm:^29.3.0, jest-circus@npm:^29.7.0":
-  version: 29.7.0
-  resolution: "jest-circus@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-circus%2F-%2Fjest-circus-29.7.0.tgz"
-  dependencies:
-    "@jest/environment": "npm:^29.7.0"
-    "@jest/expect": "npm:^29.7.0"
-    "@jest/test-result": "npm:^29.7.0"
-    "@jest/types": "npm:^29.6.3"
-    "@types/node": "npm:*"
-    chalk: "npm:^4.0.0"
-    co: "npm:^4.6.0"
-    dedent: "npm:^1.0.0"
-    is-generator-fn: "npm:^2.0.0"
-    jest-each: "npm:^29.7.0"
-    jest-matcher-utils: "npm:^29.7.0"
-    jest-message-util: "npm:^29.7.0"
-    jest-runtime: "npm:^29.7.0"
-    jest-snapshot: "npm:^29.7.0"
-    jest-util: "npm:^29.7.0"
-    p-limit: "npm:^3.1.0"
-    pretty-format: "npm:^29.7.0"
-    pure-rand: "npm:^6.0.0"
-    slash: "npm:^3.0.0"
-    stack-utils: "npm:^2.0.3"
-  checksum: 10c0/8d15344cf7a9f14e926f0deed64ed190c7a4fa1ed1acfcd81e4cc094d3cc5bf7902ebb7b874edc98ada4185688f90c91e1747e0dfd7ac12463b097968ae74b5e
   languageName: node
   linkType: hard
 
@@ -31054,6 +30964,34 @@ __metadata:
     slash: "npm:^3.0.0"
     stack-utils: "npm:^2.0.3"
   checksum: 10c0/6f20ff8b5f100c7bafb6f71a2bd42e81804f0af848d628864508340239c56957a731bcdd83dba3e962a81c1f05ce9daa4ecee207a02e0ec73a908a2ec62f1f19
+  languageName: node
+  linkType: hard
+
+"jest-circus@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "jest-circus@npm:29.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-circus%2F-%2Fjest-circus-29.7.0.tgz"
+  dependencies:
+    "@jest/environment": "npm:^29.7.0"
+    "@jest/expect": "npm:^29.7.0"
+    "@jest/test-result": "npm:^29.7.0"
+    "@jest/types": "npm:^29.6.3"
+    "@types/node": "npm:*"
+    chalk: "npm:^4.0.0"
+    co: "npm:^4.6.0"
+    dedent: "npm:^1.0.0"
+    is-generator-fn: "npm:^2.0.0"
+    jest-each: "npm:^29.7.0"
+    jest-matcher-utils: "npm:^29.7.0"
+    jest-message-util: "npm:^29.7.0"
+    jest-runtime: "npm:^29.7.0"
+    jest-snapshot: "npm:^29.7.0"
+    jest-util: "npm:^29.7.0"
+    p-limit: "npm:^3.1.0"
+    pretty-format: "npm:^29.7.0"
+    pure-rand: "npm:^6.0.0"
+    slash: "npm:^3.0.0"
+    stack-utils: "npm:^2.0.3"
+  checksum: 10c0/8d15344cf7a9f14e926f0deed64ed190c7a4fa1ed1acfcd81e4cc094d3cc5bf7902ebb7b874edc98ada4185688f90c91e1747e0dfd7ac12463b097968ae74b5e
   languageName: node
   linkType: hard
 
@@ -31294,7 +31232,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-jsdom@npm:^29.3.0, jest-environment-jsdom@npm:^29.5.0":
+"jest-environment-jsdom@npm:^29.5.0":
   version: 29.5.0
   resolution: "jest-environment-jsdom@npm:29.5.0::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fjest-environment-jsdom%2F-%2Fjest-environment-jsdom-29.5.0.tgz"
   dependencies:
@@ -31340,18 +31278,6 @@ __metadata:
     jest-mock: "npm:^29.7.0"
     jest-util: "npm:^29.7.0"
   checksum: 10c0/61f04fec077f8b1b5c1a633e3612fc0c9aa79a0ab7b05600683428f1e01a4d35346c474bde6f439f9fcc1a4aa9a2861ff852d079a43ab64b02105d1004b2592b
-  languageName: node
-  linkType: hard
-
-"jest-extended@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "jest-extended@npm:3.1.0"
-  dependencies:
-    jest-diff: "npm:^29.0.0"
-    jest-get-type: "npm:^29.0.0"
-  peerDependencies:
-    jest: ">=27.2.5"
-  checksum: 10c0/c6519f0e3ec0b9bb842fbb90c5c9a101460d8a1da7ee55975e3641437a86a52280762eaf0ca2919cf1f992b8c2ade78bf9abea926ab8ef1a7629f36c43e12cb6
   languageName: node
   linkType: hard
 
@@ -36140,11 +36066,11 @@ __metadata:
   linkType: hard
 
 "moo-color@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "moo-color@npm:1.0.2"
+  version: 1.0.3
+  resolution: "moo-color@npm:1.0.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fmoo-color%2F-%2Fmoo-color-1.0.3.tgz"
   dependencies:
     color-name: "npm:^1.1.4"
-  checksum: 10c0/9528dfca2c7567b8d5ad47ea2b7e1aaf36e6e91915260f3979acb82d247e7b5f76d3f95cd30e7186bddbd0eefbca7dca03243363b28e9f249aab6374a01f4a2d
+  checksum: 10c0/778c82f67f638c03a1d0fa78dcd6ea376a9f17b5e78e349c7e34a290b496dbdb43fd0b1c38070e2062d5e784bcf08e57f499015fcbcf52b3a1887d7825ebb80d
   languageName: node
   linkType: hard
 
@@ -45676,13 +45602,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"text-encoding@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "text-encoding@npm:0.7.0"
-  checksum: 10c0/6c20f5d19f996501677cc60b79bc4af550f840b426eacc5f67bd2bd5a7a7a058ab58679f851e0afee879aaaaf7fdb95cfe4de35ab29f9b34f9ce2a7b8de9bacb
-  languageName: node
-  linkType: hard
-
 "text-hex@npm:1.0.x":
   version: 1.0.0
   resolution: "text-hex@npm:1.0.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftext-hex%2F-%2Ftext-hex-1.0.0.tgz"
@@ -46184,11 +46103,11 @@ __metadata:
   linkType: hard
 
 "ts-api-utils@npm:^1.0.1, ts-api-utils@npm:^1.3.0":
-  version: 1.4.3
-  resolution: "ts-api-utils@npm:1.4.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fts-api-utils%2F-%2Fts-api-utils-1.4.3.tgz"
+  version: 1.3.0
+  resolution: "ts-api-utils@npm:1.3.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fts-api-utils%2F-%2Fts-api-utils-1.3.0.tgz"
   peerDependencies:
     typescript: ">=4.2.0"
-  checksum: 10c0/e65dc6e7e8141140c23e1dc94984bf995d4f6801919c71d6dc27cf0cd51b100a91ffcfe5217626193e5bea9d46831e8586febdc7e172df3f1091a7384299e23a
+  checksum: 10c0/f54a0ba9ed56ce66baea90a3fa087a484002e807f28a8ccb2d070c75e76bde64bd0f6dce98b3802834156306050871b67eec325cb4e918015a360a3f0868c77c
   languageName: node
   linkType: hard
 

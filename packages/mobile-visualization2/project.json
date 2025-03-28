@@ -11,7 +11,10 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@cbhq/mono-tasks:test"
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{projectRoot}/jest.config.js"
+      }
     },
     "typecheck": {
       "executor": "nx:run-commands",
