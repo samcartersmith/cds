@@ -12,8 +12,16 @@ RUN yarn --immutable
 # Build the package with nx
 RUN yarn nx run mobile-visualization2:typecheck:prod
 RUN yarn nx run mobile-visualization2:build
+
 RUN node rewrite-alpha.mjs mobile-visualization2
+
+RUN rm -rf packages/common/
+RUN rm -rf packages/mobile/
+RUN rm -rf packages/web/
 RUN rm -rf packages/mobile-visualization/
+RUN rm -rf packages/web-visualization/
+RUN rm -rf packages/lottie-files/
+RUN rm -rf packages/ui-mobile-playground/
 
 # Prepare the package for publish
 RUN cd /repo/packages/mobile-visualization2 && yarn pack
