@@ -89,6 +89,8 @@ export type UiIconName =
   | 'collectibles'
   | 'comment'
   | 'commentActive'
+  | 'concierge'
+  | 'conciergeBell'
   | 'continuous'
   | 'convert'
   | 'copy'

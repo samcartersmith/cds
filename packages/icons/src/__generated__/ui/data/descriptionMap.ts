@@ -89,6 +89,8 @@ const descriptionMap: Record<string, string[]> = {
     'sortDownCenterInactive',
     'sortUpCenterInactive',
     'barChartWindow',
+    'concierge',
+    'conciergeBell',
   ],
   spin: ['setPinCode'],
   password: ['setPinCode'],
@@ -739,8 +741,8 @@ const descriptionMap: Record<string, string[]> = {
   update: ['bell', 'bellInactive'],
   news: ['bell', 'newsFeed', 'bellInactive'],
   new: ['bell', 'bellInactive'],
-  bell: ['bell', 'bellInactive'],
-  '🔔': ['bell', 'bellInactive', 'bellCheck', 'bellPlus'],
+  bell: ['bell', 'bellInactive', 'concierge', 'conciergeBell'],
+  '🔔': ['bell', 'bellInactive', 'bellCheck', 'bellPlus', 'conciergeBell'],
   '🛎': ['bell', 'bellInactive'],
   sale: ['nftSaleActive', 'nftSaleInactive'],
   auction: ['nftSaleActive', 'nftSaleInactive'],
@@ -1238,7 +1240,7 @@ const descriptionMap: Record<string, string[]> = {
   procedures: ['api'],
   applications: ['api'],
   features: ['api'],
-  service: ['api'],
+  service: ['api', 'concierge', 'conciergeBell'],
   '⏭': ['arrowRight'],
   '⏩': ['arrowRight'],
   airdrop: ['airdrop'],
@@ -1442,6 +1444,9 @@ const descriptionMap: Record<string, string[]> = {
   health: ['gaugeHighMid'],
   futures: ['gaugeHighMid'],
   balance: ['gaugeHighMid'],
+  '👥': ['concierge'],
+  concierge: ['concierge', 'conciergeBell'],
+  CB1: ['concierge', 'conciergeBell'],
 };
 
 export default descriptionMap;

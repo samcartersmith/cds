@@ -4213,7 +4213,7 @@ __metadata:
     sharp: "npm:^0.31.2"
     svgo: "npm:^3.0.2"
     update-notifier: "npm:^5.1.0"
-    webfont: "npm:9.0.0"
+    webfont: "npm:11.2.26"
   peerDependencies:
     "@nx/devkit": ">=15.0.0"
   languageName: unknown
@@ -17280,10 +17280,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xmldom/xmldom@npm:~0.7.7":
-  version: 0.7.9
-  resolution: "@xmldom/xmldom@npm:0.7.9::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40xmldom%2Fxmldom%2F-%2Fxmldom-0.7.9.tgz"
-  checksum: 10c0/aa664f1e670081dd116d879562dffbd9f80e91dea4867e4af0d6ae4c9f29e1b2dbed6b12b1116b139ebf7221f682fa90c4bc2b2d251342b05b813f1b88a293ac
+"@xmldom/xmldom@npm:^0.7.2, @xmldom/xmldom@npm:~0.7.7":
+  version: 0.7.10
+  resolution: "@xmldom/xmldom@npm:0.7.10::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40xmldom%2Fxmldom%2F-%2Fxmldom-0.7.10.tgz"
+  checksum: 10c0/034e8b800e3b38c7bb3e02126603a5cdc266503ffb32ffbfc43cae9aa5f484d9518f013f414fce393da78d805764e14c739e05d239d554913ffccbdec4c7b8bc
   languageName: node
   linkType: hard
 
@@ -18119,18 +18119,6 @@ __metadata:
     es-abstract: "npm:^1.22.1"
     es-shim-unscopables: "npm:^1.0.0"
   checksum: 10c0/a578ed836a786efbb6c2db0899ae80781b476200617f65a44846cb1ed8bd8b24c8821b83703375d8af639c689497b7b07277060024b9919db94ac3e10dc8a49b
-  languageName: node
-  linkType: hard
-
-"array.prototype.flatmap@npm:1.2.4":
-  version: 1.2.4
-  resolution: "array.prototype.flatmap@npm:1.2.4"
-  dependencies:
-    call-bind: "npm:^1.0.0"
-    define-properties: "npm:^1.1.3"
-    es-abstract: "npm:^1.18.0-next.1"
-    function-bind: "npm:^1.1.1"
-  checksum: 10c0/f897c4b88e2d51a668c0b0c4361f36f750e98fbdb32d7d75e68d80affcd013ba5b85380d3deb40c4e23d5da28f2cd774424c8278c9e0c8dbbb6df5206e9663fb
   languageName: node
   linkType: hard
 
@@ -19976,7 +19964,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"call-bind@npm:^1.0.0, call-bind@npm:^1.0.2, call-bind@npm:^1.0.7, call-bind@npm:^1.0.8":
+"call-bind@npm:^1.0.2, call-bind@npm:^1.0.7, call-bind@npm:^1.0.8":
   version: 1.0.8
   resolution: "call-bind@npm:1.0.8::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcall-bind%2F-%2Fcall-bind-1.0.8.tgz"
   dependencies:
@@ -20081,17 +20069,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"camelcase-keys@npm:^4.0.0":
-  version: 4.2.0
-  resolution: "camelcase-keys@npm:4.2.0"
-  dependencies:
-    camelcase: "npm:^4.1.0"
-    map-obj: "npm:^2.0.0"
-    quick-lru: "npm:^1.0.0"
-  checksum: 10c0/f62198805fbd99fad523e6a4bead1d23c9be9b1e60024fe855631fb978001f39571930f94a7a81f0cd6d2e6b110356847488e88b120475def1ffad5cf34a9758
-  languageName: node
-  linkType: hard
-
 "camelcase-keys@npm:^6.2.2":
   version: 6.2.2
   resolution: "camelcase-keys@npm:6.2.2"
@@ -20107,13 +20084,6 @@ __metadata:
   version: 2.1.1
   resolution: "camelcase@npm:2.1.1"
   checksum: 10c0/610db65fa7dd50a400525ec2188fd65a1939dda4afe5de7d08608670013269c3743c3737fb0f138d1df8aa74e257cc83e3b756e776b604af16dac297b4a0d054
-  languageName: node
-  linkType: hard
-
-"camelcase@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "camelcase@npm:4.1.0"
-  checksum: 10c0/54c0b6a85b54fb4e96a9d834a9d0d8f760fd608ab6752a6789042b5e1c38d3dd60f878d2c590d005046445d32d77f6e05e568a91fe8db3e282da0a1560d83058
   languageName: node
   linkType: hard
 
@@ -21026,7 +20996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^4.0.0, commander@npm:^4.0.1, commander@npm:^4.1.1":
+"commander@npm:^4.0.0, commander@npm:^4.1.1":
   version: 4.1.1
   resolution: "commander@npm:4.1.1::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fcommander%2F-%2Fcommander-4.1.1.tgz"
   checksum: 10c0/84a76c08fe6cc08c9c93f62ac573d2907d8e79138999312c92d4155bc2325d487d64d13f669b2000c9f8caf70493c1be2dac74fec3c51d5a04f8bc3ae1830bab
@@ -22215,7 +22185,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cubic2quad@npm:^1.0.0":
+"cubic2quad@npm:^1.2.1":
   version: 1.2.1
   resolution: "cubic2quad@npm:1.2.1"
   checksum: 10c0/6be433131510b5468a940c3ebc5ae74300f7a223cf3e13003c54e1b0648b0c99e585bb159cfc1bca3c26e2f9bdf1bcbcc7b5547ccde45d11180c2364c3dfd0f7
@@ -22538,7 +22508,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decamelize-keys@npm:^1.0.0, decamelize-keys@npm:^1.1.0":
+"decamelize-keys@npm:^1.1.0":
   version: 1.1.0
   resolution: "decamelize-keys@npm:1.1.0"
   dependencies:
@@ -22640,13 +22610,6 @@ __metadata:
   version: 0.1.4
   resolution: "deep-is@npm:0.1.4"
   checksum: 10c0/7f0ee496e0dff14a573dc6127f14c95061b448b87b995fc96c017ce0a1e66af1675e73f1d6064407975bc4ea6ab679497a29fff7b5b9c4e99cb10797c1ad0b4c
-  languageName: node
-  linkType: hard
-
-"deepmerge@npm:^3.2.0":
-  version: 3.3.0
-  resolution: "deepmerge@npm:3.3.0"
-  checksum: 10c0/143bc6b6cd8a1216565c61c0fe38bf43fe691fb6876fb3f5727c6e323defe4e947c68fbab9957e17e837c5594a56af885c5834d23dc6cf2c41bef97090005104
   languageName: node
   linkType: hard
 
@@ -23055,7 +23018,7 @@ __metadata:
     type-fest: "npm:^2.19.0"
     typescript: "npm:~5.7.2"
     typescript-eslint: "npm:^8.26.1"
-    webfont: "npm:9.0.0"
+    webfont: "npm:11.2.26"
     webpack: "npm:^5.63.0"
     webpack-bundle-analyzer: "npm:^4.10.1"
     webpack-cli: "npm:^5"
@@ -24170,7 +24133,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-abstract@npm:^1.17.5, es-abstract@npm:^1.18.0-next.1, es-abstract@npm:^1.19.0, es-abstract@npm:^1.19.1, es-abstract@npm:^1.19.4, es-abstract@npm:^1.22.1, es-abstract@npm:^1.23.2, es-abstract@npm:^1.23.3, es-abstract@npm:^1.23.5, es-abstract@npm:^1.23.6, es-abstract@npm:^1.23.9":
+"es-abstract@npm:^1.17.5, es-abstract@npm:^1.19.0, es-abstract@npm:^1.19.1, es-abstract@npm:^1.19.4, es-abstract@npm:^1.22.1, es-abstract@npm:^1.23.2, es-abstract@npm:^1.23.3, es-abstract@npm:^1.23.5, es-abstract@npm:^1.23.6, es-abstract@npm:^1.23.9":
   version: 1.23.9
   resolution: "es-abstract@npm:1.23.9::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fes-abstract%2F-%2Fes-abstract-1.23.9.tgz"
   dependencies:
@@ -26711,15 +26674,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-up@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "find-up@npm:2.1.0"
-  dependencies:
-    locate-path: "npm:^2.0.0"
-  checksum: 10c0/c080875c9fe28eb1962f35cbe83c683796a0321899f1eed31a37577800055539815de13d53495049697d3ba313013344f843bb9401dd337a1b832be5edfc6840
-  languageName: node
-  linkType: hard
-
 "find-up@npm:^3.0.0":
   version: 3.0.0
   resolution: "find-up@npm:3.0.0"
@@ -27205,17 +27159,6 @@ __metadata:
     jsonfile: "npm:^6.0.1"
     universalify: "npm:^2.0.0"
   checksum: 10c0/5f579466e7109719d162a9249abbeffe7f426eb133ea486e020b89bc6d67a741134076bf439983f2eb79276ceaf6bd7b7c1e43c3fd67fe889863e69072fb0a5e
-  languageName: node
-  linkType: hard
-
-"fs-extra@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "fs-extra@npm:7.0.1"
-  dependencies:
-    graceful-fs: "npm:^4.1.2"
-    jsonfile: "npm:^4.0.0"
-    universalify: "npm:^0.1.0"
-  checksum: 10c0/1943bb2150007e3739921b8d13d4109abdc3cc481e53b97b7ea7f77eda1c3c642e27ae49eac3af074e3496ea02fde30f411ef410c760c70a38b92e656e5da784
   languageName: node
   linkType: hard
 
@@ -27834,9 +27777,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^11.0.1, globby@npm:^11.0.2, globby@npm:^11.0.3, globby@npm:^11.0.4, globby@npm:^11.1.0":
+"globby@npm:^11.0.0, globby@npm:^11.0.1, globby@npm:^11.0.2, globby@npm:^11.0.3, globby@npm:^11.0.4, globby@npm:^11.1.0":
   version: 11.1.0
-  resolution: "globby@npm:11.1.0"
+  resolution: "globby@npm:11.1.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fglobby%2F-%2Fglobby-11.1.0.tgz"
   dependencies:
     array-union: "npm:^2.1.0"
     dir-glob: "npm:^3.0.1"
@@ -29419,13 +29362,6 @@ __metadata:
   dependencies:
     repeating: "npm:^2.0.0"
   checksum: 10c0/d38e04bbd9b0e1843164d06e9ac1e106ead5a6f7b5714c94ecebc2555b2d3af075b3ddc4d6f92ac87d5319c0935df60d571d3f45f17a6f0ec707be65f26ae924
-  languageName: node
-  linkType: hard
-
-"indent-string@npm:^3.0.0":
-  version: 3.2.0
-  resolution: "indent-string@npm:3.2.0"
-  checksum: 10c0/91b6d61621d24944c5c4d365d6f1ff4a490264ccaf1162a602faa0d323e69231db2180ad4ccc092c2f49cf8888cdb3da7b73e904cc0fdeec40d0bfb41ceb9478
   languageName: node
   linkType: hard
 
@@ -33154,18 +33090,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"load-json-file@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "load-json-file@npm:4.0.0"
-  dependencies:
-    graceful-fs: "npm:^4.1.2"
-    parse-json: "npm:^4.0.0"
-    pify: "npm:^3.0.0"
-    strip-bom: "npm:^3.0.0"
-  checksum: 10c0/6b48f6a0256bdfcc8970be2c57f68f10acb2ee7e63709b386b2febb6ad3c86198f840889cdbe71d28f741cbaa2f23a7771206b138cd1bdd159564511ca37c1d5
-  languageName: node
-  linkType: hard
-
 "loader-runner@npm:^2.4.0":
   version: 2.4.0
   resolution: "loader-runner@npm:2.4.0"
@@ -33206,16 +33130,6 @@ __metadata:
   version: 3.2.0
   resolution: "loader-utils@npm:3.2.0"
   checksum: 10c0/573f7059f283b24b2b68cd230d9f0ba87315da8ecc7885734ea5f108fc83c7882e4eb8f8feab65f7db1661ab540f5aea778f48d18b7aadc24c37be77b2ff70a0
-  languageName: node
-  linkType: hard
-
-"locate-path@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "locate-path@npm:2.0.0"
-  dependencies:
-    p-locate: "npm:^2.0.0"
-    path-exists: "npm:^3.0.0"
-  checksum: 10c0/24efa0e589be6aa3c469b502f795126b26ab97afa378846cb508174211515633b770aa0ba610cab113caedab8d2a4902b061a08aaed5297c12ab6f5be4df0133
   languageName: node
   linkType: hard
 
@@ -33712,13 +33626,6 @@ __metadata:
   version: 1.0.1
   resolution: "map-obj@npm:1.0.1"
   checksum: 10c0/ccca88395e7d38671ed9f5652ecf471ecd546924be2fb900836b9da35e068a96687d96a5f93dcdfa94d9a27d649d2f10a84595590f89a347fb4dda47629dcc52
-  languageName: node
-  linkType: hard
-
-"map-obj@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "map-obj@npm:2.0.0"
-  checksum: 10c0/e8e0f786fb944614475dab3d5d727a24c4e6f000e35e6b35ebd4c62fc3e336a773db1ae317bc658cc9563ce17225c658049206e6fe650ccd1232329c58b4436d
   languageName: node
   linkType: hard
 
@@ -34338,23 +34245,6 @@ __metadata:
     redent: "npm:^1.0.0"
     trim-newlines: "npm:^1.0.0"
   checksum: 10c0/e5ba4632b6558006b5f4df64b5a35e777d75629ab08d84f7bbc967e7603a396e16baa8f67aae26c7833a6a117e4857afef393e0b9aee21f52320e54812d9ae09
-  languageName: node
-  linkType: hard
-
-"meow@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "meow@npm:5.0.0"
-  dependencies:
-    camelcase-keys: "npm:^4.0.0"
-    decamelize-keys: "npm:^1.0.0"
-    loud-rejection: "npm:^1.0.0"
-    minimist-options: "npm:^3.0.1"
-    normalize-package-data: "npm:^2.3.4"
-    read-pkg-up: "npm:^3.0.0"
-    redent: "npm:^2.0.0"
-    trim-newlines: "npm:^2.0.0"
-    yargs-parser: "npm:^10.0.0"
-  checksum: 10c0/c9d62cc714e9b46c58f1f8b2ab35d0cab535f0ce08ecdc9c02f4e42b30d4b13bd67d0e0ea12c59ad7c94bdd9116a8ea5caf62fa1d22b991bcdbf7f3a40b0f60a
   languageName: node
   linkType: hard
 
@@ -35759,16 +35649,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist-options@npm:^3.0.1":
-  version: 3.0.2
-  resolution: "minimist-options@npm:3.0.2"
-  dependencies:
-    arrify: "npm:^1.0.1"
-    is-plain-obj: "npm:^1.1.0"
-  checksum: 10c0/8277dc07e623a3d422735b67bef4f5da7733370896226efbff1aa2f34a54426989bdadd29d8205f7fd45225565c56ca8f38f7360626410b1e7aed8fee299b683
-  languageName: node
-  linkType: hard
-
 "minimist@npm:^1.1.1, minimist@npm:^1.1.3, minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.5, minimist@npm:^1.2.6":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8::__archiveUrl=https%3A%2F%2Fartifactory-proxy.cbhq.net%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fminimist%2F-%2Fminimist-1.2.8.tgz"
@@ -36859,9 +36739,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nunjucks@npm:^3.2.0":
-  version: 3.2.3
-  resolution: "nunjucks@npm:3.2.3"
+"nunjucks@npm:^3.2.3":
+  version: 3.2.4
+  resolution: "nunjucks@npm:3.2.4::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fnunjucks%2F-%2Fnunjucks-3.2.4.tgz"
   dependencies:
     a-sync-waterfall: "npm:^1.0.0"
     asap: "npm:^2.0.3"
@@ -36873,7 +36753,7 @@ __metadata:
       optional: true
   bin:
     nunjucks-precompile: bin/precompile
-  checksum: 10c0/4af94aacb0c4bb513905db6c6a74cd3b8d1fa53fed4648a01751c99ced8e2d61d766c7307d455510e3e2da8533e5d265dee7cf2706c2c36a63ec74a2a40dcdf2
+  checksum: 10c0/7fe5197559b7c09972c79e2a86f9c093459b9075bc9b41134cd2bc599ae93567b53bd09d472a748edc736192d9ccd2998aa8c20cfcbe6a3fffd281f91897c888
   languageName: node
   linkType: hard
 
@@ -37539,15 +37419,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-limit@npm:^1.1.0":
-  version: 1.3.0
-  resolution: "p-limit@npm:1.3.0"
-  dependencies:
-    p-try: "npm:^1.0.0"
-  checksum: 10c0/5c1b1d53d180b2c7501efb04b7c817448e10efe1ba46f4783f8951994d5027e4cd88f36ad79af50546682594c4ebd11702ac4b9364c47f8074890e2acad0edee
-  languageName: node
-  linkType: hard
-
 "p-limit@npm:^2.0.0, p-limit@npm:^2.2.0":
   version: 2.3.0
   resolution: "p-limit@npm:2.3.0"
@@ -37563,15 +37434,6 @@ __metadata:
   dependencies:
     yocto-queue: "npm:^1.0.0"
   checksum: 10c0/a56af34a77f8df2ff61ddfb29431044557fcbcb7642d5a3233143ebba805fc7306ac1d448de724352861cb99de934bc9ab74f0d16fe6a5460bdbdf938de875ad
-  languageName: node
-  linkType: hard
-
-"p-locate@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "p-locate@npm:2.0.0"
-  dependencies:
-    p-limit: "npm:^1.1.0"
-  checksum: 10c0/82da4be88fb02fd29175e66021610c881938d3cc97c813c71c1a605fac05617d57fd5d3b337494a6106c0edb2a37c860241430851411f1b265108cead34aee67
   languageName: node
   linkType: hard
 
@@ -37670,13 +37532,6 @@ __metadata:
   dependencies:
     p-finally: "npm:^1.0.0"
   checksum: 10c0/524b393711a6ba8e1d48137c5924749f29c93d70b671e6db761afa784726572ca06149c715632da8f70c090073afb2af1c05730303f915604fd38ee207b70a61
-  languageName: node
-  linkType: hard
-
-"p-try@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "p-try@npm:1.0.0"
-  checksum: 10c0/757ba31de5819502b80c447826fac8be5f16d3cb4fbf9bc8bc4971dba0682e84ac33e4b24176ca7058c69e29f64f34d8d9e9b08e873b7b7bb0aa89d620fa224a
   languageName: node
   linkType: hard
 
@@ -40500,13 +40355,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"quick-lru@npm:^1.0.0":
-  version: 1.1.0
-  resolution: "quick-lru@npm:1.1.0"
-  checksum: 10c0/10bffcde872642b8dc393ece9b1e0a04ac8012645ecf164a223f06b933bfe9dbcbeff589fe4bb57de3cd7f5d7555d3266dd0a0e26c30340351aa89b44b0849f4
-  languageName: node
-  linkType: hard
-
 "quick-lru@npm:^4.0.1":
   version: 4.0.1
   resolution: "quick-lru@npm:4.0.1"
@@ -41392,16 +41240,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"read-pkg-up@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "read-pkg-up@npm:3.0.0"
-  dependencies:
-    find-up: "npm:^2.0.0"
-    read-pkg: "npm:^3.0.0"
-  checksum: 10c0/2cd0a180260b0d235990e6e9c8c2330a03882d36bc2eba8930e437ef23ee52a68a894e7e1ccb1c33f03bcceb270a861ee5f7eac686f238857755e2cddfb48ffd
-  languageName: node
-  linkType: hard
-
 "read-pkg-up@npm:^7.0.1":
   version: 7.0.1
   resolution: "read-pkg-up@npm:7.0.1"
@@ -41421,17 +41259,6 @@ __metadata:
     normalize-package-data: "npm:^2.3.2"
     path-type: "npm:^1.0.0"
   checksum: 10c0/51fce9f7066787dc7688ea7014324cedeb9f38daa7dace4f1147d526f22354a07189ef728710bc97e27fcf5ed3a03b68ad8b60afb4251984640b6f09c180d572
-  languageName: node
-  linkType: hard
-
-"read-pkg@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "read-pkg@npm:3.0.0"
-  dependencies:
-    load-json-file: "npm:^4.0.0"
-    normalize-package-data: "npm:^2.3.2"
-    path-type: "npm:^3.0.0"
-  checksum: 10c0/65acf2df89fbcd506b48b7ced56a255ba00adf7ecaa2db759c86cc58212f6fd80f1f0b7a85c848551a5d0685232e9b64f45c1fd5b48d85df2761a160767eeb93
   languageName: node
   linkType: hard
 
@@ -41673,16 +41500,6 @@ __metadata:
     indent-string: "npm:^2.1.0"
     strip-indent: "npm:^1.0.1"
   checksum: 10c0/9fa48d250d4e645acac9de57cb82dc29cd7f5f27257ec367461e3dd0c9f14c55f1c40fd3d9cf7f9a3ed337f209ad4e0370abfcf5cf75569ebd31c97a7949b8a2
-  languageName: node
-  linkType: hard
-
-"redent@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "redent@npm:2.0.0"
-  dependencies:
-    indent-string: "npm:^3.0.0"
-    strip-indent: "npm:^2.0.0"
-  checksum: 10c0/4435add945631e81121cd1284e54c28aa654b1e3b606f32f5624ea0eb1aa9460df8f5475ee0a5dab27210e476e54bfc02316463a74d707d2fc8417603a020e6f
   languageName: node
   linkType: hard
 
@@ -44489,20 +44306,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string.fromcodepoint@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "string.fromcodepoint@npm:0.2.1"
-  checksum: 10c0/2e26c7370daea0725f2cc3b0a2e4b84613c44b68130ad2afa1364b51fd48ebdfe6390086807d7b5e95d58e8a872aca46a53bbc182c549cd74c0ee9b46de32b02
-  languageName: node
-  linkType: hard
-
-"string.prototype.codepointat@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "string.prototype.codepointat@npm:0.2.1"
-  checksum: 10c0/83c4d2f83b6f3f8f377e0b36628b74a9efcaf5a725e6fb6354f15f30f0399c8f4b08956df883877b2b0f50dd2e644ed7e8b1f6d45bdee2dc5b3f4248796607fa
-  languageName: node
-  linkType: hard
-
 "string.prototype.includes@npm:^2.0.1":
   version: 2.0.1
   resolution: "string.prototype.includes@npm:2.0.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fstring.prototype.includes%2F-%2Fstring.prototype.includes-2.0.1.tgz"
@@ -44739,13 +44542,6 @@ __metadata:
   bin:
     strip-indent: cli.js
   checksum: 10c0/671370d44105b63daf4582a42f0a0168d58a351f6558eb913d1ede05d0ad5f964548b99f15c63fa6c7415c3980aad72f28c62997fd98fbb6da2eee1051d3c21a
-  languageName: node
-  linkType: hard
-
-"strip-indent@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "strip-indent@npm:2.0.0"
-  checksum: 10c0/d88dbef5d2aaa3eb622a9011151b2543b886c581366003ad2bd8c168b419dfbf83f28dcb8962b670ab71a818895d998479b0eac08fba99ee0267b600d11bd764
   languageName: node
   linkType: hard
 
@@ -45168,10 +44964,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svg-pathdata@npm:^5.0.2":
-  version: 5.0.5
-  resolution: "svg-pathdata@npm:5.0.5"
-  checksum: 10c0/e9d1f25a97dd9b6d6d70db29bba05878123ebdb314fc30c7982f744dc65e74bc2ce480b73126989f21528ea351f44020553cea6ce6c3f5d7b1556c407b233a23
+"svg-pathdata@npm:^6.0.0":
+  version: 6.0.3
+  resolution: "svg-pathdata@npm:6.0.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fsvg-pathdata%2F-%2Fsvg-pathdata-6.0.3.tgz"
+  checksum: 10c0/1ba4ad2fa81e86df37d6e78d3be9e664bbedf97773b725a863a85db384285be32dc37d9c0d61e477d89594ee95b967d2c53d6bee2d76420aab670ab4124a38b9
   languageName: node
   linkType: hard
 
@@ -45182,39 +44978,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svg2ttf@npm:^4.0.0":
-  version: 4.3.0
-  resolution: "svg2ttf@npm:4.3.0"
+"svg2ttf@npm:^6.0.2":
+  version: 6.0.3
+  resolution: "svg2ttf@npm:6.0.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fsvg2ttf%2F-%2Fsvg2ttf-6.0.3.tgz"
   dependencies:
-    argparse: "npm:^1.0.6"
-    cubic2quad: "npm:^1.0.0"
+    "@xmldom/xmldom": "npm:^0.7.2"
+    argparse: "npm:^2.0.1"
+    cubic2quad: "npm:^1.2.1"
     lodash: "npm:^4.17.10"
     microbuffer: "npm:^1.0.0"
     svgpath: "npm:^2.1.5"
-    xmldom: "npm:~0.1.22"
   bin:
-    svg2ttf: ./svg2ttf.js
-  checksum: 10c0/c9b0a8f9d058bb102e083c9a096e52df70330d510123a100b1684aae733a5b3284172791f0c694d766aab7ca424ac0743ff0b46b462475eb10c02455cd13923f
+    svg2ttf: svg2ttf.js
+  checksum: 10c0/6087f988beb807fda5ff55e3bb14dcf36b4dfdcc8857720310b0b281ad5f9d504025629c842dff14861cdfb7fe01ba5947850311e2e897797a96b907b4276a82
   languageName: node
   linkType: hard
 
-"svgicons2svgfont@npm:^9.0.3":
-  version: 9.2.0
-  resolution: "svgicons2svgfont@npm:9.2.0"
+"svgicons2svgfont@npm:^10.0.3":
+  version: 10.0.6
+  resolution: "svgicons2svgfont@npm:10.0.6::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fsvgicons2svgfont%2F-%2Fsvgicons2svgfont-10.0.6.tgz"
   dependencies:
-    array.prototype.flatmap: "npm:1.2.4"
-    commander: "npm:^4.0.1"
+    commander: "npm:^7.2.0"
     geometry-interfaces: "npm:^1.1.4"
     glob: "npm:^7.1.6"
     neatequal: "npm:^1.0.0"
     readable-stream: "npm:^3.4.0"
     sax: "npm:^1.2.4"
-    string.fromcodepoint: "npm:^0.2.1"
-    string.prototype.codepointat: "npm:^0.2.1"
-    svg-pathdata: "npm:^5.0.2"
+    svg-pathdata: "npm:^6.0.0"
   bin:
     svgicons2svgfont: bin/svgicons2svgfont.js
-  checksum: 10c0/bdb9dd0b1f496545455cf87659148a07476c30414825aaef57250bc5aad99657fd04ca081fc7e12372e8c40f5afe59c2c4eddb5dc174a5d1d0be3567a988b0a8
+  checksum: 10c0/4f36563ed9412e5b0dc1bbbc8f81ee8f7bdb9e02eb1d4159a2009c2e2ae111d2bd16d96737ce08e0e8b8a7a010d0afc132cff4c29be173b7f8835bae0b5aba8b
   languageName: node
   linkType: hard
 
@@ -46007,13 +45800,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"trim-newlines@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "trim-newlines@npm:2.0.0"
-  checksum: 10c0/3f2d391b9f2d742807bcb1abfd7c069223dae939ba1e7af3cfcfac14e92bb94b2bd41fe75678e29d485e3f8aeb319c1fd7218d8eb1c0cc44179eb96f661124ac
-  languageName: node
-  linkType: hard
-
 "trim-newlines@npm:^3.0.0":
   version: 3.0.1
   resolution: "trim-newlines@npm:3.0.1"
@@ -46315,7 +46101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ttf2woff@npm:^2.0.0":
+"ttf2woff@npm:^2.0.2":
   version: 2.0.2
   resolution: "ttf2woff@npm:2.0.2"
   dependencies:
@@ -47915,15 +47701,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wawoff2@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "wawoff2@npm:1.0.2"
+"wawoff2@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "wawoff2@npm:2.0.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fwawoff2%2F-%2Fwawoff2-2.0.1.tgz"
   dependencies:
-    argparse: "npm:^1.0.6"
+    argparse: "npm:^2.0.1"
   bin:
-    woff2_compress.js: ./bin/woff2_compress.js
-    woff2_decompress.js: ./bin/woff2_decompress.js
-  checksum: 10c0/356930367b4e11c9bf133fc377044298f229258f617e0ecdb2c2e717cec818d9116a5914055edeea57f70dfab3ecfe7132f7318252a4fe3debde0cc3362090cb
+    woff2_compress.js: bin/woff2_compress.js
+    woff2_decompress.js: bin/woff2_decompress.js
+  checksum: 10c0/98a286b60114e15ed578bbeeef1759b4890a1e8106e1486d8d0d4106b8e6c7a99c4c1d1b64afc76a83893dae040cc19a59dd64cffd5754b5337b5c82efed3d12
   languageName: node
   linkType: hard
 
@@ -47993,27 +47779,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webfont@npm:9.0.0":
-  version: 9.0.0
-  resolution: "webfont@npm:9.0.0"
+"webfont@npm:11.2.26":
+  version: 11.2.26
+  resolution: "webfont@npm:11.2.26::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fwebfont%2F-%2Fwebfont-11.2.26.tgz"
   dependencies:
     cosmiconfig: "npm:^5.2.0"
-    deepmerge: "npm:^3.2.0"
-    fs-extra: "npm:^7.0.1"
-    globby: "npm:^9.2.0"
-    meow: "npm:^5.0.0"
-    nunjucks: "npm:^3.2.0"
-    p-limit: "npm:^2.2.0"
+    deepmerge: "npm:^4.2.2"
+    globby: "npm:^11.0.0"
+    meow: "npm:^9.0.0"
+    nunjucks: "npm:^3.2.3"
+    p-limit: "npm:^3.1.0"
+    parse-json: "npm:^5.2.0"
     resolve-from: "npm:^5.0.0"
-    svg2ttf: "npm:^4.0.0"
-    svgicons2svgfont: "npm:^9.0.3"
+    svg2ttf: "npm:^6.0.2"
+    svgicons2svgfont: "npm:^10.0.3"
     ttf2eot: "npm:^2.0.0"
-    ttf2woff: "npm:^2.0.0"
-    wawoff2: "npm:^1.0.2"
-    xml2js: "npm:^0.4.17"
+    ttf2woff: "npm:^2.0.2"
+    wawoff2: "npm:^2.0.0"
+    xml2js: "npm:^0.4.23"
   bin:
     webfont: dist/cli.js
-  checksum: 10c0/5df9b3efe0531e91c905beff6f4ac9efd399846b17a0bf44d3b1d29f8e93c770d7a1ccc1145007d0e6f93f216134008e8d434f19f0b55d5ff9b751cb6f82d528
+  checksum: 10c0/e7aa28c9690e021864fe310ba4534228b993977cdb2c89db65d5d3c1b7bd41817ae0fe77c6887aeb9d1538348e6555a96f5fdb2b05928df59ce724c529136b1e
   languageName: node
   linkType: hard
 
@@ -48965,7 +48751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml2js@npm:^0.4.17":
+"xml2js@npm:^0.4.23":
   version: 0.4.23
   resolution: "xml2js@npm:0.4.23"
   dependencies:
@@ -49007,13 +48793,6 @@ __metadata:
   version: 2.2.0
   resolution: "xmlchars@npm:2.2.0"
   checksum: 10c0/b64b535861a6f310c5d9bfa10834cf49127c71922c297da9d4d1b45eeaae40bf9b4363275876088fbe2667e5db028d2cd4f8ee72eed9bede840a67d57dab7593
-  languageName: node
-  linkType: hard
-
-"xmldom@npm:~0.1.22":
-  version: 0.1.31
-  resolution: "xmldom@npm:0.1.31"
-  checksum: 10c0/7f20d4f0cb314dbdcf86f392690b4323762fe0a57d3fe84a7878da8b9fa651d0d73e3bd7225f97bafb9077cb3627021c05cf9c14ddda507619c6c5940eed3e42
   languageName: node
   linkType: hard
 
@@ -49086,15 +48865,6 @@ __metadata:
   version: 21.1.1
   resolution: "yargs-parser@npm:21.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fyargs-parser%2F-%2Fyargs-parser-21.1.1.tgz"
   checksum: 10c0/f84b5e48169479d2f402239c59f084cfd1c3acc197a05c59b98bab067452e6b3ea46d4dd8ba2985ba7b3d32a343d77df0debd6b343e5dae3da2aab2cdf5886b2
-  languageName: node
-  linkType: hard
-
-"yargs-parser@npm:^10.0.0":
-  version: 10.1.0
-  resolution: "yargs-parser@npm:10.1.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fyargs-parser%2F-%2Fyargs-parser-10.1.0.tgz"
-  dependencies:
-    camelcase: "npm:^4.1.0"
-  checksum: 10c0/dafdda1b32acfe83d661d373c93e92d13e067ab8603ad269305fa674a5dba4c11db41cbc23557a489302ba171c83ec2951b412bdd33d79db88505ae8f62c8b90
   languageName: node
   linkType: hard
 

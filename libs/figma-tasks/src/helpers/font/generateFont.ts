@@ -1,4 +1,3 @@
-// @ts-expect-error No types for this package
 import webfont from 'webfont';
 
 import { fontOutputGenerator, FontOutputGeneratorParams } from './fontOutputGenerator';
@@ -46,7 +45,7 @@ export async function generateFont({
      * https://github.com/nfroidure/svgicons2svgfont/blob/master/src/metadata.js#L10-L15
      */
     startUnicode: 0xf000, // U+F000
-    metadataProvider: processor,
+    metadata: processor,
   }).catch((err: Error) => {
     throw err;
   })) as GeneratedFont;
