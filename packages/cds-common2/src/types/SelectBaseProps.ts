@@ -16,8 +16,14 @@ export type SelectBaseProps = {
   label?: string;
   /** Callback that is fired whenever a select option is selected */
   onChange?: ((newValue: string) => void) | React.Dispatch<React.SetStateAction<string>>;
+  /**
+   * Determines the sentiment of the input.
+   * Sets styles on the input border and helper text.
+   * @default foregroundMuted
+   */
+  variant?: Exclude<InputStackBaseProps['variant'], 'secondary'>;
 } & SharedProps &
-  Pick<InputStackBaseProps, 'width' | 'disabled' | 'variant' | 'focused' | 'startNode'> &
+  Pick<InputStackBaseProps, 'width' | 'disabled' | 'focused' | 'startNode'> &
   Pick<
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'

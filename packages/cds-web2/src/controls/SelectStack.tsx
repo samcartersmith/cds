@@ -23,7 +23,6 @@ const variantToHelperTextColor: Record<
   negative: 'fgNegative',
   primary: 'fgPrimary',
   foregroundMuted: 'fgMuted',
-  secondary: 'bgSecondary',
 };
 
 export const SelectStack = memo(

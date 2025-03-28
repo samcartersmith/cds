@@ -1,13 +1,4 @@
-import React, {
-  forwardRef,
-  memo,
-  useCallback,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, memo, useCallback, useMemo, useRef, useState } from 'react';
 import { css } from '@linaria/core';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
@@ -115,8 +106,8 @@ export const TabbedChips = memo(
           alignItems="center"
           className={scrollContainerStyles}
           onScroll={handleOnScroll}
+          // TODO: this overflow styling is necessary for the Paddle feature but cuts off child Chips' focus ring
           overflow="auto"
-          position="relative"
         >
           <Tabs
             ref={ref}

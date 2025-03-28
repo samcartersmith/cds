@@ -1,9 +1,9 @@
 import React, { forwardRef, Fragment, memo } from 'react';
-import { css, cx } from '@linaria/core';
+import { css } from '@linaria/core';
 import { curves, durations } from '@cbhq/cds-common2/motion/tokens';
 import { chipMaxWidth } from '@cbhq/cds-common2/tokens/chip';
 
-import { HStack } from '../layout';
+import { Box, HStack } from '../layout';
 import { Pressable } from '../system/Pressable';
 import { InvertedThemeProvider } from '../system/ThemeProvider';
 import { Text } from '../typography/Text';
@@ -46,10 +46,9 @@ export const Chip = memo(
     const content = (
       <HStack
         alignItems="center"
-        // need to set the background here if the content is not wrapped in a Pressable
-        background={hasPressableContainer ? undefined : 'bgSecondary'}
+        background="bgSecondary"
         borderRadius={500}
-        className={cx(contentClass, !hasPressableContainer && containerClass)}
+        className={contentClass}
         gap={1}
         maxWidth={maxWidth}
         paddingX={compact ? 1 : 2}
@@ -69,27 +68,28 @@ export const Chip = memo(
       </HStack>
     );
 
-    const Wrapper = inverted ? InvertedThemeProvider : Fragment;
+    const Providers = inverted ? InvertedThemeProvider : Fragment;
 
+    // The wrapping Box ensures that the layout is consistent since the child pressable and provider child elements conditionally render
     return (
-      <Wrapper>
-        {hasPressableContainer ? (
-          <Pressable
-            ref={ref}
-            accessibilityLabel={accessibilityLabel}
-            background="bgSecondary"
-            borderRadius={500}
-            className={containerClass}
-            onClick={onClick}
-            testID={testID}
-            {...pressableProps}
-          >
-            {content}
-          </Pressable>
-        ) : (
-          content
-        )}
-      </Wrapper>
+      <Box className={containerClass} display="block">
+        <Providers>
+          {hasPressableContainer ? (
+            <Pressable
+              ref={ref}
+              accessibilityLabel={accessibilityLabel}
+              borderRadius={500}
+              onClick={onClick}
+              testID={testID}
+              {...pressableProps}
+            >
+              {content}
+            </Pressable>
+          ) : (
+            content
+          )}
+        </Providers>
+      </Box>
     );
   }),
 );

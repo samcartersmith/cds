@@ -220,7 +220,6 @@ const Variants = () => {
       <Default helperText="I am helpful text" label="I am a label" variant="foreground" />
       <Default helperText="I am helpful text" label="I am a label" variant="foregroundMuted" />
       <Default helperText="I am helpful text" label="I am a label" variant="primary" />
-      <Default helperText="I am helpful text" label="I am a label" variant="secondary" />
       <Default helperText="I am helpful text" label="I am a label" variant="positive" />
       <Default helperText="I am helpful text" label="I am a label" variant="negative" />
     </VStack>
