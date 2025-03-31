@@ -50,6 +50,7 @@ const scrollContainerClassName = css`
     &::-webkit-scrollbar {
       display: none;
     }
+    scrollbar-width: none;
   }
 `;
 const pressableClass = css`

@@ -16,6 +16,7 @@ const scrollContainerStyles = css`
   &::-webkit-scrollbar {
     display: none;
   }
+  scrollbar-width: none;
 `;
 
 const TabComponent = ({ label = '', id, ...tabProps }: TabValue) => {

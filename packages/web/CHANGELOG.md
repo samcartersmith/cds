@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.7.8 (3/31/2025 PST)
+
+#### 🐞 Fixes
+
+- Add scrollbar-width: none for tab components.
+
 ## 7.7.7 (3/27/2025 PST)
 
 #### 🐞 Fixes

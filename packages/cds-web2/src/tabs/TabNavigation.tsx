@@ -49,6 +49,7 @@ const scrollContainerStyles = css`
   &::-webkit-scrollbar {
     display: none;
   }
+  scrollbar-width: none;
 `;
 const pressableStyles = css`
   margin: 0;
