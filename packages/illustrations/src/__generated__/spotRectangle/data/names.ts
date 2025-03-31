@@ -48,6 +48,7 @@ const names: SpotRectangleName[] = [
   'commerceAccounting',
   'commerceInvoices',
   'completeAQuiz',
+  'concierge',
   'congratulationsOnEarningCrypto',
   'connectWalletTutorial',
   'contactsListWarning',

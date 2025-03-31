@@ -205,8 +205,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/coinbaseOneZeroPortal-1').content,
   },
   coinFifty: {
-    light: () => require('../svgJs/light/coinFifty-0').content,
-    dark: () => require('../svgJs/dark/coinFifty-0').content,
+    light: () => require('../svgJs/light/coinFifty-1').content,
+    dark: () => require('../svgJs/dark/coinFifty-1').content,
   },
   collectingNfts: {
     light: () => require('../svgJs/light/collectingNfts-3').content,
@@ -293,8 +293,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/decentralization-3').content,
   },
   decentralizedWebWeb3: {
-    light: () => require('../svgJs/light/decentralizedWebWeb3-3').content,
-    dark: () => require('../svgJs/dark/decentralizedWebWeb3-3').content,
+    light: () => require('../svgJs/light/decentralizedWebWeb3-4').content,
+    dark: () => require('../svgJs/dark/decentralizedWebWeb3-4').content,
   },
   defiDecentralizedBorrowingLending: {
     light: () => require('../svgJs/light/defiDecentralizedBorrowingLending-2').content,
@@ -521,8 +521,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/moneyRewards-5').content,
   },
   multicoinSupport: {
-    light: () => require('../svgJs/light/multicoinSupport-4').content,
-    dark: () => require('../svgJs/dark/multicoinSupport-4').content,
+    light: () => require('../svgJs/light/multicoinSupport-5').content,
+    dark: () => require('../svgJs/dark/multicoinSupport-5').content,
   },
   multiPlatformMobileAppBrowserExtension: {
     light: () => require('../svgJs/light/multiPlatformMobileAppBrowserExtension-3').content,

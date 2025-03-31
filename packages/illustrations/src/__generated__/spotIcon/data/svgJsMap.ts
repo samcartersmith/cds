@@ -81,8 +81,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/custodyProduct-1').content,
   },
   dataMarketplace: {
-    light: () => require('../svgJs/light/dataMarketplace-1').content,
-    dark: () => require('../svgJs/dark/dataMarketplace-1').content,
+    light: () => require('../svgJs/light/dataMarketplace-2').content,
+    dark: () => require('../svgJs/dark/dataMarketplace-2').content,
   },
   delegate: {
     light: () => require('../svgJs/light/delegate-1').content,
@@ -93,8 +93,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/delegateProduct-1').content,
   },
   derivativesProduct: {
-    light: () => require('../svgJs/light/derivativesProduct-3').content,
-    dark: () => require('../svgJs/dark/derivativesProduct-3').content,
+    light: () => require('../svgJs/light/derivativesProduct-4').content,
+    dark: () => require('../svgJs/dark/derivativesProduct-4').content,
   },
   done: {
     light: () => require('../svgJs/light/done-0').content,
@@ -121,8 +121,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/helpCenterProduct-1').content,
   },
   idVerification: {
-    light: () => require('../svgJs/light/idVerification-1').content,
-    dark: () => require('../svgJs/dark/idVerification-1').content,
+    light: () => require('../svgJs/light/idVerification-2').content,
+    dark: () => require('../svgJs/dark/idVerification-2').content,
   },
   institutionalProduct: {
     light: () => require('../svgJs/light/institutionalProduct-1').content,
@@ -169,24 +169,24 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/paySDKProduct-2').content,
   },
   pieChart: {
-    light: () => require('../svgJs/light/pieChart-1').content,
-    dark: () => require('../svgJs/dark/pieChart-1').content,
+    light: () => require('../svgJs/light/pieChart-2').content,
+    dark: () => require('../svgJs/dark/pieChart-2').content,
   },
   primeProduct: {
     light: () => require('../svgJs/light/primeProduct-2').content,
     dark: () => require('../svgJs/dark/primeProduct-2').content,
   },
   privateClientProduct: {
-    light: () => require('../svgJs/light/privateClientProduct-0').content,
-    dark: () => require('../svgJs/dark/privateClientProduct-0').content,
+    light: () => require('../svgJs/light/privateClientProduct-1').content,
+    dark: () => require('../svgJs/dark/privateClientProduct-1').content,
   },
   productCoinbaseCard: {
     light: () => require('../svgJs/light/productCoinbaseCard-2').content,
     dark: () => require('../svgJs/dark/productCoinbaseCard-2').content,
   },
   productCompliance: {
-    light: () => require('../svgJs/light/productCompliance-0').content,
-    dark: () => require('../svgJs/dark/productCompliance-0').content,
+    light: () => require('../svgJs/light/productCompliance-1').content,
+    dark: () => require('../svgJs/dark/productCompliance-1').content,
   },
   productEarn: {
     light: () => require('../svgJs/light/productEarn-3').content,
@@ -201,16 +201,16 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/productWallet-2').content,
   },
   recurringPurchases: {
-    light: () => require('../svgJs/light/recurringPurchases-1').content,
-    dark: () => require('../svgJs/dark/recurringPurchases-1').content,
+    light: () => require('../svgJs/light/recurringPurchases-2').content,
+    dark: () => require('../svgJs/dark/recurringPurchases-2').content,
   },
   rewardsProduct: {
     light: () => require('../svgJs/light/rewardsProduct-2').content,
     dark: () => require('../svgJs/dark/rewardsProduct-2').content,
   },
   rosettaProduct: {
-    light: () => require('../svgJs/light/rosettaProduct-1').content,
-    dark: () => require('../svgJs/dark/rosettaProduct-1').content,
+    light: () => require('../svgJs/light/rosettaProduct-2').content,
+    dark: () => require('../svgJs/dark/rosettaProduct-2').content,
   },
   send: {
     light: () => require('../svgJs/light/send-2').content,
@@ -237,8 +237,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/wallet-2').content,
   },
   walletAsAServiceProduct: {
-    light: () => require('../svgJs/light/walletAsAServiceProduct-1').content,
-    dark: () => require('../svgJs/dark/walletAsAServiceProduct-1').content,
+    light: () => require('../svgJs/light/walletAsAServiceProduct-2').content,
+    dark: () => require('../svgJs/dark/walletAsAServiceProduct-2').content,
   },
   walletLogo: {
     light: () => require('../svgJs/light/walletLogo-1').content,

@@ -71,7 +71,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   emptyTrading: 3,
   emptyNfts: 2,
   transferFunds: 3,
-  clawMachinePig: 3,
+  clawMachinePig: 4,
   ratFoundWallet: 3,
   multicoinSupport: 2,
   crossBorderPayments: 2,
@@ -167,7 +167,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   tradeImmediately: 3,
   documentSuccess: 2,
   coinbaseCardLock: 2,
-  commerceInvoices: 2,
+  commerceInvoices: 3,
   commerceAccounting: 1,
   defiRisk: 2,
   verifyInfo: 3,
@@ -177,7 +177,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   appTrackingTransparency: 2,
   walletNotifications: 2,
   phoneNumber: 3,
-  verifyEmail: 2,
+  verifyEmail: 3,
   cryptoAndMore: 3,
   automaticPayments: 2,
   coinbaseOneDiscountedAmount: 3,
@@ -206,6 +206,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   cb1BankTransfers: 0,
   liquidationBufferRed: 0,
   liquidationBufferGreen: 0,
+  concierge: 0,
 };
 
 export default versionMap;

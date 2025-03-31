@@ -42,6 +42,7 @@ export type SpotRectangleName =
   | 'commerceAccounting'
   | 'commerceInvoices'
   | 'completeAQuiz'
+  | 'concierge'
   | 'congratulationsOnEarningCrypto'
   | 'connectWalletTutorial'
   | 'contactsListWarning'

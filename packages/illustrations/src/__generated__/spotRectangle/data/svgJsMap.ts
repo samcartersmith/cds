@@ -109,8 +109,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/cbEth-2').content,
   },
   clawMachinePig: {
-    light: () => require('../svgJs/light/clawMachinePig-3').content,
-    dark: () => require('../svgJs/dark/clawMachinePig-3').content,
+    light: () => require('../svgJs/light/clawMachinePig-4').content,
+    dark: () => require('../svgJs/dark/clawMachinePig-4').content,
   },
   coinbaseCardLock: {
     light: () => require('../svgJs/light/coinbaseCardLock-2').content,
@@ -153,12 +153,16 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/commerceAccounting-1').content,
   },
   commerceInvoices: {
-    light: () => require('../svgJs/light/commerceInvoices-2').content,
-    dark: () => require('../svgJs/dark/commerceInvoices-2').content,
+    light: () => require('../svgJs/light/commerceInvoices-3').content,
+    dark: () => require('../svgJs/dark/commerceInvoices-3').content,
   },
   completeAQuiz: {
     light: () => require('../svgJs/light/completeAQuiz-3').content,
     dark: () => require('../svgJs/dark/completeAQuiz-3').content,
+  },
+  concierge: {
+    light: () => require('../svgJs/light/concierge-0').content,
+    dark: () => require('../svgJs/dark/concierge-0').content,
   },
   congratulationsOnEarningCrypto: {
     light: () => require('../svgJs/light/congratulationsOnEarningCrypto-3').content,
@@ -729,8 +733,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/usdcLoan-1').content,
   },
   verifyEmail: {
-    light: () => require('../svgJs/light/verifyEmail-2').content,
-    dark: () => require('../svgJs/dark/verifyEmail-2').content,
+    light: () => require('../svgJs/light/verifyEmail-3').content,
+    dark: () => require('../svgJs/dark/verifyEmail-3').content,
   },
   verifyInfo: {
     light: () => require('../svgJs/light/verifyInfo-3').content,

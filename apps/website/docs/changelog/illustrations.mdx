@@ -8,6 +8,88 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.8.0 (3/31/2025 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 03/31/2025. [[#3849](https://github.cbhq.net/frontend/cds/pull/3849)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- concierge
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- addPhone
+- analyticsNavigation
+- assetEncryption
+- authenticationApp
+- blockchainConnection
+- browserMultiPlatform
+- coinbaseLogoNavigation
+- coinbaseOneFiat
+- coinbaseOneShield
+- dataMarketplaceNavigation
+- driversLicense
+- easyToUse
+- email
+- findYourSelection
+- gasFees
+- governance
+- hardwareWallet
+- laptopCharts
+- lightningNetworkSend
+- noAnnualFee
+- primeMobileApp
+- protectionPlan
+- securityCoinShield
+- seedPhrase
+- target
+- taxBeta
+- usdcToken
+- walletNavigation
+
+#### Spot Icon
+
+- dataMarketplace
+- derivativesProduct
+- idVerification
+- pieChart
+- privateClientProduct
+- productCompliance
+- recurringPurchases
+- rosettaProduct
+- walletAsAServiceProduct
+
+#### Hero Square
+
+- coinbaseWalletToTrade
+- commerceAccounting
+- connectPeople
+- processing
+- readyToTrade
+- rocket
+
+#### Spot Rectangle
+
+- clawMachinePig
+- commerceInvoices
+- verifyEmail
+
+#### Spot Square
+
+- coinFifty
+- decentralizedWebWeb3
+- multicoinSupport
+
 ## 4.7.0 (3/26/2025 PST)
 
 #### 🚀 Updates
