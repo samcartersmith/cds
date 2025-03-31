@@ -67,7 +67,6 @@ export const Coachmark = memo(
             {!!onClose && (
               <Box alignSelf="flex-start" padding={1} pin="right">
                 <IconButton
-                  transparent
                   accessibilityLabel={closeButtonAccessibilityLabel}
                   name="close"
                   onClick={onClose}

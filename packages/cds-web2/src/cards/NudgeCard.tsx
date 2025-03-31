@@ -5,7 +5,7 @@ import type { IllustrationPictogramNames } from '@cbhq/cds-common2/types/Illustr
 
 import { IconButton } from '../buttons/IconButton';
 import { Pictogram } from '../illustrations/Pictogram';
-import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
+import { type BoxDefaultElement, type BoxProps, Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { type StyleProps } from '../styles/styleProps';
@@ -208,7 +208,7 @@ export const NudgeCard = ({
         <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
           <VStack gap={0.5} maxWidth="100%" paddingTop={hasMedia ? 0 : 2}>
             <Text
-              as="p"
+              as="h3"
               display="block"
               font="headline"
               numberOfLines={numberOfLines}

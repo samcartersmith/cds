@@ -110,6 +110,7 @@ export const CardBody = memo(function CardBody({
         >
           <Text
             font="headline"
+            as="h3"
             numberOfLines={numberOfLines}
             testID={`${testID}-title`}
             transform="none"
@@ -146,6 +147,7 @@ export const CardBody = memo(function CardBody({
         <VStack gap={1} maxWidth="100%" paddingTop={mediaContent ? 0 : 2}>
           <Text
             font="headline"
+            as="h3"
             numberOfLines={numberOfLines}
             testID={`${testID}-title`}
             transform="none"

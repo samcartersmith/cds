@@ -81,6 +81,7 @@ export const ProgressCircle = memo(
         testID,
         hideText,
         size,
+        accessibilityLabel,
       }: ProgressCircleBaseProps,
       forwardedRef: React.ForwardedRef<HTMLDivElement>,
     ) => {
@@ -93,10 +94,16 @@ export const ProgressCircle = memo(
           {({ width, height, circleSize }: VisualizationContainerDimension) => (
             <Box
               ref={forwardedRef}
+              accessibilityLabel={accessibilityLabel}
               alignItems="center"
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow={Math.round(progress * 100)}
               height={height}
               justifyContent="center"
+              role="progressbar"
               testID={testID}
+              title={accessibilityLabel}
               width={width}
             >
               <Box
@@ -108,6 +115,7 @@ export const ProgressCircle = memo(
               >
                 <svg
                   key={circleSize}
+                  aria-hidden
                   className={svgClassName}
                   height={circleSize}
                   width={circleSize}

@@ -51,7 +51,7 @@ describe('ProgressCircle tests', () => {
     expect(
       await renderA11y(
         <DefaultThemeProvider>
-          <ProgressCircle progress={0} />
+          <ProgressCircle accessibilityLabel="Test label" progress={0} />
         </DefaultThemeProvider>,
       ),
     ).toHaveNoViolations();

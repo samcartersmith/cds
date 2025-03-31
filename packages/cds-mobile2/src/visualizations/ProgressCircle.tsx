@@ -79,6 +79,9 @@ export const ProgressCircle = memo(
       {
         weight = 'normal',
         progress,
+        // Default is empty string due to iOS VoiceOver repeating percentage multiple times when
+        // a11y label isn't specified
+        accessibilityLabel = '',
         color = 'bgPrimary',
         disabled = false,
         testID,
@@ -97,8 +100,13 @@ export const ProgressCircle = memo(
             <Box
               ref={forwardedRef}
               accessible
-              accessibilityLabel={`${progress * 100}%`}
+              accessibilityLabel={accessibilityLabel}
               accessibilityRole="progressbar"
+              accessibilityValue={{
+                min: 0,
+                max: 100,
+                now: progress * 100,
+              }}
               alignItems="center"
               height={height}
               justifyContent="center"

@@ -14,7 +14,11 @@ const ProgressBarScreen = () => {
           {({ calculateProgress }) => (
             <HStack gap={1}>
               <ProgressCircle progress={calculateProgress(0)} size={100} />
-              <ProgressCircle progress={calculateProgress(0.2)} size={100} />
+              <ProgressCircle
+                accessibilityLabel="Custom accessibility label for progress circle"
+                progress={calculateProgress(0.2)}
+                size={100}
+              />
             </HStack>
           )}
         </ProgressContainerWithButtons>

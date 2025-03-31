@@ -19,12 +19,7 @@ export const VisualizationContainer: React.FC<VisualizationContainerBaseProps> =
     });
 
     return (
-      <Box
-        ref={dimensions.shouldObserve ? observe : undefined}
-        height={height}
-        role="application"
-        width={width}
-      >
+      <Box ref={dimensions.shouldObserve ? observe : undefined} height={height} width={width}>
         {dimensions.width && dimensions.height ? children(dimensions) : null}
       </Box>
     );

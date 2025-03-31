@@ -53,7 +53,7 @@ export const ContentCardHeader: ContentCardHeaderComponent = memo(
               avatar
             )}
             {typeof title === 'string' ? (
-              <Text as="p" display="block" font="label1" numberOfLines={1}>
+              <Text as="h3" display="block" font="label1" numberOfLines={1}>
                 {title}
               </Text>
             ) : (

@@ -19,7 +19,7 @@ export const ProgressBar = memo(
         disabled = false,
         disableAnimateOnMount = false,
         testID,
-        accessibilityLabel = 'progress bar',
+        accessibilityLabel,
       }: ProgressBaseProps,
       forwardedRef: React.ForwardedRef<View>,
     ) => {
@@ -71,7 +71,7 @@ export const ProgressBar = memo(
           accessible
           accessibilityLabel={accessibilityLabel}
           accessibilityRole="progressbar"
-          accessibilityValue={{ text: `${progress * 100}%` }}
+          accessibilityValue={{ min: 0, max: 100, now: progress * 100 }}
           flexGrow={1}
           flexShrink={0}
           testID={testID}
