@@ -50,7 +50,10 @@ export type ControlProps = FilteredHTMLAttributes<
   React.InputHTMLAttributes<HTMLInputElement>,
   'value'
 > &
-  SharedProps;
+  SharedProps & {
+    iconStyle?: React.CSSProperties;
+    labelStyle?: React.CSSProperties;
+  };
 
 type ControlInternalProps<T extends string> = {
   value?: T;
@@ -75,6 +78,8 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     borderRadius,
     borderWidth,
     testID,
+    iconStyle,
+    labelStyle,
     ...htmlProps
   }: ControlInternalProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>,
@@ -134,6 +139,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         borderWidth={borderWidth}
         className={interactableContainer}
         disabled={disabled || readOnly}
+        style={iconStyle}
         testID={testID ? `${testID}-parent` : undefined}
       >
         <>
@@ -150,6 +156,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       checked,
       children,
       disabled,
+      iconStyle,
       inputProps,
       readOnly,
       testID,
@@ -157,7 +164,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   );
   const InternalLabel = useMemo(
     () => (
-      <label className={pointer} htmlFor={inputId}>
+      <label className={pointer} htmlFor={inputId} style={labelStyle}>
         <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'}>
           {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
           <Box alignItems="center" height="var(--body-line-height)" role="presentation">
@@ -175,7 +182,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         </Box>
       </label>
     ),
-    [checked, disabled, iconNode, inputId, label, labelId, readOnly],
+    [checked, disabled, iconNode, inputId, label, labelId, labelStyle, readOnly],
   );
 
   // If no label (children) is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.

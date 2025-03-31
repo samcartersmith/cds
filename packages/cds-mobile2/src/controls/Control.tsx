@@ -6,6 +6,7 @@ import {
   Keyboard,
   Pressable,
   PressableProps,
+  PressableStateCallbackType,
   View,
   ViewStyle,
 } from 'react-native';
@@ -34,6 +35,7 @@ export type ControlIconProps = {
 export type ControlProps<T extends string> = {
   /** Toggle control selected state. */
   onChange?: (value?: T) => void;
+  style?: ViewStyle;
 } & Omit<PressableProps, 'disabled' | 'children' | 'style'> &
   Omit<ControlBaseProps<T>, 'children'>;
 
@@ -62,6 +64,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     accessibilityHint,
     children: ControlIcon,
     shouldUseSwitchTransition,
+    style,
     ...props
   }: ControlInternalProps<T>,
   ref: React.ForwardedRef<View>,
@@ -118,6 +121,17 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     [bodyLineHeight],
   );
 
+  const pressableStyle = useCallback(
+    (state: PressableStateCallbackType): ViewStyle => ({
+      flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+      alignItems: 'flex-start',
+      gap: theme.space[1],
+      opacity: state.pressed ? opacityPressed : pressDisabled ? accessibleOpacityDisabled : 1,
+      ...style,
+    }),
+    [theme.space, pressDisabled, style],
+  );
+
   return (
     <Pressable
       ref={ref}
@@ -141,11 +155,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         [handlePress],
       )}
       onPress={handlePress}
-      style={{
-        flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
-        alignItems: 'flex-start',
-        gap: theme.space[1],
-      }}
+      style={pressableStyle}
       {...props}
     >
       {({ pressed }) =>
@@ -164,8 +174,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
                   inputRange: [0, 1],
                   outputRange: [theme.color.fgMuted, theme.color.fg],
                 }),
-                // Simplify to use opacity for default palette foreground color (i.e. gray100) hue step
-                opacity: pressed ? opacityPressed : pressDisabled ? accessibleOpacityDisabled : 1,
                 // Prevent text element from expanding beyond available width.
                 flexShrink: 1,
               }}

@@ -36,6 +36,7 @@ export type ControlIconProps = {
 export type ControlProps<T extends string> = {
   /** Toggle control selected state. */
   onChange?: (value?: T) => void;
+  style?: ViewStyle;
 } & Omit<PressableProps, 'disabled' | 'children' | 'style'> &
   Omit<ControlBaseProps<T>, 'children'>;
 
@@ -64,6 +65,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     accessibilityHint,
     children: ControlIcon,
     shouldUseSwitchTransition,
+    style,
     ...props
   }: ControlInternalProps<T>,
   ref: React.ForwardedRef<View>,
@@ -142,10 +144,13 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         [handlePress],
       )}
       onPress={handlePress}
-      style={{
-        flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
-        alignItems: 'flex-start',
-      }}
+      style={[
+        {
+          flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+          alignItems: 'flex-start',
+        },
+        style,
+      ]}
       {...props}
     >
       {({ pressed }) =>
