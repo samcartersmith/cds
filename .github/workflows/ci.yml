@@ -87,6 +87,17 @@ jobs:
       - name: Typecheck
         run: yarn nx affected --target=typecheck --base=$NX_BASE --head=$NX_HEAD
 
+  build:
+    name: Build
+    runs-on: [xlarge, amd64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 100 # TODO: This needs to include the merge-base
+      - uses: ./.github/actions/setup
+      - name: Build
+        run: yarn nx affected --exclude=mobile-app,mobile-app2 --target=build --base=$NX_BASE --head=$NX_HEAD
+
   storybook-a11y:
     if: ${{ github.event_name == 'pull_request' }}
     name: Storybook a11y
@@ -315,3 +326,23 @@ jobs:
             STORYBOOK_SKIP_ANIMATION=true
             PERCY_TOKEN="${{ env.PERCY_TOKEN }}"
             CI=true
+
+  summarize-results:
+    needs:
+      [
+        validate,
+        lint,
+        format,
+        test,
+        typecheck,
+        build,
+        storybook-a11y,
+        storybook-e2e,
+        bundle-stats,
+        visreg-web,
+      ]
+    if: always()
+    name: Job Status Rollup
+    uses: infra/cb-workflow-result-summary/.github/workflows/workflow-check.yml@master
+    with:
+      include-job-summary: true
