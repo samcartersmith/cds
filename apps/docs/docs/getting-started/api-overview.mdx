@@ -1,0 +1,253 @@
+---
+id: api-overview
+title: API Overview
+hide_title: true
+---
+
+import { MDXSection } from '@site/src/components/page/MDXSection';
+import { MDXArticle } from '@site/src/components/page/MDXArticle';
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { GettingStartedBanner } from '@site/src/components/page/ComponentBanner/GettingStartedBanner';
+
+<ComponentHeader
+  title="API Overview"
+  description="The Coinbase Design System (CDS) provides a robust set of APIs to streamline development and create consistent, accessible, and high-performance applications. This page provides an overview of the key APIs and concepts in CDS to help you get started."
+  banner={<GettingStartedBanner />}
+/>
+
+<MDXSection>
+<MDXArticle>
+## Core Concepts
+
+### Components
+
+CDS offers a comprehensive library of React and React Native components. These components are designed to:
+
+<ul>
+  <li>Be customizable via props and theming.</li>
+  <li>Ensure consistency with Coinbase's design language.</li>
+  <li>Adhere to accessibility standards.</li>
+</ul>
+
+### Theming
+
+Theming is at the core of CDS. The `ThemeProvider` broadcasts a theme throughout your application, enabling:
+
+<ul>
+  <li>Global style consistency.</li>
+  <li>Customization of colors, spacing, typography, and more.</li>
+  <li>Light and dark mode support.</li>
+</ul>
+
+#### Web
+
+For web applications, theming is achieved through CSS Variables and React Context. CSS Variables minimize JavaScript-driven re-renders, offering optimal performance.
+
+#### React Native
+
+In React Native, theming is achieved through React Context, providing dynamic styles at runtime.
+
+</MDXArticle>
+
+<MDXArticle>
+### StyleProps
+
+CDS components support a powerful `StyleProps` API that simplifies applying styles. This API:
+
+<ul>
+  <li>Supports responsive design out of the box.</li>
+  <li>Includes dynamic and static style properties.</li>
+  <li>Reduces the need for custom CSS or inline styles.</li>
+</ul>
+
+Example:
+
+```tsx
+<Box color="bgPrimary" padding={{ base: 3, tablet: 5 }} width={{ base: '100%', desktop: '50%' }} />
+```
+
+### Polymorphic Components
+
+Many CDS components are polymorphic, meaning they can render different HTML elements or React Native views based on the `as` prop. This flexibility allows developers to tailor components to specific use cases while maintaining consistent styles and behavior.
+
+Example:
+
+```tsx
+<Box as="section" padding={4}>
+  Content here
+</Box>
+```
+
+</MDXArticle>
+
+<MDXArticle>
+### Responsive Design
+
+CDS supports responsive design with a declarative syntax. You can specify different styles for various breakpoints directly in your components without writing media queries manually.
+
+Example:
+
+```tsx
+<Grid templateColumns={{ base: '1fr', tablet: 'repeat(2, 1fr)' }} gap={{ base: 2, desktop: 4 }}>
+  <Box>Item 1</Box>
+  <Box>Item 2</Box>
+</Grid>
+```
+
+</MDXArticle>
+</MDXSection>
+
+<MDXSection>
+<MDXArticle>
+## Component API
+
+Each CDS component includes:
+
+<ul>
+  <li>
+    <strong>Props API</strong>: Define how the component behaves and interacts with the rest of the
+    UI.
+  </li>
+  <li>
+    <strong>StyleProps API</strong>: Customize the component's appearance with responsive styles.
+  </li>
+</ul>
+
+### Common Props
+
+Most CDS components support the following common props:
+
+<ul>
+  <li>
+    <code>className</code> (web only): Pass custom class names for additional styling.
+  </li>
+  <li>
+    <code>style</code>: Apply inline styles.
+  </li>
+  <li>
+    <code>id</code>: Set a unique identifier for the component.
+  </li>
+  <li>
+    <code>data-*</code>: Add custom data attributes for testing or analytics.
+  </li>
+</ul>
+
+### Component-Specific Props
+
+Each component has its own set of specific props. Refer to the individual component documentation for detailed information about its API.
+
+Example:
+
+```tsx
+<Button variant="primary" size="large" onClick={() => console.log('Button clicked')}>
+  Click Me
+</Button>
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Dynamic Styling with Theme Variables
+
+CDS exposes theme variables that allow you to create custom styles based on the current theme. These variables include:
+
+<ul>
+  <li>
+    Colors (<code>color.fgPrimary</code>, <code>color.bgPrimary</code>, etc.)
+  </li>
+  <li>
+    Spacing (<code>space.0</code>, <code>space.1</code>, etc.)
+  </li>
+  <li>
+    Typography (<code>fontSize.body</code>, <code>lineHeight.body</code>, etc.)
+  </li>
+  <li>And more.</li>
+</ul>
+
+For web, use CSS Variables directly:
+
+```css
+.my-class {
+  background-color: var(--color-bgPrimary);
+}
+```
+
+For React Native, access them through the theme context:
+
+```tsx
+import { useTheme } from '@cbhq/cds-mobile';
+
+const MyComponent = () => {
+  const theme = useTheme();
+  return <View style={{ backgroundColor: theme.color.bgPrimary }}>{/* Content */}</View>;
+};
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Accessibility API
+
+CDS components are designed with accessibility in mind. Key features include:
+
+<ul>
+  <li>ARIA attributes to support screen readers.</li>
+  <li>
+    Focus management for interactive components (e.g., <code>Modal</code>, <code>Dropdown</code>).
+  </li>
+  <li>Keyboard navigation support.</li>
+</ul>
+
+Developers can further enhance accessibility by:
+
+<ul>
+  <li>
+    Providing descriptive labels (e.g., <code>aria-label</code>, <code>aria-labelledby</code>).
+  </li>
+  <li>Testing with accessibility tools.</li>
+</ul>
+
+Example:
+
+```tsx
+<Button aria-label="Submit form">Submit</Button>
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Integration with Third-Party Libraries
+
+CDS components integrate seamlessly with third-party libraries, such as:
+
+<ul>
+  <li><strong>React Router</strong>: Use <code>NavLink</code> and <code>Link</code> for navigation.</li>
+  <li><strong>Redux or Context</strong>: Manage state alongside CDS components.</li>
+  <li><strong>Analytics Tools</strong>: Add <code>data-*</code> attributes to components for tracking user interactions.</li>
+</ul>
+</MDXArticle>
+</MDXSection>
+
+<MDXSection>
+<MDXArticle hideDivider>
+## Next Steps
+
+<ul>
+  <li>
+    <a href="/components/layout/Accordion">Component Library</a>: Explore all the components
+    available in CDS.
+  </li>
+  <li>
+    <a href="/getting-started/theming#setting-up-the-themeprovider">Theming</a>: Learn how to
+    customize your application's theme.
+  </li>
+  <li>
+    <a href="/getting-started/styling">StyleProps Guide</a>: Dive deeper into the powerful
+    StyleProps API.
+  </li>
+</ul>
+
+Unlock the full potential of the Coinbase Design System and start building high-quality applications today!
+
+</MDXArticle>
+</MDXSection>

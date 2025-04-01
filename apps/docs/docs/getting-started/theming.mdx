@@ -1,30 +1,55 @@
 ---
 id: theming
 title: Theming
+hide_title: true
 ---
 
-# Theming
+import { MDXSection } from '@site/src/components/page/MDXSection';
+import { MDXArticle } from '@site/src/components/page/MDXArticle';
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { GettingStartedBanner } from '@site/src/components/page/ComponentBanner/GettingStartedBanner';
 
-The Coinbase Design System (CDS) provides a powerful and flexible theming system that ensures a consistent look and feel across applications. By using the `ThemeProvider`, you can customize and manage theme variables globally, enabling dynamic theming, brand alignment, and support for features like light and dark modes.
+<ComponentHeader
+  title="Theming"
+  description="The Coinbase Design System (CDS) provides a powerful and flexible theming system that ensures a consistent look and feel across applications. By using the ThemeProvider, you can customize and manage theme variables globally, enabling dynamic theming, brand alignment, and support for features like light and dark modes."
+  banner={<GettingStartedBanner />}
+/>
 
+<MDXSection>
+<MDXArticle>
 ## What is a Theme?
 
 A theme in CDS is a collection of variables that define the visual design of an application. These variables include:
 
-- **Colors**: Define text, background, and accent colors.
-- **Typography**: Control font sizes, weights, and line heights.
-- **Spacing**: Set padding, margins, and gaps.
-- **Other Styles**: Configure borders, shadows, z-indexes, and more.
+<ul>
+  <li>
+    <strong>Colors</strong>: Define text, background, and accent colors.
+  </li>
+  <li>
+    <strong>Typography</strong>: Control font sizes, weights, and line heights.
+  </li>
+  <li>
+    <strong>Spacing</strong>: Set padding, margins, and gaps.
+  </li>
+  <li>
+    <strong>Other Styles</strong>: Configure borders, shadows, z-indexes, and more.
+  </li>
+</ul>
 
 CDS uses these variables to style components consistently across web and mobile platforms.
 
+</MDXArticle>
+
+<MDXArticle>
 ## The ThemeProvider
 
 The `ThemeProvider` is the foundation of theming in CDS. It:
 
-- Provides the theme to all components within its context.
-- Dynamically updates the theme when changes are made.
-- Inserts CSS Variables (web) or React Context (React Native) to manage styles efficiently.
+<ul>
+  <li>Provides the theme to all components within its context.</li>
+  <li>Dynamically updates the theme when changes are made.</li>
+  <li>Inserts CSS Variables (web) or React Context (React Native) to manage styles efficiently.</li>
+</ul>
 
 ### Setting Up the ThemeProvider
 
@@ -50,6 +75,9 @@ import { ThemeProvider } from '@cbhq/cds-mobile';
 </ThemeProvider>;
 ```
 
+</MDXArticle>
+
+<MDXArticle>
 ## Default Theme
 
 CDS provides a default theme out of the box, which includes a carefully curated set of variables:
@@ -89,6 +117,9 @@ const defaultTypography = {
 };
 ```
 
+</MDXArticle>
+
+<MDXArticle>
 ## Customizing the Theme
 
 You can override the default theme by providing a custom theme to the `ThemeProvider`:
@@ -112,6 +143,9 @@ const customTheme = {
 </ThemeProvider>;
 ```
 
+</MDXArticle>
+
+<MDXArticle>
 ## Dynamic Theming
 
 Dynamic theming allows your application to switch between themes at runtime. This is particularly useful for implementing light and dark mode:
@@ -145,6 +179,9 @@ const App = () => {
 };
 ```
 
+</MDXArticle>
+
+<MDXArticle>
 ## Accessing Theme Variables
 
 ### Web
@@ -176,16 +213,39 @@ const MyComponent = () => {
 };
 ```
 
+</MDXArticle>
+
+<MDXArticle>
 ## Best Practices
 
-- **Use the `ThemeProvider`**: Ensure your application is wrapped with the `ThemeProvider` to enable theming.
-- **Prefer Theme Variables**: Use theme variables for styles to maintain consistency and support dynamic theming.
-- **Test Multiple Themes**: Validate your application with light and dark themes to ensure proper functionality.
+<ul>
+  <li><strong>Use the `ThemeProvider`</strong>: Ensure your application is wrapped with the `ThemeProvider` to enable theming.</li>
+  <li><strong>Prefer Theme Variables</strong>: Use theme variables for styles to maintain consistency and support dynamic theming.</li>
+  <li><strong>Test Multiple Themes</strong>: Validate your application with light and dark themes to ensure proper functionality.</li>
+</ul>
+</MDXArticle>
+</MDXSection>
 
+<MDXSection>
+<MDXArticle hideDivider>
 ## Next Steps
 
-- [Styling](#): Learn how to style components with `StyleProps` and responsive design.
-- [Component Library](#): Explore the full set of components available in CDS.
-- [API Overview](#): Understand the core APIs provided by CDS.
+<ul>
+  <li>
+    <a href="/getting-started/styling">Styling</a>: Learn how to style components with `StyleProps`
+    and responsive design.
+  </li>
+  <li>
+    <a href="/components">Component Library</a>: Explore the full set of components available in
+    CDS.
+  </li>
+  <li>
+    <a href="/getting-started/api-overview">API Overview</a>: Understand the core APIs provided by
+    CDS.
+  </li>
+</ul>
 
 Leverage the power of theming in the Coinbase Design System to create visually consistent and customizable applications!
+
+</MDXArticle>
+</MDXSection>
