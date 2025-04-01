@@ -1,11 +1,11 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 import { useColorMode } from '@docusaurus/theme-common';
 import BannerArt from '@site/static/img/heroBanners/banner_art.svg';
 import BannerArtDark from '@site/static/img/heroBanners/banner_art_dark.svg';
-import { Button } from '@cbhq/cds-web2/buttons';
 import { Box, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography';
+
+import { ButtonLink } from '../../ButtonLink';
 
 import styles from './styles.module.css';
 
@@ -49,17 +49,15 @@ export const Hero = () => {
             decentralized future.
           </Text>
         </VStack>
-        <Button
+        <ButtonLink
           compact
           aria-label="Get started with our documentation"
-          as={Link}
           endIcon="forwardArrow"
-          hoverColor="fgInverse"
           to="/getting-started/introduction"
           variant="primary"
         >
           Get started
-        </Button>
+        </ButtonLink>
       </VStack>
       <Box alignItems="stretch" flexShrink={0}>
         <BannerArtComponent height="100%" width="100%" />

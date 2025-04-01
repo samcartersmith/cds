@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
-import Link from '@docusaurus/Link';
 import { useColorMode } from '@docusaurus/theme-common';
-import { Button } from '@cbhq/cds-web2/buttons';
 import { Box, Divider, HStack, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography';
+
+import { ButtonLink } from '../../ButtonLink';
 
 export type QuickStartLinkProps = {
   title: string;
@@ -43,19 +43,17 @@ export const QuickStartCampaignCard = ({
             </Text>
             <Text>{description}</Text>
           </VStack>
-          <Button
+          <ButtonLink
             compact
             transparent
             alignSelf="start"
-            as={Link}
             endIcon="forwardArrow"
             flush="start"
-            hoverColor="fgPrimary"
             to={destination}
             variant="primary"
           >
             {link.label}
-          </Button>
+          </ButtonLink>
         </VStack>
         <Box flexShrink={0} height={{ base: 88, desktop: 140 }} width={{ base: 88, desktop: 140 }}>
           <BannerComponent height="100%" width="100%" />

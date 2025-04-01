@@ -56,15 +56,6 @@ body {
   font-weight: 400;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
 .navbar {
   padding: 0;
   height: auto;
@@ -110,13 +101,12 @@ h6 {
   margin-top: 0;
 }
 
-p {
-  margin-bottom: 0;
-}
-
-a {
+a,
+a:hover,
+a:active,
+a:visited {
   color: var(--color-fgPrimary);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .display-2 {

@@ -7,6 +7,7 @@ import IconExternalLink from '@theme/Icon/ExternalLink';
 import { Box, HStack } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system';
 
+import styles from './styles.module.css';
 export default function DocSidebarItemLink({
   item,
   onItemClick,
@@ -32,11 +33,11 @@ export default function DocSidebarItemLink({
         borderWidth={0}
         color={isActive ? 'fgPrimary' : 'fg'}
         font={isActive ? 'label1' : 'label2'}
-        hoverColor="fgPrimary"
         to={href}
         {...(isInternalLink && {
           onClick: onItemClick ? () => onItemClick(item) : undefined,
         })}
+        className={styles.link}
         {...props}
       >
         <HStack alignItems="center" gap={1} paddingX={1.5} paddingY={0.5}>

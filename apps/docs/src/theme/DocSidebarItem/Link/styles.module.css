@@ -1,0 +1,5 @@
+.link:hover,
+.link:active,
+.link:visited {
+  color: var(--color-fgPrimary);
+}
