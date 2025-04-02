@@ -20,7 +20,7 @@ steps:
       - export PERCY_TOKEN=$(aws secretsmanager get-secret-value --secret-id $$IOS_PERCY_SECRET --query SecretString --output text)
       - tools/ci/setup.sh
       - echo "--- Running iOS visreg tests"
-      - yarn nx run mobile-app2:detox:ios-release
+      - yarn nx run mobile-app:detox:ios-release
     retry:
       automatic:
         limit: 1
