@@ -1,20 +1,18 @@
-// eslint.config.js
-const globals = require('globals');
-const tseslint = require('typescript-eslint');
-const eslintJs = require('@eslint/js');
-const eslintImport = require('eslint-plugin-import');
-const eslintSimpleImportSort = require('eslint-plugin-simple-import-sort');
-const eslintReact = require('eslint-plugin-react');
-const eslintReactHooks = require('eslint-plugin-react-hooks');
-const eslintReactPerf = require('eslint-plugin-react-perf');
-const eslintJest = require('eslint-plugin-jest');
-const eslintTestingLibrary = require('eslint-plugin-testing-library');
-const eslintJsxA11y = require('eslint-plugin-jsx-a11y');
-const eslintReactNativeA11y = require('eslint-plugin-react-native-a11y');
-const eslintReactNative = require('eslint-plugin-react-native');
-const eslintCodegen = require('eslint-plugin-codegen');
-
-const eslintImportAutofixRule = require('./eslint.autofix.cjs');
+import globals from 'globals';
+import * as tseslint from 'typescript-eslint';
+import eslintJs from '@eslint/js';
+import eslintImport from 'eslint-plugin-import';
+import eslintSimpleImportSort from 'eslint-plugin-simple-import-sort';
+import eslintReact from 'eslint-plugin-react';
+import eslintReactHooks from 'eslint-plugin-react-hooks';
+import eslintReactPerf from 'eslint-plugin-react-perf';
+import eslintJest from 'eslint-plugin-jest';
+import eslintTestingLibrary from 'eslint-plugin-testing-library';
+import eslintJsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintReactNativeA11y from 'eslint-plugin-react-native-a11y';
+import eslintReactNative from 'eslint-plugin-react-native';
+import eslintCodegen from 'eslint-plugin-codegen';
+import eslintImportAutofixRule from './eslint.autofix.mjs';
 
 const commonSettings = {
   react: {
@@ -28,7 +26,7 @@ const ignores = [
   'node_modules/',
   'OWNERS',
   'Makefile',
-  'eslint.config.cjs',
+  'eslint.config.mjs',
   '**/babel.config.cjs',
   'next-env.d.ts',
   '__mocks__',
@@ -116,7 +114,7 @@ const importPlugins = {
   },
 };
 
-module.exports = tseslint.config(
+export default tseslint.config(
   { ignores },
   {
     files: ['**/*.{js,jsx,mjs,cjs}'],

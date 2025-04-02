@@ -1,3 +1,5 @@
+import { AST_NODE_TYPES } from '@typescript-eslint/types';
+
 const knownReactImports = {
   useRef: {
     source: 'react',
@@ -424,174 +426,172 @@ function createRule({ meta, create, defaultOptions }) {
   return { defaultOptions: defaultOptions ?? [], meta, create };
 }
 
-module.exports = {
-  default: createRule({
-    meta: {
-      fixable: 'code',
-      messages: {
-        importMissing: 'An import is missing for {{ name }}.',
-        unusedImport: 'Import for {{ name }} is unused and can be removed.',
-      },
-      schema: [
-        {
-          type: 'array',
-          items: {
-            type: 'object',
-            properties: {
-              name: { type: 'string' },
-              source: { type: 'string' },
-              type: { type: 'string', enum: ['named', 'default'] },
-            },
-            required: ['name', 'source', 'type'],
-            additionalProperties: false,
+const rule = createRule({
+  meta: {
+    fixable: 'code',
+    messages: {
+      importMissing: 'An import is missing for {{ name }}.',
+      unusedImport: 'Import for {{ name }} is unused and can be removed.',
+    },
+    schema: [
+      {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            name: { type: 'string' },
+            source: { type: 'string' },
+            type: { type: 'string', enum: ['named', 'default'] },
           },
+          required: ['name', 'source', 'type'],
+          additionalProperties: false,
         },
-      ],
-      type: 'suggestion',
-    },
-    create(context) {
-      const fixableImports = {
-        ...knownImports,
+      },
+    ],
+    type: 'suggestion',
+  },
+  create(context) {
+    const fixableImports = {
+      ...knownImports,
+    };
+
+    let hasReported = false;
+
+    (context.options[0] || []).forEach((customImport) => {
+      fixableImports[customImport.name] = {
+        source: customImport.source,
+        type: customImport.type === 'default' ? 'ImportDefaultSpecifier' : 'ImportSpecifier',
       };
+    });
 
-      let hasReported = false;
+    function isReferenced(node) {
+      /*
+       * Return true whenever the identifier node is part of
+       * a call expression or member expression where it is
+       * references to like a variable.
+       *
+       * useRef()
+       * styled.div``
+       * graphql``
+       */
+      if (node.parent?.type === AST_NODE_TYPES.CallExpression) {
+        return node.parent.callee === node;
+      }
+      if (node.parent?.type === AST_NODE_TYPES.MemberExpression) {
+        return node.parent.object === node;
+      }
+      if (node.parent?.type === AST_NODE_TYPES.TaggedTemplateExpression) {
+        return node.parent.tag === node;
+      }
+      return false;
+    }
 
-      (context.options[0] || []).forEach((customImport) => {
-        fixableImports[customImport.name] = {
-          source: customImport.source,
-          type: customImport.type === 'default' ? 'ImportDefaultSpecifier' : 'ImportSpecifier',
-        };
+    function isImportSpecifier(node) {
+      /*
+       * Return true if this identifier node is part of
+       * an import specifier.
+       *
+       * import { useRef } from 'react';
+       */
+      return Boolean(
+        node.parent &&
+          (node.parent.type === AST_NODE_TYPES.ImportSpecifier ||
+            node.parent.type === AST_NODE_TYPES.ImportDefaultSpecifier) &&
+          node.parent.local &&
+          node.parent.local === node &&
+          node.parent.parent &&
+          node.parent.parent.type === AST_NODE_TYPES.ImportDeclaration &&
+          node.parent.parent.specifiers.includes(node.parent),
+      );
+    }
+
+    function hasReferences(node) {
+      /*
+       * Return true if the variable assigned to the identifier
+       * node is used anywhere (so we know to drop this import or not).
+       */
+      const references = getVariableReferences({
+        context,
+        node,
+        name: node.name,
       });
+      return references.some((ref) => Boolean(ref !== node));
+    }
 
-      function isReferenced(node) {
-        /*
-         * Return true whenever the identifier node is part of
-         * a call expression or member expression where it is
-         * references to like a variable.
-         *
-         * useRef()
-         * styled.div``
-         * graphql``
-         */
-        if (node.parent?.type === AST_NODE_TYPES.CallExpression) {
-          return node.parent.callee === node;
+    function needsAddImport(node) {
+      /*
+       * Return true if identifier node is a variable that
+       * we know we can import but isn't yet imported.
+       */
+      return Boolean(
+        fixableImports[node.name] &&
+          isReferenced(node) &&
+          !getVariable({ context, node, name: node.name }),
+      );
+    }
+
+    function needsRemoveImport(node) {
+      /*
+       * Return true if identifier node is a known variable
+       * that is imported and unused.
+       */
+      return Boolean(fixableImports[node.name] && isImportSpecifier(node) && !hasReferences(node));
+    }
+
+    function fixAddImport(node, fixer) {
+      /*
+       * Add missing import for a given identifier node.
+       */
+      const { name } = node;
+      const { source, type } = fixableImports[name];
+
+      return fixAddImportSpecifier({
+        node,
+        source,
+        name,
+        type,
+        fixer,
+        context,
+      });
+    }
+
+    function reportOnce(data) {
+      /*
+       * Report and fix one issue at the time so text editors
+       * do not apply multiple fixes on top of each other, which
+       * can result in broken import syntax.
+       */
+      if (hasReported) return;
+      hasReported = true;
+      context.report(data);
+    }
+
+    return {
+      Identifier(node) {
+        if (needsAddImport(node)) {
+          reportOnce({
+            node,
+            messageId: 'importMissing',
+            data: {
+              name: node.name,
+            },
+            fix: (fixer) => fixAddImport(node, fixer),
+          });
         }
-        if (node.parent?.type === AST_NODE_TYPES.MemberExpression) {
-          return node.parent.object === node;
+        if (needsRemoveImport(node)) {
+          reportOnce({
+            node,
+            messageId: 'unusedImport',
+            data: {
+              name: node.name,
+            },
+            fix: (fixer) => fixRemoveImportSpecifier({ node, fixer, context }),
+          });
         }
-        if (node.parent?.type === AST_NODE_TYPES.TaggedTemplateExpression) {
-          return node.parent.tag === node;
-        }
-        return false;
-      }
+      },
+    };
+  },
+});
 
-      function isImportSpecifier(node) {
-        /*
-         * Return true if this identifier node is part of
-         * an import specifier.
-         *
-         * import { useRef } from 'react';
-         */
-        return Boolean(
-          node.parent &&
-            (node.parent.type === AST_NODE_TYPES.ImportSpecifier ||
-              node.parent.type === AST_NODE_TYPES.ImportDefaultSpecifier) &&
-            node.parent.local &&
-            node.parent.local === node &&
-            node.parent.parent &&
-            node.parent.parent.type === AST_NODE_TYPES.ImportDeclaration &&
-            node.parent.parent.specifiers.includes(node.parent),
-        );
-      }
-
-      function hasReferences(node) {
-        /*
-         * Return true if the variable assigned to the identifier
-         * node is used anywhere (so we know to drop this import or not).
-         */
-        const references = getVariableReferences({
-          context,
-          node,
-          name: node.name,
-        });
-        return references.some((ref) => Boolean(ref !== node));
-      }
-
-      function needsAddImport(node) {
-        /*
-         * Return true if identifier node is a variable that
-         * we know we can import but isn't yet imported.
-         */
-        return Boolean(
-          fixableImports[node.name] &&
-            isReferenced(node) &&
-            !getVariable({ context, node, name: node.name }),
-        );
-      }
-
-      function needsRemoveImport(node) {
-        /*
-         * Return true if identifier node is a known variable
-         * that is imported and unused.
-         */
-        return Boolean(
-          fixableImports[node.name] && isImportSpecifier(node) && !hasReferences(node),
-        );
-      }
-
-      function fixAddImport(node, fixer) {
-        /*
-         * Add missing import for a given identifier node.
-         */
-        const { name } = node;
-        const { source, type } = fixableImports[name];
-
-        return fixAddImportSpecifier({
-          node,
-          source,
-          name,
-          type,
-          fixer,
-          context,
-        });
-      }
-
-      function reportOnce(data) {
-        /*
-         * Report and fix one issue at the time so text editors
-         * do not apply multiple fixes on top of each other, which
-         * can result in broken import syntax.
-         */
-        if (hasReported) return;
-        hasReported = true;
-        context.report(data);
-      }
-
-      return {
-        Identifier(node) {
-          if (needsAddImport(node)) {
-            reportOnce({
-              node,
-              messageId: 'importMissing',
-              data: {
-                name: node.name,
-              },
-              fix: (fixer) => fixAddImport(node, fixer),
-            });
-          }
-          if (needsRemoveImport(node)) {
-            reportOnce({
-              node,
-              messageId: 'unusedImport',
-              data: {
-                name: node.name,
-              },
-              fix: (fixer) => fixRemoveImportSpecifier({ node, fixer, context }),
-            });
-          }
-        },
-      };
-    },
-  }),
-  knownImports,
-};
+export { knownImports };
+export default rule;
