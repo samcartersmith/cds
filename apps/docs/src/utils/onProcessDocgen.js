@@ -32,7 +32,21 @@ function onProcessDoc(doc, { addToSharedTypeAliases, addToParentTypes, formatStr
     .map((prop) => {
       if (isTypeAlias(prop)) {
         const { raw: alias, value } = prop.type;
-        const formattedValue = formatString(value.map((item) => item.value).join(' | '));
+
+        let formattedValue;
+
+        // Format the value based on its structure
+        if (alias && alias.includes('ResponsiveProp<')) {
+          // Special handling for ResponsiveProp types
+          formattedValue = formatResponsivePropValue(alias, value, formatString);
+        } else if (Array.isArray(value)) {
+          // Standard handling for array values
+          formattedValue = formatString(value.map((item) => item.value).join(' | '));
+        } else {
+          // Fallback for other formats
+          formattedValue = formatString(prop.type.raw);
+        }
+
         addToSharedTypeAliases(alias, formattedValue);
         return { ...prop, type: alias };
       }
@@ -49,6 +63,34 @@ function onProcessDoc(doc, { addToSharedTypeAliases, addToParentTypes, formatStr
     });
 
   return { ...doc, props };
+}
+
+/**
+ * Special formatter for ResponsiveProp values to present them in a more structured way
+ * Extracts only the actual token values, ignoring the responsive type structure
+ */
+function formatResponsivePropValue(typeName, value, formatString) {
+  if (!Array.isArray(value)) {
+    return formatString(String(value));
+  }
+
+  // Filter out all the responsive object structure items
+  // (base, phone, tablet, desktop, undefined, etc.)
+  const tokenValues = value.filter((item) => {
+    const val = item.value || '';
+    return (
+      !val.includes('base?:') &&
+      !val.includes('phone?:') &&
+      !val.includes('tablet?:') &&
+      !val.includes('desktop?:') &&
+      !val.includes('undefined;') &&
+      !val.includes('{') &&
+      !val.includes('}')
+    );
+  });
+
+  // Just return the token values as a pipe-separated list
+  return tokenValues.map((item) => item.value.trim()).join(' | ');
 }
 
 module.exports = onProcessDoc;

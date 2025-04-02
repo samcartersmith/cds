@@ -1,6 +1,9 @@
 import React, { useMemo } from 'react';
+import DocusaurusLink from '@docusaurus/Link';
 import { cx } from '@linaria/core';
 import { VStack } from '@cbhq/cds-web2/layout';
+import { Divider } from '@cbhq/cds-web2/layout/Divider';
+import { Link } from '@cbhq/cds-web2/typography/Link';
 import { TextBody } from '@cbhq/cds-web2/typography/TextBody';
 import { TextLabel2 } from '@cbhq/cds-web2/typography/TextLabel2';
 import { SharedTypeAliases } from '@cbhq/docusaurus-plugin-docgen';
@@ -11,18 +14,43 @@ import styles from './styles.module.css';
 
 export type TypeAliasModalContentProps = {
   typeAlias: string;
+  type?: string;
 };
 
-export function TypeAliasModalContent({ typeAlias }: TypeAliasModalContentProps) {
-  const values = useMemo(() => typeAlias.split('|'), [typeAlias]);
+export function TypeAliasModalContent({ typeAlias, type }: TypeAliasModalContentProps) {
+  // Check if this is a ResponsiveProp type
+  const isResponsiveProp = type && type.includes('ResponsiveProp');
+
+  // Parse token values
+  const tokenValues = useMemo(() => {
+    if (typeAlias.includes('|')) {
+      return typeAlias
+        .split('|')
+        .map((v) => v.trim())
+        .filter(Boolean);
+    }
+    return typeAlias.includes('\n') ? typeAlias.split('\n') : [typeAlias];
+  }, [typeAlias]);
 
   return (
-    <VStack gap={1}>
-      {values.map((item) => (
-        <span key={item}>
-          <code>{item}</code>
-        </span>
-      ))}
+    <VStack gap={2}>
+      <VStack gap={1}>
+        {tokenValues.map((value, index) => (
+          <span key={index}>
+            <code>{value}</code>
+          </span>
+        ))}
+      </VStack>
+
+      {/* Add link to responsive props documentation if this is a ResponsiveProp type */}
+      {isResponsiveProp && (
+        <VStack gap={1}>
+          <Divider />
+          <Link as={DocusaurusLink} to="/getting-started/styling#responsive-design">
+            Learn more about responsive props.
+          </Link>
+        </VStack>
+      )}
     </VStack>
   );
 }
@@ -101,7 +129,11 @@ function PropsTableRow({ prop, sharedTypeAliases, searchTerm = '' }: PropsTableR
     if (type in sharedTypeAliases) {
       const typeAlias = sharedTypeAliases[type];
       return (
-        <ModalLink mono content={<TypeAliasModalContent typeAlias={typeAlias} />} font="body">
+        <ModalLink
+          mono
+          content={<TypeAliasModalContent type={type} typeAlias={typeAlias} />}
+          font="body"
+        >
           {type}
         </ModalLink>
       );
