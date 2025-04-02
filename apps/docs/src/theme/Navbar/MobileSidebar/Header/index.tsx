@@ -25,6 +25,7 @@ export default function NavbarMobileSidebarHeader(): JSX.Element {
   return (
     <HStack
       alignItems="center"
+      background="bg"
       justifyContent="space-between"
       padding={2}
       position="sticky"

@@ -18,15 +18,15 @@ type ComponentPropsTableProps = {
 };
 
 function ComponentPropsTable({
-  props,
+  props: { props, parentTypes },
   sharedTypeAliases,
   sharedParentTypes,
 }: ComponentPropsTableProps) {
   const [searchValue, setSearchValue] = useState('');
   const filteredProps = React.useMemo(() => {
     const searchTerm = searchValue.toLowerCase();
-    return props.props.filter((item) => item.name.toLowerCase().includes(searchTerm));
-  }, [searchValue, props.props]);
+    return props.filter((item) => item.name.toLowerCase().includes(searchTerm));
+  }, [searchValue, props]);
   const handleSearchChange = React.useCallback((value: string) => {
     setSearchValue(value);
   }, []);
@@ -39,7 +39,7 @@ function ComponentPropsTable({
         value={searchValue}
       />
       <ParentTypesList
-        parentTypes={props.parentTypes}
+        parentTypes={parentTypes}
         sharedParentTypes={sharedParentTypes}
         sharedTypeAliases={sharedTypeAliases}
       />
@@ -49,10 +49,15 @@ function ComponentPropsTable({
           searchTerm={searchValue}
           sharedTypeAliases={sharedTypeAliases}
         />
-      ) : (
+      ) : props.length > 0 ? (
         <VStack alignContent="center" alignItems="center" gap={1.5} paddingBottom={2}>
           <Text font="headline">No results found</Text>
           <Text font="body">This prop does not exist.</Text>
+        </VStack>
+      ) : (
+        <VStack alignContent="center" alignItems="center" gap={1.5} paddingBottom={2}>
+          <Text font="headline">No props found</Text>
+          <Text font="body">This component/hook does not have any props.</Text>
         </VStack>
       )}
     </VStack>

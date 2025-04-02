@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Divider } from '@cbhq/cds-web2/layout';
 
+import styles from './style.module.css';
+
 export function MDXArticle({
   children,
   hideDivider,
@@ -10,7 +12,7 @@ export function MDXArticle({
 }) {
   return (
     <>
-      <Box as="article" display="block" padding={4}>
+      <Box as="article" className={styles.articleContainer} display="block" padding={4}>
         {children}
       </Box>
       {!hideDivider && <Divider />}

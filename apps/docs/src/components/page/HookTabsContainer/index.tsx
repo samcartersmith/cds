@@ -4,39 +4,38 @@ import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { Box, Divider, VStack } from '@cbhq/cds-web2/layout';
 import { TabNavigation } from '@cbhq/cds-web2/tabs/TabNavigation';
 
-import { PropsTOCUpdater } from '../../../utils/toc/PropsTOCManager';
 import { TOCUpdater } from '../../../utils/toc/TOCManager';
 
 const tabs = [
   { id: 'examples-tab', label: 'Examples' },
-  { id: 'props-tab', label: 'Props' },
+  { id: 'api-tab', label: 'API' },
 ];
 
-type ComponentMetaContainerProps = {
-  webPropsTable?: React.ReactNode;
-  mobilePropsTable?: React.ReactNode;
+type HookTabsContainerProps = {
+  webApi?: React.ReactNode;
+  mobileApi?: React.ReactNode;
   webExamples?: React.ReactNode;
   mobileExamples?: React.ReactNode;
-  webPropsToc?: TOCItem[];
-  mobilePropsToc?: TOCItem[];
+  webApiToc?: TOCItem[];
+  mobileApiToc?: TOCItem[];
   webExamplesToc?: TOCItem[];
   mobileExamplesToc?: TOCItem[];
 };
 
-export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
+export const HookTabsContainer: React.FC<HookTabsContainerProps> = ({
   webExamples,
   mobileExamples,
-  webPropsTable,
-  mobilePropsTable,
+  webApi,
+  mobileApi,
   webExamplesToc,
   mobileExamplesToc,
-  webPropsToc,
-  mobilePropsToc,
+  webApiToc,
+  mobileApiToc,
 }) => {
   const [activeTab, setActiveTab] = useState<string>('examples-tab');
   const { platform } = usePlatformContext();
   const shouldRenderExamples = activeTab === tabs[0].id;
-  const shouldRenderProps = activeTab === tabs[1].id;
+  const shouldRenderApi = activeTab === tabs[1].id;
   const isWeb = platform === 'web';
   const isMobile = platform === 'mobile';
 
@@ -50,13 +49,7 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
           paddingTop={1}
           paddingX={4}
         >
-          <TabNavigation
-            accessibilityLabel="Component documentation sections"
-            aria-controls={`tabpanel--${activeTab}`}
-            onChange={setActiveTab}
-            tabs={tabs}
-            value={activeTab}
-          />
+          <TabNavigation onChange={setActiveTab} tabs={tabs} value={activeTab} />
         </Box>
         <Divider />
       </VStack>
@@ -65,16 +58,10 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
         background="bgAlternate"
         borderBottomLeftRadius={500}
         borderBottomRightRadius={500}
-        gap={3}
-        paddingBottom={2}
-        paddingEnd={4}
-        paddingStart={4}
-        paddingTop={5}
         zIndex={0}
       >
         <VStack
           accessibilityLabelledBy="tab--examples-tab"
-          gap={3}
           hidden={!shouldRenderExamples}
           id="tabpanel--examples-tab"
           role="tabpanel"
@@ -85,15 +72,14 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
         </VStack>
 
         <VStack
-          accessibilityLabelledBy="tab--props-tab"
-          gap={3}
-          hidden={!shouldRenderProps}
-          id="tabpanel--props-tab"
+          accessibilityLabelledBy="tab--api-tab"
+          hidden={!shouldRenderApi}
+          id="tabpanel--api-tab"
           role="tabpanel"
         >
-          {shouldRenderProps && <PropsTOCUpdater toc={isWeb ? webPropsToc : mobilePropsToc} />}
-          {shouldRenderProps && isWeb && webPropsTable}
-          {shouldRenderProps && isMobile && mobilePropsTable}
+          {shouldRenderApi && <TOCUpdater toc={isWeb ? webApiToc : mobileApiToc} />}
+          {shouldRenderApi && isWeb && webApi}
+          {shouldRenderApi && isMobile && mobileApi}
         </VStack>
       </VStack>
     </VStack>

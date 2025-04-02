@@ -1,4 +1,4 @@
-.sectionContainer {
+.articleContainer {
   & h2 {
     font-family: var(--fontFamily-title2);
     font-size: var(--fontSize-title2);
@@ -8,18 +8,18 @@
   }
 
   & h3 {
-    font-family: var(--fontFamily-headline);
-    font-size: var(--fontSize-headline);
-    font-weight: var(--fontWeight-headline);
-    line-height: var(--lineHeight-headline);
+    font-family: var(--fontFamily-title3);
+    font-size: var(--fontSize-title3);
+    font-weight: var(--fontWeight-title3);
+    line-height: var(--lineHeight-title3);
     margin-bottom: var(--space-1\.5);
   }
 
   & h4 {
-    font-family: var(--fontFamily-headline);
-    font-size: var(--fontSize-headline);
-    font-weight: var(--fontWeight-headline);
-    line-height: var(--lineHeight-headline);
+    font-family: var(--fontFamily-title4);
+    font-size: var(--fontSize-title4);
+    font-weight: var(--fontWeight-title4);
+    line-height: var(--lineHeight-title4);
     margin-bottom: var(--space-1\.5);
   }
 
@@ -53,6 +53,10 @@
     font-weight: var(--fontWeight-body);
     line-height: var(--lineHeight-body);
     margin-bottom: var(--space-3);
+
+    & p {
+      margin-bottom: var(--space-1);
+    }
   }
 
   & ol {
@@ -61,6 +65,10 @@
     font-weight: var(--fontWeight-body);
     line-height: var(--lineHeight-body);
     margin-bottom: var(--space-3);
+
+    & p {
+      margin-bottom: var(--space-1);
+    }
   }
 
   & blockquote {

@@ -1,0 +1,5 @@
+{
+  "import": "import { useEventHandler } from '@cbhq/cds-common/hooks/useEventHandler'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/cds-common/src/hooks/useEventHandler.ts",
+  "description": "A React hook that creates event handlers for components based on the EventHandlerProvider configuration. It enables centralized event handling and analytics tracking by mapping component actions to configured handlers."
+}

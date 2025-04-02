@@ -179,7 +179,6 @@ export default function DocSidebarItemCategory({
             borderWidth={0}
             flexGrow={1}
             href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
-            tabIndex={tabIndex}
             onClick={
               collapsible
                 ? (e) => {
@@ -196,6 +195,7 @@ export default function DocSidebarItemCategory({
                   }
             }
             role={collapsible && !href ? 'button' : undefined}
+            tabIndex={tabIndex}
             {...props}
           >
             <HStack

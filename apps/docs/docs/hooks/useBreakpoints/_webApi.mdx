@@ -1,0 +1,46 @@
+import { MDXArticle } from '@site/src/components/page/MDXArticle';
+
+<MDXArticle>
+## Parameters
+
+The `useBreakpoints` hook does not accept any parameters. It must be used within a `MediaQueryProvider` component.
+
+</MDXArticle>
+
+<MDXArticle hideDivider>
+## Returns
+
+```tsx
+type DeviceBreakpointValues =
+  | 'isPhone'
+  | 'isPhonePortrait'
+  | 'isPhoneLandscape'
+  | 'isTablet'
+  | 'isTabletPortrait'
+  | 'isTabletLandscape'
+  | 'isDesktop'
+  | 'isDesktopSmall'
+  | 'isDesktopLarge'
+  | 'isExtraWide';
+
+type BreakpointRecord = Partial<Record<DeviceBreakpointValues, boolean>>;
+```
+
+Returns a `BreakpointRecord` object containing boolean flags for different device breakpoints:
+
+- `isPhone`: Whether the viewport matches phone breakpoint (0px and up)
+- `isPhonePortrait`: Whether the viewport matches phone portrait breakpoint
+- `isPhoneLandscape`: Whether the viewport matches phone landscape breakpoint (560px and up)
+- `isTablet`: Whether the viewport matches tablet breakpoint (768px and up)
+- `isTabletPortrait`: Whether the viewport matches tablet portrait breakpoint
+- `isTabletLandscape`: Whether the viewport matches tablet landscape breakpoint (1024px and up)
+- `isDesktop`: Whether the viewport matches desktop breakpoint (1280px and up)
+- `isDesktopSmall`: Whether the viewport matches small desktop breakpoint
+- `isDesktopLarge`: Whether the viewport matches large desktop breakpoint (1440px and up)
+- `isExtraWide`: Whether the viewport matches extra wide breakpoint (1600px and up)
+
+:::note
+Multiple breakpoint values can be true at the same time as they are inclusive ranges.
+:::
+
+</MDXArticle>

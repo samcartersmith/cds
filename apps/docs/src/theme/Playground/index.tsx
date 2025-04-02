@@ -3,6 +3,7 @@ import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import { ErrorBoundaryErrorMessageFallback, usePrismTheme } from '@docusaurus/theme-common';
+import { Button } from '@cbhq/cds-web2';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
@@ -81,34 +82,29 @@ const Playground = memo(function Playground({
           )}
           {!hideControls && (
             <HStack alignItems="center" gap={0.5}>
-              <Pressable
+              <Button
+                compact
                 noScaleOnPress
-                transparentWhileInactive
-                background="bg"
-                borderRadius={400}
+                transparent
+                transparentWhilePressed
+                flush="start"
                 onClick={toggleCode}
+                startIcon={collapsed ? 'caretDown' : 'caretUp'}
+                variant="primary"
               >
-                <HStack alignItems="center" gap={1} padding={1}>
-                  <Icon color="fgPrimary" name={collapsed ? 'caretDown' : 'caretUp'} size="xs" />
-                  <Text as="p" color="fgPrimary" font="label1" transform="none">
-                    {collapsed ? 'Show code' : 'Hide code'}
-                  </Text>
-                </HStack>
-              </Pressable>
-              <Pressable
+                {collapsed ? 'Show code' : 'Hide code'}
+              </Button>
+              <Button
+                compact
                 noScaleOnPress
-                transparentWhileInactive
-                background="bg"
-                borderRadius={1000}
+                transparent
+                flush="start"
                 onClick={handleCopyToClipboard}
+                startIcon="copy"
+                variant="primary"
               >
-                <HStack alignItems="center" gap={1} padding={1}>
-                  <Icon color="fgPrimary" name="copy" size="xs" />
-                  <Text color="fgPrimary" font="label1" transform="none">
-                    Copy code
-                  </Text>
-                </HStack>
-              </Pressable>
+                Copy code
+              </Button>
             </HStack>
           )}
           <Collapsible collapsed={collapsed}>

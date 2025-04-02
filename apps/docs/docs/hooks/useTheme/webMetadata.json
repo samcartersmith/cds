@@ -1,0 +1,5 @@
+{
+  "import": "import { useTheme } from '@cbhq/cds-web/hooks/useTheme'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web/src/hooks/useTheme.ts",
+  "description": "A React hook that returns the currently active Theme, determined by the ThemeProvider's activeColorScheme. The Theme includes color schemes, spacing, typography, and other design tokens."
+}

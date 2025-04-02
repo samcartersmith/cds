@@ -125,13 +125,14 @@ const NavbarThemeToggle = () => {
             return (
               <Box
                 key={themeOption.label}
-                aria-label={themeOption.label}
                 aria-checked={currentColor === color}
+                aria-label={themeOption.label}
                 as="button"
                 borderRadius={1000}
                 height={16}
                 onClick={() => updateTheme(themeOption)}
                 onKeyDown={(event) => handleKeyDown(event, themeOption)}
+                role="radio"
                 style={{
                   background: color,
                   cursor: 'pointer',
@@ -139,7 +140,6 @@ const NavbarThemeToggle = () => {
                 }}
                 tabIndex={0}
                 width={16}
-                role="radio"
               />
             );
           })}
@@ -157,9 +157,9 @@ const NavbarThemeToggle = () => {
         borderRadius={1000}
         height={40}
         justifyContent="center"
+        onClick={handleOpen}
         style={{ cursor: 'pointer' }}
         width={40}
-        onClick={handleOpen}
       >
         <Box background="bgPrimary" borderRadius={1000} padding={1} />
       </Pressable>

@@ -61,7 +61,7 @@ export function FeedbackWidget() {
         <VStack
           ref={confirmationRef}
           background="bgAlternate"
-          borderRadius={400}
+          borderRadius={500}
           gap={3}
           padding={4}
           tabIndex={-1} // Makes the element focusable without keyboard navigation
@@ -72,7 +72,7 @@ export function FeedbackWidget() {
         <VStack
           aria-labelledby="feedback-heading"
           background="bgAlternate"
-          borderRadius={400}
+          borderRadius={500}
           gap={3}
           padding={4}
           role="region"

@@ -1,0 +1,5 @@
+{
+  "import": "import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/hooks/useDimensions.ts",
+  "description": "A React hook that measure an element's size and handle responsive components with highly-performant way, using ResizeObserver."
+}

@@ -1,0 +1,79 @@
+import { MDXArticle } from '@site/src/components/page/MDXArticle';
+
+<MDXArticle>
+## Basic Usage
+
+```tsx live
+function Example() {
+  const theme = useTheme();
+
+  return (
+    <VStack gap={2}>
+      <Box padding={3} background="bgAlternate" borderRadius={300}>
+        <Text>Current color scheme: {theme.colorScheme}</Text>
+      </Box>
+      <Box padding={3} background="bgAlternate" borderRadius={300}>
+        <Text>Primary color: {theme.color.bgPrimary}</Text>
+      </Box>
+    </VStack>
+  );
+}
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Using Theme Values for Styling
+
+```tsx live
+function Example() {
+  const theme = useTheme();
+
+  return (
+    <VStack gap={2}>
+      <Box
+        padding={theme.space[3]}
+        background={theme.color.bgPrimary}
+        borderRadius={theme.borderRadius[300]}
+      >
+        <Text font="title3" color="fgInverse">
+          Themed Box
+        </Text>
+      </Box>
+      <Box
+        padding={theme.space[2]}
+        background={theme.color.bgSecondary}
+        borderRadius={theme.borderRadius[200]}
+      >
+        <Text font="body">Secondary Box</Text>
+      </Box>
+    </VStack>
+  );
+}
+```
+
+</MDXArticle>
+
+<MDXArticle hideDivider>
+## With Inverted Theme
+
+```tsx live
+function Example() {
+  const theme = useTheme();
+
+  return (
+    <VStack gap={2}>
+      <Box padding={3} background="bgAlternate" borderRadius={300}>
+        <Text>Normal Theme</Text>
+      </Box>
+      <InvertedThemeProvider>
+        <Box padding={3} background="bgAlternate" borderRadius={300}>
+          <Text>Inverted Theme</Text>
+        </Box>
+      </InvertedThemeProvider>
+    </VStack>
+  );
+}
+```
+
+</MDXArticle>

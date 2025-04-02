@@ -240,11 +240,11 @@ export const SparklineInteractivePriceWithHeader = memo((props: SparklineInterac
   return (
     <SparklineInteractivePrice
       {...props}
-      trailing={trailing}
       headerNode={header}
       onPeriodChanged={handleOnPeriodChanged}
       onScrub={handleScrub}
       onScrubEnd={handleScrubEnd}
+      trailing={trailing}
     />
   );
 });

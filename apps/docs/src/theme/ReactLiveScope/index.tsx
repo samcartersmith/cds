@@ -1,6 +1,10 @@
 import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { DateInputValidationError } from '@cbhq/cds-common2/dates/DateInputValidationError';
+import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
+import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
+import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
 import * as CDSDataAssets from '@cbhq/cds-common2/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { prices } from '@cbhq/cds-common2/internal/data/prices';
@@ -32,7 +36,12 @@ import { DatePicker } from '@cbhq/cds-web2/dates/DatePicker';
 import * as CDSDots from '@cbhq/cds-web2/dots';
 import { Dropdown } from '@cbhq/cds-web2/dropdown/Dropdown';
 import { useA11yControlledVisibility } from '@cbhq/cds-web2/hooks/useA11yControlledVisibility';
+import { useBreakpoints } from '@cbhq/cds-web2/hooks/useBreakpoints';
 import { useCheckboxGroupState } from '@cbhq/cds-web2/hooks/useCheckboxGroupState';
+import { useDimensions } from '@cbhq/cds-web2/hooks/useDimensions';
+import { useHasMounted } from '@cbhq/cds-web2/hooks/useHasMounted';
+import { useIsoEffect } from '@cbhq/cds-web2/hooks/useIsoEffect';
+import { useScrollBlocker } from '@cbhq/cds-web2/hooks/useScrollBlocker';
 import { useTheme } from '@cbhq/cds-web2/hooks/useTheme';
 import * as CDSIcons from '@cbhq/cds-web2/icons';
 import * as CDSIllustrations from '@cbhq/cds-web2/illustrations';
@@ -51,7 +60,6 @@ import * as CDSTypography from '@cbhq/cds-web2/typography';
 import * as CDSVisualizations from '@cbhq/cds-web2/visualizations';
 
 import { SparklineInteractivePrice, SparklineInteractivePriceWithHeader } from '../Sparkline';
-
 // Add react-live imports you need here
 const ReactLiveScope: Record<string, unknown> = {
   React,
@@ -122,6 +130,16 @@ const ReactLiveScope: Record<string, unknown> = {
   ...CDSDataAssets,
   loremIpsum,
   prices,
+  // hooks
+  useBreakpoints,
+  useDimensions,
+  useScrollBlocker,
+  useHasMounted,
+  usePreviousValue,
+  useIsoEffect,
+  useMergeRefs,
+  useRefMap,
+  useEventHandler,
 };
 
 export default ReactLiveScope;

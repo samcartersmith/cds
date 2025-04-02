@@ -1,0 +1,5 @@
+{
+  "description": "The useScrollBlocker hook is a React hook that blocks page scrolling.",
+  "import": "import { useScrollBlocker } from '@cbhq/cds-web/hooks/useScrollBlocker'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/hooks/useScrollBlocker.ts"
+}

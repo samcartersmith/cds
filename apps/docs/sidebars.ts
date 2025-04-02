@@ -395,63 +395,53 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'doc',
-          id: 'hooks/introduction',
-          label: 'Introduction',
-        },
-        {
-          type: 'doc',
-          id: 'hooks/useBreakpoints',
+          id: 'hooks/useBreakpoints/useBreakpoints',
           label: 'useBreakpoints',
         },
         {
           type: 'doc',
-          id: 'hooks/useClickOutside',
-          label: 'useClickOutside',
-        },
-        {
-          type: 'doc',
-          id: 'hooks/useDimensions',
+          id: 'hooks/useDimensions/useDimensions',
           label: 'useDimensions',
         },
         {
           type: 'doc',
-          id: 'hooks/useHasMounted',
+          id: 'hooks/useEventHandler/useEventHandler',
+          label: 'useEventHandler',
+        },
+        {
+          type: 'doc',
+          id: 'hooks/useHasMounted/useHasMounted',
           label: 'useHasMounted',
         },
         {
           type: 'doc',
-          id: 'hooks/useIsoEffect',
+          id: 'hooks/useIsoEffect/useIsoEffect',
           label: 'useIsoEffect',
         },
         {
           type: 'doc',
-          id: 'hooks/useMergeRefs',
+          id: 'hooks/useMergeRefs/useMergeRefs',
           label: 'useMergeRefs',
         },
         {
           type: 'doc',
-          id: 'hooks/usePreviousValue',
+          id: 'hooks/usePreviousValue/usePreviousValue',
           label: 'usePreviousValue',
         },
         {
           type: 'doc',
-          id: 'hooks/useRefMap',
+          id: 'hooks/useRefMap/useRefMap',
           label: 'useRefMap',
         },
         {
           type: 'doc',
-          id: 'hooks/useSpectrum',
-          label: 'useSpectrum',
-        },
-        {
-          type: 'doc',
-          id: 'hooks/useScrollBlocker',
+          id: 'hooks/useScrollBlocker/useScrollBlocker',
           label: 'useScrollBlocker',
         },
         {
           type: 'doc',
-          id: 'hooks/useTriggerFocus',
-          label: 'useTriggerFocus',
+          id: 'hooks/useTheme/useTheme',
+          label: 'useTheme',
         },
       ],
       customProps: {
