@@ -17,6 +17,7 @@ export const SelectBanner = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <g clipPath="url(#clip0_4191_139)">
+          <rect fill="rgb(var(--gray10))" height="200" width="826" />
           <rect fill="rgb(var(--gray15))" height="69" width="249" y="-13" />
           <rect fill="rgb(var(--gray15))" height="69" width="250" x="576" y="-13" />
           <rect fill="rgb(var(--gray20))" height="200" width="327" x="249" y="-0.43457" />
