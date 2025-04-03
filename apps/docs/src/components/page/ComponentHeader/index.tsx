@@ -1,5 +1,4 @@
 import React, { memo, useCallback } from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
@@ -11,6 +10,8 @@ import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
 import { Link } from '@cbhq/cds-web2/typography/Link';
 import { Text } from '@cbhq/cds-web2/typography/Text';
+
+import { useDocsTheme } from '../../../theme/Layout/Provider/UnifiedThemeContext';
 
 import styles from './styles.module.css';
 
@@ -86,11 +87,11 @@ export const ComponentHeader = memo(
     bannerDark,
   }: ComponentHeaderProps) => {
     const { platform } = usePlatformContext();
-    const { colorMode } = useColorMode();
+    const { colorScheme } = useDocsTheme();
     const toast = useToast();
 
     const activeMetadata = platform === 'web' ? webMetadata : mobileMetadata;
-    const activeBanner = colorMode === 'dark' && bannerDark ? bannerDark : banner;
+    const activeBanner = colorScheme === 'dark' && bannerDark ? bannerDark : banner;
 
     const copyImport = useCallback(async () => {
       const importText = activeMetadata?.import;

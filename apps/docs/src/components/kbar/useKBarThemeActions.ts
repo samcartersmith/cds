@@ -1,15 +1,16 @@
 import { useMemo } from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import decreasePriorityIfCategory from '@site/src/utils/decreasePriorityIfCategory';
 
+import { useUnifiedTheme } from '../../theme/Layout/Provider/UnifiedThemeContext';
+
 export default function useKBarThemeActions() {
-  const { setColorMode } = useColorMode();
+  const { setUnifiedColorScheme } = useUnifiedTheme();
 
   return useMemo(
     () =>
       [
         {
-          id: 'spectrumPreference',
+          id: 'colorModePreference',
           name: 'Change color mode…',
           keywords: 'spectrum color dark light',
           icon: 'gear',
@@ -19,23 +20,19 @@ export default function useKBarThemeActions() {
           id: 'darkPreference',
           name: 'Dark',
           keywords: 'dark mode',
-          parent: 'spectrumPreference',
+          parent: 'colorModePreference',
           icon: 'moon',
-          perform: () => {
-            setColorMode('dark');
-          },
+          perform: () => setUnifiedColorScheme('dark'),
         },
         {
           id: 'lightPreference',
           name: 'Light',
           keywords: 'light mode',
-          parent: 'spectrumPreference',
+          parent: 'colorModePreference',
           icon: 'light',
-          perform: () => {
-            setColorMode('light');
-          },
+          perform: () => setUnifiedColorScheme('light'),
         },
       ].map(decreasePriorityIfCategory),
-    [setColorMode],
+    [setUnifiedColorScheme],
   );
 }

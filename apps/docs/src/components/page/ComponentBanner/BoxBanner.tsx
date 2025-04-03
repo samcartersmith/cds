@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const BoxBanner = () => {
-  // const { colorMode } = useColorMode(); // If tokens are different for dark mode, we can use this
+  // const { colorScheme } = useDocsTheme(); // If tokens are different for dark mode, we can use this
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
       <svg

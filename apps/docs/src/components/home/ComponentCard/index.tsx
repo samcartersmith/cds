@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import { useColorMode } from '@docusaurus/theme-common';
 import { HStack, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography';
+
+import { useDocsTheme } from '../../../theme/Layout/Provider/UnifiedThemeContext';
 
 import styles from './styles.module.css';
 
@@ -28,9 +29,9 @@ export const ComponentCard = ({
   bannerLightOverlaySrc,
   to,
 }: ComponentCardProps) => {
-  const { colorMode } = useColorMode();
-  const bannerSrc = colorMode === 'dark' ? bannerDarkSrc : bannerLightSrc;
-  const bannerOverlaySrc = colorMode === 'dark' ? bannerDarkOverlaySrc : bannerLightOverlaySrc;
+  const { colorScheme } = useDocsTheme();
+  const bannerSrc = colorScheme === 'dark' ? bannerDarkSrc : bannerLightSrc;
+  const bannerOverlaySrc = colorScheme === 'dark' ? bannerDarkOverlaySrc : bannerLightOverlaySrc;
   return (
     <VStack
       as={Link}

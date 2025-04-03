@@ -1,14 +1,9 @@
 ```jsx live
 function SwitchDemo() {
-  // doc site theme control
-  const { colorMode, setColorMode } = useColorMode();
-
-  const handleChange = useCallback(() => {
-    setColorMode(colorMode === 'light' ? 'dark' : 'light');
-  }, [colorMode, setColorMode]);
+  const [checked, setChecked] = useState(false);
 
   return (
-    <Switch onChange={handleChange} checked={colorMode === 'dark'}>
+    <Switch onChange={() => setChecked((s) => !s)} checked={checked}>
       Dark Mode
     </Switch>
   );

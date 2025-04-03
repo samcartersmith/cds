@@ -1,15 +1,17 @@
 import React from 'react';
-import { FooterLinkItem, useColorMode, useThemeConfig } from '@docusaurus/theme-common';
+import { FooterLinkItem, useThemeConfig } from '@docusaurus/theme-common';
 import { FooterLink } from '@site/src/components/FooterLink';
 import CDSLogo from '@site/static/img/logos/cds_logo.svg';
 import CDSLogoDark from '@site/static/img/logos/cds_logo_dark.svg';
 import { Box, HStack, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography';
 
+import { useDocsTheme } from '../Layout/Provider/UnifiedThemeContext';
+
 export default function Footer(): JSX.Element | null {
   const { footer } = useThemeConfig();
-  const { colorMode } = useColorMode();
-  const LogoComponent = colorMode === 'light' ? CDSLogo : CDSLogoDark;
+  const { colorScheme } = useDocsTheme();
+  const LogoComponent = colorScheme === 'light' ? CDSLogo : CDSLogoDark;
 
   if (!footer) {
     return null;

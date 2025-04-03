@@ -22,13 +22,11 @@ const CDSContainer = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className={globalStyles}>
-      <MediaQueryProvider>
-        <ThemeProvider activeColorScheme={colorScheme} display="contents" theme={theme}>
-          <PortalProvider>
-            <KBarProvider>{children}</KBarProvider>
-          </PortalProvider>
-        </ThemeProvider>
-      </MediaQueryProvider>
+      <ThemeProvider activeColorScheme={colorScheme} display="contents" theme={theme}>
+        <PortalProvider>
+          <KBarProvider>{children}</KBarProvider>
+        </PortalProvider>
+      </ThemeProvider>
     </div>
   );
 };
@@ -40,6 +38,7 @@ const Provider = composeProviders([
   DocsPreferredVersionContextProvider,
   PluginHtmlClassNameProvider,
   NavbarProvider,
+  MediaQueryProvider,
   UnifiedThemeProvider,
 ]);
 

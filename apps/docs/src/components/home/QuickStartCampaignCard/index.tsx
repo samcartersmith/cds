@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import { Box, Divider, HStack, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography';
 
+import { useDocsTheme } from '../../../theme/Layout/Provider/UnifiedThemeContext';
 import { ButtonLink } from '../../ButtonLink';
 
 export type QuickStartLinkProps = {
@@ -22,8 +22,8 @@ export const QuickStartCampaignCard = ({
   BannerComponentLight,
   BannerComponentDark,
 }: QuickStartLinkProps) => {
-  const { colorMode } = useColorMode();
-  const BannerComponent = colorMode === 'dark' ? BannerComponentDark : BannerComponentLight;
+  const { colorScheme } = useDocsTheme();
+  const BannerComponent = colorScheme === 'dark' ? BannerComponentDark : BannerComponentLight;
   const destination = useMemo(() => ('to' in link ? link.to : link.href), [link]);
 
   return (

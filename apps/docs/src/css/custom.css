@@ -51,9 +51,18 @@
   flex-direction: column;
 }
 
+html {
+  color: var(--color-fg);
+}
+
 body {
   font-style: normal;
   font-weight: 400;
+}
+
+code {
+  color: var(--color-fg);
+  background-color: var(--color-bgSecondary);
 }
 
 .navbar {
@@ -61,6 +70,10 @@ body {
   height: auto;
   background-color: var(--color-bg);
   box-shadow: none;
+}
+
+.navbar-sidebar {
+  background-color: var(--color-bg);
 }
 
 .navbar__logo {
@@ -109,45 +122,6 @@ a:focus-visible {
   text-decoration: none;
 }
 
-.display-2 {
-  font-family: var(--font-style-display);
-  font-size: var(--font-size-display-2);
-  font-style: normal;
-  line-height: var(--font-line-height-display-2);
-}
-
-.title-2 {
-  font-family: var(--font-style-display);
-  font-size: var(--font-size-title-2);
-  font-style: normal;
-  line-height: var(--font-line-height-title-2);
-}
-
-.headline-text {
-  font-family: var(--font-style-body);
-  font-size: var(--font-size-headline);
-  font-style: normal;
-  font-weight: 500;
-  line-height: var(--font-line-height-headline);
-}
-
-.body-text {
-  font-family: var(--font-style-body);
-  font-size: var(--font-size-body);
-  font-style: normal;
-  line-height: var(--font-line-height-body);
-}
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
 table {
   table-layout: fixed;
   width: 100%;
@@ -162,6 +136,7 @@ table tr {
 
 table thead tr {
   border-bottom: none;
+  color: var(--color-fg);
 }
 
 /* Add padding to table cells */
@@ -192,6 +167,17 @@ table tr:last-child td {
 table tr:nth-child(even),
 table tr:nth-child(odd) {
   background-color: transparent;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  color: var(--color-fg);
 }
 
 .table-of-contents,

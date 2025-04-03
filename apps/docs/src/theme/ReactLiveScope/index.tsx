@@ -1,5 +1,4 @@
 import React from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import { DateInputValidationError } from '@cbhq/cds-common2/dates/DateInputValidationError';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
@@ -64,8 +63,6 @@ import { SparklineInteractivePrice, SparklineInteractivePriceWithHeader } from '
 const ReactLiveScope: Record<string, unknown> = {
   React,
   ...React,
-  // Docusaurus
-  useColorMode,
   // CDS tokens
   avatarDotSizeMap,
   avatarIconSizeMap,

@@ -1,10 +1,10 @@
 import React from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
 import BannerArt from '@site/static/img/heroBanners/banner_art.svg';
 import BannerArtDark from '@site/static/img/heroBanners/banner_art_dark.svg';
 import { Box, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography';
 
+import { useDocsTheme } from '../../../theme/Layout/Provider/UnifiedThemeContext';
 import { ButtonLink } from '../../ButtonLink';
 
 import styles from './styles.module.css';
@@ -12,8 +12,8 @@ import styles from './styles.module.css';
 const bannerTitleFontConfig = { base: 'title2', desktop: 'display2' } as const;
 
 export const Hero = () => {
-  const { colorMode } = useColorMode();
-  const BannerArtComponent = colorMode === 'dark' ? BannerArtDark : BannerArt;
+  const { colorScheme } = useDocsTheme();
+  const BannerArtComponent = colorScheme === 'dark' ? BannerArtDark : BannerArt;
 
   return (
     <Box
