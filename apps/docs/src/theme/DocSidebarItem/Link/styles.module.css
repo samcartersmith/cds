@@ -4,6 +4,11 @@
 }
 
 .link:hover,
-.link:active {
+.link:active,
+.link:focus-visible {
+  color: var(--color-fgPrimary);
+}
+
+.linkSelected {
   color: var(--color-fgPrimary);
 }

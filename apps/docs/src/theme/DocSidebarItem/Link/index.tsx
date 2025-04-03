@@ -31,13 +31,12 @@ export default function DocSidebarItemLink({
         background="transparent"
         borderRadius={1000}
         borderWidth={0}
-        color={isActive ? 'fgPrimary' : 'fg'}
         font={isActive ? 'label1' : 'label2'}
         to={href}
         {...(isInternalLink && {
           onClick: onItemClick ? () => onItemClick(item) : undefined,
         })}
-        className={styles.link}
+        className={isActive ? styles.linkSelected : styles.link}
         {...props}
       >
         <HStack alignItems="center" gap={1} paddingX={1.5} paddingY={0.5}>
