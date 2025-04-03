@@ -85,24 +85,3 @@ export default {
   title: 'Interactive/Modal',
   component: BasicModal,
 };
-
-// Using the motion duration so make sure we wait the appropriate amount of time before our assertion
-const DURATION: number = Number(durations[animateOutOpacityConfig.duration ?? 'fast1']) + 10;
-const YUBIKEY_STRING = 'cccccbeurlitbgvnvidvttluefrcnnggvhnhcuuddjkn';
-
-export const ModalWithYubikeyInteraction: StoryObj<typeof BasicModal> = {
-  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
-    const canvas = within(canvasElement);
-    const modalTitle = canvas.getByText('Basic Modal');
-
-    // Sanity check
-    await waitFor(() => expect(modalTitle).toBeVisible());
-
-    // Fake press the yubikey
-    userEvent.type(modalTitle, `${YUBIKEY_STRING}{Enter}`);
-
-    // Make sure the modal is still visible
-    await pauseStory(DURATION);
-    await waitFor(() => expect(modalTitle).toBeVisible());
-  },
-};

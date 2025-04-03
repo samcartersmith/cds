@@ -13,6 +13,10 @@
     },
     "build": {
       "command": "build-storybook --output-dir dist",
+      "inputs": [
+        "{projectRoot}/**/__stories__/**",
+        "{projectRoot}/**/*.stories.*"
+      ],
       "outputs": [
         "{projectRoot}/dist"
       ]

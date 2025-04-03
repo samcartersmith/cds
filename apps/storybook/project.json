@@ -13,6 +13,10 @@
     },
     "build": {
       "command": "build-storybook --output-dir dist",
+      "inputs": [
+        "{projectRoot}/**/__stories__/**",
+        "{projectRoot}/**/*.stories.*"
+      ],
       "outputs": [
         "{projectRoot}/dist"
       ]
@@ -25,6 +29,13 @@
     },
     "analyze": {
       "command": "build-storybook --output-dir dist",
+      "inputs": [
+        "{projectRoot}/**/__stories__/**",
+        "{projectRoot}/**/*.stories.*"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
       "options": {
         "env": {
           "ANALYZE": "true"
@@ -33,6 +44,10 @@
     },
     "build-for-analyze": {
       "command": "build-storybook --output-dir dist",
+      "inputs": [
+        "{projectRoot}/**/__stories__/**",
+        "{projectRoot}/**/*.stories.*"
+      ],
       "outputs": [
         "{projectRoot}/dist",
         "{workspaceRoot}/bundle-stats.json",
@@ -54,11 +69,18 @@
       "dependsOn": [
         "^build"
       ],
+      "inputs": [
+        "{projectRoot}/**/__stories__/**",
+        "{projectRoot}/**/*.stories.*"
+      ],
       "outputs": [
         "{projectRoot}/dist"
       ],
       "options": {
-        "cwd": "apps/storybook"
+        "cwd": "apps/storybook",
+        "env": {
+          "STORYBOOK_SKIP_ANIMATION": "true"
+        }
       }
     },
     "a11y-web": {
