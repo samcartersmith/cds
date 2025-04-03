@@ -25,8 +25,8 @@ CDS offers a comprehensive library of React and React Native components. These c
 
 <ul>
   <li>Be customizable via props and theming.</li>
-  <li>Ensure consistency with Coinbase's design language.</li>
-  <li>Adhere to accessibility standards.</li>
+  <li>Render quickly with no runtime style injection.</li>
+  <li>Adhere to strict accessibility standards.</li>
 </ul>
 
 ### Theming
@@ -37,16 +37,8 @@ Theming is at the core of CDS. The `ThemeProvider` broadcasts a theme throughout
   <li>Global style consistency.</li>
   <li>Customization of colors, spacing, typography, and more.</li>
   <li>Light and dark mode support.</li>
+  <li>Injection of CSS variables for web.</li>
 </ul>
-
-#### Web
-
-For web applications, theming is achieved through CSS Variables and React Context. CSS Variables minimize JavaScript-driven re-renders, offering optimal performance.
-
-#### React Native
-
-In React Native, theming is achieved through React Context, providing dynamic styles at runtime.
-
 </MDXArticle>
 
 <MDXArticle>
@@ -55,82 +47,61 @@ In React Native, theming is achieved through React Context, providing dynamic st
 CDS components support a powerful `StyleProps` API that simplifies applying styles. This API:
 
 <ul>
-  <li>Supports responsive design out of the box.</li>
-  <li>Includes dynamic and static style properties.</li>
+  <li>Is connected to the ThemeProvider.</li>
   <li>Reduces the need for custom CSS or inline styles.</li>
+  <li>Supports responsive design out of the box on web.</li>
+  <li>Minimizes CSS output with atomic CSS.</li>
 </ul>
 
 Example:
 
 ```tsx
-<Box color="bgPrimary" padding={{ base: 3, tablet: 5 }} width={{ base: '100%', desktop: '50%' }} />
+<Box
+  color="fgMuted"
+  background="bgAlternate"
+  padding={{ base: 2, tablet: 4, desktop: 6 }}
+  width={{ base: '100%', desktop: '50%' }}
+/>
 ```
 
-### Polymorphic Components
+### Polymorphic Components on web
 
-Many CDS components are polymorphic, meaning they can render different HTML elements or React Native views based on the `as` prop. This flexibility allows developers to tailor components to specific use cases while maintaining consistent styles and behavior.
+Many CDS web components are polymorphic, meaning they can render different HTML elements based on the `as` prop. This flexibility allows developers to tailor components to specific use cases while maintaining consistent styles and behavior.
 
 Example:
 
 ```tsx
-<Box as="section" padding={4}>
-  Content here
-</Box>
+<Button as="a" href="https://coinbase.com">
+  Go to Coinbase
+</Button>
 ```
 
 </MDXArticle>
 
 <MDXArticle>
-### Responsive Design
+### Responsive Design on web
 
 CDS supports responsive design with a declarative syntax. You can specify different styles for various breakpoints directly in your components without writing media queries manually.
 
 Example:
 
 ```tsx
-<Grid templateColumns={{ base: '1fr', tablet: 'repeat(2, 1fr)' }} gap={{ base: 2, desktop: 4 }}>
+<Grid gap={{ base: 2, desktop: 4 }} templateColumns={{ base: '1fr', tablet: 'repeat(2, 1fr)' }}>
   <Box>Item 1</Box>
   <Box>Item 2</Box>
 </Grid>
 ```
 
 </MDXArticle>
-</MDXSection>
-
-<MDXSection>
 <MDXArticle>
-## Component API
-
-Each CDS component includes:
-
-<ul>
-  <li>
-    <strong>Props API</strong>: Define how the component behaves and interacts with the rest of the
-    UI.
-  </li>
-  <li>
-    <strong>StyleProps API</strong>: Customize the component's appearance with responsive styles.
-  </li>
-</ul>
-
 ### Common Props
 
 Most CDS components support the following common props:
 
-<ul>
-  <li>
-    <code>className</code> (web only): Pass custom class names for additional styling.
-  </li>
-  <li>
-    <code>style</code>: Apply inline styles.
-  </li>
-  <li>
-    <code>id</code>: Set a unique identifier for the component.
-  </li>
-  <li>
-    <code>data-*</code>: Add custom data attributes for testing or analytics.
-  </li>
-</ul>
+- StyleProps
+- `className` (web only): Pass custom class names for additional styling.
+- `style`: Apply inline styles.
+- Native properties for the specific platform (web or React Native)
 
 ### Component-Specific Props
 
@@ -139,48 +110,41 @@ Each component has its own set of specific props. Refer to the individual compon
 Example:
 
 ```tsx
-<Button variant="primary" size="large" onClick={() => console.log('Button clicked')}>
-  Click Me
-</Button>
+<Button variant="secondary">Hello world</Button>
 ```
 
 </MDXArticle>
+</MDXSection>
+
+<MDXSection>
 
 <MDXArticle>
 ## Dynamic Styling with Theme Variables
 
 CDS exposes theme variables that allow you to create custom styles based on the current theme. These variables include:
 
-<ul>
-  <li>
-    Colors (<code>color.fgPrimary</code>, <code>color.bgPrimary</code>, etc.)
-  </li>
-  <li>
-    Spacing (<code>space.0</code>, <code>space.1</code>, etc.)
-  </li>
-  <li>
-    Typography (<code>fontSize.body</code>, <code>lineHeight.body</code>, etc.)
-  </li>
-  <li>And more.</li>
-</ul>
+- Colors (`color.fgPrimary`, `color.bgPrimary`, etc.)
+- Spacing (`space.0`, `space.1`, etc.)
+- Typography (`fontSize.body`, `lineHeight.body`, etc.)
+- And more.
 
-For web, use CSS Variables directly:
-
-```css
-.my-class {
-  background-color: var(--color-bgPrimary);
-}
-```
-
-For React Native, access them through the theme context:
+Both React Native and web provide access through the theme context:
 
 ```tsx
 import { useTheme } from '@cbhq/cds-mobile';
 
 const MyComponent = () => {
   const theme = useTheme();
-  return <View style={{ backgroundColor: theme.color.bgPrimary }}>{/* Content */}</View>;
+  return <View style={{ backgroundColor: theme.color.bgPrimary }}>Hello world</View>;
 };
+```
+
+Prefer to use CSS Variables directly on web for better performance:
+
+```css
+.my-class {
+  background-color: var(--color-bgPrimary);
+}
 ```
 
 </MDXArticle>
@@ -190,22 +154,14 @@ const MyComponent = () => {
 
 CDS components are designed with accessibility in mind. Key features include:
 
-<ul>
-  <li>ARIA attributes to support screen readers.</li>
-  <li>
-    Focus management for interactive components (e.g., <code>Modal</code>, <code>Dropdown</code>).
-  </li>
-  <li>Keyboard navigation support.</li>
-</ul>
+- ARIA attributes to support screen readers.
+- Focus management for interactive components (e.g., `Modal`, `Dropdown`).
+- Keyboard navigation support.
 
 Developers can further enhance accessibility by:
 
-<ul>
-  <li>
-    Providing descriptive labels (e.g., <code>aria-label</code>, <code>aria-labelledby</code>).
-  </li>
-  <li>Testing with accessibility tools.</li>
-</ul>
+- Providing descriptive labels (e.g., `aria-label`, `aria-labelledby`).
+- Testing with accessibility tools.
 
 Example:
 
@@ -221,9 +177,9 @@ Example:
 CDS components integrate seamlessly with third-party libraries, such as:
 
 <ul>
+  <li><strong>Panda CSS</strong>: Create type-safe CSS at build time.</li>
+  <li><strong>Styled Components</strong>: Wrap CDS components with custom styles.</li>
   <li><strong>React Router</strong>: Use <code>NavLink</code> and <code>Link</code> for navigation.</li>
-  <li><strong>Redux or Context</strong>: Manage state alongside CDS components.</li>
-  <li><strong>Analytics Tools</strong>: Add <code>data-*</code> attributes to components for tracking user interactions.</li>
 </ul>
 </MDXArticle>
 </MDXSection>
@@ -232,20 +188,9 @@ CDS components integrate seamlessly with third-party libraries, such as:
 <MDXArticle hideDivider>
 ## Next Steps
 
-<ul>
-  <li>
-    <a href="/components/layout/Accordion">Component Library</a>: Explore all the components
-    available in CDS.
-  </li>
-  <li>
-    <a href="/getting-started/theming#setting-up-the-themeprovider">Theming</a>: Learn how to
-    customize your application's theme.
-  </li>
-  <li>
-    <a href="/getting-started/styling">StyleProps Guide</a>: Dive deeper into the powerful
-    StyleProps API.
-  </li>
-</ul>
+- [Component Library](/components/layout/Accordion): Explore all the components available in CDS.
+- [Theming](/getting-started/theming#setting-up-the-themeprovider): Learn how to customize your application's theme.
+- [StyleProps Guide](/getting-started/styling) Dive deeper into the powerful StyleProps API.
 
 Unlock the full potential of the Coinbase Design System and start building high-quality applications today!
 
