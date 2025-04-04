@@ -58,7 +58,6 @@ export const Banner = memo(
       {
         variant,
         borderRadius = 400,
-        bordered = true,
         startIcon,
         onClose,
         primaryAction,
@@ -174,7 +173,6 @@ export const Banner = memo(
             ref={ref}
             background={background}
             borderRadius={borderRadius}
-            bordered={bordered}
             className={stackClassName}
             flexGrow={1}
             gap={1}

@@ -486,7 +486,7 @@ export const Examples = () => {
         </Example>
         <Divider paddingY={4} />
         <VStack>
-          <Text as="h1" display="block" paddingBottom={3}>
+          <Text as="h1" display="block" font="display1" paddingBottom={3}>
             Implicit Layouts
           </Text>
           <Text as="h2" display="block" font="headline" paddingBottom={4}>

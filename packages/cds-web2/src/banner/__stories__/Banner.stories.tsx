@@ -241,9 +241,7 @@ export const CustomMargin = () => {
         styleVariant="global"
         title="Global informational Message"
         variant="informational"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
       <Banner
         {...examplePropsWithMargin}
         showDismiss
@@ -251,21 +249,15 @@ export const CustomMargin = () => {
         styleVariant="global"
         title="Global promotional Message"
         variant="promotional"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
       <Banner
         {...examplePropsWithMargin}
         startIcon="warning"
         startIconAccessibilityLabel="Warning"
         styleVariant="global"
         variant="warning"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
-      <Banner {...examplePropsWithMargin} styleVariant="global" variant="error">
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
+      <Banner {...examplePropsWithMargin} styleVariant="global" variant="error" />
       <Text as="h1" display="block" font="title1">
         Inline
       </Text>
@@ -276,9 +268,7 @@ export const CustomMargin = () => {
         styleVariant="inline"
         title="Inline informational Message"
         variant="informational"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
       <Banner
         {...examplePropsWithMargin}
         showDismiss
@@ -286,21 +276,15 @@ export const CustomMargin = () => {
         styleVariant="inline"
         title="Inline promotional Message"
         variant="promotional"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
       <Banner
         {...examplePropsWithMargin}
         startIcon="warning"
         startIconAccessibilityLabel="Warning"
         styleVariant="inline"
         variant="warning"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
-      <Banner {...examplePropsWithMargin} styleVariant="inline" variant="error">
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
+      <Banner {...examplePropsWithMargin} styleVariant="inline" variant="error" />
     </VStack>
   );
 };
@@ -316,9 +300,7 @@ export const CustomAlignment = () => {
         alignItems="center"
         startIconAccessibilityLabel="Information"
         variant="informational"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
       <Banner
         {...exampleProps}
         showDismiss
@@ -326,9 +308,7 @@ export const CustomAlignment = () => {
         startIconAccessibilityLabel="Information"
         title="Promotional Message"
         variant="promotional"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
       <Banner
         {...exampleProps}
         alignItems={{
@@ -339,9 +319,7 @@ export const CustomAlignment = () => {
         primaryAction={primaryAction}
         secondaryAction={secondaryAction}
         variant="error"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
       <Banner
         {...exampleProps}
         showDismiss
@@ -356,9 +334,7 @@ export const CustomAlignment = () => {
         startIconAccessibilityLabel="Warning"
         title="Warning Message"
         variant="warning"
-      >
-        {shortMessage} <Link href="https://www.coinbase.com">Learn more</Link>
-      </Banner>
+      />
     </VStack>
   );
 };

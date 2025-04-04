@@ -114,7 +114,7 @@ describe('Grid', () => {
 
       expect(screen.getByText('Child')).toHaveAttribute(
         'style',
-        '--gridTemplateColumns: repeat(12, 1fr); --opacity: 0.4;',
+        '--gridTemplateColumns: repeat(12, minmax(0, 1fr)); --opacity: 0.4;',
       );
     });
   });
@@ -125,7 +125,7 @@ describe('Grid', () => {
 
       expect(screen.getByText('Child')).toHaveAttribute(
         'style',
-        '--gridTemplateColumns: repeat(12, 1fr);',
+        '--gridTemplateColumns: repeat(12, minmax(0, 1fr));',
       );
 
       rerender(
@@ -136,7 +136,7 @@ describe('Grid', () => {
 
       expect(screen.getByText('Child')).toHaveAttribute(
         'style',
-        '--gridTemplateColumns: repeat(12, 1fr); --width: 321px; --minWidth: 66%; --maxWidth: 789rem;',
+        '--gridTemplateColumns: repeat(12, minmax(0, 1fr)); --width: 321px; --minWidth: 66%; --maxWidth: 789rem;',
       );
     });
   });
@@ -147,7 +147,7 @@ describe('Grid', () => {
 
       expect(screen.getByText('Child')).toHaveAttribute(
         'style',
-        '--gridTemplateColumns: repeat(12, 1fr);',
+        '--gridTemplateColumns: repeat(12, minmax(0, 1fr));',
       );
 
       rerender(
@@ -158,7 +158,7 @@ describe('Grid', () => {
 
       expect(screen.getByText('Child')).toHaveAttribute(
         'style',
-        '--gridTemplateColumns: repeat(12, 1fr); --height: 321px; --minHeight: 66%; --maxHeight: 789rem;',
+        '--gridTemplateColumns: repeat(12, minmax(0, 1fr)); --height: 321px; --minHeight: 66%; --maxHeight: 789rem;',
       );
     });
   });
@@ -215,7 +215,7 @@ describe('Grid', () => {
 
       expect(screen.getByText('Child')).toHaveAttribute(
         'style',
-        '--gridTemplateColumns: repeat(12, 1fr); opacity: 0.4; padding: 2px 4px;',
+        '--gridTemplateColumns: repeat(12, minmax(0, 1fr)); opacity: 0.4; padding: 2px 4px;',
       );
     });
   });

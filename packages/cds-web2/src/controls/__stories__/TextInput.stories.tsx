@@ -484,7 +484,7 @@ export const CopyTextInput = function CopyTextInput() {
       <TextInput
         end={
           <HStack>
-            <Link as="button" color={variantColorMap[variant]} onClick={handleOnClick}>
+            <Link as="button" color={variantColorMap[variant]} font="legal" onClick={handleOnClick}>
               {copied ? 'copied' : 'copy'}
             </Link>
             <InputIcon name="visibleActive" />

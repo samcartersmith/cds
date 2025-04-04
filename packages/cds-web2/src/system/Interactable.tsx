@@ -58,8 +58,7 @@ const baseStyle = css`
     }
   }
 
-  &:active,
-  &[aria-pressed='true'] {
+  &:active {
     background-color: var(${interactablePressedBackground});
     > * {
       opacity: var(${interactablePressedOpacity});

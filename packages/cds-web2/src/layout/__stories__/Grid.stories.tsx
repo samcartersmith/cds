@@ -143,9 +143,9 @@ const FullBleedExample = () => {
 };
 
 const responsiveGridColumnConfig = {
-  phone: 'repeat(3, 1fr)',
-  tablet: 'repeat(6, 1fr)',
-  desktop: 'repeat(12, 1fr)',
+  phone: 'repeat(3, minmax(0, 1fr))',
+  tablet: 'repeat(6, minmax(0, 1fr))',
+  desktop: 'repeat(12, minmax(0, 1fr))',
 } as const;
 
 export const GridExamples = () => {

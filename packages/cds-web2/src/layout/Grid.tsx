@@ -80,7 +80,8 @@ export const Grid: GridComponent = forwardRef<React.ReactElement<GridBaseProps>,
         return `repeat(auto-fill, minmax(${columnMin}, ${columnMax}))`;
       }
       return (
-        templateColumns ?? (typeof columns !== 'undefined' ? `repeat(${columns}, 1fr)` : undefined)
+        templateColumns ??
+        (typeof columns !== 'undefined' ? `repeat(${columns}, minmax(0, 1fr))` : undefined)
       );
     }, [columnMax, columnMin, columns, isImplicit, templateColumns]);
 
@@ -90,7 +91,9 @@ export const Grid: GridComponent = forwardRef<React.ReactElement<GridBaseProps>,
         as={Component}
         display={display}
         gridTemplateColumns={templateColumnsValue}
-        gridTemplateRows={typeof rows !== 'undefined' ? `repeat(${rows}, 1fr)` : undefined}
+        gridTemplateRows={
+          typeof rows !== 'undefined' ? `repeat(${rows},  minmax(0, 1fr))` : undefined
+        }
         {...props}
       />
     );

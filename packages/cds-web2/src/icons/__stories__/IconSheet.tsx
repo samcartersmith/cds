@@ -58,8 +58,7 @@ export const IconSheet = memo(function IconSheet({ startIndex, endIndex }: IconS
                   })}
                 </HStack>
                 <HStack alignItems="center" gap={2}>
-                  <SvgFromFigma name={name} size="xs" />
-                  {(['s', 'm', 'l'] as const).map((size) => {
+                  {(['xs', 's', 'm', 'l'] as const).map((size) => {
                     return <SvgFromFigma key={`figma-icon-${size}`} name={name} size={size} />;
                   })}
                 </HStack>

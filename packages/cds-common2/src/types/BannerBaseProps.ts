@@ -43,11 +43,6 @@ export type BannerBaseProps = {
   /** Accessibility label for close button on the banner */
   closeAccessibilityLabel?: string;
   /**
-   * Determines whether banner has a border or not
-   * @default true
-   * */
-  bordered?: boolean;
-  /**
    * Determines banner's border radius
    * @default 400
    * */

@@ -36,6 +36,7 @@ export const HelperText = memo(function HelperTex({
     <Text
       color={color}
       dangerouslySetColor={dangerouslySetColor}
+      display="block"
       font="label2"
       id={id}
       textAlign={textAlign}
