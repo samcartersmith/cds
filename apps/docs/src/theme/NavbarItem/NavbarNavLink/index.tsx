@@ -3,10 +3,13 @@ import type { Props as DocusaurusLinkProps } from '@docusaurus/Link';
 import Link from '@docusaurus/Link';
 import { isRegexpStringMatch } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { cx } from '@linaria/core';
 import type { Props } from '@theme/NavbarItem/NavbarNavLink';
 import { type Location } from 'history';
 import { Box } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
+
+import styles from './styles.module.css';
 
 export type NavbarNavLinkProps = Pick<
   Props,
@@ -22,6 +25,7 @@ export default function NavbarNavLink({
   label,
   html,
   prependBaseUrlToHref,
+  className,
   ...props
 }: NavbarNavLinkProps): JSX.Element {
   const toUrl = useBaseUrl(to);
@@ -36,10 +40,11 @@ export default function NavbarNavLink({
         background="bgSecondary"
         borderRadius={1000}
         borderWidth={0}
+        className={cx(styles.navLink, className)}
         color="fg"
         font="headline"
-        hoverColor="fg"
         href={prependBaseUrlToHref ? normalizedHref : href}
+        {...props}
       >
         <Box as="span" paddingX={1.5} paddingY={0.5}>
           {label}
@@ -56,6 +61,7 @@ export default function NavbarNavLink({
       background="bgSecondary"
       borderRadius={1000}
       borderWidth={0}
+      className={cx(styles.navLink, className)}
       to={toUrl}
       {...((activeBasePath || activeBaseRegex) && {
         isActive: (_: unknown, location: Location) =>
