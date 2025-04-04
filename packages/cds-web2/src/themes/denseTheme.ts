@@ -2,6 +2,7 @@ import type { ThemeConfig } from '../core/theme';
 
 import { defaultTheme } from './defaultTheme';
 
+/** @deprecated This theme was created to test backwards compatibility, it is not officially supported by CDS. */
 export const denseTheme = {
   ...defaultTheme,
   space: {
