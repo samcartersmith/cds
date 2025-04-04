@@ -53,13 +53,12 @@ export const IconSheet = memo(function IconSheet({ startIndex, endIndex }: IconS
             <HStack key={`icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
               <VStack gap={2}>
                 <HStack alignItems="center" className={iconFontOverride} gap={2}>
-                  <Icon color="fg" name={name} size="s" />
-                  {(['s', 'm', 'l'] as const).map((size) => {
+                  {(['xs', 's', 'm', 'l'] as const).map((size) => {
                     return <Icon key={`icon-${size}`} color="fg" name={name} size={size} />;
                   })}
                 </HStack>
                 <HStack alignItems="center" gap={2}>
-                  <SvgFromFigma name={name} size="s" />
+                  <SvgFromFigma name={name} size="xs" />
                   {(['s', 'm', 'l'] as const).map((size) => {
                     return <SvgFromFigma key={`figma-icon-${size}`} name={name} size={size} />;
                   })}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
-import { selectCellSpacingConfig } from '@cbhq/cds-common2/tokens/select';
 import type { CellPriority, CellSpacing } from '@cbhq/cds-common2/types/CellBaseProps';
 
 import { Button, IconButton } from '../../buttons';
+import { Checkbox } from '../../controls/Checkbox';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { VStack } from '../../layout';
 import { CellMedia } from '../CellMedia';
@@ -502,7 +502,7 @@ const WithMedia = () => (
 
 const WithActions = () => (
   <>
-    {/* <ListCell action={<Checkbox checked accessibilityLabel="Checkbox" />} title="Title" /> */}
+    <ListCell action={<Checkbox checked accessibilityLabel="Checkbox" />} title="Title" />
     <ListCell action={<Button>Action</Button>} detail="Detail" title="Title" />
 
     <ListCell
@@ -564,35 +564,10 @@ const WithIntermediary = () => (
   </>
 );
 
-const CustomSpacing = () => (
-  <>
-    <ListCell
-      selected
-      borderRadius={0}
-      description="Description"
-      detail="$1,230"
-      detailWidth={100}
-      onClick={onClickConsole}
-      title="Title"
-      {...selectCellSpacingConfig}
-    />
-    <ListCell
-      borderRadius={0}
-      description="Description"
-      detail="$1,230"
-      detailWidth={100}
-      onClick={onClickConsole}
-      title="Title"
-      {...selectCellSpacingConfig}
-    />
-  </>
-);
-
 export {
   CompactContent,
   CompactPressableContent,
   Content,
-  CustomSpacing,
   LongContent,
   PressableContent,
   PriorityContent,
