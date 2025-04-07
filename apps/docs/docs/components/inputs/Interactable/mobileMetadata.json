@@ -1,5 +1,15 @@
 {
   "import": "import { Interactable } from '@cbhq/cds-mobile/system/Interactable'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/system/Interactable.tsx",
-  "description": "A low-level composable component for interactable elements, like buttons and input fields. It provides a consistent pattern for handling hovered, pressed, and disabled interactive states."
+  "description": "A low-level composable component for interactable elements, like buttons and input fields. It provides a consistent pattern for handling hovered, pressed, and disabled interactive states.",
+  "relatedComponents": [
+    {
+      "label": "Pressable",
+      "url": "/components/inputs/Pressable/"
+    },
+    {
+      "label": "Button",
+      "url": "/components/inputs/Button/"
+    }
+  ]
 }

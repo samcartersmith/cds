@@ -1,5 +1,19 @@
 {
   "import": "import { Box } from '@cbhq/cds-mobile/layout/Box';",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/Box.tsx",
-  "description": "The Box component is a container component that can be used to wrap other components."
+  "description": "The Box component is a container component that can be used to wrap other components.",
+  "relatedComponents": [
+    {
+      "label": "VStack",
+      "url": "/components/layout/VStack/"
+    },
+    {
+      "label": "HStack",
+      "url": "/components/layout/HStack/"
+    },
+    {
+      "label": "Grid",
+      "url": "/components/layout/Grid/"
+    }
+  ]
 }

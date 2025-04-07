@@ -1,5 +1,15 @@
 {
   "import": "import { Avatar } from '@cbhq/cds-mobile/media/Avatar'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/media/Avatar.tsx",
-  "description": "Avatar is a visual representation of a user, company, or entity."
+  "description": "Avatar is a visual representation of a user, company, or entity.",
+  "relatedComponents": [
+    {
+      "label": "AvatarButton",
+      "url": "/components/inputs/AvatarButton/"
+    },
+    {
+      "label": "DotCount",
+      "url": "/components/other/DotCount/"
+    }
+  ]
 }

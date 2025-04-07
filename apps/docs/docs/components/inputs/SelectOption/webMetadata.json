@@ -3,5 +3,11 @@
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/controls/SelectOption.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-select-selectoption--stories",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=466-13810&t=K73gadcWiDv2aYlS-1",
-  "description": "SelectOption renders a single option of a Select component."
+  "description": "SelectOption renders a single option of a Select component.",
+  "relatedComponents": [
+    {
+      "label": "Select",
+      "url": "/components/inputs/Select/"
+    }
+  ]
 }

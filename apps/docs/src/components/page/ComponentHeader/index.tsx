@@ -1,4 +1,5 @@
 import React, { memo, useCallback } from 'react';
+import DocusaurusLink from '@docusaurus/Link';
 import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
@@ -175,7 +176,7 @@ export const ComponentHeader = memo(
               {source && (
                 <MetadataItem label="Source">
                   <Text font="body">
-                    <Link href={source} target="_blank">
+                    <Link as={DocusaurusLink} target="_blank" to={source}>
                       View source code
                     </Link>
                   </Text>
@@ -184,7 +185,7 @@ export const ComponentHeader = memo(
               {storybook && (
                 <MetadataItem label="Storybook">
                   <Text font="body">
-                    <Link href={storybook} target="_blank">
+                    <Link as={DocusaurusLink} target="_blank" to={storybook}>
                       View Storybook
                     </Link>
                   </Text>
@@ -193,7 +194,7 @@ export const ComponentHeader = memo(
               {figma && (
                 <MetadataItem label="Figma">
                   <Text font="body">
-                    <Link href={figma} target="_blank">
+                    <Link as={DocusaurusLink} target="_blank" to={figma}>
                       View Figma
                     </Link>
                   </Text>
@@ -222,7 +223,7 @@ export const ComponentHeader = memo(
                   <li key={dependency.name}>
                     <Text font="label2">
                       {dependency.url ? (
-                        <Link href={dependency.url} target="_blank">
+                        <Link as={DocusaurusLink} target="_blank" to={dependency.url}>
                           {dependency.name}
                         </Link>
                       ) : (
@@ -256,7 +257,9 @@ export const ComponentHeader = memo(
                 {relatedComponents.map((component, index) => (
                   <li key={component.url}>
                     <Text font="label2">
-                      <Link href={component.url}>{component.label}</Link>
+                      <Link as={DocusaurusLink} to={component.url}>
+                        {component.label}
+                      </Link>
                       {index < relatedComponents.length - 1 && ', '}
                     </Text>
                   </li>
