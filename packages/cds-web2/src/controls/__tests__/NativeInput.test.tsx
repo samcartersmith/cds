@@ -51,7 +51,7 @@ describe('NativeInput', () => {
     expect(screen.getByTestId(TEST_ID)).toHaveAttribute('disabled');
   });
 
-  it('changes scheme style for input icons for dark spectrum', () => {
+  it('changes scheme style for input icons for dark colorScheme', () => {
     render(
       <DefaultThemeProvider activeColorScheme="dark">
         <NativeInput testID={TEST_ID} />

@@ -9,7 +9,7 @@ type GetAccessibleForegroundGradientParams = {
   background: string;
   /* Valid color value (hex, rgb, rgba, etc) */
   color: string;
-  /** Active spectrum (light or dark) */
+  /** Active colorScheme (light or dark) */
   colorScheme: ColorScheme;
   /** Where the foreground color is being applied. */
   usage: A11yColorUsage;

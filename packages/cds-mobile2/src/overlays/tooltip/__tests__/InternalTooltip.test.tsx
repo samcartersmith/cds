@@ -73,7 +73,7 @@ describe('InternalTooltip.test', () => {
     expect(mockAnimateIn.start).toHaveBeenCalledTimes(1);
   });
 
-  it('renders normal spectrum when inverteSpectrum sets to false', () => {
+  it('renders active colorScheme when invertColorScheme sets to false', () => {
     render(
       <DefaultThemeProvider>
         <InternalTooltip
