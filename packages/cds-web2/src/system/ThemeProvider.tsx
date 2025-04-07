@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 import React, { createContext, useContext, useId, useMemo } from 'react';
 import { cx } from '@linaria/core';
 import type { ColorScheme } from '@cbhq/cds-common2/core/theme';

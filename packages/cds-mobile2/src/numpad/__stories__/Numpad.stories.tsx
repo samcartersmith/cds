@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import React, { View } from 'react-native';
+import { View } from 'react-native';
 
 import { Banner } from '../../banner/Banner';
 import { Button, ButtonGroup } from '../../buttons';

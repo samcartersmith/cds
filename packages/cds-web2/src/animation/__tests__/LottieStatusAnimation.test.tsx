@@ -25,12 +25,12 @@ jest.mock('@cbhq/cds-common2/lottie/useStatusAnimationPoller', () => ({
 jest.mock('../Lottie', () => {
   const { forwardRef }: { forwardRef: typeof React.forwardRef } = jest.requireActual('react');
   return {
-    Lottie: forwardRef(
-      ({ onAnimationFinish, testID }: { onAnimationFinish?: () => void; testID?: string }, ref) => {
+    Lottie: forwardRef<HTMLDivElement, { onAnimationFinish?: () => void; testID?: string }>(
+      ({ onAnimationFinish, testID }, ref) => {
         if (onAnimationFinish) {
           setTimeout(onAnimationFinish, 1000);
         }
-        return <div data-testid={testID} />;
+        return <div ref={ref} data-testid={testID} />;
       },
     ),
   };

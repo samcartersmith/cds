@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useEffect, useRef } from 'react';
 import { Animated, View } from 'react-native';
-import Svg, { Circle, CircleProps, G } from 'react-native-svg';
+import { Circle, CircleProps, G, Svg } from 'react-native-svg';
 import { SharedProps } from '@cbhq/cds-common2';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
 import {

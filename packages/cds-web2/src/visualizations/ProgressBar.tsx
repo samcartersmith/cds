@@ -58,8 +58,8 @@ export const ProgressBar = memo(
         <VStack
           ref={forwardedRef}
           accessibilityLabel={accessibilityLabel}
-          aria-valuemin={0}
           aria-valuemax={100}
+          aria-valuemin={0}
           aria-valuenow={progress * 100}
           flexGrow={1}
           flexShrink={0}

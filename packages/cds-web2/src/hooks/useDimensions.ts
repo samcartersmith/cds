@@ -220,7 +220,7 @@ export const useDimensions = <T extends HTMLElement>({
     observe(null);
 
     return () => unobserve();
-  }, [breakpoints, useBorderBoxSize, observe, unobserve, updateOnBreakpointChange]);
+  }, [breakpoints, useBorderBoxSize, observe, unobserve, updateOnBreakpointChange, polyfill]);
 
   return { ref, ...state, observe, unobserve };
 };

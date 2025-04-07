@@ -101,6 +101,7 @@ export const ComponentHeader = memo(
           await navigator.clipboard.writeText(importText);
           toast.show('Copied to clipboard');
         } catch (error) {
+          console.error(error);
           toast.show('Failed to copy to clipboard', { variant: 'fgNegative' });
         }
       } else {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect } from 'react';
 import { Animated } from 'react-native';
 import { noop } from '@cbhq/cds-utils';
@@ -7,12 +8,12 @@ import { Box } from '../layout/Box';
 import { LottieProps } from './LottieProps';
 
 export const LottieMock = ({
-  autoplay: _1 = false,
-  colorFilters: _2,
-  loop: _3 = false,
-  progress: _4,
-  resizeMode: _5 = 'contain',
-  source: _6,
+  autoplay = false,
+  colorFilters,
+  loop = false,
+  progress,
+  resizeMode = 'contain',
+  source,
   onAnimationFinish,
   ...boxProps
 }: LottieProps) => {

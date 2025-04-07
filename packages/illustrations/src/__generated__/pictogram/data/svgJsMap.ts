@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-
 import type { PictogramName } from '../types/PictogramName';
 
 /**

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Svg, { Path } from 'react-native-svg';
+import { Path, Svg } from 'react-native-svg';
 import { LogoMarkParams, useLogoMark } from '@cbhq/cds-common2/hooks/useLogo';
 
 import { useTheme } from '../hooks/useTheme';

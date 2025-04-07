@@ -76,7 +76,6 @@ export const Link: LinkComponent = memo(
   forwardRef<React.ReactElement<LinkBaseProps>, LinkBaseProps>(
     <AsComponent extends React.ElementType>(
       {
-        renderContainer,
         // Text props
         children,
         color = 'fgPrimary',

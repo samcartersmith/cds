@@ -27,7 +27,6 @@ export const NavigationIcon = memo(
         name,
         size = 'm',
         testID,
-        padding,
         ...props
       },
       ref,

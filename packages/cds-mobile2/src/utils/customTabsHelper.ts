@@ -1,5 +1,6 @@
 import { NativeModules } from 'react-native';
-import noop from 'lodash/noop';
+
+const noop = (...args: any[]) => {};
 
 // Only implemented on Android -- it's a noop on iOS
 const CustomTabsHelper = (NativeModules.CustomTabsHelperModule || {

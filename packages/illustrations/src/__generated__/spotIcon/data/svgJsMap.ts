@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-
 import type { SpotIconName } from '../types/SpotIconName';
 
 /**

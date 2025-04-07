@@ -31,7 +31,6 @@ const ModalDropdown = memo(
         onCloseMenu = NOOP,
         content,
         disablePortal,
-        accessibilityLabel,
         value,
         disableCloseOnOptionChange,
         visible,

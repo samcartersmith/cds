@@ -37,14 +37,14 @@ const Default = () => {
       </Box>
       <Box>
         <Pressable block as="button" background="bgPrimary">
-          <Text as="p" display="block" color="fgInverse" font="body">
+          <Text as="p" color="fgInverse" display="block" font="body">
             Pressable full-width
           </Text>
         </Pressable>
       </Box>
       <Box>
         <Pressable loading as="button" background="bgPrimary">
-          <Text as="p" display="block" color="fgInverse" font="body">
+          <Text as="p" color="fgInverse" display="block" font="body">
             loading
           </Text>
         </Pressable>
@@ -62,7 +62,7 @@ const Transparent = () => {
         </Text>
       </Pressable>
       <Pressable transparentWhileInactive as="button" background="bgPrimary">
-        <Text as="p" display="block" color="fgInverse" font="body" padding={1}>
+        <Text as="p" color="fgInverse" display="block" font="body" padding={1}>
           transparentWhileInactive
         </Text>
       </Pressable>
@@ -72,7 +72,7 @@ const Transparent = () => {
         </Text>
       </Pressable>
       <Pressable disabled transparentWhileInactive as="button" background="bgPrimary">
-        <Text as="p" display="block" color="fgInverse" font="body" padding={1}>
+        <Text as="p" color="fgInverse" display="block" font="body" padding={1}>
           transparentWhileInactive
         </Text>
       </Pressable>
@@ -125,17 +125,17 @@ const Borders = () => {
         </Text>
       </Pressable>
       <Pressable as="button" background="bgPrimary" borderColor="bgPositive" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body" padding={1}>
+        <Text as="p" color="fgInverse" display="block" font="body" padding={1}>
           positive + standard
         </Text>
       </Pressable>
       <Pressable as="button" background="bgSecondary" borderColor="bgLineHeavy" borderRadius={200}>
-        <Text as="p" display="block" color="fg" font="body" padding={1}>
+        <Text as="p" color="fg" display="block" font="body" padding={1}>
           bgLineHeavy + tooltip
         </Text>
       </Pressable>
       <Pressable as="button" background="bgPositive" borderColor="bgLine" borderRadius={400}>
-        <Text as="p" display="block" color="fgInverse" font="body" padding={1}>
+        <Text as="p" color="fgInverse" display="block" font="body" padding={1}>
           line + pill
         </Text>
       </Pressable>
@@ -145,7 +145,7 @@ const Borders = () => {
         borderColor="bgPrimaryWash"
         borderRadius={1000}
       >
-        <Text as="p" display="block" color="fgInverse" font="body" padding={1}>
+        <Text as="p" color="fgInverse" display="block" font="body" padding={1}>
           primaryWash + round
         </Text>
       </Pressable>
@@ -178,7 +178,7 @@ export const ThemeColors = () => {
             borderColor="bgLine"
             borderWidth={100}
           >
-            <Text as="p" display="block" dangerouslySetColor={textColor} font="body" padding={1}>
+            <Text as="p" dangerouslySetColor={textColor} display="block" font="body" padding={1}>
               {color}
             </Text>
           </Pressable>
@@ -204,7 +204,7 @@ export const ThemeColorsWithDisabled = () => {
             borderColor="bgLine"
             borderWidth={100}
           >
-            <Text as="p" display="block" dangerouslySetColor={textColor} font="body" padding={1}>
+            <Text as="p" dangerouslySetColor={textColor} display="block" font="body" padding={1}>
               {color}
             </Text>
           </Pressable>

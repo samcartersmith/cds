@@ -110,6 +110,7 @@ function preProcessDoc(doc: Doc): PreProcessedDoc {
 /*                                   Process                                  */
 /* -------------------------------------------------------------------------- */
 function processPropItem(prop: PreProcessedPropItem | ProcessedPropItem): ProcessedPropItem {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { declarations: _declarations, tags: _tags, ...restOfProp } = prop;
   return {
     ...restOfProp,

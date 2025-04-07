@@ -85,7 +85,7 @@ export type ModalProps = {
   dangerouslySetPosition?: Position;
   /**
    * Set disableFocusTrap to disable keyboard listeners responsible for focus trap behavior
-   * This can be useful for scenarios like Yubikey 2fa
+   * This can be useful for scenarios like 2fa
    * @default false
    */
   disableFocusTrap?: boolean;

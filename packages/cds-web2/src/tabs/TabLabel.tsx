@@ -93,7 +93,7 @@ export const TabLabel = memo(
               </>
             ) : (
               <>
-                <Text as="h2" display="block" color={color} font={font} {...props} />
+                <Text as="h2" color={color} display="block" font={font} {...props} />
                 {/* This element is used to ensure the element width doesn't change when we change font-weight */}
                 <Text
                   as="h2"

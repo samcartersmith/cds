@@ -6,7 +6,7 @@ import type {
   NativeSyntheticEvent,
   ScrollView,
 } from 'react-native';
-import { throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 
 type Options = {
   scrollThrottleWaitTime?: number;

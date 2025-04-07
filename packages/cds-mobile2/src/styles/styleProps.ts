@@ -2,7 +2,6 @@ import type { TextStyle, ViewStyle } from 'react-native';
 import { DimensionValue, Position } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
-import { TextAlignProps } from '@cbhq/cds-common2/types/TextBaseProps';
 import type { TypeOrNumber } from '@cbhq/cds-common2/types/TypeOrNumber';
 
 import type { Theme } from '../core/theme';

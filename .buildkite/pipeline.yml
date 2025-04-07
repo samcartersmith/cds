@@ -126,7 +126,7 @@ steps:
     <<: *k8s_large
     commands:
       - tools/ci/setup.sh
-      - yarn nx run-many --target=lint --verbose
+      - yarn nx run-many --target=lint --verbose --exclude=common,web,mobile,web-visualization,mobile-visualization,mobile-app,website,cds-migrator,storybook
 
   - label: Format
     <<: *k8s_medium

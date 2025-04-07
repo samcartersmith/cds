@@ -42,7 +42,7 @@ export const CoachmarkExamples = () => {
         closeButtonAccessibilityLabel="Close"
         content={
           <VStack gap={2}>
-            <Text as="p" display="block" color="fgMuted" font="caption">
+            <Text as="p" color="fgMuted" display="block" font="caption">
               50%
             </Text>
             <ProgressBar progress={0.5} />

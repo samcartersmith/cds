@@ -18,15 +18,14 @@ const dropdownStaticClassName = 'cds-dropdown';
 
 export type DropdownContentProps = {
   height?: DimensionValue;
-  onOpen?: () => void;
   placement?: Placement;
-} & Pick<DropdownProps, 'width' | 'maxHeight' | 'maxWidth' | 'minWidth' | 'children' | 'value'>;
+} & Pick<DropdownProps, 'width' | 'maxHeight' | 'maxWidth' | 'minWidth' | 'children'>;
 
 const MotionVStack = motion(VStack);
 
 export const DropdownContent = memo(
   forwardRef<HTMLDivElement, DropdownContentProps>(
-    ({ children, value, onOpen, placement, minWidth = 'min-content', ...props }, ref) => {
+    ({ children, placement, minWidth = 'min-content', ...props }, ref) => {
       const isHorizontal = placement?.includes('left') || placement?.includes('right');
       const translate = isHorizontal ? 'x' : 'y';
 

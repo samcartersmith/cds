@@ -5,13 +5,10 @@ import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import { ErrorBoundaryErrorMessageFallback, usePrismTheme } from '@docusaurus/theme-common';
 import { Button } from '@cbhq/cds-web2';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
-import { Icon } from '@cbhq/cds-web2/icons/Icon';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { VStack } from '@cbhq/cds-web2/layout/VStack';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
-import { Pressable } from '@cbhq/cds-web2/system/Pressable';
 import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
-import { Text } from '@cbhq/cds-web2/typography/Text';
 
 import { usePlaygroundTheme } from '../Layout/Provider/UnifiedThemeContext';
 

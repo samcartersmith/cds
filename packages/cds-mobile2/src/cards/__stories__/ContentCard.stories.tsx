@@ -1,4 +1,4 @@
-import React, { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { assets, ethBackground } from '@cbhq/cds-common2/internal/data/assets';
 
 import { Button, IconButton, IconCounterButton } from '../../buttons';

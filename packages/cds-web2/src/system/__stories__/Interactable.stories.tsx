@@ -3,7 +3,6 @@ import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Button } from '../../buttons/Button';
 import { TextInput } from '../../controls';
-import { HelperText } from '../../controls/HelperText';
 import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout';
 import { Text } from '../../typography';

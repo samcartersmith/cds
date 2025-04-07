@@ -309,10 +309,10 @@ describe('useDimensions', () => {
     expect(error).toHaveBeenCalledTimes(2);
   });
 
-  // it('should use polyfill', () => {
-  //   deleteResizeObserver();
-  //   deleteResizeObserverEntry();
-  //   renderHelper({ polyfill: mockResizeObserver });
-  //   expect(observe).toHaveBeenCalledTimes(1);
-  // });
+  it('should use polyfill', () => {
+    deleteResizeObserver();
+    deleteResizeObserverEntry();
+    renderHelper({ polyfill: mockResizeObserver });
+    expect(observe).toHaveBeenCalledTimes(1);
+  });
 });

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useLayoutEffect, useRef } from 'react';
+import { memo, useCallback, useLayoutEffect, useRef } from 'react';
 import { Platform } from 'react-native';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import { colorToHex } from '@cbhq/cds-common2/color/colorToHex';

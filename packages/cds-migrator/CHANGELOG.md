@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Fix lint issues. [[#3879](https://github.cbhq.net/frontend/cds/pull/3879)]
+
 ## 0.2.2 (3/14/2025 PST)
 
 #### 🐞 Fixes

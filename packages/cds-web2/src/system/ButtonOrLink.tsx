@@ -63,7 +63,6 @@ export const ButtonOrLink = memo(
       useImperativeHandle(ref, () => elementRef.current as HTMLElement, []); // Merges forwarded ref with internal elementRef
 
       const isLink = to || href;
-      const trulyDisabled = Boolean(disabled && !focusable);
 
       const [nativeTabbable, setNativeTabbable] = useState(true);
       const [supportsDisabled, setSupportsDisabled] = useState(true);

@@ -78,8 +78,6 @@ const ALPHABET_KEYS = [
 ];
 const FOCUSABLE_ELEMENTS_INCLUDING_TABINDEX = `${FOCUSABLE_ELEMENTS}, [tabindex]`;
 
-const maybeYubikeyString = (str: string) => /^(cc|vv)/.test(str);
-
 export const FocusTrap = memo(function FocusTrap({
   children,
   onEscPress,

@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import Svg, { G, Path } from 'react-native-svg';
+import { G, Path, Svg } from 'react-native-svg';
 import * as interpolate from 'd3-interpolate-path';
 import { borderWidth } from '@cbhq/cds-common2/tokens/sparkline';
 import {

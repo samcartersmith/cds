@@ -5,7 +5,6 @@ import { DefaultThemeProvider } from '../../utils/test';
 import {
   TextBody,
   TextCaption,
-  type TextDefaultElement,
   TextDisplay1,
   TextDisplay2,
   TextDisplay3,
@@ -13,7 +12,6 @@ import {
   TextLabel1,
   TextLabel2,
   TextLegal,
-  type TextProps,
   TextTitle1,
   TextTitle2,
   TextTitle3,

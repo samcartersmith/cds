@@ -13,9 +13,6 @@ const names = ['Sneezy', 'Happy', 'Sleepy', 'Doc', 'Bashful', 'Grumpy', 'Dopey',
 
 const FallbackColoredForAvatarButtonBase = ({
   dense = true,
-  shape,
-  compact,
-  loading,
   ...props
 }: Pick<AvatarButtonProps, 'shape' | 'loading' | 'compact'> & { dense?: boolean }) => {
   return (

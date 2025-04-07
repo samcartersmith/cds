@@ -1,5 +1,5 @@
 import { Linking, Platform } from 'react-native';
-import InAppBrowser, { InAppBrowserOptions } from 'react-native-inappbrowser-reborn';
+import { InAppBrowser, InAppBrowserOptions } from 'react-native-inappbrowser-reborn';
 
 import { Theme } from '../core/theme';
 

@@ -10,7 +10,7 @@ import {
   ImageURISource,
   StyleProp,
 } from 'react-native';
-import Svg, { ClipPath, Defs, Image as SvgImage, Path, SvgXml } from 'react-native-svg';
+import { ClipPath, Defs, Image as SvgImage, Path, Svg, SvgXml } from 'react-native-svg';
 import { SvgCssUri } from 'react-native-svg/css';
 import { AspectRatio, FixedValue, RemoteImageBaseProps } from '@cbhq/cds-common2';
 

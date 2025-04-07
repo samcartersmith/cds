@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
-import Svg, { Path, Rect, SvgProps } from 'react-native-svg';
+import { Path, Rect, Svg } from 'react-native-svg';
 import { SharedProps } from '@cbhq/cds-common2';
 import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBaseProps';

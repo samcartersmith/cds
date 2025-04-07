@@ -136,7 +136,7 @@ export const ContentCell: ContentCellComponent = memo(
 
           {!!description && (
             <div className={overflowStyle}>
-              <Text as="div" display="block" color="fgMuted" font="body">
+              <Text as="div" color="fgMuted" display="block" font="body">
                 {description}
               </Text>
             </div>

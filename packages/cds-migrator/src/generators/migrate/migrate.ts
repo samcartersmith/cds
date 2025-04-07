@@ -2,12 +2,12 @@ import { Tree } from '@nx/devkit';
 
 import migrateBanner from '../../migrations/banner';
 import migrateGap from '../../migrations/gap';
-import migrateToDecompedPackages from '../../migrations/gondolin';
 import gondolin from '../../migrations/gondolin';
 import revertDecompedPackages from '../../migrations/revert-decomp';
 import migrateTo4_0_0 from '../../migrations/update-4-0-0';
 import migrateTo5_0_0 from '../../migrations/update-5-0-0';
 import migrateTo6_0_0 from '../../migrations/update-6-0-0';
+import migrateToDecompedPackages from '../../migrations/update-decomp';
 
 type MigrateOptions = {
   version: string;

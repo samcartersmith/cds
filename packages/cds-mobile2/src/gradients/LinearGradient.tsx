@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Svg, { Defs, LinearGradient as Lg, Rect, Stop } from 'react-native-svg';
+import { Defs, LinearGradient as Lg, Rect, Stop, Svg } from 'react-native-svg';
 import type { SharedProps } from '@cbhq/cds-common2';
 
 function getAlpha(color: string) {

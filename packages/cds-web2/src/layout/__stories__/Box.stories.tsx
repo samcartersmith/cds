@@ -11,7 +11,7 @@ export default {
 };
 
 const Lipsum = ({ color }: { color?: ThemeVars.Color }) => (
-  <Text as="p" display="block" color={color} font="body">
+  <Text as="p" color={color} display="block" font="body">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie tellus quis sem
     suscipit molestie. In tincidunt hendrerit lectus fermentum euismod. Fusce interdum mollis
     sodales. Aenean ac nibh eu velit condimentum laoreet quis in enim. Sed ut massa at purus auctor

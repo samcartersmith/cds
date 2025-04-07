@@ -1,5 +1,6 @@
 import { NativeModules } from 'react-native';
-import noop from 'lodash/noop';
+
+const noop = (...args: any[]) => {};
 
 const HapticsModule = (NativeModules.Haptics || {
   impactAsync: noop,

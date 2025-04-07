@@ -1,3 +1,4 @@
+/* eslint-disable jest/expect-expect */
 import { measurePerformance } from 'reassure';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 

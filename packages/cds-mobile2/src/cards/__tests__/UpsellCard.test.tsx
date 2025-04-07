@@ -128,6 +128,7 @@ describe('UpsellCard', () => {
     expect(screen.getByTestId('custom-action-button')).toBeVisible();
   });
   it('does not render action button if action prop is not passed', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { action, ...propsWithoutAction } = exampleProps;
     render(
       <DefaultThemeProvider>

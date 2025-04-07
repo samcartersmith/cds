@@ -1,5 +1,5 @@
 import React, { type ReactNode } from 'react';
-import { ThemeClassNames, usePrismTheme, useThemeConfig } from '@docusaurus/theme-common';
+import { usePrismTheme, useThemeConfig } from '@docusaurus/theme-common';
 import {
   containsLineNumbers,
   parseCodeBlockTitle,

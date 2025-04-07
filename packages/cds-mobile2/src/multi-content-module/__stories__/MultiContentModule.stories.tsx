@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import Svg, { Path } from 'react-native-svg';
+import { Path, Svg } from 'react-native-svg';
 import type { IconName, ModalRenderChildren } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';

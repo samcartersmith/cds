@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo, useRef } from 'react';
-import Svg, { Defs, G, LinearGradient, Path, Stop } from 'react-native-svg';
+import { Defs, G, LinearGradient, Path, Stop, Svg } from 'react-native-svg';
 import { getAccessibleForegroundGradient } from '@cbhq/cds-common2/color/getAccessibleForegroundGradient';
 import { borderWidth } from '@cbhq/cds-common2/tokens/sparkline';
 import { SparklineBaseProps } from '@cbhq/cds-common2/types/SparklineBaseProps';

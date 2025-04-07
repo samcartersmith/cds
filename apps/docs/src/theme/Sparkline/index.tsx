@@ -20,7 +20,6 @@ type SparklineInteractivePriceProps = Omit<
 > &
   Partial<Pick<SparklineInteractiveBaseProps<SparklinePeriod>, 'defaultPeriod'>> & {
     hideHoverDate?: boolean;
-    hideMinMaxLabel?: boolean;
     trailing?: React.ReactNode;
     gutter?: ThemeVars.Space;
     disableHorizontalPadding?: boolean;
@@ -145,7 +144,7 @@ export function generateSubHead(
 }
 
 export const SparklineInteractivePrice = memo(
-  ({ defaultPeriod, hideHoverDate, hideMinMaxLabel, ...props }: SparklineInteractivePriceProps) => {
+  ({ defaultPeriod, hideHoverDate, ...props }: SparklineInteractivePriceProps) => {
     const timezoneObj = useMemo(() => {
       return { timeZone: 'America/New_York' };
     }, []);

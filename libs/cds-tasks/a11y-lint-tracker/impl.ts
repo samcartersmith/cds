@@ -154,7 +154,7 @@ async function mergeJSONOutputs(sourceDir: string, outputFile: string) {
     await fs.promises.writeFile(outputFile, JSON.stringify(flattenedResults, null, 2), 'utf-8');
     info(`Merged output saved to ${outputFile}`);
   } catch (error) {
-    console.error(`Error merging JSON outputs`);
+    console.error('Error merging JSON outputs:', error);
   }
 }
 

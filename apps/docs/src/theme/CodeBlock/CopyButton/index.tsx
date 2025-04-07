@@ -1,4 +1,4 @@
-import React, { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import React, { type ReactNode, useCallback } from 'react';
 import { translate } from '@docusaurus/Translate';
 import type { Props } from '@theme/CodeBlock/CopyButton';
 import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
@@ -11,6 +11,7 @@ async function copyTextToClipboard(text: string): Promise<boolean> {
       await navigator.clipboard.writeText(text);
       return true;
     } catch (error) {
+      console.error(error);
       return false;
     }
   }

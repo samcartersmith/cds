@@ -16,10 +16,8 @@ const TITLE = 'Basic Modal';
 const LABELLED_BY = 'some-id';
 const LABEL = 'A label';
 
-/** YUBIKEY EDGE CASE CONFIG */
-const YUBIKEY_STRING = 'cccccbeurlitbgvnvidvttluefrcnnggvhnhcuuddjkn';
-const YUBIKEY_TITLE = 'Yubikey Test Title';
-const YUBIKEY_BUTTON = 'Open Yubikey Modal';
+const modalTitleText = '2FA Test Title';
+const modalButtonText = 'Open 2FA Modal';
 
 const ExampleModalScreen = ({
   disableFocusTrap,
@@ -49,9 +47,9 @@ const ExampleModalScreen = ({
         shouldCloseOnEscPress={shouldCloseOnEscPress}
         visible={isVisible}
       >
-        <ModalHeader title={YUBIKEY_TITLE} />
+        <ModalHeader title={modalTitleText} />
       </Modal>
-      <Button onClick={handleModalOpen}>{YUBIKEY_BUTTON}</Button>
+      <Button onClick={handleModalOpen}>{modalButtonText}</Button>
     </>
   );
 };
@@ -412,20 +410,20 @@ describe('Modal', () => {
       </DefaultThemeProvider>,
     );
 
-    const modalButton = screen.getByText(YUBIKEY_BUTTON);
+    const modalButton = screen.getByText(modalButtonText);
 
     // Sanity check
-    await waitFor(() => expect(screen.queryByText(YUBIKEY_TITLE)).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByText(modalTitleText)).not.toBeInTheDocument());
 
     // Open the modal
     fireEvent.click(modalButton);
 
     // Make sure the modal is open before simulating a yubikey tap
-    await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
+    await waitFor(() => expect(screen.getByText(modalTitleText)).toBeVisible());
 
     // Simulate yubikey tap
     await user.keyboard(`{Tab}{Tab}{Tab}{Tab}{Tab}{Enter}`);
-    await waitFor(() => expect(screen.getByText(YUBIKEY_TITLE)).toBeVisible());
+    await waitFor(() => expect(screen.getByText(modalTitleText)).toBeVisible());
     expect(spy).not.toHaveBeenCalled();
   });
 

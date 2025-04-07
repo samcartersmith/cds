@@ -13,14 +13,14 @@ export const InputStackExamples = () => (
   <InputStack
     appendNode={
       <Box background="bgPrimary">
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           Append
         </Text>
       </Box>
     }
     endNode={
       <Box background="bgPositive" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           EndContent
         </Text>
       </Box>
@@ -48,14 +48,14 @@ export const InputStackExamples = () => (
     }
     prependNode={
       <Box background="bgPrimary">
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           Prepend
         </Text>
       </Box>
     }
     startNode={
       <Box background="bgPositive" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           StartContent
         </Text>
       </Box>
@@ -68,14 +68,14 @@ export const Append = () => (
   <InputStack
     appendNode={
       <Box background="bgPrimary" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           Append
         </Text>
       </Box>
     }
     endNode={
       <Box background="bgPositive" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           EndContent
         </Text>
       </Box>
@@ -103,7 +103,7 @@ export const Append = () => (
     }
     startNode={
       <Box background="bgPositive" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           StartContent
         </Text>
       </Box>
@@ -116,7 +116,7 @@ export const Prepend = () => (
   <InputStack
     endNode={
       <Box background="bgPositive" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           EndContent
         </Text>
       </Box>
@@ -144,14 +144,14 @@ export const Prepend = () => (
     }
     prependNode={
       <Box background="bgPrimary" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           Append
         </Text>
       </Box>
     }
     startNode={
       <Box background="bgPositive" borderRadius={200}>
-        <Text as="p" display="block" color="fgInverse" font="body">
+        <Text as="p" color="fgInverse" display="block" font="body">
           StartContent
         </Text>
       </Box>

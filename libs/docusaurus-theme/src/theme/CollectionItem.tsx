@@ -20,6 +20,7 @@ const CollectionItem = memo(function CollectionItem({
   flexGrow = 1,
   children,
   textAlign = 'center',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   href,
   ...rest
 }: CollectionItemProps) {

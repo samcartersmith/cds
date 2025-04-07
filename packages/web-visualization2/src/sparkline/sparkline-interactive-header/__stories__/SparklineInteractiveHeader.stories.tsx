@@ -175,30 +175,36 @@ const SparklineInteractiveWithHeader = ({
     [timezoneObj],
   );
 
-  const handleScrub = useCallback(({ point, period }: ChartScrubParams<SparklinePeriod>) => {
-    headerRef.current?.update({
-      title: `$${point.value.toLocaleString('en-US')}`,
-      subHead: generateSubHead(point, period, sparklineData),
-    });
-  }, []);
+  const handleScrub = useCallback(
+    ({ point, period }: ChartScrubParams<SparklinePeriod>) => {
+      headerRef.current?.update({
+        title: `$${point.value.toLocaleString('en-US')}`,
+        subHead: generateSubHead(point, period, sparklineData),
+      });
+    },
+    [sparklineData],
+  );
 
   const handleScrubEnd = useCallback(() => {
     headerRef.current?.update({
       title: `$${numToLocaleString(lastPoint.value)}`,
       subHead: generateSubHead(lastPoint, currentPeriod, sparklineData),
     });
-  }, [currentPeriod, lastPoint]);
+  }, [currentPeriod, lastPoint, sparklineData]);
 
-  const handleOnPeriodChanged = useCallback((period: SparklinePeriod) => {
-    setCurrentPeriod(period);
-    const newData = sparklineData[period];
-    const newLastPoint = newData[newData.length - 1];
+  const handleOnPeriodChanged = useCallback(
+    (period: SparklinePeriod) => {
+      setCurrentPeriod(period);
+      const newData = sparklineData[period];
+      const newLastPoint = newData[newData.length - 1];
 
-    headerRef.current?.update({
-      title: `$${numToLocaleString(newLastPoint.value)}`,
-      subHead: generateSubHead(newLastPoint, period, sparklineData),
-    });
-  }, []);
+      headerRef.current?.update({
+        title: `$${numToLocaleString(newLastPoint.value)}`,
+        subHead: generateSubHead(newLastPoint, period, sparklineData),
+      });
+    },
+    [sparklineData],
+  );
 
   const header = (
     <SparklineInteractiveHeader

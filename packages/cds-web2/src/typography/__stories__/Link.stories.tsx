@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Link as RRLink } from 'react-router-dom';
 import { noop } from '@cbhq/cds-utils';
 
-import { Button } from '../../buttons';
 import { Link } from '../Link';
 import { Text } from '../Text';
 

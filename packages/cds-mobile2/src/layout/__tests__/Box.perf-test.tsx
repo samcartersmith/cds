@@ -1,3 +1,4 @@
+/* eslint-disable jest/expect-expect */
 import { measurePerformance } from 'reassure';
 import { ElevationLevels } from '@cbhq/cds-common2/types/ElevationLevels';
 

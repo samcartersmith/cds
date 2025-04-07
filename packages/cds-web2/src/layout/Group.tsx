@@ -9,7 +9,7 @@ export type RenderGroupItem = GroupBaseProps<BoxProps<BoxDefaultElement>>['rende
 export type GroupProps = GroupBaseProps<BoxProps<BoxDefaultElement>>;
 
 const ItemWrapper: React.FC<React.PropsWithChildren<BoxProps<BoxDefaultElement>>> = memo(
-  ({ className, ...props }) => <Box display="contents" {...props} />,
+  ({ display = 'contents', ...props }) => <Box display={display} {...props} />,
 );
 
 const fallbackRenderItem: RenderGroupItem = ({

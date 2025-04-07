@@ -23,7 +23,6 @@ export default function NavbarNavLink({
   to,
   href,
   label,
-  html,
   prependBaseUrlToHref,
   className,
   ...props

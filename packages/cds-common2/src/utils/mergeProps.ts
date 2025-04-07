@@ -12,8 +12,8 @@ export function mergeProps<T>(prev: UnknownProps, next: UnknownProps): T {
       typeof next[key] === 'function'
     ) {
       result[key] = (...args: unknown[]) => {
-        (prev[key] as Function)(...args);
-        (next[key] as Function)(...args);
+        (prev[key] as (...args: unknown[]) => void)(...args);
+        (next[key] as (...args: unknown[]) => void)(...args);
       };
     } else if (value !== undefined) {
       result[key] = value;

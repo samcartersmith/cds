@@ -25,6 +25,7 @@ import { Link } from '@cbhq/cds-web2/typography/Link';
  */
 const MDXA = forwardRef<HTMLAnchorElement, Props>((props, ref) => {
   // Extract color prop to avoid type incompatibility
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { color, style, ...restProps } = props;
 
   // Override the hover color behavior by adding a style that maintains the same color on hover

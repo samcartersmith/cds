@@ -5,6 +5,7 @@ import LogoSvg from '@site/static/img/logos/cds_logo.svg';
 import type { Props } from '@theme/Logo';
 
 const Logo = forwardRef<HTMLAnchorElement, Props>(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ imageClassName, titleClassName, ...linkProps }, ref) => {
     const { withBaseUrl } = useBaseUrlUtils();
 

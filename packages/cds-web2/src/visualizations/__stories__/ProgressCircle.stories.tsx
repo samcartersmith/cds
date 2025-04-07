@@ -17,9 +17,9 @@ export const Default = () => {
         <HStack gap={2}>
           <ProgressCircle progress={calculateProgress(0)} size={100} />
           <ProgressCircle
+            accessibilityLabel="Custom accessibility label for progress circle"
             progress={calculateProgress(0.2)}
             size={100}
-            accessibilityLabel="Custom accessibility label for progress circle"
           />
         </HStack>
       )}

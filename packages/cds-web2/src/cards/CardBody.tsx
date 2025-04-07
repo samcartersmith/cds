@@ -109,8 +109,8 @@ export const CardBody = memo(function CardBody({
           paddingStart={spacingProps.paddingStart}
         >
           <Text
-            font="headline"
             as="h3"
+            font="headline"
             numberOfLines={numberOfLines}
             testID={`${testID}-title`}
             transform="none"
@@ -146,8 +146,8 @@ export const CardBody = memo(function CardBody({
       <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
         <VStack gap={1} maxWidth="100%" paddingTop={mediaContent ? 0 : 2}>
           <Text
-            font="headline"
             as="h3"
+            font="headline"
             numberOfLines={numberOfLines}
             testID={`${testID}-title`}
             transform="none"

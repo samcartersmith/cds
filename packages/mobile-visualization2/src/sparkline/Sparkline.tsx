@@ -1,5 +1,5 @@
 import React, { memo, useRef } from 'react';
-import Svg, { Defs, G, Path } from 'react-native-svg';
+import { Defs, G, Path, Svg } from 'react-native-svg';
 import { borderWidth } from '@cbhq/cds-common2/tokens/sparkline';
 import { SparklineBaseProps } from '@cbhq/cds-common2/types';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';

@@ -63,7 +63,6 @@ export const NativeTextArea = memo(
       onBlur,
       onKeyDown,
       onChange,
-      accessibilityLabel,
       accessibilityHint,
       compact,
       containerSpacing,

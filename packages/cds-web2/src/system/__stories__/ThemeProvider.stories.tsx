@@ -17,7 +17,7 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
         <VStack>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
-          <Text as="p" display="block" color="bgSecondary" font="body">
+          <Text as="p" color="bgSecondary" display="block" font="body">
             Secondary text
           </Text>
         </VStack>

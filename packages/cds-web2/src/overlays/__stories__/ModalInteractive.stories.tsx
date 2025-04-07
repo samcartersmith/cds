@@ -1,13 +1,7 @@
 import React, { useCallback, useState } from 'react';
-import { expect } from '@storybook/jest';
-import { StoryObj } from '@storybook/react';
-import { userEvent, waitFor, within } from '@storybook/testing-library';
-import { animateOutOpacityConfig } from '@cbhq/cds-common2/animation/modal';
-import { durations } from '@cbhq/cds-common2/motion/tokens';
 
 import { Button } from '../../buttons/Button';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
-import { pauseStory } from '../../utils/storybook';
 import { Modal } from '../modal/Modal';
 import { ModalBody } from '../modal/ModalBody';
 import { ModalFooter } from '../modal/ModalFooter';

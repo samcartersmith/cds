@@ -95,6 +95,7 @@ export function docgenScaffolder({
         addToFilesToWrite();
       }
     } catch (err) {
+      console.log(err);
       if (outputDir === displayName) {
         logger.preppingDoc(displayName);
         addToFilesToWrite();

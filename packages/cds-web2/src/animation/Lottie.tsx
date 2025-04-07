@@ -221,7 +221,6 @@ export const Lottie = memo(
         handlers,
         resizeMode = 'contain',
         filterSize = defaultFilterSize,
-        borderRadius,
         ...otherProps
       }: LottieProps<Marker, Source>,
       // String wont work on literal unions, so use any here
