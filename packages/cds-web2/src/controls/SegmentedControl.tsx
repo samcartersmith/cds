@@ -25,11 +25,11 @@ const insetFocusRing = css`
   &:focus {
     outline: none;
   }
-  &:focus-visible {
+  &:focus-visible + label {
     outline-style: solid;
     outline-width: 2px;
     outline-color: var(--color-bgPrimary);
-    outline-offset: 0;
+    outline-offset: -3px;
   }
 `;
 
