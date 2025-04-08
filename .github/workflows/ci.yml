@@ -290,6 +290,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 100 # TODO: This needs to include the merge-base
+          ref: ${{ github.event.pull_request.head.sha }} # Use HEAD SHA instead of auto-generated GHA merge commit for pull request events
       - uses: infra/cb-action-config-service@master
         with: { scope: 'actions-context/cds/percy-web-' }
       - uses: ./.github/actions/setup

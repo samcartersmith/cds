@@ -27,6 +27,7 @@
     "sharedGlobals": [
       "{workspaceRoot}/.buildkite/*.yml",
       "{workspaceRoot}/.eslintrc.cjs",
+      "{workspaceRoot}/.github/workflows/ci.yml",
       "{workspaceRoot}/.*ignore",
       "{workspaceRoot}/*.config.js",
       "{workspaceRoot}/*.config.cjs",
