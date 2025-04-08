@@ -1,6 +1,6 @@
 import React from 'react';
+import { AnimatedHeroGrid } from '@site/src/components/home/AnimatedHero/HeroGrid';
 import { ComponentCard, ComponentCardProps } from '@site/src/components/home/ComponentCard';
-import { Hero } from '@site/src/components/home/Hero';
 import {
   QuickStartCampaignCard,
   QuickStartLinkProps,
@@ -163,7 +163,7 @@ const componentCards: ComponentCardProps[] = [
 export default function Home() {
   return (
     <VStack gap={8}>
-      <Hero />
+      <AnimatedHeroGrid />
       <VStack as="section" gap={4}>
         <Text {...sectionHeaderProps}>Quickstarts</Text>
         <Box flexDirection={{ base: 'row', phone: 'column' }} flexWrap="wrap" gap={4}>
