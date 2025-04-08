@@ -131,6 +131,19 @@ const lightSpectrum = {
   yellow80: '96,48,0',
   yellow90: '58,20,0',
   yellow100: '27,6,0',
+  chartreuse0: '245,255,250',
+  chartreuse5: '221,251,232',
+  chartreuse10: '198,247,209',
+  chartreuse15: '176,242,182',
+  chartreuse20: '159,238,155',
+  chartreuse30: '137,223,117',
+  chartreuse40: '127,208,87',
+  chartreuse50: '86,179,64',
+  chartreuse60: '53,151,48',
+  chartreuse70: '35,122,43',
+  chartreuse80: '25,93,41',
+  chartreuse90: '17,64,35',
+  chartreuse100: '7,26,17',
 } as const satisfies ThemeConfig['lightSpectrum'];
 
 const darkSpectrum = {
@@ -264,6 +277,19 @@ const darkSpectrum = {
   yellow80: '242,222,94',
   yellow90: '255,240,145',
   yellow100: '255,252,241',
+  chartreuse0: '5,22,14',
+  chartreuse5: '14,54,29',
+  chartreuse10: '21,79,34',
+  chartreuse15: '29,103,36',
+  chartreuse20: '45,128,40',
+  chartreuse30: '73,152,54',
+  chartreuse40: '107,176,73',
+  chartreuse50: '123,200,105',
+  chartreuse60: '140,209,136',
+  chartreuse70: '158,217,163',
+  chartreuse80: '178,222,188',
+  chartreuse90: '209,238,220',
+  chartreuse100: '245,255,250',
 } as const satisfies ThemeConfig['darkSpectrum'];
 
 export const defaultTheme = {

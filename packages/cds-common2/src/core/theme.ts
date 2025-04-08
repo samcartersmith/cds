@@ -16,7 +16,8 @@ export namespace ThemeVars {
     | 'pink'
     | 'purple'
     | 'red'
-    | 'teal';
+    | 'teal'
+    | 'chartreuse';
 
   export type SpectrumHueStep = 0 | 5 | 10 | 15 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
 
