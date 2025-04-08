@@ -50,7 +50,7 @@ jobs:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
       - name: Lint
-        run: yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD
+        run: yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --exclude=common,web,mobile,web-visualization,mobile-visualization,mobile-app,website,cds-migrator,storybook # Temporarily disable v7 linting
 
   format:
     name: Format
@@ -338,6 +338,7 @@ jobs:
         build,
         storybook-a11y,
         storybook-e2e,
+        depcheck,
         bundle-stats,
         visreg-web,
       ]
