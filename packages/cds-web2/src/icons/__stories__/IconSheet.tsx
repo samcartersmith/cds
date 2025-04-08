@@ -9,20 +9,14 @@ import namesOld from '@cbhq/cds-icons/__generated__/ui/data/names-old';
 import { useTheme } from '../../hooks/useTheme';
 import { HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
-import { Icon, sourceSizeMap } from '../Icon';
+import { getIconSourceSize, Icon } from '../Icon';
 
 type SvgFromFigmaProps = { name: IconName; size: IconSize };
-
-const iconFontOverride = css`
-  span {
-    color: var(--color-fg) !important;
-  }
-`;
 
 function SvgFromFigma({ name, size }: SvgFromFigmaProps) {
   const theme = useTheme();
   const iconSize = theme.iconSize[size];
-  const sourceSize = sourceSizeMap[size];
+  const sourceSize = getIconSourceSize(iconSize);
   const svgPath = `@cbhq/cds-icons/__generated__/ui/svg/ui-${name}-${sourceSize}.svg`;
   return <img alt={name} height={iconSize} src={svgPath} width={iconSize} />;
 }
@@ -52,7 +46,7 @@ export const IconSheet = memo(function IconSheet({ startIndex, endIndex }: IconS
           return (
             <HStack key={`icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
               <VStack gap={2}>
-                <HStack alignItems="center" className={iconFontOverride} gap={2}>
+                <HStack alignItems="center" gap={2}>
                   {(['xs', 's', 'm', 'l'] as const).map((size) => {
                     return <Icon key={`icon-${size}`} color="fg" name={name} size={size} />;
                   })}

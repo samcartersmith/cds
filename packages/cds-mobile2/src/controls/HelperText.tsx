@@ -1,9 +1,9 @@
 import React, { memo, useMemo } from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { IconSize, IconSourcePixelSize } from '@cbhq/cds-common2/types/IconSize';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 
 import { useTheme } from '../hooks/useTheme';
+import { getIconSourceSize } from '../icons/Icon';
 import { Text, TextProps } from '../typography/Text';
 
 export type HelperTextProps = {
@@ -18,15 +18,6 @@ export type HelperTextProps = {
   errorIconTestID?: string;
 } & TextProps;
 
-const sourceSizeMap: {
-  [key in IconSize]: IconSourcePixelSize;
-} = {
-  xs: 12,
-  s: 12,
-  m: 16,
-  l: 24,
-};
-
 export const HelperText = memo(function HelperText({
   color,
   errorIconAccessibilityLabel,
@@ -39,7 +30,7 @@ export const HelperText = memo(function HelperText({
   const theme = useTheme();
   // Get info icon for negative variant
   const iconSize = theme.iconSize.xs;
-  const sourceSize = sourceSizeMap.xs;
+  const sourceSize = getIconSourceSize(iconSize);
   const glyphKey = `ui-info-${sourceSize}` as const;
   const glyph = glyphMap[glyphKey];
 

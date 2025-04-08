@@ -4,6 +4,7 @@ import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
 import type {
   IconBaseProps,
+  IconSize,
   IconSourcePixelSize,
   SharedAccessibilityProps,
 } from '@cbhq/cds-common2/types';
@@ -29,6 +30,15 @@ export type IconProps = IconBaseProps & {
   animated?: boolean;
   style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
+
+const borderedSizeMap: {
+  [key in IconSize]: IconSize;
+} = {
+  xs: 'xs',
+  s: 'xs',
+  m: 'xs',
+  l: 's',
+};
 
 export const getIconSourceSize = (iconSize: number): IconSourcePixelSize => {
   if (iconSize <= 12) return 12;
@@ -60,11 +70,13 @@ export const Icon = memo(function Icon({
 }: IconProps) {
   const TextComponent = animated ? Animated.Text : Text;
   const theme = useTheme();
+
+  const containerSize = theme.iconSize[size];
+  const sourceSize = getIconSourceSize(containerSize);
+  const iconSize = bordered ? theme.iconSize[borderedSizeMap[size]] : containerSize;
+
   const iconColor = theme.color[color];
   const finalColor = dangerouslySetColor ?? iconColor;
-  const containerSize = theme.iconSize[size];
-  const iconSize = bordered ? containerSize - 2 : containerSize;
-  const sourceSize = getIconSourceSize(containerSize);
 
   const boxStyles = useMemo(
     () => [

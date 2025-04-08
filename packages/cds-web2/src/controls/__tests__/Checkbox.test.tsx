@@ -15,7 +15,7 @@ describe('Checkbox', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-checkmark-12']);
+    const icon = screen.getByText(glyphMap['ui-checkmark-16']);
     expect(icon).toBeTruthy();
   });
 
@@ -28,7 +28,7 @@ describe('Checkbox', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-minus-12']);
+    const icon = screen.getByText(glyphMap['ui-minus-16']);
     expect(icon).toBeTruthy();
   });
 });

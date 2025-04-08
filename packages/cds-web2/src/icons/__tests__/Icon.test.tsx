@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { Icon } from '../Icon';
 
 type IconExampleProps = {
@@ -8,7 +9,11 @@ type IconExampleProps = {
   title?: string;
 };
 
-const IconExample = (props: IconExampleProps) => <Icon name="copy" size="m" {...props} />;
+const IconExample = (props: IconExampleProps) => (
+  <DefaultThemeProvider>
+    <Icon name="copy" size="m" {...props} />
+  </DefaultThemeProvider>
+);
 
 describe('Icon', () => {
   it('passes accessibility', async () => {

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { NavigationIcon } from '../NavigationIcon';
 
 type IconExampleProps = {
@@ -9,18 +10,28 @@ type IconExampleProps = {
 };
 
 const NavigationIconExample = (props: IconExampleProps) => (
-  <NavigationIcon name="copy" size="m" {...props} />
+  <DefaultThemeProvider>
+    <NavigationIcon name="copy" size="m" {...props} />
+  </DefaultThemeProvider>
 );
 
 describe('NavigationIcon.test', () => {
   it('renders with default color', () => {
-    render(<NavigationIcon name="account" testID="test-nav-icon" />);
+    render(
+      <DefaultThemeProvider>
+        <NavigationIcon name="account" testID="test-nav-icon" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('test-nav-icon')).toBeTruthy();
   });
 
   it('renders with active color', () => {
-    render(<NavigationIcon active name="account" testID="test-nav-icon" />);
+    render(
+      <DefaultThemeProvider>
+        <NavigationIcon active name="account" testID="test-nav-icon" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByTestId('test-nav-icon')).toBeTruthy();
   });

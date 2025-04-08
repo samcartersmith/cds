@@ -62,15 +62,17 @@ describe('Banner', () => {
     `;
 
     render(
-      <Banner
-        className={customClassName}
-        startIcon="cashUSD"
-        testID={TEST_ID}
-        title=""
-        variant="warning"
-      >
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner
+          className={customClassName}
+          startIcon="cashUSD"
+          testID={TEST_ID}
+          title=""
+          variant="warning"
+        >
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
@@ -84,15 +86,17 @@ describe('Banner', () => {
     } as const;
 
     render(
-      <Banner
-        startIcon="cashUSD"
-        style={customClassName}
-        testID={TEST_ID}
-        title=""
-        variant="warning"
-      >
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner
+          startIcon="cashUSD"
+          style={customClassName}
+          testID={TEST_ID}
+          title=""
+          variant="warning"
+        >
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID)).toHaveStyle(customClassName);
@@ -100,9 +104,11 @@ describe('Banner', () => {
 
   it('renders warning banner correctly', () => {
     render(
-      <Banner startIcon="cashUSD" testID={TEST_ID} title="warning banner" variant="warning">
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner startIcon="cashUSD" testID={TEST_ID} title="warning banner" variant="warning">
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
     const element = screen.getByTestId(TEST_ID);
     expect(element.className).toContain('bgWarningWash');
@@ -111,9 +117,11 @@ describe('Banner', () => {
 
   it('renders error banner correctly', () => {
     render(
-      <Banner startIcon="cashUSD" testID={TEST_ID} title="error banner" variant="error">
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner startIcon="cashUSD" testID={TEST_ID} title="error banner" variant="error">
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
     const element = screen.getByTestId(TEST_ID);
     expect(element.className).toContain('bgNegativeWash');
@@ -121,14 +129,16 @@ describe('Banner', () => {
 
   it('renders informational banner correctly', () => {
     render(
-      <Banner
-        startIcon="cashUSD"
-        testID={TEST_ID}
-        title="informational banner"
-        variant="informational"
-      >
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner
+          startIcon="cashUSD"
+          testID={TEST_ID}
+          title="informational banner"
+          variant="informational"
+        >
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID).className).toContain('bgSecondary');
@@ -136,9 +146,16 @@ describe('Banner', () => {
 
   it('renders promotional banner correctly', () => {
     render(
-      <Banner startIcon="cashUSD" testID={TEST_ID} title="promotional banner" variant="promotional">
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner
+          startIcon="cashUSD"
+          testID={TEST_ID}
+          title="promotional banner"
+          variant="promotional"
+        >
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID).className).toContain('bgPrimaryWash');
@@ -146,9 +163,11 @@ describe('Banner', () => {
 
   it('renders contextual banner by default', () => {
     render(
-      <Banner startIcon="cashUSD" testID={TEST_ID} title="contextual banner" variant="warning">
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner startIcon="cashUSD" testID={TEST_ID} title="contextual banner" variant="warning">
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID).className).toContain('400');
@@ -156,15 +175,17 @@ describe('Banner', () => {
 
   it('renders inline banner correctly', () => {
     render(
-      <Banner
-        startIcon="cashUSD"
-        styleVariant="inline"
-        testID={TEST_ID}
-        title="inline banner"
-        variant="warning"
-      >
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner
+          startIcon="cashUSD"
+          styleVariant="inline"
+          testID={TEST_ID}
+          title="inline banner"
+          variant="warning"
+        >
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID).className).not.toContain('400');
@@ -172,15 +193,17 @@ describe('Banner', () => {
 
   it('renders global banner correctly', () => {
     render(
-      <Banner
-        startIcon="cashUSD"
-        styleVariant="global"
-        testID={TEST_ID}
-        title="global banner"
-        variant="warning"
-      >
-        Banner Content
-      </Banner>,
+      <DefaultThemeProvider>
+        <Banner
+          startIcon="cashUSD"
+          styleVariant="global"
+          testID={TEST_ID}
+          title="global banner"
+          variant="warning"
+        >
+          Banner Content
+        </Banner>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByTestId(TEST_ID).className).not.toContain('400');

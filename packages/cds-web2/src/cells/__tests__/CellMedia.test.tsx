@@ -9,7 +9,13 @@ import { CellMedia } from '../CellMedia';
 
 describe('CellMedia', () => {
   it('icon passes accessibility', async () => {
-    expect(await renderA11y(<CellMedia name="arrowUp" type="icon" />)).toHaveNoViolations();
+    expect(
+      await renderA11y(
+        <DefaultThemeProvider>
+          <CellMedia name="arrowUp" type="icon" />
+        </DefaultThemeProvider>,
+      ),
+    ).toHaveNoViolations();
   });
 
   it('asset passes accessibility', async () => {
@@ -41,7 +47,11 @@ describe('CellMedia', () => {
   });
 
   it('icon sets an accessible label', () => {
-    render(<CellMedia accessibilityLabel="Icon label" name="arrowUp" type="icon" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia accessibilityLabel="Icon label" name="arrowUp" type="icon" />
+      </DefaultThemeProvider>,
+    );
 
     expect(screen.getByLabelText('Icon label')).toBeVisible();
   });
@@ -103,9 +113,13 @@ describe('CellMedia', () => {
   });
 
   it('renders an icon', () => {
-    render(<CellMedia name="arrowUp" type="icon" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia name="arrowUp" type="icon" />
+      </DefaultThemeProvider>,
+    );
 
-    expect(screen.getByText(glyphMap['ui-arrowUp-12'])).toBeVisible();
+    expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toBeVisible();
   });
 
   it('renders an asset', () => {
@@ -143,7 +157,11 @@ describe('CellMedia', () => {
   });
 
   it('sets icon size', () => {
-    render(<CellMedia name="arrowUp" type="icon" />);
+    render(
+      <DefaultThemeProvider>
+        <CellMedia name="arrowUp" type="icon" />
+      </DefaultThemeProvider>,
+    );
 
     const icon = screen.getByTestId('icon-base-glyph');
     expect(icon).toHaveAttribute('data-icon-name', 'arrowUp');

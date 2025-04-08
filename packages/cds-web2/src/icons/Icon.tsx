@@ -6,6 +6,7 @@ import type { IconSize, IconSourcePixelSize } from '@cbhq/cds-common2/types/Icon
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils/env';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 
 export type IconProps = IconBaseProps &
@@ -66,7 +67,7 @@ const borderedSizeStyles: {
     font-size: var(--iconSize-xs);
   `,
   s: css`
-    font-size: var(--iconSize-s);
+    font-size: var(--iconSize-xs);
   `,
   m: css`
     font-size: var(--iconSize-xs);
@@ -76,13 +77,10 @@ const borderedSizeStyles: {
   `,
 };
 
-export const sourceSizeMap: {
-  [key in IconSize]: IconSourcePixelSize;
-} = {
-  xs: 12,
-  s: 12,
-  m: 16,
-  l: 24,
+export const getIconSourceSize = (iconSize: number): IconSourcePixelSize => {
+  if (iconSize <= 12) return 12;
+  if (iconSize <= 16) return 16;
+  return 24;
 };
 
 export const Icon = memo(
@@ -95,7 +93,7 @@ export const Icon = memo(
         dangerouslySetColor,
         fallback = null,
         name,
-        size,
+        size = 'm',
         testID,
         style,
         active,
@@ -104,6 +102,11 @@ export const Icon = memo(
       }: IconProps,
       ref: React.Ref<HTMLElement>,
     ) => {
+      const theme = useTheme();
+
+      const containerSize = theme.iconSize[size];
+      const sourceSize = getIconSourceSize(containerSize);
+
       const inlineStyle = useMemo(
         () => ({
           ...(dangerouslySetColor ? { color: dangerouslySetColor } : {}),
@@ -111,8 +114,6 @@ export const Icon = memo(
         }),
         [dangerouslySetColor, style],
       );
-
-      const sourceSize = sourceSizeMap[size];
 
       const iconActiveString = active ? 'active' : 'inactive';
       const navIconName = `nav-${name}-${sourceSize}-${iconActiveString}`;

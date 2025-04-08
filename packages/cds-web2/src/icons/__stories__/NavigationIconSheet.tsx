@@ -6,9 +6,10 @@ import { NavIconName } from '@cbhq/cds-icons';
 import names from '@cbhq/cds-icons/__generated__/nav/data/names';
 import namesOld from '@cbhq/cds-icons/__generated__/nav/data/names-old';
 
+import { useTheme } from '../../hooks/useTheme';
 import { HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
-import { sourceSizeMap } from '../Icon';
+import { getIconSourceSize } from '../Icon';
 import { NavigationIcon, NavigationIconName } from '../NavigationIcon';
 
 type SvgFromFigmaProps = { name: NavigationIconName; size: IconSize; active?: boolean };
@@ -41,8 +42,9 @@ const sizeStyles: {
 };
 
 function SvgFromFigma({ name, size, active }: SvgFromFigmaProps) {
-  // const { iconSize, sourceSize } = sourceSizeMap(size);
-  const sourceSize = sourceSizeMap[size];
+  const theme = useTheme();
+  const iconSize = theme.iconSize[size];
+  const sourceSize = getIconSourceSize(iconSize);
 
   const activeSuffix = active ? 'active' : 'inactive';
   const svgPath = `@cbhq/cds-icons/__generated__/nav/svg/nav-${name}-${sourceSize}-${activeSuffix}.svg`;

@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
+import { DefaultThemeProvider } from '../../utils/test';
 import { HelperText } from '../HelperText';
 
 describe('HelperText.test', () => {
@@ -11,9 +12,11 @@ describe('HelperText.test', () => {
 
   it('renders negative color', () => {
     render(
-      <HelperText color="fgNegative" errorIconTestID="error-icon">
-        Test text
-      </HelperText>,
+      <DefaultThemeProvider>
+        <HelperText color="fgNegative" errorIconTestID="error-icon">
+          Test text
+        </HelperText>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText('Test text').className).toContain('fgNegative');
@@ -30,9 +33,11 @@ describe('HelperText.test', () => {
 
   it('renders custom color with error icon via dangerouslySetColor', () => {
     render(
-      <HelperText color="fgNegative" dangerouslySetColor="#FF0000" errorIconTestID="error-icon">
-        Test text
-      </HelperText>,
+      <DefaultThemeProvider>
+        <HelperText color="fgNegative" dangerouslySetColor="#FF0000" errorIconTestID="error-icon">
+          Test text
+        </HelperText>
+      </DefaultThemeProvider>,
     );
 
     expect(screen.getByText('Test text')).toHaveStyle({
