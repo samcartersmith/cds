@@ -2,7 +2,7 @@ import React, { Children, cloneElement, memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { ButtonGroupBaseProps, SharedProps } from '@cbhq/cds-common2';
 
-import { HStack, VStack } from '../layout';
+import { Box } from '../layout/Box';
 
 export type ButtonGroupProps = ButtonGroupBaseProps & SharedProps;
 
@@ -14,13 +14,13 @@ export const ButtonGroup = memo(function ButtonGroup({
   direction,
 }: ButtonGroupProps) {
   const isVertical = direction === 'vertical';
-  const Stack = isVertical ? VStack : HStack;
 
   return (
-    <Stack
+    <Box
       accessibilityHint={accessibilityLabel}
       accessibilityLabel={accessibilityLabel}
       alignItems="stretch"
+      flexDirection={isVertical ? 'column' : 'row'}
       flexWrap="nowrap"
       gap={1}
       testID={testID}
@@ -30,7 +30,7 @@ export const ButtonGroup = memo(function ButtonGroup({
           <View style={block ? styles.button : undefined}>{cloneElement(child, { block })}</View>
         ) : null,
       )}
-    </Stack>
+    </Box>
   );
 });
 

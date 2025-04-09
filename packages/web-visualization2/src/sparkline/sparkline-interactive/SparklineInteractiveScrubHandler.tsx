@@ -18,13 +18,25 @@ import { debounce } from '@cbhq/cds-common2/utils/debounce';
 import { noop } from '@cbhq/cds-utils';
 import { cubicBezier } from '@cbhq/cds-web2/animation/convertMotionConfig';
 import { useDimensions } from '@cbhq/cds-web2/hooks/useDimensions';
-import { insetFocusRing } from '@cbhq/cds-web2/styles/focus';
 
 import { fadeIn, fadeOut } from './fade';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveScrubContext } from './SparklineInteractiveScrubProvider';
 
 export const scrubHandlerStaticClassName = 'cds-sparkline--scrubhandler';
+
+const insetFocusRing = css`
+  position: relative;
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--color-bgPrimary);
+    outline-offset: 0;
+  }
+`;
 
 const scrubHandlerContainerClassName = css`
   position: relative;

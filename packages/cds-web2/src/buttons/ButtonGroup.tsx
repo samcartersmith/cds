@@ -3,8 +3,7 @@ import { css, cx } from '@linaria/core';
 import type { ButtonGroupBaseProps } from '@cbhq/cds-common2/types/ButtonBaseProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
-import { HStack } from '../layout/HStack';
-import { VStack } from '../layout/VStack';
+import { Box } from '../layout/Box';
 
 export type ButtonGroupProps = ButtonGroupBaseProps & SharedProps;
 
@@ -30,15 +29,15 @@ export const ButtonGroup = memo(function ButtonGroup({
   direction,
 }: ButtonGroupProps) {
   const isVertical = direction === 'vertical';
-  const Stack = isVertical ? VStack : HStack;
 
   return (
-    <Stack
+    <Box
       alignItems="stretch"
       aria-label={accessibilityLabel}
       as="ul"
       className={listStyle}
       data-testid={testID}
+      flexDirection={isVertical ? 'column' : 'row'}
       flexWrap="nowrap"
       gap={1}
     >
@@ -51,6 +50,6 @@ export const ButtonGroup = memo(function ButtonGroup({
           </li>
         ) : null,
       )}
-    </Stack>
+    </Box>
   );
 });

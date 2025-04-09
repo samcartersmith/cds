@@ -4,7 +4,6 @@ import type { CollapsibleBaseProps } from '@cbhq/cds-common2/types/CollapsibleBa
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 
 import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
-import { HStack } from '../layout/HStack';
 
 import { useCollapsibleMotionProps } from './useCollapsibleMotionProps';
 
@@ -66,8 +65,6 @@ export const Collapsible = memo(
           : { maxHeight };
       }, [direction, maxWidth, maxHeight]);
 
-      const Stack = direction === 'horizontal' ? HStack : Box;
-
       // visibility is used to prevent child content from being focusable when collapsed
       const [visibility, setVisibility] = useState<
         Extract<React.CSSProperties['visibility'], 'visible' | 'hidden'>
@@ -105,7 +102,7 @@ export const Collapsible = memo(
           style={style}
         >
           <Box display="block" paddingTop={paddingTop}>
-            <Stack
+            <Box
               overflow={maxWidth || maxHeight ? 'auto' : undefined}
               {...sizeProps}
               padding={padding}
@@ -116,7 +113,7 @@ export const Collapsible = memo(
               paddingY={paddingY}
             >
               {children}
-            </Stack>
+            </Box>
           </Box>
         </motion.div>
       );

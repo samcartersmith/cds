@@ -13,7 +13,6 @@ export const ContentCardBody = memo(
     ref: React.ForwardedRef<View>,
   ) {
     const isHorizontal = mediaPosition === 'right' || mediaPosition === 'left';
-    const Stack = isHorizontal ? HStack : VStack;
     const mediaBox = isHorizontal ? (
       <Box flexShrink={0} height={96} width={96}>
         {media}
@@ -23,7 +22,8 @@ export const ContentCardBody = memo(
     );
     return (
       <VStack ref={ref} gap={1} testID={testID} {...props}>
-        <Stack
+        <Box
+          flexDirection={isHorizontal ? 'row' : 'column'}
           gap={isHorizontal ? 2 : 1}
           justifyContent={mediaPosition === 'right' ? 'space-between' : 'flex-start'}
         >
@@ -33,7 +33,7 @@ export const ContentCardBody = memo(
             {typeof label === 'string' ? <Text font="label2">{label}</Text> : label}
           </VStack>
           {(mediaPosition === 'bottom' || mediaPosition === 'right') && mediaBox}
-        </Stack>
+        </Box>
         {children}
       </VStack>
     );

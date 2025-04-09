@@ -1,16 +1,29 @@
 import React, { forwardRef, memo, useCallback } from 'react';
+import { css } from '@linaria/core';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { useSelectContext } from '../controls/selectContext';
 import { SelectOptionProps } from '../controls/SelectOption';
 import type { Polymorphic } from '../core/polymorphism';
-import { insetFocusRing } from '../styles/focus';
 import {
   Pressable,
   type PressableBaseProps,
   type PressableDefaultElement,
   type PressableProps,
 } from '../system/Pressable';
+
+const insetFocusRing = css`
+  position: relative;
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--color-bgPrimary);
+    outline-offset: 0;
+  }
+`;
 
 export const menuitemDefaultElement = 'button';
 

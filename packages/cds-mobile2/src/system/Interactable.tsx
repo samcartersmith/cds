@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { Animated, Falsy, type StyleProp, View, type ViewStyle } from 'react-native';
+import { Animated, type StyleProp, View, type ViewStyle } from 'react-native';
 import { ElevationLevels } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
@@ -9,7 +9,7 @@ import { getInteractableStyles } from '../styles/getInteractableStyles';
 
 export type InteractableBaseProps = {
   /** Apply animated styles to the outer container. */
-  style?: Animated.WithAnimatedValue<Falsy | ViewStyle>[];
+  style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>[];
   /** Background color of the overlay (element being interacted with). */
   background?: ThemeVars.Color;
   /** Set element to block and expand to 100% width. */
@@ -47,7 +47,7 @@ export type InteractableBaseProps = {
     disabledBackground?: string;
   };
   /** Apply animated styles to the inner container. */
-  contentStyle?: Falsy | ViewStyle;
+  contentStyle?: StyleProp<ViewStyle>;
   /** Apply styles to the outer container. */
   wrapperStyles?: {
     base?: StyleProp<ViewStyle>;
