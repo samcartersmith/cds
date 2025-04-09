@@ -189,7 +189,7 @@ describe('CellMedia', () => {
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toBeTruthy();
+    expect(screen.getByText(glyphMap['ui-arrowUp-24'])).toBeTruthy();
   });
 
   it('renders an asset', () => {
@@ -246,7 +246,7 @@ describe('CellMedia', () => {
         </DefaultThemeProvider>,
       );
 
-      expect(screen.getByRole('image')).toHaveStyle({ width: 16, height: 16 });
+      expect(screen.getByRole('image')).toHaveStyle({ width: 32, height: 32 });
     });
 
     it('sets asset size', () => {

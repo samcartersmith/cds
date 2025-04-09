@@ -32,7 +32,7 @@ describe('Checkbox', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-checkmark-16']);
+    const icon = screen.getByText(glyphMap['ui-checkmark-24']);
     expect(icon).toBeTruthy();
   });
   it('checked Checkbox passes a11y', () => {
@@ -53,7 +53,7 @@ describe('Checkbox', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-minus-16']);
+    const icon = screen.getByText(glyphMap['ui-minus-24']);
     expect(icon).toBeTruthy();
   });
   it('indeterminate Checkbox passes a11y', () => {

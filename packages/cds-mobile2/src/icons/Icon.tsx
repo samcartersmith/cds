@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { Animated, StyleProp, Text, TextStyle } from 'react-native';
+import { Animated, StyleProp, Text, TextStyle, useWindowDimensions } from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
 import type {
@@ -70,10 +70,13 @@ export const Icon = memo(function Icon({
 }: IconProps) {
   const TextComponent = animated ? Animated.Text : Text;
   const theme = useTheme();
+  const { fontScale } = useWindowDimensions();
 
-  const containerSize = theme.iconSize[size];
+  // Scale according to device a11y font size settings
+  const containerSize = theme.iconSize[size] * fontScale;
   const sourceSize = getIconSourceSize(containerSize);
-  const iconSize = bordered ? theme.iconSize[borderedSizeMap[size]] : containerSize;
+  const borderedContainerSize = theme.iconSize[borderedSizeMap[size]] * fontScale;
+  const iconSize = bordered ? borderedContainerSize : containerSize;
 
   const iconColor = theme.color[color];
   const finalColor = dangerouslySetColor ?? iconColor;
