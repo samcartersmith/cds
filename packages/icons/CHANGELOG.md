@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.3.0 (3/26/2025 PST)
+
 ### 🚀 Added
 
 Generated with `yarn nx run icons:sync`
