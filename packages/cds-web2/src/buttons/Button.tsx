@@ -35,7 +35,7 @@ const baseStyle = css`
 `;
 
 const blockStyle = css`
-  display: block;
+  display: flex;
   width: 100%;
   max-width: 100%;
   white-space: normal;
@@ -259,7 +259,12 @@ export const Button: ButtonComponent = memo(
                 <Spinner color="currentColor" size={spinnerHeight} style={spinnerStyle} />
               </span>
             )}
-            <Text color="currentColor" font="headline" numberOfLines={numberOfLines}>
+            <Text
+              color="currentColor"
+              display="inline"
+              font="headline"
+              numberOfLines={numberOfLines}
+            >
               <span className={cx(loading && hiddenStyle)}>{children}</span>
             </Text>
           </span>

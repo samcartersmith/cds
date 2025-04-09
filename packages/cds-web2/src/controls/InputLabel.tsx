@@ -10,6 +10,14 @@ export const InputLabel = memo(function InputLabel({
   ...props
 }: InputLabelProps) {
   return (
-    <Text as="label" color={color} disabled={disabled} font="label1" paddingY={0.5} {...props} />
+    <Text
+      as="label"
+      color={color}
+      disabled={disabled}
+      display="block"
+      font="label1"
+      paddingY={0.5}
+      {...props}
+    />
   );
 });

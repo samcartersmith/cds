@@ -82,25 +82,6 @@ export const TextWithInherit = () => {
   );
 };
 
-export const Dense = () => {
-  const theme = useTheme();
-  return (
-    <ThemeProvider activeColorScheme={theme.colorScheme} theme={theme}>
-      <>
-        {renderHeaderComponents({ display: 'block' })}
-        {textComponents.map((Component) => {
-          const name = (Component as { displayName?: string }).displayName?.slice(4);
-          return (
-            <Component key={name} as="p" display="block">
-              {name}
-            </Component>
-          );
-        })}
-      </>
-    </ThemeProvider>
-  );
-};
-
 export const MonoFont = () => (
   <>
     {renderHeaderComponents({ mono: true, display: 'block' })}
