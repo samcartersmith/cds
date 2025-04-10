@@ -113,7 +113,7 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
       () =>
         ({
           paddingTop: 1,
-          paddingStart: variant === 'default' ? 0 : 1,
+          paddingStart: variant === 'default' ? 1 : 0,
           paddingBottom: 4,
           alignSelf: variant === 'default' ? undefined : 'center',
           alignItems: variant === 'default' ? undefined : 'center',
