@@ -18,4 +18,19 @@ export const docsTheme = {
     bgTertiary: `rgb(${defaultTheme.darkSpectrum.gray5})`, // instead of gray20
     // bgCode: `rgb(${defaultTheme.darkSpectrum.blue0})`, // new color
   },
+  fontFamily: {
+    display1: 'Arial, Helvetica, Sans-Serif',
+    display2: 'Arial, Helvetica, Sans-Serif',
+    display3: 'Arial, Helvetica, Sans-Serif',
+    title1: 'Arial, Helvetica, Sans-Serif',
+    title2: 'Arial, Helvetica, Sans-Serif',
+    title3: 'Arial, Helvetica, Sans-Serif',
+    title4: 'Arial, Helvetica, Sans-Serif',
+    headline: 'Arial, Helvetica, Sans-Serif',
+    body: 'Arial, Helvetica, Sans-Serif',
+    label1: 'Arial, Helvetica, Sans-Serif',
+    label2: 'Arial, Helvetica, Sans-Serif',
+    caption: 'Arial, Helvetica, Sans-Serif',
+    legal: 'Arial, Helvetica, Sans-Serif',
+  },
 } as const satisfies ThemeConfig;

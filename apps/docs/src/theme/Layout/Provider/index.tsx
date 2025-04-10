@@ -9,6 +9,7 @@ import {
   ScrollControllerProvider,
 } from '@docusaurus/theme-common/internal';
 import KBarProvider from '@site/src/components/kbar/KBarProvider';
+import { useInternalCDSTheme } from '@site/src/hooks/useInternalCDSTheme';
 import type { Props } from '@theme/Layout/Provider';
 import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
 import { globalStyles } from '@cbhq/cds-web2/styles/global';
@@ -39,13 +40,18 @@ const Provider = composeProviders([
   PluginHtmlClassNameProvider,
   NavbarProvider,
   MediaQueryProvider,
-  UnifiedThemeProvider,
 ]);
 
 export default function LayoutProvider({ children }: Props): JSX.Element {
+  const theme = useInternalCDSTheme();
   return (
     <Provider>
-      <CDSContainer>{children}</CDSContainer>
+      <UnifiedThemeProvider
+        baseDocsTheme={theme?.docsTheme}
+        basePlaygroundTheme={theme?.playgroundTheme}
+      >
+        <CDSContainer>{children}</CDSContainer>
+      </UnifiedThemeProvider>
     </Provider>
   );
 }

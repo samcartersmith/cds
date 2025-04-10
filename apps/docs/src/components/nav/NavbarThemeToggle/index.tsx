@@ -1,15 +1,13 @@
 import React, { useCallback, useRef } from 'react';
+import {
+  themeOptions,
+  useDocsTheme,
+  useUnifiedTheme,
+} from '@site/src/theme/Layout/Provider/UnifiedThemeContext';
 import type { Property } from 'csstype';
-import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';
 import { Dropdown } from '@cbhq/cds-web2/dropdown';
 import { Box, VStack } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system';
-import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
-
-import {
-  useDocsTheme,
-  usePlaygroundTheme,
-} from '../../../theme/Layout/Provider/UnifiedThemeContext';
 
 type ThemeOption = {
   label: string;
@@ -17,72 +15,10 @@ type ThemeOption = {
   darkValue: Property.Color;
 };
 
-const themeOptions: ThemeOption[] = [
-  {
-    label: 'Green theme',
-    lightValue: `rgb(${defaultTheme.lightSpectrum.green50})`,
-    darkValue: `rgb(${defaultTheme.darkSpectrum.green60})`,
-  },
-  {
-    label: 'Red theme',
-    lightValue: `rgb(${defaultTheme.lightSpectrum.red50})`,
-    darkValue: `rgb(${defaultTheme.darkSpectrum.red60})`,
-  },
-  {
-    label: 'Purple theme',
-    lightValue: `rgb(${defaultTheme.lightSpectrum.purple50})`,
-    darkValue: `rgb(${defaultTheme.darkSpectrum.purple60})`,
-  },
-  {
-    label: 'Blue theme',
-    lightValue: `rgb(${defaultTheme.lightSpectrum.blue50})`,
-    darkValue: `rgb(${defaultTheme.darkSpectrum.blue70})`,
-  },
-] as const;
-
 const NavbarThemeToggle = () => {
-  const { theme: docsTheme, setTheme: setDocsTheme, colorScheme } = useDocsTheme();
-  const { setTheme: setPlaygroundTheme } = usePlaygroundTheme();
+  const { theme: docsTheme, colorScheme } = useDocsTheme();
+  const { setThemeOption } = useUnifiedTheme();
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const updateTheme = useCallback(
-    (themeOption: ThemeOption) => {
-      const newDocsTheme = {
-        ...docsTheme,
-        light: {
-          ...defaultTheme.light,
-          ...docsTheme.light,
-          bgPrimary: themeOption.lightValue,
-          fgPrimary: themeOption.lightValue,
-        },
-        dark: {
-          ...defaultTheme.dark,
-          ...docsTheme.dark,
-          bgPrimary: themeOption.darkValue,
-          fgPrimary: themeOption.darkValue,
-        },
-      } satisfies ThemeConfig;
-
-      const newPlaygroundTheme = {
-        ...defaultTheme,
-        light: {
-          ...defaultTheme.light,
-          bgPrimary: themeOption.lightValue,
-          fgPrimary: themeOption.lightValue,
-        },
-        dark: {
-          ...defaultTheme.dark,
-          bgPrimary: themeOption.darkValue,
-          fgPrimary: themeOption.darkValue,
-        },
-      } satisfies ThemeConfig;
-
-      setDocsTheme(newDocsTheme);
-      setPlaygroundTheme(newPlaygroundTheme);
-    },
-    [docsTheme, setDocsTheme, setPlaygroundTheme],
-  );
-
   /**
    * Handles keyboard interactions (Enter/Space) for accessibility.
    * When a valid key is pressed, prevents default behavior and
@@ -92,10 +28,10 @@ const NavbarThemeToggle = () => {
     (event: React.KeyboardEvent, themeOption: ThemeOption) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
-        updateTheme(themeOption);
+        setThemeOption(themeOption);
       }
     },
-    [updateTheme],
+    [setThemeOption],
   );
 
   const handleOpen = () => {
@@ -130,7 +66,7 @@ const NavbarThemeToggle = () => {
                 as="button"
                 borderRadius={1000}
                 height={16}
-                onClick={() => updateTheme(themeOption)}
+                onClick={() => setThemeOption(themeOption)}
                 onKeyDown={(event) => handleKeyDown(event, themeOption)}
                 role="radio"
                 style={{

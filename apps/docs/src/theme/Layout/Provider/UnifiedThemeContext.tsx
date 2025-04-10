@@ -1,11 +1,18 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import { docsTheme } from '@site/src/constants';
+import type { Property } from 'csstype';
 import { ColorScheme } from '@cbhq/cds-common2/core/theme';
 import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';
 import { useHasMounted } from '@cbhq/cds-web2/hooks/useHasMounted';
 import { useMediaQuery } from '@cbhq/cds-web2/hooks/useMediaQuery';
 import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
+
+type ThemeOption = {
+  label: string;
+  lightValue: Property.Color;
+  darkValue: Property.Color;
+};
 
 type UnifiedThemeContextValue = {
   /** The activeColorScheme for the docs ThemeProvider */
@@ -14,19 +21,42 @@ type UnifiedThemeContextValue = {
   setDocsColorScheme: (scheme: ColorScheme) => void;
   /** The theme for the docs ThemeProvider */
   docsTheme: ThemeConfig;
-  /** Set the theme for the docs ThemeProvider */
-  setDocsTheme: (theme: ThemeConfig) => void;
   /** The activeColorScheme for the code playground ThemeProvider */
   playgroundColorScheme: ColorScheme;
   /** Set the activeColorScheme for the code playground ThemeProvider */
   setPlaygroundColorScheme: (scheme: ColorScheme) => void;
   /** The theme for the code playground ThemeProvider */
   playgroundTheme: ThemeConfig;
-  /** Set the theme for the code playground ThemeProvider */
-  setPlaygroundTheme: (theme: ThemeConfig) => void;
   /** Set the activeColorScheme for both the docs ThemeProvider and the code playground ThemeProvider */
   setUnifiedColorScheme: (scheme: ColorScheme) => void;
+  /** The themeOption for the code playground ThemeProvider */
+  themeOption: ThemeOption;
+  /** Set the themeOption for the code playground ThemeProvider */
+  setThemeOption: (option: ThemeOption) => void;
 };
+
+export const themeOptions: ThemeOption[] = [
+  {
+    label: 'Blue theme',
+    lightValue: `rgb(${defaultTheme.lightSpectrum.blue50})`,
+    darkValue: `rgb(${defaultTheme.darkSpectrum.blue70})`,
+  },
+  {
+    label: 'Green theme',
+    lightValue: `rgb(${defaultTheme.lightSpectrum.green50})`,
+    darkValue: `rgb(${defaultTheme.darkSpectrum.green60})`,
+  },
+  {
+    label: 'Red theme',
+    lightValue: `rgb(${defaultTheme.lightSpectrum.red50})`,
+    darkValue: `rgb(${defaultTheme.darkSpectrum.red60})`,
+  },
+  {
+    label: 'Purple theme',
+    lightValue: `rgb(${defaultTheme.lightSpectrum.purple50})`,
+    darkValue: `rgb(${defaultTheme.darkSpectrum.purple60})`,
+  },
+] as const;
 
 const UnifiedThemeContext = createContext<UnifiedThemeContextValue | undefined>(undefined);
 
@@ -37,46 +67,84 @@ export const useUnifiedTheme = () => {
 };
 
 export const useDocsTheme = () => {
-  const { docsColorScheme, setDocsColorScheme, docsTheme, setDocsTheme } = useUnifiedTheme();
+  const { docsColorScheme, setDocsColorScheme, docsTheme } = useUnifiedTheme();
   return {
     colorScheme: docsColorScheme,
     setColorScheme: setDocsColorScheme,
     theme: docsTheme,
-    setTheme: setDocsTheme,
   };
 };
 
 export const usePlaygroundTheme = () => {
-  const { playgroundColorScheme, setPlaygroundColorScheme, playgroundTheme, setPlaygroundTheme } =
-    useUnifiedTheme();
+  const { playgroundColorScheme, setPlaygroundColorScheme, playgroundTheme } = useUnifiedTheme();
   return {
     colorScheme: playgroundColorScheme,
     setColorScheme: setPlaygroundColorScheme,
     theme: playgroundTheme,
-    setTheme: setPlaygroundTheme,
   };
 };
 
 type UnifiedThemeProviderProps = {
   children: React.ReactNode;
-  initialDocsTheme?: ThemeConfig;
-  initialPlaygroundTheme?: ThemeConfig;
+  baseDocsTheme?: ThemeConfig;
+  basePlaygroundTheme?: ThemeConfig;
 };
 
 const colorSchemeStorageKey = 'cdsColorScheme';
 
 export const UnifiedThemeProvider = ({
   children,
-  initialDocsTheme = docsTheme,
-  initialPlaygroundTheme = defaultTheme,
+  baseDocsTheme = docsTheme,
+  basePlaygroundTheme = defaultTheme,
 }: UnifiedThemeProviderProps) => {
   const { setColorMode } = useColorMode();
   const [docsColorScheme, setDocsColorScheme] = useState<ColorScheme>('dark');
-  const [docsTheme, setDocsTheme] = useState(initialDocsTheme);
+  const [themeOption, setThemeOption] = useState<ThemeOption>(themeOptions[0]);
   const [playgroundColorScheme, setPlaygroundColorScheme] = useState<ColorScheme>(docsColorScheme);
-  const [playgroundTheme, setPlaygroundTheme] = useState<ThemeConfig>(initialPlaygroundTheme);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const hasMounted = useHasMounted();
+
+  const docsThemeWithOption: ThemeConfig = useMemo(() => {
+    return {
+      ...baseDocsTheme,
+      light: {
+        ...defaultTheme.light,
+        ...baseDocsTheme.light,
+        bgPrimary: themeOption.lightValue,
+        fgPrimary: themeOption.lightValue,
+      },
+      dark: {
+        ...defaultTheme.dark,
+        ...baseDocsTheme.dark,
+        bgPrimary: themeOption.darkValue,
+        fgPrimary: themeOption.darkValue,
+      },
+    } satisfies ThemeConfig;
+  }, [baseDocsTheme, themeOption]);
+
+  const playgroundThemeWithOption: ThemeConfig = useMemo(() => {
+    return {
+      ...basePlaygroundTheme,
+      light: {
+        ...defaultTheme.light,
+        ...docsThemeWithOption.light,
+        bgPrimary: themeOption.lightValue,
+        fgPrimary: themeOption.lightValue,
+      },
+      dark: {
+        ...defaultTheme.dark,
+        ...docsThemeWithOption.dark,
+        bgPrimary: themeOption.darkValue,
+        fgPrimary: themeOption.darkValue,
+      },
+    } satisfies ThemeConfig;
+  }, [
+    docsThemeWithOption.dark,
+    docsThemeWithOption.light,
+    basePlaygroundTheme,
+    themeOption.darkValue,
+    themeOption.lightValue,
+  ]);
 
   /** Sets the docsColorScheme and saves the value to localStorage */
   const updateDocsColorScheme = useCallback(
@@ -124,21 +192,22 @@ export const UnifiedThemeProvider = ({
     () => ({
       docsColorScheme,
       setDocsColorScheme: updateDocsColorScheme,
-      docsTheme,
-      setDocsTheme,
+      docsTheme: docsThemeWithOption,
       playgroundColorScheme,
       setPlaygroundColorScheme,
-      playgroundTheme,
-      setPlaygroundTheme,
+      playgroundTheme: playgroundThemeWithOption,
       setUnifiedColorScheme: updateUnifiedColorScheme,
+      themeOption,
+      setThemeOption,
     }),
     [
       docsColorScheme,
       updateDocsColorScheme,
-      docsTheme,
+      docsThemeWithOption,
       playgroundColorScheme,
-      playgroundTheme,
+      playgroundThemeWithOption,
       updateUnifiedColorScheme,
+      themeOption,
     ],
   );
 
