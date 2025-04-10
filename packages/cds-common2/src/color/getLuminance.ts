@@ -1,8 +1,15 @@
 import { color } from 'd3-color';
 
 /**
- * Relative luminance is the relative brightness of any point in a colorspace, normalized to 0 for darkest black and 1 for lightest white.
- * https://contrastchecker.online/color-relative-luminance-calculator
+ * Relative luminance is the relative brightness of any point in an RGB colorspace, normalized to 0 for darkest black and 1 for lightest white.
+ *
+ * Edge cases:
+ * - Returns undefined for invalid color values or non-parseable color strings
+ * - HSL colors outside the RGB gamut will have their RGB components clamped to [0,255], which may not preserve the original color relationships
+ * - Special color keywords like 'currentColor' or 'transparent' will return undefined
+ * - CSS Variables or dynamic values cannot be calculated
+ *
+ * @see https://contrastchecker.online/color-relative-luminance-calculator
  */
 export const getLuminance = (value: string) => {
   const rgbObject = color(value)?.rgb();
