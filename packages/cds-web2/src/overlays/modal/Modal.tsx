@@ -21,7 +21,7 @@ import { Box } from '../../layout';
 import { VStack } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { media } from '../../styles/media';
-import { FocusTrap } from '../FocusTrap';
+import { FocusTrap, type FocusTrapProps } from '../FocusTrap';
 
 import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
 
@@ -84,19 +84,15 @@ export type ModalProps = {
    */
   dangerouslySetPosition?: Position;
   /**
-   * Set disableFocusTrap to disable keyboard listeners responsible for focus trap behavior
-   * This can be useful for scenarios like 2fa
-   * @default false
+   * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
+   *
+   * WARNING: If you disable this, you need to ensure that focus is restored properly so it doesn't end up on the body
+   * @default true
    */
-  disableFocusTrap?: boolean;
-  /**
-   * Allow any element with `tabIndex` attribute to be focusable in FocusTrap, rather than only focusing specific interactive element types like button.
-   * This can be useful when having long content in a Modal.
-   * @default false
-   */
-  focusTabIndexElements?: boolean;
+  restoreFocusOnUnmount?: boolean;
 } & Omit<ModalBaseProps, 'width'> &
-  Omit<ModalWrapperProps, 'onOverlayPress'>;
+  Omit<ModalWrapperProps, 'onOverlayPress'> &
+  Pick<FocusTrapProps, 'disableFocusTrap' | 'focusTabIndexElements'>;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, ModalProps>(
@@ -111,6 +107,7 @@ export const Modal = memo(
         accessibilityLabelledBy,
         accessibilityLabel,
         focusTabIndexElements = false,
+        restoreFocusOnUnmount = true,
         width,
         dangerouslyDisableResponsiveness = false,
         dangerouslySetPosition,
@@ -190,6 +187,7 @@ export const Modal = memo(
                 disableFocusTrap={disableFocusTrap}
                 focusTabIndexElements={focusTabIndexElements}
                 onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
+                restoreFocusOnUnmount={restoreFocusOnUnmount}
               >
                 <VStack
                   background="bg"

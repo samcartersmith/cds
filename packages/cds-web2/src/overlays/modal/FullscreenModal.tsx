@@ -21,7 +21,7 @@ import { Box, HStack, VStack } from '../../layout';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { breakpoints } from '../../styles/media';
 import { Text } from '../../typography/Text';
-import { FocusTrap } from '../FocusTrap';
+import { FocusTrap, type FocusTrapProps } from '../FocusTrap';
 import { Overlay } from '../overlay/Overlay';
 
 import { ModalProps } from './Modal';
@@ -87,8 +87,10 @@ export type FullscreenModalProps = {
   | 'shouldCloseOnEscPress'
   | 'disableFocusTrap'
   | 'focusTabIndexElements'
+  | 'restoreFocusOnUnmount'
 > &
-  Pick<ModalHeaderProps, 'closeAccessibilityLabel'>;
+  Pick<ModalHeaderProps, 'closeAccessibilityLabel'> &
+  Pick<FocusTrapProps, 'disableFocusTrap' | 'focusTabIndexElements'>;
 
 const contentMaxWidth = 800;
 const secondaryContentWidth = 400;
@@ -219,6 +221,7 @@ export const FullscreenModal = memo(function FullscreenModal({
   onDidClose,
   shouldCloseOnEscPress = true,
   disableFocusTrap,
+  restoreFocusOnUnmount = true,
   accessibilityLabelledBy,
   accessibilityLabel,
   closeAccessibilityLabel,
@@ -334,6 +337,7 @@ export const FullscreenModal = memo(function FullscreenModal({
             disableFocusTrap={disableFocusTrap}
             focusTabIndexElements={focusTabIndexElements}
             onEscPress={shouldCloseOnEscPress ? onRequestClose : undefined}
+            restoreFocusOnUnmount={restoreFocusOnUnmount}
           >
             <VStack background="bg" className={containerStyles}>
               {header}

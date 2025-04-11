@@ -79,6 +79,7 @@ export type PopoverProps = {
     | 'respectNegativeTabIndex'
     | 'focusTabIndexElements'
     | 'autoFocusDelay'
+    | 'restoreFocusOnUnmount'
   > &
   SharedProps &
   Partial<Pick<AccessibleControlledReturnType, 'controlledElementAccessibilityProps'>>;

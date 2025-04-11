@@ -39,6 +39,7 @@ const ModalDropdown = memo(
         disabled,
         controlledElementAccessibilityProps,
         respectNegativeTabIndex,
+        restoreFocusOnUnmount,
         ...props
       },
       ref,
@@ -75,6 +76,7 @@ const ModalDropdown = memo(
               disableAutoFocus={!!value}
               onEscPress={onCloseMenu}
               respectNegativeTabIndex={respectNegativeTabIndex}
+              restoreFocusOnUnmount={restoreFocusOnUnmount}
             >
               <DropdownContent {...props}>{content}</DropdownContent>
             </FocusTrap>
@@ -119,6 +121,7 @@ const PopoverDropdown = memo(
         contentPosition = defaultPopoverContentPositionConfig,
         block,
         disabled,
+        restoreFocusOnUnmount,
         ...props
       },
       ref,
@@ -199,6 +202,7 @@ const PopoverDropdown = memo(
             onBlur={onBlur}
             onClose={onCloseMenu}
             onPressSubject={!visible ? onOpenMenu : undefined}
+            restoreFocusOnUnmount={restoreFocusOnUnmount}
             showOverlay={showOverlay}
             testID={testID}
             visible={disabled ? false : visible}
@@ -223,6 +227,7 @@ export const Dropdown = memo(
         enableMobileModal,
         onOpenMenu,
         onCloseMenu,
+        restoreFocusOnUnmount = true,
         ...props
       },
       ref,
@@ -246,6 +251,7 @@ export const Dropdown = memo(
           maxHeight={maxHeight}
           onCloseMenu={handleCloseMenu}
           onOpenMenu={handleOpenMenu}
+          restoreFocusOnUnmount={restoreFocusOnUnmount}
           visible={visible}
           {...props}
         >
@@ -257,6 +263,7 @@ export const Dropdown = memo(
           maxHeight={maxHeight}
           onCloseMenu={handleCloseMenu}
           onOpenMenu={handleOpenMenu}
+          restoreFocusOnUnmount={restoreFocusOnUnmount}
           visible={visible}
           {...props}
         >

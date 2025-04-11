@@ -25,13 +25,8 @@ export default {
 const useTriggerFocus = () => {
   const triggerRef = useRef<HTMLButtonElement>(null);
 
-  const focusTrigger = () => {
-    triggerRef.current?.focus();
-  };
-
   return {
     triggerRef,
-    focusTrigger,
   };
 };
 
@@ -41,7 +36,7 @@ export const Basic = () => {
   const [visible, setVisible] = useState(true);
   const setVisibleToTrue = useCallback(() => setVisible(true), []);
   const setVisibleToFalse = useCallback(() => setVisible(false), []);
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
@@ -66,7 +61,6 @@ export const Basic = () => {
       </Button>
       <FullscreenModal
         closeAccessibilityLabel="Close modal"
-        onDidClose={focusTrigger}
         onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
@@ -81,7 +75,7 @@ export const NoTitle = () => {
   const [visible, setVisible] = useState(true);
   const setVisibleToFalse = useCallback(() => setVisible(false), []);
   const setVisibleToTrue = useCallback(() => setVisible(true), []);
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
@@ -107,7 +101,6 @@ export const NoTitle = () => {
       <FullscreenModal
         accessibilityLabel="Modal context info"
         closeAccessibilityLabel="Close modal"
-        onDidClose={focusTrigger}
         onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
@@ -121,7 +114,7 @@ export const NoSecondary = () => {
   const [visible, setVisible] = useState(true);
   const setVisibleToFalse = useCallback(() => setVisible(false), []);
   const setVisibleToTrue = useCallback(() => setVisible(true), []);
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
@@ -138,7 +131,6 @@ export const NoSecondary = () => {
       </Button>
       <FullscreenModal
         closeAccessibilityLabel="Close modal"
-        onDidClose={focusTrigger}
         onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         title="Modal title"
@@ -152,7 +144,7 @@ export const Example = () => {
   const [visible, setVisible] = useState(true);
   const setVisibleToTrue = useCallback(() => setVisible(true), []);
   const setVisibleToFalse = useCallback(() => setVisible(false), []);
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
 
   const feedCard = (
     <FeedCard
@@ -219,7 +211,6 @@ export const Example = () => {
       </Button>
       <FullscreenModal
         closeAccessibilityLabel="Close modal"
-        onDidClose={focusTrigger}
         onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
@@ -234,7 +225,7 @@ export const SecondaryContentDivider = () => {
   const [visible, setVisible] = useState(true);
   const setVisibleToFalse = useCallback(() => setVisible(false), []);
   const setVisibleToTrue = useCallback(() => setVisible(true), []);
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
@@ -260,7 +251,6 @@ export const SecondaryContentDivider = () => {
       <FullscreenModal
         showSecondaryContentDivider
         closeAccessibilityLabel="Close modal"
-        onDidClose={focusTrigger}
         onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         secondaryContent={secondaryContent}
@@ -275,7 +265,7 @@ export const CenterPrimary = () => {
   const [visible, setVisible] = useState(true);
   const setVisibleToFalse = useCallback(() => setVisible(false), []);
   const setVisibleToTrue = useCallback(() => setVisible(true), []);
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
 
   const primaryContent = (
     <Box background="bgAlternate" height={800}>
@@ -293,7 +283,6 @@ export const CenterPrimary = () => {
       <FullscreenModal
         closeAccessibilityLabel="Close modal"
         contentStyle={contentStyle}
-        onDidClose={focusTrigger}
         onRequestClose={setVisibleToFalse}
         primaryContent={primaryContent}
         title="Modal title"

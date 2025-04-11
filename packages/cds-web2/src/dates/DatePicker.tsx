@@ -55,6 +55,13 @@ export type DatePickerProps = {
   onConfirm?: () => void;
   /** Callback function fired when the user closes the Calendar popover without selecting a date. Interacting with the DateInput does not fire this callback. Will always be called before `onClose`. */
   onCancel?: () => void;
+  /**
+   * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
+   *
+   * WARNING: If you disable this, you need to ensure that focus is restored properly so it doesn't end up on the body
+   * @default true
+   */
+  restoreFocusOnUnmount?: boolean;
   /** Accessibility label describing the calendar IconButton, which opens the calendar when pressed. */
   calendarIconButtonAccessibilityLabel?: string;
   calendarStyle?: React.CSSProperties;
@@ -120,6 +127,7 @@ export const DatePicker = memo(
         invalidDateError,
         disabledDateError,
         label,
+        restoreFocusOnUnmount = true,
         accessibilityLabel,
         accessibilityLabelledBy,
         calendarIconButtonAccessibilityLabel,
@@ -145,8 +153,6 @@ export const DatePicker = memo(
     ) => {
       const [showCalendar, setShowCalendar] = useState<boolean>(defaultOpen);
       const calendarRef = useRef<HTMLDivElement | null>(null);
-      const calendarIconButtonRef = useRef<HTMLButtonElement | null>(null);
-      const dateInputRef = useRef<HTMLInputElement | null>(null);
 
       /**
        * Be careful to preserve the correct event orders
@@ -182,7 +188,6 @@ export const DatePicker = memo(
       const handleCancelCalendar = useCallback(() => {
         onCancel?.();
         handleCloseCalendar();
-        calendarIconButtonRef.current?.focus();
       }, [onCancel, handleCloseCalendar]);
 
       const handleConfirmCalendarDate = useCallback(
@@ -190,9 +195,9 @@ export const DatePicker = memo(
           onConfirm?.();
           onChangeDate(date);
           if (error && error.type !== 'custom') onErrorDate(null);
+          // Wait to close the calendar for a bit, so we can see the selected date change
           setTimeout(() => {
             handleCloseCalendar();
-            dateInputRef.current?.focus();
           }, 10);
         },
         [onConfirm, onChangeDate, error, onErrorDate, handleCloseCalendar],
@@ -202,7 +207,6 @@ export const DatePicker = memo(
         () => (
           <VStack paddingEnd={0.5}>
             <InputIconButton
-              ref={calendarIconButtonRef}
               disableInheritFocusStyle
               transparent
               accessibilityLabel={calendarIconButtonAccessibilityLabel}
@@ -218,7 +222,6 @@ export const DatePicker = memo(
       const dateInput = useMemo(
         () => (
           <DateInput
-            ref={dateInputRef}
             {...rest}
             accessibilityLabel={accessibilityLabel}
             accessibilityLabelledBy={accessibilityLabelledBy}
@@ -326,6 +329,7 @@ export const DatePicker = memo(
             content={calendar}
             contentPosition={calendarPopoverPosition}
             onClose={handleCancelCalendar}
+            restoreFocusOnUnmount={restoreFocusOnUnmount}
             showOverlay={showOverlay}
             visible={showCalendar}
           >

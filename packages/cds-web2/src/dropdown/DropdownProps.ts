@@ -51,6 +51,13 @@ export type DropdownProps = {
    * You'll need to surface disabled state on the trigger manually.
    */
   disabled?: boolean;
+  /**
+   * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
+   *
+   * WARNING: If you disable this, you need to ensure that focus is restored properly so it doesn't end up on the body
+   * @default true
+   */
+  restoreFocusOnUnmount?: boolean;
 } & Pick<
   PopoverProps,
   // TODO it doesn't really make sense to place these Popover props on the DropdownProps as it is possible for the Dropdown to render a Modal instead of Popover

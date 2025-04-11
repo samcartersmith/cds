@@ -15,7 +15,6 @@ export default {
 
 type ModalA11yProps = {
   triggerRef?: React.RefObject<HTMLButtonElement>;
-  focusTrigger?: () => void;
   enableBackButton?: boolean;
   visible?: boolean;
 };
@@ -23,13 +22,8 @@ type ModalA11yProps = {
 const useTriggerFocus = () => {
   const triggerRef = useRef<HTMLButtonElement>(null);
 
-  const focusTrigger = () => {
-    triggerRef.current?.focus();
-  };
-
   return {
     triggerRef,
-    focusTrigger,
   };
 };
 
@@ -41,7 +35,6 @@ const BasicModalExample: React.FC<
   visible: defaultVisible,
   hideDividers,
   triggerRef,
-  focusTrigger,
   enableBackButton,
   width,
   maxWidth,
@@ -59,7 +52,6 @@ const BasicModalExample: React.FC<
         focusTabIndexElements={focusTabIndexElements}
         hideDividers={hideDividers}
         maxWidth={maxWidth}
-        onDidClose={focusTrigger}
         onRequestClose={() => setVisible(false)}
         visible={visible}
         width={width}
@@ -90,14 +82,13 @@ const BasicModalExample: React.FC<
 const PortalModalExample: React.FC<React.PropsWithChildren<ModalA11yProps>> = ({
   children,
   triggerRef,
-  focusTrigger,
 }) => {
   const { openModal, closeModal } = useModal();
 
   const handlePress = useCallback(
     () =>
       openModal(
-        <Modal visible onDidClose={focusTrigger} onRequestClose={closeModal}>
+        <Modal visible onRequestClose={closeModal}>
           <ModalHeader closeAccessibilityLabel="Close" title="Default Modal" />
           <ModalBody>{children}</ModalBody>
           <ModalFooter
@@ -110,7 +101,7 @@ const PortalModalExample: React.FC<React.PropsWithChildren<ModalA11yProps>> = ({
           />
         </Modal>,
       ),
-    [openModal, closeModal, focusTrigger, children],
+    [openModal, closeModal, children],
   );
 
   useEffect(() => {
@@ -127,54 +118,54 @@ const PortalModalExample: React.FC<React.PropsWithChildren<ModalA11yProps>> = ({
 };
 
 export const BasicModal = () => {
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
   return (
-    <BasicModalExample focusTrigger={focusTrigger} triggerRef={triggerRef}>
+    <BasicModalExample triggerRef={triggerRef}>
       <LoremIpsum />
     </BasicModalExample>
   );
 };
 
 export const CustomWidthModal = () => {
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
   return (
-    <BasicModalExample focusTrigger={focusTrigger} triggerRef={triggerRef} width={300}>
+    <BasicModalExample triggerRef={triggerRef} width={300}>
       <LoremIpsum />
     </BasicModalExample>
   );
 };
 
 export const BackButtonModal = () => {
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
   return (
-    <BasicModalExample enableBackButton focusTrigger={focusTrigger} triggerRef={triggerRef}>
+    <BasicModalExample enableBackButton triggerRef={triggerRef}>
       <LoremIpsum />
     </BasicModalExample>
   );
 };
 
 export const ModalWithoutPortal = () => {
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
   return (
-    <BasicModalExample disablePortal focusTrigger={focusTrigger} triggerRef={triggerRef}>
+    <BasicModalExample disablePortal triggerRef={triggerRef}>
       <LoremIpsum />
     </BasicModalExample>
   );
 };
 
 export const LongModal = () => {
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
   return (
-    <BasicModalExample focusTabIndexElements focusTrigger={focusTrigger} triggerRef={triggerRef}>
+    <BasicModalExample focusTabIndexElements triggerRef={triggerRef}>
       <LoremIpsum repeat={30} />
     </BasicModalExample>
   );
 };
 
 export const PortalModal = () => {
-  const { triggerRef, focusTrigger } = useTriggerFocus();
+  const { triggerRef } = useTriggerFocus();
   return (
-    <PortalModalExample focusTrigger={focusTrigger} triggerRef={triggerRef}>
+    <PortalModalExample triggerRef={triggerRef}>
       <LoremIpsum />
     </PortalModalExample>
   );

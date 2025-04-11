@@ -17,7 +17,10 @@ export type AlertProps = {
    */
   stacked?: boolean;
 } & AlertBaseProps &
-  Pick<ModalProps, 'disablePortal' | 'accessibilityLabel' | 'accessibilityLabelledBy'>;
+  Pick<
+    ModalProps,
+    'disablePortal' | 'accessibilityLabel' | 'accessibilityLabelledBy' | 'restoreFocusOnUnmount'
+  >;
 
 export const alertModalWidth = 318;
 

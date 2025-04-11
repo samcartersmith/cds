@@ -17,7 +17,7 @@ export default {
   component: DatePicker,
 };
 
-const today = new Date(new Date(2024, 7, 18).setHours(0, 0, 0, 0));
+const today = new Date();
 const twoDaysAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
 const fourDaysAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 4);
 const oneWeekAgo = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);

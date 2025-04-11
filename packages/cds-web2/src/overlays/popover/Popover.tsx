@@ -62,6 +62,7 @@ export const Popover = memo(
     focusTabIndexElements,
     respectNegativeTabIndex,
     autoFocusDelay,
+    restoreFocusOnUnmount,
     controlledElementAccessibilityProps,
   }: PopoverProps) => {
     const { setSubject, setPopper, popperStyles, popperAttributes } = usePopper(contentPosition);
@@ -99,6 +100,7 @@ export const Popover = memo(
             focusTabIndexElements={focusTabIndexElements}
             onEscPress={handleClose}
             respectNegativeTabIndex={respectNegativeTabIndex}
+            restoreFocusOnUnmount={restoreFocusOnUnmount}
           >
             {/* Box with Horizontal padding to ensure proper margins but still rely on popper for layout. */}
             <Box
@@ -126,6 +128,7 @@ export const Popover = memo(
         focusTabIndexElements,
         respectNegativeTabIndex,
         autoFocusDelay,
+        restoreFocusOnUnmount,
       ],
     );
 

@@ -363,4 +363,25 @@ describe('FocusTrap', () => {
 
     jest.useRealTimers();
   });
+
+  it('restores focus to the previously focused element on unmount', () => {
+    const initialFocusElement = document.createElement('button');
+    document.body.appendChild(initialFocusElement);
+    initialFocusElement.focus();
+
+    const { unmount } = render(
+      <FocusTrap restoreFocusOnUnmount>
+        <button data-testid="trap-button">Trap Button</button>
+      </FocusTrap>,
+    );
+
+    const trapButton = screen.getByTestId('trap-button');
+    trapButton.focus();
+    expect(trapButton).toHaveFocus();
+
+    unmount();
+    expect(initialFocusElement).toHaveFocus();
+
+    document.body.removeChild(initialFocusElement);
+  });
 });

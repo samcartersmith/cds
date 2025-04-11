@@ -30,6 +30,11 @@ export type FocusTrapProps = {
    */
   disableAutoFocus?: boolean;
   /**
+   * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
+   * @default false
+   */
+  restoreFocusOnUnmount?: boolean;
+  /**
    * If `true`, the focus trap will respect negative `tabIndex` values, removing them from the list of focusable elements.
    * @default false
    */
@@ -87,9 +92,25 @@ export const FocusTrap = memo(function FocusTrap({
   respectNegativeTabIndex,
   focusTabIndexElements,
   autoFocusDelay,
+  restoreFocusOnUnmount,
 }: FocusTrapProps) {
   const isFocused = useRef(false);
   const childrenRef = useRef<HTMLElement>(null);
+  const previouslyFocusedElement = useRef<HTMLElement | null>(null);
+  previouslyFocusedElement.current ??= getBrowserGlobals()?.document?.activeElement as HTMLElement;
+
+  // Restore focus when the trap is unmounted
+  useEffect(() => {
+    return () => {
+      if (
+        restoreFocusOnUnmount &&
+        previouslyFocusedElement.current &&
+        previouslyFocusedElement.current !== document?.activeElement
+      ) {
+        previouslyFocusedElement.current.focus();
+      }
+    };
+  }, [restoreFocusOnUnmount]);
 
   /** START KEYSTROKE HISTORY
    * Track keystrokes with a short memory */
