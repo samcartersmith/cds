@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { AccessibilityProps, Animated, StyleSheet, View } from 'react-native';
+import { AccessibilityProps, Animated, ColorValue, StyleSheet, View } from 'react-native';
 import { Path, Rect, Svg } from 'react-native-svg';
 import { SharedProps } from '@cbhq/cds-common2';
 import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
@@ -15,12 +15,12 @@ import { Control, ControlIconProps, ControlProps } from './Control';
 
 export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
 
-const dotSvg = (
+const DotSvg = ({ color }: { color?: ColorValue }) => (
   <Svg fill="none" height="20" viewBox="0 0 20 20" width="20">
-    <Rect height="19" rx="9.5" stroke="currentColor" width="19" x="0.5" y="0.5" />
+    <Rect height="19" rx="9.5" stroke={color} width="19" x="0.5" y="0.5" />
     <Path
       d="M9.98877 16.9952C13.8548 16.9952 16.9888 13.8612 16.9888 9.99518C16.9888 6.12918 13.8548 2.99518 9.98877 2.99518C6.12278 2.99518 2.98877 6.12918 2.98877 9.99518C2.98877 13.8612 6.12278 16.9952 9.98877 16.9952Z"
-      fill="currentColor"
+      fill={color}
     />
   </Svg>
 );
@@ -56,8 +56,8 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
       <Animated.View
         style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
       >
-        <Box alignItems="center" color="fgPrimary" justifyContent="center" testID="radio-icon">
-          {dotSvg}
+        <Box alignItems="center" justifyContent="center" testID="radio-icon">
+          <DotSvg color={theme.color.fgPrimary} />
         </Box>
       </Animated.View>
     </Interactable>
