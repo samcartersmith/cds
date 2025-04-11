@@ -133,7 +133,8 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
           justifyContent="space-between"
           left="0"
           minWidth={computedWidth}
-          padding={2}
+          paddingX={variant === 'default' ? 2 : 1.5}
+          paddingY={2}
           position="sticky"
           testID={testID}
           top="0"

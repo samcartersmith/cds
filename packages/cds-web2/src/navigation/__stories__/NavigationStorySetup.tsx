@@ -263,7 +263,7 @@ const renderCustomSidebarItem: SidebarItemProps['Component'] = ({
 
 const renderAnotherCustomItem: SidebarItemProps['Component'] = ({ color, title, active, icon }) => (
   <VStack alignItems="center" gap={0.5} padding={2}>
-    <Icon active={active} name={icon} size="m" />
+    <Icon active={active} color={active ? 'fgPrimary' : 'fg'} name={icon} size="m" />
     <Text color={color} font="label1">
       {title}
     </Text>
