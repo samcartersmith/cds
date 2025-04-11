@@ -1,13 +1,16 @@
 import React, { Children, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
-import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { useDimensions } from '../hooks/useDimensions';
-import { Box, type BoxBaseProps, VStack } from '../layout';
+import { Box, type BoxBaseProps, type BoxProps, VStack } from '../layout';
 import { breakpoints } from '../styles/media';
 
 import { SidebarProvider } from './SidebarContext';
+
+export const sidebarDefaultElement = 'nav';
+
+export type SidebarDefaultElement = typeof sidebarDefaultElement;
 
 // STYLES
 const breakpointObserverStyle = css`
@@ -39,7 +42,7 @@ const breakpointConfig = {
   updateOnBreakpointChange: true,
 };
 
-export type SidebarProps = {
+export type SidebarBaseProps = BoxBaseProps & {
   /**
    * The logo to display
    * @default undefined
@@ -67,11 +70,11 @@ export type SidebarProps = {
    */
   renderEnd?: (isCollapsed: boolean) => React.ReactNode;
   variant?: 'default' | 'condensed';
-} & SharedProps &
-  SharedAccessibilityProps &
-  Pick<BoxBaseProps, 'width'>;
+};
 
-export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
+export type SidebarProps = SidebarBaseProps & Omit<BoxProps<SidebarDefaultElement>, 'children'>;
+
+export const Sidebar: React.FC<SidebarProps> = memo(
   ({
     logo,
     children,
@@ -82,7 +85,7 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
     accessibilityLabel = 'Sidebar',
     width,
     variant = 'default',
-    ...rest
+    ...props
   }) => {
     const { ref, currentBreakpoint } = useDimensions(breakpointConfig);
     /**
@@ -126,7 +129,7 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
         <VStack
           borderedEnd
           accessibilityLabel={accessibilityLabel}
-          as="nav"
+          as={sidebarDefaultElement}
           background="bg"
           bottom="0"
           height="100%"
@@ -140,7 +143,7 @@ export const Sidebar: React.FC<React.PropsWithChildren<SidebarProps>> = memo(
           top="0"
           width={width ?? computedWidth}
           zIndex={zIndex.navigation}
-          {...rest}
+          {...props}
         >
           <VStack>
             {logo && (
