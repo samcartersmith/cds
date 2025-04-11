@@ -1,0 +1,16 @@
+name: Test New GitHub Actions Locally
+
+on:
+  # Manual trigger for testing
+  workflow_dispatch:
+
+jobs:
+  test-local:
+    runs-on: [small, default-config]
+    steps:
+      - uses: actions/checkout@v4
+
+      # Test the published action
+      # - name: New CDS Action
+      #   uses: [fill this in on new branch]
+      #   with: [fill this in on new branch]
