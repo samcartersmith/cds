@@ -3,4 +3,4 @@ services:
   app:
     build:
       context: ../../
-      dockerfile: packages/ui-mobile-playground/publish.Dockerfile
+      dockerfile: packages/ui-mobile-playground2/publish.Dockerfile

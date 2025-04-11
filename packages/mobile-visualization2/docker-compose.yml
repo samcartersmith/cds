@@ -3,4 +3,4 @@ services:
   app:
     build:
       context: ../../
-      dockerfile: packages/mobile-visualization/publish.Dockerfile
+      dockerfile: packages/mobile-visualization2/publish.Dockerfile
