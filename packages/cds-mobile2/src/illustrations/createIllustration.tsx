@@ -37,8 +37,8 @@ export function createIllustration<
     accessibilityHint,
     accessibilityLabel,
   }: IllustrationProps) {
-    const { colorScheme } = useTheme();
-    const requireFn = config[name]?.[colorScheme];
+    const { activeColorScheme } = useTheme();
+    const requireFn = config[name]?.[activeColorScheme];
 
     const xml = useMemo(() => requireFn?.(), [requireFn]);
 

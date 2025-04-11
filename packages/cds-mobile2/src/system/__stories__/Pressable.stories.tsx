@@ -95,7 +95,7 @@ const PressableScreen = () => {
           {Object.entries(theme.color).map(([color, value]) => {
             let textColor = getAccessibleColor({ background: value });
             if (color === 'currentColor')
-              textColor = theme.colorScheme === 'dark' ? '#ffffff' : '#000000';
+              textColor = theme.activeColorScheme === 'dark' ? '#ffffff' : '#000000';
             return (
               <Pressable
                 key={color}
@@ -115,7 +115,7 @@ const PressableScreen = () => {
           {Object.entries(theme.color).map(([color, value]) => {
             let textColor = getAccessibleColor({ background: value });
             if (color === 'currentColor')
-              textColor = theme.colorScheme === 'dark' ? '#ffffff' : '#000000';
+              textColor = theme.activeColorScheme === 'dark' ? '#ffffff' : '#000000';
             return (
               <Pressable
                 key={color}

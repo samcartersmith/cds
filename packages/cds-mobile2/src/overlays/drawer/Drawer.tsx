@@ -61,7 +61,7 @@ export const Drawer = memo(
     },
     ref,
   ) {
-    const { colorScheme } = useTheme();
+    const { activeColorScheme } = useTheme();
     const { width, height } = useWindowDimensions();
     const isAndroid = Platform.OS === 'android';
 
@@ -209,8 +209,8 @@ export const Drawer = memo(
             animated
             background="bg"
             borderRadius={isPinHorizontal ? 0 : 400}
-            bordered={colorScheme === 'dark'}
-            elevation={colorScheme === 'dark' ? 2 : 0}
+            bordered={activeColorScheme === 'dark'}
+            elevation={activeColorScheme === 'dark' ? 2 : 0}
             maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
             onAccessibilityEscape={handleClose}
             pin={pin}

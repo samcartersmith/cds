@@ -43,7 +43,7 @@ const SwitchScreen = () => {
               activeColorScheme="light"
               theme={{
                 ...defaultTheme,
-                light: { ...defaultTheme.light, bgPrimary: 'pink' },
+                lightColor: { ...defaultTheme.lightColor, bgPrimary: 'pink' },
               }}
             >
               <Switch checked={isChecked2} onChange={toggleChecked}>

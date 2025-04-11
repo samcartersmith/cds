@@ -22,8 +22,12 @@ const transition = css`
 `;
 
 export const LogoMark = memo(({ size, foreground }: Omit<LogoMarkParams, 'colorScheme'>) => {
-  const { colorScheme } = useTheme();
-  const { viewBox, width, height, path, color } = useLogoMark({ size, foreground, colorScheme });
+  const { activeColorScheme } = useTheme();
+  const { viewBox, width, height, path, color } = useLogoMark({
+    size,
+    foreground,
+    colorScheme: activeColorScheme,
+  });
 
   return (
     <svg

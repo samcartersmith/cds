@@ -48,7 +48,7 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
     checked: checked || indeterminate,
   });
-  const { colorScheme } = useTheme();
+  const { activeColorScheme } = useTheme();
 
   return (
     <Control
@@ -59,7 +59,7 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
       {...props}
     >
       <motion.div
-        key={colorScheme}
+        key={activeColorScheme}
         className={cx(checkbox, focusRingStyle)}
         data-filled={checked || indeterminate}
         role="presentation"

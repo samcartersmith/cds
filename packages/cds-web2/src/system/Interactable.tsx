@@ -161,21 +161,21 @@ export const getInteractableStyles = ({
     [interactableHoveredBackground]: getBlendedColor({
       color: blendStyles?.hoveredBackground ?? backgroundColor,
       opacity: opacityHovered,
-      colorScheme: theme.colorScheme,
+      colorScheme: theme.activeColorScheme,
     }),
     [interactableHoveredOpacity]: opacityHovered,
     // Pressed:
     [interactablePressedBackground]: getBlendedColor({
       color: blendStyles?.pressedBackground ?? backgroundColor,
       opacity: opacityPressed,
-      colorScheme: theme.colorScheme,
+      colorScheme: theme.activeColorScheme,
     }),
     [interactablePressedOpacity]: opacityPressed,
     // Disabled:
     [interactableDisabledBackground]: getBlendedColor({
       color: blendStyles?.disabledBackground ?? backgroundColor,
       opacity: opacityDisabled,
-      colorScheme: theme.colorScheme,
+      colorScheme: theme.activeColorScheme,
       isDisabled: true,
     }),
   };

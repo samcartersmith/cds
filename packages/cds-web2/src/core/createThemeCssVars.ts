@@ -9,11 +9,11 @@ export const createThemeCssVars = (theme: Partial<Theme>) => {
     const themeKey = key as keyof Theme;
     if (
       !theme[themeKey] ||
-      themeKey === 'colorScheme' ||
+      themeKey === 'activeColorScheme' ||
       themeKey === 'lightSpectrum' ||
       themeKey === 'darkSpectrum' ||
-      themeKey === 'light' ||
-      themeKey === 'dark'
+      themeKey === 'lightColor' ||
+      themeKey === 'darkColor'
     )
       continue;
     const cssVars = createCssVars(theme[themeKey], styleVarPrefixes[themeKey] || '');

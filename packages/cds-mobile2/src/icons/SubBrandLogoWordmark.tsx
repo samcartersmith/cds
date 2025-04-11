@@ -11,10 +11,10 @@ export type SubBrandLogoWordmarkProps = SubBrandLogoWordmarkParams;
 
 export const SubBrandLogoWordmark = memo(
   (props: Omit<SubBrandLogoWordmarkProps, 'colorScheme'>) => {
-    const { colorScheme } = useTheme();
+    const { activeColorScheme } = useTheme();
     const { logoColor, typeColor, viewBox, logoPath, typePath } = useSubBrandLogoWordmark({
       ...props,
-      colorScheme,
+      colorScheme: activeColorScheme,
     });
 
     return (

@@ -69,14 +69,14 @@ const ChildThemeProviderDark = () => {
 
 const customTheme: ThemeConfig = {
   ...defaultTheme,
-  light: {
-    ...defaultTheme.light,
+  lightColor: {
+    ...defaultTheme.lightColor,
     bg: `rgb(${defaultTheme.lightSpectrum.orange50})`,
     bgPrimary: `rgb(${defaultTheme.lightSpectrum.red20})`,
     bgSecondary: `rgb(${defaultTheme.lightSpectrum.blue50})`,
   },
-  dark: {
-    ...defaultTheme.dark,
+  darkColor: {
+    ...defaultTheme.darkColor,
     bg: `rgb(${defaultTheme.darkSpectrum.orange50})`,
     bgPrimary: `rgb(${defaultTheme.darkSpectrum.red20})`,
     bgSecondary: `rgb(${defaultTheme.darkSpectrum.blue50})`,
@@ -86,7 +86,7 @@ const customTheme: ThemeConfig = {
 const ChildThemeWithOverrides = () => {
   const theme = useTheme();
   return (
-    <ThemeProvider activeColorScheme={theme.colorScheme} theme={customTheme}>
+    <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={customTheme}>
       <Text as="p" display="block" font="body">
         With theme overrides
       </Text>
@@ -109,7 +109,7 @@ const ChildThemeWithOverridesDark = () => {
 const ChildThemeWithNestedOverrides = () => {
   const theme = useTheme();
   return (
-    <ThemeProvider activeColorScheme={theme.colorScheme} theme={customTheme}>
+    <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={customTheme}>
       <ThemeProvider activeColorScheme="light" theme={theme}>
         <Text as="p" display="block" font="body">
           With nested theme overrides

@@ -107,15 +107,15 @@ export const UnifiedThemeProvider = ({
   const docsThemeWithOption: ThemeConfig = useMemo(() => {
     return {
       ...baseDocsTheme,
-      light: {
-        ...defaultTheme.light,
-        ...baseDocsTheme.light,
+      lightColor: {
+        ...defaultTheme.lightColor,
+        ...baseDocsTheme.lightColor,
         bgPrimary: themeOption.lightValue,
         fgPrimary: themeOption.lightValue,
       },
-      dark: {
-        ...defaultTheme.dark,
-        ...baseDocsTheme.dark,
+      darkColor: {
+        ...defaultTheme.darkColor,
+        ...baseDocsTheme.darkColor,
         bgPrimary: themeOption.darkValue,
         fgPrimary: themeOption.darkValue,
       },
@@ -125,22 +125,22 @@ export const UnifiedThemeProvider = ({
   const playgroundThemeWithOption: ThemeConfig = useMemo(() => {
     return {
       ...basePlaygroundTheme,
-      light: {
-        ...defaultTheme.light,
-        ...docsThemeWithOption.light,
+      lightColor: {
+        ...defaultTheme.lightColor,
+        ...docsThemeWithOption.lightColor,
         bgPrimary: themeOption.lightValue,
         fgPrimary: themeOption.lightValue,
       },
-      dark: {
-        ...defaultTheme.dark,
-        ...docsThemeWithOption.dark,
+      darkColor: {
+        ...defaultTheme.darkColor,
+        ...docsThemeWithOption.darkColor,
         bgPrimary: themeOption.darkValue,
         fgPrimary: themeOption.darkValue,
       },
     } satisfies ThemeConfig;
   }, [
-    docsThemeWithOption.dark,
-    docsThemeWithOption.light,
+    docsThemeWithOption.darkColor,
+    docsThemeWithOption.lightColor,
     basePlaygroundTheme,
     themeOption.darkValue,
     themeOption.lightValue,

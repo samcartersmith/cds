@@ -40,14 +40,14 @@ export const getInteractableStyles = ({
       backgroundColor: getBlendedColor({
         color: pressedBackground ?? background,
         opacity: opacityPressed,
-        colorScheme: theme.colorScheme,
+        colorScheme: theme.activeColorScheme,
       }),
     },
     disabled: {
       backgroundColor: getBlendedColor({
         color: disabledBackground ?? background,
         opacity: accessibleOpacityDisabled,
-        colorScheme: theme.colorScheme,
+        colorScheme: theme.activeColorScheme,
         isDisabled: true,
       }),
     },

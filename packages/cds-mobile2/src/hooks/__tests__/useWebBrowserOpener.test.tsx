@@ -10,8 +10,8 @@ const URL = 'https://www.coinbase.com';
 const DEFAULT_OPEN_WEB_BROWSER_OPTIONS = {
   theme: {
     ...defaultTheme,
-    colorScheme: 'light' as const,
-    color: defaultTheme.light,
+    activeColorScheme: 'light' as const,
+    color: defaultTheme.lightColor,
     spectrum: defaultTheme.lightSpectrum,
   },
 };

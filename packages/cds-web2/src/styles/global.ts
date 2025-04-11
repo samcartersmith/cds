@@ -6,13 +6,14 @@ export const globalStyles = css`
     ::before,
     ::after {
       box-sizing: border-box;
-      border-style: solid;
-      border-width: 0;
     }
 
     * {
       margin: 0;
       padding: 0;
+      font-size: 100%;
+      border-style: solid;
+      border-width: 0;
     }
 
     html {

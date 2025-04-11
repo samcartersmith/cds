@@ -5,8 +5,8 @@ import { useSparklineAreaOpacity } from '@cbhq/cds-common2/visualizations/useSpa
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 
 export const SparklineAreaPattern = ({ color, id }: SparklineAreaPatternBaseProps) => {
-  const { colorScheme } = useTheme();
-  const fillOpacity = useSparklineAreaOpacity(colorScheme);
+  const { activeColorScheme } = useTheme();
+  const fillOpacity = useSparklineAreaOpacity(activeColorScheme);
   return (
     <Pattern height="4" id={id} patternUnits="userSpaceOnUse" width="4" x="0" y="0">
       <G>

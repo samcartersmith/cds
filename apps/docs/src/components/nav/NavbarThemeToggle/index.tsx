@@ -40,7 +40,8 @@ const NavbarThemeToggle = () => {
     }, 1);
   };
 
-  const currentColor = docsTheme[colorScheme]?.bgPrimary;
+  const colorKey = `${colorScheme}Color` as const;
+  const currentColor = docsTheme[colorKey]?.bgPrimary;
 
   return (
     <Dropdown

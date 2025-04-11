@@ -78,10 +78,10 @@ export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ chil
   return (
     <VStack testID="mobile-playground-screen">
       <Screen>
-        <ThemeProvider activeColorScheme={theme.colorScheme} theme={denseTheme}>
+        <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={denseTheme}>
           <VStack>
             <VStack background="bg" gap={1} paddingX={gutter} paddingY={3}>
-              <Switch checked={theme.colorScheme === 'dark'} onChange={noop}>
+              <Switch checked={theme.activeColorScheme === 'dark'} onChange={noop}>
                 Dark Spectrum
               </Switch>
               <Switch checked={false} onChange={noop}>

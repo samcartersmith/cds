@@ -295,7 +295,7 @@ const darkSpectrum = {
 export const defaultTheme = {
   lightSpectrum,
   darkSpectrum,
-  light: {
+  lightColor: {
     // Text
     fg: `rgb(${lightSpectrum.gray100})`,
     fgMuted: `rgb(${lightSpectrum.gray60})`,
@@ -348,7 +348,7 @@ export const defaultTheme = {
     // Transparent
     transparent: `rgba(${lightSpectrum.gray0},0)`,
   },
-  dark: {
+  darkColor: {
     // Text
     fg: `rgb(${darkSpectrum.gray100})`,
     fgInverse: `rgb(${darkSpectrum.gray0})`,

@@ -20,11 +20,12 @@ export type ThemeProviderProps = {
 export const ThemeProvider = ({ theme, activeColorScheme, children }: ThemeProviderProps) => {
   const themeApi = useMemo(() => {
     const activeSpectrumKey = activeColorScheme === 'dark' ? 'darkSpectrum' : 'lightSpectrum';
+    const activeColorKey = activeColorScheme === 'dark' ? 'darkColor' : 'lightColor';
     const inverseSpectrumKey = activeColorScheme === 'dark' ? 'lightSpectrum' : 'darkSpectrum';
-    const inverseColorScheme = activeColorScheme === 'dark' ? 'light' : 'dark';
+    const inverseColorKey = activeColorScheme === 'dark' ? 'lightColor' : 'darkColor';
 
     // TO DO: Link to color / theme docs in these error messages
-    if (!theme[activeColorScheme])
+    if (!theme[activeColorKey])
       throw Error(
         `ThemeProvider activeColorScheme is ${activeColorScheme} but no ${activeColorScheme} colors are defined for the theme`,
       );
@@ -34,21 +35,21 @@ export const ThemeProvider = ({ theme, activeColorScheme, children }: ThemeProvi
         `ThemeProvider activeColorScheme is ${activeColorScheme} but no ${activeSpectrumKey} values are defined for the theme`,
       );
 
-    if (theme[inverseSpectrumKey] && !theme[inverseColorScheme])
+    if (theme[inverseSpectrumKey] && !theme[inverseColorKey])
       throw Error(
-        `ThemeProvider theme has ${inverseSpectrumKey} values defined but no ${inverseColorScheme} colors are defined for the theme`,
+        `ThemeProvider theme has ${inverseSpectrumKey} values defined but no ${inverseColorKey} colors are defined for the theme`,
       );
 
-    if (theme[inverseColorScheme] && !theme[inverseSpectrumKey])
+    if (theme[inverseColorKey] && !theme[inverseSpectrumKey])
       throw Error(
-        `ThemeProvider theme has ${inverseColorScheme} colors defined but no ${inverseSpectrumKey} values are defined for the theme`,
+        `ThemeProvider theme has ${inverseColorKey} colors defined but no ${inverseSpectrumKey} values are defined for the theme`,
       );
 
     return {
       ...theme,
-      colorScheme: activeColorScheme,
+      activeColorScheme: activeColorScheme,
       spectrum: theme[activeSpectrumKey],
-      color: theme[activeColorScheme],
+      color: theme[activeColorKey],
     };
   }, [theme, activeColorScheme]);
 
@@ -63,8 +64,9 @@ export type InvertedThemeProviderProps = {
 export const InvertedThemeProvider = ({ children }: InvertedThemeProviderProps) => {
   const context = useContext(ThemeContext);
   if (!context) throw Error('InvertedThemeProvider must be used within a ThemeProvider');
-  const inverseColorScheme = context.colorScheme === 'dark' ? 'light' : 'dark';
-  const newColorScheme = context[inverseColorScheme] ? inverseColorScheme : context.colorScheme;
+  const inverseColorScheme = context.activeColorScheme === 'dark' ? 'light' : 'dark';
+  const inverseColorKey = context.activeColorScheme === 'dark' ? 'lightColor' : 'darkColor';
+  const newColorScheme = context[inverseColorKey] ? inverseColorScheme : context.activeColorScheme;
 
   return (
     <ThemeProvider activeColorScheme={newColorScheme} theme={context}>

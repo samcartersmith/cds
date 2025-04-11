@@ -65,7 +65,7 @@ describe('Box', () => {
     expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
-      backgroundColor: defaultTheme.light.bgAlternate,
+      backgroundColor: defaultTheme.lightColor.bgAlternate,
     });
   });
 
@@ -95,7 +95,7 @@ describe('Box', () => {
     expect(screen.getByTestId('parent')).toBeAccessible();
 
     expect(screen.getByTestId('parent')).toHaveStyle({
-      borderColor: defaultTheme.light.bgLine,
+      borderColor: defaultTheme.lightColor.bgLine,
       borderRadius: 8,
       borderWidth: 1,
     });

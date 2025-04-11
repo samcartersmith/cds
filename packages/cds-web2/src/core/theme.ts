@@ -4,8 +4,8 @@ import type { ColorScheme, ThemeVars } from '@cbhq/cds-common2/core/theme';
 export type ThemeConfig = {
   lightSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
   darkSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
-  light?: { [key in ThemeVars.Color]: Property.Color };
-  dark?: { [key in ThemeVars.Color]: Property.Color };
+  lightColor?: { [key in ThemeVars.Color]: Property.Color };
+  darkColor?: { [key in ThemeVars.Color]: Property.Color };
   space: { [key in ThemeVars.Space]: number };
   iconSize: { [key in ThemeVars.IconSize]: number };
   avatarSize: { [key in ThemeVars.AvatarSize]: number };
@@ -22,7 +22,7 @@ export type ThemeConfig = {
 };
 
 export type Theme = ThemeConfig & {
-  colorScheme: ColorScheme;
+  activeColorScheme: ColorScheme;
   spectrum: { [key in ThemeVars.SpectrumColor]: string };
   color: { [key in ThemeVars.Color]: Property.Color };
 };
@@ -45,7 +45,10 @@ export const styleVarPrefixes = {
   shadow: 'shadow',
   controlSize: 'controlSize',
 } as const satisfies Record<
-  Exclude<keyof Theme, 'colorScheme' | 'lightSpectrum' | 'darkSpectrum' | 'light' | 'dark'>,
+  Exclude<
+    keyof Theme,
+    'activeColorScheme' | 'lightSpectrum' | 'darkSpectrum' | 'lightColor' | 'darkColor'
+  >,
   string
 >;
 

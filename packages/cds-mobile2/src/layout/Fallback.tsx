@@ -33,8 +33,8 @@ export const Fallback = memo(function Fallback({
 
   const { width, borderRadius } = useFallbackShape(shape, baseWidth, fallbackShapeOptions);
 
-  const { colorScheme } = useTheme();
-  const shimmerColor = fallbackShimmer[colorScheme];
+  const { activeColorScheme } = useTheme();
+  const shimmerColor = fallbackShimmer[activeColorScheme];
   const shimmerPosition = useRef(new Animated.Value(-1));
 
   useEffect(() => {

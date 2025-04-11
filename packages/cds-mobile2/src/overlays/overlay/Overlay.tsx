@@ -26,7 +26,9 @@ export const Overlay = memo(function Overlay({ opacity, ...props }: OverlayProps
         renderToHardwareTextureAndroid
         background="bgOverlay"
         dangerouslySetBackground={
-          theme.colorScheme === 'dark' ? `rgba(${theme?.darkSpectrum?.gray0}, 0.5)` : undefined
+          theme.activeColorScheme === 'dark'
+            ? `rgba(${theme?.darkSpectrum?.gray0}, 0.5)`
+            : undefined
         }
         opacity={opacity}
         pin="all"

@@ -5,8 +5,8 @@ import { LogoWordmarkParams, useLogoWordmark } from '@cbhq/cds-common2/hooks/use
 import { useTheme } from '../hooks/useTheme';
 
 export const LogoWordmark = memo(({ foreground }: Omit<LogoWordmarkParams, 'colorScheme'>) => {
-  const { colorScheme } = useTheme();
-  const { viewBox, path, color } = useLogoWordmark({ foreground, colorScheme });
+  const { activeColorScheme } = useTheme();
+  const { viewBox, path, color } = useLogoWordmark({ foreground, colorScheme: activeColorScheme });
 
   return (
     <Svg viewBox={viewBox}>

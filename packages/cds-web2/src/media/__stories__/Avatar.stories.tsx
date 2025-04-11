@@ -190,7 +190,7 @@ export const FallbackColoredDense = () => {
   const theme = useTheme();
   const newTheme = useMemo(() => ({ ...theme, ...denseTheme }), [theme]);
   return (
-    <ThemeProvider activeColorScheme={theme.colorScheme} theme={newTheme}>
+    <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={newTheme}>
       <VStack gap={2} paddingTop={4}>
         <Text as="h3" display="block" font="headline">
           Default

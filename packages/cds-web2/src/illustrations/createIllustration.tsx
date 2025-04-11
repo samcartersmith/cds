@@ -42,10 +42,10 @@ export function createIllustration<Variant extends IllustrationVariant>(
     alt = '',
     fallback = null,
   }: IllustrationProps) {
-    const { colorScheme } = useTheme();
+    const { activeColorScheme } = useTheme();
     const version = config[name];
 
-    const src = `https://static-assets.coinbase.com/ui-infra/illustration/v1/${variant}/svg/${colorScheme}/${name}-${version}.svg`;
+    const src = `https://static-assets.coinbase.com/ui-infra/illustration/v1/${variant}/svg/${activeColorScheme}/${name}-${version}.svg`;
 
     const { width, height } = useMemo(() => {
       let size = defaultSize;

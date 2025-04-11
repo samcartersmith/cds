@@ -18,7 +18,7 @@ export const SparklineGradient = memo(
       const gradient = getAccessibleForegroundGradient({
         background: background ?? theme.color.bg,
         color,
-        colorScheme: theme.colorScheme,
+        colorScheme: theme.activeColorScheme,
         usage: 'graphic',
       });
       const areaColor =

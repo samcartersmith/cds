@@ -8,9 +8,9 @@ import { openWebBrowser } from '../openWebBrowser';
 
 const darkTheme = {
   ...defaultTheme,
-  colorScheme: 'dark',
+  activeColorScheme: 'dark',
   spectrum: defaultTheme.darkSpectrum,
-  color: defaultTheme.dark,
+  color: defaultTheme.darkColor,
 } satisfies Theme;
 
 describe('openWebBrowser', () => {

@@ -22,8 +22,8 @@ const transition = css`
 `;
 
 export const LogoWordmark = memo(({ foreground }: Omit<LogoWordmarkParams, 'colorScheme'>) => {
-  const { colorScheme } = useTheme();
-  const { viewBox, path, color } = useLogoWordmark({ foreground, colorScheme });
+  const { activeColorScheme } = useTheme();
+  const { viewBox, path, color } = useLogoWordmark({ foreground, colorScheme: activeColorScheme });
 
   return (
     <svg

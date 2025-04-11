@@ -26,11 +26,11 @@ const transition = css`
 
 export const SubBrandLogoMark = memo(
   ({ type, foreground }: Omit<SubBrandLogoMarkParams, 'colorScheme'>) => {
-    const { colorScheme } = useTheme();
+    const { activeColorScheme } = useTheme();
     const { logoColor, typeColor, viewBox, logoPath, typePath } = useSubBrandLogoMark({
       type,
       foreground,
-      colorScheme,
+      colorScheme: activeColorScheme,
     });
 
     const title = `Coinbase ${type} logo`;

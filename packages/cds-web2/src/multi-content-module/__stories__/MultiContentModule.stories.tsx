@@ -44,7 +44,7 @@ const useTriggerFocus = () => {
 
 const PasskeyIcon = () => {
   const theme = useTheme();
-  const fill = theme.colorScheme === 'light' ? 'black' : 'white';
+  const fill = theme.activeColorScheme === 'light' ? 'black' : 'white';
 
   return (
     <svg
@@ -64,7 +64,7 @@ const PasskeyIcon = () => {
 
 const GoogleIcon = () => {
   const theme = useTheme();
-  const fill = theme.colorScheme === 'light' ? 'black' : 'white';
+  const fill = theme.activeColorScheme === 'light' ? 'black' : 'white';
   return (
     <svg
       fill="none"
@@ -112,7 +112,7 @@ const GoogleIcon = () => {
 const AppleIcon = () => {
   const theme = useTheme();
 
-  const fill = theme.colorScheme === 'light' ? 'black' : 'white';
+  const fill = theme.activeColorScheme === 'light' ? 'black' : 'white';
   return (
     <svg
       fill="none"

@@ -26,10 +26,10 @@ const transition = css`
 
 export const SubBrandLogoWordmark = memo(
   (props: Omit<SubBrandLogoWordmarkParams, 'colorScheme'>) => {
-    const { colorScheme } = useTheme();
+    const { activeColorScheme } = useTheme();
     const { logoColor, typeColor, viewBox, logoPath, typePath } = useSubBrandLogoWordmark({
       ...props,
-      colorScheme,
+      colorScheme: activeColorScheme,
     });
 
     const { type } = props;

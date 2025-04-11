@@ -26,10 +26,10 @@ describe('useSparklineInteractiveHeaderStyles', () => {
       wrapper: DefaultThemeProvider,
     });
     const subHeadIconStyles = result.current.subHead('positive');
-    expect(getStyleValue(subHeadIconStyles, 'color')).toBe(defaultTheme.light.fgPositive);
+    expect(getStyleValue(subHeadIconStyles, 'color')).toBe(defaultTheme.lightColor.fgPositive);
 
     const subHeadStyles = result.current.subHead('positive');
-    expect(getStyleValue(subHeadStyles, 'color')).toBe(defaultTheme.light.fgPositive);
+    expect(getStyleValue(subHeadStyles, 'color')).toBe(defaultTheme.lightColor.fgPositive);
   });
 
   it('sets correct styles for negative subHead (percent change)', () => {
@@ -37,9 +37,9 @@ describe('useSparklineInteractiveHeaderStyles', () => {
       wrapper: DefaultThemeProvider,
     });
     const subHeadIconStyles = result.current.subHead('negative');
-    expect(getStyleValue(subHeadIconStyles, 'color')).toBe(defaultTheme.light.fgNegative);
+    expect(getStyleValue(subHeadIconStyles, 'color')).toBe(defaultTheme.lightColor.fgNegative);
 
     const subHeadStyles = result.current.subHead('negative');
-    expect(getStyleValue(subHeadStyles, 'color')).toBe(defaultTheme.light.fgNegative);
+    expect(getStyleValue(subHeadStyles, 'color')).toBe(defaultTheme.lightColor.fgNegative);
   });
 });

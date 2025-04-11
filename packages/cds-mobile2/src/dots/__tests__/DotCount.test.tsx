@@ -50,7 +50,7 @@ describe('DotCount', () => {
     });
 
     expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
-      borderColor: defaultTheme.light.bgSecondary,
+      borderColor: defaultTheme.lightColor.bgSecondary,
       borderWidth: 1,
     });
   });

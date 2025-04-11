@@ -41,7 +41,7 @@ describe('TabIndicator', () => {
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId('cds-tab-indicator-inner-bar')).toHaveStyle({
-      backgroundColor: defaultTheme.light.bgSecondary,
+      backgroundColor: defaultTheme.lightColor.bgSecondary,
     });
   });
 

@@ -162,7 +162,7 @@ export const Dense = () => {
   const theme = useTheme();
   const newTheme = useMemo(() => ({ ...theme, ...denseTheme }), [theme]);
   return (
-    <ThemeProvider activeColorScheme={theme.colorScheme} theme={newTheme}>
+    <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={newTheme}>
       <All />
     </ThemeProvider>
   );

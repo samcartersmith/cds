@@ -75,7 +75,7 @@ describe('Tag', () => {
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(TEST_ID)).toHaveStyle({
-      backgroundColor: defaultTheme.light.bgNegativeWash,
+      backgroundColor: defaultTheme.lightColor.bgNegativeWash,
     });
   });
 });

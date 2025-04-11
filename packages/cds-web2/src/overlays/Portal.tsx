@@ -29,7 +29,7 @@ export const Portal = memo(function Portal({
   }
 
   return createPortal(
-    <ThemeProvider activeColorScheme={theme.colorScheme} theme={theme}>
+    <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={theme}>
       {children}
     </ThemeProvider>,
     document.getElementById(containerId) as HTMLElement,

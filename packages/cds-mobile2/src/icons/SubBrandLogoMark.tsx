@@ -10,10 +10,10 @@ import { useTheme } from '../hooks/useTheme';
 export type SubBrandLogoMarkProps = SubBrandLogoMarkParams;
 
 export const SubBrandLogoMark = memo((props: Omit<SubBrandLogoMarkProps, 'colorScheme'>) => {
-  const { colorScheme } = useTheme();
+  const { activeColorScheme } = useTheme();
   const { logoColor, typeColor, viewBox, logoPath, typePath } = useSubBrandLogoMark({
     ...props,
-    colorScheme,
+    colorScheme: activeColorScheme,
   });
 
   return (

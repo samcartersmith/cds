@@ -11,8 +11,8 @@ type Shadow = {
 export type ThemeConfig = {
   lightSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
   darkSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
-  light?: { [key in ThemeVars.Color]: string };
-  dark?: { [key in ThemeVars.Color]: string };
+  lightColor?: { [key in ThemeVars.Color]: string };
+  darkColor?: { [key in ThemeVars.Color]: string };
   space: { [key in ThemeVars.Space]: number };
   iconSize: { [key in ThemeVars.IconSize]: number };
   avatarSize: { [key in ThemeVars.AvatarSize]: number };
@@ -29,7 +29,7 @@ export type ThemeConfig = {
 };
 
 export type Theme = ThemeConfig & {
-  colorScheme: ColorScheme;
+  activeColorScheme: ColorScheme;
   spectrum: { [key in ThemeVars.SpectrumColor]: string };
   color: { [key in ThemeVars.Color]: string };
 };

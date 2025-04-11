@@ -121,18 +121,19 @@ export const NativeInput = memo(
     }: NativeInputProps,
     ref: React.ForwardedRef<HTMLInputElement>,
   ) {
-    const { colorScheme } = useTheme();
+    const { activeColorScheme } = useTheme();
     const defaultContainerPadding = compact
       ? compactContainerPaddingStyle
       : originalContainerPaddingStyle;
 
-    const dynamicStyles = useMemo(() => {
-      return {
+    const dynamicStyles = useMemo(
+      () => ({
         textAlign: align,
-        colorScheme,
+        colorScheme: activeColorScheme,
         ...style,
-      };
-    }, [align, colorScheme, style]);
+      }),
+      [align, activeColorScheme, style],
+    );
 
     return (
       <input

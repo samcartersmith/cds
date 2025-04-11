@@ -30,9 +30,9 @@ type SocialMediaItem = {
 const onPressConsole = () => console.log('onPress');
 
 const PasskeyIcon = () => {
-  const { colorScheme } = useTheme();
+  const { activeColorScheme } = useTheme();
   const size = 24;
-  const fill = colorScheme === 'dark' ? 'white' : 'black';
+  const fill = activeColorScheme === 'dark' ? 'white' : 'black';
 
   return (
     <Svg fill="none" height={size} viewBox="0 0 16 17" width={size}>
@@ -45,9 +45,9 @@ const PasskeyIcon = () => {
 };
 
 const GoogleIcon = () => {
-  const { colorScheme } = useTheme();
+  const { activeColorScheme } = useTheme();
   const size = 24;
-  const fill = colorScheme === 'dark' ? 'white' : 'black';
+  const fill = activeColorScheme === 'dark' ? 'white' : 'black';
   return (
     <Svg fill="none" height={size} viewBox="0 0 25 25" width={size}>
       <Path
@@ -83,9 +83,9 @@ const GoogleIcon = () => {
 };
 
 const AppleIcon = () => {
-  const { colorScheme } = useTheme();
+  const { activeColorScheme } = useTheme();
   const size = 24;
-  const fill = colorScheme === 'dark' ? 'white' : 'black';
+  const fill = activeColorScheme === 'dark' ? 'white' : 'black';
   return (
     <Svg fill="none" height={size} viewBox="0 0 24 24" width={size}>
       <Path

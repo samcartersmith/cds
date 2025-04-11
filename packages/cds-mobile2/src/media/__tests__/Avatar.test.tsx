@@ -41,7 +41,7 @@ describe('Avatar', () => {
 
     expect(box).toHaveStyle({
       borderWidth: 2,
-      borderColor: defaultTheme.light.bgPositive,
+      borderColor: defaultTheme.lightColor.bgPositive,
     });
   });
 

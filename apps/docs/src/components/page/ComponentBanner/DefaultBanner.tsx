@@ -2,8 +2,8 @@ import React from 'react';
 import { useTheme } from '@cbhq/cds-web2/hooks/useTheme';
 
 export const DefaultBanner = () => {
-  const { colorScheme } = useTheme();
-  const isLight = colorScheme === 'light';
+  const { activeColorScheme } = useTheme();
+  const isLight = activeColorScheme === 'light';
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
       <svg

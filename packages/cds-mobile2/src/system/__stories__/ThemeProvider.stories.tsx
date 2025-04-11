@@ -10,7 +10,7 @@ import { Text } from '../../typography/Text';
 import { ThemeProvider } from '../ThemeProvider';
 
 const Child = ({ expectedColorScheme }: { expectedColorScheme: string }) => {
-  const { colorScheme } = useTheme();
+  const { activeColorScheme } = useTheme();
 
   return (
     <VStack background="bg">
@@ -32,7 +32,7 @@ const Child = ({ expectedColorScheme }: { expectedColorScheme: string }) => {
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
-        <Text font="body">Spectrum value at parent level: {colorScheme}</Text>
+        <Text font="body">Spectrum value at parent level: {activeColorScheme}</Text>
         <Text font="body">Should be {expectedColorScheme}</Text>
       </VStack>
     </VStack>
@@ -49,8 +49,8 @@ const ChildThemeProviderDark = () => {
 
 const customLightTheme = {
   ...defaultTheme,
-  light: {
-    ...defaultTheme.light,
+  lightColor: {
+    ...defaultTheme.lightColor,
     bg: `rgb(${defaultTheme.lightSpectrum.orange50})`,
     bgPrimary: `rgb(${defaultTheme.lightSpectrum.red20})`,
     bgSecondary: `rgb(${defaultTheme.lightSpectrum.blue50})`,
@@ -68,8 +68,8 @@ const ChildThemeWithOverrides = () => {
 
 const customDarkTheme = {
   ...defaultTheme,
-  dark: {
-    ...defaultTheme.dark,
+  darkColor: {
+    ...defaultTheme.darkColor,
     bg: `rgb(${defaultTheme.darkSpectrum.orange50})`,
     bgPrimary: `rgb(${defaultTheme.darkSpectrum.red20})`,
     bgSecondary: `rgb(${defaultTheme.darkSpectrum.blue50})`,

@@ -17,8 +17,8 @@ export const Accordion = ({
   testID,
   style,
 }: AccordionProps) => {
-  const { colorScheme } = useTheme();
-  const dividerColor = colorScheme === 'light' ? 'bgLine' : 'bgLineHeavy';
+  const { activeColorScheme } = useTheme();
+  const dividerColor = activeColorScheme === 'light' ? 'bgLine' : 'bgLineHeavy';
 
   return (
     <AccordionProvider

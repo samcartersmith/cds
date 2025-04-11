@@ -97,8 +97,8 @@ export const MultiLineLabel = () => (
 
 const customTheme: ThemeConfig = {
   ...defaultTheme,
-  light: {
-    ...defaultTheme.light,
+  lightColor: {
+    ...defaultTheme.lightColor,
     bgPrimary: 'rgb(var(--pink50))',
   },
 };

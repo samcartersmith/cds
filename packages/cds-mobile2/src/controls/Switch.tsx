@@ -63,7 +63,7 @@ const SwitchIcon = ({
       testID={testID}
     >
       <Interactable
-        background={theme.colorScheme === 'dark' ? 'bgInverse' : 'bg'}
+        background={theme.activeColorScheme === 'dark' ? 'bgInverse' : 'bg'}
         borderColor="bgLine"
         borderRadius={1000}
         borderWidth={100}

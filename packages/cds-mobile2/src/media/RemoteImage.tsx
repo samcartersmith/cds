@@ -129,7 +129,7 @@ export const RemoteImage = memo(function RemoteImage({
   ...props
 }: RemoteImageProps) {
   const shapeRadius = shapeBorderRadius[shape];
-  const { colorScheme, avatarSize } = useTheme();
+  const { activeColorScheme, avatarSize } = useTheme();
 
   // If height and width are not provided, we default to avatarSize
   const computedHeight = useMemo(
@@ -150,7 +150,7 @@ export const RemoteImage = memo(function RemoteImage({
   const theme = useTheme();
 
   const applyDarkModeEnhancement =
-    colorScheme === 'dark' && (shouldApplyDarkModeEnhacements || darkModeEnhancementsApplied);
+    activeColorScheme === 'dark' && (shouldApplyDarkModeEnhacements || darkModeEnhancementsApplied);
 
   const darkModeStyles = useMemo(() => {
     if (applyDarkModeEnhancement) {
@@ -227,7 +227,7 @@ export const RemoteImage = memo(function RemoteImage({
         height={computedHeight}
         style={styles}
         width={computedWidth}
-        xml={colorScheme === 'dark' ? darkFallback.content : lightFallback.content}
+        xml={activeColorScheme === 'dark' ? darkFallback.content : lightFallback.content}
       />
     );
   }
