@@ -21,13 +21,13 @@ const tableStickyStyle = css`
   z-index: ${zIndex.interactable};
 `;
 
-export const TableHeader = memo(({ children, sticky, testID, ...rest }: TableHeaderProps) => {
+export const TableHeader = memo(({ children, sticky, testID, ...props }: TableHeaderProps) => {
   return (
     <TableSection
       as="thead"
       className={cx(tableHeaderStaticClassName, sticky && tableStickyStyle)}
       data-testid={testID}
-      {...rest}
+      {...props}
     >
       {children}
     </TableSection>

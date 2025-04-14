@@ -26,19 +26,18 @@ export const AnnouncementCard = memo(function AnnouncementCard({
   onActionPress,
   ...props
 }: AnnouncementCardProps) {
-  const accessibilityProps = useMemo(
-    () => ({
-      accessibilityLabel:
-        accessibilityLabel ?? typeof title === 'string' ? (title as string) : undefined,
-      accessibilityHint:
-        accessibilityHint ?? typeof description === 'string' ? (description as string) : undefined,
-    }),
-    [accessibilityHint, accessibilityLabel, title, description],
-  );
+  const accessibilityLabelValue =
+    typeof title === 'string' && accessibilityLabel === undefined ? title : accessibilityLabel;
+
+  const accessibilityHintValue =
+    typeof description === 'string' && accessibilityHint === undefined
+      ? description
+      : accessibilityHint;
 
   return (
     <Card
-      {...accessibilityProps}
+      accessibilityHint={accessibilityHintValue}
+      accessibilityLabel={accessibilityLabelValue}
       borderRadius={borderRadius}
       elevation={elevation}
       flexShrink={0}

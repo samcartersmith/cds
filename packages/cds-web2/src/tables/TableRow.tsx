@@ -94,7 +94,7 @@ export const TableRow = memo(
     onClick,
     outerSpacing,
     innerSpacing,
-    ...rest
+    ...props
   }: TableRowProps) => {
     const isBrowser = useIsBrowser();
     const tableSectionType = useTableSectionTag();
@@ -124,7 +124,7 @@ export const TableRow = memo(
         onClick={onClick}
         style={inlineStyles}
         tabIndex={onClick && 0}
-        {...rest}
+        {...props}
       >
         {fullWidth ? (
           <TableCell

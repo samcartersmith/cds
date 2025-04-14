@@ -95,7 +95,7 @@ export const FloatingAssetCard = ({
           subtitle
         )}
         {typeof title === 'string' ? (
-          <Text as="h3" display="block" font="headline" numberOfLines={3}>
+          <Text as="p" display="block" font="headline" numberOfLines={3}>
             {title}
           </Text>
         ) : (

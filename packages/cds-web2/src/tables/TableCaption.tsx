@@ -85,7 +85,7 @@ export const TableCaption = memo(
     innerSpacing,
     testID,
     style,
-    ...rest
+    ...props
   }: TableCaptionProps) => {
     const { outer, inner } = useTableCellSpacing({
       outer: outerSpacing,
@@ -108,7 +108,7 @@ export const TableCaption = memo(
     );
 
     return (
-      <caption data-testid={testID} style={inlineStyles} {...rest}>
+      <caption data-testid={testID} style={inlineStyles} {...props}>
         <Box {...outerCaptionSpacing}>
           <Box alignContent="stretch" flexDirection="column" flexGrow={1} {...innerCaptionSpacing}>
             {typeof children === 'string' ? (

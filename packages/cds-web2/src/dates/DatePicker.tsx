@@ -147,7 +147,7 @@ export const DatePicker = memo(
         onConfirm,
         onCancel,
         onChange,
-        ...rest
+        ...props
       },
       ref,
     ) => {
@@ -222,7 +222,7 @@ export const DatePicker = memo(
       const dateInput = useMemo(
         () => (
           <DateInput
-            {...rest}
+            {...props}
             accessibilityLabel={accessibilityLabel}
             accessibilityLabelledBy={accessibilityLabelledBy}
             className={dateInputClassName}
@@ -270,7 +270,7 @@ export const DatePicker = memo(
           variant,
           dateInputClassName,
           dateInputStyle,
-          rest,
+          props,
         ],
       );
 

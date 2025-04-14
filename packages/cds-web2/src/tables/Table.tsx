@@ -189,7 +189,7 @@ const TableWithRef = forwardRef<HTMLTableElement, TableProps>(function TableWith
     accessibilityLabelledBy,
     accessibilityLabel,
     className,
-    ...rest
+    ...props
   },
   ref,
 ) {
@@ -220,7 +220,7 @@ const TableWithRef = forwardRef<HTMLTableElement, TableProps>(function TableWith
           aria-labelledby={accessibilityLabelledBy}
           className={cx(tableStyle, fixed && tableFixedStyle, className)}
           data-testid={testID}
-          {...rest}
+          {...props}
         >
           {children}
         </table>

@@ -44,7 +44,7 @@ export const TableCellFallback = memo(
     innerSpacing,
     disableRandomRectWidth,
     rectWidthVariant,
-    ...rest
+    ...props
   }: TableCellFallbackProps) => {
     const TableCellComponent = useTableCellTag(as);
     // Depending on compact value
@@ -58,7 +58,7 @@ export const TableCellFallback = memo(
     const cellInnerSpacing = innerSpacing ?? tableCellSpacing?.inner;
 
     return (
-      <TableCellComponent className={tableCellStyle} data-testid={testID} {...rest}>
+      <TableCellComponent className={tableCellStyle} data-testid={testID} {...props}>
         <Cell
           accessory={end && <MediaFallback testID="table-cell-fallback-accessory" type={end} />}
           gap={cellGap}

@@ -116,7 +116,7 @@ export const ContainedAssetCard = ({
           {typeof title !== 'string' ? (
             title
           ) : (
-            <Text as="h3" display="block" font="headline" numberOfLines={1}>
+            <Text as="p" display="block" font="headline" numberOfLines={1}>
               {title}
             </Text>
           )}

@@ -42,23 +42,22 @@ export const SelectOption = memo(function SelectOption({
     [onPress, onChange, value, handleClose],
   );
 
-  const accessibilityProps = useMemo(
-    () => ({
-      accessibilityLabel:
-        typeof title === 'string' && accessibilityLabel === undefined ? title : accessibilityLabel,
-      accessibilityHint:
-        typeof description === 'string' && accessibilityHint === undefined
-          ? description
-          : accessibilityHint,
-    }),
-    [title, description, accessibilityLabel, accessibilityHint],
-  );
+  const accessibilityLabelValue =
+    typeof title === 'string' && accessibilityLabel === undefined ? title : accessibilityLabel;
+
+  const accessibilityHintValue =
+    typeof description === 'string' && accessibilityHint === undefined
+      ? description
+      : accessibilityHint;
+
+  const accessibilityState = selected ? { selected: true } : undefined;
 
   return (
     <Cell
       {...selectCellMobileSpacingConfig}
-      accessibilityHint={accessibilityProps.accessibilityHint}
-      accessibilityLabel={accessibilityProps.accessibilityLabel}
+      accessibilityHint={accessibilityHintValue}
+      accessibilityLabel={accessibilityLabelValue}
+      accessibilityState={accessibilityState}
       accessory={selected ? <CellAccessory type="selected" /> : undefined}
       borderRadius={0}
       maxHeight={multiline ? undefined : selectOptionMaxHeight}

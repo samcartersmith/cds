@@ -204,7 +204,7 @@ export const Calendar = memo(
         style,
         nextArrowAccessibilityLabel,
         previousArrowAccessibilityLabel,
-        ...rest
+        ...props
       },
       ref,
     ) => {
@@ -321,7 +321,7 @@ export const Calendar = memo(
           padding={2}
           style={style}
           width={360}
-          {...rest}
+          {...props}
         >
           <HStack
             alignItems="center"

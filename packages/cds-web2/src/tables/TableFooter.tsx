@@ -4,9 +4,9 @@ import { TableSection, type TableSectionProps } from './TableSection';
 
 export type TableFooterProps = TableSectionProps;
 
-export const TableFooter = memo(({ children, testID, ...rest }: TableFooterProps) => {
+export const TableFooter = memo(({ children, testID, ...props }: TableFooterProps) => {
   return (
-    <TableSection as="tfoot" data-testid={testID} {...rest}>
+    <TableSection as="tfoot" data-testid={testID} {...props}>
       {children}
     </TableSection>
   );

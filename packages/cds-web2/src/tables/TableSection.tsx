@@ -16,7 +16,7 @@ export type TableSectionProps = SharedProps & {
 };
 
 export const TableSection = memo(
-  ({ as = 'tbody', children, testID, className, ...rest }: TableSectionProps) => {
+  ({ as = 'tbody', children, testID, className, ...props }: TableSectionProps) => {
     const value: TableSectionContextValue = useMemo(() => ({ as }), [as]);
     const TableSectionComponent = as;
 
@@ -24,7 +24,7 @@ export const TableSection = memo(
     // be smart about how to render their content.
     return (
       <TableSectionContext.Provider value={value}>
-        <TableSectionComponent className={className} data-testid={testID} {...rest}>
+        <TableSectionComponent className={className} data-testid={testID} {...props}>
           {Children.map(children, (child: React.ReactNode) => {
             // extra whitespace in table sections causes DOM validation errors
             // so we need to filter out empty children

@@ -25,7 +25,7 @@ export const CellDetail = memo(function CellDetail({
   return (
     <VStack alignContent="flex-end" alignItems="flex-end" justifyContent="center">
       {!!detail && (
-        <Text adjustsFontSizeToFit={adjustsFontSizeToFit} numberOfLines={1}>
+        <Text adjustsFontSizeToFit={adjustsFontSizeToFit} font="body" numberOfLines={1}>
           {detail}
         </Text>
       )}
@@ -34,6 +34,7 @@ export const CellDetail = memo(function CellDetail({
         <Text
           adjustsFontSizeToFit={adjustsFontSizeToFit}
           color={variantColorMap[variant]}
+          font="body"
           numberOfLines={1}
         >
           {subdetail}

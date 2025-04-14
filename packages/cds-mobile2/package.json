@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/cds-mobile2",
   "version": "8.0.0-alpha.4",
+  "private": true,
   "description": "Coinbase Design System - Mobile Native",
   "repository": {
     "type": "git",

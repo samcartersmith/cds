@@ -98,13 +98,13 @@ function useHandleRadioSelect<T extends string>(onChange?: (value: T) => void) {
 }
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
-  { label, value, onChange, options, name, testID, ...restProps }: RadioGroupProps<T>,
+  { label, value, onChange, options, name, testID, ...props }: RadioGroupProps<T>,
   ref: React.ForwardedRef<HTMLDivElement>,
 ) {
   const handleSelect = useHandleRadioSelect<T>(onChange);
 
   return (
-    <Group ref={ref} role="radiogroup" testID={testID} {...restProps}>
+    <Group ref={ref} role="radiogroup" testID={testID} {...props}>
       {label}
       {Object.entries<string | React.ReactNode>(options).map(([optionValue, option]) => (
         <Radio

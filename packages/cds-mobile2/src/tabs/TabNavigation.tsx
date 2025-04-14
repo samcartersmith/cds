@@ -26,7 +26,7 @@ export const TabNavigation = memo(
         Component,
         gap = 4,
         role = 'tablist',
-        ...rest
+        ...props
       },
       forwardedRef,
     ) => {
@@ -43,6 +43,8 @@ export const TabNavigation = memo(
       } = useHorizontallyScrollingPressables(value, {
         setActivePressableLayout: setActiveTabLayout,
       });
+
+      // TO DO: The `tab` role is not being announced correctly because of this RN issue https://github.com/facebook/react-native/issues/43266
       const descendantAriaRole = role === 'tablist' ? 'tab' : 'radio';
 
       const getTabPressHandler = useCallback(
@@ -134,7 +136,7 @@ export const TabNavigation = memo(
             isScrollContentOverflowing && isScrollContentOffscreenRight ? undefined : 'visible'
           }
           testID={testID}
-          {...rest}
+          {...props}
         >
           <ScrollView
             ref={scrollRef}

@@ -42,7 +42,7 @@ export const AnimatedCaret = memo(function AnimatedCaret({
   size = 's',
   color = 'fgMuted',
   style,
-  ...rest
+  ...props
 }: AnimatedCaretProps) {
   const { animatedStyles, animate } = useAnimatedCaretAnimation();
   const previousRotate = usePreviousValue(rotate);
@@ -62,7 +62,7 @@ export const AnimatedCaret = memo(function AnimatedCaret({
         name="caretUp"
         size={size}
         style={[style, animatedStyles]}
-        {...rest}
+        {...props}
       />
     </HStack>
   );

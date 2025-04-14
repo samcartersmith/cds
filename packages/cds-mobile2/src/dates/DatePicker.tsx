@@ -88,7 +88,7 @@ export const DatePicker = memo(
         onConfirm,
         onCancel,
         onChange,
-        ...rest
+        ...props
       },
       ref,
     ) => {
@@ -151,7 +151,7 @@ export const DatePicker = memo(
         <View ref={ref}>
           <DateInput
             ref={dateInputRef}
-            {...rest}
+            {...props}
             accessibilityLabel={accessibilityLabel}
             accessibilityLabelledBy={accessibilityLabelledBy}
             compact={compact}

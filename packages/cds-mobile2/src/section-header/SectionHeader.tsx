@@ -52,7 +52,7 @@ export const SectionHeader = memo(
           </HStack>
           {typeof balance === 'string' ? <Text font="title3">{balance}</Text> : balance}
           {typeof description === 'string' ? (
-            <Text color="fgMuted" numberOfLines={2}>
+            <Text color="fgMuted" font="body" numberOfLines={2}>
               {description}
             </Text>
           ) : (

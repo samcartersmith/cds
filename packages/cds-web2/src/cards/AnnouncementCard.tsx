@@ -23,19 +23,18 @@ export const AnnouncementCard = memo(function AnnouncementCard({
   // TODO this is only spread on the CardBody - are we sure that there are no CardBaseProps trapped in here that never make it to that element?
   ...props
 }: AnnouncementCardProps) {
-  const accessibilityProps = useMemo(
-    () => ({
-      accessibilityLabel:
-        accessibilityLabel ?? typeof title === 'string' ? (title as string) : undefined,
-      accessibilityHint:
-        accessibilityHint ?? typeof description === 'string' ? (description as string) : undefined,
-    }),
-    [accessibilityHint, accessibilityLabel, title, description],
-  );
+  const accessibilityLabelValue =
+    typeof title === 'string' && accessibilityLabel === undefined ? title : accessibilityLabel;
+
+  const accessibilityHintValue =
+    typeof description === 'string' && accessibilityHint === undefined
+      ? description
+      : accessibilityHint;
 
   return (
     <Card
-      {...accessibilityProps}
+      accessibilityHint={accessibilityHintValue}
+      accessibilityLabel={accessibilityLabelValue}
       borderRadius={borderRadius}
       elevation={elevation}
       flexShrink={0}

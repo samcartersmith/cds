@@ -68,23 +68,19 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
   { children, accessibilityHint, accessibilityLabel, ...props }: RadioProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
-  const accessibilityProps = useMemo(
-    () => ({
-      accessibilityLabel:
-        typeof children === 'string' && accessibilityLabel === undefined
-          ? children
-          : accessibilityLabel,
-      accessibilityHint,
-    }),
-    [children, accessibilityLabel, accessibilityHint],
-  );
+  const accessibilityLabelValue =
+    typeof children === 'string' && accessibilityLabel === undefined
+      ? children
+      : accessibilityLabel;
 
   return (
     <Control<T>
       {...props}
-      {...accessibilityProps}
       ref={ref}
-      accessibilityRole="radio"
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabelValue}
+      // TO DO: This should be `accessibilityRole="radio"` but RN has an issue https://github.com/facebook/react-native/issues/43266
+      accessibilityRole="button"
       hitSlop={5}
       label={children}
     >
@@ -118,18 +114,12 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
     accessibilityLabel,
     accessibilityHint,
     radioAccessibilityLabel,
-    ...restProps
+    ...props
   }: RadioGroupProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
-  const accessibilityProps = useMemo(
-    () => ({
-      accessibilityLabel:
-        typeof label === 'string' && accessibilityLabel === undefined ? label : accessibilityLabel,
-      accessibilityHint,
-    }),
-    [label, accessibilityLabel, accessibilityHint],
-  );
+  const accessibilityLabelValue =
+    typeof label === 'string' && accessibilityLabel === undefined ? label : accessibilityLabel;
 
   if (
     isDevelopment() &&
@@ -145,10 +135,11 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   return (
     <Group
       ref={ref}
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabelValue}
       accessibilityRole="radiogroup"
       testID={testID}
-      {...accessibilityProps}
-      {...restProps}
+      {...props}
     >
       {label}
       {entries<Record<T, string | React.ReactNode>>(options).map(([optionValue, option], index) => {

@@ -65,29 +65,24 @@ const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
   { children, accessibilityLabel, accessibilityHint, ...props }: CheckboxProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
-  const accessibilityProps = useMemo(
-    () => ({
-      accessibilityLabel:
-        typeof children === 'string' && accessibilityLabel === undefined
-          ? children
-          : accessibilityLabel,
-      accessibilityHint:
-        typeof children === 'string' && accessibilityHint === undefined
-          ? children
-          : accessibilityHint,
-    }),
-    [children, accessibilityLabel, accessibilityHint],
-  );
+  const accessibilityLabelValue =
+    typeof children === 'string' && accessibilityLabel === undefined
+      ? children
+      : accessibilityLabel;
+
+  const accessibilityHintValue =
+    typeof children === 'string' && accessibilityHint === undefined ? children : accessibilityHint;
 
   return (
     <Control<T>
+      ref={ref}
       accessible
+      accessibilityHint={accessibilityHintValue}
+      accessibilityLabel={accessibilityLabelValue}
       accessibilityRole="switch"
       hitSlop={5}
-      {...props}
-      {...accessibilityProps}
-      ref={ref}
       label={children}
+      {...props}
     >
       {CheckboxIcon}
     </Control>

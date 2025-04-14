@@ -36,7 +36,7 @@ const navLinkStyles = css`
   }
 `;
 
-export const NavLink = memo(({ active, className: customClassName, ...rest }: NavLinkProps) => {
+export const NavLink = memo(({ active, className: customClassName, ...props }: NavLinkProps) => {
   return (
     <Link
       className={cx(navLinkStyles, customClassName)}
@@ -45,7 +45,7 @@ export const NavLink = memo(({ active, className: customClassName, ...rest }: Na
       font="label1"
       tabIndex={0}
       underline={false}
-      {...rest}
+      {...props}
     />
   );
 });

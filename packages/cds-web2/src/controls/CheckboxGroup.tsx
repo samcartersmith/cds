@@ -43,7 +43,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     name,
     style,
     testID,
-    ...restProps
+    ...props
   }: CheckboxGroupProps<T>,
   ref: React.ForwardedRef<HTMLFieldSetElement>,
 ) {
@@ -78,7 +78,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
       ref={ref}
       className={cx(checkboxStyles, className)}
       data-testid={testID}
-      {...restProps}
+      {...props}
       style={style}
     >
       {label}

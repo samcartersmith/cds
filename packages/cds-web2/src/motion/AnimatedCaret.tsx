@@ -37,7 +37,7 @@ export const AnimatedCaret = memo(function AnimatedCaret({
   paddingStart,
   paddingTop,
   paddingY,
-  ...rest
+  ...props
 }: AnimatedCaretProps) {
   const motionProps = useMotionProps({
     enterConfigs: [{ ...animateRotateConfig, toValue: rotate }],
@@ -60,7 +60,7 @@ export const AnimatedCaret = memo(function AnimatedCaret({
     <HStack {...paddingProps}>
       <MotionConfig reducedMotion="user">
         <motion.div {...motionProps} data-testid={`${testID}-motion`}>
-          <Icon color={variant} name="caretUp" size={size} {...rest} />
+          <Icon color={variant} name="caretUp" size={size} {...props} />
         </motion.div>
       </MotionConfig>
     </HStack>

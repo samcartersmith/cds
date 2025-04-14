@@ -92,9 +92,9 @@ export type TabNavigationProps<T extends string | undefined = string> = {
    */
   gap?: ThemeVars.Space;
   /**
-   * Used to generate a11y attributes for the Tabs
-   * If TabNavigation is used to display options that will filter data, use `radiogroup`
-   * If TabNavigation is used to display a list of pages or views, use `tablist`
+   * Used to generate a11y attributes for the Tabs.
+   * If TabNavigation is used to display options that will filter data, use `radiogroup`.
+   * If TabNavigation is used to display a list of pages or views, use `tablist`.
    * @default tablist
    */
   role?: 'radiogroup' | 'tablist';

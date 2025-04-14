@@ -47,14 +47,14 @@ describe('Radio', () => {
     expect(screen.queryAllByTestId(TEST_ID)).toHaveLength(1);
   });
 
-  it('has accessibility role radio', () => {
+  it('has accessibility role button', () => {
     render(
       <DefaultThemeProvider>
         <Radio>Radio</Radio>
       </DefaultThemeProvider>,
     );
 
-    expect(screen.queryAllByRole('radio')).toHaveLength(1);
+    expect(screen.queryAllByRole('button')).toHaveLength(1);
   });
 
   it('has accessibility state checked when checked', () => {

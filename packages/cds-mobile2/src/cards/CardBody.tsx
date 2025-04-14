@@ -132,7 +132,12 @@ export const CardBody = memo(function CardBody({
           paddingEnd={spacingProps.paddingEnd}
           paddingStart={spacingProps.paddingStart}
         >
-          <Text font="headline" {...textProps} testID={`${testID}-title`}>
+          <Text
+            accessibilityRole="header"
+            font="headline"
+            {...textProps}
+            testID={`${testID}-title`}
+          >
             {title}
           </Text>
           <Text color="fgMuted" font="label2" {...textProps} testID={`${testID}-description`}>

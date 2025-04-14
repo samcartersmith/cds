@@ -76,7 +76,7 @@ export const Toast = memo(
         bottomOffset = 'var(--space-4)',
         closeButtonAccessibilityProps = closeButtonAccessibilityDefaults,
         variant,
-        ...rest
+        ...props
       },
       ref,
     ) => {
@@ -125,7 +125,7 @@ export const Toast = memo(
               role="alert"
               testID={testID}
               width="100%"
-              {...rest}
+              {...props}
             >
               <HStack
                 alignItems="center"

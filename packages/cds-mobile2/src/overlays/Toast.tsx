@@ -17,7 +17,7 @@ export type ToastProps = ToastBaseProps;
 export const Toast = memo(
   forwardRef<ToastRefBaseProps, ToastProps>(
     (
-      { text, action, onWillHide, onDidHide, bottomOffset, variant, accessibilityLabel, ...rest },
+      { text, action, onWillHide, onDidHide, bottomOffset, variant, accessibilityLabel, ...props },
       ref,
     ) => {
       const theme = useTheme();
@@ -77,7 +77,7 @@ export const Toast = memo(
             elevation: zIndex.portal,
           }}
           zIndex={zIndex.portal}
-          {...rest}
+          {...props}
           accessibilityRole="alert"
         >
           <HStack

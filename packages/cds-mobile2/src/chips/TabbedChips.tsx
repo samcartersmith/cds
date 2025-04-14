@@ -15,7 +15,7 @@ const TabComponent = ({ label = '', id, ...tabProps }: TabValue) => {
   const isActive = activeTab?.id === id;
   const handleClick = useCallback(() => updateActiveTab(id), [id, updateActiveTab]);
   return (
-    <Chip inverted={isActive} onPress={handleClick} {...tabProps}>
+    <Chip aria-checked={isActive} inverted={isActive} onPress={handleClick} {...tabProps}>
       {label}
     </Chip>
   );

@@ -123,7 +123,7 @@ export const TabNavigation = memo(
         gap = 4,
         role = 'tablist',
         paddleStyle,
-        ...rest
+        ...props
       }: TabNavigationProps,
       forwardedRef: ForwardedRef<HTMLElement | null>,
     ) => {
@@ -369,7 +369,7 @@ export const TabNavigation = memo(
             onScroll={handleOnScroll}
             position="relative"
           >
-            <VStack testID={testID} {...rest} padding={0}>
+            <VStack testID={testID} {...props} padding={0}>
               <HStack
                 accessibilityLabel={accessibilityLabel}
                 accessibilityLabelledBy={accessibilityLabelledBy}
