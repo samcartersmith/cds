@@ -8,4 +8,5 @@
   font-weight: var(--fontWeight-title4);
   line-height: var(--lineHeight-title4);
   background-color: var(--color-transparent);
+  color: var(--color-fg);
 }
