@@ -40,18 +40,14 @@ const Provider = composeProviders([
   PluginHtmlClassNameProvider,
   NavbarProvider,
   MediaQueryProvider,
+  UnifiedThemeProvider,
 ]);
 
 export default function LayoutProvider({ children }: Props): JSX.Element {
-  const theme = useInternalCDSTheme();
+  useInternalCDSTheme();
   return (
     <Provider>
-      <UnifiedThemeProvider
-        baseDocsTheme={theme?.docsTheme}
-        basePlaygroundTheme={theme?.playgroundTheme}
-      >
-        <CDSContainer>{children}</CDSContainer>
-      </UnifiedThemeProvider>
+      <CDSContainer>{children}</CDSContainer>
     </Provider>
   );
 }
