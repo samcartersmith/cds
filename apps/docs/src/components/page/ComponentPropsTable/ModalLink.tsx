@@ -1,13 +1,15 @@
 import React, { createContext } from 'react';
 import { useToggler } from '@cbhq/cds-common2';
 import { Modal } from '@cbhq/cds-web2/overlays/modal/Modal';
-import { ModalBody } from '@cbhq/cds-web2/overlays/modal/ModalBody';
+import { ModalBody, ModalBodyProps } from '@cbhq/cds-web2/overlays/modal/ModalBody';
 import { ModalHeader } from '@cbhq/cds-web2/overlays/modal/ModalHeader';
 import { Link, type LinkBaseProps } from '@cbhq/cds-web2/typography/Link';
 
 export type ModalLinkProps = {
   children: string;
   content: React.ReactElement;
+  modalBodyRef?: React.RefObject<HTMLDivElement>;
+  modalBodyProps?: Omit<ModalBodyProps, 'children'>;
 } & Omit<LinkBaseProps, 'content'>;
 
 /**
@@ -16,7 +18,7 @@ export type ModalLinkProps = {
  */
 export const ModalChildContext = createContext<boolean>(false);
 
-function ModalLink({ children, content, ...props }: ModalLinkProps) {
+function ModalLink({ children, content, modalBodyRef, modalBodyProps, ...props }: ModalLinkProps) {
   const [visible, { toggleOn, toggleOff }] = useToggler();
   return (
     <>
@@ -26,7 +28,9 @@ function ModalLink({ children, content, ...props }: ModalLinkProps) {
       <ModalChildContext.Provider value>
         <Modal onRequestClose={toggleOff} visible={visible}>
           <ModalHeader title={children} />
-          <ModalBody>{content}</ModalBody>
+          <ModalBody ref={modalBodyRef} {...modalBodyProps}>
+            {content}
+          </ModalBody>
         </Modal>
       </ModalChildContext.Provider>
     </>

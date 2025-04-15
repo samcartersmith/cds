@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
+import { useIsSticky } from '@site/src/utils/useIsSticky';
 import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
-import { VStack } from '@cbhq/cds-web2/layout';
+import { Box, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography/Text';
 import { SharedParentTypes, SharedTypeAliases } from '@cbhq/docusaurus-plugin-docgen';
 import { ProcessedPropItem } from '@cbhq/docusaurus-plugin-docgen/types';
@@ -17,45 +18,71 @@ type ComponentPropsTableProps = {
   sharedParentTypes: SharedParentTypes;
 };
 
+const tabsHeight = 67;
+const stickyTopOffset = 115;
+
 function ComponentPropsTable({
   props: { props, parentTypes },
   sharedTypeAliases,
   sharedParentTypes,
 }: ComponentPropsTableProps) {
   const [searchValue, setSearchValue] = useState('');
-  const filteredProps = React.useMemo(() => {
+  const filteredProps = useMemo(() => {
     const searchTerm = searchValue.toLowerCase();
     return props.filter((item) => item.name.toLowerCase().includes(searchTerm));
   }, [searchValue, props]);
-  const handleSearchChange = React.useCallback((value: string) => {
+  const handleSearchChange = useCallback((value: string) => {
     setSearchValue(value);
   }, []);
+
+  const { elementRef: stickyElementRef, isSticky } = useIsSticky({
+    top: stickyTopOffset,
+  });
+
   return (
-    <VStack gap={2} maxWidth="100%" overflow="hidden" width="100%">
-      <SearchInput
-        compact
-        onChangeText={handleSearchChange}
-        placeholder="Search"
-        value={searchValue}
-      />
-      <ParentTypesList
-        parentTypes={parentTypes}
-        sharedParentTypes={sharedParentTypes}
-        sharedTypeAliases={sharedTypeAliases}
-      />
-      {filteredProps.length > 0 ? (
-        <PropsTable
-          props={filteredProps}
-          searchTerm={searchValue}
+    <VStack maxWidth="100%" width="100%">
+      <VStack
+        ref={stickyElementRef}
+        background="bgAlternate"
+        borderedBottom={isSticky}
+        gap={2}
+        paddingBottom={2}
+        paddingTop={5}
+        paddingX={4}
+        position={{ desktop: 'sticky', tablet: 'sticky' }}
+        top={{
+          desktop: `calc(var(--ifm-navbar-height) + ${tabsHeight}px - var(--space-3))`,
+          tablet: `calc(var(--ifm-navbar-height) + ${tabsHeight}px - var(--space-3))`,
+        }}
+        zIndex={1}
+      >
+        <SearchInput
+          compact
+          onChangeText={handleSearchChange}
+          placeholder="Search"
+          value={searchValue}
+        />
+        <ParentTypesList
+          parentTypes={parentTypes}
+          sharedParentTypes={sharedParentTypes}
           sharedTypeAliases={sharedTypeAliases}
         />
+      </VStack>
+      {filteredProps.length > 0 ? (
+        <Box maxWidth="100%" overflow="hidden" paddingBottom={4} paddingX={4}>
+          <PropsTable
+            props={filteredProps}
+            searchTerm={searchValue}
+            sharedTypeAliases={sharedTypeAliases}
+          />
+        </Box>
       ) : props.length > 0 ? (
-        <VStack alignContent="center" alignItems="center" gap={1.5} paddingBottom={2}>
+        <VStack alignContent="center" alignItems="center" gap={1.5} paddingBottom={4} paddingX={4}>
           <Text font="headline">No results found</Text>
           <Text font="body">This prop does not exist.</Text>
         </VStack>
       ) : (
-        <VStack alignContent="center" alignItems="center" gap={1.5} paddingBottom={2}>
+        <VStack alignContent="center" alignItems="center" gap={1.5} paddingBottom={4} paddingX={4}>
           <Text font="headline">No props found</Text>
           <Text font="body">This component/hook does not have any props.</Text>
         </VStack>

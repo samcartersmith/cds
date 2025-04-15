@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TOCItem } from '@docusaurus/mdx-loader';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
-import { Box, Divider, VStack } from '@cbhq/cds-web2/layout';
+import { Box, VStack } from '@cbhq/cds-web2/layout';
 import { TabNavigation } from '@cbhq/cds-web2/tabs/TabNavigation';
 
 import { PropsTOCUpdater } from '../../../utils/toc/PropsTOCManager';
@@ -42,8 +42,9 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
 
   return (
     <VStack as="section">
-      <VStack background="bg" position="sticky" top="var(--ifm-navbar-height)" zIndex={1}>
+      <VStack background="bg" position="sticky" top="var(--ifm-navbar-height)" zIndex={2}>
         <Box
+          borderedBottom
           background="bgAlternate"
           borderTopLeftRadius={500}
           borderTopRightRadius={500}
@@ -58,43 +59,38 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
             value={activeTab}
           />
         </Box>
-        <Divider />
       </VStack>
-
       <VStack
+        accessibilityLabelledBy="tab--examples-tab"
         background="bgAlternate"
         borderBottomLeftRadius={500}
         borderBottomRightRadius={500}
+        display={shouldRenderExamples ? 'block' : 'none'}
         gap={3}
+        id="tabpanel--examples-tab"
         paddingBottom={2}
         paddingEnd={4}
         paddingStart={4}
         paddingTop={5}
-        zIndex={0}
+        role="tabpanel"
       >
-        <VStack
-          accessibilityLabelledBy="tab--examples-tab"
-          gap={3}
-          hidden={!shouldRenderExamples}
-          id="tabpanel--examples-tab"
-          role="tabpanel"
-        >
-          {shouldRenderExamples && <TOCUpdater toc={isWeb ? webExamplesToc : mobileExamplesToc} />}
-          {shouldRenderExamples && isWeb && webExamples}
-          {shouldRenderExamples && isMobile && mobileExamples}
-        </VStack>
-
-        <VStack
-          accessibilityLabelledBy="tab--props-tab"
-          gap={3}
-          hidden={!shouldRenderProps}
-          id="tabpanel--props-tab"
-          role="tabpanel"
-        >
-          {shouldRenderProps && <PropsTOCUpdater toc={isWeb ? webPropsToc : mobilePropsToc} />}
-          {shouldRenderProps && isWeb && webPropsTable}
-          {shouldRenderProps && isMobile && mobilePropsTable}
-        </VStack>
+        {shouldRenderExamples && <TOCUpdater toc={isWeb ? webExamplesToc : mobileExamplesToc} />}
+        {shouldRenderExamples && isWeb && webExamples}
+        {shouldRenderExamples && isMobile && mobileExamples}
+      </VStack>
+      <VStack
+        accessibilityLabelledBy="tab--props-tab"
+        background="bgAlternate"
+        borderBottomLeftRadius={500}
+        borderBottomRightRadius={500}
+        display={shouldRenderProps ? 'block' : 'none'}
+        gap={3}
+        id="tabpanel--props-tab"
+        role="tabpanel"
+      >
+        {shouldRenderProps && <PropsTOCUpdater toc={isWeb ? webPropsToc : mobilePropsToc} />}
+        {shouldRenderProps && isWeb && webPropsTable}
+        {shouldRenderProps && isMobile && mobilePropsTable}
       </VStack>
     </VStack>
   );

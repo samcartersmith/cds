@@ -1,7 +1,9 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
-import { HStack, VStack } from '@cbhq/cds-web2/layout';
+import { Box, HStack, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography/Text';
+
+import { useIsSticky } from '../../../utils/useIsSticky';
 
 import ModalLink from './ModalLink';
 import PropsTable from './PropsTable';
@@ -14,7 +16,13 @@ const noResultsMessage = (
   </VStack>
 );
 
-function ParentTypes({ name, sharedTypeAliases, sharedParentTypes, props }: ParentTypesItem) {
+function ParentTypesTable({
+  name,
+  sharedTypeAliases,
+  sharedParentTypes,
+  props,
+  scrollContainerRef,
+}: ParentTypesItem & { scrollContainerRef: React.RefObject<HTMLDivElement> }) {
   const [searchValue, setSearchValue] = useState('');
   const filteredProps = useMemo(
     () =>
@@ -24,15 +32,31 @@ function ParentTypes({ name, sharedTypeAliases, sharedParentTypes, props }: Pare
       ),
     [name, props, searchValue, sharedParentTypes],
   );
-  const content = useMemo(() => {
-    return (
-      <VStack gap={2}>
+
+  const { elementRef, isSticky } = useIsSticky({
+    top: 0,
+    containerRef: scrollContainerRef,
+  });
+
+  return (
+    <VStack paddingTop={0.25}>
+      <Box
+        ref={elementRef}
+        background="bg"
+        elevation={isSticky ? 1 : 0}
+        paddingX={2}
+        paddingY={2}
+        position={{ desktop: 'sticky', tablet: 'sticky' }}
+        top={{ desktop: 0, tablet: 0 }}
+      >
         <SearchInput
           compact
           onChangeText={setSearchValue}
           placeholder="Search"
           value={searchValue}
         />
+      </Box>
+      <Box paddingX={2}>
         {filteredProps.length > 0 ? (
           <PropsTable
             props={filteredProps}
@@ -42,12 +66,28 @@ function ParentTypes({ name, sharedTypeAliases, sharedParentTypes, props }: Pare
         ) : (
           noResultsMessage
         )}
-      </VStack>
-    );
-  }, [searchValue, filteredProps, sharedTypeAliases]);
+      </Box>
+    </VStack>
+  );
+}
 
+function ParentTypes({ name, sharedTypeAliases, sharedParentTypes, props }: ParentTypesItem) {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   return (
-    <ModalLink content={content} font="headline">
+    <ModalLink
+      content={
+        <ParentTypesTable
+          name={name}
+          props={props}
+          scrollContainerRef={scrollContainerRef}
+          sharedParentTypes={sharedParentTypes}
+          sharedTypeAliases={sharedTypeAliases}
+        />
+      }
+      font="headline"
+      modalBodyProps={{ paddingX: 0, paddingY: 0 }}
+      modalBodyRef={scrollContainerRef}
+    >
       {name}
     </ModalLink>
   );
