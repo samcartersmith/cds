@@ -190,7 +190,6 @@ export const Modal = memo(
                 restoreFocusOnUnmount={restoreFocusOnUnmount}
               >
                 <VStack
-                  background="bg"
                   borderRadius={200}
                   className={cx(!dangerouslyDisableResponsiveness && modalDialogResponsiveStyle)}
                   elevation={2}

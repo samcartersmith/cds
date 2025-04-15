@@ -127,24 +127,18 @@ export const UnifiedThemeProvider = ({
       ...basePlaygroundTheme,
       lightColor: {
         ...defaultTheme.lightColor,
-        ...docsThemeWithOption.lightColor,
+        ...basePlaygroundTheme.lightColor,
         bgPrimary: themeOption.lightValue,
         fgPrimary: themeOption.lightValue,
       },
       darkColor: {
         ...defaultTheme.darkColor,
-        ...docsThemeWithOption.darkColor,
+        ...basePlaygroundTheme.darkColor,
         bgPrimary: themeOption.darkValue,
         fgPrimary: themeOption.darkValue,
       },
     } satisfies ThemeConfig;
-  }, [
-    docsThemeWithOption.darkColor,
-    docsThemeWithOption.lightColor,
-    basePlaygroundTheme,
-    themeOption.darkValue,
-    themeOption.lightValue,
-  ]);
+  }, [basePlaygroundTheme, themeOption]);
 
   /** Sets the docsColorScheme and saves the value to localStorage */
   const updateDocsColorScheme = useCallback(

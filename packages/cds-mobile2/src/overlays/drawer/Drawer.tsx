@@ -207,10 +207,9 @@ export const Drawer = memo(
           <Box
             {...getPanGestureHandlers}
             animated
-            background="bg"
             borderRadius={isPinHorizontal ? 0 : 400}
             bordered={activeColorScheme === 'dark'}
-            elevation={activeColorScheme === 'dark' ? 2 : 0}
+            elevation={2}
             maxHeight={!isPinHorizontal ? verticalDrawerMaxHeight : '100%'}
             onAccessibilityEscape={handleClose}
             pin={pin}

@@ -63,6 +63,8 @@ getCacheKey);
 
 export const IconButton = memo(function IconButton({
   background,
+  borderRadius = 1000,
+  borderWidth = 100,
   color: customColor,
   compact = true,
   feedback = compact ? 'light' : 'normal',
@@ -93,8 +95,8 @@ export const IconButton = memo(function IconButton({
     <Pressable
       background={background ?? backgroundColor}
       borderColor={borderColor}
-      borderRadius={1000}
-      borderWidth={100}
+      borderRadius={borderRadius}
+      borderWidth={borderWidth}
       feedback={feedback}
       style={pressableStyle}
       transparentWhileInactive={transparent}

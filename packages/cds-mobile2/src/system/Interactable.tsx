@@ -60,6 +60,7 @@ export type InteractableProps = Omit<BoxProps, 'background' | 'animated'> & Inte
 
 export const Interactable = memo(function Interactable({
   background = 'transparent',
+  borderColor = background,
   block,
   children,
   disabled,
@@ -112,7 +113,7 @@ export const Interactable = memo(function Interactable({
   );
 
   return (
-    <Box animated style={mergedWrapperStyles} {...props}>
+    <Box animated borderColor={borderColor} style={mergedWrapperStyles} {...props}>
       <View style={mergedContentStyles}>{children}</View>
     </Box>
   );

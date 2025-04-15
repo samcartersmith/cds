@@ -180,7 +180,7 @@ export const Button: ButtonComponent = memo(
         compact,
         borderRadius = compact ? 700 : 900,
         height = compact ? 40 : 56,
-        borderWidth = 100,
+        borderWidth,
         children,
         numberOfLines,
         startIcon,
