@@ -73,7 +73,7 @@ const Playground = memo(function Playground({
       <VStack gap={1}>
         <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
           {!hidePreview && (
-            <VStack background="bg" borderRadius={400} padding={3}>
+            <VStack background="bg" borderRadius={400} color="fg" font="body" padding={3}>
               <BrowserOnly fallback={<div>Loading...</div>}>{previewComponent}</BrowserOnly>
             </VStack>
           )}
