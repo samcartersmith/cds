@@ -35,7 +35,6 @@ export const Coachmark = memo(
         <ThemeProvider name="coachmark" spectrum={invertedSpectrum}>
           <VStack
             ref={ref}
-            background="background"
             borderRadius="roundedLarge"
             maxWidth={windowWidth - spacingHorizontal * 2}
             overflow="hidden"
@@ -43,7 +42,7 @@ export const Coachmark = memo(
             width={width}
           >
             {media}
-            <VStack spacing={2}>
+            <VStack spacing={2} background="background">
               <VStack gap={2}>
                 <VStack gap={0.5}>
                   {typeof title === 'string' ? (

@@ -4,11 +4,12 @@ import { noop } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
-import { VStack } from '../../layout';
+import { Box, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
 import { TextBody, TextCaption } from '../../typography';
 import { ProgressBar } from '../../visualizations';
 import { Coachmark } from '../Coachmark';
+import { SpotRectangle } from '../../illustrations';
 
 export const CoachmarkExamples = () => {
   const [checked, { toggle }] = useToggler();
@@ -51,9 +52,26 @@ export const CoachmarkExamples = () => {
             </TextBody>
           </VStack>
         }
-        media={<RemoteImage height={150} source={ethBackground} width="100%" />}
+        media={
+          <RemoteImage
+            height={150}
+            source={ethBackground}
+            width="100%"
+            style={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
+          />
+        }
         onClose={noop}
         title="Rich Content"
+      />
+      <Coachmark
+        action={<Button>Next</Button>}
+        content="This SpotRectangle is in a Box with primary background."
+        media={
+          <Box background="primary" alignItems="center" justifyContent="center" spacing={4}>
+            <SpotRectangle name="defiEarn" />
+          </Box>
+        }
+        title="With a SpotRectangle"
       />
       <Coachmark
         action={<Button>Done</Button>}

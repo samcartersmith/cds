@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 7.7.9 (4/16/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix an issue in Coachmark where background color is visible in top corners when `media` prop is used. [[#3921](https://github.cbhq.net/frontend/cds/pull/3921)]
+
 ## 7.7.8 (3/31/2025 PST)
 
 #### 🐞 Fixes
