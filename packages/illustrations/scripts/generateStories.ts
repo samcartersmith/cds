@@ -1,5 +1,4 @@
 import chalk from 'chalk';
-import { writePrettyFile } from '@cbhq/script-utils/fs/writePrettyFile';
 
 import heroSquareNames from '../src/__generated__/heroSquare/data/names';
 import pictogramNames from '../src/__generated__/pictogram/data/names';
@@ -13,6 +12,8 @@ import type {
   SpotRectangleName,
   SpotSquareName,
 } from '../src/index';
+
+const { writePrettyFile } = await import('@cbhq/script-utils/fs/writePrettyFile');
 
 const HEROSQUARE_CHUNK_SIZE = 240;
 const PICTOGRAM_CHUNK_SIZE = 240;
