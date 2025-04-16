@@ -28,7 +28,13 @@ export const ProjectCards = ({
   );
 
   const projectGroups = sortedGroups.map((group) => {
-    const averageScore = meanBy(group.scores, (score) => score.automatedA11yScore ?? 0);
+    const scoresWithA11yData = group.scores.filter(
+      (score) =>
+        Object.keys(score).includes('a11yScore') &&
+        Object.keys(score).includes('totalNumberOfPassingAccessibilityTests') &&
+        Object.keys(score).includes('automatedA11yScore'),
+    );
+    const averageScore = meanBy(scoresWithA11yData, (score) => score.automatedA11yScore ?? 0);
     const readableProjectName = a11yProjectNameMap[group.projectName] || group.projectName;
 
     return (

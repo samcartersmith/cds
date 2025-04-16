@@ -12,7 +12,7 @@ import { EmptySelectedEntry } from './EmptySelectedEntry';
 import { ProjectCards } from './ProjectCards';
 import { SelectedEntryDetails } from './SelectedEntryDetails';
 import { A11yData } from './types';
-import { getLatestScores, groupScoresByProject } from './utils';
+import { getLatestScores, groupAndSortScoresByProject } from './utils';
 
 export const A11yScorecardsOverview = () => {
   const [scores, setScores] = useState<A11yData[] | null>(null);
@@ -54,7 +54,7 @@ export const A11yScorecardsOverview = () => {
   }
 
   const sortedAndFilteredScores = getLatestScores(scores);
-  const groupedScores = groupScoresByProject(sortedAndFilteredScores);
+  const groupedScores = groupAndSortScoresByProject(sortedAndFilteredScores);
 
   const start = (
     <VStack gap={2} spacingEnd={3}>

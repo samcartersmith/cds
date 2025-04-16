@@ -1,6 +1,6 @@
 import groupBy from 'lodash/groupBy';
 import orderBy from 'lodash/orderBy';
-import sortBy from 'lodash/orderBy';
+import sortBy from 'lodash/sortBy';
 
 import { A11yData, GroupedScoreByProjectEntry } from './types';
 
@@ -40,14 +40,13 @@ export function getLatestScores(scores: A11yData[]) {
  * @param scores A11yData[]
  * @returns GroupedScoreByProjectEntry
  */
-export function groupScoresByProject(scores: A11yData[]): GroupedScoreByProjectEntry[] {
+export function groupAndSortScoresByProject(scores: A11yData[]): GroupedScoreByProjectEntry[] {
   const grouped = groupBy(scores, 'projectName');
   return Object.keys(grouped).map((projectName) => {
     const projectScores = grouped[projectName];
-
     // Sort scores within each group by automatedA11yScore, placing undefined or empty scores at the bottom
     const sortedScores = orderBy(
-      grouped[projectName],
+      projectScores,
       [(score) => score.automatedA11yScore ?? -Infinity],
       ['desc'],
     );
