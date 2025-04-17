@@ -117,6 +117,7 @@ export type SpotRectangleName =
   | 'linkingYourWalletToYourCoinbaseAccount'
   | 'liquidationBufferGreen'
   | 'liquidationBufferRed'
+  | 'liquidationBufferYellow'
   | 'loanValue'
   | 'login'
   | 'margin'

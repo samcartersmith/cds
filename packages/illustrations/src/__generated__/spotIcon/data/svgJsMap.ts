@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 import type { SpotIconName } from '../types/SpotIconName';
 
 /**
@@ -67,8 +69,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/coinbaseOneProduct-1').content,
   },
   commerceProduct: {
-    light: () => require('../svgJs/light/commerceProduct-1').content,
-    dark: () => require('../svgJs/dark/commerceProduct-1').content,
+    light: () => require('../svgJs/light/commerceProduct-2').content,
+    dark: () => require('../svgJs/dark/commerceProduct-2').content,
   },
   creditCard: {
     light: () => require('../svgJs/light/creditCard-1').content,
@@ -95,8 +97,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/derivativesProduct-4').content,
   },
   done: {
-    light: () => require('../svgJs/light/done-0').content,
-    dark: () => require('../svgJs/dark/done-0').content,
+    light: () => require('../svgJs/light/done-1').content,
+    dark: () => require('../svgJs/dark/done-1').content,
   },
   email: {
     light: () => require('../svgJs/light/email-1').content,
@@ -107,16 +109,16 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/error-1').content,
   },
   exchangeProduct: {
-    light: () => require('../svgJs/light/exchangeProduct-1').content,
-    dark: () => require('../svgJs/dark/exchangeProduct-1').content,
+    light: () => require('../svgJs/light/exchangeProduct-2').content,
+    dark: () => require('../svgJs/dark/exchangeProduct-2').content,
   },
   fast: {
-    light: () => require('../svgJs/light/fast-1').content,
-    dark: () => require('../svgJs/dark/fast-1').content,
+    light: () => require('../svgJs/light/fast-2').content,
+    dark: () => require('../svgJs/dark/fast-2').content,
   },
   helpCenterProduct: {
-    light: () => require('../svgJs/light/helpCenterProduct-1').content,
-    dark: () => require('../svgJs/dark/helpCenterProduct-1').content,
+    light: () => require('../svgJs/light/helpCenterProduct-2').content,
+    dark: () => require('../svgJs/dark/helpCenterProduct-2').content,
   },
   idVerification: {
     light: () => require('../svgJs/light/idVerification-2').content,

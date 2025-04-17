@@ -42,15 +42,6 @@
         "cwd": "packages/illustrations"
       }
     },
-    "uploadToStaticAssets": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "packages/illustrations",
-        "commands": [
-          "./scripts/uploadToStaticAssets.sh"
-        ]
-      }
-    },
     "release": {
       "executor": "nx:run-commands",
       "dependsOn": [

@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 import type { SpotSquareName } from '../types/SpotSquareName';
 
 /**
@@ -31,8 +33,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/addPhoneNumber-2').content,
   },
   advancedTrading: {
-    light: () => require('../svgJs/light/advancedTrading-2').content,
-    dark: () => require('../svgJs/dark/advancedTrading-2').content,
+    light: () => require('../svgJs/light/advancedTrading-3').content,
+    dark: () => require('../svgJs/dark/advancedTrading-3').content,
   },
   advancedTradingChartsIndicatorsCandles: {
     light: () => require('../svgJs/light/advancedTradingChartsIndicatorsCandles-2').content,
@@ -59,24 +61,24 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/assetRefresh-4').content,
   },
   automaticPayments: {
-    light: () => require('../svgJs/light/automaticPayments-2').content,
-    dark: () => require('../svgJs/dark/automaticPayments-2').content,
+    light: () => require('../svgJs/light/automaticPayments-3').content,
+    dark: () => require('../svgJs/dark/automaticPayments-3').content,
   },
   backedByUsDollar: {
     light: () => require('../svgJs/light/backedByUsDollar-4').content,
     dark: () => require('../svgJs/dark/backedByUsDollar-4').content,
   },
   basedInUsa: {
-    light: () => require('../svgJs/light/basedInUsa-3').content,
-    dark: () => require('../svgJs/dark/basedInUsa-3').content,
+    light: () => require('../svgJs/light/basedInUsa-4').content,
+    dark: () => require('../svgJs/dark/basedInUsa-4').content,
   },
   bigBtc: {
     light: () => require('../svgJs/light/bigBtc-3').content,
     dark: () => require('../svgJs/dark/bigBtc-3').content,
   },
   blockchain: {
-    light: () => require('../svgJs/light/blockchain-4').content,
-    dark: () => require('../svgJs/dark/blockchain-4').content,
+    light: () => require('../svgJs/light/blockchain-5').content,
+    dark: () => require('../svgJs/dark/blockchain-5').content,
   },
   boostedCard: {
     light: () => require('../svgJs/light/boostedCard-4').content,
@@ -171,8 +173,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/coinbaseOneRewards-4').content,
   },
   coinbaseOneSavingFunds: {
-    light: () => require('../svgJs/light/coinbaseOneSavingFunds-3').content,
-    dark: () => require('../svgJs/dark/coinbaseOneSavingFunds-3').content,
+    light: () => require('../svgJs/light/coinbaseOneSavingFunds-4').content,
+    dark: () => require('../svgJs/dark/coinbaseOneSavingFunds-4').content,
   },
   coinbaseOneStakeOrWrap: {
     light: () => require('../svgJs/light/coinbaseOneStakeOrWrap-2').content,
@@ -187,8 +189,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/coinbaseOneStarToken-2').content,
   },
   coinbaseOneTokenRewards: {
-    light: () => require('../svgJs/light/coinbaseOneTokenRewards-3').content,
-    dark: () => require('../svgJs/dark/coinbaseOneTokenRewards-3').content,
+    light: () => require('../svgJs/light/coinbaseOneTokenRewards-4').content,
+    dark: () => require('../svgJs/dark/coinbaseOneTokenRewards-4').content,
   },
   coinbaseOneUSDC: {
     light: () => require('../svgJs/light/coinbaseOneUSDC-1').content,
@@ -227,8 +229,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/confirmAddress-4').content,
   },
   confirmEmail: {
-    light: () => require('../svgJs/light/confirmEmail-4').content,
-    dark: () => require('../svgJs/dark/confirmEmail-4').content,
+    light: () => require('../svgJs/light/confirmEmail-5').content,
+    dark: () => require('../svgJs/dark/confirmEmail-5').content,
   },
   confirmIDCard: {
     light: () => require('../svgJs/light/confirmIDCard-5').content,
@@ -371,8 +373,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/eth2SendSell-3').content,
   },
   ethStakeOrWrap: {
-    light: () => require('../svgJs/light/ethStakeOrWrap-3').content,
-    dark: () => require('../svgJs/dark/ethStakeOrWrap-3').content,
+    light: () => require('../svgJs/light/ethStakeOrWrap-4').content,
+    dark: () => require('../svgJs/dark/ethStakeOrWrap-4').content,
   },
   ethStakeOrWrapTwo: {
     light: () => require('../svgJs/light/ethStakeOrWrapTwo-3').content,
@@ -599,8 +601,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/performance-4').content,
   },
   phoneNotifications: {
-    light: () => require('../svgJs/light/phoneNotifications-5').content,
-    dark: () => require('../svgJs/dark/phoneNotifications-5').content,
+    light: () => require('../svgJs/light/phoneNotifications-6').content,
+    dark: () => require('../svgJs/dark/phoneNotifications-6').content,
   },
   phoneNumber: {
     light: () => require('../svgJs/light/phoneNumber-1').content,
@@ -699,8 +701,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/semiCustodial-4').content,
   },
   sendCryptoFaster: {
-    light: () => require('../svgJs/light/sendCryptoFaster-4').content,
-    dark: () => require('../svgJs/dark/sendCryptoFaster-4').content,
+    light: () => require('../svgJs/light/sendCryptoFaster-5').content,
+    dark: () => require('../svgJs/dark/sendCryptoFaster-5').content,
   },
   shareOnSocialMedia: {
     light: () => require('../svgJs/light/shareOnSocialMedia-3').content,
@@ -759,8 +761,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/taxesDetails-4').content,
   },
   tradeImmediately: {
-    light: () => require('../svgJs/light/tradeImmediately-2').content,
-    dark: () => require('../svgJs/dark/tradeImmediately-2').content,
+    light: () => require('../svgJs/light/tradeImmediately-3').content,
+    dark: () => require('../svgJs/dark/tradeImmediately-3').content,
   },
   transferringCrypto: {
     light: () => require('../svgJs/light/transferringCrypto-5').content,
@@ -775,8 +777,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/unsupportedAsset-4').content,
   },
   verifyEmail: {
-    light: () => require('../svgJs/light/verifyEmail-2').content,
-    dark: () => require('../svgJs/dark/verifyEmail-2').content,
+    light: () => require('../svgJs/light/verifyEmail-3').content,
+    dark: () => require('../svgJs/dark/verifyEmail-3').content,
   },
   verifyInfo: {
     light: () => require('../svgJs/light/verifyInfo-3').content,
@@ -819,8 +821,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/yieldCenter-5').content,
   },
   yieldCenterUSDC: {
-    light: () => require('../svgJs/light/yieldCenterUSDC-0').content,
-    dark: () => require('../svgJs/dark/yieldCenterUSDC-0').content,
+    light: () => require('../svgJs/light/yieldCenterUSDC-1').content,
+    dark: () => require('../svgJs/dark/yieldCenterUSDC-1').content,
   },
 } as Record<SpotSquareName, { light: () => string; dark: () => string }>;
 

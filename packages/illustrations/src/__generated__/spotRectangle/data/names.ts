@@ -123,6 +123,7 @@ const names: SpotRectangleName[] = [
   'linkingYourWalletToYourCoinbaseAccount',
   'liquidationBufferGreen',
   'liquidationBufferRed',
+  'liquidationBufferYellow',
   'loanValue',
   'login',
   'margin',

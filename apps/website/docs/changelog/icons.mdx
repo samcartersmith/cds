@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Update readme. [[#3927](https://github.cbhq.net/frontend/cds/pull/3927)]
+
 ## 4.3.0 (3/26/2025 PST)
 
 ### 🚀 Added

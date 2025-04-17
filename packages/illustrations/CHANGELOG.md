@@ -8,7 +8,120 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 4.9.0 (4/16/2025 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 04/16/2025. [[#3927](https://github.cbhq.net/frontend/cds/pull/3927)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Rectangle
+
+- liquidationBufferYellow
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Spot Icon
+
+- commerceProduct
+- done
+- exchangeProduct
+- fast
+- helpCenterProduct
+
+#### Pictogram
+
+- baseLogoNavigation
+- browserTransaction
+- cardBlocked
+- coinbaseOneTrade
+- crypto101
+- decentralizationEverything
+- decentralizedWeb3
+- explore
+- formDownload
+- learningRewardsNavigation
+- manageWeb3SignersAcct
+- nftLibrary
+- payNavigation
+- pizza
+- planet
+- premiumInvestor
+- restaking
+- securedAssets
+- selectAddNft
+- settings
+- smsAuthenticate
+- trusted
+- usdcInterest
+- walletSuccess
+
+#### Hero Square
+
+- airdrop
+- artFrameEmptyState
+- coinbaseOneAirdrop
+- contactsListWarning
+- idVerificationSecure
+- notificationsAlt
+- privateKey
+- referralsBitcoin
+- reviewInfo
+- tradeGeneral
+- usdtToUSDC
+- walletConfirmation
+
+#### Spot Rectangle
+
+- apiKey
+- blockchain
+- borrowWallet
+- browserExtension
+- collectingNfts
+- connectWalletTutorial
+- cryptoAssets
+- cryptoWallet
+- defiDecentralizedTradingExchange
+- earnInterest
+- eth2SellSend
+- ethAddress
+- gainsAndLosses
+- getStartedInMinutes
+- insuranceProtection
+- login
+- mining
+- notificationsAlt
+- poweredByEthereum
+- primeEarn
+- protectedNotes
+- retailUSDCRewards
+- secureAndTrusted
+- secureStorage
+- securityShield
+- selfCustody
+- stayInControlSelfHostedWalletsStorage
+- transferFunds
+
+#### Spot Square
+
+- advancedTrading
+- automaticPayments
+- basedInUsa
+- blockchain
+- coinbaseOneSavingFunds
+- coinbaseOneTokenRewards
+- confirmEmail
+- ethStakeOrWrap
+- phoneNotifications
+- sendCryptoFaster
+- tradeImmediately
+- verifyEmail
+- yieldCenterUSDC
 
 #### 📘 Misc
 
