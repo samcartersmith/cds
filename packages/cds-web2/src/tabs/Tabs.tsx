@@ -90,7 +90,7 @@ export const Tabs = memo(
         activeTab,
         disabled,
         onChange,
-        role = 'group',
+        role = 'tablist',
         position = 'relative',
         width = 'fit-content',
         style,

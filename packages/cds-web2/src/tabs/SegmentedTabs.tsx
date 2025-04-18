@@ -29,6 +29,7 @@ export const SegmentedTabs = memo(
         activeBackground={activeBackground}
         background={background}
         borderRadius={borderRadius}
+        role="radiogroup"
         {...props}
       />
     ),

@@ -36,7 +36,16 @@ export const Coachmark = memo(
             width={width}
           >
             {media}
-            <VStack padding={2} background="bg">
+            {!!onClose && (
+              <Box alignSelf="flex-start" padding={1} pin="right">
+                <IconButton
+                  accessibilityLabel={closeButtonAccessibilityLabel}
+                  name="close"
+                  onClick={onClose}
+                />
+              </Box>
+            )}
+            <VStack background="bg" padding={2}>
               <VStack gap={2}>
                 <VStack gap={0.5}>
                   {typeof title === 'string' ? (
@@ -63,15 +72,6 @@ export const Coachmark = memo(
                 </HStack>
               </VStack>
             </VStack>
-            {!!onClose && (
-              <Box alignSelf="flex-start" padding={1} pin="right">
-                <IconButton
-                  accessibilityLabel={closeButtonAccessibilityLabel}
-                  name="close"
-                  onClick={onClose}
-                />
-              </Box>
-            )}
           </VStack>
         </InvertedThemeProvider>
       );

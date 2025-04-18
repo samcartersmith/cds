@@ -73,7 +73,6 @@ export const SegmentedTab = memo(
         color = 'fg',
         activeColor = 'fgInverse',
         className,
-        'aria-pressed': ariaPressed,
         testID,
         ...props
       },
@@ -103,7 +102,7 @@ export const SegmentedTab = memo(
       return (
         <button
           ref={ref}
-          aria-pressed={ariaPressed ?? isActive}
+          aria-checked={isActive}
           className={cx(
             insetFocusRingStyle,
             buttonStyle,
@@ -115,6 +114,7 @@ export const SegmentedTab = memo(
           disabled={isDisabled}
           id={id}
           onClick={handlePress}
+          role="radio"
           type="button"
           {...props}
         >
