@@ -88,7 +88,7 @@ const NavbarThemeToggle = () => {
       <Pressable
         alignContent="center"
         alignItems="center"
-        aria-label="Current theme color"
+        aria-label="Edit theme color"
         as="button"
         background="bgSecondary"
         borderRadius={1000}

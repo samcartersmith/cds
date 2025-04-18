@@ -12,7 +12,7 @@ export default function NavbarColorModeToggle({ className }: Props): ReactNode {
   const isDarkMode = docsColorScheme === 'dark';
 
   const label = translate({
-    message: 'Dark mode',
+    message: `${docsColorScheme} mode, adjust viewing mode`,
     id: 'theme.colorToggle.ariaLabel',
     description: 'The ARIA label for the navbar color mode toggle',
   });
@@ -28,7 +28,6 @@ export default function NavbarColorModeToggle({ className }: Props): ReactNode {
   return (
     <IconButton
       aria-label={label}
-      aria-pressed={isDarkMode}
       className={className}
       name={isDarkMode ? 'moon' : 'light'}
       onClick={handleClick}

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
@@ -35,6 +35,47 @@ const previewComponent = () => (
   </>
 );
 
+const isHeader = (element: HTMLElement): boolean => {
+  return (
+    element.tagName === 'H1' ||
+    element.tagName === 'H2' ||
+    element.tagName === 'H3' ||
+    element.tagName === 'H4' ||
+    element.tagName === 'H5' ||
+    element.tagName === 'H6'
+  );
+};
+
+const useGetHeadingText = () => {
+  const [headingText, setHeadingText] = useState('');
+  const editorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Get the heading text from the previous header sibling
+    if (!editorRef.current?.parentElement) return;
+
+    let currentElement = editorRef.current.parentElement;
+    if (isHeader(currentElement) && currentElement.classList.contains('anchor')) {
+      setHeadingText(currentElement.textContent?.toLowerCase() || '');
+      return;
+    }
+
+    // Look through previous siblings for a header
+    while (currentElement.previousElementSibling) {
+      currentElement = currentElement.previousElementSibling as HTMLElement;
+      if (isHeader(currentElement) && currentElement.classList.contains('anchor')) {
+        setHeadingText(currentElement.textContent?.toLowerCase() || '');
+        return;
+      }
+    }
+
+    // No appropriate heading found
+    setHeadingText('');
+  }, []);
+
+  return { editorRef, headingText };
+};
+
 const Playground = memo(function Playground({
   children,
   transformCode: transformCodeProp = transformCodeFallback,
@@ -49,6 +90,8 @@ const Playground = memo(function Playground({
   const toggleCode = useCallback(() => setIsCollapsed((collapsed) => !collapsed), []);
   const toast = useToast();
   const { colorScheme, theme } = usePlaygroundTheme();
+
+  const { editorRef, headingText } = useGetHeadingText();
 
   const transformCode = useCallback(
     (val: string) => transformCodeProp(val.replace(/\n$/, '')),
@@ -70,7 +113,7 @@ const Playground = memo(function Playground({
 
   return (
     <ThemeProvider activeColorScheme={colorScheme} theme={theme}>
-      <VStack gap={1}>
+      <VStack ref={editorRef} gap={1}>
         <LiveProvider code={code} theme={prismTheme} transformCode={transformCode} {...props}>
           {!hidePreview && (
             <VStack background="bg" borderRadius={400} color="fg" font="body" padding={3}>
@@ -84,6 +127,9 @@ const Playground = memo(function Playground({
                 noScaleOnPress
                 transparent
                 transparentWhilePressed
+                accessibilityLabel={`${collapsed ? 'Show' : 'Hide'} code${
+                  headingText ? ` for ${headingText} example` : ''
+                }`}
                 flush="start"
                 onClick={toggleCode}
                 startIcon={collapsed ? 'caretDown' : 'caretUp'}
@@ -95,6 +141,7 @@ const Playground = memo(function Playground({
                 compact
                 noScaleOnPress
                 transparent
+                accessibilityLabel={`Copy code${headingText ? ` for ${headingText} example` : ''}`}
                 flush="start"
                 onClick={handleCopyToClipboard}
                 startIcon="copy"

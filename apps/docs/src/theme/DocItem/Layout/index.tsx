@@ -88,7 +88,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
           {shouldRenderPlatformSwitcher && <PlatformSwitcher />}
           <VStack gap={2} overflow="auto">
             {shouldRenderToc && (
-              <Text font="headline" paddingX={0.5}>
+              <Text as="h3" font="headline" paddingX={0.5}>
                 On This Page
               </Text>
             )}
