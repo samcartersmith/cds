@@ -1,0 +1,16 @@
+{
+  "import": "import { Chip } from '@cbhq/cds-web/chips/Chip'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/chips/Chip.tsx",
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-chips-chip--default",
+  "description": "A foundational component that displays compact, interactive content with optional start/end elements. It serves as the base for InputChip (removable selections) and SelectChip (dropdown selections), supporting both static and interactive states.",
+  "relatedComponents": [
+    {
+      "label": "InputChip",
+      "url": "/components/inputs/InputChip/"
+    },
+    {
+      "label": "SelectChip",
+      "url": "/components/inputs/SelectChip/"
+    }
+  ]
+}

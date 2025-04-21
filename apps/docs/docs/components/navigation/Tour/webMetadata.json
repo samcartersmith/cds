@@ -1,0 +1,6 @@
+{
+  "import": "import { Tour, TourStep } from '@cbhq/cds-web/tour'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tour/Tour.tsx",
+  "description": "The Tour component manages state and popover element positioning, as well as rendering the tour screen overlay. Place TourStep components anywhere in the Tour children component tree to highlight specific areas of the application UI.",
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-tour--tour-default"
+}

@@ -120,7 +120,7 @@ const componentCards: ComponentCardProps[] = [
     bannerLightOverlaySrc: '/img/componentCardBanners/data_display_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/data_display_dark.svg',
     bannerDarkOverlaySrc: '/img/componentCardBanners/data_display_dark_hover.svg',
-    to: 'components/cards/ContainedAssetCard',
+    to: 'components/data-display/ContentCell',
   },
   {
     name: 'Feedback',

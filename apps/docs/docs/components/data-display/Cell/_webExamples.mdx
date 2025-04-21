@@ -1,0 +1,84 @@
+### Basic Usage
+
+```tsx live
+<Cell>Basic Cell Content</Cell>
+```
+
+### With Media and Detail
+
+```tsx live
+<Cell
+  media={<Avatar size="md" src="https://example.com/avatar.jpg" />}
+  detail={<CellDetail>Details here</CellDetail>}
+>
+  Cell with Media and Detail
+</Cell>
+```
+
+### Interactive Cell (Button)
+
+```tsx live
+<Cell onClick={() => alert('Cell clicked!')} accessory={<Icon name="chevronRight" />}>
+  Clickable Cell
+</Cell>
+```
+
+### Interactive Cell (Link)
+
+```tsx live
+<Cell href="https://example.com" target="_blank" accessory={<Icon name="externalLink" />}>
+  Link Cell
+</Cell>
+```
+
+### With All Elements
+
+```tsx live
+<Cell
+  media={<Avatar size="md" src="https://example.com/avatar.jpg" />}
+  intermediary={<Badge>New</Badge>}
+  detail={<CellDetail>12:30 PM</CellDetail>}
+  accessory={<Icon name="chevronRight" />}
+  onClick={() => alert('Full featured cell clicked!')}
+>
+  Complete Cell Example
+</Cell>
+```
+
+### Custom Alignment and Spacing
+
+```tsx live
+<Cell
+  alignItems="flex-start"
+  innerSpacing={4}
+  outerSpacing={2}
+  media={<Avatar size="lg" src="https://example.com/avatar.jpg" />}
+  detail={<CellDetail>Custom spaced detail</CellDetail>}
+>
+  Cell with Custom Spacing
+</Cell>
+```
+
+### Selected State
+
+```tsx live
+<Cell
+  selected
+  media={<Avatar size="md" src="https://example.com/avatar.jpg" />}
+  accessory={<Icon name="check" />}
+>
+  Selected Cell
+</Cell>
+```
+
+### Disabled State
+
+```tsx live
+<Cell
+  disabled
+  onClick={() => alert('This will not trigger')}
+  accessory={<Icon name="chevronRight" />}
+>
+  Disabled Cell
+</Cell>
+```

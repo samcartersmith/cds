@@ -1,0 +1,76 @@
+### Basic Usage
+
+```tsx
+<Cell>Basic Cell Content</Cell>
+```
+
+### With Media and Detail
+
+```tsx
+<Cell
+  media={<Avatar size="md" source={{ uri: 'https://example.com/avatar.jpg' }} />}
+  detail={<CellDetail>Details here</CellDetail>}
+>
+  Cell with Media and Detail
+</Cell>
+```
+
+### Interactive Cell
+
+```tsx
+<Cell onPress={() => console.log('Cell pressed!')} accessory={<Icon name="chevronRight" />}>
+  Pressable Cell
+</Cell>
+```
+
+### With All Elements
+
+```tsx
+<Cell
+  media={<Avatar size="md" source={{ uri: 'https://example.com/avatar.jpg' }} />}
+  intermediary={<Badge>New</Badge>}
+  detail={<CellDetail>12:30 PM</CellDetail>}
+  accessory={<Icon name="chevronRight" />}
+  onPress={() => console.log('Full featured cell pressed!')}
+>
+  Complete Cell Example
+</Cell>
+```
+
+### Custom Alignment and Spacing
+
+```tsx
+<Cell
+  alignItems="flex-start"
+  innerSpacing={4}
+  outerSpacing={2}
+  media={<Avatar size="lg" source={{ uri: 'https://example.com/avatar.jpg' }} />}
+  detail={<CellDetail>Custom spaced detail</CellDetail>}
+>
+  Cell with Custom Spacing
+</Cell>
+```
+
+### Selected State
+
+```tsx
+<Cell
+  selected
+  media={<Avatar size="md" source={{ uri: 'https://example.com/avatar.jpg' }} />}
+  accessory={<Icon name="check" />}
+>
+  Selected Cell
+</Cell>
+```
+
+### Disabled State
+
+```tsx
+<Cell
+  disabled
+  onPress={() => console.log('This will not trigger')}
+  accessory={<Icon name="chevronRight" />}
+>
+  Disabled Cell
+</Cell>
+```

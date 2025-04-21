@@ -15,6 +15,7 @@ import { useAlert } from '@cbhq/cds-common2/overlays/useAlert';
 import { useModal } from '@cbhq/cds-common2/overlays/useModal';
 import { LocaleProvider } from '@cbhq/cds-common2/system/LocaleProvider';
 import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common2/tokens/dot';
+import { useTourContext } from '@cbhq/cds-common2/tour/TourContext';
 import { useSparklineArea } from '@cbhq/cds-common2/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common2/visualizations/useSparklinePath';
 import * as CDSSparklineComponents from '@cbhq/cds-web-visualization2/sparkline';
@@ -29,6 +30,7 @@ import { NudgeCard } from '@cbhq/cds-web2/cards/NudgeCard';
 import { UpsellCard } from '@cbhq/cds-web2/cards/UpsellCard';
 import * as CDSCells from '@cbhq/cds-web2/cells';
 import * as CDSChips from '@cbhq/cds-web2/chips';
+import { Coachmark } from '@cbhq/cds-web2/coachmark/Coachmark';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import * as CDSControls from '@cbhq/cds-web2/controls';
 import { DatePicker } from '@cbhq/cds-web2/dates/DatePicker';
@@ -51,10 +53,14 @@ import { MultiContentModule } from '@cbhq/cds-web2/multi-content-module/MultiCon
 import * as CDSNavigation from '@cbhq/cds-web2/navigation';
 import * as CDSOverlays from '@cbhq/cds-web2/overlays';
 import { useToast } from '@cbhq/cds-web2/overlays/useToast';
+import { PageFooter } from '@cbhq/cds-web2/page/PageFooter';
 import { PageHeader } from '@cbhq/cds-web2/page/PageHeader';
+import { SectionHeader } from '@cbhq/cds-web2/section-header/SectionHeader';
 import * as CDSSystem from '@cbhq/cds-web2/system';
 import * as CDSTabs from '@cbhq/cds-web2/tabs';
 import { Tag } from '@cbhq/cds-web2/tag/Tag';
+import { Tour } from '@cbhq/cds-web2/tour/Tour';
+import { TourStep } from '@cbhq/cds-web2/tour/TourStep';
 import * as CDSTypography from '@cbhq/cds-web2/typography';
 import * as CDSVisualizations from '@cbhq/cds-web2/visualizations';
 
@@ -80,6 +86,7 @@ const ReactLiveScope: Record<string, unknown> = {
   AccordionItem,
   Dropdown,
   MultiContentModule,
+  SectionHeader,
   // cells
   ...CDSCells,
   // overlays
@@ -88,6 +95,12 @@ const ReactLiveScope: Record<string, unknown> = {
   ...CDSNavigation,
   ...CDSTabs,
   PageHeader,
+  PageFooter,
+  // tour
+  Tour,
+  TourStep,
+  Coachmark,
+  useTourContext,
   // typography
   ...CDSTypography,
   Tag,

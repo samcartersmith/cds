@@ -1,0 +1,5 @@
+{
+  "import": "import { Overlay } from '@cbhq/cds-mobile2/overlays/overlay/Overlay'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/overlays/overlay/Overlay.tsx",
+  "description": "A component that creates a semi-transparent layer over content, optimized for mobile platforms. It supports animated opacity transitions and is commonly used as a backdrop for modals, dialogs, or to indicate that the underlying content is inactive."
+}

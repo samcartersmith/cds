@@ -110,8 +110,18 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
+              id: 'components/inputs/Chip/chip',
+              label: 'Chip',
+            },
+            {
+              type: 'doc',
               id: 'components/inputs/IconButton/iconButton',
               label: 'IconButton',
+            },
+            {
+              type: 'doc',
+              id: 'components/inputs/InputChip/input-chip',
+              label: 'InputChip',
             },
             {
               type: 'doc',
@@ -142,6 +152,11 @@ const sidebars: SidebarsConfig = {
               id: 'components/inputs/TextInput/textInput',
               label: 'TextInput',
             },
+            {
+              type: 'doc',
+              id: 'components/inputs/SearchInput/searchInput',
+              label: 'SearchInput',
+            },
           ],
         },
         {
@@ -152,6 +167,12 @@ const sidebars: SidebarsConfig = {
               type: 'doc',
               id: 'components/media/Avatar/avatar',
               label: 'Avatar',
+            },
+
+            {
+              type: 'doc',
+              id: 'components/media/CellMedia/cell-media',
+              label: 'CellMedia',
             },
             {
               type: 'doc',
@@ -234,6 +255,23 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: 'Data Display',
+          items: [
+            {
+              type: 'doc',
+              id: 'components/data-display/Cell/cell',
+              label: 'Cell',
+            },
+            {
+              type: 'doc',
+              id: 'components/data-display/ContentCell/content-cell',
+              label: 'ContentCell',
+            },
+            { type: 'doc', id: 'components/data-display/ListCell/listCell', label: 'ListCell' },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Feedback',
           items: [
             { type: 'doc', id: 'components/feedback/Banner/banner', label: 'Banner' },
@@ -241,11 +279,6 @@ const sidebars: SidebarsConfig = {
               type: 'doc',
               id: 'components/feedback/Fallback/fallback',
               label: 'Fallback',
-            },
-            {
-              type: 'doc',
-              id: 'components/feedback/overlays',
-              label: 'Overlays',
             },
             {
               type: 'doc',
@@ -275,10 +308,20 @@ const sidebars: SidebarsConfig = {
             { type: 'doc', id: 'components/overlay/ModalFooter/modalFooter', label: 'ModalFooter' },
             {
               type: 'doc',
-              id: 'components/overlay/portalContext',
-              label: 'PortalContext',
+              id: 'components/overlay/Overlay/overlay',
+              label: 'Overlay',
+            },
+            {
+              type: 'doc',
+              id: 'components/overlay/PortalProvider/portalProvider',
+              label: 'PortalProvider',
             },
             { type: 'doc', id: 'components/overlay/Toast/toast', label: 'Toast' },
+            {
+              type: 'doc',
+              id: 'components/overlay/Tray/tray',
+              label: 'Tray',
+            },
             { type: 'doc', id: 'components/overlay/Tooltip/tooltip', label: 'Tooltip' },
           ],
         },
@@ -303,8 +346,18 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
+              id: 'components/navigation/PageFooter/pageFooter',
+              label: 'PageFooter',
+            },
+            {
+              type: 'doc',
               id: 'components/navigation/SegmentedTabs/segmentedTabs',
               label: 'SegmentedTabs',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/SectionHeader/sectionHeader',
+              label: 'SectionHeader',
             },
             {
               type: 'doc',
@@ -340,6 +393,11 @@ const sidebars: SidebarsConfig = {
               type: 'doc',
               id: 'components/navigation/TabbedChips/tabbedChips',
               label: 'TabbedChips',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/Tour/tour',
+              label: 'Tour',
             },
           ],
         },

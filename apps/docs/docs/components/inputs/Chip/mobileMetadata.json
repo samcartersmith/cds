@@ -1,0 +1,15 @@
+{
+  "import": "import { Chip } from '@cbhq/cds-mobile/chips/Chip'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/chips/Chip.tsx",
+  "description": "A Chip is a compact element that represents an input, attribute, or action. Chips allow users to enter information, make selections, filter content, or trigger actions.",
+  "relatedComponents": [
+    {
+      "label": "InputChip",
+      "url": "/components/inputs/InputChip/"
+    },
+    {
+      "label": "SelectChip",
+      "url": "/components/inputs/SelectChip/"
+    }
+  ]
+}

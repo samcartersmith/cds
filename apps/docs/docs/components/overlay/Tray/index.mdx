@@ -1,0 +1,25 @@
+---
+id: tray
+title: Tray
+platform_switcher_options: { web: false, mobile: true }
+hide_title: true
+---
+
+import { VStack } from '@cbhq/cds-web2/layout';
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
+
+import mobilePropsToc from ':docgen/cds-mobile2/overlays/tray/Tray/toc-props';
+import MobilePropsTable from './_mobilePropsTable.mdx';
+import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
+import mobileMetadata from './mobileMetadata.json';
+
+<VStack gap={5}>
+  <ComponentHeader title="Tray" mobileMetadata={mobileMetadata} />
+  <ComponentTabsContainer
+    mobilePropsTable={<MobilePropsTable />}
+    mobileExamples={<MobileExamples />}
+    mobileExamplesToc={mobileExamplesToc}
+    mobilePropsToc={mobilePropsToc}
+  />
+</VStack>{' '}
