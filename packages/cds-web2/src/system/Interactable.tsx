@@ -189,9 +189,9 @@ export const Interactable: InteractableComponent = forwardRef<
     {
       as,
       background = 'transparent',
-      block,
       borderColor = background,
-      borderWidth,
+      borderWidth = 100,
+      block,
       className,
       disabled,
       loading,
