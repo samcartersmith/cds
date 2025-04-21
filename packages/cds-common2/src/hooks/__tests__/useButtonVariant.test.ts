@@ -19,7 +19,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fgInverse',
       backgroundColor: 'bgPrimary',
-      borderColor: 'transparent',
+      borderColor: 'bgPrimary',
     });
   });
   it('returns correct styles for variant: secondary, transparent: false', () => {
@@ -30,7 +30,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fg',
       backgroundColor: 'bgSecondary',
-      borderColor: 'transparent',
+      borderColor: 'bgSecondary',
     });
   });
   it('returns correct styles for variant: foregroundMuted, transparent: false', () => {
@@ -52,7 +52,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fgInverse',
       backgroundColor: 'bgPositive',
-      borderColor: 'transparent',
+      borderColor: 'bgPositive',
     });
   });
   it('returns correct styles for variant: negative, transparent: false', () => {
@@ -63,7 +63,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fgInverse',
       backgroundColor: 'bgNegative',
-      borderColor: 'transparent',
+      borderColor: 'bgNegative',
     });
   });
 
@@ -76,7 +76,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fgPrimary',
       backgroundColor: 'bg',
-      borderColor: 'transparent',
+      borderColor: 'bg',
     });
   });
   it('returns correct styles for variant: secondary, transparent: true', () => {
@@ -87,7 +87,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fg',
       backgroundColor: 'bg',
-      borderColor: 'transparent',
+      borderColor: 'bg',
     });
   });
   it('returns correct styles for variant: foregroundMuted, transparent: true', () => {
@@ -98,7 +98,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fgMuted',
       backgroundColor: 'bg',
-      borderColor: 'transparent',
+      borderColor: 'bg',
     });
   });
   it('returns correct styles for variant: positive, transparent: true', () => {
@@ -109,7 +109,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fgPositive',
       backgroundColor: 'bg',
-      borderColor: 'transparent',
+      borderColor: 'bg',
     });
   });
   it('returns correct styles for variant: negative, transparent: true', () => {
@@ -120,7 +120,7 @@ describe('useButtonVariant', () => {
     expect(value).toStrictEqual({
       color: 'fgNegative',
       backgroundColor: 'bg',
-      borderColor: 'transparent',
+      borderColor: 'bg',
     });
   });
 });

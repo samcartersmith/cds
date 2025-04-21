@@ -26,6 +26,8 @@ export const Button = memo(
       color: customColor,
       children,
       compact,
+      borderRadius = compact ? 700 : 900,
+      borderWidth = 100,
       endIcon,
       feedback = compact ? 'light' : 'normal',
       loading,
@@ -53,10 +55,7 @@ export const Button = memo(
 
     const color = customColor ?? foregroundColor;
 
-    const { borderRadius, minHeight, iconSize } = useMemo(
-      () => getButtonSizeProps({ compact }),
-      [compact],
-    );
+    const { minHeight, iconSize } = useMemo(() => getButtonSizeProps({ compact }), [compact]);
 
     const { spacingStart, spacingEnd, offsetStart, offsetEnd } = useMemo(
       () => getButtonSpacingProps({ compact, flush, startIcon, endIcon }),
@@ -73,12 +72,8 @@ export const Button = memo(
     );
 
     const justifyContent = useMemo(() => {
-      if (flush) {
-        return 'flex-start';
-      }
-      if (startIcon || endIcon) {
-        return 'space-between';
-      }
+      if (flush) return 'flex-start';
+      if (startIcon || endIcon) return 'space-between';
       return 'center';
     }, [endIcon, flush, startIcon]);
 
@@ -111,7 +106,7 @@ export const Button = memo(
         block={block}
         borderColor={borderColor}
         borderRadius={borderRadius}
-        borderWidth={100}
+        borderWidth={borderWidth}
         feedback={feedback}
         loading={loading}
         noScaleOnPress={noScaleOnPress}

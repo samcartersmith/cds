@@ -15,12 +15,12 @@ const variants: ButtonVariantConfig = {
   primary: {
     color: 'fgInverse',
     backgroundColor: 'bgPrimary',
-    borderColor: 'transparent',
+    borderColor: 'bgPrimary',
   },
   secondary: {
     color: 'fg',
     backgroundColor: 'bgSecondary',
-    borderColor: 'transparent',
+    borderColor: 'bgSecondary',
   },
   foregroundMuted: {
     color: 'fgMuted',
@@ -30,12 +30,12 @@ const variants: ButtonVariantConfig = {
   positive: {
     color: 'fgInverse',
     backgroundColor: 'bgPositive',
-    borderColor: 'transparent',
+    borderColor: 'bgPositive',
   },
   negative: {
     color: 'fgInverse',
     backgroundColor: 'bgNegative',
-    borderColor: 'transparent',
+    borderColor: 'bgNegative',
   },
 };
 
@@ -43,27 +43,27 @@ const transparentVariants: ButtonVariantConfig = {
   primary: {
     color: 'fgPrimary',
     backgroundColor: 'bg',
-    borderColor: 'transparent',
+    borderColor: 'bg',
   },
   secondary: {
     color: 'fg',
     backgroundColor: 'bg',
-    borderColor: 'transparent',
+    borderColor: 'bg',
   },
   foregroundMuted: {
     color: 'fgMuted',
     backgroundColor: 'bg',
-    borderColor: 'transparent',
+    borderColor: 'bg',
   },
   positive: {
     color: 'fgPositive',
     backgroundColor: 'bg',
-    borderColor: 'transparent',
+    borderColor: 'bg',
   },
   negative: {
     color: 'fgNegative',
     backgroundColor: 'bg',
-    borderColor: 'transparent',
+    borderColor: 'bg',
   },
 };
 
