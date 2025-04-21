@@ -86,7 +86,7 @@ export const Link: LinkComponent = memo(
         as,
         background = 'transparent',
         className,
-        display = 'inline-flex',
+        display = 'inline',
         borderWidth = 0,
         margin = 0,
         padding = 0,

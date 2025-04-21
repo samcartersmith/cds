@@ -59,7 +59,7 @@ describe('TableCaption', () => {
 
     const caption = screen.getByText(DEFAULT_CAPTION);
     expect(caption.tagName.toLowerCase()).toBe('h2');
-    expect(caption.className).toContain('inline-flex');
+    expect(caption.className).toContain('inline');
     expect(caption.className).toContain('currentColor');
     expect(caption.className).toContain('title3');
     expect(caption.className).toContain('start');

@@ -153,7 +153,7 @@ export const Text: TextComponent = memo(
         font = 'inherit',
         fontFamily = font,
         color = 'fg',
-        display = 'inline-flex',
+        display = 'inline',
         textAlign = 'start',
         numberOfLines,
         style,
