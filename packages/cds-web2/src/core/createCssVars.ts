@@ -1,10 +1,8 @@
-export const createCssVars = <Vars extends Record<string, unknown>, Prefix extends string>(
-  vars: Vars,
-  prefix: Prefix,
-) =>
+/** Takes a JS object and formats its keys as CSS variables. */
+export const createCssVars = (vars: Record<string, unknown>, prefix: string) =>
   Object.fromEntries(
     Object.entries(vars).map(([key, value]) => [
       `--${prefix ? `${prefix}-` : ''}${key}`,
       typeof value === 'number' ? value + 'px' : value,
     ]),
-  ) as { [key in string & keyof Vars as `--${Prefix}-${key}`]: Vars[key] };
+  );

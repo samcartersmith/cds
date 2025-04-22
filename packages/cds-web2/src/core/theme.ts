@@ -29,6 +29,10 @@ export type Theme = ThemeConfig & {
 
 /** Maps our StyleVars to their CSS variable prefixes. For example, the names of CSS vars generated from `iconSize` vars will be prefixed with `--iconSize-`. */
 export const styleVarPrefixes = {
+  lightSpectrum: 'light',
+  darkSpectrum: 'dark',
+  lightColor: 'lightColor',
+  darkColor: 'darkColor',
   spectrum: '',
   color: 'color',
   space: 'space',
@@ -44,13 +48,7 @@ export const styleVarPrefixes = {
   textTransform: 'textTransform',
   shadow: 'shadow',
   controlSize: 'controlSize',
-} as const satisfies Record<
-  Exclude<
-    keyof Theme,
-    'activeColorScheme' | 'lightSpectrum' | 'darkSpectrum' | 'lightColor' | 'darkColor'
-  >,
-  string
->;
+} as const satisfies Record<Exclude<keyof Theme, 'activeColorScheme'>, string>;
 
 /** Used to generate intellisense via ThemeCSSVars below. */
 type ThemeObjectCssVars = {
