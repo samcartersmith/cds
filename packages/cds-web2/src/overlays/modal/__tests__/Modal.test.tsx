@@ -357,9 +357,11 @@ describe('Modal', () => {
         <MockModal visible onRequestClose={jest.fn()} />
       </DefaultThemeProvider>,
     );
-    expect(screen.getByText(loremIpsum)).not.toBeVisible();
 
-    await waitFor(() => expect(screen.getByText(loremIpsum)).toBeVisible());
+    const text = loremIpsum.trim();
+    expect(screen.getByText(text)).not.toBeVisible();
+
+    await waitFor(() => expect(screen.getByText(text)).toBeVisible());
   });
 
   it('renders modal footer', async () => {
