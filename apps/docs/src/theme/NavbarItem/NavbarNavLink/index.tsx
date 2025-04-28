@@ -13,7 +13,12 @@ import styles from './styles.module.css';
 
 export type NavbarNavLinkProps = Pick<
   Props,
-  'activeBasePath' | 'activeBaseRegex' | 'label' | 'html' | 'prependBaseUrlToHref'
+  | 'activeBasePath'
+  | 'activeBaseRegex'
+  | 'label'
+  | 'html'
+  | 'prependBaseUrlToHref'
+  | 'isDropdownLink'
 > &
   Omit<DocusaurusLinkProps, 'ref' | 'color'>;
 
@@ -25,6 +30,9 @@ export default function NavbarNavLink({
   label,
   prependBaseUrlToHref,
   className,
+  // This prop is injected by Docusaurus's internal navbar logic, even though we don't use it directly.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  isDropdownLink,
   ...props
 }: NavbarNavLinkProps): JSX.Element {
   const toUrl = useBaseUrl(to);
