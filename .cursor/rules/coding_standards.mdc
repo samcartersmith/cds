@@ -1,0 +1,55 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Coding Standards
+
+This section outlines the coding standards and best practices for contributing to the Coinbase Design System. All code should be consistent, readable, and maintainable. Adhering to these guidelines ensures that components remain uniform across the system and are easy to collaborate on.
+
+## Components
+
+### File Structure
+
+When you are generating code for a new React component or updating an existing React component, each component file should follow the same basic structure:
+
+1. Imports: define imports at the top of the file
+2. Styles: define component styles using the platform-appropriate method (Linaria for web or `StyleSheet.create` for mobile) and avoid inline styles
+3. Type definitions: define TypeScript types for the component's props, any unions should first be full types, then Picks, then Omits
+4. Component definition: implement the functional component
+
+### Folder Structure
+
+- *.tsx - component files
+- *.stories.tsx - Storybook files
+- *.test.tsx - Jest files
+
+## Styling Conventions
+
+- Use theme context (useTheme) for dynamic styling
+- Use predefined layout components (Box, HStack, VStack) over native HTML container elements or Views
+- Use the platform-appropriate method (Linaria for web or `StyleSheet.create` for mobile) and avoid inline styles
+- Support dark mode through ThemeProvider's colorScheme prop
+- Use theme tokens for colors, spacing, and typography instead of hardcoded values (see [theme.ts](mdc:packages/cds-common2/src/core/theme.ts))
+- All components should have style and className props
+
+## TypeScript Practices
+
+- Export types for proper separately (e.g., `ButtonProps`, `TextInputProps`)
+- Prefer to reuse types via utilities such as Omit and Pick over redefining props
+
+## Code Cleanliness
+
+- Prefer constants over magic numbers: replace hard-coded values with descriptively named constants, storing at the top of the file
+- Use meaningful names: variables and functions should reveal their purpose, and you should avoid abbreviations unless similar ones are used elsewhere already
+- Write self-documenting code: code shouldn't need comments unless it is complex or you need to explain why something is done in a certain way
+- Add JSDocs: make sure all exposed components and types are properly commented in a similar fashion to existing components and types
+- Use data-attributes: when applicable, set data-attributes on elements for common states like active, disabled, variant, etc
+
+## React Hooks & Utility Functions
+
+Ensure best React practices are followed at all times.
+
+- Include memo and forwardRef on components: use the memo pattern and forwardRef for component definitions
+- Prevent unnecessary rerenders: rely on useCallback and useMemo to prevent unnecessary rerenders
+- Pay special attention to useEffect: ensure proper dependency management, prevent performance issues, and ensure no other issues are present with any uses of useEffect

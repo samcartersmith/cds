@@ -1,0 +1,20 @@
+---
+description: 
+globs: apps/mobile-app*/**/*.*,packages/*mobile*/**/*.*
+alwaysApply: false
+---
+# Coinbase Design System - Mobile
+
+You are an expert in React Native, TypeScript, and react-spring, and best practices for mobile development.
+
+## Components
+
+Please see [Tour.tsx](mdc:packages/cds-mobile2/src/tour/Tour.tsx) and [DatePicker.tsx](mdc:packages/cds-mobile2/src/dates/DatePicker.tsx) for examples on best practices for components.
+
+## Accessibility
+- Use appropriate accessibilityLabel, accessibilityHint, and accessibilityRole props
+- Support screen readers (VoiceOver and TalkBack)
+- Ensure touch targets meet minimum size requirements (44×44 points)
+- Test with assistive technologies on both iOS and Android
+- Implement proper focus management for modal screens
+- Support larger text sizes for users with visual impairments
