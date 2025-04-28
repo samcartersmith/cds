@@ -21,14 +21,14 @@ const Child = ({ expectedColorScheme }: { expectedColorScheme: ColorScheme }) =>
             Secondary text
           </Text>
         </VStack>
-        <VStack bordered background="bg" borderRadius={400} elevation={1} gap={1} padding={2}>
+        <VStack bordered borderRadius={400} elevation={1} gap={1} padding={2}>
           <Text as="p" display="block" font="body">
             Elevation 1
           </Text>
           <Button variant="secondary">Secondary button</Button>
           <Button variant="primary">Primary button</Button>
         </VStack>
-        <VStack bordered background="bg" borderRadius={400} elevation={2} gap={1} padding={2}>
+        <VStack bordered borderRadius={400} elevation={2} gap={1} padding={2}>
           <Text as="p" display="block" font="body">
             Elevation 2
           </Text>

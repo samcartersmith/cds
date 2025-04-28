@@ -62,7 +62,7 @@ const Transparent = () => {
         </Text>
       </Pressable>
       <Pressable transparentWhileInactive as="button" background="bgPrimary">
-        <Text as="p" color="fgInverse" display="block" font="body" padding={1}>
+        <Text as="p" display="block" font="body" padding={1}>
           transparentWhileInactive
         </Text>
       </Pressable>

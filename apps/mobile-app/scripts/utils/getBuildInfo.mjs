@@ -51,7 +51,7 @@ export function getBuildInfo() {
   const android = {
     sdkVersions: {
       platform: '34',
-      buildTools: '35.0.0-rc1',
+      buildTools: '35.0.0',
       systemImage: '30',
     },
     zipFile: `${outputName}.zip`,
