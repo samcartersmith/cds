@@ -59,7 +59,8 @@ describe('Popover', () => {
   });
   it('renders content when subject is pressed', async () => {
     const pressSpy = jest.fn();
-    render(<PopoverExample visible onPressSubject={pressSpy} />);
+    render(<PopoverExample onPressSubject={pressSpy} />);
+    expect(screen.queryByTestId(CONTENT_TEST_ID)).not.toBeInTheDocument();
     fireEvent.click(await screen.findByTestId(SUBJECT_TEST_ID));
 
     expect(await screen.findByTestId(CONTENT_TEST_ID)).toBeInTheDocument();

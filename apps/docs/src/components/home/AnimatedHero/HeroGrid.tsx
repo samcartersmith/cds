@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { animated, useSpring, useSprings } from '@react-spring/web';
-import { Grid } from '@cbhq/cds-web2';
+import { Grid } from '@cbhq/cds-web2/layout/Grid';
 
 import {
   autoTransitionIntervalMs,

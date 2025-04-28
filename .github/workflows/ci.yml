@@ -100,7 +100,7 @@ jobs:
 
   storybook-a11y:
     if: ${{ github.event_name == 'pull_request' }}
-    name: Storybook a11y
+    name: Storybook A11y
     runs-on: [medium, amd64]
     steps:
       - uses: actions/checkout@v4

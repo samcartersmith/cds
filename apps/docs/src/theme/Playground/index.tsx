@@ -3,7 +3,7 @@ import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import { ErrorBoundaryErrorMessageFallback, usePrismTheme } from '@docusaurus/theme-common';
-import { Button } from '@cbhq/cds-web2';
+import { Button } from '@cbhq/cds-web2/buttons/Button';
 import { Collapsible } from '@cbhq/cds-web2/collapsible/Collapsible';
 import { HStack } from '@cbhq/cds-web2/layout/HStack';
 import { VStack } from '@cbhq/cds-web2/layout/VStack';

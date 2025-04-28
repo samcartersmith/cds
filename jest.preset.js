@@ -1,20 +1,10 @@
 const nxPreset = require('@nx/jest/preset');
 
-function isCI() {
-  return !!process.env.CI || !!process.env.BUILDKITE;
-}
+const isCI = process.env.CI === 'true' || process.env.BUILDKITE === 'true';
 
 const config = {
   ...nxPreset,
   resolver: '@nx/jest/plugins/resolver',
-  coverageThreshold: {
-    global: {
-      branches: 5,
-      functions: 5,
-      lines: 5,
-      statements: 5,
-    },
-  },
   moduleNameMapper: {
     '\\.(scss|css|jpg|jpeg|png|gif)$': 'identity-obj-proxy',
   },
@@ -44,11 +34,15 @@ const config = {
   restoreMocks: true,
   passWithNoTests: true,
   cacheDirectory: '.nx/cache/tools/jestTransforms',
+  coverageThreshold: {
+    global: {
+      branches: 5,
+      functions: 5,
+      lines: 5,
+      statements: 5,
+    },
+  },
+  coverageReporters: isCI ? ['text-summary', ['text', { file: 'coverage.txt' }]] : undefined,
 };
-
-if (isCI()) {
-  // Only output a coverage summary, and write the full coverage text to a file for optional storage in artifacts:
-  config.coverageReporters = ['text-summary', ['text', { file: 'coverage.txt' }]];
-}
 
 module.exports = config;

@@ -53,7 +53,7 @@ export const PortalHost: React.FC = memo(() => {
     // This happens when multiple PortalProvider are defined
     return () => {
       // Remove element from dom
-      target?.removeChild(portalRoot);
+      portalRoot.remove();
     };
   }, [portalRoot]);
 

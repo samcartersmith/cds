@@ -4,9 +4,8 @@ import { type SharedProps } from '@cbhq/cds-common2';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons';
-import { HStack, VStack, VStackProps } from '../layout';
-import { Pressable } from '../system';
-import { HapticFeedbackType } from '../types';
+import { HStack, VStack, type VStackProps } from '../layout';
+import { type HapticFeedbackType, Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
 export const SEPARATOR = 'SEPARATOR';

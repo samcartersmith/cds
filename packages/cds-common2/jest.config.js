@@ -2,10 +2,13 @@ const d3 = ['d3', 'd3-.+', 'internmap'];
 
 const esModules = ['@cbhq', ...d3];
 
-export default {
+/** @type {import('jest').Config} */
+const config = {
+  preset: '../../jest.preset.js',
+  displayName: 'cds-common',
   coveragePathIgnorePatterns: ['<rootDir>/src/tokens'],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
-  displayName: 'cds-common',
-  preset: '../../jest.preset.js',
   transformIgnorePatterns: [`node_modules/(?!(${esModules.join('|')}))`],
 };
+
+export default config;

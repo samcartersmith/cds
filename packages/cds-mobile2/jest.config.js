@@ -1,5 +1,8 @@
+import os from 'os';
+
 const d3 = ['d3', 'd3-.+', 'internmap'];
-const native = [
+
+const reactNative = [
   'jest-react-native',
   'react-native',
   '@react-native',
@@ -8,9 +11,14 @@ const native = [
   '@bugsnag/react-native',
 ];
 
-const esModules = ['@cbhq', ...native, ...d3];
+const esModules = ['@cbhq', ...reactNative, ...d3];
 
-export default {
+const isCI = process.env.CI === 'true' || process.env.BUILDKITE === 'true';
+
+/** @type {import('jest').Config} */
+const config = {
+  preset: '../../jest.preset-mobile.js',
+  displayName: 'cds-mobile',
   coveragePathIgnorePatterns: [
     '<rootDir>/src/illustrations/images',
     '.stories.tsx',
@@ -18,8 +26,6 @@ export default {
     '.perf-test',
   ],
   coverageReporters: ['json', 'text-summary', 'text', 'json-summary'],
-  displayName: 'cds-mobile',
-  preset: '../../jest.preset-mobile.js',
   // https://docs.swmansion.com/react-native-gesture-handler/docs/guides/testing
   setupFiles: [
     '<rootDir>/../../node_modules/react-native-gesture-handler/jestSetup.js',
@@ -33,3 +39,7 @@ export default {
   },
   transformIgnorePatterns: [`node_modules/(?!(${esModules.join('|')}))`],
 };
+
+if (isCI) config.maxWorkers = Math.floor(os.availableParallelism() / 2);
+
+export default config;

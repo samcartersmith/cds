@@ -108,24 +108,32 @@ export const CardBody = memo(function CardBody({
           paddingEnd={spacingProps.paddingEnd}
           paddingStart={spacingProps.paddingStart}
         >
-          <Text
-            as="h3"
-            font="headline"
-            numberOfLines={numberOfLines}
-            testID={`${testID}-title`}
-            transform="none"
-          >
-            {title}
-          </Text>
-          <Text
-            color="fgMuted"
-            font="label2"
-            numberOfLines={numberOfLines}
-            testID={`${testID}-description`}
-            transform="none"
-          >
-            {description}
-          </Text>
+          {typeof title === 'string' ? (
+            <Text
+              as="h3"
+              font="headline"
+              numberOfLines={numberOfLines}
+              testID={`${testID}-title`}
+              transform="none"
+            >
+              {title}
+            </Text>
+          ) : (
+            title
+          )}
+          {typeof description === 'string' ? (
+            <Text
+              color="fgMuted"
+              font="label2"
+              numberOfLines={numberOfLines}
+              testID={`${testID}-description`}
+              transform="none"
+            >
+              {description}
+            </Text>
+          ) : (
+            description
+          )}
           {action}
         </VStack>
       </VStack>

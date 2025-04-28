@@ -1,4 +1,5 @@
 import React from 'react';
+import { ColorScheme } from '@cbhq/cds-common2/core/theme';
 
 import { Button } from '../../buttons';
 import { ThemeConfig } from '../../core/theme';
@@ -8,9 +9,8 @@ import { defaultTheme } from '../../themes/defaultTheme';
 import { Text } from '../../typography/Text';
 import { ThemeProvider, useThemeProviderStyles } from '../ThemeProvider';
 
-const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
+const Child = ({ expectedColorScheme }: { expectedColorScheme: ColorScheme }) => {
   const theme = useTheme();
-  const { className } = useThemeProviderStyles(theme);
   return (
     <VStack background="bg">
       <VStack gap={3} padding={1}>
@@ -36,10 +36,10 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
           <Button variant="primary">Primary button</Button>
         </VStack>
         <Text as="p" display="block" font="body">
-          ClassName value at nested ThemeProvider parent level: {className}
+          ClassName value at nested ThemeProvider parent level: {theme.activeColorScheme}
         </Text>
         <Text as="p" display="block" font="body">
-          Should be {expectedSpectrum}
+          Should be {expectedColorScheme}
         </Text>
       </VStack>
     </VStack>
@@ -48,12 +48,8 @@ const Child = ({ expectedSpectrum }: { expectedSpectrum: string }) => {
 
 const StyledThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const theme = useTheme();
-  const props = useThemeProviderStyles(theme);
-  return (
-    <div {...props} className={props.className}>
-      {children}
-    </div>
-  );
+  const style = useThemeProviderStyles(theme);
+  return <div style={style}>{children}</div>;
 };
 
 const ChildThemeProviderDark = () => {
@@ -61,7 +57,7 @@ const ChildThemeProviderDark = () => {
   return (
     <ThemeProvider activeColorScheme="dark" theme={theme}>
       <StyledThemeProvider>
-        <Child expectedSpectrum="dark" />
+        <Child expectedColorScheme="dark" />
       </StyledThemeProvider>
     </ThemeProvider>
   );
@@ -90,7 +86,7 @@ const ChildThemeWithOverrides = () => {
       <Text as="p" display="block" font="body">
         With theme overrides
       </Text>
-      <Child expectedSpectrum="light" />
+      <Child expectedColorScheme="light" />
     </ThemeProvider>
   );
 };
@@ -101,7 +97,7 @@ const ChildThemeWithOverridesDark = () => {
       <Text as="p" display="block" font="body">
         With theme overrides
       </Text>
-      <Child expectedSpectrum="dark" />
+      <Child expectedColorScheme="dark" />
     </ThemeProvider>
   );
 };
@@ -114,7 +110,7 @@ const ChildThemeWithNestedOverrides = () => {
         <Text as="p" display="block" font="body">
           With nested theme overrides
         </Text>
-        <Child expectedSpectrum="light" />
+        <Child expectedColorScheme="light" />
       </ThemeProvider>
     </ThemeProvider>
   );
@@ -128,7 +124,7 @@ const ChildThemeWithNestedOverridesDark = () => {
         <Text as="p" display="block" font="body">
           With nested theme overrides
         </Text>
-        <Child expectedSpectrum="dark" />
+        <Child expectedColorScheme="dark" />
       </ThemeProvider>
     </ThemeProvider>
   );
@@ -139,7 +135,7 @@ export const ThemeProviderTest = () => {
   return (
     <ThemeProvider activeColorScheme="light" theme={theme}>
       <VStack gap={3}>
-        <Child expectedSpectrum="light" />
+        <Child expectedColorScheme="light" />
         <ChildThemeProviderDark />
         <ChildThemeWithOverrides />
         <ChildThemeWithOverridesDark />

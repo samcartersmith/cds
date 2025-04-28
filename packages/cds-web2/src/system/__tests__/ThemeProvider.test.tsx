@@ -7,12 +7,14 @@ describe('ThemeProvider', () => {
   const testID = 'theme-wrapper';
   it('applies theme css variables', () => {
     render(
-      <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
-        app content
-      </ThemeProvider>,
+      <div data-testid={testID}>
+        <ThemeProvider activeColorScheme="light" theme={defaultTheme}>
+          app content
+        </ThemeProvider>
+      </div>,
     );
     const wrapper = screen.getByTestId(testID);
-    expect(wrapper.innerHTML).toContain(`--color-fg:rgb(${defaultTheme.lightSpectrum.gray100})`);
+    expect(wrapper.innerHTML).toContain(`--color-fg: rgb(${defaultTheme.lightSpectrum.gray100})`);
   });
 
   it('applies default className', async () => {
@@ -35,12 +37,14 @@ describe('ThemeProvider', () => {
 
   it('applies display="contents" correctly', () => {
     render(
-      <ThemeProvider activeColorScheme="light" display="contents" theme={defaultTheme}>
-        app content
-      </ThemeProvider>,
+      <div data-testid={testID}>
+        <ThemeProvider activeColorScheme="light" display="contents" theme={defaultTheme}>
+          app content
+        </ThemeProvider>
+      </div>,
     );
 
-    const themeWrapper = screen.getByTestId(testID);
+    const themeWrapper = screen.getByTestId(testID).children[0];
     expect(themeWrapper).toHaveStyle({ display: 'contents' });
   });
 });

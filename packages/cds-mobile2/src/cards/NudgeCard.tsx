@@ -95,24 +95,32 @@ export const NudgeCard = memo(
           {hasMedia && mediaPosition === 'left' ? renderMedia : null}
           <VStack alignItems="flex-start" flexGrow={1} flexShrink={1} gap={2} maxWidth={maxWidth}>
             <VStack gap={0.5} maxWidth="100%" paddingTop={hasMedia ? 0 : 2}>
-              <Text
-                ellipsize="tail"
-                font="headline"
-                numberOfLines={numberOfLines}
-                testID={`${testID}-title`}
-                textTransform="none"
-              >
-                {title}
-              </Text>
-              <Text
-                ellipsize="tail"
-                font="label2"
-                numberOfLines={numberOfLines}
-                testID={`${testID}-description`}
-                textTransform="none"
-              >
-                {description}
-              </Text>
+              {typeof title === 'string' ? (
+                <Text
+                  ellipsize="tail"
+                  font="headline"
+                  numberOfLines={numberOfLines}
+                  testID={`${testID}-title`}
+                  textTransform="none"
+                >
+                  {title}
+                </Text>
+              ) : (
+                title
+              )}
+              {typeof description === 'string' ? (
+                <Text
+                  ellipsize="tail"
+                  font="label2"
+                  numberOfLines={numberOfLines}
+                  testID={`${testID}-description`}
+                  textTransform="none"
+                >
+                  {description}
+                </Text>
+              ) : (
+                description
+              )}
             </VStack>
             {action ? renderAction : null}
           </VStack>

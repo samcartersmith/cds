@@ -19,7 +19,9 @@ type CreateFeatureEntryCardParams<OnPressFn> = {
   HStack: React.ComponentType<React.PropsWithChildren<CardBoxProps>>;
   ProgressCircle: React.ComponentType<ProgressCircleBaseProps>;
   ProgressBar: React.ComponentType<ProgressBaseProps>;
-  Text: React.ComponentType<React.PropsWithChildren<TextBaseProps & { color?: ThemeVars.Color }>>;
+  TextBody: React.ComponentType<
+    React.PropsWithChildren<TextBaseProps & { color?: ThemeVars.Color }>
+  >;
   TextHeadline: React.ComponentType<React.PropsWithChildren<TextBaseProps>>;
   TextLabel2: React.ComponentType<
     React.PropsWithChildren<TextBaseProps & { color?: ThemeVars.Color }>
@@ -33,7 +35,7 @@ export function createDataCard<OnPressFn>({
   HStack,
   ProgressBar,
   ProgressCircle,
-  Text,
+  TextBody,
   TextHeadline,
   TextLabel2,
 }: CreateFeatureEntryCardParams<OnPressFn>) {
@@ -52,7 +54,7 @@ export function createDataCard<OnPressFn>({
     ...cardProps
   }: DataCardBaseProps & { onPress?: OnPressFn }) {
     const content = useMemo(() => {
-      const TextEndLabel = progressVariant === 'bar' ? TextLabel2 : Text;
+      const TextEndLabel = progressVariant === 'bar' ? TextLabel2 : TextBody;
       return (
         <HStack justifyContent="space-between">
           {!!startLabelProp && (

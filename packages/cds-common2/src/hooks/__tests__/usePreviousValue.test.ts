@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { usePreviousValue } from '../usePreviousValue';
 
@@ -18,13 +18,22 @@ describe('usePreviousValue', () => {
     const { result } = renderHook(() => useMockPreviousValue());
     expect(result.current.previousValue).toBeUndefined();
     expect(result.current.currentValue).toBe(false);
-    result.current.setCurrentValue(true);
+
+    act(() => {
+      result.current.setCurrentValue(true);
+    });
     expect(result.current.previousValue).toBe(false);
     expect(result.current.currentValue).toBe(true);
-    result.current.setCurrentValue(false);
+
+    act(() => {
+      result.current.setCurrentValue(false);
+    });
     expect(result.current.previousValue).toBe(true);
     expect(result.current.currentValue).toBe(false);
-    result.current.setCurrentValue(false);
+
+    act(() => {
+      result.current.setCurrentValue(false);
+    });
     expect(result.current.previousValue).toBe(false);
     expect(result.current.currentValue).toBe(false);
   });

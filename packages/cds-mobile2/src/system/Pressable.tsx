@@ -11,10 +11,11 @@ import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
 import { type BoxBaseProps } from '../layout/Box';
-import { HapticFeedbackType } from '../types';
 import { Haptics } from '../utils/haptics';
 
 import { Interactable, type InteractableBaseProps } from './Interactable';
+
+export type HapticFeedbackType = 'light' | 'normal' | 'heavy' | 'none';
 
 export type LinkableProps = Pick<
   BasePressableProps,

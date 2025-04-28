@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import React, { createContext, useContext, useId, useMemo } from 'react';
-import { cx } from '@linaria/core';
+import React, { createContext, useContext, useMemo } from 'react';
 import type { ColorScheme } from '@cbhq/cds-common2/core/theme';
 
-import { createCssString } from '../core/createCssString';
 import { createThemeCssVars } from '../core/createThemeCssVars';
 import type { Theme, ThemeConfig, ThemeCSSVars } from '../core/theme';
 
@@ -25,29 +23,15 @@ type ThemeManagerProps = {
 };
 
 export const useThemeProviderStyles = (theme: Theme) => {
-  const id = useId();
-  return useMemo(() => {
-    const className = `cds-theme-${id.replaceAll(':', '')}`;
-    const themeCssVars = createThemeCssVars(theme);
-    const css = createCssString(themeCssVars);
-    return { className, css };
-  }, [id, theme]);
+  const style = useMemo(() => createThemeCssVars(theme), [theme]);
+  return style;
 };
 
 const ThemeManager = ({ display, children, theme }: ThemeManagerProps) => {
-  const { className, css } = useThemeProviderStyles(theme);
-  const style = useMemo(() => ({ display }), [display]);
-  const styleElement = useMemo(
-    () => <style type="text/css">{`.${className}{${css}}`}</style>,
-    [className, css],
-  );
+  const style = useThemeProviderStyles(theme);
+  const styles = useMemo(() => ({ ...style, display }), [style, display]);
   return (
-    <div
-      className={cx(className, theme.activeColorScheme)}
-      data-testid="theme-wrapper"
-      style={style}
-    >
-      {styleElement}
+    <div className={theme.activeColorScheme} style={styles}>
       {children}
     </div>
   );

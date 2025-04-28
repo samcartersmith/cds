@@ -5,7 +5,7 @@ import type { Props } from '@theme/DocSidebar/Desktop';
 import CollapseButton from '@theme/DocSidebar/Desktop/CollapseButton';
 import Content from '@theme/DocSidebar/Desktop/Content';
 import Logo from '@theme/Logo';
-import { VStack } from '@cbhq/cds-web2';
+import { VStack } from '@cbhq/cds-web2/layout/VStack';
 
 import styles from './styles.module.css';
 

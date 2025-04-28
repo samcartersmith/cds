@@ -148,7 +148,7 @@ export const HexagonClipPathPortal: React.FC = memo(() => {
     // This happens when multiple PortalProvider are defined
     return () => {
       // Remove element from dom
-      target?.removeChild(hexagonClipPathContainer);
+      hexagonClipPathContainer.remove();
     };
   }, [hexagonClipPathContainer]);
 

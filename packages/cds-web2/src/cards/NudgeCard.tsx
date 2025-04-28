@@ -207,26 +207,34 @@ export const NudgeCard = ({
         {hasMedia && mediaPosition === 'left' && renderMedia}
         <VStack alignItems="flex-start" flexShrink={1} gap={2} maxWidth={maxWidth}>
           <VStack gap={0.5} maxWidth="100%" paddingTop={hasMedia ? 0 : 2}>
-            <Text
-              as="h3"
-              display="block"
-              font="headline"
-              numberOfLines={numberOfLines}
-              testID={`${testID}-title`}
-              transform="none"
-            >
-              {title}
-            </Text>
-            <Text
-              as="p"
-              display="block"
-              font="label2"
-              numberOfLines={numberOfLines}
-              testID={`${testID}-description`}
-              transform="none"
-            >
-              {description}
-            </Text>
+            {typeof title === 'string' ? (
+              <Text
+                as="h3"
+                display="block"
+                font="headline"
+                numberOfLines={numberOfLines}
+                testID={`${testID}-title`}
+                transform="none"
+              >
+                {title}
+              </Text>
+            ) : (
+              title
+            )}
+            {typeof description === 'string' ? (
+              <Text
+                as="p"
+                display="block"
+                font="label2"
+                numberOfLines={numberOfLines}
+                testID={`${testID}-description`}
+                transform="none"
+              >
+                {description}
+              </Text>
+            ) : (
+              description
+            )}
           </VStack>
           {typeof action === 'string' ? (
             <Pressable background="transparent" onClick={onActionPress} paddingY={1}>

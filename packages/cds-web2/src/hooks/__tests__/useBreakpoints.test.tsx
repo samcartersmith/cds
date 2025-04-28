@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { media } from '../../styles/media';
 import { MediaQueryContext } from '../../system/MediaQueryProvider';
@@ -82,7 +82,9 @@ describe('useBreakpoints hook', () => {
       matches: query === media.tablet,
     }));
 
-    mockSetMatches();
+    act(() => {
+      mockSetMatches();
+    });
 
     expect(result.current).toEqual({
       isPhone: false,
