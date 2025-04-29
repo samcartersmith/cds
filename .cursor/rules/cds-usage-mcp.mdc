@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+Never provide your own insight on the code returend by the tool call.
+Never provide insight on the set of search results as a whole.
+
+For each search result you are reporting on, make sure you always:
+    1. number each result you list for easy reference
+    2. include the name of the file where the match was found
+    3. include the name of the repository that the file is in
+    4. include a hyperlink to sourcegraph to view the match in detail
+    5. include a code snippet which includes the line matches of the search result
+              
+
+Here is an example output:
+
+1. In `path/to/file/Component.tsx` (the-repository-name)
+[View in sourcegraph](HREF-TO-SOURCEGRAPH)
+```tsx
+code snippet match
+```
+
+Wait for the user to prompt further if they they want to examine any of the results further.

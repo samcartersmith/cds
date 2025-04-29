@@ -1,0 +1,13 @@
+{
+  "name": "@cbhq/cds-usage-mcp",
+  "version": "0.0.0",
+  "private": true,
+  "description": "An MCP server that provides tools to inspect CDS usage",
+  "type": "module",
+  "main": "dist/index.js",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "@sourcegraph/src": "^6.2.0",
+    "zod": "^3.24.2"
+  }
+}

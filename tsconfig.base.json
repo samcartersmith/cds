@@ -99,6 +99,12 @@
       "@cbhq/cds-mobile2/*": [
         "packages/cds-mobile2/src/*"
       ],
+      "@cbhq/cds-usage-mcp": [
+        "libs/cds-usage-mcp/src"
+      ],
+      "@cbhq/cds-usage-mcp/*": [
+        "libs/cds-usage-mcp/src/*"
+      ],
       "@cbhq/cds-utils": [
         "packages/utils/src"
       ],

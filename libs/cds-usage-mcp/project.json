@@ -1,0 +1,22 @@
+{
+  "name": "cds-usage-mcp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/cds-usage-mcp/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "tsc --outDir dist"
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./install_cursor.sh",
+        "cwd": "{projectRoot}"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    }
+  }
+}
