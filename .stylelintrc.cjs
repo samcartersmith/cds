@@ -1,29 +1,15 @@
 module.exports = {
-  extends: [
-    'stylelint-config-recommended',
-    'stylelint-prettier/recommended',
-    // NOTE (hannah): autofix doesn't work with 'linaria/stylelint-config'.
-    // Submitted bug report https://github.com/callstack/linaria/issues/664
-    // If remove linaria stylelint config, autofix works.
-    // TODO (hannah): add linaria/stylelint-config back once they fix the autofix issue.
-  ],
+  extends: ['stylelint-config-recommended'],
+  // NOTE: autofix doesnt work properly due to linaria v3 parsing issues.
+  // DO NOT use `--fix` on files with Linaria styles until Linaria is upgraded to v5+.
+  customSyntax: '@linaria/postcss-linaria',
   ignoreFiles: ['**/*.native.*', 'mobile/**'],
   plugins: [
-    'stylelint-prettier',
     'stylelint-a11y',
     'stylelint-high-performance-animation',
     'stylelint-no-unsupported-browser-features',
   ],
   rules: {
-    // formatting
-    'prettier/prettier': true,
-    // for uniformity
-    'color-hex-case': 'lower',
-    'declaration-block-no-shorthand-property-overrides': null,
-    'font-family-name-quotes': 'always-unless-keyword',
-    'font-weight-notation': 'numeric',
-    'length-zero-no-unit': true,
-    // for quality
     'color-named': 'never',
     'max-nesting-depth': 3,
     'selector-pseudo-class-no-unknown': [
@@ -45,5 +31,7 @@ module.exports = {
       { ignoreFontFamilies: ['CoinbaseIcons'] },
     ],
     'property-no-unknown': [true, { ignoreProperties: ['aspect-ratio'] }],
+    'length-zero-no-unit': true,
+    'media-query-no-invalid': null, // Disabled due to false positives from Linaria v3 / Stylelint v15 parser mismatch.
   },
 };

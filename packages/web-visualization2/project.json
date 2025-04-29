@@ -25,6 +25,13 @@
     "report-disabled-eslint-rules": {
       "executor": "@cbhq/prevent-eslint-disable:report"
     },
+    "lint-styles": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint \"**/*.{css,scss,js,jsx,ts,tsx}\" --formatter string",
+        "cwd": "{projectRoot}"
+      }
+    },
     "publish-figma": {
       "executor": "nx:run-commands",
       "options": {
