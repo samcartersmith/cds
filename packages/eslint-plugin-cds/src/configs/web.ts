@@ -1,13 +1,49 @@
 /**
- * For web, Coinbase's cbhq eslint rules use jsx-a11y rules as part of the eslint-plugin-airbnb a11y rules.
- * We need to ensure that we override the jsx-a11y/control-has-associated-label.
+ * For web codebases, our plugin includes jsx-a11y rules.
+ * We override the jsx-a11y/control-has-associated-label rule since we provide our own implementation.
  *
- * Note: We have jsx-a11y as a plugin. This makes the plugin's rules available to be turned on or off in our configuration.
+ * Note: We list jsx-a11y as a plugin. This makes the plugin's rules available to be turned on or off in the configuration.
  * It's a more selective approach that requires you to manually specify which rules to enable.
  * (As opposed to extending which is used to inherit configurations from a set of predefined rules.)
  */
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
-export const webConfig = {
+/**
+ * Builds the "web" shareable config in modern EsLint flat config format.
+ *
+ * @param plugin - The CDS plugin object, defined in src/index.ts
+ */
+export function buildWebConfig(plugin: Record<string, unknown>) {
+  return {
+    files: ['**/*.ts', '**/*.tsx'],
+    plugins: {
+      'jsx-a11y': jsxA11y,
+      '@cbhq/cds': plugin,
+    },
+    rules: {
+      '@cbhq/cds/control-has-associated-label-extended': 'warn',
+      'jsx-a11y/control-has-associated-label': [
+        'warn',
+        {
+          controlComponents: [
+            'Button',
+            'Checkbox',
+            'InputChip',
+            'IconButton',
+            'IconCounterButton',
+            'Pressable',
+            'Switch',
+            'TextInput',
+          ],
+          depth: 3,
+          labelAttributes: ['label', 'accessibilityLabel'],
+        },
+      ],
+    },
+  };
+}
+
+export const legacyWebConfig = {
   plugins: ['jsx-a11y'],
   rules: {
     '@cbhq/cds/control-has-associated-label-extended': 'warn',

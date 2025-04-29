@@ -11,10 +11,15 @@
  * ensures that `controlledElementAccessibilityProps` are provided.
  */
 
-import { type TSESLint, AST_NODE_TYPES, TSESTree } from '@typescript-eslint/utils';
+import { AST_NODE_TYPES, ESLintUtils, TSESTree } from '@typescript-eslint/utils';
 
 import { extractA11yAttributesState } from '../utils/extractA11yAttributesState';
 import { getSimpleNameFromJSX } from '../utils/getSimpleNameFromJSX';
+
+const ruleCreator = ESLintUtils.RuleCreator(
+  (name) =>
+    `https://github.cbhq.net/frontend/cds/blob/master/packages/eslint-plugin-cds/README.md#${name}`,
+);
 
 type MessageIds =
   | 'missingAccessibilityLabel'
@@ -64,14 +69,14 @@ const config = {
   allowedPackages: ['@cbhq/cds-common', '@cbhq/cds-web', '@cbhq/cds-web-visualization'],
 };
 
-export const controlHasAssociatedLabelExtended: TSESLint.RuleModule<MessageIds> = {
+export const controlHasAssociatedLabelExtended = ruleCreator({
+  name: 'control-has-associated-label-extended',
   defaultOptions: [],
   meta: {
     type: 'problem',
     docs: {
       description:
         'Checks for the presence of accessibilityLabel on Mobile CDS components. Will not flag it component has text content inside the element.',
-      recommended: 'recommended',
     },
     messages: {
       missingAccessibilityLabel: `Missing 'accessibilityLabel' on <{{componentName}}>.`,
@@ -243,4 +248,4 @@ export const controlHasAssociatedLabelExtended: TSESLint.RuleModule<MessageIds> 
       },
     };
   },
-};
+});

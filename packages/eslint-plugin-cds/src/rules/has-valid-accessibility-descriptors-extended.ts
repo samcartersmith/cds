@@ -7,10 +7,15 @@
  * - have props spread.
  */
 
-import { type TSESLint, AST_NODE_TYPES, TSESTree } from '@typescript-eslint/utils';
+import { AST_NODE_TYPES, ESLintUtils, TSESTree } from '@typescript-eslint/utils';
 
 import { extractA11yAttributesState } from '../utils/extractA11yAttributesState';
 import { getSimpleNameFromJSX } from '../utils/getSimpleNameFromJSX';
+
+const ruleCreator = ESLintUtils.RuleCreator(
+  (name) =>
+    `https://github.cbhq.net/frontend/cds/blob/master/packages/eslint-plugin-cds/README.md#${name}`,
+);
 
 type MessageIds =
   | 'missingAccessibilityLabel'
@@ -56,7 +61,8 @@ const config = {
   allowedPackages: ['@cbhq/cds-common', '@cbhq/cds-mobile', '@cbhq/cds-mobile-visualization'],
 };
 
-export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = {
+export const hasValidA11yDescriptorsExtended = ruleCreator({
+  name: 'has-valid-accessibility-descriptors-extended',
   defaultOptions: [],
   meta: {
     type: 'problem',
@@ -119,6 +125,7 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
           hasMissingClearIconAccessibilityLabel,
         } = extractA11yAttributesState(node, node.openingElement);
 
+        // TODO need test cases for TextInput
         let isTextInputWithNegativeVariant = true;
         if (getSimpleNameFromJSX(node.openingElement) === 'TextInput') {
           const attributes = node.openingElement.attributes as TSESTree.JSXAttribute[];
@@ -208,4 +215,4 @@ export const hasValidA11yDescriptorsExtended: TSESLint.RuleModule<MessageIds> = 
       },
     };
   },
-};
+});

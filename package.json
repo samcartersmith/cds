@@ -65,6 +65,7 @@
     "@babel/runtime": "^7.20.13",
     "@babel/template": "^7.20.7",
     "@babel/types": "^7.20.7",
+    "@cbhq/eslint-plugin-internal": "workspace:^",
     "@cbhq/mono-env": "^0.3.1",
     "@cbhq/mono-pipeline": "^1.6.0",
     "@cbhq/mono-tasks": "^1.16.0",

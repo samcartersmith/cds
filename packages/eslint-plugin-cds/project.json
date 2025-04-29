@@ -11,6 +11,12 @@
         "cwd": "packages/eslint-plugin-cds"
       }
     },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{projectRoot}/jest.config.mjs"
+      }
+    },
     "typecheck": {
       "executor": "nx:run-commands",
       "defaultConfiguration": "dev",

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.0 (4/15/2025 PST)
+
+#### 💥 Breaking
+
+- web and mobile shareable configs are not using modern _[Flat Config](https://eslint.org/blog/2022/08/new-config-system-part-2/)_
+- clients using these shareable configs must [migrate](https://eslint.org/docs/latest/use/configure/migration-guide) their EsLint configs files to the new format or switch to using the `web-legacy`/`mobile-legacy` shareable configs
+
+#### 🚀 Updates
+
+- fix unit tests and enable in CI
+- remove unnecessary dependencies
+
 ## 0.0.8 (3/14/2025 PST)
 
 #### 🐞 Fixes

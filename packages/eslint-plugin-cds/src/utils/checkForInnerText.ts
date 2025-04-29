@@ -1,4 +1,4 @@
-import { type TSESTree, AST_NODE_TYPES } from '@typescript-eslint/utils';
+import { AST_NODE_TYPES, type TSESTree } from '@typescript-eslint/utils';
 
 export const tryTrim = (value: unknown) => {
   return typeof value === 'string' ? value.trim() : value;

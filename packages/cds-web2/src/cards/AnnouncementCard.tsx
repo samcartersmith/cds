@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 import type { AnnouncementCardBaseProps } from '@cbhq/cds-common2/types';
 
 import { Card, type CardProps } from './Card';

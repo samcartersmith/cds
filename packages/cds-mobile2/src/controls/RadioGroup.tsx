@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { AccessibilityProps, Animated, ColorValue, StyleSheet, View } from 'react-native';
 import { Path, Rect, Svg } from 'react-native-svg';
 import { SharedProps } from '@cbhq/cds-common2';

@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import { css } from '@linaria/core';
 import { type IconName, type IconSize } from '@cbhq/cds-common2';
 import { sortNamesByOldOrder } from '@cbhq/cds-common2/internal/utils/sortIconsForVisReg';
 import { UiIconName } from '@cbhq/cds-icons';

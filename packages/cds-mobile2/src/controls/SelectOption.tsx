@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { selectCellMobileSpacingConfig } from '@cbhq/cds-common2/tokens/select';
 import { SelectOptionBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';

@@ -6,15 +6,49 @@
 
 The CDS ESLint Plugin targets gaps in existing accessibility linting and CDS Best Practices that were identified in our [CDS A11y linting rules audit](https://docs.google.com/spreadsheets/d/1qL_83p7iYsX81OzMjPtZc1xN7oaEbCCXh6hKqkB9otE/edit?usp=sharing).
 
-Currently, the [`cbhq` official plugin](https://github.cbhq.net/frontend/nx-tools/tree/master/packages/eslint-plugin) has two main configs:
+The CDS Eslint Plugin is integrated into the [`cbhq` official plugin](https://github.cbhq.net/frontend/nx-tools/tree/master/packages/eslint-plugin) and is utilized in two of its configurations:
 
-- 🌐 [react.ts](https://github.cbhq.net/frontend/nx-tools/blob/master/packages/eslint-plugin/src/configs/react.ts): Used in web repositories and uses `airbnb/rules/react-a11y`. Airbnb react-a11y rules uses [`jsx-a11y` a11y rules](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main).
-- 📱[react-native.ts](https://github.cbhq.net/frontend/nx-tools/blob/master/packages/eslint-plugin/src/configs/react-native.ts): Used in mobile repositories and uses `react-native-a11y` for accessibility.
+- 🌐 [react](https://github.cbhq.net/frontend/nx-tools/blob/master/packages/eslint-plugin/src/configs/react.ts): Used in web repositories. Extends `airbnb/rules/react-a11y` which includes the [`jsx-a11y`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main) plugin.
+- 📱[react-native](https://github.cbhq.net/frontend/nx-tools/blob/master/packages/eslint-plugin/src/configs/react-native.ts): Used in React Native repositories and includes the `react-native-a11y` plugin.
 
-There is currently a gap in the existing ruleset that cannot target specific CDS components.
+In both react and react-native configurations there is a gap in the a11y ruleset that cannot target specific CDS components.
 More detail found in [P/PS: CDS ESLint Plugin For Accessibility Remediation](https://docs.google.com/document/d/1zZvMw53YysvSuPd9Uph7Yr3JewpIfSVK_a9eeJ6Xktw/edit?usp=sharing)
 
 🎯 Our goal with the `eslint-plugin-cds` package is to create new rules to address these gaps in accessibility and to enforce CDS Best Practices.
+
+## Setup
+
+### EsLint 9 Flat Config
+
+Eslint v9 introduced the modern _[Flat Config](https://eslint.org/docs/latest/use/configure/migration-guide)_ format for configuration files.
+
+```js
+// eslint.config.js
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import cds from '@cbhq/eslint-plugin-cds';
+
+export default tseslint.config({
+  extends: [js.configs.recommended, ...tseslint.configs.recommended, cds.configs.web],
+  plugins: {
+    '@cbhq/cds': cds,
+  },
+  files: ['**/*.{ts,tsx}'],
+});
+```
+
+### Legacy _eslintrc_ Config
+
+In order to use the CDS plugin in legacy `.eslintrc` configuration files, you will need to use the _legacy_ configurations.
+
+```js
+// .eslintrc.js
+module.exports = {
+  plugins: ['@typescript-eslint', '@cbhq/cds'],
+  parser: '@typescript-eslint/parser',
+  extends: ['plugin:@cbhq/cds/web-legacy'],
+};
+```
 
 ## Development
 
@@ -32,8 +66,8 @@ To create a new ESLint rule, you can add your rule from the `packages/eslint-plu
 
 We have two configs:
 
-- mobile: config containing rules targeting mobile / react-native rules
-- web: config containing rules targeting web / react rules
+- mobile: config containing rules targeting mobile / react-native
+- web: config containing rules targeting web / react
 
 After creating a rule, be sure to add it to the appropriate config.
 
@@ -43,17 +77,19 @@ Note: Use [AST Explorer](https://astexplorer.net/) with parser set to `@typescri
 
 To test on consumer repos locally, you will need to build your `eslint-plugin-cds` package, add your package to the `package.json` and modify `eslintrc`.
 
-1. Build your local package
+1. Build your local package and pack it.
 
    ```
    yarn nx run eslint-plugin-cds:build
+   cd packages/eslint-plugin-cds
+   yarn pack
    ```
 
 2. Add your package as a `devDependency` in the consumer's `package.json`. Use the path in your local directory.
    ```
-   "@cbhq/eslint-plugin-cds": "file:../cds/packages/eslint-plugin-cds",
+   "@cbhq/eslint-plugin-cds": "file:../cds/packages/eslint-plugin-cds/package.tgz",
    ```
-3. Add your plugin and extend your specific config in the `.eslintrc.js` file.
+3. Add the plugin and extend a specific config in the `.eslintrc.js`/`eslint.confg.js` file.
 
    📝 Note: There are differences between `extends` and `plugins`:
 
@@ -74,11 +110,11 @@ To test on consumer repos locally, you will need to build your `eslint-plugin-cd
 
 ## CDS Rules
 
-## ♿ Accessibility Rules
+### ♿ Accessibility Rules
 
 We currently have two additional accessibility rules:
 
-### 🔍 controlHasAssociatedLabelExtended (Web)
+#### 🔍 controlHasAssociatedLabelExtended (Web)
 
 **Rule Description**:
 
@@ -127,7 +163,7 @@ For components listed under `collapsibleCheckForControlledElementAccessibilityPr
 - `SearchInput`
   - Checks for presence of `startIconAccessibilityLabel` and `clearIconAccessibilityLabel`
 
-### 🔍 hasValidA11yDescriptorsExtended (mobile)
+#### 🔍 hasValidA11yDescriptorsExtended (mobile)
 
 **Rule Description**:
 
@@ -175,6 +211,64 @@ This rule also checks for other required a11y labels that need to be enforced ou
 
 TBD
 
-### Resources
+## Development
+
+### Building Locally
+
+To build locally, run
+
+```
+yarn nx run eslint-plugin-cds:build
+```
+
+### Creating New Rule
+
+To create a new ESLint rule, you can add your rule from the `packages/eslint-plugin-cds/src/rules/` directory.
+
+We have two configs:
+
+- mobile: config containing rules targeting mobile / react-native
+- web: config containing rules targeting web / react
+
+After creating a rule, be sure to add it to the appropriate config.
+
+Note: Use [AST Explorer](https://astexplorer.net/) with parser set to `@typescript-eslint/parser` to determine AST node types.
+
+### Testing on Consumer Repos Locally
+
+To test on consumer repos locally, you will need to build your `eslint-plugin-cds` package, add your package to the `package.json` and modify `eslintrc`.
+
+1. Build your local package and pack it.
+
+   ```
+   yarn nx run eslint-plugin-cds:build
+   cd packages/eslint-plugin-cds
+   yarn pack
+   ```
+
+2. Add your package as a `devDependency` in the consumer's `package.json`. Use the path in your local directory.
+   ```
+   "@cbhq/eslint-plugin-cds": "file:../cds/packages/eslint-plugin-cds/package.tgz",
+   ```
+3. Add the plugin and extend a specific config in the `.eslintrc.js`/`eslint.confg.js` file.
+
+   📝 Note: There are differences between `extends` and `plugins`:
+
+   - `extends`: Allows you to use and build upon an existing set of ESLint rules defined in another configuration. Useful for adhering to standardized coding styles like Airbnb or Google.
+     - By using the extends keyword, you're not just making rules available, but you are actively applying a set of predefined rules from another configuration. This means that the rules defined in the extended configurations are automatically enforced in your project, unless explicitly overridden.
+   - `plugins`: Introduces new rules or environments to ESLint that extend its core capabilities, tailored for specific frameworks or libraries.
+     - When you use plugins, you make a set of additional rules available to your configuration. However, simply including a plugin does not apply those rules. You must explicitly enable the rules provided by the plugin in your configuration file to enforce them in your project. Essentially, plugins expand the rule set that you can choose from, but they don't enforce any rules by default.
+
+   Examples:
+
+   - [react-native draft PR](https://github.cbhq.net/consumer/react-native/pull/31138)
+   - [coinbase-wwww draft PR](https://github.cbhq.net/frontend/coinbase-www/pull/36718)
+   - [wallet-mobile - RN only draft PR](https://github.cbhq.net/wallet/wallet-mobile/pull/21702)
+
+4. Run `yarn` in root directory or `workspace`.
+5. Run `yarn nx run <target>:lint` or `npx eslint .` in root directory or `workspace`.
+   - 💡 Tip: Run `npx eslint . > eslint_output.txt` to be able to see all the output.
+
+## Resources
 
 - [Fixing A11y Engine Issues Guidebook](https://docs.google.com/document/d/1vafx_gnf8VKF9Kc6O-HGIftymI0obnn0-HnriOnWCE0/edit)

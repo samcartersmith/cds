@@ -8,7 +8,6 @@ export const customRule: TSESLint.RuleModule<MessageIds> = {
     type: 'problem',
     docs: {
       description: 'My custom rule description',
-      recommended: 'recommended',
     },
     messages: {
       messageOne: 'Message one',

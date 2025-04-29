@@ -12,7 +12,7 @@ import eslintJsxA11y from 'eslint-plugin-jsx-a11y';
 import eslintReactNativeA11y from 'eslint-plugin-react-native-a11y';
 import eslintReactNative from 'eslint-plugin-react-native';
 import eslintCodegen from 'eslint-plugin-codegen';
-import eslintImportAutofixRule from './eslint.autofix.mjs';
+import internalPlugin from '@cbhq/eslint-plugin-internal';
 
 const commonSettings = {
   react: {
@@ -42,6 +42,15 @@ const ignores = [
   '**/getBuildInfo.mjs',
   'apps/mobile-app/prebuilds',
   'apps/mobile-app2/prebuilds',
+  // within their NX project, these files are not included by the Typescript config
+  // when linting with TS types (e.g. internal/safely-spread-props) this will raise an error
+  'packages/cds-web2/optimize-css.ts',
+  'packages/icons/scripts/generateStories.ts',
+  'packages/illustrations/scripts/generateStories.ts',
+  'libs/docusaurus-plugin-docgen/module-declarations.d.ts',
+  'libs/docusaurus-theme/scripts/postbuild.ts',
+  'libs/docusaurus-theme/types.d.ts',
+  'apps/figma-strings-plugin/vite.config.ts',
 ];
 
 const typescriptRules = {
@@ -105,15 +114,6 @@ const testRules = {
   'testing-library/render-result-naming-convention': 'off',
 };
 
-const importPlugins = {
-  'simple-import-sort': eslintSimpleImportSort,
-  coinbase: {
-    rules: {
-      'import-autofix': eslintImportAutofixRule,
-    },
-  },
-};
-
 export default tseslint.config(
   { ignores },
   {
@@ -126,9 +126,6 @@ export default tseslint.config(
         ...globals.browser,
       },
     },
-    plugins: {
-      ...importPlugins,
-    },
     settings: commonSettings,
     extends: [
       eslintJs.configs.recommended,
@@ -137,7 +134,11 @@ export default tseslint.config(
       eslintReactHooks.configs['recommended-latest'],
       eslintReactPerf.configs.flat.recommended,
       eslintJsxA11y.flatConfigs.recommended,
+      internalPlugin.configs.importRules,
     ],
+    plugins: {
+      'simple-import-sort': eslintSimpleImportSort,
+    },
     rules: {
       ...reactRules,
       'no-loss-of-precision': 'off',
@@ -155,9 +156,10 @@ export default tseslint.config(
       eslintReactHooks.configs['recommended-latest'],
       eslintReactPerf.configs.flat.recommended,
       eslintJsxA11y.flatConfigs.recommended,
+      internalPlugin.configs.allRules,
     ],
     plugins: {
-      ...importPlugins,
+      'simple-import-sort': eslintSimpleImportSort,
       codegen: eslintCodegen,
     },
     settings: commonSettings,
@@ -167,6 +169,7 @@ export default tseslint.config(
       'no-loss-of-precision': 'off',
       'jsx-a11y/label-has-associated-control': 'off',
       'codegen/codegen': 'error',
+      'internal/safely-spread-props': 'warn',
     },
   },
   {
@@ -179,11 +182,12 @@ export default tseslint.config(
       eslintReactHooks.configs['recommended-latest'],
       eslintReactPerf.configs.flat.recommended,
       eslintJsxA11y.flatConfigs.recommended,
+      internalPlugin.configs.importRules,
     ],
     plugins: {
       'react-native': eslintReactNative,
       'react-native-a11y': eslintReactNativeA11y,
-      ...importPlugins,
+      'simple-import-sort': eslintSimpleImportSort,
     },
     settings: commonSettings,
     rules: {
@@ -205,6 +209,7 @@ export default tseslint.config(
       eslintJest.configs['flat/recommended'],
       eslintTestingLibrary.configs['flat/react'],
       eslintJsxA11y.flatConfigs.recommended,
+      internalPlugin.configs.importRules,
     ],
     languageOptions: {
       globals: {
@@ -214,7 +219,7 @@ export default tseslint.config(
     plugins: {
       'react-native': eslintReactNative,
       'react-native-a11y': eslintReactNativeA11y,
-      ...importPlugins,
+      'simple-import-sort': eslintSimpleImportSort,
     },
     settings: commonSettings,
     rules: {
