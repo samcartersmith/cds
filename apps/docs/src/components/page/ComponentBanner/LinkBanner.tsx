@@ -29,7 +29,7 @@ export const LinkBanner = () => {
           <clipPath id="clip0_3950_617">
             <rect fill="white" height="200" width="826" />
           </clipPath>
-        </defs>{' '}
+        </defs>
       </svg>
     </div>
   );

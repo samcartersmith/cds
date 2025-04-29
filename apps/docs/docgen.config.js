@@ -133,5 +133,13 @@ module.exports = {
     'tour/Tour',
     'typography/Link',
     'typography/Text',
+    'tables/Table',
+    'tables/TableBody',
+    'tables/TableCaption',
+    'tables/TableCell',
+    'tables/TableCellFallback',
+    'tables/TableFooter',
+    'tables/TableHeader',
+    'tables/TableRow',
   ],
 };

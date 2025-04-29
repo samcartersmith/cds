@@ -1,12 +1,16 @@
 import React from 'react';
+import { accounts } from '@cbhq/cds-common/internal/data/accounts';
+import { prices } from '@cbhq/cds-common/internal/data/prices';
+import { product } from '@cbhq/cds-common/internal/data/product';
+import { users } from '@cbhq/cds-common/internal/data/users';
 import { DateInputValidationError } from '@cbhq/cds-common2/dates/DateInputValidationError';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
 import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
+import { useSort } from '@cbhq/cds-common2/hooks/useSort';
 import * as CDSDataAssets from '@cbhq/cds-common2/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
-import { prices } from '@cbhq/cds-common2/internal/data/prices';
 import {
   sparklineInteractiveData,
   sparklineInteractiveHoverData,
@@ -57,6 +61,8 @@ import { PageFooter } from '@cbhq/cds-web2/page/PageFooter';
 import { PageHeader } from '@cbhq/cds-web2/page/PageHeader';
 import { SectionHeader } from '@cbhq/cds-web2/section-header/SectionHeader';
 import * as CDSSystem from '@cbhq/cds-web2/system';
+import * as CDSTables from '@cbhq/cds-web2/tables';
+import { useSortableCell } from '@cbhq/cds-web2/tables/hooks/useSortableCell';
 import * as CDSTabs from '@cbhq/cds-web2/tabs';
 import { Tag } from '@cbhq/cds-web2/tag/Tag';
 import { Tour } from '@cbhq/cds-web2/tour/Tour';
@@ -87,8 +93,11 @@ const ReactLiveScope: Record<string, unknown> = {
   Dropdown,
   MultiContentModule,
   SectionHeader,
-  // cells
+  // data display
   ...CDSCells,
+  ...CDSTables,
+  useSort,
+  useSortableCell,
   // overlays
   ...CDSOverlays,
   // navigation
@@ -140,6 +149,9 @@ const ReactLiveScope: Record<string, unknown> = {
   ...CDSDataAssets,
   loremIpsum,
   prices,
+  accounts,
+  users,
+  product,
   // hooks
   useBreakpoints,
   useDimensions,

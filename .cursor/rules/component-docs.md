@@ -11,13 +11,11 @@ In `apps/docs/src/components/page/ReactLiveScope.ts`, add the component imports 
 ```ts
 // Add imports
 import { ComponentName } from '@cbhq/cds-web2';
-import { ComponentName as MobileComponentName } from '@cbhq/cds-mobile2'; // if mobile version exists
 
 // Add to scope object
 const ReactLiveScope = {
   // ... existing scope
   ComponentName,
-  MobileComponentName, // if mobile version exists
 };
 ```
 
@@ -114,7 +112,7 @@ apps/docs/docs/components/[docs-category]/[ComponentName]/
   "figma": "[figma link]", // only add if provided
   "storybook": "[storybook link]", // only add if provided
   "relatedComponents": [
-    { "label": "[componentName]", "url": "[url to component]" }
+    { "label": "[componentName]", "url": "components/[category]/[componentName]" }
     //...other related components
   ]
 }
@@ -129,7 +127,7 @@ apps/docs/docs/components/[docs-category]/[ComponentName]/
   "description": "[Component description]",
   "figma": "[figma link]", // only add if provided
   "relatedComponents": [
-    { "label": "[componentName]", "url": "[url to component]" }
+    { "label": "[componentName]", "url": "components/[category]/[componentName]" }
     //...other related components
   ]
 }
@@ -150,7 +148,6 @@ import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
   sharedTypeAliases={sharedTypeAliases}
   sharedParentTypes={sharedParentTypes}
 />
-;
 ```
 
 #### \_mobilePropsTable.mdx
@@ -166,7 +163,6 @@ import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
   sharedTypeAliases={sharedTypeAliases}
   sharedParentTypes={sharedParentTypes}
 />
-;
 ```
 
 ### 3. Main Documentation (index.mdx)

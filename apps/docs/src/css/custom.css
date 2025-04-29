@@ -123,7 +123,6 @@ a:focus-visible {
 }
 
 table {
-  table-layout: fixed;
   width: 100%;
   word-break: break-word;
   border-radius: var(--borderRadius-400);

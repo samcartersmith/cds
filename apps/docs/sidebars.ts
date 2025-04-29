@@ -268,6 +268,46 @@ const sidebars: SidebarsConfig = {
               label: 'ContentCell',
             },
             { type: 'doc', id: 'components/data-display/ListCell/listCell', label: 'ListCell' },
+            {
+              type: 'doc',
+              id: 'components/data-display/Table/table',
+              label: 'Table',
+            },
+            {
+              type: 'doc',
+              id: 'components/data-display/TableBody/tableBody',
+              label: 'TableBody',
+            },
+            {
+              type: 'doc',
+              id: 'components/data-display/TableCaption/tableCaption',
+              label: 'TableCaption',
+            },
+            {
+              type: 'doc',
+              id: 'components/data-display/TableCell/tableCell',
+              label: 'TableCell',
+            },
+            {
+              type: 'doc',
+              id: 'components/data-display/TableCellFallback/tableCellFallback',
+              label: 'TableCellFallback',
+            },
+            {
+              type: 'doc',
+              id: 'components/data-display/TableFooter/tableFooter',
+              label: 'TableFooter',
+            },
+            {
+              type: 'doc',
+              id: 'components/data-display/TableHeader/tableHeader',
+              label: 'TableHeader',
+            },
+            {
+              type: 'doc',
+              id: 'components/data-display/TableRow/tableRow',
+              label: 'TableRow',
+            },
           ],
         },
         {

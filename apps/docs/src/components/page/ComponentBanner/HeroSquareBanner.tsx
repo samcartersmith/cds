@@ -94,7 +94,7 @@ export const HeroSquareBanner = () => {
           <clipPath id="clip0_3930_159">
             <rect fill="white" height="200" transform="translate(0 0.43457)" width="826" />
           </clipPath>
-        </defs>{' '}
+        </defs>
       </svg>
     </div>
   );
