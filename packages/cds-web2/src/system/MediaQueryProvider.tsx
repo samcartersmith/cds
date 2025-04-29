@@ -72,19 +72,30 @@ const mediaQueryDefaultSolutions: Record<
 const solveMediaQueryDefaults = (query: string, defaultValues: MediaSettings) => {
   const queryString = query.match(/\((.*)\)/)?.[1].trim();
   if (!queryString) return false;
+
   const queryParts = queryString.split(' and ');
-  let matching = true;
   for (const queryPart of queryParts) {
-    const queryPartString = queryPart.match(/\((.*)\)/)?.[1].trim();
-    if (!queryPartString) {
-      matching = false;
-      continue;
-    }
-    const [condition, value] = queryPartString.split(':');
-    const result = mediaQueryDefaultSolutions[condition.trim()]?.(value.trim(), defaultValues);
-    if (!result) matching = false;
+    // Trim the part and handle optional inner parentheses correctly
+    const trimmedPart = queryPart.trim();
+    const conditionValueString =
+      trimmedPart[0] === '(' && trimmedPart[trimmedPart.length - 1] === ')'
+        ? trimmedPart.slice(1, -1).trim()
+        : trimmedPart; // Assume valid if no outer parens on the part
+
+    if (!conditionValueString) return false; // e.g., `(()) and (cond:val)` -> `()` -> empty
+
+    // Split the actual condition/value string
+    const splittedConditionValueString = conditionValueString.split(':');
+    const condition = splittedConditionValueString[0].trim();
+    const value = splittedConditionValueString[1]?.trim();
+    if (!condition || !value) return false; // e.g., `(cond:)` or `(cond)`
+
+    // Call handler with trimmed values
+    const result = mediaQueryDefaultSolutions[condition]?.(value, defaultValues);
+    if (!result) return false; // If any part is false, the whole query is false
   }
-  return matching;
+
+  return true; // If all parts evaluated to true
 };
 
 /**
@@ -102,7 +113,7 @@ const solveMediaQueryDefaults = (query: string, defaultValues: MediaSettings) =>
  * }
  * ```
  */
-const createMediaQueryStore = () => {
+export const createMediaQueryStore = () => {
   const mediaQueryLists: Record<string, MediaQueryList> = {};
   const subscribers: Record<string, (() => void)[]> = {};
   let defaultValues: MediaSettings | null = null;
@@ -117,8 +128,7 @@ const createMediaQueryStore = () => {
   const getSnapshot = (query: string): boolean => mediaQueryLists[query]?.matches ?? false;
 
   const getServerSnapshot = (query: string): boolean => {
-    if (!defaultValues) return false;
-    return solveMediaQueryDefaults(query, defaultValues);
+    return solveMediaQueryDefaults(query, defaultValues ?? {});
   };
 
   const subscribe = (query: string, callback: () => void): (() => void) => {
