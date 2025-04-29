@@ -8,7 +8,23 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 4.4.0 (4/28/2025 PST)
+
+#### 🚀 Updates
+
+- Publish icons 04/28/2025. [[#3950](https://github.cbhq.net/frontend/cds/pull/3950)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Nav
+
+- coinbaseRewards
+
+#### Ui
+
+- peopleStar
 
 #### 📘 Misc
 

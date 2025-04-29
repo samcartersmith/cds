@@ -209,6 +209,7 @@ export type UiIconName =
   | 'payouts'
   | 'paypal'
   | 'pencil'
+  | 'peopleStar'
   | 'percentage'
   | 'perpetualSwap'
   | 'pFPS'

@@ -137,6 +137,7 @@ const names: NavIconName[] = [
   'priceAlertsCheck',
   'verifiedPools',
   'orderBook',
+  'coinbaseRewards',
 ];
 
 export default names;

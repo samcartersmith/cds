@@ -329,7 +329,7 @@ const descriptionMap: Record<string, string[]> = {
   '🔖': ['tag'],
   'gift box': ['giftBox'],
   present: ['giftBox'],
-  rewards: ['giftBox', 'earn', 'learningRewardsProduct', 'rewardsProduct'],
+  rewards: ['giftBox', 'earn', 'learningRewardsProduct', 'rewardsProduct', 'coinbaseRewards'],
   joy: ['giftBox'],
   contribution: ['giftBox'],
   perk: ['giftBox'],
@@ -600,7 +600,7 @@ const descriptionMap: Record<string, string[]> = {
     'developerAPIProduct',
     'folderOpen',
   ],
-  logo: ['base', 'walletLogo', 'coinbase', 'coinbaseOneLogo'],
+  logo: ['base', 'walletLogo', 'coinbase', 'coinbaseOneLogo', 'coinbaseRewards'],
   base: ['base'],
   product: [
     'commerceProduct',
@@ -748,6 +748,10 @@ const descriptionMap: Record<string, string[]> = {
   review: ['orderBook'],
   open: ['orderBook'],
   completed: ['orderBook'],
+  Coinbase: ['coinbaseRewards'],
+  Coinbaserewards: ['coinbaseRewards'],
+  trophy: ['coinbaseRewards'],
+  ribbon: ['coinbaseRewards'],
 };
 
 export default descriptionMap;

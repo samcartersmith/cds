@@ -309,6 +309,7 @@ const names: UiIconName[] = [
   'gaugeHighMid',
   'concierge',
   'conciergeBell',
+  'peopleStar',
 ];
 
 export default names;

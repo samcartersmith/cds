@@ -29,6 +29,7 @@ export type NavIconName =
   | 'coinbase'
   | 'coinbaseCardProduct'
   | 'coinbaseOneLogo'
+  | 'coinbaseRewards'
   | 'collection'
   | 'comment'
   | 'commerceProduct'

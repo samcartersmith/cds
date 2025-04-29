@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2025-03-28T18:39:51.186Z",
+  "lastUpdated": "2025-04-28T21:43:41.259Z",
   "metadata": { "lastUnicode": 63980 },
   "items": {
     "2:188": {
@@ -11077,6 +11077,54 @@
         "svg16Inactive": "./ui/svg/ui-concierge-16.svg",
         "svg24Active": "./ui/svg/ui-concierge-24-active.svg",
         "svg24Inactive": "./ui/svg/ui-concierge-24.svg"
+      }
+    },
+    "3581:182": {
+      "type": "nav",
+      "name": "coinbaseRewards",
+      "hash": "n9TNRbG8kvQy8S4vlwHuIeH/zGJdzPJaJzH0zRbLebQ=",
+      "description": "Coinbase, Coinbaserewards, rewards, trophy, ribbon, logo",
+      "components": [
+        { "props": { "size": 24, "active": false } },
+        { "props": { "size": 24, "active": true } },
+        { "props": { "size": 16, "active": false } },
+        { "props": { "size": 16, "active": true } },
+        { "props": { "size": 12, "active": false } },
+        { "props": { "size": 12, "active": true } }
+      ],
+      "createdAt": "2025-04-15T19:05:46.330Z",
+      "lastUpdated": "2025-04-15T19:05:46.330Z",
+      "outputs": {
+        "svg12Active": "./nav/svg/nav-coinbaseRewards-12-active.svg",
+        "svg12Inactive": "./nav/svg/nav-coinbaseRewards-12-inactive.svg",
+        "svg16Active": "./nav/svg/nav-coinbaseRewards-16-active.svg",
+        "svg16Inactive": "./nav/svg/nav-coinbaseRewards-16-inactive.svg",
+        "svg24Active": "./nav/svg/nav-coinbaseRewards-24-active.svg",
+        "svg24Inactive": "./nav/svg/nav-coinbaseRewards-24-inactive.svg"
+      }
+    },
+    "3581:195": {
+      "type": "ui",
+      "name": "peopleStar",
+      "hash": "HqcpEZ9cj4R/gjYQRlMs7W1kJ9tLXWtAcG/EI7sPuT8=",
+      "description": "people, star, reward, concierge,",
+      "components": [
+        { "props": { "size": 24, "active": false } },
+        { "props": { "size": 24, "active": true } },
+        { "props": { "size": 16, "active": false } },
+        { "props": { "size": 16, "active": true } },
+        { "props": { "size": 12, "active": false } },
+        { "props": { "size": 12, "active": true } }
+      ],
+      "createdAt": "2025-04-15T19:05:46.339Z",
+      "lastUpdated": "2025-04-22T16:26:52.188Z",
+      "outputs": {
+        "svg12Active": "./ui/svg/ui-peopleStar-12-active.svg",
+        "svg12Inactive": "./ui/svg/ui-peopleStar-12.svg",
+        "svg16Active": "./ui/svg/ui-peopleStar-16-active.svg",
+        "svg16Inactive": "./ui/svg/ui-peopleStar-16.svg",
+        "svg24Active": "./ui/svg/ui-peopleStar-24-active.svg",
+        "svg24Inactive": "./ui/svg/ui-peopleStar-24.svg"
       }
     }
   }
