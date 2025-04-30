@@ -128,6 +128,15 @@ describe('Dropdown', () => {
   it('Dropdown renders as a modal when enableMobileModal is set', async () => {
     jest.spyOn(useBreakpoints, 'useBreakpoints').mockImplementation(() => ({
       isPhone: true,
+      isPhonePortrait: true,
+      isPhoneLandscape: false,
+      isTablet: false,
+      isTabletPortrait: false,
+      isTabletLandscape: false,
+      isDesktop: false,
+      isDesktopSmall: false,
+      isDesktopLarge: false,
+      isExtraWide: false,
     }));
 
     render(

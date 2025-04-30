@@ -68,7 +68,10 @@ describe('useBreakpoints hook', () => {
     const mockSetMatches = jest.fn();
     mockSubscribe.mockImplementation((_, callback) => {
       mockSetMatches.mockImplementation(callback);
+      return jest.fn();
     });
+
+    mockGetSnapshot.mockImplementation((query) => query === media.phone);
 
     const wrapper = ({ children }: { children: React.ReactNode }) => (
       <MediaQueryContext.Provider value={mockMediaQueryContext}>
@@ -78,12 +81,17 @@ describe('useBreakpoints hook', () => {
 
     const { result } = renderHook(() => useBreakpoints(), { wrapper });
 
-    mockMatchMedia.mockImplementation((query) => ({
-      matches: query === media.tablet,
-    }));
+    expect(result.current.isPhone).toBe(true);
+    expect(result.current.isTablet).toBe(false);
+
+    mockGetSnapshot.mockImplementation((query) => query === media.tablet);
 
     act(() => {
-      mockSetMatches();
+      if (typeof mockSetMatches === 'function') {
+        mockSetMatches();
+      } else {
+        throw new Error('mockSetMatches was not assigned the update callback');
+      }
     });
 
     expect(result.current).toEqual({

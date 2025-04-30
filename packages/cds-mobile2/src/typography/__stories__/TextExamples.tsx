@@ -16,15 +16,6 @@ const TextExamplesScreen = ({
       <Example accessibilityRole="header" title="Mono">
         <TextComponent mono>Mono font</TextComponent>
       </Example>
-      <Example title="Inherited Font">
-        <Box>
-          <TextComponent>
-            This Text element uses one font family and the inner Text element - Hello World inherits
-            it but overrides the font size
-            <TextComponent fontSize="legal"> Hello World</TextComponent>
-          </TextComponent>
-        </Box>
-      </Example>
       <Example title="Colors">
         <Box>
           <TextComponent>Default foreground</TextComponent>
@@ -145,7 +136,18 @@ const TextExamplesScreen = ({
           <TextComponent disabled>Hello</TextComponent>
         </Box>
       </Example>
+
       {extraExample}
+
+      <Example title="Inherited Font">
+        <Box>
+          <TextComponent>
+            This Text element uses one font family and the inner Text element - Hello World inherits
+            it but overrides the font size
+            <TextComponent fontSize="legal"> Hello World</TextComponent>
+          </TextComponent>
+        </Box>
+      </Example>
     </ExampleScreen>
   );
 };

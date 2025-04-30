@@ -320,10 +320,10 @@ describe('getServerSnapshot logic', () => {
   it('handles complex queries with "and" correctly', () => {
     const store = createMediaQueryStore();
     store.init({ defaultValues: { width: 1200, colorScheme: 'dark' } });
-    expect(store.getServerSnapshot('((min-width: 1024px) and (prefers-color-scheme: dark))')).toBe(
+    expect(store.getServerSnapshot('(min-width: 1024px) and (prefers-color-scheme: dark)')).toBe(
       true,
     );
-    expect(store.getServerSnapshot('((min-width: 1024px) and (prefers-color-scheme: light))')).toBe(
+    expect(store.getServerSnapshot('(min-width: 1024px) and (prefers-color-scheme: light)')).toBe(
       false,
     );
   });

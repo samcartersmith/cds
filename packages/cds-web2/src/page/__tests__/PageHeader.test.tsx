@@ -17,6 +17,15 @@ describe('PageHeader', () => {
   beforeEach(() => {
     jest.spyOn(useBreakpoints, 'useBreakpoints').mockImplementation(() => ({
       isPhone: false,
+      isPhonePortrait: false,
+      isPhoneLandscape: false,
+      isTablet: false,
+      isTabletPortrait: false,
+      isTabletLandscape: false,
+      isDesktop: true,
+      isDesktopSmall: true,
+      isDesktopLarge: false,
+      isExtraWide: false,
     }));
   });
 

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
 import { MediaQueryProvider } from '../../system/MediaQueryProvider';
 import { Text } from '../../typography/Text';
@@ -39,11 +38,14 @@ const Example = () => {
   };
 
   return (
-    <HStack background="bgAlternate" borderColor="bgLine" borderRadius={200} padding={3}>
+    <VStack background="bgAlternate" borderColor="bgLine" borderRadius={200} padding={3} gap={2}>
       <Text as="h3" display="block" font="headline">
         I am as wide as {deviceName()}
       </Text>
-    </HStack>
+      <VStack as="pre" color="fg">
+        {JSON.stringify(result, null, 2)}
+      </VStack>
+    </VStack>
   );
 };
 

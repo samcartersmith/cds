@@ -1,6 +1,6 @@
 import { styleVarPrefixes, type Theme } from './theme';
 
-/** Takes a theme object and formats its keys as CSS variables. */
+/** Takes a theme object and formats its keys as CSS variables to be used in inline styles. */
 export const createThemeCssVars = (theme: Partial<Theme>) => {
   const themeCss: Record<string, unknown> = {};
 
@@ -25,8 +25,7 @@ export const createThemeCssVars = (theme: Partial<Theme>) => {
       if (value === undefined) continue;
 
       // Create CSS variable name with escaped periods
-      const cssVarName = `${cssVarPrefix}${varName}`.replaceAll('.', '\\.');
-
+      const cssVarName = `${cssVarPrefix}${varName}`;
       // Format value (add px to numbers)
       themeCss[cssVarName] = typeof value !== 'number' ? value : value + 'px';
     }

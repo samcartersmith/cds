@@ -18,6 +18,15 @@ describe('PageFooter', () => {
   beforeEach(() => {
     jest.spyOn(useBreakpoints, 'useBreakpoints').mockImplementation(() => ({
       isPhone: false,
+      isPhonePortrait: false,
+      isPhoneLandscape: false,
+      isTablet: false,
+      isTabletPortrait: false,
+      isTabletLandscape: false,
+      isDesktop: true,
+      isDesktopSmall: true,
+      isDesktopLarge: false,
+      isExtraWide: false,
     }));
   });
 
@@ -28,6 +37,15 @@ describe('PageFooter', () => {
   it('justifies content to the center on mobile devices', () => {
     jest.spyOn(useBreakpoints, 'useBreakpoints').mockImplementation(() => ({
       isPhone: true,
+      isPhonePortrait: true,
+      isPhoneLandscape: false,
+      isTablet: false,
+      isTabletPortrait: false,
+      isTabletLandscape: false,
+      isDesktop: false,
+      isDesktopSmall: false,
+      isDesktopLarge: false,
+      isExtraWide: false,
     }));
     render(
       <DefaultThemeProvider>

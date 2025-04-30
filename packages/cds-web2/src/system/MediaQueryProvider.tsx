@@ -14,7 +14,7 @@ type MediaSettings = {
 const getMediaPixelValue = (value: string, fontSize = 16): number => {
   const numericValue = parseInt(value.slice(0, -2), 10);
   const isPx = value.endsWith('px');
-  const isEm = value.endsWith('em') || value.endsWith('rem');
+  const isEm = value.endsWith('em');
   if (isNaN(numericValue) || (!isPx && !isEm))
     throw Error(`getPixelValue failed to parse value: "${value}`);
   if (isEm) return numericValue * fontSize;
@@ -70,10 +70,7 @@ const mediaQueryDefaultSolutions: Record<
  * @returns
  */
 const solveMediaQueryDefaults = (query: string, defaultValues: MediaSettings) => {
-  const queryString = query.match(/\((.*)\)/)?.[1].trim();
-  if (!queryString) return false;
-
-  const queryParts = queryString.split(' and ');
+  const queryParts = query.split(' and ');
   for (const queryPart of queryParts) {
     // Trim the part and handle optional inner parentheses correctly
     const trimmedPart = queryPart.trim();
@@ -86,7 +83,7 @@ const solveMediaQueryDefaults = (query: string, defaultValues: MediaSettings) =>
 
     // Split the actual condition/value string
     const splittedConditionValueString = conditionValueString.split(':');
-    const condition = splittedConditionValueString[0].trim();
+    const condition = splittedConditionValueString[0]?.trim();
     const value = splittedConditionValueString[1]?.trim();
     if (!condition || !value) return false; // e.g., `(cond:)` or `(cond)`
 
@@ -116,21 +113,30 @@ const solveMediaQueryDefaults = (query: string, defaultValues: MediaSettings) =>
 export const createMediaQueryStore = () => {
   const mediaQueryLists: Record<string, MediaQueryList> = {};
   const subscribers: Record<string, (() => void)[]> = {};
-  let defaultValues: MediaSettings | null = null;
+  let defaultValues: MediaSettings = {};
   let initialized = false;
 
+  /** Sets the default values to be used for server renders. */
   const init = (options: { defaultValues?: MediaSettings }) => {
     if (initialized) return;
     initialized = true;
     if (options.defaultValues) defaultValues = options.defaultValues;
   };
 
-  const getSnapshot = (query: string): boolean => mediaQueryLists[query]?.matches ?? false;
-
-  const getServerSnapshot = (query: string): boolean => {
-    return solveMediaQueryDefaults(query, defaultValues ?? {});
+  /** For client renders, returns the result of solving the media query with window.matchMedia. */
+  const getSnapshot = (query: string): boolean => {
+    return mediaQueryLists[query]?.matches ?? solveMediaQueryDefaults(query, defaultValues);
   };
 
+  /** For server renders, returns the result of solving the media query with the defaultValues. */
+  const getServerSnapshot = (query: string): boolean => {
+    return solveMediaQueryDefaults(query, defaultValues);
+  };
+
+  /**
+   * Subscribes to a media query with a callback function that will be called when the media query
+   * match results change. Returns a function that can be called to unsubscribe.
+   */
   const subscribe = (query: string, callback: () => void): (() => void) => {
     subscribers[query] ??= [];
     subscribers[query].push(callback);
@@ -146,7 +152,7 @@ export const createMediaQueryStore = () => {
       addMediaQueryListener(mediaQueryLists[query], listener);
     }
 
-    return () => {
+    const unsubscribe = () => {
       subscribers[query] = subscribers[query].filter((cb) => cb !== callback);
       if (subscribers[query]?.length === 0) {
         delete subscribers[query];
@@ -154,6 +160,8 @@ export const createMediaQueryStore = () => {
         delete mediaQueryLists[query];
       }
     };
+
+    return unsubscribe;
   };
 
   return {
@@ -173,7 +181,7 @@ export type MediaQueryContextValue = {
 export const MediaQueryContext = createContext<MediaQueryContextValue | null>(null);
 
 export type MediaQueryProviderProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   defaultValues?: MediaSettings;
 };
 
