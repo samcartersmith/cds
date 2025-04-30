@@ -28,8 +28,8 @@ const exampleProps = {
 };
 
 export const Examples = () => {
-  const [selectedDate1, setSelectedDate1] = useState<Date | null>(null);
-  const [selectedDate2, setSelectedDate2] = useState<Date | null>(null);
+  const [selectedDate1, setSelectedDate1] = useState<Date | null>(today);
+  const [selectedDate2, setSelectedDate2] = useState<Date | null>(today);
   return (
     <Group gap={8}>
       <VStack>
@@ -53,11 +53,11 @@ export const Props = () => (
   <Group gap={8}>
     <VStack>
       <Note>Calendar with no props</Note>
-      <Calendar />
+      <Calendar selectedDate={today} />
     </VStack>
     <VStack>
       <Note>Calendar with seedDate</Note>
-      <Calendar seedDate={lastMonth15th} />
+      <Calendar seedDate={lastMonth15th} selectedDate={today} />
     </VStack>
     <VStack>
       <Note>Calendar with selectedDate</Note>
@@ -68,6 +68,7 @@ export const Props = () => (
       <Calendar
         disabledDateError="Date unavailable"
         disabledDates={[[oneWeekAgo, twoDaysAgo], today, oneWeekLater]}
+        selectedDate={today}
       />
     </VStack>
     <VStack>
@@ -76,11 +77,15 @@ export const Props = () => (
         disabledDateError="Date unavailable"
         maxDate={nextMonth15th}
         minDate={lastMonth15th}
+        selectedDate={today}
       />
     </VStack>
     <VStack>
       <Note>Calendar with highlightedDates</Note>
-      <Calendar highlightedDates={[[oneWeekAgo, twoDaysAgo], today, oneWeekLater]} />
+      <Calendar
+        highlightedDates={[[oneWeekAgo, twoDaysAgo], today, oneWeekLater]}
+        selectedDate={today}
+      />
     </VStack>
     <VStack>
       <Note>Calendar with disabledDates, highlightedDates, and disabledDateError</Note>
@@ -88,15 +93,16 @@ export const Props = () => (
         disabledDateError="Date unavailable"
         disabledDates={[[oneWeekAgo, twoDaysAgo], today, oneWeekLater]}
         highlightedDates={[[oneWeekAgo, twoDaysAgo], today, oneWeekLater]}
+        selectedDate={today}
       />
     </VStack>
     <VStack>
       <Note>Calendar with hideControls</Note>
-      <Calendar hideControls />
+      <Calendar hideControls selectedDate={today} />
     </VStack>
     <VStack>
       <Note>Calendar when disabled</Note>
-      <Calendar disabled />
+      <Calendar disabled selectedDate={today} />
     </VStack>
     <Box height={100} />
   </Group>
