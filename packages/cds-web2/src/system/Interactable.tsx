@@ -190,7 +190,6 @@ export const Interactable: InteractableComponent = forwardRef<
       as,
       background = 'transparent',
       borderColor = background,
-      borderWidth = 100,
       block,
       className,
       disabled,
@@ -223,7 +222,6 @@ export const Interactable: InteractableComponent = forwardRef<
         aria-pressed={pressed}
         as={Component}
         borderColor={transparentWhileInactive ? 'transparent' : borderColor}
-        borderWidth={borderWidth}
         className={cx(
           baseStyle,
           focusRingStyle,
