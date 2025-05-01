@@ -40,7 +40,7 @@ const buttonStories: Omit<ButtonBaseProps, 'children'>[] = [
 const onClickConsole = () => console.log('clicked');
 
 export const CreateButtonStories = () => (
-  <VStack alignItems="flex-start" gap={2}>
+  <VStack alignItems="flex-start" gap={2} padding={0.5}>
     {buttonStories.map((props, idx) => {
       const key = `button-${idx}`;
       return (

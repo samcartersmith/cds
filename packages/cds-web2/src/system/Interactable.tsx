@@ -102,7 +102,6 @@ export type InteractableBaseProps = Polymorphic.ExtendableProps<
   {
     /** Apply class names to the outer container. */
     className?: string;
-    focusable?: boolean;
     /** Background color of the overlay (element being interacted with). */
     background?: ThemeVars.Color;
     /** Set element to block and expand to 100% width. */
@@ -190,6 +189,7 @@ export const Interactable: InteractableComponent = forwardRef<
       as,
       background = 'transparent',
       borderColor = background,
+      borderWidth = 100,
       block,
       className,
       disabled,
@@ -222,6 +222,7 @@ export const Interactable: InteractableComponent = forwardRef<
         aria-pressed={pressed}
         as={Component}
         borderColor={transparentWhileInactive ? 'transparent' : borderColor}
+        borderWidth={borderWidth}
         className={cx(
           baseStyle,
           focusRingStyle,

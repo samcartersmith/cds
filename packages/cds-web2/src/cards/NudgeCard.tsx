@@ -170,6 +170,7 @@ export const NudgeCard = ({
       background={background}
       borderColor="transparent"
       borderRadius={500}
+      borderWidth={100}
       className={cx(onClick && pressStyle, focusRingStyle, className)}
       maxHeight={maxHeight}
       maxWidth={maxWidth}

@@ -68,6 +68,7 @@ export type PressableBaseProps = Polymorphic.ExtendableProps<
   {
     /** Dont scale element on press. */
     noScaleOnPress?: boolean;
+    focusable?: boolean;
   } & ComponentEventHandlerProps
 >;
 
