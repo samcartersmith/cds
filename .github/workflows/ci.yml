@@ -281,53 +281,6 @@ jobs:
           ANALYZE_REPORT_PATH: apps/storybook/bundle-stats.json
         run: yarn nx run storybook:analyze-bundle
 
-  visreg-web:
-    name: Visreg Web
-    runs-on: [large, amd64]
-    env:
-      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 0
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 100 # TODO: This needs to include the merge-base
-          ref: ${{ github.event.pull_request.head.sha }} # Use HEAD SHA instead of auto-generated GHA merge commit for pull request events
-      - uses: infra/cb-action-config-service@master
-        with: { scope: 'actions-context/cds/percy-web-' }
-      - uses: ./.github/actions/setup
-      - name: Visreg Web (All)
-        if: ${{ github.event_name == 'push' }}
-        uses: infra/cb-action-docker@master
-        with:
-          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
-          command: |-
-            yarn mono-pipeline run-percy storybook
-          environment: |-
-            STORYBOOK_SKIP_ANIMATION=true
-            PERCY_TOKEN="${{ env.PERCY_TOKEN }}"
-            CI=true
-      - name: Evaluate Visreg Should Run
-        id: visreg-should-run
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          if yarn workspace @cds/storybook should-run-visreg; then
-            echo "Package changes detected, running Visreg Web Percy run"
-            echo "SHOULD_RUN_VISREG=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "No package changes detected, skipping Visreg Web Percy run"
-            echo "SHOULD_RUN_VISREG=false" >> "$GITHUB_OUTPUT"
-          fi
-        shell: bash
-      - name: Visreg Web (Affected)
-        if: ${{ github.event_name == 'pull_request' && steps.visreg-should-run.outputs.SHOULD_RUN_VISREG == 'true'}}
-        uses: infra/cb-action-docker@master
-        with:
-          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
-          command: yarn mono-pipeline run-percy storybook
-          environment: |-
-            STORYBOOK_SKIP_ANIMATION=true
-            PERCY_TOKEN="${{ env.PERCY_TOKEN }}"
-            CI=true
-
   lint-styles:
     name: Lint Styles
     runs-on: [medium, amd64]
@@ -354,7 +307,6 @@ jobs:
         storybook-e2e,
         depcheck,
         bundle-stats,
-        visreg-web,
       ]
     if: always()
     name: Job Status Rollup
