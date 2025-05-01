@@ -18,8 +18,15 @@ const checkIfPackagesHaveChanged = async () => {
   });
 };
 
-const havePackagesChanged = await checkIfPackagesHaveChanged();
+const checkIfStorybookHasChanged = async () => {
+  const baseBranch = process.env.BUILDKITE_PULL_REQUEST_BASE_BRANCH || 'master';
+  const changedFiles = getChangedFilesOnBranch('HEAD', baseBranch);
+  return changedFiles.some((file) => file.includes('apps/storybook/'));
+};
 
-if (!havePackagesChanged) process.exit(1);
+const havePackagesChanged = await checkIfPackagesHaveChanged();
+const hasStorybookChanged = await checkIfStorybookHasChanged();
+
+if (!havePackagesChanged && !hasStorybookChanged) process.exit(1);
 
 process.exit(0);
