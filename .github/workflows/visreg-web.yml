@@ -26,6 +26,14 @@ jobs:
       - uses: infra/cb-action-config-service@master
         with: { scope: 'actions-context/cds/percy-web-' }
       - uses: ./.github/actions/setup
+      - name: Set branch name for Percy
+        id: set_branch
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "PERCY_BRANCH=${{ github.head_ref }}" >> "$GITHUB_ENV"
+          else
+            echo "PERCY_BRANCH=${{ github.ref_name }}" >> "$GITHUB_ENV"
+          fi
       - name: Evaluate Visreg Web Should Run
         id: visreg-should-run
         # Do not run affected tests when the run-all `visreg` label is present
@@ -50,4 +58,5 @@ jobs:
           environment: |-
             STORYBOOK_SKIP_ANIMATION=true
             PERCY_TOKEN="${{ env.PERCY_TOKEN }}"
+            PERCY_BRANCH=${{ env.PERCY_BRANCH }}
             CI=true
