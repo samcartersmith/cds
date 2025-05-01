@@ -14,7 +14,6 @@ const server = new McpServer({
 ////////// TOOLS ////////////////////
 enum ToolType {
   testSourcegraphConnection = 'testSourcegraphConnection',
-  generalSearch = 'generalSearch',
   getFileContent = 'getFileContent',
   searchReactPropUsage = 'searchReactPropUsage',
 }
@@ -40,53 +39,6 @@ server.tool(
           {
             type: 'text',
             text: `Error connecting to Sourcegraph: ${
-              error instanceof Error ? error.message : String(error)
-            }`,
-          },
-        ],
-        isError: true,
-      };
-    }
-  },
-);
-
-//Add a tool to execute a Sourcegraph search
-server.tool(
-  ToolType.generalSearch,
-  `
-    Search for code in Sourcegraph. Use this tool for general searches.
-    Do not prioritize it over more specific search tools.
-    Do not use this tool for retrieving the full source code of a specific file.
-    Always present the information by highlighting the repository, file name and a snippet of the matching code.
-  `,
-  {
-    query: z.string().describe('The search query to execute'),
-    limit: z
-      .number()
-      .int()
-      .min(1)
-      .max(100)
-      .optional()
-      .describe('Maximum number of results to return'),
-  },
-  async ({ query, limit = 10 }) => {
-    const queryWithOptions = `${query} count:${limit}`;
-    try {
-      const searchResults = await executeSrcCommand('search', ['-json', queryWithOptions]);
-      return {
-        content: [
-          {
-            type: 'text',
-            text: formatSearchResults(searchResults),
-          },
-        ],
-      };
-    } catch (error) {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: `Error executing search: ${
               error instanceof Error ? error.message : String(error)
             }`,
           },
@@ -146,7 +98,7 @@ server.tool(
 server.tool(
   ToolType.searchReactPropUsage,
   `
-    A more specific type of Sourcegraph search.
+    This tool uses the Sourcegraph CLI to fulfill the user's request.
     Use this tool when the user asks about the usage of a specific prop of a React component.
     This could be helpful for library maintainers when they need to understand the usage of their components.
     Both a prop name and the component name must be specified in the user prompt.
