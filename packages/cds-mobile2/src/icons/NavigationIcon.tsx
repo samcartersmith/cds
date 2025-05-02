@@ -5,6 +5,7 @@ import { NavigationBaseIconProps } from '@cbhq/cds-common2/types/NavigationBaseI
 
 import { Icon } from './Icon';
 
+/** @deprecated This component will be removed in a future version. Use Icon instead. */
 export type NavigationIconProps = NavigationBaseIconProps & {
   /**
    * Color of the icon when used as a foreground.
@@ -12,7 +13,7 @@ export type NavigationIconProps = NavigationBaseIconProps & {
    */ color?: ThemeVars.Color;
 } & Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
 
-/** @deprecated Will be removed in Q1 2025. Use Icon instead. */
+/** @deprecated This component will be removed in a future version. Use Icon instead. */
 export const NavigationIcon = memo(function NavigationIcon({
   accessibilityLabel,
   accessibilityHint,

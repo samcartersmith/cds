@@ -6,13 +6,13 @@ import type { PressableProps } from '../system/Pressable';
 import { Card } from './Card';
 import { CardBody, type CardBodyProps } from './CardBody';
 
-/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
+/** @deprecated This component will be removed in a future version. Use NudgeCard or UpsellCard instead. */
 export type AnnouncementCardProps = AnnouncementCardBaseProps &
   Pick<CardBodyProps, 'onActionPress'> & {
     onPress?: PressableProps['onPress'];
   };
 
-/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
+/** @deprecated This component will be removed in a future version. Use NudgeCard or UpsellCard instead. */
 export const AnnouncementCard = memo(function AnnouncementCard({
   onPress,
   width,

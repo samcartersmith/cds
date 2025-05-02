@@ -32,7 +32,7 @@ const visibleClassName = css`
 `;
 
 /**
- * @deprecated this component will be removed from CDS in v6.0.0. It has been moved to cds-web-sparkline.
+ * @deprecated This component will be removed from CDS in a future version. It has been moved to cds-web-sparkline.
  */
 export const Counter = ({ startNum, endNum, renderNum, durationInMillis }: CounterBaseProps) => {
   const count = useCounter({ startNum, endNum, durationInMillis });

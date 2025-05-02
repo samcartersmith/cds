@@ -22,7 +22,7 @@ type XmlReturnType = { content: string };
 
 type BaseRemoteImageProps = {
   /**
-   * @deprecated will be removed in v6.0.0 - use darkModeEnhancementsApplied instead
+   * @deprecated This prop will be removed in a future version. Use darkModeEnhancementsApplied instead.
    * Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.
    */
   shouldApplyDarkModeEnhacements?: boolean;

@@ -4,13 +4,13 @@ import { FeatureEntryCardBaseProps } from '@cbhq/cds-common2/types';
 import { Card, type CardProps } from './Card';
 import { CardBody, type CardBodyProps } from './CardBody';
 
-/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
+/** @deprecated This component will be removed in a future version. Use NudgeCard or UpsellCard instead. */
 export type FeatureEntryCardProps = FeatureEntryCardBaseProps & {
   onClick?: CardProps['onClick'];
   onActionPress?: CardBodyProps['onActionPress'];
 };
 
-/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
+/** @deprecated This component will be removed in a future version. Use NudgeCard or UpsellCard instead. */
 export const FeatureEntryCard = memo(function FeatureEntryCard({
   onClick,
   testID = 'feature-entry-card',

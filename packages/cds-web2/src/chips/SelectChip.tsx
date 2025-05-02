@@ -15,7 +15,7 @@ export type SelectChipProps = {
   /** Indicates that the control is being used to manipulate data elsewhere */
   active?: boolean;
   /**
-   * @deprecated The `children` prop is now deprecated and will be removed in the next major version (v7).
+   * @deprecated The prop will be removed in a future version.
    */
   children?: React.ReactNode;
 } & Omit<ChipProps, 'inverted' | 'children' | 'onBlur' | 'noScaleOnPress' | 'content'> &
