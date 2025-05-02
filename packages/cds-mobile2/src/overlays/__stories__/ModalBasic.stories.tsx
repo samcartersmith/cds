@@ -9,7 +9,7 @@ import { ModalFooter } from '../modal/ModalFooter';
 import { ModalHeader } from '../modal/ModalHeader';
 
 const ModalBasicScreen = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const handleClose = useCallback(() => setVisible(false), []);
   const handleOpen = useCallback(() => setVisible(true), []);
 

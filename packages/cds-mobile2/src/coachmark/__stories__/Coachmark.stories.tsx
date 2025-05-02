@@ -6,11 +6,11 @@ import { noop } from '@cbhq/cds-utils';
 import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { SpotRectangle } from '../../illustrations';
 import { Box, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { ProgressBar } from '../../visualizations';
 import { Coachmark } from '../Coachmark';
-import { SpotRectangle } from '../../illustrations';
 
 const CoachmarkExamples = () => {
   const [checked, setChecked] = useState(false);
@@ -49,7 +49,7 @@ const CoachmarkExamples = () => {
               50%
             </Text>
             <ProgressBar progress={0.5} />
-            <Text>
+            <Text font="body">
               Add up to 3 lines of body copy. Deliver your message with clarity and impact
             </Text>
           </VStack>
@@ -70,7 +70,7 @@ const CoachmarkExamples = () => {
         action={<Button>Next</Button>}
         content="This SpotRectangle is in a Box with bgPrimary background."
         media={
-          <Box background="bgPrimary" alignItems="center" justifyContent="center" padding={4}>
+          <Box alignItems="center" background="bgPrimary" justifyContent="center" padding={4}>
             <SpotRectangle name="defiEarn" />
           </Box>
         }

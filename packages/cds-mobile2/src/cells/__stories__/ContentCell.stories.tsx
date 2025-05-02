@@ -8,7 +8,7 @@ import { Box } from '../../layout/Box';
 import { CellMedia } from '../CellMedia';
 import { ContentCell } from '../ContentCell';
 
-const innerSpacingConfig: CellSpacing = { paddingX: 2 };
+const innerSpacingConfig: CellSpacing = { paddingX: 1 };
 
 const onPressConsole = () => console.log('pressed');
 
