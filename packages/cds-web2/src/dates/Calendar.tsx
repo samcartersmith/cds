@@ -112,6 +112,21 @@ const getDayAccessibilityLabel = (date: Date, locale = 'en-US') =>
     year: 'numeric',
   })}`;
 
+const getDateWithOffset = (
+  year: number,
+  month: number,
+  day: number,
+  monthOffset: number = 0,
+  yearOffset: number = 0,
+  dayOffset: number = 0,
+): Date => {
+  const targetYear = year + yearOffset;
+  const targetMonth = month - 1 + monthOffset;
+  const targetDay = day + dayOffset;
+  const lastDayOfTargetMonth = new Date(targetYear, targetMonth + 1, 0).getDate();
+  return new Date(targetYear, targetMonth, Math.min(targetDay, lastDayOfTargetMonth));
+};
+
 const CalendarDay = memo(
   forwardRef<HTMLButtonElement, CalendarDayProps>(
     (
@@ -274,7 +289,18 @@ export const Calendar = memo(
           const focusedElement = document.activeElement as HTMLElement;
           const focusedDateString = focusedElement?.getAttribute('data-calendar-date');
           if (!focusedDateString || !calendarRef.current?.contains(focusedElement)) return;
-          if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key))
+          if (
+            [
+              'ArrowUp',
+              'ArrowDown',
+              'ArrowLeft',
+              'ArrowRight',
+              'PageUp',
+              'PageDown',
+              'Home',
+              'End',
+            ].includes(event.key)
+          )
             event.preventDefault();
           const [year, month, day] = focusedDateString.split('-').map((s) => parseInt(s, 10));
           const focusedDate = new Date(year, month - 1, day);
@@ -283,6 +309,23 @@ export const Calendar = memo(
           if (event.key === 'ArrowDown') newFocusDate = new Date(year, month - 1, day + 7);
           if (event.key === 'ArrowLeft') newFocusDate = new Date(year, month - 1, day - 1);
           if (event.key === 'ArrowRight') newFocusDate = new Date(year, month - 1, day + 1);
+          if (event.key === 'Home')
+            newFocusDate = new Date(year, month - 1, day - focusedDate.getDay());
+          if (event.key === 'End')
+            newFocusDate = new Date(year, month - 1, day + (6 - focusedDate.getDay()));
+
+          if (event.key === 'PageUp') {
+            newFocusDate = event.shiftKey
+              ? getDateWithOffset(year, month, day, 0, -1)
+              : getDateWithOffset(year, month, day, -1, 0);
+          }
+
+          if (event.key === 'PageDown') {
+            newFocusDate = event.shiftKey
+              ? getDateWithOffset(year, month, day, 0, 1)
+              : getDateWithOffset(year, month, day, 1, 0);
+          }
+
           // Prevent keyboard focus navigation past minDate and maxDate months
           if (
             !newFocusDate ||
@@ -294,7 +337,11 @@ export const Calendar = memo(
                 newFocusDate.getFullYear() > maxDate.getFullYear()))
           )
             return;
-          if (newFocusDate.getMonth() !== focusedDate.getMonth()) setCalendarSeedDate(newFocusDate);
+          if (
+            newFocusDate.getMonth() !== focusedDate.getMonth() ||
+            newFocusDate.getFullYear() !== focusedDate.getFullYear()
+          )
+            setCalendarSeedDate(newFocusDate);
           setTimeout(() => {
             const dateString = newFocusDate && getISOStringLocal(newFocusDate);
             calendarRef.current
