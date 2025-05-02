@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2025-04-28T21:43:41.259Z",
+  "lastUpdated": "2025-05-02T16:39:34.640Z",
   "metadata": { "lastUnicode": 63980 },
   "items": {
     "2:188": {
@@ -11125,6 +11125,78 @@
         "svg16Inactive": "./ui/svg/ui-peopleStar-16.svg",
         "svg24Active": "./ui/svg/ui-peopleStar-24-active.svg",
         "svg24Inactive": "./ui/svg/ui-peopleStar-24.svg"
+      }
+    },
+    "3691:169": {
+      "type": "ui",
+      "name": "gaugeHighLow",
+      "hash": "OC344TV0ZO1u8wcM427nn3r6qUgYPahKXDFpDJoKOo0=",
+      "description": "gauge, measure, size, scope, calculate,\nmachine",
+      "components": [
+        { "props": { "size": 24, "active": false } },
+        { "props": { "size": 24, "active": true } },
+        { "props": { "size": 16, "active": false } },
+        { "props": { "size": 16, "active": true } },
+        { "props": { "size": 12, "active": false } },
+        { "props": { "size": 12, "active": true } }
+      ],
+      "createdAt": "2025-05-02T16:31:42.682Z",
+      "lastUpdated": "2025-05-02T16:31:42.682Z",
+      "outputs": {
+        "svg12Active": "./ui/svg/ui-gaugeHighLow-12-active.svg",
+        "svg12Inactive": "./ui/svg/ui-gaugeHighLow-12.svg",
+        "svg16Active": "./ui/svg/ui-gaugeHighLow-16-active.svg",
+        "svg16Inactive": "./ui/svg/ui-gaugeHighLow-16.svg",
+        "svg24Active": "./ui/svg/ui-gaugeHighLow-24-active.svg",
+        "svg24Inactive": "./ui/svg/ui-gaugeHighLow-24.svg"
+      }
+    },
+    "3691:177": {
+      "type": "ui",
+      "name": "gaugeLowHigh",
+      "hash": "WNE9CfCTpTAHnOxvO1VGlmhhzXIvnE1gl4gWR21LdC0=",
+      "description": "gauge, measure, size, scope, calculate,\nmachine",
+      "components": [
+        { "props": { "size": 24, "active": false } },
+        { "props": { "size": 24, "active": true } },
+        { "props": { "size": 16, "active": false } },
+        { "props": { "size": 16, "active": true } },
+        { "props": { "size": 12, "active": false } },
+        { "props": { "size": 12, "active": true } }
+      ],
+      "createdAt": "2025-05-02T16:31:42.688Z",
+      "lastUpdated": "2025-05-02T16:31:42.688Z",
+      "outputs": {
+        "svg12Active": "./ui/svg/ui-gaugeLowHigh-12-active.svg",
+        "svg12Inactive": "./ui/svg/ui-gaugeLowHigh-12.svg",
+        "svg16Active": "./ui/svg/ui-gaugeLowHigh-16-active.svg",
+        "svg16Inactive": "./ui/svg/ui-gaugeLowHigh-16.svg",
+        "svg24Active": "./ui/svg/ui-gaugeLowHigh-24-active.svg",
+        "svg24Inactive": "./ui/svg/ui-gaugeLowHigh-24.svg"
+      }
+    },
+    "3691:185": {
+      "type": "ui",
+      "name": "gaugeLowMid",
+      "hash": "HE78wQ+xg6N8UdtWl/a/U4bvJIHZS7FdQU1KNiEu26o=",
+      "description": "gauge, measure, size, scope, calculate,\nmachine",
+      "components": [
+        { "props": { "size": 24, "active": false } },
+        { "props": { "size": 24, "active": true } },
+        { "props": { "size": 16, "active": false } },
+        { "props": { "size": 16, "active": true } },
+        { "props": { "size": 12, "active": false } },
+        { "props": { "size": 12, "active": true } }
+      ],
+      "createdAt": "2025-05-02T16:31:42.674Z",
+      "lastUpdated": "2025-05-02T16:31:42.674Z",
+      "outputs": {
+        "svg12Active": "./ui/svg/ui-gaugeLowMid-12-active.svg",
+        "svg12Inactive": "./ui/svg/ui-gaugeLowMid-12.svg",
+        "svg16Active": "./ui/svg/ui-gaugeLowMid-16-active.svg",
+        "svg16Inactive": "./ui/svg/ui-gaugeLowMid-16.svg",
+        "svg24Active": "./ui/svg/ui-gaugeLowMid-24-active.svg",
+        "svg24Inactive": "./ui/svg/ui-gaugeLowMid-24.svg"
       }
     }
   }
