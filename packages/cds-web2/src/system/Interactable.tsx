@@ -88,7 +88,8 @@ const transparentActiveStyle = css`
 
 const transparentWhileInactiveStyle = css`
   background-color: transparent;
-  &:disabled {
+  &:disabled,
+  &[aria-disabled='true'] {
     background-color: transparent;
   }
 `;
