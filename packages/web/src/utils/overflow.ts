@@ -15,6 +15,7 @@ const overflowStyles = css`
   overflow: visible;
   white-space: normal;
   hyphens: auto;
+  overflow-wrap: anywhere;
 `;
 
 export const getOverflowTextStyles = (expanded: boolean) =>
