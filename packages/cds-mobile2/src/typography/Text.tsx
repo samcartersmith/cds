@@ -183,10 +183,10 @@ export const Text = memo(
       const textAlign = useTextAlign(align);
       const monoFontFamily = mono && fontFamily !== 'inherit' && theme.fontFamilyMono?.[fontFamily];
       const textTransformValue =
-        textTransform ?? fontFamily !== 'inherit'
+        textTransform ??
+        (fontFamily !== 'inherit'
           ? theme.textTransform[fontFamily as keyof typeof theme.textTransform]
-          : undefined;
-
+          : undefined);
       const computedNumberOfLines =
         noWrap || (ellipsize && typeof numberOfLines === 'undefined') ? 1 : numberOfLines;
 

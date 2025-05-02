@@ -36,7 +36,7 @@ const pinnedSharedWrapperProps = {
 } as const;
 
 const innerSpacingConfig: CellSpacing = {
-  paddingX: 2,
+  paddingX: 1,
 };
 
 const ListCellCard = () => (

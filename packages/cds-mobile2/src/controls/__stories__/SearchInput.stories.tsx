@@ -68,7 +68,7 @@ const OnChangeExample = () => {
         onChangeText={setText}
         value={text}
       />
-      <Text font="label1">{text}</Text>
+      {!!text && <Text font="label1">{text}</Text>}
     </>
   );
 };
@@ -110,7 +110,7 @@ const SetCustomSearchStartIcon = () => {
         startIcon="search"
         value={text}
       />
-      <Text font="label1">{text}</Text>
+      {!!text && <Text font="label1">{text}</Text>}
     </>
   );
 };
@@ -131,7 +131,7 @@ const SetCustomBackArrowStartIcon = () => {
         startIcon="backArrow"
         value={text}
       />
-      <Text font="label1">{text}</Text>
+      {!!text && <Text font="label1">{text}</Text>}
     </>
   );
 };

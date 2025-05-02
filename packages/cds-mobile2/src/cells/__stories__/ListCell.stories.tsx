@@ -12,7 +12,7 @@ import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
 const onPressConsole = () => console.log('onPress');
-const innerSpacingConfig: CellSpacing = { paddingX: 2 };
+const innerSpacingConfig: CellSpacing = { paddingX: 1 };
 const cellPriorities: CellPriority[] = ['middle', 'end'];
 const titlePadding = { paddingX: gutter } as const;
 

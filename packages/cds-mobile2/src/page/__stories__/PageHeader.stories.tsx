@@ -39,7 +39,7 @@ const exampleProps = {
   intermediary1: <Text font="headline">Intermediary Content</Text>,
   intermediary2: (
     <Box dangerouslySetBackground="red">
-      <Text>
+      <Text font="body">
         Hello there. This is a rather long text sentence since I do not have lorem ipsum handy.
         Hello there. This is a rather long text sentence since I do not have lorem ipsum handy.
       </Text>

@@ -121,15 +121,29 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     [bodyLineHeight],
   );
 
-  const pressableStyle = useCallback(
-    (state: PressableStateCallbackType): ViewStyle => ({
+  const pressableStyle: ViewStyle = useMemo(
+    () => ({
       flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
       alignItems: 'flex-start',
       gap: theme.space[1],
-      opacity: state.pressed ? opacityPressed : pressDisabled ? accessibleOpacityDisabled : 1,
       ...style,
     }),
-    [theme.space, pressDisabled, style],
+    [theme.space, style],
+  );
+
+  const getLabelStyle = useCallback(
+    (state: PressableStateCallbackType) => {
+      return {
+        color: animatedBoxValue.interpolate({
+          inputRange: [0, 1],
+          outputRange: [theme.color.fgMuted, theme.color.fg],
+        }),
+        // Prevent text element from expanding beyond available width.
+        flexShrink: 1,
+        opacity: state.pressed ? opacityPressed : pressDisabled ? accessibleOpacityDisabled : 1,
+      };
+    },
+    [animatedBoxValue, pressDisabled, theme.color.fg, theme.color.fgMuted],
   );
 
   return (
@@ -169,14 +183,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
               animated
               color={checked || indeterminate ? 'fg' : 'fgMuted'}
               font="body"
-              style={{
-                color: animatedBoxValue.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [theme.color.fgMuted, theme.color.fg],
-                }),
-                // Prevent text element from expanding beyond available width.
-                flexShrink: 1,
-              }}
+              style={getLabelStyle({ pressed })}
               testID={`${testID}Label`}
             >
               {label}

@@ -313,7 +313,7 @@ const InputScreen = () => {
       <Example inline title="CompactTextInput with End Node">
         <MockCompactTextInput
           end={
-            <Text accessibilityHint="Cancel" accessibilityLabel="Cancel">
+            <Text accessibilityHint="Cancel" accessibilityLabel="Cancel" font="body">
               End Node
             </Text>
           }
