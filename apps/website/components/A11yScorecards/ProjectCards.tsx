@@ -28,13 +28,16 @@ export const ProjectCards = ({
   );
 
   const projectGroups = sortedGroups.map((group) => {
-    const scoresWithA11yData = group.scores.filter(
-      (score) =>
-        Object.keys(score).includes('a11yScore') &&
-        Object.keys(score).includes('totalNumberOfPassingAccessibilityTests') &&
-        Object.keys(score).includes('automatedA11yScore'),
-    );
-    const averageScore = meanBy(scoresWithA11yData, (score) => score.automatedA11yScore ?? 0);
+    // In Go, zero values are not included in the JSON response, so we need to add them back in
+    const normalizedScores = group.scores.map((score) => {
+      return {
+        ...score,
+        a11yScore: score.a11yScore ?? 0,
+        totalNumberOfPassingAccessibilityTests: score.totalNumberOfPassingAccessibilityTests ?? 0,
+        automatedA11yScore: score.automatedA11yScore ?? 0,
+      };
+    });
+    const averageScore = meanBy(normalizedScores, (score) => score.automatedA11yScore ?? 0);
     const readableProjectName = a11yProjectNameMap[group.projectName] || group.projectName;
 
     return (

@@ -21,7 +21,7 @@ export const ProjectCell = memo(({ score, active, onPress, percentChange }: Proj
   const end = (
     <VStack>
       <TextBody align="end" as="p" overflow="truncate">
-        {score.automatedA11yScore ? `${score.automatedA11yScore}%` : 'Data not available'}
+        {score.automatedA11yScore ?? 0}%
       </TextBody>
       <PercentDisplayOnly percentChange={percentChange} />
     </VStack>
