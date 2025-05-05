@@ -89,7 +89,7 @@ const DisableBackArrow = () => {
         onSearch={handleOnSearch}
         value={text}
       />
-      <Text font="label1">{text}</Text>
+      {!!test && <Text font="label1">{text}</Text>}
     </>
   );
 };
