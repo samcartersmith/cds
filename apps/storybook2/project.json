@@ -23,6 +23,18 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "percy": {
+      "command": "tsx ./scripts/run-percy.ts",
+      "dependsOn": [
+        "build"
+      ],
+      "inputs": [
+        "{projectRoot}/dist"
+      ],
+      "options": {
+        "cwd": "apps/storybook2"
+      }
     }
   }
 }

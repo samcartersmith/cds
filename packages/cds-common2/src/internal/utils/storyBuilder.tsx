@@ -113,33 +113,18 @@ export type StoryBuilderConfig<Props, WrapperProps> = {
 
 export const baseConfig = {
   args: {
-    scale: 'large',
-    spectrum: 'light',
+    isDarkMode: false,
   },
   argTypes: {
-    // Global args for all stories built with storyBuilder
-    scale: {
-      options: ['xSmall', 'small', 'medium', 'large', 'xLarge', 'xxLarge', 'xxxLarge'],
-      control: 'radio',
-      description: 'Scale to pull sizes from',
-    },
-    spectrum: {
-      options: ['light', 'dark'],
-      control: 'radio',
-      description: 'Spectrum to pull palette colors from',
+    isDarkMode: {
+      control: 'boolean',
+      description: 'Enable dark mode',
     },
   },
   parameters: {
     // Percy specific params
     percy: {
-      additionalSnapshots: [
-        { prefix: '[Dark mode] ', args: { spectrum: 'dark' } },
-        { prefix: '[xSmall scale] ', args: { scale: 'xSmall', spectrum: 'light' } },
-        { prefix: '[small mode] ', args: { scale: 'small', spectrum: 'light' } },
-        { prefix: '[medium mode] ', args: { scale: 'medium', spectrum: 'light' } },
-        { prefix: '[xLarge mode] ', args: { scale: 'xLarge', spectrum: 'light' } },
-        { prefix: '[xxxLarge mode] ', args: { scale: 'xxxLarge', spectrum: 'light' } },
-      ],
+      additionalSnapshots: [{ prefix: '[Dark mode] ', args: { isDarkMode: true } }],
     },
   },
 };

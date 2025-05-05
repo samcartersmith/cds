@@ -32,9 +32,12 @@ const LocalStrictMode = ({ children }: { children: React.ReactNode }) => {
 
 export function StoryContainer<Props>(
   StoryComponent: Story,
-  context: StoryBuilderConfig<Props, { children?: React.ReactNode }>,
+  context: StoryBuilderConfig<Props & { isDarkMode?: boolean }, { children?: React.ReactNode }>,
 ) {
-  const isDarkMode = useDarkMode();
+  const darkModeArg = context.args?.isDarkMode;
+  const isDarkModeState = useDarkMode();
+  const isDarkModeValue = darkModeArg ?? isDarkModeState;
+
   const stories = context.parameters?.stories;
 
   const Container = memo(() => {
@@ -44,7 +47,6 @@ export function StoryContainer<Props>(
         return React.Children.toArray(
           stories.map((child) => {
             const mergedProps = sanitizeProps(merge({}, child.args, context.args));
-            // @ts-expect-error - TODO: Fix this
             return React.createElement(child, mergedProps);
           }),
         );
@@ -60,7 +62,7 @@ export function StoryContainer<Props>(
       <LocalStrictMode>
         <MediaQueryProvider>
           <ThemeProvider
-            activeColorScheme={isDarkMode ? 'dark' : 'light'}
+            activeColorScheme={isDarkModeValue ? 'dark' : 'light'}
             display="contents"
             theme={defaultTheme}
           >

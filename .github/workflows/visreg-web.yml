@@ -39,7 +39,7 @@ jobs:
         # Do not run affected tests when the run-all `visreg` label is present
         if: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'visreg') }}
         run: |
-          if yarn workspace @cds/storybook should-run-visreg; then
+          if yarn workspace @cds/storybook2 should-run-visreg; then
             echo "Storybook changes detected, running Visreg Web Percy run"
             echo "SHOULD_RUN_VISREG=true" >> "$GITHUB_OUTPUT"
           else
@@ -54,7 +54,7 @@ jobs:
         with:
           image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
           command: |-
-            yarn nx run storybook:percy
+            yarn nx run storybook2:percy
           environment: |-
             STORYBOOK_SKIP_ANIMATION=true
             PERCY_TOKEN="${{ env.PERCY_TOKEN }}"
