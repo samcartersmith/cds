@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Enable prettier for type outputs.
+
 ## 4.9.0 (4/16/2025 PST)
 
 #### 🚀 Updates
