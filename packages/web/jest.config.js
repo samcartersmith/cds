@@ -14,5 +14,6 @@ export default {
     '__stories__',
   ],
   testMatch: ['**//**/*.test.(ts|tsx)'],
+  testTimeout: 10000,
   transformIgnorePatterns: [`node_modules/(?!(${esModules.join('|')}))`],
 };

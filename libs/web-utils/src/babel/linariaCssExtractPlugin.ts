@@ -74,26 +74,18 @@ function extractCss(metadata: LinariaMetadata, options: CssExtractOptions): CssR
   return result;
 }
 
-async function writeCssFiles(cssMap: Map<string, CssResult>) {
-  const promises: Promise<unknown>[] = [];
-
-  cssMap.forEach(({ cssText, sourceMap }, outputFile) => {
-    if (fs.existsSync(path.dirname(outputFile))) {
-      promises.push(
-        fs.promises.writeFile(
+function writeCssFiles(cssMap: Map<string, CssResult>) {
+  try {
+    cssMap.forEach(({ cssText, sourceMap }, outputFile) => {
+      if (fs.existsSync(path.dirname(outputFile))) {
+        fs.writeFileSync(
           outputFile,
           sourceMap ? `${cssText}\n/*# sourceMappingURL=${outputFile}.map */` : cssText,
-        ),
-      );
+        );
 
-      if (sourceMap) {
-        promises.push(fs.promises.writeFile(`${outputFile}.map`, sourceMap));
+        if (sourceMap) fs.writeFileSync(`${outputFile}.map`, sourceMap);
       }
-    }
-  });
-
-  try {
-    await Promise.all(promises);
+    });
   } catch (error) {
     console.error(chalk.redBright('error'), error);
   }
@@ -156,7 +148,7 @@ export function linariaCssExtractPlugin(): PluginObj {
       },
     },
     post() {
-      void writeCssFiles(cssMap);
+      writeCssFiles(cssMap);
     },
   };
 }
