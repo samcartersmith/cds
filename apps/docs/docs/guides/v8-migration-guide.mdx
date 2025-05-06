@@ -1,0 +1,335 @@
+---
+id: v8-migration-guide
+title: v8 Migration Guide
+hide_title: true
+---
+
+import { MDXSection } from '@site/src/components/page/MDXSection';
+import { MDXArticle } from '@site/src/components/page/MDXArticle';
+import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
+import { GettingStartedBanner } from '@site/src/components/page/ComponentBanner/GettingStartedBanner';
+
+<MDXSection>
+<MDXArticle>
+
+## Introduction
+
+CDS v8 is our most feature packed release ever! Including but not limited to:
+
+- 🔮 Expanded styling and customization options
+- 🔥 Faster renders and smaller flamegraphs
+- 🦾 Improved accessibility of components and theming
+- 🧩 Simplified and more predictable internal architecture
+
+To enable global theming and style customization for all CDS components, some APIs were deprecated or outright deleted. We appreciate the impact this will have on teams adopting CDS v8 and are committed to supporting developers through this upgrade 🏎️
+
+If you experience any trouble migrating we're ready to help! Just reach out in #ask-ui-systems
+
+## Dependencies
+
+TO DO...
+
+## Styles
+
+CDS components support more flexible styling and improved customization options, including polymorphism on web.
+
+### Safari web support
+
+CDS v8 for web supports Safari 15.4 and later, released March 14, 2022. We make use of features like CSS layers and selectors like `:focus-visible` and `:has()`.
+
+### CSS layers
+
+All CDS web CSS is now scoped to a [CSS layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer):
+
+```css
+@layer cds {
+  .hello-world {
+    color: red;
+  }
+}
+```
+
+This causes CDS CSS to have lower style specificity than styles that are not on a CSS layer - which makes it easy to ensure your custom styles always overwrite CDS. This solves problems with non-deterministic styles based on stylesheet load order.
+
+### New web global styles
+
+CDS web global styles now include a CSS reset which override the browser default styles for some elements. This ensures that polymorphic components render correctly, regardless of their HTML element. See the [full style reset here](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/styles/global.ts).
+
+### Improved web polymorphism
+
+Many web components are now fully polymorphic, allowing the use of any HTML element with strong typechecking:
+
+```tsx
+// Without the `as` prop, href throws a type error
+<Button href="example.com" />
+// With the `as` prop, all native anchor props are valid
+<Button as="a" href="example.com" />
+```
+
+### Elevation changes
+
+TO DO...
+
+### New style tokens
+
+CDS has many new themeable style tokens that allow customizing colors, fonts, borders, spacing, and more. The value of these style tokens is configured in the ThemeProvider. Adopting v8 requires migrating to the new token names.
+
+In the case of color tokens in particular, the new name that you migrate to will depend on the context of the color. For example, the old `primary` token can be migrated to either `fgPrimary` or `bgPrimary` depending on the context.
+
+The `fg` colors should be used for foreground elements like text and icons, while the `bg` colors should be used for background elements like borders and background colors.
+
+CDS v8 no longer places limits on how developers use colors. Technically "incorrect" uses like setting `background="fgNegative"` (`fg` indicates a foreground color) are allowed by the API.
+
+### Foreground color updates
+
+This table maps the old foreground color tokens to the new foreground color tokens:
+
+| Old foreground color tokens | New foreground color tokens |
+| --------------------------- | --------------------------- |
+| foreground                  | fg                          |
+| foregroundMuted             | fgMuted                     |
+| primary                     | fgPrimary                   |
+| primaryForeground           | fgInverse                   |
+| secondary                   | bgSecondary                 |
+| secondaryForeground         | fg                          |
+| positive                    | fgPositive                  |
+| positiveForeground          | fgInverse                   |
+| negative                    | fgNegative                  |
+| negativeForeground          | fgInverse                   |
+| warning                     | bgWarning                   |
+| warningForeground           | fgWarning                   |
+
+### Background color updates
+
+This table maps the old background color tokens to the new background color tokens:
+
+| Old background color tokens | New background color tokens |
+| --------------------------- | --------------------------- |
+| background                  | bg                          |
+| backgroundAlternate         | bgAlternate                 |
+| backgroundOverlay           | bgOverlay                   |
+| backgroundInverse           | bgInverse                   |
+| primary                     | bgPrimary                   |
+| secondary                   | bgSecondary                 |
+| positive                    | bgPositive                  |
+| negative                    | bgNegative                  |
+| warning                     | bgWarning                   |
+| primaryWash                 | bgPrimaryWash               |
+| negativeWash                | bgNegativeWash              |
+| transparent                 | transparent                 |
+
+### Border color updates
+
+This table maps the old border color tokens to the new border color tokens:
+
+| Old border color tokens | New border color tokens |
+| ----------------------- | ----------------------- |
+| primary                 | bgLinePrimary           |
+| primaryWash             | bgLinePrimarySubtle     |
+| secondary               | bgLine                  |
+| positive                | bgPositive              |
+| negative                | bgNegative              |
+| line                    | bgLine                  |
+| lineHeavy               | bgLineHeavy             |
+| transparent             | transparent             |
+| warning                 | bgWarning               |
+| warningForeground       | fgWarning               |
+
+### Border width updates
+
+This table maps the old border width tokens to the new border width tokens:
+
+| Old border width tokens | New border width tokens |
+| ----------------------- | ----------------------- |
+| none                    | 0                       |
+| button                  | 100                     |
+| card                    | 100                     |
+| checkbox                | 200                     |
+| radio                   | 200                     |
+| sparkline               | 200                     |
+| focusRing               | 200                     |
+| input                   | 100                     |
+
+### Border radius updates
+
+This table maps the old border radius tokens to the new border radius tokens:
+
+| Old border radius tokens | New border radius tokens |
+| ------------------------ | ------------------------ |
+| roundedNone              | 0                        |
+| roundedSmall             | 100                      |
+| rounded                  | 200                      |
+| roundedMedium            | 300                      |
+| roundedLarge             | 400                      |
+| roundedXLarge            | 500                      |
+| roundedFull              | 1000                     |
+
+## Theming and Providers
+
+CDS components are now able to be extensively themed through the ThemeProvider, which has an all new API. All CDS components that render UI must now be inside a ThemeProvider.
+
+Any component calling the `useTheme()` hook without a parent ThemeProvider will throw an error, and component styles will be broken.
+
+### Spectrum changes
+
+In CDS v7 and lower, `spectrum` referred to two things:
+
+- The concept of light and dark mode, and
+- The different sets of RGB values applied in light and dark mode
+
+In CDS v8, the concept of light and dark mode is now called the `colorScheme`. The ThemeProvider now accepts an `activeColorScheme` prop to specify rendering in light or dark mode. The different sets of RGB values applied in light and dark mode are still referred to as `spectrum` values, e.g. `theme.lightSpectrum` and `theme.darkSpectrum`.
+
+### Note about spectrum vs color
+
+The difference in `theme.spectrum` and `theme.color` is that spectrum values are just `"r,g,b"` strings while color values are valid CSS values.
+
+The `theme.color` values have semantic names. You should always prefer to use these values instead of spectrum values when styling UI.
+
+```tsx
+const lightSpectrum = {
+  red60: '207,32,47',
+};
+
+const theme = {
+  lightSpectrum,
+  lightColor: {
+    bgNegative: `rgb(${lightSpectrum.red60})`,
+  },
+};
+
+<ThemeProvider theme={theme} activeColorScheme="light">
+```
+
+```tsx
+const theme = useTheme();
+console.log(theme.spectrum.red60); // "207,32,47"
+console.log(theme.color.bgNegative); // "rgb(207,32,47)"
+```
+
+### ThemeProvider default values
+
+The ThemeProvider no longer includes default values for the `theme` or `activeColorScheme` props. These props are now required on every ThemeProvider.
+
+### Deleted hooks
+
+Many internal hooks that were used to compute CDS component styles have been deleted or refactored.
+
+Some consumer-facing hooks like `useSpectrum` and `useScale` have been deleted, and are replaced by the new `useTheme` hook.
+
+### ThemeProvider theme object
+
+The new `theme` object defines the values for all themeable style tokens in CDS. These style tokens are called [`ThemeVars`](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-common2/src/core/theme.ts).
+
+First, take a look at the definitions for our `defaultTheme` on [web here](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/themes/defaultTheme.ts) and [mobile here](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/themes/defaultTheme.ts).
+
+When the `theme` object is passed to the ThemeProvider, it must fit the `ThemeConfig` type - [web type](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/core/theme.ts#L4) and [mobile type](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/core/theme.ts#L11).
+
+When the `theme` object is returned from the `useTheme` hook, it will fit the `Theme` type - [web type](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/core/theme.ts#L24) and [mobile type](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/core/theme.ts#L31). This is because it also contains references to the `activeColorScheme`, `spectrum`, and `color` values.
+
+### ThemeProvider CSS variables
+
+On web, the ThemeProvider creates CSS variables for all values in the theme. These variables are scoped to the ThemeProvider's classname.
+
+| JS variable             | CSS variable       |
+| ----------------------- | ------------------ |
+| theme.color.bgPrimary   | --color-bgPrimary  |
+| theme.space[2]          | --space-2          |
+| theme.borderRadius[200] | --borderRadius-200 |
+
+### ThemeProvider colorScheme className
+
+On web, the ThemeProvider adds a `.dark` or `.light` class to its container element depending on the `activeColorScheme`. You can use this class for writing styles specific to the colorSchemes.
+
+```css
+const myStyles = css`
+  .dark {
+    background-image: url('http://example.com/dark.png');
+  }
+
+  .light {
+    background-image: url('http://example.com/light.png');
+  }
+`;
+```
+
+### ThemeProvider inheritence
+
+The ThemeProvider no longer automatically inherits and merges themes from parent ThemeProviders. However you can manually inherit the theme if you want:
+
+```tsx
+const MyPage = () => {
+  const theme = useTheme();
+
+  const customTheme = {
+    ...theme,
+    fontFamily: {
+      ...theme.fontFamily,
+      label1: 'Arial',
+    },
+  };
+
+  return (
+    <ThemeProvider theme={customTheme} activeColorScheme={theme.activeColorScheme}>
+      Customized theming!
+    </ThemeProvider>
+  );
+};
+```
+
+### New useTheme hook
+
+The current `theme` and `activeColorScheme` values can be accessed through the `useTheme()` hook on both mobile and web.
+
+The `theme.color` value is a reference to `theme.lightColor` or `theme.darkColor` depending on the `activeColorScheme`.
+
+The `theme.spectrum` value is a reference to `theme.lightSpectrum` or `theme.darkSpectrum` depending on the `activeColorScheme`.
+
+Whenever possible, use CSS variables on web instead of the `useTheme()` hook to ensure best performance.
+
+```tsx
+const MyPage = () => {
+  const theme = useTheme();
+  console.log(theme.activeColorScheme); // "light" or "dark"
+  console.log(theme.spectrum); // Reference to lightSpectrum or darkSpectrum, depends on activeColorScheme
+  console.log(theme.color); // Reference to lightColor or darkColor, depends on activeColorScheme
+  console.log(theme.color.bgPrimary); // "rgb(0,82,255)" or "rgb(87,139,250)", depends on activeColorScheme
+  console.log(theme.space[2]); // "16px"
+  console.log(theme.borderRadius[200]); // "8px"
+  console.log(theme.fontSize.display3); // "2.5rem"
+};
+```
+
+### Deleted providers
+
+The following providers have been deleted:
+
+- DevicePreferencesProvider
+- FeatureFlagProvider
+- ScaleProvider / RootScaleProvider
+- SpectrumProvider / RootSpectrumProvider
+- NormalScaleProvider / DenseScaleProvider
+- DarkModeProvider / LightModeProvider
+
+### Scale / density removed
+
+In CDS v8, the concept of scale / density no longer exists.
+
+To achieve dense / xSmall scale styles, you can create a new theme that updates the values of `space`, `fontSize`, `lineHeight`, `controlSize`, `iconSize`, etc.
+
+We have an example `denseTheme` you can use to emulate the old dense / xSmall scale styles - [web link](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/themes/denseTheme.ts) and [mobile link](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/themes/denseTheme.ts). However you need to copy this theme into your application, it will be deleted from CDS in the next major release.
+
+### Inverting the theme
+
+Some component props like `invertSpectrum` allow inverting a component tree to use the opposite of the current `activeColorScheme`. These props have been renamed to `invertColorScheme`.
+
+We have a new InvertedThemeProvider that will do this inversion automatically if the opposite color palette is defined in the theme. If the opposite colors are not defined then the InvertedThemeProvider does nothing.
+
+```tsx
+const MyComponent = ({ invertColorScheme }) => {
+  const Wrapper = invertColorScheme ? InvertedThemeProvider : React.Fragment;
+  return <Wrapper>Hello world</Wrapper>;
+};
+```
+
+</MDXArticle>
+</MDXSection>
