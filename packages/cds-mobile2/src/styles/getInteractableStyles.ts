@@ -20,6 +20,9 @@ export type GetInteractableStylesParams = {
   background: string;
   pressedBackground?: string;
   disabledBackground?: string;
+  borderColor: string;
+  pressedBorderColor?: string;
+  disabledBorderColor?: string;
   elevation?: ElevationLevels;
 };
 
@@ -28,6 +31,9 @@ export const getInteractableStyles = ({
   background,
   pressedBackground,
   disabledBackground,
+  borderColor,
+  pressedBorderColor,
+  disabledBorderColor,
 }: GetInteractableStylesParams) => {
   /**
    * Apply an interactive background style. Blend the color with the background or backgroundInverse values
@@ -35,6 +41,7 @@ export const getInteractableStyles = ({
   const wrapperStyles = {
     base: {
       backgroundColor: background,
+      borderColor: borderColor,
     },
     pressed: {
       backgroundColor: getBlendedColor({
@@ -42,10 +49,21 @@ export const getInteractableStyles = ({
         opacity: opacityPressed,
         colorScheme: theme.activeColorScheme,
       }),
+      borderColor: getBlendedColor({
+        color: pressedBorderColor ?? borderColor,
+        opacity: opacityPressed,
+        colorScheme: theme.activeColorScheme,
+      }),
     },
     disabled: {
       backgroundColor: getBlendedColor({
         color: disabledBackground ?? background,
+        opacity: accessibleOpacityDisabled,
+        colorScheme: theme.activeColorScheme,
+        isDisabled: true,
+      }),
+      borderColor: getBlendedColor({
+        color: disabledBorderColor ?? borderColor,
         opacity: accessibleOpacityDisabled,
         colorScheme: theme.activeColorScheme,
         isDisabled: true,

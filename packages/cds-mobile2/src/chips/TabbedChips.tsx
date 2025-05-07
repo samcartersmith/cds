@@ -1,12 +1,11 @@
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import { ScrollView, View } from 'react-native';
-import { TabbedChipsBaseProps } from '@cbhq/cds-common2';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
 
 import { useHorizontallyScrollingPressables } from '../hooks/useHorizontallyScrollingPressables';
 import { Box, OverflowGradient } from '../layout';
-import { Tabs } from '../tabs';
+import { type TabNavigationBaseProps, Tabs } from '../tabs';
 
 import { Chip } from './Chip';
 
@@ -25,6 +24,10 @@ const TabsActiveIndicatorComponent = () => {
   return null;
 };
 
+export type TabbedChipsBaseProps = Omit<TabNavigationBaseProps, 'variant'>;
+
+export type TabbedChipsProps = TabbedChipsBaseProps;
+
 export const TabbedChips = memo(
   forwardRef(function TabbedChips(
     {
@@ -34,7 +37,7 @@ export const TabbedChips = memo(
       onChange,
       Component = TabComponent,
       ...props
-    }: TabbedChipsBaseProps,
+    }: TabbedChipsProps,
     ref: React.ForwardedRef<View>,
   ) {
     const activeTab = useMemo(() => tabs.find((tab) => tab.id === value), [tabs, value]);

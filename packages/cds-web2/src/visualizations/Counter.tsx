@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { css } from '@linaria/core';
-import { CounterBaseProps } from '@cbhq/cds-common2/types/CounterBaseProps';
 import { useCounter } from '@cbhq/cds-common2/visualizations/useCounter';
 
 const containerClassName = css`
@@ -30,6 +29,15 @@ const visibleClassName = css`
     align-items: center;
   }
 `;
+
+export type CounterBaseProps = {
+  startNum: number;
+  endNum: number;
+  durationInMillis: number;
+  renderNum?: (num: number) => string | React.ReactNode;
+};
+
+export type CounterProps = CounterBaseProps;
 
 /**
  * @deprecated This component will be removed from CDS in a future version. It has been moved to cds-web-sparkline.

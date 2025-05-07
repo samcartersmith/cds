@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
-import { TabLabelProps as CommonTabLabelProps } from '@cbhq/cds-common2';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
 import { DotCount } from '../dots/DotCount';
 import { useTheme } from '../hooks/useTheme';
@@ -8,6 +8,7 @@ import { HStack } from '../layout';
 import { Text, TextProps } from '../typography/Text';
 
 import { useDotAnimation } from './hooks/useDotAnimation';
+import type { TabProps } from './TabNavigation';
 
 const COLORS = {
   primary: {
@@ -20,7 +21,18 @@ const COLORS = {
   },
 } as const;
 
-export type TabLabelProps = CommonTabLabelProps & TextProps;
+export type TabLabelBaseProps = SharedProps &
+  Pick<TabProps, 'variant' | 'count' | 'accessibilityLabel' | 'max' | 'Component'> & {
+    /** Identify the active tab */
+    active?: boolean;
+    /** Display title to render as the TabLabel. */
+    children: React.ReactNode;
+    /** Callback to fire when pressed */
+    onPress?: () => void;
+  };
+
+export type TabLabelProps = TabLabelBaseProps & TextProps;
+
 export const TabLabel = memo(
   ({ active, variant = 'primary', count = 0, max, ...props }: TabLabelProps) => {
     const theme = useTheme();

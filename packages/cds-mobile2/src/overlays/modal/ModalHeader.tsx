@@ -1,16 +1,54 @@
 import React from 'react';
-import { GestureResponderEvent } from 'react-native';
-import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
-import { ModalHeaderBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
+import { type GestureResponderEvent } from 'react-native';
+import { useModalContext } from '@cbhq/cds-common2/overlays/ModalContext';
+import { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { IconButton } from '../../buttons';
 import { Box, HStack } from '../../layout';
 import { Text } from '../../typography/Text';
 
-type ModalHeaderProps = {
+export type ModalHeaderBaseProps = SharedProps & {
   /** Handles back button press */
   onBackButtonClick?: (event: GestureResponderEvent) => void;
-} & ModalHeaderBaseProps;
+  /** Title of the Modal */
+  title?: string;
+  /**
+   * Sets an accessible label for the back button.
+   * On web, maps to `aria-label` and defines a string value that labels an interactive element.
+   * On mobile, VoiceOver will read this string when a user selects the associated element.
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
+   * @link https://reactnative.dev/docs/accessibility#accessibilitylabel
+   */
+  backAccessibilityLabel?: SharedAccessibilityProps['accessibilityLabel'];
+  /**
+   * Sets an accessible hint or description for the back button.
+   * On web, maps to `aria-describedby` and lists the id(s) of the element(s) that describe the element on which the attribute is set.
+   * On mobile, a string that helps users understand what will happen when they perform an action on the accessibility element
+   * when that result is not clear from the accessibility label.
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby
+   * @link https://reactnative.dev/docs/accessibility#accessibilityhint
+   */
+  backAccessibilityHint?: SharedAccessibilityProps['accessibilityHint'];
+  /**
+   * Sets an accessible label for the close button.
+   * On web, maps to `aria-label` and defines a string value that labels an interactive element.
+   * On mobile, VoiceOver will read this string when a user selects the associated element.
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label
+   * @link https://reactnative.dev/docs/accessibility#accessibilitylabel
+   */
+  closeAccessibilityLabel?: SharedAccessibilityProps['accessibilityLabel'];
+  /**
+   * Sets an accessible hint or description for the close button.
+   * On web, maps to `aria-describedby` and lists the id(s) of the element(s) that describe the element on which the attribute is set.
+   * On mobile, a string that helps users understand what will happen when they perform an action on the accessibility element
+   * when that result is not clear from the accessibility label.
+   * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby
+   * @link https://reactnative.dev/docs/accessibility#accessibilityhint
+   */
+  closeAccessibilityHint?: SharedAccessibilityProps['accessibilityHint'];
+};
+
+export type ModalHeaderProps = ModalHeaderBaseProps;
 
 export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = ({
   title,
@@ -21,7 +59,7 @@ export const ModalHeader: React.FC<React.PropsWithChildren<ModalHeaderProps>> = 
   closeAccessibilityHint,
   testID,
 }) => {
-  const { onRequestClose, hideCloseButton, hideDividers } = useModalParent();
+  const { onRequestClose, hideCloseButton, hideDividers } = useModalContext();
 
   return (
     <HStack

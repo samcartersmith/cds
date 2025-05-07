@@ -1,7 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { css, cx } from '@linaria/core';
 import { borderWidth, lineDashArray } from '@cbhq/cds-common2/tokens/sparkline';
-import { SparklineInteractiveLineVerticalProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 
 import { resetFadeClassName } from './fade';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
@@ -38,6 +37,10 @@ const lineProps: React.SVGProps<SVGLineElement> = {
   y2: 0,
   strokeDasharray: lineDashArray.join(','),
   strokeWidth: borderWidth,
+};
+
+export type SparklineInteractiveLineVerticalProps = {
+  color: string;
 };
 
 export const SparklineInteractiveLineVertical = memo(

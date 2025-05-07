@@ -1,9 +1,21 @@
-import type { SpotSquareProps as SpotSquareCommonProps } from '@cbhq/cds-common2/types/IllustrationProps';
 import spotSquareVersionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/versionMap';
 
-import { createIllustration, IllustrationA11yProps } from './createIllustration';
+import {
+  createIllustration,
+  type IllustrationA11yProps,
+  type IllustrationBaseProps,
+  type IllustrationDimensionsMap,
+} from './createIllustration';
 
 export const SpotSquare = createIllustration('spotSquare', spotSquareVersionMap);
 
-export type SpotSquareProps = SpotSquareCommonProps & IllustrationA11yProps;
+export type SpotSquareBaseProps = IllustrationBaseProps<'spotSquare'> &
+  IllustrationA11yProps & {
+    /**
+     * @default 96x96
+     * */
+    dimension?: IllustrationDimensionsMap['spotSquare'];
+  };
+
+export type SpotSquareProps = SpotSquareBaseProps;
 export type { SpotSquareName } from '@cbhq/cds-illustrations';

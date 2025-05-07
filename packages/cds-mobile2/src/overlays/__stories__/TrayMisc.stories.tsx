@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
-import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { Menu } from '../../controls/Menu';
@@ -10,6 +9,7 @@ import { useA11y } from '../../hooks/useA11y';
 import { HStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Text } from '../../typography/Text';
+import type { DrawerRefBaseProps } from '../drawer/Drawer';
 import { Modal } from '../modal/Modal';
 import { ModalBody } from '../modal/ModalBody';
 import { ModalHeader } from '../modal/ModalHeader';

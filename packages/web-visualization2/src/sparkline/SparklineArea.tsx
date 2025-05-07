@@ -1,5 +1,9 @@
 import React, { forwardRef, memo } from 'react';
-import { SparklineAreaBaseProps } from '@cbhq/cds-common2';
+
+export type SparklineAreaBaseProps = {
+  area?: string;
+  patternId?: string;
+};
 
 export const SparklineArea = memo(
   forwardRef<SVGPathElement | null, SparklineAreaBaseProps>(

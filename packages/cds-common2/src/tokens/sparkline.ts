@@ -1,5 +1,5 @@
 import { durations } from '../motion/tokens';
-import { SparklineInteractiveSubHead } from '../types';
+import type { SparklineInteractiveHeaderSignVariant } from '../types';
 
 export const chartHeight = 320;
 export const chartCompactHeight = 120;
@@ -17,7 +17,7 @@ export const periodLabelMap: Record<string, string> = {
   '1Y': '1 year',
 };
 
-export const subheadIconSignMap: Record<SparklineInteractiveSubHead['sign'], string> = {
+export const subheadIconSignMap: Record<SparklineInteractiveHeaderSignVariant, string> = {
   positive: '+',
   negative: '-',
   upwardTrend: '\u2197',

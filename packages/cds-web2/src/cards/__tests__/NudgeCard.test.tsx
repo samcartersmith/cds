@@ -25,7 +25,7 @@ const NudgeCard = (
   >,
 ) => <BaseNudgeCard {...exampleProps} {...props} />;
 
-describe('createNudgeCard', () => {
+describe('NudgeCard', () => {
   it('passes accessibility', async () => {
     expect(
       await renderA11y(

@@ -1,5 +1,5 @@
 import React, { forwardRef, memo } from 'react';
-import type { ContentCardBodyBaseProps as BaseProps } from '@cbhq/cds-common2/types';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
 import { Polymorphic } from '../../core/polymorphism';
 import { Box, type BoxBaseProps, HStack, VStack } from '../../layout';
@@ -8,7 +8,23 @@ import { Text } from '../../typography/Text';
 export const contentCardBodyDefaultElement = 'div';
 export type ContentCardBodyDefaultElement = typeof contentCardBodyDefaultElement;
 
-export type ContentCardBodyBaseProps = Polymorphic.ExtendableProps<BoxBaseProps, BaseProps>;
+export type ContentCardBodyBaseProps = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  SharedProps & {
+    /** Main body copy */
+    body?: React.ReactNode;
+    /** Use for supplemental data */
+    label?: React.ReactNode;
+    /** Media, image or video to show */
+    media?: React.ReactNode;
+    /**
+     * The position of the media within the card.
+     * Can be one of: 'top', 'bottom', 'right' or 'left'.
+     */
+    mediaPosition?: 'top' | 'bottom' | 'right' | 'left';
+    children?: React.ReactNode;
+  }
+>;
 
 export type ContentCardBodyProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,

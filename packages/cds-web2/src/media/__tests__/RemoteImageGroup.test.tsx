@@ -1,18 +1,18 @@
 import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
-import type { RemoteImageGroupBaseProps, Shape } from '@cbhq/cds-common2/types';
+import type { Shape } from '@cbhq/cds-common2/types';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { DefaultThemeProvider } from '../../utils/test';
 import { RemoteImage } from '../RemoteImage';
-import { RemoteImageGroup } from '../RemoteImageGroup';
+import { RemoteImageGroup, type RemoteImageGroupProps } from '../RemoteImageGroup';
 
 const src = 'https://images.coinbase.com/avatar?s=56';
 const TEST_ID = 'remote-image-test-id';
 const SIZE = 40;
 
-const RemoteImageGroupDefaults = ({ ...props }: RemoteImageGroupBaseProps) => (
+const RemoteImageGroupDefaults = ({ ...props }: RemoteImageGroupProps) => (
   <DefaultThemeProvider>
     <RemoteImageGroup shape="circle" size={SIZE} testID={TEST_ID} {...props}>
       <RemoteImage alt="Test RemoteImage" source={src} />

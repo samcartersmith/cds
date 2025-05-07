@@ -1,10 +1,13 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { TextInput, TextInputProps, ViewStyle } from 'react-native';
-import { SharedProps, TextBaseProps, TextInputBaseProps } from '@cbhq/cds-common2';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 import { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 
 import { useTextAlign } from '../hooks/useTextAlign';
 import { useTheme } from '../hooks/useTheme';
+import type { TextBaseProps } from '../typography/Text';
+
+import type { TextInputBaseProps } from './TextInput';
 
 export type NativeInputProps = {
   /**

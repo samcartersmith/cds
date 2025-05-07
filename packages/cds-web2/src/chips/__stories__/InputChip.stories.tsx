@@ -2,7 +2,7 @@ import React from 'react';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 import { HStack, VStack } from '../../layout';
-import { RemoteImage, RemoteImageProps } from '../../media';
+import { RemoteImage, type RemoteImageProps } from '../../media';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { denseTheme } from '../../themes/denseTheme';
 import { Text } from '../../typography/Text';

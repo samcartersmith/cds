@@ -1,9 +1,8 @@
 import React from 'react';
 import { css } from '@linaria/core';
-import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
-import type { ButtonBaseProps } from '@cbhq/cds-common2/types/ButtonBaseProps';
+import { useModalContext } from '@cbhq/cds-common2/overlays/ModalContext';
 
-import { Button } from '../../buttons/Button';
+import { Button, ButtonBaseProps } from '../../buttons/Button';
 import type { BoxDefaultElement, BoxProps } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
 import { breakpoints } from '../../styles/media';
@@ -52,7 +51,7 @@ export const ModalFooter = ({
   secondaryAction,
   ...props
 }: ModalFooterProps) => {
-  const { hideDividers } = useModalParent();
+  const { hideDividers } = useModalContext();
 
   if (primaryAction.type !== Button || (secondaryAction && primaryAction.type !== Button)) {
     console.error('Modal footer actions need to be CDS Button component');

@@ -1,17 +1,32 @@
 import React, { memo, useMemo } from 'react';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { defaultMediaSize } from '@cbhq/cds-common2/tokens/card';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
-import type { DataCardBaseProps } from '@cbhq/cds-common2/types';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
 import { HStack } from '../layout/HStack';
 import { Text } from '../typography/Text';
 import { ProgressBar } from '../visualizations/ProgressBar';
 import { ProgressCircle } from '../visualizations/ProgressCircle';
 
-import { Card, type CardProps } from './Card';
+import { Card, type CardBaseProps } from './Card';
 import { CardBody } from './CardBody';
 
-export type DataCardProps = DataCardBaseProps & { onClick?: CardProps['onClick'] };
+export type DataCardBaseProps = CardBaseProps &
+  SharedProps & {
+    onClick?: CardBaseProps['onClick'];
+    /** Text to be displayed in TextHeadline under CardHeader section. */
+    title: string;
+    /** Text to be displayed in TextLabel2 under title. */
+    description: string;
+    startLabel?: string;
+    endLabel?: string;
+    progressVariant?: 'bar' | 'circle';
+    progress?: number;
+    progressColor?: ThemeVars.Color;
+  };
+
+export type DataCardProps = DataCardBaseProps;
 
 export const DataCard = memo(function DataCard({
   onClick,

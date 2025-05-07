@@ -4,6 +4,14 @@ import type {
   MotionTransition as MotionBaseTransition,
 } from '@cbhq/cds-common2/types/Motion';
 
+export type HintMotionBaseProps = {
+  /**
+   * Disable animation on component mount
+   * @default false
+   */
+  disableAnimateOnMount?: boolean;
+};
+
 export type MotionSpec = {
   toValue: MotionBaseSpec['toValue'] | string; // allow string values like scale(0.5)
   fromValue?: MotionBaseSpec['fromValue'] | string;

@@ -1,20 +1,59 @@
 import React, { memo, useMemo } from 'react';
-import { ViewProps } from 'react-native';
-import { CellBaseProps as SharedCellBaseProps } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
+import type { ViewProps } from 'react-native';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { CellPriority, SharedProps } from '@cbhq/cds-common2/types';
 import { hasCellPriority } from '@cbhq/cds-common2/utils/cell';
 
+import { useCellSpacing } from '../hooks/useCellSpacing';
 import { useTheme } from '../hooks/useTheme';
-import { Box, type BoxProps } from '../layout/Box';
+import { Box, type BoxBaseProps, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { LinkableProps, Pressable } from '../system/Pressable';
 
-export type CellBaseProps = SharedCellBaseProps &
+import type { CellAccessoryProps } from './CellAccessory';
+
+export type CellSpacing = Pick<
+  BoxBaseProps,
+  | 'padding'
+  | 'paddingX'
+  | 'paddingY'
+  | 'paddingTop'
+  | 'paddingEnd'
+  | 'paddingBottom'
+  | 'paddingStart'
+  | 'margin'
+  | 'marginX'
+  | 'marginY'
+  | 'marginTop'
+  | 'marginEnd'
+  | 'marginBottom'
+  | 'marginStart'
+>;
+
+export type CellBaseProps = SharedProps &
   LinkableProps & {
+    accessory?: React.ReactElement<CellAccessoryProps>;
+    children: React.ReactNode;
+    detail?: React.ReactNode;
+    intermediary?: React.ReactNode;
+    media?: React.ReactElement;
+    borderRadius?: ThemeVars.BorderRadius;
+    /** Apply a fixed width to the detail (end). */
+    detailWidth?: number | string;
+    /** Is the cell disabled? Will apply opacity and disable interaction. */
+    disabled?: boolean;
+    /** Which piece of content has the highest priority in regards to text truncation, growing, and shrinking. */
+    priority?: CellPriority | CellPriority[];
+    /** Is the cell selected? Will apply a background and selected accessory. */
+    selected?: boolean;
+    /** The spacing to use on the parent wrapper of Cell */
+    outerSpacing?: CellSpacing;
+    /** The spacing to use on the inner content of Cell */
+    innerSpacing?: CellSpacing;
     /** Measure the dimensions of the cell. */
     onLayout?: ViewProps['onLayout'];
   };
+
 export type CellProps = BoxProps & CellBaseProps;
 
 export const Cell = memo(function Cell({
@@ -34,12 +73,10 @@ export const Cell = memo(function Cell({
   priority,
   selected,
   testID,
-  shouldOverflow,
   accessibilityLabel,
   accessibilityHint,
   innerSpacing,
   outerSpacing,
-  compact,
   ...props
 }: CellProps) {
   const theme = useTheme();

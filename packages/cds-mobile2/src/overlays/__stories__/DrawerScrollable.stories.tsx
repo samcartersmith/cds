@@ -1,7 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { FlatList, ScrollView } from 'react-native';
 import { prices } from '@cbhq/cds-common2/internal/data/prices';
-import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { Menu, SelectOption } from '../../controls';
@@ -9,6 +8,7 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Pressable } from '../../system/Pressable';
+import type { DrawerBaseProps, DrawerRefBaseProps } from '../drawer/Drawer';
 import { Drawer } from '../drawer/Drawer';
 
 const lotsOfOptions: string[] = prices.slice(0, 30);

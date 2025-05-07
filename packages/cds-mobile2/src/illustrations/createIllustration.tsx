@@ -1,14 +1,64 @@
 import React, { memo, useMemo } from 'react';
 import { AccessibilityProps } from 'react-native';
 import { SvgXml } from 'react-native-svg';
-import { IllustrationVariant } from '@cbhq/cds-common2';
-import { IllustrationBaseProps } from '@cbhq/cds-common2/types/IllustrationProps';
+import type { IllustrationVariant } from '@cbhq/cds-common2/types/IllustrationNames';
+import type {
+  HeroSquareDimension,
+  PictogramDimension,
+  SpotIconDimension,
+  SpotRectangleDimension,
+  SpotSquareDimension,
+} from '@cbhq/cds-common2/types/IllustrationProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { convertDimensionToSize } from '@cbhq/cds-common2/utils/convertDimensionToSize';
 import { convertSizeWithMultiplier } from '@cbhq/cds-common2/utils/convertSizeWithMultiplier';
 import { getDefaultSizeObjectForIllustration } from '@cbhq/cds-common2/utils/getDefaultSizeObjectForIllustration';
+import type {
+  HeroSquareName,
+  PictogramName,
+  SpotIconName,
+  SpotRectangleName,
+  SpotSquareName,
+} from '@cbhq/cds-illustrations';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useTheme } from '../hooks/useTheme';
+
+export type IllustrationNamesMap = {
+  heroSquare: HeroSquareName;
+  spotRectangle: SpotRectangleName;
+  pictogram: PictogramName;
+  spotSquare: SpotSquareName;
+  spotIcon: SpotIconName;
+};
+
+export type IllustrationDimensionsMap = {
+  heroSquare: HeroSquareDimension;
+  spotSquare: SpotSquareDimension;
+  spotRectangle: SpotRectangleDimension;
+  pictogram: PictogramDimension;
+  spotIcon: SpotIconDimension;
+};
+
+export type IllustrationBaseProps<T extends keyof IllustrationNamesMap> = SharedProps & {
+  /** Name of illustration as defined in Figma */
+  name: IllustrationNamesMap[T];
+  /**
+   * HeroSquare Default:  240x240
+   * SpotSquare Default: 96x96
+   * Pictogram Default: 48x48
+   * SpotRectangle Default: 240x120
+   *
+   */
+  dimension?: IllustrationDimensionsMap[T];
+  /** Multiply the width & height while maintaining aspect ratio */
+  scaleMultiplier?: number;
+  /**
+   * Fallback element to render if unable to find an illustration with the matching name
+   * @default null
+   * */
+  fallback?: null | React.ReactElement;
+};
 
 type IllustrationConfigShape = Record<string, { light: () => string; dark: () => string }>;
 

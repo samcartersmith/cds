@@ -1,9 +1,40 @@
 import { Animated, StyleProp, ViewStyle } from 'react-native';
-import { LottieBaseProps, SharedProps } from '@cbhq/cds-common2';
+import type { LottieSource } from '@cbhq/cds-common2/types';
 
-import { BoxProps } from '../layout';
+import type { BoxBaseProps } from '../layout';
 
-export type LottieProps = {
+export type LottieBaseProps<T extends LottieSource = LottieSource> = Omit<
+  BoxBaseProps,
+  'alignContent' | 'justifyContent' | 'flexWrap' | 'flexDirection'
+> & {
+  /**
+   * A boolean flag indicating whether or not the animation should start automatically when
+   * mounted. This only affects the imperative API.
+   * @default false
+   */
+  autoplay?: boolean;
+  /**
+   * A boolean flag indicating whether or not the animation should loop.
+   * @default false
+   */
+  loop?: boolean;
+  /**
+   * A callback function which will be called when animation is finished. Note that on mobile, this
+   * callback will be called only when `loop` is set to false.
+   */
+  onAnimationFinish?: () => void;
+  /**
+   * Determines how to resize the animated view when the frame doesn't match the raw image
+   * dimensions.
+   * Refer to React Native docs [here](https://facebook.github.io/react-native/docs/image.html#resizemode)
+   * @default contain
+   */
+  resizeMode?: 'cover' | 'contain' | 'center';
+  /**
+   * The source of animation. Should be pulled from @cbhq/cds-lottie-files.
+   * For mobile, import the animation from the animations folder instead of from index so that unused animations are not included during build, `import { tradeStatus } from @cbhq/cds-lottie-files/tradeStatus`.
+   */
+  source: T;
   /**
    * A number between 0 and 1, or an `Animated` number between 0 and 1. This number
    * represents the normalized progress of the animation. If you update this prop, the
@@ -17,6 +48,6 @@ export type LottieProps = {
   colorFilters?: { keypath: string; color: string }[];
   animated?: boolean;
   style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
-} & Omit<LottieBaseProps, 'aspectRatio'> &
-  SharedProps &
-  Pick<BoxProps, 'aspectRatio'>;
+};
+
+export type LottieProps<T extends LottieSource = LottieSource> = LottieBaseProps<T>;

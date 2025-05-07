@@ -5,15 +5,11 @@ import {
   accordionIconHiddenRotate,
   accordionIconVisibleRotate,
 } from '@cbhq/cds-common2/animation/accordion';
-import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
 import { listHeight } from '@cbhq/cds-common2/tokens/cell';
-import type {
-  AccordionHeaderBaseProps,
-  AccordionIconBaseProps,
-  AccordionMediaBaseProps,
-  AccordionTitleBaseProps,
-} from '@cbhq/cds-common2/types/AccordionBaseProps';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
+import type { CollapsibleBaseProps } from '../collapsible';
+import { useCellSpacing } from '../hooks/useCellSpacing';
 import { Box, HStack, VStack } from '../layout';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
 import { Pressable } from '../system/Pressable';
@@ -21,12 +17,39 @@ import { Text } from '../typography/Text';
 
 import { getAccordionHeaderId, getAccordionPanelId } from './utils';
 
-export type AccordionHeaderProps = Omit<AccordionHeaderBaseProps, 'onPress'> & {
-  /**
-   * Callback function fired when the accordion item is clicked
-   */
-  onClick?: (key: string) => void;
+export type AccordionMediaBaseProps = {
+  /* Media (icon, asset, image, etc) to display at the start of the cell. */
+  media?: React.ReactNode;
 };
+
+export type AccordionTitleBaseProps = {
+  /**
+   * Title of the accordion item
+   */
+  title: string;
+  /**
+   * Subtitle of the accordion item
+   */
+  subtitle?: string;
+};
+
+export type AccordionIconBaseProps = Pick<CollapsibleBaseProps, 'collapsed'>;
+
+export type AccordionHeaderBaseProps = SharedProps &
+  AccordionMediaBaseProps &
+  AccordionTitleBaseProps &
+  AccordionIconBaseProps & {
+    /**
+     * Callback function fired when the accordion item is clicked
+     */
+    onClick?: (key: string) => void;
+    /**
+     * Key of the accordion item.
+     * This should be unique inside the same Accordion
+     * unless you want multiple items to be controlled at the same time.
+     */
+    itemKey: string;
+  };
 
 const baseStyle = css`
   margin: 0;
@@ -46,13 +69,17 @@ const titleStyle = css`
   min-width: 0;
 `;
 
-export const AccordionMedia = memo(({ media }: AccordionMediaBaseProps) => (
+type AccordionMediaProps = AccordionMediaBaseProps;
+
+export const AccordionMedia = memo(({ media }: AccordionMediaProps) => (
   <Box flexGrow={0} flexShrink={0}>
     {media}
   </Box>
 ));
 
-export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps) => (
+type AccordionTitleProps = AccordionTitleBaseProps;
+
+export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleProps) => (
   <Box className={titleStyle} flexGrow={1} flexShrink={1} justifyContent="flex-start">
     <VStack>
       <Text as="div" display="block" font="headline" overflow="wrap">
@@ -74,7 +101,9 @@ export const AccordionTitle = memo(({ title, subtitle }: AccordionTitleBaseProps
   </Box>
 ));
 
-export const AccordionIcon = memo(({ collapsed }: AccordionIconBaseProps) => {
+type AccordionIconProps = AccordionIconBaseProps;
+
+export const AccordionIcon = memo(({ collapsed }: AccordionIconProps) => {
   return (
     <Box justifyContent="flex-end">
       <AnimatedCaret rotate={collapsed ? accordionIconHiddenRotate : accordionIconVisibleRotate} />
@@ -82,6 +111,12 @@ export const AccordionIcon = memo(({ collapsed }: AccordionIconBaseProps) => {
   );
 });
 
+type AccordionHeaderProps = AccordionHeaderBaseProps;
+
+/**
+ * Renders a Pressable element to use as the header to an AccordionItem.
+ * Composes an Accordion Media, Title, and Icon.
+ */
 export const AccordionHeader = memo(
   forwardRef(
     (

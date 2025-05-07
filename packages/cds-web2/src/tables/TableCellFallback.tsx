@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { css } from '@linaria/core';
-import type { CellMediaType } from '@cbhq/cds-common2';
 import type { FallbackRectWidthProps } from '@cbhq/cds-common2/types/FallbackBaseProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 import { getRectWidthVariant } from '@cbhq/cds-common2/utils/getRectWidthVariant';
 
 import { Cell } from '../cells/Cell';
+import type { CellMediaType } from '../cells/CellMedia';
 import { MediaFallback } from '../cells/MediaFallback';
 import { Fallback } from '../layout';
 

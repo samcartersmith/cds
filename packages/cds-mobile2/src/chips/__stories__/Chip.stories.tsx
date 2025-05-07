@@ -1,6 +1,5 @@
 import React from 'react';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
-import { ChipBaseProps } from '@cbhq/cds-common2/types';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -9,6 +8,7 @@ import { VStack } from '../../layout';
 import { RemoteImage, RemoteImageProps } from '../../media';
 import { Text } from '../../typography/Text';
 import { Chip } from '../Chip';
+import type { ChipBaseProps } from '../ChipProps';
 
 const assetIconProps: RemoteImageProps = {
   height: 16,

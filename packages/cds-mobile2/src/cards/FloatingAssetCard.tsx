@@ -1,16 +1,36 @@
 import React, { memo, useMemo } from 'react';
 import { PressableProps } from 'react-native';
-import { FloatingAssetCardBaseProps } from '@cbhq/cds-common2';
 import {
   floatingAssetCardLargeWidth,
   floatingAssetCardSmallDimension,
 } from '@cbhq/cds-common2/tokens/card';
+import { SharedProps } from '@cbhq/cds-common2/types';
 
 import { HStack, VStack } from '../layout';
 import { Pressable } from '../system';
 import { Text } from '../typography/Text';
 
-export type FloatingAssetCardProps = FloatingAssetCardBaseProps & Pick<PressableProps, 'onPress'>;
+export type FloatingAssetCardBaseProps = SharedProps & {
+  /** Callback fired when the card is pressed */
+  onPress?: PressableProps['onPress'];
+  /** Text or ReactNode to be displayed above Title */
+  subtitle?: React.ReactNode;
+  /** Text or ReactNode to be displayed in TextHeadline */
+  title: React.ReactNode;
+  /** Content to be displayed below the title */
+  description?: React.ReactNode;
+  /**
+   * Remote Image or other node with media content.
+   */
+  media: React.ReactNode;
+  /**
+   * Variant for card size. Can be small or large.
+   * @default 's'
+   */
+  size?: 's' | 'l';
+};
+
+export type FloatingAssetCardProps = FloatingAssetCardBaseProps;
 
 export const FloatingAssetCard = memo(
   ({

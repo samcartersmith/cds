@@ -1,16 +1,15 @@
 import React, { forwardRef, memo, useCallback, useMemo, useRef, useState } from 'react';
 import {
-  AccessibilityProps,
+  type AccessibilityProps,
   GestureResponderEvent,
-  Pressable as BasePressable,
-  PressableProps as BasePressableProps,
+  Pressable as NativePressable,
+  type PressableProps as NativePressableProps,
   View,
 } from 'react-native';
-import { ComponentEventHandlerProps } from '@cbhq/cds-common2';
+import type { ComponentEventHandlerProps, ValidateProps } from '@cbhq/cds-common2';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 
 import { usePressAnimation } from '../hooks/usePressAnimation';
-import { type BoxBaseProps } from '../layout/Box';
 import { Haptics } from '../utils/haptics';
 
 import { Interactable, type InteractableBaseProps } from './Interactable';
@@ -18,55 +17,45 @@ import { Interactable, type InteractableBaseProps } from './Interactable';
 export type HapticFeedbackType = 'light' | 'normal' | 'heavy' | 'none';
 
 export type LinkableProps = Pick<
-  BasePressableProps,
+  NativePressableProps,
   'onPress' | 'accessibilityLabel' | 'accessibilityHint'
 >;
 
-export type PressableProps = {
-  /**
-   * Haptic feedback to trigger when being pressed.
-   * @default none
-   */
-  feedback?: HapticFeedbackType;
-  /** Is the element currenty loading. */
-  loading?: boolean;
-  /**
-   * The amount of time to wait (in milliseconds) before invoking the debounced function.
-   * This prop is used in conjunction with the `disableDebounce` prop.
-   * The debounce function is configured to be invoked as soon as it's called, but subsequent calls
-   * within the `debounceTime` period will be ignored.
-   * @default 500
-   */
-  debounceTime?: number;
-  /**
-   * React Native is historically trash at debouncing touch events. This can cause a lot of
-   * unwanted behavior such as double navigations where we push a screen onto the stack 2 times.
-   * Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and
-   * the accidental "double-tap".
-   */
-  disableDebounce?: boolean;
-} & Pick<
-  BasePressableProps,
-  'delayLongPress' | 'hitSlop' | 'onLongPress' | 'onPress' | 'pressRetentionOffset' | 'testID'
-> &
+export type PressableBaseProps = AccessibilityProps &
   ComponentEventHandlerProps &
-  AccessibilityProps;
+  Pick<NativePressableProps, 'style' | 'onPress'> &
+  Omit<InteractableBaseProps, 'style' | 'pressed'> & {
+    /** Dont scale element on press. */
+    noScaleOnPress?: boolean;
+    /** Callback fired before `onPress` when button is pressed. */
+    onPressIn?: (event: GestureResponderEvent) => void;
+    /** Callback fired before `onPress` when button is released. */
+    onPressOut?: (event: GestureResponderEvent) => void;
+    /**
+     * Haptic feedback to trigger when being pressed.
+     * @default none
+     */
+    feedback?: HapticFeedbackType;
+    /** Is the element currenty loading. */
+    loading?: boolean;
+    /**
+     * The amount of time to wait (in milliseconds) before invoking the debounced function.
+     * This prop is used in conjunction with the `disableDebounce` prop.
+     * The debounce function is configured to be invoked as soon as it's called, but subsequent calls
+     * within the `debounceTime` period will be ignored.
+     * @default 500
+     */
+    debounceTime?: number;
+    /**
+     * React Native is historically trash at debouncing touch events. This can cause a lot of
+     * unwanted behavior such as double navigations where we push a screen onto the stack 2 times.
+     * Debouncing the event 500 miliseconds, but taking the leading event prevents this effect and
+     * the accidental "double-tap".
+     */
+    disableDebounce?: boolean;
+  };
 
-export type PressableInternalProps = {
-  /** Dont scale element on press. */
-  noScaleOnPress?: boolean;
-  /** Callback fired before `onPress` when button is pressed. */
-  onPressIn?: (event: GestureResponderEvent) => void;
-  /** Callback fired before `onPress` when button is released. */
-  onPressOut?: (event: GestureResponderEvent) => void;
-  /**
-   * Pressable will always be the outermost component so that we can handle overflow within a child without impacting hitSlop.
-   * Pass any styles that impact layout to this prop (i.e width, flex-direction, etc).
-   */
-  style?: BasePressableProps['style'];
-} & PressableProps &
-  Omit<InteractableBaseProps, 'pressed' | 'style'> &
-  BoxBaseProps;
+export type PressableProps = PressableBaseProps & NativePressableProps;
 
 export const Pressable = memo(
   forwardRef(function Pressable(
@@ -121,6 +110,7 @@ export const Pressable = memo(
       fontSize,
       fontWeight,
       lineHeight,
+      textAlign,
       textDecorationStyle,
       textDecorationColor,
       textDecorationLine,
@@ -168,8 +158,9 @@ export const Pressable = memo(
       eventConfig,
       analyticsId,
       debounceTime,
+      testID,
       ...props
-    }: PressableInternalProps,
+    }: PressableProps,
     forwardedRef: React.ForwardedRef<View>,
   ) {
     const [pressIn, pressOut, pressScale] = usePressAnimation();
@@ -233,7 +224,7 @@ export const Pressable = memo(
     const scaleOnPressStyle = useMemo(() => [{ transform: [{ scale: pressScale }] }], [pressScale]);
 
     return (
-      <BasePressable
+      <NativePressable
         ref={forwardedRef}
         accessibilityRole="button"
         accessibilityState={accessibilityState}
@@ -242,7 +233,9 @@ export const Pressable = memo(
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
         style={style}
-        {...props}
+        testID={testID}
+        // Spread all props except the InteractableBaseProps, which must be destructured
+        {...(props satisfies ValidateProps<typeof props, InteractableBaseProps>)}
       >
         <Interactable
           alignContent={alignContent}
@@ -333,7 +326,7 @@ export const Pressable = memo(
         >
           {children}
         </Interactable>
-      </BasePressable>
+      </NativePressable>
     );
   }),
 );

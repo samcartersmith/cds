@@ -5,13 +5,7 @@ import {
   sparklineInteractiveData,
   type SparklinePeriod,
 } from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
-import type {
-  ChartData,
-  ChartDataPoint,
-  ChartScrubParams,
-  SparklineInteractiveHeaderRef,
-  SparklineInteractiveSubHead,
-} from '@cbhq/cds-common2/types';
+import type { ChartData, ChartDataPoint, ChartScrubParams } from '@cbhq/cds-common2/types';
 import { IconButton } from '@cbhq/cds-mobile2/buttons';
 import { Example, ExampleScreen } from '@cbhq/cds-mobile2/examples/ExampleScreen';
 import { Icon } from '@cbhq/cds-mobile2/icons';
@@ -22,7 +16,11 @@ import {
   SparklineInteractive,
   type SparklineInteractiveBaseProps,
 } from '../../sparkline-interactive/SparklineInteractive';
-import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
+import {
+  SparklineInteractiveHeader,
+  type SparklineInteractiveHeaderRef,
+  type SparklineInteractiveSubHead,
+} from '../SparklineInteractiveHeader';
 import { useSparklineInteractiveHeaderStyles } from '../useSparklineInteractiveHeaderStyles';
 
 const DEFAULT_PERIOD = 'day';

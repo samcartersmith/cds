@@ -1,14 +1,24 @@
 import React, { memo, useCallback, useMemo } from 'react';
 import { periodLabelMap } from '@cbhq/cds-common2/tokens/sparkline';
-import {
-  SparklineInteractivePeriodProps,
-  SparklineInteractivePeriodSelectorProps,
-} from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 import { useTheme } from '@cbhq/cds-web2/hooks/useTheme';
 import { Box, HStack } from '@cbhq/cds-web2/layout';
 import { Pressable } from '@cbhq/cds-web2/system/Pressable';
 import { TextLabel1 } from '@cbhq/cds-web2/typography/TextLabel1';
+
+export type SparklineInteractivePeriodSelectorProps<Period extends string> = {
+  selectedPeriod: Period;
+  setSelectedPeriod: (period: Period) => void;
+  periods: { label: string; value: Period }[];
+  color: string;
+};
+
+export type SparklineInteractivePeriodProps<Period extends string> = {
+  period: { label: string; value: Period };
+  selectedPeriod: Period;
+  setSelectedPeriod: SparklineInteractivePeriodSelectorProps<Period>['setSelectedPeriod'];
+  color: string;
+};
 
 function SparklineInteractivePeriodWithGeneric<Period extends string>({
   period,

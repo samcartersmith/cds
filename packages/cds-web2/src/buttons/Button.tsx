@@ -1,12 +1,14 @@
-import React, { forwardRef, memo, useMemo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
-import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
-import { IconName } from '@cbhq/cds-common2/types/IconName';
-import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
-import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+import { transparentVariants, variants } from '@cbhq/cds-common2/tokens/button';
+import type {
+  ButtonVariant,
+  IconName,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
-import { Polymorphic } from '../core/polymorphism';
+import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
 import { Spinner } from '../loaders/Spinner';
 import { Pressable, type PressableBaseProps } from '../system/Pressable';
@@ -40,11 +42,13 @@ const blockStyle = css`
   max-width: 100%;
   white-space: normal;
 `;
+
 const compactStyle = css`
   min-width: auto;
   padding-left: var(--space-2);
   padding-right: var(--space-2);
 `;
+
 const spinnerContainerStyle = css`
   position: absolute;
   top: 50%;
@@ -54,6 +58,7 @@ const spinnerContainerStyle = css`
   justify-content: center;
   align-items: center;
 `;
+
 const startNodeStyle = css`
   display: flex;
   flex-direction: row;
@@ -63,6 +68,7 @@ const startNodeStyle = css`
   justify-content: flex-start;
   margin-inline-end: var(--space-1);
 `;
+
 const endNodeStyle = css`
   display: flex;
   flex-direction: row;
@@ -72,15 +78,19 @@ const endNodeStyle = css`
   justify-content: flex-end;
   margin-inline-start: var(--space-1);
 `;
+
 const iconStyle = css`
   justify-content: space-between;
 `;
+
 const unsetNoWrapStyle = css`
   white-space: unset;
 `;
+
 const hiddenStyle = css`
   visibility: hidden;
 `;
+
 const middleNodeStyle = css`
   position: relative;
 `;
@@ -99,60 +109,63 @@ const flushEndStyle = css`
   margin-inline-end: calc(var(--space-2) * -1);
 `;
 
+const spinnerStyle = {
+  width: '24px',
+  height: '24px',
+  border: '2px solid',
+  borderTopColor: 'var(--color-transparent)',
+  borderRightColor: 'var(--color-transparent)',
+  borderLeftColor: 'var(--color-transparent)',
+};
+
 export const buttonDefaultElement = 'button';
 
 export type ButtonDefaultElement = typeof buttonDefaultElement;
 
 export type ButtonBaseProps = Polymorphic.ExtendableProps<
-  Omit<PressableBaseProps, 'background'>,
-  {
-    /** Background color of the overlay (element being interacted with). */
-    background?: ThemeVars.Color;
-    /** Mark the button as disabled. */
-    disabled?: boolean;
-    /** Mark the background and border as transparent until interacted with. */
-    transparent?: boolean;
-    /**
-     * Toggle design and visual variants.
-     * @default primary
-     */
-    variant?: 'primary' | 'secondary' | 'positive' | 'negative';
-    /** Change to block and expand to 100% of parent width. */
-    block?: boolean;
-    /** Children to render within the button. */
-    children: React.ReactNode;
-    /** Reduce the inner padding within the button itself. */
-    compact?: boolean;
-    /**
-     * Set the end node
-     */
-    end?: React.ReactNode;
-    /** Icon to render at the end of the button. */
-    endIcon?: IconName;
-    /** Ensure the button aligns flush on the left or right.
-     * This prop will translate the entire button left/right,
-     * so take care to ensure it is not overflowing awkwardly
-     */
-    flush?: 'start' | 'end';
-    /** Mark the button as loading and display a spinner. */
-    loading?: boolean;
-    /** Uniquely identify the button within a form. */
-    name?: string;
-    /**
-     * Set the start node
-     */
-    start?: React.ReactNode;
-    /** Icon to render at the start of the button. */
-    startIcon?: IconName;
-    /** Don't scale element on press. */
-    noScaleOnPress?: boolean;
-    /**
-     * Truncates text after wrapping to a defined number of lines.
-     * @default 1
-     */
-    numberOfLines?: number;
-  } & Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
-    SharedProps
+  PressableBaseProps,
+  SharedProps &
+    Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
+      /**
+       * Toggle design and visual variants.
+       * @default primary
+       */
+      variant?: ButtonVariant;
+      /** Mark the button as disabled. */
+      disabled?: boolean;
+      /** Mark the button as loading and display a spinner. */
+      loading?: boolean;
+      /** Mark the background and border as transparent until interacted with. */
+      transparent?: boolean;
+      /** Change to block and expand to 100% of parent width. */
+      block?: boolean;
+      /** Reduce the inner padding within the button itself. */
+      compact?: boolean;
+      /** Children to render within the button. */
+      children: React.ReactNode;
+      /** Set the start node */
+      start?: React.ReactNode;
+      /** Icon to render at the start of the button. */
+      startIcon?: IconName;
+      /** Set the end node */
+      end?: React.ReactNode;
+      /** Icon to render at the end of the button. */
+      endIcon?: IconName;
+      /** Ensure the button aligns flush on the left or right.
+       * This prop will translate the entire button left/right,
+       * so take care to ensure it is not overflowing awkwardly
+       */
+      flush?: 'start' | 'end';
+      /** Uniquely identify the button within a form. */
+      name?: string;
+      /** Don't scale element on press. */
+      noScaleOnPress?: boolean;
+      /**
+       * Truncates text after wrapping to a defined number of lines.
+       * @default 1
+       */
+      numberOfLines?: number;
+    }
 >;
 
 export type ButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<
@@ -170,59 +183,50 @@ export const Button: ButtonComponent = memo(
     <AsComponent extends React.ElementType>(
       {
         as,
+        variant = 'primary',
+        loading,
+        transparent,
+        block,
+        compact,
+        children,
+        start,
+        startIcon,
+        end,
+        endIcon,
+        flush,
+        noScaleOnPress,
+        numberOfLines,
         background,
         color,
-        variant = 'primary',
-        transparent,
-        disabled,
-        block,
         className,
-        compact,
+        // TO DO: get rid of this height and interactableHeight (mobile and web both)
         height = compact ? 40 : 56,
-        borderRadius = compact ? 700 : 900,
+        borderColor,
         borderWidth = 100,
-        children,
-        numberOfLines,
-        startIcon,
-        endIcon,
-        start,
-        end,
-        loading,
+        borderRadius = compact ? 700 : 900,
         accessibilityLabel,
-        noScaleOnPress,
-        flush,
-        onClick,
         ...props
       }: ButtonProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
     ) => {
       const Component = (as ?? buttonDefaultElement) satisfies React.ElementType;
-      const hasIcon = Boolean(startIcon ?? endIcon);
       const iconSize = compact ? 's' : 'm';
-      const {
-        color: foregroundColor,
-        backgroundColor,
-        borderColor,
-      } = useButtonVariant(variant, transparent);
+      const hasIcon = Boolean(startIcon ?? endIcon);
 
-      const spinnerStyle = useMemo(() => {
-        return {
-          width: '24px',
-          height: '24px',
-          border: '2px solid',
-          borderTopColor: 'var(--color-transparent)',
-          borderRightColor: 'var(--color-transparent)',
-          borderLeftColor: 'var(--color-transparent)',
-        };
-      }, []);
+      const variantMap = transparent ? transparentVariants : variants;
+      const variantStyle = variantMap[variant];
+
+      const colorValue = color ?? variantStyle.color;
+      const backgroundValue = background ?? variantStyle.background;
+      const borderColorValue = borderColor ?? variantStyle.borderColor;
 
       return (
         <Pressable
           ref={ref}
           aria-label={accessibilityLabel ?? (loading ? 'Loading' : undefined)}
           as={Component}
-          background={background ?? backgroundColor}
-          borderColor={borderColor}
+          background={backgroundValue}
+          borderColor={borderColorValue}
           borderRadius={borderRadius}
           borderWidth={borderWidth}
           className={cx(
@@ -236,12 +240,10 @@ export const Button: ButtonComponent = memo(
             flush === 'end' && flushEndStyle,
             className,
           )}
-          color={color ?? foregroundColor}
-          disabled={disabled}
+          color={colorValue}
           height={height}
           loading={loading}
           noScaleOnPress={noScaleOnPress}
-          onClick={onClick}
           transparentWhileInactive={transparent}
           {...props}
         >

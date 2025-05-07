@@ -1,6 +1,5 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { PageHeaderBaseProps } from '@cbhq/cds-common2';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 import { Button, ButtonGroup, IconButton } from '../../buttons';
@@ -11,7 +10,7 @@ import { Box, Divider, HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
 import { Link, Text } from '../../typography';
 import { PageFooter } from '../PageFooter';
-import { PageHeader } from '../PageHeader';
+import { PageHeader, type PageHeaderProps } from '../PageHeader';
 
 function getCustomMarginForBox() {
   return { marginLeft: -8 };
@@ -158,7 +157,7 @@ const exampleProps = {
   ),
 };
 
-const Template: Story<PageHeaderBaseProps> = (args) => <PageHeader {...args} />;
+const Template: Story<PageHeaderProps> = (args) => <PageHeader {...args} />;
 
 export const InteractiveHeader = Template.bind({});
 

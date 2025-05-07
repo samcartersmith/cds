@@ -1,10 +1,10 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
 import { FeedCard } from '../../cards/FeedCard';
 import { Menu } from '../../controls/Menu';
 import { SelectOption } from '../../controls/SelectOption';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import type { DrawerRefBaseProps } from '../drawer/Drawer';
 import { Tray } from '../tray/Tray';
 
 const simpleOptions: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5'];

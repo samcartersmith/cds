@@ -1,16 +1,15 @@
 import { render, screen } from '@testing-library/react-native';
-import { RemoteImageGroupBaseProps } from '@cbhq/cds-common2/types/RemoteImageGroupBaseProps';
 
 import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { RemoteImage } from '../RemoteImage';
-import { RemoteImageGroup } from '../RemoteImageGroup';
+import { RemoteImageGroup, type RemoteImageGroupProps } from '../RemoteImageGroup';
 
 const src = 'https://images.coinbase.com/avatar?s=56';
 const TEST_ID = 'remote-image-test-id';
 const remoteImageIndices = [0, 1, 2, 3];
 
-const MockRemoteImageGroup = ({ ...props }: RemoteImageGroupBaseProps) => (
+const MockRemoteImageGroup = ({ ...props }: RemoteImageGroupProps) => (
   <DefaultThemeProvider>
     <RemoteImageGroup shape="circle" testID={TEST_ID} {...props}>
       {remoteImageIndices.map((index) => (

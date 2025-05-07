@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import type { AlertBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../buttons';
 import { DefaultThemeProvider } from '../../utils/test';
-import { Alert } from '../Alert';
+import { Alert, type AlertBaseProps } from '../Alert';
 
 const TITLE = 'Alert title';
 const LABELLED_BY = 'some-id';

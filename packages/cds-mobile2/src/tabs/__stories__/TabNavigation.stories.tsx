@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import sample from 'lodash/sample';
-import { CustomTabProps, TabNavigationProps } from '@cbhq/cds-common2';
 import { sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
@@ -9,7 +8,7 @@ import { Chip } from '../../chips/Chip';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';
 import { Text } from '../../typography/Text';
-import { TabNavigation } from '../TabNavigation';
+import { type CustomTabProps, TabNavigation, type TabNavigationProps } from '../TabNavigation';
 
 const renderCustomTab = ({ label, ...props }: CustomTabProps) => (
   <HStack bordered background="bg" borderRadius={100} paddingX={2} paddingY={1} {...props}>

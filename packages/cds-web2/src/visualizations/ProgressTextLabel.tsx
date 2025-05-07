@@ -1,13 +1,20 @@
 import React, { memo, useCallback } from 'react';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { usePreviousValues } from '@cbhq/cds-common2/hooks/usePreviousValues';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
 import { MotionDuration } from '@cbhq/cds-common2/types';
-import { ProgressTextLabelProps } from '@cbhq/cds-common2/types/ProgressBarBaseProps';
 
 import { Text } from '../typography/Text';
 
 import { Counter } from './Counter';
+import type { ProgressBaseProps } from './ProgressBar';
+
+export type ProgressTextLabelProps = Pick<ProgressBaseProps, 'disabled'> & {
+  value: number;
+  renderLabel?: (num: number, disabled?: boolean) => React.ReactNode;
+  color?: ThemeVars.Color;
+};
 
 export const ProgressTextLabel = memo(
   ({ value, renderLabel, disabled, color }: ProgressTextLabelProps) => {

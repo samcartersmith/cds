@@ -1,8 +1,9 @@
 import { useCallback, useMemo, useRef } from 'react';
 import { Animated, PanResponder, useWindowDimensions } from 'react-native';
-import { ToastBaseProps } from '@cbhq/cds-common2';
 import { bottomPanThreshold, horizontalPanThreshold } from '@cbhq/cds-common2/animation/toast';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
+
+import type { ToastBaseProps } from './Toast';
 
 export const useToastPanResponder = ({
   onWillHide,

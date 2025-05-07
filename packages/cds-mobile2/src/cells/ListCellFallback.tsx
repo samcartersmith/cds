@@ -1,14 +1,30 @@
 import React, { memo } from 'react';
-import { ListCellFallbackProps } from '@cbhq/cds-common2';
+import { FallbackRectWidthProps, SharedProps } from '@cbhq/cds-common2/types';
 import { getRectWidthVariant } from '@cbhq/cds-common2/utils/getRectWidthVariant';
 
 import { useTheme } from '../hooks/useTheme';
 import { Fallback } from '../layout/Fallback';
 
-import { ListCell } from './ListCell';
+import type { CellMediaType } from './CellMedia';
+import { ListCell, type ListCellBaseProps } from './ListCell';
 import { MediaFallback } from './MediaFallback';
 
-export type { ListCellFallbackProps };
+export type ListCellFallbackBaseProps = SharedProps &
+  FallbackRectWidthProps &
+  Pick<ListCellBaseProps, 'compact' | 'innerSpacing' | 'outerSpacing'> & {
+    /** Display description shimmer. */
+    description?: boolean;
+    /** Display detail shimmer. */
+    detail?: boolean;
+    /** Display media shimmer with a shape according to type. */
+    media?: CellMediaType;
+    /** Display subdetail shimmer. */
+    subdetail?: boolean;
+    /** Display title shimmer. */
+    title?: boolean;
+  };
+
+export type ListCellFallbackProps = ListCellFallbackBaseProps;
 
 export const ListCellFallback = memo(function ListCellFallback({
   title,
@@ -16,18 +32,14 @@ export const ListCellFallback = memo(function ListCellFallback({
   detail,
   subdetail,
   media,
-  compact,
   disableRandomRectWidth,
   rectWidthVariant,
-  testID,
-  innerSpacing,
-  outerSpacing,
+  ...props
 }: ListCellFallbackProps) {
   const theme = useTheme();
 
   return (
     <ListCell
-      compact={compact}
       description={
         description && (
           <Fallback
@@ -51,9 +63,7 @@ export const ListCellFallback = memo(function ListCellFallback({
           />
         )
       }
-      innerSpacing={innerSpacing}
       media={media ? <MediaFallback testID="list-cell-fallback-media" type={media} /> : undefined}
-      outerSpacing={outerSpacing}
       subdetail={
         subdetail && (
           <Fallback
@@ -66,7 +76,6 @@ export const ListCellFallback = memo(function ListCellFallback({
           />
         )
       }
-      testID={testID}
       title={
         title && (
           <Fallback
@@ -78,6 +87,7 @@ export const ListCellFallback = memo(function ListCellFallback({
           />
         )
       }
+      {...props}
     />
   );
 });

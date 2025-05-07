@@ -1,18 +1,14 @@
 import React, { memo } from 'react';
-import type { FeatureEntryCardBaseProps } from '@cbhq/cds-common2/types';
 
-import type { PressableProps } from '../system/Pressable';
+import { Card, type CardBaseProps } from './Card';
+import { CardBody, type CardBodyBaseProps } from './CardBody';
 
-import { Card } from './Card';
-import { CardBody, type CardBodyProps } from './CardBody';
+export type FeatureEntryCardBaseProps = CardBaseProps & CardBodyBaseProps;
 
-/** @deprecated This component will be removed in a future version. Use NudgeCard or UpsellCard instead. */
-export type FeatureEntryCardProps = FeatureEntryCardBaseProps &
-  Pick<CardBodyProps, 'onActionPress'> & {
-    onPress?: PressableProps['onPress'];
-  };
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
+export type FeatureEntryCardProps = FeatureEntryCardBaseProps;
 
-/** @deprecated This component will be removed in a future version. Use NudgeCard or UpsellCard instead. */
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export const FeatureEntryCard = memo(function FeatureEntryCard({
   onPress,
   testID = 'feature-entry-card',

@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { CounterBaseProps } from '@cbhq/cds-common2/types/CounterBaseProps';
 import { useCounter } from '@cbhq/cds-common2/visualizations/useCounter';
 import { Box } from '@cbhq/cds-mobile2/layout';
+import type { CounterBaseProps } from '@cbhq/cds-mobile2/visualizations/Counter';
 
 const styles = StyleSheet.create({
   hidden: {

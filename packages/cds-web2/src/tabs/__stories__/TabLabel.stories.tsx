@@ -1,14 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
 import sample from 'lodash/sample';
-import { TabLabelProps } from '@cbhq/cds-common2';
 import { ColorScheme } from '@cbhq/cds-common2/core/theme';
 
 import { Button } from '../../buttons/Button';
 import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
-import { TabLabel } from '../TabLabel';
+import { TabLabel, type TabLabelBaseProps } from '../TabLabel';
 
 export default {
   title: 'Core Components/Tabs/TabLabel',
@@ -16,7 +15,7 @@ export default {
 } as Meta;
 
 type ExampleProps = {
-  variant: TabLabelProps['variant'];
+  variant: TabLabelBaseProps['variant'];
   colorScheme: ColorScheme;
 };
 

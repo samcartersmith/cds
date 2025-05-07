@@ -15,7 +15,7 @@ export type BoxBaseProps = StyleProps & {
   animated?: boolean;
   /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
   elevation?: ElevationLevels;
-  font?: ThemeVars.FontFamily;
+  font?: ThemeVars.FontFamily | 'inherit';
   /** Direction in which to absolutely pin the box. */
   pin?: PinningDirection;
   /** Add a border around all sides of the box. */
@@ -38,7 +38,7 @@ export type BoxBaseProps = StyleProps & {
   testID?: string;
 };
 
-export type BoxProps = Omit<ViewProps, 'style'> & BoxBaseProps;
+export type BoxProps = BoxBaseProps & Omit<ViewProps, 'style'>;
 
 export const getElevationStyles = (
   elevation: ElevationLevels,
@@ -181,6 +181,7 @@ export const Box = memo(
         fontSize = font,
         fontWeight = font,
         lineHeight = font,
+        textAlign,
         textDecorationStyle,
         textDecorationColor,
         textDecorationLine,
@@ -271,6 +272,7 @@ export const Box = memo(
               fontSize,
               fontWeight,
               lineHeight,
+              textAlign,
               textDecorationStyle,
               textDecorationColor,
               textDecorationLine,
@@ -346,6 +348,7 @@ export const Box = memo(
           fontSize,
           fontWeight,
           lineHeight,
+          textAlign,
           textDecorationStyle,
           textDecorationColor,
           textDecorationLine,

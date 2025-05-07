@@ -1,12 +1,13 @@
 import React, { forwardRef, memo } from 'react';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import type { SelectBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
 import { handlePreventPropagation } from '../utils/eventHandlers';
 
 import { HelperText } from './HelperText';
 import { InputLabel } from './InputLabel';
 import { InputStack } from './InputStack';
+import type { SelectBaseProps } from './Select';
 
 export type SelectStackProps = {
   children: React.ReactElement;

@@ -1,17 +1,13 @@
 import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useTimer } from '../hooks/useTimer';
-import { ToastBaseProps, ToastRefBaseProps } from '../types';
 
-export type ToastNode = {
-  duration: number;
-  element: React.ReactElement<ToastBaseProps & { ref?: React.Ref<ToastRefBaseProps> }>;
-};
+import type { ToastNode, ToastRefHandle } from './ToastProvider';
 
 export const useToastQueue = () => {
   const [activeToast, setActiveToast] = useState<ToastNode>();
   const toastQueue = useRef<ToastNode[]>([]);
-  const activeToastRef = useRef<ToastRefBaseProps | null>(null);
+  const activeToastRef = useRef<ToastRefHandle | null>(null);
   const hasActiveToast = useRef(false);
   const timer = useTimer();
 

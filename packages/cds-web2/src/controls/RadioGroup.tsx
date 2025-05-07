@@ -2,13 +2,12 @@ import React, { forwardRef, memo, useCallback } from 'react';
 import { css, cx } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
-import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
-import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBaseProps';
 
-import { Box, Group } from '../layout';
+import { Box, type BoxBaseProps, Group } from '../layout';
+import type { GroupBaseProps } from '../layout/Group';
 import type { FilteredHTMLAttributes } from '../types';
 
-import { Control, type ControlProps } from './Control';
+import { Control, type ControlBaseProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
 const dotSvg = (
@@ -130,18 +129,26 @@ export const RadioGroup = memo(RadioGroupWithRef) as typeof RadioGroupWithRef &
 
 export { Radio, useHandleRadioSelect };
 
-export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps;
-export type RadioGroupProps<T extends string> = {
-  /** Field name of the multiple choice radio group. */
-  name: string;
-  /**
-   * @deprecated This prop will be replaced in v6.0.0 with accessibilityLabelledBy.
-   * id of the element that labels the radio group
-   */
-  'aria-labelledby'?: string;
-  /** Handle change event when pressing on a radio option. */
-  onChange?: (value: T) => void;
-} & FilteredHTMLAttributes<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'color'> &
-  RadioGroupBaseProps<T> &
+export type RadioProps<T extends string> = ControlBaseProps<T>;
+export type RadioGroupBaseProps<T extends string> = FilteredHTMLAttributes<
+  React.HTMLAttributes<HTMLDivElement>,
+  'onChange' | 'color'
+> &
   SharedProps &
-  Pick<SharedAccessibilityProps, 'accessibilityLabelledBy'>;
+  Pick<SharedAccessibilityProps, 'accessibilityLabelledBy'> &
+  Pick<GroupBaseProps<BoxBaseProps>, 'direction' | 'gap'> & {
+    /**
+     * Multiple choice options for the radio group. The object key represents
+     * the radio input value and the object value represents the radio option label.
+     */
+    options: Record<T, string | React.ReactNode>;
+    /** Set a label summary for the group of radios. */
+    label?: React.ReactNode;
+    /** Currently selected value. */
+    value?: T;
+    /** Field name of the multiple choice radio group. */
+    name: string;
+    /** Handle change event when pressing on a radio option. */
+    onChange?: (value: T) => void;
+  };
+export type RadioGroupProps<T extends string> = RadioGroupBaseProps<T>;

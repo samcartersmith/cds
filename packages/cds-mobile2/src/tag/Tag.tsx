@@ -1,16 +1,47 @@
 import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
-import { TagBaseProps } from '@cbhq/cds-common2';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   tagBorderRadiusMap,
   tagColorMap,
   tagFontMap,
   tagHorizontalSpacing,
 } from '@cbhq/cds-common2/tokens/tags';
+import type {
+  SharedAccessibilityProps,
+  SharedProps,
+  TagColorScheme,
+  TagIntent,
+} from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box, type BoxProps } from '../layout';
 import { Text } from '../typography/Text';
+
+export type TagBaseProps = SharedProps &
+  SharedAccessibilityProps & {
+    /** Children to render within the Tag. */
+    children: React.ReactNode;
+    /**
+     * Specify the intent of the Tag
+     * @default informational
+     */
+    intent?: TagIntent;
+    /**
+     * Specify the colorScheme of the Tag
+     * @default blue
+     */
+    colorScheme?: TagColorScheme;
+    /** @danger Custom background color */
+    background?: ThemeVars.SpectrumColor;
+    /** @danger Custom text color */
+    color?: ThemeVars.SpectrumColor;
+    /** Setting a custom max width for this tag will enable text truncation */
+    maxWidth?: BoxProps['maxWidth'];
+  };
+
+export type TagProps = TagBaseProps &
+  Omit<BoxProps, 'color' | 'background' | 'children' | 'maxWidth'>;
 
 export const Tag = memo(
   forwardRef(
@@ -25,7 +56,7 @@ export const Tag = memo(
         justifyContent = 'center',
         testID = 'cds-tag',
         ...props
-      }: TagBaseProps & Omit<BoxProps, 'color' | 'background' | 'backgroundColor' | 'children'>,
+      }: TagProps,
       forwardedRef: React.ForwardedRef<View>,
     ) => {
       const theme = useTheme();

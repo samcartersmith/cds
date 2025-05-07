@@ -1,8 +1,10 @@
 import React from 'react';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
-import type { CellPriority, CellSpacing } from '@cbhq/cds-common2/types/CellBaseProps';
+import { selectCellSpacingConfig } from '@cbhq/cds-common2/tokens/select';
+import type { CellPriority } from '@cbhq/cds-common2/types/CellBaseProps';
 
 import { Button, IconButton } from '../../buttons';
+import type { CellSpacing } from '../../cells/Cell';
 import { Checkbox } from '../../controls/Checkbox';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { VStack } from '../../layout';

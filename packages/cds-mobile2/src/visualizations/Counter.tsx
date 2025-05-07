@@ -1,11 +1,19 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { CounterBaseProps } from '@cbhq/cds-common2/types/CounterBaseProps';
 import { useCounter } from '@cbhq/cds-common2/visualizations/useCounter';
 
 import { Box } from '../layout';
 
-export const Counter = ({ startNum, endNum, renderNum, durationInMillis }: CounterBaseProps) => {
+export type CounterBaseProps = {
+  startNum: number;
+  endNum: number;
+  durationInMillis: number;
+  renderNum?: (num: number) => string | React.ReactNode;
+};
+
+export type CounterProps = CounterBaseProps;
+
+export const Counter = ({ startNum, endNum, renderNum, durationInMillis }: CounterProps) => {
   const count = useCounter({ startNum, endNum, durationInMillis });
   const renderFunction = useMemo(() => {
     return (num: number) => {

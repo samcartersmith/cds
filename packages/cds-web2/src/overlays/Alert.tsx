@@ -1,5 +1,11 @@
-import React, { forwardRef, memo, useCallback, useMemo } from 'react';
-import type { AlertBaseProps, AlertRefBaseProps } from '@cbhq/cds-common2';
+import { forwardRef, memo, useCallback, useMemo } from 'react';
+import type {
+  ButtonVariant,
+  IllustrationPictogramNames,
+  PositionStyles,
+  SharedProps,
+  ValidateProps,
+} from '@cbhq/cds-common2/types';
 
 import { Button } from '../buttons';
 import { useA11yLabels } from '../hooks/useA11yLabels';
@@ -7,25 +13,71 @@ import { Pictogram } from '../illustrations';
 import { Box } from '../layout/Box';
 import { Text } from '../typography/Text';
 
-import { Modal, ModalProps } from './modal/Modal';
+import { Modal, type ModalBaseProps, type ModalRefBaseProps } from './modal/Modal';
 import { Portal } from './Portal';
 import { alertContainerId } from './PortalProvider';
 
-export type AlertProps = {
-  /**
-   * Indicating if Alert is stacked on top of Modal
-   */
-  stacked?: boolean;
-} & AlertBaseProps &
+export type AlertBaseProps = SharedProps &
+  Pick<PositionStyles, 'zIndex'> &
   Pick<
-    ModalProps,
-    'disablePortal' | 'accessibilityLabel' | 'accessibilityLabelledBy' | 'restoreFocusOnUnmount'
-  >;
+    ModalBaseProps,
+    | 'onRequestClose'
+    | 'visible'
+    | 'onDidClose'
+    | 'disablePortal'
+    | 'accessibilityLabel'
+    | 'accessibilityLabelledBy'
+  > & {
+    /**
+     * Indicating if Alert is stacked on top of Modal
+     */
+    stacked?: boolean;
+    /**
+     * Alert title
+     */
+    title: string;
+    /**
+     * Alert body/description
+     */
+    body: string;
+    /**
+     * Illustration pictogram name for alert
+     */
+    pictogram?: IllustrationPictogramNames;
+    /**
+     * Label of the preferred action
+     */
+    preferredActionLabel: string;
+    /**
+     * Callback function fired when the preferred action is pressed
+     */
+    onPreferredActionPress?: () => void;
+    /**
+     * Button variant of the preferred action
+     * @default primary
+     */
+    preferredActionVariant?: Extract<ButtonVariant, 'primary' | 'negative'>;
+    /**
+     * Label of the dismiss action
+     */
+    dismissActionLabel?: string;
+    /**
+     * Callback function fired when the dismiss action is pressed
+     */
+    onDismissActionPress?: () => void;
+    /**
+     * Layout of the actions
+     * @default horizontal
+     */
+    actionLayout?: 'horizontal' | 'vertical';
+  };
+
+export type AlertProps = AlertBaseProps;
 
 export const alertModalWidth = 318;
 
 export const Alert = memo(
-  forwardRef<AlertRefBaseProps, AlertProps>(
+  forwardRef<ModalRefBaseProps, AlertProps>(
     (
       {
         title,
@@ -112,7 +164,10 @@ export const Alert = memo(
             testID={testID}
             visible={visible}
             width={alertModalWidth}
-            {...props}
+            {...(props satisfies ValidateProps<
+              typeof props,
+              Omit<AlertProps, keyof ModalBaseProps>
+            >)}
           >
             <Box
               alignItems="center"

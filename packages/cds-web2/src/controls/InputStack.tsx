@@ -4,11 +4,10 @@ import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
 import { inputStackGap } from '@cbhq/cds-common2/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
-import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 import type { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
-import { type BoxDefaultElement, type BoxProps } from '../layout/Box';
+import { type BoxBaseProps, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { ColorSurge } from '../motion/ColorSurge';
@@ -25,6 +24,7 @@ const baseStyle = css`
   /* When input is disabled, opacity 0.5 was applied twice. One time on the root VStack, and second time in interactable. As a result, it was not a11y compliant. To resolve this issue, i had to put an opacity of 1 override in the interactable element. */
   &:disabled,
   &[aria-disabled='true'] {
+    border-color: var(--border-color-unfocused);
     opacity: 1;
   }
 
@@ -68,9 +68,9 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   secondary: 'bgSecondary',
 };
 
-export type InputStackBaseProps = {
+export type InputStackBaseProps = SharedProps & {
   /** Width of the border.
-   * @default rounded
+   * @default 100
    */
   borderWidth?: ThemeVars.BorderWidth;
   /**
@@ -78,19 +78,18 @@ export type InputStackBaseProps = {
    * we allow startContent and endContent to be custom ReactNode,
    * the content placed inside these slots will not change colors according
    * to the variant. You will have to add that yourself
-   * @default fgMuted
+   * @default foregroundMuted
    */
   variant?: InputVariant;
   /**
    * Width of input as a percentage string.
    * @default 100%
    * */
-  width?: `${number}%` | number;
+  width?: BoxBaseProps['width'];
   /**
    * Height of input
-   * @default auto
    */
-  height?: DimensionValue;
+  height?: BoxBaseProps['height'];
   /**
    * Toggles input interactability and opacity
    * @default false
@@ -114,9 +113,9 @@ export type InputStackBaseProps = {
   focused?: boolean;
   /**
    * Leverage one of the borderRadius styles we offer to round the corners of the input.
-   * @default rounded
+   * @default 200
    */
-  borderRadius?: ThemeVars.BorderRadius;
+  borderRadius?: BoxBaseProps['borderRadius'];
   /**
    * Disable default focus styles
    * @default false
@@ -124,12 +123,15 @@ export type InputStackBaseProps = {
   disableFocusedStyle?: boolean;
   /**
    * Enable Color Surge motion
-   * @default false
    */
   enableColorSurge?: boolean;
-} & SharedProps;
+};
 
-export type InputStackProps = InputStackBaseProps & BoxProps<BoxDefaultElement>;
+export type InputStackProps = Omit<
+  BoxProps<BoxDefaultElement>,
+  'width' | 'height' | 'borderRadius'
+> &
+  InputStackBaseProps;
 
 export const InputStack = memo(
   forwardRef<HTMLElement, InputStackProps>(

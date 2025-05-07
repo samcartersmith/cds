@@ -2,10 +2,7 @@ import React, { memo, useCallback, useId, useMemo } from 'react';
 import { css } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
-import type {
-  TabIndicatorProps,
-  TabLabelProps as CommonTabLabelProps,
-} from '@cbhq/cds-common2/types';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
 import { Collapsible } from '../collapsible';
 import { DotCount } from '../dots/DotCount';
@@ -13,6 +10,9 @@ import { useDimensions } from '../hooks/useDimensions';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 import { HStack } from '../layout';
 import { Text, type TextProps } from '../typography/Text';
+
+import type { TabIndicatorProps } from './TabIndicator';
+import type { TabProps } from './TabNavigation';
 
 const primaryTabLabelStyles = css`
   padding-top: var(--space-2);
@@ -45,7 +45,17 @@ const colorVariantStyle: Record<
   },
 } as const;
 
-export type TabLabelProps = CommonTabLabelProps &
+export type TabLabelBaseProps = SharedProps &
+  Pick<TabProps, 'variant' | 'count' | 'accessibilityLabel' | 'max' | 'Component'> & {
+    /** Identify the active tab */
+    active?: boolean;
+    /** Display title to render as the TabLabel. */
+    children: React.ReactNode;
+    /** Callback to fire when pressed */
+    onPress?: () => void;
+  };
+
+export type TabLabelProps = TabLabelBaseProps &
   TextProps<'h2'> & { onLayout?: (key: string, props: TabIndicatorProps) => void };
 
 export const TabLabel = memo(

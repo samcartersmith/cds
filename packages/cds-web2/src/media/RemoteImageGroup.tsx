@@ -1,14 +1,40 @@
 import React, { Children, isValidElement, useMemo } from 'react';
 import { css, type LinariaClassName } from '@linaria/core';
 import type {
-  RemoteImageBaseProps,
-  RemoteImageGroupBaseProps,
+  AvatarSize,
   Shape,
+  SharedAccessibilityProps,
+  SharedProps,
 } from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 import { Text } from '../typography/Text';
+
+import type { RemoteImageProps } from './RemoteImage';
+
+export type RemoteImageGroupBaseProps = SharedProps &
+  SharedAccessibilityProps & {
+    /**
+     * Indicates the number of remote image before it collapses
+     * @default 4
+     */
+    max?: number;
+    /**
+     * Size of all RemoteImage children in the group.
+     * @default m
+     */
+    size?: AvatarSize | number;
+    /**
+     * Shape of all RemoteImage children in the group
+     * @default circle
+     */
+    shape?: Shape;
+    /** Children content */
+    children?: React.ReactNode;
+  };
+
+export type RemoteImageGroupProps = RemoteImageGroupBaseProps;
 
 const borderRadiusStyles: Record<Shape, LinariaClassName> = {
   circle: css`
@@ -35,7 +61,7 @@ export const RemoteImageGroup = ({
   shape = 'circle',
   testID,
   ...props
-}: RemoteImageGroupBaseProps) => {
+}: RemoteImageGroupProps) => {
   const { avatarSize } = useTheme();
 
   const borderRadius = borderRadiusStyles[shape];
@@ -61,7 +87,7 @@ export const RemoteImageGroup = ({
         }
 
         // dynamically apply uniform sizing and shape to all RemoteImage children elements
-        const clonedChild = React.cloneElement<RemoteImageBaseProps>(child as React.ReactElement, {
+        const clonedChild = React.cloneElement(child as React.ReactElement<RemoteImageProps>, {
           width: sizeAsNumber,
           height: sizeAsNumber,
           ...(child.props.shape ? undefined : { shape }),

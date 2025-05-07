@@ -1,5 +1,4 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -7,6 +6,7 @@ import { SpotRectangle } from '../../illustrations';
 import { Box, VStack } from '../../layout';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
 import { Text } from '../../typography/Text';
+import type { DrawerRefBaseProps } from '../drawer/Drawer';
 import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 export const Default = () => {

@@ -1,10 +1,11 @@
 import React, { memo, useCallback } from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { selectCellMobileSpacingConfig } from '@cbhq/cds-common2/tokens/select';
-import { SelectOptionBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';
+import { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
-import { Cell } from '../cells/Cell';
+import { Cell, type CellBaseProps } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
+import type { ListCellBaseProps } from '../cells/ListCell';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
@@ -14,10 +15,15 @@ const selectOptionMinHeight = 56;
 
 const selectOptionMaxHeight = 64;
 
-export type SelectOptionProps = {
-  onPress?: (() => void) | ((event: GestureResponderEvent) => void);
-} & Omit<SelectOptionBaseProps, 'compact'> &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
+export type SelectOptionBaseProps = Omit<CellBaseProps, 'children' | 'selected'> &
+  Pick<ListCellBaseProps, 'title' | 'description' | 'multiline'> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'> & {
+    onPress?: (() => void) | ((event: GestureResponderEvent) => void);
+    /** Unique identifier for each option */
+    value: string;
+  };
+
+export type SelectOptionProps = SelectOptionBaseProps;
 
 export const SelectOption = memo(function SelectOption({
   title,

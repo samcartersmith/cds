@@ -1,22 +1,51 @@
 import React, { forwardRef, memo, useMemo } from 'react';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
   tagBorderRadiusMap,
   tagColorMap,
   tagFontMap,
   tagHorizontalSpacing,
 } from '@cbhq/cds-common2/tokens/tags';
-import type { TagBaseProps } from '@cbhq/cds-common2/types/TagBaseProps';
+import type {
+  SharedAccessibilityProps,
+  SharedProps,
+  TagColorScheme,
+  TagIntent,
+} from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { Text } from '../typography/Text';
 
-type TagProps = TagBaseProps &
-  Omit<BoxProps<BoxDefaultElement>, 'background' | 'backgroundColor' | 'children'>;
-
 export const tagStaticClassName = 'cds-tag';
+
+export type TagBaseProps = SharedProps &
+  SharedAccessibilityProps & {
+    /** Children to render within the Tag. */
+    children: React.ReactNode;
+    /**
+     * Specify the intent of the Tag
+     * @default informational
+     */
+    intent?: TagIntent;
+    /**
+     * Specify the colorScheme of the Tag
+     * @default blue
+     */
+    colorScheme?: TagColorScheme;
+    /** @danger Custom background color */
+    background?: ThemeVars.SpectrumColor;
+    /** @danger Custom text color */
+    color?: ThemeVars.SpectrumColor;
+    /** Setting a custom max width for this tag will enable text truncation */
+    maxWidth?: BoxProps<BoxDefaultElement>['maxWidth'];
+  };
+
+export type TagProps = TagBaseProps &
+  Omit<BoxProps<BoxDefaultElement>, 'color' | 'background' | 'children' | 'maxWidth'>;
+
 export const Tag = memo(
-  forwardRef<HTMLDivElement, TagProps>(function Tag(
+  forwardRef(function Tag(
     {
       children,
       intent = 'informational',
@@ -28,7 +57,7 @@ export const Tag = memo(
       justifyContent = 'center',
       testID = tagStaticClassName,
       ...props
-    },
+    }: TagProps,
     forwardedRef: React.ForwardedRef<HTMLDivElement>,
   ) {
     const theme = useTheme();

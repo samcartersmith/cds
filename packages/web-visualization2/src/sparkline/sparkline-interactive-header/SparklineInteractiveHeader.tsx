@@ -1,15 +1,12 @@
 import React, { forwardRef, memo, useCallback, useImperativeHandle, useMemo, useRef } from 'react';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { subheadIconSignMap } from '@cbhq/cds-common2/tokens/sparkline';
-import {
-  SparklineInteractiveHeaderProps,
-  SparklineInteractiveHeaderRef,
-  SparklineInteractiveHeaderValues,
+import type {
+  SharedProps,
+  SparklineInteractiveHeaderSignVariant,
   SparklineInteractiveHeaderVariant,
-  SparklineInteractiveSubHead,
-} from '@cbhq/cds-common2/types/SparklineInteractiveHeaderBaseProps';
+} from '@cbhq/cds-common2/types';
 import { debounce } from '@cbhq/cds-common2/utils/debounce';
-import { interpolateSubHeadText } from '@cbhq/cds-common2/visualizations/interpolateSubHeadText';
 import { AccessibilityAnnouncer } from '@cbhq/cds-web2/AccessibilityAnnouncer/AccessibilityAnnouncer';
 import { VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography/Text';
@@ -20,6 +17,97 @@ const variantColorMap: Record<SparklineInteractiveHeaderVariant, ThemeVars.Color
   positive: 'bgPositive',
   negative: 'bgNegative',
   foregroundMuted: 'fgMuted',
+};
+
+export type SparklineInteractiveSubHead = {
+  /**
+   * Free form percentage change
+   */
+  percent: string;
+  /**
+   * Sign to denote the change in price
+   */
+  sign: SparklineInteractiveHeaderSignVariant;
+  /**
+   * The variant to use for the price and percentage change
+   */
+  variant: SparklineInteractiveHeaderVariant;
+  /**
+   * Show the dollar amount of price change
+   */
+  priceChange?: string;
+  /**
+   * The accessoryText to show after the price and / or percentage change. An example is "All time"
+   */
+  accessoryText?: string;
+  /**
+   * The accessibilityLabel to show for the price and / or percentage change. This should be localized
+   * @example
+   * // First, configure your i18n strings
+   * const messages = defineMessages({
+   *   subHeadPrefix: {
+   *     id: `${i18nKey}.subHeadPrefix`,
+   *     defaultMessage: 'Price increase in the amount of',
+   *     description: 'A prefix to make it clear which direction the price action was moving',
+   *   }
+   * });
+   *
+   * // then  provide the translated string the accessibilityLabel prop
+   * messages.subHeadPrefix
+   */
+  accessibilityLabel?: string;
+};
+
+export type SparklineInteractiveHeaderValues = {
+  /**
+   * Describes what the Header represents e.g. Bitcoin Price
+   */
+  label?: string;
+  /**
+   * Main content of header, this is usually the price
+   */
+  title?: React.ReactNode;
+  /**
+   * Provides additional information about the title, such as a price change
+   */
+  subHead?: SparklineInteractiveSubHead;
+};
+
+export type SparklineInteractiveHeaderRef = {
+  update: (params: SparklineInteractiveHeaderValues) => void;
+};
+
+export type SparklineInteractiveHeaderProps = SharedProps & {
+  /**
+   * Default title, changing this prop has no effect once the default is rendered. If you use a ReactNode that is not a string, then you cannot use the text based label that supports updates.
+   */
+  defaultTitle: React.ReactNode;
+  /**
+   * Default label, changing this prop has no effect once the default is rendered.
+   */
+  defaultLabel?: string;
+  /**
+   * Default SubHead, changing this prop has no effect once the default is rendered.
+   */
+  defaultSubHead?: SparklineInteractiveSubHead;
+  /**
+   * Adds a label node that allows React components. If you use this node then you cannot use the text based label that supports updates.
+   */
+  labelNode?: React.ReactNode;
+  /**
+   * Reduce the font size used for the header itself.
+   */
+  compact?: boolean;
+};
+
+const interpolateSubHeadText = (subHead: SparklineInteractiveSubHead) => {
+  if (subHead.priceChange && subHead.percent) {
+    return `${subHead.priceChange} (${subHead.percent})`;
+  }
+  if (subHead.priceChange) {
+    return subHead.priceChange;
+  }
+  return '';
 };
 
 const SparklineInteractiveHeaderStable = memo(

@@ -1,15 +1,18 @@
 import React, { act } from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { AccordionBaseProps } from '../../types';
-import { AccordionProvider, useAccordionContext } from '../AccordionProvider';
+import {
+  AccordionProvider,
+  type AccordionProviderProps,
+  useAccordionContext,
+} from '../AccordionProvider';
 
 describe('AccordionProvider', () => {
   describe('uncontrolled', () => {
     const onChange = jest.fn();
     it('uses defaultActiveKey', () => {
       const { result } = renderHook(() => useAccordionContext(), {
-        wrapper: ({ children }: { children: AccordionBaseProps['children'] }) => (
+        wrapper: ({ children }: { children: AccordionProviderProps['children'] }) => (
           <AccordionProvider defaultActiveKey="1" onChange={onChange}>
             {children}
           </AccordionProvider>
@@ -20,7 +23,7 @@ describe('AccordionProvider', () => {
     it('updates internal state when setActiveKey is called', () => {
       const onChange = jest.fn();
       const { result } = renderHook(() => useAccordionContext(), {
-        wrapper: ({ children }: { children: AccordionBaseProps['children'] }) => (
+        wrapper: ({ children }: { children: AccordionProviderProps['children'] }) => (
           <AccordionProvider defaultActiveKey="1" onChange={onChange}>
             {children}
           </AccordionProvider>
@@ -44,7 +47,7 @@ describe('AccordionProvider', () => {
 
     it('uses provided activeKey', () => {
       const { result } = renderHook(() => useAccordionContext(), {
-        wrapper: ({ children }: { children: AccordionBaseProps['children'] }) => (
+        wrapper: ({ children }: { children: AccordionProviderProps['children'] }) => (
           <AccordionProvider activeKey="1" setActiveKey={setActiveKey}>
             {children}
           </AccordionProvider>
@@ -55,7 +58,7 @@ describe('AccordionProvider', () => {
 
     it('calls setActiveKey when state changes', () => {
       const { result } = renderHook(() => useAccordionContext(), {
-        wrapper: ({ children }: { children: AccordionBaseProps['children'] }) => (
+        wrapper: ({ children }: { children: AccordionProviderProps['children'] }) => (
           <AccordionProvider activeKey="1" setActiveKey={setActiveKey}>
             {children}
           </AccordionProvider>

@@ -1,6 +1,6 @@
-import React, { memo, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { css } from '@linaria/core';
-import type { AlertActionsBaseProps, IllustrationHeroSquareNames } from '@cbhq/cds-common2';
+import type { ButtonVariant, IllustrationHeroSquareNames } from '@cbhq/cds-common2/types';
 
 import { Button } from '../buttons';
 import { useA11yLabels } from '../hooks/useA11yLabels';
@@ -15,11 +15,8 @@ import { ModalProps } from './modal/Modal';
 import { ModalHeaderProps } from './modal/ModalHeader';
 import { AlertProps } from './Alert';
 
-export type FullscreenAlertProps = { heroSquare?: IllustrationHeroSquareNames } & Pick<
-  AlertProps,
-  'title' | 'body'
-> &
-  AlertActionsBaseProps &
+export type FullscreenAlertProps = Pick<AlertProps, 'title' | 'body'> &
+  Pick<ModalHeaderProps, 'closeAccessibilityLabel'> &
   Pick<
     ModalProps,
     | 'visible'
@@ -28,8 +25,33 @@ export type FullscreenAlertProps = { heroSquare?: IllustrationHeroSquareNames } 
     | 'accessibilityLabel'
     | 'accessibilityLabelledBy'
     | 'testID'
-  > &
-  Pick<ModalHeaderProps, 'closeAccessibilityLabel'>;
+  > & {
+    /**
+     * Name of the illustration that is rendered in the alert
+     */
+    heroSquare?: IllustrationHeroSquareNames;
+    /**
+     * Label of the main call to action button
+     */
+    preferredActionLabel: string;
+    /**
+     * Callback function fired when the main call to action button is pressed
+     */
+    onPreferredActionPress?: () => void;
+    /**
+     * Variant of the main call to action button
+     * @default primary
+     */
+    preferredActionVariant?: Extract<ButtonVariant, 'primary' | 'negative'>;
+    /**
+     * Label of the dismiss button
+     */
+    dismissActionLabel?: string;
+    /**
+     * Callback function fired when the dismiss button is pressed
+     */
+    onDismissActionPress?: () => void;
+  };
 
 const centerContentStyles = css`
   height: 100%;

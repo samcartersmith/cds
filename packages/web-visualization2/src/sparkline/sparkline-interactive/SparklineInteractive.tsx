@@ -1,13 +1,16 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 import { chartCompactHeight, chartHeight } from '@cbhq/cds-common2/tokens/sparkline';
-import {
-  SparklineInteractiveBaseProps,
-  SparklineInteractiveDefaultFallback,
-} from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
-import { VisualizationContainerDimension } from '@cbhq/cds-common2/types/VisualizationContainerBaseProps';
+import type {
+  ChartData,
+  ChartFormatDate,
+  ChartScrubParams,
+  ChartTimeseries,
+  Placement,
+} from '@cbhq/cds-common2/types';
 import { debounce } from '@cbhq/cds-common2/utils/debounce';
 import { useSparklineCoordinates } from '@cbhq/cds-common2/visualizations/useSparklineCoordinates';
 import { chartFallbackNegative, chartFallbackPositive } from '@cbhq/cds-lottie-files2';
@@ -17,7 +20,10 @@ import { useDimensions } from '@cbhq/cds-web2/hooks/useDimensions';
 import { HStack, VStack } from '@cbhq/cds-web2/layout';
 import { Box } from '@cbhq/cds-web2/layout/Box';
 import { getBrowserGlobals } from '@cbhq/cds-web2/utils/browser';
-import { VisualizationContainer } from '@cbhq/cds-web2/visualizations/VisualizationContainer';
+import {
+  VisualizationContainer,
+  type VisualizationContainerDimension,
+} from '@cbhq/cds-web2/visualizations/VisualizationContainer';
 
 import { InnerSparklineInteractiveProvider } from './InnerSparklineInteractiveProvider';
 import { SparklineInteractiveHoverDate } from './SparklineInteractiveHoverDate';
@@ -35,7 +41,11 @@ import { SparklineInteractiveScrubProvider } from './SparklineInteractiveScrubPr
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
 export * from '@cbhq/cds-common2/types/Chart';
-export * from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
+
+export type SparklineInteractiveDefaultFallback = Pick<
+  SparklineInteractiveBaseProps<string>,
+  'fallbackType' | 'compact'
+>;
 
 const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallback) => {
   // don't show lottie animation in story book
@@ -46,6 +56,106 @@ const DefaultFallback = memo(({ fallbackType }: SparklineInteractiveDefaultFallb
 });
 
 const mobileLayoutBreakpoint = 650;
+
+export type SparklineInteractiveBaseProps<Period extends string> = {
+  /**
+   * Chart data bucketed by Period. Period is a string key
+   */
+  data?: Record<Period, ChartData>;
+  /**
+   * A list of periods that the chart will use. label is what is shown in the bottom of the chart and the value is the key.
+   */
+  periods: { label: string; value: Period }[];
+  /**
+   * default period value that the chart will use
+   */
+  defaultPeriod: Period;
+  /**
+   * Callback when the user selects a new period.
+   */
+  onPeriodChanged?: (period: Period) => void;
+  /**
+   * Callback when the user starts scrubbing
+   */
+  onScrubStart?: () => void;
+  /**
+   * Callback when a user finishes scrubbing
+   */
+  onScrubEnd?: () => void;
+  /**
+   * Callback used when the user is scrubbing. This will be called for every data point change.
+   */
+  onScrub?: (params: ChartScrubParams<Period>) => void;
+  /**
+   * Disables the scrub user interaction from the chart
+   *
+   * @default false
+   */
+  disableScrubbing?: boolean;
+  /**
+   * function used to format the date that is shown in the bottom of the chart as the user scrubs
+   */
+  formatDate: ChartFormatDate<Period>;
+  /**
+   * Color of the line*
+   */
+  strokeColor: string;
+  /**
+   * Fallback shown in the chart when data is not available. This is usually a loading state.
+   */
+  fallback?: React.ReactNode;
+  /**
+   * If you use the default fallback then this specifies if the fallback line is decreasing or increasing
+   */
+  fallbackType?: 'positive' | 'negative';
+  /**
+   * Show the chart in compact height
+   *
+   * @default false
+   */
+  compact?: boolean;
+  /**
+   * Hides the period selector at the bottom of the chart
+   *
+   * @default false
+   */
+  hidePeriodSelector?: boolean;
+  /**
+   * Adds an area fill to the Sparkline
+   *
+   * @default true
+   */
+  fill?: boolean;
+  /**
+   Formats the date above the chart as you scrub. Omit this if you don't want to show the date as the user scrubs
+   */
+  formatHoverDate?: (date: Date, period: Period) => string;
+  /**
+   Formats the price above the chart as you scrub. Omit this if you don't want to show the price as the user scrubs
+   */
+  formatHoverPrice?: (price: number) => string;
+  /**
+   * Adds a header node above the chart. It will be placed next to the period selector on web.
+   */
+  headerNode?: React.ReactNode;
+  /**
+   *  Optional data to show on hover/scrub instead of the original sparkline. This allows multiple timeseries lines.
+   *
+   *  Period => timeseries list
+   */
+  hoverData?: Record<Period, ChartTimeseries[]>;
+  /**
+   * Optional gutter to add to the Period selector. This is useful if you choose to use the full screen width for the chart
+   */
+  timePeriodGutter?: ThemeVars.Space;
+  /**
+   * Optional placement prop that position the period selector component above or below the chart
+   */
+  periodSelectorPlacement?: Extract<Placement, 'above' | 'below'>;
+  /** Scales the sparkline to show more or less variance. Use a number less than 1 for less variance and a number greater than 1 for more variance. If you use a number greater than 1 it may clip the boundaries of the sparkline. */
+  yAxisScalingFactor?: number;
+};
+
 function SparklineInteractiveContentWithGeneric<Period extends string>({
   data,
   periods,

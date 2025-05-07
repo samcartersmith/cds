@@ -5,7 +5,6 @@ import { interpolatePath } from 'd3-interpolate-path';
 import { select } from 'd3-selection';
 import { animatedPathConfig } from '@cbhq/cds-common2/animation/sparkline';
 import { useValueChanges } from '@cbhq/cds-common2/hooks/useValueChanges';
-import { SparklineInteractiveAnimatedPathProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 
 import { SparklineArea } from '../SparklineArea';
 import { SparklineGradient } from '../SparklineGradient';
@@ -14,6 +13,16 @@ import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
 const { duration, easing } = animatedPathConfig;
+
+export type SparklineInteractiveAnimatedPathProps = {
+  d: string;
+  color: string;
+  area?: string;
+  selectedPeriod: string;
+  yAxisScalingFactor?: number;
+  initialPath?: string;
+  initialArea?: string;
+};
 
 export const SparklineInteractiveAnimatedPath = memo(
   ({

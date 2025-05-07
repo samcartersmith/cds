@@ -16,23 +16,42 @@ import {
   StyleSheet,
 } from 'react-native';
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
-import { ModalParentContext } from '@cbhq/cds-common2/overlays/ModalParentContext';
+import { ModalContext, type ModalContextValue } from '@cbhq/cds-common2/overlays/ModalContext';
 import {
   OverlayContentContext,
   type OverlayContentContextValue,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
-import { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common2/types';
+import type { PositionStyles, SharedProps } from '@cbhq/cds-common2/types';
 
 import { VStack } from '../../layout';
 
 import { useModalAnimation } from './useModalAnimation';
 
+type ModalChildrenRenderProps = { closeModal: () => void };
+
+export type ModalBaseProps = SharedProps &
+  ModalContextValue &
+  Pick<PositionStyles, 'zIndex'> &
+  Omit<RNModalProps, 'children' | 'visible' | 'onRequestClose' | 'animationType'> & {
+    /** Component to render as the Modal content */
+    children?: React.ReactNode | React.FC<ModalChildrenRenderProps>;
+    /**
+     * Callback fired after the component is closed.
+     */
+    onDidClose?: () => void;
+    /**
+     * @danger This is a migration escape hatch. It is not intended to be used normally.
+     * */
+    width?: number;
+  };
+
+export type ModalRefBaseProps = Pick<ModalBaseProps, 'onRequestClose'>;
+
+export type ModalProps = ModalBaseProps;
+
 const overlayContentContextValue: OverlayContentContextValue = {
   isModal: true,
 };
-
-export type ModalProps = Omit<ModalBaseProps, 'width'> &
-  Omit<RNModalProps, 'children' | 'visible' | 'onRequestClose' | 'animationType'>;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, ModalProps>((props, ref) => {
@@ -109,9 +128,9 @@ export const Modal = memo(
             style={{ transform: [{ scale }], opacity, borderWidth: 0 }}
           >
             <SafeAreaView style={styles.safeAreaContainer}>
-              <ModalParentContext.Provider value={modalData}>
+              <ModalContext.Provider value={modalData}>
                 {typeof children === 'function' ? children(renderChildrenProps) : children}
-              </ModalParentContext.Provider>
+              </ModalContext.Provider>
             </SafeAreaView>
           </VStack>
         </RNModal>

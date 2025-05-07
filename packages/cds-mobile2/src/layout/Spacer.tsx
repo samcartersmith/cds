@@ -1,17 +1,30 @@
 import React, { memo } from 'react';
 import { Animated, StyleProp, View, ViewProps, ViewStyle } from 'react-native';
-import { FixedValue, SharedProps } from '@cbhq/cds-common2';
-import { SpacerBaseProps } from '@cbhq/cds-common2/types/SpacerBaseProps';
-import { getSpacerStyle } from '@cbhq/cds-common2/utils/getSpacerStyle';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { FixedValue, FlexStyles, SharedProps } from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
+import { getSpacerStyle } from '../utils/getSpacerStyle';
 
-export type SpacerProps = SpacerBaseProps &
-  SharedProps &
-  Omit<ViewProps, 'style'> & {
+export type SpacerBaseProps = SharedProps &
+  Pick<FlexStyles, 'flexGrow' | 'flexShrink' | 'flexBasis'> & {
+    /** Padding in the horizontal direction */
+    horizontal?: ThemeVars.Space;
+    /** Padding in the vertical direction */
+    vertical?: ThemeVars.Space;
+    /** Max padding in the horizontal direction */
+    maxHorizontal?: ThemeVars.Space;
+    /** Max padding in the vertical direction */
+    maxVertical?: ThemeVars.Space;
+    /** Min padding in the horizontal direction */
+    minHorizontal?: ThemeVars.Space;
+    /** Min padding in the vertical direction */
+    minVertical?: ThemeVars.Space;
     animated?: boolean;
     style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
   };
+
+export type SpacerProps = SpacerBaseProps & Omit<ViewProps, 'style'>;
 
 /**
  * Spacer component is for adding spacing gap between two dom nodes. If no horizontal or vertical

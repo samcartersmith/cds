@@ -1,12 +1,24 @@
 import React, { forwardRef, memo } from 'react';
 import { m as motion } from 'framer-motion';
-import { TabIndicatorProps } from '@cbhq/cds-common2/types';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
 import { Box } from '../layout/Box';
 
 import { useAnimateTabIndicator } from './hooks/useAnimateTabIndicator';
 
 const MotionBox = motion(Box);
+
+export type TabIndicatorProps = SharedProps & {
+  /** The width of the active TabLabel. */
+  width: number;
+  /** The xPosition of the active TabLabel. */
+  x: number;
+  /** This should always match the background color of the parent container
+   * @default: 'bg'
+   */
+  background?: ThemeVars.Color;
+};
 
 export const TabIndicator = memo(
   forwardRef(

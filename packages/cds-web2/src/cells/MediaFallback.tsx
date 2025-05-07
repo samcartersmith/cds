@@ -1,9 +1,10 @@
 import React, { memo } from 'react';
 import { imageSize, mediaSize } from '@cbhq/cds-common2/tokens/cell';
-import { type CellMediaType } from '@cbhq/cds-common2/types/CellBaseProps';
 import { type SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { Fallback } from '../layout/Fallback';
+
+import type { CellMediaType } from './CellMedia';
 
 export type MediaFallbackProps = {
   type: CellMediaType;

@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react';
 import { FlatList, ListRenderItem } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import includes from 'lodash/includes';
-import { CellSpacing } from '@cbhq/cds-common2';
+import { CellSpacing } from '@cbhq/cds-mobile2/cells/Cell';
 import { ListCell } from '@cbhq/cds-mobile2/cells/ListCell';
 import { Box } from '@cbhq/cds-mobile2/layout/Box';
 

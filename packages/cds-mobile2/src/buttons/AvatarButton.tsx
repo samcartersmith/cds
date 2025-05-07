@@ -1,20 +1,20 @@
 import React, { memo } from 'react';
-import { ButtonBaseProps, SharedProps } from '@cbhq/cds-common2';
 import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
-import { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
-import { Avatar } from '../media';
-import { Pressable, type PressableProps } from '../system/Pressable';
+import { Avatar, type AvatarBaseProps } from '../media';
+import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
-export type AvatarButtonProps = PressableProps &
+import type { ButtonBaseProps } from './Button';
+
+export type AvatarButtonProps = PressableBaseProps &
   SharedProps &
   Pick<ButtonBaseProps, 'accessibilityLabel' | 'compact'> &
-  Pick<AvatarBaseProps, 'alt' | 'src' | 'shape' | 'colorScheme' | 'borderColor' | 'name'>;
+  Pick<AvatarBaseProps, 'src' | 'shape' | 'colorScheme' | 'borderColor' | 'name'>;
 
 export const AvatarButton = memo(function AvatarButton({
   accessibilityLabel,
   feedback = 'light',
-  alt,
   src,
   compact,
   shape,
@@ -27,14 +27,13 @@ export const AvatarButton = memo(function AvatarButton({
 
   return (
     <Pressable
-      accessibilityHint={accessibilityLabel ?? alt}
-      accessibilityLabel={accessibilityLabel ?? alt}
+      accessibilityHint={accessibilityLabel}
+      accessibilityLabel={accessibilityLabel}
       background="transparent"
       feedback={feedback}
       {...props}
     >
       <Avatar
-        alt={alt}
         borderColor={borderColor}
         colorScheme={colorScheme}
         dangerouslySetSize={height}

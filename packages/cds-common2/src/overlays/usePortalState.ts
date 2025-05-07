@@ -1,19 +1,21 @@
-import { cloneElement, useCallback, useMemo, useState } from 'react';
+import React, { cloneElement, useCallback, useMemo, useState } from 'react';
 
-import type {
-  AlertBaseProps,
-  AlertRefBaseProps,
-  ModalBaseProps,
-  ModalRefBaseProps,
-} from '../types';
-
+/**
+ * This type defines the basic interface of a Component rendered through the PortalProvider.
+ */
 export type PortalNode = {
   id: string;
-  element: React.ReactElement<
-    (ModalBaseProps | AlertBaseProps) & { ref?: React.Ref<ModalRefBaseProps | AlertRefBaseProps> }
-  >;
+  element: React.ReactElement<{
+    visible: boolean;
+    onDidClose: () => void;
+    children?: React.ReactNode;
+    ref?: React.Ref<{ onRequestClose: () => void }>;
+  }>;
 };
 
+/**
+ * This hook is used to manage the state of a set of nodes rendered through the PortalProvider.
+ */
 export const usePortalState = () => {
   const [nodes, setNodes] = useState<PortalNode[]>([]);
 

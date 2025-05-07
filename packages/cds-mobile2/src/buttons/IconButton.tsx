@@ -1,108 +1,91 @@
-import React, { memo, useMemo } from 'react';
-import { type StyleProp, type ViewStyle } from 'react-native';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
-import { IconButtonBaseProps } from '@cbhq/cds-common2/types';
-import { getButtonSizeProps } from '@cbhq/cds-common2/utils/getButtonSizeProps';
+import React, { memo, useCallback, useMemo } from 'react';
+import type { PressableStateCallbackType, ViewStyle } from 'react-native';
+import { transparentVariants, variants } from '@cbhq/cds-common2/tokens/button';
+import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
+import type { IconButtonVariant, IconName, SharedProps } from '@cbhq/cds-common2/types';
 import { getButtonSpacingProps } from '@cbhq/cds-common2/utils/getButtonSpacingProps';
-import { memoize } from '@cbhq/cds-common2/utils/memoize';
 
-import { Theme } from '../core/theme';
-import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
-import { Pressable, type PressableInternalProps } from '../system/Pressable';
+import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
-export type IconButtonProps = IconButtonBaseProps &
-  Omit<PressableInternalProps, 'background' | 'style'> & {
-    style?: StyleProp<ViewStyle>;
-    /** Background color of the icon button. */
-    background?: ThemeVars.Color;
+import type { ButtonBaseProps } from './Button';
+
+export type IconButtonBaseProps = SharedProps &
+  Omit<PressableBaseProps, 'children'> &
+  Pick<ButtonBaseProps, 'disabled' | 'transparent' | 'compact' | 'flush'> & {
+    /** Name of the icon, as defined in Figma. */
+    name: IconName;
+    /**
+     * Toggle design and visual variants.
+     * @default primary
+     */
+    variant?: IconButtonVariant;
   };
 
-type GetIconStylesParams = Pick<IconButtonProps, 'compact' | 'flush'> & {
-  compactSize: string;
-  theme: Theme;
-};
-
-function getCacheKey({ compact, flush }: GetIconStylesParams) {
-  return `${compact}-${flush}`;
-}
-
-const getIconStyles = memoize(function getIconStyles({
-  compact,
-  flush,
-  compactSize,
-  theme,
-}: GetIconStylesParams) {
-  const { minHeight, iconSize } = getButtonSizeProps({ compact, compactSize });
-  const { offsetEnd, offsetStart } = getButtonSpacingProps({
-    compact,
-    flush,
-  });
-  const spacingStyles = {
-    marginStart: offsetStart ? -theme.space[offsetStart] : undefined,
-    marginEnd: offsetEnd ? -theme.space[offsetEnd] : undefined,
-  };
-  const sizingStyles = {
-    height: minHeight,
-    width: minHeight,
-    alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  } as const;
-  return {
-    pressableStyles: {
-      ...spacingStyles,
-      ...sizingStyles,
-    },
-    iconStyles: sizingStyles,
-    iconSize,
-  } as const;
-},
-getCacheKey);
+export type IconButtonProps = IconButtonBaseProps;
 
 export const IconButton = memo(function IconButton({
-  background,
-  borderRadius = 1000,
-  borderWidth = 100,
-  color: customColor,
-  compact = true,
-  feedback = compact ? 'light' : 'normal',
   name,
-  transparent,
   variant = 'secondary',
+  transparent,
+  compact = true,
+  background,
+  color,
+  borderColor,
+  borderWidth = 100,
+  borderRadius = 1000,
+  feedback = compact ? 'light' : 'normal',
   flush,
   style,
   ...props
 }: IconButtonProps) {
-  const theme = useTheme();
-  const {
-    color: foregroundColor,
-    backgroundColor,
-    borderColor,
-  } = useButtonVariant(variant, transparent);
+  const iconSize = compact ? 's' : 'm';
 
-  const color = customColor ?? foregroundColor;
+  const variantMap = transparent ? transparentVariants : variants;
+  const variantStyle = variantMap[variant];
 
-  const { pressableStyles, iconSize, iconStyles } = useMemo(
-    () => getIconStyles({ compact, flush, compactSize: 's', theme }),
-    [compact, flush, theme],
+  const colorValue = color ?? variantStyle.color;
+  const backgroundValue = background ?? variantStyle.background;
+  const borderColorValue = borderColor ?? variantStyle.borderColor;
+
+  const minHeight = interactableHeight[compact ? 'compact' : 'regular'];
+
+  const { marginStart, marginEnd } = getButtonSpacingProps({ compact, flush });
+
+  const sizingStyle = useMemo<ViewStyle>(
+    () => ({
+      height: minHeight,
+      width: minHeight,
+      alignItems: 'center',
+      flexDirection: 'column',
+      justifyContent: 'center',
+    }),
+    [minHeight],
   );
 
-  const pressableStyle = useMemo(() => [pressableStyles, style], [pressableStyles, style]);
+  const pressableStyle = useCallback(
+    (state: PressableStateCallbackType) => [
+      sizingStyle,
+      typeof style === 'function' ? style(state) : style,
+    ],
+    [sizingStyle, style],
+  );
 
   return (
     <Pressable
-      background={background ?? backgroundColor}
-      borderColor={borderColor}
+      background={backgroundValue}
+      borderColor={borderColorValue}
       borderRadius={borderRadius}
       borderWidth={borderWidth}
       feedback={feedback}
+      marginEnd={marginEnd}
+      marginStart={marginStart}
       style={pressableStyle}
       transparentWhileInactive={transparent}
       {...props}
     >
-      <Icon color={color} name={name} size={iconSize} style={iconStyles} />
+      {/* TO DO: test using currentColor like web2 does on Icon here */}
+      <Icon color={colorValue} name={name} size={iconSize} style={sizingStyle} />
     </Pressable>
   );
 });

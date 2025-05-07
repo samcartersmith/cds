@@ -1,24 +1,26 @@
 import React, { memo } from 'react';
 import { useAccordionContext } from '@cbhq/cds-common2/accordion/AccordionProvider';
 import { accordionMinWidth } from '@cbhq/cds-common2/tokens/accordion';
-import type { AccordionItemBaseProps } from '@cbhq/cds-common2/types/AccordionBaseProps';
 
 import { VStack } from '../layout/VStack';
 
-import { AccordionHeader } from './AccordionHeader';
-import { AccordionPanel, AccordionPanelProps } from './AccordionPanel';
+import { AccordionHeader, type AccordionHeaderBaseProps } from './AccordionHeader';
+import { AccordionPanel, type AccordionPanelBaseProps } from './AccordionPanel';
 
-export type AccordionItemProps = {
-  headerRef?: React.RefObject<HTMLButtonElement>;
-  panelRef?: React.RefObject<HTMLDivElement>;
-  style?: React.CSSProperties;
-  /**
-   * Callback function fired when the accordion item is pressed
-   */
-  onClick?: (key: string) => void;
-} & Omit<AccordionItemBaseProps, 'onPress'> &
-  Pick<AccordionPanelProps, 'maxHeight'>;
+export type AccordionItemBaseProps = Omit<AccordionHeaderBaseProps, 'collapsed'> &
+  Pick<AccordionPanelBaseProps, 'maxHeight' | 'children'> & {
+    headerRef?: React.RefObject<HTMLButtonElement>;
+    panelRef?: React.RefObject<HTMLDivElement>;
+    style?: React.CSSProperties;
+  };
 
+export type AccordionItemProps = AccordionItemBaseProps;
+
+/**
+ * A component that represents a single item within an Accordion.
+ * It composes together an AccordionHeader and a collapsible AccordionPanel.
+ * Accepts a unique `itemKey` prop to uniquely identify one item from another within the same Accordion.
+ */
 export const AccordionItem = memo(
   ({
     itemKey,

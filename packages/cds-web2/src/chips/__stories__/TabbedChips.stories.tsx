@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { longTextTabs, sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
-import type { TabNavigationProps, TabProps } from '@cbhq/cds-common2/types';
 
 import { VStack } from '../../layout';
+import type { TabProps } from '../../tabs/TabNavigation';
 import { Text } from '../../typography/Text';
-import { TabbedChips } from '../TabbedChips';
+import { TabbedChips, type TabbedChipsBaseProps } from '../TabbedChips';
 
 export default {
   title: 'Core Components/Chips/TabbedChips',
@@ -20,7 +20,7 @@ const Demo = ({
   tabs?: TabProps[];
   style?: React.CSSProperties;
 }) => {
-  const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
+  const [value, setValue] = useState<TabbedChipsBaseProps['value']>(tabs[0].id);
   return <TabbedChips onChange={setValue} paddleStyle={style} tabs={tabs} value={value} />;
 };
 

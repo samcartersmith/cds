@@ -1,6 +1,6 @@
 import { hsl, type HSLColor } from 'd3-color';
 
-import { FallbackColor } from '../types';
+import type { AvatarFallbackColor } from '../types';
 import { between } from '../utils/between';
 
 const hashFromString = (s: string): number =>
@@ -23,7 +23,7 @@ const isGray = (hslColor: HSLColor) => {
   return hslColor.s < 0.3 || Number.isNaN(hslColor.s);
 };
 
-export const rgbToAvatarFallbackColor = (color: string): FallbackColor => {
+export const rgbToAvatarFallbackColor = (color: string): AvatarFallbackColor => {
   const hslColor = hsl(color);
   const hue = Math.round(hslColor.h);
   if (isGray(hslColor)) return 'gray';

@@ -1,11 +1,11 @@
 import React from 'react';
-import { AvatarBaseProps, AvatarSize } from '@cbhq/cds-common2';
 import { getAvatarFallbackColor } from '@cbhq/cds-common2/media/getAvatarFallbackColor';
+import { AvatarSize } from '@cbhq/cds-common2/types';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
-import { Avatar } from '../Avatar';
+import { Avatar, type AvatarBaseProps } from '../Avatar';
 
 const image = 'https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg';
 const sizes: AvatarSize[] = ['m', 'l', 'xl', 'xxl', 'xxxl'];
@@ -23,7 +23,7 @@ const FallbackColoredBase = ({
         return (
           <Avatar
             key={name}
-            alt=""
+            accessibilityLabel=""
             colorScheme={idx === 0 ? 'blue' : avatarFallbackColor}
             name={name}
             shape={shape}
@@ -40,29 +40,29 @@ const AvatarScreen = () => {
     <ExampleScreen>
       <Example title="Normal">
         <HStack alignItems="center" flexWrap="wrap" gap={2}>
-          <Avatar alt="" src={image} />
-          <Avatar alt="" name="Happy" shape="square" src={image} />
-          <Avatar alt="" name="Grumpy" shape="hexagon" src={image} />
-          <Avatar alt="" borderColor="bgPositive" name="Sleepy" src={image} />
-          <Avatar alt="" name="Bashful" size="m" src={image} />
-          <Avatar alt="" name="Grumpy" size="l" src={image} />
-          <Avatar alt="" name="Grumpy" size="xl" src={image} />
-          <Avatar alt="" name="Grumpy" size="xxl" src={image} />
-          <Avatar alt="" name="Grumpy" size="xxxl" src={image} />
+          <Avatar accessibilityLabel="" src={image} />
+          <Avatar accessibilityLabel="" name="Happy" shape="square" src={image} />
+          <Avatar accessibilityLabel="" name="Grumpy" shape="hexagon" src={image} />
+          <Avatar accessibilityLabel="" borderColor="bgPositive" name="Sleepy" src={image} />
+          <Avatar accessibilityLabel="" name="Bashful" size="m" src={image} />
+          <Avatar accessibilityLabel="" name="Grumpy" size="l" src={image} />
+          <Avatar accessibilityLabel="" name="Grumpy" size="xl" src={image} />
+          <Avatar accessibilityLabel="" name="Grumpy" size="xxl" src={image} />
+          <Avatar accessibilityLabel="" name="Grumpy" size="xxxl" src={image} />
         </HStack>
       </Example>
 
       <Example title="Fallback Image">
         <HStack alignItems="center" flexWrap="wrap" gap={2}>
-          <Avatar alt="" />
-          <Avatar alt="" shape="square" />
-          <Avatar alt="" shape="hexagon" />
-          <Avatar alt="" borderColor="bgPositive" />
-          <Avatar alt="" size="m" />
-          <Avatar alt="" size="l" />
-          <Avatar alt="" size="xl" />
-          <Avatar alt="" size="xxl" />
-          <Avatar alt="" size="xxxl" />
+          <Avatar accessibilityLabel="" />
+          <Avatar accessibilityLabel="" shape="square" />
+          <Avatar accessibilityLabel="" shape="hexagon" />
+          <Avatar accessibilityLabel="" borderColor="bgPositive" />
+          <Avatar accessibilityLabel="" size="m" />
+          <Avatar accessibilityLabel="" size="l" />
+          <Avatar accessibilityLabel="" size="xl" />
+          <Avatar accessibilityLabel="" size="xxl" />
+          <Avatar accessibilityLabel="" size="xxxl" />
         </HStack>
       </Example>
       <Example title="Fallback Colored Default">

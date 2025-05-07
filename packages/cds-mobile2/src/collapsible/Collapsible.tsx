@@ -5,7 +5,6 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
-import { CollapsibleBaseProps } from '@cbhq/cds-common2';
 import {
   animateInMaxSizeConfig,
   animateInOpacityConfig,
@@ -13,6 +12,7 @@ import {
   animateOutOpacityConfig,
 } from '@cbhq/cds-common2/animation/collapsible';
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
+import type { CollapsibleDirection, PaddingProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { useContentSize } from '../hooks/useContentSize';
 import { useTheme } from '../hooks/useTheme';
@@ -21,20 +21,37 @@ import { withMotionTiming } from '../motion/withMotionTiming';
 
 const ReanimatedView = Animated.createAnimatedComponent(View);
 
-export type CollapsibleProps = CollapsibleBaseProps & {
-  /**
-   * RN ScrollView props. Use with caution as it might break default settings.
-   */
-  scrollViewProps?: ScrollViewProps;
-  /**
-   * Max height of the content. Overflow content will be scrollable.
-   */
-  maxHeight?: number;
-  /**
-   * Max width of the content. Overflow content will be scrollable.
-   */
-  maxWidth?: number;
-};
+export type CollapsibleBaseProps = SharedProps &
+  PaddingProps & {
+    /**
+     * Expand/collapse state of the content.
+     * @default true
+     */
+    collapsed: boolean;
+    /**
+     * Collapsible content
+     */
+    children: React.ReactNode;
+    /**
+     * Direction the content should expand/collapse to
+     * @default vertical
+     */
+    direction?: CollapsibleDirection;
+    /**
+     * RN ScrollView props. Use with caution as it might break default settings.
+     */
+    scrollViewProps?: ScrollViewProps;
+    /**
+     * Max height of the content. Overflow content will be scrollable.
+     */
+    maxHeight?: number;
+    /**
+     * Max width of the content. Overflow content will be scrollable.
+     */
+    maxWidth?: number;
+  };
+
+export type CollapsibleProps = CollapsibleBaseProps;
 
 export const Collapsible = memo(
   forwardRef(

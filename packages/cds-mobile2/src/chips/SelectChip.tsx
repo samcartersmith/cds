@@ -2,25 +2,30 @@ import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } fro
 import { GestureResponderEvent, View } from 'react-native';
 import { animateCaretInConfig, animateCaretOutConfig } from '@cbhq/cds-common2/animation/select';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
-import { DrawerRefBaseProps, SelectBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
 
 import { useRotateAnimation } from '../animation/useRotateAnimation';
+import type { SelectBaseProps } from '../controls/Select';
 import { SelectProvider } from '../controls/SelectContext';
 import { useSelect } from '../controls/useSelect';
 import { useA11y } from '../hooks/useA11y';
 import { Icon } from '../icons';
 import { Tray } from '../overlays';
+import type { DrawerRefBaseProps } from '../overlays/drawer/Drawer';
+import type { TrayBaseProps } from '../overlays/tray/Tray';
 
 import { Chip } from './Chip';
-import { ChipProps } from './ChipProps';
+import type { ChipProps } from './ChipProps';
 
-export type SelectChipProps = {
-  children: React.ReactNode;
-  /** Indicates that the control is being used to manipulate data elsewhere */
-  active?: boolean;
-} & Omit<ChipProps, 'children' | 'onBlur'> &
-  Pick<SelectBaseProps, 'onChange' | 'valueLabel' | 'placeholder' | 'value'> &
-  Omit<TrayBaseProps, 'onCloseComplete' | 'children'>;
+export type SelectChipProps = Pick<
+  SelectBaseProps,
+  'onChange' | 'valueLabel' | 'placeholder' | 'value'
+> &
+  Omit<ChipProps, 'children' | 'onBlur'> &
+  Omit<TrayBaseProps, 'onCloseComplete' | 'children'> & {
+    children: React.ReactNode;
+    /** Indicates that the control is being used to manipulate data elsewhere */
+    active?: boolean;
+  };
 
 export const SelectChip = memo(
   forwardRef(

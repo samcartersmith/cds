@@ -2,7 +2,6 @@ import React, { memo, useCallback } from 'react';
 import { Dimensions, FlatList } from 'react-native';
 import {
   HeroSquareDimension,
-  IllustrationNamesMap,
   IllustrationVariant,
   PictogramDimension,
   SpotIconDimension,
@@ -19,6 +18,7 @@ import { Divider, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { Text } from '../../typography/Text';
+import type { IllustrationNamesMap } from '../createIllustration';
 import {
   HeroSquare,
   HeroSquareName,

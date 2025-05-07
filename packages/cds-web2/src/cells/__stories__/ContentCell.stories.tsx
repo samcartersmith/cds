@@ -1,7 +1,7 @@
 import React from 'react';
-import type { CellSpacing } from '@cbhq/cds-common2';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
+import type { CellSpacing } from '../../cells/Cell';
 import { Box } from '../../layout/Box';
 import { CellMedia } from '../CellMedia';
 import { ContentCell } from '../ContentCell';

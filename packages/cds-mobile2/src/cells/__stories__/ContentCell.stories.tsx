@@ -1,10 +1,10 @@
 import React from 'react';
-import type { CellSpacing } from '@cbhq/cds-common2';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { Box } from '../../layout/Box';
+import type { CellSpacing } from '../Cell';
 import { CellMedia } from '../CellMedia';
 import { ContentCell } from '../ContentCell';
 

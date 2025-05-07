@@ -1,9 +1,21 @@
-import type { PictogramProps as CommonPictogramProps } from '@cbhq/cds-common2/types/IllustrationProps';
 import pictogramVersionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/versionMap';
 
-import { createIllustration, IllustrationA11yProps } from './createIllustration';
+import {
+  createIllustration,
+  type IllustrationA11yProps,
+  type IllustrationBaseProps,
+  type IllustrationDimensionsMap,
+} from './createIllustration';
 
 export const Pictogram = createIllustration('pictogram', pictogramVersionMap);
 
-export type PictogramProps = CommonPictogramProps & IllustrationA11yProps;
+export type PictogramBaseProps = IllustrationBaseProps<'pictogram'> &
+  IllustrationA11yProps & {
+    /**
+     * @default 48x48
+     * */
+    dimension?: IllustrationDimensionsMap['pictogram'];
+  };
+
+export type PictogramProps = PictogramBaseProps;
 export type { PictogramName } from '@cbhq/cds-illustrations';

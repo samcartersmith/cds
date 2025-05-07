@@ -5,10 +5,12 @@ import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 import { Divider } from '../layout/Divider';
 import { Group, GroupProps, RenderGroupItem } from '../layout/Group';
 
+export type CardGroupBaseProps = GroupProps;
+export type CardGroupProps = CardGroupBaseProps;
 export type CardGroupRenderItem = RenderGroupItem;
 
 export const CardGroup = memo(
-  forwardRef<View, GroupProps>(function CardGroup(
+  forwardRef<View, CardGroupProps>(function CardGroup(
     {
       accessibilityLabel,
       accessibilityHint = accessibilityLabel,

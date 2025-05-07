@@ -45,7 +45,7 @@ const nativeInputContainerStyle = css`
   }
 `;
 
-export type TextInputProps = {
+export type TextInputBaseProps = {
   /**
    * Callback fired when pressed/clicked
    */
@@ -102,6 +102,8 @@ export type TextInputProps = {
     'height' | 'variant' | 'width' | 'disabled' | 'borderRadius' | 'enableColorSurge'
   > &
   Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width'>;
+
+export type TextInputProps = TextInputBaseProps;
 
 const useInputVariant = (focused: boolean, variant: InputVariant) => {
   return useMemo(

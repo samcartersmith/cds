@@ -30,11 +30,9 @@ export const menuitemDefaultElement = 'button';
 export type MenuitemDefaultElement = typeof menuitemDefaultElement;
 
 export type MenuitemBaseProps = Polymorphic.ExtendableProps<
-  Omit<PressableBaseProps, 'background'>,
+  PressableBaseProps,
   {
     children: NonNullable<React.ReactNode>;
-    /** Background color of the overlay (element being interacted with). */
-    background?: ThemeVars.Color;
   } & Pick<SelectOptionProps, 'disableCloseOnOptionChange' | 'value' | 'tabIndex'>
 >;
 

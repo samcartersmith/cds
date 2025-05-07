@@ -1,10 +1,29 @@
 import React, { Children, cloneElement, memo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ButtonGroupBaseProps, SharedProps } from '@cbhq/cds-common2';
+import type {
+  ElementChildren,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
-import { Box } from '../layout/Box';
+import { Box, type GroupDirection } from '../layout';
 
-export type ButtonGroupProps = ButtonGroupBaseProps & SharedProps;
+import type { ButtonBaseProps } from './Button';
+
+export type ButtonGroupBaseProps = SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
+    /** Expand buttons to fill available space within the group. */
+    block?: boolean;
+    /** Buttons to render as a group. */
+    children: ElementChildren<ButtonBaseProps>;
+    /**
+     * @default horizontal
+     * Stack buttons vertically or horizontally.
+     */
+    direction?: GroupDirection;
+  };
+
+export type ButtonGroupProps = ButtonGroupBaseProps;
 
 export const ButtonGroup = memo(function ButtonGroup({
   accessibilityLabel,

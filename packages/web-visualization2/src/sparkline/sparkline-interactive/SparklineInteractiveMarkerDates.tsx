@@ -1,11 +1,12 @@
 import React, { memo, useCallback, useMemo, useState } from 'react';
 import times from 'lodash/times';
-import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useDateLookup } from '@cbhq/cds-common2/visualizations/useDateLookup';
 import { HStack } from '@cbhq/cds-web2/layout';
 import { TextLabel2 } from '@cbhq/cds-web2/typography/TextLabel2';
 
 import { fadeInClassName } from './fade';
+import type { ChartFormatDate, ChartGetMarker } from './SparklineInteractive';
 
 const labelWidth = 125;
 const noPointerEvents = { pointerEvents: 'none' } as const;
@@ -34,6 +35,13 @@ const SparklineInteractiveMarkerDate: React.FunctionComponent<
     </span>
   );
 });
+
+export type SparklineInteractiveMarkerDatesProps<Period extends string> = {
+  getMarker: ChartGetMarker;
+  formatDate: ChartFormatDate<Period>;
+  selectedPeriod: Period;
+  timePeriodGutter?: ThemeVars.Space;
+};
 
 function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
   formatDate,

@@ -7,13 +7,13 @@ import {
   animateOutOpacityConfig,
   animateOutScaleConfig,
 } from '@cbhq/cds-common2/animation/modal';
-import { ModalParentContext } from '@cbhq/cds-common2/overlays/ModalParentContext';
+import { ModalContext, type ModalContextValue } from '@cbhq/cds-common2/overlays/ModalContext';
 import {
   OverlayContentContext,
   type OverlayContentContextValue,
 } from '@cbhq/cds-common2/overlays/OverlayContentContext';
 import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
-import type { ModalBaseProps, ModalRefBaseProps } from '@cbhq/cds-common2/types/ModalBaseProps';
+import type { PositionStyles, SharedProps } from '@cbhq/cds-common2/types';
 import type { Position } from '@cbhq/cds-common2/types/Position';
 
 import { useA11yLabels } from '../../hooks/useA11yLabels';
@@ -72,27 +72,52 @@ const overlayContentContextValue: OverlayContentContextValue = {
   isModal: true,
 };
 
-export type ModalProps = {
-  /**
-   * If pressing the esc key should close the modal
-   * @default true
-   */
-  shouldCloseOnEscPress?: boolean;
-  /**
-   * Set the position for the modal dialogue
-   * @danger This is a migration escape hatch. It is not intended to be used normally.
-   */
-  dangerouslySetPosition?: Position;
-  /**
-   * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
-   *
-   * WARNING: If you disable this, you need to ensure that focus is restored properly so it doesn't end up on the body
-   * @default true
-   */
-  restoreFocusOnUnmount?: boolean;
-} & Omit<ModalBaseProps, 'width'> &
-  Omit<ModalWrapperProps, 'onOverlayPress'> &
-  Pick<FocusTrapProps, 'disableFocusTrap' | 'focusTabIndexElements'>;
+type ModalChildrenRenderProps = { closeModal: () => void };
+
+export type ModalBaseProps = SharedProps &
+  ModalContextValue &
+  Pick<PositionStyles, 'zIndex'> &
+  Omit<ModalWrapperProps, 'onOverlayPress'> & {
+    /** Component to render as the Modal content */
+    children?: React.ReactNode | React.FC<ModalChildrenRenderProps>;
+    /**
+     * Callback fired after the component is closed.
+     */
+    onDidClose?: () => void;
+    /**
+     * If pressing the esc key should close the modal
+     * @default true
+     */
+    shouldCloseOnEscPress?: boolean;
+    /**
+     * Set the position for the modal dialogue
+     * @danger This is a migration escape hatch. It is not intended to be used normally.
+     */
+    dangerouslySetPosition?: Position;
+    /**
+     * Set disableFocusTrap to disable keyboard listeners responsible for focus trap behavior
+     * This can be useful for scenarios like Yubikey 2fa
+     * @default false
+     */
+    disableFocusTrap?: boolean;
+    /**
+     * Allow any element with `tabIndex` attribute to be focusable in FocusTrap, rather than only focusing specific interactive element types like button.
+     * This can be useful when having long content in a Modal.
+     * @default false
+     */
+    focusTabIndexElements?: boolean;
+    /**
+     * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
+     *
+     * WARNING: If you disable this, you need to ensure that focus is restored properly so it doesn't end up on the body
+     * @default true
+     */
+    restoreFocusOnUnmount?: boolean;
+  };
+
+export type ModalProps = ModalBaseProps;
+
+export type ModalRefBaseProps = Pick<ModalBaseProps, 'onRequestClose'>;
 
 export const Modal = memo(
   forwardRef<ModalRefBaseProps, ModalProps>(
@@ -196,9 +221,9 @@ export const Modal = memo(
                   overflow="hidden"
                   width="100%"
                 >
-                  <ModalParentContext.Provider value={modalData}>
+                  <ModalContext.Provider value={modalData}>
                     {typeof children === 'function' ? children(renderChildrenProps) : children}
-                  </ModalParentContext.Provider>
+                  </ModalContext.Provider>
                 </VStack>
               </FocusTrap>
             </MotionBox>

@@ -1,17 +1,44 @@
 import React, { memo } from 'react';
-import {
-  ProgressBarFixedLabelBesideProps,
-  ProgressBarFixedLabelContainerProps,
-  ProgressBarFixedLabelProps,
-  ProgressBarWithFixedLabelsProps,
-} from '@cbhq/cds-common2/types/ProgressBarBaseProps';
-import { getProgressBarLabelParts } from '@cbhq/cds-common2/visualizations/getProgressBarLabelParts';
+import type { PaddingProps, Placement } from '@cbhq/cds-common2/types';
 
 import { Box } from '../layout/Box';
 import { VStack } from '../layout/VStack';
 import { isRtl } from '../utils/isRtl';
 
+import { getProgressBarLabelParts, type ProgressBarLabel } from './getProgressBarLabelParts';
+import { type ProgressBaseProps } from './ProgressBar';
 import { ProgressTextLabel } from './ProgressTextLabel';
+
+export type ProgressBarWithFixedLabelsProps = Pick<ProgressBaseProps, 'disabled' | 'testID'> & {
+  /** Label that is pinned to the start of the container. If a number is used then it will format it as a percentage. */
+  startLabel?: ProgressBarLabel;
+  /** Label that is pinned to the end of the container. If a number is used then it will format it as a percentage. */
+  endLabel?: ProgressBarLabel;
+  /**
+   * Position of label relative to the bar
+   * @default beside
+   * */
+  labelPlacement?: Extract<Placement, 'above' | 'below' | 'beside'>;
+};
+
+export type ProgressBarFixedLabelContainerProps = Omit<
+  ProgressBarWithFixedLabelsProps,
+  'labelPlacement' | 'progress' | 'disabled'
+> &
+  Pick<PaddingProps, 'paddingBottom' | 'paddingTop'> & {
+    visuallyDisabled: boolean;
+  };
+
+export type ProgressBarFixedLabelBesideProps = {
+  label: ProgressBarLabel;
+  visuallyDisabled: boolean;
+};
+
+export type ProgressBarFixedLabelProps = {
+  position: 'start' | 'end';
+  label: ProgressBarLabel;
+  visuallyDisabled: boolean;
+};
 
 const ProgressBarFixedLabelBeside = memo(
   ({ label, visuallyDisabled }: ProgressBarFixedLabelBesideProps) => {

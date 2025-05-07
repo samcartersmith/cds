@@ -14,9 +14,12 @@ import {
   dotOuterContainerStyles,
 } from '@cbhq/cds-common2/tokens/dot';
 import type {
-  DotCountBaseProps,
+  DotCountPinPlacement,
   DotCountVariants,
-} from '@cbhq/cds-common2/types/DotCountBaseProps';
+  DotOverlap,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 import { parseDotCountMaxOverflow } from '@cbhq/cds-common2/utils/parseDotCountMaxOverflow';
 
 import { NewAnimatePresence } from '../animation/NewAnimatePresence';
@@ -42,6 +45,35 @@ const variantColorMap: Record<DotCountVariants, ThemeVars.Color> = {
   negative: 'fgNegative',
 };
 
+export type DotCountBaseProps = SharedProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > & {
+    /**
+     * The number value to be shown in the dot. If count is <= 0, dot will not show up.
+     *  */
+    count: number;
+    /**
+     * If a badge count is greater than max, it will truncate the numbers so its max+
+     * @default 99
+     *  */
+    max?: number;
+    /**
+     * Background color of dot
+     * @default negative
+     * */
+    variant?: DotCountVariants;
+    /** Position of dot relative to its parent */
+    pin?: DotCountPinPlacement;
+    /** Children of where the dot will anchor to */
+    children?: React.ReactNode;
+    /** Indicates what shape Dot is overlapping */
+    overlap?: DotOverlap;
+  };
+
+export type DotCountProps = DotCountBaseProps;
+
 export const DotCount = memo(
   ({
     children,
@@ -53,7 +85,7 @@ export const DotCount = memo(
     accessibilityLabel,
     overlap,
     ...props
-  }: DotCountBaseProps) => {
+  }: DotCountProps) => {
     const { color } = useTheme();
     const pinStyles = getTransform(pin, overlap);
 

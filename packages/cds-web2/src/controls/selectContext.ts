@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
-import type { SelectBaseProps } from '@cbhq/cds-common2/types';
+
+import type { SelectBaseProps } from './Select';
 
 export type SelectContextType = {
   handleCloseMenu?: () => void;

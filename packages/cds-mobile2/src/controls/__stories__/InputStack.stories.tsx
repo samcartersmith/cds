@@ -1,10 +1,9 @@
 import React from 'react';
-import { InputStackBaseProps } from '@cbhq/cds-common2';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
 import { Text } from '../../typography/Text';
-import { InputStack } from '../InputStack';
+import { InputStack, type InputStackBaseProps } from '../InputStack';
 
 const InputStackBasic = (props: InputStackBaseProps) => {
   // {/*

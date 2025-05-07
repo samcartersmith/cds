@@ -9,23 +9,25 @@ import React, {
 import { m as motion, useAnimation } from 'framer-motion';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { colorSurgeEnterConfig, colorSurgeExitConfig } from '@cbhq/cds-common2/motion/hint';
-import type { HintMotionBaseProps } from '@cbhq/cds-common2/types/MotionBaseProps';
 
 import { Box } from '../layout/Box';
 
+import type { HintMotionBaseProps } from './types';
 import { useMotionProps } from './useMotionProps';
 
 export type ColorSurgeRefBaseProps = {
   play: (background?: ThemeVars.Color) => Promise<void>;
 };
 
-export type ColorSurgeTypes = {
+export type ColorSurgeBaseProps = HintMotionBaseProps & {
   /**
    * The surge color
    * @default bgPrimary
    */
   background?: ThemeVars.Color;
-} & HintMotionBaseProps;
+};
+
+export type ColorSurgeTypes = ColorSurgeBaseProps;
 
 const MotionBox = motion(Box);
 

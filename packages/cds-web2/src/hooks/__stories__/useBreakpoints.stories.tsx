@@ -38,7 +38,7 @@ const Example = () => {
   };
 
   return (
-    <VStack background="bgAlternate" borderColor="bgLine" borderRadius={200} padding={3} gap={2}>
+    <VStack background="bgAlternate" borderColor="bgLine" borderRadius={200} gap={2} padding={3}>
       <Text as="h3" display="block" font="headline">
         I am as wide as {deviceName()}
       </Text>

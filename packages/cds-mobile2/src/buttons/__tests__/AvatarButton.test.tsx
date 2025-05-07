@@ -11,7 +11,7 @@ describe('AvatarButton', () => {
   it('passes a11y', () => {
     render(
       <DefaultThemeProvider>
-        <AvatarButton alt="Sneezy" testID="avatar-button" />
+        <AvatarButton accessibilityLabel="Sneezy" testID="avatar-button" />
       </DefaultThemeProvider>,
     );
 
@@ -21,7 +21,7 @@ describe('AvatarButton', () => {
   it('renders an animated view', () => {
     render(
       <DefaultThemeProvider>
-        <AvatarButton alt="Sneezy" />
+        <AvatarButton accessibilityLabel="Sneezy" />
       </DefaultThemeProvider>,
     );
 
@@ -31,7 +31,7 @@ describe('AvatarButton', () => {
   it('renders a pressable', () => {
     render(
       <DefaultThemeProvider>
-        <AvatarButton alt="Sneezy" />
+        <AvatarButton accessibilityLabel="Sneezy" />
       </DefaultThemeProvider>,
     );
 
@@ -42,7 +42,7 @@ describe('AvatarButton', () => {
     render(
       <DefaultThemeProvider>
         <AvatarButton
-          alt="Sneezy"
+          accessibilityLabel="Sneezy"
           src="https://avatars.slack-edge.com/2019-12-09/865473396980_e8c83b072b452e4d03f7_192.jpg"
           testID="avatar-button"
         />
@@ -61,7 +61,7 @@ describe('AvatarButton', () => {
     (debounce as jest.Mock).mockImplementation(() => spy);
     render(
       <DefaultThemeProvider>
-        <AvatarButton alt="Sneezy" onPress={spy} testID="avatar-button" />
+        <AvatarButton accessibilityLabel="Sneezy" onPress={spy} testID="avatar-button" />
       </DefaultThemeProvider>,
     );
 

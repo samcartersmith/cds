@@ -1,22 +1,44 @@
 import React, { memo } from 'react';
-import { ListCellBaseProps } from '@cbhq/cds-common2';
 import { compactListHeight, listHeight } from '@cbhq/cds-common2/tokens/cell';
 
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
-import { Cell, type CellProps } from './Cell';
-import { CellAccessory } from './CellAccessory';
-import { CellDetail } from './CellDetail';
+import { Cell, type CellBaseProps, type CellProps } from './Cell';
+import { CellAccessory, type CellAccessoryType } from './CellAccessory';
+import { CellDetail, type CellDetailProps } from './CellDetail';
 
-export type ListCellProps = Omit<CellProps, 'accessory' | 'children'> &
-  ListCellBaseProps & {
+export type ListCellBaseProps = CellDetailProps &
+  Omit<CellBaseProps, 'accessory' | 'children'> & {
+    /** Accessory to display at the end of the cell. */
+    accessory?: CellAccessoryType;
+    /** Interactive action, like a CTA or form element. Cannot be used alongside `onPress`. */
+    action?: React.ReactNode;
+    /** Enables compact spacing */
+    compact?: boolean;
+    /** Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate. */
+    description?: React.ReactNode;
+    /**
+     * Disable the default accessory that is displayed when the cell is selected.
+     * If `accessory` is provided, that will continue to be displayed, otherwise no accessory will be displayed when the cell is selected.
+     */
+    disableSelectionAccessory?: boolean;
     /**
      *  @default false
      *  When there is no description the title will take up two lines by default. When this is set to true multiline title behavior is overwritten and regardless of description text state the title will take up a single line truncating with ellipses.
      *   */
     disableMultilineTitle?: boolean;
+    /** For internal use only. */
+    intermediary?: React.ReactNode;
+    /* Media (icon, asset, image, etc) to display at the start of the cell. */
+    media?: React.ReactElement;
+    /** Allow the description to span multiple lines. This *will* break fixed height requirements, so should not be used in a `FlatList`. */
+    multiline?: boolean;
+    /** Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate. */
+    title?: React.ReactNode;
   };
+
+export type ListCellProps = ListCellBaseProps & Omit<CellProps, 'accessory' | 'children'>;
 
 export const ListCell = memo(function ListCell({
   accessory,
@@ -48,7 +70,6 @@ export const ListCell = memo(function ListCell({
   return (
     <Cell
       accessory={accessoryType ? <CellAccessory type={accessoryType} /> : undefined}
-      compact={compact}
       detail={
         action ||
         (hasDetails && (

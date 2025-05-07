@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 
-import { Polymorphic } from '../../core/polymorphism';
+import type { Polymorphic } from '../../core/polymorphism';
 import { type BoxBaseProps, HStack } from '../../layout';
 
 export const contentCardFooterDefaultElement = 'div';

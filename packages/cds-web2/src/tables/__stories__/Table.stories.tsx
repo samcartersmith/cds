@@ -3,10 +3,9 @@ import { Meta } from '@storybook/react';
 import startCase from 'lodash/startCase';
 import { useSort } from '@cbhq/cds-common2/hooks/useSort';
 import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
-import { type CellMediaType } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
-import { CellMedia } from '../../cells/CellMedia';
+import { CellMedia, type CellMediaType } from '../../cells/CellMedia';
 import { Switch } from '../../controls/Switch';
 import { HStack } from '../../layout/HStack';
 import { assetHubMock } from '../__mocks__';

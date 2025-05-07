@@ -1,19 +1,68 @@
-import React, { forwardRef, memo, useCallback, useEffect, useImperativeHandle } from 'react';
+import { forwardRef, memo, useCallback, useEffect, useImperativeHandle } from 'react';
 import { Modal as RNModal } from 'react-native';
-import type { AlertBaseProps, AlertRefBaseProps } from '@cbhq/cds-common2';
+import type {
+  ButtonVariant,
+  IllustrationPictogramNames,
+  PositionStyles,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { Button } from '../buttons';
 import { Pictogram } from '../illustrations';
 import { Box, HStack, VStack } from '../layout';
 import { Text } from '../typography/Text';
 
+import type { ModalBaseProps, ModalRefBaseProps } from './modal/Modal';
 import { Overlay } from './overlay/Overlay';
 import { useAlertAnimation } from './useAlertAnimation';
+
+export type AlertBaseProps = SharedProps &
+  Pick<PositionStyles, 'zIndex'> &
+  Pick<ModalBaseProps, 'onRequestClose' | 'visible' | 'onDidClose'> & {
+    /**
+     * Alert title
+     */
+    title: string;
+    /**
+     * Alert body/description
+     */
+    body: string;
+    /**
+     * Illustration pictogram name for alert
+     */
+    pictogram?: IllustrationPictogramNames;
+    /**
+     * Label of the preferred action
+     */
+    preferredActionLabel: string;
+    /**
+     * Callback function fired when the preferred action is pressed
+     */
+    onPreferredActionPress?: () => void;
+    /**
+     * Button variant of the preferred action
+     * @default primary
+     */
+    preferredActionVariant?: Extract<ButtonVariant, 'primary' | 'negative'>;
+    /**
+     * Label of the dismiss action
+     */
+    dismissActionLabel?: string;
+    /**
+     * Callback function fired when the dismiss action is pressed
+     */
+    onDismissActionPress?: () => void;
+    /**
+     * Layout of the actions
+     * @default horizontal
+     */
+    actionLayout?: 'horizontal' | 'vertical';
+  };
 
 export type AlertProps = AlertBaseProps;
 
 export const Alert = memo(
-  forwardRef<AlertRefBaseProps, React.PropsWithChildren<AlertProps>>(
+  forwardRef<ModalRefBaseProps, AlertProps>(
     (
       {
         title,

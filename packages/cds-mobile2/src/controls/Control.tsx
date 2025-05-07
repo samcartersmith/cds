@@ -13,7 +13,6 @@ import {
 import { SharedProps } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { accessibleOpacityDisabled, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
-import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useTheme } from '../hooks/useTheme';
@@ -32,21 +31,37 @@ export type ControlIconProps = {
   animatedOpacityValue: Animated.Value;
 } & SharedProps;
 
-export type ControlProps<T extends string> = {
+export type ControlBaseProps<T extends string> = Omit<
+  PressableProps,
+  'disabled' | 'children' | 'style'
+> & {
+  /** Label for the control option. */
+  children?: React.ReactNode;
+  /** Set the control to selected/on. */
+  checked?: boolean;
+  /** Disable user interaction. */
+  disabled?: boolean;
+  /** Set the control to ready-only. Similar effect as disabled. */
+  readOnly?: boolean;
+  /** Value of the option. Useful for multiple choice. */
+  value?: T;
+  /** Accessibility label describing the element. */
+  accessibilityLabel?: string;
+  /** Enable indeterminate state. Useful when you want to indicate that sub-items of a control are partially filled. */
+  indeterminate?: boolean;
   /** Toggle control selected state. */
   onChange?: (value?: T) => void;
   style?: ViewStyle;
-} & Omit<PressableProps, 'disabled' | 'children' | 'style'> &
-  Omit<ControlBaseProps<T>, 'children'>;
+};
 
-type ControlInternalProps<T extends string> = {
+export type ControlProps<T extends string> = Omit<ControlBaseProps<T>, 'children'> & {
   /** Control icon to show. */
   children: React.ComponentType<React.PropsWithChildren<ControlIconProps>>;
   /** Label associated with the multiple choice option control. */
   label?: TextProps['children'];
   /** If control is a switch. This will use switch motion token. */
   shouldUseSwitchTransition?: boolean;
-} & ControlProps<T>;
+};
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   {
@@ -66,7 +81,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     shouldUseSwitchTransition,
     style,
     ...props
-  }: ControlInternalProps<T>,
+  }: ControlProps<T>,
   ref: React.ForwardedRef<View>,
 ) {
   const theme = useTheme();
@@ -196,9 +211,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     </Pressable>
   );
   // Make forwardRef result function stay generic function type
-}) as <T extends string>(
-  props: ControlInternalProps<T> & { ref?: React.Ref<View> },
-) => React.ReactElement;
+}) as <T extends string>(props: ControlProps<T> & { ref?: React.Ref<View> }) => React.ReactElement;
 
 // Make memoized function stay generic function type
 export const Control = memo(ControlWithRef) as typeof ControlWithRef &

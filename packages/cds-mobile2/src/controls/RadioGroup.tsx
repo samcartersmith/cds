@@ -1,19 +1,20 @@
 import React, { forwardRef, memo } from 'react';
-import { AccessibilityProps, Animated, ColorValue, StyleSheet, View } from 'react-native';
-import { Path, Rect, Svg } from 'react-native-svg';
+import { AccessibilityProps, Animated, type ColorValue, StyleSheet, View } from 'react-native';
+import Svg, { Path, Rect } from 'react-native-svg';
 import { SharedProps } from '@cbhq/cds-common2';
-import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
-import type { RadioGroupBaseProps } from '@cbhq/cds-common2/types/RadioGroupBaseProps';
 import { entries } from '@cbhq/cds-utils';
 import { isDevelopment } from '@cbhq/cds-utils/env';
 
 import { useTheme } from '../hooks/useTheme';
-import { Box, Group } from '../layout';
+import { Box, type BoxBaseProps, Group } from '../layout';
+import type { GroupBaseProps } from '../layout/Group';
 import { Interactable } from '../system/Interactable';
 
-import { Control, ControlIconProps, ControlProps } from './Control';
+import { Control, type ControlBaseProps, ControlIconProps } from './Control';
 
-export type RadioProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
+export type RadioBaseProps<T extends string> = ControlBaseProps<T>;
+
+export type RadioProps<T extends string> = RadioBaseProps<T>;
 
 const DotSvg = ({ color }: { color?: ColorValue }) => (
   <Svg fill="none" height="20" viewBox="0 0 20 20" width="20">
@@ -94,15 +95,29 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
 export const Radio = memo(RadioWithRef) as typeof RadioWithRef &
   React.MemoExoticComponent<typeof RadioWithRef>;
 
-export type RadioGroupProps<T extends string> = {
-  /** Handle change event when pressing on a radio option. */
-  onChange?: RadioProps<T>['onChange'];
+export type RadioGroupBaseProps<T extends string> = Omit<
+  AccessibilityProps,
+  'accessibilityLabelledBy'
+> &
+  SharedProps &
+  Pick<GroupBaseProps<BoxBaseProps>, 'direction' | 'gap'> & {
+    /**
+     * Multiple choice options for the radio group. The object key represents
+     * the radio input value and the object value represents the radio option label.
+     */
+    options: Record<T, string | React.ReactNode>;
+    /** Set a label summary for the group of radios. */
+    label?: React.ReactNode;
+    /** Currently selected value. */
+    value?: T;
+    /** Handle change event when pressing on a radio option. */
+    onChange?: RadioProps<T>['onChange'];
 
-  /** A11Y label to indicate order of radio buttons when focused on one button */
-  radioAccessibilityLabel?: string;
-} & Omit<AccessibilityProps, 'accessibilityLabelledBy'> &
-  RadioGroupBaseProps<T> &
-  SharedProps;
+    /** A11Y label to indicate order of radio buttons when focused on one button */
+    radioAccessibilityLabel?: string;
+  };
+
+export type RadioGroupProps<T extends string> = RadioGroupBaseProps<T>;
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
   {

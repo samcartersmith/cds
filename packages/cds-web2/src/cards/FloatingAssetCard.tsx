@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, cx } from '@linaria/core';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
-import type { FloatingAssetCardBaseProps } from '@cbhq/cds-common2/types/FloatingAssetCardBaseProps';
+import type { SharedProps, ValidateProps } from '@cbhq/cds-common2/types';
 
 import { type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
@@ -10,6 +10,24 @@ import { Text } from '../typography/Text';
 
 export const floatingAssetCardLargeWidth = 359;
 export const floatingAssetCardSmallDimension = 156;
+
+export type FloatingAssetCardBaseProps = SharedProps & {
+  /** Text or ReactNode to be displayed above Title */
+  subtitle?: React.ReactNode;
+  /** Text or ReactNode to be displayed in TextHeadline */
+  title: React.ReactNode;
+  /** Content to be displayed below the title */
+  description?: React.ReactNode;
+  /**
+   * Remote Image or other node with media content.
+   */
+  media: React.ReactNode;
+  /**
+   * Variant for card size. Can be small or large.
+   * @default 's'
+   */
+  size?: 's' | 'l';
+};
 
 export type FloatingAssetCardProps = FloatingAssetCardBaseProps & BoxProps<BoxDefaultElement>;
 
@@ -73,7 +91,10 @@ export const FloatingAssetCard = ({
       maxWidth={width}
       onClick={onClick}
       testID={testID}
-      {...props}
+      {...(props satisfies ValidateProps<
+        typeof props,
+        Omit<FloatingAssetCardProps, keyof BoxProps<BoxDefaultElement>>
+      >)}
     >
       <HStack
         borderColor="bgLine"

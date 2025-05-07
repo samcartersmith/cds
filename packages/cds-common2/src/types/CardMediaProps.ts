@@ -1,5 +1,6 @@
+import type { PictogramName, SpotSquareName } from '@cbhq/cds-illustrations';
+
 import type { CardRemoteImageDimensionValue } from './CardRemoteImageProps';
-import type { PictogramName, SpotSquareName } from './IllustrationProps';
 import type { AspectRatio } from './Shape';
 
 export type CardMediaPlacement = 'start' | 'above' | 'end';

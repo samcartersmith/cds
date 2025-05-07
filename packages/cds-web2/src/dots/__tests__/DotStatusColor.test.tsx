@@ -1,15 +1,14 @@
 import { render, screen, within } from '@testing-library/react';
-import type { DotBaseProps } from '@cbhq/cds-common2/types/DotBaseProps';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/test';
-import { DotStatusColor } from '../DotStatusColor';
+import { DotStatusColor, DotStatusColorBaseProps } from '../DotStatusColor';
 
 const DOTSTATUSCOLOR_TESTID = 'dot-status-test';
 const DOTSTATUSCOLOR_INNER_CONTAINER_TESTID = 'dotstatuscolor-inner-container';
 
-const MockDotStatusColorWithTheme = (props: DotBaseProps) => {
+const MockDotStatusColorWithTheme = (props: DotStatusColorBaseProps) => {
   return (
     <DefaultThemeProvider>
       <DotStatusColor {...props} />

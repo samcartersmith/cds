@@ -3,11 +3,7 @@ import { css } from '@linaria/core';
 import { m as motion, MotionStyle, useAnimation } from 'framer-motion';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common2/hooks/usePreviousValues';
-import {
-  ProgressBarFloatLabelProps,
-  ProgressBarWithFloatLabelProps,
-} from '@cbhq/cds-common2/types/ProgressBarBaseProps';
-import { getProgressBarLabelParts } from '@cbhq/cds-common2/visualizations/getProgressBarLabelParts';
+import type { Placement } from '@cbhq/cds-common2/types';
 import { isStorybook } from '@cbhq/cds-utils';
 
 import { useDimensions } from '../hooks/useDimensions';
@@ -17,7 +13,14 @@ import { VStack } from '../layout/VStack';
 import { convertTransition } from '../motion/utils';
 import { isRtl } from '../utils/isRtl';
 
+import { getProgressBarLabelParts, type ProgressBarLabel } from './getProgressBarLabelParts';
+import { type ProgressBaseProps } from './ProgressBar';
 import { ProgressTextLabel } from './ProgressTextLabel';
+
+export type ProgressBarFloatLabelProps = Pick<
+  ProgressBarWithFloatLabelProps,
+  'label' | 'progress' | 'disabled' | 'labelPlacement'
+>;
 
 const floatingTextContainerClassName = css`
   position: relative;
@@ -103,6 +106,19 @@ const ProgressBarFloatLabel = memo(
     );
   },
 );
+
+export type ProgressBarWithFloatLabelProps = Pick<
+  ProgressBaseProps,
+  'progress' | 'disabled' | 'testID'
+> & {
+  /** Label that is floated at the end of the filled in bar. If a number is used then it will format it as a percentage. */
+  label: ProgressBarLabel;
+  /**
+   * Position of label relative to the bar
+   * @default above
+   * */
+  labelPlacement?: Extract<Placement, 'above' | 'below'>;
+};
 
 export const ProgressBarWithFloatLabel: React.FC<
   React.PropsWithChildren<ProgressBarWithFloatLabelProps>

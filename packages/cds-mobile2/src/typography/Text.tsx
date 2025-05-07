@@ -14,62 +14,63 @@ import { useTextAlign } from '../hooks/useTextAlign';
 import { useTheme } from '../hooks/useTheme';
 import { getStyles, type StyleProps } from '../styles/styleProps';
 
-export type TextProps = StyleProps &
-  Omit<NativeTextProps, 'style'> & {
-    children?: React.ReactNode;
-    style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
-    animated?: boolean;
-    /**
-     * Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to `start` on Android.
-     * @default start
-     */
-    align?: 'start' | 'end' | 'center' | 'justify';
-    /**
-     * Set text font family.
-     * @default body
-     */
-    font?: ThemeVars.FontFamily | 'inherit';
-    /**
-     * Add disabled opacity style to text
-     */
-    disabled?: boolean;
-    /**
-     * Use CoinbaseMono font
-     */
-    mono?: boolean;
-    /**
-     * Set text decoration to underline.
-     * @default false
-     */
-    underline?: boolean;
-    /**
-     * Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
-     * @default false
-     */
-    tabularNumbers?: boolean;
-    /**
-     * Truncates text after wrapping to a defined number of lines.
-     */
-    numberOfLines?: number;
-    /**
-     * Choose ellipsize mode.
-     * @link [React Native docs](https://reactnative.dev/docs/text#ellipsizemode)
-     */
-    ellipsize?: NativeTextProps['ellipsizeMode'];
-    /**
-     * Set text to be in a single line.
-     * @default false
-     */
-    noWrap?: boolean;
-    /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-    dangerouslySetColor?: TextStyle['color'];
-    /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-    dangerouslySetBackground?: TextStyle['backgroundColor'];
-    /** @deprecated Do not use this prop. This is a migration escape hatch and will be removed in the next major version of CDS. */
-    renderEmptyNode?: boolean;
-    /** Used to locate this element in unit and end-to-end tests. */
-    testID?: string;
-  };
+export type TextBaseProps = StyleProps & {
+  children?: React.ReactNode;
+  style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
+  animated?: boolean;
+  /**
+   * Specifies text alignment. On mobile, the value `justify` is only supported on iOS and fallbacks to `start` on Android.
+   * @default start
+   */
+  align?: 'start' | 'end' | 'center' | 'justify';
+  /**
+   * Set text font family.
+   * @default body
+   */
+  font?: ThemeVars.FontFamily | 'inherit';
+  /**
+   * Add disabled opacity style to text
+   */
+  disabled?: boolean;
+  /**
+   * Use CoinbaseMono font
+   */
+  mono?: boolean;
+  /**
+   * Set text decoration to underline.
+   * @default false
+   */
+  underline?: boolean;
+  /**
+   * Activates the set of figures where numbers are all of the same size, allowing them to be easily aligned.
+   * @default false
+   */
+  tabularNumbers?: boolean;
+  /**
+   * Truncates text after wrapping to a defined number of lines.
+   */
+  numberOfLines?: number;
+  /**
+   * Choose ellipsize mode.
+   * @link [React Native docs](https://reactnative.dev/docs/text#ellipsizemode)
+   */
+  ellipsize?: NativeTextProps['ellipsizeMode'];
+  /**
+   * Set text to be in a single line.
+   * @default false
+   */
+  noWrap?: boolean;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetColor?: TextStyle['color'];
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetBackground?: TextStyle['backgroundColor'];
+  /** @deprecated Do not use this prop. This is a migration escape hatch and will be removed in the next major version of CDS. */
+  renderEmptyNode?: boolean;
+  /** Used to locate this element in unit and end-to-end tests. */
+  testID?: string;
+};
+
+export type TextProps = TextBaseProps & Omit<NativeTextProps, 'style'>;
 
 const styles = StyleSheet.create({
   disabled: {

@@ -25,7 +25,7 @@ import {
   horizontalDrawerPercentageOfView,
   verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView,
 } from '@cbhq/cds-common2/tokens/drawer';
-import type { DrawerBaseProps, DrawerRefBaseProps } from '@cbhq/cds-common2/types';
+import type { PinningDirection, SharedProps } from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../../hooks/useTheme';
 import { Box } from '../../layout/Box';
@@ -38,7 +38,65 @@ import { useDrawerAnimation } from './useDrawerAnimation';
 import { useDrawerPanResponder } from './useDrawerPanResponder';
 import { useDrawerSpacing } from './useDrawerSpacing';
 
-export type DrawerProps = DrawerBaseProps & Omit<ModalProps, 'onRequestClose' | 'children'>;
+export type DrawerRenderChildren = React.FC<{ handleClose: () => void }>;
+
+export type DrawerRefBaseProps = {
+  /** ref callback that animates out the drawer */
+  handleClose: () => void;
+};
+
+export type DrawerBaseProps = SharedProps &
+  Omit<ModalProps, 'onRequestClose' | 'children'> & {
+    /** Component to render as the Modal content */
+    children: DrawerRenderChildren | React.ReactNode;
+    /**
+     * Pin the modal to one side of the screen
+     * @default bottom
+     * */
+    pin: PinningDirection;
+    /**
+     * Prevents a user from dismissing the drawer by pressing the overlay or swiping
+     * @default false
+     */
+    preventDismissGestures?: boolean;
+    /**
+     * Prevents a user from dismissing the drawer by pressing hardware back button on Android
+     * @default false
+     */
+    preventHardwareBackBehaviorAndroid?: boolean;
+    /**
+     * The HandleBar by default only is used for a bottom pinned drawer. This removes it.
+     * @default false
+     * */
+    hideHandleBar?: boolean;
+    /** Action that will happen when drawer is dismissed */
+    onCloseComplete: () => void;
+    /**
+     * Prevents the Drawer from capturing pan gestures on children. Set to true when using a ScrollView as a child
+     * @default false
+     */
+    disableCapturePanGestureToDismiss?: boolean;
+    /** Callback fired when the overlay is pressed, or swipe to close */
+    onBlur?: () => void;
+
+    /**
+     * Allow user of component to define maximum percentage of screen that can be taken up by the Drawer
+     * @example if you want a Drawer to take up 50% of the screen, you would pass a value of `0.5`
+     */
+    verticalDrawerPercentageOfView?: number;
+    /**
+     * Accessibility label for handlebar
+     * @example This is a handlebar, double tap to dismiss the tray.
+     */
+    handleBarAccessibilityLabel?: string;
+    /**
+     * StickyFooter to be rendered at bottom of Drawer
+     * @deprecated Use TrayStickyFooter as a Tray child instead.
+     */
+    stickyFooter?: DrawerRenderChildren | React.ReactNode;
+  };
+
+export type DrawerProps = DrawerBaseProps;
 
 const overlayContentContextValue: OverlayContentContextValue = {
   isDrawer: true,

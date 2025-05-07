@@ -1,5 +1,5 @@
-import { ThemeVars } from '../core/theme';
-import { BannerVariant } from '../types/BannerBaseProps';
+import type { ThemeVars } from '../core/theme';
+import type { BannerVariant } from '../types/BannerBaseProps';
 
 export type BannerVariantStyle = {
   background: ThemeVars.Color | undefined;
@@ -14,15 +14,6 @@ export type BannerVariantStyle = {
 export type BannerVariantConfig = Record<BannerVariant, BannerVariantStyle>;
 
 export const variants: BannerVariantConfig = {
-  danger: {
-    background: 'bgNegative',
-    iconColor: 'fgNegative',
-    textColor: 'fgNegative',
-    primaryActionColor: 'fgNegative',
-    secondaryActionColor: 'fgNegative',
-    iconButtonColor: 'fgNegative',
-    borderColor: 'bgNegative',
-  },
   informational: {
     background: 'bgSecondary',
     iconColor: 'fgPrimary',

@@ -1,12 +1,40 @@
 import React, { Children, isValidElement, useMemo } from 'react';
 import { StyleSheet, Text, ViewStyle } from 'react-native';
 import { shapeBorderRadius } from '@cbhq/cds-common2/tokens/borderRadius';
-import { RemoteImageGroupBaseProps, Shape } from '@cbhq/cds-common2/types';
+import type {
+  AvatarSize,
+  Shape,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 
 import type { RemoteImageProps } from './RemoteImage';
+
+export type RemoteImageGroupBaseProps = SharedProps &
+  SharedAccessibilityProps & {
+    /**
+     * Indicates the number of remote image before it collapses
+     * @default 4
+     */
+    max?: number;
+    /**
+     * Size of all RemoteImage children in the group.
+     * @default m
+     */
+    size?: AvatarSize | number;
+    /**
+     * Shape of all RemoteImage children in the group
+     * @default circle
+     */
+    shape?: Shape;
+    /** Children content */
+    children?: React.ReactNode;
+  };
+
+export type RemoteImageGroupProps = RemoteImageGroupBaseProps;
 
 export const RemoteImageGroup = ({
   children,
@@ -15,7 +43,7 @@ export const RemoteImageGroup = ({
   shape = 'circle',
   testID,
   ...props
-}: RemoteImageGroupBaseProps) => {
+}: RemoteImageGroupProps) => {
   const { avatarSize, fontFamily, color } = useTheme();
 
   const shapeStyle = shapeStyles[shape];

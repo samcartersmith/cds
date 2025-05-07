@@ -9,16 +9,26 @@ import React, {
   useState,
 } from 'react';
 import { Animated } from 'react-native';
-import type {
-  ColorSurgeBaseProps,
-  ColorSurgeRefBaseProps,
-  MotionBaseSpec,
-} from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { colorSurgeEnterConfig, colorSurgeExitConfig } from '@cbhq/cds-common2/motion/hint';
+import type { MotionBaseSpec } from '@cbhq/cds-common2/types';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { Box } from '../layout';
+
+import type { HintMotionBaseProps } from './types';
+
+export type ColorSurgeBaseProps = HintMotionBaseProps & {
+  /**
+   * Palette alias of the surge color
+   * @default primary
+   */
+  background?: ThemeVars.Color;
+};
+
+export type ColorSurgeRefBaseProps = {
+  play: (background?: ThemeVars.Color) => Promise<void>;
+};
 
 export type ColorSurgeTypes = ColorSurgeBaseProps;
 

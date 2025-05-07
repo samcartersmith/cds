@@ -10,20 +10,3 @@ export type DotVariant = 'positive' | 'negative' | 'primary' | 'foregroundMuted'
 export type DotOverlap = 'circular';
 
 export type DotSize = IconSize;
-
-export type DotBaseProps = {
-  /** Position of dot relative to its parent */
-  pin?: PinPlacement;
-  /** Background color of dot */
-  variant: DotVariant;
-  /** Children of where the dot will anchor to */
-  children?: React.ReactNode;
-  /** Size of dot */
-  size?: DotSize;
-  /** Indicates what shape Dot is overlapping */
-  overlap?: DotOverlap;
-} & SharedProps &
-  Pick<
-    SharedAccessibilityProps,
-    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
-  >;

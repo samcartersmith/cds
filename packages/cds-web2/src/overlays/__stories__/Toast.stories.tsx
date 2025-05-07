@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 
 import { Button } from '../../buttons/Button';
 import { HStack } from '../../layout/HStack';
+import { useToast } from '../../overlays/useToast';
 import { PortalProvider } from '../PortalProvider';
 import { Toast } from '../Toast';
-import { useToast } from '../useToast';
 
 export default {
   title: 'Core Components/Toast',

@@ -1,10 +1,20 @@
 import React, { memo } from 'react';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
-import type { CardFooterProps as CommonCardFooterProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
+import type { BoxBaseProps, BoxProps } from '../layout';
 import { HStack } from '../layout/HStack';
 
-export type CardFooterProps = CommonCardFooterProps;
+export type CardFooterBaseProps = Pick<
+  SharedAccessibilityProps,
+  'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+> &
+  Omit<BoxBaseProps, 'children'> & {
+    /** CardFooter takes one or many actions as children */
+    children: React.ReactNode;
+  };
+
+export type CardFooterProps = CardFooterBaseProps & Omit<BoxProps, 'children'>;
 
 export const CardFooter = memo(function CardFooter({
   children,

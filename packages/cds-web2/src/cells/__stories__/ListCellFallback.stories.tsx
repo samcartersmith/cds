@@ -1,6 +1,6 @@
 import React from 'react';
-import type { CellSpacing } from '@cbhq/cds-common2';
 
+import type { CellSpacing } from '../../cells/Cell';
 import { ListCellFallback } from '../ListCellFallback';
 
 export default {

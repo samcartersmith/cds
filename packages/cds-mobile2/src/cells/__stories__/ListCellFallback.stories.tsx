@@ -1,7 +1,7 @@
 import React from 'react';
-import type { CellSpacing } from '@cbhq/cds-common2';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import type { CellSpacing } from '../Cell';
 import { ListCellFallback } from '../ListCellFallback';
 
 const innerSpacing: CellSpacing = {

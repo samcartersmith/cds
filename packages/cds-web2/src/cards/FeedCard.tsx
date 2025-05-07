@@ -1,49 +1,44 @@
 import React, { memo, useMemo } from 'react';
-import { ButtonBaseProps } from '@cbhq/cds-common2/types/ButtonBaseProps';
-import { CardBaseProps } from '@cbhq/cds-common2/types/CardBaseProps';
-import { CardBodyBaseProps } from '@cbhq/cds-common2/types/CardBodyBaseProps';
 import { CardMediaPlacement } from '@cbhq/cds-common2/types/CardMediaProps';
-import { IconButtonBaseProps } from '@cbhq/cds-common2/types/IconButtonBaseProps';
-import { LikeButtonBaseProps } from '@cbhq/cds-common2/types/LikeButtonBaseProps';
-import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
-import { Button } from '../buttons/Button';
-import { IconButton } from '../buttons/IconButton';
+import { Button, ButtonBaseProps } from '../buttons/Button';
+import { IconButton, IconButtonBaseProps } from '../buttons/IconButton';
 import { HStack } from '../layout/HStack';
 
-import { Card, type CardProps } from './Card';
-import { CardBody } from './CardBody';
+import { Card, type CardBaseProps } from './Card';
+import { CardBody, type CardBodyBaseProps } from './CardBody';
 import { CardFooter } from './CardFooter';
 import { CardHeader } from './CardHeader';
-import { LikeButton } from './LikeButton';
+import { LikeButton, type LikeButtonBaseProps } from './LikeButton';
 
-/** @deprecated use ContentCard instead */
-export type FeedCardProps = {
-  /** Image url for Avatar */
-  avatar?: string;
-  /** Source of the card info. Typically this text is associated with the avatar. */
-  author?: string;
-  /** Metadata to be displayed under author text. */
-  metadata?: string;
-  /** Above places media above text content, start & end places media to the side of text content
-   * @default above for mobile, start for web. Web will need to handle responsiveness changes manually.
-   */
-  mediaPlacement?: Exclude<CardMediaPlacement, 'end'>;
-  /** Text to be displayed in TextHeadline under CardHeader section. */
-  title: string;
-  /** Text to be displayed in TextLabel2 under title. */
-  description: string;
-  /** IconButton to show in top-right of FeedCard. Takes props for IconButton */
-  headerAction?: IconButtonBaseProps & { onClick?: CardProps['onClick'] };
-  like?: LikeButtonBaseProps;
-  comment?: Omit<IconButtonBaseProps, 'name'>;
-  share?: Omit<IconButtonBaseProps, 'name'>;
-  cta?: ButtonBaseProps;
-} & CardBaseProps &
-  SharedProps &
-  Pick<CardBodyBaseProps, 'image' | 'pictogram' | 'spotSquare'>;
+export type FeedCardBaseProps = Pick<CardBodyBaseProps, 'image' | 'pictogram' | 'spotSquare'> &
+  CardBaseProps & {
+    /** Image url for Avatar */
+    avatar?: string;
+    /** Source of the card info. Typically this text is associated with the avatar. */
+    author?: string;
+    /** Metadata to be displayed under author text. */
+    metadata?: string;
+    /** Above places media above text content, start & end places media to the side of text content
+     * @default above for mobile, start for web. Web will need to handle responsiveness changes manually.
+     */
+    mediaPlacement?: Exclude<CardMediaPlacement, 'end'>;
+    /** Text to be displayed in TextHeadline under CardHeader section. */
+    title: string;
+    /** Text to be displayed in TextLabel2 under title. */
+    description: string;
+    /** IconButton to show in top-right of FeedCard. Takes props for IconButton */
+    headerAction?: IconButtonBaseProps & { onClick?: CardBaseProps['onClick'] };
+    like?: LikeButtonBaseProps;
+    comment?: Omit<IconButtonBaseProps, 'name'>;
+    share?: Omit<IconButtonBaseProps, 'name'>;
+    cta?: ButtonBaseProps;
+  };
 
-/** @deprecated use ContentCard instead */
+/** @deprecated Use the ContentCard component instead. */
+export type FeedCardProps = FeedCardBaseProps;
+
+/** @deprecated Use the ContentCard component instead. */
 export const FeedCard = memo(function FeedCard({
   testID = 'feed-card',
   avatar,

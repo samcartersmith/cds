@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useCallback, useState } from 'react';
 import { css, cx } from '@linaria/core';
-import { IconButtonVariant, NavigationIconName } from '@cbhq/cds-common2';
-import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
+import { variants } from '@cbhq/cds-common2/tokens/button';
+import type { IconButtonVariant, NavigationIconName } from '@cbhq/cds-common2/types';
 
 import { NavigationIcon } from '../icons/NavigationIcon';
 import { Pressable } from '../system/Pressable';
@@ -11,7 +11,7 @@ import { type IconButtonDefaultElement, IconButtonProps } from './IconButton';
 type NavigationButtonProps = {
   active?: boolean;
   name: NavigationIconName;
-  variant?: Omit<IconButtonVariant, 'primary'>;
+  variant?: IconButtonVariant;
 } & Omit<IconButtonProps<IconButtonDefaultElement>, 'name' | 'variant' | 'transparent'>;
 
 const baseStyle = css`
@@ -51,9 +51,8 @@ export const NavigationIconButton = memo(
     ref: React.ForwardedRef<HTMLButtonElement>,
   ) {
     const [isActive, setIsActive] = useState(active);
-    const { backgroundColor, borderColor } = useButtonVariant(variant as IconButtonVariant, false);
-
     const iconSize = compact ? 's' : 'm';
+    const { background, borderColor } = variants[variant];
 
     const handleClick = useCallback(
       (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -71,7 +70,7 @@ export const NavigationIconButton = memo(
         noScaleOnPress
         alignItems={alignItems}
         as={as}
-        background={backgroundColor}
+        background={background}
         borderColor={borderColor}
         borderRadius={1000}
         borderWidth={100}

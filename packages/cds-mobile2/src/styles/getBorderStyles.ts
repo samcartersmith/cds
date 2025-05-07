@@ -1,15 +1,35 @@
 import { ViewStyle } from 'react-native';
-import { BorderedStyles, ElevationLevels } from '@cbhq/cds-common2';
+import { ElevationLevels } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { Theme } from '../core/theme';
 
 export type BorderStyles = ViewStyle;
 
-export type GetBorderStyleParams = Omit<BorderedStyles, 'borderRadius'> & {
-  borderWidth?: ThemeVars.BorderWidth;
+export type GetBorderStyleParams = {
+  /** Add a border around all sides of the box. */
+  bordered?: boolean;
+  /** Add a border to the top side of the box. */
+  borderedTop?: boolean;
+  /** Add a border to the bottom side of the box. */
+  borderedBottom?: boolean;
+  /** Add a border to the leading side of the box. */
+  borderedStart?: boolean;
+  /** Add a border to the trailing side of the box. */
+  borderedEnd?: boolean;
+  /** Add a border to the leading and trailing sides of the box. */
+  borderedHorizontal?: boolean;
+  /** Add a border to the top and bottom sides of the box. */
+  borderedVertical?: boolean;
+  /** Leverage one of the borderRadius styles we offer to round the corners of the box. */
   borderRadius?: ThemeVars.BorderRadius;
+  /** Adds a custom border color from the palette */
+  borderColor?: ThemeVars.Color;
+  /** Adds a custom border width from the palette */
+  borderWidth?: ThemeVars.BorderWidth;
+  /** Adds an elevation to the box */
   elevation?: ElevationLevels;
+  /** Theme object */
   theme: Theme;
 };
 

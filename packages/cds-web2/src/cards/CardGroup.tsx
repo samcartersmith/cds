@@ -3,7 +3,8 @@ import React, { forwardRef, memo } from 'react';
 import { Divider } from '../layout/Divider';
 import { Group, GroupProps, RenderGroupItem } from '../layout/Group';
 
-export type CardGroupProps = Omit<GroupProps, 'horizontal'>;
+export type CardGroupBaseProps = Omit<GroupProps, 'horizontal'>;
+export type CardGroupProps = CardGroupBaseProps;
 export type CardGroupRenderItem = RenderGroupItem;
 
 export const CardGroup = memo(

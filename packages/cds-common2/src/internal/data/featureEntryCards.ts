@@ -1,4 +1,4 @@
-import { SpotSquareName } from '../../types/IllustrationProps';
+import type { SpotSquareName } from '@cbhq/cds-illustrations';
 
 const onPress = () => console.log('pressed');
 export const featureEntryCards = [

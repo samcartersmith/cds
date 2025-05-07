@@ -1,13 +1,38 @@
 import React, { forwardRef, memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, I18nManager, LayoutChangeEvent, View } from 'react-native';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { usePreviousValues } from '@cbhq/cds-common2/hooks/usePreviousValues';
-import { ProgressBaseProps } from '@cbhq/cds-common2/types/ProgressBaseProps';
+import type { SharedAccessibilityProps, SharedProps, Weight } from '@cbhq/cds-common2/types';
 import { useProgressSize } from '@cbhq/cds-common2/visualizations/useProgressSize';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { useTheme } from '../hooks/useTheme';
 import { Box, HStack, VStack } from '../layout';
+import type { HintMotionBaseProps } from '../motion/types';
+
+export type ProgressBaseProps = SharedProps &
+  Pick<HintMotionBaseProps, 'disableAnimateOnMount'> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
+    /** Number between 0-1 representing the progress percentage */
+    progress: number;
+    /** Toggle used to change thickness of progress visualization
+     * @default normal
+     * */
+    weight?: Weight;
+    /**
+     * Toggle used to show a disabled progress visualization
+     * @default false
+     */
+    disabled?: boolean;
+    /**
+     * Custom progress color.
+     * @default primary
+     */
+    color?: ThemeVars.Color;
+  };
+
+export type ProgressBarProps = ProgressBaseProps;
 
 export const ProgressBar = memo(
   forwardRef(
@@ -20,7 +45,7 @@ export const ProgressBar = memo(
         disableAnimateOnMount = false,
         testID,
         accessibilityLabel,
-      }: ProgressBaseProps,
+      }: ProgressBarProps,
       forwardedRef: React.ForwardedRef<View>,
     ) => {
       const theme = useTheme();

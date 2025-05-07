@@ -2,13 +2,16 @@ import React, { memo, useMemo } from 'react';
 import { css, cx, type LinariaClassName } from '@linaria/core';
 import type { AvatarSize } from '@cbhq/cds-common2';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import type { AvatarBaseProps, AvatarShape } from '@cbhq/cds-common2/types/AvatarBaseProps';
+import type { AvatarFallbackColor, AvatarShape, SharedProps } from '@cbhq/cds-common2/types';
 
-import { Box } from '../layout/Box';
+import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { Text } from '../typography/Text';
 
 import { hexagonAvatarClipId, HexagonBorder } from './Hexagon';
 import { RemoteImage } from './RemoteImage';
+
+export const fallbackImageSrc =
+  'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAOAA4AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+t80Zo4o4oAM0ZrsPBvw7m8Sxi7uZDa2GcKwHzyeu30HvXdf8Kp0Dytnlz7v+ennHP8Ah+lAHiuaM12XjL4dTeG4jd2sjXViDhiR88f1x1HvXG8UAGaKOKKADI9Kkt4vtFxFEOC7Bc/U4qPJ9KVXZGDLwwOQaAPpS0tY7G1ht4VCRRKEVcdABipc1meG9eh8RaRBeRMNzACRB1R+4/z2rU/OgCK5t47y3lgmUPFKpR1I6gjBr5uu4fst1NCefLdkz64OK+g/EWuQ+HtJnvJmHyjCIerv2Ar55klaWRnblmJJPqaAG5HpRRk+lFABzVnTtOutWvY7W0iMs8hwqj+Z9BVbB9a9o+GXhlNI0VL2VR9rvFD5PVY/4R+PX8vSgCfwX4EXwsDNJdSTXTrh1RisQ/Dv9T+QrrP89aT8qPyoA5Txr4FHilRNHdSQ3Ua4RHYtEfw7fUfrXjOo6dc6Tey2t3EYp4zgqf5j1FfSP5VxvxN8Mpq+jPfRKPtlmpfI6tH/ABD8Ov5+tAHi/NFGDRQBY060+3aja22f9dKsf5kD+tfSKIsaKigKqjAAHAFFFAC/j+lL+P6UUUAH4/pTXRZEZGG5WGCCOooooA+btRtPsOoXVtn/AFMrR/kSKKKKAP/Z';
 
 const wrapperStyles = css`
   // Styles the possible values of the colorScheme prop. Children elements will use CSS currentColor to inherit this color styles.
@@ -41,10 +44,8 @@ const wrapperStyles = css`
 
 const avatarStyles = css`
   overflow: hidden;
-
-  // it may have been unintentional, but in v7 downwards the unselected Avatar has a 1px transparent border on the inner div
-  // to reduce visual regressions, this has been preserved in the migration for v8
   border: solid 1px var(--avatar-borderColor);
+
   &[data-bordered='true'] {
     border-width: 2px;
   }
@@ -75,55 +76,53 @@ const borderRadiusStyles: Record<AvatarShape, LinariaClassName> = {
   `,
 };
 
-export type FallbackColor = Extract<
-  ThemeVars.SpectrumHue,
-  'blue' | 'purple' | 'green' | 'teal' | 'pink' | 'gray'
->;
-
-export type AvatarProps = {
-  /**
-   * @danger Adds a className to the Avatar. If you pass in a className make sure your styles override the Avatar using the avatar class .cds-avatar like this: .my-class.cds-avatar
+export type AvatarBaseProps = SharedProps & {
+  /** Absolute url to the image that should be shown in the Avatar. If no src is provided then a generic fallback image is used. */
+  src?: string;
+  /** Shape of Avatar.
+   * Note: If the shape is a hexagon, do not use name.
    */
-  className?: string;
-  /** Adds treatment that indicates that the Avatar is currently selected */
-  selected?: boolean;
+  shape?: AvatarShape;
+  /** Size for a given avatar. */
+  size?: AvatarSize;
+  /** Adds a border to the Avatar */
+  borderColor?: ThemeVars.Color;
   /**
    * Override the default fallback background and border color
    * @default blue
    */
-  colorScheme?: FallbackColor;
-  /** Adds a border to the Avatar */
-  borderColor?: ThemeVars.Color;
-  // override the dangerous style prop to mark it as deprecated in the updated cds web package
+  colorScheme?: AvatarFallbackColor;
+  /** This is the name associated with the Avatar's entity. It will be used to generate a fallback. */
+  name?: string;
+  /** Adds treatment that indicates that the Avatar is currently selected */
+  selected?: boolean;
+  /** This is the name associated with the entity in the Avatar. This is used in the image alt tag for accessibility. */
+  alt?: string;
   /**
-   * @deprecated Use the style prop instead to set the width/height properties
    * @danger Creates a custom Avatar size. The size prop should be used in most circumstances.
+   * @deprecated Use the style prop instead to set the width/height properties
    * This is an escape hatch when using the Avatar in a fixed size container where you cannot control the dimensions.
    */
   dangerouslySetSize?: number;
-  /**
-   * Applies inline styles to the container element
-   */
-  style?: React.CSSProperties;
-} & Omit<AvatarBaseProps, 'colorScheme' | 'borderColor' | 'dangerouslySetSize'>;
+};
 
-export const fallbackImageSrc =
-  'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAOAA4AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+t80Zo4o4oAM0ZrsPBvw7m8Sxi7uZDa2GcKwHzyeu30HvXdf8Kp0Dytnlz7v+ennHP8Ah+lAHiuaM12XjL4dTeG4jd2sjXViDhiR88f1x1HvXG8UAGaKOKKADI9Kkt4vtFxFEOC7Bc/U4qPJ9KVXZGDLwwOQaAPpS0tY7G1ht4VCRRKEVcdABipc1meG9eh8RaRBeRMNzACRB1R+4/z2rU/OgCK5t47y3lgmUPFKpR1I6gjBr5uu4fst1NCefLdkz64OK+g/EWuQ+HtJnvJmHyjCIerv2Ar55klaWRnblmJJPqaAG5HpRRk+lFABzVnTtOutWvY7W0iMs8hwqj+Z9BVbB9a9o+GXhlNI0VL2VR9rvFD5PVY/4R+PX8vSgCfwX4EXwsDNJdSTXTrh1RisQ/Dv9T+QrrP89aT8qPyoA5Txr4FHilRNHdSQ3Ua4RHYtEfw7fUfrXjOo6dc6Tey2t3EYp4zgqf5j1FfSP5VxvxN8Mpq+jPfRKPtlmpfI6tH/ABD8Ov5+tAHi/NFGDRQBY060+3aja22f9dKsf5kD+tfSKIsaKigKqjAAHAFFFAC/j+lL+P6UUUAH4/pTXRZEZGG5WGCCOooooA+btRtPsOoXVtn/AFMrR/kSKKKKAP/Z';
+export type AvatarProps = AvatarBaseProps & BoxProps<BoxDefaultElement>;
 
 export const Avatar = memo(
   ({
-    alt,
     src,
     shape = 'circle',
     size = 'l',
     borderColor,
-    className,
+    colorScheme = 'blue',
+    name,
+    selected,
+    alt,
     testID,
     dangerouslySetSize,
-    selected,
-    colorScheme: colorSchemeProp = 'blue',
-    name,
-    style = {},
+    className,
+    style,
+    ...props
   }: AvatarProps) => {
     const avatarSize = `var(--avatarSize-${size})`;
     const userProvidedSize = style?.width ?? style?.height ?? dangerouslySetSize;
@@ -168,33 +167,28 @@ export const Avatar = memo(
       );
     }, [name, size, dangerouslySetSize]);
 
-    const shouldShowBorder = (!!src || !name) && !!borderColor;
+    const shouldShowBorder = Boolean((src || !name) && borderColor);
 
-    const avatarInlineStyles = useMemo(() => {
-      return {
+    const avatarInlineStyles = useMemo<React.CSSProperties>(
+      () => ({
         width: computedSize,
         height: computedSize,
-        ...style,
         '--avatar-borderColor': shouldShowBorder
           ? `var(--color-${borderColor})`
           : 'var(--color-transparent)',
-      } as React.CSSProperties;
-    }, [computedSize, style, shouldShowBorder, borderColor]);
-
-    const fallbackStyle = useMemo(
-      () => ({
-        background: 'currentColor',
+        ...style,
       }),
-      [],
+      [computedSize, style, shouldShowBorder, borderColor],
     );
 
     return (
       // set position required to place the HexagonBorder elements properly
       <Box
         className={wrapperStyles}
-        data-colorscheme={colorSchemeProp}
+        data-colorscheme={colorScheme}
         position="relative"
         testID={`${testID}-wrapper`}
+        {...props}
       >
         <Box
           alignItems="center"
@@ -220,11 +214,11 @@ export const Avatar = memo(
           ) : (
             <Box
               alignItems="center"
+              background="currentColor"
               className={borderRadiusStyles[shape]}
               flexGrow={1}
               height="100%"
               justifyContent="center"
-              style={fallbackStyle}
               testID={`${testID}-fallback`}
             >
               {avatarText}

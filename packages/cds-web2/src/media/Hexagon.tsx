@@ -1,12 +1,13 @@
 import React, { memo, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { css } from '@linaria/core';
-import type { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
-import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
 import { useIsBrowser } from '../hooks/useIsBrowser';
 import { Box } from '../layout/Box';
 import { getBrowserGlobals } from '../utils/browser';
+
+import type { AvatarBaseProps } from './Avatar';
 
 export const cdsHexagonTestId = 'cds-hexagon';
 export const hexagonClipPathContainerId = 'cds-hexagon-clipPath-container';
@@ -65,7 +66,7 @@ const pathElementStyles = css`
   stroke-linecap: round;
 `;
 
-type HexagonBorderProps = {
+type HexagonBorderProps = SharedProps & {
   /**
    * The color that is applied to the stroke. This color will be overridden by any color set by CSS in the className prop
    */
@@ -78,7 +79,7 @@ type HexagonBorderProps = {
    * Child path elements are programmed to use the currentColor CSS value to inherit this color.
    */
   className?: string;
-} & SharedProps;
+};
 
 export const HexagonBorder = memo(
   ({

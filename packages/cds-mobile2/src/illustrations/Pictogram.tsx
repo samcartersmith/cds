@@ -1,9 +1,21 @@
-import { PictogramProps as PictogramCommonProps } from '@cbhq/cds-common2';
 import pictogramIllustrations from '@cbhq/cds-illustrations/__generated__/pictogram/data/svgJsMap';
 
-import { createIllustration, IllustrationA11yProps } from './createIllustration';
+import {
+  createIllustration,
+  type IllustrationA11yProps,
+  type IllustrationBaseProps,
+  type IllustrationDimensionsMap,
+} from './createIllustration';
 
-export type PictogramProps = PictogramCommonProps & IllustrationA11yProps;
+export type PictogramBaseProps = IllustrationBaseProps<'pictogram'> &
+  IllustrationA11yProps & {
+    /**
+     * @default 48x48
+     * */
+    dimension?: IllustrationDimensionsMap['pictogram'];
+  };
+
+export type PictogramProps = PictogramBaseProps;
 
 export const Pictogram = createIllustration('pictogram', pictogramIllustrations);
 

@@ -1,19 +1,45 @@
 import React, { isValidElement, memo } from 'react';
 import { PressableProps } from 'react-native';
-import { UpsellCardBaseProps } from '@cbhq/cds-common2';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { upsellCardDefaultWidth, upsellCardMinHeight } from '@cbhq/cds-common2/tokens/card';
+import { DimensionStyles, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { Button, IconButton } from '../buttons';
 import { HStack, VStack } from '../layout';
 import { Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
-export type UpsellCardProps = UpsellCardBaseProps & {
-  /** Callback fired when the action button is pressed */
-  onActionPress?: PressableProps['onPress'];
-  /** Callback fired when the dismiss button is pressed */
-  onDismissPress?: PressableProps['onPress'];
-} & Pick<PressableProps, 'onPress'>;
+export type UpsellCardBaseProps = SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
+  Pick<DimensionStyles, 'width'> & {
+    /** Callback fired when the action button is pressed */
+    onActionPress?: PressableProps['onPress'];
+    /** Callback fired when the dismiss button is pressed */
+    onDismissPress?: PressableProps['onPress'];
+    /** Callback fired when the card is pressed */
+    onPress?: PressableProps['onPress'];
+    /** Text or ReactNode to be displayed in TextHeadline */
+    title: React.ReactNode;
+    /** Content to be displayed below the title */
+    description?: React.ReactNode;
+    /** Node to display for the card action */
+    action?: React.ReactNode;
+    /**
+     * Remote Image or other node with media content.
+     */
+    media?: React.ReactNode;
+    /**
+     * Background color for the card.
+     * @default 'bgPrimaryWash'
+     */
+    background?: ThemeVars.Color;
+    /**
+     * @danger This is a migration escape hatch. It is not intended to be used normally.
+     */
+    dangerouslySetBackground?: string;
+  };
+
+export type UpsellCardProps = UpsellCardBaseProps;
 
 export const UpsellCard = memo(
   ({

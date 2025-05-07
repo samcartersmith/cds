@@ -11,6 +11,7 @@ export default {
 };
 
 const buttonStories: Omit<ButtonBaseProps, 'children'>[] = [
+  { variant: 'foregroundMuted' },
   { variant: 'secondary' },
   { variant: 'positive' },
   { variant: 'negative' },

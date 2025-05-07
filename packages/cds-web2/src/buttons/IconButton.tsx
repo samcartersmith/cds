@@ -1,23 +1,21 @@
 import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
-import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
-import { IconName } from '@cbhq/cds-common2/types/IconName';
+import { transparentVariants, variants } from '@cbhq/cds-common2/tokens/button';
+import type { IconButtonVariant, IconName } from '@cbhq/cds-common2/types';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
 import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
+import type { ButtonBaseProps } from './Button';
+
 export const iconButtonDefaultElement = 'button';
 
 export type IconButtonDefaultElement = typeof iconButtonDefaultElement;
 
-export type IconButtonVariant = 'primary' | 'secondary' | 'foregroundMuted';
-
 export type IconButtonBaseProps = Polymorphic.ExtendableProps<
-  Omit<PressableBaseProps, 'background' | 'children'>,
-  {
-    /** Reduce the inner padding within the button itself. */
-    compact?: boolean;
+  Omit<PressableBaseProps, 'children'>,
+  Pick<ButtonBaseProps, 'disabled' | 'transparent' | 'compact' | 'flush'> & {
     /** Name of the icon, as defined in Figma. */
     name: IconName;
     /**
@@ -25,17 +23,6 @@ export type IconButtonBaseProps = Polymorphic.ExtendableProps<
      * @default primary
      */
     variant?: IconButtonVariant;
-    /** Ensure the button aligns flush on the left or right.
-     * This prop will translate the entire button left/right,
-     * so take care to ensure it is not overflowing awkwardly
-     */
-    flush?: 'start' | 'end';
-    /** Mark the button as loading and display a spinner. */
-    loading?: boolean;
-    /** Mark the button as disabled. */
-    disabled?: boolean;
-    /** Mark the background and border as transparent until interacted with. */
-    transparent?: boolean;
   }
 >;
 
@@ -68,41 +55,43 @@ export const IconButton: IconButtonComponent = memo(
     <AsComponent extends React.ElementType>(
       {
         as,
-        alignItems = 'center',
+        variant = 'secondary',
+        transparent,
+        compact = true,
         background,
+        color,
+        borderColor,
         borderRadius = 1000,
         borderWidth = 100,
-        color,
-        compact = true,
-        className,
-        name,
-        disabled,
-        transparent,
-        variant = 'secondary',
+        alignItems = 'center',
         justifyContent = 'center',
-        flush,
+        // TO DO: fix this alongside interactableHeight
         height = compact ? 40 : 56,
         width = compact ? 40 : 56,
-        onClick,
+        className,
+        name,
+        flush,
         ...props
       }: IconButtonProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
     ) => {
       const Component = (as ?? iconButtonDefaultElement) satisfies React.ElementType;
       const iconSize = compact ? 's' : 'm';
-      const {
-        color: foregroundColor,
-        backgroundColor,
-        borderColor,
-      } = useButtonVariant(variant, transparent);
+
+      const variantMap = transparent ? transparentVariants : variants;
+      const variantStyle = variantMap[variant];
+
+      const colorValue = color ?? variantStyle.color;
+      const backgroundValue = background ?? variantStyle.background;
+      const borderColorValue = borderColor ?? variantStyle.borderColor;
 
       return (
         <Pressable
           ref={ref}
           alignItems={alignItems}
           as={Component}
-          background={background ?? backgroundColor}
-          borderColor={borderColor}
+          background={backgroundValue}
+          borderColor={borderColorValue}
           borderRadius={borderRadius}
           borderWidth={borderWidth}
           className={cx(
@@ -111,11 +100,9 @@ export const IconButton: IconButtonComponent = memo(
             flush === 'end' && flushEndStyle,
             className,
           )}
-          color={color ?? foregroundColor}
-          disabled={disabled}
+          color={colorValue}
           height={height}
           justifyContent={justifyContent}
-          onClick={onClick}
           transparentWhileInactive={transparent}
           width={width}
           {...props}

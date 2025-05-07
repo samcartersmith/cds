@@ -1,23 +1,30 @@
 import React, { memo, useMemo } from 'react';
-import { Animated, DimensionValue, StyleProp, ViewStyle } from 'react-native';
+import { DimensionValue } from 'react-native';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2';
 import { cardSizes } from '@cbhq/cds-common2/tokens/card';
-import type { CardBaseProps } from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
+import type { BoxBaseProps, BoxProps } from '../layout/Box';
 import { VStack } from '../layout/VStack';
 import { pinStyles } from '../styles/pinStyles';
-import { Pressable, PressableProps } from '../system/Pressable';
+import { Pressable, type PressableProps } from '../system/Pressable';
 
-export type CardProps = {
-  /**
-   * If onPress is present the Card will be wrapped with a Pressable component.
-   * pressableProps allows customization of that Pressable wrapper.
-   */
-  pressableProps?: Omit<PressableProps, 'onPress'>;
-  animated?: boolean;
-  style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
-} & CardBaseProps &
-  Pick<PressableProps, 'onPress'>;
+export type CardBaseProps = Pick<
+  SharedAccessibilityProps,
+  'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+> &
+  Pick<PressableProps, 'noScaleOnPress' | 'onPress'> &
+  BoxBaseProps & {
+    /** Size of the card. Small and medium have fixed widths and large grows with its children. */
+    size?: 'small' | 'medium' | 'large';
+    /**
+     * If onPress is present the Card will be wrapped with a Pressable component.
+     * pressableProps allows customization of that Pressable wrapper.
+     */
+    pressableProps?: Omit<PressableProps, 'onPress'>;
+  };
+
+export type CardProps = CardBaseProps & BoxProps;
 
 const getBorderRadiusPinStyle = (borderRadius: number) => ({
   top: {
@@ -66,6 +73,7 @@ export const Card = memo(function OldCard({
   accessibilityHint,
   pressableProps,
   borderRadius = 200,
+  noScaleOnPress,
   ...props
 }: CardProps) {
   const width = widthProps ?? cardSizes[size].width;
@@ -81,6 +89,8 @@ export const Card = memo(function OldCard({
   const content = useMemo(
     () => (
       <VStack
+        accessibilityHint={onPress ? undefined : accessibilityHint}
+        accessibilityLabel={onPress ? undefined : accessibilityLabel}
         background={onPress ? undefined : background}
         borderRadius={borderRadius}
         elevation={onPress ? undefined : elevation}
@@ -95,6 +105,8 @@ export const Card = memo(function OldCard({
       </VStack>
     ),
     [
+      accessibilityHint,
+      accessibilityLabel,
       background,
       borderRadius,
       children,
@@ -117,6 +129,7 @@ export const Card = memo(function OldCard({
       background={background}
       borderRadius={borderRadius}
       elevation={elevation}
+      noScaleOnPress={noScaleOnPress}
       onPress={onPress}
       style={{
         ...(pin ? pinStyles[pin] : undefined),

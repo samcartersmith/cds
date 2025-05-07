@@ -1,5 +1,5 @@
 import React from 'react';
-import type { CellPriority, CellSpacing } from '@cbhq/cds-common2';
+import type { CellPriority } from '@cbhq/cds-common2';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { selectCellSpacingConfig } from '@cbhq/cds-common2/tokens/select';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
@@ -8,6 +8,7 @@ import { Button } from '../../buttons/Button';
 import { IconButton } from '../../buttons/IconButton';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';
+import type { CellSpacing } from '../Cell';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 

@@ -1,6 +1,7 @@
 import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
-import { IconCounterButtonBaseProps } from '@cbhq/cds-common2';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { IconSize, ValidateProps } from '@cbhq/cds-common2/types';
 import { formatCount } from '@cbhq/cds-common2/utils/formatCount';
 import { UiIconName } from '@cbhq/cds-icons';
 
@@ -8,6 +9,18 @@ import { Icon } from '../icons';
 import { HStack } from '../layout';
 import { Pressable, PressableProps } from '../system';
 import { Text } from '../typography/Text';
+
+export type IconCounterButtonBaseProps = {
+  /** Name of the icon or ReactNode */
+  icon: Exclude<React.ReactNode, 'string'> | UiIconName;
+  /** Size for given icon. */
+  iconSize?: IconSize;
+  count?: number;
+  /** Color of the icon */
+  color?: ThemeVars.Color;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetColor?: string;
+};
 
 export type IconCounterButtonProps = IconCounterButtonBaseProps & PressableProps;
 
@@ -24,7 +37,14 @@ export const IconCounterButton = memo(
     ref: React.ForwardedRef<View>,
   ) {
     return (
-      <Pressable ref={ref} background="transparent" {...props}>
+      <Pressable
+        ref={ref}
+        background="transparent"
+        {...(props satisfies ValidateProps<
+          typeof props,
+          Omit<IconCounterButtonProps, keyof PressableProps>
+        >)}
+      >
         <HStack alignItems="center" gap={1}>
           {typeof icon === 'string' ? (
             <Icon

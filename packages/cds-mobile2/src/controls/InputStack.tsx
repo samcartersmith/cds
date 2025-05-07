@@ -3,22 +3,71 @@ import { Animated, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { focusedInputBorderWidth, inputBorderWidth } from '@cbhq/cds-common2/tokens/input';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
-import { InputStackBaseProps, InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
+import type { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
+import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
 
 import { useLayout } from '../hooks/useLayout';
 import { useTheme } from '../hooks/useTheme';
+import type { BoxBaseProps, BoxProps } from '../layout';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { ColorSurge } from '../motion/ColorSurge';
 
-export type InputStackProps = {
+export type InputStackBaseProps = SharedProps & {
+  /**
+   * Determines the sentiment of the input. Because
+   * we allow startContent and endContent to be custom ReactNode,
+   * the content placed inside these slots will not change colors according
+   * to the variant. You will have to add that yourself
+   */
+  variant?: InputVariant;
+  /**
+   * Width of input as a percentage string.
+   * @default 100%
+   * */
+  width?: BoxProps['width'];
+  /**
+   * Height of input
+   */
+  height?: BoxBaseProps['height'];
+  /**
+   * Toggles input interactability and opacity
+   * @default false
+   */
+  disabled?: boolean;
+  /** Prepends custom content to the start. Content is not part of input */
+  prependNode?: React.ReactNode;
+  /** Adds content to the start of the inner input. Refer to diagram for location of startNode in InputStack component */
+  startNode?: React.ReactNode;
+  /** Appends custom content to the end. Content is not part of input */
+  appendNode?: React.ReactNode;
+  /** Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component */
+  endNode?: React.ReactNode;
+  /** Editable area of the Input */
+  inputNode: React.ReactNode;
+  /** Text shown below input. Used for when label is not enough to indicate what this input does */
+  helperTextNode?: React.ReactNode;
+  /** A message indicating the purpose of this input */
+  labelNode?: React.ReactNode;
+  /** This should only be used when focused styles need to be persisted */
+  focused?: boolean;
+  /**
+   * Leverage one of the borderRadius styles we offer to round the corners of the input.
+   * @default 200
+   */
+  borderRadius?: BoxProps['borderRadius'];
+  /**
+   * Enable Color Surge motion
+   */
+  enableColorSurge?: boolean;
   /** Adds border styling to input  */
   borderStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
   /** Border overlay to animate border when focused */
   borderFocusedStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
-  animated?: boolean;
-  style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
-} & InputStackBaseProps;
+};
+
+export type InputStackProps = Omit<BoxProps, 'width' | 'height' | 'borderRadius'> &
+  InputStackBaseProps;
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   primary: 'fgPrimary',

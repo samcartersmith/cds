@@ -8,18 +8,29 @@ import React, {
   useRef,
 } from 'react';
 import { Animated } from 'react-native';
-import type { ShakeBaseProps, ShakeRefBaseProps } from '@cbhq/cds-common2';
 import { shakeTransitionConfig, shakeTranslateX } from '@cbhq/cds-common2/motion/hint';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { Haptics } from '../utils/haptics';
+
+import type { HintMotionBaseProps } from './types';
+
+export type ShakeRefBaseProps = {
+  play: () => Promise<void>;
+};
+
+export type ShakeBaseProps = HintMotionBaseProps & {
+  children: React.ReactNode;
+};
+
+export type ShakeProps = ShakeBaseProps;
 
 /**
  * Please consult with the motion team in #ask-motion before using this component.
  */
 export const Shake = memo(
   forwardRef(function Shake(
-    { children, disableAnimateOnMount = false }: ShakeBaseProps,
+    { children, disableAnimateOnMount = false }: ShakeProps,
     ref: ForwardedRef<ShakeRefBaseProps>,
   ) {
     const translateX = useRef(new Animated.Value(0)).current;

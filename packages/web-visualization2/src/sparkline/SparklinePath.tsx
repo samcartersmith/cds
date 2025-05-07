@@ -1,8 +1,14 @@
 import React, { forwardRef, memo } from 'react';
-import { SparklinePathBaseProps } from '@cbhq/cds-common2';
 import { borderWidth } from '@cbhq/cds-common2/tokens/sparkline';
 
 export type SparklinePathRef = SVGPathElement | null;
+
+export type SparklinePathBaseProps = {
+  /** The svg string path that is generate via useSparklinePath */
+  path?: string;
+  /** Color of the stroke for the path. */
+  stroke: string;
+};
 
 export const SparklinePath = memo(
   forwardRef<SparklinePathRef, SparklinePathBaseProps>(({ path, stroke }, forwardedRef) => {

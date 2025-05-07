@@ -2,7 +2,6 @@ import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import { Path } from 'react-native-svg';
 import * as interpolate from 'd3-interpolate-path';
 import { useValueChanges } from '@cbhq/cds-common2/hooks/useValueChanges';
-import { SparklineInteractiveAnimatedPathProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 
 import { SparklineArea } from '../SparklineArea';
 import { SparklineGradient } from '../SparklineGradient';
@@ -10,6 +9,16 @@ import { SparklineGradient } from '../SparklineGradient';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
+
+export type SparklineInteractiveAnimatedPathProps = {
+  d: string;
+  color: string;
+  area?: string;
+  selectedPeriod: string;
+  yAxisScalingFactor?: number;
+  initialPath?: string;
+  initialArea?: string;
+};
 
 export const SparklineInteractiveAnimatedPath = memo(
   ({

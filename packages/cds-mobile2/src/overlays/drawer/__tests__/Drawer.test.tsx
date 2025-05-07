@@ -5,13 +5,13 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react-nativ
 import { drawerAnimationDefaultDuration } from '@cbhq/cds-common2/animation/drawer';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
-import { DrawerBaseProps } from '@cbhq/cds-common2/types';
 import { delay } from '@cbhq/cds-common2/utils/delay';
 
 import { Button } from '../../../buttons';
 import { VStack } from '../../../layout/VStack';
 import { Text } from '../../../typography/Text';
 import { DefaultThemeProvider, SAFE_AREA_METRICS } from '../../../utils/testHelpers';
+import type { DrawerBaseProps } from '../Drawer';
 import { Drawer } from '../Drawer';
 
 // We're using the drawers animation time here just to be extra close to the implementation

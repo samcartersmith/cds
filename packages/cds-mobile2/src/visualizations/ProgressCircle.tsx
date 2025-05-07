@@ -3,12 +3,6 @@ import { Animated, View } from 'react-native';
 import { Circle, CircleProps, G, Svg } from 'react-native-svg';
 import { SharedProps } from '@cbhq/cds-common2';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
-import {
-  ProgressCircleBaseProps,
-  ProgressCircleTextBaseProps,
-  ProgressInnerCircleBaseProps,
-} from '@cbhq/cds-common2/types/ProgressCircleBaseProps';
-import { VisualizationContainerDimension } from '@cbhq/cds-common2/types/VisualizationContainerBaseProps';
 import { getCircumference, getRadius } from '@cbhq/cds-common2/utils/circle';
 import { getProgressCircleParams } from '@cbhq/cds-common2/visualizations/getProgressCircleParams';
 import { useProgressSize } from '@cbhq/cds-common2/visualizations/useProgressSize';
@@ -18,8 +12,26 @@ import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout';
 
+import type { ProgressBaseProps } from './ProgressBar';
 import { ProgressTextLabel } from './ProgressTextLabel';
-import { VisualizationContainer } from './VisualizationContainer';
+import {
+  VisualizationContainer,
+  type VisualizationContainerDimension,
+} from './VisualizationContainer';
+
+export type ProgressCircleBaseProps = ProgressBaseProps & {
+  /** Toggle used to hide the inner circle percentage */
+  hideText?: boolean;
+  /** Optional size in px for the visualization. This is useful if the visualization is used in an HStack. If this is omitted the visualization will fill the parent width or height. Since it's a circular visualization it will fill the smaller of the parent width or height. */
+  size?: number;
+};
+
+export type ProgressCircleTextBaseProps = Pick<ProgressCircleBaseProps, 'progress' | 'disabled'>;
+
+export type ProgressInnerCircleBaseProps = Pick<ProgressCircleBaseProps, 'progress'> &
+  Required<Pick<ProgressCircleBaseProps, 'size' | 'weight' | 'color'>> & {
+    visuallyDisabled?: boolean;
+  };
 
 type CircleType = React.ComponentClass<CircleProps & SharedProps>;
 const AnimatedCircle = Animated.createAnimatedComponent(Circle as CircleType);

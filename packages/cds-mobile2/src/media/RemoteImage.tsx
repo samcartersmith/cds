@@ -12,7 +12,8 @@ import {
 } from 'react-native';
 import { ClipPath, Defs, Image as SvgImage, Path, Svg, SvgXml } from 'react-native-svg';
 import { SvgCssUri } from 'react-native-svg/css';
-import { AspectRatio, FixedValue, RemoteImageBaseProps } from '@cbhq/cds-common2';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { AspectRatio, AvatarSize, FixedValue, Shape } from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
 
@@ -20,7 +21,27 @@ type SourceProp = string | ImageProps['source'];
 
 type XmlReturnType = { content: string };
 
-type BaseRemoteImageProps = {
+type BaseRemoteImageProps = Omit<ImageProps, 'style' | 'width' | 'height' | 'source'> & {
+  /** Scale image based on this aspect-ratio */
+  aspectRatio?: AspectRatio;
+  /** Height of RemoteImage. Height takes precedence over size */
+  height?: FixedValue;
+  /**
+   * Shape of RemoteImage
+   * @default square
+   * */
+  shape?: Shape;
+  /** Width of RemoteImage. Width takes precedence over size */
+  width?: FixedValue;
+  /**
+   * Size for a given RemoteImage. If width or height is not defined,
+   * it will set size = m as default
+   *
+   * @default m
+   * */
+  size?: AvatarSize;
+  /** Adds a custom border color */
+  borderColor?: ThemeVars.Color;
   /**
    * @deprecated This prop will be removed in a future version. Use darkModeEnhancementsApplied instead.
    * Fill in transparent background with inverted background color and add border. This solves issue of transparent, stamped out asset icons not being visible on dark backgrounds.
@@ -34,8 +55,7 @@ type BaseRemoteImageProps = {
   fallbackAccessibilityLabel?: AccessibilityProps['accessibilityLabel'];
   fallbackAccessibilityHint?: AccessibilityProps['accessibilityHint'];
   style?: StyleProp<ImageStyle>;
-} & Omit<ImageProps, 'style' | 'width' | 'height' | 'source'> &
-  RemoteImageBaseProps;
+};
 
 type RemoteImagePropsWithSource = {
   source?: SourceProp;
@@ -57,11 +77,13 @@ type RemoteImagePropsWidthAndHeight = {
   resizeMode: ImageResizeMode;
 } & BaseRemoteImageProps;
 
-export type RemoteImageProps =
+export type RemoteImageBaseProps =
   | RemoteImagePropsWithWidth
   | RemoteImagePropsWithHeight
   | RemoteImagePropsWidthAndHeight
   | RemoteImagePropsWithSource;
+
+export type RemoteImageProps = RemoteImageBaseProps;
 
 function getSource(
   source: string | number | ImageURISource,

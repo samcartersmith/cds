@@ -1,11 +1,7 @@
 import { ThemeVars } from '../core/theme';
 
-import { DimensionStyles, DimensionValue } from './DimensionStyles';
-import { ElevationLevels } from './ElevationLevels';
-import { Position } from './Position';
-import { SharedAccessibilityProps } from './SharedAccessibilityProps';
-import { MarginProps, PaddingProps } from './SpacingProps';
-import { Visibility } from './Visibility';
+import type { DimensionValue } from './DimensionStyles';
+import type { Position } from './Position';
 
 export type FlexAxisValue = 'flex-start' | 'flex-end' | 'center';
 export type FlexAlignCommon = FlexAxisValue | 'stretch';
@@ -77,69 +73,4 @@ export type PositionStyles = {
   top?: DimensionValue;
   /** Adjust the z-index positioning layer. */
   zIndex?: number;
-};
-
-export type BorderedStyles = {
-  /** Add a border around all sides of the box. */
-  bordered?: boolean;
-  /** Add a border to the top side of the box. */
-  borderedTop?: boolean;
-  /** Add a border to the bottom side of the box. */
-  borderedBottom?: boolean;
-  /** Add a border to the leading side of the box. */
-  borderedStart?: boolean;
-  /** Add a border to the trailing side of the box. */
-  borderedEnd?: boolean;
-  /** Add a border to the leading and trailing sides of the box. */
-  borderedHorizontal?: boolean;
-  /** Add a border to the top and bottom sides of the box. */
-  borderedVertical?: boolean;
-  /** Leverage one of the borderRadius styles we offer to round the corners of the box. */
-  borderRadius?: ThemeVars.BorderRadius;
-  /** Adds a custom border color from the palette */
-  borderColor?: ThemeVars.Color;
-};
-
-export type BoxA11yProps = Pick<
-  SharedAccessibilityProps,
-  'accessibilityLabel' | 'accessibilityLabelledBy'
-> & {
-  /** @danger This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls */
-  id?: string;
-};
-
-export type BoxBackgroundProps = {
-  /**
-   * Set the background color of the box. Passing `true` will enable the default background,
-   * otherwise a custom palette alias can be passed.
-   */
-  background?: ThemeVars.Color;
-  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-  dangerouslySetBackground?: string;
-};
-
-type VisibilityProps = {
-  visibility?: Visibility;
-};
-
-export type BoxBaseProps = {
-  /** Content to render within the box. */
-  children?: React.ReactNode;
-  /** Direction in which to absolutely pin the box. */
-  pin?: PinningDirection;
-  /** Determines box shadow styles. Parent should have overflow set to visible to ensure styles are not clipped. */
-  elevation?: ElevationLevels;
-} & DimensionStyles &
-  FlexStyles &
-  PaddingProps &
-  MarginProps &
-  PositionStyles &
-  BorderedStyles &
-  BoxA11yProps &
-  BoxBackgroundProps &
-  VisibilityProps;
-
-export type StackBaseProps = {
-  /** Gap to insert between siblings. */
-  gap?: ThemeVars.Space;
 };

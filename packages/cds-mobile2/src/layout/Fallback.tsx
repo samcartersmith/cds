@@ -1,11 +1,11 @@
 // Simplified version of https://github.com/tomzaku/react-native-shimmer-placeholder/blob/master/lib/ShimmerPlaceholder.js
 import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { Animated, DimensionValue, StyleSheet, View, ViewStyle } from 'react-native';
-import { FallbackBaseProps } from '@cbhq/cds-common2';
 import {
   useFallbackShape,
   UseFallbackShapeOptions,
 } from '@cbhq/cds-common2/hooks/useFallbackShape';
+import type { Shape } from '@cbhq/cds-common2/types/Shape';
 
 import { LinearGradient } from '../gradients/LinearGradient';
 import { useTheme } from '../hooks/useTheme';
@@ -13,7 +13,23 @@ import { fallbackShimmer } from '../styles/fallbackShimmer';
 
 import { Box, BoxProps } from './Box';
 
-export type FallbackProps = FallbackBaseProps & Omit<BoxProps, 'borderRadius' | 'height' | 'width'>;
+export type FallbackBaseProps = {
+  height: number | string;
+  /**
+   * @default rectangle
+   */
+  shape?: Shape;
+  width: number | string;
+  /** Disables randomization of rectangle shape width. */
+  disableRandomRectWidth?: boolean;
+  /**
+   * When shape is a rectangle, creates a variant with deterministic width.
+   * Variants map to a predetermined set of width values, which are cycled through repeatedly when the set is exhausted.
+   */
+  rectWidthVariant?: number;
+};
+
+export type FallbackProps = Omit<BoxProps, 'borderRadius' | 'height' | 'width'> & FallbackBaseProps;
 
 export const Fallback = memo(function Fallback({
   height,

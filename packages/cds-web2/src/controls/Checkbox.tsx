@@ -1,12 +1,11 @@
 import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
 import { m as motion } from 'framer-motion';
-import type { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 
-import { Control, type ControlProps } from './Control';
+import { Control, type ControlBaseProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
 const focusRingStyle = css`
@@ -38,7 +37,7 @@ const checkbox = css`
   border-width: var(--borderWidth-100);
 `;
 
-export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps;
+export type CheckboxProps<T extends string> = ControlBaseProps<T>;
 
 const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   { children, indeterminate, ...props }: CheckboxProps<T>,

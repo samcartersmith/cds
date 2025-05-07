@@ -1,10 +1,11 @@
 import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { css, cx } from '@linaria/core';
 import { selectCellSpacingConfig } from '@cbhq/cds-common2/tokens/select';
-import { type SelectOptionBaseProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
-import { Cell } from '../cells/Cell';
+import { Cell, type CellBaseProps } from '../cells/Cell';
 import { CellAccessory } from '../cells/CellAccessory';
+import type { ListCellBaseProps } from '../cells/ListCell';
 import { VStack } from '../layout/VStack';
 import { Pressable, type PressableProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
@@ -88,17 +89,24 @@ const multilineTextStyles = css`
   white-space: normal;
 `;
 
-export type SelectOptionProps = {
-  /** Prevent menu from closing when an option is selected */
-  disableCloseOnOptionChange?: boolean;
-  /**
-   * Necessary to control roving tabindex for accessibility
-   * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
-   * */
-  tabIndex?: number;
-  onClick?: React.MouseEventHandler;
-} & SelectOptionBaseProps &
-  Pick<PressableProps<'a'>, 'href'>;
+export type SelectOptionBaseProps = Omit<CellBaseProps, 'children' | 'selected'> &
+  // href is a valid prop for Cell, but it is not on its BaseProps type
+  Pick<PressableProps<'a'>, 'href'> &
+  Pick<ListCellBaseProps, 'title' | 'description' | 'multiline' | 'compact'> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
+    onClick?: React.MouseEventHandler;
+    /** Prevent menu from closing when an option is selected */
+    disableCloseOnOptionChange?: boolean;
+    /**
+     * Necessary to control roving tabindex for accessibility
+     * https://www.w3.org/TR/wai-aria-practices/#kbd_roving_tabindex
+     * */
+    tabIndex?: number;
+    /** Unique identifier for each option */
+    value: string;
+  };
+
+export type SelectOptionProps = SelectOptionBaseProps;
 
 export const SelectOption = memo(
   ({

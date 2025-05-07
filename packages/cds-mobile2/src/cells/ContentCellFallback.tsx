@@ -1,14 +1,26 @@
 import React, { memo } from 'react';
-import { ContentCellFallbackProps } from '@cbhq/cds-common2';
+import type { FallbackRectWidthProps } from '@cbhq/cds-common2/types';
 import { getRectWidthVariant } from '@cbhq/cds-common2/utils/getRectWidthVariant';
 
 import { useTheme } from '../hooks/useTheme';
 import { Fallback } from '../layout';
 
+import type { CellMediaType } from './CellMedia';
 import { ContentCell } from './ContentCell';
 import { MediaFallback } from './MediaFallback';
 
-export type { ContentCellFallbackProps };
+export type ContentCellFallbackProps = FallbackRectWidthProps & {
+  /** Display description shimmer. */
+  description?: boolean;
+  /** Display media shimmer with a shape according to type. */
+  media?: CellMediaType;
+  /** Display meta shimmer. */
+  meta?: boolean;
+  /** Display subtitle shimmer. */
+  subtitle?: boolean;
+  /** Display title shimmer. */
+  title?: boolean;
+};
 
 export const ContentCellFallback = memo(function ContentCellFallback({
   title,

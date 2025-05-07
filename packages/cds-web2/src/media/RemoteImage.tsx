@@ -8,7 +8,6 @@ import type { AvatarSize } from '@cbhq/cds-common2/types/AvatarSize';
 import type { AspectRatio, Shape } from '@cbhq/cds-common2/types/Shape';
 
 import { Box, type BoxProps } from '../layout/Box';
-import { StyleProps } from '../styles/styleProps';
 
 const baseStyle = css`
   display: block;
@@ -59,7 +58,7 @@ const borderRadiusStyle = {
   `,
 };
 
-type BaseRemoteImageProps = {
+export type RemoteImageBaseProps = Omit<BoxProps<'img'>, 'aspectRatio'> & {
   /** Absolute url to the image that should be shown in the RemoteImage. If no source is provided then a generic fallback image is used. */
   source?: string;
   resizeMode?: keyof typeof resizeStyle;
@@ -76,32 +75,9 @@ type BaseRemoteImageProps = {
    * */
   size?: AvatarSize;
   aspectRatio?: AspectRatio;
-} & Omit<BoxProps<'img'>, 'aspectRatio'>;
+};
 
-type RemoteImagePropsWithWidth = {
-  width: StyleProps['width'];
-  aspectRatio: AspectRatio;
-} & BaseRemoteImageProps;
-
-type RemoteImagePropsWithHeight = {
-  height: StyleProps['height'];
-  aspectRatio: AspectRatio;
-} & BaseRemoteImageProps;
-
-type RemoteImagePropsWidthAndHeight = {
-  width: StyleProps['width'];
-  height: StyleProps['height'];
-} & BaseRemoteImageProps;
-
-type RemoteImagePropsSize = {
-  size: AvatarSize;
-} & BaseRemoteImageProps;
-
-export type RemoteImageProps =
-  | RemoteImagePropsWithWidth
-  | RemoteImagePropsWithHeight
-  | RemoteImagePropsWidthAndHeight
-  | RemoteImagePropsSize;
+export type RemoteImageProps = RemoteImageBaseProps;
 
 export const RemoteImage = memo(
   ({
@@ -118,7 +94,7 @@ export const RemoteImage = memo(
     borderWidth = borderColor ? 200 : undefined,
     style,
     ...props
-  }: BaseRemoteImageProps) => {
+  }: RemoteImageProps) => {
     const styles = useMemo(
       () =>
         ({

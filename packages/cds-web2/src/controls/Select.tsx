@@ -2,7 +2,11 @@ import React, { forwardRef, memo, useCallback, useMemo, useState } from 'react';
 import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { helperTextHeight, inputStackGap } from '@cbhq/cds-common2/tokens/input';
-import type { SelectBaseProps } from '@cbhq/cds-common2/types';
+import type {
+  SharedAccessibilityProps,
+  SharedInputProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { Dropdown } from '../dropdown/Dropdown';
 import { DropdownProps } from '../dropdown/DropdownProps';
@@ -11,15 +15,38 @@ import { HStack } from '../layout/HStack';
 import { type PopoverContentPositionConfig } from '../overlays/popover/PopoverProps';
 
 import { TextInputFocusVariantContext } from './context';
+import type { InputStackBaseProps } from './InputStack';
 import { SelectTrigger } from './SelectTrigger';
 import { useRefocusTrigger } from './useRefocusTrigger';
 
-export type SelectProps = {
-  children: React.ReactNode;
-  /** Event handler for when the Select Input trigger is pressed */
-  onClick?: () => void;
-} & Omit<SelectBaseProps, 'onPress'> &
-  Pick<DropdownProps, 'disablePortal'>;
+export type SelectBaseProps = SharedProps &
+  Omit<SharedInputProps, 'label'> &
+  Pick<InputStackBaseProps, 'disabled' | 'focused' | 'startNode'> &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > &
+  Pick<DropdownProps, 'disablePortal' | 'width'> & {
+    children?: React.ReactNode;
+    /** Event handler for when the Select Input trigger is pressed */
+    onClick?: () => void;
+    /** Pass a value that will prepopulate the select input. This will replace the placeholder text. */
+    value?: string;
+    /** Optional label for selected value when using a value/label object model */
+    valueLabel?: string;
+    /** Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input */
+    label?: string;
+    /** Callback that is fired whenever a select option is selected */
+    onChange?: ((newValue: string) => void) | React.Dispatch<React.SetStateAction<string>>;
+    /**
+     * Determines the sentiment of the input.
+     * Sets styles on the input border and helper text.
+     * @default foregroundMuted
+     */
+    variant?: Exclude<InputStackBaseProps['variant'], 'secondary'>;
+  };
+
+export type SelectProps = SelectBaseProps;
 
 export const Select = memo(
   forwardRef<HTMLButtonElement, SelectProps>(function Select(

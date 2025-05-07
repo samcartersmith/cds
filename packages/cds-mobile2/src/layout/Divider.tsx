@@ -1,10 +1,23 @@
 import React, { memo, useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { DividerBaseProps } from '@cbhq/cds-common2';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 import { useTheme } from '../hooks/useTheme';
 
 import { Box, BoxProps } from './Box';
+
+export type DividerBaseProps = {
+  /**
+   * Color of the divider line.
+   * @default line
+   */
+  color?: ThemeVars.Color;
+  /**
+   * The direction to render the divider line.
+   * @default horizontal
+   */
+  direction?: 'horizontal' | 'vertical';
+};
 
 export type DividerProps = DividerBaseProps & BoxProps;
 

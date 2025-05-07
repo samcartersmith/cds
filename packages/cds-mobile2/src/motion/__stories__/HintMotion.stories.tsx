@@ -1,18 +1,13 @@
 import React, { useCallback, useMemo, useRef } from 'react';
-import {
-  ColorSurgeRefBaseProps,
-  MotionTransition,
-  PulseRefBaseProps,
-  ShakeRefBaseProps,
-} from '@cbhq/cds-common2/types';
+import type { MotionTransition } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
-import { ColorSurge as ColorSurgeComponent } from '../ColorSurge';
-import { Pulse as PulseComponent } from '../Pulse';
-import { Shake as ShakeComponent } from '../Shake';
+import { ColorSurge as ColorSurgeComponent, type ColorSurgeRefBaseProps } from '../ColorSurge';
+import { Pulse as PulseComponent, type PulseRefBaseProps } from '../Pulse';
+import { Shake as ShakeComponent, type ShakeRefBaseProps } from '../Shake';
 
 const ColorSurge = () => {
   const ref = useRef<ColorSurgeRefBaseProps>(null);

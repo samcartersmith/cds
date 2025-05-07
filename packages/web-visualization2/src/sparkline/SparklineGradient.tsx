@@ -1,12 +1,12 @@
 import React, { forwardRef, memo, useId, useMemo, useRef } from 'react';
 import { getAccessibleForegroundGradient } from '@cbhq/cds-common2/color/getAccessibleForegroundGradient';
-import { SparklineBaseProps } from '@cbhq/cds-common2/types';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
-import { generateSparklineAreaWithId } from '@cbhq/cds-common2/visualizations/generateSparklineAreaWithId';
 import { getSparklineTransform } from '@cbhq/cds-common2/visualizations/getSparklineTransform';
 import { generateRandomId } from '@cbhq/cds-utils';
 import { useTheme } from '@cbhq/cds-web2/hooks/useTheme';
 
+import { generateSparklineAreaWithId } from './generateSparklineWithId';
+import type { SparklineBaseProps } from './Sparkline';
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 import { SparklinePath, SparklinePathRef } from './SparklinePath';
 

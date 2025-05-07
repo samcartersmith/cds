@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { SelectBaseProps } from '@cbhq/cds-common2';
+
+import type { SelectBaseProps } from './Select';
 
 export const useSelect = ({
   value,

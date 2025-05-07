@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import type { DrawerBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Fallback, Spacer, VStack } from '../../layout';
+import type { DrawerBaseProps } from '../drawer/Drawer';
 import { Drawer } from '../drawer/Drawer';
 
 import { navOptions, SideDrawerContent } from './Drawers';

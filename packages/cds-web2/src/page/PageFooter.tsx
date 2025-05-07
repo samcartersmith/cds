@@ -1,10 +1,22 @@
 import React, { forwardRef, memo } from 'react';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { pageFooterHeight } from '@cbhq/cds-common2/tokens/page';
-import type { PageFooterBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
+import type { PositionStyles, SharedProps } from '@cbhq/cds-common2/types';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import type { ResponsiveProps, StaticStyleProps } from '../styles/styleProps';
+
+export type PageFooterBaseProps = SharedProps &
+  PositionStyles & {
+    /**
+     * Required. Accepts a ReactNode. Intended for content on the right side of the footer, such as action buttons or icons. */
+    action: React.ReactNode;
+    /**
+     * Set the background color of the box.
+     */
+    background?: ThemeVars.Color;
+  };
 
 export const pageFooterPaddingX: ResponsiveProps<StaticStyleProps>['paddingX'] = {
   phone: 3,

@@ -1,23 +1,13 @@
-import { I18nManager, ViewStyle } from 'react-native';
-import { ButtonBaseProps } from '@cbhq/cds-common2';
-import { memoize } from '@cbhq/cds-common2/utils/memoize';
+import { I18nManager, type ViewStyle } from 'react-native';
+
+import { ButtonBaseProps } from '../buttons/Button';
 
 type GetFlushStylesProps = {
   flush: ButtonBaseProps['flush'];
   spacing: ViewStyle;
 };
 
-function getCacheKey({
-  flush,
-  spacing: { paddingLeft = 0, paddingRight = 0 },
-}: GetFlushStylesProps) {
-  return `${flush}-${paddingLeft}-${paddingRight}`;
-}
-
-export const getFlushStyles = memoize(function getFlushStyles({
-  flush,
-  spacing,
-}: GetFlushStylesProps): ViewStyle {
+export const getFlushStyles = ({ flush, spacing }: GetFlushStylesProps): ViewStyle => {
   let offsetDirection = flush === 'start' ? 'left' : 'right';
   // We need to invert the setup for RTL
   if (I18nManager.isRTL) {
@@ -30,5 +20,4 @@ export const getFlushStyles = memoize(function getFlushStyles({
   };
 
   return flush ? style : {};
-},
-getCacheKey);
+};

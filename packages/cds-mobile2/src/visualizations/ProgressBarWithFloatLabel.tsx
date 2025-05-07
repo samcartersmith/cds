@@ -2,17 +2,20 @@ import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, I18nManager, LayoutChangeEvent } from 'react-native';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
 import { usePreviousValues } from '@cbhq/cds-common2/hooks/usePreviousValues';
-import {
-  ProgressBarFloatLabelProps,
-  ProgressBarWithFloatLabelProps,
-} from '@cbhq/cds-common2/types/ProgressBarBaseProps';
-import { getProgressBarLabelParts } from '@cbhq/cds-common2/visualizations/getProgressBarLabelParts';
+import type { Placement } from '@cbhq/cds-common2/types';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { useLayout } from '../hooks/useLayout';
 import { Box, VStack } from '../layout';
 
+import { getProgressBarLabelParts, type ProgressBarLabel } from './getProgressBarLabelParts';
+import { type ProgressBaseProps } from './ProgressBar';
 import { ProgressTextLabel } from './ProgressTextLabel';
+
+export type ProgressBarFloatLabelProps = Pick<
+  ProgressBarWithFloatLabelProps,
+  'label' | 'progress' | 'disabled' | 'labelPlacement'
+>;
 
 const ProgressBarFloatLabel = memo(
   ({ label, disabled, progress, labelPlacement }: ProgressBarFloatLabelProps) => {
@@ -88,6 +91,19 @@ const ProgressBarFloatLabel = memo(
     );
   },
 );
+
+export type ProgressBarWithFloatLabelProps = Pick<
+  ProgressBaseProps,
+  'progress' | 'disabled' | 'testID'
+> & {
+  /** Label that is floated at the end of the filled in bar. If a number is used then it will format it as a percentage. */
+  label: ProgressBarLabel;
+  /**
+   * Position of label relative to the bar
+   * @default above
+   * */
+  labelPlacement?: Extract<Placement, 'above' | 'below'>;
+};
 
 export const ProgressBarWithFloatLabel: React.FC<
   React.PropsWithChildren<ProgressBarWithFloatLabelProps>

@@ -1,18 +1,64 @@
 import React, { memo, useMemo } from 'react';
-import { getCardBodySpacingProps } from '@cbhq/cds-common2/cards/getCardBodySpacingProps';
 import { defaultMediaSize } from '@cbhq/cds-common2/tokens/card';
-import type { CardBodyBaseProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
+import { PictogramName, SpotSquareName } from '@cbhq/cds-illustrations';
 
 import { Button } from '../buttons/Button';
+import type { BoxBaseProps, BoxDefaultElement, BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
 import { CardMedia } from './CardMedia';
 
-export type CardBodyProps = CardBodyBaseProps & {
-  onActionPress?: React.MouseEventHandler;
-};
+export type CardMediaPlacement = 'start' | 'above' | 'end';
+
+export type CardBodyBaseProps = Pick<SharedAccessibilityProps, 'id'> &
+  BoxBaseProps & {
+    onActionPress?: React.MouseEventHandler;
+    /** Text to be displayed in TextHeadline when it's a string, unless you pass a ReactNode */
+    title?: React.ReactNode;
+    /** Text to be displayed in TextBody when it's a string, unless you pass a ReactNode */
+    description?: React.ReactNode;
+    /**
+     * Maximum number of lines shown. Text that exceeds will be truncated.
+     * Only applies to description
+     * @default 3
+     */
+    numberOfLines?: number;
+    /** Enables compact spacing around CardBody content */
+    compact?: boolean;
+    children?: React.ReactNode;
+    /** Above places media above text content, start or end places media to the side of text content
+     * @default end
+     */
+    mediaPlacement?: CardMediaPlacement;
+    /** The name of the SpotSquare Illustration to use in CardMedia. */
+    spotSquare?: SpotSquareName;
+    /** The name of the Pictogram Illustration to use in CardMedia. */
+    pictogram?: PictogramName;
+    /** The image url to use in the CardMedia. Will not be used if illustration is present. */
+    image?: string;
+    /**
+     * Remote Image or other node with media content.
+     * If illustration prop is present this will default to <CardMedia type="illustration" name={illustration} variant={variant} />.
+     * If image prop is present this will default to <CardMedia type="image" src={image} variant={variant} />.
+     */
+    media?: React.ReactNode;
+    /**
+     * Call to action to display underneath title and description.
+     * When present this will set action prop to be CardBodyAction with some defaults.
+     */
+    actionLabel?: string;
+    /**
+     * Call to action to display underneath title and description.
+     * When actionLabel and onActionPress are present this will assign action to <CardBodyAction onPress={onActionPress} endIcon="forwardArrow">{actionLabel}</CardBodyAction>.
+     * Internally CardBodyAction is a normal CDS Button, but with some default props designed specifically for this layout.
+     */
+    action?: React.ReactNode;
+  };
+
+export type CardBodyProps = CardBodyBaseProps & Omit<BoxProps<BoxDefaultElement>, 'title'>;
 
 /**
  * Provides an opinionated layout for the typical content of a Card: a title, description, media, and action
@@ -42,16 +88,10 @@ export const CardBody = memo(function CardBody({
   compact,
   ...props
 }: CardBodyProps) {
-  const spacingProps = getCardBodySpacingProps({
-    padding,
-    paddingX,
-    paddingY,
-    paddingTop,
-    paddingStart,
-    paddingBottom,
-    paddingEnd,
-    compact,
-  });
+  const paddingBottomValue = paddingBottom ?? paddingY ?? padding ?? (compact ? 1 : 3);
+  const paddingTopValue = paddingTop ?? paddingY ?? padding ?? (compact ? 2 : 3);
+  const paddingStartValue = paddingStart ?? paddingX ?? padding ?? (compact ? 2 : 3);
+  const paddingEndValue = paddingEnd ?? paddingX ?? padding ?? (compact ? 2 : 3);
 
   let mediaContent: React.ReactNode = mediaProp;
 
@@ -97,43 +137,31 @@ export const CardBody = memo(function CardBody({
     return (
       <VStack
         gap={2}
-        paddingBottom={spacingProps.paddingBottom}
-        paddingTop={spacingProps.paddingTop}
+        paddingBottom={paddingBottomValue}
+        paddingTop={paddingTopValue}
         testID={testID}
         {...props}
       >
         {mediaContent}
-        <VStack
-          gap={1}
-          paddingEnd={spacingProps.paddingEnd}
-          paddingStart={spacingProps.paddingStart}
-        >
-          {typeof title === 'string' ? (
-            <Text
-              as="h3"
-              font="headline"
-              numberOfLines={numberOfLines}
-              testID={`${testID}-title`}
-              transform="none"
-            >
-              {title}
-            </Text>
-          ) : (
-            title
-          )}
-          {typeof description === 'string' ? (
-            <Text
-              color="fgMuted"
-              font="label2"
-              numberOfLines={numberOfLines}
-              testID={`${testID}-description`}
-              transform="none"
-            >
-              {description}
-            </Text>
-          ) : (
-            description
-          )}
+        <VStack gap={1} paddingEnd={paddingEndValue} paddingStart={paddingStartValue}>
+          <Text
+            as="h3"
+            font="headline"
+            numberOfLines={numberOfLines}
+            testID={`${testID}-title`}
+            transform="none"
+          >
+            {title}
+          </Text>
+          <Text
+            color="fgMuted"
+            font="label2"
+            numberOfLines={numberOfLines}
+            testID={`${testID}-description`}
+            transform="none"
+          >
+            {description}
+          </Text>
           {action}
         </VStack>
       </VStack>
@@ -147,7 +175,10 @@ export const CardBody = memo(function CardBody({
       gap={1}
       justifyContent="space-between"
       minHeight={minHeight}
-      {...spacingProps}
+      paddingBottom={paddingBottomValue}
+      paddingEnd={paddingEndValue}
+      paddingStart={paddingStartValue}
+      paddingTop={paddingTopValue}
       testID={testID}
       {...props}
     >

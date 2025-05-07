@@ -1,6 +1,4 @@
-import { TabProps } from '../../types';
-
-export const sampleTabs: TabProps[] = [
+export const sampleTabs = [
   {
     id: 'first_primary_tab',
     label: 'Tab one',
@@ -53,7 +51,7 @@ export const sampleTabs: TabProps[] = [
   },
 ];
 
-export const longTextTabs: TabProps[] = [
+export const longTextTabs = [
   {
     id: 'first_primary_tab',
     label: 'Tab one will get truncated',

@@ -1,6 +1,5 @@
 import React, { forwardRef, memo } from 'react';
 import { css } from '@linaria/core';
-import type { ContentCellBaseProps as SharedContentCellBaseProps } from '@cbhq/cds-common2/types';
 import { isProduction } from '@cbhq/cds-utils';
 
 import type { Polymorphic } from '../core/polymorphism';
@@ -10,7 +9,7 @@ import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
 import { Cell, type CellBaseProps } from './Cell';
-import { CellAccessory } from './CellAccessory';
+import { CellAccessory, type CellAccessoryType } from './CellAccessory';
 
 const overflowStyle = css`
   overflow: auto;
@@ -32,7 +31,20 @@ export type ContentCellDefaultElement = typeof contentCellDefaultElement;
 
 export type ContentCellBaseProps = Polymorphic.ExtendableProps<
   Omit<CellBaseProps, 'children'>,
-  SharedContentCellBaseProps
+  {
+    /** Accessory to display at the end of the cell. */
+    accessory?: CellAccessoryType;
+    /** Description of content. Content will wrap accordingly. */
+    description?: React.ReactNode;
+    /** Media (icon, asset, image, etc) to display at the start of the cell. */
+    media?: React.ReactElement;
+    /** Meta information to display at the end of the title. */
+    meta?: React.ReactNode;
+    /** Subtitle of content. Max 1 line, otherwise will truncate. */
+    subtitle?: React.ReactNode;
+    /** Title of content. Max 1 line, otherwise will truncate. */
+    title?: React.ReactNode;
+  }
 >;
 
 export type ContentCellProps<AsComponent extends React.ElementType> = Polymorphic.Props<
@@ -58,7 +70,6 @@ export const ContentCell: ContentCellComponent = memo(
         meta,
         selected,
         subtitle,
-        compact,
         detailWidth,
         priority,
         innerSpacing,
@@ -84,7 +95,6 @@ export const ContentCell: ContentCellComponent = memo(
           accessory={accessoryType && <CellAccessory paddingTop={0.5} type={accessoryType} />}
           alignItems={alignItems}
           as={Component}
-          compact={compact}
           detailWidth={detailWidth}
           disabled={disabled}
           innerSpacing={innerSpacing}

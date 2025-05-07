@@ -1,17 +1,16 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import type {
-  ChartDataPoint,
-  ChartScrubParams,
-  SparklineInteractiveHeaderRef,
-  SparklineInteractiveSubHead,
-} from '@cbhq/cds-common2';
+import type { ChartDataPoint, ChartScrubParams } from '@cbhq/cds-common2';
 import { sparklineInteractiveData } from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
 import { Icon } from '@cbhq/cds-web2/icons';
 import { HStack } from '@cbhq/cds-web2/layout';
 import { TextTitle3 } from '@cbhq/cds-web2/typography';
 
 import { SparklineInteractive } from '../../sparkline-interactive/SparklineInteractive';
-import { SparklineInteractiveHeader } from '../SparklineInteractiveHeader';
+import {
+  SparklineInteractiveHeader,
+  type SparklineInteractiveHeaderRef,
+  type SparklineInteractiveSubHead,
+} from '../SparklineInteractiveHeader';
 
 export default {
   component: SparklineInteractiveHeader,

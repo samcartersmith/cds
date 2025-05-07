@@ -1,10 +1,13 @@
 import React from 'react';
 import { Animated } from 'react-native';
 import { render } from '@testing-library/react-native';
-import { SparklineInteractiveHoverDateRefProps } from '@cbhq/cds-common2';
 import { DefaultThemeProvider } from '@cbhq/cds-mobile2/utils/testHelpers';
 
-import { setTransform, SparklineInteractiveHoverDate } from '../SparklineInteractiveHoverDate';
+import {
+  setTransform,
+  SparklineInteractiveHoverDate,
+  type SparklineInteractiveHoverDateRefProps,
+} from '../SparklineInteractiveHoverDate';
 
 describe('SparklineInteractiveHoverDate.test', () => {
   it('renders', () => {

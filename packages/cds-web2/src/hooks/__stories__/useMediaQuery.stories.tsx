@@ -15,9 +15,9 @@ const Example = () => {
       background="bgAlternate"
       borderColor="bgLine"
       borderRadius={200}
-      padding={3}
-      gap={2}
       fontSize="body"
+      gap={2}
+      padding={3}
     >
       <VStack as="pre" color="fg">
         {query1}

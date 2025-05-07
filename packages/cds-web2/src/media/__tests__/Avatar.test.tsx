@@ -76,9 +76,7 @@ describe('Avatar', () => {
     const fallbackBox = screen.getByTestId(`${testID}-fallback`);
     expect(fallbackBox).toBeTruthy();
     expect(fallbackBox.textContent).toBe('T');
-    expect(fallbackBox).toHaveStyle({
-      background: 'currentColor',
-    });
+    expect(fallbackBox.className).toContain('currentColor');
   });
 
   it('when passed an empty string for src it shows a fallback image', () => {
@@ -105,9 +103,7 @@ describe('Avatar', () => {
     const fallbackBox = screen.getByTestId(`${testID}-fallback`);
     expect(fallbackBox).toBeTruthy();
     expect(fallbackBox.textContent).toBe('T');
-    expect(fallbackBox).toHaveStyle({
-      background: 'currentColor',
-    });
+    expect(fallbackBox.className).toContain('currentColor');
   });
 
   it('capitalizes first letter of avatar name', () => {

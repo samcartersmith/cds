@@ -1,12 +1,14 @@
-import React from 'react';
-import type { CellSpacing } from '@cbhq/cds-common2';
+import React, { useCallback, useMemo, useState } from 'react';
 import { announcementCards } from '@cbhq/cds-common2/internal/data/announcementCards';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
+import { avatars } from '@cbhq/cds-common2/internal/data/avatars';
 import { dataCards } from '@cbhq/cds-common2/internal/data/dataCards';
 import { featureEntryCards } from '@cbhq/cds-common2/internal/data/featureEntryCards';
-import { feedCards } from '@cbhq/cds-common2/internal/data/feedCards';
+import { feedImages } from '@cbhq/cds-common2/internal/data/feedImages';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 
 import { Button } from '../../buttons/Button';
+import type { CellSpacing } from '../../cells/Cell';
 import { CellMedia } from '../../cells/CellMedia';
 import { ListCell } from '../../cells/ListCell';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -19,8 +21,35 @@ import { CardGroup } from '../CardGroup';
 import { DataCard } from '../DataCard';
 import { FeatureEntryCard } from '../FeatureEntryCard';
 import { FeedCard } from '../FeedCard';
+import type { LikeButtonBaseProps } from '../LikeButton';
 
 const onPressConsole = () => console.log('pressed');
+
+const likeCounter = ({ count: countProp = 0, liked: likedProp }: LikeButtonBaseProps) => {
+  return function useLikeButtonProps() {
+    const [count, setCount] = useState(countProp);
+    const [liked, setLiked] = useState(likedProp);
+    const handleOnPress = useCallback(() => {
+      if (liked) {
+        setCount((prev) => prev - 1);
+        setLiked(false);
+      } else {
+        setCount((prev) => prev + 1);
+        setLiked(true);
+      }
+    }, [liked]);
+
+    return useMemo(
+      () => ({
+        liked,
+        count,
+        onPress: handleOnPress,
+        accessibilityLabel: `${count} likes, ${liked ? 'unlike' : 'like'}`,
+      }),
+      [liked, count, handleOnPress],
+    );
+  };
+};
 
 const sharedWrapperProps = {
   position: 'relative',
@@ -38,6 +67,49 @@ const pinnedSharedWrapperProps = {
 const innerSpacingConfig: CellSpacing = {
   paddingX: 1,
 };
+
+const defaultProps = {
+  avatar: avatars[0],
+  author: 'Author Name',
+  metadata: 'News • Dec 18',
+  title: 'Title',
+  description: loremIpsum,
+  image: feedImages[0],
+  headerAction: {
+    name: 'more',
+    onPress: onPressConsole,
+  },
+  like: likeCounter({
+    liked: false,
+    count: 10,
+  }),
+  share: {},
+  cta: {
+    children: 'View ETH',
+  },
+} as const;
+
+const feedCards = [
+  {
+    ...defaultProps,
+    key: 'card1',
+    title: 'Russia Values Local Crypto at $200 Billion as Rules Near',
+  } as const,
+  {
+    ...defaultProps,
+    key: 'card2',
+    avatar: avatars[1],
+    image: feedImages[1],
+    title: 'Reddit co-founder raises $500 million fund for crypto startups: report',
+    description:
+      '776 Management, the VC firm owned by Reddit co-founder Alexis Ohanian, has raised $500 million for two new funds primarily focused on...',
+    like: likeCounter({
+      liked: true,
+      count: 3,
+    }),
+    comment: {},
+  } as const,
+];
 
 const ListCellCard = () => (
   <React.Fragment>

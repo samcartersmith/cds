@@ -1,13 +1,14 @@
 import React from 'react';
 import { css, cx } from '@linaria/core';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
+import type { SharedProps, ValidateProps } from '@cbhq/cds-common2/types';
 
 import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
-export type ContainedAssetCardBaseProps = {
+export type ContainedAssetCardBaseProps = SharedProps & {
   header: React.ReactNode;
   title: React.ReactNode;
   subtitle?: React.ReactNode;
@@ -94,7 +95,10 @@ export const ContainedAssetCard = ({
       onClick={onClick}
       overflow={overflow}
       testID={testID}
-      {...props}
+      {...(props satisfies ValidateProps<
+        typeof props,
+        Omit<ContainedAssetCardProps, keyof BoxProps<BoxDefaultElement>>
+      >)}
     >
       <VStack
         alignContent="center"

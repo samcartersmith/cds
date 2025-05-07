@@ -1,11 +1,13 @@
 import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
-import { ContentCardBaseProps } from '@cbhq/cds-common2';
 import { contentCardMaxWidth, contentCardMinWidth } from '@cbhq/cds-common2/tokens/card';
+import { ValidateProps } from '@cbhq/cds-common2/types';
 
-import { VStack, VStackProps } from '../../layout';
+import { VStack, type VStackProps } from '../../layout';
 
-export type ContentCardProps = ContentCardBaseProps & VStackProps;
+export type ContentCardBaseProps = VStackProps;
+
+export type ContentCardProps = ContentCardBaseProps;
 
 export const ContentCard = memo(
   forwardRef(function ContentCard(
@@ -29,7 +31,10 @@ export const ContentCard = memo(
         paddingX={paddingX}
         paddingY={paddingY}
         testID={testID}
-        {...props}
+        {...(props satisfies ValidateProps<
+          typeof props,
+          Omit<ContentCardProps, keyof VStackProps>
+        >)}
       >
         {children}
       </VStack>

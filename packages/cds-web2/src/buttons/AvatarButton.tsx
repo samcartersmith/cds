@@ -1,22 +1,24 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import type { ButtonBaseProps } from '@cbhq/cds-common2';
 import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
-import type { AvatarBaseProps } from '@cbhq/cds-common2/types/AvatarBaseProps';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { Avatar, type AvatarProps } from '../media';
+import { Avatar, type AvatarBaseProps } from '../media';
 import { Pressable, type PressableBaseProps } from '../system';
+
+import type { ButtonBaseProps } from './Button';
 
 export const avatarButtonDefaultElement = 'button';
 
 export type AvatarButtonDefaultElement = typeof avatarButtonDefaultElement;
 
 export type AvatarButtonBaseProps = Polymorphic.ExtendableProps<
-  Omit<PressableBaseProps, 'background' | 'children'>,
+  Omit<PressableBaseProps, 'children'>,
   Pick<ButtonBaseProps, 'compact'> &
-    Pick<AvatarBaseProps, 'alt' | 'src' | 'colorScheme' | 'shape' | 'borderColor' | 'name'> &
-    Pick<AvatarProps, 'selected'>
+    Pick<
+      AvatarBaseProps,
+      'alt' | 'src' | 'colorScheme' | 'shape' | 'borderColor' | 'name' | 'selected'
+    >
 >;
 
 export type AvatarButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<

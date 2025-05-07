@@ -1,9 +1,16 @@
 import React, { memo } from 'react';
 import { css, cx } from '@linaria/core';
-import type { DotSymbolBaseProps } from '@cbhq/cds-common2/types/DotSymbolBaseProps';
+import type {
+  DotOverlap,
+  DotSize,
+  IconName,
+  PinPlacement,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { Icon, type IconProps } from '../icons/Icon';
-import { Box } from '../layout';
+import { Box, type BoxBaseProps } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 import { handlePreventPropagation } from '../utils/eventHandlers';
 
@@ -29,17 +36,37 @@ const baseStyle = css`
   position: relative;
 `;
 
-export type DotSymbolProps = DotSymbolBaseProps & {
-  /** a string path to image source */
-  source?: string;
-  color?: IconProps['color'];
-  style?: React.CSSProperties;
-  className?: string;
-  iconStyle?: React.CSSProperties;
-  iconClassName?: string;
-  imageStyle?: React.CSSProperties;
-  imageClassName?: string;
-};
+export type DotSymbolBaseProps = SharedProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > & {
+    /** Add an icon to the dot. IconName can be any CDS icon name. */
+    iconName?: IconName;
+    /** Add an arbitrary ReactNode to the dot. */
+    symbol?: React.ReactNode;
+    background?: BoxBaseProps['background'];
+    borderColor?: BoxBaseProps['borderColor'];
+    /** Position of dot relative to its parent */
+    pin?: PinPlacement;
+    /** Children of where the dot will anchor to */
+    children?: React.ReactNode;
+    /** Size of dot */
+    size?: DotSize;
+    /** Indicates what shape Dot is overlapping */
+    overlap?: DotOverlap;
+    /** a string path to image source */
+    source?: string;
+    color?: IconProps['color'];
+    style?: React.CSSProperties;
+    className?: string;
+    iconStyle?: React.CSSProperties;
+    iconClassName?: string;
+    imageStyle?: React.CSSProperties;
+    imageClassName?: string;
+  };
+
+export type DotSymbolProps = DotSymbolBaseProps;
 
 const aspectRatio: [number, number] = [1, 1];
 

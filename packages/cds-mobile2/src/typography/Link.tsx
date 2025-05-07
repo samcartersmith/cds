@@ -1,35 +1,47 @@
 import React, { memo, useCallback } from 'react';
 import { GestureResponderEvent } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
-import { LinkBaseProps } from '@cbhq/cds-common2/types/LinkBaseProps';
 
 import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
+import { PressableBaseProps } from '../system/Pressable';
 
-import { Text, type TextProps } from './Text';
+import { Text } from './Text';
 
-export type LinkProps = {
-  /** Callback to fire when pressed */
-  onPress?: (event: GestureResponderEvent) => void;
-  /**
-   * Toggles whether the link should be opened outside or within app
-   * @default false
-   * */
-  forceOpenOutsideApp?: boolean;
-  /**
-   * Toggles whether we allow users to go back to app
-   * when they are in an external browser
-   * @default false
-   */
-  preventRedirectionIntoApp?: boolean;
-  /**
-   * Toggles readerMode flag for web browser.
-   * Note: readerMode is only available on ios
-   * @default false
-   */
-  readerMode?: boolean;
-} & LinkBaseProps &
-  SharedProps &
-  Pick<TextProps, 'font'>;
+// TO DO: This component should render a Pressable instead of Text!
+export type LinkBaseProps = PressableBaseProps &
+  SharedProps & {
+    /** URL that this link goes to when pressed. */
+    to?: string;
+    /** Use CoinbaseMono font */
+    mono?: boolean;
+    /**
+     * Set text decoration to underline.
+     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) | [React Native Docs](https://reactnative.dev/docs/text-style-props#textdecorationline)
+     * @default false (unless nested inside a paragraph tag)
+     */
+    underline?: boolean;
+    /** Callback to fire when pressed */
+    onPress?: (event: GestureResponderEvent) => void;
+    /**
+     * Toggles whether the link should be opened outside or within app
+     * @default false
+     * */
+    forceOpenOutsideApp?: boolean;
+    /**
+     * Toggles whether we allow users to go back to app
+     * when they are in an external browser
+     * @default false
+     */
+    preventRedirectionIntoApp?: boolean;
+    /**
+     * Toggles readerMode flag for web browser.
+     * Note: readerMode is only available on ios
+     * @default false
+     */
+    readerMode?: boolean;
+  };
+
+export type LinkProps = LinkBaseProps;
 
 export const Link = memo(
   ({

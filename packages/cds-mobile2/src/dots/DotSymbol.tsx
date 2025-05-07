@@ -6,24 +6,52 @@ import {
   View,
   type ViewStyle,
 } from 'react-native';
-import { DotSymbolBaseProps } from '@cbhq/cds-common2';
+import type {
+  DotOverlap,
+  DotSize,
+  IconName,
+  PinPlacement,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
 import { useTheme } from '../hooks/useTheme';
 import { Icon, type IconProps } from '../icons/Icon';
-import { Box } from '../layout/Box';
+import { Box, type BoxBaseProps } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
 import { getTransform } from './dotStyles';
 import { useDotsLayout } from './useDotsLayout';
 
-export type DotSymbolProps = DotSymbolBaseProps & {
-  source?: ImageSourcePropType | string;
-  color?: IconProps['color'];
-  style?: StyleProp<ViewStyle>;
-  iconStyle?: StyleProp<ViewStyle>;
-  imageStyle?: StyleProp<ImageStyle>;
-};
+export type DotSymbolBaseProps = SharedProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > & {
+    /** Add an icon to the dot. IconName can be any CDS icon name. */
+    iconName?: IconName;
+    /** The color of the Icon rendered */
+    color?: IconProps['color'];
+    /** Add an arbitrary ReactNode to the dot. */
+    symbol?: React.ReactNode;
+    background?: BoxBaseProps['background'];
+    borderColor?: BoxBaseProps['borderColor'];
+    /** Position of dot relative to its parent */
+    pin?: PinPlacement;
+    /** Children of where the dot will anchor to */
+    children?: React.ReactNode;
+    /** Size of dot */
+    size?: DotSize;
+    /** Indicates what shape Dot is overlapping */
+    overlap?: DotOverlap;
+    source?: ImageSourcePropType | string;
+    style?: StyleProp<ViewStyle>;
+    iconStyle?: StyleProp<ViewStyle>;
+    imageStyle?: StyleProp<ImageStyle>;
+  };
+
+export type DotSymbolProps = DotSymbolBaseProps;
 
 export const DotSymbol = memo(
   ({

@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 import { css, cx } from '@linaria/core';
 import type { SharedProps } from '@cbhq/cds-common2/types';
-import type { CheckboxGroupBaseProps } from '@cbhq/cds-common2/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import type { FilteredHTMLAttributes } from '../types';
@@ -22,14 +21,24 @@ const checkboxStyles = css`
   border-width: 0;
 `;
 
-export type CheckboxGroupProps<T extends string> = {
-  className?: string;
-  /** Handle change event when pressing on a checkbox option. */
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  style?: React.CSSProperties;
-} & FilteredHTMLAttributes<FieldsetHTMLAttributes<HTMLFieldSetElement>, 'onChange'> &
-  CheckboxGroupBaseProps<T> &
-  SharedProps;
+export type CheckboxGroupBaseProps<T extends string | number> = FilteredHTMLAttributes<
+  FieldsetHTMLAttributes<HTMLFieldSetElement>,
+  'onChange'
+> &
+  SharedProps & {
+    /** Checkbox elements that are part of the checkbox group. */
+    children: React.ReactElement[];
+    /** Set a label summary for the group of checkboxes. */
+    label?: React.ReactNode;
+    /** Checkbox options that are checked. */
+    selectedValues: Set<T>;
+    className?: string;
+    /** Handle change event when pressing on a checkbox option. */
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    style?: React.CSSProperties;
+  };
+
+export type CheckboxGroupProps<T extends string> = CheckboxGroupBaseProps<T>;
 
 // Follows behavior describe in https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html
 const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends string>(

@@ -1,8 +1,12 @@
 import React from 'react';
 import { Circle, G, Pattern, Rect } from 'react-native-svg';
-import { SparklineAreaPatternBaseProps } from '@cbhq/cds-common2';
 import { useSparklineAreaOpacity } from '@cbhq/cds-common2/visualizations/useSparklineAreaOpacity';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
+
+export type SparklineAreaPatternBaseProps = {
+  color: string;
+  id: string;
+};
 
 export const SparklineAreaPattern = ({ color, id }: SparklineAreaPatternBaseProps) => {
   const { activeColorScheme } = useTheme();

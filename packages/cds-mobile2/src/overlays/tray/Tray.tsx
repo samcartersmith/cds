@@ -12,15 +12,26 @@ import React, {
 import { LayoutChangeEvent, useWindowDimensions } from 'react-native';
 import { MAX_OVER_DRAG } from '@cbhq/cds-common2/animation/drawer';
 import { verticalDrawerPercentageOfView as defaultVerticalDrawerPercentageOfView } from '@cbhq/cds-common2/tokens/drawer';
-import { DrawerRefBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
 
 import { Box, HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
-import { Drawer } from '../drawer/Drawer';
+import { Drawer, type DrawerBaseProps, type DrawerRefBaseProps } from '../drawer/Drawer';
 
-type RenderTrayProps = {
-  handleClose: () => void;
+export type TrayRenderChildren = React.FC<{ handleClose: () => void }>;
+
+export type TrayBaseProps = Omit<DrawerBaseProps, 'pin' | 'children'> & {
+  children: React.ReactNode | TrayRenderChildren;
+  /**
+   * Optional callback that, if provided, will be triggered when the Tray is toggled open/ closed
+   * If used for analytics, context ('visible' | 'hidden') can be bundled with the event info to track whether the
+   * multiselect was toggled into or out of view
+   */
+  onVisibilityChange?: (context: 'visible' | 'hidden') => void;
+  /** Text or ReactNode for optional Tray title */
+  title?: React.ReactNode;
 };
+
+export type TrayProps = TrayBaseProps;
 
 export const TrayContext = createContext<{
   verticalDrawerPercentageOfView: number;
@@ -31,7 +42,7 @@ export const TrayContext = createContext<{
 });
 
 export const Tray = memo(
-  forwardRef<DrawerRefBaseProps, TrayBaseProps>(function Tray(
+  forwardRef<DrawerRefBaseProps, TrayProps>(function Tray(
     {
       children,
       title,
@@ -51,8 +62,8 @@ export const Tray = memo(
       [title],
     );
 
-    const renderChildren = useCallback(
-      ({ handleClose }: RenderTrayProps) => (
+    const renderChildren: TrayRenderChildren = useCallback(
+      ({ handleClose }) => (
         <VStack paddingTop={title ? 0 : 2}>
           {title &&
             (typeof title === 'string' ? (

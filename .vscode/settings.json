@@ -15,11 +15,11 @@
   "javascript.validate.enable": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.quoteStyle": "single",
 
   // ESLint
   "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-  "eslint.packageManager": "yarn",
   "eslint.useESLintClass": true,
   "eslint.workingDirectories": [
     { "pattern": "apps/*" },

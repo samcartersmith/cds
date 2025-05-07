@@ -1,12 +1,12 @@
 import React from 'react';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
-import type { ChipBaseProps } from '@cbhq/cds-common2/types';
 
 import { Icon } from '../../icons/Icon';
 import { HStack, VStack } from '../../layout';
-import { RemoteImage, RemoteImageProps } from '../../media';
+import { RemoteImage, type RemoteImageProps } from '../../media';
 import { Text } from '../../typography/Text';
 import { Chip } from '../Chip';
+import type { ChipBaseProps } from '../ChipProps';
 
 export default {
   title: 'Core Components/Chips/Chip',

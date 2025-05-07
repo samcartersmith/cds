@@ -1,8 +1,12 @@
 import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
-import { ContentCardFooterBaseProps } from '@cbhq/cds-common2';
+import { SharedProps } from '@cbhq/cds-common2/types';
 
 import { HStack, HStackProps } from '../../layout';
+
+export type ContentCardFooterBaseProps = SharedProps & {
+  children?: React.ReactNode;
+};
 
 export type ContentCardFooterProps = ContentCardFooterBaseProps & HStackProps;
 

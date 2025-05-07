@@ -2,19 +2,26 @@ import React, { memo } from 'react';
 import { View, ViewProps } from 'react-native';
 import { useAccordionContext } from '@cbhq/cds-common2/accordion/AccordionProvider';
 import { accordionMinWidth } from '@cbhq/cds-common2/tokens/accordion';
-import type { AccordionItemBaseProps } from '@cbhq/cds-common2/types';
 
 import { VStack } from '../layout';
 
-import { AccordionHeader } from './AccordionHeader';
-import { AccordionPanel } from './AccordionPanel';
+import { AccordionHeader, type AccordionHeaderBaseProps } from './AccordionHeader';
+import { AccordionPanel, type AccordionPanelBaseProps } from './AccordionPanel';
 
-export type AccordionItemProps = {
-  headerRef?: React.RefObject<View>;
-  panelRef?: React.RefObject<View>;
-} & AccordionItemBaseProps &
-  Pick<ViewProps, 'style'>;
+export type AccordionItemBaseProps = Pick<ViewProps, 'style'> &
+  Omit<AccordionHeaderBaseProps, 'collapsed'> &
+  Omit<AccordionPanelBaseProps, 'collapsed'> & {
+    headerRef?: React.RefObject<View>;
+    panelRef?: React.RefObject<View>;
+  };
 
+export type AccordionItemProps = AccordionItemBaseProps;
+
+/**
+ * A component that represents a single item within an Accordion.
+ * It composes together an AccordionHeader and a collapsible AccordionPanel.
+ * Accepts a unique `itemKey` prop to uniquely identify one item from another within the same Accordion.
+ */
 export const AccordionItem = memo(
   ({
     itemKey,

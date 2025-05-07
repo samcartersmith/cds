@@ -8,7 +8,7 @@ import { LogoMark } from '../../icons';
 import { Box, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/test';
-import { MultiContentModule, MultiContentModuleBaseProps } from '../MultiContentModule';
+import { MultiContentModule, type MultiContentModuleBaseProps } from '../MultiContentModule';
 
 const exampleProps: MultiContentModuleBaseProps = {
   title: 'Title',

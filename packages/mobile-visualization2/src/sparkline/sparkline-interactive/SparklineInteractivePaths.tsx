@@ -1,13 +1,23 @@
 import React, { memo, useCallback, useRef } from 'react';
 import { ChartTimeseries } from '@cbhq/cds-common2/types/Chart';
-import {
-  SparklineInteractivePathsProps,
-  TimeseriesPathOnRenderParams,
-} from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 
+import type { SparklineInteractiveBaseProps } from './SparklineInteractive';
 import { SparklineInteractiveAnimatedPath } from './SparklineInteractiveAnimatedPath';
-import { SparklineInteractiveTimeseriesPaths } from './SparklineInteractiveTimeseriesPaths';
+import {
+  SparklineInteractiveTimeseriesPaths,
+  type TimeseriesPathOnRenderParams,
+} from './SparklineInteractiveTimeseriesPaths';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
+
+export type SparklineInteractivePathsProps<Period extends string> = Pick<
+  SparklineInteractiveBaseProps<Period>,
+  'fill' | 'yAxisScalingFactor' | 'strokeColor' | 'hoverData' | 'compact'
+> & {
+  showHoverData: boolean;
+  path: string;
+  area: string;
+  selectedPeriod: Period;
+};
 
 function SparklineInteractivePathsWithGeneric<Period extends string>({
   showHoverData,

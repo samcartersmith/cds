@@ -2,11 +2,10 @@ import React, { forwardRef, memo, useCallback, useMemo, useRef, useState } from 
 import { css } from '@linaria/core';
 import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
 import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
-import type { TabbedChipsBaseProps } from '@cbhq/cds-common2/types';
 
 import { useDimensions } from '../hooks/useDimensions';
-import { HStack } from '../layout';
-import { Paddle, Tabs } from '../tabs';
+import { type BoxBaseProps, HStack } from '../layout';
+import { Paddle, type TabNavigationBaseProps, Tabs } from '../tabs';
 
 import { Chip } from './Chip';
 
@@ -40,6 +39,10 @@ const TabsActiveIndicatorComponent = () => {
   return null;
 };
 
+export type TabbedChipsBaseProps = BoxBaseProps & Omit<TabNavigationBaseProps, 'variant'>;
+
+export type TabbedChipsProps = TabbedChipsBaseProps;
+
 export const TabbedChips = memo(
   forwardRef(function TabbedChips(
     {
@@ -48,9 +51,15 @@ export const TabbedChips = memo(
       onChange,
       Component = TabComponent,
       paddleStyle,
-      width: widthProp = '100%',
+      testID,
+      background,
+      gap,
+      role,
+      previousArrowAccessibilityLabel,
+      nextArrowAccessibilityLabel,
+      width = '100%',
       ...props
-    }: TabbedChipsBaseProps,
+    }: TabbedChipsProps,
     ref: React.ForwardedRef<HTMLElement | null>,
   ) {
     const activeTab = useMemo(() => tabs.find((tab) => tab.id === value), [tabs, value]);
@@ -98,7 +107,7 @@ export const TabbedChips = memo(
     }, [end]);
 
     return (
-      <HStack ref={observe} alignItems="center" position="relative" width={widthProp}>
+      <HStack ref={observe} alignItems="center" position="relative" width={width} {...props}>
         <Paddle
           accessibilityLabel="Previous"
           background="bg"

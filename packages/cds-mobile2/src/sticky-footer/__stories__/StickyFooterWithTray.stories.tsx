@@ -1,6 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { FlatList, ScrollView } from 'react-native';
-import { DrawerRefBaseProps } from '@cbhq/cds-common2';
 import { prices } from '@cbhq/cds-common2/internal/data/prices';
 
 import { Button } from '../../buttons/Button';
@@ -9,6 +8,7 @@ import { SelectOption } from '../../controls/SelectOption';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box, HStack } from '../../layout';
 import { Tray, TrayStickyFooter } from '../../overlays';
+import type { DrawerRefBaseProps } from '../../overlays/drawer/Drawer';
 import { StickyFooter } from '../StickyFooter';
 
 const options: string[] = prices.slice(0, 20);

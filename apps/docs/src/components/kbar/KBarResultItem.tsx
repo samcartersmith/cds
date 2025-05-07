@@ -1,8 +1,8 @@
 import React, { forwardRef, Fragment, memo, useMemo } from 'react';
 import { ActionImpl } from 'kbar';
-import { IconName, PictogramName } from '@cbhq/cds-common2';
+import { IconName } from '@cbhq/cds-common2';
 import { Icon } from '@cbhq/cds-web2/icons/Icon';
-import { Pictogram } from '@cbhq/cds-web2/illustrations/Pictogram';
+import { Pictogram, type PictogramName } from '@cbhq/cds-web2/illustrations/Pictogram';
 import { HStack, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography/Text';
 

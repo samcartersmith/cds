@@ -1,15 +1,37 @@
 import React, { memo, useMemo } from 'react';
 import { PressableProps, ViewStyle } from 'react-native';
-import { ContainedAssetCardBaseProps } from '@cbhq/cds-common2';
 import {
   containedAssetCardLargeDimension,
   containedAssetCardLargeWidth,
   containedAssetCardSmallDimension,
 } from '@cbhq/cds-common2/tokens/card';
+import { SharedProps } from '@cbhq/cds-common2/types';
 
 import { HStack, HStackProps, VStack } from '../layout';
 import { Pressable } from '../system';
 import { Text } from '../typography/Text';
+
+export type ContainedAssetCardBaseProps = {
+  /** Text or ReactNode to be displayed above Title */
+  subtitle?: React.ReactNode;
+  /** Text or ReactNode to be displayed in TextHeadline */
+  title: React.ReactNode;
+  /** Content to be displayed below the title */
+  description?: React.ReactNode;
+  /**
+   * Header to display Remote Image or other content.
+   */
+  header: React.ReactNode;
+  /**
+   * Variant for card size. Can be small or large.
+   * @default 's'
+   */
+  size?: 's' | 'l';
+  /**
+   * Children to be rendered in the card
+   */
+  children?: React.ReactNode;
+} & SharedProps;
 
 export type ContainedAssetCardProps = ContainedAssetCardBaseProps &
   Pick<PressableProps, 'onPress'> &

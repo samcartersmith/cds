@@ -3,10 +3,12 @@ import { Animated, StyleProp, Text, TextStyle, useWindowDimensions } from 'react
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
 import type {
-  IconBaseProps,
+  IconName,
   IconSize,
   IconSourcePixelSize,
+  PaddingProps,
   SharedAccessibilityProps,
+  SharedProps,
 } from '@cbhq/cds-common2/types';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils';
@@ -16,20 +18,45 @@ import { Box } from '../layout/Box';
 
 import { IconOutline } from './IconOutline';
 
-export type IconProps = IconBaseProps & {
-  /** Color of the icon when used as a foreground.
-   * @default primary
-   */
-  color?: ThemeVars.Color;
-  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
-  dangerouslySetColor?: string | Animated.AnimatedInterpolation<string>;
-  /**
-   * @deprecated Internal only: prop used to distinguish nav icons and to ensure backwards compatibility with new update
-   */
-  iconType?: string;
-  animated?: boolean;
-  style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
-} & Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
+export type IconBaseProps = SharedProps &
+  PaddingProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'> & {
+    /**
+     * Size for a given icon.
+     * @default m
+     */
+    size?: IconSize;
+    /** Name of the icon, as defined in Figma. */
+    name: IconName;
+    /**
+     * A boolean flag indicating whether or not a border should be shown around an icon.
+     * This border will match color prop. Border is only allowed for sizes m and above.
+     * @default false
+     */
+    bordered?: boolean;
+    /**
+     * Fallback element to render if unable to find an icon with matching name
+     * @default null
+     * */
+    fallback?: null | React.ReactNode;
+    /**
+     * Toggles the active and inactive state of the navigation icon
+     * @default false
+     */
+    active?: boolean;
+    /** Color of the icon when used as a foreground.
+     * @default primary
+     */
+    color?: ThemeVars.Color;
+    /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+    dangerouslySetColor?: string | Animated.AnimatedInterpolation<string>;
+    /**
+     * @deprecated Internal only: prop used to distinguish nav icons and to ensure backwards compatibility with new update
+     */
+    iconType?: string;
+    animated?: boolean;
+    style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
+  };
 
 const borderedSizeMap: {
   [key in IconSize]: IconSize;
@@ -39,6 +66,7 @@ const borderedSizeMap: {
   m: 'xs',
   l: 's',
 };
+export type IconProps = IconBaseProps;
 
 export const getIconSourceSize = (iconSize: number): IconSourcePixelSize => {
   if (iconSize <= 12) return 12;

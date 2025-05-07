@@ -1,12 +1,26 @@
 import React, { memo } from 'react';
-import { ContentCellBaseProps } from '@cbhq/cds-common2';
 import { isProduction } from '@cbhq/cds-utils';
 
 import { Box, HStack, VStack } from '../layout';
 import { Text } from '../typography/Text';
 
-import { Cell, CellProps } from './Cell';
-import { CellAccessory } from './CellAccessory';
+import { Cell, type CellProps } from './Cell';
+import { CellAccessory, type CellAccessoryType } from './CellAccessory';
+
+export type ContentCellBaseProps = {
+  /** Accessory to display at the end of the cell. */
+  accessory?: CellAccessoryType;
+  /** Description of content. Content will wrap accordingly. */
+  description?: React.ReactNode;
+  /** Media (icon, asset, image, etc) to display at the start of the cell. */
+  media?: React.ReactElement;
+  /** Meta information to display at the end of the title. */
+  meta?: React.ReactNode;
+  /** Subtitle of content. Max 1 line, otherwise will truncate. */
+  subtitle?: React.ReactNode;
+  /** Title of content. Max 1 line, otherwise will truncate. */
+  title?: React.ReactNode;
+};
 
 export type ContentCellProps = Omit<CellProps, 'children' | 'accessory'> & ContentCellBaseProps;
 
@@ -39,7 +53,6 @@ export const ContentCell = memo(function ContentCell({
   subtitle,
   accessibilityLabel,
   accessibilityHint,
-  compact,
   detailWidth,
   priority,
   innerSpacing,
@@ -71,7 +84,6 @@ export const ContentCell = memo(function ContentCell({
         accessoryType ? <CellAccessory paddingTop={0.5} type={accessoryType} /> : undefined
       }
       alignItems={alignItems}
-      compact={compact}
       detailWidth={detailWidth}
       disabled={disabled}
       innerSpacing={innerSpacing}

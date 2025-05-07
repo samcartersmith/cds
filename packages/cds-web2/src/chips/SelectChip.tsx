@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useCallback, useState } from 'react';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
-import type { SelectBaseProps } from '@cbhq/cds-common2/types';
 
+import type { SelectBaseProps } from '../controls/Select';
 import { useRefocusTrigger } from '../controls/useRefocusTrigger';
 import { Dropdown, DropdownProps } from '../dropdown';
 import { AnimatedCaret } from '../motion/AnimatedCaret';

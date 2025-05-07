@@ -16,7 +16,7 @@ import { getTimesFromDatesAndRanges } from '@cbhq/cds-common2/dates/getTimesFrom
 import { useLocale } from '@cbhq/cds-common2/system/LocaleProvider';
 import { accessibleOpacityDisabled } from '@cbhq/cds-common2/tokens/interactable';
 
-import { Polymorphic } from '../core/polymorphism';
+import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons/Icon';
 import { Grid } from '../layout/Grid';
 import { HStack } from '../layout/HStack';

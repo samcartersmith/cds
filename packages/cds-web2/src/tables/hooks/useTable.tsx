@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import type { CellSpacing } from '@cbhq/cds-common2/types/CellBaseProps';
 
+import type { CellSpacing } from '../../cells/Cell';
 import { TableContext } from '../context/TableContext';
 import { TableSectionContext } from '../context/TableSectionContext';
 import type { TableCellSpacing } from '../Table';
@@ -64,5 +64,5 @@ export const useTableCellSpacing = (props?: UseTableCellSpacing) => {
   const componentSpacing = (props?.inner || props?.outer) && props;
   if (cellSpacing) return { ...cellSpacing, ...componentSpacing };
   if (compact) return { ...compactCellSpacing, ...componentSpacing };
-  return defaultCellSpacing;
+  return { ...defaultCellSpacing, ...componentSpacing };
 };

@@ -19,9 +19,14 @@ import {
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
+import type {
+  SharedAccessibilityProps,
+  SharedInputProps,
+  SharedProps,
+  TextAlignProps,
+} from '@cbhq/cds-common2/types';
 import { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
-import { TextInputBaseProps } from '@cbhq/cds-common2/types/TextInputBaseProps';
 
 import { useInputBorderStyle } from '../hooks/useInputBorderStyle';
 import { useTheme } from '../hooks/useTheme';
@@ -33,30 +38,69 @@ import { TextInputFocusVariantContext } from './context';
 import { HelperText } from './HelperText';
 import { InputIconButton, InputIconButtonProps } from './InputIconButton';
 import { InputLabel } from './InputLabel';
-import { InputStack } from './InputStack';
+import { InputStack, type InputStackBaseProps } from './InputStack';
 import { NativeInput } from './NativeInput';
 
-export type TextInputProps = {
-  value?: RNTextInputProps['value'];
-  onChange?: RNTextInputProps['onChange'];
-  onChangeText?: RNTextInputProps['onChangeText'];
-  /**
-   * minimum height of input
-   * @default auto
-   */
-  minHeight?: DimensionValue;
-  /**
-   * Native TextInput textAlign with the extra unset option to remove the textAlign style.
-   * Use this to workaround the issue where long text does not ellipsis in TextInput
-   */
-  textAlign?: RNTextInputProps['textAlign'] | 'unset';
-  /**
-   * Determines if the input should have a border
-   * @default true
-   */
-  bordered?: boolean;
-} & TextInputBaseProps &
-  Omit<RNTextInputProps, 'value' | 'onChange' | 'onChangeText' | 'textAlign'>;
+export type TextInputBaseProps = SharedProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > &
+  SharedInputProps &
+  Pick<
+    InputStackBaseProps,
+    'height' | 'variant' | 'width' | 'disabled' | 'borderRadius' | 'enableColorSurge'
+  > & {
+    /**
+     * Aligns text inside input and helperText
+     * @default start
+     */
+    align?: TextAlignProps['align'];
+    /**
+     * Adds suffix text to the end of input
+     */
+    suffix?: string;
+    /** Adds content to the start of the inner input. Refer to diagram for location of startNode in InputStack component */
+    start?: React.ReactNode;
+    /** Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component */
+    end?: React.ReactNode;
+    /**
+     * Add ability to test individual parts of the input
+     */
+    testIDMap?: {
+      start?: string;
+      end?: string;
+      label?: string;
+      helperText?: string;
+    };
+    /**
+     * Accessibility label for helper text error icon when variant='negative'
+     * @default 'error'
+     */
+    helperTextErrorIconAccessibilityLabel?: string;
+  };
+
+export type TextInputProps = TextInputBaseProps &
+  Omit<RNTextInputProps, 'value' | 'onChange' | 'onChangeText' | 'textAlign'> & {
+    value?: RNTextInputProps['value'];
+    onChange?: RNTextInputProps['onChange'];
+    onChangeText?: RNTextInputProps['onChangeText'];
+    /**
+     * minimum height of input
+     * @default auto
+     */
+    minHeight?: DimensionValue;
+    /**
+     * Native TextInput textAlign with the extra unset option to remove the textAlign style.
+     * Use this to workaround the issue where long text does not ellipsis in TextInput
+     */
+    textAlign?: RNTextInputProps['textAlign'] | 'unset';
+    /**
+     * Determines if the input should have a border
+     * @default true
+     */
+    bordered?: boolean;
+  };
 
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   primary: 'fgPrimary',

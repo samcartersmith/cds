@@ -17,7 +17,12 @@ import {
   selectTriggerCompactMinHeight,
   selectTriggerMinHeight,
 } from '@cbhq/cds-common2/tokens/select';
-import { InputVariant, SelectBaseProps } from '@cbhq/cds-common2/types';
+import {
+  InputVariant,
+  SharedAccessibilityProps,
+  SharedInputProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { useRotateAnimation } from '../animation/useRotateAnimation';
 import { useA11y } from '../hooks/useA11y';
@@ -29,7 +34,7 @@ import { TextInputFocusVariantContext } from './context';
 import { HelperText } from './HelperText';
 import { InputIcon } from './InputIcon';
 import { InputLabel } from './InputLabel';
-import { InputStack } from './InputStack';
+import { InputStack, type InputStackBaseProps } from './InputStack';
 import { SelectProvider } from './SelectContext';
 import { useSelect } from './useSelect';
 
@@ -41,6 +46,28 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   foregroundMuted: 'fgMuted',
   secondary: 'bgSecondary',
 };
+
+export type SelectBaseProps = SharedProps &
+  Omit<SharedInputProps, 'label'> &
+  Pick<InputStackBaseProps, 'width' | 'disabled' | 'variant' | 'focused' | 'startNode'> &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > & {
+    children?: React.ReactNode;
+    /** Pass a value that will prepopulate the select input. This will replace the placeholder text. */
+    value?: string;
+    /** Optional label for selected value when using a value/label object model */
+    valueLabel?: string;
+    /** Event handler for when the Select Input trigger is pressed */
+    onPress?: () => void;
+    /** Optional string placed above the input (or within if compact is enabled) to indicate purpose of the input */
+    label?: string;
+    /** Callback that is fired whenever a select option is selected */
+    onChange?: ((newValue: string) => void) | React.Dispatch<React.SetStateAction<string>>;
+  };
+
+export type SelectProps = SelectBaseProps;
 
 export const Select = memo(
   forwardRef(
@@ -62,7 +89,7 @@ export const Select = memo(
         onPress,
         startNode,
         onChange,
-      }: SelectBaseProps,
+      }: SelectProps,
       ref: ForwardedRef<TouchableWithoutFeedback>,
     ) => {
       const { rotateAnimation, animateRotateIn, animateRotateOut, rotateAnimationStyles } =

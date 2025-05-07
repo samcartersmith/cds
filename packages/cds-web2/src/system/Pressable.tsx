@@ -10,7 +10,7 @@ import { css, cx } from '@linaria/core';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 import { ComponentEventHandlerProps } from '@cbhq/cds-common2/types/ComponentEventHandlerProps';
 
-import { Polymorphic } from '../core/polymorphism';
+import type { Polymorphic } from '../core/polymorphism';
 import { useIsoEffect } from '../hooks/useIsoEffect';
 
 import { Interactable, type InteractableBaseProps } from './Interactable';
@@ -65,11 +65,11 @@ export type PressableDefaultElement = typeof pressableDefaultElement;
 
 export type PressableBaseProps = Polymorphic.ExtendableProps<
   InteractableBaseProps,
-  {
+  ComponentEventHandlerProps & {
     /** Dont scale element on press. */
     noScaleOnPress?: boolean;
     focusable?: boolean;
-  } & ComponentEventHandlerProps
+  }
 >;
 
 export type PressableProps<AsComponent extends React.ElementType> = Polymorphic.Props<

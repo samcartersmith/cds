@@ -3,7 +3,6 @@ import { Animated as RNAnimated, Platform, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { runOnJS } from 'react-native-reanimated';
 import { ChartGetMarker, ChartScrubParams } from '@cbhq/cds-common2/types/Chart';
-import { SparklineInteractiveScrubHandlerProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 import { Haptics } from '@cbhq/cds-mobile2/utils/haptics';
 import { noop } from '@cbhq/cds-utils';
 
@@ -13,12 +12,18 @@ import { useSparklineInteractiveConstants } from './useSparklineInteractiveConst
 
 const { lightImpact } = Haptics;
 
-export type SparklineInteractivePanGestureHandlerProps<Period extends string> = {
+export type SparklineInteractivePanGestureHandlerProps<Period extends string> = Pick<
+  SparklineInteractiveMobileProps<Period>,
+  'allowOverflowGestures'
+> & {
   onScrub?: (params: ChartScrubParams<Period>) => void;
   getMarker: ChartGetMarker;
   selectedPeriod: Period;
-} & SparklineInteractiveScrubHandlerProps &
-  Pick<SparklineInteractiveMobileProps<Period>, 'allowOverflowGestures'>;
+  onScrubEnd?: () => void;
+  onScrubStart?: () => void;
+  disabled?: boolean;
+  children: React.ReactNode;
+};
 
 // Generics do not work with React.memo or forwardRef
 // https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref/58473012

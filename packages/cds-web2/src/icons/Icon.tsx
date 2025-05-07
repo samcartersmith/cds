@@ -1,16 +1,48 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx, type LinariaClassName } from '@linaria/core';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
-import type { IconBaseProps } from '@cbhq/cds-common2/types/IconBaseProps';
+import type { IconName, SharedProps, ValidateProps } from '@cbhq/cds-common2/types';
 import type { IconSize, IconSourcePixelSize } from '@cbhq/cds-common2/types/IconSize';
 import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
 import { isDevelopment } from '@cbhq/cds-utils/env';
 
 import { useTheme } from '../hooks/useTheme';
-import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
+import { Box, type BoxBaseProps, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 
-export type IconProps = IconBaseProps &
-  BoxProps<BoxDefaultElement> & {
+export type IconBaseProps = SharedProps &
+  Pick<
+    BoxBaseProps,
+    | 'padding'
+    | 'paddingX'
+    | 'paddingY'
+    | 'paddingTop'
+    | 'paddingEnd'
+    | 'paddingBottom'
+    | 'paddingStart'
+  > & {
+    /**
+     * Size for a given icon.
+     * @default m
+     */
+    size?: IconSize;
+    /** Name of the icon, as defined in Figma. */
+    name: IconName;
+    /**
+     * A boolean flag indicating whether or not a border should be shown around an icon.
+     * This border will match color prop. Border is only allowed for sizes m and above.
+     * @default false
+     */
+    bordered?: boolean;
+    /**
+     * Fallback element to render if unable to find an icon with matching name
+     * @default null
+     * */
+    fallback?: null | React.ReactNode;
+    /**
+     * Toggles the active and inactive state of the navigation icon
+     * @default false
+     */
+    active?: boolean;
     /** @danger This is a migration escape hatch. It is not intended to be used normally. */
     dangerouslySetColor?: string;
     /**
@@ -19,7 +51,9 @@ export type IconProps = IconBaseProps &
     iconType?: string;
   };
 
-const iconStyles = css`
+export type IconProps = IconBaseProps & BoxProps<BoxDefaultElement>;
+
+export const iconStyles = css`
   color: currentColor;
   font-family: 'CoinbaseIcons';
   font-weight: 400;
@@ -180,7 +214,16 @@ export const Icon = memo(
       const glyphTestId = testID ? `${testID}-glyph` : 'icon-base-glyph';
 
       return (
-        <Box color={color} position="relative" style={inlineStyle} testID={testID} {...props}>
+        <Box
+          color={color}
+          position="relative"
+          style={inlineStyle}
+          testID={testID}
+          {...(props satisfies ValidateProps<
+            typeof props,
+            Omit<IconProps, keyof BoxProps<BoxDefaultElement>>
+          >)}
+        >
           <div className={cx(sizeStyles[size], bordered && borderedSizeStyles[size])}>
             <span
               ref={ref}

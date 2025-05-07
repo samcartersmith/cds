@@ -1,11 +1,21 @@
 import React, { memo, useCallback, useMemo, useState } from 'react';
 import { css } from '@linaria/core';
 import { tileSize } from '@cbhq/cds-common2/tokens/tile';
-import { TileBaseProps } from '@cbhq/cds-common2/types/TileBaseProps';
 
 import { DotCount } from '../dots/DotCount';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
+
+export type TileBaseProps = {
+  title: string;
+  /** Surfaces a DotCount around the content */
+  count?: number;
+  /** Reveals truncated title text */
+  showOverflow?: boolean;
+  children?: JSX.Element;
+};
+
+export type TileProps = TileBaseProps;
 
 const truncatedStyles = css`
   width: 100%;
@@ -24,7 +34,7 @@ const visibleStyles = css`
 /**
  * @danger this component is for internal use only
  */
-export const Tile = memo(({ title, count, showOverflow, children }: TileBaseProps) => {
+export const Tile = memo(({ title, count, showOverflow, children }: TileProps) => {
   const [shouldOverflow, setShouldOverflow] = useState(false);
   const overflowTextStyles = showOverflow ?? shouldOverflow ? visibleStyles : truncatedStyles;
 

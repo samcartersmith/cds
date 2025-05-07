@@ -1,9 +1,9 @@
-import { ThemeVars } from '../core/theme';
-import { FallbackColor } from '../types';
+import type { ThemeVars } from '../core/theme';
+import type { AvatarFallbackColor } from '../types';
 
-type FallbackColorMap = Record<FallbackColor, ThemeVars.SpectrumColor>;
+type AvatarFallbackColorMap = Record<AvatarFallbackColor, ThemeVars.SpectrumColor>;
 
-export const colorSchemeMap: FallbackColorMap = {
+export const colorSchemeMap: AvatarFallbackColorMap = {
   blue: 'blue60',
   teal: 'teal60',
   purple: 'purple60',

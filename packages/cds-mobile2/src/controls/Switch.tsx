@@ -1,18 +1,18 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { PressableProps, StyleSheet, View } from 'react-native';
-import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
+import { StyleSheet, View } from 'react-native';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 import { Interactable } from '../system/Interactable';
 
-import { Control, ControlIconProps } from './Control';
+import { Control, type ControlBaseProps, ControlIconProps } from './Control';
 
-export type SwitchProps = {
+export type SwitchBaseProps = Omit<ControlBaseProps<string>, 'value' | 'onChange' | 'style'> & {
   /** Triggered when switch is toggled. */
   onChange?: () => void;
-} & Omit<ControlBaseProps<string>, 'value'> &
-  Omit<PressableProps, 'disabled' | 'children' | 'style'>;
+};
+
+export type SwitchProps = SwitchBaseProps;
 
 const SwitchIcon = ({
   pressed,

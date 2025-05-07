@@ -1,16 +1,40 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { View } from 'react-native';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { pageHeaderHeight } from '@cbhq/cds-common2/tokens/page';
-import { PageHeaderBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
+import type { PositionStyles, SharedProps } from '@cbhq/cds-common2/types';
 
-import { Box } from '../layout/Box';
+import { Box, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
+export type PageHeaderBaseProps = SharedProps &
+  PositionStyles & {
+    /**
+     * Optional. Accepts a ReactNode. Used for placing primary content on the left side of the page header, such as a header title, logo, or icon button.
+     */
+    start?: React.ReactNode;
+    /**
+     * Optional. Accepts a ReactNode. Intended for content on the right side of the header, such as action buttons or icons.
+     * In modal usage, elements like a close button should be included to facilitate modal dismissal.
+     */
+    end?: React.ReactNode;
+    /**
+     * Optional. Accepts a ReactNode. Intended for main title within the Page Header or for secondary content in the center of the header, like a navigation stepper or search bar.
+     */
+    title?: React.ReactNode;
+    /**
+     * Set the background color of the box.
+     */
+    background?: ThemeVars.Color;
+  };
+
+export type PageHeaderProps = PageHeaderBaseProps & BoxProps;
+
 export const PageHeader = memo(
   forwardRef(function PageHeader(
-    { start, title, end, ...props }: PageHeaderBaseProps,
+    { start, title, end, ...props }: PageHeaderProps,
     ref: React.ForwardedRef<View>,
   ) {
     const isMultiRow = useMemo(() => Boolean(start && title && end), [start, end, title]);

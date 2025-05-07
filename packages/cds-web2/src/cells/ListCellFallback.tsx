@@ -1,15 +1,32 @@
 import React, { memo } from 'react';
-import type { ListCellFallbackProps as ListCellFallbackCommonProps } from '@cbhq/cds-common2/types/CellBaseProps';
+import type { FallbackRectWidthProps, SharedProps } from '@cbhq/cds-common2/types';
 import { getRectWidthVariant } from '@cbhq/cds-common2/utils/getRectWidthVariant';
 
-import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
+import { Box } from '../layout/Box';
 import { Fallback } from '../layout/Fallback';
 
-import { Cell } from './Cell';
+import { Cell, type CellBaseProps } from './Cell';
+import type { CellMediaType } from './CellMedia';
 import { MediaFallback } from './MediaFallback';
 
-export type ListCellFallbackProps = ListCellFallbackCommonProps &
-  Omit<BoxProps<BoxDefaultElement>, 'title'>;
+export type ListCellFallbackBaseProps = SharedProps &
+  FallbackRectWidthProps &
+  Pick<CellBaseProps, 'innerSpacing' | 'outerSpacing'> & {
+    /** Display description shimmer. */
+    description?: boolean;
+    /** Display detail shimmer. */
+    detail?: boolean;
+    /** Display media shimmer with a shape according to type. */
+    media?: CellMediaType;
+    /** Display subdetail shimmer. */
+    subdetail?: boolean;
+    /** Display title shimmer. */
+    title?: boolean;
+    /** @deprecated This prop does nothing and will be removed in a future version of CDS. */
+    compact?: boolean;
+  };
+
+export type ListCellFallbackProps = ListCellFallbackBaseProps;
 
 const fullWidthStyle = { width: '100%' } as const;
 
@@ -19,11 +36,9 @@ export const ListCellFallback = memo(function ListCellFallback({
   detail,
   subdetail,
   media,
-  testID,
   disableRandomRectWidth,
   rectWidthVariant,
-  innerSpacing,
-  outerSpacing,
+  ...props
 }: ListCellFallbackProps) {
   // We cant use ListCell here as we need to account for percentage based widths.
   // Flexbox collides with percentages also, so we need to wrap in normal divs.
@@ -63,10 +78,8 @@ export const ListCellFallback = memo(function ListCellFallback({
           </div>
         )
       }
-      innerSpacing={innerSpacing}
       media={media && <MediaFallback testID="list-cell-fallback-media" type={media} />}
-      outerSpacing={outerSpacing}
-      testID={testID}
+      {...props}
     >
       <div style={{ width: '100%' }}>
         {title && (

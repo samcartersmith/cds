@@ -1,8 +1,24 @@
 import React, { memo } from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import type { CellDetailProps, CellDetailVariant } from '@cbhq/cds-common2/types/CellBaseProps';
 
 import { Text } from '../typography/Text';
+
+export type CellDetailVariant = 'foregroundMuted' | 'negative' | 'positive' | 'warning';
+
+export type CellDetailProps = {
+  /**
+   * Label and/or extra detail. This prop is only intended to accept a string or Text component;
+   * other use cases, while allowed, are not supported and may result in unexpected behavior.
+   */
+  detail?: React.ReactNode;
+  /**
+   * Subdetail providing more information. This prop is only intended to accept a string or Text component;
+   * other use cases, while allowed, are not supported and may result in unexpected behavior.
+   */
+  subdetail?: React.ReactNode;
+  /** Variant color to apply to the subdetail text. */
+  variant?: CellDetailVariant;
+};
 
 const variantColorMap: Record<CellDetailVariant, ThemeVars.Color> = {
   foregroundMuted: 'fgMuted',

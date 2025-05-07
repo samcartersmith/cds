@@ -13,23 +13,20 @@ import React, {
   useState,
 } from 'react';
 import { css, cx } from '@linaria/core';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
-import type { DotCountBaseProps } from '@cbhq/cds-common2/types/DotCountBaseProps';
-import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
-import type {
-  CustomTabProps,
-  TabIndicatorProps,
-  TabNavigationProps as SharedTabNavigationProps,
-} from '@cbhq/cds-common2/types/TabsProps';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
+import type { DotCountBaseProps } from '../dots/DotCount';
 import { useDimensions } from '../hooks/useDimensions';
+import type { BoxBaseProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Pressable } from '../system/Pressable';
 
 import { Paddle, paddleWidth } from './Paddle';
-import { TabIndicator } from './TabIndicator';
+import { TabIndicator, type TabIndicatorProps } from './TabIndicator';
 import { TabLabel } from './TabLabel';
 
 export const tabNavigationTestId = 'tabNavigation';
@@ -78,33 +75,88 @@ const insetFocusRing = css`
   }
 `;
 
-export type TabProps<T extends string | undefined = string> = {
-  /** The id should be a meaningful and useful identifier like "watchlist" or "forSale" */
-  id: T;
-  /** Define a label for this Tab */
-  label: React.ReactNode;
-  /** See the Tabs TDD to understand which variant should be used.
-   *  @default 'primary'
-   */
-  variant?: 'primary' | 'secondary';
-  /** Disable interactions on the tab. */
-  disabled?: boolean;
-  /** Full length accessibility label when the child text is not descriptive enough. */
-  accessibilityLabel?: string;
-  /** Callback to fire when pressed */
-  onClick?: (id: T) => void;
-  /** Render a custom Component for the Tab */
-  Component?: (props: CustomTabProps) => React.ReactElement;
-} & Partial<Pick<DotCountBaseProps, 'count' | 'max'>> &
-  SharedProps;
+export type TabProps<T extends string | undefined = string> = SharedProps &
+  Partial<Pick<DotCountBaseProps, 'count' | 'max'>> & {
+    /** The id should be a meaningful and useful identifier like "watchlist" or "forSale" */
+    id: T;
+    /** Define a label for this Tab */
+    label: React.ReactNode;
+    /** See the Tabs TDD to understand which variant should be used.
+     *  @default 'primary'
+     */
+    variant?: 'primary' | 'secondary';
+    /** Disable interactions on the tab. */
+    disabled?: boolean;
+    /** Full length accessibility label when the child text is not descriptive enough. */
+    accessibilityLabel?: string;
+    /** Callback to fire when pressed */
+    onClick?: (id: T) => void;
+    /** Render a custom Component for the Tab */
+    Component?: (props: CustomTabProps) => React.ReactNode;
+  };
 
-type TabNavigationProps = Omit<SharedTabNavigationProps, 'tabs'> & {
-  tabs: TabProps[];
+export type CustomTabProps = Pick<TabProps, 'id'> & {
+  /**
+   * @default false
+   * When true, used to surface an active state for the currently selected tab
+   */
+  active?: boolean;
+  /** Define a label for this Tab */
+  label?: React.ReactNode;
 };
+
+export type TabNavigationBaseProps<T extends string | undefined = string> = SharedProps &
+  BoxBaseProps &
+  Pick<TabProps, 'variant' | 'Component'> & {
+    /** The active tabId
+     *  @default tabs[0].id
+     */
+    value?: T;
+    /** Children should be TabLabels. If you only have one child, don't use tabs 🤪 */
+    tabs: TabProps[];
+    /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
+    onChange: ((tabId: T) => void) | React.Dispatch<React.SetStateAction<T>>;
+    /** This should always match the background color of the parent container
+     * @default: 'bg'
+     */
+    background?: ThemeVars.Color;
+    /**
+     * The spacing between Tabs
+     * @default 4
+     */
+    gap?: ThemeVars.Space;
+    /**
+     * Used to generate a11y attributes for the Tabs
+     * If TabNavigation is used to display options that will filter data, use `radiogroup`
+     * If TabNavigation is used to display a list of pages or views, use `tablist`
+     * @default tablist
+     */
+    role?: 'radiogroup' | 'tablist';
+    /**
+     * Web only. Accessibility label for the previous arrow paddle (skip to beginning).
+     */
+    previousArrowAccessibilityLabel?: string | undefined;
+    /**
+     * Web only. Accessibility label for the next arrow paddle (skip to end).
+     */
+    nextArrowAccessibilityLabel?: string | undefined;
+    /**
+     * Web only. Styling for the paddle icon buttons. Mobile does not have paddles.
+     */
+    paddleStyle?: React.CSSProperties;
+  };
+
+export type TabNavigationProps = TabNavigationBaseProps;
+
 type LayoutProps = { width: number; x: number };
 type TabRefs = Ref<{ id: string; ref: React.RefObject<HTMLButtonElement> }[]>;
 const fallbackLayout: LayoutProps = { width: 0, x: 0 };
 
+/**
+ * TabNavigation renders a horizontal, tab-based navigation bar.
+ * This component has a opinionated default style, but allows for customization through custom Component props.
+ * @deprecated Use Tabs instead.
+ */
 export const TabNavigation = memo(
   forwardRef(
     (

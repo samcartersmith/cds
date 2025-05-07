@@ -11,7 +11,7 @@ export const listHeight = 80;
 
 export const compactListHeight = 40;
 
-/** Spacing configs for Cells to be parsed in common/hooks/useCellSpacing */
+/** Spacing configs for Cells to be parsed in [web/mobile]/hooks/useCellSpacing */
 
 /** Default spacing config */
 export const defaultSpacingConfig = {

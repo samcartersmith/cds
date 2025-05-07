@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { Path, Svg } from 'react-native-svg';
-import type { IconName, ModalRenderChildren } from '@cbhq/cds-common2';
+import Svg, { Path } from 'react-native-svg';
+import type { IconName } from '@cbhq/cds-common2';
 
 import { Button } from '../../buttons';
 import { ButtonGroup } from '../../buttons/ButtonGroup';
@@ -11,7 +11,7 @@ import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons';
 import { Box, Divider, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media';
-import { Modal, ModalBody, ModalHeader } from '../../overlays';
+import { Modal, type ModalBaseProps, ModalBody, ModalHeader } from '../../overlays';
 import { Pressable } from '../../system/Pressable';
 import { Text } from '../../typography/Text';
 import { MultiContentModule, MultiContentModuleProps } from '../MultiContentModule';
@@ -141,7 +141,7 @@ const socialMediaItems: SocialMediaItem[] = [
   },
 ];
 
-const BasicModal = ({ children }: { children: ModalRenderChildren }) => {
+const BasicModal = ({ children }: { children: ModalBaseProps['children'] }) => {
   const [visible, setVisible] = useState(false);
   const setVisibleToOn = useCallback(() => setVisible(true), []);
   const setVisibleToOff = useCallback(() => setVisible(false), []);
@@ -210,7 +210,7 @@ export const WithButtonGroup = () => {
                 <Box bordered borderColor="bgPrimary" borderRadius={300}>
                   <ListCell
                     description="Satoshi Nakamoto"
-                    media={<Avatar alt="Sneezy" colorScheme="blue" name="Sneezy" />}
+                    media={<Avatar accessibilityLabel="Sneezy" colorScheme="blue" name="Sneezy" />}
                     title="satoshi@coinbase.com"
                   />
                 </Box>

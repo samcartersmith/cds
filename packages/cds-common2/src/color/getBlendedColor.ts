@@ -63,26 +63,43 @@ export const getBlendedColor = ({
   // If the color is 'currentColor', we are unable to blend it with the theme background and return the background color
   if (color === 'currentColor') return color;
 
-  const overlayColorRgb = d3color(color);
-  if (overlayColorRgb === null) return color;
+  const overlayColorRgba = d3color(color);
+  if (overlayColorRgba === null) return color;
 
+  const overlayColorOpacity = overlayColorRgba.opacity;
   // return transparent if the color is transparent
-  if (overlayColorRgb.opacity === 0) return 'transparent';
+  if (overlayColorOpacity === 0) return 'transparent';
 
-  const backgroundLuminance = getLuminance(color) ?? 1;
-  const isHighHue =
-    colorScheme === 'dark'
-      ? backgroundLuminance >= lightColorThreshold // This filters out the light colors in the default darkSpectrum, e.g. gray70-gray100
-      : backgroundLuminance < darkColorThreshold; // This filters out the dark colors in the default lightSpectrum, e.g. gray70-gray100
-
+  const overlayLuminance = getLuminance(color) ?? 1;
   const inverseColorScheme = colorScheme === 'dark' ? 'light' : 'dark';
-  const underlayColor = colorSchemeMap[isDisabled || isHighHue ? colorScheme : inverseColorScheme];
+  const isHighContrastToColorSchemeBg =
+    colorScheme === 'dark'
+      ? overlayLuminance >= lightColorThreshold // This filters out the light colors in the default darkSpectrum, e.g. gray70-gray100
+      : overlayLuminance < darkColorThreshold; // This filters out the dark colors in the default lightSpectrum, e.g. gray70-gray100
+
+  const underlayColor =
+    colorSchemeMap[isDisabled || isHighContrastToColorSchemeBg ? colorScheme : inverseColorScheme];
   const underlayLuminance = getLuminance(underlayColor) ?? 1;
 
+  if (overlayColorOpacity < 1) {
+    // If the overlay color is not fully opaque, blend it with the theme underlay color with its own opacity first before applying opacity
+    const blendedOverlayColor = blendColors({
+      underlayColor: colorSchemeMap[colorScheme],
+      overlayColor: overlayColorRgba,
+    });
+    const blendedOverlayColorRgba = d3color(blendedOverlayColor);
+    if (blendedOverlayColorRgba === null) return blendedOverlayColor;
+    const adjustedOpacity = getAdjustedOpacity(overlayLuminance, underlayLuminance, opacity);
+    const blendedOverlayColorRgbaWithAdjustedOpacity = blendedOverlayColorRgba.copy({
+      opacity: adjustedOpacity,
+    });
+    return blendColors({ underlayColor, overlayColor: blendedOverlayColorRgbaWithAdjustedOpacity });
+  }
+
   // Get adjusted opacity based on luminance difference between the overlay and underlay colors
-  const adjustedOpacity = getAdjustedOpacity(backgroundLuminance, underlayLuminance, opacity);
+  const adjustedOpacity = getAdjustedOpacity(overlayLuminance, underlayLuminance, opacity);
 
-  const overlayColorRgba = overlayColorRgb.copy({ opacity: adjustedOpacity });
+  const overlayColorRgbaWithAdjustedOpacity = overlayColorRgba.copy({ opacity: adjustedOpacity });
 
-  return blendColors({ underlayColor, overlayColor: overlayColorRgba });
+  return blendColors({ underlayColor, overlayColor: overlayColorRgbaWithAdjustedOpacity });
 };

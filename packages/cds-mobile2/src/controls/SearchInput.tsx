@@ -15,13 +15,65 @@ import {
   TextInputProps as RNTextInputProps,
 } from 'react-native';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
-import { IconName } from '@cbhq/cds-common2/types';
-import { SearchInputBaseProps } from '@cbhq/cds-common2/types/SearchInputBaseProps';
+import type { IconName } from '@cbhq/cds-common2/types';
 
 import { Box } from '../layout/Box';
 
 import { InputIconButton } from './InputIconButton';
-import { TextInput } from './TextInput';
+import { TextInput, type TextInputBaseProps } from './TextInput';
+
+export type SearchInputBaseProps = Pick<
+  TextInputBaseProps,
+  | 'accessibilityHint'
+  | 'accessibilityLabel'
+  | 'accessibilityLabelledBy'
+  | 'compact'
+  | 'disabled'
+  | 'enableColorSurge'
+  | 'helperTextErrorIconAccessibilityLabel'
+  | 'placeholder'
+  | 'testID'
+  | 'testIDMap'
+  | 'width'
+> & {
+  /**
+   * Callback is fired when a user hits enter on the keyboard. Can obtain the query
+   * through str parameter
+   */
+  onSearch?: (str: string) => void;
+  /**
+   * hide the start icon
+   * @default false
+   */
+  hideStartIcon?: boolean;
+  /**
+   * Set the start icon. You can only
+   * set it to search | backArrow icon. If
+   * you set this, the icon would not toggle
+   * between search and backArrow depending on
+   * the focus state
+   * @default search
+   */
+  startIcon?: Extract<IconName, 'search' | 'backArrow'>;
+  /**
+   * hide the end icon
+   * @default undefined
+   */
+  hideEndIcon?: boolean;
+  /**
+   * Set the end node
+   * @default undefined
+   */
+  end?: React.ReactNode;
+  /**
+   * Set the a11y label for the clear icon
+   */
+  clearIconAccessibilityLabel?: string | undefined;
+  /**
+   * Set the a11y label for the start icon
+   */
+  startIconAccessibilityLabel?: string | undefined;
+};
 
 export type SearchInputProps = SearchInputBaseProps &
   RNTextInputProps & {

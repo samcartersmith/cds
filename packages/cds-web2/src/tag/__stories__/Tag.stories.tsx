@@ -1,9 +1,8 @@
 import React from 'react';
 import startCase from 'lodash/startCase';
-import { TagBaseProps } from '@cbhq/cds-common2';
 
 import { VStack } from '../../layout';
-import { Tag } from '../Tag';
+import { Tag, type TagBaseProps } from '../Tag';
 
 export default {
   title: 'Core Components/Tag',

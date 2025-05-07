@@ -1,5 +1,4 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
@@ -8,6 +7,7 @@ import { SectionHeader } from '../../section-header/SectionHeader';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
 import { Text } from '../../typography/Text';
 import { ProgressBar } from '../../visualizations/ProgressBar';
+import type { DrawerRefBaseProps } from '../drawer/Drawer';
 import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 export const Default = () => {

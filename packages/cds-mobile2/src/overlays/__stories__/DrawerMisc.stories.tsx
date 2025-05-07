@@ -1,9 +1,9 @@
 import React, { useCallback, useRef, useState } from 'react';
-import type { DrawerBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { useA11y } from '../../hooks/useA11y';
+import type { DrawerBaseProps } from '../drawer/Drawer';
 import { Drawer } from '../drawer/Drawer';
 
 import { SideDrawerContent } from './Drawers';

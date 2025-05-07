@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Pressable, PressableInternalProps } from './Pressable';
+import { Pressable, PressableProps } from './Pressable';
 
 /** @deprecated This component will be removed in a future version. Use `<Pressable background="transparent">` instead. */
 export type PressableOpacityProps = Omit<
-  PressableInternalProps,
+  PressableProps,
   'background' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'transparentWhileInactive'
 >;
 

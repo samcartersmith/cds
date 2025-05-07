@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import useMeasure from 'react-use-measure';
 import { render, screen } from '@testing-library/react';
 import { sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
-import type { TabNavigationProps } from '@cbhq/cds-common2/types';
 
 import { DefaultThemeProvider } from '../../utils/test';
-import { TabbedChips } from '../TabbedChips';
+import { TabbedChips, type TabbedChipsBaseProps } from '../TabbedChips';
 
 jest.mock('../../hooks/useDimensions', () => ({
   useDimensions: jest.fn(() => {
@@ -38,7 +37,7 @@ const mockDimensions: Partial<ReturnType<typeof useMeasure>> = [
 const testID = 'tabbedChip';
 
 const Demo = () => {
-  const [value, setValue] = useState<TabNavigationProps['value']>(sampleTabs[0].id);
+  const [value, setValue] = useState<TabbedChipsBaseProps['value']>(sampleTabs[0].id);
   return (
     <DefaultThemeProvider>
       <TabbedChips onChange={setValue} tabs={sampleTabs} testID={testID} value={value} />

@@ -2,12 +2,11 @@ import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 import { switchTransitionConfig } from '@cbhq/cds-common2/motion/switch';
-import { ControlBaseProps } from '@cbhq/cds-common2/types/ControlBaseProps';
 
 import { Box } from '../layout/Box';
 import { convertTransition } from '../motion/utils';
 
-import { Control, ControlProps } from './Control';
+import { Control, type ControlBaseProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
 const track = css`
@@ -41,7 +40,7 @@ const thumbBackgroundStyle = css`
   background-color: rgb(255, 255, 255);
 `;
 
-export type SwitchProps = Omit<ControlBaseProps<string> & ControlProps, 'value'>;
+export type SwitchProps = Omit<ControlBaseProps<string>, 'value'>;
 
 const MotionBox = motion(Box);
 

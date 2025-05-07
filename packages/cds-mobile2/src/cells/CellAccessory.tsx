@@ -1,11 +1,20 @@
 import React, { memo } from 'react';
 import { I18nManager } from 'react-native';
-import { CellAccessoryProps } from '@cbhq/cds-common2';
+import type { PaddingProps } from '@cbhq/cds-common2/types';
 
 import { Icon } from '../icons/Icon';
 import { Box } from '../layout/Box';
 
-export type { CellAccessoryProps };
+export type CellAccessoryType = 'arrow' | 'more' | 'selected';
+
+export type CellAccessoryProps = PaddingProps & {
+  /** Type of accessory to display at the end. */
+  type: CellAccessoryType;
+  /**
+   * @danger This is a migration escape hatch. It is not intended to be used normally.
+   */
+  className?: string;
+};
 
 export const CellAccessory = memo(function CellAccessory({ type, ...props }: CellAccessoryProps) {
   let icon;

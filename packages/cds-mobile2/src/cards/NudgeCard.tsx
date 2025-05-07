@@ -1,7 +1,14 @@
 import React, { isValidElement, memo } from 'react';
 import { PressableProps } from 'react-native';
 import { getCardBodySpacingProps } from '@cbhq/cds-common2/cards/getCardBodySpacingProps';
-import { NudgeCardBaseProps } from '@cbhq/cds-common2/types';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import {
+  DimensionStyles,
+  DimensionValue,
+  IllustrationPictogramNames,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { IconButton } from '../buttons';
 import { Pictogram } from '../illustrations/Pictogram';
@@ -9,10 +16,48 @@ import { Box, HStack, VStack } from '../layout';
 import { Pressable } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
-export type NudgeCardProps = NudgeCardBaseProps & {
-  onDismissPress?: PressableProps['onPress'];
-  onActionPress?: PressableProps['onPress'];
-} & Pick<PressableProps, 'onPress'>;
+export type NudgeCardBaseProps = SharedProps &
+  Omit<DimensionStyles, 'minHeight' | 'width'> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
+    /** Text or ReactNode to be displayed above the description in a TextHeadline */
+    title?: React.ReactNode;
+    /** Text or ReactNode to be displayed below the title in a TextBody */
+    description?: React.ReactNode;
+    /** If you pass a Pictogram name it will render a Pictogram to the right of the text content */
+    pictogram?: IllustrationPictogramNames;
+    /** Pass any node to be rendered to the right of the text content */
+    media?: React.ReactNode;
+    /** Text or ReactNode to display as the call to action */
+    action?: React.ReactNode;
+    /**
+     * Maximum number of lines shown for the title and description text. Text that exceeds will be truncated.
+     * @default 3
+     */
+    numberOfLines?: number;
+    /**
+     * @default 327
+     */
+    width?: DimensionValue;
+    /**
+     * @default 160
+     */
+    minHeight?: DimensionValue;
+    /**
+     * Background color for the card.
+     * @default bgAlternate
+     */
+    background?: ThemeVars.Color;
+    /**
+     * Set the media position for the pictogram or media.
+     * @default right
+     */
+    mediaPosition?: 'left' | 'right';
+    onDismissPress?: PressableProps['onPress'];
+    onActionPress?: PressableProps['onPress'];
+    onPress?: PressableProps['onPress'];
+  };
+
+export type NudgeCardProps = NudgeCardBaseProps;
 
 export const NudgeCard = memo(
   ({

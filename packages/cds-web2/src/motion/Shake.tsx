@@ -7,17 +7,27 @@ import React, {
   useImperativeHandle,
 } from 'react';
 import { m as motion, useAnimation } from 'framer-motion';
-import type { ShakeBaseProps, ShakeRefBaseProps } from '@cbhq/cds-common2';
 import { shakeTransitionConfig, shakeTranslateX } from '@cbhq/cds-common2/motion/hint';
 
+import type { HintMotionBaseProps } from './types';
 import { convertTransition } from './utils';
+
+export type ShakeRefBaseProps = {
+  play: () => Promise<void>;
+};
+
+export type ShakeBaseProps = HintMotionBaseProps & {
+  children: React.ReactNode;
+};
+
+export type ShakeProps = ShakeBaseProps;
 
 /**
  * Please consult with the motion team in #ask-motion before using this component.
  */
 export const Shake = memo(
   forwardRef(function Shake(
-    { children, disableAnimateOnMount = false }: ShakeBaseProps,
+    { children, disableAnimateOnMount = false }: ShakeProps,
     ref: ForwardedRef<ShakeRefBaseProps>,
   ) {
     const controls = useAnimation();

@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { Animated, LayoutChangeEvent, StyleSheet } from 'react-native';
-import { SparklineInteractiveMinMaxProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
+import type { ChartDataPoint, ChartFormatAmount, ChartXFunction } from '@cbhq/cds-common2/types';
 import { useLayout } from '@cbhq/cds-mobile2/hooks/useLayout';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 import { TextLabel2 } from '@cbhq/cds-mobile2/typography';
@@ -73,6 +73,12 @@ const SparklineInteractiveMinMaxContent: React.FunctionComponent<
     </Animated.View>
   );
 });
+
+export type SparklineInteractiveMinMaxProps = {
+  dataPoint: ChartDataPoint | undefined;
+  formatMinMaxLabel: ChartFormatAmount;
+  xFunction: ChartXFunction;
+};
 
 export const SparklineInteractiveMinMax: React.FunctionComponent<
   React.PropsWithChildren<SparklineInteractiveMinMaxProps>

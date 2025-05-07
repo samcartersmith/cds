@@ -1,17 +1,23 @@
 import React, { Children, cloneElement, forwardRef, isValidElement, memo } from 'react';
 import { View, ViewProps } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
-import type { CheckboxGroupBaseProps } from '@cbhq/cds-common2/types/CheckboxGroupBaseProps';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { CheckboxProps } from './Checkbox';
 
-export type CheckboxGroupProps<T extends string> = Omit<ViewProps, 'children'> &
-  CheckboxGroupBaseProps<T> &
+export type CheckboxGroupBaseProps<T extends string | number> = Omit<ViewProps, 'children'> &
   SharedProps & {
+    /** Checkbox elements that are part of the checkbox group. */
+    children: React.ReactElement[];
+    /** Set a label summary for the group of checkboxes. */
+    label?: React.ReactNode;
+    /** Checkbox options that are checked. */
+    selectedValues: Set<T>;
     /** Handle change events when user tap on the checkboxes */
     onChange?: (value?: T) => void;
   };
+
+export type CheckboxGroupProps<T extends string> = CheckboxGroupBaseProps<T>;
 
 // Follows behavior describe in https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html
 const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends string>(

@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { navigationOptions } from '@cbhq/cds-common2/internal/data/navigation';
-import { DrawerRefBaseProps, IllustrationPictogramNames } from '@cbhq/cds-common2/types';
+import { IllustrationPictogramNames } from '@cbhq/cds-common2/types';
 import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
 
 import { IconButton } from '../../buttons/IconButton';
@@ -9,6 +9,7 @@ import { SelectOption } from '../../controls/SelectOption';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { HStack } from '../../layout';
+import type { DrawerRefBaseProps } from '../drawer/Drawer';
 import { Tray } from '../tray/Tray';
 
 const NavigationTray = () => {

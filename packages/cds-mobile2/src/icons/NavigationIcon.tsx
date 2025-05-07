@@ -1,17 +1,48 @@
 import React, { memo } from 'react';
-import { SharedAccessibilityProps } from '@cbhq/cds-common2';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { NavigationBaseIconProps } from '@cbhq/cds-common2/types/NavigationBaseIconProps';
+import type {
+  IconSize,
+  NavigationIconName,
+  PaddingProps,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { Icon } from './Icon';
 
-/** @deprecated This component will be removed in a future version. Use Icon instead. */
-export type NavigationIconProps = NavigationBaseIconProps & {
-  /**
-   * Color of the icon when used as a foreground.
-   * @default foreground
-   */ color?: ThemeVars.Color;
-} & Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
+export type NavigationBaseIconProps = PaddingProps &
+  SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'> & {
+    /** Size for a given icon.
+     * @default m
+     */
+    size?: IconSize;
+    /** Name of the icon, as defined in Figma. */
+    name: NavigationIconName;
+    /**
+     * A boolean flag indicating whether or not a border should be shown around an icon.
+     * This border will match color prop. Border is only allowed for sizes m and above.
+     * @default false
+     */
+    bordered?: boolean;
+    /**
+     * Fallback element to render if unable to find an icon with matching name
+     * @default null
+     * */
+    fallback?: null | React.ReactNode;
+    /**
+     * Toggles the active and inactive state of the navigation icon
+     * @default false
+     */
+    active?: boolean;
+    /**
+     * Color of the icon when used as a foreground.
+     * @default foreground
+     */
+    color?: ThemeVars.Color;
+  };
+
+export type NavigationIconProps = NavigationBaseIconProps;
 
 /** @deprecated This component will be removed in a future version. Use Icon instead. */
 export const NavigationIcon = memo(function NavigationIcon({

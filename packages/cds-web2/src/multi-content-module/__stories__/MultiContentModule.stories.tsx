@@ -12,7 +12,7 @@ import { Avatar } from '../../media';
 import { FullscreenModal } from '../../overlays/modal/FullscreenModal';
 import { Pressable } from '../../system/Pressable';
 import { Text } from '../../typography/Text';
-import { MultiContentModule, MultiContentModuleBaseProps } from '../MultiContentModule';
+import { MultiContentModule, type MultiContentModuleBaseProps } from '../MultiContentModule';
 
 type ListItem = {
   icon: IconName;

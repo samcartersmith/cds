@@ -1,21 +1,24 @@
-import React, { type HTMLAttributes, memo, useMemo } from 'react';
+import React, { type HTMLAttributes, memo, type MouseEventHandler, useMemo } from 'react';
 import { cardSizes } from '@cbhq/cds-common2/tokens/card';
-import type { CardBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
+import type { BoxBaseProps, BoxDefaultElement, BoxProps } from '../layout/Box';
 import { VStack } from '../layout/VStack';
 import { Pressable, type PressableProps } from '../system/Pressable';
 
-export type CardProps = CardBaseProps & {
-  // TODO (DX-4652): These key handling props have been kept for bw compatibility since they are valid props for a dif
-  // it would be better to have Card extend the entire Box interface instead of arbitrarily picking these two
-  onKeyDown?: HTMLAttributes<HTMLElement>['onKeyDown'];
-  onKeyUp?: HTMLAttributes<HTMLElement>['onKeyUp'];
-  onClick?: React.MouseEventHandler;
-} & Pick<
-    SharedAccessibilityProps,
-    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
-  > &
-  Pick<PressableProps<'a'>, 'href' | 'target'>;
+export type CardBaseProps = Pick<SharedAccessibilityProps, 'id'> &
+  Pick<PressableProps<'a'>, 'href' | 'target' | 'background' | 'noScaleOnPress'> &
+  Omit<BoxBaseProps, 'background'> & {
+    /** Size of the card. Small and medium have fixed widths and large grows with its children. */
+    size?: 'small' | 'medium' | 'large';
+    children?: React.ReactNode;
+    onKeyDown?: HTMLAttributes<HTMLElement>['onKeyDown'];
+    onKeyUp?: HTMLAttributes<HTMLElement>['onKeyUp'];
+    onClick?: MouseEventHandler;
+  };
+
+export type CardProps = CardBaseProps &
+  Omit<BoxProps<BoxDefaultElement>, 'onClick' | 'onKeyDown' | 'onKeyUp' | 'background'>;
 
 export const Card = memo<CardProps>(function Card({
   children,
@@ -35,6 +38,7 @@ export const Card = memo<CardProps>(function Card({
   testID,
   borderRadius,
   elevation,
+  noScaleOnPress,
   ...props
 }) {
   const width = widthProps ?? cardSizes[size].width;
@@ -74,6 +78,7 @@ export const Card = memo<CardProps>(function Card({
         elevation={elevation}
         height={height}
         href={href}
+        noScaleOnPress={noScaleOnPress}
         onClick={onClick}
         onKeyDown={onKeyDown}
         onKeyUp={onKeyUp}
@@ -97,6 +102,7 @@ export const Card = memo<CardProps>(function Card({
         borderRadius={borderRadius}
         elevation={elevation}
         height={height}
+        noScaleOnPress={noScaleOnPress}
         onClick={onClick}
         onKeyDown={onKeyDown}
         onKeyUp={onKeyUp}

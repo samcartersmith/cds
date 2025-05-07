@@ -2,39 +2,39 @@ import { ThemeVars } from '../core/theme';
 
 import { TypeOrNumber } from './TypeOrNumber';
 
-type NegativeSpace = TypeOrNumber<'0' | `-${Exclude<ThemeVars.Space, 0>}`>;
+export type NegativeSpace = TypeOrNumber<'0' | `-${Exclude<ThemeVars.Space, 0>}`>;
 
 export type MarginProps = {
-  /** Apply negative margin on all sides. */
+  /** Apply margin on all sides. */
   margin?: NegativeSpace;
-  /** Apply negative margin on the leading and trailing sides. */
+  /** Apply margin on the start and end sides. */
   marginX?: NegativeSpace;
-  /** Apply negative margin on the top and bottom sides. */
+  /** Apply margin on the top and bottom sides. */
   marginY?: NegativeSpace;
-  /** Apply negative margin on the top side. */
+  /** Apply margin on the top side. */
   marginTop?: NegativeSpace;
-  /** Apply negative margin on the trailing side. */
+  /** Apply margin on the end side. */
   marginEnd?: NegativeSpace;
-  /** Apply negative margin on the bottom side. */
+  /** Apply margin on the bottom side. */
   marginBottom?: NegativeSpace;
-  /** Apply negative margin on the leading side. */
+  /** Apply margin on the start side. */
   marginStart?: NegativeSpace;
 };
 
 export type PaddingProps = {
   /** Apply padding on all sides. */
   padding?: ThemeVars.Space;
-  /** Apply padding on the leading and trailing sides. */
+  /** Apply padding on the start and end sides. */
   paddingX?: ThemeVars.Space;
   /** Apply padding on the top and bottom sides. */
   paddingY?: ThemeVars.Space;
   /** Apply padding on the top side. */
   paddingTop?: ThemeVars.Space;
-  /** Apply padding on the trailing side. */
+  /** Apply padding on the end side. */
   paddingEnd?: ThemeVars.Space;
   /** Apply padding on the bottom side. */
   paddingBottom?: ThemeVars.Space;
-  /** Apply padding on the leading side. */
+  /** Apply padding on the start side. */
   paddingStart?: ThemeVars.Space;
 };
 

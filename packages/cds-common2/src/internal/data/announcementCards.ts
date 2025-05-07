@@ -1,4 +1,4 @@
-import { SpotSquareName } from '../../types';
+import type { SpotSquareName } from '@cbhq/cds-illustrations';
 
 const onPress = () => console.log('pressed');
 export const announcementCards = [

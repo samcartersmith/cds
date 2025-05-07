@@ -2,7 +2,7 @@ import React, { forwardRef, memo } from 'react';
 import { css } from '@linaria/core';
 import { useInputVariant } from '@cbhq/cds-common2/hooks/useInputVariant';
 import { usePrefixedId } from '@cbhq/cds-common2/hooks/usePrefixedId';
-import type { InputVariant, SelectBaseProps } from '@cbhq/cds-common2/types';
+import type { InputVariant } from '@cbhq/cds-common2/types';
 
 import { HStack } from '../layout/HStack';
 import { AnimatedCaret } from '../motion/AnimatedCaret';
@@ -11,6 +11,7 @@ import { Text } from '../typography/Text';
 
 import { TextInputFocusVariantContext } from './context';
 import { InputLabel } from './InputLabel';
+import type { SelectBaseProps } from './Select';
 import { SelectStack } from './SelectStack';
 
 const selectTriggerMinHeight = 56;
@@ -22,7 +23,7 @@ export type SelectTriggerProps = {
   visible?: boolean;
   /** Event handler for when the Select Input trigger is pressed */
   onClick?: () => void;
-} & Omit<SelectBaseProps, 'children' | 'focused' | 'width' | 'onChange' | 'onPress'>;
+} & Omit<SelectBaseProps, 'children' | 'focused' | 'width' | 'onChange' | 'onClick'>;
 
 const pressableOverrides = css`
   padding: 0;

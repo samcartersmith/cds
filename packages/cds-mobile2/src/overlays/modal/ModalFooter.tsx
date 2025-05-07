@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
-import { PressableProps } from 'react-native';
-import { ButtonBaseProps, SharedProps } from '@cbhq/cds-common2';
-import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
+import type { PressableProps } from 'react-native';
+import { useModalContext } from '@cbhq/cds-common2/overlays/ModalContext';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
-import { ButtonGroup, ButtonGroupProps } from '../../buttons';
-import { Box } from '../../layout';
+import type { ButtonBaseProps } from '../../buttons/Button';
+import { ButtonGroup, type ButtonGroupProps } from '../../buttons/ButtonGroup';
+import { Box } from '../../layout/Box';
 
 export type ModalFooterProps = {
   /** Primary action button */
@@ -22,7 +23,7 @@ export const ModalFooter = ({
   direction = 'horizontal',
   testID,
 }: ModalFooterProps) => {
-  const { hideDividers = false } = useModalParent();
+  const { hideDividers = false } = useModalContext();
   const actions = [secondaryAction, primaryAction].filter(Boolean);
   const isVertical = direction === 'vertical';
 

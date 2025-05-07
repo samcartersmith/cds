@@ -1,25 +1,18 @@
 import React, { memo, useMemo } from 'react';
-import { Animated, type StyleProp, View, type ViewStyle } from 'react-native';
-import { ElevationLevels } from '@cbhq/cds-common2';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import { Animated, type StyleProp, View, type ViewProps, type ViewStyle } from 'react-native';
+import { ElevationLevels, type ThemeVars } from '@cbhq/cds-common2';
 
 import { useTheme } from '../hooks/useTheme';
-import { Box, type BoxProps } from '../layout/Box';
+import { Box, type BoxBaseProps } from '../layout/Box';
 import { getInteractableStyles } from '../styles/getInteractableStyles';
 
-export type InteractableBaseProps = {
+export type InteractableBaseProps = Omit<BoxBaseProps, 'animated'> & {
   /** Apply animated styles to the outer container. */
   style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>[];
   /** Background color of the overlay (element being interacted with). */
   background?: ThemeVars.Color;
   /** Set element to block and expand to 100% width. */
   block?: boolean;
-  /** Border color of the element being interacted with. */
-  borderColor?: ThemeVars.Color;
-  /** Border radius of the element being interacted with. Number should only be used if value comes from useButtonBorderRadius. */
-  borderRadius?: ThemeVars.BorderRadius;
-  /** Width of the border. */
-  borderWidth?: ThemeVars.BorderWidth;
   /** Is the element currently disabled. */
   disabled?: boolean;
   /** Is the element elevated. */
@@ -41,10 +34,14 @@ export type InteractableBaseProps = {
    * Must be used in conjunction with the "pressed" prop
    * */
   transparentWhilePressed?: boolean;
+  /** TO DO: Document blendStyles */
   blendStyles?: {
     background?: string;
     pressedBackground?: string;
     disabledBackground?: string;
+    borderColor?: string;
+    pressedBorderColor?: string;
+    disabledBorderColor?: string;
   };
   /** Apply animated styles to the inner container. */
   contentStyle?: StyleProp<ViewStyle>;
@@ -56,7 +53,7 @@ export type InteractableBaseProps = {
   };
 };
 
-export type InteractableProps = Omit<BoxProps, 'background' | 'animated'> & InteractableBaseProps;
+export type InteractableProps = InteractableBaseProps & Omit<ViewProps, 'style'>;
 
 export const Interactable = memo(function Interactable({
   background = 'transparent',
@@ -79,6 +76,8 @@ export const Interactable = memo(function Interactable({
 
   const { wrapperStyles: defaultWrapperStyles, contentStyles } = useMemo(() => {
     const backgroundColor = blendStyles?.background ?? theme.color[background];
+    const borderColorValue = blendStyles?.borderColor ?? theme.color[borderColor];
+
     return getInteractableStyles({
       theme,
       background: isTransparent ? 'transparent' : backgroundColor,
@@ -89,8 +88,16 @@ export const Interactable = memo(function Interactable({
       disabledBackground: isTransparent
         ? 'transparent'
         : blendStyles?.disabledBackground ?? backgroundColor,
+      borderColor: isTransparent ? 'transparent' : borderColorValue,
+      pressedBorderColor:
+        isTransparent || isPressedAndTransparent
+          ? 'transparent'
+          : blendStyles?.pressedBorderColor ?? borderColorValue,
+      disabledBorderColor: isTransparent
+        ? 'transparent'
+        : blendStyles?.disabledBorderColor ?? borderColorValue,
     });
-  }, [theme, background, isTransparent, isPressedAndTransparent, blendStyles]);
+  }, [theme, background, isTransparent, isPressedAndTransparent, blendStyles, borderColor]);
 
   const mergedWrapperStyles = useMemo(
     () => [
@@ -102,7 +109,7 @@ export const Interactable = memo(function Interactable({
       pressed && wrapperStyles?.pressed,
       disabled && defaultWrapperStyles.disabled,
       disabled && wrapperStyles?.disabled,
-      ...(style ?? []),
+      style,
     ],
     [block, defaultWrapperStyles, wrapperStyles, isTransparent, style, pressed, disabled],
   );

@@ -1,10 +1,6 @@
 import React, { memo, useCallback, useMemo } from 'react';
 import { LayoutChangeEvent, ScrollView, StyleSheet } from 'react-native';
 import { periodLabelMap } from '@cbhq/cds-common2/tokens/sparkline';
-import {
-  SparklineInteractivePeriodProps,
-  SparklineInteractivePeriodSelectorProps,
-} from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 import { useHorizontallyScrollingPressables } from '@cbhq/cds-mobile2/hooks/useHorizontallyScrollingPressables';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
@@ -16,6 +12,20 @@ import { TextLabel1 } from '@cbhq/cds-mobile2/typography';
 import { Haptics } from '@cbhq/cds-mobile2/utils/haptics';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
+
+export type SparklineInteractivePeriodSelectorProps<Period extends string> = {
+  selectedPeriod: Period;
+  setSelectedPeriod: (period: Period) => void;
+  periods: { label: string; value: Period }[];
+  color: string;
+};
+
+export type SparklineInteractivePeriodProps<Period extends string> = {
+  period: { label: string; value: Period };
+  selectedPeriod: Period;
+  setSelectedPeriod: SparklineInteractivePeriodSelectorProps<Period>['setSelectedPeriod'];
+  color: string;
+};
 
 function SparklineInteractivePeriodWithGeneric<Period extends string>({
   period,

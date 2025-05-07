@@ -10,16 +10,13 @@ import React, {
 import { css, cx } from '@linaria/core';
 import { ChartGetMarker } from '@cbhq/cds-common2';
 import { fadeDuration, maskOpacity } from '@cbhq/cds-common2/tokens/sparkline';
-import {
-  SparklineInteractiveBaseProps,
-  SparklineInteractiveScrubHandlerProps,
-} from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 import { debounce } from '@cbhq/cds-common2/utils/debounce';
 import { noop } from '@cbhq/cds-utils';
 import { cubicBezier } from '@cbhq/cds-web2/animation/convertMotionConfig';
 import { useDimensions } from '@cbhq/cds-web2/hooks/useDimensions';
 
 import { fadeIn, fadeOut } from './fade';
+import type { SparklineInteractiveBaseProps } from './SparklineInteractive';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveScrubContext } from './SparklineInteractiveScrubProvider';
 
@@ -101,14 +98,17 @@ export function fadeInMask(domNode?: HTMLElement | null) {
   domNode?.classList.remove(fadeOutMaskClassName);
 }
 
-type SparklineInteractiveScrubHandlerWebProps<Period extends string> =
-  SparklineInteractiveScrubHandlerProps & {
-    getMarker: ChartGetMarker;
-    selectedPeriod: Period;
-  } & Pick<
-      SparklineInteractiveBaseProps<Period>,
-      'onScrub' | 'formatHoverDate' | 'formatHoverPrice'
-    >;
+type SparklineInteractiveScrubHandlerWebProps<Period extends string> = Pick<
+  SparklineInteractiveBaseProps<Period>,
+  'onScrub' | 'formatHoverDate' | 'formatHoverPrice'
+> & {
+  getMarker: ChartGetMarker;
+  selectedPeriod: Period;
+  onScrubEnd?: () => void;
+  onScrubStart?: () => void;
+  disabled?: boolean;
+  children: React.ReactNode;
+};
 
 const SparklineInteractiveScrubHandlerWithGeneric = <Period extends string>({
   onScrubEnd = noop,

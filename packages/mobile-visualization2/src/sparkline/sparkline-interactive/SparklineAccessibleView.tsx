@@ -1,7 +1,8 @@
 import React, { memo, useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
 import chunk from 'lodash/chunk';
-import { SparklineInteractiveBaseProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
+
+import type { SparklineInteractiveBaseProps } from './SparklineInteractive';
 
 type SparklineAccessibleViewProps<Period extends string> = {
   selectedPeriod: Period;

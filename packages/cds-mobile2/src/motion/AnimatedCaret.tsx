@@ -2,11 +2,15 @@ import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
 import { animateRotateConfig } from '@cbhq/cds-common2/motion/animatedCaret';
-import type { AnimatedCaretBaseProps } from '@cbhq/cds-common2/types/AnimatedCaretBaseProp';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { Icon, IconProps } from '../icons';
-import { HStack } from '../layout';
+import { Icon, type IconProps } from '../icons';
+import { HStack } from '../layout/HStack';
+
+export type AnimatedCaretBaseProps = SharedProps & {
+  rotate: number;
+};
 
 export type AnimatedCaretProps = AnimatedCaretBaseProps & Partial<Omit<IconProps, 'name'>>;
 
@@ -48,9 +52,7 @@ export const AnimatedCaret = memo(function AnimatedCaret({
   const previousRotate = usePreviousValue(rotate);
 
   useEffect(() => {
-    if (rotate !== previousRotate) {
-      animate(rotate);
-    }
+    if (rotate !== previousRotate) animate(rotate);
   }, [rotate, previousRotate, animate]);
 
   return (

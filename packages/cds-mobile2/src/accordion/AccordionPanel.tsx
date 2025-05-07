@@ -2,12 +2,26 @@ import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
 import { accordionVisibleMaxHeight } from '@cbhq/cds-common2/animation/accordion';
 import { accordionSpacing } from '@cbhq/cds-common2/tokens/accordion';
-import type { AccordionPanelBaseProps } from '@cbhq/cds-common2/types';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
-import { Collapsible } from '../collapsible/Collapsible';
+import { Collapsible, type CollapsibleBaseProps } from '../collapsible/Collapsible';
+
+export type AccordionPanelBaseProps = SharedProps &
+  Pick<CollapsibleBaseProps, 'collapsed' | 'children'> & {
+    /**
+     * Key of the accordion item.
+     * This should be unique inside the same Accordion
+     * unless you want multiple items to be controlled at the same time.
+     */
+    itemKey: string;
+  };
 
 export type AccordionPanelProps = AccordionPanelBaseProps;
 
+/**
+ * Renders a collapsible element to use as the primary content container for an AccordionItem.
+ * Accepts a unique `itemKey` prop to uniquely identify one panel from another.
+ */
 export const AccordionPanel = memo(
   forwardRef(
     (

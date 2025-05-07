@@ -1,8 +1,68 @@
 import React, { cloneElement, createContext, isValidElement, useMemo } from 'react';
 
-import { DimensionValue } from '../types';
+import type { ThemeVars } from '../core/theme';
+import {
+  DimensionValue,
+  OverlayLifecycleProps,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '../types';
 
-import { ToastNode, useToastQueue } from './useToastQueue';
+import { useToastQueue } from './useToastQueue';
+
+export type ToastRefHandle = {
+  hide: () => Promise<boolean>;
+};
+
+export type ToastBaseProps = SharedProps &
+  SharedAccessibilityProps &
+  Pick<OverlayLifecycleProps, 'onWillHide' | 'onDidHide'> & {
+    /**
+     * The message to be displayed in the toast
+     */
+    text: string;
+    /**
+     * Optional toast action i.e. a CTA button
+     */
+    action?: SharedProps & {
+      /**
+       * Label for the action button
+       */
+      label: string;
+      /**
+       * Callback function fired when the button is pressed
+       */
+      onPress: () => void;
+    };
+    /**
+     * The vertical offset from the bottom of the screen
+     */
+    bottomOffset?: DimensionValue;
+    /**
+     * Controls color surge of the Toast background
+     * @default primary
+     */
+    variant?: ThemeVars.Color;
+  };
+
+export type ToastElement = React.ReactElement<ToastBaseProps & { ref?: React.Ref<ToastRefHandle> }>;
+
+/**
+ * The data structure managed by the ToastProvider.
+ * It composes together the Toast element requested to be rendered and the duration for which it should be displayed.
+ */
+export type ToastNode = {
+  duration: number;
+  element: ToastElement;
+};
+
+export type ToastProviderProps = {
+  /**
+   * An optional, global override to individual Toasts' bottomOffset prop.
+   * This value will be applied to all Toasts render via this Provider instance
+   */
+  toastBottomOffset?: ToastBaseProps['bottomOffset'];
+};
 
 export type ToastProviderStates = {
   activeToast?: ToastNode;
@@ -12,10 +72,6 @@ export type ToastProviderStates = {
   clearToastQueue: () => void;
   pauseTimer: () => void;
   resumeTimer: () => void;
-};
-
-export type ToastProviderProps = {
-  toastBottomOffset?: DimensionValue;
 };
 
 export const ToastContext = createContext<ToastProviderStates>({

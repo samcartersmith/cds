@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react-native';
-import { CellSpacing } from '@cbhq/cds-common2';
 
 import { DefaultThemeProvider } from '../../utils/testHelpers';
+import type { CellSpacing } from '../Cell';
 import { ListCellFallback } from '../ListCellFallback';
 
 describe('ListCellFallback', () => {

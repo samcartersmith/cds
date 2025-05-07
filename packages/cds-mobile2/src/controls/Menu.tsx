@@ -1,6 +1,6 @@
 import React from 'react';
-import { SelectBaseProps } from '@cbhq/cds-common2/types/SelectBaseProps';
 
+import type { SelectBaseProps } from './Select';
 import { SelectProvider } from './SelectContext';
 import { useSelect } from './useSelect';
 

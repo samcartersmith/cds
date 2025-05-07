@@ -1,6 +1,7 @@
 import React from 'react';
 import { css, cx } from '@linaria/core';
 import { opacityHovered, opacityPressed } from '@cbhq/cds-common2/tokens/interactable';
+import type { ValidateProps } from '@cbhq/cds-common2/types';
 import type { IllustrationPictogramNames } from '@cbhq/cds-common2/types/IllustrationNames';
 
 import { IconButton } from '../buttons/IconButton';
@@ -179,7 +180,10 @@ export const NudgeCard = ({
       paddingEnd={onDismissPress ? 3 : 0}
       position="relative"
       width={width}
-      {...props}
+      {...(props satisfies ValidateProps<
+        typeof props,
+        Omit<NudgeCardProps, keyof BoxProps<BoxDefaultElement>>
+      >)}
     >
       {onDismissPress ? (
         <Box alignSelf="flex-end" padding={0.5} position="absolute" right={0} top={0}>

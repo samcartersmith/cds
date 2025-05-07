@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from 'react';
 import { SharedProps, TextAlignProps } from '@cbhq/cds-common2';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { useCellSpacing } from '@cbhq/cds-common2/hooks/useCellSpacing';
 
+import { useCellSpacing } from '../hooks/useCellSpacing';
 import { Box } from '../layout/Box';
 import { Text } from '../typography/Text';
 

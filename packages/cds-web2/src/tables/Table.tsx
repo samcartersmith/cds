@@ -1,9 +1,10 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx, type LinariaClassName } from '@linaria/core';
-import type { CellSpacing } from '@cbhq/cds-common2/types/CellBaseProps';
 import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
 import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types/SharedAccessibilityProps';
 import type { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+
+import type { CellSpacing } from '../cells/Cell';
 
 import { TableContext } from './context/TableContext';
 

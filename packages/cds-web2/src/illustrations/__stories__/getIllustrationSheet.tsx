@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { IllustrationNamesMap, IllustrationVariant } from '@cbhq/cds-common2';
+import type { IllustrationVariant } from '@cbhq/cds-common2';
 import type { ColorScheme } from '@cbhq/cds-common2/core/theme';
 import { illustrationDimensions, illustrationSizes } from '@cbhq/cds-common2/tokens/illustrations';
 import heroSquareVersionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/versionMap';
@@ -12,6 +12,7 @@ import { HStack, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { Text } from '../../typography/Text';
+import type { IllustrationNamesMap } from '../createIllustration';
 
 type TypeMap = {
   [K in IllustrationVariant]: {

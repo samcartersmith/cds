@@ -1,7 +1,7 @@
 import React, { forwardRef, memo } from 'react';
-import type { ContentCardHeaderBaseProps as BaseProps } from '@cbhq/cds-common2/types';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
-import { Polymorphic } from '../../core/polymorphism';
+import type { Polymorphic } from '../../core/polymorphism';
 import { type BoxBaseProps, HStack } from '../../layout';
 import { Avatar } from '../../media';
 import { Text } from '../../typography/Text';
@@ -9,7 +9,19 @@ import { Text } from '../../typography/Text';
 export const contentCardHeaderDefaultElement = 'div';
 export type ContentCardHeaderDefaultElement = typeof contentCardHeaderDefaultElement;
 
-export type ContentCardHeaderBaseProps = Polymorphic.ExtendableProps<BoxBaseProps, BaseProps>;
+export type ContentCardHeaderBaseProps = Polymorphic.ExtendableProps<
+  BoxBaseProps,
+  SharedProps & {
+    /** A media object like an image, avatar, illustration, or cryptocurrency asset. */
+    avatar?: React.ReactNode;
+    /** Name of the publisher */
+    title: React.ReactNode;
+    /** Includes data like content category type and time */
+    meta?: React.ReactNode;
+    /** Typically an Icon Button or Tag */
+    end?: React.ReactNode;
+  }
+>;
 
 export type ContentCardHeaderProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,

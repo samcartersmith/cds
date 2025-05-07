@@ -4,12 +4,12 @@ import { noop } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons';
 import { Checkbox } from '../../controls';
+import { SpotRectangle } from '../../illustrations';
 import { Box, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
 import { Text } from '../../typography/Text';
 import { ProgressBar } from '../../visualizations';
 import { Coachmark } from '../Coachmark';
-import { SpotRectangle } from '../../illustrations';
 
 export const CoachmarkExamples = () => {
   const [checked, setChecked] = useState(false);
@@ -56,8 +56,8 @@ export const CoachmarkExamples = () => {
           <RemoteImage
             height={150}
             source={ethBackground}
-            width="100%"
             style={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
+            width="100%"
           />
         }
         onClose={noop}
@@ -67,7 +67,7 @@ export const CoachmarkExamples = () => {
         action={<Button>Next</Button>}
         content="This SpotRectangle is in a Box with bgPrimary background."
         media={
-          <Box background="bgPrimary" alignItems="center" justifyContent="center" padding={4}>
+          <Box alignItems="center" background="bgPrimary" justifyContent="center" padding={4}>
             <SpotRectangle name="defiEarn" />
           </Box>
         }

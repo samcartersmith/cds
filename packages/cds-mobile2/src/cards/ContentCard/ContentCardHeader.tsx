@@ -1,10 +1,21 @@
 import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
-import { ContentCardHeaderBaseProps } from '@cbhq/cds-common2';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 
 import { HStack, HStackProps } from '../../layout';
 import { Avatar } from '../../media';
 import { Text } from '../../typography/Text';
+
+export type ContentCardHeaderBaseProps = SharedProps & {
+  /** A media object like an image, avatar, illustration, or cryptocurrency asset. */
+  avatar?: React.ReactNode;
+  /** Name of the publisher */
+  title: React.ReactNode;
+  /** Includes data like content category type and time */
+  meta?: React.ReactNode;
+  /** Typically an Icon Button or Tag */
+  end?: React.ReactNode;
+};
 
 export type ContentCardHeaderProps = ContentCardHeaderBaseProps & HStackProps;
 
@@ -25,7 +36,7 @@ export const ContentCardHeader = memo(
         <HStack alignItems="center" gap={1}>
           {typeof avatar === 'string' ? (
             <Avatar
-              alt={title as string}
+              accessibilityLabel={title as string}
               name={title as string}
               shape="circle"
               size="l"

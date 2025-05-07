@@ -1,81 +1,148 @@
-import React, { forwardRef, isValidElement, memo, useMemo } from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
-import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { useButtonVariant } from '@cbhq/cds-common2/hooks/useButtonVariant';
-import type { ButtonBaseProps } from '@cbhq/cds-common2/types';
-import { getButtonSizeProps } from '@cbhq/cds-common2/utils/getButtonSizeProps';
+import React, { forwardRef, isValidElement, memo, useCallback, useMemo } from 'react';
+import {
+  ActivityIndicator,
+  type PressableStateCallbackType,
+  StyleSheet,
+  type View,
+} from 'react-native';
+import { transparentVariants, variants } from '@cbhq/cds-common2/tokens/button';
+import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
+import type {
+  ButtonVariant,
+  IconName,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 import { getButtonSpacingProps } from '@cbhq/cds-common2/utils/getButtonSpacingProps';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
-import { Pressable, type PressableInternalProps } from '../system/Pressable';
+import { Pressable, type PressableBaseProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
-export type ButtonProps = ButtonBaseProps &
-  Omit<PressableInternalProps, 'background'> & {
-    /** Background color of the button. */
-    background?: ThemeVars.Color;
+export const styles = StyleSheet.create({
+  inline: {
+    width: 'auto',
+    minWidth: 64,
+  },
+  block: {
+    width: '100%',
+    maxWidth: '100%',
+  },
+  text: {
+    flexShrink: 1,
+  },
+  icon: {
+    flexShrink: 0,
+  },
+});
+
+export type ButtonBaseProps = SharedProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
+  PressableBaseProps & {
+    /**
+     * Toggle design and visual variants.
+     * @default primary
+     */
+    variant?: ButtonVariant;
+    /** Mark the button as disabled. */
+    disabled?: boolean;
+    /** Mark the button as loading and display a spinner. */
+    loading?: boolean;
+    /** Mark the background and border as transparent until interacted with. */
+    transparent?: boolean;
+    /** Change to block and expand to 100% of parent width. */
+    block?: boolean;
+    /** Reduce the inner padding within the button itself. */
+    compact?: boolean;
+    /** Children to render within the button. */
+    children: React.ReactNode;
+    /** Set the start node */
+    start?: React.ReactNode;
+    /** Icon to render at the start of the button. */
+    startIcon?: IconName;
+    /** Set the end node */
+    end?: React.ReactNode;
+    /** Icon to render at the end of the button. */
+    endIcon?: IconName;
+    /** Ensure the button aligns flush on the left or right.
+     * This prop will translate the entire button left/right,
+     * so take care to ensure it is not overflowing awkwardly
+     */
+    flush?: 'start' | 'end';
+    /** Uniquely identify the button within a form. */
+    name?: string;
+    /** Don't scale element on press. */
+    noScaleOnPress?: boolean;
+    /**
+     * Truncates text after wrapping to a defined number of lines.
+     * @default 1
+     */
+    numberOfLines?: number;
   };
+
+export type ButtonProps = ButtonBaseProps;
 
 export const Button = memo(
   forwardRef(function Button(
     {
-      block,
-      background,
-      color: customColor,
-      children,
-      compact,
-      borderRadius = compact ? 700 : 900,
-      borderWidth = 100,
-      endIcon,
-      feedback = compact ? 'light' : 'normal',
-      loading,
-      startIcon,
-      transparent,
-      flush,
       variant = 'primary',
-      numberOfLines = 1,
+      loading,
+      transparent,
+      block,
+      compact,
+      children,
+      start,
+      startIcon,
+      end,
+      endIcon,
+      flush,
       noScaleOnPress,
+      numberOfLines = 1,
+      background,
+      color,
+      style,
+      wrapperStyles,
+      feedback = compact ? 'light' : 'normal',
+      borderColor,
+      borderWidth = 100,
+      borderRadius = compact ? 700 : 900,
       accessibilityLabel,
       accessibilityHint,
-      start,
-      end,
-      wrapperStyles,
       ...props
     }: ButtonProps,
     ref: React.ForwardedRef<View>,
   ) {
     const theme = useTheme();
-    const {
-      color: foregroundColor,
-      backgroundColor,
-      borderColor,
-    } = useButtonVariant(variant, transparent);
+    const iconSize = compact ? 's' : 'm';
+    const hasIcon = Boolean(startIcon || endIcon);
 
-    const color = customColor ?? foregroundColor;
+    const variantMap = transparent ? transparentVariants : variants;
 
-    const { minHeight, iconSize } = useMemo(() => getButtonSizeProps({ compact }), [compact]);
+    const variantStyle = variantMap[variant];
 
-    const { spacingStart, spacingEnd, offsetStart, offsetEnd } = useMemo(
-      () => getButtonSpacingProps({ compact, flush, startIcon, endIcon }),
-      [compact, endIcon, flush, startIcon],
+    const colorValue = color ?? variantStyle.color;
+    const backgroundValue = background ?? variantStyle.background;
+    const borderColorValue = borderColor ?? variantStyle.borderColor;
+
+    const sizingStyle = block ? styles.block : styles.inline;
+    const justifyContent = flush ? 'flex-start' : hasIcon ? 'space-between' : 'center';
+
+    const minHeight = interactableHeight[compact ? 'compact' : 'regular'];
+
+    const { paddingX, paddingY, marginStart, marginEnd } = getButtonSpacingProps({
+      compact,
+      flush,
+    });
+
+    const pressableStyle = useCallback(
+      (state: PressableStateCallbackType) => [
+        sizingStyle,
+        typeof style === 'function' ? style(state) : style,
+      ],
+      [sizingStyle, style],
     );
-
-    const pressableStyles = useMemo(
-      () => ({
-        ...(block ? styles.block : styles.inline),
-        marginStart: -theme.space[offsetStart ?? 0],
-        marginEnd: -theme.space[offsetEnd ?? 0],
-      }),
-      [block, theme.space, offsetStart, offsetEnd],
-    );
-
-    const justifyContent = useMemo(() => {
-      if (flush) return 'flex-start';
-      if (startIcon || endIcon) return 'space-between';
-      return 'center';
-    }, [endIcon, flush, startIcon]);
 
     const childrenNode = useMemo(
       () =>
@@ -84,7 +151,7 @@ export const Button = memo(
         ) : (
           <Text
             align="center"
-            color={color}
+            color={colorValue}
             font="headline"
             numberOfLines={numberOfLines}
             selectable={false}
@@ -94,7 +161,7 @@ export const Button = memo(
             {children}
           </Text>
         ),
-      [children, color, numberOfLines],
+      [children, colorValue, numberOfLines],
     );
 
     return (
@@ -102,15 +169,17 @@ export const Button = memo(
         ref={ref}
         accessibilityHint={loading ? 'Button is loading' : accessibilityHint}
         accessibilityLabel={loading ? 'loading' : accessibilityLabel}
-        background={background ?? backgroundColor}
+        background={backgroundValue}
         block={block}
-        borderColor={borderColor}
+        borderColor={borderColorValue}
         borderRadius={borderRadius}
         borderWidth={borderWidth}
         feedback={feedback}
         loading={loading}
+        marginEnd={marginEnd}
+        marginStart={marginStart}
         noScaleOnPress={noScaleOnPress}
-        style={pressableStyles}
+        style={pressableStyle}
         transparentWhileInactive={transparent}
         wrapperStyles={wrapperStyles}
         {...props}
@@ -120,18 +189,18 @@ export const Button = memo(
           flexWrap="nowrap"
           justifyContent={justifyContent}
           minHeight={minHeight}
-          paddingEnd={spacingEnd}
-          paddingStart={spacingStart}
-          style={block ? styles.block : styles.inline}
+          paddingX={paddingX}
+          paddingY={paddingY}
+          style={sizingStyle}
         >
           {loading ? (
-            <ActivityIndicator color={theme.color[color]} size="small" />
+            <ActivityIndicator color={theme.color[colorValue]} size="small" />
           ) : (
             <>
               {start ??
                 (startIcon ? (
                   <Icon
-                    color={color}
+                    color={colorValue}
                     name={startIcon}
                     paddingEnd={1}
                     size={iconSize}
@@ -143,7 +212,7 @@ export const Button = memo(
               {end ??
                 (endIcon ? (
                   <Icon
-                    color={color}
+                    color={colorValue}
                     name={endIcon}
                     paddingStart={1}
                     size={iconSize}
@@ -157,20 +226,5 @@ export const Button = memo(
     );
   }),
 );
-
-export const styles = StyleSheet.create({
-  inline: {
-    width: 'auto',
-    minWidth: 64,
-  },
-  block: {
-    width: '100%',
-    maxWidth: '100%',
-  },
-  text: { flexShrink: 1 },
-  icon: {
-    flexShrink: 0,
-  },
-});
 
 Button.displayName = 'Button';

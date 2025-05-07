@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import { sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
-import { type TabProps } from '@cbhq/cds-common2/types/TabsProps';
 
 import { DefaultThemeProvider } from '../../utils/test';
-import { TabNavigation } from '../TabNavigation';
+import { TabNavigation, type TabProps } from '../TabNavigation';
 
 jest.mock('../../hooks/useDimensions', () => ({
   useDimensions: jest.fn(() => {

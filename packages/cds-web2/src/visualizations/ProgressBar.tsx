@@ -2,15 +2,40 @@ import React, { forwardRef, memo } from 'react';
 import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { usePreviousValues } from '@cbhq/cds-common2/hooks/usePreviousValues';
-import { ProgressBaseProps } from '@cbhq/cds-common2/types/ProgressBaseProps';
+import type { SharedAccessibilityProps, SharedProps, Weight } from '@cbhq/cds-common2/types';
 import { useProgressSize } from '@cbhq/cds-common2/visualizations/useProgressSize';
 
 import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
+import type { HintMotionBaseProps } from '../motion/types';
 import { useMotionProps } from '../motion/useMotionProps';
 import { isRtl } from '../utils/isRtl';
+
+export type ProgressBaseProps = SharedProps &
+  Pick<HintMotionBaseProps, 'disableAnimateOnMount'> &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
+    /** Number between 0-1 representing the progress percentage */
+    progress: number;
+    /** Toggle used to change thickness of progress visualization
+     * @default normal
+     * */
+    weight?: Weight;
+    /**
+     * Toggle used to show a disabled progress visualization
+     * @default false
+     */
+    disabled?: boolean;
+    /**
+     * Custom progress color.
+     * @default primary
+     */
+    color?: ThemeVars.Color;
+  };
+
+export type ProgressBarProps = ProgressBaseProps;
 
 const MotionBox = motion(Box);
 
@@ -29,7 +54,7 @@ export const ProgressBar = memo(
         disableAnimateOnMount = false,
         testID,
         accessibilityLabel,
-      }: ProgressBaseProps,
+      }: ProgressBarProps,
       forwardedRef: React.ForwardedRef<HTMLDivElement>,
     ) => {
       const height = useProgressSize(weight);

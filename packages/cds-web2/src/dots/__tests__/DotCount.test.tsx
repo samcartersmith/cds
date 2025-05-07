@@ -1,11 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import type { DotCountBaseProps } from '@cbhq/cds-common2/types/DotCountBaseProps';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Icon } from '../../icons/Icon';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
-import { DotCount } from '../DotCount';
+import { DotCount, type DotCountBaseProps } from '../DotCount';
 
 const DOTCOUNT_TESTID = 'dot-count-test';
 

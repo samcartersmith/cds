@@ -16,10 +16,14 @@ import { Box, type BoxBaseProps } from '../layout/Box';
 
 import {
   interactableBackground,
+  interactableBorderColor,
   interactableDisabledBackground,
+  interactableDisabledBorderColor,
   interactableHoveredBackground,
+  interactableHoveredBorderColor,
   interactableHoveredOpacity,
   interactablePressedBackground,
+  interactablePressedBorderColor,
   interactablePressedOpacity,
 } from './interactableCSSProperties';
 
@@ -43,6 +47,7 @@ const baseStyle = css`
   user-select: none;
   text-decoration: none;
   background-color: var(${interactableBackground});
+  border-color: var(${interactableBorderColor});
 
   /* Removes weird bonus padding in Firefox */
   &::-moz-focus-inner {
@@ -53,6 +58,7 @@ const baseStyle = css`
 
   &:hover {
     background-color: var(${interactableHoveredBackground});
+    border-color: var(${interactableHoveredBorderColor});
     > * {
       opacity: var(${interactableHoveredOpacity});
     }
@@ -60,6 +66,7 @@ const baseStyle = css`
 
   &:active {
     background-color: var(${interactablePressedBackground});
+    border-color: var(${interactablePressedBorderColor});
     > * {
       opacity: var(${interactablePressedOpacity});
     }
@@ -72,7 +79,7 @@ const baseStyle = css`
     pointer-events: none;
     touch-action: none;
     background-color: var(${interactableDisabledBackground});
-  }
+    border-color: var(${interactableDisabledBorderColor});
 `;
 
 const blockStyle = css`
@@ -83,14 +90,17 @@ const blockStyle = css`
 const transparentActiveStyle = css`
   &:active {
     background-color: var(--color-transparent);
+    border-color: var(--color-transparent);
   }
 `;
 
 const transparentWhileInactiveStyle = css`
-  background-color: transparent;
+  background-color: var(--color-transparent);
+  border-color: var(--color-transparent);
   &:disabled,
   &[aria-disabled='true'] {
-    background-color: transparent;
+    background-color: var(--color-transparent);
+    border-color: var(--color-transparent);
   }
 `;
 
@@ -107,6 +117,8 @@ export type InteractableBaseProps = Polymorphic.ExtendableProps<
     background?: ThemeVars.Color;
     /** Set element to block and expand to 100% width. */
     block?: boolean;
+    /** Border color of the element. */
+    borderColor?: ThemeVars.Color;
     /** Is the element currently disabled. */
     disabled?: boolean;
     /**
@@ -126,11 +138,16 @@ export type InteractableBaseProps = Polymorphic.ExtendableProps<
      * Must be used in conjunction with the "pressed" prop
      */
     transparentWhilePressed?: boolean;
+    /** TO DO: Document blendStyles */
     blendStyles?: {
       background?: string;
       pressedBackground?: string;
       disabledBackground?: string;
       hoveredBackground?: string;
+      borderColor?: string;
+      pressedBorderColor?: string;
+      disabledBorderColor?: string;
+      hoveredBorderColor?: string;
     };
   }
 >;
@@ -148,18 +165,29 @@ type InteractableComponent = (<AsComponent extends React.ElementType = Interacta
 export const getInteractableStyles = ({
   theme,
   background = 'transparent',
+  borderColor = background,
   blendStyles,
-}: { theme: Theme } & Pick<InteractableBaseProps, 'background' | 'blendStyles'>) => {
+}: { theme: Theme } & Pick<
+  InteractableBaseProps,
+  'background' | 'blendStyles' | 'borderColor'
+>) => {
   const backgroundColor = blendStyles?.background ?? theme.color[background];
+  const borderColorValue = blendStyles?.borderColor ?? theme.color[borderColor];
 
   return {
     [interactableBackground]: blendStyles?.background ?? `var(--color-${background})`,
+    [interactableBorderColor]: blendStyles?.borderColor ?? `var(--color-${borderColor})`,
     /**
      * Apply an interactive background style. Blend the color with the background or backgroundInverse values
      */
     // Hover:
     [interactableHoveredBackground]: getBlendedColor({
       color: blendStyles?.hoveredBackground ?? backgroundColor,
+      opacity: opacityHovered,
+      colorScheme: theme.activeColorScheme,
+    }),
+    [interactableHoveredBorderColor]: getBlendedColor({
+      color: blendStyles?.hoveredBorderColor ?? borderColorValue,
       opacity: opacityHovered,
       colorScheme: theme.activeColorScheme,
     }),
@@ -170,10 +198,21 @@ export const getInteractableStyles = ({
       opacity: opacityPressed,
       colorScheme: theme.activeColorScheme,
     }),
+    [interactablePressedBorderColor]: getBlendedColor({
+      color: blendStyles?.pressedBorderColor ?? borderColorValue,
+      opacity: opacityPressed,
+      colorScheme: theme.activeColorScheme,
+    }),
     [interactablePressedOpacity]: opacityPressed,
     // Disabled:
     [interactableDisabledBackground]: getBlendedColor({
       color: blendStyles?.disabledBackground ?? backgroundColor,
+      opacity: opacityDisabled,
+      colorScheme: theme.activeColorScheme,
+      isDisabled: true,
+    }),
+    [interactableDisabledBorderColor]: getBlendedColor({
+      color: blendStyles?.disabledBorderColor ?? borderColorValue,
       opacity: opacityDisabled,
       colorScheme: theme.activeColorScheme,
       isDisabled: true,
@@ -209,10 +248,15 @@ export const Interactable: InteractableComponent = forwardRef<
 
     const interactableStyle = useMemo(
       () => ({
-        ...getInteractableStyles({ theme, background, blendStyles }),
+        ...getInteractableStyles({
+          theme,
+          background,
+          blendStyles,
+          borderColor,
+        }),
         ...style,
       }),
-      [style, background, theme, blendStyles],
+      [style, background, theme, blendStyles, borderColor],
     );
 
     return (
@@ -222,7 +266,6 @@ export const Interactable: InteractableComponent = forwardRef<
         aria-disabled={loading || disabled || undefined}
         aria-pressed={pressed}
         as={Component}
-        borderColor={transparentWhileInactive ? 'transparent' : borderColor}
         borderWidth={borderWidth}
         className={cx(
           baseStyle,

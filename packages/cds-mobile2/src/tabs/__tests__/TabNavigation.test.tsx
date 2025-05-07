@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { render, screen } from '@testing-library/react-native';
 import { sampleTabs as tabs } from '@cbhq/cds-common2/internal/data/tabs';
-import { type CustomTabProps, type TabProps } from '@cbhq/cds-common2/types/TabsProps';
 
 import { HStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
-import { TabNavigation } from '../TabNavigation';
+import { type CustomTabProps, TabNavigation, type TabProps } from '../TabNavigation';
 
 const sampleTabs = tabs.slice(0, 4);
 

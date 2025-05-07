@@ -8,18 +8,18 @@ import React, {
 } from 'react';
 import { css } from '@linaria/core';
 import { m as motion, useAnimation } from 'framer-motion';
-import type {
-  SharedAccessibilityProps,
-  ToastBaseProps,
-  ToastRefBaseProps,
-} from '@cbhq/cds-common2';
 import {
   animateInBottomConfig,
   animateInOpacityConfig,
   animateOutBottomConfig,
   animateOutOpacityConfig,
 } from '@cbhq/cds-common2/animation/toast';
-import { ToastContext } from '@cbhq/cds-common2/overlays/ToastProvider';
+import {
+  type ToastBaseProps as CommonToastBaseProps,
+  ToastContext,
+  type ToastRefHandle,
+} from '@cbhq/cds-common2/overlays/ToastProvider';
+import type { SharedAccessibilityProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../buttons/Button';
 import { IconButton } from '../buttons/IconButton';
@@ -33,21 +33,22 @@ import type { ModalProps } from './modal/Modal';
 import { Portal } from './Portal';
 import { toastContainerId } from './PortalProvider';
 
-export type ToastProps = {
-  /**
-   * Hide the close button on the right
-   * @default false
-   */
-  hideCloseButton?: boolean;
-  /**
-   * Accessibility props are provided to ensure i18n
-   * support for all relevant a11y props
-   * @default { accessibilityLabel: "close" }
-   */
-  closeButtonAccessibilityProps?: SharedAccessibilityProps;
-} & ToastBaseProps &
-  Pick<ModalProps, 'disablePortal'> &
-  Omit<BoxProps<BoxDefaultElement>, 'children'>;
+export type ToastBaseProps = CommonToastBaseProps &
+  Pick<ModalProps, 'disablePortal'> & {
+    /**
+     * Hide the close button on the right
+     * @default false
+     */
+    hideCloseButton?: boolean;
+    /**
+     * Accessibility props are provided to ensure i18n
+     * support for all relevant a11y props
+     * @default { accessibilityLabel: "close" }
+     */
+    closeButtonAccessibilityProps?: SharedAccessibilityProps;
+  };
+
+export type ToastProps = ToastBaseProps & Omit<BoxProps<BoxDefaultElement>, 'children'>;
 
 // Note: ensure any updates here are reflected in the jsdoc above
 const closeButtonAccessibilityDefaults: ToastProps['closeButtonAccessibilityProps'] = {
@@ -63,7 +64,7 @@ const baseStyle = css`
 export const toastTestId = 'cds-toast';
 
 export const Toast = memo(
-  forwardRef<ToastRefBaseProps, ToastProps>(
+  forwardRef<ToastRefHandle, ToastProps>(
     (
       {
         text,

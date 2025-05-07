@@ -6,16 +6,31 @@ import {
   scaleInConfig,
   scaleOutConfig,
 } from '@cbhq/cds-common2/animation/likeButton';
-import { LikeButtonBaseProps } from '@cbhq/cds-common2/types';
-import { getButtonSizeProps } from '@cbhq/cds-common2/utils/getButtonSizeProps';
+import { interactableHeight } from '@cbhq/cds-common2/tokens/interactableHeight';
+import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 import { getButtonSpacingProps } from '@cbhq/cds-common2/utils/getButtonSpacingProps';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
-import { useTheme } from '../hooks/useTheme';
 import { TextIcon } from '../icons/TextIcon';
 import { HStack } from '../layout/HStack';
 import { Pressable, PressableProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
+
+export type LikeButtonBaseProps = Pick<
+  SharedAccessibilityProps,
+  'accessibilityLabel' | 'accessibilityHint'
+> &
+  SharedProps & {
+    liked?: boolean;
+    count?: number;
+    /** Reduce the inner padding within the button itself. */
+    compact?: boolean;
+    /** Ensure the button aligns flush on the left or right.
+     * This prop will translate the entire button left/right,
+     * so take care to ensure it is not overflowing awkwardly
+     */
+    flush?: 'start' | 'end';
+  };
 
 export type LikeButtonProps = LikeButtonBaseProps & PressableProps;
 
@@ -30,29 +45,14 @@ export const LikeButton = memo(function LikeButton({
   onPress,
   accessibilityHint,
   accessibilityLabel = 'Like',
+  borderRadius = compact ? 700 : 900,
   ...props
 }: LikeButtonProps) {
-  const theme = useTheme();
   const iconScale = useRef(new Animated.Value(1));
+  const iconSize = compact ? 's' : 'm';
+  const size = interactableHeight[compact ? 'compact' : 'regular'];
 
-  const {
-    iconSize,
-    minHeight: size,
-    offsetEnd,
-    offsetStart,
-  } = useMemo(() => {
-    const sizeProps = getButtonSizeProps({ compact });
-    const spacingProps = getButtonSpacingProps({ compact, flush });
-    return {
-      ...sizeProps,
-      ...spacingProps,
-    };
-  }, [compact, flush]);
-
-  const pressableStyles = {
-    marginStart: -theme.space[offsetStart ?? 0],
-    marginEnd: -theme.space[offsetEnd ?? 0],
-  };
+  const { marginStart, marginEnd } = getButtonSpacingProps({ compact, flush });
 
   const handleOnPress = useCallback(
     (e: GestureResponderEvent) => {
@@ -82,9 +82,11 @@ export const LikeButton = memo(function LikeButton({
       accessibilityHint={accessibilityHint}
       accessibilityLabel={accessibilityLabel}
       background="transparent"
+      borderRadius={borderRadius}
       feedback="light"
+      marginEnd={marginEnd}
+      marginStart={marginStart}
       onPress={handleOnPress}
-      style={pressableStyles}
       {...props}
     >
       <HStack

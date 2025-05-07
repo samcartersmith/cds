@@ -1,22 +1,27 @@
 import React, { memo, useContext } from 'react';
-import { IconButtonVariant } from '@cbhq/cds-common2/types/IconButtonBaseProps';
-import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
+import type { IconButtonVariant, InputVariant } from '@cbhq/cds-common2/types';
 
-import { IconButton, IconButtonProps } from '../buttons/IconButton';
+import { IconButton, type IconButtonProps } from '../buttons/IconButton';
 import { Box } from '../layout/Box';
 
 import { TextInputFocusVariantContext } from './context';
 
-export type InputIconButtonProps = {
+export const variantTransformMap: Record<InputVariant, IconButtonVariant> = {
+  positive: 'primary',
+  negative: 'primary',
+  foreground: 'primary',
+  primary: 'primary',
+  foregroundMuted: 'foregroundMuted',
+  secondary: 'secondary',
+};
+
+export type InputIconButtonProps = IconButtonProps & {
   /**
    * If set to true, when parent input is focused, the icon will match the color of the focus state
    * @default false
    * */
   disableInheritFocusStyle?: boolean;
-} & IconButtonProps &
-  SharedProps;
-
-const secondaryVariants = new Set(['positive', 'negative', 'foreground']);
+};
 
 export const InputIconButton = memo(function InputIconButton({
   disableInheritFocusStyle = false,
@@ -26,9 +31,8 @@ export const InputIconButton = memo(function InputIconButton({
   accessibilityHint,
   ...props
 }: InputIconButtonProps) {
-  const contextVariant = useContext(TextInputFocusVariantContext) ?? variant;
-
-  const transformedVariant = secondaryVariants.has(contextVariant) ? 'primary' : contextVariant;
+  const contextVariant = useContext(TextInputFocusVariantContext);
+  const transformedVariant = contextVariant ? variantTransformMap[contextVariant] : variant;
 
   return (
     <Box paddingEnd={0.5} paddingStart={1} testID={testID}>
@@ -36,7 +40,7 @@ export const InputIconButton = memo(function InputIconButton({
         transparent
         accessibilityHint={accessibilityHint ?? props.name}
         accessibilityLabel={accessibilityLabel ?? props.name}
-        variant={disableInheritFocusStyle ? variant : (transformedVariant as IconButtonVariant)}
+        variant={disableInheritFocusStyle ? variant : transformedVariant}
         {...props}
       />
     </Box>

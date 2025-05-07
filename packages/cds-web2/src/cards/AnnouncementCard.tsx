@@ -1,16 +1,11 @@
 import React, { memo } from 'react';
-import type { AnnouncementCardBaseProps } from '@cbhq/cds-common2/types';
 
-import { Card, type CardProps } from './Card';
-import { CardBody, type CardBodyProps } from './CardBody';
+import { Card, type CardBaseProps } from './Card';
+import { CardBody, type CardBodyBaseProps } from './CardBody';
 
-/** @deprecated This component will be removed in a future version. Use NudgeCard or UpsellCard instead. */
-export type AnnouncementCardProps = AnnouncementCardBaseProps & {
-  onActionPress?: CardBodyProps['onActionPress'];
-  onClick?: CardProps['onClick'];
-};
-
-/** @deprecated This component will be removed in a future version. Use NudgeCard or UpsellCard instead. */
+export type AnnouncementCardBaseProps = CardBaseProps & CardBodyBaseProps;
+export type AnnouncementCardProps = AnnouncementCardBaseProps;
+/** @deprecated will be removed in v7.0.0 use NudgeCard or UpsellCard instead */
 export const AnnouncementCard = memo(function AnnouncementCard({
   width,
   title,

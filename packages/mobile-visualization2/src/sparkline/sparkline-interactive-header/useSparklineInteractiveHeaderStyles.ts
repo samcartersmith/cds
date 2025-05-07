@@ -1,9 +1,12 @@
 import { useCallback, useMemo } from 'react';
 import { StyleProp, StyleSheet, TextStyle } from 'react-native';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { SparklineInteractiveSubHeadIconColor } from '@cbhq/cds-common2/types/SparklineInteractiveHeaderBaseProps';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 import { getAdjustedFontScale } from '@cbhq/cds-mobile2/utils/getAdjustedFontScale';
+
+import type { SparklineInteractiveSubHead } from './SparklineInteractiveHeader';
+
+export type SparklineInteractiveSubHeadIconColor = SparklineInteractiveSubHead['variant'];
 
 // The – character width is larger than the width of the + character.
 // To prevent layout jank and jumping around we set a fixed width for

@@ -1,18 +1,44 @@
 import React, { cloneElement, memo } from 'react';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { imageSize, mediaSize, pictogramScaleMultiplier } from '@cbhq/cds-common2/tokens/cell';
-import type {
-  CellMediaProps as CellMediaBaseProps,
-  SharedAccessibilityProps,
-} from '@cbhq/cds-common2/types';
+import type { IconName, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { Icon } from '../icons/Icon';
 import type { PictogramProps } from '../illustrations/Pictogram';
-import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
+import { Box } from '../layout/Box';
 import { RemoteImage } from '../media/RemoteImage';
 
-export type CellMediaProps = CellMediaBaseProps<PictogramProps> &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel'> &
-  BoxProps<BoxDefaultElement>;
+export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon' | 'pictogram';
+
+export type CellMediaIconProps = {
+  type: Extract<CellMediaType, 'icon'>;
+  name: IconName;
+  color?: Extract<ThemeVars.Color, 'fgPrimary' | 'fg' | 'fgMuted'>;
+};
+
+export type CellMediaPictogramProps = {
+  type: Extract<CellMediaType, 'pictogram'>;
+  illustration: React.ReactElement<PictogramProps>;
+};
+
+type CellMediaOtherProps = {
+  type: Exclude<CellMediaType, 'icon' | 'pictogram'>;
+  /**
+   * @deprecated This prop will be removed in v6.0.0
+   * If required, use `accessibilityLabel` and `accessibilityHint` instead to set accessible labels.
+   * Refer to https://cds.cbhq.net/components/cell-media/ for updated accessibility guidance.
+   */
+  title?: string;
+  source: string | number;
+};
+
+type CellMediaVariantProps = CellMediaIconProps | CellMediaPictogramProps | CellMediaOtherProps;
+
+export type CellMediaBaseProps = SharedProps &
+  CellMediaVariantProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel'>;
+
+export type CellMediaProps = CellMediaBaseProps;
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   let size = mediaSize;
@@ -53,7 +79,6 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
     content = cloneElement(props.illustration, {
       dimension: '48x48',
       scaleMultiplier: pictogramScaleMultiplier,
-
       alt: props.accessibilityLabel ?? props.illustration.props.alt,
     });
   }

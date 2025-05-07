@@ -1,17 +1,28 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import { G, Path, Svg } from 'react-native-svg';
 import * as interpolate from 'd3-interpolate-path';
+import type { Area, Line } from 'd3-shape';
 import { borderWidth } from '@cbhq/cds-common2/tokens/sparkline';
-import {
-  SparklineInteractiveTimeseriesPathsProps,
-  TimeseriesPathProps,
-} from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
+import type { ChartDataPoint, ChartTimeseries } from '@cbhq/cds-common2/types';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
 import { getSparklineTransform } from '@cbhq/cds-common2/visualizations/getSparklineTransform';
 import { useTimeseriesPaths } from '@cbhq/cds-common2/visualizations/useTimeseriesPaths';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 
 import { useInterruptiblePathAnimation } from './useInterruptiblePathAnimation';
+
+export type TimeseriesPathOnRenderParams = {
+  path: string;
+  area: string;
+};
+
+export type TimeseriesPathProps = {
+  lineFn: Line<ChartDataPoint>;
+  areaFn: Area<ChartDataPoint>;
+  timeseries: ChartTimeseries;
+  initialPath: string;
+  onRender?: ({ path, area }: TimeseriesPathOnRenderParams) => void;
+};
 
 const TimeseriesPath = memo(
   ({ timeseries, lineFn, initialPath, onRender, areaFn }: TimeseriesPathProps) => {
@@ -88,6 +99,14 @@ const TimeseriesPath = memo(
     );
   },
 );
+
+export type SparklineInteractiveTimeseriesPathsProps = {
+  initialPath: string;
+  data: ChartTimeseries[];
+  width: number;
+  height: number;
+  onRender: ({ path, area }: TimeseriesPathOnRenderParams) => void;
+};
 
 export const SparklineInteractiveTimeseriesPaths = memo(
   ({ data, width, height, initialPath, onRender }: SparklineInteractiveTimeseriesPathsProps) => {

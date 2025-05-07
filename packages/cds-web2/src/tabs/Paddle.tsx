@@ -11,12 +11,13 @@ import {
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { durations } from '@cbhq/cds-common2/motion/tokens';
 import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
-import type { SharedAccessibilityProps, SharedProps, TabLabelProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { NewAnimatePresence } from '../animation/NewAnimatePresence';
 import { IconButton } from '../buttons/IconButton';
 import { Box } from '../layout/Box';
 import { useMotionProps } from '../motion/useMotionProps';
+import type { TabLabelBaseProps } from '../tabs/TabLabel';
 
 export const paddleWidth = 80;
 
@@ -45,7 +46,7 @@ const gradientRightStyles = css`
 export type PaddleProps = {
   direction?: 'left' | 'right';
   show: boolean;
-  variant: TabLabelProps['variant'];
+  variant: TabLabelBaseProps['variant'];
   background?: ThemeVars.Color;
   onClick: () => void;
   /**
@@ -81,6 +82,9 @@ const paddleRightStyles = css`
   padding-right: var(--space-2);
 `;
 
+/**
+ * Paddles are left/right IconButtons, rendered by TabNavigation to visually indicate the presence of tabs that are out of sight due to content overflow.
+ */
 export const Paddle = ({
   direction = 'left',
   show,

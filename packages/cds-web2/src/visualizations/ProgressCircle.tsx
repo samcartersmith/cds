@@ -2,12 +2,6 @@ import React, { forwardRef, memo, useRef } from 'react';
 import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 import { animateProgressBaseSpec } from '@cbhq/cds-common2/animation/progress';
-import {
-  ProgressCircleBaseProps,
-  ProgressCircleTextBaseProps,
-  ProgressInnerCircleBaseProps,
-} from '@cbhq/cds-common2/types/ProgressCircleBaseProps';
-import { VisualizationContainerDimension } from '@cbhq/cds-common2/types/VisualizationContainerBaseProps';
 import { getCircumference, getRadius } from '@cbhq/cds-common2/utils/circle';
 import { getProgressCircleParams } from '@cbhq/cds-common2/visualizations/getProgressCircleParams';
 import { useProgressSize } from '@cbhq/cds-common2/visualizations/useProgressSize';
@@ -16,8 +10,26 @@ import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 import { useMotionProps } from '../motion/useMotionProps';
 
+import type { ProgressBaseProps } from './ProgressBar';
 import { ProgressTextLabel } from './ProgressTextLabel';
-import { VisualizationContainer } from './VisualizationContainer';
+import {
+  VisualizationContainer,
+  type VisualizationContainerDimension,
+} from './VisualizationContainer';
+
+export type ProgressCircleBaseProps = ProgressBaseProps & {
+  /** Toggle used to hide the inner circle percentage */
+  hideText?: boolean;
+  /** Optional size in px for the visualization. This is useful if the visualization is used in an HStack. If this is omitted the visualization will fill the parent width or height. Since it's a circular visualization it will fill the smaller of the parent width or height. */
+  size?: number;
+};
+
+export type ProgressCircleTextBaseProps = Pick<ProgressCircleBaseProps, 'progress' | 'disabled'>;
+
+export type ProgressInnerCircleBaseProps = Pick<ProgressCircleBaseProps, 'progress'> &
+  Required<Pick<ProgressCircleBaseProps, 'size' | 'weight' | 'color'>> & {
+    visuallyDisabled?: boolean;
+  };
 
 const svgClassName = css`
   display: block;

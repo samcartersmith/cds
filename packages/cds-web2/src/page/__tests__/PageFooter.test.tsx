@@ -1,15 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { PageFooterBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import { Button } from '../../buttons';
 import * as useBreakpoints from '../../hooks/useBreakpoints';
 import { Box } from '../../layout';
 import { DefaultThemeProvider } from '../../utils/test';
-import { PageFooter } from '../PageFooter';
+import { PageFooter, type PageFooterProps } from '../PageFooter';
 
-const defaultProps: PageFooterBaseProps = {
+const defaultProps: PageFooterProps = {
   action: <Box>End</Box>,
   background: 'bgPrimaryWash',
 };

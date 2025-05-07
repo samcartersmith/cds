@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import type { IconCounterButtonBaseProps } from '@cbhq/cds-common2/types/IconCounterButtonBaseProps';
+import type { IconSize, ValidateProps } from '@cbhq/cds-common2/types';
 import { formatCount } from '@cbhq/cds-common2/utils/formatCount';
 import type { UiIconName } from '@cbhq/cds-icons';
 
@@ -9,10 +9,21 @@ import { HStack } from '../layout/HStack';
 import { Pressable, type PressableDefaultElement, type PressableProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
 
-export type IconCounterButtonProps = {
+export type IconCounterButtonBaseProps = {
+  /** Name of the icon or ReactNode */
+  icon: Exclude<React.ReactNode, 'string'> | UiIconName;
+  /** Size for given icon. */
+  iconSize?: IconSize;
+  count?: number;
+  /** Color of the icon */
+  color?: ThemeVars.Color;
+  /** @danger This is a migration escape hatch. It is not intended to be used normally. */
+  dangerouslySetColor?: string;
   /** Background color of the overlay (element being interacted with). */
   background?: ThemeVars.Color;
-} & IconCounterButtonBaseProps &
+};
+
+export type IconCounterButtonProps = IconCounterButtonBaseProps &
   Omit<PressableProps<PressableDefaultElement>, 'background'>;
 
 export const IconCounterButton = memo(
@@ -29,7 +40,14 @@ export const IconCounterButton = memo(
     ref: React.Ref<HTMLButtonElement>,
   ) {
     return (
-      <Pressable ref={ref} background={background} {...props}>
+      <Pressable
+        ref={ref}
+        background={background}
+        {...(props satisfies ValidateProps<
+          typeof props,
+          Omit<IconCounterButtonProps, keyof PressableProps<PressableDefaultElement>>
+        >)}
+      >
         <HStack alignItems="center" gap={1}>
           {typeof icon === 'string' ? (
             <Icon

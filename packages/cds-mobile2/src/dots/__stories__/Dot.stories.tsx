@@ -54,10 +54,10 @@ const DotCountPlacements = () => {
     >
       <Text font="label1">top-end</Text>
       <DotCount count={30} pin="top-end">
-        <Avatar alt="Sneezy" shape="square" size="xl" />
+        <Avatar shape="square" size="xl" />
       </DotCount>
       <DotCount count={30} pin="top-end">
-        <Avatar alt="Sneezy" shape="square" size="l" />
+        <Avatar shape="square" size="l" />
       </DotCount>
       <DotCount count={1} pin="top-end">
         <Icon name="calendar" size="m" />
@@ -74,16 +74,16 @@ const DotCountOverlap = () => {
   return (
     <>
       <DotCount count={1} overlap="circular" pin="top-end" variant="negative">
-        <Avatar alt="Sneezy" shape="circle" size="l" />
+        <Avatar shape="circle" size="l" />
       </DotCount>
       <DotCount count={30} overlap="circular" pin="top-end" variant="negative">
-        <Avatar alt="Sneezy" shape="circle" size="xl" />
+        <Avatar shape="circle" size="xl" />
       </DotCount>
       <DotCount count={100} overlap="circular" pin="top-end" variant="negative">
-        <Avatar alt="Sneezy" shape="circle" size="xxl" />
+        <Avatar shape="circle" size="xxl" />
       </DotCount>
       <DotCount count={99} overlap="circular" pin="top-end" variant="negative">
-        <Avatar alt="Sneezy" shape="circle" size="xxxl" />
+        <Avatar shape="circle" size="xxxl" />
       </DotCount>
     </>
   );
@@ -93,7 +93,7 @@ const DotCountComplex = () => {
   return (
     <HStack gap={2}>
       <DotCount count={2} overlap="circular" pin="top-end">
-        <Avatar alt="Sneezy" shape="circle" size="xxxl" />
+        <Avatar shape="circle" size="xxxl" />
       </DotCount>
       <VStack>
         <Text font="label1">Hello Hello</Text>
@@ -148,10 +148,10 @@ const DotStatusColorPlacements = () => {
         >
           <Text font="label1">{pinDirection}</Text>
           <DotStatusColor pin={pinDirection} variant="positive">
-            <Avatar alt="Sneezy" shape="square" size="l" />
+            <Avatar shape="square" size="l" />
           </DotStatusColor>
           <DotStatusColor pin={pinDirection} variant="positive">
-            <Avatar alt="Sneezy" shape="square" size="xxl" />
+            <Avatar shape="square" size="xxl" />
           </DotStatusColor>
           <DotStatusColor pin={pinDirection} variant="positive">
             <Icon name="calendar" size="l" />
@@ -178,7 +178,7 @@ const DotStatusColorOverlap = () => {
               {pinDirection}, avatarSize: {avatarSize}
             </Text>
             <DotStatusColor overlap="circular" pin={pinDirection} variant="positive">
-              <Avatar alt="Unknown avatar circle" shape="circle" size={avatarSize} />
+              <Avatar shape="circle" size={avatarSize} />
             </DotStatusColor>
           </VStack>
         )),
@@ -200,10 +200,10 @@ const DotSymbolPlacements = () => {
         >
           <Text font="label1">{pinDirection}</Text>
           <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
-            <Avatar alt="Sneezy" shape="square" size="xxxl" />
+            <Avatar shape="square" size="xxxl" />
           </DotSymbol>
           <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
-            <Avatar alt="Sneezy" shape="square" size="xl" />
+            <Avatar shape="square" size="xl" />
           </DotSymbol>
           <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
             <Icon name="airdrop" size="l" />
@@ -248,7 +248,7 @@ const DotSymbolIcon = () => {
               pin={pinDirection}
               size={avatarIconSizeMap[avatarSize]}
             >
-              <Avatar alt="Ethereum asset logo" size={avatarSize} src={assets.eth.imageUrl} />
+              <Avatar size={avatarSize} src={assets.eth.imageUrl} />
             </DotSymbol>
           </VStack>
         )),
@@ -278,7 +278,7 @@ const DotSymbolOverlap = () => {
               size={size}
               source={assets.ada?.imageUrl || assets.btc.imageUrl}
             >
-              <Avatar alt="Sneezy" size="xxxl" src={assets.eth.imageUrl} />
+              <Avatar size="xxxl" src={assets.eth.imageUrl} />
             </DotSymbol>
           </VStack>
         )),
@@ -296,7 +296,7 @@ const DotSymbolComplex = () => {
         size={avatarDotSizeMap.xxxl}
         source={assets.polygon?.imageUrl || assets.btc.imageUrl}
       >
-        <Avatar alt="Sneezy" shape="square" size="xxl" />
+        <Avatar shape="square" size="xxl" />
       </DotSymbol>
       <VStack>
         <Text font="label1">Hello Hello</Text>

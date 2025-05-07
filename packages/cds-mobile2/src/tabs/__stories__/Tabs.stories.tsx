@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { TabNavigationProps, TabProps } from '@cbhq/cds-common2';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
 import { Text } from '../../typography/Text';
-import { TabNavigation } from '../TabNavigation';
+import { TabNavigation, type TabNavigationProps, type TabProps } from '../TabNavigation';
 
 const tabs: TabProps[] = [
   {

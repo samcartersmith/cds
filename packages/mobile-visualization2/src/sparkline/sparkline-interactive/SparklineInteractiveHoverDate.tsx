@@ -1,12 +1,9 @@
 import React, { forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
 import { Animated, StyleSheet, TextInput } from 'react-native';
 import { ChartScrubParams } from '@cbhq/cds-common2/types/Chart';
-import {
-  SparklineInteractiveBaseProps,
-  SparklineInteractiveHoverDateRefProps,
-} from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 
+import type { SparklineInteractiveBaseProps } from './SparklineInteractive';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
@@ -45,6 +42,11 @@ const styles = StyleSheet.create({
 });
 
 const MAX_MEASURE_ITERATIONS = 5;
+
+export type SparklineInteractiveHoverDateRefProps<Period extends string> = {
+  update: (params: ChartScrubParams<Period>) => void;
+};
+
 const SparklineInteractiveHoverDateWithGeneric = forwardRef(
   <Period extends string>(
     { formatHoverDate, shouldTakeUpHeight }: Props<Period>,

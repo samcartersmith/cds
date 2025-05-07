@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
-import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
+import { useModalContext } from '@cbhq/cds-common2/overlays/ModalContext';
 
 import { Box, type BoxDefaultElement, type BoxProps } from '../../layout/Box';
 
 export type ModalBodyProps = BoxProps<BoxDefaultElement>;
 
-export const ModalBody = forwardRef<HTMLDivElement, ModalBodyProps>(
+export const ModalBody = forwardRef(
   (
     {
       children,
@@ -15,10 +15,10 @@ export const ModalBody = forwardRef<HTMLDivElement, ModalBodyProps>(
       paddingX = 3,
       tabIndex = 0,
       ...props
-    },
-    ref,
+    }: ModalBodyProps,
+    ref: React.ForwardedRef<HTMLDivElement>,
   ) => {
-    const { hideDividers } = useModalParent();
+    const { hideDividers } = useModalContext();
 
     return (
       <Box

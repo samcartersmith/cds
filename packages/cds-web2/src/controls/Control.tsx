@@ -51,23 +51,38 @@ const interactableStyle = css`
   }
 `;
 
-export type ControlProps = FilteredHTMLAttributes<
+export type ControlBaseProps<T extends string> = FilteredHTMLAttributes<
   React.InputHTMLAttributes<HTMLInputElement>,
   'value'
 > &
-  SharedProps & {
+  SharedProps &
+  Partial<
+    Pick<InteractableBaseProps, 'background' | 'borderColor' | 'borderRadius' | 'borderWidth'>
+  > & {
+    /** Label for the control option. */
+    children?: React.ReactNode;
+    /** Set the control to selected/on. */
+    checked?: boolean;
+    /** Disable user interaction. */
+    disabled?: boolean;
+    /** Set the control to ready-only. Similar effect as disabled. */
+    readOnly?: boolean;
+    /** Value of the option. Useful for multiple choice. */
+    value?: T;
+    /** Accessibility label describing the element. */
+    accessibilityLabel?: string;
+    /** Enable indeterminate state. Useful when you want to indicate that sub-items of a control are partially filled. */
+    indeterminate?: boolean;
+    /** Style for the icon element */
     iconStyle?: React.CSSProperties;
+    /** Style for the label element */
     labelStyle?: React.CSSProperties;
   };
 
-type ControlInternalProps<T extends string> = {
-  value?: T;
+export type ControlProps<T extends string> = ControlBaseProps<T> & {
   label?: React.ReactNode;
   children: React.ReactNode;
-} & ControlProps &
-  Partial<
-    Pick<InteractableBaseProps, 'background' | 'borderColor' | 'borderRadius' | 'borderWidth'>
-  >;
+};
 
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   {
@@ -88,7 +103,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     iconStyle,
     labelStyle,
     ...htmlProps
-  }: ControlInternalProps<T>,
+  }: ControlProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   if (isDevelopment() && !children && !ariaLabelledby) {
@@ -192,7 +207,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   // If no label is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.
   return label ? InternalLabel : iconNode;
 }) as <T extends string>(
-  props: ControlInternalProps<T> & { ref?: React.Ref<HTMLInputElement> },
+  props: ControlProps<T> & { ref?: React.Ref<HTMLInputElement> },
 ) => React.ReactElement;
 
 export const Control = memo(ControlWithRef) as typeof ControlWithRef &

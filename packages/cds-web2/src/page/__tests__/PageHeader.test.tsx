@@ -1,13 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { PageHeaderBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
 import * as useBreakpoints from '../../hooks/useBreakpoints';
 import { Box } from '../../layout';
-import { PageHeader } from '../PageHeader';
+import { PageHeader, type PageHeaderProps } from '../PageHeader';
 
-const defaultProps: PageHeaderBaseProps = {
+const defaultProps: PageHeaderProps = {
   start: <Box>Start</Box>,
   title: <Box>Title</Box>,
   end: <Box>End</Box>,

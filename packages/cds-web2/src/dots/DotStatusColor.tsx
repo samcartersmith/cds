@@ -1,7 +1,14 @@
 import React, { memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import type { DotBaseProps, DotVariant } from '@cbhq/cds-common2/types/DotBaseProps';
+import type {
+  DotOverlap,
+  DotSize,
+  DotVariant,
+  PinPlacement,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { useTheme } from '../hooks/useTheme';
 import { handlePreventPropagation } from '../utils/eventHandlers';
@@ -22,6 +29,25 @@ const variantColorMap: Record<DotVariant, ThemeVars.Color> = {
   warning: 'fgWarning',
 };
 
+export type DotStatusColorBaseProps = SharedProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > & {
+    /** Position of dot relative to its parent */
+    pin?: PinPlacement;
+    /** Background color of dot */
+    variant: DotVariant;
+    /** Children of where the dot will anchor to */
+    children?: React.ReactNode;
+    /** Size of dot */
+    size?: DotSize;
+    /** Indicates what shape Dot is overlapping */
+    overlap?: DotOverlap;
+  };
+
+export type DotStatusColorProps = DotStatusColorBaseProps;
+
 export const DotStatusColor = memo(
   ({
     variant,
@@ -32,7 +58,7 @@ export const DotStatusColor = memo(
     testID,
     accessibilityLabel,
     ...props
-  }: DotBaseProps) => {
+  }: DotStatusColorProps) => {
     const { color } = useTheme();
 
     const pinStyles = getTransform(pin, overlap);

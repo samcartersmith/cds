@@ -1,6 +1,11 @@
-import { CellSpacingConfig, InputVariant } from '../types';
+import type { InputVariant, MarginProps, PaddingProps } from '../types';
 
 import { gutter } from './sizing';
+
+type CellSpacingConfig = {
+  innerSpacing?: PaddingProps & MarginProps;
+  outerSpacing?: PaddingProps & MarginProps;
+};
 
 export const labelTextColor: InputVariant = 'foreground';
 

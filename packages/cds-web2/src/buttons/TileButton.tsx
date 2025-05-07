@@ -1,25 +1,25 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
 import { pictogramScaleMultiplier, tileSize } from '@cbhq/cds-common2/tokens/tile';
-import { IllustrationPictogramNames, TileBaseProps } from '@cbhq/cds-common2/types';
+import { IllustrationPictogramNames } from '@cbhq/cds-common2/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Pictogram, PictogramName } from '../illustrations/Pictogram';
 import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
-import { Tile } from './Tile';
+import { Tile, type TileBaseProps } from './Tile';
 
 export const tileButtonDefaultElement = 'button';
 
 export type TileButtonDefaultElement = typeof tileButtonDefaultElement;
 
 export type TileButtonBaseProps = Polymorphic.ExtendableProps<
-  Omit<PressableBaseProps, 'noScaleOnPress' | 'loading' | 'children' | 'background'>,
-  {
+  Omit<PressableBaseProps, 'noScaleOnPress' | 'loading' | 'children'>,
+  TileBaseProps & {
     /** Name of illustration as defined in Figma */
     pictogram?: IllustrationPictogramNames;
-  } & TileBaseProps
+  }
 >;
 export type TileButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,

@@ -10,14 +10,17 @@ import type {
   ChartData,
   ChartDataPoint,
   ChartScrubParams,
-  SparklineInteractiveHeaderRef,
-  SparklineInteractiveSubHead,
+  SparklineInteractiveHeaderVariant,
 } from '@cbhq/cds-common2/types';
 import { Example, ExampleScreen } from '@cbhq/cds-mobile2/examples/ExampleScreen';
 import { Box } from '@cbhq/cds-mobile2/layout';
 import { TextTitle3 } from '@cbhq/cds-mobile2/typography/TextTitle3';
 
-import { SparklineInteractiveHeader } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
+import {
+  SparklineInteractiveHeader,
+  type SparklineInteractiveHeaderRef,
+  type SparklineInteractiveSubHead,
+} from '../../sparkline-interactive-header/SparklineInteractiveHeader';
 import { SparklineInteractive, type SparklineInteractiveBaseProps } from '../SparklineInteractive';
 
 const DEFAULT_PERIOD = 'day';

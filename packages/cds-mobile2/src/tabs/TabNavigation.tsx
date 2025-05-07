@@ -1,17 +1,91 @@
 import React, { forwardRef, memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { ScrollView, View } from 'react-native';
-import { TabNavigationProps, TabProps } from '@cbhq/cds-common2/types';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
+import type { DotCountBaseProps } from '../dots';
 import { useHorizontallyScrollingPressables } from '../hooks/useHorizontallyScrollingPressables';
 import { OverflowGradient } from '../layout';
-import { Box } from '../layout/Box';
+import { Box, type BoxBaseProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
 import { Pressable } from '../system/Pressable';
 
 import { TabIndicator } from './TabIndicator';
 import { TabLabel } from './TabLabel';
+
+export type TabProps<T extends string | undefined = string> = SharedProps &
+  Partial<Pick<DotCountBaseProps, 'max' | 'count'>> & {
+    /** The id should be a meaningful and useful identifier like "watchlist" or "forSale" */
+    id: T;
+    /** Define a label for this Tab */
+    label: React.ReactNode;
+    /** See the Tabs TDD to understand which variant should be used.
+     *  @default 'primary'
+     */
+    variant?: 'primary' | 'secondary';
+    /** Disable interactions on the tab. */
+    disabled?: boolean;
+    /** Full length accessibility label when the child text is not descriptive enough. */
+    accessibilityLabel?: string;
+    /** Callback to fire when pressed */
+    onPress?: (id: T) => void;
+    /** Render a custom Component for the Tab */
+    Component?: (props: CustomTabProps) => React.ReactNode;
+  };
+
+export type CustomTabProps = Pick<TabProps, 'id'> & {
+  /**
+   * @default false
+   * When true, used to surface an active state for the currently selected tab
+   */
+  active?: boolean;
+  /** Define a label for this Tab */
+  label?: React.ReactNode;
+};
+
+export type TabNavigationBaseProps<T extends string | undefined = string> = SharedProps &
+  Pick<TabProps, 'variant' | 'Component'> & {
+    /** The active tabId
+     *  @default tabs[0].id
+     */
+    value?: T;
+    /** Children should be TabLabels. If you only have one child, don't use tabs 🤪 */
+    tabs: TabProps[];
+    /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
+    onChange: ((tabId: T) => void) | React.Dispatch<React.SetStateAction<T>>;
+    /** This should always match the background color of the parent container
+     * @default: 'bg'
+     */
+    background?: ThemeVars.Color;
+    /**
+     * The spacing between Tabs
+     * @default 4
+     */
+    gap?: ThemeVars.Space;
+    /**
+     * Used to generate a11y attributes for the Tabs
+     * If TabNavigation is used to display options that will filter data, use `radiogroup`
+     * If TabNavigation is used to display a list of pages or views, use `tablist`
+     * @default tablist
+     */
+    role?: 'radiogroup' | 'tablist';
+    /**
+     * Web only. Accessibility label for the previous arrow paddle (skip to beginning).
+     */
+    previousArrowAccessibilityLabel?: string | undefined;
+    /**
+     * Web only. Accessibility label for the next arrow paddle (skip to end).
+     */
+    nextArrowAccessibilityLabel?: string | undefined;
+    /**
+     * Web only. Styling for the paddle icon buttons. Mobile does not have paddles.
+     */
+    paddleStyle?: React.CSSProperties;
+  };
+
+export type TabNavigationProps = TabNavigationBaseProps & BoxBaseProps;
 
 export const TabNavigation = memo(
   forwardRef<View, TabNavigationProps>(

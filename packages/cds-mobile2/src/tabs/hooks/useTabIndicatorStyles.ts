@@ -1,7 +1,7 @@
-import { TabIndicatorProps } from '@cbhq/cds-common2';
 import { animateTabIndicatorBaseSpec } from '@cbhq/cds-common2/animation/tabs';
 
 import { useAnimatedTransition } from '../../hooks/useAnimatedTransition';
+import type { TabIndicatorProps } from '../TabIndicator';
 
 export const useTabIndicatorStyles = ({ width, x }: Pick<TabIndicatorProps, 'width' | 'x'>) => {
   const animatedWidth = useAnimatedTransition(width, animateTabIndicatorBaseSpec);

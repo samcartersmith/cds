@@ -2,13 +2,13 @@ import React, { forwardRef, memo, useMemo, useRef } from 'react';
 import { Defs, G, LinearGradient, Path, Stop, Svg } from 'react-native-svg';
 import { getAccessibleForegroundGradient } from '@cbhq/cds-common2/color/getAccessibleForegroundGradient';
 import { borderWidth } from '@cbhq/cds-common2/tokens/sparkline';
-import { SparklineBaseProps } from '@cbhq/cds-common2/types/SparklineBaseProps';
 import { getAccessibleColor } from '@cbhq/cds-common2/utils/getAccessibleColor';
-import { generateSparklineAreaWithId } from '@cbhq/cds-common2/visualizations/generateSparklineAreaWithId';
 import { getSparklineTransform } from '@cbhq/cds-common2/visualizations/getSparklineTransform';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 import { generateRandomId } from '@cbhq/cds-utils';
 
+import { generateSparklineAreaWithId } from './generateSparklineWithId';
+import type { SparklineBaseProps } from './Sparkline';
 import { SparklineAreaPattern } from './SparklineAreaPattern';
 
 export const SparklineGradient = memo(

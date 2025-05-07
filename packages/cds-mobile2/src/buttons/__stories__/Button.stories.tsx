@@ -10,6 +10,7 @@ import { Button, type ButtonProps } from '../Button';
 import { ButtonGroup } from '../ButtonGroup';
 
 const buttonStories: Omit<ButtonProps, 'children'>[] = [
+  { variant: 'foregroundMuted' },
   { variant: 'secondary' },
   { variant: 'positive' },
   { variant: 'negative' },
@@ -49,10 +50,12 @@ const ButtonScreen = () => {
           </HStack>
         </Button>
       </Example>
-      {buttonStories.map((props) => {
+      {buttonStories.map((props, index) => {
         return (
           <Example inline>
-            <Button {...props}>I am a button</Button>
+            <Button key={index} {...props}>
+              I am a button
+            </Button>
           </Example>
         );
       })}

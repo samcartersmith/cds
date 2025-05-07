@@ -11,7 +11,7 @@ describe('Avatar', () => {
     const src = 'https://images.coinbase.com/avatar?s=56';
     render(
       <DefaultThemeProvider>
-        <Avatar alt="" name={name} src={src} testID="avatar" />
+        <Avatar accessibilityLabel="" name={name} src={src} testID="avatar" />
       </DefaultThemeProvider>,
     );
     const image = screen.getByTestId('avatar-image');
@@ -27,7 +27,7 @@ describe('Avatar', () => {
     render(
       <DefaultThemeProvider>
         <Avatar
-          alt=""
+          accessibilityLabel=""
           borderColor="bgPositive"
           src="https://images.coinbase.com/avatar?s=56"
           testID="avatar"
@@ -52,7 +52,7 @@ describe('Avatar', () => {
       render(
         <DefaultThemeProvider>
           <Avatar
-            alt=""
+            accessibilityLabel=""
             name="TestName"
             size={size}
             src="https://images.coinbase.com/avatar?s=56"
@@ -81,7 +81,7 @@ describe('Avatar', () => {
     render(
       <DefaultThemeProvider>
         <Avatar
-          alt=""
+          accessibilityLabel=""
           name="TestName"
           src="https://images.coinbase.com/avatar?s=56"
           testID="avatar"
@@ -99,7 +99,7 @@ describe('Avatar', () => {
     render(
       <DefaultThemeProvider>
         <Avatar
-          alt=""
+          accessibilityLabel=""
           name="TestName"
           shape="square"
           src="https://images.coinbase.com/avatar?s=56"
@@ -120,7 +120,7 @@ describe('Avatar', () => {
     render(
       <DefaultThemeProvider>
         <Avatar
-          alt=""
+          accessibilityLabel=""
           name="TestName"
           shape="hexagon"
           src="https://images.coinbase.com/avatar?s=56"
@@ -135,7 +135,7 @@ describe('Avatar', () => {
   it('when passed a name prop and no src is provided it shows a fallback color and first letter of name prop', async () => {
     render(
       <DefaultThemeProvider>
-        <Avatar alt="" colorScheme="pink" name="TestName" testID="avatar" />
+        <Avatar accessibilityLabel="" colorScheme="pink" name="TestName" testID="avatar" />
       </DefaultThemeProvider>,
     );
 

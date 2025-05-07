@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+ 
 
 import type { SpotRectangleName } from '../types/SpotRectangleName';
 

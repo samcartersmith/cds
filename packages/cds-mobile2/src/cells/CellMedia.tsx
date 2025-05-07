@@ -1,21 +1,49 @@
 import React, { cloneElement, memo } from 'react';
 import { ImageURISource } from 'react-native';
-import { CellMediaProps as CellMediaBaseProps, SharedAccessibilityProps } from '@cbhq/cds-common2';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { imageSize, mediaSize, pictogramScaleMultiplier } from '@cbhq/cds-common2/tokens/cell';
+import { IconName, SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { Icon } from '../icons/Icon';
 import { PictogramProps } from '../illustrations';
 import { Box } from '../layout/Box';
 import { getSource, RemoteImage } from '../media/RemoteImage';
 
-export type CellMediaProps = {
+export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon' | 'pictogram';
+
+export type CellMediaIconProps = {
+  type: Extract<CellMediaType, 'icon'>;
+  name: IconName;
+  color?: Extract<ThemeVars.Color, 'fgPrimary' | 'fg' | 'fgMuted'>;
+};
+
+export type CellMediaPictogramProps = {
+  type: Extract<CellMediaType, 'pictogram'>;
+  illustration: React.ReactElement<PictogramProps>;
+};
+
+type CellMediaOtherProps = {
+  type: Exclude<CellMediaType, 'icon' | 'pictogram'>;
   /**
-   * Determines how the requests handles potentially cached responses. Not applicable to type="icon".
-   * @link https://reactnative.dev/docs/0.67/images#cache-control-ios-only
+   * @deprecated This prop will be removed in v6.0.0
+   * If required, use `accessibilityLabel` and `accessibilityHint` instead to set accessible labels.
+   * Refer to https://cds.cbhq.net/components/cell-media/ for updated accessibility guidance.
    */
-  cache?: ImageURISource['cache'];
-} & CellMediaBaseProps<PictogramProps> &
-  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'>;
+  title?: string;
+  source: string | number;
+};
+
+type CellMediaVariantProps = CellMediaIconProps | CellMediaPictogramProps | CellMediaOtherProps;
+
+export type CellMediaProps = SharedProps &
+  CellMediaVariantProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'> & {
+    /**
+     * Determines how the requests handles potentially cached responses. Not applicable to type="icon".
+     * @link https://reactnative.dev/docs/0.67/images#cache-control-ios-only
+     */
+    cache?: ImageURISource['cache'];
+  };
 
 export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
   let size = mediaSize;

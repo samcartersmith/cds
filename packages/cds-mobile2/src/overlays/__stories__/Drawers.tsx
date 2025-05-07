@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import type { DrawerBaseProps, IconName } from '@cbhq/cds-common2/types';
+import type { IconName } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { ListCell } from '../../cells/ListCell';
@@ -8,6 +8,7 @@ import { VStack } from '../../layout';
 import { LoremIpsum } from '../../layout/__stories__/LoremIpsum';
 import { Avatar } from '../../media/Avatar';
 import { Text } from '../../typography/Text';
+import type { DrawerBaseProps } from '../drawer/Drawer';
 import { Drawer } from '../drawer/Drawer';
 
 export const DefaultDrawer = ({ pin = 'left' }: Pick<DrawerBaseProps, 'pin'>) => {
@@ -73,7 +74,7 @@ export const SideDrawerContent = ({ handleClose }: SideDrawerContentProps) => {
   return (
     <VStack height="100%" justifyContent="space-between" padding={2} paddingBottom={4}>
       <VStack alignItems="center">
-        <Avatar alt="CDS" size="xxl" />
+        <Avatar accessibilityLabel="CDS" size="xxl" />
         <VStack padding={2}>
           <Text font="title3">Test User</Text>
         </VStack>

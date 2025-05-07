@@ -1,21 +1,26 @@
 import React, { forwardRef, memo, useCallback, useEffect, useImperativeHandle } from 'react';
-import { ToastBaseProps, ToastHandleClose, ToastRefBaseProps } from '@cbhq/cds-common2';
+import { ThemeVars } from '@cbhq/cds-common2/core/theme';
+import type {
+  ToastBaseProps as CommonToastBaseProps,
+  ToastRefHandle,
+} from '@cbhq/cds-common2/overlays/ToastProvider';
 import { zIndex } from '@cbhq/cds-common2/tokens/zIndex';
 
 import { Button } from '../buttons';
 import { useA11y } from '../hooks/useA11y';
 import { useTheme } from '../hooks/useTheme';
-import { Box, HStack } from '../layout';
+import { Box, type BoxProps, HStack } from '../layout';
 import { ColorSurge } from '../motion/ColorSurge';
 import { Text } from '../typography/Text';
 
 import { useToastAnimation } from './useToastAnimation';
 import { useToastPanResponder } from './useToastPanResponder';
 
-export type ToastProps = ToastBaseProps;
+export type ToastBaseProps = CommonToastBaseProps;
+export type ToastProps = ToastBaseProps & BoxProps;
 
 export const Toast = memo(
-  forwardRef<ToastRefBaseProps, ToastProps>(
+  forwardRef<ToastRefHandle, ToastProps>(
     (
       { text, action, onWillHide, onDidHide, bottomOffset, variant, accessibilityLabel, ...props },
       ref,
@@ -34,7 +39,7 @@ export const Toast = memo(
         });
       }, [animateIn, text, action, accessibilityLabel, defaultA11yLabel, announceForA11y]);
 
-      const handleClose: ToastHandleClose = useCallback(async () => {
+      const handleClose = useCallback(async (): Promise<boolean> => {
         onWillHide?.();
 
         return new Promise((resolve) => {

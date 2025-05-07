@@ -1,7 +1,14 @@
 import React, { memo, useMemo } from 'react';
 import { View, ViewStyle } from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import { DotBaseProps, DotVariant } from '@cbhq/cds-common2/types/DotBaseProps';
+import {
+  DotOverlap,
+  DotSize,
+  DotVariant,
+  PinPlacement,
+  SharedAccessibilityProps,
+  SharedProps,
+} from '@cbhq/cds-common2/types';
 
 import { DotPinStylesKey, useDotPinStyles } from '../hooks/useDotPinStyles';
 import { useTheme } from '../hooks/useTheme';
@@ -17,8 +24,27 @@ const variantColorMap: Record<DotVariant, ThemeVars.Color> = {
   negative: 'bgNegative',
 };
 
+export type DotStatusColorBaseProps = SharedProps &
+  Pick<
+    SharedAccessibilityProps,
+    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
+  > & {
+    /** Position of dot relative to its parent */
+    pin?: PinPlacement;
+    /** Background color of dot */
+    variant: DotVariant;
+    /** Children of where the dot will anchor to */
+    children?: React.ReactNode;
+    /** Size of dot */
+    size?: DotSize;
+    /** Indicates what shape Dot is overlapping */
+    overlap?: DotOverlap;
+  };
+
+export type DotStatusColorProps = DotStatusColorBaseProps;
+
 export const DotStatusColor = memo(
-  ({ variant, pin, size = 's', children, overlap, ...props }: DotBaseProps) => {
+  ({ variant, pin, size = 's', children, overlap, ...props }: DotStatusColorProps) => {
     const theme = useTheme();
     const iconSize = theme.iconSize[size];
     const [childrenSize, onLayout] = useDotsLayout();

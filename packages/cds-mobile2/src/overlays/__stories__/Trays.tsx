@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FlatList } from 'react-native';
 import { prices } from '@cbhq/cds-common2/internal/data/prices';
-import { DrawerRefBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { Menu } from '../../controls/Menu';
 import { SelectOption } from '../../controls/SelectOption';
 import { Fallback, VStack } from '../../layout';
+import type { DrawerRefBaseProps } from '../drawer/Drawer';
 import { Tray } from '../tray/Tray';
 
 export const options: string[] = prices.slice(0, 4);

@@ -1,10 +1,15 @@
 import React, { Children } from 'react';
-import { AccordionProvider } from '@cbhq/cds-common2/accordion/AccordionProvider';
-import type { AccordionBaseProps } from '@cbhq/cds-common2/types/AccordionBaseProps';
+import {
+  AccordionProvider,
+  type AccordionProviderProps,
+} from '@cbhq/cds-common2/accordion/AccordionProvider';
+import type { SharedProps } from '@cbhq/cds-common2/types';
 import { join } from '@cbhq/cds-common2/utils/join';
 
 import { useTheme } from '../hooks/useTheme';
 import { Divider, VStack } from '../layout';
+
+export type AccordionBaseProps = SharedProps & AccordionProviderProps;
 
 export type AccordionProps = AccordionBaseProps & { style?: React.CSSProperties };
 

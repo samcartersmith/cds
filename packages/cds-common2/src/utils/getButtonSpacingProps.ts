@@ -1,45 +1,42 @@
-import type { ButtonBaseProps } from '../types';
+import { ThemeVars } from '../core/theme';
+import type { NegativeSpace } from '../types';
 
-import { memoize } from './memoize';
+const buttonPaddingX = {
+  default: 4,
+  compact: 2,
+  flush: 2,
+} satisfies Record<string, ThemeVars.Space>;
 
-const defaultSpacing = 4;
-const flushSpacing = 2;
+const buttonPaddingY = {
+  default: 2,
+  compact: 1,
+} satisfies Record<string, ThemeVars.Space>;
 
 export type GetButtonSpacingParams = {
   compact?: boolean;
-  /** If present decrease horizontal padding since icons have built in white space. */
-  startIcon?: ButtonBaseProps['startIcon'] | boolean;
-  /** If present decrease horizontal padding since icons have built in white space. */
-  endIcon?: ButtonBaseProps['endIcon'] | boolean;
   /** If present decrease horizontal padding */
-  flush?: ButtonBaseProps['flush'] | boolean;
+  flush?: 'start' | 'end' | boolean;
 };
 
-const getCacheKey = ({ compact, flush, startIcon, endIcon }: GetButtonSpacingParams) => {
-  const strings = [];
-  if (compact) strings.push('compact');
-  if (flush) strings.push(flush);
-  if (startIcon) strings.push(startIcon);
-  if (endIcon) strings.push(endIcon);
-  const key = strings.join('-');
-  return key;
+type ButtonSpacingValue = {
+  paddingX?: ThemeVars.Space;
+  paddingY?: ThemeVars.Space;
+  marginEnd?: NegativeSpace;
+  marginStart?: NegativeSpace;
 };
 
-export const getButtonSpacingProps = memoize(function getButtonSpacingProps({
+export const getButtonSpacingProps = ({
   compact,
   flush,
-}: GetButtonSpacingParams) {
-  if (flush) {
+}: GetButtonSpacingParams): ButtonSpacingValue => {
+  if (flush)
     return {
-      spacingStart: flushSpacing,
-      spacingEnd: flushSpacing,
-      offsetEnd: flush === 'end' ? flushSpacing : undefined,
-      offsetStart: flush === 'start' ? flushSpacing : undefined,
-    } as const;
-  }
+      paddingX: buttonPaddingX.flush,
+      marginEnd: flush === 'end' ? (-buttonPaddingX.flush as NegativeSpace) : undefined,
+      marginStart: flush === 'start' ? (-buttonPaddingX.flush as NegativeSpace) : undefined,
+    };
   return {
-    spacingStart: compact ? flushSpacing : defaultSpacing,
-    spacingEnd: compact ? flushSpacing : defaultSpacing,
-  } as const;
-},
-getCacheKey);
+    paddingX: compact ? buttonPaddingX.compact : buttonPaddingX.default,
+    paddingY: compact ? buttonPaddingY.compact : buttonPaddingY.default,
+  };
+};

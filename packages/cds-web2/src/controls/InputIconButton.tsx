@@ -1,11 +1,10 @@
 import React, { forwardRef, memo, useContext } from 'react';
-import { InputVariant } from '@cbhq/cds-common2/types/InputBaseProps';
+import type { IconButtonVariant, InputVariant } from '@cbhq/cds-common2/types';
 
 import {
   IconButton,
   type IconButtonDefaultElement,
   type IconButtonProps,
-  type IconButtonVariant,
 } from '../buttons/IconButton';
 import { Box } from '../layout/Box';
 
@@ -20,13 +19,13 @@ export const variantTransformMap: Record<InputVariant, IconButtonVariant> = {
   secondary: 'secondary',
 };
 
-export type InputIconButtonProps = {
+export type InputIconButtonProps = IconButtonProps<IconButtonDefaultElement> & {
   /**
    * If set to true, when parent input is focused, the icon will match the color of the focus state
    * @default false
    * */
   disableInheritFocusStyle?: boolean;
-} & IconButtonProps<IconButtonDefaultElement>;
+};
 
 export const InputIconButton = memo(
   forwardRef(function InputIconButton(

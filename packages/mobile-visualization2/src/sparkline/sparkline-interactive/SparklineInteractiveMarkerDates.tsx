@@ -1,12 +1,13 @@
 import React, { memo, useMemo } from 'react';
 import { Animated, StyleSheet, ViewStyle } from 'react-native';
 import times from 'lodash/times';
-import { SparklineInteractiveMarkerDatesProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
+import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { useDateLookup } from '@cbhq/cds-common2/visualizations/useDateLookup';
 import { useLayout } from '@cbhq/cds-mobile2/hooks/useLayout';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 import { TextLabel2 } from '@cbhq/cds-mobile2/typography';
 
+import type { ChartFormatDate, ChartGetMarker } from './SparklineInteractive';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 
 const numberOfLabels = 5;
@@ -48,6 +49,13 @@ const SparklineInteractiveMarkerDate: React.FunctionComponent<
     </TextLabel2>
   );
 });
+
+export type SparklineInteractiveMarkerDatesProps<Period extends string> = {
+  getMarker: ChartGetMarker;
+  formatDate: ChartFormatDate<Period>;
+  selectedPeriod: Period;
+  timePeriodGutter?: ThemeVars.Space;
+};
 
 function SparklineInteractiveMarkerDatesWithGeneric<Period extends string>({
   formatDate,

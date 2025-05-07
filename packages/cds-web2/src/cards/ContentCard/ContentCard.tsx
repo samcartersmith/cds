@@ -1,7 +1,7 @@
 import React, { forwardRef, memo } from 'react';
 import { contentCardMaxWidth, contentCardMinWidth } from '@cbhq/cds-common2/tokens/card';
 
-import { Polymorphic } from '../../core/polymorphism';
+import type { Polymorphic } from '../../core/polymorphism';
 import { type BoxBaseProps, VStack } from '../../layout';
 
 export const contentCardDefaultElement = 'div';

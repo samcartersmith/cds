@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import { Button } from '../../buttons/Button';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout';
-import { useToast } from '../useToast';
+import { useToast } from '../../overlays/useToast';
 
 const BasicToast = () => {
   const toast = useToast();

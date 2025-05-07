@@ -1,9 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
-import { CellMediaType } from '@cbhq/cds-common2/types';
 
-import { CellMedia } from '../../cells/CellMedia';
+import { CellMedia, type CellMediaType } from '../../cells/CellMedia';
 import { Switch } from '../../controls/Switch';
 import { HStack } from '../../layout/HStack';
 import { ThemeProvider } from '../../system';

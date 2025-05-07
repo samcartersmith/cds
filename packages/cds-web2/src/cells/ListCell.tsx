@@ -1,7 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 import { compactListHeight, listHeight } from '@cbhq/cds-common2/tokens/cell';
-import type { ListCellBaseProps as SharedListCellBaseProps } from '@cbhq/cds-common2/types';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Box } from '../layout/Box';
@@ -9,8 +8,8 @@ import { VStack } from '../layout/VStack';
 import { Text } from '../typography/Text';
 
 import { Cell, type CellBaseProps } from './Cell';
-import { CellAccessory } from './CellAccessory';
-import { CellDetail } from './CellDetail';
+import { CellAccessory, type CellAccessoryType } from './CellAccessory';
+import { CellDetail, type CellDetailProps } from './CellDetail';
 
 const overflowStyle = css`
   overflow: auto;
@@ -24,8 +23,31 @@ export type ListCellDefaultElement = typeof listCellDefaultElement;
 
 export type ListCellBaseProps = Polymorphic.ExtendableProps<
   Omit<CellBaseProps, 'children'>,
-  SharedListCellBaseProps
+  CellDetailProps & {
+    /** Accessory to display at the end of the cell. */
+    accessory?: CellAccessoryType;
+    /** Interactive action, like a CTA or form element. Cannot be used alongside `onPress`. */
+    action?: React.ReactNode;
+    /** enables compact spacing */
+    compact?: boolean;
+    /** Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate. */
+    description?: React.ReactNode;
+    /**
+     * Disable the default accessory that is displayed when the cell is selected.
+     * If `accessory` is provided, that will continue to be displayed, otherwise no accessory will be displayed when the cell is selected.
+     */
+    disableSelectionAccessory?: boolean;
+    /** For internal use only. */
+    intermediary?: React.ReactNode;
+    /* Media (icon, asset, image, etc) to display at the start of the cell. */
+    media?: React.ReactElement;
+    /** Allow the description to span multiple lines. This *will* break fixed height requirements, so should not be used in a `FlatList`. */
+    multiline?: boolean;
+    /** Title of content. Max 1 line (with description) or 2 lines (without), otherwise will truncate. */
+    title?: React.ReactNode;
+  }
 >;
+
 export type ListCellProps<AsComponent extends React.ElementType> = Polymorphic.Props<
   AsComponent,
   ListCellBaseProps

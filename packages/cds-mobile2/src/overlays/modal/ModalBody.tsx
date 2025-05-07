@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { KeyboardAvoidingView, ScrollView, ScrollViewProps } from 'react-native';
-import { useModalParent } from '@cbhq/cds-common2/overlays/ModalParentContext';
+import { useModalContext } from '@cbhq/cds-common2/overlays/ModalContext';
 
 import { useContentSize } from '../../hooks/useContentSize';
 import { useLayout } from '../../hooks/useLayout';
@@ -14,7 +14,7 @@ export const ModalBody: React.FC<React.PropsWithChildren<ModalBodyProps>> = ({
 }) => {
   const [{ height: contentHeight }, onContentSizeChange] = useContentSize();
   const [{ height: scrollHeight }, onLayout] = useLayout();
-  const { hideDividers } = useModalParent();
+  const { hideDividers } = useModalContext();
 
   // dynamically set scrollEnabled base on content height
   const shouldEnableScroll = useMemo(

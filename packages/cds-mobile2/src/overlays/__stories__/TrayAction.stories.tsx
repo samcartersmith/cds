@@ -1,7 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { FlatList } from 'react-native';
 import { assets } from '@cbhq/cds-common2/internal/data/assets';
-import { DrawerRefBaseProps, TrayBaseProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { ListCell, ListCellProps } from '../../cells';
@@ -11,6 +10,8 @@ import { SectionHeader } from '../../section-header/SectionHeader';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
 import { Link } from '../../typography/Link';
 import { Text } from '../../typography/Text';
+import type { DrawerRefBaseProps } from '../drawer/Drawer';
+import type { TrayBaseProps } from '../tray/Tray';
 import { Tray, TrayStickyFooter } from '../tray/Tray';
 
 type Option = {

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { TabNavigationProps, TabProps } from '@cbhq/cds-common2';
 import { longTextTabs, sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { TabbedChips } from '../TabbedChips';
+import type { TabProps } from '../../tabs/TabNavigation';
+import { TabbedChips, type TabbedChipsBaseProps } from '../TabbedChips';
 
 const defaultTabs = sampleTabs.slice(0, 5);
 
 const Demo = ({ tabs = defaultTabs }: { tabs?: TabProps[] }) => {
-  const [value, setValue] = useState<TabNavigationProps['value']>(tabs[0].id);
+  const [value, setValue] = useState<TabbedChipsBaseProps['value']>(tabs[0].id);
   return <TabbedChips onChange={setValue} tabs={tabs} value={value} />;
 };
 

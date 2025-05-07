@@ -25,7 +25,7 @@ const navigationIconButtonVariants = [
   { name: 'appSwitcher' as NavIconName, compact: false },
   { name: 'appSwitcher' as NavIconName, compact: false, variant: 'foregroundMuted' },
   { name: 'appSwitcher' as NavIconName, disabled: true },
-];
+] as const;
 
 export const All = () => (
   <VStack alignItems="flex-start" flexWrap="nowrap" gap={2} padding={0.5}>

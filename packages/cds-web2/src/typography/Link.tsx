@@ -12,18 +12,8 @@ export const linkDefaultElement = 'a';
 export type LinkDefaultElement = typeof linkDefaultElement;
 
 export type LinkBaseProps = Polymorphic.ExtendableProps<
-  Omit<PressableBaseProps, 'color' | 'background'>,
+  PressableBaseProps,
   {
-    /**
-     * Color of the Link
-     * @default 'fgPrimary'
-     */
-    color?: PressableBaseProps['color'];
-    /**
-     * Background color of the Link
-     * @default 'transparent'
-     */
-    background?: PressableBaseProps['background'];
     /**
      * Determines whether the link opens in a new window.
      * - `true`: Opens the link in a new window.
@@ -84,7 +74,6 @@ export const Link: LinkComponent = memo(
         underline,
         // Pressable props
         as,
-        background = 'transparent',
         className,
         display = 'inline',
         borderWidth = 0,
@@ -106,7 +95,6 @@ export const Link: LinkComponent = memo(
         <Pressable
           ref={mergedRef}
           as={Component}
-          background={background}
           borderWidth={borderWidth}
           className={cx(baseStyle, className)}
           color={color}

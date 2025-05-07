@@ -1,28 +1,45 @@
 import React, { forwardRef, memo, useCallback, useMemo, useState } from 'react';
 import { m as motion } from 'framer-motion';
-import type { CollapsibleBaseProps } from '@cbhq/cds-common2/types/CollapsibleBaseProps';
-import type { DimensionValue } from '@cbhq/cds-common2/types/DimensionStyles';
+import type { CollapsibleDirection, PaddingProps, SharedProps } from '@cbhq/cds-common2/types';
 
 import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
+import { HStack } from '../layout/HStack';
 
 import { useCollapsibleMotionProps } from './useCollapsibleMotionProps';
 
-export type CollapsibleProps = {
-  /**
-   * This option may break animation. Only use this if your container has fixed height or width.
-   * @danger This is a migration escape hatch. It is not intended to be used normally.
-   */
-  dangerouslyDisableOverflowHidden?: boolean;
-  /**
-   * Max height of the content. Overflow content will be scrollable.
-   */
-  maxHeight?: DimensionValue;
-  /**
-   * Max width of the content. Overflow content will be scrollable.
-   */
-  maxWidth?: DimensionValue;
-} & CollapsibleBaseProps &
-  Pick<BoxProps<BoxDefaultElement>, 'role' | 'id' | 'accessibilityLabelledBy'>;
+export type CollapsibleBaseProps = SharedProps &
+  PaddingProps &
+  Pick<BoxProps<BoxDefaultElement>, 'role' | 'id' | 'accessibilityLabelledBy'> & {
+    /**
+     * Expand/collapse state of the content.
+     * @default true
+     */
+    collapsed: boolean;
+    /**
+     * Collapsible content
+     */
+    children: React.ReactNode;
+    /**
+     * Direction the content should expand/collapse to
+     * @default vertical
+     */
+    direction?: CollapsibleDirection;
+    /**
+     * This option may break animation. Only use this if your container has fixed height or width.
+     * @danger This is a migration escape hatch. It is not intended to be used normally.
+     */
+    dangerouslyDisableOverflowHidden?: boolean;
+    /**
+     * Max height of the content. Overflow content will be scrollable.
+     */
+    maxHeight?: BoxProps<BoxDefaultElement>['maxHeight'];
+    /**
+     * Max width of the content. Overflow content will be scrollable.
+     */
+    maxWidth?: BoxProps<BoxDefaultElement>['maxWidth'];
+  };
+
+export type CollapsibleProps = CollapsibleBaseProps;
 
 export const Collapsible = memo(
   forwardRef(

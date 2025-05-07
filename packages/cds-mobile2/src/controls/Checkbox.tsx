@@ -1,14 +1,15 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
-import { ControlBaseProps } from '@cbhq/cds-common2';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { Interactable } from '../system/Interactable';
 
-import { Control, ControlIconProps, ControlProps } from './Control';
+import { Control, type ControlBaseProps, ControlIconProps } from './Control';
 
-export type CheckboxProps<T extends string> = ControlBaseProps<T> & ControlProps<T>;
+export type CheckboxBaseProps<T extends string> = ControlBaseProps<T>;
+
+export type CheckboxProps<T extends string> = CheckboxBaseProps<T>;
 
 const CheckboxIcon = memo(
   ({

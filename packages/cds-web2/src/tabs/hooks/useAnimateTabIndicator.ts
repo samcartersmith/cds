@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { TabIndicatorProps } from '@cbhq/cds-common2';
 import { animateTabIndicatorBaseSpec } from '@cbhq/cds-common2/animation/tabs';
 import { usePreviousValues } from '@cbhq/cds-common2/hooks/usePreviousValues';
 
 import { useMotionProps } from '../../motion/useMotionProps';
+import type { TabIndicatorProps } from '../TabIndicator';
 
 type UseAnimateTabIndicator = Pick<TabIndicatorProps, 'width' | 'x'>;
 

@@ -3,14 +3,14 @@ import { Animated as RNAnimated, StyleSheet } from 'react-native';
 import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import { Line, Svg } from 'react-native-svg';
 import { maskOpacity } from '@cbhq/cds-common2/tokens/sparkline';
-import { SparklineInteractiveLineVerticalProps } from '@cbhq/cds-common2/types/SparklineInteractiveBaseProps';
 import { useTheme } from '@cbhq/cds-mobile2/hooks/useTheme';
 
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 import { useSparklineInteractiveLineStyles } from './useSparklineInteractiveLineStyles';
 
-type SparklineInteractiveLineVerticalMobileProps = SparklineInteractiveLineVerticalProps & {
+type SparklineInteractiveLineVerticalMobileProps = {
+  color: string;
   showHoverDate: boolean;
 };
 

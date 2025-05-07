@@ -1,10 +1,9 @@
 import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
-import { StackBaseProps } from '@cbhq/cds-common2';
 
 import { Box, BoxProps } from './Box';
 
-export type VStackProps = BoxProps & StackBaseProps;
+export type VStackProps = BoxProps;
 
 export const VStack = memo(
   forwardRef(function VStack(

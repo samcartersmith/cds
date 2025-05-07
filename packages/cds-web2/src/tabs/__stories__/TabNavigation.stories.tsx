@@ -3,7 +3,6 @@ import { Meta, Story } from '@storybook/react';
 import sample from 'lodash/sample';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { sampleTabs } from '@cbhq/cds-common2/internal/data/tabs';
-import { CustomTabProps, TabNavigationProps } from '@cbhq/cds-common2/types';
 
 import { Button } from '../../buttons/Button';
 import { Chip } from '../../chips/Chip';
@@ -15,7 +14,7 @@ import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { Link } from '../../typography/Link';
 import { Text } from '../../typography/Text';
-import { TabNavigation } from '../TabNavigation';
+import { type CustomTabProps, TabNavigation, type TabNavigationProps } from '../TabNavigation';
 
 import { MockTabPanel } from './MockTabPanel';
 

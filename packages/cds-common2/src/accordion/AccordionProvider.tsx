@@ -1,8 +1,6 @@
 import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import { isDevelopment } from '@cbhq/cds-utils/env';
 
-import { AccordionBaseProps } from '../types';
-
 export type AccordionContextValue = {
   activeKey: string | null;
   setActiveKey: (activeKey: string | null) => void;
@@ -17,13 +15,29 @@ export const useAccordionContext = () => {
   return useContext(AccordionContext);
 };
 
+export type AccordionProviderProps = {
+  activeKey?: AccordionContextValue['activeKey'];
+  children?: React.ReactNode;
+  /**
+   * Default active accordion item key.
+   * If not specified or does not exist in the accordion items,
+   * all items will be closed on mount
+   */
+  defaultActiveKey?: string;
+  /**
+   * Callback function fired when any of accordion items is pressed
+   */
+  onChange?: AccordionContextValue['setActiveKey'];
+  setActiveKey?: AccordionContextValue['setActiveKey'];
+};
+
 export const AccordionProvider = ({
   activeKey,
   children,
   defaultActiveKey,
   setActiveKey,
   onChange,
-}: AccordionBaseProps) => {
+}: AccordionProviderProps) => {
   const [internalActiveKey, setInternalActiveKey] = useState<AccordionContextValue['activeKey']>(
     defaultActiveKey ?? null,
   );

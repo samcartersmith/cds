@@ -30,7 +30,7 @@ const NudgeCard = (
   </DefaultThemeProvider>
 );
 
-describe('createNudgeCard', () => {
+describe('NudgeCard', () => {
   it('passes accessibility', () => {
     render(<NudgeCard />);
     expect(screen.getByTestId(exampleProps.testID)).toBeAccessible();

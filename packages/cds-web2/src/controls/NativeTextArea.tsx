@@ -1,9 +1,10 @@
 import React, { forwardRef, memo } from 'react';
 import { css, cx } from '@linaria/core';
 import { SharedProps } from '@cbhq/cds-common2/types/SharedProps';
-import { TextInputBaseProps } from '@cbhq/cds-common2/types/TextInputBaseProps';
 
 import { Box, BoxProps } from '../layout/Box';
+
+import type { TextInputBaseProps } from './TextInput';
 
 const baseStyle = css`
   min-width: 0;

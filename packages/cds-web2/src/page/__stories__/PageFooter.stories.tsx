@@ -1,13 +1,12 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { PageFooterBaseProps } from '@cbhq/cds-common2/types/PageBaseProps';
 
 import { Button, ButtonGroup, IconButton } from '../../buttons';
 import { useBreakpoints } from '../../hooks/useBreakpoints';
 import { Icon } from '../../icons';
 import { Box, Divider, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
-import { PageFooter } from '../PageFooter';
+import { PageFooter, type PageFooterProps } from '../PageFooter';
 
 const exampleProps = {
   start1: (
@@ -71,7 +70,7 @@ const exampleProps = {
   ),
 };
 
-const Template: Story<PageFooterBaseProps> = (args) => <PageFooter {...args} />;
+const Template: Story<PageFooterProps> = (args) => <PageFooter {...args} />;
 
 export const InteractiveFooter = Template.bind({});
 
