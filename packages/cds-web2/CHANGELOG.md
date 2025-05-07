@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 8.0.0-alpha.7 (5/7/2025 PST)
+
+#### 🚀 Updates
+
+- Release CDS v8 alpha.7
+
 ## 8.0.0-alpha.6 (5/5/2025 PST)
 
 #### 🚀 Updates
