@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/cds-common2",
   "version": "8.0.0-alpha.7",
+  "private": true,
   "description": "Coinbase Design System - CDS Common",
   "repository": {
     "type": "git",
