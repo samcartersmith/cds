@@ -34,7 +34,7 @@ export const HelperText = memo(function HelperText({
   const glyphKey = `ui-info-${sourceSize}` as const;
   const glyph = glyphMap[glyphKey];
 
-  const fontStyles = useMemo(
+  const iconStyle = useMemo(
     () => ({
       fontFamily: 'CoinbaseIcons',
       fontSize: iconSize,
@@ -62,7 +62,7 @@ export const HelperText = memo(function HelperText({
           color={color}
           dangerouslySetColor={dangerouslySetColor}
           font="label2"
-          style={fontStyles}
+          style={iconStyle}
           testID={errorIconTestID}
         >
           {glyph}

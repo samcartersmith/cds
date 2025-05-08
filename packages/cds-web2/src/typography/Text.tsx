@@ -109,7 +109,7 @@ export type TextBaseProps = Polymorphic.ExtendableProps<
      */
     underline?: boolean;
     /**
-     * Use CoinbaseMono font
+     * Use monospace font family.
      */
     mono?: boolean;
     /**

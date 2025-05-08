@@ -1,5 +1,6 @@
 .playgroundEditor {
-  font-family: var(--cds-font-mono);
+  font-family: var(--defaultFont-mono);
+  color: var(--color-fg);
 }
 
 .playgroundEditor pre {

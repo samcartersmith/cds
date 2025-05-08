@@ -17,7 +17,7 @@ export type HelperTextProps = {
   errorIconTestID?: string;
 } & TextProps<TextDefaultElement>;
 
-const boxStyle = css`
+const iconStyle = css`
   display: inline-block;
   padding-inline-end: var(--space-0\\.5);
 `;
@@ -43,7 +43,7 @@ export const HelperText = memo(function HelperTex({
       {...props}
     >
       {color === 'fgNegative' && (
-        <Box as="span" className={boxStyle}>
+        <Box as="span" className={iconStyle}>
           <Icon
             accessibilityLabel={errorIconAccessibilityLabel}
             color="fgNegative"

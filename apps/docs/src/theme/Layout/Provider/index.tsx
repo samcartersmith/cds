@@ -8,10 +8,12 @@ import {
   PluginHtmlClassNameProvider,
   ScrollControllerProvider,
 } from '@docusaurus/theme-common/internal';
+import { cx } from '@linaria/core';
 import KBarProvider from '@site/src/components/kbar/KBarProvider';
 import { useInternalCDSTheme } from '@site/src/hooks/useInternalCDSTheme';
 import type { Props } from '@theme/Layout/Provider';
 import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
+import { defaultFontStyles } from '@cbhq/cds-web2/styles/defaultFont';
 import { globalStyles } from '@cbhq/cds-web2/styles/global';
 import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
 import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
@@ -22,7 +24,7 @@ const CDSContainer = ({ children }: { children: React.ReactNode }) => {
   const { colorScheme, theme } = useDocsTheme();
 
   return (
-    <div className={globalStyles}>
+    <div className={cx(globalStyles, defaultFontStyles)}>
       <ThemeProvider activeColorScheme={colorScheme} display="contents" theme={theme}>
         <PortalProvider>
           <KBarProvider>{children}</KBarProvider>

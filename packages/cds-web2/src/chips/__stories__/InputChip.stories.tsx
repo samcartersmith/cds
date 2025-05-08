@@ -4,7 +4,7 @@ import { assets } from '@cbhq/cds-common2/internal/data/assets';
 import { HStack, VStack } from '../../layout';
 import { RemoteImage, type RemoteImageProps } from '../../media';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { denseTheme } from '../../themes/denseTheme';
+import { coinbaseDenseTheme } from '../../themes/coinbaseDenseTheme';
 import { Text } from '../../typography/Text';
 import { InputChip } from '../InputChip';
 
@@ -56,7 +56,7 @@ export const Default = () => (
         />
       </HStack>
     </VStack>
-    <ThemeProvider activeColorScheme="light" theme={{ ...denseTheme }}>
+    <ThemeProvider activeColorScheme="light" theme={{ ...coinbaseDenseTheme }}>
       <VStack gap={2}>
         <Text as="h2" display="block" font="display2">
           Dense

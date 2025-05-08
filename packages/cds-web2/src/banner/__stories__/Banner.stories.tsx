@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
 import { NoopFn as noopFn } from '@cbhq/cds-common2/utils/mockUtils';
-import { denseTheme } from '@cbhq/cds-web2/themes/denseTheme';
 
 import { useTheme } from '../../hooks/useTheme';
 import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
+import { coinbaseDenseTheme } from '../../themes/coinbaseDenseTheme';
 import { Link } from '../../typography/Link';
 import { Text } from '../../typography/Text';
 import { Banner, BannerProps } from '../Banner';
@@ -160,7 +160,7 @@ export const All = () => {
 
 export const Dense = () => {
   const theme = useTheme();
-  const newTheme = useMemo(() => ({ ...theme, ...denseTheme }), [theme]);
+  const newTheme = useMemo(() => ({ ...theme, ...coinbaseDenseTheme }), [theme]);
   return (
     <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={newTheme}>
       <All />

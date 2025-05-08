@@ -12,7 +12,7 @@ export type LinkBaseProps = PressableBaseProps &
   SharedProps & {
     /** URL that this link goes to when pressed. */
     to?: string;
-    /** Use CoinbaseMono font */
+    /** Use monospace font family. */
     mono?: boolean;
     /**
      * Set text decoration to underline.

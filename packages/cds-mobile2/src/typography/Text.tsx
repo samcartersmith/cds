@@ -33,7 +33,7 @@ export type TextBaseProps = StyleProps & {
    */
   disabled?: boolean;
   /**
-   * Use CoinbaseMono font
+   * Use monospace font family.
    */
   mono?: boolean;
   /**

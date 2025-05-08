@@ -9,7 +9,7 @@ import { Box, BoxProps } from '../layout/Box';
 import { Divider } from '../layout/Divider';
 import { VStack } from '../layout/VStack';
 import { ThemeProvider } from '../system';
-import { denseTheme } from '../themes/denseTheme';
+import { coinbaseDenseTheme } from '../themes/coinbaseDenseTheme';
 import { Text } from '../typography/Text';
 
 type ExampleRenderChildren = () => NonNullable<JSX.Element>;
@@ -78,7 +78,7 @@ export const ExampleScreen: React.FC<React.PropsWithChildren<unknown>> = ({ chil
   return (
     <VStack testID="mobile-playground-screen">
       <Screen>
-        <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={denseTheme}>
+        <ThemeProvider activeColorScheme={theme.activeColorScheme} theme={coinbaseDenseTheme}>
           <VStack>
             <VStack background="bg" gap={1} paddingX={gutter} paddingY={3}>
               <Switch checked={theme.activeColorScheme === 'dark'} onChange={noop}>

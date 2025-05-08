@@ -5,7 +5,10 @@
  * For real world use case these files are converted into .css files and are marked
  * as a side-effect in package.json. Thus all real world use cases can still
  * skip the two lines and just use
- * `import '@cbhq/cds-web/globalStyles'`
+ * ```
+ * import '@cbhq/cds-icons/fonts/web/icon-font.css';
+ * import '@cbhq/cds-web/globalStyles';
+ * ```
  */
 
 export * as globalCss from '@cbhq/cds-web/globalStyles';

@@ -23,7 +23,7 @@ export type LinkBaseProps = Polymorphic.ExtendableProps<
      * @default false
      */
     openInNewWindow?: boolean;
-    /** Use CoinbaseMono font */
+    /** Use monospace font family. */
     mono?: boolean;
     /**
      * Set text decoration to underline.

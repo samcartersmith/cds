@@ -136,7 +136,7 @@ describe('Text', () => {
 
       const textElement = screen.getByText('Text');
       expect(textElement).toHaveStyle({
-        fontFamily: expect.stringContaining('CoinbaseMono'),
+        fontFamily: expect.stringContaining('SourceCodePro'),
       });
       expect(screen.getByTestId(`text-${fontName}`)).toBeAccessible();
     });

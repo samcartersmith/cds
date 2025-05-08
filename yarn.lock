@@ -3610,7 +3610,8 @@ __metadata:
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
     "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-fonts": "workspace:^"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-lottie-files2": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/ui-scorecard": "workspace:^"
@@ -3639,8 +3640,6 @@ __metadata:
     react-test-renderer: "npm:^18.3.1"
     type-fest: "npm:^2.19.0"
   peerDependencies:
-    "@cbhq/cds-icons": ">=3.0.0"
-    "@cbhq/cds-illustrations": ">=4.0.0"
     "@react-navigation/native": ^6.1.6
     "@react-navigation/native-stack": ^6.9.26
     "@react-navigation/stack": ^6.3.16
@@ -3881,7 +3880,6 @@ __metadata:
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
     "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-lottie-files2": "workspace:^"
@@ -4567,7 +4565,6 @@ __metadata:
   resolution: "@cds/storybook2@workspace:apps/storybook2"
   dependencies:
     "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-web-visualization2": "workspace:^"
@@ -6525,6 +6522,20 @@ __metadata:
     "@eslint/core": "npm:^0.12.0"
     levn: "npm:^0.4.1"
   checksum: 10c0/0a1aff1ad63e72aca923217e556c6dfd67d7cd121870eb7686355d7d1475d569773528a8b2111b9176f3d91d2ea81f7413c34600e8e5b73d59e005d70780b633
+  languageName: node
+  linkType: hard
+
+"@expo-google-fonts/inter@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@expo-google-fonts/inter@npm:0.3.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40expo-google-fonts%2Finter%2F-%2Finter-0.3.0.tgz"
+  checksum: 10c0/0cf2de4dcb413010422c78cea990da88aa2a0a67f709ada11d3f6919b8799183a93d514d93e6903dd4e2a63684a456b1f7d70b05db5dfee7ef4ab72c4fde299c
+  languageName: node
+  linkType: hard
+
+"@expo-google-fonts/source-code-pro@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@expo-google-fonts/source-code-pro@npm:0.3.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40expo-google-fonts%2Fsource-code-pro%2F-%2Fsource-code-pro-0.3.0.tgz"
+  checksum: 10c0/d4da4b6dd2a385fa7b8e147f7ab60683107aa6656cd0d95639fd1045308db6ba592f4868e9615e2561be7ac64c9f50e457a932952692d19d7e377f3eef534a00
   languageName: node
   linkType: hard
 
@@ -23577,7 +23588,6 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.18.6"
     "@babel/runtime": "npm:^7.20.13"
     "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-web-visualization2": "workspace:^"
@@ -36242,7 +36252,6 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@bugsnag/react-native": "npm:^7.18.0"
-    "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-mobile-visualization2": "workspace:^"
@@ -36252,6 +36261,8 @@ __metadata:
     "@cbhq/ui-mobile-playground2": "workspace:^"
     "@cbhq/ui-mobile-visreg": "workspace:^"
     "@config-plugins/detox": "npm:^6.0.0"
+    "@expo-google-fonts/inter": "npm:^0.3.0"
+    "@expo-google-fonts/source-code-pro": "npm:^0.3.0"
     "@expo/config": "npm:~9.0.0"
     "@expo/config-types": "npm:~51.0.2"
     "@react-native/metro-config": "npm:^0.72.9"

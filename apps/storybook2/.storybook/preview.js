@@ -1,12 +1,12 @@
 // @ts-check
 import './polyfills';
-import '@cbhq/cds-fonts/fonts.css';
 import '@cbhq/cds-icons/fonts/web/icon-font.css';
 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { themes } from '@storybook/theming';
 import { withDesign } from 'storybook-addon-designs';
 import { withPerformance } from 'storybook-addon-performance';
+import { defaultFontStyles } from '@cbhq/cds-web2/styles/defaultFont';
 import { globalStyles } from '@cbhq/cds-web2/styles/global';
 
 import { StoryContainer } from './StoryContainer';
@@ -44,7 +44,7 @@ export const parameters = {
       ...INITIAL_VIEWPORTS,
     },
   },
-  globalStyles, // linaria requires usage to generate the styles
+  globalStyles: `${globalStyles} ${defaultFontStyles}`, // linaria requires usage to generate the styles
   darkMode: {
     // Override the default dark theme
     dark: { ...themes.dark, appContentBg: 'black', barBg: 'black' },

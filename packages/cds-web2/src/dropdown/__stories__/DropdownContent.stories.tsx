@@ -1,7 +1,7 @@
 import React from 'react';
-import { DROPDOWN_MAX_HEIGHT } from '@cbhq/cds-web2/dropdown';
 
 import { SelectOption } from '../../controls/SelectOption';
+import { DROPDOWN_MAX_HEIGHT } from '../../dropdown/Dropdown';
 import { VStack } from '../../layout/VStack';
 import { DropdownContent, DropdownContentProps } from '../DropdownContent';
 
