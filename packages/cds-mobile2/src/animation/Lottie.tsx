@@ -4,7 +4,7 @@ import LottieView from 'lottie-react-native';
 
 import { Box } from '../layout/Box';
 
-import { LottieProps } from './LottieProps';
+import { LottieProps } from './types';
 import { useLottieColorFilters } from './useLottieColorFilters';
 
 export type LottieMobileRef = React.ForwardedRef<LottieView>;

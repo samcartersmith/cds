@@ -5,7 +5,7 @@ import { getLottieDuration, getLottieMarkers, LottiePlayer, LottieSource } from 
 
 import { Lottie } from './Lottie';
 import { lottieProgressConfig } from './lottieProgresConfig';
-import { LottieProps } from './LottieProps';
+import { LottieProps } from './types';
 
 type ProgressListenerCallback = (frame: number) => void;
 type ProgressTimingConfig = { startFrame?: number; endFrame?: number };

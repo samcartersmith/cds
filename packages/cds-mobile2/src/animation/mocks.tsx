@@ -5,7 +5,7 @@ import { noop } from '@cbhq/cds-utils';
 
 import { Box } from '../layout/Box';
 
-import { LottieProps } from './LottieProps';
+import { LottieProps } from './types';
 
 export const LottieMock = ({
   autoplay = false,

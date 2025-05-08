@@ -4,7 +4,7 @@ import { colorToHex } from '@cbhq/cds-common2/color/colorToHex';
 
 import { useTheme } from '../hooks/useTheme';
 
-import { LottieProps } from './LottieProps';
+import { LottieProps } from './types';
 
 type AnyObject = Record<string, unknown>;
 type StringKey<T> = T extends string ? T : string;
