@@ -183,8 +183,8 @@ li {
 .table-of-contents ul {
   display: flex;
   flex-direction: column;
-  padding: 0 var(--space-0\.5);
-  gap: var(--space-1\.5);
+  padding: 0 var(--space-0_5);
+  gap: var(--space-1_5);
 }
 
 .table-of-contents ul {

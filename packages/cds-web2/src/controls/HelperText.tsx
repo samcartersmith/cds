@@ -19,7 +19,7 @@ export type HelperTextProps = {
 
 const iconStyle = css`
   display: inline-block;
-  padding-inline-end: var(--space-0\\.5);
+  padding-inline-end: var(--space-0_5);
 `;
 
 export const HelperText = memo(function HelperTex({

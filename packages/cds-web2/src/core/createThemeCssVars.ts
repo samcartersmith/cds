@@ -24,8 +24,9 @@ export const createThemeCssVars = (theme: Partial<Theme>) => {
       const value = themeVars[varName as keyof typeof themeVars];
       if (value === undefined) continue;
 
-      // Create CSS variable name with escaped periods
-      const cssVarName = `${cssVarPrefix}${varName}`;
+      // Create CSS variable name, replacing periods with underscores
+      const cssVarName = `${cssVarPrefix}${varName}`.replaceAll('.', '_');
+
       // Format value (add px to numbers)
       themeCss[cssVarName] = typeof value !== 'number' ? value : value + 'px';
     }

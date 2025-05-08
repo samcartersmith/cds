@@ -35,7 +35,7 @@ import { NativeInput } from './NativeInput';
 const nativeInputContainerStyle = css`
   padding-top: var(--space-2);
   padding-bottom: var(--space-2);
-  padding-inline-start: var(--space-0\\.5);
+  padding-inline-start: var(--space-0_5);
   padding-inline-end: var(--space-2);
 
   &[data-compact='true'] {

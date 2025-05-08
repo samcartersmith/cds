@@ -233,9 +233,9 @@ const SparklineInteractiveHeaderStable = memo(
       const subHeadColorStyles: React.CSSProperties = defaultSubHead
         ? {
             color: `var(--color-${variantColorMap[defaultSubHead.variant]})`,
-            marginRight: 'var(--space-0\\.5)',
+            marginRight: 'var(--space-0_5)',
           }
-        : { marginRight: 'var(--space-0\\.5)' };
+        : { marginRight: 'var(--space-0_5)' };
 
       const subHead = !!defaultSubHead && (
         <>

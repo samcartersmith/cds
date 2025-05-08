@@ -2075,17 +2075,17 @@ export const gap = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      gap: var(--space-0\\.25);
+      gap: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      gap: var(--space-0\\.5);
+      gap: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      gap: var(--space-0\\.75);
+      gap: var(--space-0_75);
     }
   `,
   '1': css`
@@ -2095,7 +2095,7 @@ export const gap = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      gap: var(--space-1\\.5);
+      gap: var(--space-1_5);
     }
   `,
   '2': css`
@@ -2153,17 +2153,17 @@ export const columnGap = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      column-gap: var(--space-0\\.25);
+      column-gap: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      column-gap: var(--space-0\\.5);
+      column-gap: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      column-gap: var(--space-0\\.75);
+      column-gap: var(--space-0_75);
     }
   `,
   '1': css`
@@ -2173,7 +2173,7 @@ export const columnGap = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      column-gap: var(--space-1\\.5);
+      column-gap: var(--space-1_5);
     }
   `,
   '2': css`
@@ -2231,17 +2231,17 @@ export const rowGap = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      row-gap: var(--space-0\\.25);
+      row-gap: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      row-gap: var(--space-0\\.5);
+      row-gap: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      row-gap: var(--space-0\\.75);
+      row-gap: var(--space-0_75);
     }
   `,
   '1': css`
@@ -2251,7 +2251,7 @@ export const rowGap = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      row-gap: var(--space-1\\.5);
+      row-gap: var(--space-1_5);
     }
   `,
   '2': css`
@@ -2643,26 +2643,26 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.25);
-      padding-bottom: var(--space-0\\.25);
-      padding-inline-start: var(--space-0\\.25);
-      padding-inline-end: var(--space-0\\.25);
+      padding-top: var(--space-0_25);
+      padding-bottom: var(--space-0_25);
+      padding-inline-start: var(--space-0_25);
+      padding-inline-end: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.5);
-      padding-bottom: var(--space-0\\.5);
-      padding-inline-start: var(--space-0\\.5);
-      padding-inline-end: var(--space-0\\.5);
+      padding-top: var(--space-0_5);
+      padding-bottom: var(--space-0_5);
+      padding-inline-start: var(--space-0_5);
+      padding-inline-end: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.75);
-      padding-bottom: var(--space-0\\.75);
-      padding-inline-start: var(--space-0\\.75);
-      padding-inline-end: var(--space-0\\.75);
+      padding-top: var(--space-0_75);
+      padding-bottom: var(--space-0_75);
+      padding-inline-start: var(--space-0_75);
+      padding-inline-end: var(--space-0_75);
     }
   `,
   '1': css`
@@ -2675,10 +2675,10 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      padding-top: var(--space-1\\.5);
-      padding-bottom: var(--space-1\\.5);
-      padding-inline-start: var(--space-1\\.5);
-      padding-inline-end: var(--space-1\\.5);
+      padding-top: var(--space-1_5);
+      padding-bottom: var(--space-1_5);
+      padding-inline-start: var(--space-1_5);
+      padding-inline-end: var(--space-1_5);
     }
   `,
   '2': css`
@@ -2764,20 +2764,20 @@ export const paddingX: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      padding-inline-start: var(--space-0\\.25);
-      padding-inline-end: var(--space-0\\.25);
+      padding-inline-start: var(--space-0_25);
+      padding-inline-end: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      padding-inline-start: var(--space-0\\.5);
-      padding-inline-end: var(--space-0\\.5);
+      padding-inline-start: var(--space-0_5);
+      padding-inline-end: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      padding-inline-start: var(--space-0\\.75);
-      padding-inline-end: var(--space-0\\.75);
+      padding-inline-start: var(--space-0_75);
+      padding-inline-end: var(--space-0_75);
     }
   `,
   '1': css`
@@ -2788,8 +2788,8 @@ export const paddingX: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      padding-inline-start: var(--space-1\\.5);
-      padding-inline-end: var(--space-1\\.5);
+      padding-inline-start: var(--space-1_5);
+      padding-inline-end: var(--space-1_5);
     }
   `,
   '2': css`
@@ -2857,20 +2857,20 @@ export const paddingY: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.25);
-      padding-bottom: var(--space-0\\.25);
+      padding-top: var(--space-0_25);
+      padding-bottom: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.5);
-      padding-bottom: var(--space-0\\.5);
+      padding-top: var(--space-0_5);
+      padding-bottom: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.75);
-      padding-bottom: var(--space-0\\.75);
+      padding-top: var(--space-0_75);
+      padding-bottom: var(--space-0_75);
     }
   `,
   '1': css`
@@ -2881,8 +2881,8 @@ export const paddingY: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      padding-top: var(--space-1\\.5);
-      padding-bottom: var(--space-1\\.5);
+      padding-top: var(--space-1_5);
+      padding-bottom: var(--space-1_5);
     }
   `,
   '2': css`
@@ -2949,17 +2949,17 @@ export const paddingTop: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.25);
+      padding-top: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.5);
+      padding-top: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      padding-top: var(--space-0\\.75);
+      padding-top: var(--space-0_75);
     }
   `,
   '1': css`
@@ -2969,7 +2969,7 @@ export const paddingTop: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      padding-top: var(--space-1\\.5);
+      padding-top: var(--space-1_5);
     }
   `,
   '2': css`
@@ -3027,17 +3027,17 @@ export const paddingBottom: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      padding-bottom: var(--space-0\\.25);
+      padding-bottom: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      padding-bottom: var(--space-0\\.5);
+      padding-bottom: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      padding-bottom: var(--space-0\\.75);
+      padding-bottom: var(--space-0_75);
     }
   `,
   '1': css`
@@ -3047,7 +3047,7 @@ export const paddingBottom: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      padding-bottom: var(--space-1\\.5);
+      padding-bottom: var(--space-1_5);
     }
   `,
   '2': css`
@@ -3105,17 +3105,17 @@ export const paddingStart: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      padding-inline-start: var(--space-0\\.25);
+      padding-inline-start: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      padding-inline-start: var(--space-0\\.5);
+      padding-inline-start: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      padding-inline-start: var(--space-0\\.75);
+      padding-inline-start: var(--space-0_75);
     }
   `,
   '1': css`
@@ -3125,7 +3125,7 @@ export const paddingStart: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      padding-inline-start: var(--space-1\\.5);
+      padding-inline-start: var(--space-1_5);
     }
   `,
   '2': css`
@@ -3183,17 +3183,17 @@ export const paddingEnd: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '0.25': css`
     @media ${media.desktop} {
-      padding-inline-end: var(--space-0\\.25);
+      padding-inline-end: var(--space-0_25);
     }
   `,
   '0.5': css`
     @media ${media.desktop} {
-      padding-inline-end: var(--space-0\\.5);
+      padding-inline-end: var(--space-0_5);
     }
   `,
   '0.75': css`
     @media ${media.desktop} {
-      padding-inline-end: var(--space-0\\.75);
+      padding-inline-end: var(--space-0_75);
     }
   `,
   '1': css`
@@ -3203,7 +3203,7 @@ export const paddingEnd: Record<ThemeVars.Space, LinariaClassName> = {
   `,
   '1.5': css`
     @media ${media.desktop} {
-      padding-inline-end: var(--space-1\\.5);
+      padding-inline-end: var(--space-1_5);
     }
   `,
   '2': css`
@@ -3264,26 +3264,26 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
   `,
   '-0.25': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.25));
-      margin-bottom: calc(-1 * var(--space-0\\.25));
-      margin-inline-end: calc(-1 * var(--space-0\\.25));
-      margin-inline-start: calc(-1 * var(--space-0\\.25));
+      margin-top: calc(-1 * var(--space-0_25));
+      margin-bottom: calc(-1 * var(--space-0_25));
+      margin-inline-end: calc(-1 * var(--space-0_25));
+      margin-inline-start: calc(-1 * var(--space-0_25));
     }
   `,
   '-0.5': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.5));
-      margin-bottom: calc(-1 * var(--space-0\\.5));
-      margin-inline-end: calc(-1 * var(--space-0\\.5));
-      margin-inline-start: calc(-1 * var(--space-0\\.5));
+      margin-top: calc(-1 * var(--space-0_5));
+      margin-bottom: calc(-1 * var(--space-0_5));
+      margin-inline-end: calc(-1 * var(--space-0_5));
+      margin-inline-start: calc(-1 * var(--space-0_5));
     }
   `,
   '-0.75': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.75));
-      margin-bottom: calc(-1 * var(--space-0\\.75));
-      margin-inline-end: calc(-1 * var(--space-0\\.75));
-      margin-inline-start: calc(-1 * var(--space-0\\.75));
+      margin-top: calc(-1 * var(--space-0_75));
+      margin-bottom: calc(-1 * var(--space-0_75));
+      margin-inline-end: calc(-1 * var(--space-0_75));
+      margin-inline-start: calc(-1 * var(--space-0_75));
     }
   `,
   '-1': css`
@@ -3296,10 +3296,10 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
   `,
   '-1.5': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-1\\.5));
-      margin-bottom: calc(-1 * var(--space-1\\.5));
-      margin-inline-end: calc(-1 * var(--space-1\\.5));
-      margin-inline-start: calc(-1 * var(--space-1\\.5));
+      margin-top: calc(-1 * var(--space-1_5));
+      margin-bottom: calc(-1 * var(--space-1_5));
+      margin-inline-end: calc(-1 * var(--space-1_5));
+      margin-inline-start: calc(-1 * var(--space-1_5));
     }
   `,
   '-2': css`
@@ -3385,20 +3385,20 @@ export const marginX: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaCla
   `,
   '-0.25': css`
     @media ${media.desktop} {
-      margin-inline-end: calc(-1 * var(--space-0\\.25));
-      margin-inline-start: calc(-1 * var(--space-0\\.25));
+      margin-inline-end: calc(-1 * var(--space-0_25));
+      margin-inline-start: calc(-1 * var(--space-0_25));
     }
   `,
   '-0.5': css`
     @media ${media.desktop} {
-      margin-inline-end: calc(-1 * var(--space-0\\.5));
-      margin-inline-start: calc(-1 * var(--space-0\\.5));
+      margin-inline-end: calc(-1 * var(--space-0_5));
+      margin-inline-start: calc(-1 * var(--space-0_5));
     }
   `,
   '-0.75': css`
     @media ${media.desktop} {
-      margin-inline-end: calc(-1 * var(--space-0\\.75));
-      margin-inline-start: calc(-1 * var(--space-0\\.75));
+      margin-inline-end: calc(-1 * var(--space-0_75));
+      margin-inline-start: calc(-1 * var(--space-0_75));
     }
   `,
   '-1': css`
@@ -3409,8 +3409,8 @@ export const marginX: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaCla
   `,
   '-1.5': css`
     @media ${media.desktop} {
-      margin-inline-end: calc(-1 * var(--space-1\\.5));
-      margin-inline-start: calc(-1 * var(--space-1\\.5));
+      margin-inline-end: calc(-1 * var(--space-1_5));
+      margin-inline-start: calc(-1 * var(--space-1_5));
     }
   `,
   '-2': css`
@@ -3478,20 +3478,20 @@ export const marginY: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaCla
   `,
   '-0.25': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.25));
-      margin-bottom: calc(-1 * var(--space-0\\.25));
+      margin-top: calc(-1 * var(--space-0_25));
+      margin-bottom: calc(-1 * var(--space-0_25));
     }
   `,
   '-0.5': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.5));
-      margin-bottom: calc(-1 * var(--space-0\\.5));
+      margin-top: calc(-1 * var(--space-0_5));
+      margin-bottom: calc(-1 * var(--space-0_5));
     }
   `,
   '-0.75': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.75));
-      margin-bottom: calc(-1 * var(--space-0\\.75));
+      margin-top: calc(-1 * var(--space-0_75));
+      margin-bottom: calc(-1 * var(--space-0_75));
     }
   `,
   '-1': css`
@@ -3502,8 +3502,8 @@ export const marginY: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaCla
   `,
   '-1.5': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-1\\.5));
-      margin-bottom: calc(-1 * var(--space-1\\.5));
+      margin-top: calc(-1 * var(--space-1_5));
+      margin-bottom: calc(-1 * var(--space-1_5));
     }
   `,
   '-2': css`
@@ -3570,17 +3570,17 @@ export const marginTop: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaC
   `,
   '-0.25': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.25));
+      margin-top: calc(-1 * var(--space-0_25));
     }
   `,
   '-0.5': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.5));
+      margin-top: calc(-1 * var(--space-0_5));
     }
   `,
   '-0.75': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-0\\.75));
+      margin-top: calc(-1 * var(--space-0_75));
     }
   `,
   '-1': css`
@@ -3590,7 +3590,7 @@ export const marginTop: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaC
   `,
   '-1.5': css`
     @media ${media.desktop} {
-      margin-top: calc(-1 * var(--space-1\\.5));
+      margin-top: calc(-1 * var(--space-1_5));
     }
   `,
   '-2': css`
@@ -3648,17 +3648,17 @@ export const marginBottom: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linar
   `,
   '-0.25': css`
     @media ${media.desktop} {
-      margin-bottom: calc(-1 * var(--space-0\\.25));
+      margin-bottom: calc(-1 * var(--space-0_25));
     }
   `,
   '-0.5': css`
     @media ${media.desktop} {
-      margin-bottom: calc(-1 * var(--space-0\\.5));
+      margin-bottom: calc(-1 * var(--space-0_5));
     }
   `,
   '-0.75': css`
     @media ${media.desktop} {
-      margin-bottom: calc(-1 * var(--space-0\\.75));
+      margin-bottom: calc(-1 * var(--space-0_75));
     }
   `,
   '-1': css`
@@ -3668,7 +3668,7 @@ export const marginBottom: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linar
   `,
   '-1.5': css`
     @media ${media.desktop} {
-      margin-bottom: calc(-1 * var(--space-1\\.5));
+      margin-bottom: calc(-1 * var(--space-1_5));
     }
   `,
   '-2': css`
@@ -3726,17 +3726,17 @@ export const marginEnd: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaC
   `,
   '-0.25': css`
     @media ${media.desktop} {
-      margin-inline-end: calc(-1 * var(--space-0\\.25));
+      margin-inline-end: calc(-1 * var(--space-0_25));
     }
   `,
   '-0.5': css`
     @media ${media.desktop} {
-      margin-inline-end: calc(-1 * var(--space-0\\.5));
+      margin-inline-end: calc(-1 * var(--space-0_5));
     }
   `,
   '-0.75': css`
     @media ${media.desktop} {
-      margin-inline-end: calc(-1 * var(--space-0\\.75));
+      margin-inline-end: calc(-1 * var(--space-0_75));
     }
   `,
   '-1': css`
@@ -3746,7 +3746,7 @@ export const marginEnd: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaC
   `,
   '-1.5': css`
     @media ${media.desktop} {
-      margin-inline-end: calc(-1 * var(--space-1\\.5));
+      margin-inline-end: calc(-1 * var(--space-1_5));
     }
   `,
   '-2': css`
@@ -3804,17 +3804,17 @@ export const marginStart: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linari
   `,
   '-0.25': css`
     @media ${media.desktop} {
-      margin-inline-start: calc(-1 * var(--space-0\\.25));
+      margin-inline-start: calc(-1 * var(--space-0_25));
     }
   `,
   '-0.5': css`
     @media ${media.desktop} {
-      margin-inline-start: calc(-1 * var(--space-0\\.5));
+      margin-inline-start: calc(-1 * var(--space-0_5));
     }
   `,
   '-0.75': css`
     @media ${media.desktop} {
-      margin-inline-start: calc(-1 * var(--space-0\\.75));
+      margin-inline-start: calc(-1 * var(--space-0_75));
     }
   `,
   '-1': css`
@@ -3824,7 +3824,7 @@ export const marginStart: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linari
   `,
   '-1.5': css`
     @media ${media.desktop} {
-      margin-inline-start: calc(-1 * var(--space-1\\.5));
+      margin-inline-start: calc(-1 * var(--space-1_5));
     }
   `,
   '-2': css`

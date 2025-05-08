@@ -1305,19 +1305,19 @@ export const gap: Record<ThemeVars.Space, LinariaClassName> = {
     gap: var(--space-0);
   `,
   '0.25': css`
-    gap: var(--space-0\\.25);
+    gap: var(--space-0_25);
   `,
   '0.5': css`
-    gap: var(--space-0\\.5);
+    gap: var(--space-0_5);
   `,
   '0.75': css`
-    gap: var(--space-0\\.75);
+    gap: var(--space-0_75);
   `,
   '1': css`
     gap: var(--space-1);
   `,
   '1.5': css`
-    gap: var(--space-1\\.5);
+    gap: var(--space-1_5);
   `,
   '2': css`
     gap: var(--space-2);
@@ -1353,19 +1353,19 @@ export const columnGap: Record<ThemeVars.Space, LinariaClassName> = {
     column-gap: var(--space-0);
   `,
   '0.25': css`
-    column-gap: var(--space-0\\.25);
+    column-gap: var(--space-0_25);
   `,
   '0.5': css`
-    column-gap: var(--space-0\\.5);
+    column-gap: var(--space-0_5);
   `,
   '0.75': css`
-    column-gap: var(--space-0\\.75);
+    column-gap: var(--space-0_75);
   `,
   '1': css`
     column-gap: var(--space-1);
   `,
   '1.5': css`
-    column-gap: var(--space-1\\.5);
+    column-gap: var(--space-1_5);
   `,
   '2': css`
     column-gap: var(--space-2);
@@ -1401,19 +1401,19 @@ export const rowGap: Record<ThemeVars.Space, LinariaClassName> = {
     row-gap: var(--space-0);
   `,
   '0.25': css`
-    row-gap: var(--space-0\\.25);
+    row-gap: var(--space-0_25);
   `,
   '0.5': css`
-    row-gap: var(--space-0\\.5);
+    row-gap: var(--space-0_5);
   `,
   '0.75': css`
-    row-gap: var(--space-0\\.75);
+    row-gap: var(--space-0_75);
   `,
   '1': css`
     row-gap: var(--space-1);
   `,
   '1.5': css`
-    row-gap: var(--space-1\\.5);
+    row-gap: var(--space-1_5);
   `,
   '2': css`
     row-gap: var(--space-2);
@@ -1659,22 +1659,22 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     padding-inline-end: var(--space-0);
   `,
   '0.25': css`
-    padding-top: var(--space-0\\.25);
-    padding-bottom: var(--space-0\\.25);
-    padding-inline-start: var(--space-0\\.25);
-    padding-inline-end: var(--space-0\\.25);
+    padding-top: var(--space-0_25);
+    padding-bottom: var(--space-0_25);
+    padding-inline-start: var(--space-0_25);
+    padding-inline-end: var(--space-0_25);
   `,
   '0.5': css`
-    padding-top: var(--space-0\\.5);
-    padding-bottom: var(--space-0\\.5);
-    padding-inline-start: var(--space-0\\.5);
-    padding-inline-end: var(--space-0\\.5);
+    padding-top: var(--space-0_5);
+    padding-bottom: var(--space-0_5);
+    padding-inline-start: var(--space-0_5);
+    padding-inline-end: var(--space-0_5);
   `,
   '0.75': css`
-    padding-top: var(--space-0\\.75);
-    padding-bottom: var(--space-0\\.75);
-    padding-inline-start: var(--space-0\\.75);
-    padding-inline-end: var(--space-0\\.75);
+    padding-top: var(--space-0_75);
+    padding-bottom: var(--space-0_75);
+    padding-inline-start: var(--space-0_75);
+    padding-inline-end: var(--space-0_75);
   `,
   '1': css`
     padding-top: var(--space-1);
@@ -1683,10 +1683,10 @@ export const padding: Record<ThemeVars.Space, LinariaClassName> = {
     padding-inline-end: var(--space-1);
   `,
   '1.5': css`
-    padding-top: var(--space-1\\.5);
-    padding-bottom: var(--space-1\\.5);
-    padding-inline-start: var(--space-1\\.5);
-    padding-inline-end: var(--space-1\\.5);
+    padding-top: var(--space-1_5);
+    padding-bottom: var(--space-1_5);
+    padding-inline-start: var(--space-1_5);
+    padding-inline-end: var(--space-1_5);
   `,
   '2': css`
     padding-top: var(--space-2);
@@ -1750,24 +1750,24 @@ export const paddingX: Record<ThemeVars.Space, LinariaClassName> = {
     padding-inline-end: var(--space-0);
   `,
   '0.25': css`
-    padding-inline-start: var(--space-0\\.25);
-    padding-inline-end: var(--space-0\\.25);
+    padding-inline-start: var(--space-0_25);
+    padding-inline-end: var(--space-0_25);
   `,
   '0.5': css`
-    padding-inline-start: var(--space-0\\.5);
-    padding-inline-end: var(--space-0\\.5);
+    padding-inline-start: var(--space-0_5);
+    padding-inline-end: var(--space-0_5);
   `,
   '0.75': css`
-    padding-inline-start: var(--space-0\\.75);
-    padding-inline-end: var(--space-0\\.75);
+    padding-inline-start: var(--space-0_75);
+    padding-inline-end: var(--space-0_75);
   `,
   '1': css`
     padding-inline-start: var(--space-1);
     padding-inline-end: var(--space-1);
   `,
   '1.5': css`
-    padding-inline-start: var(--space-1\\.5);
-    padding-inline-end: var(--space-1\\.5);
+    padding-inline-start: var(--space-1_5);
+    padding-inline-end: var(--space-1_5);
   `,
   '2': css`
     padding-inline-start: var(--space-2);
@@ -1813,24 +1813,24 @@ export const paddingY: Record<ThemeVars.Space, LinariaClassName> = {
     padding-bottom: var(--space-0);
   `,
   '0.25': css`
-    padding-top: var(--space-0\\.25);
-    padding-bottom: var(--space-0\\.25);
+    padding-top: var(--space-0_25);
+    padding-bottom: var(--space-0_25);
   `,
   '0.5': css`
-    padding-top: var(--space-0\\.5);
-    padding-bottom: var(--space-0\\.5);
+    padding-top: var(--space-0_5);
+    padding-bottom: var(--space-0_5);
   `,
   '0.75': css`
-    padding-top: var(--space-0\\.75);
-    padding-bottom: var(--space-0\\.75);
+    padding-top: var(--space-0_75);
+    padding-bottom: var(--space-0_75);
   `,
   '1': css`
     padding-top: var(--space-1);
     padding-bottom: var(--space-1);
   `,
   '1.5': css`
-    padding-top: var(--space-1\\.5);
-    padding-bottom: var(--space-1\\.5);
+    padding-top: var(--space-1_5);
+    padding-bottom: var(--space-1_5);
   `,
   '2': css`
     padding-top: var(--space-2);
@@ -1875,19 +1875,19 @@ export const paddingTop: Record<ThemeVars.Space, LinariaClassName> = {
     padding-top: var(--space-0);
   `,
   '0.25': css`
-    padding-top: var(--space-0\\.25);
+    padding-top: var(--space-0_25);
   `,
   '0.5': css`
-    padding-top: var(--space-0\\.5);
+    padding-top: var(--space-0_5);
   `,
   '0.75': css`
-    padding-top: var(--space-0\\.75);
+    padding-top: var(--space-0_75);
   `,
   '1': css`
     padding-top: var(--space-1);
   `,
   '1.5': css`
-    padding-top: var(--space-1\\.5);
+    padding-top: var(--space-1_5);
   `,
   '2': css`
     padding-top: var(--space-2);
@@ -1923,19 +1923,19 @@ export const paddingBottom: Record<ThemeVars.Space, LinariaClassName> = {
     padding-bottom: var(--space-0);
   `,
   '0.25': css`
-    padding-bottom: var(--space-0\\.25);
+    padding-bottom: var(--space-0_25);
   `,
   '0.5': css`
-    padding-bottom: var(--space-0\\.5);
+    padding-bottom: var(--space-0_5);
   `,
   '0.75': css`
-    padding-bottom: var(--space-0\\.75);
+    padding-bottom: var(--space-0_75);
   `,
   '1': css`
     padding-bottom: var(--space-1);
   `,
   '1.5': css`
-    padding-bottom: var(--space-1\\.5);
+    padding-bottom: var(--space-1_5);
   `,
   '2': css`
     padding-bottom: var(--space-2);
@@ -1971,19 +1971,19 @@ export const paddingStart: Record<ThemeVars.Space, LinariaClassName> = {
     padding-inline-start: var(--space-0);
   `,
   '0.25': css`
-    padding-inline-start: var(--space-0\\.25);
+    padding-inline-start: var(--space-0_25);
   `,
   '0.5': css`
-    padding-inline-start: var(--space-0\\.5);
+    padding-inline-start: var(--space-0_5);
   `,
   '0.75': css`
-    padding-inline-start: var(--space-0\\.75);
+    padding-inline-start: var(--space-0_75);
   `,
   '1': css`
     padding-inline-start: var(--space-1);
   `,
   '1.5': css`
-    padding-inline-start: var(--space-1\\.5);
+    padding-inline-start: var(--space-1_5);
   `,
   '2': css`
     padding-inline-start: var(--space-2);
@@ -2019,19 +2019,19 @@ export const paddingEnd: Record<ThemeVars.Space, LinariaClassName> = {
     padding-inline-end: var(--space-0);
   `,
   '0.25': css`
-    padding-inline-end: var(--space-0\\.25);
+    padding-inline-end: var(--space-0_25);
   `,
   '0.5': css`
-    padding-inline-end: var(--space-0\\.5);
+    padding-inline-end: var(--space-0_5);
   `,
   '0.75': css`
-    padding-inline-end: var(--space-0\\.75);
+    padding-inline-end: var(--space-0_75);
   `,
   '1': css`
     padding-inline-end: var(--space-1);
   `,
   '1.5': css`
-    padding-inline-end: var(--space-1\\.5);
+    padding-inline-end: var(--space-1_5);
   `,
   '2': css`
     padding-inline-end: var(--space-2);
@@ -2070,22 +2070,22 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     margin-inline-start: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-top: calc(-1 * var(--space-0\\.25));
-    margin-bottom: calc(-1 * var(--space-0\\.25));
-    margin-inline-end: calc(-1 * var(--space-0\\.25));
-    margin-inline-start: calc(-1 * var(--space-0\\.25));
+    margin-top: calc(-1 * var(--space-0_25));
+    margin-bottom: calc(-1 * var(--space-0_25));
+    margin-inline-end: calc(-1 * var(--space-0_25));
+    margin-inline-start: calc(-1 * var(--space-0_25));
   `,
   '-0.5': css`
-    margin-top: calc(-1 * var(--space-0\\.5));
-    margin-bottom: calc(-1 * var(--space-0\\.5));
-    margin-inline-end: calc(-1 * var(--space-0\\.5));
-    margin-inline-start: calc(-1 * var(--space-0\\.5));
+    margin-top: calc(-1 * var(--space-0_5));
+    margin-bottom: calc(-1 * var(--space-0_5));
+    margin-inline-end: calc(-1 * var(--space-0_5));
+    margin-inline-start: calc(-1 * var(--space-0_5));
   `,
   '-0.75': css`
-    margin-top: calc(-1 * var(--space-0\\.75));
-    margin-bottom: calc(-1 * var(--space-0\\.75));
-    margin-inline-end: calc(-1 * var(--space-0\\.75));
-    margin-inline-start: calc(-1 * var(--space-0\\.75));
+    margin-top: calc(-1 * var(--space-0_75));
+    margin-bottom: calc(-1 * var(--space-0_75));
+    margin-inline-end: calc(-1 * var(--space-0_75));
+    margin-inline-start: calc(-1 * var(--space-0_75));
   `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
@@ -2094,10 +2094,10 @@ export const margin: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaClas
     margin-inline-start: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-top: calc(-1 * var(--space-1\\.5));
-    margin-bottom: calc(-1 * var(--space-1\\.5));
-    margin-inline-end: calc(-1 * var(--space-1\\.5));
-    margin-inline-start: calc(-1 * var(--space-1\\.5));
+    margin-top: calc(-1 * var(--space-1_5));
+    margin-bottom: calc(-1 * var(--space-1_5));
+    margin-inline-end: calc(-1 * var(--space-1_5));
+    margin-inline-start: calc(-1 * var(--space-1_5));
   `,
   '-2': css`
     margin-top: calc(-1 * var(--space-2));
@@ -2161,24 +2161,24 @@ export const marginX: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaCla
     margin-inline-start: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-inline-end: calc(-1 * var(--space-0\\.25));
-    margin-inline-start: calc(-1 * var(--space-0\\.25));
+    margin-inline-end: calc(-1 * var(--space-0_25));
+    margin-inline-start: calc(-1 * var(--space-0_25));
   `,
   '-0.5': css`
-    margin-inline-end: calc(-1 * var(--space-0\\.5));
-    margin-inline-start: calc(-1 * var(--space-0\\.5));
+    margin-inline-end: calc(-1 * var(--space-0_5));
+    margin-inline-start: calc(-1 * var(--space-0_5));
   `,
   '-0.75': css`
-    margin-inline-end: calc(-1 * var(--space-0\\.75));
-    margin-inline-start: calc(-1 * var(--space-0\\.75));
+    margin-inline-end: calc(-1 * var(--space-0_75));
+    margin-inline-start: calc(-1 * var(--space-0_75));
   `,
   '-1': css`
     margin-inline-end: calc(-1 * var(--space-1));
     margin-inline-start: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-inline-end: calc(-1 * var(--space-1\\.5));
-    margin-inline-start: calc(-1 * var(--space-1\\.5));
+    margin-inline-end: calc(-1 * var(--space-1_5));
+    margin-inline-start: calc(-1 * var(--space-1_5));
   `,
   '-2': css`
     margin-inline-end: calc(-1 * var(--space-2));
@@ -2224,24 +2224,24 @@ export const marginY: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaCla
     margin-bottom: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-top: calc(-1 * var(--space-0\\.25));
-    margin-bottom: calc(-1 * var(--space-0\\.25));
+    margin-top: calc(-1 * var(--space-0_25));
+    margin-bottom: calc(-1 * var(--space-0_25));
   `,
   '-0.5': css`
-    margin-top: calc(-1 * var(--space-0\\.5));
-    margin-bottom: calc(-1 * var(--space-0\\.5));
+    margin-top: calc(-1 * var(--space-0_5));
+    margin-bottom: calc(-1 * var(--space-0_5));
   `,
   '-0.75': css`
-    margin-top: calc(-1 * var(--space-0\\.75));
-    margin-bottom: calc(-1 * var(--space-0\\.75));
+    margin-top: calc(-1 * var(--space-0_75));
+    margin-bottom: calc(-1 * var(--space-0_75));
   `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
     margin-bottom: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-top: calc(-1 * var(--space-1\\.5));
-    margin-bottom: calc(-1 * var(--space-1\\.5));
+    margin-top: calc(-1 * var(--space-1_5));
+    margin-bottom: calc(-1 * var(--space-1_5));
   `,
   '-2': css`
     margin-top: calc(-1 * var(--space-2));
@@ -2286,19 +2286,19 @@ export const marginTop: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaC
     margin-top: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-top: calc(-1 * var(--space-0\\.25));
+    margin-top: calc(-1 * var(--space-0_25));
   `,
   '-0.5': css`
-    margin-top: calc(-1 * var(--space-0\\.5));
+    margin-top: calc(-1 * var(--space-0_5));
   `,
   '-0.75': css`
-    margin-top: calc(-1 * var(--space-0\\.75));
+    margin-top: calc(-1 * var(--space-0_75));
   `,
   '-1': css`
     margin-top: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-top: calc(-1 * var(--space-1\\.5));
+    margin-top: calc(-1 * var(--space-1_5));
   `,
   '-2': css`
     margin-top: calc(-1 * var(--space-2));
@@ -2334,19 +2334,19 @@ export const marginBottom: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linar
     margin-bottom: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-bottom: calc(-1 * var(--space-0\\.25));
+    margin-bottom: calc(-1 * var(--space-0_25));
   `,
   '-0.5': css`
-    margin-bottom: calc(-1 * var(--space-0\\.5));
+    margin-bottom: calc(-1 * var(--space-0_5));
   `,
   '-0.75': css`
-    margin-bottom: calc(-1 * var(--space-0\\.75));
+    margin-bottom: calc(-1 * var(--space-0_75));
   `,
   '-1': css`
     margin-bottom: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-bottom: calc(-1 * var(--space-1\\.5));
+    margin-bottom: calc(-1 * var(--space-1_5));
   `,
   '-2': css`
     margin-bottom: calc(-1 * var(--space-2));
@@ -2382,19 +2382,19 @@ export const marginEnd: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, LinariaC
     margin-inline-end: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-inline-end: calc(-1 * var(--space-0\\.25));
+    margin-inline-end: calc(-1 * var(--space-0_25));
   `,
   '-0.5': css`
-    margin-inline-end: calc(-1 * var(--space-0\\.5));
+    margin-inline-end: calc(-1 * var(--space-0_5));
   `,
   '-0.75': css`
-    margin-inline-end: calc(-1 * var(--space-0\\.75));
+    margin-inline-end: calc(-1 * var(--space-0_75));
   `,
   '-1': css`
     margin-inline-end: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-inline-end: calc(-1 * var(--space-1\\.5));
+    margin-inline-end: calc(-1 * var(--space-1_5));
   `,
   '-2': css`
     margin-inline-end: calc(-1 * var(--space-2));
@@ -2430,19 +2430,19 @@ export const marginStart: Record<'0' | `-${Exclude<ThemeVars.Space, 0>}`, Linari
     margin-inline-start: calc(-1 * var(--space-0));
   `,
   '-0.25': css`
-    margin-inline-start: calc(-1 * var(--space-0\\.25));
+    margin-inline-start: calc(-1 * var(--space-0_25));
   `,
   '-0.5': css`
-    margin-inline-start: calc(-1 * var(--space-0\\.5));
+    margin-inline-start: calc(-1 * var(--space-0_5));
   `,
   '-0.75': css`
-    margin-inline-start: calc(-1 * var(--space-0\\.75));
+    margin-inline-start: calc(-1 * var(--space-0_75));
   `,
   '-1': css`
     margin-inline-start: calc(-1 * var(--space-1));
   `,
   '-1.5': css`
-    margin-inline-start: calc(-1 * var(--space-1\\.5));
+    margin-inline-start: calc(-1 * var(--space-1_5));
   `,
   '-2': css`
     margin-inline-start: calc(-1 * var(--space-2));

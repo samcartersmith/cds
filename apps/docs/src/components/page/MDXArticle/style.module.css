@@ -12,7 +12,7 @@
     font-size: var(--fontSize-title3);
     font-weight: var(--fontWeight-title3);
     line-height: var(--lineHeight-title3);
-    margin-bottom: var(--space-1\.5);
+    margin-bottom: var(--space-1_5);
   }
 
   & h4 {
@@ -20,7 +20,7 @@
     font-size: var(--fontSize-title4);
     font-weight: var(--fontWeight-title4);
     line-height: var(--lineHeight-title4);
-    margin-bottom: var(--space-1\.5);
+    margin-bottom: var(--space-1_5);
   }
 
   & h5 {
@@ -28,7 +28,7 @@
     font-size: var(--fontSize-headline);
     font-weight: var(--fontWeight-headline);
     line-height: var(--lineHeight-headline);
-    margin-bottom: var(--space-1\.5);
+    margin-bottom: var(--space-1_5);
   }
 
   & h6 {
@@ -36,7 +36,7 @@
     font-size: var(--fontSize-headline);
     font-weight: var(--fontWeight-headline);
     line-height: var(--lineHeight-headline);
-    margin-bottom: var(--space-1\.5);
+    margin-bottom: var(--space-1_5);
   }
 
   & p {
@@ -93,23 +93,23 @@
 
   @media screen and (max-width: 768px) {
     & h2 {
-      margin-bottom: var(--space-1\.5);
+      margin-bottom: var(--space-1_5);
     }
 
     & h3 {
-      margin-bottom: var(--space-1\.5);
+      margin-bottom: var(--space-1_5);
     }
 
     & h4 {
-      margin-bottom: var(--space-1\.5);
+      margin-bottom: var(--space-1_5);
     }
 
     & h5 {
-      margin-bottom: var(--space-1\.5);
+      margin-bottom: var(--space-1_5);
     }
 
     & h6 {
-      margin-bottom: var(--space-1\.5);
+      margin-bottom: var(--space-1_5);
     }
 
     & p {
