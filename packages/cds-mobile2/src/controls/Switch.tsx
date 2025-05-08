@@ -57,6 +57,7 @@ const SwitchIcon = ({
     <Interactable
       background={checked ? 'bgPrimary' : 'bgTertiary'}
       borderRadius={400}
+      borderWidth={0}
       disabled={disabled}
       pressed={pressed}
       style={trackStyle}
