@@ -108,7 +108,6 @@ export const Banner = memo(
     (
       {
         variant,
-        borderRadius = 400,
         startIcon,
         onClose,
         primaryAction,
@@ -124,6 +123,7 @@ export const Banner = memo(
         styleVariant = 'contextual',
         startIconAccessibilityLabel,
         closeAccessibilityLabel,
+        borderRadius = 400,
         margin,
         marginY,
         marginX,

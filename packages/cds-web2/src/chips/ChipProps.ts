@@ -11,7 +11,6 @@ export type ChipBaseProps = SharedProps &
     PressableProps<PressableDefaultElement>,
     | 'children'
     | 'loading'
-    | 'background'
     | 'start'
     | 'numberOfLines'
     | 'accessibilityHint'

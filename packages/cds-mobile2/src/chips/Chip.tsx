@@ -24,6 +24,8 @@ export const Chip = memo(
       onPress,
       testID,
       contentStyle,
+      borderRadius = 700,
+      background = 'bgSecondary',
       ...props
     }: ChipProps,
     ref: React.ForwardedRef<View>,
@@ -33,8 +35,8 @@ export const Chip = memo(
     const content = (
       <HStack
         alignItems="center"
-        background={onPress ? undefined : 'bgSecondary'}
-        borderRadius={500}
+        background={onPress ? undefined : background}
+        borderRadius={borderRadius}
         gap={1}
         maxWidth={maxWidth}
         minWidth={0}
@@ -64,8 +66,8 @@ export const Chip = memo(
           {onPress ? (
             <Pressable
               ref={ref}
-              background="bgSecondary"
-              borderRadius={500}
+              background={background}
+              borderRadius={borderRadius}
               onPress={onPress}
               testID={testID}
               {...props}

@@ -37,24 +37,26 @@ export const Chip = memo(
       testID,
       accessibilityLabel,
       contentStyle,
-      ...pressableProps
+      borderRadius = 700,
+      background = 'bgSecondary',
+      ...props
     },
     ref,
   ) {
-    const hasPressableContainer = Boolean(onClick);
+    const WrapperComponent = inverted ? InvertedThemeProvider : Fragment;
 
     const content = (
       <HStack
         alignItems="center"
-        background="bgSecondary"
-        borderRadius={500}
+        background={onClick ? undefined : background}
+        borderRadius={borderRadius}
         className={contentClass}
         gap={1}
         maxWidth={maxWidth}
         paddingX={compact ? 1 : 2}
         paddingY={compact ? 0.5 : 1}
         style={contentStyle}
-        testID={!hasPressableContainer ? testID : undefined}
+        testID={!onClick ? testID : undefined}
       >
         {start}
         {typeof children === 'string' ? (
@@ -68,27 +70,26 @@ export const Chip = memo(
       </HStack>
     );
 
-    const Providers = inverted ? InvertedThemeProvider : Fragment;
-
     // The wrapping Box ensures that the layout is consistent since the child pressable and provider child elements conditionally render
     return (
       <Box className={containerClass} display="block">
-        <Providers>
-          {hasPressableContainer ? (
+        <WrapperComponent>
+          {onClick ? (
             <Pressable
               ref={ref}
               accessibilityLabel={accessibilityLabel}
-              borderRadius={500}
+              background={background}
+              borderRadius={borderRadius}
               onClick={onClick}
               testID={testID}
-              {...pressableProps}
+              {...props}
             >
               {content}
             </Pressable>
           ) : (
             content
           )}
-        </Providers>
+        </WrapperComponent>
       </Box>
     );
   }),

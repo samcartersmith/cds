@@ -98,6 +98,7 @@ export const Banner = memo(
       styleVariant = 'contextual',
       startIconAccessibilityLabel,
       closeAccessibilityLabel,
+      borderRadius = 400,
       margin,
       marginX,
       marginY,
@@ -199,7 +200,7 @@ export const Banner = memo(
         <HStack
           ref={forwardedRef}
           background={background}
-          borderRadius={400}
+          borderRadius={borderRadius}
           gap={1}
           paddingY={2}
           style={rootStyle}
