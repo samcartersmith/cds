@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 
 #### 📘 Misc
 
+- Update package.json fields.
+
+#### 📘 Misc
+
 - Enable prettier for type outputs.
 
 ## 4.9.0 (4/16/2025 PST)

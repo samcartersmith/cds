@@ -128,15 +128,6 @@ const lottieStyles = css`
     }
   }
 
-  .palette_fgInverse {
-    &_stroke {
-      stroke: var(--color-fgInverse);
-    }
-    &_fill {
-      fill: var(--color-fgInverse);
-    }
-  }
-
   .palette_bgNegativeWash {
     &_stroke {
       stroke: var(--color-bgNegativeWash);
@@ -155,30 +146,12 @@ const lottieStyles = css`
     }
   }
 
-  .palette_fgInverse {
-    &_stroke {
-      stroke: var(--color-fgInverse);
-    }
-    &_fill {
-      fill: var(--color-fgInverse);
-    }
-  }
-
   .palette_bgSecondary {
     &_stroke {
       stroke: var(--color-bgSecondary);
     }
     &_fill {
       fill: var(--color-bgSecondary);
-    }
-  }
-
-  .palette_fg {
-    &_stroke {
-      stroke: var(--color-fg);
-    }
-    &_fill {
-      fill: var(--color-fg);
     }
   }
 

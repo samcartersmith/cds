@@ -80,6 +80,7 @@ const baseStyle = css`
     touch-action: none;
     background-color: var(${interactableDisabledBackground});
     border-color: var(${interactableDisabledBorderColor});
+  }
 `;
 
 const blockStyle = css`
