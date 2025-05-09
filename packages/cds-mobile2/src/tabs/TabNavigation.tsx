@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
-import type { SharedProps } from '@cbhq/cds-common2/types';
+import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common2/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import type { DotCountBaseProps } from '../dots';
@@ -46,6 +46,7 @@ export type CustomTabProps = Pick<TabProps, 'id'> & {
 };
 
 export type TabNavigationBaseProps<T extends string | undefined = string> = BoxBaseProps &
+  Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'> &
   Pick<TabProps, 'variant' | 'Component'> & {
     /** The active tabId
      *  @default tabs[0].id
@@ -83,6 +84,8 @@ export type TabNavigationBaseProps<T extends string | undefined = string> = BoxB
      * Web only. Styling for the paddle icon buttons. Mobile does not have paddles.
      */
     paddleStyle?: React.CSSProperties;
+    /** @danger This should only be used for accessibility purposes, eg: aria-controls https://accessibilityresources.org/aria-controls */
+    id?: string;
   };
 
 export type TabNavigationProps = TabNavigationBaseProps;
