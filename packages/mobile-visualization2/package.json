@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/cds-mobile-visualization2",
   "version": "3.0.0-alpha.8",
+  "private": true,
   "description": "Coinbase Design System - Mobile Visualization Native",
   "repository": {
     "type": "git",
