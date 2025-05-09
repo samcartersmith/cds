@@ -27,6 +27,8 @@ export const fallbackImageSrc =
 
 export type AvatarBaseProps = SharedProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
+    /** This is the name associated with the entity in the Avatar. This is used in the image alt tag for accessibility. */
+    alt?: string;
     /** Absolute url to the image that should be shown in the Avatar. If no src is provided then a generic fallback image is used. */
     src?: string;
     /** Shape of Avatar.
@@ -56,6 +58,7 @@ export type AvatarProps = AvatarBaseProps & Omit<BoxProps, 'children'>;
 
 export const Avatar = memo(
   ({
+    alt,
     src,
     shape = 'circle',
     size = 'l',
@@ -175,6 +178,7 @@ export const Avatar = memo(
       >
         {shouldShowAvatarImage ? (
           <RemoteImage
+            alt={alt}
             height={computedSize}
             resizeMode="cover"
             shape={shape}

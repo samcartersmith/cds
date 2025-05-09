@@ -45,7 +45,7 @@ export type CustomTabProps = Pick<TabProps, 'id'> & {
   label?: React.ReactNode;
 };
 
-export type TabNavigationBaseProps<T extends string | undefined = string> = SharedProps &
+export type TabNavigationBaseProps<T extends string | undefined = string> = BoxBaseProps &
   Pick<TabProps, 'variant' | 'Component'> & {
     /** The active tabId
      *  @default tabs[0].id
@@ -85,7 +85,7 @@ export type TabNavigationBaseProps<T extends string | undefined = string> = Shar
     paddleStyle?: React.CSSProperties;
   };
 
-export type TabNavigationProps = TabNavigationBaseProps & BoxBaseProps;
+export type TabNavigationProps = TabNavigationBaseProps;
 
 export const TabNavigation = memo(
   forwardRef<View, TabNavigationProps>(
