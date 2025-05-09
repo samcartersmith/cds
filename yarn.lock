@@ -3337,6 +3337,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cbhq/cds-common-internal@workspace:packages/cds-common-internal":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/cds-common-internal@workspace:packages/cds-common-internal"
+  dependencies:
+    "@babel/core": "npm:^7.20.12"
+    "@babel/preset-env": "npm:^7.20.2"
+    "@babel/preset-react": "npm:^7.18.6"
+    "@babel/preset-typescript": "npm:^7.18.6"
+    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@types/react": "npm:^18.3.12"
+    d3-array: "npm:^3.2.4"
+    d3-color: "npm:^3.1.0"
+    d3-interpolate: "npm:^3.0.1"
+    d3-scale: "npm:^4.0.2"
+    d3-shape: "npm:^3.2.0"
+    jest-date-mock: "npm:^1.0.8"
+    lodash: "npm:^4.17.21"
+    react-is: "npm:^17.0.2"
+    type-fest: "npm:^2.19.0"
+  peerDependencies:
+    react: ^18.3.1
+    react-dom: ^18.3.1
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/cds-common2@workspace:^, @cbhq/cds-common2@workspace:packages/cds-common2":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-common2@workspace:packages/cds-common2"
@@ -3515,15 +3543,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-mobile-themes@workspace:packages/cds-mobile-themes":
+"@cbhq/cds-mobile-internal@workspace:packages/cds-mobile-internal":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-mobile-themes@workspace:packages/cds-mobile-themes"
+  resolution: "@cbhq/cds-mobile-internal@workspace:packages/cds-mobile-internal"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-mobile": "workspace:^"
+    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
+    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-mobile2": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
     "@types/react": "npm:^18.3.12"
   peerDependencies:
     react: ^18.3.1
@@ -3772,17 +3805,48 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web-themes@workspace:packages/cds-web-themes":
+"@cbhq/cds-web-internal@workspace:packages/cds-web-internal":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-web-themes@workspace:packages/cds-web-themes"
+  resolution: "@cbhq/cds-web-internal@workspace:packages/cds-web-internal"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-web": "workspace:^"
+    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-icons": "workspace:^"
+    "@cbhq/cds-illustrations": "workspace:^"
+    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/cds-web-utils": "workspace:^"
+    "@cbhq/cds-web2": "workspace:^"
+    "@cbhq/ui-scorecard": "workspace:^"
+    "@floating-ui/react-dom": "npm:^2.1.1"
+    "@linaria/core": "npm:^3.0.0-beta.22"
+    "@linaria/shaker": "npm:^3.0.0-beta.22"
+    "@popperjs/core": "npm:^2.9.0"
+    "@react-spring/web": "npm:^9.7.4"
+    "@storybook/jest": "npm:^0.0.10"
+    "@storybook/react": "npm:^6.5.17-alpha.0"
+    "@storybook/testing-library": "npm:^0.0.13"
     "@types/react": "npm:^18.3.12"
+    "@types/react-dom": "npm:^18.3.1"
+    csstype: "npm:^3.1.3"
+    d3-interpolate: "npm:^3.0.1"
+    d3-interpolate-path: "npm:^2.3.0"
+    d3-selection: "npm:^3.0.0"
+    framer-motion: "npm:^10.18.0"
+    glob: "npm:^10.3.10"
+    lodash: "npm:^4.17.21"
+    lottie-web: "npm:^5.7.6"
+    react-popper: "npm:^2.2.4"
+    react-use-measure: "npm:^2"
+    storybook-addon-performance: "npm:^0.16.1"
+    typescript: "npm:~5.7.2"
+    vite: "npm:^3.0.0"
+    zx: "npm:^8.1.9"
   peerDependencies:
+    framer-motion: ^10.18.0
     react: ^18.3.1
     react-dom: ^18.3.1
   languageName: unknown

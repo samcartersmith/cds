@@ -5,9 +5,6 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "go": {
-      "command": "yarn workspace mobile-app2 go"
-    },
     "setup": {
       "executor": "nx:run-commands",
       "dependsOn": [

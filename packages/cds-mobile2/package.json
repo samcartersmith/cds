@@ -8,6 +8,7 @@
     "url": "git@github.cbhq.net:frontend/cds.git",
     "directory": "packages/cds-mobile2"
   },
+  "react-native": "./src/index.ts",
   "type": "module",
   "main": "./esm/index.js",
   "types": "./dts/index.d.ts",

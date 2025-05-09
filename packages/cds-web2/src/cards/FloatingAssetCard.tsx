@@ -29,7 +29,8 @@ export type FloatingAssetCardBaseProps = SharedProps & {
   size?: 's' | 'l';
 };
 
-export type FloatingAssetCardProps = FloatingAssetCardBaseProps & BoxProps<BoxDefaultElement>;
+export type FloatingAssetCardProps = FloatingAssetCardBaseProps &
+  Omit<BoxProps<BoxDefaultElement>, 'title'>;
 
 const pressStyle = css`
   /* Prevents layout shift - https://web.dev/cls/#animations-and-transitions */

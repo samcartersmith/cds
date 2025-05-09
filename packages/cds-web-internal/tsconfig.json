@@ -1,0 +1,37 @@
+{
+  "extends": "../../tsconfig.project.json",
+  "compilerOptions": {
+    "declarationDir": "dts",
+    "rootDir": "src"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [],
+  "references": [
+    {
+      "path": "../../packages/cds-common2"
+    },
+    {
+      "path": "../../packages/cds-web2"
+    },
+    {
+      "path": "../../packages/fonts"
+    },
+    {
+      "path": "../../packages/icons"
+    },
+    {
+      "path": "../../packages/illustrations"
+    },
+    {
+      "path": "../../packages/lottie-files2"
+    },
+    {
+      "path": "../../packages/utils"
+    },
+    {
+      "path": "../../libs/web-utils"
+    }
+  ]
+}

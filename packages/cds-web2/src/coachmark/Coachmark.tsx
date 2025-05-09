@@ -49,7 +49,8 @@ export type CoachmarkBaseProps = SharedProps &
     closeButtonAccessibilityLabel?: string;
   };
 
-export type CoachmarkProps = CoachmarkBaseProps & Omit<BoxProps<BoxDefaultElement>, 'content'>;
+export type CoachmarkProps = CoachmarkBaseProps &
+  Omit<BoxProps<BoxDefaultElement>, 'title' | 'content'>;
 
 export const Coachmark = memo(
   forwardRef(

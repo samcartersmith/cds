@@ -17,7 +17,8 @@ export type ContainedAssetCardBaseProps = SharedProps & {
   children?: React.ReactNode;
 };
 
-export type ContainedAssetCardProps = ContainedAssetCardBaseProps & BoxProps<BoxDefaultElement>;
+export type ContainedAssetCardProps = ContainedAssetCardBaseProps &
+  Omit<BoxProps<BoxDefaultElement>, 'title'>;
 
 export const containedAssetCardHeight = 156;
 export const containedAssetCardSmallWidth = 156;
