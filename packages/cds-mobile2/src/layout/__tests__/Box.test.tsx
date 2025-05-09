@@ -114,7 +114,7 @@ describe('Box', () => {
 
     expect(screen.getByTestId('parent')).toHaveStyle({
       shadowColor: '#000000',
-      shadowOpacity: 0.02,
+      shadowOpacity: 0.12,
       shadowRadius: 12,
     });
   });

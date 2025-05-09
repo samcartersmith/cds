@@ -9,7 +9,7 @@ export const Spinner = memo(function Spinner({
   ...props
 }: ActivityIndicatorProps) {
   const theme = useTheme();
-  const color = theme.activeColorScheme === 'dark' ? theme.color.bgOverlay : theme.color.bgPrimary;
+  const color = theme.color.bgPrimary;
 
   return <ActivityIndicator animating={animating} color={color} size={size} {...props} />;
 });

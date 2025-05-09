@@ -553,7 +553,7 @@ export const defaultTheme = {
     elevation1: {
       shadowColor: '#000000',
       shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.02,
+      shadowOpacity: 0.12,
       shadowRadius: 12,
     },
     elevation2: {
