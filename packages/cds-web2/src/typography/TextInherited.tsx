@@ -20,7 +20,7 @@ type TextInheritComponent = (<AsComponent extends React.ElementType = TextInheri
 ) => Polymorphic.ReactReturn) &
   Polymorphic.ReactNamed;
 
-export const TextInherit: TextInheritComponent = forwardRef<
+export const TextInherited: TextInheritComponent = forwardRef<
   React.ReactElement<TextInheritBaseProps>,
   TextInheritBaseProps
 >(
@@ -33,4 +33,4 @@ export const TextInherit: TextInheritComponent = forwardRef<
   },
 );
 
-TextInherit.displayName = 'TextInherit';
+TextInherited.displayName = 'TextInherited';
