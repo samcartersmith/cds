@@ -85,6 +85,7 @@ export type UiIconName =
   | 'close'
   | 'closeCaption'
   | 'coinbaseOne'
+  | 'coinbaseOneCard'
   | 'collapse'
   | 'collectibles'
   | 'comment'

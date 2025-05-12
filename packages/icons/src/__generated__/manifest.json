@@ -1,6 +1,6 @@
 {
   "executor": "sync",
-  "lastUpdated": "2025-05-02T16:39:34.640Z",
+  "lastUpdated": "2025-05-12T13:48:15.021Z",
   "metadata": { "lastUnicode": 63980 },
   "items": {
     "2:188": {
@@ -11197,6 +11197,30 @@
         "svg16Inactive": "./ui/svg/ui-gaugeLowMid-16.svg",
         "svg24Active": "./ui/svg/ui-gaugeLowMid-24-active.svg",
         "svg24Inactive": "./ui/svg/ui-gaugeLowMid-24.svg"
+      }
+    },
+    "3775:89": {
+      "type": "ui",
+      "name": "coinbaseOneCard",
+      "hash": "SW+wiTLLmyVUXjRmrp0OD5zyEkR+O4AIU2Jhe8Nc/y0=",
+      "description": "coinbaseonecard, card, one, cb1, brand,",
+      "components": [
+        { "props": { "size": 24, "active": false } },
+        { "props": { "size": 24, "active": true } },
+        { "props": { "size": 16, "active": false } },
+        { "props": { "size": 16, "active": true } },
+        { "props": { "size": 12, "active": false } },
+        { "props": { "size": 12, "active": true } }
+      ],
+      "createdAt": "2025-05-09T15:37:52.258Z",
+      "lastUpdated": "2025-05-09T15:37:52.258Z",
+      "outputs": {
+        "svg12Active": "./ui/svg/ui-coinbaseOneCard-12-active.svg",
+        "svg12Inactive": "./ui/svg/ui-coinbaseOneCard-12.svg",
+        "svg16Active": "./ui/svg/ui-coinbaseOneCard-16-active.svg",
+        "svg16Inactive": "./ui/svg/ui-coinbaseOneCard-16.svg",
+        "svg24Active": "./ui/svg/ui-coinbaseOneCard-24-active.svg",
+        "svg24Inactive": "./ui/svg/ui-coinbaseOneCard-24.svg"
       }
     }
   }

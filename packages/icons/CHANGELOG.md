@@ -8,7 +8,19 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 4.6.0 (5/12/2025 PST)
+
+#### 🚀 Updates
+
+- Publish icons 05/12/2025. [[#4015](https://github.cbhq.net/frontend/cds/pull/4015)]
+
+### 🚀 Added
+
+Generated with `yarn nx run icons:sync`
+
+#### Ui
+
+- coinbaseOneCard
 
 #### 📘 Misc
 

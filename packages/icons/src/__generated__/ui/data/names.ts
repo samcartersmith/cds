@@ -313,6 +313,7 @@ const names: UiIconName[] = [
   'gaugeLowMid',
   'gaugeHighLow',
   'gaugeLowHigh',
+  'coinbaseOneCard',
 ];
 
 export default names;
