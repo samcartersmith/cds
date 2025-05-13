@@ -14,7 +14,7 @@ export const fallbackImageSrc =
   'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAOAA4AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+t80Zo4o4oAM0ZrsPBvw7m8Sxi7uZDa2GcKwHzyeu30HvXdf8Kp0Dytnlz7v+ennHP8Ah+lAHiuaM12XjL4dTeG4jd2sjXViDhiR88f1x1HvXG8UAGaKOKKADI9Kkt4vtFxFEOC7Bc/U4qPJ9KVXZGDLwwOQaAPpS0tY7G1ht4VCRRKEVcdABipc1meG9eh8RaRBeRMNzACRB1R+4/z2rU/OgCK5t47y3lgmUPFKpR1I6gjBr5uu4fst1NCefLdkz64OK+g/EWuQ+HtJnvJmHyjCIerv2Ar55klaWRnblmJJPqaAG5HpRRk+lFABzVnTtOutWvY7W0iMs8hwqj+Z9BVbB9a9o+GXhlNI0VL2VR9rvFD5PVY/4R+PX8vSgCfwX4EXwsDNJdSTXTrh1RisQ/Dv9T+QrrP89aT8qPyoA5Txr4FHilRNHdSQ3Ua4RHYtEfw7fUfrXjOo6dc6Tey2t3EYp4zgqf5j1FfSP5VxvxN8Mpq+jPfRKPtlmpfI6tH/ABD8Ov5+tAHi/NFGDRQBY060+3aja22f9dKsf5kD+tfSKIsaKigKqjAAHAFFFAC/j+lL+P6UUUAH4/pTXRZEZGG5WGCCOooooA+btRtPsOoXVtn/AFMrR/kSKKKKAP/Z';
 
 const wrapperStyles = css`
-  // Styles the possible values of the colorScheme prop. Children elements will use CSS currentColor to inherit this color styles.
+  /* Styles the possible values of the colorScheme prop. Children elements will use CSS currentColor to inherit this color styles. */
   &[data-colorscheme='blue'] {
     color: rgb(var(--blue60));
   }
@@ -36,14 +36,17 @@ const wrapperStyles = css`
   }
 
   &[data-colorscheme='gray'] {
-    // TO DO: in the original implementation the light and dark themes used different values for gray
-    // we will need to find a value that works for both themes until we can detect/change themes in v8
+    /* TO DO: in the original implementation the light and dark themes used different values for gray */
+    /* we will need to find a value that works for both themes until we can detect/change themes in v8 */
     color: rgb(var(--gray60));
   }
 `;
 
 const avatarStyles = css`
   overflow: hidden;
+
+  /* it may have been unintentional, but in v7 downwards the unselected Avatar has a 1px transparent border on the inner div */
+  /* to reduce visual regressions, this has been preserved in the migration for v8 */
   border: solid 1px var(--avatar-borderColor);
 
   &[data-bordered='true'] {
@@ -51,15 +54,15 @@ const avatarStyles = css`
   }
 
   &[data-selected='true'] {
-    // Box shadow is used to place a ring around the avatar in the color chosen by the colorScheme prop
+    /* Box shadow is used to place a ring around the avatar in the color chosen by the colorScheme prop */
     box-shadow: 0 0 0 2px currentColor;
   }
 
   &[data-shape='hexagon'] {
     border: none;
-    // the shadow for the hex shape is applied using another technique since the normal shadow will be hidden by the clip path
+    /* the shadow for the hex shape is applied using another technique since the normal shadow will be hidden by the clip path */
     box-shadow: none;
-    // this clips the element using the Hexagon svg element
+    /* this clips the element using the Hexagon svg element */
     clip-path: url(#${hexagonAvatarClipId});
   }
 `;

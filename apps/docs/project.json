@@ -53,7 +53,7 @@
     "lint-styles": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "stylelint \"**/*.{css,scss,js,jsx,ts,tsx}\" --formatter string",
+        "command": "stylelint \"**/*.{css,ts,tsx,js,jsx}\" --formatter string",
         "cwd": "{projectRoot}"
       }
     }

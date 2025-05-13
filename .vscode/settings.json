@@ -19,12 +19,15 @@
   "typescript.preferences.quoteStyle": "single",
 
   // ESLint
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+  "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.fixAll.stylelint"],
   "eslint.useESLintClass": true,
   "eslint.workingDirectories": [
     { "pattern": "apps/*" },
     { "pattern": "packages/*" }
   ],
+
+  // Stylelint
+  "stylelint.validate": ["css", "typescript", "typescriptreact", "javascript", "javascriptreact"],
 
   // Gitlens
   "gitlens.remotes": [
@@ -33,7 +36,4 @@
       "type": "GitHub"
     }
   ],
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
 }

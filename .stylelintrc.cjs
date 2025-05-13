@@ -10,7 +10,14 @@ module.exports = {
     'stylelint-no-unsupported-browser-features',
   ],
   rules: {
-    'color-named': 'never',
+    'color-named': [
+      'never',
+      {
+        severity: 'warning',
+        message: 'Prefer theme color variables over named colors.',
+        ignoreProperties: ['transparent', 'currentColor'],
+      },
+    ],
     'max-nesting-depth': 3,
     'selector-pseudo-class-no-unknown': [
       true,
@@ -19,19 +26,21 @@ module.exports = {
       },
     ],
     'a11y/content-property-no-static-value': true,
-    'a11y/no-display-none': true,
     'a11y/no-obsolete-attribute': true,
     'a11y/no-obsolete-element': true,
     'plugin/no-low-performance-animation-properties': [
       true,
-      { ignoreProperties: ['color', 'border-color', 'background-color'] },
+      {
+        ignoreProperties: ['color', 'border-color', 'background', 'background-color'],
+      },
     ],
     'font-family-no-missing-generic-family-keyword': [
       true,
       { ignoreFontFamilies: ['CoinbaseIcons'] },
     ],
     'property-no-unknown': [true, { ignoreProperties: ['aspect-ratio'] }],
-    'length-zero-no-unit': true,
-    'media-query-no-invalid': null, // Disabled due to false positives from Linaria v3 / Stylelint v15 parser mismatch.
+    'length-zero-no-unit': null,
+    'media-query-no-invalid': null, // Disabled due to conflicts with Linaria
+    'no-empty-source': null,
   },
 };

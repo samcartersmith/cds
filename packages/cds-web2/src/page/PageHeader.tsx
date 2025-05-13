@@ -13,7 +13,7 @@ import { Text } from '../typography/Text';
 
 const gridStylesMobileTitleClassName = css`
   @media only screen and ${media.phone} {
-    grid-column: 1 / 4; // Span all three columns
+    grid-column: 1 / 4; /* Span all three columns */
     grid-row: 2;
   }
 `;

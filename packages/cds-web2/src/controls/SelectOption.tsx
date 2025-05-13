@@ -16,9 +16,9 @@ export const selectOptionStaticClassName = 'cds-select-option';
 
 const pressableStyles = css`
   --bookendRadius: var(--borderRadius-400);
-  // overrides common user agent button defaults
+  /* overrides common user agent button defaults */
   padding: 0;
-  // overrides Safari user agent button defaults
+  /* overrides Safari user agent button defaults */
   margin: 0;
   border: none;
 
@@ -32,10 +32,10 @@ const pressableStyles = css`
     border-bottom-left-radius: var(--bookendRadius);
   }
 
-  // restrict text from overflow viewport, 95 to leave space for scrollbar
+  /* restrict text from overflow viewport, 95 to leave space for scrollbar */
   max-width: 95vw;
 
-  // -- START focus ring styles
+  /* -- START focus ring styles */
   position: relative;
   &:focus {
     outline: none;
@@ -65,7 +65,7 @@ const pressableStyles = css`
       }
     }
   }
-  // -- END focus ring styles:
+  /* -- END focus ring styles: */
 `;
 
 const normalStyles = css`

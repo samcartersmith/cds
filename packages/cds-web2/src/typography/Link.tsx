@@ -46,7 +46,7 @@ type LinkComponent = (<AsComponent extends React.ElementType = LinkDefaultElemen
 const baseStyle = css`
   cursor: pointer;
 
-  // remove Pressable opacity styles
+  /* remove Pressable opacity styles */
   &:hover,
   &:active,
   &[data-active='true'],

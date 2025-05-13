@@ -67,7 +67,7 @@ const tableRowStyle = css`
     border: 0;
   }
 
-  // Ensure sticky headers display properly
+  /* Ensure sticky headers display properly */
   > th {
     background-color: inherit;
   }

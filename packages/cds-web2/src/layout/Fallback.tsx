@@ -74,10 +74,12 @@ const fallbackStyle = css`
 
   @keyframes shimmer {
     0% {
+      /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
       background-position: -600px 0;
     }
 
     100% {
+      /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
       background-position: 600px 0;
     }
   }

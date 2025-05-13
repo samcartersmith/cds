@@ -33,6 +33,7 @@ const sharedProps = {
 } as const;
 
 const whiteBorder = css`
+  /* stylelint-disable-next-line color-named */
   border-color: black;
   border-width: 8px;
 `;

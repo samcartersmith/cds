@@ -40,7 +40,7 @@ const interactableStyle = css`
       outline-offset: 1px;
     }
   }
-  // turn off control input opacity for hidden control in interactable
+  /* turn off control input opacity for hidden control in interactable */
   &:active,
   &:visited,
   &:focus,

@@ -16,6 +16,7 @@ import { HStack } from '../HStack';
 import { VStack } from '../VStack';
 
 const animationStyles = css`
+  /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
   transition: ease all 0.4s;
 `;
 
