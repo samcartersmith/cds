@@ -14,7 +14,6 @@ Please see [Tour.tsx](mdc:packages/cds-mobile2/src/tour/Tour.tsx) and [DatePicke
 ## Accessibility
 - Use appropriate accessibilityLabel, accessibilityHint, and accessibilityRole props
 - Support screen readers (VoiceOver and TalkBack)
-- Ensure touch targets meet minimum size requirements (44×44 points)
+- Ensure touch targets meet minimum size requirements (44x44 points)
 - Test with assistive technologies on both iOS and Android
-- Implement proper focus management for modal screens
 - Support larger text sizes for users with visual impairments

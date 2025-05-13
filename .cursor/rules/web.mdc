@@ -16,6 +16,5 @@ Please see [Tour.tsx](mdc:packages/cds-web2/src/tour/Tour.tsx) and [DatePicker.t
 - Use semantic HTML elements whenever possible
 - Ensure keyboard navigation works for all interactive components
 - Follow WCAG 2.1 AA standards for color contrast
-- Include proper focus management for modals and overlays
 - Support screen readers by providing descriptive labels and instructions
 - Test with assistive technologies to ensure compatibility

@@ -11,7 +11,7 @@ The Coinbase Design System (CDS) is a component library built with TypeScript. I
 
 The design system is organized into several core packages in the monorepo:
 
-- Web components: import from `@cbhq/cds-web2` found at [package.json](mdc:packages/cds-web2/package.json)
-- Mobile components: import from `@cbhq/cds-mobile2` found at [package.json](mdc:packages/cds-mobile2/package.json)
-- Shared utilities: import from `@cbhq/cds-common2` found at [package.json](mdc:packages/cds-common2/package.json)
-- Illustrations: import from `@cbhq/illustrations` found at [package.json](mdc:packages/illustrations/package.json)
+- Web components: import from the package.json exports defined in `@cbhq/cds-web2` [package.json](mdc:packages/cds-web2/package.json)
+- Mobile components: import from the package.json exports defined in `@cbhq/cds-mobile2` [package.json](mdc:packages/cds-mobile2/package.json)
+- Shared utilities: import from the package.json exports defined in `@cbhq/cds-common2` [package.json](mdc:packages/cds-common2/package.json)
+- Illustrations: import from the package.json exports defined in `@cbhq/illustrations` [package.json](mdc:packages/illustrations/package.json)
