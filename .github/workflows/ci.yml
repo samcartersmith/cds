@@ -36,8 +36,6 @@ jobs:
         run: yarn mono-pipeline validate-versioned
       - name: Validate CDS Versions
         run: yarn tsx ./tools/validateCDSVersions.ts
-      - name: Validate Website Changelog Updates
-        run: yarn tsx ./tools/validateWebsiteChangelogUpdates.ts
       - name: Validate Constraints
         run: yarn constraints || exit 1
 
@@ -50,7 +48,7 @@ jobs:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
       - name: Lint
-        run: yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --exclude=common,web,mobile,web-visualization,mobile-visualization,mobile-app,website,cds-migrator,storybook # Temporarily disable v7 linting
+        run: yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --exclude=cds-migrator # Temporarily disable cds-migrator linting
 
   format:
     name: Format
@@ -96,7 +94,7 @@ jobs:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
       - name: Build
-        run: yarn nx affected --exclude=mobile-app,mobile-app2 --target=build --base=$NX_BASE --head=$NX_HEAD
+        run: yarn nx affected --exclude=mobile-app2 --target=build --base=$NX_BASE --head=$NX_HEAD
 
   storybook-a11y:
     if: ${{ github.event_name == 'pull_request' }}
@@ -116,26 +114,26 @@ jobs:
             STORYBOOK_SKIP_ANIMATION=true
             CI=true
 
-  storybook-e2e:
-    if: ${{ github.event_name == 'pull_request' }}
-    name: Storybook E2E
-    runs-on: [medium, amd64]
-    env:
-      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 0
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 100 # TODO: This needs to include the merge-base
-      - uses: ./.github/actions/setup
-      - uses: infra/cb-action-docker@master
-        with:
-          image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
-          command: |-
-            npx playwright install --with-deps
-            yarn nx affected --target=storybook-e2e-test
-          environment: |-
-            STORYBOOK_SKIP_ANIMATION=true
-            CI=true
+  # storybook-e2e:
+  #   if: ${{ github.event_name == 'pull_request' }}
+  #   name: Storybook E2E
+  #   runs-on: [medium, amd64]
+  #   env:
+  #     PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 0
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 100 # TODO: This needs to include the merge-base
+  #     - uses: ./.github/actions/setup
+  #     - uses: infra/cb-action-docker@master
+  #       with:
+  #         image: 652969937640.dkr.ecr.us-east-1.amazonaws.com/containers/node:v20-chrome-ub22
+  #         command: |-
+  #           npx playwright install --with-deps
+  #           yarn nx affected --target=storybook-e2e-test
+  #         environment: |-
+  #           STORYBOOK_SKIP_ANIMATION=true
+  #           CI=true
 
   depcheck:
     name: Depcheck
@@ -218,7 +216,7 @@ jobs:
   #     - name: Run Profile Exports
   #       env:
   #         PROFILE_EXPORTS_DIFF: ${{ github.event_name == 'pull_request' }}
-  #       run: yarn nx run storybook:profile-exports
+  #       run: yarn nx run storybook2:profile-exports
 
   #     # For master: Cache the results with current SHA
   #     - name: Cache export stats results (Master)
@@ -241,7 +239,7 @@ jobs:
       # For master: Build storybook with bundle analyzer
       - name: Build for analyze (Master)
         if: github.ref_name == 'master'
-        run: yarn nx run storybook:build-for-analyze
+        run: yarn nx run storybook2:build-for-analyze
 
       # For master: Cache the results with current SHA
       - name: Cache bundle stats results (Master)
@@ -279,7 +277,7 @@ jobs:
         if: github.event_name == 'pull_request'
         env:
           ANALYZE_REPORT_PATH: apps/storybook/bundle-stats.json
-        run: yarn nx run storybook:analyze-bundle
+        run: yarn nx run storybook2:analyze-bundle
 
   lint-styles:
     name: Lint Styles
@@ -293,8 +291,7 @@ jobs:
         run: yarn nx affected --target=lint-styles --base=$NX_BASE --head=$NX_HEAD
 
   summarize-results:
-    needs:
-      [
+    needs: [
         validate,
         lint,
         lint-styles,
@@ -303,7 +300,7 @@ jobs:
         typecheck,
         build,
         storybook-a11y,
-        storybook-e2e,
+        # storybook-e2e,
         depcheck,
         bundle-stats,
       ]

@@ -117,7 +117,6 @@ const WEB_EXPORTS = [
   './styles/typography',
   './styles/visibility',
   './styles/visuallyHidden',
-  './system/BreakpointsProvider',
   './system/BrowserOnly',
   './system/ButtonOrLink',
   './system/DevicePreferencesProvider',

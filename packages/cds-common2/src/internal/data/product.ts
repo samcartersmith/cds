@@ -8,4 +8,4 @@ export const product = {
     { title: 'Borrow', icon: 'cash' },
     { title: 'DeFi', icon: 'defi' },
   ],
-};
+} as const;

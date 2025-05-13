@@ -25,7 +25,6 @@
     "@cbhq/cds-web2": "workspace:^",
     "@cbhq/docusaurus-plugin-docgen": "workspace:^",
     "@cbhq/docusaurus-plugin-kbar": "workspace:^",
-    "@cbhq/docusaurus-preset": "workspace:^",
     "@docusaurus/core": "^3.7.0",
     "@docusaurus/faster": "^3.7.0",
     "@docusaurus/mdx-loader": "^3.7.0",

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { useHistory } from '@docusaurus/router';
 import decreasePriorityIfCategory from '@site/src/utils/decreasePriorityIfCategory';
-import type { KBarCustomAction } from '@cbhq/docusaurus-plugin-kbar';
+import type { KBarCustomAction } from '@cbhq/docusaurus-plugin-kbar/types';
 
 export default function useKBarCustomActionsToActions(
   actions: KBarCustomAction[],

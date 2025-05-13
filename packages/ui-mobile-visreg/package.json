@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-mobile-visreg",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "description": "Visreg Helpers",
   "repository": {
     "type": "git",
@@ -37,8 +37,8 @@
     "CHANGELOG"
   ],
   "peerDependencies": {
-    "@cbhq/cds-mobile": "workspace:^",
-    "@cbhq/cds-mobile-visualization": "workspace:^",
+    "@cbhq/cds-mobile-visualization2": "workspace:^",
+    "@cbhq/cds-mobile2": "workspace:^",
     "detox": "^20.14.8"
   },
   "dependencies": {
@@ -54,8 +54,8 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@cbhq/cds-mobile": "workspace:^",
-    "@cbhq/cds-mobile-visualization": "workspace:^",
+    "@cbhq/cds-mobile-visualization2": "workspace:^",
+    "@cbhq/cds-mobile2": "workspace:^",
     "detox": "^20.14.8"
   }
 }

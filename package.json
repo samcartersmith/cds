@@ -19,7 +19,7 @@
     "codeowners": "mono-pipeline sync-codeowners",
     "diagnose": "mono-env diagnose --group common web mobile",
     "setup": "mono-env setup --group common web mobile",
-    "release": "yarn mono-pipeline validate-versioned && yarn nx run codegen:update-packages-generic-bump && yarn nx run codegen:update-website-changelogs && tsx ./tools/validateWebsiteChangelogUpdates.ts && tsx ./tools/validateCDSVersions.ts",
+    "release": "yarn mono-pipeline validate-versioned && yarn nx run codegen:update-packages-generic-bump && tsx ./tools/validateCDSVersions.ts",
     "reset-changelogs": "yarn node tools/resetChangelogs.mjs",
     "generate-tarballs": "node tools/generateTarballs.mjs"
   },

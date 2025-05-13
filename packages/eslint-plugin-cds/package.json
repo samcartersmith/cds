@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/eslint-plugin-cds",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "ESLint plugin for CDS",
   "repository": {
     "type": "git",
@@ -18,9 +18,9 @@
     "CHANGELOG"
   ],
   "peerDependencies": {
-    "@cbhq/cds-common": "workspace:^",
-    "@cbhq/cds-mobile": "workspace:^",
-    "@cbhq/cds-web": "workspace:^",
+    "@cbhq/cds-common2": "workspace:^",
+    "@cbhq/cds-mobile2": "workspace:^",
+    "@cbhq/cds-web2": "workspace:^",
     "eslint": "^8 || ^9",
     "eslint-plugin-jsx-a11y": "^6",
     "eslint-plugin-react-native-a11y": "^3"

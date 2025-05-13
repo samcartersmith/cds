@@ -5,7 +5,7 @@ type TOCItems = TOCItem[] | undefined;
 
 type TOCContextValue = {
   items: TOCItems;
-  update: import('@cbhq/cds-common').SetState<TOCItems>;
+  update: (items: TOCItems) => void;
 };
 
 export type TOCProviderProps = {

@@ -1,5 +1,5 @@
 import { usePluginData } from '@docusaurus/useGlobalData';
-import type { PluginData } from '@cbhq/docusaurus-plugin-kbar';
+import type { PluginData } from '@cbhq/docusaurus-plugin-kbar/types';
 
 import useKBarCustomActionsToActions from './useKBarCustomActionsToActions';
 

@@ -6,8 +6,7 @@ import { Divider } from '@cbhq/cds-web2/layout/Divider';
 import { Link } from '@cbhq/cds-web2/typography/Link';
 import { TextBody } from '@cbhq/cds-web2/typography/TextBody';
 import { TextLabel2 } from '@cbhq/cds-web2/typography/TextLabel2';
-import { SharedTypeAliases } from '@cbhq/docusaurus-plugin-docgen';
-import { ProcessedPropItem } from '@cbhq/docusaurus-plugin-docgen/types';
+import { ProcessedPropItem, SharedTypeAliases } from '@cbhq/docusaurus-plugin-docgen/types';
 
 import ModalLink from './ModalLink';
 import styles from './styles.module.css';

@@ -1,27 +1,27 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
-import { accounts } from '@cbhq/cds-common/internal/data/accounts';
-import { assetColors, assetImages, assets } from '@cbhq/cds-common/internal/data/assets';
-import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
-import { prices } from '@cbhq/cds-common/internal/data/prices';
-import { product } from '@cbhq/cds-common/internal/data/product';
-import { users } from '@cbhq/cds-common/internal/data/users';
-import { sparklineInteractiveWithHeaderBuilder } from '@cbhq/cds-common/internal/sparklineInteractiveBuilder';
-import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
-import { gutter } from '@cbhq/cds-common/tokens/sizing';
-import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
-import { SetState } from '@cbhq/cds-web';
-import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
-import { Button, IconButton } from '@cbhq/cds-web/buttons';
-import { Card, CardBody, CardFooter, CardGroup, FeedCard, UpsellCard } from '@cbhq/cds-web/cards';
-import { ListCell } from '@cbhq/cds-web/cells';
-import { Checkbox, Select, SelectOption, Switch } from '@cbhq/cds-web/controls';
-import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
-import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web/icons';
-import { Pictogram } from '@cbhq/cds-web/illustrations';
-import { Box, Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
-import { Avatar } from '@cbhq/cds-web/media';
-import { NavigationBar, NavigationTitle, Sidebar, SidebarItem } from '@cbhq/cds-web/navigation';
+import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
+import { accounts } from '@cbhq/cds-common2/internal/data/accounts';
+import { assetColors, assetImages, assets } from '@cbhq/cds-common2/internal/data/assets';
+import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
+import { prices } from '@cbhq/cds-common2/internal/data/prices';
+import { product } from '@cbhq/cds-common2/internal/data/product';
+import { users } from '@cbhq/cds-common2/internal/data/users';
+import { sparklineInteractiveData } from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
+import { gutter } from '@cbhq/cds-common2/tokens/sizing';
+import type { IconName } from '@cbhq/cds-common2/types';
+import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
+import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization2';
+import { Accordion, AccordionItem } from '@cbhq/cds-web2/accordion';
+import { Button, IconButton } from '@cbhq/cds-web2/buttons';
+import { Card, CardBody, CardFooter, CardGroup, FeedCard, UpsellCard } from '@cbhq/cds-web2/cards';
+import { ListCell } from '@cbhq/cds-web2/cells';
+import { Checkbox, Select, SelectOption, Switch } from '@cbhq/cds-web2/controls';
+import { Dropdown } from '@cbhq/cds-web2/dropdown/Dropdown';
+import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web2/icons';
+import { Pictogram } from '@cbhq/cds-web2/illustrations';
+import { Box, Divider, Group, HStack, VStack } from '@cbhq/cds-web2/layout';
+import { Avatar } from '@cbhq/cds-web2/media';
+import { NavigationBar, NavigationTitle, Sidebar, SidebarItem } from '@cbhq/cds-web2/navigation';
 import {
   Alert,
   FullscreenAlert,
@@ -31,11 +31,10 @@ import {
   ModalFooter,
   ModalHeader,
   Tooltip,
-} from '@cbhq/cds-web/overlays';
-import { useAlert } from '@cbhq/cds-web/overlays/useAlert';
-import { useModal } from '@cbhq/cds-web/overlays/useModal';
-import { useToast } from '@cbhq/cds-web/overlays/useToast';
-import { Pressable } from '@cbhq/cds-web/system';
+} from '@cbhq/cds-web2/overlays';
+import { useModal } from '@cbhq/cds-web2/overlays/useModal';
+import { useToast } from '@cbhq/cds-web2/overlays/useToast';
+import { Pressable } from '@cbhq/cds-web2/system';
 import {
   Table,
   TableBody,
@@ -43,26 +42,25 @@ import {
   TableFooter,
   TableHeader,
   TableRow,
-} from '@cbhq/cds-web/tables';
+} from '@cbhq/cds-web2/tables';
 import {
   TextBody,
   TextCaption,
   TextHeadline,
   TextTitle1,
   TextTitle3,
-} from '@cbhq/cds-web/typography';
+} from '@cbhq/cds-web2/typography';
 import {
   ProgressBar,
   ProgressBarWithFloatLabel,
   ProgressCircle,
-} from '@cbhq/cds-web/visualizations';
-import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
+} from '@cbhq/cds-web2/visualizations';
 
-const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
-  SparklineInteractive,
-  SparklineInteractiveHeader,
-  isMobile: false,
-});
+// const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
+//   SparklineInteractive,
+//   SparklineInteractiveHeader,
+//   isMobile: false,
+// });
 
 // Add any mock data for examples here
 const mocks = {
@@ -78,16 +76,17 @@ const mocks = {
 const { name, avatar } = mocks.users[1];
 
 const sidebarItems = mocks.product.navigationItems;
-function createSidebarItem(activeIndex: number, setActiveIndex: SetState<number>) {
-  return ({ title, icon }: { title: string; icon: string }, index: number) => {
+
+function createSidebarItem(activeIndex: number, setActiveIndex: (number: number) => void) {
+  return ({ title, icon }: { title: string; icon: IconName }, index: number) => {
     const handlePress = () => setActiveIndex(index);
 
     return (
       <SidebarItem
         key={`example--sidebar-item--${title}`}
         active={index === activeIndex}
-        icon={icon as NavigationIconProps['name']}
-        onPress={handlePress} // onPress={setActiveIndex} // todo: callback includes index by default
+        icon={icon}
+        onClick={handlePress} // onClick={setActiveIndex} // todo: callback includes index by default
         title={title}
       />
     );
@@ -128,7 +127,7 @@ function Popover({ trigger }: { trigger: () => React.ReactElement }) {
     <Dropdown
       content={
         <>
-          <Box spacing={2}>
+          <Box padding={2}>
             <TextCaption as="label">For Individuals</TextCaption>
           </Box>
           {options.map(createMenuOption())}
@@ -159,23 +158,7 @@ function NotificationsTrigger() {
 }
 
 function FeedCardWithPopover() {
-  const alert = useAlert();
-
-  const showAlert = useCallback(
-    () =>
-      alert.open(
-        <Alert
-          visible
-          body="Alert body type that can run over multiple lines, but should be kept short."
-          onPreferredActionPress={alert.close}
-          onRequestClose={alert.close}
-          pictogram="warning"
-          preferredActionLabel="Save"
-          title="Alert title"
-        />,
-      ),
-    [alert],
-  );
+  const [showAlert, setShowAlert] = useState(true);
 
   const feedCardProps = {
     avatar: assets.eth.imageUrl,
@@ -188,12 +171,25 @@ function FeedCardWithPopover() {
       'https://images.ctfassets.net/q5ulk4bp65r7/3rv8jr1B1Z1dZ2EhHqo7dp/e74ddbf1cd4836b83d34fe5cec351d78/Alt-Coin.png?w=768&fm=png',
     mediaPlacement: 'above',
     headerAction: {
-      onPress: showAlert,
+      onClick: () => setShowAlert(true),
       name: 'more',
     },
   } as const;
 
-  return <FeedCard {...feedCardProps} />;
+  return (
+    <>
+      <FeedCard {...feedCardProps} />
+      <Alert
+        body="Alert body type that can run over multiple lines, but should be kept short."
+        onPreferredActionPress={() => setShowAlert(false)}
+        onRequestClose={() => setShowAlert(false)}
+        pictogram="warning"
+        preferredActionLabel="Save"
+        title="Alert title"
+        visible={showAlert}
+      />
+    </>
+  );
 }
 
 function DataCardWithCircle() {
@@ -211,7 +207,7 @@ function DataCardWithCircle() {
         title="Crypto earned"
       />
       <CardFooter>
-        <Button compact onPress={showToast} variant="secondary">
+        <Button compact onClick={showToast} variant="secondary">
           See more
         </Button>
       </CardFooter>
@@ -241,7 +237,7 @@ function DataCardWithBar() {
         <ModalBody>
           <TextBody as="p">This is a Modal rendered inside of a portal</TextBody>
         </ModalBody>
-        <ModalFooter primaryAction={<Button onPress={closeModal}>Save</Button>} />
+        <ModalFooter primaryAction={<Button onClick={closeModal}>Save</Button>} />
       </Modal>,
     );
   }, [closeModal, openModal]);
@@ -249,14 +245,14 @@ function DataCardWithBar() {
   return (
     <Card>
       <CardBody description="Earn $40 more by learning about new assets" title="Crypto earned">
-        <VStack spacingBottom={gutter}>
+        <VStack paddingBottom={gutter}>
           <ProgressBarWithFloatLabel label={label} labelPlacement="above" progress={0.6}>
             <ProgressBar progress={0.6} />
           </ProgressBarWithFloatLabel>
         </VStack>
       </CardBody>
       <CardFooter>
-        <Button compact onPress={showModal} variant="secondary">
+        <Button compact onClick={showModal} variant="secondary">
           See more
         </Button>
       </CardFooter>
@@ -310,9 +306,9 @@ function FullScreenModalAmp() {
         variant="positive"
       />
       <FullScreenModalSelectComponent />
-      <HStack gap={3} spacingVertical={3}>
-        <Button onPress={toggleOff}>Yes</Button>
-        <Button onPress={toggleOff} variant="secondary">
+      <HStack gap={3} paddingY={3}>
+        <Button onClick={toggleOff}>Yes</Button>
+        <Button onClick={toggleOff} variant="secondary">
           No
         </Button>
       </HStack>
@@ -320,7 +316,7 @@ function FullScreenModalAmp() {
   );
 
   const secondaryContent = (
-    <VStack borderRadius="rounded" elevation={1}>
+    <VStack borderRadius={200} elevation={1}>
       <Accordion defaultActiveKey="2">
         <AccordionItem itemKey="1" subtitle="subtitle1" title="Accordion #1">
           <TextBody as="p">{loremIpsum}</TextBody>
@@ -334,7 +330,7 @@ function FullScreenModalAmp() {
 
   return (
     <>
-      <Button onPress={toggleOn}>Open Modal</Button>
+      <Button onClick={toggleOn}>Open Modal</Button>
       <FullscreenModal
         onRequestClose={handleClose}
         primaryContent={primaryContent}
@@ -366,7 +362,7 @@ function FullScreenAlertAmp() {
 
   return (
     <>
-      <Button onPress={toggleOn}>Open Alert</Button>
+      <Button onClick={toggleOn}>Open Alert</Button>
       <FullscreenAlert
         body="We're unable to connect to our card partner. Apologies for the inconvenience. Please try again later today or tomorrow."
         dismissActionLabel="Cancel"
@@ -413,9 +409,9 @@ function ChartWithBalance() {
   }, []);
 
   return (
-    <VStack spacingVertical={6} width="100%">
+    <VStack paddingY={6} width="100%">
       {!data && <div style={{ height: '500px' }} />}
-      {data && <SparklineInteractiveWithHeaderBuild data={data} strokeColor={assets.btc.color} />}
+      {/* {data && <SparklineInteractiveWithHeaderBuild data={data} strokeColor={assets.btc.color} />} */}
     </VStack>
   );
 }
@@ -458,7 +454,7 @@ function AssetTable() {
               <TableCell subtitle={account.balance.currency} title={`$${account.balance.amount}`} />
               <TableCell direction="horizontal" justifyContent="flex-end">
                 <Icon
-                  color={account.primary ? 'positive' : 'negative'}
+                  color={account.primary ? 'fgPositive' : 'fgNegative'}
                   name={account.primary ? 'circleCheckmark' : 'circleCross'}
                   size="m"
                 />
@@ -475,7 +471,7 @@ function AssetTable() {
                 <Button
                   key={pg}
                   compact
-                  onPress={() => setPage(pg)}
+                  onClick={() => setPage(pg)}
                   variant={page === pg ? 'primary' : 'secondary'}
                 >
                   {pg}
@@ -498,8 +494,8 @@ const dropdownOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option
 
 const DropdownContent = () => (
   <>
-    <Box spacing={2}>
-      <TextCaption as="h2" color="foregroundMuted">
+    <Box padding={2}>
+      <TextCaption as="h2" color="fgMuted">
         Section Heading
       </TextCaption>
     </Box>
@@ -515,7 +511,7 @@ function AppContent() {
   const [showOverlay, toggleOverlay] = useToggler(false);
 
   return (
-    <HStack background="background">
+    <HStack background="bg">
       <VStack>
         <Sidebar autoCollapse logo={<LogoMark />}>
           {sidebarItems.map(createSidebarItem(activeIndex, setActiveIndex))}
@@ -551,7 +547,7 @@ function AppContent() {
           position="relative"
         >
           <Group divider={Divider} flexBasis="0%" flexGrow={3} flexShrink={1} gap={0}>
-            <ChartWithBalance />
+            {/* <ChartWithBalance /> */}
             <AssetTable />
           </Group>
           <VStack
@@ -559,11 +555,11 @@ function AppContent() {
             flexGrow={1}
             flexShrink={0}
             minHeight="100vh"
-            spacing={gutter}
-            spacingTop={0}
+            padding={gutter}
+            paddingTop={0}
           >
             <CardGroup>
-              <VStack gap={2} spacingVertical={2}>
+              <VStack gap={2} paddingY={2}>
                 <UpsellCard
                   action="Get started"
                   description="Want to add funds to your card every week or month?"

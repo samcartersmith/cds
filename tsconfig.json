@@ -7,28 +7,10 @@
       "path": "apps/docs"
     },
     {
-      "path": "apps/figma-athena-plugin"
-    },
-    {
-      "path": "apps/figma-icons-plugin"
-    },
-    {
-      "path": "apps/figma-strings-plugin"
-    },
-    {
-      "path": "apps/mobile-app"
-    },
-    {
       "path": "apps/mobile-app2"
     },
     {
       "path": "apps/next-app"
-    },
-    {
-      "path": "apps/storybook"
-    },
-    {
-      "path": "apps/website"
     },
     {
       "path": "libs/cds-tasks"
@@ -91,9 +73,6 @@
       "path": "packages/cds-web2"
     },
     {
-      "path": "packages/common"
-    },
-    {
       "path": "packages/eslint-plugin-cds"
     },
     {
@@ -106,25 +85,13 @@
       "path": "packages/illustrations"
     },
     {
-      "path": "packages/lottie-files"
-    },
-    {
       "path": "packages/lottie-files2"
-    },
-    {
-      "path": "packages/mobile"
-    },
-    {
-      "path": "packages/mobile-visualization"
     },
     {
       "path": "packages/mobile-visualization2"
     },
     {
       "path": "packages/profile-package"
-    },
-    {
-      "path": "packages/ui-mobile-playground"
     },
     {
       "path": "packages/ui-mobile-playground2"
@@ -137,12 +104,6 @@
     },
     {
       "path": "packages/utils"
-    },
-    {
-      "path": "packages/web"
-    },
-    {
-      "path": "packages/web-visualization"
     },
     {
       "path": "packages/web-visualization2"

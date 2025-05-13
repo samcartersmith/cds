@@ -7,18 +7,6 @@ secure:
   auto_assign_reviewers: true
 build:
   engines:
-    # CSS
-    - BaldurECR:
-        name: cds-css-upload
-        path: ./packages/web/cssupload-production.Dockerfile
-        autobuild_files:
-          - packages/web/package.json
-    - BaldurECR:
-        name: cds-css-upload-development
-        path: ./packages/web/cssupload-development.Dockerfile
-        autobuild_files:
-          - packages/web/package.json
-
     # Apps
     - BaldurECR:
         name: cds-next-docs
@@ -26,36 +14,11 @@ build:
         autobuild: true
     - BaldurECR:
         name: cds-storybook
-        path: ./apps/storybook/production.Dockerfile
-        autobuild: true
-    - BaldurECR:
-        name: cds-storybook-v8
         path: ./apps/storybook2/production.Dockerfile
         autobuild: true
-    - BaldurECR:
-        name: cds-website-docs
-        path: ./apps/website/production.Dockerfile
-        autobuild: true
-    - BaldurECR:
-        name: cds-website-docs-development
-        path: ./apps/website/development.Dockerfile
-        autobuild: false
-    - BaldurECR:
-        name: figma-athena
-        path: ./apps/figma-athena-plugin/Dockerfile
-        autobuild: false
-
     # Packages
     - BaldurNode:
         name: package-cds-common
-        path: ./packages/common/publish.Dockerfile
-        autobuild_files:
-          - packages/common/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-common-v8
         path: ./packages/cds-common2/publish.Dockerfile
         autobuild_files:
           - packages/cds-common2/package.json
@@ -88,14 +51,6 @@ build:
         expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-lottie-files
-        path: ./packages/lottie-files/publish.Dockerfile
-        autobuild_files:
-          - packages/lottie-files/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-lottie-files-v8
         path: ./packages/lottie-files2/publish.Dockerfile
         autobuild_files:
           - packages/lottie-files2/package.json
@@ -112,14 +67,6 @@ build:
         expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-mobile
-        path: ./packages/mobile/publish.Dockerfile
-        autobuild_files:
-          - packages/mobile/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-mobile-v8
         path: ./packages/cds-mobile2/publish.Dockerfile
         autobuild_files:
           - packages/cds-mobile2/package.json
@@ -136,14 +83,6 @@ build:
         expire_all_after_days: 2
     - BaldurNode:
         name: package-cds-web
-        path: ./packages/web/publish.Dockerfile
-        autobuild_files:
-          - packages/web/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-cds-web-v8
         path: ./packages/cds-web2/publish.Dockerfile
         autobuild_files:
           - packages/cds-web2/package.json
@@ -160,14 +99,6 @@ build:
         expire_all_after_days: 2
     - BaldurNode:
         name: package-mobile-visualization
-        path: ./packages/mobile-visualization/publish.Dockerfile
-        autobuild_files:
-          - packages/mobile-visualization/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-mobile-visualization-v8
         path: ./packages/mobile-visualization2/publish.Dockerfile
         autobuild_files:
           - packages/mobile-visualization2/package.json
@@ -176,14 +107,6 @@ build:
         expire_all_after_days: 2
     - BaldurNode:
         name: package-ui-mobile-playground
-        path: ./packages/ui-mobile-playground/publish.Dockerfile
-        autobuild_files:
-          - packages/ui-mobile-playground/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-ui-mobile-playground-v8
         path: ./packages/ui-mobile-playground2/publish.Dockerfile
         autobuild_files:
           - packages/ui-mobile-playground2/package.json
@@ -208,21 +131,12 @@ build:
         expire_all_after_days: 2
     - BaldurNode:
         name: package-web-visualization
-        path: ./packages/web-visualization/publish.Dockerfile
-        autobuild_files:
-          - packages/web-visualization/package.json
-        expire_keep_tags_after_days: 1
-        expire_tmp_tags_after_days: 1
-        expire_all_after_days: 2
-    - BaldurNode:
-        name: package-web-visualization-v8
         path: ./packages/web-visualization2/publish.Dockerfile
         autobuild_files:
           - packages/web-visualization2/package.json
         expire_keep_tags_after_days: 1
         expire_tmp_tags_after_days: 1
         expire_all_after_days: 2
-
     # Static assets
     - BaldurECR:
         name: static-assets

@@ -27,10 +27,8 @@
     "dts",
     "CHANGELOG"
   ],
-  "peerDependencies": {
-    "@cbhq/cds-common": "workspace:^"
-  },
   "dependencies": {
+    "@cbhq/cds-common2": "workspace:^",
     "@docusaurus/logger": "^3.7.0",
     "@docusaurus/plugin-content-docs": "^3.7.0",
     "@docusaurus/types": "^3.7.0",

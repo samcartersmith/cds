@@ -1,16 +1,16 @@
 import React from 'react';
-import { accounts } from '@cbhq/cds-common/internal/data/accounts';
-import { prices } from '@cbhq/cds-common/internal/data/prices';
-import { product } from '@cbhq/cds-common/internal/data/product';
-import { users } from '@cbhq/cds-common/internal/data/users';
 import { DateInputValidationError } from '@cbhq/cds-common2/dates/DateInputValidationError';
 import { useEventHandler } from '@cbhq/cds-common2/hooks/useEventHandler';
 import { useMergeRefs } from '@cbhq/cds-common2/hooks/useMergeRefs';
 import { usePreviousValue } from '@cbhq/cds-common2/hooks/usePreviousValue';
 import { useRefMap } from '@cbhq/cds-common2/hooks/useRefMap';
 import { useSort } from '@cbhq/cds-common2/hooks/useSort';
+import { accounts } from '@cbhq/cds-common2/internal/data/accounts';
 import * as CDSDataAssets from '@cbhq/cds-common2/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
+import { prices } from '@cbhq/cds-common2/internal/data/prices';
+import { product } from '@cbhq/cds-common2/internal/data/product';
+import { users } from '@cbhq/cds-common2/internal/data/users';
 import {
   sparklineInteractiveData,
   sparklineInteractiveHoverData,

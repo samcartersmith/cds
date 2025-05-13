@@ -1,9 +1,0 @@
-Components and utils that are platform agnostic live in a shared package, `@cbhq/cds-common`.
-
-Most applications include a lint rule, `import/no-extraneous-dependencies`, which will error if you try to directly import from cds-common unless this package is defined in your package.json's dependencies.
-
-:::caution
-We do not recommend adding cds-common to deps to get around this error. Instead you can add an override to your eslint rules to honor these transitive dependencies.
-:::
-
-The `packageDir` option of the import/no-extraneous-dependencies rule is for specifying the path(s) to the folder containing package.json. You can point this to the directory of your app's package.json and CDS's package.json in node_modules.

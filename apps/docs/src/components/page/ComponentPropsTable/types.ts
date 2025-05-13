@@ -2,7 +2,7 @@ import {
   ProcessedPropItem,
   SharedParentTypes,
   SharedTypeAliases,
-} from '@cbhq/docusaurus-plugin-docgen';
+} from '@cbhq/docusaurus-plugin-docgen/types';
 
 type ParentTypes = import('@cbhq/docusaurus-plugin-docgen').ProcessedDoc['parentTypes'];
 

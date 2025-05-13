@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0 (5/13/2025 PST)
+
+#### 💥 Breaking
+
+- Upgrade to CDS v8. [[#4023](https://github.cbhq.net/frontend/cds/pull/4023)]
+
 ## 2.0.0 (4/15/2025 PST)
 
 #### 💥 Breaking

@@ -3,8 +3,11 @@ import { useIsSticky } from '@site/src/utils/useIsSticky';
 import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
 import { Box, VStack } from '@cbhq/cds-web2/layout';
 import { Text } from '@cbhq/cds-web2/typography/Text';
-import { SharedParentTypes, SharedTypeAliases } from '@cbhq/docusaurus-plugin-docgen';
-import { ProcessedPropItem } from '@cbhq/docusaurus-plugin-docgen/types';
+import {
+  ProcessedPropItem,
+  SharedParentTypes,
+  SharedTypeAliases,
+} from '@cbhq/docusaurus-plugin-docgen/types';
 
 import ParentTypesList from './ParentTypesList';
 import PropsTable from './PropsTable';

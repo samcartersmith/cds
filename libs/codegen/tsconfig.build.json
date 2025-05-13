@@ -17,12 +17,6 @@
   ],
   "references": [
     {
-      "path": "../../packages/common"
-    },
-    {
-      "path": "../../packages/web"
-    },
-    {
       "path": "../../packages/utils"
     }
   ]

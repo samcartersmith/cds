@@ -1,18 +1,23 @@
+/* eslint-disable simple-import-sort/exports */
 /**
- * Following two lines are a workaround to make hot-reloading work for CDS repo.
+ * Following lines are a workaround to make hot-reloading work for CDS repo.
  * Linaria global styling needs to be exported and since globalStyle.ts has
  * no exports, it gets tree shaken in the process.
  * For real world use case these files are converted into .css files and are marked
  * as a side-effect in package.json. Thus all real world use cases can still
- * skip the two lines and just use
+ * skip the workaround and just use:
  * ```
  * import '@cbhq/cds-icons/fonts/web/icon-font.css';
+ * import '@cbhq/cds-web/defaultFontStyles';
  * import '@cbhq/cds-web/globalStyles';
  * ```
  */
+import '@cbhq/cds-icons/fonts/web/icon-font.css';
+export * as defaultFontCss from '@cbhq/cds-web2/defaultFontStyles';
+export { defaultFontStyles } from '@cbhq/cds-web2/styles/defaultFont';
 
-export * as globalCss from '@cbhq/cds-web/globalStyles';
-export { globalStyles } from '@cbhq/cds-web/styles/global';
+export * as globalCss from '@cbhq/cds-web2/globalStyles';
+export { globalStyles } from '@cbhq/cds-web2/styles/global';
 
 // Next.js has built-in i18n support: https://nextjs.org/docs/advanced-features/i18n-routing
 // However, this *does not* work with static builds, which is our Nx default if you're

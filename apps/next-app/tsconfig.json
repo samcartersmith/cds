@@ -14,7 +14,10 @@
   ],
   "references": [
     {
-      "path": "../../packages/common"
+      "path": "../../packages/cds-common2"
+    },
+    {
+      "path": "../../packages/cds-web2"
     },
     {
       "path": "../../packages/fonts"
@@ -26,10 +29,7 @@
       "path": "../../packages/illustrations"
     },
     {
-      "path": "../../packages/web"
-    },
-    {
-      "path": "../../packages/web-visualization"
+      "path": "../../packages/web-visualization2"
     }
   ]
 }
