@@ -1,0 +1,19 @@
+{
+  "import": "import { ProgressBarWithFixedLabels } from '@cbhq/cds-mobile/visualizations/ProgressBarWithFixedLabels'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/visualizations/ProgressBarWithFixedLabels.tsx",
+  "description": "A ProgressBarWithFixedLabels displays a ProgressBar with fixed labels at the start and/or end positions, or above/below the bar, providing context for the progress status.",
+  "relatedComponents": [
+    {
+      "label": "ProgressBar",
+      "url": "/components/feedback/ProgressBar"
+    },
+    {
+      "label": "ProgressCircle",
+      "url": "/components/feedback/ProgressCircle"
+    },
+    {
+      "label": "ProgressBarWithFloatLabel",
+      "url": "/components/feedback/ProgressBarWithFloatLabel"
+    }
+  ]
+}

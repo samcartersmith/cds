@@ -322,6 +322,26 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
+              id: 'components/feedback/ProgressBar/progress-bar',
+              label: 'ProgressBar',
+            },
+            {
+              type: 'doc',
+              id: 'components/feedback/ProgressBarWithFixedLabels/progress-bar-with-fixed-labels',
+              label: 'ProgressBarWithFixedLabels',
+            },
+            {
+              type: 'doc',
+              id: 'components/feedback/ProgressBarWithFloatLabel/progress-bar-with-float-label',
+              label: 'ProgressBarWithFloatLabel',
+            },
+            {
+              type: 'doc',
+              id: 'components/feedback/ProgressCircle/progress-circle',
+              label: 'ProgressCircle',
+            },
+            {
+              type: 'doc',
               id: 'components/feedback/Spinner/spinner',
               label: 'Spinner',
             },

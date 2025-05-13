@@ -3,7 +3,7 @@ import React from 'react';
 import { HStack } from '../../layout/HStack';
 import { ProgressCircle } from '../ProgressCircle';
 
-import { ProgressContainerWithButtons } from './ProgressContainerWithButtons';
+import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
 export default {
   component: ProgressCircle,

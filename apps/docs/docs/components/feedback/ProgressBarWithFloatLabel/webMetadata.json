@@ -1,0 +1,19 @@
+{
+  "import": "import { ProgressBarWithFloatLabel } from '@cbhq/cds-web/visualizations/ProgressBarWithFloatLabel'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/visualizations/ProgressBarWithFloatLabel.tsx",
+  "description": "A ProgressBarWithFloatLabel displays a ProgressBar with a label that moves along with the progress, providing real-time visual feedback on the current progress value.",
+  "relatedComponents": [
+    {
+      "label": "ProgressBar",
+      "url": "/components/feedback/ProgressBar"
+    },
+    {
+      "label": "ProgressCircle",
+      "url": "/components/feedback/ProgressCircle"
+    },
+    {
+      "label": "ProgressBarWithFixedLabels",
+      "url": "/components/feedback/ProgressBarWithFixedLabels"
+    }
+  ]
+}

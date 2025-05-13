@@ -7,7 +7,7 @@ import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
 
-import { ProgressContainerWithButtons } from './ProgressContainerWithButtons';
+import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
 export default {
   component: ProgressBar,

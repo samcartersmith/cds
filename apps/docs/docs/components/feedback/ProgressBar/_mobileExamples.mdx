@@ -1,0 +1,41 @@
+### Default
+
+```tsx live
+<VStack gap={2}>
+  <ProgressBar progress={0} />
+  <ProgressBar progress={0.5} />
+  <ProgressBar progress={1} />
+</VStack>
+```
+
+### Weights
+
+```tsx live
+<VStack gap={2}>
+  <ProgressBar weight="light" progress={0.3} />
+  <ProgressBar weight="normal" progress={0.5} />
+  <ProgressBar weight="heavy" progress={0.7} />
+</VStack>
+```
+
+### Disabled
+
+```tsx live
+<VStack gap={2}>
+  <ProgressBar disabled progress={0} />
+  <ProgressBar disabled progress={0.5} />
+  <ProgressBar disabled progress={1} />
+</VStack>
+```
+
+### Colors
+
+```tsx live
+<VStack gap={2}>
+  <ProgressBar color="bgPositive" progress={0.5} />
+  <ProgressBar color="bgNegative" progress={0.5} />
+  <ProgressBar color="bgPrimary" progress={0.5} />
+  <ProgressBar color="fg" progress={0.5} />
+  <ProgressBar disabled color="fg" progress={0.5} />
+</VStack>
+```
