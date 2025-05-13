@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useMemo } from 'react';
-import { ToastContext } from '@cbhq/cds-common2/overlays/ToastProvider';
+import { ToastContext, type ToastDuration } from '@cbhq/cds-common2/overlays/ToastProvider';
 import {
   charsThreshold,
   defaultDuration,
@@ -9,14 +9,7 @@ import {
 
 import { Toast, type ToastBaseProps } from './Toast';
 
-type ShowToastOptions = Omit<ToastBaseProps, 'text'> & {
-  /**
-   * Duration in milliseconds.
-   * Duration is automatically calculated based on this formula https://docs.google.com/document/d/1s1u9CGb37HCeuMo2ZcVz7Zxo13HH6F10J7Z5W-8ks48
-   * @danger This will override default calculated value.
-   */
-  duration?: number;
-};
+export type ShowToastOptions = Omit<ToastBaseProps, 'text'> & ToastDuration;
 
 export const useToast = () => {
   const { addToast, removeToast, hideToast, clearToastQueue } = useContext(ToastContext);

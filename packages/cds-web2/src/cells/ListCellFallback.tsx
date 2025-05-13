@@ -22,8 +22,6 @@ export type ListCellFallbackBaseProps = SharedProps &
     subdetail?: boolean;
     /** Display title shimmer. */
     title?: boolean;
-    /** @deprecated This prop does nothing and will be removed in a future version of CDS. */
-    compact?: boolean;
   };
 
 export type ListCellFallbackProps = ListCellFallbackBaseProps;

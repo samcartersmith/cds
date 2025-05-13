@@ -14,6 +14,26 @@ export type ToastRefHandle = {
   hide: () => Promise<boolean>;
 };
 
+export type ToastDuration = {
+  /**
+   * Duration in milliseconds.
+   * Duration is automatically calculated based on this formula https://docs.google.com/document/d/1s1u9CGb37HCeuMo2ZcVz7Zxo13HH6F10J7Z5W-8ks48
+   * @danger This will override default calculated value.
+   */
+  duration?: number;
+};
+
+export type ToastAction = SharedProps & {
+  /**
+   * Label for the action button
+   */
+  label: string;
+  /**
+   * Callback function fired when the button is pressed
+   */
+  onPress: () => void;
+};
+
 export type ToastBaseProps = SharedProps &
   SharedAccessibilityProps &
   Pick<OverlayLifecycleProps, 'onWillHide' | 'onDidHide'> & {
@@ -24,16 +44,7 @@ export type ToastBaseProps = SharedProps &
     /**
      * Optional toast action i.e. a CTA button
      */
-    action?: SharedProps & {
-      /**
-       * Label for the action button
-       */
-      label: string;
-      /**
-       * Callback function fired when the button is pressed
-       */
-      onPress: () => void;
-    };
+    action?: ToastAction;
     /**
      * The vertical offset from the bottom of the screen
      */

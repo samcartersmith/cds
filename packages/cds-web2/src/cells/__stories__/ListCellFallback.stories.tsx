@@ -35,53 +35,6 @@ export const Fallbacks = () => {
       <ListCellFallback description detail subdetail title media="asset" rectWidthVariant={0} />
       <ListCellFallback description detail subdetail title media="asset" rectWidthVariant={1} />
       <ListCellFallback description detail subdetail title media="asset" rectWidthVariant={2} />
-      <ListCellFallback compact disableRandomRectWidth title />
-      <ListCellFallback compact description disableRandomRectWidth title />
-      <ListCellFallback compact detail disableRandomRectWidth title />
-      <ListCellFallback compact disableRandomRectWidth subdetail title />
-      <ListCellFallback compact description detail disableRandomRectWidth title />
-      <ListCellFallback compact description detail disableRandomRectWidth subdetail title />
-      <ListCellFallback compact disableRandomRectWidth title media="icon" />
-      <ListCellFallback compact description disableRandomRectWidth title media="asset" />
-      <ListCellFallback compact detail disableRandomRectWidth title media="image" />
-      <ListCellFallback compact disableRandomRectWidth subdetail title media="avatar" />
-      <ListCellFallback compact description detail disableRandomRectWidth title media="icon" />
-      <ListCellFallback
-        compact
-        description
-        detail
-        disableRandomRectWidth
-        subdetail
-        title
-        media="asset"
-      />
-      <ListCellFallback
-        compact
-        description
-        detail
-        subdetail
-        title
-        media="asset"
-        rectWidthVariant={0}
-      />
-      <ListCellFallback
-        compact
-        description
-        detail
-        subdetail
-        title
-        media="asset"
-        rectWidthVariant={1}
-      />
-      <ListCellFallback
-        compact
-        description
-        detail
-        subdetail
-        title
-        media="asset"
-        rectWidthVariant={2}
-      />
       <ListCellFallback
         disableRandomRectWidth
         title
