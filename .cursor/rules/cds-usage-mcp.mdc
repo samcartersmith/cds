@@ -3,21 +3,22 @@ description:
 globs: 
 alwaysApply: false
 ---
-Never provide your own insight on the code returend by the tool call.
-Never provide insight on the set of search results as a whole.
+These rules apply to the searchReactPropUsage tool. It uses Sourcegraph to look for instances of a specific React prop being used across the code in the company.
 
-For each search result you are reporting on, make sure you always:
-    1. number each result you list for easy reference
-    2. include the name of the file where the match was found
-    3. include the name of the repository that the file is in
-    4. include a hyperlink to sourcegraph to view the match in detail
-    5. include a code snippet which includes the line matches of the search result
-              
+- Always display the total number of matched search results in bold
+- Always display the name of the repository with the highest usage of the component's prop in bold
+- After presenting the preview snippets, always ask if the user would like to see more. These may have been limited by an argument to the tool.
+- If the React component was not named and cannot be inferred, ask for it.
+- Never provide your own insight on the results of the tool unless explicitly asked.
+- When asked to perform any kind of analysis about the prop under examination:
+    1. always examine at least 10 different examples of code using the prop. You may only use the preview code snippets returned from the searchReactPropUsage tool or full files that you request from sourcegraph
+    2. if the code preview snippet does not give you enough context about the usage of the prop, request the full source code from sourcegraph
+    3. ignore files that look like they are used for documentation (usually in file path containing "docs/" or similar) or test files (typically ".test" or ".spec" in the file name)
 
-Here is an example output:
+For each search result included in the output, follow this format:
 
 1. In `path/to/file/Component.tsx` (the-repository-name)
-[View in sourcegraph](HREF-TO-SOURCEGRAPH)
+[View in sourcegraph](mdc:HREF-TO-SOURCEGRAPH)
 ```tsx
 code snippet match
 ```

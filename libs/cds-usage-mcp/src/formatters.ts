@@ -48,8 +48,9 @@ export function formatFileLookupResults(jsonResults: string): string {
 
 /**
  * Format search results from src-cli JSON output into a more readable format
+ * Optionally limit the number of results to display with the limit parameter
  */
-export function formatSearchResults(jsonResults: string): string {
+export function formatSearchResults(jsonResults: string, limit?: number): string {
   try {
     const data = JSON.parse(jsonResults);
 
@@ -64,6 +65,11 @@ export function formatSearchResults(jsonResults: string): string {
     formattedOutput += `Result Count: ${data.ResultCount}${
       data.LimitHit ? ' (limit hit)' : ''
     }\n\n`;
+
+    if (limit) {
+      // Limit the number of results to display
+      data.Results = data.Results.slice(0, limit);
+    }
 
     // Format each result
     data.Results.forEach((result: SearchResultType, index: number) => {

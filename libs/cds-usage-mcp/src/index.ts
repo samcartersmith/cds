@@ -98,22 +98,32 @@ server.tool(
 server.tool(
   ToolType.searchReactPropUsage,
   `
-    This tool uses the Sourcegraph CLI to fulfill the user's request.
-    Use this tool when the user asks about the usage of a specific prop of a React component.
-    This could be helpful for library maintainers when they need to understand the usage of their components.
-    Both a prop name and the component name must be specified in the user prompt.
+    This tool searches Sourcegraph to find code that uses a specific prop of a React component.
+    This could be helpful for React component library maintainers when they need to understand the usage of their components.
+    It could also be helpful for when React component library maintainers want to remove a prop and need to know how many customers would be affected by the change.
   `,
   {
     propName: z.string().describe('Name of the prop to search for'),
     componentName: z.string().describe('Name of the React component that owns the prop'),
-    limit: z.string().optional().default('10').describe('Maximum number of results to return'),
+    repo: z.string().optional().describe('Repository to search (e.g., frontend/coinbase-www)'),
+    limit: z
+      .string()
+      .optional()
+      .default('10')
+      .describe('Maximum number of results to preview in the response'),
   },
-  async ({ componentName, propName, limit }) => {
+  async ({ componentName, propName, repo, limit }) => {
     try {
       // Construct the regex pattern for searching component prop usage
-      // The pattern looks for <ComponentName propName=
-      const regexPattern = `/<${componentName}\\s+${propName}=/`;
-      const query = `${regexPattern} count:${limit}`;
+      // The pattern looks for something like <ComponentName propName=
+      const regexPattern = `/<${componentName}\\b[^>]*?\\b${propName}=/`;
+      // to limit the results returned by Sourcegraph, add count:${limit}
+      // count:all will perform an exhaustive search but may time out
+      let query = `${regexPattern} -file:.*.test.* count:all`;
+
+      if (repo) {
+        query += ` repo:${repo}`;
+      }
 
       const searchResults = await executeSrcCommand('search', ['-json', query]);
 
@@ -121,7 +131,7 @@ server.tool(
         content: [
           {
             type: 'text',
-            text: formatSearchResults(searchResults),
+            text: formatSearchResults(searchResults, parseInt(limit, 10)),
           },
         ],
       };
