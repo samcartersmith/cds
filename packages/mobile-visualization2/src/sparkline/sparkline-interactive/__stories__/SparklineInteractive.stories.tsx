@@ -6,12 +6,7 @@ import {
   type SparklinePeriod,
   strokeColor,
 } from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
-import type {
-  ChartData,
-  ChartDataPoint,
-  ChartScrubParams,
-  SparklineInteractiveHeaderVariant,
-} from '@cbhq/cds-common2/types';
+import type { ChartData, ChartDataPoint, ChartScrubParams } from '@cbhq/cds-common2/types';
 import { Example, ExampleScreen } from '@cbhq/cds-mobile2/examples/ExampleScreen';
 import { Box } from '@cbhq/cds-mobile2/layout';
 import { TextTitle3 } from '@cbhq/cds-mobile2/typography/TextTitle3';
@@ -21,7 +16,11 @@ import {
   type SparklineInteractiveHeaderRef,
   type SparklineInteractiveSubHead,
 } from '../../sparkline-interactive-header/SparklineInteractiveHeader';
-import { SparklineInteractive, type SparklineInteractiveBaseProps } from '../SparklineInteractive';
+import {
+  SparklineInteractive,
+  type SparklineInteractiveBaseProps,
+  type SparklineInteractiveProps,
+} from '../SparklineInteractive';
 
 const DEFAULT_PERIOD = 'day';
 
@@ -107,10 +106,10 @@ const periods = [
 ];
 
 type SparklineInteractivePriceProps = Omit<
-  SparklineInteractiveBaseProps<SparklinePeriod>,
+  SparklineInteractiveProps<SparklinePeriod>,
   'periods' | 'defaultPeriod' | 'formatMinMaxLabel' | 'formatDate'
 > &
-  Partial<Pick<SparklineInteractiveBaseProps<SparklinePeriod>, 'defaultPeriod'>> & {
+  Partial<Pick<SparklineInteractiveProps<SparklinePeriod>, 'defaultPeriod'>> & {
     hideHoverDate?: boolean;
     hideMinMaxLabel?: boolean;
     trailing?: React.ReactNode;
@@ -473,6 +472,22 @@ const SparklineInteractiveScreen = () => {
             allowOverflowGestures
             data={sparklineInteractiveData}
             strokeColor={strokeColor}
+          />
+        </Box>
+      </Example>
+      <Example padding={0}>
+        <Box>
+          <TextTitle3 paddingX={3} paddingY={3}>
+            Custom Node Header Styles
+          </TextTitle3>
+          <SparklineInteractiveWithHeaderBuild
+            data={sparklineInteractiveData}
+            strokeColor="#F7931A"
+            styles={{
+              header: {
+                paddingBottom: 0,
+              },
+            }}
           />
         </Box>
       </Example>

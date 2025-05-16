@@ -84,3 +84,18 @@ The scaling factor is usually used when you want to show less variance in the ch
   />
 </Box>
 ```
+
+### Custom styles
+
+You can also provide custom styles, such as to remove any horizontal padding from the header.
+
+```jsx live
+<Box padding={3} width="100%">
+  <SparklineInteractivePriceWithHeader
+    data={sparklineInteractiveData}
+    fill
+    strokeColor="#F7931A"
+    styles={{ header: { paddingLeft: 0, paddingRight: 0 } }}
+  />
+</Box>
+```

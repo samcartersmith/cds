@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import { cx } from '@linaria/core';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
 import type { ThemeVars } from '@cbhq/cds-common2/core/theme';
@@ -156,6 +157,46 @@ export type SparklineInteractiveBaseProps<Period extends string> = {
   yAxisScalingFactor?: number;
 };
 
+export type SparklineInteractiveProps<Period extends string> =
+  SparklineInteractiveBaseProps<Period> & {
+    /**
+     * Custom class name for the root element.
+     */
+    className?: string;
+    /**
+     * Custom class names for the component.
+     */
+    classNames?: {
+      /**
+       * Custom class name for the header node.
+       */
+      header?: string;
+      /**
+       * Custom class name for the root element.
+       */
+      root?: string;
+    };
+    /**
+     * Custom styles for the root element.
+     */
+    style?: React.CSSProperties;
+    /**
+     * Custom styles for the component.
+     */
+    styles?: {
+      /**
+       * Custom style for the header node.
+       */
+      header?: React.CSSProperties;
+      /**
+       * Custom style for the root element.
+       */
+      root?: React.CSSProperties;
+    };
+    /** Test ID for the header */
+    headerTestID?: string;
+  };
+
 function SparklineInteractiveContentWithGeneric<Period extends string>({
   data,
   periods,
@@ -179,7 +220,12 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   timePeriodGutter,
   hoverData,
   periodSelectorPlacement = 'above',
-}: SparklineInteractiveBaseProps<Period>) {
+  className,
+  classNames,
+  style,
+  styles,
+  headerTestID,
+}: SparklineInteractiveProps<Period>) {
   const [isScrubbing, setIsScrubbing] = useState(false);
   const [isMarkerDateVisible, setIsMarkerDateVisible] = useState(false);
   const innerSparklineInteractiveHeight = compact ? chartCompactHeight : chartHeight;
@@ -266,7 +312,13 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   let header;
   if (headerNode) {
     header = (
-      <Box flexGrow={1} paddingX={!isMobileLayout ? gutter : 0}>
+      <Box
+        className={classNames?.header}
+        flexGrow={1}
+        paddingX={!isMobileLayout ? gutter : 0}
+        style={styles?.header}
+        testID={headerTestID}
+      >
         {headerNode}
       </Box>
     );
@@ -281,8 +333,17 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
     />
   );
 
+  const rootStyles = useMemo(
+    () => ({
+      width: '100%',
+      ...style,
+      ...styles?.root,
+    }),
+    [style, styles?.root],
+  );
+
   return (
-    <div ref={containerRef} style={{ width: '100%' }}>
+    <div ref={containerRef} className={cx(className, classNames?.root)} style={rootStyles}>
       {isMobileLayout && showHeaderPeriodSelector && (
         <Box paddingBottom={2} width="100%">
           {periodSelector}
@@ -371,7 +432,7 @@ export const SparklineInteractiveContent = memo(
 function SparklineInteractiveWithGeneric<Period extends string>({
   compact,
   ...props
-}: SparklineInteractiveBaseProps<Period>) {
+}: SparklineInteractiveProps<Period>) {
   const [resizeKey, setResizeKey] = useState(0);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const resizeHandler = useCallback(

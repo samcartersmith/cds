@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { css } from '@linaria/core';
 import type { ChartDataPoint, ChartScrubParams } from '@cbhq/cds-common2';
 import {
   sparklineInteractiveData,
@@ -589,6 +590,104 @@ export const NoDataInSelectedPeriod = () => {
 };
 NoDataInSelectedPeriod.bind({});
 NoDataInSelectedPeriod.parameters = {
+  percy: { enableJavaScript: true },
+  a11y: {
+    config: {
+      rules: [{ id: 'color-contrast', enabled: false }],
+    },
+  },
+};
+
+export const WithCustomStyles = () => {
+  const [currentPeriod, setCurrentPeriod] = useState<SparklinePeriod>(DEFAULT_PERIOD);
+  const headerRef = useRef<SparklineInteractiveHeaderRef>(null);
+  const data = sparklineInteractiveData[currentPeriod];
+  const lastPoint = data[data.length - 1];
+  const timezoneObj = useMemo(() => ({ timeZone: 'America/New_York' }), []);
+
+  const formatDateWithConfig = useCallback(
+    (value: Date, period: SparklinePeriod) => {
+      const config = getFormattingConfigForPeriod(period);
+      return value.toLocaleString('en-US', {
+        ...timezoneObj,
+        ...config,
+      });
+    },
+    [timezoneObj],
+  );
+
+  const formatHoverDate = useCallback(
+    (date: Date, period: SparklinePeriod) => {
+      return date.toLocaleString('en-US', {
+        ...timezoneObj,
+        ...getDateHoverOptions(period),
+      });
+    },
+    [timezoneObj],
+  );
+
+  const handleScrub = useCallback(({ point, period }: ChartScrubParams<SparklinePeriod>) => {
+    headerRef.current?.update({
+      title: `$${point.value.toLocaleString('en-US')}`,
+      subHead: generateSubHead(point, period, sparklineInteractiveData),
+    });
+  }, []);
+
+  const handleScrubEnd = useCallback(() => {
+    headerRef.current?.update({
+      title: `$${numToLocaleString(lastPoint.value)}`,
+      subHead: generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData),
+    });
+  }, [currentPeriod, lastPoint]);
+
+  const handleOnPeriodChanged = useCallback((period: SparklinePeriod) => {
+    setCurrentPeriod(period);
+    const newData = sparklineInteractiveData[period];
+    const newLastPoint = newData[newData.length - 1];
+
+    headerRef.current?.update({
+      title: `$${numToLocaleString(newLastPoint.value)}`,
+      subHead: generateSubHead(newLastPoint, period, sparklineInteractiveData),
+    });
+  }, []);
+
+  const header = (
+    <SparklineInteractiveHeader
+      ref={headerRef}
+      defaultLabel="Bitcoin Price"
+      defaultSubHead={generateSubHead(lastPoint, currentPeriod, sparklineInteractiveData)}
+      defaultTitle={`$${numToLocaleString(lastPoint.value)}`}
+    />
+  );
+
+  return (
+    <SparklineInteractive
+      classNames={{
+        root: css`
+          padding: var(--space-2);
+        `,
+      }}
+      data={sparklineInteractiveData}
+      defaultPeriod={DEFAULT_PERIOD}
+      formatDate={formatDateWithConfig}
+      formatHoverDate={formatHoverDate}
+      headerNode={header}
+      onPeriodChanged={handleOnPeriodChanged}
+      onScrub={handleScrub}
+      onScrubEnd={handleScrubEnd}
+      periods={periods}
+      strokeColor="#F7931A"
+      styles={{
+        header: {
+          paddingLeft: 0,
+          paddingRight: 0,
+        },
+      }}
+    />
+  );
+};
+
+WithCustomStyles.parameters = {
   percy: { enableJavaScript: true },
   a11y: {
     config: {

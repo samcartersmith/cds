@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Animated, StyleSheet, View, ViewStyle } from 'react-native';
+import { Animated, type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native';
 import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
@@ -233,7 +233,10 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
   hoverData,
   timePeriodGutter,
   allowOverflowGestures,
-}: SparklineInteractiveMobileProps<Period>) {
+  style,
+  styles,
+  headerTestID,
+}: SparklineInteractiveProps<Period>) {
   const [isScrubbing, setIsScrubbing] = useState(false);
   const { isFallbackVisible, showFallback, chartOpacity, minMaxOpacity, compact } =
     useSparklineInteractiveContext();
@@ -324,18 +327,25 @@ function SparklineInteractiveContentWithGeneric<Period extends string>({
 
   let header;
   if (headerNode) {
-    header = <Box paddingBottom={2}>{headerNode}</Box>;
+    header = (
+      <Box paddingBottom={2} style={styles?.header} testID={headerTestID}>
+        {headerNode}
+      </Box>
+    );
   }
 
-  const style: ViewStyle = useMemo(() => {
-    return {};
-  }, []);
-  if (!disableHorizontalPadding) {
-    style.paddingHorizontal = chartHorizontalGutter;
-  }
+  const rootStyles = useMemo(() => {
+    return [
+      !disableHorizontalPadding && {
+        paddingHorizontal: chartHorizontalGutter,
+      },
+      style,
+      styles?.root,
+    ];
+  }, [style, styles?.root, chartHorizontalGutter, disableHorizontalPadding]);
 
   return (
-    <Animated.View style={style}>
+    <Animated.View style={rootStyles}>
       {header}
       <SparklineInteractivePanGestureHandler
         allowOverflowGestures={allowOverflowGestures}
@@ -418,7 +428,7 @@ const SparklineInteractiveContent = memo(
   SparklineInteractiveContentWithGeneric,
 ) as typeof SparklineInteractiveContentWithGeneric;
 
-export type SparklineInteractiveMobileProps<Period extends string> =
+export type SparklineInteractiveProps<Period extends string> =
   SparklineInteractiveBaseProps<Period> & {
     /**
      * Hides the min and max label
@@ -450,13 +460,32 @@ export type SparklineInteractiveMobileProps<Period extends string> =
      * Allows continuous gestures on the Sparkline chart to continue outside the bounds of the chart element.
      */
     allowOverflowGestures?: boolean;
+    /**
+     * Custom style for the root element.
+     */
+    style?: StyleProp<ViewStyle>;
+    /**
+     * Custom styles for the component.
+     */
+    styles?: {
+      /**
+       * Custom style for the header node.
+       */
+      header?: StyleProp<ViewStyle>;
+      /**
+       * Custom style for the root element.
+       */
+      root?: StyleProp<ViewStyle>;
+    };
+    /** Test ID for the header */
+    headerTestID?: string;
   };
 
 function SparklineInteractiveWithGeneric<Period extends string>({
   compact,
   gutter,
   ...props
-}: SparklineInteractiveMobileProps<Period>) {
+}: SparklineInteractiveProps<Period>) {
   return (
     <SparklineInteractiveProvider compact={compact} gutter={gutter}>
       <SparklineInteractiveContent {...props} />

@@ -6,14 +6,14 @@ import { ChartGetMarker, ChartScrubParams } from '@cbhq/cds-common2/types/Chart'
 import { Haptics } from '@cbhq/cds-mobile2/utils/haptics';
 import { noop } from '@cbhq/cds-utils';
 
-import { type SparklineInteractiveMobileProps } from './SparklineInteractive';
+import { type SparklineInteractiveProps } from './SparklineInteractive';
 import { useSparklineInteractiveContext } from './SparklineInteractiveProvider';
 import { useSparklineInteractiveConstants } from './useSparklineInteractiveConstants';
 
 const { lightImpact } = Haptics;
 
 export type SparklineInteractivePanGestureHandlerProps<Period extends string> = Pick<
-  SparklineInteractiveMobileProps<Period>,
+  SparklineInteractiveProps<Period>,
   'allowOverflowGestures'
 > & {
   onScrub?: (params: ChartScrubParams<Period>) => void;
