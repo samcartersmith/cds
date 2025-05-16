@@ -41,7 +41,7 @@ function Placements() {
 }
 ```
 
-### Dotting relative to shape of child
+### Dotting Relative to Shape of Child
 
 You can use the overlap prop to place the dot relative to the corner of the wrapped element.
 
@@ -69,6 +69,48 @@ function DottingRelativeToShapeOfChild() {
           Child
         </VStack>
       </DotCount>
+    </HStack>
+  );
+}
+```
+
+### Customize Style
+
+You can use the styles prop to customize appearance.
+
+```jsx
+function CustomizeStyle() {
+  const theme = useTheme();
+  return (
+    <HStack gap={2}>
+      <DotCount
+        count={5}
+        styles={{
+          container: {
+            backgroundColor: theme.color.bgPositive,
+            borderColor: theme.color.fgPositive,
+          },
+        }}
+      />
+      <DotCount
+        count={10}
+        styles={{
+          container: {
+            borderRadius: 4,
+            padding: 2,
+            paddingHorizontal: 6,
+          },
+        }}
+      />
+      <DotCount
+        count={42}
+        styles={{
+          container: {
+            backgroundColor: theme.color.bgNegative,
+            minWidth: 24,
+          },
+        }}
+      />
     </HStack>
   );
 }

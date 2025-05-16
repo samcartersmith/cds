@@ -1,5 +1,12 @@
 import React, { memo, useEffect, useMemo, useState } from 'react';
-import { LayoutRectangle, View, ViewStyle } from 'react-native';
+import {
+  LayoutRectangle,
+  type StyleProp,
+  StyleSheet,
+  type TextStyle,
+  View,
+  type ViewStyle,
+} from 'react-native';
 import Animated, {
   runOnJS,
   useAnimatedReaction,
@@ -14,11 +21,7 @@ import {
   dotScaleEnterConfig,
   dotScaleExitConfig,
 } from '@cbhq/cds-common2/motion/dot';
-import {
-  dotCountContent,
-  dotCountSize,
-  dotOuterContainerStyles,
-} from '@cbhq/cds-common2/tokens/dot';
+import { dotCountSize } from '@cbhq/cds-common2/tokens/dot';
 import {
   DotCountPinPlacement,
   DotCountVariants,
@@ -84,10 +87,42 @@ export type DotCountBaseProps = SharedProps &
     overlap?: DotOverlap;
   };
 
-export type DotCountProps = DotCountBaseProps;
+export type DotCountProps = DotCountBaseProps & {
+  /**
+   * Custom styles for the root element.
+   */
+  style?: StyleProp<ViewStyle>;
+  /**
+   * Custom styles for the component.
+   */
+  styles?: {
+    /**
+     * Custom styles for the root element.
+     */
+    root?: StyleProp<ViewStyle>;
+    /**
+     * Custom styles for the container element.
+     */
+    container?: StyleProp<ViewStyle>;
+    /**
+     * Custom styles for the text element.
+     */
+    text?: StyleProp<TextStyle>;
+  };
+};
 
 export const DotCount = memo(
-  ({ children, pin, variant = 'negative', count, max, overlap, ...props }: DotCountProps) => {
+  ({
+    children,
+    pin,
+    variant = 'negative',
+    count,
+    max,
+    overlap,
+    style,
+    styles,
+    ...props
+  }: DotCountProps) => {
     const theme = useTheme();
     const [childrenSize, onChildrenLayout] = useDotsLayout();
     const transforms = useDotPinStyles(
@@ -114,13 +149,12 @@ export const DotCount = memo(
       return {};
     }, [pin, transforms]);
 
-    const innerContainerStyles = useMemo(() => {
+    const containerStyles = useMemo(() => {
       return [
-        dotCountContent,
-        dotOuterContainerStyles,
+        styleSheet.container,
         {
-          backgroundColor: theme.color[variantColorMap[variant]],
           borderColor: theme.color.bgSecondary,
+          backgroundColor: theme.color[variantColorMap[variant]],
         },
       ];
     }, [theme.color, variant]);
@@ -160,27 +194,30 @@ export const DotCount = memo(
       };
     });
 
-    const dotCountInnerContainerStyle = useMemo(
-      () => [innerContainerStyles, animatedStyles],
-      [innerContainerStyles, animatedStyles],
+    const dotCountContainerStyle = useMemo(
+      () => [containerStyles, animatedStyles, styles?.container],
+      [containerStyles, animatedStyles, styles?.container],
     );
+
+    const textStyles = useMemo(
+      () => [{ paddingHorizontal: dotTextPaddingHorizontal }, styles?.text],
+      [styles?.text],
+    );
+
+    const rootStyles = useMemo(() => [style, styles?.root], [styles?.root, style]);
 
     // only check childrenSize when children is defined
     const shouldShow = children !== undefined ? childrenSize !== null : true;
 
     return (
-      <View {...props}>
+      <View style={rootStyles} {...props}>
         <View onLayout={onChildrenLayout} testID={`${props.testID}-children`}>
           {children}
         </View>
         {!shouldUnmount && shouldShow && (
           <View style={pinStyles}>
-            <Animated.View style={dotCountInnerContainerStyle} testID="dotcount-inner-container">
-              <Text
-                color="fgInverse"
-                font="caption"
-                style={{ paddingHorizontal: dotTextPaddingHorizontal }}
-              >
+            <Animated.View style={dotCountContainerStyle} testID="dotcount-container">
+              <Text color="fgInverse" font="caption" style={textStyles}>
                 {parseDotCountMaxOverflow(countInternal, max)}
               </Text>
             </Animated.View>
@@ -190,3 +227,15 @@ export const DotCount = memo(
     );
   },
 );
+
+const styleSheet = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+    borderWidth: 1,
+    minWidth: dotCountSize,
+    height: dotCountSize,
+    borderRadius: 16,
+  },
+});

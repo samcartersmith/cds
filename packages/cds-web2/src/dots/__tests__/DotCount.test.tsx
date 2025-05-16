@@ -54,7 +54,7 @@ describe('DotCount', () => {
       </MockDotCountWithTheme>,
     );
 
-    expect(screen.getByTestId('dotcount-outer-container')).toHaveStyle({
+    expect(screen.getByTestId('dotcount-container')).toHaveStyle({
       position: 'absolute',
       top: 0,
       right: 0,

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { css } from '@linaria/core';
 
+import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons/Icon';
 import { Box, HStack, VStack } from '../../layout';
 import { Avatar } from '../../media/Avatar';
@@ -139,6 +141,25 @@ const DotCountComplex = () => {
   );
 };
 
+const DotCountStyle = () => {
+  const theme = useTheme();
+  return (
+    <VStack key="DotCount-style" alignItems="flex-start" gap={1}>
+      <DotCount
+        classNames={{
+          container: css`
+            border-radius: 4px;
+          `,
+        }}
+        count={30}
+        styles={{
+          container: { backgroundColor: theme.color.bgPositive, borderColor: theme.color.fg },
+        }}
+      />
+    </VStack>
+  );
+};
+
 export const AllDotCount = () => {
   return (
     <VStack gap={2}>
@@ -148,6 +169,7 @@ export const AllDotCount = () => {
       <DotCountOverlap />
       <DotCountPlacements />
       <DotCountComplex />
+      <DotCountStyle />
     </VStack>
   );
 };

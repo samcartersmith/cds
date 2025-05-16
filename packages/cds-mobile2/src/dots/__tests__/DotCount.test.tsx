@@ -49,7 +49,7 @@ describe('DotCount', () => {
       nativeEvent: { layout: { height: 16, width: 16 } },
     });
 
-    expect(screen.getByTestId('dotcount-inner-container')).toHaveStyle({
+    expect(screen.getByTestId('dotcount-container')).toHaveStyle({
       borderColor: defaultTheme.lightColor.bgSecondary,
       borderWidth: 1,
     });
@@ -137,12 +137,12 @@ describe('DotCount', () => {
   //   });
 
   //   // Trigger onLayout for the dot
-  //   fireEvent(screen.getByTestId('dotcount-inner-container'), 'layout', {
+  //   fireEvent(screen.getByTestId('dotcount-container'), 'layout', {
   //     nativeEvent: { layout: { height: dotSize, width: dotSize } },
   //   });
 
   //   // initial styles
-  //   expect(screen.getByTestId('dotcount-inner-container')).toHaveAnimatedStyle({
+  //   expect(screen.getByTestId('dotcount-container')).toHaveAnimatedStyle({
   //     position: 'absolute',
   //     transform: [
   //       { scale: 0.9 },
@@ -159,7 +159,7 @@ describe('DotCount', () => {
   //     jest.advanceTimersByTime(200);
 
   //     // styles after animation
-  //     expect(screen.getByTestId('dotcount-inner-container')).toHaveAnimatedStyle({
+  //     expect(screen.getByTestId('dotcount-container')).toHaveAnimatedStyle({
   //       position: 'absolute',
   //       transform: [
   //         { scale: 1 },

@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { css } from '@linaria/core';
+import { css, cx } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import {
@@ -8,11 +8,7 @@ import {
   dotScaleEnterConfig,
   dotScaleExitConfig,
 } from '@cbhq/cds-common2/motion/dot';
-import {
-  dotCountContent,
-  dotCountPadding,
-  dotOuterContainerStyles,
-} from '@cbhq/cds-common2/tokens/dot';
+import { dotCountSize } from '@cbhq/cds-common2/tokens/dot';
 import type {
   DotCountPinPlacement,
   DotCountVariants,
@@ -36,9 +32,17 @@ const baseStyle = css`
 `;
 
 const dotCountContentStyle = css`
-  ${dotCountContent}
-  ${dotOuterContainerStyles}
-  ${dotCountPadding}
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-width: 1px;
+  min-width: ${dotCountSize}px;
+  height: ${dotCountSize}px;
+  border-radius: 16px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
 `;
 
 const variantColorMap: Record<DotCountVariants, ThemeVars.Color> = {
@@ -72,7 +76,50 @@ export type DotCountBaseProps = SharedProps &
     overlap?: DotOverlap;
   };
 
-export type DotCountProps = DotCountBaseProps;
+export type DotCountProps = DotCountBaseProps & {
+  /**
+   * Custom class name for the root element.
+   */
+  className?: string;
+  /**
+   * Custom styles for the root element.
+   */
+  style?: React.CSSProperties;
+  /**
+   * Custom class names for the component.
+   */
+  classNames?: {
+    /**
+     * Custom class name for the root element.
+     */
+    root?: string;
+    /**
+     * Custom class name for the container element.
+     */
+    container?: string;
+    /**
+     * Custom class name for the text element.
+     */
+    text?: string;
+  };
+  /**
+   * Custom styles for the component.
+   */
+  styles?: {
+    /**
+     * Custom styles for the root element.
+     */
+    root?: React.CSSProperties;
+    /**
+     * Custom styles for the container element.
+     */
+    container?: React.CSSProperties;
+    /**
+     * Custom styles for the text element.
+     */
+    text?: React.CSSProperties;
+  };
+};
 
 export const DotCount = memo(
   ({
@@ -84,19 +131,24 @@ export const DotCount = memo(
     testID,
     accessibilityLabel,
     overlap,
+    className,
+    classNames,
+    style,
+    styles,
     ...props
   }: DotCountProps) => {
     const { color } = useTheme();
     const pinStyles = getTransform(pin, overlap);
 
-    const styles = useMemo(() => {
+    const containerStyles = useMemo(() => {
       const variantColor = variantColorMap[variant];
       return {
         backgroundColor: color[variantColor],
         borderColor: color.bgSecondary,
         ...pinStyles,
+        ...styles?.container,
       };
-    }, [color, pinStyles, variant]);
+    }, [color, pinStyles, styles?.container, variant]);
 
     const motionProps = useMotionProps({
       enterConfigs: [dotOpacityEnterConfig, dotScaleEnterConfig],
@@ -104,18 +156,40 @@ export const DotCount = memo(
       exit: 'exit',
     });
 
+    const rootStyles = useMemo(
+      () => ({
+        ...style,
+        ...styles?.root,
+      }),
+      [styles?.root, style],
+    );
+
     return (
-      <div aria-label={accessibilityLabel} className={baseStyle} data-testid={testID} {...props}>
+      <div
+        aria-label={accessibilityLabel}
+        className={cx(baseStyle, className, classNames?.root)}
+        data-testid={testID}
+        style={rootStyles}
+        {...props}
+      >
         {children}
         <NewAnimatePresence>
           {count > 0 && (
             <motion.div
               {...motionProps}
-              className={dotCountContentStyle}
-              data-testid="dotcount-outer-container"
-              style={styles}
+              className={cx(dotCountContentStyle, classNames?.container)}
+              data-testid="dotcount-container"
+              style={containerStyles}
             >
-              <Text as="p" color="fgInverse" display="block" font="caption" textAlign="center">
+              <Text
+                as="p"
+                className={classNames?.text}
+                color="fgInverse"
+                display="block"
+                font="caption"
+                style={styles?.text}
+                textAlign="center"
+              >
                 {parseDotCountMaxOverflow(count, max)}
               </Text>
             </motion.div>

@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/cds-web2",
   "version": "8.0.0-rc.3",
+  "private": true,
   "description": "Coinbase Design System - Web",
   "repository": {
     "type": "git",

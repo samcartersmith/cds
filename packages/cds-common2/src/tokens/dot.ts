@@ -19,27 +19,7 @@ export const avatarDotSizeMap: Record<AvatarSize, DotSize> = {
   s: 'xs',
 } as const;
 
-export const dotOuterContainerStyles = {
-  alignItems: 'center',
-  justifyContent: 'center',
-  display: 'flex',
-  borderWidth: 1,
-} as const;
-
 export const dotCountSize = 24;
-
-export const dotCountContent = {
-  minWidth: dotCountSize,
-  height: dotCountSize,
-  borderRadius: 16,
-} as const;
-
-export const dotCountPadding = {
-  paddingTop: 3,
-  paddingBottom: 3,
-  paddingLeft: 6,
-  paddingRight: 6,
-} as const;
 
 // This works for the purposes of TabNavigation, but it's not stable
 // TODO Update this with more stable values

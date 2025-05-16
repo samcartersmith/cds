@@ -5,6 +5,7 @@ import { iconSizes } from '@cbhq/cds-common2/internal/data/iconData';
 import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common2/tokens/dot';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../../icons/Icon';
 import { Box } from '../../layout/Box';
 import { HStack } from '../../layout/HStack';
@@ -104,6 +105,22 @@ const DotCountComplex = () => {
         <Text font="label1">Hello Hello</Text>
       </VStack>
     </HStack>
+  );
+};
+
+const DotCountStyle = () => {
+  const theme = useTheme();
+  return (
+    <DotCount
+      count={30}
+      styles={{
+        container: {
+          borderRadius: 4,
+          backgroundColor: theme.color.bgPositive,
+          borderColor: theme.color.fg,
+        },
+      }}
+    />
   );
 };
 
@@ -327,6 +344,9 @@ const DotScreen = () => {
       </Example>
       <Example inline title="DotCount Complex">
         <DotCountComplex />
+      </Example>
+      <Example inline title="DotCount Style">
+        <DotCountStyle />
       </Example>
       <Example inline title="DotStatusColor Basic">
         <DotStatusColorBasic />
