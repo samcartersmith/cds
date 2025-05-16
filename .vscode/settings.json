@@ -19,7 +19,7 @@
   "typescript.preferences.quoteStyle": "single",
 
   // ESLint
-  "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.fixAll.stylelint"],
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   "eslint.useESLintClass": true,
   "eslint.workingDirectories": [
     { "pattern": "apps/*" },
