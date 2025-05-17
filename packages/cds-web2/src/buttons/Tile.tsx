@@ -1,6 +1,5 @@
 import React, { memo, useCallback, useMemo, useState } from 'react';
 import { css } from '@linaria/core';
-import { tileSize } from '@cbhq/cds-common2/tokens/tile';
 
 import { DotCount } from '../dots/DotCount';
 import { VStack } from '../layout/VStack';
@@ -47,15 +46,17 @@ export const Tile = memo(({ title, count, showOverflow, children }: TileProps) =
   }, [showOverflow]);
 
   /* If count is provided, wrap the children in a DotCount */
-  const renderContent = useMemo(() => {
-    return count ? (
-      <DotCount count={count} pin="top-end">
-        {children}
-      </DotCount>
-    ) : (
-      children
-    );
-  }, [children, count]);
+  const renderContent = useMemo(
+    () =>
+      count ? (
+        <DotCount count={count} pin="top-end">
+          {children}
+        </DotCount>
+      ) : (
+        children
+      ),
+    [children, count],
+  );
 
   return (
     <VStack
@@ -65,7 +66,7 @@ export const Tile = memo(({ title, count, showOverflow, children }: TileProps) =
       onMouseEnter={handleShowOverflow}
       onMouseLeave={handleHideOverflow}
       padding={1}
-      width={tileSize} // TO DO: tileSize should come from ThemeVars.ControlSize
+      width="var(--controlSize-tileSize)"
     >
       <VStack alignItems="center" justifyContent="center">
         {renderContent}

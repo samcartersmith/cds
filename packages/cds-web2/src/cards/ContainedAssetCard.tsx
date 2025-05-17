@@ -52,7 +52,7 @@ const pressStyle = css`
 
 const focusRingStyle = css`
   position: relative;
-  /* if we use the focus ring we need to turn off the browser stylesheet outline */
+  /* Disable default focus ring before adding custom focus ring styles */
   &:focus {
     outline: none;
   }

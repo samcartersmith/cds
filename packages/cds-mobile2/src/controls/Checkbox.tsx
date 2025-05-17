@@ -1,5 +1,5 @@
 import React, { forwardRef, memo, useMemo } from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, View } from 'react-native';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
@@ -21,41 +21,50 @@ const CheckboxIcon = memo(
     animatedOpacityValue,
     testID,
   }: React.PropsWithChildren<ControlIconProps>) => {
+    const filled = checked || indeterminate;
     const theme = useTheme();
-    const { checkboxSize } = theme.controlSize;
-    const backgroundColor = useMemo(() => {
-      return checked || indeterminate ? 'bgPrimary' : 'bg';
-    }, [checked, indeterminate]);
+    const checkboxSize = theme.controlSize.checkboxSize;
+    const iconPadding = checkboxSize / 5;
+    const iconSize = checkboxSize - iconPadding;
 
-    const borderColor = useMemo(() => {
-      // Checked/Indeterminate + Disabled buttons need a transparent border
-      if (disabled) {
-        return checked || indeterminate ? 'transparent' : 'bgLineHeavy';
-      }
+    const animatedStyle = useMemo(
+      () => ({ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }),
+      [animatedScaleValue, animatedOpacityValue],
+    );
 
-      return checked || indeterminate ? 'bgPrimary' : 'bgLineHeavy';
-    }, [checked, indeterminate, disabled]);
+    const iconStyle = useMemo(
+      () => ({
+        icon: {
+          width: iconSize,
+          height: iconSize,
+          fontSize: iconSize,
+          lineHeight: iconSize,
+          opacity: filled ? 1 : 0,
+        } as const,
+      }),
+      [iconSize, filled],
+    );
 
     return (
       <Interactable
-        background={backgroundColor}
-        borderColor={borderColor}
+        alignItems="center"
+        background={filled ? 'bgPrimary' : 'bg'}
+        borderColor={disabled && filled ? 'transparent' : filled ? 'bgPrimary' : 'bgLineHeavy'}
         borderWidth={100}
         disabled={disabled}
+        height={checkboxSize}
+        justifyContent="center"
         pressed={pressed}
-        style={[
-          styles.box,
-          {
-            width: checkboxSize,
-            height: checkboxSize,
-          },
-        ]}
         testID={testID}
+        width={checkboxSize}
       >
-        <Animated.View
-          style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
-        >
-          <Icon color="fgInverse" name={checked ? 'checkmark' : 'minus'} size="s" />
+        <Animated.View style={animatedStyle}>
+          <Icon
+            color="fgInverse"
+            name={checked ? 'checkmark' : 'minus'}
+            size="s"
+            styles={iconStyle}
+          />
         </Animated.View>
       </Interactable>
     );
@@ -94,10 +103,3 @@ const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
 // Make memoized function stay generic function type
 export const Checkbox = memo(CheckboxWithRef) as typeof CheckboxWithRef &
   React.MemoExoticComponent<typeof CheckboxWithRef>;
-
-const styles = StyleSheet.create({
-  box: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

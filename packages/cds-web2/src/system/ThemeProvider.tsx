@@ -31,15 +31,11 @@ const ThemeManager = ({ display, children, theme }: ThemeManagerProps) => {
   const style = useThemeProviderStyles(theme);
   const styles = useMemo(() => ({ ...style, display }), [style, display]);
   return (
-    <div className={theme.activeColorScheme} style={styles}>
+    <div className={theme.id + ' ' + theme.activeColorScheme} style={styles}>
       {children}
     </div>
   );
 };
-
-// export type ThemeProviderProps = SystemProviderProps &
-//   ThemeManagerProps &
-//   FramerMotionProviderProps;
 
 export type ThemeProviderProps = Pick<ThemeManagerProps, 'display'> &
   Pick<FramerMotionProviderProps, 'motionFeatures'> & {

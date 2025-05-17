@@ -6,7 +6,6 @@ import { getCircumference, getRadius } from '@cbhq/cds-common2/utils/circle';
 import { getProgressCircleParams } from '@cbhq/cds-common2/visualizations/getProgressCircleParams';
 import { useProgressSize } from '@cbhq/cds-common2/visualizations/useProgressSize';
 
-import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 import { useMotionProps } from '../motion/useMotionProps';
 
@@ -47,7 +46,6 @@ const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseP
 const ProgressCircleInner = memo(
   ({ size, progress, color, weight, visuallyDisabled }: ProgressInnerCircleBaseProps) => {
     const strokeWidth = useProgressSize(weight);
-    const theme = useTheme(); // TO DO: Refactor this to css vars
     const circleRef = useRef<SVGCircleElement>(null);
 
     const circumference = getCircumference(getRadius(size, strokeWidth));
@@ -75,7 +73,7 @@ const ProgressCircleInner = memo(
         {...getProgressCircleParams({
           size,
           strokeWidth,
-          stroke: !visuallyDisabled ? theme.color[color] : theme.color.bgLineHeavy,
+          stroke: !visuallyDisabled ? `var(--color-${color})` : 'var(--color-bgLineHeavy)',
         })}
       />
     );
@@ -98,7 +96,6 @@ export const ProgressCircle = memo(
       forwardedRef: React.ForwardedRef<HTMLDivElement>,
     ) => {
       const strokeWidth = useProgressSize(weight);
-      const theme = useTheme(); // TO DO: Refactor this to css vars
 
       const visSize = size ?? '100%';
       return (
@@ -136,7 +133,7 @@ export const ProgressCircle = memo(
                     {...getProgressCircleParams({
                       size: circleSize,
                       strokeWidth,
-                      stroke: theme.color.bgLine,
+                      stroke: 'var(--color-bgLine)',
                     })}
                   />
                   <ProgressCircleInner

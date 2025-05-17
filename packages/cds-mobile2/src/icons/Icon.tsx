@@ -1,5 +1,12 @@
 import React, { memo, useMemo } from 'react';
-import { Animated, StyleProp, Text, TextStyle, useWindowDimensions } from 'react-native';
+import {
+  Animated,
+  StyleProp,
+  Text,
+  TextStyle,
+  useWindowDimensions,
+  type ViewStyle,
+} from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common2/core/theme';
 import { uiIconExceptions } from '@cbhq/cds-common2/internal/data/uiIconExceptions';
 import type {
@@ -16,8 +23,6 @@ import { isDevelopment } from '@cbhq/cds-utils';
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 
-import { IconOutline } from './IconOutline';
-
 export type IconBaseProps = SharedProps &
   PaddingProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityHint'> & {
@@ -28,12 +33,6 @@ export type IconBaseProps = SharedProps &
     size?: IconSize;
     /** Name of the icon, as defined in Figma. */
     name: IconName;
-    /**
-     * A boolean flag indicating whether or not a border should be shown around an icon.
-     * This border will match color prop. Border is only allowed for sizes m and above.
-     * @default false
-     */
-    bordered?: boolean;
     /**
      * Fallback element to render if unable to find an icon with matching name
      * @default null
@@ -58,15 +57,12 @@ export type IconBaseProps = SharedProps &
     style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
   };
 
-const borderedSizeMap: {
-  [key in IconSize]: IconSize;
-} = {
-  xs: 'xs',
-  s: 'xs',
-  m: 'xs',
-  l: 's',
+export type IconProps = IconBaseProps & {
+  styles?: {
+    root?: StyleProp<ViewStyle>;
+    icon?: StyleProp<TextStyle>;
+  };
 };
-export type IconProps = IconBaseProps;
 
 export const getIconSourceSize = (iconSize: number): IconSourcePixelSize => {
   if (iconSize <= 12) return 12;
@@ -78,10 +74,10 @@ export const Icon = memo(function Icon({
   accessibilityLabel,
   accessibilityHint,
   animated = false,
-  bordered = false,
   color = 'fgPrimary',
   dangerouslySetColor,
   style,
+  styles,
   fallback = null,
   name,
   size = 'm',
@@ -101,15 +97,13 @@ export const Icon = memo(function Icon({
   const { fontScale } = useWindowDimensions();
 
   // Scale according to device a11y font size settings
-  const containerSize = theme.iconSize[size] * fontScale;
-  const sourceSize = getIconSourceSize(containerSize);
-  const borderedContainerSize = theme.iconSize[borderedSizeMap[size]] * fontScale;
-  const iconSize = bordered ? borderedContainerSize : containerSize;
+  const iconSize = theme.iconSize[size] * fontScale;
+  const sourceSize = getIconSourceSize(iconSize);
 
   const iconColor = theme.color[color];
   const finalColor = dangerouslySetColor ?? iconColor;
 
-  const boxStyles = useMemo(
+  const rootStyle = useMemo(
     () => [
       {
         paddingTop: theme.space[paddingTop ?? paddingY ?? padding ?? 0],
@@ -118,6 +112,7 @@ export const Icon = memo(function Icon({
         paddingStart: theme.space[paddingStart ?? paddingX ?? padding ?? 0],
       },
       style,
+      styles?.root,
     ],
     [
       style,
@@ -129,6 +124,7 @@ export const Icon = memo(function Icon({
       paddingEnd,
       paddingBottom,
       paddingStart,
+      styles?.root,
     ],
   );
 
@@ -186,16 +182,19 @@ export const Icon = memo(function Icon({
       ? uiIconNameNoSuffixBase
       : undefined;
 
-  const fontStyles = useMemo(
-    () => ({
-      fontFamily: 'CoinbaseIcons',
-      fontSize: iconSize,
-      height: iconSize,
-      width: iconSize,
-      lineHeight: iconSize,
-      color: finalColor,
-    }),
-    [finalColor, iconSize],
+  const iconStyle = useMemo(
+    () => [
+      {
+        fontFamily: 'CoinbaseIcons',
+        fontSize: iconSize,
+        height: iconSize,
+        width: iconSize,
+        lineHeight: iconSize,
+        color: finalColor,
+      },
+      styles?.icon,
+    ],
+    [finalColor, iconSize, styles?.icon],
   );
 
   if (iconName === undefined) {
@@ -209,27 +208,17 @@ export const Icon = memo(function Icon({
   const glyph = glyphMap[iconName as keyof typeof glyphMap];
 
   return (
-    <Box animated={animated} style={boxStyles} testID={testID}>
-      <Box alignItems="center" height={containerSize} justifyContent="center" width={containerSize}>
-        <TextComponent
-          accessibilityHint={accessibilityHint}
-          accessibilityLabel={accessibilityLabel}
-          accessibilityRole="image"
-          accessible={!!accessibilityLabel}
-          allowFontScaling={false}
-          style={fontStyles as TextStyle}
-        >
-          {glyph}
-        </TextComponent>
-        {bordered && (
-          <IconOutline
-            animated={animated}
-            color={iconColor}
-            size={containerSize}
-            sourceSize={sourceSize}
-          />
-        )}
-      </Box>
+    <Box animated={animated} style={rootStyle} testID={testID}>
+      <TextComponent
+        accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
+        accessibilityRole="image"
+        accessible={!!accessibilityLabel}
+        allowFontScaling={false}
+        style={iconStyle}
+      >
+        {glyph}
+      </TextComponent>
     </Box>
   );
 });

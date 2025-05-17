@@ -8,7 +8,7 @@ import type { Theme } from '../core/theme';
 
 type NegativeSpace = TypeOrNumber<'0' | `-${Exclude<ThemeVars.Space, 0>}`>;
 
-// TO DO: Refactor DimensionValue to ViewStyle['width'] etc
+// TO DO: If possible, refactor DimensionValue to ViewStyle['width'] etc
 export type StyleProps = {
   color?: ThemeVars.Color;
   background?: ThemeVars.Color;
@@ -153,7 +153,7 @@ export const getStyles = (styleProps: StyleProps, theme: Theme) => {
         style[styleProp as keyof typeof style] = value as any;
       }
       // If it is themed and it is margin* prop
-      else if (styleProp.includes('margin')) {
+      else if (styleProp.startsWith('margin')) {
         style[styleProp as keyof typeof style] = -(
           theme[themedStyleProps[styleProp as keyof typeof themedStyleProps]] as any
         )[-value as any] as any;
@@ -171,7 +171,7 @@ export const getStyles = (styleProps: StyleProps, theme: Theme) => {
           style[propAlias as keyof typeof style] = value as any;
         }
         // If it is themed and it is margin* prop
-        else if (styleProp.includes('margin')) {
+        else if (styleProp.startsWith('margin')) {
           style[propAlias as keyof typeof style] = -(
             theme[themedStyleProps[styleProp as keyof typeof themedStyleProps]] as any
           )[-value as any] as any;

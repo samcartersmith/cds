@@ -21,7 +21,7 @@ import { Haptics } from '../utils/haptics';
 
 import { useControlMotionProps } from './useControlMotionProps';
 
-export type ControlIconProps = {
+export type ControlIconProps = SharedProps & {
   pressed: boolean;
   checked?: boolean;
   indeterminate?: boolean;
@@ -29,7 +29,7 @@ export type ControlIconProps = {
   backgroundColor: ThemeVars.Color;
   animatedScaleValue: Animated.Value;
   animatedOpacityValue: Animated.Value;
-} & SharedProps;
+};
 
 export type ControlBaseProps<T extends string> = Omit<
   PressableProps,
@@ -105,11 +105,8 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   const pressDisabled = disabled || readOnly;
 
   useEffect(() => {
-    if (isMounted.current) {
-      animation.start();
-    } else {
-      isMounted.current = true;
-    }
+    if (isMounted.current) animation.start();
+    else isMounted.current = true;
   }, [checked, indeterminate, animation]);
 
   const handlePress = useCallback(() => {
@@ -117,16 +114,6 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     onChange?.(value);
     Keyboard.dismiss();
   }, [onChange, value]);
-
-  const controlIconProps = {
-    checked,
-    indeterminate,
-    backgroundColor: checked || indeterminate ? ('bgPrimary' as const) : ('bg' as const),
-    disabled: pressDisabled,
-    animatedScaleValue,
-    animatedOpacityValue,
-    testID,
-  };
 
   const iconWrapperStyles: ViewStyle = useMemo(
     () => ({
@@ -147,67 +134,103 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   );
 
   const getLabelStyle = useCallback(
-    (state: PressableStateCallbackType) => {
-      return {
-        color: animatedBoxValue.interpolate({
-          inputRange: [0, 1],
-          outputRange: [theme.color.fgMuted, theme.color.fg],
-        }),
-        // Prevent text element from expanding beyond available width.
-        flexShrink: 1,
-        opacity: state.pressed ? opacityPressed : pressDisabled ? accessibleOpacityDisabled : 1,
-      };
-    },
+    (state: PressableStateCallbackType) => ({
+      color: animatedBoxValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [theme.color.fgMuted, theme.color.fg],
+      }),
+      // Prevent text element from expanding beyond available width.
+      flexShrink: 1,
+      opacity: state.pressed ? opacityPressed : pressDisabled ? accessibleOpacityDisabled : 1,
+    }),
     [animatedBoxValue, pressDisabled, theme.color.fg, theme.color.fgMuted],
+  );
+
+  const accessibilityActions = useMemo(() => [{ name: 'activate' }], []);
+
+  const accessibilityState = useMemo(
+    () => ({
+      disabled: pressDisabled,
+      checked: Boolean(checked || indeterminate),
+    }),
+    [pressDisabled, checked, indeterminate],
+  );
+
+  const handleAccessibilityAction = useCallback(
+    (event: AccessibilityActionEvent) => {
+      if (event.nativeEvent.actionName === 'activate') handlePress();
+    },
+    [handlePress],
+  );
+
+  const controlIcon = useCallback(
+    ({ pressed }: { pressed: boolean }) => {
+      /**
+       * If the control has label, the label's lineHeight doesn't match the icon size. We need to
+       * wrap the icon with a container that match the lineHeight of the label typography and
+       * center the icon inside the wrapper so that the icon will be aligned properly with the
+       * first line of the label text.
+       */
+      const iconElement = (
+        <ControlIcon
+          animatedOpacityValue={animatedOpacityValue}
+          animatedScaleValue={animatedScaleValue}
+          backgroundColor={checked || indeterminate ? 'bgPrimary' : 'bg'}
+          checked={checked}
+          disabled={pressDisabled}
+          indeterminate={indeterminate}
+          pressed={pressed}
+          testID={testID}
+        />
+      );
+
+      if (!label) return iconElement;
+      return (
+        <>
+          <View style={iconWrapperStyles}>{iconElement}</View>
+          <Text
+            animated
+            color={checked || indeterminate ? 'fg' : 'fgMuted'}
+            font="body"
+            style={getLabelStyle({ pressed })}
+            testID={`${testID}Label`}
+          >
+            {label}
+          </Text>
+        </>
+      );
+    },
+    [
+      ControlIcon,
+      animatedOpacityValue,
+      animatedScaleValue,
+      checked,
+      getLabelStyle,
+      iconWrapperStyles,
+      indeterminate,
+      label,
+      pressDisabled,
+      testID,
+    ],
   );
 
   return (
     <Pressable
       ref={ref}
       accessible
-      accessibilityActions={[{ name: 'activate' }]}
+      accessibilityActions={accessibilityActions}
       accessibilityHint={accessibilityHint}
       accessibilityLabel={accessibilityLabel}
       accessibilityRole={accessibilityRole}
-      accessibilityState={{
-        disabled: pressDisabled,
-        checked: Boolean(checked || indeterminate),
-      }}
+      accessibilityState={accessibilityState}
       disabled={pressDisabled}
       hitSlop={hitSlop}
-      onAccessibilityAction={useCallback(
-        (event: AccessibilityActionEvent) => {
-          if (event.nativeEvent.actionName === 'activate') {
-            handlePress();
-          }
-        },
-        [handlePress],
-      )}
+      onAccessibilityAction={handleAccessibilityAction}
       onPress={handlePress}
       style={pressableStyle}
       {...props}
     >
-      {({ pressed }) =>
-        // If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text.
-        label ? (
-          <>
-            <View style={iconWrapperStyles}>
-              <ControlIcon {...controlIconProps} pressed={pressed} />
-            </View>
-            <Text
-              animated
-              color={checked || indeterminate ? 'fg' : 'fgMuted'}
-              font="body"
-              style={getLabelStyle({ pressed })}
-              testID={`${testID}Label`}
-            >
-              {label}
-            </Text>
-          </>
-        ) : (
-          <ControlIcon {...controlIconProps} pressed={pressed} />
-        )
-      }
+      {controlIcon}
     </Pressable>
   );
   // Make forwardRef result function stay generic function type

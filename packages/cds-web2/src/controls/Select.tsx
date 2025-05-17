@@ -146,7 +146,6 @@ export const Select = memo(
             content={children}
             contentPosition={contentPosition}
             disablePortal={disablePortal}
-            // @ts-expect-error TODO: support string values for dimensions in layout components
             maxWidth="95vw"
             onChange={onChange}
             onCloseMenu={onCloseMenu}

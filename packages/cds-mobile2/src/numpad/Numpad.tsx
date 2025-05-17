@@ -181,15 +181,6 @@ const NumpadButton = memo(function NumpadButton({
     return `numpad-${value}`;
   }, [value]);
 
-  // TO DO: delete this and implement CSS vars
-  const contentStyles = useMemo(
-    () => ({
-      ...styles.content,
-      height: 48,
-    }),
-    [],
-  );
-
   const pressableStyles = useMemo(
     () => ({
       ...styles.button,
@@ -215,7 +206,7 @@ const NumpadButton = memo(function NumpadButton({
       style={pressableStyles}
       testID={testID}
     >
-      <View style={contentStyles}>{content}</View>
+      <View style={styles.content}>{content}</View>
     </Pressable>
   );
 });

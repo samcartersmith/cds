@@ -311,6 +311,7 @@ export const Pressable = memo(
           right={right}
           rowGap={rowGap}
           style={!noScaleOnPress ? scaleOnPressStyle : undefined}
+          textAlign={textAlign}
           textDecorationColor={textDecorationColor}
           textDecorationLine={textDecorationLine}
           textDecorationStyle={textDecorationStyle}

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 8.0.0-rc.4 (5/16/2025 PST)
+
+#### 🚀 Updates
+
+- Release CDS v8 rc.4
+
 ## 8.0.0-rc.3 (5/13/2025 PST)
 
 #### 🚀 Updates

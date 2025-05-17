@@ -27,20 +27,6 @@ import {
   interactablePressedOpacity,
 } from './interactableCSSProperties';
 
-const focusRingStyle = css`
-  position: relative;
-  /* if we use the focus ring we need to turn off the browser stylesheet outline */
-  &:focus {
-    outline: none;
-  }
-  &:focus-visible {
-    outline-style: solid;
-    outline-width: 2px;
-    outline-offset: 2px;
-    outline-color: var(--color-bgPrimary);
-  }
-`;
-
 const baseStyle = css`
   appearance: none;
   cursor: pointer;
@@ -80,6 +66,17 @@ const baseStyle = css`
     touch-action: none;
     background-color: var(${interactableDisabledBackground});
     border-color: var(${interactableDisabledBorderColor});
+  }
+
+  /* Disable default focus ring before adding custom focus ring styles */
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+    outline-color: var(--color-bgPrimary);
   }
 `;
 
@@ -270,7 +267,6 @@ export const Interactable: InteractableComponent = forwardRef<
         borderWidth={borderWidth}
         className={cx(
           baseStyle,
-          focusRingStyle,
           block && blockStyle,
           transparentWhileInactive && transparentWhileInactiveStyle,
           transparentWhilePressed && transparentActiveStyle,

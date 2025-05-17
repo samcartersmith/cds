@@ -51,7 +51,21 @@ export type IconBaseProps = SharedProps &
     iconType?: string;
   };
 
-export type IconProps = IconBaseProps & BoxProps<BoxDefaultElement>;
+export type IconProps = IconBaseProps &
+  BoxProps<BoxDefaultElement> & {
+    styles?: {
+      /** TO DO: Document this prop */
+      root?: React.CSSProperties;
+      /** TO DO: Document this prop */
+      icon?: React.CSSProperties;
+    };
+    classNames?: {
+      /** TO DO: Document this prop */
+      root?: string;
+      /** TO DO: Document this prop */
+      icon?: string;
+    };
+  };
 
 export const iconStyles = css`
   color: currentColor;
@@ -129,7 +143,10 @@ export const Icon = memo(
         name,
         size = 'm',
         testID,
+        className,
+        classNames,
         style,
+        styles,
         active,
         iconType,
         ...props
@@ -138,15 +155,16 @@ export const Icon = memo(
     ) => {
       const theme = useTheme();
 
-      const containerSize = theme.iconSize[size];
-      const sourceSize = getIconSourceSize(containerSize);
+      const iconSize = theme.iconSize[size];
+      const sourceSize = getIconSourceSize(iconSize);
 
-      const inlineStyle = useMemo(
+      const rootStyle = useMemo(
         () => ({
           ...(dangerouslySetColor ? { color: dangerouslySetColor } : {}),
           ...style,
+          ...styles?.root,
         }),
-        [dangerouslySetColor, style],
+        [dangerouslySetColor, style, styles?.root],
       );
 
       const iconActiveString = active ? 'active' : 'inactive';
@@ -215,30 +233,35 @@ export const Icon = memo(
 
       return (
         <Box
+          className={cx(className, classNames?.root)}
           color={color}
           position="relative"
-          style={inlineStyle}
+          style={rootStyle}
           testID={testID}
           {...(props satisfies ValidateProps<
             typeof props,
             Omit<IconProps, keyof BoxProps<BoxDefaultElement>>
           >)}
         >
-          <div className={cx(sizeStyles[size], bordered && borderedSizeStyles[size])}>
-            <span
-              ref={ref}
-              aria-hidden={!accessibilityLabel}
-              aria-label={accessibilityLabel}
-              className={iconStyles}
-              data-icon-name={name}
-              data-testid={glyphTestId}
-              role="img"
-              title={accessibilityLabel}
-              translate="no"
-            >
-              {glyph}
-            </span>
-          </div>
+          <span
+            ref={ref}
+            aria-hidden={!accessibilityLabel}
+            aria-label={accessibilityLabel}
+            className={cx(
+              iconStyles,
+              sizeStyles[size],
+              bordered && borderedSizeStyles[size],
+              classNames?.icon,
+            )}
+            data-icon-name={name}
+            data-testid={glyphTestId}
+            role="img"
+            style={styles?.icon}
+            title={accessibilityLabel}
+            translate="no"
+          >
+            {glyph}
+          </span>
         </Box>
       );
     },

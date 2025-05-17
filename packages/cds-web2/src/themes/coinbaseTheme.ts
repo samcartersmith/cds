@@ -1,5 +1,7 @@
 import { type ThemeConfig } from '../core/theme';
 
+export const coinbaseThemeId = 'coinbase';
+
 const lightSpectrum = {
   blue0: '245,248,255',
   blue5: '211,225,255',
@@ -293,6 +295,7 @@ const darkSpectrum = {
 } as const satisfies ThemeConfig['darkSpectrum'];
 
 export const coinbaseTheme = {
+  id: coinbaseThemeId,
   lightSpectrum,
   darkSpectrum,
   lightColor: {

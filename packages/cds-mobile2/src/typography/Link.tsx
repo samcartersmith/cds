@@ -3,13 +3,11 @@ import { GestureResponderEvent } from 'react-native';
 import { SharedProps } from '@cbhq/cds-common2';
 
 import { useWebBrowserOpener } from '../hooks/useWebBrowserOpener';
-import { PressableBaseProps } from '../system/Pressable';
 
-import { Text } from './Text';
+import { Text, type TextBaseProps, type TextProps } from './Text';
 
-// TO DO: This component should render a Pressable instead of Text!
-export type LinkBaseProps = PressableBaseProps &
-  SharedProps & {
+export type LinkBaseProps = SharedProps &
+  TextBaseProps & {
     /** URL that this link goes to when pressed. */
     to?: string;
     /** Use monospace font family. */
@@ -41,35 +39,34 @@ export type LinkBaseProps = PressableBaseProps &
     readerMode?: boolean;
   };
 
-export type LinkProps = LinkBaseProps;
+export type LinkProps = LinkBaseProps & TextProps;
 
 export const Link = memo(
   ({
-    accessibilityLabel,
     children,
     to,
     color = 'fgPrimary',
-    testID,
-    onPress,
     font = 'inherit',
+    onPress,
     forceOpenOutsideApp = false,
     preventRedirectionIntoApp = false,
     readerMode = false,
-    mono,
     underline,
+    accessibilityLabel,
+    testID,
+    ...props
   }: LinkProps) => {
     const openUrl = useWebBrowserOpener();
 
     const openUrlOnPress = useCallback(
       (event: GestureResponderEvent) => {
         onPress?.(event);
-        if (to !== undefined) {
-          void openUrl(to, {
-            forceOpenOutsideApp,
-            preventRedirectionIntoApp,
-            readerMode,
-          });
-        }
+        if (to === undefined) return;
+        void openUrl(to, {
+          forceOpenOutsideApp,
+          preventRedirectionIntoApp,
+          readerMode,
+        });
       },
       [openUrl, to, onPress, forceOpenOutsideApp, preventRedirectionIntoApp, readerMode],
     );
@@ -81,10 +78,10 @@ export const Link = memo(
         accessibilityRole="link"
         color={color}
         font={font}
-        mono={mono}
         onPress={openUrlOnPress}
         testID={testID}
         underline={underline}
+        {...props}
       >
         {children}
       </Text>

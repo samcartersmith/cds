@@ -8,7 +8,8 @@ export const createThemeCssVars = (theme: Partial<Theme>) => {
 
   for (const key of themeKeys) {
     const themeVars = theme[key as keyof Theme];
-    if (!themeVars) continue;
+    if (!themeVars || key === 'id') continue;
+
     // Handle activeColorScheme separately
     if (key === 'activeColorScheme') {
       themeCss['--activeColorScheme'] = theme.activeColorScheme;

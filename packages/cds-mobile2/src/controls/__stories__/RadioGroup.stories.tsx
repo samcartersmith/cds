@@ -22,6 +22,9 @@ const RadioGroupScreen = () => {
 
       <Example inline title="States">
         <Radio checked>Selected</Radio>
+        <Radio checked disabled>
+          Disabled Selected
+        </Radio>
         <Radio disabled>Disabled</Radio>
         <Radio readOnly>Read Only</Radio>
         <Radio accessibilityLabel="radio with no label" />

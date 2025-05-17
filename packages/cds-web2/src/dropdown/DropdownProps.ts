@@ -25,15 +25,15 @@ export type DropdownProps = {
    * Width of input as a percentage string or number converted to pixels.
    * @default 100%
    * */
-  width?: `${number}%` | number;
+  width?: React.CSSProperties['width'];
   /** Minimum width of input as a percentage string or number converted to pixels. */
-  minWidth?: `${number}%` | number;
+  minWidth?: React.CSSProperties['minWidth'];
   /** Maximum width of input as a percentage string or number converted to pixels. */
-  maxWidth?: `${number}%` | number;
+  maxWidth?: React.CSSProperties['maxWidth'];
   /** Can optionally pass a maxHeight.
    * @default 300
    * */
-  maxHeight?: `${number}%` | number;
+  maxHeight?: React.CSSProperties['maxHeight'];
   /** Callback that fires when Dropdown is opened */
   onOpenMenu?: () => void;
   /** Callback that fires when Dropdown is closed */

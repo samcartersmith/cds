@@ -24,17 +24,12 @@ const options = {
 
 const CheckboxScreen = () => {
   const [checked, setChecked] = useState(false);
-  const toggleChecked = () => setChecked((prevChecked) => !prevChecked);
   return (
     <ExampleScreen>
       <Example inline title="Default">
-        {() => {
-          return (
-            <Checkbox checked={checked} onChange={toggleChecked}>
-              Default
-            </Checkbox>
-          );
-        }}
+        <Checkbox checked={checked} onChange={() => setChecked((prevChecked) => !prevChecked)}>
+          Default
+        </Checkbox>
       </Example>
 
       <Example inline title="States">

@@ -2,28 +2,50 @@ import type { Property } from 'csstype';
 import type { ColorScheme, ThemeVars } from '@cbhq/cds-common2/core/theme';
 
 export type ThemeConfig = {
+  /** A unique identifier for the theme. Must be a valid CSS class name. */
+  id?: string;
+  /** The light spectrum color values. */
   lightSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
+  /** The dark spectrum color values. */
   darkSpectrum?: { [key in ThemeVars.SpectrumColor]: string };
+  /** The light color palette. */
   lightColor?: { [key in ThemeVars.Color]: Property.Color };
+  /** The dark color palette. */
   darkColor?: { [key in ThemeVars.Color]: Property.Color };
+  /** The space values, used for margin and padding. */
   space: { [key in ThemeVars.Space]: number };
+  /** The icon size values. */
   iconSize: { [key in ThemeVars.IconSize]: number };
+  /** The avatar size values. */
   avatarSize: { [key in ThemeVars.AvatarSize]: number };
+  /** The border width values. */
   borderWidth: { [key in ThemeVars.BorderWidth]: number };
+  /** The border radius values. */
   borderRadius: { [key in ThemeVars.BorderRadius]: number };
+  /** The font family values. */
   fontFamily: { [key in ThemeVars.FontFamily]: Property.FontFamily };
+  /** The font family values for monospace fonts. */
   fontFamilyMono?: { [key in ThemeVars.FontFamily]: Property.FontFamily };
+  /** The font size values. */
   fontSize: { [key in ThemeVars.FontSize]: Property.FontSize };
+  /** The font weight values. */
   fontWeight: { [key in ThemeVars.FontWeight]: Property.FontWeight };
+  /** The line height values. */
   lineHeight: { [key in ThemeVars.LineHeight]: Property.LineHeight };
+  /** The text transform values. */
   textTransform: { [key in ThemeVars.TextTransform]: Property.TextTransform };
+  /** The shadow values. */
   shadow: { [key in ThemeVars.Shadow]: Property.BoxShadow };
+  /** The control size values. */
   controlSize: { [key in ThemeVars.ControlSize]: number };
 };
 
 export type Theme = ThemeConfig & {
+  /** The currently active color scheme for the parent ThemeProvider, either "light" or "dark". */
   activeColorScheme: ColorScheme;
+  /** The light or dark spectrum color values, as appropriate based on the activeColorScheme. */
   spectrum: { [key in ThemeVars.SpectrumColor]: string };
+  /** The light or dark color palette, as appropriate based on the activeColorScheme. */
   color: { [key in ThemeVars.Color]: Property.Color };
 };
 
@@ -48,7 +70,7 @@ export const styleVarPrefixes = {
   textTransform: 'textTransform',
   shadow: 'shadow',
   controlSize: 'controlSize',
-} as const satisfies Record<Exclude<keyof Theme, 'activeColorScheme'>, string>;
+} as const satisfies Record<Exclude<keyof Theme, 'id' | 'activeColorScheme'>, string>;
 
 /** Used to generate intellisense via ThemeCSSVars below. */
 type ThemeObjectCssVars = {

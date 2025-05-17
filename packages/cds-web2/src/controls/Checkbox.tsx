@@ -1,5 +1,5 @@
-import React, { forwardRef, memo } from 'react';
-import { css, cx } from '@linaria/core';
+import React, { forwardRef, memo, useMemo } from 'react';
+import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 
 import { useTheme } from '../hooks/useTheme';
@@ -8,9 +8,20 @@ import { Icon } from '../icons/Icon';
 import { Control, type ControlBaseProps } from './Control';
 import { useControlMotionProps } from './useControlMotionProps';
 
-const focusRingStyle = css`
+const checkboxStyle = css`
   position: relative;
-  /* if we use the focus ring we need to turn off the browser stylesheet outline */
+  width: var(--controlSize-checkboxSize);
+  height: var(--controlSize-checkboxSize);
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-style: solid;
+  border-width: var(--borderWidth-100);
+
+  /* Disable default focus ring before adding custom focus ring styles */
   &:focus {
     outline: none;
   }
@@ -22,50 +33,57 @@ const focusRingStyle = css`
   }
 `;
 
-const checkboxSize = 20; // TO DO: This should come from theme controlSize
-
-const checkbox = css`
-  width: ${checkboxSize}px;
-  height: ${checkboxSize}px;
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-style: solid;
-  border-width: var(--borderWidth-100);
-`;
-
 export type CheckboxProps<T extends string> = ControlBaseProps<T>;
 
 const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
-  { children, indeterminate, ...props }: CheckboxProps<T>,
+  { children, checked, indeterminate, ...props }: CheckboxProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
-  const { checked } = props;
+  const filled = checked || indeterminate;
+  const theme = useTheme();
+  const checkboxSize = theme.controlSize.checkboxSize;
+  const iconPadding = checkboxSize / 5;
+  const iconSize = checkboxSize - iconPadding;
+
   const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
-    checked: checked || indeterminate,
+    checked: filled,
   });
-  const { activeColorScheme } = useTheme();
+
+  const iconStyle = useMemo(
+    () => ({
+      icon: {
+        width: iconSize,
+        height: iconSize,
+        fontSize: iconSize,
+        opacity: filled ? 1 : 0,
+      } as const,
+    }),
+    [iconSize, filled],
+  );
 
   return (
     <Control
       ref={ref}
       aria-label={props.accessibilityLabel}
+      checked={checked}
       label={children}
       type="checkbox"
       {...props}
     >
       <motion.div
-        key={activeColorScheme}
-        className={cx(checkbox, focusRingStyle)}
-        data-filled={checked || indeterminate}
+        key={theme.activeColorScheme}
+        className={checkboxStyle}
+        data-filled={filled}
         role="presentation"
         {...outerContainerMotionProps}
       >
         <motion.div {...innerContainerMotionProps}>
-          <Icon color="fgInverse" name={checked ? 'checkmark' : 'minus'} size="s" />
+          <Icon
+            color="fgInverse"
+            name={checked ? 'checkmark' : 'minus'}
+            size="s"
+            styles={iconStyle}
+          />
         </motion.div>
       </motion.div>
     </Control>

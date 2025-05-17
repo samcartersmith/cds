@@ -1,4 +1,3 @@
-export const tileSize = 106;
 export const pictogramSize = 48;
 export const pictogramWrapperSize = 62;
 

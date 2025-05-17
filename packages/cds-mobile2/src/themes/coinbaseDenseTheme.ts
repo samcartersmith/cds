@@ -2,9 +2,12 @@ import type { ThemeConfig } from '../core/theme';
 
 import { coinbaseTheme } from './coinbaseTheme';
 
-/** @deprecated This theme was created to test backwards compatibility, it is not officially supported by CDS. */
+export const coinbaseDenseThemeId = 'coinbase-dense';
+
+/** @deprecated This theme was created to test backwards compatibility, it is not officially supported by CDS. Please copy it into your own repo and modify it as needed. Do not import it directly from CDS. */
 export const coinbaseDenseTheme = {
   ...coinbaseTheme,
+  id: coinbaseDenseThemeId,
   space: {
     '0': 0,
     '0.25': 2,

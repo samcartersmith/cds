@@ -5,7 +5,6 @@ import { getCircumference, getRadius } from '@cbhq/cds-common2/utils/circle';
 import { UseCounterParams } from '@cbhq/cds-common2/visualizations/useCounter';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
-import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/test';
 import { ProgressCircle } from '../ProgressCircle';
 
@@ -68,11 +67,11 @@ describe('ProgressCircle tests', () => {
     const circumference = getCircumference(getRadius(size, 4));
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toBeTruthy();
-    expect(innerCircle).toHaveAttribute('stroke-dashoffset', `${circumference}`);
+    expect(innerCircle).toHaveAttribute('stroke-dashoffset', circumference.toString());
 
-    expect(innerCircle).toHaveAttribute('stroke-dasharray', `${circumference}`);
+    expect(innerCircle).toHaveAttribute('stroke-dasharray', circumference.toString());
 
-    expect(innerCircle).toHaveAttribute('stroke', defaultTheme.lightColor.bgPrimary);
+    expect(innerCircle).toHaveAttribute('stroke', 'var(--color-bgPrimary)');
 
     expect(screen.getAllByText('0%')).toHaveLength(2);
   });
@@ -94,7 +93,7 @@ describe('ProgressCircle tests', () => {
 
     expect(innerCircle).toHaveAttribute('stroke-dasharray', `${circumference}`);
 
-    expect(innerCircle).toHaveAttribute('stroke', defaultTheme.lightColor.bgPrimary);
+    expect(innerCircle).toHaveAttribute('stroke', 'var(--color-bgPrimary)');
 
     expect(screen.getAllByText('50%')).toHaveLength(2);
   });
@@ -116,7 +115,7 @@ describe('ProgressCircle tests', () => {
     });
     expect(innerCircle).toHaveAttribute('stroke-dasharray', `${circumference}`);
 
-    expect(innerCircle).toHaveAttribute('stroke', defaultTheme.lightColor.bgPrimary);
+    expect(innerCircle).toHaveAttribute('stroke', 'var(--color-bgPrimary)');
 
     expect(screen.getAllByText('100%')).toHaveLength(2);
   });
@@ -154,6 +153,6 @@ describe('ProgressCircle tests', () => {
     );
 
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
-    expect(innerCircle).toHaveAttribute('stroke', defaultTheme.lightColor.bgPositive);
+    expect(innerCircle).toHaveAttribute('stroke', 'var(--color-bgPositive)');
   });
 });

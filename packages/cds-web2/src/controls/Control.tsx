@@ -87,10 +87,10 @@ export type ControlProps<T extends string> = ControlBaseProps<T> & {
 const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   {
     type,
-    checked = false,
-    disabled = false,
-    readOnly = false,
-    required = false,
+    checked,
+    disabled,
+    readOnly,
+    required,
     value,
     children,
     label,
@@ -113,44 +113,13 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
   }
   // Setup a11y IDs
   const [id1, id2] = usePrefixedId(['trigger', 'collapsible']);
-  const labelId = useMemo(() => ariaLabelledby ?? id1, [ariaLabelledby, id1]);
-  const inputId = useMemo(() => htmlProps.id ?? id2, [htmlProps.id, id2]);
+  const labelId = ariaLabelledby ?? id1;
+  const inputId = htmlProps.id ?? id2;
 
   const internalInputRef = useRef<HTMLInputElement>();
   const inputRef = useMergeRefs(ref, internalInputRef);
 
-  const inputProps = useMemo(
-    () => ({
-      ref: inputRef,
-      type,
-      checked,
-      disabled,
-      readOnly,
-      required,
-      value,
-      id: inputId,
-      'aria-labelledby': labelId,
-      'aria-checked': checked,
-      'aria-required': type !== 'checkbox' ? required : undefined,
-      'data-testid': testID,
-      ...htmlProps,
-    }),
-    [
-      checked,
-      disabled,
-      htmlProps,
-      inputId,
-      inputRef,
-      labelId,
-      readOnly,
-      required,
-      testID,
-      type,
-      value,
-    ],
-  );
-
-  const iconNode = useMemo(
+  const iconElement = useMemo(
     () => (
       <Interactable
         transparentWhileInactive
@@ -164,7 +133,23 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         style={iconStyle}
         testID={testID ? `${testID}-parent` : undefined}
       >
-        <input className={cx(inputBaseStyle, pointerStyle)} {...inputProps} />
+        {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
+        <input
+          ref={inputRef}
+          aria-checked={checked}
+          aria-labelledby={labelId}
+          aria-required={type !== 'checkbox' ? required : undefined}
+          checked={checked}
+          className={cx(inputBaseStyle, pointerStyle)}
+          data-testid={testID}
+          disabled={disabled}
+          id={inputId}
+          readOnly={readOnly}
+          required={required}
+          type={type}
+          value={value}
+          {...htmlProps}
+        />
         {children}
       </Interactable>
     ),
@@ -176,19 +161,32 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       checked,
       children,
       disabled,
+      htmlProps,
       iconStyle,
-      inputProps,
+      inputId,
+      inputRef,
+      labelId,
       readOnly,
+      required,
       testID,
+      type,
+      value,
     ],
   );
-  const InternalLabel = useMemo(
-    () => (
+
+  const controlElement = useMemo(() => {
+    /**
+     * If the control has label, the label's lineHeight doesn't match the icon size. We need to
+     * wrap the icon with a container that match the lineHeight of the label typography and
+     * center the icon inside the wrapper so that the icon will be aligned properly with the
+     * first line of the label text.
+     */
+    if (!label) return iconElement;
+    return (
       <label className={pointerStyle} htmlFor={inputId} style={labelStyle}>
         <Box alignItems="flex-start" flexDirection={isRtl() ? 'row-reverse' : 'row'} gap={1}>
-          {/* If the control has label, the label's lineHeight doesn't match the icon size. We need to wrap the icon with a container that match the lineHeight of the label typography and center the icon inside the wrapper so that the icon will be aligned properly with the first line of the label text. */}
           <Box alignItems="center" height="var(--lineHeight-body)" role="presentation">
-            {iconNode}
+            {iconElement}
           </Box>
           <Text
             color={checked ? 'fg' : 'fgMuted'}
@@ -200,12 +198,11 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
           </Text>
         </Box>
       </label>
-    ),
-    [checked, disabled, iconNode, inputId, label, labelId, readOnly, labelStyle],
-  );
+    );
+  }, [iconElement, checked, disabled, inputId, label, labelId, readOnly, labelStyle]);
 
   // If no label is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.
-  return label ? InternalLabel : iconNode;
+  return controlElement;
 }) as <T extends string>(
   props: ControlProps<T> & { ref?: React.Ref<HTMLInputElement> },
 ) => React.ReactElement;

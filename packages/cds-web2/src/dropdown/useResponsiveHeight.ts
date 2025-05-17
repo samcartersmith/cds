@@ -11,7 +11,7 @@ import { getBrowserGlobals, isSSR } from '../utils/browser';
 type UseResponsiveHeightParams = {
   gap?: ThemeVars.Space;
   dropdownBounds: RectReadOnly;
-  maxHeight: number | `${number}%` | undefined;
+  maxHeight?: React.CSSProperties['maxHeight'];
   visible: boolean;
   placement: PopoverContentPositionConfig['placement'];
 };

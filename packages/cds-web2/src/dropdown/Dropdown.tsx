@@ -156,12 +156,10 @@ const PopoverDropdown = memo(
         return (
           <DropdownContent
             ref={dropdownRef}
-            // @ts-expect-error TODO: support string values for dimensions in layout components
             maxHeight={dropdownHeight}
             maxWidth={maxWidth}
             minWidth={minWidth}
             placement={combinedContentPosition.placement}
-            value={value}
             width={block ? subjectBounds.width : width}
           >
             {content}
@@ -173,7 +171,6 @@ const PopoverDropdown = memo(
         maxWidth,
         minWidth,
         combinedContentPosition.placement,
-        value,
         block,
         subjectBounds.width,
         width,

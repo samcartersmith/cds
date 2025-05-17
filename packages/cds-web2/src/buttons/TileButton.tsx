@@ -1,6 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { gutter } from '@cbhq/cds-common2/tokens/sizing';
-import { pictogramScaleMultiplier, tileSize } from '@cbhq/cds-common2/tokens/tile';
+import { pictogramScaleMultiplier } from '@cbhq/cds-common2/tokens/tile';
 import { IllustrationPictogramNames } from '@cbhq/cds-common2/types';
 import { isDevelopment } from '@cbhq/cds-utils';
 
@@ -53,24 +53,23 @@ export const TileButton: TileButtonComponent = memo(
         );
       }
 
-      const content = useMemo(() => {
-        return (
+      const content = useMemo(
+        () =>
           children || (
             <Pictogram
               name={pictogram as PictogramName}
               scaleMultiplier={pictogramScaleMultiplier}
             />
-          )
-        );
-      }, [children, pictogram]);
+          ),
+        [children, pictogram],
+      );
 
       return (
         <div
-          // TO DO: tileSize should come from ThemeVars.ControlSize
           style={{
-            height: `${tileSize}px`,
+            height: 'var(--controlSize-tileSize)',
             /* add gutter to account for the border added by Pressable */
-            width: `${tileSize + gutter}px`,
+            width: `calc(var(--controlSize-tileSize) + ${gutter}px)`,
           }}
         >
           <Pressable
