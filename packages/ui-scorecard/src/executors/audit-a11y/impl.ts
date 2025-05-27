@@ -4,6 +4,8 @@ import {
   ComponentType,
   init,
   logEvent,
+  logMetric,
+  MetricType,
   PlatformName,
 } from '@cbhq/client-analytics';
 import { color, createTask, logError, logVerbose } from '@cbhq/mono-tasks';
@@ -124,6 +126,25 @@ async function initializeAnalytics(options: TestOptions) {
   });
 }
 
+function sendMetrics(
+  metricName: string,
+  options: TestOptions,
+  codeOwner: string | undefined,
+  value: number,
+) {
+  logMetric({
+    metricName,
+    metricType: MetricType.count,
+    tags: {
+      page_key: 'accessibility_score',
+      repository: options.eventProjectName ?? 'unknown',
+      codeOwner: codeOwner ?? 'unknown',
+      platformType: options.platform,
+    },
+    value,
+  });
+}
+
 async function sendScores(
   options: TestOptions,
   {
@@ -168,6 +189,23 @@ async function sendScores(
       platformType: options.platform,
     },
     AnalyticsEventImportance.high,
+  );
+
+  sendMetrics('a11yScore', options, codeOwner, a11yScore ?? 0);
+  sendMetrics('automatedA11yScore', options, codeOwner, automatedA11yScore);
+  sendMetrics('jestScore', options, codeOwner, jestScore ?? 0);
+  sendMetrics('filteredJestScore', options, codeOwner, filteredJestScore ?? 0);
+  sendMetrics(
+    'totalNumberOfPassingAccessibleTests',
+    options,
+    codeOwner,
+    totalNumberOfPassingAccessibleTests,
+  );
+  sendMetrics(
+    'totalNumberOfComponentsWithTest',
+    options,
+    codeOwner,
+    totalNumberOfComponentsWithTest,
   );
 
   // delay that gives enough time to send event

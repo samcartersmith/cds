@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.5 (5/15/2025 PST)
+
+#### 🚀 Updates
+
+- Log metric data for a11y scores to Datadog. [[#4029](https://github.cbhq.net/frontend/cds/pull/4029)]
+
 ## 0.2.4 (3/26/2025 PST)
 
 #### 🐞 Fixes
