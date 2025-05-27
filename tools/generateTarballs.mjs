@@ -1,26 +1,29 @@
-/* eslint-disable no-console */
 import { execSync } from 'child_process';
 import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync } from 'fs';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import inquirer from 'inquirer';
 import { join, resolve } from 'path';
-
-const projects = [
-  'common',
-  'fonts',
-  'icons',
-  'illustrations',
-  'lottie-files',
-  'mobile',
-  'mobile-visualization',
-  'utils',
-  'web',
-  'web-visualization',
-];
 
 const tarballsDir = 'tarballs';
 
 async function selectProjects() {
+  const packagesDir = resolve(process.cwd(), 'packages');
+  const projects = readdirSync(packagesDir, { withFileTypes: true })
+    .filter((dirent) => {
+      if (dirent.isDirectory()) {
+        // Check if package.json exists in this directory
+        const packageJsonPath = join(packagesDir, dirent.name, 'package.json');
+        return existsSync(packageJsonPath);
+      }
+      return false;
+    })
+    .map((dirent) => dirent.name)
+    .sort();
+
+  if (projects.length === 0) {
+    console.log('No projects found in the packages directory. Exiting...');
+    process.exit(0);
+  }
+
   const choices = await Promise.all(
     projects.map(async (project) => {
       const packageJsonPath = join('packages', project, 'package.json');
@@ -58,7 +61,7 @@ async function main() {
   const selectedProjects = await selectProjects();
 
   if (selectedProjects.length === 0) {
-    console.log('No projects selected. Exiting...');
+    console.log('No projects selected by the user. Exiting...');
     process.exit(0);
   }
 
