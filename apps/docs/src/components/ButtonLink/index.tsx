@@ -2,7 +2,7 @@ import React from 'react';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import Link from '@docusaurus/Link';
 import { cx } from '@linaria/core';
-import { Button, type ButtonProps } from '@cbhq/cds-web2/buttons';
+import { Button, type ButtonProps } from '@cbhq/cds-web/buttons';
 
 import styles from './styles.module.css';
 

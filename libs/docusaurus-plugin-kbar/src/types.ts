@@ -1,5 +1,5 @@
 import type { SetOptional } from 'type-fest';
-import type { IconName, PictogramName, SpotSquareName } from '@cbhq/cds-common2/types';
+import type { IconName, PictogramName, SpotSquareName } from '@cbhq/cds-common/types';
 
 export type Plugin = import('@docusaurus/types').Plugin;
 export type DocsPluginOptions = import('@docusaurus/plugin-content-docs').PluginOptions;

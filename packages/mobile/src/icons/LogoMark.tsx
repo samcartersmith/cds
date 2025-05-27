@@ -1,0 +1,22 @@
+import React, { memo } from 'react';
+import { Path, Svg } from 'react-native-svg';
+import { LogoMarkParams, useLogoMark } from '@cbhq/cds-common/hooks/useLogo';
+
+import { useTheme } from '../hooks/useTheme';
+
+export const LogoMark = memo(({ size, foreground }: Omit<LogoMarkParams, 'colorScheme'>) => {
+  const { activeColorScheme } = useTheme();
+  const { viewBox, width, height, path, color } = useLogoMark({
+    size,
+    foreground,
+    colorScheme: activeColorScheme,
+  });
+
+  return (
+    <Svg height={height} viewBox={viewBox} width={width}>
+      <Path d={path} fill={color} />
+    </Svg>
+  );
+});
+
+LogoMark.displayName = 'LogoMark';

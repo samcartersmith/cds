@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import MDXComponents from '@theme/MDXComponents';
 import type { Props } from '@theme/MDXContent';
-import { VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 
 export default function MDXContent({ children }: Props): ReactNode {
   return (

@@ -7,7 +7,7 @@ import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarItem, { type Props as NavbarItemConfig } from '@theme/NavbarItem';
 import SearchBar from '@theme/SearchBar';
-import { HStack } from '@cbhq/cds-web2/layout';
+import { HStack } from '@cbhq/cds-web/layout';
 
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved

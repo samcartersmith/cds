@@ -1,9 +1,9 @@
 import React, { createContext } from 'react';
-import { useToggler } from '@cbhq/cds-common2';
-import { Modal } from '@cbhq/cds-web2/overlays/modal/Modal';
-import { ModalBody, ModalBodyProps } from '@cbhq/cds-web2/overlays/modal/ModalBody';
-import { ModalHeader } from '@cbhq/cds-web2/overlays/modal/ModalHeader';
-import { Link, type LinkBaseProps } from '@cbhq/cds-web2/typography/Link';
+import { useToggler } from '@cbhq/cds-common';
+import { Modal } from '@cbhq/cds-web/overlays/modal/Modal';
+import { ModalBody, ModalBodyProps } from '@cbhq/cds-web/overlays/modal/ModalBody';
+import { ModalHeader } from '@cbhq/cds-web/overlays/modal/ModalHeader';
+import { Link, type LinkBaseProps } from '@cbhq/cds-web/typography/Link';
 
 export type ModalLinkProps = {
   children: string;

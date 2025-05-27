@@ -3,8 +3,8 @@ import { FooterLinkItem, useThemeConfig } from '@docusaurus/theme-common';
 import { FooterLink } from '@site/src/components/FooterLink';
 import CDSLogo from '@site/static/img/logos/cds_logo.svg';
 import CDSLogoDark from '@site/static/img/logos/cds_logo_dark.svg';
-import { Box, HStack, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography';
+import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography';
 
 import { useDocsTheme } from '../Layout/Provider/UnifiedThemeContext';
 

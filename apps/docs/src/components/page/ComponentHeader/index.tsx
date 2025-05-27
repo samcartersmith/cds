@@ -2,15 +2,15 @@ import React, { memo, useCallback } from 'react';
 import DocusaurusLink from '@docusaurus/Link';
 import { DefaultBanner } from '@site/src/components/page/ComponentBanner/DefaultBanner';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
-import { IconButton } from '@cbhq/cds-web2/buttons/IconButton';
-import { Grid } from '@cbhq/cds-web2/layout';
-import { Divider } from '@cbhq/cds-web2/layout/Divider';
-import { HStack } from '@cbhq/cds-web2/layout/HStack';
-import { VStack } from '@cbhq/cds-web2/layout/VStack';
-import { Tooltip } from '@cbhq/cds-web2/overlays/tooltip/Tooltip';
-import { useToast } from '@cbhq/cds-web2/overlays/useToast';
-import { Link } from '@cbhq/cds-web2/typography/Link';
-import { Text } from '@cbhq/cds-web2/typography/Text';
+import { IconButton } from '@cbhq/cds-web/buttons/IconButton';
+import { Grid } from '@cbhq/cds-web/layout';
+import { Divider } from '@cbhq/cds-web/layout/Divider';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { VStack } from '@cbhq/cds-web/layout/VStack';
+import { Tooltip } from '@cbhq/cds-web/overlays/tooltip/Tooltip';
+import { useToast } from '@cbhq/cds-web/overlays/useToast';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { Text } from '@cbhq/cds-web/typography/Text';
 
 import { useDocsTheme } from '../../../theme/Layout/Provider/UnifiedThemeContext';
 

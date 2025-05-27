@@ -8,12 +8,12 @@
       "name": "cds-vscode-plugin:client",
       "type": "extensionHost",
       "request": "launch",
-      "runtimeExecutable": "${execPath}/packages/cds-vscode-plugin",
+      "runtimeExecutable": "${execPath}/packages/vscode-plugin",
       "args": [
-        "--extensionDevelopmentPath=${workspaceFolder}/packages/cds-vscode-plugin"
+        "--extensionDevelopmentPath=${workspaceFolder}/packages/vscode-plugin"
       ],
       "outFiles": [
-        "${workspaceFolder}/packages/cds-vscode-plugin/dist/**/*.js"
+        "${workspaceFolder}/packages/vscode-plugin/dist/**/*.js"
       ],
       "preLaunchTask": "cds-vscode-plugin:watch",
       "postDebugTask": "cds-vscode-plugin:stop-watch"
@@ -25,7 +25,7 @@
       "port": 6009,
       "restart": true,
       "outFiles": [
-        "${workspaceFolder}/packages/cds-vscode-plugin/dist/**/*.js"
+        "${workspaceFolder}/packages/vscode-plugin/dist/**/*.js"
       ]
     }
   ],

@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { useLocation } from '@docusaurus/router';
 import { useAnalytics } from '@site/src/utils/useAnalytics';
-import { Button } from '@cbhq/cds-web2/buttons';
-import { HStack, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography/Text';
+import { Button } from '@cbhq/cds-web/buttons';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography/Text';
 
 type FeedbackType = 'positive' | 'negative' | null;
 

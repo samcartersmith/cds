@@ -41,15 +41,13 @@ const ignores = [
   '**/getAffectedRoutes.mjs',
   '**/getBuildInfo.mjs',
   'apps/mobile-app/prebuilds',
-  'apps/mobile-app2/prebuilds',
+  'apps/mobile-app/prebuilds',
   // within their NX project, these files are not included by the Typescript config
   // when linting with TS types (e.g. internal/safely-spread-props) this will raise an error
-  'packages/cds-web2/optimize-css.ts',
+  'packages/web/optimize-css.ts',
   'packages/icons/scripts/generateStories.ts',
   'packages/illustrations/scripts/generateStories.ts',
   'libs/docusaurus-plugin-docgen/module-declarations.d.ts',
-  'libs/docusaurus-theme/scripts/postbuild.ts',
-  'libs/docusaurus-theme/types.d.ts',
   'apps/figma-strings-plugin/vite.config.ts',
 ];
 

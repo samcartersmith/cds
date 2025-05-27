@@ -1,0 +1,67 @@
+{
+  "name": "@cbhq/cds-web-visualization",
+  "version": "3.0.0-rc.4",
+  "private": true,
+  "description": "Coinbase Design System - Web Sparkline",
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "packages/web-visualization"
+  },
+  "type": "module",
+  "main": "./esm/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./sparkline": {
+      "types": "./dts/sparkline/index.d.ts",
+      "default": "./esm/sparkline/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./esm/*.js"
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dts",
+    "esm",
+    "CHANGELOG"
+  ],
+  "peerDependencies": {
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-lottie-files": "workspace:^",
+    "@cbhq/cds-utils": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "@linaria/core": "^3.0.0-beta.22",
+    "d3-color": "^3.1.0",
+    "d3-interpolate": "^3.0.1",
+    "d3-interpolate-path": "^2.3.0",
+    "d3-selection": "^3.0.0",
+    "d3-transition": "^3.0.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-lottie-files": "workspace:^",
+    "@cbhq/cds-utils": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
+    "@figma/code-connect": "^1.2.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
+  }
+}

@@ -1,8 +1,8 @@
 import App, { AppContext, AppProps } from 'next/app';
-import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
-import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
-import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
-import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
+import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
+import { MediaQueryProvider } from '@cbhq/cds-web/system/MediaQueryProvider';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
+import { defaultTheme } from '@cbhq/cds-web/themes/defaultTheme';
 
 // https://nextjs.org/docs/advanced-features/custom-app
 export async function getInitialProps(context: AppContext) {

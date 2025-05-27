@@ -9,7 +9,7 @@ import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebar/Mobile';
 import DocSidebarItems from '@theme/DocSidebarItems';
-import { VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 
 const DocSidebarMobileSecondaryMenu: NavbarSecondaryMenuComponent<Props> = ({
   sidebar,

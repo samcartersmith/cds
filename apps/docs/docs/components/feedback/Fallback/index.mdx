@@ -5,15 +5,15 @@ platform_switcher_options: { web: true, mobile: true }
 hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web2/layout';
-import { Fallback } from '@cbhq/cds-web2/layout/Fallback';
+import { VStack } from '@cbhq/cds-web/layout';
+import { Fallback } from '@cbhq/cds-web/layout/Fallback';
 
 import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
 import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
 import { FallbackBanner } from '@site/src/components/page/ComponentBanner/FallbackBanner';
 
-import webPropsToc from ':docgen/cds-web2/layout/Fallback/toc-props';
-import mobilePropsToc from ':docgen/cds-mobile2/layout/Fallback/toc-props';
+import webPropsToc from ':docgen/web/layout/Fallback/toc-props';
+import mobilePropsToc from ':docgen/mobile/layout/Fallback/toc-props';
 
 import WebPropsTable from './_webPropsTable.mdx';
 import MobilePropsTable from './_mobilePropsTable.mdx';

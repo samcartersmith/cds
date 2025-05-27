@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Props } from '@theme/DocRoot/Layout/Main';
-import { HStack } from '@cbhq/cds-web2/layout';
+import { HStack } from '@cbhq/cds-web/layout';
 
 const mainStyles = {
   margin: '0 auto',

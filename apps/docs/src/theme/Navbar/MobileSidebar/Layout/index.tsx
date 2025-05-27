@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Props } from '@theme/Navbar/MobileSidebar/Layout';
-import { VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 
 export default function NavbarMobileSidebarLayout({
   header,

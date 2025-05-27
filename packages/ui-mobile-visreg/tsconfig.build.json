@@ -17,10 +17,10 @@
   ],
   "references": [
     {
-      "path": "../../packages/cds-mobile2"
+      "path": "../../packages/mobile"
     },
     {
-      "path": "../../packages/mobile-visualization2"
+      "path": "../../packages/mobile-visualization"
     }
   ]
 }

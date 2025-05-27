@@ -16,13 +16,13 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebarItem/Category';
 import DocSidebarItems from '@theme/DocSidebarItems';
-import { IconName } from '@cbhq/cds-common2/types';
-import { Collapsible } from '@cbhq/cds-web2/collapsible';
-import { Icon } from '@cbhq/cds-web2/icons/Icon';
-import { Box, VStack } from '@cbhq/cds-web2/layout';
-import { HStack } from '@cbhq/cds-web2/layout/HStack';
-import { Pressable } from '@cbhq/cds-web2/system/Pressable';
-import { Text } from '@cbhq/cds-web2/typography/Text';
+import { IconName } from '@cbhq/cds-common/types';
+import { Collapsible } from '@cbhq/cds-web/collapsible';
+import { Icon } from '@cbhq/cds-web/icons/Icon';
+import { Box, VStack } from '@cbhq/cds-web/layout';
+import { HStack } from '@cbhq/cds-web/layout/HStack';
+import { Pressable } from '@cbhq/cds-web/system/Pressable';
+import { Text } from '@cbhq/cds-web/typography/Text';
 // If we navigate to a category and it becomes active, it should automatically
 // expand itself
 function useAutoExpandActiveCategory({

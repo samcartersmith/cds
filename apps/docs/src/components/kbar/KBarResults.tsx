@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from 'react';
 import { KBarResults as OriginalKBarResults, useMatches } from 'kbar';
-import { Box } from '@cbhq/cds-web2/layout/Box';
-import { Text } from '@cbhq/cds-web2/typography/Text';
+import { Box } from '@cbhq/cds-web/layout/Box';
+import { Text } from '@cbhq/cds-web/typography/Text';
 
 import KBarResultItem from './KBarResultItem';
 

@@ -5,15 +5,15 @@ platform_switcher_options: { web: true, mobile: true }
 hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
 import { HStackBanner } from '@site/src/components/page/ComponentBanner/HStackBanner';
 import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
 
 import MobilePropsTable from './_mobilePropsTable.mdx';
-import mobilePropsToc from ':docgen/cds-mobile2/layout/HStack/toc-props';
+import mobilePropsToc from ':docgen/mobile/layout/HStack/toc-props';
 import WebPropsTable from './_webPropsTable.mdx';
-import webPropsToc from ':docgen/cds-web2/layout/HStack/toc-props';
+import webPropsToc from ':docgen/web/layout/HStack/toc-props';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 

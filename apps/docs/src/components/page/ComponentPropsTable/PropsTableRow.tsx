@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import DocusaurusLink from '@docusaurus/Link';
 import { cx } from '@linaria/core';
-import { VStack } from '@cbhq/cds-web2/layout';
-import { Divider } from '@cbhq/cds-web2/layout/Divider';
-import { Link } from '@cbhq/cds-web2/typography/Link';
-import { TextBody } from '@cbhq/cds-web2/typography/TextBody';
-import { TextLabel2 } from '@cbhq/cds-web2/typography/TextLabel2';
+import { VStack } from '@cbhq/cds-web/layout';
+import { Divider } from '@cbhq/cds-web/layout/Divider';
+import { Link } from '@cbhq/cds-web/typography/Link';
+import { TextBody } from '@cbhq/cds-web/typography/TextBody';
+import { TextLabel2 } from '@cbhq/cds-web/typography/TextLabel2';
 import { ProcessedPropItem, SharedTypeAliases } from '@cbhq/docusaurus-plugin-docgen/types';
 
 import ModalLink from './ModalLink';

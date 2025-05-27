@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useIsSticky } from '@site/src/utils/useIsSticky';
-import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
-import { Box, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography/Text';
+import { SearchInput } from '@cbhq/cds-web/controls/SearchInput';
+import { Box, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography/Text';
 import {
   ProcessedPropItem,
   SharedParentTypes,

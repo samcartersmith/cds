@@ -21,11 +21,11 @@ module.exports = {
    * which sourceFiles are present in those packages.
    */
   entryPoints: [
-    path.join(__dirname, '../../packages/cds-web2/tsconfig.json'),
-    path.join(__dirname, '../../packages/web-visualization2/tsconfig.json'),
-    path.join(__dirname, '../../packages/cds-mobile2/tsconfig.json'),
-    path.join(__dirname, '../../packages/mobile-visualization2/tsconfig.json'),
-    path.join(__dirname, '../../packages/cds-common2/tsconfig.json'),
+    path.join(__dirname, '../../packages/web/tsconfig.json'),
+    path.join(__dirname, '../../packages/web-visualization/tsconfig.json'),
+    path.join(__dirname, '../../packages/mobile/tsconfig.json'),
+    path.join(__dirname, '../../packages/mobile-visualization/tsconfig.json'),
+    path.join(__dirname, '../../packages/common/tsconfig.json'),
     path.join(__dirname, '../../packages/icons/tsconfig.json'),
     path.join(__dirname, '../../packages/illustrations/tsconfig.json'),
   ],

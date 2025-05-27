@@ -1,5 +1,5 @@
-import { ThemeConfig } from '@cbhq/cds-web2/core/theme';
-import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
+import { ThemeConfig } from '@cbhq/cds-web/core/theme';
+import { defaultTheme } from '@cbhq/cds-web/themes/defaultTheme';
 
 export const DESKTOP_BREAKPOINT = 1280;
 

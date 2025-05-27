@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Divider } from '@cbhq/cds-web2/layout';
+import { Box, Divider } from '@cbhq/cds-web/layout';
 
 import styles from './style.module.css';
 

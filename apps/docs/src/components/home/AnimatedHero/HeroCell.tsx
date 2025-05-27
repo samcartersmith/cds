@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { animated } from '@react-spring/web';
 import { useThrottledValue } from '@site/src/utils/useThrottledValue';
-import { Box } from '@cbhq/cds-web2/layout/Box';
-import { Pressable, PressableProps } from '@cbhq/cds-web2/system/Pressable';
-import { Text } from '@cbhq/cds-web2/typography';
+import { Box } from '@cbhq/cds-web/layout/Box';
+import { Pressable, PressableProps } from '@cbhq/cds-web/system/Pressable';
+import { Text } from '@cbhq/cds-web/typography';
 
 import { characterSet, maxUpdatesPerSecond } from './constants';
 

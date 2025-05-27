@@ -1,7 +1,7 @@
 import React from 'react';
 import { useKBar } from 'kbar';
-import { IconButton } from '@cbhq/cds-web2/buttons';
-import { Tooltip } from '@cbhq/cds-web2/overlays';
+import { IconButton } from '@cbhq/cds-web/buttons';
+import { Tooltip } from '@cbhq/cds-web/overlays';
 
 const SearchBar = () => {
   const {

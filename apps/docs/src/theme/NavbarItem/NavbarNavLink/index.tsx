@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/NavbarItem/NavbarNavLink';
 import { type Location } from 'history';
-import { Box } from '@cbhq/cds-web2/layout';
-import { Pressable } from '@cbhq/cds-web2/system/Pressable';
+import { Box } from '@cbhq/cds-web/layout';
+import { Pressable } from '@cbhq/cds-web/system/Pressable';
 
 import styles from './styles.module.css';
 

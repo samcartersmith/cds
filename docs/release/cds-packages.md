@@ -55,7 +55,7 @@ If heimdall fails to do this for some reason, then manually deploy to those targ
 
 ![release.png](/docs/release.png)
 
-If any changes were made to the `cds-migrator` package, manually deploy:
+If any changes were made to the `packages/migrator` package, manually deploy:
 
 - corporate::cds-migrator
 

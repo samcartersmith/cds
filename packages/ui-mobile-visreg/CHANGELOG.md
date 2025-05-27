@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## Unreleased
+
+#### 📘 Misc
+
+- Update internal configs. [[#4035](https://github.cbhq.net/frontend/cds/pull/4035)]
+
 ## 4.0.0 (5/13/2025 PST)
 
 #### 💥 Breaking

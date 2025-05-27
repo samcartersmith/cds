@@ -5,9 +5,9 @@ import {
   useUnifiedTheme,
 } from '@site/src/theme/Layout/Provider/UnifiedThemeContext';
 import type { Property } from 'csstype';
-import { Dropdown } from '@cbhq/cds-web2/dropdown';
-import { Box, VStack } from '@cbhq/cds-web2/layout';
-import { Pressable } from '@cbhq/cds-web2/system';
+import { Dropdown } from '@cbhq/cds-web/dropdown';
+import { Box, VStack } from '@cbhq/cds-web/layout';
+import { Pressable } from '@cbhq/cds-web/system';
 
 type ThemeOption = {
   label: string;

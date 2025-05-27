@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
-import { Box, HStack, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography/Text';
+import { SearchInput } from '@cbhq/cds-web/controls/SearchInput';
+import { Box, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography/Text';
 
 import { useIsSticky } from '../../../utils/useIsSticky';
 

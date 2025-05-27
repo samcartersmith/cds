@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
-import { useTabsContext } from '@cbhq/cds-common2/tabs/TabsContext';
-import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
-import { Box } from '@cbhq/cds-web2/layout';
-import { TabsActiveIndicator, TabsActiveIndicatorProps } from '@cbhq/cds-web2/tabs';
-import { Tabs as CDSTabs, TabsProps as CDSTabsProps } from '@cbhq/cds-web2/tabs/Tabs';
-import { Text } from '@cbhq/cds-web2/typography';
+import { useTabsContext } from '@cbhq/cds-common/tabs/TabsContext';
+import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
+import { Box } from '@cbhq/cds-web/layout';
+import { TabsActiveIndicator, TabsActiveIndicatorProps } from '@cbhq/cds-web/tabs';
+import { Tabs as CDSTabs, TabsProps as CDSTabsProps } from '@cbhq/cds-web/tabs/Tabs';
+import { Text } from '@cbhq/cds-web/typography';
 
 const CustomTab = ({ id, label }: TabValue) => {
   const { activeTab, updateActiveTab } = useTabsContext();

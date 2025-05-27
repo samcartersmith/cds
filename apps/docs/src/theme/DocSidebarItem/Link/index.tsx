@@ -4,8 +4,8 @@ import Link from '@docusaurus/Link';
 import { isActiveSidebarItem } from '@docusaurus/plugin-content-docs/client';
 import type { Props } from '@theme/DocSidebarItem/Link';
 import IconExternalLink from '@theme/Icon/ExternalLink';
-import { Box, HStack } from '@cbhq/cds-web2/layout';
-import { Pressable } from '@cbhq/cds-web2/system';
+import { Box, HStack } from '@cbhq/cds-web/layout';
+import { Pressable } from '@cbhq/cds-web/system';
 
 import styles from './styles.module.css';
 export default function DocSidebarItemLink({

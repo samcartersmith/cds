@@ -18,9 +18,9 @@
     "CHANGELOG"
   ],
   "peerDependencies": {
-    "@cbhq/cds-common2": "workspace:^",
-    "@cbhq/cds-mobile2": "workspace:^",
-    "@cbhq/cds-web2": "workspace:^",
+    "@cbhq/cds-common": "workspace:^",
+    "@cbhq/cds-mobile": "workspace:^",
+    "@cbhq/cds-web": "workspace:^",
     "eslint": "^8 || ^9",
     "eslint-plugin-jsx-a11y": "^6",
     "eslint-plugin-react-native-a11y": "^3"

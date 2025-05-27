@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { processAdmonitionProps } from '@docusaurus/theme-common';
 import type { Props } from '@theme/Admonition';
-import { Banner, BannerProps } from '@cbhq/cds-web2/banner/Banner';
+import { Banner, BannerProps } from '@cbhq/cds-web/banner/Banner';
 
 export default function Admonition(unprocessedProps: Props): React.ReactNode {
   const props = processAdmonitionProps(unprocessedProps);

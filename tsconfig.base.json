@@ -24,17 +24,17 @@
       ":next-app/*": [
         "apps/next-app/src/*"
       ],
+      "@cbhq/cds-common": [
+        "packages/common/src"
+      ],
       "@cbhq/cds-common-internal": [
-        "packages/cds-common-internal/src"
+        "packages/common-internal/src"
       ],
       "@cbhq/cds-common-internal/*": [
-        "packages/cds-common-internal/src/*"
+        "packages/common-internal/src/*"
       ],
-      "@cbhq/cds-common2": [
-        "packages/cds-common2/src"
-      ],
-      "@cbhq/cds-common2/*": [
-        "packages/cds-common2/src/*"
+      "@cbhq/cds-common/*": [
+        "packages/common/src/*"
       ],
       "@cbhq/cds-fonts": [
         "packages/fonts/src"
@@ -54,29 +54,29 @@
       "@cbhq/cds-illustrations/*": [
         "packages/illustrations/src/*"
       ],
-      "@cbhq/cds-lottie-files2": [
-        "packages/lottie-files2/src"
+      "@cbhq/cds-lottie-files": [
+        "packages/lottie-files/src"
       ],
-      "@cbhq/cds-lottie-files2/*": [
-        "packages/lottie-files2/src/*"
+      "@cbhq/cds-lottie-files/*": [
+        "packages/lottie-files/src/*"
+      ],
+      "@cbhq/cds-mobile": [
+        "packages/mobile/src"
       ],
       "@cbhq/cds-mobile-internal": [
-        "packages/cds-mobile-internal/src"
+        "packages/mobile-internal/src"
       ],
       "@cbhq/cds-mobile-internal/*": [
-        "packages/cds-mobile-internal/src/*"
+        "packages/mobile-internal/src/*"
       ],
-      "@cbhq/cds-mobile-visualization2": [
-        "packages/mobile-visualization2/src"
+      "@cbhq/cds-mobile-visualization": [
+        "packages/mobile-visualization/src"
       ],
-      "@cbhq/cds-mobile-visualization2/*": [
-        "packages/mobile-visualization2/src/*"
+      "@cbhq/cds-mobile-visualization/*": [
+        "packages/mobile-visualization/src/*"
       ],
-      "@cbhq/cds-mobile2": [
-        "packages/cds-mobile2/src"
-      ],
-      "@cbhq/cds-mobile2/*": [
-        "packages/cds-mobile2/src/*"
+      "@cbhq/cds-mobile/*": [
+        "packages/mobile/src/*"
       ],
       "@cbhq/cds-usage-mcp": [
         "libs/cds-usage-mcp/src"
@@ -90,11 +90,14 @@
       "@cbhq/cds-utils/*": [
         "packages/utils/src/*"
       ],
+      "@cbhq/cds-web": [
+        "packages/web/src"
+      ],
       "@cbhq/cds-web-internal": [
-        "packages/cds-web-internal/src"
+        "packages/web-internal/src"
       ],
       "@cbhq/cds-web-internal/*": [
-        "packages/cds-web-internal/src/*"
+        "packages/web-internal/src/*"
       ],
       "@cbhq/cds-web-utils": [
         "libs/web-utils/src"
@@ -102,17 +105,14 @@
       "@cbhq/cds-web-utils/*": [
         "libs/web-utils/src/*"
       ],
-      "@cbhq/cds-web-visualization2": [
-        "packages/web-visualization2/src"
+      "@cbhq/cds-web-visualization": [
+        "packages/web-visualization/src"
       ],
-      "@cbhq/cds-web-visualization2/*": [
-        "packages/web-visualization2/src/*"
+      "@cbhq/cds-web-visualization/*": [
+        "packages/web-visualization/src/*"
       ],
-      "@cbhq/cds-web2": [
-        "packages/cds-web2/src"
-      ],
-      "@cbhq/cds-web2/*": [
-        "packages/cds-web2/src/*"
+      "@cbhq/cds-web/*": [
+        "packages/web/src/*"
       ],
       "@cbhq/docusaurus-plugin-docgen": [
         "libs/docusaurus-plugin-docgen/src"
@@ -125,18 +125,6 @@
       ],
       "@cbhq/docusaurus-plugin-kbar/*": [
         "libs/docusaurus-plugin-kbar/src/*"
-      ],
-      "@cbhq/docusaurus-preset": [
-        "libs/docusaurus-preset/src"
-      ],
-      "@cbhq/docusaurus-preset/*": [
-        "libs/docusaurus-preset/src/*"
-      ],
-      "@cbhq/docusaurus-theme": [
-        "libs/docusaurus-theme/src"
-      ],
-      "@cbhq/docusaurus-theme/*": [
-        "libs/docusaurus-theme/src/*"
       ],
       "@cbhq/figma-api": [
         "libs/figma-api/src"
@@ -156,11 +144,11 @@
       "@cbhq/script-utils/*": [
         "libs/script-utils/src/*"
       ],
-      "@cbhq/ui-mobile-playground2": [
-        "packages/ui-mobile-playground2/src"
+      "@cbhq/ui-mobile-playground": [
+        "packages/ui-mobile-playground/src"
       ],
-      "@cbhq/ui-mobile-playground2/*": [
-        "packages/ui-mobile-playground2/src/*"
+      "@cbhq/ui-mobile-playground/*": [
+        "packages/ui-mobile-playground/src/*"
       ],
       "@cbhq/ui-mobile-visreg": [
         "packages/ui-mobile-visreg/src"

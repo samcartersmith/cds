@@ -13,8 +13,8 @@ import IntroductionBannerLight from '@site/static/img/campaignCardBanners/introd
 import IntroductionBannerDark from '@site/static/img/campaignCardBanners/introduction_dark.svg';
 import ThemingBannerLight from '@site/static/img/campaignCardBanners/theming.svg';
 import ThemingBannerDark from '@site/static/img/campaignCardBanners/theming_dark.svg';
-import { Box, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography';
+import { Box, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography';
 
 const sectionHeaderProps = {
   as: 'h2',

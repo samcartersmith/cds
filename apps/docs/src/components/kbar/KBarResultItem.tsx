@@ -1,10 +1,10 @@
 import React, { forwardRef, Fragment, memo, useMemo } from 'react';
 import { ActionImpl } from 'kbar';
-import { IconName } from '@cbhq/cds-common2';
-import { Icon } from '@cbhq/cds-web2/icons/Icon';
-import { Pictogram, type PictogramName } from '@cbhq/cds-web2/illustrations/Pictogram';
-import { HStack, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography/Text';
+import { IconName } from '@cbhq/cds-common';
+import { Icon } from '@cbhq/cds-web/icons/Icon';
+import { Pictogram, type PictogramName } from '@cbhq/cds-web/illustrations/Pictogram';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography/Text';
 
 type KBarResultItemProps = {
   action: ActionImpl & {

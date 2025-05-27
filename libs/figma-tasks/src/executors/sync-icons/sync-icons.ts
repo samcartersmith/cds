@@ -80,7 +80,7 @@ const updateCoinbaseIconsFile = () => {
 
     const destinationPath2 = path.resolve(
       MONOREPO_ROOT,
-      'apps/mobile-app2/assets/fonts/CoinbaseIcons.ttf',
+      'apps/mobile-app/assets/fonts/CoinbaseIcons.ttf',
     );
 
     fs.copyFileSync(sourcePath, destinationPath);

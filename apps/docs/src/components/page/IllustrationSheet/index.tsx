@@ -5,12 +5,12 @@ import {
   IllustrationVariant,
   PictogramDimension,
   SpotIconDimension,
-} from '@cbhq/cds-common2';
-import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
+} from '@cbhq/cds-common';
+import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
 import {
   illustrationDimensionDefaults,
   illustrationDimensions,
-} from '@cbhq/cds-common2/tokens/illustrations';
+} from '@cbhq/cds-common/tokens/illustrations';
 import heroSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/heroSquare/data/descriptionMap';
 import heroSquareNames from '@cbhq/cds-illustrations/__generated__/heroSquare/data/names';
 import pictogramDescriptionMap from '@cbhq/cds-illustrations/__generated__/pictogram/data/descriptionMap';
@@ -21,9 +21,9 @@ import spotRectangleDescriptionMap from '@cbhq/cds-illustrations/__generated__/s
 import spotRectangleNames from '@cbhq/cds-illustrations/__generated__/spotRectangle/data/names';
 import spotSquareDescriptionMap from '@cbhq/cds-illustrations/__generated__/spotSquare/data/descriptionMap';
 import spotSquareNames from '@cbhq/cds-illustrations/__generated__/spotSquare/data/names';
-import { SearchInput } from '@cbhq/cds-web2/controls/SearchInput';
-import { Select } from '@cbhq/cds-web2/controls/Select';
-import { SelectOption } from '@cbhq/cds-web2/controls/SelectOption';
+import { SearchInput } from '@cbhq/cds-web/controls/SearchInput';
+import { Select } from '@cbhq/cds-web/controls/Select';
+import { SelectOption } from '@cbhq/cds-web/controls/SelectOption';
 import {
   HeroSquare,
   HeroSquareName,
@@ -35,11 +35,11 @@ import {
   SpotRectangleName,
   SpotSquare,
   SpotSquareName,
-} from '@cbhq/cds-web2/illustrations';
-import { Box, Grid, VStack } from '@cbhq/cds-web2/layout';
-import { useToast } from '@cbhq/cds-web2/overlays/useToast';
-import { Pressable } from '@cbhq/cds-web2/system';
-import { TextLegal } from '@cbhq/cds-web2/typography';
+} from '@cbhq/cds-web/illustrations';
+import { Box, Grid, VStack } from '@cbhq/cds-web/layout';
+import { useToast } from '@cbhq/cds-web/overlays/useToast';
+import { Pressable } from '@cbhq/cds-web/system';
+import { TextLegal } from '@cbhq/cds-web/typography';
 
 import { SheetTabs } from '../SheetTabs';
 

@@ -2,7 +2,7 @@ import React, { type ReactNode, useCallback } from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import type { Props } from '@theme/ColorModeToggle';
-import { IconButton } from '@cbhq/cds-web2/buttons';
+import { IconButton } from '@cbhq/cds-web/buttons';
 
 import { useUnifiedTheme } from '../../Layout/Provider/UnifiedThemeContext';
 

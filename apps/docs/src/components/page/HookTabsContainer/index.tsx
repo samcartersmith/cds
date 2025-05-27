@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { TOCItem } from '@docusaurus/mdx-loader';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
-import { Box, Divider, VStack } from '@cbhq/cds-web2/layout';
-import { TabNavigation } from '@cbhq/cds-web2/tabs/TabNavigation';
+import { Box, Divider, VStack } from '@cbhq/cds-web/layout';
+import { TabNavigation } from '@cbhq/cds-web/tabs/TabNavigation';
 
 import { TOCUpdater } from '../../../utils/toc/TOCManager';
 

@@ -99,11 +99,11 @@ export async function prepare() {
       dest: `apps/mobile-app/src/routes.ts`,
     });
 
-    // Write to mobile-app2. This is required for hot reload - internal packages need src in path for hot reload, while consumers do not.
+    // Write to mobile-app. This is required for hot reload - internal packages need src in path for hot reload, while consumers do not.
     await writeFile({
       data: { routes: hotReloadRoutes },
       template: 'mobileRoutes.ejs',
-      dest: `apps/mobile-app2/src/routes.ts`,
+      dest: `apps/mobile-app/src/routes.ts`,
     });
 
     // Write to mobile-app. This is required for evaluating which routes to run during visreg testing.
@@ -117,7 +117,7 @@ export async function prepare() {
     await writeFile({
       data: { routes: consumerRoutes },
       template: 'mobileRoutes.ejs',
-      dest: `apps/mobile-app2/scripts/utils/routes.mjs`,
+      dest: `apps/mobile-app/scripts/utils/routes.mjs`,
     });
   } catch (err) {
     if (err instanceof Error) {

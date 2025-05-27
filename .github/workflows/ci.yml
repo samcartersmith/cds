@@ -49,7 +49,7 @@ jobs:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
       - name: Lint
-        run: yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --exclude=cds-migrator # Temporarily disable cds-migrator linting
+        run: yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --exclude=migrator # Temporarily disable cds-migrator linting
 
   format:
     name: Format
@@ -95,7 +95,7 @@ jobs:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
       - name: Build
-        run: yarn nx affected --exclude=mobile-app2 --target=build --base=$NX_BASE --head=$NX_HEAD
+        run: yarn nx affected --exclude=mobile-app --target=build --base=$NX_BASE --head=$NX_HEAD
 
   storybook-a11y:
     if: ${{ github.event_name == 'pull_request' }}
@@ -217,7 +217,7 @@ jobs:
   #     - name: Run Profile Exports
   #       env:
   #         PROFILE_EXPORTS_DIFF: ${{ github.event_name == 'pull_request' }}
-  #       run: yarn nx run storybook2:profile-exports
+  #       run: yarn nx run storybook:profile-exports
 
   #     # For master: Cache the results with current SHA
   #     - name: Cache export stats results (Master)
@@ -240,7 +240,7 @@ jobs:
       # For master: Build storybook with bundle analyzer
       - name: Build for analyze (Master)
         if: github.ref_name == 'master'
-        run: yarn nx run storybook2:build-for-analyze
+        run: yarn nx run storybook:build-for-analyze
 
       # For master: Cache the results with current SHA
       - name: Cache bundle stats results (Master)
@@ -278,7 +278,7 @@ jobs:
         if: github.event_name == 'pull_request'
         env:
           ANALYZE_REPORT_PATH: apps/storybook/bundle-stats.json
-        run: yarn nx run storybook2:analyze-bundle
+        run: yarn nx run storybook:analyze-bundle
 
   lint-styles:
     name: Lint Styles

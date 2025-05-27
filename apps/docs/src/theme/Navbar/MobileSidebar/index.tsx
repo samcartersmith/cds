@@ -5,7 +5,7 @@ import NavbarMobileSidebarHeader from '@theme/Navbar/MobileSidebar/Header';
 import NavbarMobileSidebarLayout from '@theme/Navbar/MobileSidebar/Layout';
 import NavbarMobileSidebarPrimaryMenu from '@theme/Navbar/MobileSidebar/PrimaryMenu';
 import NavbarMobileSidebarSecondaryMenu from '@theme/Navbar/MobileSidebar/SecondaryMenu';
-import { FocusTrap } from '@cbhq/cds-web2/overlays/FocusTrap';
+import { FocusTrap } from '@cbhq/cds-web/overlays/FocusTrap';
 
 export default function NavbarMobileSidebar(): JSX.Element | null {
   const mobileSidebar = useNavbarMobileSidebar();

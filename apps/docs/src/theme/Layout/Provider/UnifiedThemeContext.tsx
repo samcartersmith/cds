@@ -2,11 +2,11 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import { useColorMode } from '@docusaurus/theme-common';
 import { docsTheme } from '@site/src/constants';
 import type { Property } from 'csstype';
-import { ColorScheme } from '@cbhq/cds-common2/core/theme';
-import type { ThemeConfig } from '@cbhq/cds-web2/core/theme';
-import { useHasMounted } from '@cbhq/cds-web2/hooks/useHasMounted';
-import { useMediaQuery } from '@cbhq/cds-web2/hooks/useMediaQuery';
-import { defaultTheme } from '@cbhq/cds-web2/themes/defaultTheme';
+import { ColorScheme } from '@cbhq/cds-common/core/theme';
+import type { ThemeConfig } from '@cbhq/cds-web/core/theme';
+import { useHasMounted } from '@cbhq/cds-web/hooks/useHasMounted';
+import { useMediaQuery } from '@cbhq/cds-web/hooks/useMediaQuery';
+import { defaultTheme } from '@cbhq/cds-web/themes/defaultTheme';
 
 type ThemeOption = {
   label: string;

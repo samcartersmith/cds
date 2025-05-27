@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import { HStack, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography';
+import { HStack, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography';
 
 import { useDocsTheme } from '../../../theme/Layout/Provider/UnifiedThemeContext';
 

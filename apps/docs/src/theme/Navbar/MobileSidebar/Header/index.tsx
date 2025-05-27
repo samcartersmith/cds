@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
 import NavbarLogo from '@theme/Navbar/Logo';
-import { IconButton } from '@cbhq/cds-web2/buttons';
-import { HStack } from '@cbhq/cds-web2/layout';
+import { IconButton } from '@cbhq/cds-web/buttons';
+import { HStack } from '@cbhq/cds-web/layout';
 
 function CloseButton() {
   const { toggle } = useNavbarMobileSidebar();

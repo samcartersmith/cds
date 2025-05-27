@@ -230,12 +230,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app/next-app@workspace:apps/next-app"
   dependencies:
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-fonts": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-web-visualization2": "workspace:^"
-    "@cbhq/cds-web2": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
+    "@cbhq/cds-web-visualization": "workspace:^"
     "@linaria/babel-preset": "npm:^3.0.0-beta.22"
     "@next/eslint-plugin-next": "npm:^14.2.15"
     "@testing-library/jest-dom": "npm:^5.16.5"
@@ -2595,15 +2595,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/cds-common-internal@workspace:packages/cds-common-internal":
+"@cbhq/cds-common-internal@workspace:packages/common-internal":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-common-internal@workspace:packages/cds-common-internal"
+  resolution: "@cbhq/cds-common-internal@workspace:packages/common-internal"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
@@ -2623,9 +2623,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-common2@workspace:^, @cbhq/cds-common2@workspace:packages/cds-common2":
+"@cbhq/cds-common@workspace:^, @cbhq/cds-common@workspace:packages/common":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-common2@workspace:packages/cds-common2"
+  resolution: "@cbhq/cds-common@workspace:packages/common"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
@@ -2690,9 +2690,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-lottie-files2@workspace:^, @cbhq/cds-lottie-files2@workspace:packages/lottie-files2":
+"@cbhq/cds-lottie-files@workspace:^, @cbhq/cds-lottie-files@workspace:packages/lottie-files":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-lottie-files2@workspace:packages/lottie-files2"
+  resolution: "@cbhq/cds-lottie-files@workspace:packages/lottie-files"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
@@ -2701,9 +2701,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-migrator@workspace:packages/cds-migrator":
+"@cbhq/cds-migrator@workspace:packages/migrator":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-migrator@workspace:packages/cds-migrator"
+  resolution: "@cbhq/cds-migrator@workspace:packages/migrator"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
@@ -2722,19 +2722,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-mobile-internal@workspace:packages/cds-mobile-internal":
+"@cbhq/cds-mobile-internal@workspace:packages/mobile-internal":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-mobile-internal@workspace:packages/cds-mobile-internal"
+  resolution: "@cbhq/cds-mobile-internal@workspace:packages/mobile-internal"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-lottie-files2": "workspace:^"
-    "@cbhq/cds-mobile2": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@types/react": "npm:^18.3.12"
   peerDependencies:
@@ -2743,17 +2743,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-mobile-visualization2@workspace:^, @cbhq/cds-mobile-visualization2@workspace:packages/mobile-visualization2":
+"@cbhq/cds-mobile-visualization@workspace:^, @cbhq/cds-mobile-visualization@workspace:packages/mobile-visualization":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-mobile-visualization2@workspace:packages/mobile-visualization2"
+  resolution: "@cbhq/cds-mobile-visualization@workspace:packages/mobile-visualization"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-lottie-files2": "workspace:^"
-    "@cbhq/cds-mobile2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@figma/code-connect": "npm:^1.2.2"
     "@types/react": "npm:^18.3.12"
@@ -2765,9 +2765,9 @@ __metadata:
     react-native-svg: "npm:14.1.0"
     react-test-renderer: "npm:^18.3.1"
   peerDependencies:
-    "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-lottie-files2": "workspace:^"
-    "@cbhq/cds-mobile2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     react: ^18.3.1
     react-native: ^0.74.5
@@ -2778,18 +2778,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-mobile2@workspace:^, @cbhq/cds-mobile2@workspace:packages/cds-mobile2":
+"@cbhq/cds-mobile@workspace:^, @cbhq/cds-mobile@workspace:packages/mobile":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-mobile2@workspace:packages/cds-mobile2"
+  resolution: "@cbhq/cds-mobile@workspace:packages/mobile"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/ui-scorecard": "workspace:^"
     "@figma/code-connect": "npm:^1.2.2"
@@ -2870,9 +2870,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-vscode-plugin@workspace:packages/cds-vscode-plugin":
+"@cbhq/cds-vscode-plugin@workspace:packages/vscode-plugin":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-vscode-plugin@workspace:packages/cds-vscode-plugin"
+  resolution: "@cbhq/cds-vscode-plugin@workspace:packages/vscode-plugin"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
@@ -2892,21 +2892,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web-internal@workspace:packages/cds-web-internal":
+"@cbhq/cds-web-internal@workspace:packages/web-internal":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-web-internal@workspace:packages/cds-web-internal"
+  resolution: "@cbhq/cds-web-internal@workspace:packages/web-internal"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
     "@cbhq/cds-web-utils": "workspace:^"
-    "@cbhq/cds-web2": "workspace:^"
     "@cbhq/ui-scorecard": "workspace:^"
     "@floating-ui/react-dom": "npm:^2.1.1"
     "@linaria/core": "npm:^3.0.0-beta.22"
@@ -2958,18 +2958,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web-visualization2@workspace:^, @cbhq/cds-web-visualization2@workspace:packages/web-visualization2":
+"@cbhq/cds-web-visualization@workspace:^, @cbhq/cds-web-visualization@workspace:packages/web-visualization":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-web-visualization2@workspace:packages/web-visualization2"
+  resolution: "@cbhq/cds-web-visualization@workspace:packages/web-visualization"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
-    "@cbhq/cds-web2": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
     "@figma/code-connect": "npm:^1.2.2"
     "@linaria/core": "npm:^3.0.0-beta.22"
     "@types/react": "npm:^18.3.12"
@@ -2981,27 +2981,27 @@ __metadata:
     d3-transition: "npm:^3.0.1"
     lodash: "npm:^4.17.21"
   peerDependencies:
-    "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
-    "@cbhq/cds-web2": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
     react: ^18.3.1
     react-dom: ^18.3.1
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-web2@workspace:^, @cbhq/cds-web2@workspace:packages/cds-web2":
+"@cbhq/cds-web@workspace:^, @cbhq/cds-web@workspace:packages/web":
   version: 0.0.0-use.local
-  resolution: "@cbhq/cds-web2@workspace:packages/cds-web2"
+  resolution: "@cbhq/cds-web@workspace:packages/web"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-lottie-files2": "workspace:^"
+    "@cbhq/cds-lottie-files": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/cds-web-utils": "workspace:^"
     "@cbhq/ui-scorecard": "workspace:^"
@@ -3111,7 +3111,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@docusaurus/logger": "npm:^3.7.0"
     "@docusaurus/plugin-content-docs": "npm:^3.7.0"
     "@docusaurus/types": "npm:^3.7.0"
@@ -3140,9 +3140,9 @@ __metadata:
     rollup: "npm:^4.22.4"
     typescript: "npm:~5.7.2"
   peerDependencies:
-    "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-mobile2": "workspace:^"
-    "@cbhq/cds-web2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
     eslint: ^8 || ^9
     eslint-plugin-jsx-a11y: ^6
     eslint-plugin-react-native-a11y: ^3
@@ -3432,9 +3432,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/ui-mobile-playground2@workspace:^, @cbhq/ui-mobile-playground2@workspace:packages/ui-mobile-playground2":
+"@cbhq/ui-mobile-playground@workspace:^, @cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground":
   version: 0.0.0-use.local
-  resolution: "@cbhq/ui-mobile-playground2@workspace:packages/ui-mobile-playground2"
+  resolution: "@cbhq/ui-mobile-playground@workspace:packages/ui-mobile-playground"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/preset-env": "npm:^7.20.2"
@@ -3448,9 +3448,9 @@ __metadata:
     lodash: "npm:^4.17.21"
     react-native-safe-area-context: "npm:4.10.5"
   peerDependencies:
-    "@cbhq/cds-common2": "workspace:^"
-    "@cbhq/cds-mobile-visualization2": "workspace:^"
-    "@cbhq/cds-mobile2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
+    "@cbhq/cds-mobile-visualization": "workspace:^"
     "@react-navigation/elements": ^1.3.17
     "@react-navigation/native": ^6.1.6
     "@react-navigation/stack": ^6.3.16
@@ -3468,8 +3468,8 @@ __metadata:
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/cds-mobile-visualization2": "workspace:^"
-    "@cbhq/cds-mobile2": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
+    "@cbhq/cds-mobile-visualization": "workspace:^"
     "@cbhq/detox-utils": "npm:^0.5.1"
     "@percy/cli": "npm:^1.30.1"
     "@percy/client": "npm:^1.30.1"
@@ -3478,8 +3478,8 @@ __metadata:
     detox: "npm:^20.14.8"
     lodash: "npm:^4.17.21"
   peerDependencies:
-    "@cbhq/cds-mobile-visualization2": "workspace:^"
-    "@cbhq/cds-mobile2": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
+    "@cbhq/cds-mobile-visualization": "workspace:^"
     detox: ^20.14.8
   languageName: unknown
   linkType: soft
@@ -3533,14 +3533,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cds/storybook2@workspace:apps/storybook2":
+"@cds/storybook@workspace:apps/storybook":
   version: 0.0.0-use.local
-  resolution: "@cds/storybook2@workspace:apps/storybook2"
+  resolution: "@cds/storybook@workspace:apps/storybook"
   dependencies:
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-web-visualization2": "workspace:^"
+    "@cbhq/cds-web-visualization": "workspace:^"
     "@juggle/resize-observer": "npm:^3.4.0"
     "@linaria/webpack-loader": "npm:^3.0.0-beta.22"
     "@percy/cli": "npm:^1.30.1"
@@ -21167,11 +21167,11 @@ __metadata:
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
     "@babel/runtime": "npm:^7.20.13"
-    "@cbhq/cds-common2": "workspace:^"
+    "@cbhq/cds-common": "workspace:^"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-web-visualization2": "workspace:^"
-    "@cbhq/cds-web2": "workspace:^"
+    "@cbhq/cds-web": "workspace:^"
+    "@cbhq/cds-web-visualization": "workspace:^"
     "@cbhq/docusaurus-plugin-docgen": "workspace:^"
     "@cbhq/docusaurus-plugin-kbar": "workspace:^"
     "@docusaurus/core": "npm:^3.7.0"
@@ -33624,19 +33624,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mobile-app2@workspace:apps/mobile-app2":
+"mobile-app@workspace:apps/mobile-app":
   version: 0.0.0-use.local
-  resolution: "mobile-app2@workspace:apps/mobile-app2"
+  resolution: "mobile-app@workspace:apps/mobile-app"
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@bugsnag/react-native": "npm:^7.18.0"
     "@cbhq/cds-icons": "workspace:^"
     "@cbhq/cds-illustrations": "workspace:^"
-    "@cbhq/cds-mobile-visualization2": "workspace:^"
-    "@cbhq/cds-mobile2": "workspace:^"
+    "@cbhq/cds-mobile": "workspace:^"
+    "@cbhq/cds-mobile-visualization": "workspace:^"
     "@cbhq/metro-config": "npm:^0.1.2"
     "@cbhq/mobile-runtime": "npm:0.3.2"
-    "@cbhq/ui-mobile-playground2": "workspace:^"
+    "@cbhq/ui-mobile-playground": "workspace:^"
     "@cbhq/ui-mobile-visreg": "workspace:^"
     "@config-plugins/detox": "npm:^6.0.0"
     "@expo-google-fonts/inter": "npm:^0.3.0"

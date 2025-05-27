@@ -13,11 +13,11 @@ const webpackPlugin = () => {
           ...(config.mode === 'production'
             ? {}
             : {
-                '@cbhq/cds-common2': path.resolve(__dirname, '../../packages/cds-common2/src'),
+                '@cbhq/cds-common': path.resolve(__dirname, '../../packages/common/src'),
                 '@cbhq/cds-fonts': path.resolve(__dirname, '../../packages/fonts/src'),
-                '@cbhq/cds-lottie-files2': path.resolve(
+                '@cbhq/cds-lottie-files': path.resolve(
                   __dirname,
-                  '../../packages/lottie-files2/src',
+                  '../../packages/lottie-files/src',
                 ),
                 '@cbhq/cds-icons': path.resolve(__dirname, '../../packages/icons/src'),
                 '@cbhq/cds-illustrations': path.resolve(
@@ -25,10 +25,10 @@ const webpackPlugin = () => {
                   '../../packages/illustrations/src',
                 ),
                 '@cbhq/cds-utils': path.resolve(__dirname, '../../packages/utils/src'),
-                '@cbhq/cds-web2': path.resolve(__dirname, '../../packages/cds-web2/src'),
-                '@cbhq/cds-web-visualization2': path.resolve(
+                '@cbhq/cds-web': path.resolve(__dirname, '../../packages/web/src'),
+                '@cbhq/cds-web-visualization': path.resolve(
                   __dirname,
-                  '../../packages/web-visualization2/src',
+                  '../../packages/web-visualization/src',
                 ),
               }),
         },

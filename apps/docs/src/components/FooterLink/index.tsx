@@ -1,7 +1,7 @@
 import React from 'react';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import Link, { type Props } from '@docusaurus/Link';
-import { Text, type TextDefaultElement, type TextProps } from '@cbhq/cds-web2/typography/Text';
+import { Text, type TextDefaultElement, type TextProps } from '@cbhq/cds-web/typography/Text';
 
 import styles from './styles.module.css';
 

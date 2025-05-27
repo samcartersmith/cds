@@ -11,8 +11,8 @@ import type { Props } from '@theme/CodeBlock/Content/String';
 import CopyButton from '@theme/CodeBlock/CopyButton';
 import Line from '@theme/CodeBlock/Line';
 import { Highlight } from 'prism-react-renderer';
-import { Box, Divider, HStack, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography';
+import { Box, Divider, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography';
 
 import styles from './styles.module.css';
 

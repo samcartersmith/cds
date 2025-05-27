@@ -11,7 +11,7 @@
 
 ## Deployment Flow in AWS for Web Apps
 
-1. Codeflow builds are configured in [.codeflow.yml](https://github.cbhq.net/frontend/cds/blob/master/.codeflow.yml) in this repo. It attributes a build name with a dockerfile (like [this](https://github.cbhq.net/frontend/cds/blob/master/apps/website/development.Dockerfile)) that runs a series of commands to prep for the deploy.
+1. Codeflow builds are configured in [.codeflow.yml](https://github.cbhq.net/frontend/cds/blob/master/.codeflow.yml) in this repo. It attributes a build name with a dockerfile (like [this](https://github.cbhq.net/frontend/cds/blob/master/apps/docs/development.Dockerfile)) that runs a series of commands to prep for the deploy.
 2. Codeflow configurations determine the buttons shown w/ deployment options. You can edit theses in Deployment Settings. Each config for websites with have the S3 bucket name in the deploy config.
 3. When you deploy from Codeflow, it will push the webapp to the S3 Bucket. You can look up the buckets by name (same as shown in Codeflow) using eng-ops@development login to AWS from Okta and navigating to S3.
 4. Your files in the S3 will have an object url. This url must be the same as the Cloudfront (AWS Service) Origin Url. This connects your S3 files with the cloudfront record. This is automatically handled for you when you use infra/aws-resources to create your new S3.

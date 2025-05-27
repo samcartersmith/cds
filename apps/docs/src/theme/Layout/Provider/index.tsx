@@ -12,11 +12,11 @@ import { cx } from '@linaria/core';
 import KBarProvider from '@site/src/components/kbar/KBarProvider';
 import { useInternalCDSTheme } from '@site/src/hooks/useInternalCDSTheme';
 import type { Props } from '@theme/Layout/Provider';
-import { PortalProvider } from '@cbhq/cds-web2/overlays/PortalProvider';
-import { defaultFontStyles } from '@cbhq/cds-web2/styles/defaultFont';
-import { globalStyles } from '@cbhq/cds-web2/styles/global';
-import { MediaQueryProvider } from '@cbhq/cds-web2/system/MediaQueryProvider';
-import { ThemeProvider } from '@cbhq/cds-web2/system/ThemeProvider';
+import { PortalProvider } from '@cbhq/cds-web/overlays/PortalProvider';
+import { defaultFontStyles } from '@cbhq/cds-web/styles/defaultFont';
+import { globalStyles } from '@cbhq/cds-web/styles/global';
+import { MediaQueryProvider } from '@cbhq/cds-web/system/MediaQueryProvider';
+import { ThemeProvider } from '@cbhq/cds-web/system/ThemeProvider';
 
 import { UnifiedThemeProvider, useDocsTheme } from './UnifiedThemeContext';
 

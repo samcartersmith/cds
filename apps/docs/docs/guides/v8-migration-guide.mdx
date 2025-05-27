@@ -53,7 +53,7 @@ This causes CDS CSS to have lower style specificity than styles that are not on 
 
 ### New web global styles
 
-CDS web global styles now include a CSS reset which override the browser default styles for some elements. This ensures that polymorphic components render correctly, regardless of their HTML element. See the [full style reset here](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/styles/global.ts).
+CDS web global styles now include a CSS reset which override the browser default styles for some elements. This ensures that polymorphic components render correctly, regardless of their HTML element. See the [full style reset here](https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/styles/global.ts).
 
 ### Improved web polymorphism
 
@@ -218,13 +218,13 @@ Some consumer-facing hooks like `useSpectrum` and `useScale` have been deleted, 
 
 ### ThemeProvider theme object
 
-The new `theme` object defines the values for all themeable style tokens in CDS. These style tokens are called [`ThemeVars`](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-common2/src/core/theme.ts).
+The new `theme` object defines the values for all themeable style tokens in CDS. These style tokens are called [`ThemeVars`](https://github.cbhq.net/frontend/cds/blob/master/packages/common/src/core/theme.ts).
 
-First, take a look at the definitions for our `defaultTheme` on [web here](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/themes/defaultTheme.ts) and [mobile here](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/themes/defaultTheme.ts).
+First, take a look at the definitions for our `defaultTheme` on [web here](https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/themes/defaultTheme.ts) and [mobile here](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/themes/defaultTheme.ts).
 
-When the `theme` object is passed to the ThemeProvider, it must fit the `ThemeConfig` type - [web type](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/core/theme.ts#L4) and [mobile type](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/core/theme.ts#L11).
+When the `theme` object is passed to the ThemeProvider, it must fit the `ThemeConfig` type - [web type](https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/core/theme.ts#L4) and [mobile type](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/core/theme.ts#L11).
 
-When the `theme` object is returned from the `useTheme` hook, it will fit the `Theme` type - [web type](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/core/theme.ts#L24) and [mobile type](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/core/theme.ts#L31). This is because it also contains references to the `activeColorScheme`, `spectrum`, and `color` values.
+When the `theme` object is returned from the `useTheme` hook, it will fit the `Theme` type - [web type](https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/core/theme.ts#L24) and [mobile type](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/core/theme.ts#L31). This is because it also contains references to the `activeColorScheme`, `spectrum`, and `color` values.
 
 ### ThemeProvider CSS variables
 
@@ -316,7 +316,7 @@ In CDS v8, the concept of scale / density no longer exists.
 
 To achieve dense / xSmall scale styles, you can create a new theme that updates the values of `space`, `fontSize`, `lineHeight`, `controlSize`, `iconSize`, etc.
 
-We have an example `denseTheme` you can use to emulate the old dense / xSmall scale styles - [web link](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/themes/denseTheme.ts) and [mobile link](https://github.cbhq.net/frontend/cds/blob/master/packages/cds-mobile2/src/themes/denseTheme.ts). However you need to copy this theme into your application, it will be deleted from CDS in the next major release.
+We have an example `denseTheme` you can use to emulate the old dense / xSmall scale styles - [web link](https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/themes/denseTheme.ts) and [mobile link](https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/themes/denseTheme.ts). However you need to copy this theme into your application, it will be deleted from CDS in the next major release.
 
 ### Inverting the theme
 

@@ -5,7 +5,7 @@ import { translate } from '@docusaurus/Translate';
 import { cx } from '@linaria/core';
 import type { Props } from '@theme/DocSidebar/Desktop/Content';
 import DocSidebarItems from '@theme/DocSidebarItems';
-import { VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 
 import styles from './styles.module.css';
 

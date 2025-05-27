@@ -1,27 +1,27 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useToggler } from '@cbhq/cds-common2/hooks/useToggler';
-import { accounts } from '@cbhq/cds-common2/internal/data/accounts';
-import { assetColors, assetImages, assets } from '@cbhq/cds-common2/internal/data/assets';
-import { loremIpsum } from '@cbhq/cds-common2/internal/data/loremIpsum';
-import { prices } from '@cbhq/cds-common2/internal/data/prices';
-import { product } from '@cbhq/cds-common2/internal/data/product';
-import { users } from '@cbhq/cds-common2/internal/data/users';
-import { sparklineInteractiveData } from '@cbhq/cds-common2/internal/visualizations/SparklineInteractiveData';
-import { gutter } from '@cbhq/cds-common2/tokens/sizing';
-import type { IconName } from '@cbhq/cds-common2/types';
-import { NoopFn } from '@cbhq/cds-common2/utils/mockUtils';
-import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization2';
-import { Accordion, AccordionItem } from '@cbhq/cds-web2/accordion';
-import { Button, IconButton } from '@cbhq/cds-web2/buttons';
-import { Card, CardBody, CardFooter, CardGroup, FeedCard, UpsellCard } from '@cbhq/cds-web2/cards';
-import { ListCell } from '@cbhq/cds-web2/cells';
-import { Checkbox, Select, SelectOption, Switch } from '@cbhq/cds-web2/controls';
-import { Dropdown } from '@cbhq/cds-web2/dropdown/Dropdown';
-import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web2/icons';
-import { Pictogram } from '@cbhq/cds-web2/illustrations';
-import { Box, Divider, Group, HStack, VStack } from '@cbhq/cds-web2/layout';
-import { Avatar } from '@cbhq/cds-web2/media';
-import { NavigationBar, NavigationTitle, Sidebar, SidebarItem } from '@cbhq/cds-web2/navigation';
+import { useToggler } from '@cbhq/cds-common/hooks/useToggler';
+import { accounts } from '@cbhq/cds-common/internal/data/accounts';
+import { assetColors, assetImages, assets } from '@cbhq/cds-common/internal/data/assets';
+import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
+import { prices } from '@cbhq/cds-common/internal/data/prices';
+import { product } from '@cbhq/cds-common/internal/data/product';
+import { users } from '@cbhq/cds-common/internal/data/users';
+import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizations/SparklineInteractiveData';
+import { gutter } from '@cbhq/cds-common/tokens/sizing';
+import type { IconName } from '@cbhq/cds-common/types';
+import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
+import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
+import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
+import { Button, IconButton } from '@cbhq/cds-web/buttons';
+import { Card, CardBody, CardFooter, CardGroup, FeedCard, UpsellCard } from '@cbhq/cds-web/cards';
+import { ListCell } from '@cbhq/cds-web/cells';
+import { Checkbox, Select, SelectOption, Switch } from '@cbhq/cds-web/controls';
+import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
+import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web/icons';
+import { Pictogram } from '@cbhq/cds-web/illustrations';
+import { Box, Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
+import { Avatar } from '@cbhq/cds-web/media';
+import { NavigationBar, NavigationTitle, Sidebar, SidebarItem } from '@cbhq/cds-web/navigation';
 import {
   Alert,
   FullscreenAlert,
@@ -31,10 +31,10 @@ import {
   ModalFooter,
   ModalHeader,
   Tooltip,
-} from '@cbhq/cds-web2/overlays';
-import { useModal } from '@cbhq/cds-web2/overlays/useModal';
-import { useToast } from '@cbhq/cds-web2/overlays/useToast';
-import { Pressable } from '@cbhq/cds-web2/system';
+} from '@cbhq/cds-web/overlays';
+import { useModal } from '@cbhq/cds-web/overlays/useModal';
+import { useToast } from '@cbhq/cds-web/overlays/useToast';
+import { Pressable } from '@cbhq/cds-web/system';
 import {
   Table,
   TableBody,
@@ -42,19 +42,19 @@ import {
   TableFooter,
   TableHeader,
   TableRow,
-} from '@cbhq/cds-web2/tables';
+} from '@cbhq/cds-web/tables';
 import {
   TextBody,
   TextCaption,
   TextHeadline,
   TextTitle1,
   TextTitle3,
-} from '@cbhq/cds-web2/typography';
+} from '@cbhq/cds-web/typography';
 import {
   ProgressBar,
   ProgressBarWithFloatLabel,
   ProgressCircle,
-} from '@cbhq/cds-web2/visualizations';
+} from '@cbhq/cds-web/visualizations';
 
 // const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
 //   SparklineInteractive,

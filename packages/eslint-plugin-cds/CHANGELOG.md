@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+#### 📘 Misc
+
+- Update internal configs. [[#4035](https://github.cbhq.net/frontend/cds/pull/4035)]
+
 ## 3.0.0 (5/13/2025 PST)
 
 #### 💥 Breaking

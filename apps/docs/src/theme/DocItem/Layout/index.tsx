@@ -17,8 +17,8 @@ import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocVersionBadge from '@theme/DocVersionBadge';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import Footer from '@theme/Footer';
-import { VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography/Text';
+import { VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography/Text';
 
 type DocFrontMatterExtended = DocFrontMatter & {
   platform_switcher_options?: { web: boolean; mobile: boolean };

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import type { Props } from '@theme/MDXComponents/A';
-import { Link } from '@cbhq/cds-web2/typography/Link';
+import { Link } from '@cbhq/cds-web/typography/Link';
 
 /**
  * Custom MDX link component that overrides Docusaurus's default link behavior.

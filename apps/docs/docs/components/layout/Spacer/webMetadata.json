@@ -1,5 +1,5 @@
 {
-  "import": "import { Spacer } from '@cbhq/cds-web2/layout/Spacer'",
+  "import": "import { Spacer } from '@cbhq/cds-web/layout/Spacer'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/layout/Spacer.tsx",
   "description": "The Spacer component is layout component that can be used to create space between components."
 }

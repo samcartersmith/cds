@@ -51,4 +51,4 @@ steps:
     if: build.branch != 'master' && !(build.pull_request.labels	includes 'visreg')
     commands:
       - tools/ci/setup.sh
-      - (yarn workspace mobile-app2 should-run-visreg && yarn mono-pipeline run-ci other --targets=visreg --allOnMaster) || echo 'Skipping Percy (Mobile)'
+      - (yarn workspace mobile-app should-run-visreg && yarn mono-pipeline run-ci other --targets=visreg --allOnMaster) || echo 'Skipping Percy (Mobile)'

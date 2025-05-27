@@ -7,7 +7,7 @@
       "path": "apps/docs"
     },
     {
-      "path": "apps/mobile-app2"
+      "path": "apps/mobile-app"
     },
     {
       "path": "apps/next-app"
@@ -28,12 +28,6 @@
       "path": "libs/docusaurus-plugin-kbar"
     },
     {
-      "path": "libs/docusaurus-preset"
-    },
-    {
-      "path": "libs/docusaurus-theme"
-    },
-    {
       "path": "libs/figma-api"
     },
     {
@@ -49,28 +43,28 @@
       "path": "libs/web-utils"
     },
     {
-      "path": "packages/cds-common2"
+      "path": "packages/common"
     },
     {
-      "path": "packages/cds-migrator"
+      "path": "packages/migrator"
     },
     {
-      "path": "packages/cds-mobile-internal"
+      "path": "packages/mobile-internal"
     },
     {
-      "path": "packages/cds-mobile2"
+      "path": "packages/mobile"
     },
     {
-      "path": "packages/cds-vscode-plugin"
+      "path": "packages/vscode-plugin"
     },
     {
-      "path": "packages/cds-web-internal"
+      "path": "packages/web-internal"
     },
     {
-      "path": "packages/cds-common-internal"
+      "path": "packages/common-internal"
     },
     {
-      "path": "packages/cds-web2"
+      "path": "packages/web"
     },
     {
       "path": "packages/eslint-plugin-cds"
@@ -85,16 +79,16 @@
       "path": "packages/illustrations"
     },
     {
-      "path": "packages/lottie-files2"
+      "path": "packages/lottie-files"
     },
     {
-      "path": "packages/mobile-visualization2"
+      "path": "packages/mobile-visualization"
     },
     {
       "path": "packages/profile-package"
     },
     {
-      "path": "packages/ui-mobile-playground2"
+      "path": "packages/ui-mobile-playground"
     },
     {
       "path": "packages/ui-mobile-visreg"
@@ -106,7 +100,7 @@
       "path": "packages/utils"
     },
     {
-      "path": "packages/web-visualization2"
+      "path": "packages/web-visualization"
     }
   ]
 }

@@ -1,19 +1,19 @@
 import React, { useCallback, useState } from 'react';
 import { sortByAlphabet } from '@site/src/utils/sortByAlphabet';
 import { throttle } from 'lodash';
-import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
-import { IconSize } from '@cbhq/cds-common2/types';
-import type { IconName } from '@cbhq/cds-common2/types/IconName';
+import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
+import { IconSize } from '@cbhq/cds-common/types';
+import type { IconName } from '@cbhq/cds-common/types/IconName';
 import navIconDescriptionMap from '@cbhq/cds-icons/__generated__/nav/data/descriptionMap';
 import navIconNames from '@cbhq/cds-icons/__generated__/nav/data/names';
 import uiIconDescriptionMap from '@cbhq/cds-icons/__generated__/ui/data/descriptionMap';
 import uiIconNames from '@cbhq/cds-icons/__generated__/ui/data/names';
-import { TileButton } from '@cbhq/cds-web2/buttons/TileButton';
-import { SearchInput, Switch } from '@cbhq/cds-web2/controls';
-import { Icon } from '@cbhq/cds-web2/icons/Icon';
-import { Box, Grid } from '@cbhq/cds-web2/layout';
-import { useToast } from '@cbhq/cds-web2/overlays/useToast';
-import { Text } from '@cbhq/cds-web2/typography';
+import { TileButton } from '@cbhq/cds-web/buttons/TileButton';
+import { SearchInput, Switch } from '@cbhq/cds-web/controls';
+import { Icon } from '@cbhq/cds-web/icons/Icon';
+import { Box, Grid } from '@cbhq/cds-web/layout';
+import { useToast } from '@cbhq/cds-web/overlays/useToast';
+import { Text } from '@cbhq/cds-web/typography';
 
 import { SheetTabs } from '../SheetTabs';
 

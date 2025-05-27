@@ -1,9 +1,9 @@
 import React, { memo, useCallback } from 'react';
 import { KBarSearch, useKBar, VisualState } from 'kbar';
-import { IconButton } from '@cbhq/cds-web2/buttons';
-import { Icon } from '@cbhq/cds-web2/icons/Icon';
-import { Divider, HStack } from '@cbhq/cds-web2/layout';
-import { Modal } from '@cbhq/cds-web2/overlays/modal/Modal';
+import { IconButton } from '@cbhq/cds-web/buttons';
+import { Icon } from '@cbhq/cds-web/icons/Icon';
+import { Divider, HStack } from '@cbhq/cds-web/layout';
+import { Modal } from '@cbhq/cds-web/overlays/modal/Modal';
 
 import KBarAnimator from '../KBarAnimator';
 import KBarResults from '../KBarResults';

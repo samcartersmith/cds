@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo, useRef } from 'react';
 import { type Platform, usePlatformContext } from '@site/src/utils/PlatformContext';
-import { TabValue } from '@cbhq/cds-common2/tabs/useTabs';
-import { TabsActiveIndicator } from '@cbhq/cds-web2/tabs';
-import { SegmentedTabs } from '@cbhq/cds-web2/tabs/SegmentedTabs';
-import { SegmentedTabsActiveIndicatorProps } from '@cbhq/cds-web2/tabs/SegmentedTabsActiveIndicator';
+import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
+import { TabsActiveIndicator } from '@cbhq/cds-web/tabs';
+import { SegmentedTabs } from '@cbhq/cds-web/tabs/SegmentedTabs';
+import { SegmentedTabsActiveIndicatorProps } from '@cbhq/cds-web/tabs/SegmentedTabsActiveIndicator';
 
 const SegmentedTabsActiveIndicator = ({ ...props }: SegmentedTabsActiveIndicatorProps) => {
   return <TabsActiveIndicator borderRadius={300} {...props} />;

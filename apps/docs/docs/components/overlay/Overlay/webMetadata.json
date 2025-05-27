@@ -1,5 +1,5 @@
 {
-  "import": "import { Overlay } from '@cbhq/cds-web2/overlays/overlay/Overlay'",
-  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web2/src/overlays/overlay/Overlay.tsx",
+  "import": "import { Overlay } from '@cbhq/cds-web/overlays/overlay/Overlay'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/overlay/Overlay.tsx",
   "description": "A component that creates a semi-transparent layer over content, typically used as a backdrop for modals, dialogs, or to indicate that the underlying content is inactive."
 }

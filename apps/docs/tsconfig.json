@@ -15,7 +15,7 @@
   ],
   "references": [
     {
-      "path": "../../packages/cds-common2"
+      "path": "../../packages/common"
     },
     {
       "path": "../../packages/icons"
@@ -24,10 +24,10 @@
       "path": "../../packages/illustrations"
     },
     {
-      "path": "../../packages/cds-web2"
+      "path": "../../packages/web"
     },
     {
-      "path": "../../packages/web-visualization2"
+      "path": "../../packages/web-visualization"
     },
     {
       "path": "../../libs/docusaurus-plugin-kbar"

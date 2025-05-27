@@ -1,8 +1,8 @@
 import React from 'react';
 import BannerArt from '@site/static/img/heroBanners/banner_art.svg';
 import BannerArtDark from '@site/static/img/heroBanners/banner_art_dark.svg';
-import { Box, VStack } from '@cbhq/cds-web2/layout';
-import { Text } from '@cbhq/cds-web2/typography';
+import { Box, VStack } from '@cbhq/cds-web/layout';
+import { Text } from '@cbhq/cds-web/typography';
 
 import { useDocsTheme } from '../../../theme/Layout/Provider/UnifiedThemeContext';
 import { ButtonLink } from '../../ButtonLink';

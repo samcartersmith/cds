@@ -13,11 +13,11 @@
  * ```
  */
 import '@cbhq/cds-icons/fonts/web/icon-font.css';
-export * as defaultFontCss from '@cbhq/cds-web2/defaultFontStyles';
-export { defaultFontStyles } from '@cbhq/cds-web2/styles/defaultFont';
+export * as defaultFontCss from '@cbhq/cds-web/defaultFontStyles';
+export { defaultFontStyles } from '@cbhq/cds-web/styles/defaultFont';
 
-export * as globalCss from '@cbhq/cds-web2/globalStyles';
-export { globalStyles } from '@cbhq/cds-web2/styles/global';
+export * as globalCss from '@cbhq/cds-web/globalStyles';
+export { globalStyles } from '@cbhq/cds-web/styles/global';
 
 // Next.js has built-in i18n support: https://nextjs.org/docs/advanced-features/i18n-routing
 // However, this *does not* work with static builds, which is our Nx default if you're
