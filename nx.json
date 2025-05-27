@@ -10,14 +10,6 @@
     "appsDir": "apps",
     "libsDir": "packages"
   },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@cbhq/nx-tasks-runner",
-      "options": {
-        "captureStderr": true
-      }
-    }
-  },
   "namedInputs": {
     "default": [
       "{projectRoot}/*",
