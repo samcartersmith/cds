@@ -18,14 +18,8 @@ const pathToSrcCli = path.join(projectRoot, 'node_modules/.bin/src');
  * Execute a src-cli command and return the output
  */
 export async function executeSrcCommand(command: string, args: string[] = []): Promise<string> {
-  try {
-    // Check if src-cli is available in root node_modules
-    await exec(`${pathToSrcCli} version`);
-  } catch (error) {
-    throw new Error(
-      `src-cli is not installed or not in PATH. Please install it first. Exec path: ${pathToSrcCli}`,
-    );
-  }
+  // Check if src-cli is available in root node_modules
+  await exec(`${pathToSrcCli} version`);
 
   return new Promise((resolve, reject) => {
     // Sourcegraph API key from env

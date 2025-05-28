@@ -35,7 +35,7 @@ export function formatFileLookupResults(jsonResults: string): string {
     formattedOutput += `File Contents:\n`;
     formattedOutput += `${fileResult.file.content}\n`;
 
-    formattedOutput += '\n\n' + '-'.repeat(50) + '\n\n';
+    formattedOutput += '\n' + '-'.repeat(10) + '\n';
 
     return formattedOutput;
   } catch (error) {
@@ -50,7 +50,7 @@ export function formatFileLookupResults(jsonResults: string): string {
  * Format search results from src-cli JSON output into a more readable format
  * Optionally limit the number of results to display with the limit parameter
  */
-export function formatSearchResults(jsonResults: string, limit?: number): string {
+export function formatSearchResults(jsonResults: string, limit: number = 5): string {
   try {
     const data = JSON.parse(jsonResults);
 
@@ -66,12 +66,6 @@ export function formatSearchResults(jsonResults: string, limit?: number): string
       data.LimitHit ? ' (limit hit)' : ''
     }\n\n`;
 
-    if (limit) {
-      // Limit the number of results to display
-      data.Results = data.Results.slice(0, limit);
-    }
-
-    // Format each result
     data.Results.forEach((result: SearchResultType, index: number) => {
       formattedOutput += `Result ${index + 1}:\n`;
 
@@ -104,7 +98,7 @@ export function formatSearchResults(jsonResults: string, limit?: number): string
           contentLines.join('\n') + (contentLines.length >= 10 ? '\n...(truncated)' : '');
       }
 
-      formattedOutput += '\n\n' + '-'.repeat(50) + '\n\n';
+      formattedOutput += '\n' + '-'.repeat(10) + '\n';
     });
 
     return formattedOutput;
@@ -120,6 +114,5 @@ export function formatSearchResults(jsonResults: string, limit?: number): string
  * Format version information into a readable format
  */
 export function formatVersionInfo(versionInfo: string): string {
-  // Version info is usually already well-formatted, but we can enhance it
   return `Sourcegraph CLI Version Information:\n${versionInfo}`;
 }

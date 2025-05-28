@@ -18,10 +18,9 @@ enum ToolType {
   searchReactPropUsage = 'searchReactPropUsage',
 }
 
-// Add a tool to test the Sourcegraph connection
 server.tool(
   ToolType.testSourcegraphConnection,
-  'Test the connection to Sourcegraph and return version info',
+  'Test the connection to Sourcegraph and retrieve version info',
   async () => {
     try {
       const versionInfo = await testConnection();
@@ -64,6 +63,8 @@ server.tool(
   },
   async ({ repository, path, revision = 'HEAD' }) => {
     try {
+      await testConnection();
+
       // Construct the query to get file content
       const query = `count:1 repo:^${repository}$ file:${path}$ rev:${revision}`;
       const fileContent = await executeSrcCommand('search', ['-json', query]);
@@ -98,22 +99,50 @@ server.tool(
 server.tool(
   ToolType.searchReactPropUsage,
   `
-    This tool searches Sourcegraph to find code that uses a specific prop of a React component.
-    This could be helpful for React component library maintainers when they need to understand the usage of their components.
-    It could also be helpful for when React component library maintainers want to remove a prop and need to know how many customers would be affected by the change.
+    This tool searches Sourcegraph to find specific instances of code written by our customers (customers of CDS - Coinbase Design System).
+    The type of code that is searched for is React code that uses a specific prop.
+    This operation is helpful for the CDS library maintainers when they need to understand how their customers are using a specific feature.
+
+    The tool will return a formatted response containing a set of search results.
+    Each results includes the name of the file and github repository, a link to the specific matching line of code and a brief code snippet.
+
+    While relevant code may exist in the local filesystem, it is only the results returned from Sourcegraph that the user is expecting.
+    Because of this, you should never attempt to augment the context window with additional information from the local file system.
+    
+    --------------
+    
+    The agent response should ALWAYS follow these formatting rules:
+
+    - Always display the total number of matched search results in bold
+    - Always display the name of the repository with the highest usage of the component's prop in bold
+    - Preset the sample results as a numbered list
+    - Each result should match this general format:
+      1. In path/to/File.tsx (the-repository-name)
+         View in sourcegraph (link to the line of code in sourcegraph)
+        [code snippet]
   `,
   {
     propName: z.string().describe('Name of the prop to search for'),
-    componentName: z.string().describe('Name of the React component that owns the prop'),
-    repo: z.string().optional().describe('Repository to search (e.g., frontend/coinbase-www)'),
-    limit: z
+    componentName: z
+      .string()
+      .default('*')
+      .describe('The name of the React component which owns the prop'),
+    repo: z
       .string()
       .optional()
-      .default('10')
-      .describe('Maximum number of results to preview in the response'),
+      .describe('A repository to narrow the search within (e.g., frontend/coinbase-www)'),
+    numberOfSamples: z
+      .string()
+      .optional()
+      .default('5')
+      .describe(
+        'The number of results to display in the formatted response, as examples to the user',
+      ),
   },
-  async ({ componentName, propName, repo, limit }) => {
+  async ({ componentName, propName, repo, numberOfSamples }) => {
     try {
+      await testConnection();
+
       // Construct the regex pattern for searching component prop usage
       // The pattern looks for something like <ComponentName propName=
       const regexPattern = `/<${componentName}\\b[^>]*?\\b${propName}=/`;
@@ -131,7 +160,7 @@ server.tool(
         content: [
           {
             type: 'text',
-            text: formatSearchResults(searchResults, parseInt(limit, 10)),
+            text: formatSearchResults(searchResults, parseInt(numberOfSamples, 10)),
           },
         ],
       };
