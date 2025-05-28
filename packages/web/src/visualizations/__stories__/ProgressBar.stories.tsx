@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { HStack } from '../../layout/HStack';
 import { VStack } from '../../layout/VStack';
@@ -6,7 +6,6 @@ import { Text } from '../../typography/Text';
 import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';
 import { ProgressBarWithFloatLabel } from '../ProgressBarWithFloatLabel';
-
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
 export default {
@@ -311,6 +310,44 @@ export const CustomStringLabel = () => {
   );
 };
 CustomStringLabel.parameters = { percy: { enableJavaScript: true } };
+
+export const AnimationCallbacks = () => {
+  const [animationStatus, setAnimationStatus] = React.useState<string>('Ready');
+
+  const handleAnimationStart = useCallback(() => {
+    setAnimationStatus('Animating...');
+  }, []);
+
+  const handleAnimationEnd = useCallback(() => {
+    setAnimationStatus('Animation Ended');
+  }, []);
+
+  return (
+    <VStack gap={4}>
+      <Text as="p" display="block" font="label1">
+        Animation Status: {animationStatus}
+      </Text>
+      <ProgressContainerWithButtons>
+        {({ calculateProgress }) => (
+          <VStack gap={2}>
+            <ProgressBarWithFloatLabel
+              label={Math.round(calculateProgress(0.2) * 100)}
+              labelPlacement="above"
+              progress={calculateProgress(0.2)}
+            >
+              <ProgressBar
+                onAnimationEnd={handleAnimationEnd}
+                onAnimationStart={handleAnimationStart}
+                progress={calculateProgress(0.2)}
+              />
+            </ProgressBarWithFloatLabel>
+          </VStack>
+        )}
+      </ProgressContainerWithButtons>
+    </VStack>
+  );
+};
+AnimationCallbacks.parameters = { percy: { enableJavaScript: true } };
 
 export const DisableAnimateOnMount = () => {
   return (

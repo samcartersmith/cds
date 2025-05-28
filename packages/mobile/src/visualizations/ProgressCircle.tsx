@@ -28,7 +28,10 @@ export type ProgressCircleBaseProps = ProgressBaseProps & {
 
 export type ProgressCircleTextBaseProps = Pick<ProgressCircleBaseProps, 'progress' | 'disabled'>;
 
-export type ProgressInnerCircleBaseProps = Pick<ProgressCircleBaseProps, 'progress'> &
+export type ProgressInnerCircleBaseProps = Pick<
+  ProgressCircleBaseProps,
+  'progress' | 'onAnimationEnd' | 'onAnimationStart'
+> &
   Required<Pick<ProgressCircleBaseProps, 'size' | 'weight' | 'color'>> & {
     visuallyDisabled?: boolean;
   };
@@ -47,7 +50,15 @@ const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseP
 });
 
 const ProgressCircleInner = memo(
-  ({ size, progress, color, weight, visuallyDisabled }: ProgressInnerCircleBaseProps) => {
+  ({
+    size,
+    progress,
+    color,
+    weight,
+    visuallyDisabled,
+    onAnimationEnd,
+    onAnimationStart,
+  }: ProgressInnerCircleBaseProps) => {
     const strokeWidth = useProgressSize(weight);
     const theme = useTheme();
     const circleRef = useRef<React.Component<CircleProps>>(null);
@@ -58,6 +69,8 @@ const ProgressCircleInner = memo(
     useEffect(() => {
       const strokeDashoffset = circumference - circumference * progress;
 
+      onAnimationStart?.();
+
       Animated.timing(
         animatedStrokeDashOffset.current,
         convertMotionConfig({
@@ -65,8 +78,10 @@ const ProgressCircleInner = memo(
           ...animateProgressBaseSpec,
           useNativeDriver: true,
         }),
-      ).start();
-    }, [circumference, progress, animatedStrokeDashOffset]);
+      ).start(({ finished }) => {
+        if (finished) onAnimationEnd?.();
+      });
+    }, [circumference, progress, animatedStrokeDashOffset, onAnimationStart, onAnimationEnd]);
 
     return (
       <AnimatedCircle
@@ -99,6 +114,8 @@ export const ProgressCircle = memo(
         testID,
         hideText,
         size,
+        onAnimationEnd,
+        onAnimationStart,
       }: ProgressCircleBaseProps,
       forwardedRef: React.ForwardedRef<View>,
     ) => {
@@ -142,6 +159,8 @@ export const ProgressCircle = memo(
                     />
                     <ProgressCircleInner
                       color={color}
+                      onAnimationEnd={onAnimationEnd}
+                      onAnimationStart={onAnimationStart}
                       progress={progress}
                       size={circleSize}
                       visuallyDisabled={disabled}

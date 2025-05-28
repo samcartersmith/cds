@@ -1,10 +1,42 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View } from 'react-native';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout/HStack';
+import { VStack } from '../../layout/VStack';
+import { Text } from '../../typography/Text';
 import { ProgressCircle } from '../ProgressCircle';
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
+
+const AnimationCallbacksExample = () => {
+  const [animationStatus, setAnimationStatus] = React.useState<string>('Ready');
+
+  const handleAnimationStart = useCallback(() => {
+    setAnimationStatus('Animating...');
+  }, []);
+
+  const handleAnimationEnd = useCallback(() => {
+    setAnimationStatus('Animation Ended');
+  }, []);
+
+  return (
+    <ProgressContainerWithButtons>
+      {({ calculateProgress }) => (
+        <VStack gap={2}>
+          <Text font="label1">Animation Status: {animationStatus}</Text>
+          <HStack gap={2}>
+            <ProgressCircle
+              onAnimationEnd={handleAnimationEnd}
+              onAnimationStart={handleAnimationStart}
+              progress={calculateProgress(0.2)}
+              size={100}
+            />
+          </HStack>
+        </VStack>
+      )}
+    </ProgressContainerWithButtons>
+  );
+};
 
 const ProgressBarScreen = () => {
   return (
@@ -78,6 +110,9 @@ const ProgressBarScreen = () => {
             </HStack>
           )}
         </ProgressContainerWithButtons>
+      </Example>
+      <Example title="Animation Callbacks">
+        <AnimationCallbacksExample />
       </Example>
     </ExampleScreen>
   );

@@ -155,4 +155,31 @@ describe('ProgressCircle tests', () => {
     const innerCircle = screen.getByTestId('cds-progress-circle-inner');
     expect(innerCircle).toHaveAttribute('stroke', 'var(--color-bgPositive)');
   });
+
+  it('calls onAnimationStart and onAnimationEnd callbacks', async () => {
+    const onAnimationStart = jest.fn();
+    const onAnimationEnd = jest.fn();
+    const size = 100;
+
+    render(
+      <DefaultThemeProvider>
+        <ProgressCircle
+          onAnimationEnd={onAnimationEnd}
+          onAnimationStart={onAnimationStart}
+          progress={0.5}
+          size={size}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    // Wait for animation to start
+    await waitFor(() => {
+      expect(onAnimationStart).toHaveBeenCalledTimes(1);
+    });
+
+    // Wait for animation to end
+    await waitFor(() => {
+      expect(onAnimationEnd).toHaveBeenCalledTimes(1);
+    });
+  });
 });

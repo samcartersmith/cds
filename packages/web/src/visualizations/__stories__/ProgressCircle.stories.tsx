@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { HStack } from '../../layout/HStack';
+import { VStack } from '../../layout/VStack';
+import { Text } from '../../typography/Text';
 import { ProgressCircle } from '../ProgressCircle';
-
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
 export default {
@@ -75,6 +76,39 @@ export const Colors = () => {
     </HStack>
   );
 };
+
+export const AnimationCallbacks = () => {
+  const [animationStatus, setAnimationStatus] = React.useState<string>('Ready');
+
+  const handleAnimationStart = useCallback(() => {
+    setAnimationStatus('Animating...');
+  }, []);
+
+  const handleAnimationEnd = useCallback(() => {
+    setAnimationStatus('Animation Ended');
+  }, []);
+
+  return (
+    <VStack gap={4}>
+      <Text as="p" display="block" font="label1">
+        Animation Status: {animationStatus}
+      </Text>
+      <ProgressContainerWithButtons>
+        {({ calculateProgress }) => (
+          <HStack gap={2}>
+            <ProgressCircle
+              onAnimationEnd={handleAnimationEnd}
+              onAnimationStart={handleAnimationStart}
+              progress={calculateProgress(0.2)}
+              size={100}
+            />
+          </HStack>
+        )}
+      </ProgressContainerWithButtons>
+    </VStack>
+  );
+};
+AnimationCallbacks.parameters = { percy: { enableJavaScript: true } };
 
 export const FillParent = () => {
   return (

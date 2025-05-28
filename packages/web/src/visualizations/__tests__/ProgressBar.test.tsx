@@ -158,4 +158,48 @@ describe('ProgressBar test', () => {
     expect(startLabelText.className).toContain('fg');
     expect(endLabelText.className).toContain('fg');
   });
+
+  it('calls onAnimationStart and onAnimationEnd callbacks', async () => {
+    const onAnimationStart = jest.fn();
+    const onAnimationEnd = jest.fn();
+
+    render(
+      <Box width="200">
+        <ProgressBar
+          onAnimationEnd={onAnimationEnd}
+          onAnimationStart={onAnimationStart}
+          progress={0.5}
+        />
+      </Box>,
+    );
+
+    // Wait for animation to start
+    await waitFor(() => {
+      expect(onAnimationStart).toHaveBeenCalledTimes(1);
+    });
+
+    // Wait for animation to end
+    await waitFor(() => {
+      expect(onAnimationEnd).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it('does not call animation callbacks when progress is 0', () => {
+    const onAnimationStart = jest.fn();
+    const onAnimationEnd = jest.fn();
+
+    render(
+      <Box width="200">
+        <ProgressBar
+          onAnimationEnd={onAnimationEnd}
+          onAnimationStart={onAnimationStart}
+          progress={0}
+        />
+      </Box>,
+    );
+
+    // Animation callbacks should not be called for 0 progress
+    expect(onAnimationStart).not.toHaveBeenCalled();
+    expect(onAnimationEnd).not.toHaveBeenCalled();
+  });
 });

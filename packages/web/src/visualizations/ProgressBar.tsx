@@ -33,6 +33,14 @@ export type ProgressBaseProps = SharedProps &
      * @default primary
      */
     color?: ThemeVars.Color;
+    /**
+     * Callback fired when the progress animation ends.
+     */
+    onAnimationEnd?: () => void;
+    /**
+     * Callback fired when the progress animation starts.
+     */
+    onAnimationStart?: () => void;
   };
 
 export type ProgressBarProps = ProgressBaseProps;
@@ -54,6 +62,8 @@ export const ProgressBar = memo(
         disableAnimateOnMount = false,
         testID,
         accessibilityLabel,
+        onAnimationEnd,
+        onAnimationStart,
       }: ProgressBarProps,
       forwardedRef: React.ForwardedRef<HTMLDivElement>,
     ) => {
@@ -114,6 +124,8 @@ export const ProgressBar = memo(
                 height={height}
                 initial={motionProps.initial}
                 justifyContent="flex-start"
+                onAnimationComplete={onAnimationEnd}
+                onAnimationStart={onAnimationStart}
                 opacity={disableAnimateOnMount ? 1 : 0}
                 style={motionProps.style}
                 testID="cds-progress-bar-inner-bar"

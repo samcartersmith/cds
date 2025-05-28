@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { VStack } from '../../layout/VStack';
@@ -22,6 +22,39 @@ const renderEndLabelNum = (num: number) => {
 
 const renderCustomStringLabel: (num: number) => string = (num: number) => {
   return `$${num.toLocaleString()}`;
+};
+
+const AnimationCallbacksExample = () => {
+  const [animationStatus, setAnimationStatus] = React.useState<string>('Ready');
+
+  const handleAnimationStart = useCallback(() => {
+    setAnimationStatus('Animating...');
+  }, []);
+
+  const handleAnimationEnd = useCallback(() => {
+    setAnimationStatus('Animation Ended');
+  }, []);
+
+  return (
+    <ProgressContainerWithButtons>
+      {({ calculateProgress }) => (
+        <VStack gap={2}>
+          <Text font="label1">Animation Status: {animationStatus}</Text>
+          <ProgressBarWithFloatLabel
+            label={Math.round(calculateProgress(0.2) * 100)}
+            labelPlacement="above"
+            progress={calculateProgress(0.2)}
+          >
+            <ProgressBar
+              onAnimationEnd={handleAnimationEnd}
+              onAnimationStart={handleAnimationStart}
+              progress={calculateProgress(0.2)}
+            />
+          </ProgressBarWithFloatLabel>
+        </VStack>
+      )}
+    </ProgressContainerWithButtons>
+  );
 };
 
 const ProgressBarScreen = () => {
@@ -237,6 +270,9 @@ const ProgressBarScreen = () => {
         <ProgressContainerWithButtons hideIncrease>
           {() => <ProgressBar disableAnimateOnMount progress={0.8} />}
         </ProgressContainerWithButtons>
+      </Example>
+      <Example title="Animation Callbacks">
+        <AnimationCallbacksExample />
       </Example>
     </ExampleScreen>
   );

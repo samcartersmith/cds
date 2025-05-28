@@ -25,7 +25,10 @@ export type ProgressCircleBaseProps = ProgressBaseProps & {
 
 export type ProgressCircleTextBaseProps = Pick<ProgressCircleBaseProps, 'progress' | 'disabled'>;
 
-export type ProgressInnerCircleBaseProps = Pick<ProgressCircleBaseProps, 'progress'> &
+export type ProgressInnerCircleBaseProps = Pick<
+  ProgressCircleBaseProps,
+  'progress' | 'onAnimationEnd' | 'onAnimationStart'
+> &
   Required<Pick<ProgressCircleBaseProps, 'size' | 'weight' | 'color'>> & {
     visuallyDisabled?: boolean;
   };
@@ -44,7 +47,15 @@ const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseP
 });
 
 const ProgressCircleInner = memo(
-  ({ size, progress, color, weight, visuallyDisabled }: ProgressInnerCircleBaseProps) => {
+  ({
+    size,
+    progress,
+    color,
+    weight,
+    visuallyDisabled,
+    onAnimationEnd,
+    onAnimationStart,
+  }: ProgressInnerCircleBaseProps) => {
     const strokeWidth = useProgressSize(weight);
     const circleRef = useRef<SVGCircleElement>(null);
 
@@ -75,6 +86,8 @@ const ProgressCircleInner = memo(
           strokeWidth,
           stroke: !visuallyDisabled ? `var(--color-${color})` : 'var(--color-bgLineHeavy)',
         })}
+        onAnimationComplete={onAnimationEnd}
+        onAnimationStart={onAnimationStart}
       />
     );
   },
@@ -92,6 +105,8 @@ export const ProgressCircle = memo(
         hideText,
         size,
         accessibilityLabel,
+        onAnimationEnd,
+        onAnimationStart,
       }: ProgressCircleBaseProps,
       forwardedRef: React.ForwardedRef<HTMLDivElement>,
     ) => {
@@ -138,6 +153,8 @@ export const ProgressCircle = memo(
                   />
                   <ProgressCircleInner
                     color={color}
+                    onAnimationEnd={onAnimationEnd}
+                    onAnimationStart={onAnimationStart}
                     progress={progress}
                     size={circleSize}
                     visuallyDisabled={disabled}

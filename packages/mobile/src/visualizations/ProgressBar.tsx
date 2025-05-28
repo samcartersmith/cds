@@ -30,6 +30,14 @@ export type ProgressBaseProps = SharedProps &
      * @default primary
      */
     color?: ThemeVars.Color;
+    /**
+     * Callback fired when the progress animation ends.
+     */
+    onAnimationEnd?: () => void;
+    /**
+     * Callback fired when the progress animation starts.
+     */
+    onAnimationStart?: () => void;
   };
 
 export type ProgressBarProps = ProgressBaseProps;
@@ -45,6 +53,8 @@ export const ProgressBar = memo(
         disableAnimateOnMount = false,
         testID,
         accessibilityLabel,
+        onAnimationEnd,
+        onAnimationStart,
       }: ProgressBarProps,
       forwardedRef: React.ForwardedRef<View>,
     ) => {
@@ -63,6 +73,8 @@ export const ProgressBar = memo(
 
       useEffect(() => {
         if (innerWidth > -1) {
+          onAnimationStart?.();
+
           Animated.timing(
             animatedProgress.current,
             convertMotionConfig({
@@ -70,9 +82,11 @@ export const ProgressBar = memo(
               ...animateProgressBaseSpec,
               useNativeDriver: true,
             }),
-          )?.start();
+          )?.start(({ finished }) => {
+            if (finished) onAnimationEnd?.();
+          });
         }
-      }, [progress, animatedProgress, innerWidth]);
+      }, [progress, animatedProgress, innerWidth, onAnimationStart, onAnimationEnd]);
 
       const handleLayout = useCallback((event: LayoutChangeEvent) => {
         setInnerWidth(event.nativeEvent.layout.width);

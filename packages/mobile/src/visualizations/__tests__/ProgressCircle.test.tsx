@@ -128,4 +128,32 @@ describe('ProgressCircle tests and passes a11y', () => {
     expect(screen.getByTestId('cds-progress-circle-inner')).toBeDefined();
     expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
   });
+
+  it('calls onAnimationStart and onAnimationEnd callbacks', () => {
+    const onAnimationStart = jest.fn();
+    const onAnimationEnd = jest.fn();
+    const size = 100;
+
+    render(
+      <DefaultThemeProvider>
+        <ProgressCircle
+          onAnimationEnd={onAnimationEnd}
+          onAnimationStart={onAnimationStart}
+          progress={0.5}
+          size={size}
+          testID="mock-progress-circle"
+        />
+      </DefaultThemeProvider>,
+    );
+
+    // Animation should start
+    expect(onAnimationStart).toHaveBeenCalledTimes(1);
+
+    // Run timers to end animation
+    jest.runAllTimers();
+
+    // Animation should end
+    expect(onAnimationEnd).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
+  });
 });

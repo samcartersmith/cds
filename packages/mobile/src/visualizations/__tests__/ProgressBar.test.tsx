@@ -205,4 +205,66 @@ describe('ProgressBar test', () => {
 
     expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
   });
+
+  it('calls onAnimationStart and onAnimationEnd callbacks', () => {
+    const onAnimationStart = jest.fn();
+    const onAnimationEnd = jest.fn();
+
+    render(
+      <DefaultThemeProvider>
+        <Box width="200">
+          <ProgressBar
+            onAnimationEnd={onAnimationEnd}
+            onAnimationStart={onAnimationStart}
+            progress={0.5}
+            testID="mock-progress-bar"
+          />
+        </Box>
+      </DefaultThemeProvider>,
+    );
+
+    // Trigger layout to start animation
+    fireTextContainerEvent(screen.getByTestId('cds-progress-bar-inner-bar-container'));
+
+    // Animation should start
+    expect(onAnimationStart).toHaveBeenCalledTimes(1);
+
+    // Run timers to end animation
+    act(() => void jest.runAllTimers());
+
+    // Animation should end
+    expect(onAnimationEnd).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
+  });
+
+  it('does not call animation callbacks when progress is 0', () => {
+    const onAnimationStart = jest.fn();
+    const onAnimationEnd = jest.fn();
+
+    render(
+      <DefaultThemeProvider>
+        <Box width="200">
+          <ProgressBar
+            onAnimationEnd={onAnimationEnd}
+            onAnimationStart={onAnimationStart}
+            progress={0}
+            testID="mock-progress-bar"
+          />
+        </Box>
+      </DefaultThemeProvider>,
+    );
+
+    // Trigger layout
+    fireTextContainerEvent(screen.getByTestId('cds-progress-bar-inner-bar-container'));
+
+    // Animation should start even for 0 progress
+    expect(onAnimationStart).toHaveBeenCalledTimes(1);
+
+    // Run timers to end animation
+    act(() => void jest.runAllTimers());
+
+    // Animation should end
+    expect(onAnimationEnd).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId('mock-progress-bar')).toBeAccessible();
+  });
 });

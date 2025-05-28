@@ -1,6 +1,6 @@
 ## Default
 
-```jsx live
+```jsx
 <HStack gap={2}>
   <ProgressCircle progress={0} size={100} />
   <ProgressCircle progress={0.5} size={100} />
@@ -10,7 +10,7 @@
 
 ## Thin
 
-```jsx live
+```jsx
 <HStack gap={2}>
   <ProgressCircle progress={0} weight="thin" size={100} />
   <ProgressCircle progress={0.5} weight="thin" size={100} />
@@ -20,7 +20,7 @@
 
 ## Semiheavy
 
-```jsx live
+```jsx
 <HStack gap={2}>
   <ProgressCircle progress={0} weight="semiheavy" size={100} />
   <ProgressCircle progress={0.5} weight="semiheavy" size={100} />
@@ -30,7 +30,7 @@
 
 ## Heavy
 
-```jsx live
+```jsx
 <HStack gap={2}>
   <ProgressCircle progress={0} weight="heavy" size={100} />
   <ProgressCircle progress={0.5} weight="heavy" size={100} />
@@ -40,7 +40,7 @@
 
 ## No Text
 
-```jsx live
+```jsx
 <HStack gap={2}>
   <ProgressCircle progress={0} hideText size={25} />
   <ProgressCircle progress={0.5} hideText size={25} />
@@ -50,7 +50,7 @@
 
 ## Disabled
 
-```jsx live
+```jsx
 <HStack gap={2}>
   <ProgressCircle progress={0} disabled size={100} />
   <ProgressCircle progress={0.5} disabled size={100} />
@@ -60,7 +60,7 @@
 
 ## Colors
 
-```jsx live
+```jsx
 <HStack gap={2}>
   <ProgressCircle progress={0.5} color="positive" size={100} />
   <ProgressCircle progress={0.5} color="negative" size={100} />
@@ -73,7 +73,7 @@
 
 The progress circle can be dynamically sized to fit its parent. If you drag the browser window smaller or larger then the ProgressCircle will resize accordingly.
 
-```jsx live
+```jsx
 <HStack gap={2} flexWrap="wrap">
   <div style={{ height: '15vw', width: '15vw', minWidth: '60px', minHeight: '60px' }}>
     <ProgressCircle progress={1} />
@@ -85,4 +85,34 @@ The progress circle can be dynamically sized to fit its parent. If you drag the 
     <ProgressCircle progress={1} />
   </div>
 </HStack>
+```
+
+### Animation Callbacks
+
+You can use the `onAnimationStart` and `onAnimationEnd` callbacks to track the progress of the animation.
+
+```jsx
+function Example() {
+  const [animationStatus, setAnimationStatus] = React.useState('Ready');
+
+  const handleAnimationStart = useCallback(() => {
+    setAnimationStatus('Animating...');
+  }, []);
+
+  const handleAnimationEnd = useCallback(() => {
+    setAnimationStatus('Animation Ended');
+  }, []);
+
+  return (
+    <VStack gap={2}>
+      <Text>Animation Status: {animationStatus}</Text>
+      <ProgressCircle
+        onAnimationEnd={handleAnimationEnd}
+        onAnimationStart={handleAnimationStart}
+        progress={calculateProgress(0.2)}
+        size={100}
+      />
+    </VStack>
+  );
+}
 ```

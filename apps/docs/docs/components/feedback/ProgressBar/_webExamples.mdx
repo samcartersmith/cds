@@ -54,3 +54,36 @@ This is for demo purposes. ProgressContainerWithButtons isn't designed for produ
   )}
 </ProgressContainerWithButtons>
 ```
+
+## Animation Callbacks
+
+You can use the `onAnimationStart` and `onAnimationEnd` callbacks to track the progress of the animation.
+
+```jsx live
+function Example() {
+  const [animationStatus, setAnimationStatus] = React.useState('Ready');
+
+  const handleAnimationStart = useCallback(() => {
+    setAnimationStatus('Animating...');
+  }, []);
+
+  const handleAnimationEnd = useCallback(() => {
+    setAnimationStatus('Animation Ended');
+  }, []);
+
+  return (
+    <ProgressContainerWithButtons>
+      {({ calculateProgress }) => (
+        <VStack gap={2}>
+          <Text>Animation Status: {animationStatus}</Text>
+          <ProgressBar
+            onAnimationEnd={handleAnimationEnd}
+            onAnimationStart={handleAnimationStart}
+            progress={calculateProgress(0.2)}
+          />
+        </VStack>
+      )}
+    </ProgressContainerWithButtons>
+  );
+}
+```
