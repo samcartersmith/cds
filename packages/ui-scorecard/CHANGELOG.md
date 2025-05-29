@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.6 (5/29/2025 PST)
+
+#### 🐞 Fixes
+
+- Add executors.json file to exports. [[#4041](https://github.cbhq.net/frontend/cds/pull/4041)]
+
 ## 0.2.5 (5/15/2025 PST)
 
 #### 🚀 Updates

@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/ui-scorecard",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "UI scorecard and adoption tracking cli tool",
   "repository": {
     "type": "git",
@@ -31,7 +31,8 @@
   "files": [
     "cjs",
     "dts",
-    "CHANGELOG"
+    "CHANGELOG",
+    "executors.json"
   ],
   "peerDependencies": {
     "@cbhq/mono-tasks": "^1.16.0",
