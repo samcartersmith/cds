@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 0.2.3 (5/29/2025 PST)
+
+#### 🐞 Fixes
+
+- Add missing `@types/update-notifier` dev dependency.
 
 #### 📘 Misc
 

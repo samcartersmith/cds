@@ -58,7 +58,6 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@cbhq/cds-web-utils": "workspace:^",
-    "@cbhq/ui-scorecard": "workspace:^",
     "@linaria/shaker": "^3.0.0-beta.22",
     "@storybook/jest": "^0.0.10",
     "@storybook/react": "^6.5.17-alpha.0",

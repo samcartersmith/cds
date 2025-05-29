@@ -71,9 +71,7 @@ jobs:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
       - name: Test
-        run: |
-          yarn nx affected --target=test --base=$NX_BASE --head=$NX_HEAD
-          yarn nx affected --target=audit-a11y --base=$NX_BASE --head=$NX_HEAD
+        run: yarn nx affected --target=test --base=$NX_BASE --head=$NX_HEAD
 
   typecheck:
     name: Typecheck

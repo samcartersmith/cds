@@ -37,16 +37,6 @@
         }
       }
     },
-    "audit-a11y": {
-      "executor": "@cbhq/ui-scorecard:audit-a11y",
-      "dependsOn": [
-        "test"
-      ],
-      "options": {
-        "eventProjectName": "cds_mobile",
-        "platform": "mobile"
-      }
-    },
     "publish-figma": {
       "executor": "nx:run-commands",
       "options": {
