@@ -3,6 +3,7 @@
 }
 
 .propsTable {
+  width: 100%;
   display: table;
   border-collapse: separate;
   border-spacing: 0;
