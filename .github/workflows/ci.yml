@@ -13,6 +13,7 @@ env:
   CI: true
   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
   NX_SELF_HOSTED_REMOTE_CACHE_SERVER: 'https://nx-remote-cache.cbhq.net'
+  CB_GHA_BRANCH: ${{github.head_ref || github.base_ref || github.ref_name}}
 
 jobs:
   validate:
@@ -23,18 +24,12 @@ jobs:
         with:
           fetch-depth: 100 # TODO: This needs to include the merge-base
       - uses: ./.github/actions/setup
-      - name: Validate Codeflow
-        run: yarn mono-pipeline validate-codeflow
-      - name: Validate Codeowners
-        run: yarn mono-pipeline validate-codeowners
       - name: Validate Lockfile
-        run: yarn mono-pipeline validate-lockfile
-      - name: Validate Package JSONs
-        run: yarn mono-pipeline validate-package-jsons
+        run: yarn tsx ./tools/ci/validators/validateLockfile.ts
       - name: Validate Patches
-        run: yarn mono-pipeline validate-patches
+        run: yarn tsx ./tools/ci/validators/validatePatches.ts
       - name: Validate Versioned
-        run: yarn mono-pipeline validate-versioned
+        run: yarn tsx ./tools/ci/validators/validateVersioned.ts
       - name: Validate CDS Versions
         run: yarn tsx ./tools/validateCDSVersions.ts
       - name: Validate Constraints
