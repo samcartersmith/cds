@@ -1,7 +1,7 @@
 ### Placement
 
 ```jsx live
-function DefaultSelect() {
+function TooltipPlacement() {
   const content = 'This is the tooltip Content';
   return (
     <HStack spacingHorizontal={2} gap={2} justifyContent="space-around">
@@ -21,6 +21,34 @@ function DefaultSelect() {
         <Button>Bottom</Button>
       </Tooltip>
     </HStack>
+  );
+}
+```
+
+### Positioning
+
+Sometimes you may want to use a tooltip with an absolute positioned element.
+
+To ensure the tooltip is properly aligned, you should instead set the position prop on the tooltip.
+
+```jsx live
+function TooltipPosition() {
+  const content = 'This is the tooltip Content';
+  return (
+    <VStack gap={2}>
+      <Box position="relative">
+        Set your default display currency.
+        <Tooltip content="I am not centered horizontally">
+          <Icon color="fg" name="infoInactive" paddingStart={1} position="absolute" />
+        </Tooltip>
+      </Box>
+      <Box position="relative">
+        Set your default display currency.
+        <Tooltip content="I am centered horizontally" position="absolute">
+          <Icon color="fg" name="infoInactive" paddingStart={1} />
+        </Tooltip>
+      </Box>
+    </VStack>
   );
 }
 ```
