@@ -3,8 +3,6 @@
  * Generated from yarn nx run icons:generate-stories
  */
 
-import React from 'react';
-
 import { Icon } from '../Icon';
 
 import { IconSheet } from './IconSheet';

@@ -45,8 +45,8 @@ const ignores = [
   // within their NX project, these files are not included by the Typescript config
   // when linting with TS types (e.g. internal/safely-spread-props) this will raise an error
   'packages/web/optimize-css.ts',
-  'packages/icons/scripts/generateStories.ts',
-  'packages/illustrations/scripts/generateStories.ts',
+  'packages/icons/scripts/*.ts',
+  'packages/illustrations/scripts/*.ts',
   'libs/docusaurus-plugin-docgen/module-declarations.d.ts',
   'apps/figma-strings-plugin/vite.config.ts',
 ];

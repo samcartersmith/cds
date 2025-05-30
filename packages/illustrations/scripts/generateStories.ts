@@ -13,7 +13,7 @@ import type {
   SpotSquareName,
 } from '../src/index';
 
-const { writePrettyFile } = await import('@cbhq/script-utils/fs/writePrettyFile');
+import { writePrettyFile } from './writeStories';
 
 const HEROSQUARE_CHUNK_SIZE = 240;
 const PICTOGRAM_CHUNK_SIZE = 240;

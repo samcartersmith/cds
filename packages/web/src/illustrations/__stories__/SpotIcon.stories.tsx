@@ -3,8 +3,6 @@
  * Generated from yarn nx run illustrations:generate-stories
  */
 
-import React from 'react';
-
 import { SpotIcon } from '../SpotIcon';
 
 import { getIllustrationSheet } from './getIllustrationSheet';

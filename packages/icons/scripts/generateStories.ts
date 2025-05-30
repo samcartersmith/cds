@@ -3,8 +3,7 @@ import chalk from 'chalk';
 import navIconNames from '../src/__generated__/nav/data/names';
 import iconNames from '../src/__generated__/ui/data/names';
 import type { NavIconName, UiIconName } from '../src/index';
-
-const { writePrettyFile } = await import('@cbhq/script-utils/fs/writePrettyFile');
+import { writePrettyFile } from './writeStories';
 
 const NAV_ICON_CHUNK_SIZE = 80;
 const ICON_CHUNK_SIZE = 160;

@@ -2670,8 +2670,9 @@ __metadata:
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
     "@cbhq/figma-tasks": "workspace:^"
-    "@cbhq/script-utils": "workspace:^"
+    "@types/prettier": "npm:^2.7.3"
     chalk: "npm:^4.1.2"
+    prettier: "npm:^2.8.3"
   languageName: unknown
   linkType: soft
 
@@ -2686,7 +2687,9 @@ __metadata:
     "@cbhq/figma-styles": "workspace:^"
     "@cbhq/figma-tasks": "workspace:^"
     "@cbhq/script-utils": "workspace:^"
+    "@types/prettier": "npm:^2.7.3"
     chalk: "npm:^4.1.2"
+    prettier: "npm:^2.8.3"
   languageName: unknown
   linkType: soft
 

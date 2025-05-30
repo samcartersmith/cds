@@ -3,8 +3,6 @@
  * Generated from yarn nx run illustrations:generate-stories
  */
 
-import React from 'react';
-
 import { HeroSquare } from '../HeroSquare';
 
 import { getIllustrationSheet } from './getIllustrationSheet';

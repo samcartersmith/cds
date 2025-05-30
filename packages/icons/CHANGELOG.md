@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.6.1 (5/29/2025 PST)
+
+#### 🐞 Fixes
+
+- Removing script-utils dependency.
+
 ## 4.6.0 (5/12/2025 PST)
 
 #### 🚀 Updates
