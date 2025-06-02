@@ -2838,18 +2838,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/cds-tasks@workspace:libs/cds-tasks":
-  version: 0.0.0-use.local
-  resolution: "@cbhq/cds-tasks@workspace:libs/cds-tasks"
-  dependencies:
-    chalk: "npm:^4.1.2"
-    execa: "npm:^5.1.1"
-    fast-glob: "npm:^3.2.11"
-    lodash: "npm:^4.17.21"
-    ts-morph: "npm:^19.0.0"
-  languageName: unknown
-  linkType: soft
-
 "@cbhq/cds-usage-mcp@workspace:libs/cds-usage-mcp":
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-usage-mcp@workspace:libs/cds-usage-mcp"
