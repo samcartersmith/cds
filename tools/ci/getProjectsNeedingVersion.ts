@@ -1,15 +1,7 @@
-import { getChangedFiles } from '../getChangedFiles';
-import { getCurrentCIBranch } from '../getCurrentCIBranch';
-import { getPublishableProjects } from '../getPublishableProjects';
-import {
-  LogOutStream,
-  LogParam,
-  color,
-  logInfo as logInfoBase,
-  logWarn as logWarnBase,
-  logSuccess,
-} from '../logging';
-import { projectsNeedingVersion } from '../getProjectsNeedingVersion';
+import { getChangedFiles } from './getChangedFiles';
+import { getCurrentCIBranch } from './getCurrentCIBranch';
+import { getPublishableProjects } from './getPublishableProjects';
+import { LogParam, logInfo as logInfoBase, logSuccess } from './logging';
 
 // WARNING: This list is not comprehensive and may be missing configuration files
 const BUMP_REGEX =
@@ -73,30 +65,42 @@ export async function getAffectedPackages(options: Partial<PackageVersionCheckOp
   );
 }
 
-export function validateVersioned(options: Partial<PackageVersionCheckOptions> = {}) {
-  return async function (outputStream: LogOutStream) {
-    const logInfo = (msg: LogParam) => {
-      logInfoBase(msg, outputStream);
-    };
-    const logWarn = (msg: LogParam) => {
-      logWarnBase(msg, outputStream);
-    };
-    const unversionedPackages = await projectsNeedingVersion(logInfo, options);
-    unversionedPackages.forEach((projectName) => {
-      const versionCommand = color.shell(`yarn mono-pipeline version ${projectName}`);
-      const privatePackageProp = color.shell('"private": true');
+export async function projectsNeedingVersion(
+  logInfo: typeof logInfoBase,
+  options: Partial<PackageVersionCheckOptions> = {},
+) {
+  if (getCurrentCIBranch() === 'master') {
+    logInfo('Skipping version check on master branch');
+    return [];
+  }
 
-      logWarn(
-        `Changelog not generated, please run ${versionCommand}. If this package should not be published, add ${privatePackageProp} to its package.json.`,
-      );
-    });
+  logInfo('Checking for packages that need versioning');
 
-    if (unversionedPackages.length) {
-      throw new Error(
-        `CHANGELOG entries are missing for ${unversionedPackages.length} package(s).`,
-      );
-    }
-  };
+  const changedFiles = await getChangedFiles(false);
+  const changedPackages = await getAffectedPackages({
+    ...options,
+    onlyPublishable: true,
+    changedFiles,
+  });
+
+  if (Object.keys(changedPackages).length === 0) {
+    logSuccess('No changes within packages');
+    return [];
+  }
+
+  const unversionedPackages = Object.keys(changedPackages).filter((projectName) => {
+    const changelogPath = `${changedPackages[projectName].data.root}/CHANGELOG.md`;
+    // Already bumped!
+    return !changedFiles.includes(changelogPath);
+  });
+
+  if (unversionedPackages.length > 0) {
+    logInfo(
+      `Found ${
+        unversionedPackages.length
+      } package(s) that need versioning: ${unversionedPackages.join(', ')}`,
+    );
+  }
+
+  return unversionedPackages;
 }
-
-void validateVersioned()(process.stdout);
