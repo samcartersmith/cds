@@ -35,6 +35,7 @@ const baseStyle = css`
   overflow: hidden;
 
   &:hover {
+    border-color: var(--border-color-unfocused);
     opacity: 1;
   }
 
