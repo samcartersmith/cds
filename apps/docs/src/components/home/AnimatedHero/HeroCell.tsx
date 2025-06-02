@@ -1,14 +1,10 @@
 import React, { useCallback } from 'react';
-import { animated } from '@react-spring/web';
 import { useThrottledValue } from '@site/src/utils/useThrottledValue';
 import { Box } from '@cbhq/cds-web/layout/Box';
 import { Pressable, PressableProps } from '@cbhq/cds-web/system/Pressable';
 import { Text } from '@cbhq/cds-web/typography';
 
 import { characterSet, maxUpdatesPerSecond } from './constants';
-
-const AnimatedBox = animated(Box);
-
 type HeroCellProps = Omit<
   PressableProps<'button'>,
   'children' | 'background' | 'onHoverStart' | 'onHoverEnd' | 'onClick'
@@ -27,7 +23,6 @@ export const HeroCell = ({
   onHoverStart,
   onHoverEnd,
   onClick,
-  ...rest
 }: HeroCellProps) => {
   const throttledCharSetIndex = useThrottledValue(charSetIndex, 1000 / maxUpdatesPerSecond);
   const character = characterSet[throttledCharSetIndex % characterSet.length];
@@ -35,10 +30,16 @@ export const HeroCell = ({
 
   const handleHoverStart = useCallback(() => onHoverStart(cellIndex), [onHoverStart, cellIndex]);
   const handleHoverEnd = useCallback(() => onHoverEnd(cellIndex), [onHoverEnd, cellIndex]);
-  const handleClick = useCallback(() => onClick(cellIndex), [onClick, cellIndex]);
-
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      event.stopPropagation();
+      onClick(cellIndex);
+    },
+    [onClick, cellIndex],
+  );
   return (
     <Pressable
+      aria-hidden={true}
       aspectRatio={1}
       background="bgAlternate"
       borderRadius={{ base: 200, phone: 100 }}
@@ -49,9 +50,9 @@ export const HeroCell = ({
       onMouseEnter={handleHoverStart}
       onMouseLeave={handleHoverEnd}
       overflow="hidden"
-      {...rest}
+      tabIndex={-1}
     >
-      <AnimatedBox
+      <Box
         alignItems="center"
         borderRadius={{ base: 200, phone: 100 }}
         dangerouslySetBackground={isColor ? character : undefined}
@@ -63,7 +64,7 @@ export const HeroCell = ({
         <Text font={{ base: 'display2', tablet: 'display3', phone: 'title4' }}>
           {isColor ? ' ' : character}
         </Text>
-      </AnimatedBox>
+      </Box>
     </Pressable>
   );
 };

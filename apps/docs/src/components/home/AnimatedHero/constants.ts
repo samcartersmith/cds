@@ -114,6 +114,14 @@ export const messagesCharSetIndices = messages.map((message) => {
   });
 });
 
+export const messageAccessibilityDescriptions = messages.map(
+  (message) =>
+    `Current message: ${message
+      .map((row) => row.join('').trim())
+      .filter((row) => !!row)
+      .join(' ')}. Press Enter or Space to skip to the next message.`,
+);
+
 // Grid animation constants
 export const autoTransitionIntervalMs = 10000; // Interval for automatic message rotation
 export const gridCellDistanceDelayMs = 80; // Delay per grid unit for ripple effect
