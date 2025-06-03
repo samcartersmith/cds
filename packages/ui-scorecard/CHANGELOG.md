@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.7 (5/30/2025 PST)
+
+#### 🐞 Fixes
+
+- Update path used in executors.json file. [[#4044](https://github.cbhq.net/frontend/cds/pull/4044)]
+
 ## 0.2.6 (5/29/2025 PST)
 
 #### 🐞 Fixes
