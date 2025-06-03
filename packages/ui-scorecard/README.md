@@ -33,7 +33,7 @@ We will walk you through deploying a newer version of the package to artifactory
 1. To bump this package using mono-pipeline, run the command below at the root of the repo
 
 ```
-yarn mono-pipeline version ui-scorecard
+yarn bump-version ui-scorecard
 ```
 
 Just follow the instructions and it should work. If mono-pipeline fails to work at any point, you can bump it manually. See steps below.

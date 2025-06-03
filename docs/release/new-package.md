@@ -52,15 +52,15 @@ After your PR is merged Codeflow will automatically deploy it to Artifactory. Bu
 
 ## Updates
 
-Whenever you make updates to your package you'll want to bump the version and changelog, you can use the `yarn mono-pipeline version` and the name of your package to bump the version and changelog.
+Whenever you make updates to your package you'll want to bump the version and changelog, you can use the `yarn bump-version` and the name of your package to bump the version and changelog.
 
 Example:
 
 ```
-yarn mono-pipeline version <YOUR_PACKAGE>
+yarn bump-version <YOUR_PACKAGE>
 ```
 
-ie. `yarn mono-pipeline version eslint-plugin-cds`
+ie. `yarn bump-version eslint-plugin-cds`
 
 ## Resources
 

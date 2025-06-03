@@ -44,11 +44,11 @@ steps:
       DETOX_RUN_ALL: true
     commands:
       - tools/ci/setup.sh
-      - yarn mono-pipeline run-ci other --targets=visreg --allOnMaster
+      - yarn nx run mobile-app:visreg
 
   - label: 'Visreg (Mobile - Affected)'
     <<: *k8s_medium
     if: build.branch != 'master' && !(build.pull_request.labels	includes 'visreg')
     commands:
       - tools/ci/setup.sh
-      - (yarn workspace mobile-app should-run-visreg && yarn mono-pipeline run-ci other --targets=visreg --allOnMaster) || echo 'Skipping Percy (Mobile)'
+      - (yarn workspace mobile-app should-run-visreg && yarn nx run mobile-app:visreg) || echo 'Skipping Percy (Mobile)'

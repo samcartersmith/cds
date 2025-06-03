@@ -83,7 +83,7 @@ export function validateVersioned(options: Partial<PackageVersionCheckOptions> =
     };
     const unversionedPackages = await projectsNeedingVersion(logInfo, options);
     unversionedPackages.forEach((projectName) => {
-      const versionCommand = color.shell(`yarn mono-pipeline version ${projectName}`);
+      const versionCommand = color.shell(`yarn bump-version ${projectName}`);
       const privatePackageProp = color.shell('"private": true');
 
       logWarn(

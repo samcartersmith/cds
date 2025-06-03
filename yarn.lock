@@ -2165,7 +2165,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:>=7, @babel/traverse@npm:^7.1.6, @babel/traverse@npm:^7.11.5, @babel/traverse@npm:^7.12.11, @babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.13.0, @babel/traverse@npm:^7.16.0, @babel/traverse@npm:^7.16.8, @babel/traverse@npm:^7.20.0, @babel/traverse@npm:^7.22.15, @babel/traverse@npm:^7.23.2, @babel/traverse@npm:^7.23.4, @babel/traverse@npm:^7.25.7, @babel/traverse@npm:^7.25.9, @babel/traverse@npm:^7.26.10, @babel/traverse@npm:^7.26.8, @babel/traverse@npm:^7.4.5, @babel/traverse@npm:^7.7.2, @babel/traverse@npm:^7.7.4":
+"@babel/traverse@npm:>=7, @babel/traverse@npm:^7.1.6, @babel/traverse@npm:^7.11.5, @babel/traverse@npm:^7.12.11, @babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.13.0, @babel/traverse@npm:^7.16.0, @babel/traverse@npm:^7.16.8, @babel/traverse@npm:^7.20.0, @babel/traverse@npm:^7.22.15, @babel/traverse@npm:^7.23.2, @babel/traverse@npm:^7.25.7, @babel/traverse@npm:^7.25.9, @babel/traverse@npm:^7.26.10, @babel/traverse@npm:^7.26.8, @babel/traverse@npm:^7.4.5, @babel/traverse@npm:^7.7.2, @babel/traverse@npm:^7.7.4":
   version: 7.27.0
   resolution: "@babel/traverse@npm:7.27.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40babel%2Ftraverse%2F-%2Ftraverse-7.27.0.tgz"
   dependencies:
@@ -3285,33 +3285,6 @@ __metadata:
   bin:
     mono-env: ./lib/bin.js
   checksum: 10c0/87871e3223f41cd610b78d98c337b7dfe0f9da42d590fce431dd724541df20f7717f320b65324da06d8a47dd3247bfc5e140b93c6e549e61ef40f157d838b4f0
-  languageName: node
-  linkType: hard
-
-"@cbhq/mono-pipeline@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "@cbhq/mono-pipeline@npm:1.6.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-pipeline%2F-%2F%40cbhq%2Fmono-pipeline-1.6.0.tgz"
-  dependencies:
-    "@babel/core": "npm:^7.23.3"
-    "@babel/traverse": "npm:^7.23.4"
-    "@boost/common": "npm:^4.1.0"
-    "@nx/devkit": "npm:^20.3.2"
-    execa: "npm:^5.1.1"
-    fast-glob: "npm:^3.3.2"
-    inquirer: "npm:^8.2.6"
-    micromatch: "npm:^4.0.8"
-    octokit: "npm:^3.1.2"
-    packemon: "npm:^3.1.1"
-    semver: "npm:^7.5.4"
-    update-notifier: "npm:^5.1.0"
-    yaml: "npm:^2.3.4"
-    yargs: "npm:^17.7.2"
-  peerDependencies:
-    "@cbhq/mono-tasks": ">=1.1.3"
-    nx: ^20.3.2
-  bin:
-    mono-pipeline: ./lib/bin.js
-  checksum: 10c0/5d96998170844354d1b8b8b1363a92792c34c1938a7267e6e3dc4b474472b55d1727a7b102d6735aff42c5731025df29fe6181bf9d643a552ef85a879e9651ed
   languageName: node
   linkType: hard
 
@@ -20846,7 +20819,6 @@ __metadata:
     "@babel/types": "npm:^7.20.7"
     "@cbhq/eslint-plugin-internal": "workspace:^"
     "@cbhq/mono-env": "npm:^0.3.1"
-    "@cbhq/mono-pipeline": "npm:^1.6.0"
     "@cbhq/mono-tasks": "npm:^1.16.0"
     "@graphql-tools/jest-transform": "npm:^2.0.0"
     "@inquirer/prompts": "npm:^7.5.3"
@@ -34786,7 +34758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"octokit@npm:^3.0.0, octokit@npm:^3.1.2":
+"octokit@npm:^3.0.0":
   version: 3.2.1
   resolution: "octokit@npm:3.2.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Foctokit%2F-%2Foctokit-3.2.1.tgz"
   dependencies:
@@ -46039,7 +46011,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.0.0, yaml@npm:^2.2.1, yaml@npm:^2.2.2, yaml@npm:^2.3.4, yaml@npm:^2.4.1, yaml@npm:^2.4.3, yaml@npm:^2.6.0":
+"yaml@npm:^2.0.0, yaml@npm:^2.2.1, yaml@npm:^2.2.2, yaml@npm:^2.4.1, yaml@npm:^2.4.3, yaml@npm:^2.6.0":
   version: 2.7.0
   resolution: "yaml@npm:2.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fyaml%2F-%2Fyaml-2.7.0.tgz"
   bin:

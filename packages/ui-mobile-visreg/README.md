@@ -9,7 +9,7 @@ This package contains the logic to utilize visreg in your CI.
 2. Bump the package version and update the changelog
 
 ```shell
-yarn mono-pipeline version ui-mobile-visreg
+yarn bump-version ui-mobile-visreg
 ```
 
 - When prompted, do the following:

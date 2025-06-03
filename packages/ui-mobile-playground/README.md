@@ -9,7 +9,7 @@ This package contains the Mobile Playground UI that renders our storybook mobile
 2. Bump the package version and update the changelog
 
 ```shell
-yarn mono-pipeline version ui-mobile-playground
+yarn bump-version ui-mobile-playground
 ```
 
 - When prompted, do the following:

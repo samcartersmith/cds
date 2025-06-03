@@ -72,7 +72,7 @@ git push origin update-release
 Once your work is merged in, create a release PR off of the release branch.
 
 1. Create a new branch based off of `release-<your major version>0.0-rc.x`
-2. Run `yarn release` to see what changes are needed for your versioning. It will prompt you to run `yarn mono-pipeline version <package>` for whichever packages need to be bumped. By the end of this step, your Changelogs, website changelogs & package.json versions should all be up to date and `yarn release` should pass.
+2. Run `yarn release` to see what changes are needed for your versioning. It will prompt you to run `yarn bump-version <package>` for whichever packages need to be bumped. By the end of this step, your Changelogs, website changelogs & package.json versions should all be up to date and `yarn release` should pass.
 3. If impacting cds-web, cds-mobile, or cds-common, increment the rc version in the website changelogs as well by adding `-rc.<version num>` in `package.json`, `Changelog`, and website changelogs.
 4. Merge into the release branch.
 5. After your branch has built on codeflow, deploy the packages in the codeflow UI. See [release.md](../release.md) for how to deploy each package.

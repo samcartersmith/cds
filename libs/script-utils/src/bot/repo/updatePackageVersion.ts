@@ -28,7 +28,7 @@ export const updatePackageVersion = async ({
     const jiraFlag = jiraTicket ? ` --jira=${jiraTicket}` : '';
 
     const changelogUpdateResult = await spawn(
-      `yarn mono-pipeline version ${project} -b "${versionBump}" -m "${message}"${prFlag}${jiraFlag}`,
+      `yarn bump-version ${project} -b "${versionBump}" -m "${message}"${prFlag}${jiraFlag}`,
     );
 
     const fullChangelogPath = resolveWorkingDirectoryPath(changelogPath);
