@@ -43,7 +43,7 @@
       "name": "positive",
       "type": "light",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#00D17F" },
+      "paint": { "type": "solid", "value": "#3CC28A" },
       "cssVarSetter": "--illustration-positive",
       "cssVarGetter": "var(--illustration-positive)"
     },
@@ -52,7 +52,7 @@
       "name": "negative",
       "type": "light",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#FF3344" },
+      "paint": { "type": "solid", "value": "#E13947" },
       "cssVarSetter": "--illustration-negative",
       "cssVarGetter": "var(--illustration-negative)"
     },
@@ -97,7 +97,7 @@
       "name": "invert",
       "type": "light",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#101114" },
+      "paint": { "type": "solid", "value": "#0A0B0E" },
       "cssVarSetter": "--illustration-invert",
       "cssVarGetter": "var(--illustration-invert)"
     },
@@ -106,7 +106,7 @@
       "name": "invert-2",
       "type": "light",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#FEFFFF" },
+      "paint": { "type": "solid", "value": "#FFFFFE" },
       "cssVarSetter": "--illustration-invert-2",
       "cssVarGetter": "var(--illustration-invert-2)"
     },
@@ -115,7 +115,7 @@
       "name": "gray-2",
       "type": "light",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#050607" },
+      "paint": { "type": "solid", "value": "#0A0B0F" },
       "cssVarSetter": "--illustration-gray-2",
       "cssVarGetter": "var(--illustration-gray-2)"
     },
@@ -124,7 +124,7 @@
       "name": "gray-3",
       "type": "light",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#CED3DA" },
+      "paint": { "type": "solid", "value": "#CED2DC" },
       "cssVarSetter": "--illustration-gray-3",
       "cssVarGetter": "var(--illustration-gray-3)"
     }

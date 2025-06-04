@@ -7,7 +7,7 @@
       "name": "primary",
       "type": "dark",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#588AF5" },
+      "paint": { "type": "solid", "value": "#578BFA" },
       "cssVarSetter": "--illustration-primary",
       "cssVarGetter": "var(--illustration-primary)"
     },
@@ -70,7 +70,7 @@
       "name": "accent-2",
       "type": "dark",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#45DAF6" },
+      "paint": { "type": "solid", "value": "#45D9F5" },
       "cssVarSetter": "--illustration-accent-2",
       "cssVarGetter": "var(--illustration-accent-2)"
     },
@@ -88,7 +88,7 @@
       "name": "accent-4",
       "type": "dark",
       "prefix": "illustration",
-      "paint": { "type": "solid", "value": "#A5C1FD" },
+      "paint": { "type": "solid", "value": "#84AAFD" },
       "cssVarSetter": "--illustration-accent-4",
       "cssVarGetter": "var(--illustration-accent-4)"
     },

@@ -1,4 +1,4 @@
-import { execSync } from 'node:child_process';
+import { spawnSync } from 'node:child_process';
 import { logInfo as logInfoBase } from './logging';
 import { printFileList } from './findFiles';
 import { getBase } from './getBase';
@@ -12,13 +12,15 @@ export async function getChangedFiles(verbose = true, logInfo = logInfoBase): Pr
   let mergeBase = base;
 
   try {
-    mergeBase = execSync(`git merge-base ${base} HEAD`).toString().trim();
+    mergeBase = spawnSync(`git`, ['merge-base', base, 'HEAD']).stdout.toString().trim();
   } catch {
-    mergeBase = execSync(`git merge-base --fork-point ${base} HEAD`).toString().trim();
+    mergeBase = spawnSync(`git`, ['merge-base', '--fork-point', base, 'HEAD'])
+      .stdout.toString()
+      .trim();
   }
 
-  const files = execSync(`git --no-pager diff --name-only --relative ${mergeBase}`)
-    .toString()
+  const files = spawnSync(`git`, ['--no-pager', 'diff', '--name-only', '--relative', mergeBase])
+    .stdout.toString()
     .trim()
     .split('\n');
 
