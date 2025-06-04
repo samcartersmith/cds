@@ -33,7 +33,7 @@ function ToastExample() {
 
     const handleNoClose = () =>
       toast.show(toastText, {
-        action: { label: 'Action', onClick: () => console.log('action pressed') },
+        action: { label: 'Action', onPress: () => console.log('action pressed') },
         hideCloseButton: true,
       });
 

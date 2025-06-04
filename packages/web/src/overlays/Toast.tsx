@@ -59,6 +59,11 @@ const baseStyle = css`
   position: fixed;
   left: 0;
   width: 100%;
+  pointer-events: none;
+`;
+
+const toastStyle = css`
+  pointer-events: all;
 `;
 
 export const toastTestId = 'cds-toast';
@@ -132,6 +137,7 @@ export const Toast = memo(
                 alignItems="center"
                 background="bgAlternate"
                 borderRadius={200}
+                className={toastStyle}
                 elevation={2}
                 maxWidth={550}
                 overflow="hidden"
