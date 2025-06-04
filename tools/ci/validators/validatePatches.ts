@@ -3,7 +3,14 @@ import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { execSync } from 'node:child_process';
 
-import { LogOutStream, LogParam, color, logInfo as logInfoBase, logSuccess } from '../logging';
+import {
+  LogOutStream,
+  LogParam,
+  color,
+  logInfo as logInfoBase,
+  logSuccess,
+  logError as logErrorBase,
+} from '../logging';
 
 const PATCHES_PATH = '.yarn/patches';
 
@@ -25,6 +32,9 @@ export async function validatePatches(outputStream: LogOutStream) {
   const logInfo = (msg: LogParam) => {
     logInfoBase(msg, outputStream);
   };
+  const logError = (msg: LogParam) => {
+    logErrorBase(msg, outputStream);
+  };
   logInfo('Validating that all yarn patches are being used');
 
   if (!existsSync(PATCHES_PATH)) {
@@ -36,7 +46,8 @@ export async function validatePatches(outputStream: LogOutStream) {
   try {
     result = execSync('yarn info --all --name-only --recursive --json').toString();
   } catch (error) {
-    throw new Error((error as Error)?.message);
+    logError((error as Error)?.message);
+    process.exit(1);
   }
 
   const dependenciesSet = parsePatchedDependenciesSet(result);
@@ -49,7 +60,8 @@ export async function validatePatches(outputStream: LogOutStream) {
   const unusedPatches = files.filter((file) => !dependenciesSet.has(join(PATCHES_PATH, file)));
 
   if (unusedPatches.length > 0) {
-    throw new Error(`Unused patches found: \n- ${unusedPatches.join('\n- ')}`);
+    logError(`Unused patches found: \n- ${unusedPatches.join('\n- ')}`);
+    process.exit(1);
   }
 
   logSuccess('All yarn patches are being used');
