@@ -28,12 +28,6 @@ export type IconBaseProps = SharedProps &
     /** Name of the icon, as defined in Figma. */
     name: IconName;
     /**
-     * A boolean flag indicating whether or not a border should be shown around an icon.
-     * This border will match color prop. Border is only allowed for sizes m and above.
-     * @default false
-     */
-    bordered?: boolean;
-    /**
      * Fallback element to render if unable to find an icon with matching name
      * @default null
      * */
@@ -108,23 +102,6 @@ const sizeStyles: {
   `,
 };
 
-const borderedSizeStyles: {
-  [key in IconSize]: LinariaClassName;
-} = {
-  xs: css`
-    font-size: var(--iconSize-xs);
-  `,
-  s: css`
-    font-size: var(--iconSize-xs);
-  `,
-  m: css`
-    font-size: var(--iconSize-xs);
-  `,
-  l: css`
-    font-size: var(--iconSize-s);
-  `,
-};
-
 export const getIconSourceSize = (iconSize: number): IconSourcePixelSize => {
   if (iconSize <= 12) return 12;
   if (iconSize <= 16) return 16;
@@ -136,7 +113,6 @@ export const Icon = memo(
     (
       {
         accessibilityLabel,
-        bordered = false,
         color = 'fgPrimary',
         dangerouslySetColor,
         fallback = null,
@@ -247,12 +223,7 @@ export const Icon = memo(
             ref={ref}
             aria-hidden={!accessibilityLabel}
             aria-label={accessibilityLabel}
-            className={cx(
-              iconStyles,
-              sizeStyles[size],
-              bordered && borderedSizeStyles[size],
-              classNames?.icon,
-            )}
+            className={cx(iconStyles, sizeStyles[size], classNames?.icon)}
             data-icon-name={name}
             data-testid={glyphTestId}
             role="img"
