@@ -259,11 +259,6 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'doc',
-              id: 'components/data-display/Cell/cell',
-              label: 'Cell',
-            },
-            {
-              type: 'doc',
               id: 'components/data-display/ContentCell/content-cell',
               label: 'ContentCell',
             },

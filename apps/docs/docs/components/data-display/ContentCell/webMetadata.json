@@ -6,10 +6,6 @@
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-cells-contentcell--content",
   "relatedComponents": [
     {
-      "label": "Cell",
-      "url": "/components/data-display/Cell"
-    },
-    {
       "label": "ListCell",
       "url": "/components/data-display/ListCell"
     },

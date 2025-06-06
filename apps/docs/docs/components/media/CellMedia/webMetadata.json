@@ -4,10 +4,6 @@
   "description": "A required component for displaying media within a cell and should only be used in that context. It automatically handles sizing and dimensions based on the current design system scale.",
   "relatedComponents": [
     {
-      "label": "Cell",
-      "url": "/components/data-display/Cell"
-    },
-    {
       "label": "ContentCell",
       "url": "/components/data-display/ContentCell"
     },
