@@ -48,9 +48,9 @@ function ComponentPropsTable({
         ref={stickyElementRef}
         background="bgAlternate"
         borderedBottom={isSticky}
-        gap={2}
-        paddingBottom={2}
-        paddingTop={5}
+        gap={1}
+        paddingBottom={1}
+        paddingTop={2}
         paddingX={4}
         position={{ desktop: 'sticky', tablet: 'sticky' }}
         top={{

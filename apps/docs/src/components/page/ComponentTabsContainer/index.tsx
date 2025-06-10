@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { TOCItem } from '@docusaurus/mdx-loader';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
+import { useTabsContext } from '@cbhq/cds-common/tabs/TabsContext';
+import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
 import { Box, VStack } from '@cbhq/cds-web/layout';
-import { TabNavigation } from '@cbhq/cds-web/tabs/TabNavigation';
+import { Pressable } from '@cbhq/cds-web/system';
+import { Tabs, TabsActiveIndicator, TabsActiveIndicatorProps } from '@cbhq/cds-web/tabs/Tabs';
 
 import { PropsTOCUpdater } from '../../../utils/toc/PropsTOCManager';
 import { TOCUpdater } from '../../../utils/toc/TOCManager';
 
-const tabs = [
-  { id: 'examples-tab', label: 'Examples' },
-  { id: 'props-tab', label: 'Props' },
-];
+const examplesTab = { id: 'examples-tab', label: 'Examples' };
+const propsTab = { id: 'props-tab', label: 'Props' };
+const tabs = [examplesTab, propsTab];
 
 type ComponentMetaContainerProps = {
   webPropsTable?: React.ReactNode;
@@ -23,6 +25,26 @@ type ComponentMetaContainerProps = {
   mobileExamplesToc?: TOCItem[];
 };
 
+const CustomTab = ({ id, label }: TabValue) => {
+  const { activeTab, updateActiveTab } = useTabsContext();
+  const isActive = activeTab?.id === id;
+  return (
+    <Pressable
+      color={isActive ? 'fgPrimary' : 'fg'}
+      font="headline"
+      onClick={() => updateActiveTab(id)}
+      paddingBottom={0.75}
+      paddingTop={0.5}
+    >
+      {label}
+    </Pressable>
+  );
+};
+
+const CustomTabsActiveIndicator = (props: TabsActiveIndicatorProps) => {
+  return <TabsActiveIndicator {...props} background="bgPrimary" bottom={0} height={2} />;
+};
+
 export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
   webExamples,
   mobileExamples,
@@ -33,10 +55,10 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
   webPropsToc,
   mobilePropsToc,
 }) => {
-  const [activeTab, setActiveTab] = useState<string>('examples-tab');
+  const [activeTab, setActiveTab] = useState<TabValue | null>(tabs[0]);
   const { platform } = usePlatformContext();
-  const shouldRenderExamples = activeTab === tabs[0].id;
-  const shouldRenderProps = activeTab === tabs[1].id;
+  const shouldRenderExamples = activeTab?.id === examplesTab.id;
+  const shouldRenderProps = activeTab?.id === propsTab.id;
   const isWeb = platform === 'web';
   const isMobile = platform === 'mobile';
 
@@ -51,12 +73,15 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
           paddingTop={1}
           paddingX={4}
         >
-          <TabNavigation
+          <Tabs
+            TabComponent={CustomTab}
+            TabsActiveIndicatorComponent={CustomTabsActiveIndicator}
             accessibilityLabel="Component documentation sections"
+            activeTab={activeTab}
             aria-controls={`tabpanel--${activeTab}`}
+            gap={4}
             onChange={setActiveTab}
             tabs={tabs}
-            value={activeTab}
           />
         </Box>
       </VStack>

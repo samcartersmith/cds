@@ -41,7 +41,7 @@ const NavbarThemeToggle = () => {
   };
 
   const colorKey = `${colorScheme}Color` as const;
-  const currentColor = docsTheme[colorKey]?.bgPrimary;
+  const activeColor = docsTheme[colorKey]?.bgPrimary;
 
   return (
     <Dropdown
@@ -62,10 +62,12 @@ const NavbarThemeToggle = () => {
             return (
               <Box
                 key={themeOption.label}
-                aria-checked={currentColor === color}
+                aria-checked={activeColor === color}
                 aria-label={themeOption.label}
                 as="button"
+                borderColor="bgInverse"
                 borderRadius={1000}
+                borderWidth={200}
                 height={16}
                 onClick={() => setThemeOption(themeOption)}
                 onKeyDown={(event) => handleKeyDown(event, themeOption)}
@@ -73,7 +75,7 @@ const NavbarThemeToggle = () => {
                 style={{
                   background: color,
                   cursor: 'pointer',
-                  border: currentColor === color ? '2px solid currentColor' : 'none',
+                  borderStyle: activeColor === color ? 'solid' : 'none',
                 }}
                 tabIndex={0}
                 width={16}
@@ -83,7 +85,7 @@ const NavbarThemeToggle = () => {
         </VStack>
       }
       contentPosition={{ gap: 0.5, skid: 0 }}
-      value={currentColor}
+      value={activeColor}
     >
       <Pressable
         alignContent="center"

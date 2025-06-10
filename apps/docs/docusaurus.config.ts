@@ -173,12 +173,8 @@ const config: Config = {
     footer: {
       links: [
         {
-          label: 'Figma',
-          href: 'https://www.figma.com/files/657352101224507447/project/62154462',
-        },
-        {
           label: 'Storybook',
-          href: 'https://cdsstorybook.cbhq.net/',
+          href: 'https://cds-storybook.cbhq.net/',
         },
         {
           label: 'Github',
@@ -195,8 +191,8 @@ const config: Config = {
       ],
     },
     prism: {
-      theme: { ...prismThemes.github, plain: { background: 'transparent' } },
-      darkTheme: { ...prismThemes.dracula, plain: { background: 'transparent' } },
+      theme: prismThemes.github,
+      darkTheme: prismThemes.nightOwl,
     },
   },
 

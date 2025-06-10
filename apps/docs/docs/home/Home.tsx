@@ -70,7 +70,7 @@ const quickStartCards: QuickStartLinkProps[] = [
 const componentCards: ComponentCardProps[] = [
   {
     name: 'Layout',
-    count: 11,
+    count: 13,
     bannerLightSrc: '/img/componentCardBanners/layout_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/layout_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/layout_dark.svg',
@@ -88,7 +88,7 @@ const componentCards: ComponentCardProps[] = [
   },
   {
     name: 'Inputs',
-    count: 12,
+    count: 16,
     bannerLightSrc: '/img/componentCardBanners/inputs_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/inputs_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/inputs_dark.svg',
@@ -97,7 +97,7 @@ const componentCards: ComponentCardProps[] = [
   },
   {
     name: 'Media',
-    count: 7,
+    count: 9,
     bannerLightSrc: '/img/componentCardBanners/media_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/media_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/media_dark.svg',
@@ -106,7 +106,7 @@ const componentCards: ComponentCardProps[] = [
   },
   {
     name: 'Cards',
-    count: 5,
+    count: 8,
     bannerLightSrc: '/img/componentCardBanners/cards_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/cards_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/cards_dark.svg',
@@ -115,7 +115,7 @@ const componentCards: ComponentCardProps[] = [
   },
   {
     name: 'Data Display',
-    count: 4,
+    count: 11,
     bannerLightSrc: '/img/componentCardBanners/data_display_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/data_display_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/data_display_dark.svg',
@@ -124,7 +124,7 @@ const componentCards: ComponentCardProps[] = [
   },
   {
     name: 'Feedback',
-    count: 4,
+    count: 7,
     bannerLightSrc: '/img/componentCardBanners/feedback_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/feedback_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/feedback_dark.svg',
@@ -133,7 +133,7 @@ const componentCards: ComponentCardProps[] = [
   },
   {
     name: 'Overlay',
-    count: 5,
+    count: 12,
     bannerLightSrc: '/img/componentCardBanners/overlays_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/overlays_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/overlays_dark.svg',
@@ -142,7 +142,7 @@ const componentCards: ComponentCardProps[] = [
   },
   {
     name: 'Navigation',
-    count: 6,
+    count: 14,
     bannerLightSrc: '/img/componentCardBanners/navigation_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/navigation_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/navigation_dark.svg',
@@ -151,7 +151,7 @@ const componentCards: ComponentCardProps[] = [
   },
   {
     name: 'Graphs',
-    count: 3,
+    count: 4,
     bannerLightSrc: '/img/componentCardBanners/graphs_light.svg',
     bannerLightOverlaySrc: '/img/componentCardBanners/graphs_light_hover.svg',
     bannerDarkSrc: '/img/componentCardBanners/graphs_dark.svg',

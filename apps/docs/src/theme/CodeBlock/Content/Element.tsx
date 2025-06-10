@@ -8,14 +8,8 @@ import { Text } from '@cbhq/cds-web/typography';
 // actually highlighting.
 export default function CodeBlockJSX({ children, className }: Props): ReactNode {
   return (
-    <Box
-      as="pre"
-      background="accentSubtleBlue"
-      className={cx('thin-scrollbar', className)}
-      padding={0}
-      tabIndex={0}
-    >
-      <Text mono as="code" minWidth="100%">
+    <Box as="pre" className={cx('thin-scrollbar', className)} padding={0} tabIndex={0}>
+      <Text as="code" minWidth="100%">
         {children}
       </Text>
     </Box>

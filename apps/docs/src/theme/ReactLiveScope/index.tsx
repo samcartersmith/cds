@@ -22,7 +22,6 @@ import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common/tokens/dot
 import { useTourContext } from '@cbhq/cds-common/tour/TourContext';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
-import * as CDSSparklineComponents from '@cbhq/cds-web-visualization/sparkline';
 import { Accordion } from '@cbhq/cds-web/accordion/Accordion';
 import { AccordionItem } from '@cbhq/cds-web/accordion/AccordionItem';
 import { Banner } from '@cbhq/cds-web/banner/Banner';
@@ -69,6 +68,7 @@ import { Tour } from '@cbhq/cds-web/tour/Tour';
 import { TourStep } from '@cbhq/cds-web/tour/TourStep';
 import * as CDSTypography from '@cbhq/cds-web/typography';
 import * as CDSVisualizations from '@cbhq/cds-web/visualizations';
+import * as CDSSparklineComponents from '@cbhq/cds-web-visualization/sparkline';
 
 import { SparklineInteractivePrice, SparklineInteractivePriceWithHeader } from '../Sparkline';
 // Add react-live imports you need here
