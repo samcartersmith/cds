@@ -20,7 +20,12 @@ const KBarModal = memo(function KBarModal() {
   }, [query]);
 
   return (
-    <Modal onRequestClose={handleRequestClose} shouldCloseOnEscPress={false} visible={showing}>
+    <Modal
+      onRequestClose={handleRequestClose}
+      shouldCloseOnEscPress={false}
+      visible={showing}
+      width={{ tablet: '100%', desktop: 612 }}
+    >
       <KBarAnimator>
         <HStack alignItems="center" gap={2} paddingX={3} paddingY={2}>
           <HStack alignItems="center" flexGrow={1} gap={1.5}>
