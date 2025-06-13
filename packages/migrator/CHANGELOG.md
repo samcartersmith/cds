@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.4 (6/13/2025 PST)
+
+#### 🚀 Updates
+
+- Create scripts for CDS v8 upgrade. [[#3976](https://github.cbhq.net/frontend/cds/pull/3976)]
+
 ## 0.2.3 (5/29/2025 PST)
 
 #### 🐞 Fixes

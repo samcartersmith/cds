@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-migrator",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Codemod transformations to help upgrade your CDS codebase",
   "repository": {
     "type": "git",
@@ -45,6 +45,10 @@
       "types": "./dts/migrations/update-6-0-0/index.d.ts",
       "default": "./cjs/migrations/update-6-0-0/index.js"
     },
+    "./migrations/update-8-0-0-jscodeshift": {
+      "types": "./dts/migrations/update-8-0-0-jscodeshift/index.d.ts",
+      "default": "./cjs/migrations/update-8-0-0-jscodeshift/index.js"
+    },
     "./migrations/update-decomp": {
       "types": "./dts/migrations/update-decomp/index.d.ts",
       "default": "./cjs/migrations/update-decomp/index.js"
@@ -61,7 +65,8 @@
     "CHANGELOG"
   ],
   "peerDependencies": {
-    "@nx/devkit": ">=15.0.0"
+    "@nx/devkit": ">=15.0.0",
+    "jscodeshift": ">=0.14.0"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -76,8 +81,13 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@types/cli-progress": "^3.11.0",
+    "@types/jscodeshift": "^17.3.0",
     "@types/semver": "^7",
     "@types/update-notifier": "^5.1.0",
+    "jscodeshift": "^0.15.1",
     "semver": "^7.5.4"
+  },
+  "bin": {
+    "cds-migrator-codemod": "./cjs/cli/codemod.js"
   }
 }

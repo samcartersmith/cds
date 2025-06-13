@@ -1,8 +1,138 @@
 # @cbhq/cds-migrator
 
-Codemod transformations to help upgrade your CDS codebase
+Codemod transformations to help upgrade your Coinbase Design System (CDS) codebase.
 
-## Getting started
+## Migration Types
+
+### Version >= 8.0.0 (JSCodeshift)
+
+- Uses jscodeshift for transformations
+- Focuses on TypeScript/TSX files
+
+### Previous Versions (ts-morph)
+
+- Uses ts-morph for transformations
+- Only works in Nx monorepo projects
+- Requires Nx workspace setup
+
+## Installation
+
+1.  **Install Migrator:**
+    Add the migrator package as a dev dependency in your project:
+
+    ```sh
+    yarn add @cbhq/cds-migrator --dev
+    # or
+    npm install @cbhq/cds-migrator --save-dev
+    ```
+
+2.  **Install jscodeshift (Required for v8+ Migrations):**
+    If running migrations for CDS v8.0.0 or later (like `update-8-0-0`), `jscodeshift` is required in your project:
+    ```sh
+    yarn add jscodeshift --dev
+    # or
+    npm install jscodeshift --save-dev
+    ```
+
+## Usage: v8+ Migrations (jscodeshift)
+
+For migrating to CDS v8.0.0 and later, use the included CLI wrapper. The `update-8-0-0` transform **requires** the `--platform` option.
+
+### Recommended: CLI Wrapper
+
+```sh
+# General syntax for v8+ transforms
+yarn cds-migrator-codemod <transform-name> <paths...> -- --platform=<web|mobile> [other-jscodeshift-options]
+
+# Example: Run the v8 migration for the 'web' platform on the 'src' directory
+yarn cds-migrator-codemod update-8-0-0 src -- --platform=web
+
+# Example: Run the v8 migration for the 'mobile' platform
+yarn cds-migrator-codemod update-8-0-0 app/components -- --platform=mobile
+```
+
+#### Passing Additional Options to jscodeshift
+
+You can pass any other standard `jscodeshift` options _after_ the required `--platform` option.
+
+```sh
+# Dry run for web
+yarn cds-migrator-codemod update-8-0-0 src -- --platform=web --dry
+
+# Verbose output for mobile (level 2)
+yarn cds-migrator-codemod update-8-0-0 src -- --platform=mobile -v=2
+
+# Print transformed files to stdout for web
+yarn cds-migrator-codemod update-8-0-0 src -- --platform=web --print
+
+# Combine options for web
+yarn cds-migrator-codemod update-8-0-0 src test -- --platform=web --dry -v=2
+```
+
+##### Ignoring Directories (e.g., node_modules)
+
+By default, `jscodeshift` (and thus the codemod CLI) does not ignore `node_modules`. If you run the command on broad paths like `.` (current directory), you should explicitly ignore `node_modules` and potentially other build artifact directories.
+
+```sh
+# Run on current directory, ignoring node_modules
+yarn cds-migrator-codemod update-8-0-0 . -- --platform=mobile --ignore-pattern=node_modules
+
+# Ignore multiple patterns
+yarn cds-migrator-codemod update-8-0-0 . -- --platform=web --ignore-pattern='**/node_modules/**' --ignore-pattern='**/dist/**'
+```
+
+Refer to the [jscodeshift documentation](https://github.com/facebook/jscodeshift#usage-cli) for all available options.
+
+#### Logging Output to a File
+
+```sh
+# Capture stdout and stderr to migration.log for web platform
+yarn cds-migrator-codemod update-8-0-0 src -- --platform=web -v=2 > migration.log 2>&1
+```
+
+### Advanced: Using `jscodeshift` Directly
+
+While the CLI wrapper is recommended, you can run specific v8+ transforms directly using `jscodeshift`. Remember to include the `--platform` option and potentially `--ignore-pattern`.
+
+```sh
+# Example for web (path may vary depending on the specific transform)
+npx jscodeshift \
+  -t ./node_modules/@cbhq/cds-migrator/cjs/migrations/update-8-0-0-jscodeshift/index.js \
+  --parser=tsx \
+  --platform=web \
+  --ignore-pattern=node_modules \
+  <paths...>
+```
+
+### Post-Migration Formatting & Linting (Recommended)
+
+Codemods, especially those using `jscodeshift` and `recast` for parsing and printing code, can sometimes introduce minor formatting inconsistencies (like extra parentheses or slightly different spacing) or code patterns that violate linting rules, even when only necessary changes are made.
+
+**It is highly recommended to run your project's standard code formatter (e.g., Prettier) and linter (e.g., ESLint) over the modified files after running the codemod.** This will ensure the code adheres to your project's style guide and catches potential issues.
+
+```sh
+# Example using Prettier & ESLint
+prettier --write "src/**/*.ts" "src/**/*.tsx"
+eslint --fix "src/**/*.ts" "src/**/*.tsx"
+# or your project's formatting/linting commands
+```
+
+## Usage: Legacy Migrations (< v8, ts-morph, Nx Required)
+
+Migrations for versions prior to 8.0.0 were built using `ts-morph` and rely on the Nx monorepo tooling. These do not use the `--platform` option in the same way.
+
+### Running Legacy Migrations
+
+These migrations are typically run using an Nx generator within the CDS monorepo.
+
+```sh
+# Example for migrating to v4.0.0 (within the CDS Nx workspace)
+yarn nx generate @cbhq/cds-migrator:migrate 4.0.0
+```
+
+### Getting started (< v8)
+
+---
 
 1. Install
 
@@ -16,18 +146,18 @@ yarn add @cbhq/cds-migrator --dev
 # Running generator
 alias mig="yarn nx generate @cbhq/cds-migrator:migrate"
 
-# Wipe nx cache and build package with watch for CDS migrator
-alias bumi="yarn nx run migrator:build --skip-nx-cache && yarn nx run migrator:watch"
+# Wipe nx cache and build package for CDS migrator
+alias bumi="yarn nx run migrator:build --skip-nx-cache"
 ```
 
-3. Wipe nx cache and build the package and watch changes. Open new terminal and run:
+1. Wipe nx cache and build the package. Open new terminal and run:
 
 ```shell
 # With alias
 bumi
 
 # Without alias
-yarn nx run migrator:build --skip-nx-cache && yarn nx run migrator:watch
+yarn nx run migrator:build --skip-nx-cache
 ```
 
 4. Run the generator and pass in the version you are trying to migrate to
@@ -44,7 +174,6 @@ yarn nx generate @cbhq/cds-migrator:migrate <version>
 
 # Example
 yarn nx generate @cbhq/cds-migrator:migrate 4.0.0
-
 ```
 
 5. Clear NX cache when needed
@@ -57,43 +186,22 @@ yarn nx reset
 
 ![Alt text](image.png)
 
-## Inspiration
+### Inspiration
 
 https://polaris.shopify.com/tools/polaris-migrator#usage
 
-## Create Your Own Migrator Script
+### Create Your Own Migrator Script
 
 1. Create a directory under `src/migrations/update<YOUR_VERSION>` suffixed with the CDS version you're upgrading to.
 2. Create your migrator functions in this directory. You can access the project tree (the NX project where you are running the script) by passing `tree` as an argument to the default export function in a migrator file. Check out the "Writing Your Own Migrator Script" section for guidance on how to write these functions.
 3. Add a case for the version you are adding to the switch case statement in `packages/migrator/src/generators/migrate/migrate.ts` and pass it your migrator functions and the tree as an argument.
 4. Add the same key to `properties.version.enum` in `src/generators/migrate/schema.json`
 5. Clear your NX cache with `yarn nx reset`
-6. Build and watch for changes in the migrator package by running `yarn nx run migrator:build --skip-nx-cache && yarn nx run migrator:watch`
-7. Test your script by running `yarn nx generate @cbhq/migrator:migrate <YOUR_VERSION>`
+6. Build the changes in the migrator package by running `yarn nx run migrator:build --skip-nx-cache`
+7. Test your script by running `yarn nx generate @cbhq/cds-migrator:migrate <YOUR_VERSION>`
 8. When your script is complete, run `yarn mono-pipeline` and complete the CLI steps to version the package. Run `yarn release` to verify that no other packages need to be bumped. After your PR merges, deploy the package via codeflow.
 
-## Debugging
-
-1. Before you run any scripts, make sure you build the migrator package by running `yarn nx run migrator:build --skip-nx-cache`.
-2. Then run `yarn nx run migrator:watch` and it will rebuild the package as you make changes.
-3. In a separate terminal, run your migrator script.
-
-I recommend storing this as an alias:
-
-```zsh
-yarn nx run migrator:build --skip-nx-cache && yarn nx run migrator:watch
-```
-
-## Testing in Consumer Repos
-
-1. Add the `@cbhq/cds-migrator` package as a dependency in the consuming repo
-2. You'll need to have the `frontend/cds` repo cloned locally. Resolve the `@cbhq/cds-migrator` dependency to the absolute path of your local instances, eg: `"@cbhq/cds-migrator": "file:/Users/blairmckee/code/cds/packages/migrator"`
-3. Run the debug script in `frontend/cds`: `yarn nx run migrator:build --skip-nx-cache && yarn nx run migrator:watch`
-4. Run `yarn` in the consuming repo
-5. Every time you make a change in `frontend/cds` you'll need to rerun `yarn` in the consuming repo, because the `@cbhq/cds-migrator` package needs to be rebuilt and reinstalled in the consumer.
-6. Rinse and repeat steps 4 & 5 whenever you make a change in `frontend/cds`.
-
-## How It Works
+### How It Works
 
 There's quite a lot of boilerplate that goes into creating a generator. We've abstracted a lot of the `ts-morph` and NX generator logic into friendly helpers called `createMigration` and `createJsxMigration`. Both functions need to be passed the NX `tree` instance in order to have read/write access to all the projects in an NX workspace.
 
@@ -109,22 +217,45 @@ When we're performing our migrations we don't want to parse every file in an NX 
 
 ### How Do createJsxMigration and createMigration Work?
 
-# 1. Gathers sourceFiles
+#### 1. Gathers sourceFiles
 
 First we need to create a temporary file system that only contains files with migratable instances. Both helpers use `parseSourceFiles` under the hood to traverse the NX `tree` and gather the `sourceFiles` of workspaces that have CDS packages as a dependency.
 
 You can customize this script to only add `sourceFiles` that meet a given conditional; like `filterSourceFiles` checks if a file contains a migratable instace, or `checkSourceFile` makes it easy to parse the actual JSX elements in a file that meets a condition (the latter is more accurate as it checks the actual JSX and not the file content as a string). These helpers gate your migration scripts from being run over irrelevant files that don't contain migrations.
 
-# 2. Parses JSX Elements
+#### 2. Parses JSX Elements
 
 `createJsxMigration` then uses the `parseJsxElements` helper to pull JSX elements out of a `sourceFile` and perform transformations over each element. The callback gets access to the JSX element itself, as well as some other crucial information you'll need to perform your `ts-morph` migrations.
 
 Note: If you don't need access to the JSX in a file, use `createMigration` instead. It's much faster because it only parses the content of a file as a string, as opposed to looping over every JSX element in a `sourceFile`.
 
-# 3. Ready, Set, Migrate!
+#### 3. Ready, Set, Migrate!
 
 Use the [helpers](./helpers) we've provided to traverse and manipulate file contents and JSX to perform your migrations.
 
-# 4. Save to the File System
+#### 4. Save to the File System
 
 Whenever you modify a file, make sure you write the changes to the disc file system with `writeMigrationToFile` otherwise your changes will only be reflected in the `ts-morph` project instance (a copy of the file system).
+
+## Troubleshooting (General)
+
+- **Permission Denied Error (`sh: .../.bin/jscodeshift: Permission denied`):**
+  (Applies to v8+ migrations) The `jscodeshift` executable needs execute permissions.
+  ```sh
+  chmod +x ./node_modules/.bin/jscodeshift
+  ```
+- **Command Not Found (`command not found: cds-migrator-codemod`):**
+  (Applies to v8+ migrations) Ensure `@cbhq/cds-migrator` is installed correctly.
+- **Line Ending Errors (`env: node\r: No such file or directory`):**
+  (Applies to v8+ CLI script) Indicates incorrect line endings. Reinstall the package or perform a clean install.
+- **Nx Command Errors:**
+  (Applies to < v8 migrations) Ensure you are within a correctly configured Nx workspace (typically the CDS monorepo).
+
+## Testing in Consumer Repos
+
+1. Add the `@cbhq/cds-migrator` package as a dependency in the consuming repo
+2. You'll need to have the `frontend/cds` repo cloned locally. Resolve the `cds-migrator` dependency to the absolute path of your local instances, eg: `"@cbhq/cds-migrator": "file:/Users/blairmckee/code/cds/packages/migrator"`
+3. Run the debug script in `frontend/cds`: `yarn nx run migrator:build --skip-nx-cache`
+4. Run `yarn` in the consuming repo
+5. Every time you make a change in `frontend/cds` you'll need to rerun `yarn` in the consuming repo, because the `migrator` package needs to be rebuilt and reinstalled in the consumer.
+6. Rinse and repeat steps 4 & 5 whenever you make a change in `frontend/cds`.
