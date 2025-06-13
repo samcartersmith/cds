@@ -81,7 +81,6 @@ function Example() {
       dangerouslySetBackground: `rgb(${theme.spectrum.indigo70})`,
     },
   ];
-  const textColor = colorScheme === 'light' ? 'white' : 'black';
   return (
     <VStack minHeight={300} padding={2} alignItems="center" justifyContent="center" gap={1}>
       {cards.map((card) => {
@@ -89,12 +88,12 @@ function Example() {
           <UpsellCard
             {...card}
             title={
-              <TextHeadline dangerouslySetColor={textColor} as="h3">
+              <TextHeadline color="fgInverse" as="h3">
                 {card.title}
               </TextHeadline>
             }
             description={
-              <TextLabel2 as="p" numberOfLines={3} dangerouslySetColor={textColor}>
+              <TextLabel2 as="p" numberOfLines={3} color="fgInverse">
                 {card.description}
               </TextLabel2>
             }
@@ -144,7 +143,6 @@ function Example() {
       dangerouslySetBackground: `rgb(${spectrum.purple70})`,
     },
   ];
-  const textColor = colorScheme === 'light' ? 'white' : 'black';
   return (
     <VStack minHeight={300} padding={2} alignItems="center" justifyContent="center" gap={1}>
       {cards.map((card) => {
@@ -152,12 +150,12 @@ function Example() {
           <UpsellCard
             {...card}
             title={
-              <TextHeadline dangerouslySetColor={textColor} as="h3">
+              <TextHeadline color="fgInverse" as="h3">
                 {card.title}
               </TextHeadline>
             }
             description={
-              <TextLabel2 as="p" numberOfLines={3} dangerouslySetColor={textColor}>
+              <TextLabel2 as="p" numberOfLines={3} color="fgInverse">
                 {card.description}
               </TextLabel2>
             }
@@ -207,7 +205,6 @@ function Example() {
       dangerouslySetBackground: `rgb(${spectrum.gray100})`,
     },
   ];
-  const textColor = colorScheme === 'light' ? 'white' : 'black';
   return (
     <VStack minHeight={300} padding={2} alignItems="center" justifyContent="center" gap={1}>
       {cards.map((card) => {
@@ -215,12 +212,12 @@ function Example() {
           <UpsellCard
             {...card}
             title={
-              <TextHeadline dangerouslySetColor={textColor} as="h3">
+              <TextHeadline color="fgInverse" as="h3">
                 {card.title}
               </TextHeadline>
             }
             description={
-              <TextLabel2 as="p" numberOfLines={3} dangerouslySetColor={textColor}>
+              <TextLabel2 as="p" numberOfLines={3} color="fgInverse">
                 {card.description}
               </TextLabel2>
             }
@@ -273,17 +270,16 @@ function Example() {
   return (
     <VStack minHeight={300} padding={2} alignItems="center" justifyContent="center" gap={1}>
       {cards.map((card) => {
-        const textColor = colorScheme === 'light' ? 'white' : 'black';
         return (
           <UpsellCard
             {...card}
             title={
-              <TextHeadline dangerouslySetColor={textColor} as="h3">
+              <TextHeadline color="fgInverse" as="h3">
                 {card.title}
               </TextHeadline>
             }
             description={
-              <TextLabel2 as="p" numberOfLines={3} dangerouslySetColor={textColor}>
+              <TextLabel2 as="p" numberOfLines={3} color="fgInverse">
                 {card.description}
               </TextLabel2>
             }
