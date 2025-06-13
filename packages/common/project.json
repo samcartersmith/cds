@@ -8,6 +8,21 @@
     "build": {
       "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
+    "build-mcp": {
+      "dependsOn": [
+        "docs:build"
+      ],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "rm -rf mcp-docs",
+          "nx run docs:build-llm-docs ./packages/common/mcp-docs",
+          "chmod +x esm/mcp/server.js esm/mcp/setup.js"
+        ],
+        "cwd": "{projectRoot}",
+        "parallel": false
+      }
+    },
     "lint": {
       "executor": "@nx/eslint:lint"
     },
@@ -36,6 +51,12 @@
           "parallel": false
         }
       }
+    },
+    "inspect-mcp": {
+      "dependsOn": [
+        "build-mcp"
+      ],
+      "command": "npx @modelcontextprotocol/inspector npx tsx src/mcp/server.ts"
     }
   }
 }

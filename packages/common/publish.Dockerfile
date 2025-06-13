@@ -12,6 +12,7 @@ RUN yarn --immutable
 # Build the package with nx
 RUN yarn nx run common:typecheck:prod
 RUN yarn nx run common:build
+RUN yarn nx run common:build-mcp
 
 # Prepare the package for publish
 RUN cd /repo/packages/common && yarn pack

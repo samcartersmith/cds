@@ -33,8 +33,13 @@
       }
     },
     "build": {
-      "command": "docusaurus build --out-dir dist",
+      "executor": "nx:run-commands",
       "options": {
+        "commands": [
+          "docusaurus build --out-dir dist",
+          "node ai-doc-generator/generator.cjs"
+        ],
+        "parallel": false,
         "cwd": "apps/docs"
       }
     },
@@ -55,6 +60,12 @@
       "options": {
         "command": "stylelint \"**/*.{css,ts,tsx,js,jsx}\" --formatter string",
         "cwd": "{projectRoot}"
+      }
+    },
+    "build-llm-docs": {
+      "command": "node {projectRoot}/ai-doc-generator/generator.cjs",
+      "options": {
+        "cwd": "{workspaceRoot}"
       }
     }
   }
