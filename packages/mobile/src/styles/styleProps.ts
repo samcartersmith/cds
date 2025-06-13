@@ -29,7 +29,6 @@ export type StyleProps = {
   lineHeight?: ThemeVars.LineHeight | 'inherit';
   textDecorationStyle?: TextStyle['textDecorationStyle'];
   textDecorationLine?: TextStyle['textDecorationLine'];
-  textDecorationColor?: ThemeVars.Color;
   textTransform?: TextStyle['textTransform'];
   userSelect?: TextStyle['userSelect'];
   display?: ViewStyle['display'];
@@ -110,7 +109,6 @@ export const themedStyleProps = {
   fontSize: 'fontSize',
   fontWeight: 'fontWeight',
   lineHeight: 'lineHeight',
-  textDecorationColor: 'color',
   gap: 'space',
   columnGap: 'space',
   rowGap: 'space',

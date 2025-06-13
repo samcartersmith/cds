@@ -3,11 +3,15 @@
  */
 import { css, type LinariaClassName } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common/core/theme';
-import type { ElevationLevels } from '@cbhq/cds-common/types/ElevationLevels';
 
 import { media } from '../media';
 import type { DynamicStyleProps } from '../styleProps';
 
+/**
+ * Classnames for dynamic style props. Dynamic style props are style props whose
+ * values cannot be known at build time, such as width and height. The values for
+ * these style props are set via CSS Variables in the inline styles.
+ */
 export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   width: css`
     @media ${media.tablet} {
@@ -171,7 +175,7 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   `,
 } as const;
 
-export const elevation: Record<ElevationLevels, LinariaClassName> = {
+export const elevation: Record<ThemeVars.Elevation, LinariaClassName> = {
   '0': css``,
   '1': css`
     @media ${media.tablet} {
@@ -1675,257 +1679,6 @@ export const textDecoration = {
   'underline double': css`
     @media ${media.tablet} {
       text-decoration: underline double;
-    }
-  `,
-} as const;
-
-export const textDecorationThickness = {
-  auto: css`
-    @media ${media.tablet} {
-      text-decoration-thickness: auto;
-    }
-  `,
-  'from-font': css`
-    @media ${media.tablet} {
-      text-decoration-thickness: from-font;
-    }
-  `,
-  thin: css`
-    @media ${media.tablet} {
-      text-decoration-thickness: thin;
-    }
-  `,
-  medium: css`
-    @media ${media.tablet} {
-      text-decoration-thickness: medium;
-    }
-  `,
-  thick: css`
-    @media ${media.tablet} {
-      text-decoration-thickness: thick;
-    }
-  `,
-} as const;
-
-export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
-  // Text
-  fg: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-fg);
-    }
-  `,
-  fgInverse: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-fgInverse);
-    }
-  `,
-  fgMuted: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-fgMuted);
-    }
-  `,
-  fgPrimary: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-fgPrimary);
-    }
-  `,
-  fgPositive: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-fgPositive);
-    }
-  `,
-  fgNegative: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-fgNegative);
-    }
-  `,
-  fgWarning: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-fgWarning);
-    }
-  `,
-  // Background
-  bg: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bg);
-    }
-  `,
-  bgAlternate: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgAlternate);
-    }
-  `,
-  bgInverse: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgInverse);
-    }
-  `,
-  bgOverlay: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgOverlay);
-    }
-  `,
-  bgPrimary: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgPrimary);
-    }
-  `,
-  bgPrimaryWash: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgPrimaryWash);
-    }
-  `,
-  bgSecondary: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgSecondary);
-    }
-  `,
-  bgTertiary: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgTertiary);
-    }
-  `,
-  bgSecondaryWash: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgSecondaryWash);
-    }
-  `,
-  bgNegative: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgNegative);
-    }
-  `,
-  bgNegativeWash: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgNegativeWash);
-    }
-  `,
-  bgPositive: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgPositive);
-    }
-  `,
-  bgPositiveWash: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgPositiveWash);
-    }
-  `,
-  bgWarning: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgWarning);
-    }
-  `,
-  bgWarningWash: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgWarningWash);
-    }
-  `,
-  currentColor: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-currentColor);
-    }
-  `,
-  // Line
-  bgLine: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgLine);
-    }
-  `,
-  bgLineInverse: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgLineInverse);
-    }
-  `,
-  bgLineHeavy: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgLineHeavy);
-    }
-  `,
-  bgLinePrimary: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgLinePrimary);
-    }
-  `,
-  bgLinePrimarySubtle: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgLinePrimarySubtle);
-    }
-  `,
-  // Elevation
-  bgElevation1: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgElevation1);
-    }
-  `,
-  bgElevation2: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-bgElevation2);
-    }
-  `,
-  // Accent
-  accentSubtleGreen: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentSubtleGreen);
-    }
-  `,
-  accentBoldGreen: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentBoldGreen);
-    }
-  `,
-  accentSubtleBlue: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentSubtleBlue);
-    }
-  `,
-  accentBoldBlue: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentBoldBlue);
-    }
-  `,
-  accentSubtlePurple: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentSubtlePurple);
-    }
-  `,
-  accentBoldPurple: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentBoldPurple);
-    }
-  `,
-  accentSubtleYellow: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentSubtleYellow);
-    }
-  `,
-  accentBoldYellow: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentBoldYellow);
-    }
-  `,
-  accentSubtleRed: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentSubtleRed);
-    }
-  `,
-  accentBoldRed: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentBoldRed);
-    }
-  `,
-  accentSubtleGray: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentSubtleGray);
-    }
-  `,
-  accentBoldGray: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-accentBoldGray);
-    }
-  `,
-  transparent: css`
-    @media ${media.tablet} {
-      text-decoration-color: var(--color-transparent);
     }
   `,
 } as const;

@@ -406,7 +406,7 @@ export const Calendar = memo(
           <Grid gap={1} justifyContent="space-between" templateColumns="repeat(7, 40px)">
             {daysOfWeek.map((day) => (
               <VStack key={day} alignItems="center" height={40} justifyContent="center" width={40}>
-                <Text font="body" selectable="none">
+                <Text font="body" userSelect="none">
                   {day.charAt(0)}
                 </Text>
               </VStack>

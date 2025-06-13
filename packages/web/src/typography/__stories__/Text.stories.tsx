@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { useTheme } from '../../hooks/useTheme';
 import { Box } from '../../layout/Box';
 import { VStack } from '../../layout/VStack';
-import { ThemeProvider } from '../../system/ThemeProvider';
 import {
   Text,
   TextBody,

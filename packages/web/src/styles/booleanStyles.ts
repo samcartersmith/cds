@@ -1,3 +1,8 @@
+/**
+ * Boolean styles are used to power component style props,
+ * but they are not responsive and do not accept arguments.
+ * They are either on or off.
+ */
 import { css, type LinariaClassName } from '@linaria/core';
 import type { PinningDirection } from '@cbhq/cds-common/types/BoxBaseProps';
 

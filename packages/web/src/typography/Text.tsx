@@ -40,18 +40,6 @@ const noWrapStyle = css`
   white-space: nowrap;
 `;
 
-const userSelectStyle: Record<NonNullable<TextBaseProps['selectable']>, LinariaClassName> = {
-  none: css`
-    user-select: none;
-  `,
-  text: css`
-    user-select: text;
-  `,
-  all: css`
-    user-select: all;
-  `,
-};
-
 const overflowStyle = {
   truncate: css`
     overflow: hidden;
@@ -119,11 +107,6 @@ export type TextBaseProps = Polymorphic.ExtendableProps<
      */
     noWrap?: boolean;
     /**
-     * Set select behavior.
-     * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select)
-     */
-    selectable?: 'none' | 'text' | 'all';
-    /**
      * Set overflow behavior.
      * @link [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
      */
@@ -165,7 +148,6 @@ export const Text: TextComponent = memo(
         underline,
         mono,
         noWrap,
-        selectable,
         overflow,
         textDecoration = underline ? 'underline' : 'none',
         textTransform,
@@ -205,7 +187,6 @@ export const Text: TextComponent = memo(
             tabularNumbers && tabularNumbersStyle,
             slashedZero && slashedZeroStyle,
             noWrap && noWrapStyle,
-            selectable && userSelectStyle[selectable],
             overflow && overflowStyle[overflow],
             className,
           )}

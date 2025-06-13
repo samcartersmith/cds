@@ -1,14 +1,15 @@
-/* eslint-disable */
 /**
  * Import order determines CSS cascade order, therefor affects specificity.
  * Do not change the order of these imports or everything will break.
  */
+/* eslint-disable simple-import-sort/imports, @typescript-eslint/no-unused-expressions */
 import * as booleanStyles from './booleanStyles';
 import * as baseStyles from './responsive/base';
 import * as phoneStyles from './responsive/phone';
 import * as tabletStyles from './responsive/tablet';
 import * as desktopStyles from './responsive/desktop';
 import type { TypeOrNumber } from '@cbhq/cds-common/types/TypeOrNumber';
+import { globalCDSConfig } from './config';
 
 /**
  * Prevents tree-shaking. Do not remove or everything will break.
@@ -17,13 +18,83 @@ booleanStyles;
 
 /**
  * Style props that set classnames but not inline style CSS Variables.
+ * @danger You probably don't want to use this type directly. To refer to any
+ * style prop, use the StyleProps type instead. Only use this type to reference
+ * specifically the static style props (style props that don't use inline styles).
  */
 export type StaticStyleProps = {
   [key in keyof Omit<typeof baseStyles, 'dynamic'>]?: TypeOrNumber<keyof (typeof baseStyles)[key]>;
 };
 
 /**
+ * Maps the StaticStyleProps that are affected by Theme variables to the
+ * ThemeVars interface names that affect them.
+ */
+const stylePropThemeVarMap = {
+  color: 'Color',
+  background: 'Color',
+  borderColor: 'Color',
+  borderWidth: 'BorderWidth',
+  borderTopWidth: 'BorderWidth',
+  borderEndWidth: 'BorderWidth',
+  borderBottomWidth: 'BorderWidth',
+  borderStartWidth: 'BorderWidth',
+  borderRadius: 'BorderRadius',
+  borderTopLeftRadius: 'BorderRadius',
+  borderTopRightRadius: 'BorderRadius',
+  borderBottomLeftRadius: 'BorderRadius',
+  borderBottomRightRadius: 'BorderRadius',
+  fontFamily: 'FontFamily',
+  fontSize: 'FontSize',
+  fontWeight: 'FontWeight',
+  lineHeight: 'LineHeight',
+  gap: 'Space',
+  columnGap: 'Space',
+  rowGap: 'Space',
+  padding: 'Space',
+  paddingX: 'Space',
+  paddingY: 'Space',
+  paddingTop: 'Space',
+  paddingBottom: 'Space',
+  paddingStart: 'Space',
+  paddingEnd: 'Space',
+  margin: 'Space',
+  marginX: 'Space',
+  marginY: 'Space',
+  marginTop: 'Space',
+  marginBottom: 'Space',
+  marginEnd: 'Space',
+  marginStart: 'Space',
+  elevation: 'Elevation',
+} as const satisfies Partial<Record<keyof StaticStyleProps, string>>;
+
+/**
+ * The subset of StaticStyleProps that are affected by theme variables.
+ * @danger You probably don't want to use this type directly. To refer to any
+ * style prop, use the StyleProps type instead. To refer only to static style
+ * props (style props that don't use inline styles), use the StaticStyleProps
+ * type instead. Only use this type to reference specifically the subset of
+ * StaticStyleProps that are affected by theme variables.
+ */
+export type ThemedStaticStyleProps = {
+  [themedStaticStyleProp in keyof typeof stylePropThemeVarMap]?: StaticStyleProps[themedStaticStyleProp];
+};
+
+/**
+ * The subset of StaticStyleProps that are not affected by theme variables.
+ * @danger You probably don't want to use this type directly. To refer to any
+ * style prop, use the StyleProps type instead. To refer only to static style
+ * props (style props that don't use inline styles), use the StaticStyleProps
+ * type instead. Only use this type to reference specifically the subset of
+ * StaticStyleProps that are not affected by theme variables.
+ */
+export type UnthemedStaticStyleProps = Omit<StaticStyleProps, keyof ThemedStaticStyleProps>;
+
+/**
  * Style props that set inline style CSS Variables, and classnames that consume those CSS Variables.
+ * @danger You probably don't want to use this type directly. To refer to any
+ * style prop, use the StyleProps type instead. Only use this type to reference
+ * specifically the dynamic style props (style props that use inline styles).
  */
 export type DynamicStyleProps = {
   width?: React.CSSProperties['width'];
@@ -136,23 +207,57 @@ export const getStyles = (styleProps: StyleProps, inlineStyle?: React.CSSPropert
     }
 
     // Otherwise, if it's a static style prop...
-
-    // @ts-expect-error - Key type
-    if (typeof value !== 'object') className += ' ' + baseStyles[styleProp][value];
-    else {
+    if (typeof value !== 'object') {
+      className +=
+        ' ' +
+        // @ts-expect-error - Key type
+        (baseStyles[styleProp][value] ??
+          // @ts-expect-error - Key type
+          globalCDSConfig.current.extendStyleProps?.[stylePropThemeVarMap[styleProp]][value]?.[
+            styleProp
+          ].base);
+    } else {
       // If it's an object, treat it as a responsive style: add the corresponding classnames
-      if (typeof value.base !== 'undefined')
-        // @ts-expect-error - Key type
-        className += ' ' + baseStyles[styleProp][value.base];
-      if (typeof value.phone !== 'undefined')
-        // @ts-expect-error - Key type
-        className += ' ' + phoneStyles[styleProp][value.phone];
-      if (typeof value.tablet !== 'undefined')
-        // @ts-expect-error - Key type
-        className += ' ' + tabletStyles[styleProp][value.tablet];
-      if (typeof value.desktop !== 'undefined')
-        // @ts-expect-error - Key type
-        className += ' ' + desktopStyles[styleProp][value.desktop];
+      if (typeof value.base !== 'undefined') {
+        className +=
+          ' ' +
+          // @ts-expect-error - Key type
+          (baseStyles[styleProp][value.base] ??
+            // @ts-expect-error - Key type
+            globalCDSConfig.current.extendStyleProps?.[stylePropThemeVarMap[styleProp]][
+              value.base
+            ]?.[styleProp].base);
+      }
+      if (typeof value.phone !== 'undefined') {
+        className +=
+          ' ' +
+          // @ts-expect-error - Key type
+          (phoneStyles[styleProp][value.phone] ??
+            // @ts-expect-error - Key type
+            globalCDSConfig.current.extendStyleProps?.[stylePropThemeVarMap[styleProp]][
+              value.phone
+            ]?.[styleProp].phone);
+      }
+      if (typeof value.tablet !== 'undefined') {
+        className +=
+          ' ' +
+          // @ts-expect-error - Key type
+          (tabletStyles[styleProp][value.tablet] ??
+            // @ts-expect-error - Key type
+            globalCDSConfig.current.extendStyleProps?.[stylePropThemeVarMap[styleProp]][
+              value.tablet
+            ]?.[styleProp].tablet);
+      }
+      if (typeof value.desktop !== 'undefined') {
+        className +=
+          ' ' +
+          // @ts-expect-error - Key type
+          (desktopStyles[styleProp][value.desktop] ??
+            // @ts-expect-error - Key type
+            globalCDSConfig.current.extendStyleProps?.[stylePropThemeVarMap[styleProp]][
+              value.desktop
+            ]?.[styleProp].desktop);
+      }
     }
   }
 

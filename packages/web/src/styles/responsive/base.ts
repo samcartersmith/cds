@@ -3,10 +3,14 @@
  */
 import { css, type LinariaClassName } from '@linaria/core';
 import type { ThemeVars } from '@cbhq/cds-common/core/theme';
-import type { ElevationLevels } from '@cbhq/cds-common/types/ElevationLevels';
 
 import type { DynamicStyleProps } from '../styleProps';
 
+/**
+ * Classnames for dynamic style props. Dynamic style props are style props whose
+ * values cannot be known at build time, such as width and height. The values for
+ * these style props are set via CSS Variables in the inline styles.
+ */
 export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   width: css`
     width: var(--width);
@@ -106,7 +110,7 @@ export const dynamic: Record<keyof DynamicStyleProps, LinariaClassName> = {
   `,
 } as const;
 
-export const elevation: Record<ElevationLevels, LinariaClassName> = {
+export const elevation: Record<ThemeVars.Elevation, LinariaClassName> = {
   '0': css``,
   '1': css`
     background-color: var(--color-bgElevation1);
@@ -1055,161 +1059,6 @@ export const textDecoration = {
   `,
   'underline double': css`
     text-decoration: underline double;
-  `,
-} as const;
-
-export const textDecorationThickness = {
-  auto: css`
-    text-decoration-thickness: auto;
-  `,
-  'from-font': css`
-    text-decoration-thickness: from-font;
-  `,
-  thin: css`
-    text-decoration-thickness: thin;
-  `,
-  medium: css`
-    text-decoration-thickness: medium;
-  `,
-  thick: css`
-    text-decoration-thickness: thick;
-  `,
-} as const;
-
-export const textDecorationColor: Record<ThemeVars.Color, LinariaClassName> = {
-  // Text
-  fg: css`
-    text-decoration-color: var(--color-fg);
-  `,
-  fgInverse: css`
-    text-decoration-color: var(--color-fgInverse);
-  `,
-  fgMuted: css`
-    text-decoration-color: var(--color-fgMuted);
-  `,
-  fgPrimary: css`
-    text-decoration-color: var(--color-fgPrimary);
-  `,
-  fgPositive: css`
-    text-decoration-color: var(--color-fgPositive);
-  `,
-  fgNegative: css`
-    text-decoration-color: var(--color-fgNegative);
-  `,
-  fgWarning: css`
-    text-decoration-color: var(--color-fgWarning);
-  `,
-  // Background
-  bg: css`
-    text-decoration-color: var(--color-bg);
-  `,
-  bgAlternate: css`
-    text-decoration-color: var(--color-bgAlternate);
-  `,
-  bgInverse: css`
-    text-decoration-color: var(--color-bgInverse);
-  `,
-  bgOverlay: css`
-    text-decoration-color: var(--color-bgOverlay);
-  `,
-  bgPrimary: css`
-    text-decoration-color: var(--color-bgPrimary);
-  `,
-  bgPrimaryWash: css`
-    text-decoration-color: var(--color-bgPrimaryWash);
-  `,
-  bgSecondary: css`
-    text-decoration-color: var(--color-bgSecondary);
-  `,
-  bgTertiary: css`
-    text-decoration-color: var(--color-bgTertiary);
-  `,
-  bgSecondaryWash: css`
-    text-decoration-color: var(--color-bgSecondaryWash);
-  `,
-  bgNegative: css`
-    text-decoration-color: var(--color-bgNegative);
-  `,
-  bgNegativeWash: css`
-    text-decoration-color: var(--color-bgNegativeWash);
-  `,
-  bgPositive: css`
-    text-decoration-color: var(--color-bgPositive);
-  `,
-  bgPositiveWash: css`
-    text-decoration-color: var(--color-bgPositiveWash);
-  `,
-  bgWarning: css`
-    text-decoration-color: var(--color-bgWarning);
-  `,
-  bgWarningWash: css`
-    text-decoration-color: var(--color-bgWarningWash);
-  `,
-  currentColor: css`
-    text-decoration-color: var(--color-currentColor);
-  `,
-  // Line
-  bgLine: css`
-    text-decoration-color: var(--color-bgLine);
-  `,
-  bgLineInverse: css`
-    text-decoration-color: var(--color-bgLineInverse);
-  `,
-  bgLineHeavy: css`
-    text-decoration-color: var(--color-bgLineHeavy);
-  `,
-  bgLinePrimary: css`
-    text-decoration-color: var(--color-bgLinePrimary);
-  `,
-  bgLinePrimarySubtle: css`
-    text-decoration-color: var(--color-bgLinePrimarySubtle);
-  `,
-  // Elevation
-  bgElevation1: css`
-    text-decoration-color: var(--color-bgElevation1);
-  `,
-  bgElevation2: css`
-    text-decoration-color: var(--color-bgElevation2);
-  `,
-  // Accent
-  accentSubtleGreen: css`
-    text-decoration-color: var(--color-accentSubtleGreen);
-  `,
-  accentBoldGreen: css`
-    text-decoration-color: var(--color-accentBoldGreen);
-  `,
-  accentSubtleBlue: css`
-    text-decoration-color: var(--color-accentSubtleBlue);
-  `,
-  accentBoldBlue: css`
-    text-decoration-color: var(--color-accentBoldBlue);
-  `,
-  accentSubtlePurple: css`
-    text-decoration-color: var(--color-accentSubtlePurple);
-  `,
-  accentBoldPurple: css`
-    text-decoration-color: var(--color-accentBoldPurple);
-  `,
-  accentSubtleYellow: css`
-    text-decoration-color: var(--color-accentSubtleYellow);
-  `,
-  accentBoldYellow: css`
-    text-decoration-color: var(--color-accentBoldYellow);
-  `,
-  accentSubtleRed: css`
-    text-decoration-color: var(--color-accentSubtleRed);
-  `,
-  accentBoldRed: css`
-    text-decoration-color: var(--color-accentBoldRed);
-  `,
-  accentSubtleGray: css`
-    text-decoration-color: var(--color-accentSubtleGray);
-  `,
-  accentBoldGray: css`
-    text-decoration-color: var(--color-accentBoldGray);
-  `,
-  transparent: css`
-    text-decoration-color: var(--color-transparent);
   `,
 } as const;
 
