@@ -15,8 +15,11 @@ The `publishToBranch.ts` script helps publish actions to a specified branch (e.g
 
 ### Basic Usage
 
+There are two scripts in package.json that can be used to publish CDS actions.
+
 ```bash
-yarn ts-node actions/publishToBranch.ts --branch <branch-name>
+"publish-actions-test": "yarn && tsx ./actions/publishToBranch.ts --branch v999"
+"publish-actions-prod": "yarn && tsx ./actions/publishToBranch.ts"
 ```
 
 ### Options
@@ -28,14 +31,17 @@ yarn ts-node actions/publishToBranch.ts --branch <branch-name>
 ### Example Commands
 
 ```bash
+#Publish to v999 for local testing
+yarn publish-actions-test
+
 # Publish to v3 branch
-yarn ts-node actions/publishToBranch.ts --branch v3
+yarn publish-actions-prod --branch v3
 
 # Publish to next branch with dirty working directory
-yarn ts-node actions/publishToBranch.ts --branch next --allow-dirty
+yarn publish-actions-prod --branch next --allow-dirty
 
 # Publish to latest branch without confirmation
-yarn ts-node actions/publishToBranch.ts --branch latest --yes
+yarn publish-actions-prod --branch latest --yes
 ```
 
 ### What the Script Does
