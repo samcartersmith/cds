@@ -1,0 +1,27 @@
+{
+  "name": "cds-adoption-tracker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/cds-adoption-tracker/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "git clean -fde '!dist' && ncc build src/action.ts --transpile-only"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "dev",
+      "configurations": {
+        "dev": {
+          "command": "tsc --build --pretty --verbose"
+        },
+        "prod": {
+          "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
+        }
+      }
+    }
+  }
+}

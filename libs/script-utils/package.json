@@ -17,6 +17,10 @@
       "types": "./dts/index.d.ts",
       "default": "./cjs/index.js"
     },
+    "./actions": {
+      "types": "./dts/actions/index.d.ts",
+      "default": "./cjs/actions/index.js"
+    },
     "./bot/git": {
       "types": "./dts/bot/git/index.d.ts",
       "default": "./cjs/bot/git/index.js"

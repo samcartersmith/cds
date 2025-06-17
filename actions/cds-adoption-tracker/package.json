@@ -1,0 +1,14 @@
+{
+  "name": "@cbhq/cds-adoption-tracker",
+  "private": true,
+  "scripts": {
+    "build": "git clean -fde '!dist' && ncc build src/action.ts --transpile-only"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "@cbhq/script-utils": "workspace:^",
+    "@vercel/ncc": "^0.38.1",
+    "ts-morph": "^19.0.0"
+  }
+}

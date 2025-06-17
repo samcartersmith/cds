@@ -20,7 +20,10 @@
     "diagnose": "mono-env diagnose --group common web mobile",
     "setup": "mono-env setup --group common web mobile",
     "release": "tsx tools/ci/validators/validateVersioned.ts && yarn nx run codegen:update-packages-generic-bump && tsx ./tools/validateCDSVersions.ts",
-    "generate-tarballs": "node tools/generateTarballs.mjs"
+    "generate-tarballs": "node tools/generateTarballs.mjs",
+    "build-actions": "yarn workspace @cbhq/cds-adoption-tracker build",
+    "publish-actions-test": "yarn && tsx ./actions/publishToBranch.ts --branch v999",
+    "publish-actions-prod": "yarn && tsx ./actions/publishToBranch.ts"
   },
   "resolutions": {
     "@testing-library/user-event@^14.0.4": "patch:@testing-library/user-event@npm:14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170",
@@ -45,6 +48,7 @@
     "react-helmet-async": "Working around Nx graph resolution issue"
   },
   "workspaces": [
+    "actions/*",
     "apps/*",
     "libs/*",
     "packages/*"
