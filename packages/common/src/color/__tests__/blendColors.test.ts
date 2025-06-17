@@ -25,4 +25,14 @@ describe('blendColors', () => {
       blendColors({ underlayColor: 'rgb(255, 255, 255)', overlayColor: 'rgba(33, 98, 238, 0.2)' }),
     ).toBe('rgb(211, 224, 252)');
   });
+
+  it('returns blended color if the second color has opacity and finalOpacity is provided', () => {
+    expect(
+      blendColors({
+        underlayColor: 'rgb(255, 255, 255)',
+        overlayColor: 'rgba(33, 98, 238, 0.2)',
+        finalOpacity: 0.5,
+      }),
+    ).toBe('rgba(211, 224, 252, 0.5)');
+  });
 });

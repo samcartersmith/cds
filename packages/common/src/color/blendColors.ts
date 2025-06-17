@@ -8,6 +8,7 @@ export type ColorValue =
 type BlendColorsParams = {
   underlayColor: ColorValue;
   overlayColor: ColorValue;
+  finalOpacity?: number;
 };
 
 export const getRGBColor = (color: ColorValue): RGBColor => {
@@ -24,9 +25,12 @@ export const getRGBColor = (color: ColorValue): RGBColor => {
  * The overlayColor value must have an alpha less than 1 in order to output a different color.
  * @param underlayColor ColorValue
  * @param overlayColor  ColorValue
+ *
+ * The final opacity is applied to the blended color.
+ * @param finalOpacity  number
  * @returns rbgString
  */
-export const blendColors = ({ underlayColor, overlayColor }: BlendColorsParams) => {
+export const blendColors = ({ underlayColor, overlayColor, finalOpacity }: BlendColorsParams) => {
   const {
     r: underlayR,
     g: underlayG,
@@ -57,6 +61,10 @@ export const blendColors = ({ underlayColor, overlayColor }: BlendColorsParams) 
     (OverlayB * OverlayOpacity) / mix[3] +
       (underlayB * underlayOpacity * (1 - OverlayOpacity)) / mix[3],
   );
+
+  if (finalOpacity !== undefined) {
+    return `rgba(${mix[0]}, ${mix[1]}, ${mix[2]}, ${finalOpacity})`;
+  }
 
   return `rgb(${mix[0]}, ${mix[1]}, ${mix[2]})`;
 };

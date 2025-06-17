@@ -81,25 +81,16 @@ export const getBlendedColor = ({
     colorSchemeMap[isDisabled || isHighContrastToColorSchemeBg ? colorScheme : inverseColorScheme];
   const underlayLuminance = getLuminance(underlayColor) ?? 1;
 
-  if (overlayColorOpacity < 1) {
-    // If the overlay color is not fully opaque, blend it with the theme underlay color with its own opacity first before applying opacity
-    const blendedOverlayColor = blendColors({
-      underlayColor: colorSchemeMap[colorScheme],
-      overlayColor: overlayColorRgba,
-    });
-    const blendedOverlayColorRgba = d3color(blendedOverlayColor);
-    if (blendedOverlayColorRgba === null) return blendedOverlayColor;
-    const adjustedOpacity = getAdjustedOpacity(overlayLuminance, underlayLuminance, opacity);
-    const blendedOverlayColorRgbaWithAdjustedOpacity = blendedOverlayColorRgba.copy({
-      opacity: adjustedOpacity,
-    });
-    return blendColors({ underlayColor, overlayColor: blendedOverlayColorRgbaWithAdjustedOpacity });
-  }
-
   // Get adjusted opacity based on luminance difference between the overlay and underlay colors
   const adjustedOpacity = getAdjustedOpacity(overlayLuminance, underlayLuminance, opacity);
 
   const overlayColorRgbaWithAdjustedOpacity = overlayColorRgba.copy({ opacity: adjustedOpacity });
 
-  return blendColors({ underlayColor, overlayColor: overlayColorRgbaWithAdjustedOpacity });
+  return blendColors({
+    underlayColor,
+    overlayColor: overlayColorRgbaWithAdjustedOpacity,
+    // If the overlay color is not fully opaque (eg. bgLine, bgLineHeavy),
+    // blend the overlay color with the underlay color and then apply the original opacity to the blended color
+    finalOpacity: overlayColorOpacity < 1 ? overlayColorOpacity : undefined,
+  });
 };
