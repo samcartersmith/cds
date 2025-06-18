@@ -19,20 +19,6 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
-    "sync": {
-      "executor": "@cbhq/figma-tasks:sync-illustrations",
-      "dependsOn": [
-        "^build"
-      ],
-      "options": {
-        "figmaApiFileId": "LmkJatvMRVzNgfiIkJDb99",
-        "changelogFile": "./CHANGELOG.md",
-        "manifestFile": "./src/__generated__/manifest.json",
-        "darkModeManifestFile": "libs/figma-styles/src/__generated__/illustration/dark/manifest.json",
-        "lightModeManifestFile": "libs/figma-styles/src/__generated__/illustration/light/manifest.json",
-        "generatedDirectory": "./src/__generated__"
-      }
-    },
     "generate-stories": {
       "command": "tsx ./scripts/generateStories.ts",
       "dependsOn": [

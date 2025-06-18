@@ -2739,7 +2739,6 @@ __metadata:
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/figma-tasks": "workspace:^"
     "@types/prettier": "npm:^2.7.3"
     chalk: "npm:^4.1.2"
     prettier: "npm:^2.8.3"
@@ -2754,9 +2753,6 @@ __metadata:
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/figma-styles": "workspace:^"
-    "@cbhq/figma-tasks": "workspace:^"
-    "@cbhq/script-utils": "workspace:^"
     "@types/prettier": "npm:^2.7.3"
     chalk: "npm:^4.1.2"
     prettier: "npm:^2.8.3"
@@ -3274,7 +3270,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/figma-styles@workspace:^, @cbhq/figma-styles@workspace:libs/figma-styles":
+"@cbhq/figma-styles@workspace:libs/figma-styles":
   version: 0.0.0-use.local
   resolution: "@cbhq/figma-styles@workspace:libs/figma-styles"
   dependencies:
@@ -3300,13 +3296,12 @@ __metadata:
     "@types/sharp": "npm:^0.31.0"
     "@types/svgo": "npm:^2.6.4"
     "@types/update-notifier": "npm:^5.1.0"
+    dotenv: "npm:^16.4.7"
     lodash: "npm:^4.17.21"
     sharp: "npm:^0.31.2"
     svgo: "npm:^3.0.2"
     update-notifier: "npm:^5.1.0"
     webfont: "npm:11.2.26"
-  peerDependencies:
-    "@nx/devkit": ">=15.0.0"
   languageName: unknown
   linkType: soft
 
@@ -21594,7 +21589,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.3, dotenv@npm:^16.3.1, dotenv@npm:^16.4.4":
+"dotenv@npm:^16.0.3, dotenv@npm:^16.3.1, dotenv@npm:^16.4.4, dotenv@npm:^16.4.7":
   version: 16.5.0
   resolution: "dotenv@npm:16.5.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fdotenv%2F-%2Fdotenv-16.5.0.tgz"
   checksum: 10c0/5bc94c919fbd955bf0ba44d33922a1e93d1078e64a1db5c30faeded1d996e7a83c55332cb8ea4fae5a9ca4d0be44cbceb95c5811e70f9f095298df09d1997dd9

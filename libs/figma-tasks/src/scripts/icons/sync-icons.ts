@@ -1,8 +1,14 @@
+const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
+if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
+
+process.env.DOTENV_CONFIG_PATH = path.resolve(MONOREPO_ROOT, '.env');
+
+import 'dotenv/config';
+
 import camelCase from 'lodash/camelCase';
 import fs from 'node:fs';
 import path from 'node:path';
 import type { SyncedLibrary } from '@cbhq/figma-api';
-import { createTask } from '@cbhq/mono-tasks';
 import {
   getAbsolutePath,
   pascalCase,
@@ -14,22 +20,20 @@ import {
 import { createDescriptionGraph } from '../../helpers/createDescriptionGraph';
 import { generateFont } from '../../helpers/font/generateFont';
 import { getFontProcessor } from '../../helpers/font/getFontProcessor';
-import { FontConfig } from '../../helpers/font/types';
+import type { FontConfig } from '../../helpers/font/types';
 import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { createSvgContent } from '../../helpers/image/createSvgContent';
 import { getIdMappedSvg } from '../../helpers/image/getIdMappedSvg';
 import { sortByCreatedAt } from '../../helpers/sortByCreatedAt';
-import { CodegenItemConfig } from '../../helpers/types';
+import type { CodegenItemConfig } from '../../helpers/types';
 import type { ComponentSetManifest } from '../../tools/ComponentSet';
 import { ComponentSet } from '../../tools/ComponentSet';
 import { ComponentSetChild } from '../../tools/ComponentSetChild';
 import { Manifest, ManifestShape, ManifestTaskOptions } from '../../tools/Manifest';
 
 import svgoConfig from './svgoConfig';
-
-const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
-if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
+import { task } from './task';
 
 type IconComponentSetChildShape = {
   metadata: { unicode: number };
@@ -99,16 +103,16 @@ async function createItem(manifest: ComponentSetManifest) {
   return ComponentSet.create(manifest, getHashSourceItem);
 }
 
-export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (task) => {
+export const main = async () => {
   const codegenHeader = `
     /**
      * DO NOT MODIFY
-     * Generated from yarn nx run ${task.context.projectName}:${task.targetName}
+     * Generated from yarn nx run figma-tasks:${task.targetName}
     */
   `;
 
   const { manifest, changelog } = await Manifest.init<IconsManifestShape, SyncIconsTaskOptions>(
-    task,
+    task as any,
     {
       imageFormats: ['svg'],
       requestType: 'component_sets',
@@ -126,7 +130,13 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
    * based on alphabetical sorting.
    */
   const svgFileMap = new Map<string, IconComponentSetChild>();
-  const generatedDirectory = getAbsolutePath(task, task.options.generatedDirectory);
+  const generatedDirectory = getAbsolutePath(
+    {
+      projectRoot: task.projectRoot as any,
+      workspace: task.workspace as any,
+    },
+    task.options.generatedDirectory,
+  );
   const iconEntries = manifest.groupedItems;
 
   function generateSvg(componentSet: IconComponentSet) {
@@ -268,7 +278,7 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
    * update the lastUnicode once finished processing
    */
   await generateFont({
-    task,
+    task: task as any,
     sourceSvgsGlob: `${generatedDirectory}/**/svg/*.svg`,
     generatedFontName: task.options.generatedFontName,
     generatedFontFormats: task.options.generatedFontFormats,
@@ -282,8 +292,8 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
   updateCoinbaseIconsFile();
 
   await Promise.all([
-    manifest.generateFile(task),
-    changelog?.generateFile({ task, manifest, groupByType: true }),
+    manifest.generateFile(task as any),
+    changelog?.generateFile({ task: task as any, manifest, groupByType: true }),
   ]);
 
   // if (icons.warnings) {
@@ -292,4 +302,6 @@ export const syncIcons = createTask<SyncIconsTaskOptions>('sync-icons', async (t
   // }
 
   return { success: true };
-});
+};
+
+main();

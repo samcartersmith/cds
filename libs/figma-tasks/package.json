@@ -2,13 +2,12 @@
   "name": "@cbhq/figma-tasks",
   "version": "0.0.0",
   "private": true,
-  "description": "Figma nx tasks",
+  "description": "Figma tasks",
   "repository": {
     "type": "git",
     "url": "git@github.cbhq.net:frontend/cds.git",
     "directory": "libs/figma-tasks"
   },
-  "executors": "./executors.json",
   "type": "commonjs",
   "main": "./cjs/index.js",
   "types": "./dts/index.d.ts",
@@ -17,10 +16,6 @@
     ".": {
       "types": "./dts/index.d.ts",
       "default": "./cjs/index.js"
-    },
-    "./executors": {
-      "types": "./dts/executors/index.d.ts",
-      "default": "./cjs/executors/index.js"
     },
     "./*": {
       "types": "./dts/*.d.ts",
@@ -33,14 +28,12 @@
     "dts",
     "CHANGELOG"
   ],
-  "peerDependencies": {
-    "@nx/devkit": ">=15.0.0"
-  },
   "dependencies": {
     "@cbhq/figma-api": "workspace:^",
     "@cbhq/mono-tasks": "^1.16.0",
     "@cbhq/script-utils": "workspace:^",
     "@types/svgo": "^2.6.4",
+    "dotenv": "^16.4.7",
     "lodash": "^4.17.21",
     "sharp": "^0.31.2",
     "svgo": "^3.0.2",

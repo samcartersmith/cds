@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.10.1 (6/18/2025 PST)
+
+#### 🐞 Fixes
+
+- Removed figma-tasks dependency. [[#4086](https://github.cbhq.net/frontend/cds/pull/4086)]
+
 ## 4.10.0 (6/18/2025 PST)
 
 #### 🚀 Updates

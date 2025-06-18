@@ -27,6 +27,24 @@
           "command": "tsc --build ./tsconfig.build.json --pretty --verbose"
         }
       }
+    },
+    "sync-icons": {
+      "command": "tsx ./src/scripts/icons/sync-icons.ts",
+      "dependsOn": [
+        "icons:build"
+      ],
+      "options": {
+        "cwd": "libs/figma-tasks"
+      }
+    },
+    "sync-illustrations": {
+      "command": "tsx ./src/scripts/illustrations/sync-illustrations.ts",
+      "dependsOn": [
+        "illustrations:build"
+      ],
+      "options": {
+        "cwd": "libs/figma-tasks"
+      }
     }
   }
 }

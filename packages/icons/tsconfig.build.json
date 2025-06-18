@@ -15,9 +15,5 @@
     "**/*.test.*",
     "**/*.spec.*"
   ],
-  "references": [
-    {
-      "path": "../../libs/figma-tasks"
-    }
-  ]
+  "references": []
 }

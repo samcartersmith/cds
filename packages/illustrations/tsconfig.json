@@ -8,12 +8,5 @@
     "src/**/*"
   ],
   "exclude": [],
-  "references": [
-    {
-      "path": "../../libs/figma-styles"
-    },
-    {
-      "path": "../../libs/figma-tasks"
-    }
-  ]
+  "references": []
 }

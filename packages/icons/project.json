@@ -39,32 +39,6 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
-    "sync": {
-      "executor": "@cbhq/figma-tasks:sync-icons",
-      "dependsOn": [
-        "^build"
-      ],
-      "options": {
-        "figmaApiFileId": "1J3XC4iA2xRzlnC3y0pl1N",
-        "changelogFile": "./CHANGELOG.md",
-        "manifestFile": "./src/__generated__/manifest.json",
-        "generatedDirectory": "./src/__generated__",
-        "generatedFontName": "CoinbaseIcons",
-        "generatedFontFormats": [
-          {
-            "generatedFontFormat": "woff2",
-            "generatedFontDirectory": "./src/fonts/web",
-            "generatedCssDirectory": "./src/fonts/web",
-            "generatedCssFileName": "icon-font",
-            "hashed": true
-          },
-          {
-            "generatedFontFormat": "ttf",
-            "generatedFontDirectory": "./src/fonts/native"
-          }
-        ]
-      }
-    },
     "generate-stories": {
       "command": "tsx ./scripts/generateStories.ts",
       "dependsOn": [
@@ -72,16 +46,6 @@
       ],
       "options": {
         "cwd": "packages/icons"
-      }
-    },
-    "release": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "nx run icons:sync",
-          "nx run icons:generate-stories"
-        ],
-        "parallel": false
       }
     }
   }

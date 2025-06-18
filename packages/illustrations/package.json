@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-illustrations",
-  "version": "4.10.0",
+  "version": "4.10.1",
   "description": "CDS illustrations",
   "repository": {
     "type": "git",
@@ -32,9 +32,6 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@cbhq/figma-styles": "workspace:^",
-    "@cbhq/figma-tasks": "workspace:^",
-    "@cbhq/script-utils": "workspace:^",
     "@types/prettier": "^2.7.3",
     "chalk": "^4.1.2",
     "prettier": "^2.8.3"
