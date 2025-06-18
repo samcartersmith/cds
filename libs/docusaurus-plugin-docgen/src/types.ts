@@ -169,6 +169,10 @@ export type Template =
   | 'doc-item/example'
   | 'doc-item/import-block';
 
+import type { Symbol, SourceFile } from 'typescript';
+
+export type ComponentNameResolver = (exp: Symbol, source: SourceFile) => string | undefined | false;
+
 export type WriteFileConfig = {
   dest: string;
   data: unknown;

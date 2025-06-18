@@ -12,6 +12,7 @@ import type {
   ProcessedDoc,
   ProcessedPropItem,
   PropItem,
+  ComponentNameResolver,
 } from '../types';
 
 export const sharedParentTypesCache = new Set<ProcessedPropItem>();
@@ -139,6 +140,16 @@ function processDoc({ parentTypes = {}, ...doc }: PreProcessedDoc | ProcessedDoc
 
 const onProcessDocFallback: OnProcessDoc = (doc) => ({ ...doc, parentTypes: {} });
 
+/**
+ * A custom component name resolver for react-docgen-typescript.
+ * It will only pick up components that have the same name as the file.
+ * This is to avoid picking up helper hooks and components that are not the main export.
+ */
+const componentNameResolver: ComponentNameResolver = (exp, source) => {
+  const componentName = path.basename(source.fileName, path.extname(source.fileName));
+  return exp.getName() === componentName ? undefined : false;
+};
+
 export type DocgenParamsParams = {
   files: string[];
   tsconfigPath: string;
@@ -164,6 +175,7 @@ export function docgenParser({
     shouldRemoveUndefinedFromOptional: true,
     shouldIncludePropTagMap: true,
     shouldIncludeExpression: true,
+    componentNameResolver,
   })
     .parse(filesToParse)
     .map((doc) => {
