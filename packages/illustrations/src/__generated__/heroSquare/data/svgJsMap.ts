@@ -641,8 +641,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/errorWeb400-4').content,
   },
   errorWeb404: {
-    light: () => require('../svgJs/light/errorWeb404-5').content,
-    dark: () => require('../svgJs/dark/errorWeb404-5').content,
+    light: () => require('../svgJs/light/errorWeb404-6').content,
+    dark: () => require('../svgJs/dark/errorWeb404-6').content,
   },
   errorWeb404Mobile: {
     light: () => require('../svgJs/light/errorWeb404Mobile-1').content,

@@ -66,7 +66,7 @@ const versionMap: Record<HeroSquareName, number> = {
   myNameIsSatoshi: 3,
   estimatedAmount: 3,
   idFront: 3,
-  errorWeb404: 5,
+  errorWeb404: 6,
   earnInterest: 4,
   idBack: 2,
   restrictedCountry: 6,

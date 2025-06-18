@@ -330,7 +330,7 @@ const versionMap: Record<PictogramName, number> = {
   avatarFb: 0,
   avatarHj: 0,
   avatarHi: 0,
-  avatarHg: 0,
+  avatarHg: 1,
   avatarHf: 0,
   avatarHd: 0,
   avatarHb: 0,
@@ -398,7 +398,7 @@ const versionMap: Record<PictogramName, number> = {
   avatarEj: 0,
   avatarAi: 0,
   avatarBj: 0,
-  avatarHc: 0,
+  avatarHc: 1,
   avatarGh: 0,
   avatarFc: 0,
   avatarBc: 0,
@@ -412,7 +412,7 @@ const versionMap: Record<PictogramName, number> = {
   avatarCe: 0,
   avatarEe: 0,
   avatarGe: 0,
-  avatarHh: 0,
+  avatarHh: 1,
   avatarGc: 0,
   avatarGa: 0,
   avatarFd: 0,
@@ -427,6 +427,8 @@ const versionMap: Record<PictogramName, number> = {
   avatarCj: 0,
   avatarCb: 0,
   avatarEa: 0,
+  alertsCoinbaseOne: 0,
+  futuresCoinbaseOne: 0,
 };
 
 export default versionMap;

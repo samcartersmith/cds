@@ -68,6 +68,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/alerts-3').content,
     dark: () => require('../svgJs/dark/alerts-3').content,
   },
+  alertsCoinbaseOne: {
+    light: () => require('../svgJs/light/alertsCoinbaseOne-0').content,
+    dark: () => require('../svgJs/dark/alertsCoinbaseOne-0').content,
+  },
   analyticsNavigation: {
     light: () => require('../svgJs/light/analyticsNavigation-5').content,
     dark: () => require('../svgJs/dark/analyticsNavigation-5').content,
@@ -413,8 +417,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/avatarHb-0').content,
   },
   avatarHc: {
-    light: () => require('../svgJs/light/avatarHc-0').content,
-    dark: () => require('../svgJs/dark/avatarHc-0').content,
+    light: () => require('../svgJs/light/avatarHc-1').content,
+    dark: () => require('../svgJs/dark/avatarHc-1').content,
   },
   avatarHd: {
     light: () => require('../svgJs/light/avatarHd-0').content,
@@ -429,12 +433,12 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/avatarHf-0').content,
   },
   avatarHg: {
-    light: () => require('../svgJs/light/avatarHg-0').content,
-    dark: () => require('../svgJs/dark/avatarHg-0').content,
+    light: () => require('../svgJs/light/avatarHg-1').content,
+    dark: () => require('../svgJs/dark/avatarHg-1').content,
   },
   avatarHh: {
-    light: () => require('../svgJs/light/avatarHh-0').content,
-    dark: () => require('../svgJs/dark/avatarHh-0').content,
+    light: () => require('../svgJs/light/avatarHh-1').content,
+    dark: () => require('../svgJs/dark/avatarHh-1').content,
   },
   avatarHi: {
     light: () => require('../svgJs/light/avatarHi-0').content,
@@ -947,6 +951,10 @@ const svgJsMap = {
   futures: {
     light: () => require('../svgJs/light/futures-2').content,
     dark: () => require('../svgJs/dark/futures-2').content,
+  },
+  futuresCoinbaseOne: {
+    light: () => require('../svgJs/light/futuresCoinbaseOne-0').content,
+    dark: () => require('../svgJs/dark/futuresCoinbaseOne-0').content,
   },
   gasFees: {
     light: () => require('../svgJs/light/gasFees-5').content,

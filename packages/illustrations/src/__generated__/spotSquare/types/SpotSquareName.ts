@@ -40,6 +40,7 @@ export type SpotSquareName =
   | 'coinbaseFees'
   | 'coinbaseLock'
   | 'coinbaseOneBoostedCard'
+  | 'coinbaseOneBoostedCardCB1'
   | 'coinbaseOneConcierge'
   | 'coinbaseOneDiscountedAmount'
   | 'coinbaseOneEarn'

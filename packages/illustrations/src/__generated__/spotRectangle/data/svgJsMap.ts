@@ -105,8 +105,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/cbbtc-1').content,
   },
   cbEth: {
-    light: () => require('../svgJs/light/cbEth-3').content,
-    dark: () => require('../svgJs/dark/cbEth-3').content,
+    light: () => require('../svgJs/light/cbEth-4').content,
+    dark: () => require('../svgJs/dark/cbEth-4').content,
   },
   clawMachinePig: {
     light: () => require('../svgJs/light/clawMachinePig-4').content,
@@ -179,6 +179,10 @@ const svgJsMap = {
   creditCardExcitement: {
     light: () => require('../svgJs/light/creditCardExcitement-4').content,
     dark: () => require('../svgJs/dark/creditCardExcitement-4').content,
+  },
+  creditCardExcitementCoinbaseOne: {
+    light: () => require('../svgJs/light/creditCardExcitementCoinbaseOne-0').content,
+    dark: () => require('../svgJs/dark/creditCardExcitementCoinbaseOne-0').content,
   },
   crossBorderPayments: {
     light: () => require('../svgJs/light/crossBorderPayments-3').content,
@@ -633,8 +637,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/secureAndTrusted-3').content,
   },
   secureGlobalTransactions: {
-    light: () => require('../svgJs/light/secureGlobalTransactions-4').content,
-    dark: () => require('../svgJs/dark/secureGlobalTransactions-4').content,
+    light: () => require('../svgJs/light/secureGlobalTransactions-5').content,
+    dark: () => require('../svgJs/dark/secureGlobalTransactions-5').content,
   },
   secureStorage: {
     light: () => require('../svgJs/light/secureStorage-5').content,

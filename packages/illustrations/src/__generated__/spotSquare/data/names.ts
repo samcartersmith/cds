@@ -47,6 +47,7 @@ const names: SpotSquareName[] = [
   'coinbaseFees',
   'coinbaseLock',
   'coinbaseOneBoostedCard',
+  'coinbaseOneBoostedCardCB1',
   'coinbaseOneConcierge',
   'coinbaseOneDiscountedAmount',
   'coinbaseOneEarn',

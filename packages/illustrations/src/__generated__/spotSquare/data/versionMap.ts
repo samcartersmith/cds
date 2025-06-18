@@ -220,6 +220,7 @@ const versionMap: Record<SpotSquareName, number> = {
   coinbaseOneZeroPortal: 1,
   coinbaseOneZero: 1,
   refresh: 0,
+  coinbaseOneBoostedCardCB1: 0,
 };
 
 export default versionMap;

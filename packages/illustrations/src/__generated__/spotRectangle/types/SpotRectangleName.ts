@@ -47,6 +47,7 @@ export type SpotRectangleName =
   | 'connectWalletTutorial'
   | 'contactsListWarning'
   | 'creditCardExcitement'
+  | 'creditCardExcitementCoinbaseOne'
   | 'crossBorderPayments'
   | 'cryptoAndMore'
   | 'cryptoApps'

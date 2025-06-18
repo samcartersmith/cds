@@ -8,6 +8,67 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.10.0 (6/18/2025 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 06/18/2025. [[#4083](https://github.cbhq.net/frontend/cds/pull/4083)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- alertsCoinbaseOne
+- avatarHa
+- avatarHb
+- avatarHc
+- avatarHd
+- avatarHe
+- avatarHf
+- avatarHg
+- avatarHh
+- avatarHi
+- avatarHj
+- futures
+- futuresCoinbaseOne
+
+#### Spot Square
+
+- coinbaseOneBoostedCardCB1
+
+#### Spot Rectangle
+
+- creditCardExcitementCoinbaseOne
+
+#### Spot Icon
+
+- derivativesProduct
+
+#### Hero Square
+
+- errorWeb404
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync`
+
+#### Pictogram
+
+- avatarHc
+- avatarHg
+- avatarHh
+
+#### Hero Square
+
+- errorWeb404
+
+#### Spot Rectangle
+
+- cbEth
+- secureGlobalTransactions
+
 ## 4.9.2 (6/3/2025 PST)
 
 #### 🐞 Fixes

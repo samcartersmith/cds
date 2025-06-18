@@ -53,6 +53,7 @@ const names: SpotRectangleName[] = [
   'connectWalletTutorial',
   'contactsListWarning',
   'creditCardExcitement',
+  'creditCardExcitementCoinbaseOne',
   'crossBorderPayments',
   'cryptoAndMore',
   'cryptoApps',

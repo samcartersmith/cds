@@ -133,14 +133,14 @@ const versionMap: Record<SpotRectangleName, number> = {
   backedByUsDollar: 4,
   ethStakingRewards: 4,
   ethWrappedStakingRewards: 4,
-  cbEth: 3,
+  cbEth: 4,
   transferEth: 3,
   ethStakeOrWrap: 3,
   eth2SellSend: 3,
   ethStakingMovement: 3,
   earnToLearn: 4,
   globalTransactions: 5,
-  secureGlobalTransactions: 4,
+  secureGlobalTransactions: 5,
   referralsBitcoin: 4,
   walletReconnect: 4,
   p2pPayments: 5,
@@ -208,6 +208,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   liquidationBufferGreen: 1,
   concierge: 1,
   liquidationBufferYellow: 1,
+  creditCardExcitementCoinbaseOne: 0,
 };
 
 export default versionMap;
