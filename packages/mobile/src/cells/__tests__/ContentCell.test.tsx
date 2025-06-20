@@ -1,7 +1,9 @@
 import { Text, View } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 
+import { VStack } from '../../layout';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
+import { Cell } from '../Cell';
 import { CellMedia } from '../CellMedia';
 import { ContentCell } from '../ContentCell';
 
@@ -53,6 +55,30 @@ describe('ContentCell', () => {
     );
 
     expect(screen.getByTestId('cell-with-title')).toBeAccessible();
+  });
+
+  it('Cell standalone disabled passes a11y', () => {
+    render(
+      <DefaultThemeProvider>
+        <Cell disabled testID="cell-standalone">
+          <Text>Cell</Text>
+        </Cell>
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('cell-standalone')).toBeAccessible();
+  });
+
+  it('Cell with onPress and disabled passes a11y', () => {
+    render(
+      <DefaultThemeProvider>
+        <Cell disabled onPress={() => {}} testID="cell-standalone">
+          <Text>Cell</Text>
+        </Cell>
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('cell-standalone')).toBeAccessible();
   });
 
   it('renders a subtitle', () => {
