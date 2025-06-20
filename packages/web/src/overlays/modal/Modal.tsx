@@ -21,7 +21,7 @@ import { Box } from '../../layout';
 import { VStack } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { media } from '../../styles/media';
-import { FocusTrap, type FocusTrapProps } from '../FocusTrap';
+import { FocusTrap } from '../FocusTrap';
 
 import { ModalWrapper, ModalWrapperProps } from './ModalWrapper';
 
@@ -31,7 +31,6 @@ const defaultMaxWidthStyle = { tablet: modalMaxWidth };
 
 const baseStyle = css`
   position: absolute;
-  top: var(--space-10);
   max-height: calc(100vh - var(--space-10) * 2);
   @supports (height: 100dvh) {
     max-height: calc(100dvh - var(--space-10) * 2);
