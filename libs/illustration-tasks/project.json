@@ -1,7 +1,7 @@
 {
-  "name": "figma-tasks",
+  "name": "illustration-tasks",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/figma-tasks/src",
+  "sourceRoot": "libs/illustration-tasks/src",
   "projectType": "library",
   "targets": {
     "build": {
@@ -28,13 +28,13 @@
         }
       }
     },
-    "sync-icons": {
-      "command": "tsx ./src/scripts/icons/sync-icons.ts",
+    "sync-illustrations": {
+      "command": "tsx ./src/scripts/illustrations/sync-illustrations.ts",
       "dependsOn": [
-        "icons:build"
+        "illustrations:build"
       ],
       "options": {
-        "cwd": "libs/figma-tasks"
+        "cwd": "libs/illustration-tasks"
       }
     }
   }
