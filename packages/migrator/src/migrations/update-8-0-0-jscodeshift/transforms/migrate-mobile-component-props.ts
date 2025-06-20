@@ -60,15 +60,24 @@ const tooltipPropMapping = {
   invertSpectrum: 'invertColorScheme',
 } as const;
 
+const linkComponents = ['Link'] as const;
+
+const linkPropMapping = {
+  variant: 'font',
+} as const;
+
 const CDS_PACKAGES = ['@cbhq/cds-mobile'];
 
 // Create component prop mappings for all text components and tooltip components
 const componentPropMapping = Object.fromEntries([
   ...textComponents.map((component) => [component, textPropMapping]),
   ...tooltipComponents.map((component) => [component, tooltipPropMapping]),
+  ...linkComponents.map((component) => [component, linkPropMapping]),
 ]) as Record<
-  (typeof textComponents)[number] | (typeof tooltipComponents)[number],
-  typeof textPropMapping | typeof tooltipPropMapping
+  | (typeof textComponents)[number]
+  | (typeof tooltipComponents)[number]
+  | (typeof linkComponents)[number],
+  typeof textPropMapping | typeof tooltipPropMapping | typeof linkPropMapping
 >;
 
 export default function transformer(file: FileInfo, api: API, options: Options) {

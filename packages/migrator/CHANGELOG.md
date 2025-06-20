@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.5 (6/20/2025 PST)
+
+#### 🚀 Updates
+
+- Add script to migrate palette types, paletteValueToCssVar, useSpectrum and Link prop. [[#4082](https://github.cbhq.net/frontend/cds/pull/4082)]
+
 ## 0.2.4 (6/13/2025 PST)
 
 #### 🚀 Updates

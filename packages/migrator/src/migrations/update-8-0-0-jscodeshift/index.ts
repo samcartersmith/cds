@@ -10,13 +10,17 @@ import migrateCssVariables from './transforms/migrate-css-variables';
 import migrateMobileComponentProps from './transforms/migrate-mobile-component-props';
 import migrateOnKeypressToOnKeydown from './transforms/migrate-onKeyPress-to-onKeyDown';
 import migrateOnPressToOnClick from './transforms/migrate-onPress-to-onClick';
+import migratePaletteTypes from './transforms/migrate-palette-types';
+import migratePaletteValueToCssVar from './transforms/migrate-paletteValueToCssVar';
 import migrateRenamedCommonTypes from './transforms/migrate-renamed-common-types';
 import migrateResponsiveConfig from './transforms/migrate-responsive-config';
 import migrateSpacerGapToGap from './transforms/migrate-spacerGap-to-gap';
 import migrateSpacingMargin from './transforms/migrate-spacing-margin';
 import migrateSpecificPaths from './transforms/migrate-specific-paths';
+import migrateUseSpectrum from './transforms/migrate-useSpectrum';
 import migrateWebComponentProps from './transforms/migrate-web-component-props';
 import migrateWebTokens from './transforms/migrate-web-tokens';
+
 // Define a type for the transform functions for clarity
 type TransformFunction = (file: FileInfo, api: API, options: Options) => string;
 
@@ -48,6 +52,7 @@ export default function mainTransform(file: FileInfo, api: API, options: Options
     transformsToRun.push(migrateResponsiveConfig);
     transformsToRun.push(migrateCssVariables);
     transformsToRun.push(migrateWebTokens);
+    transformsToRun.push(migratePaletteValueToCssVar);
     console.log(`INFO [${file.path}]: Added web-specific transforms.`);
   }
 
@@ -65,6 +70,8 @@ export default function mainTransform(file: FileInfo, api: API, options: Options
   // transformsToRun.push(migrateDefaultText);
   transformsToRun.push(migrateBorderRadius);
   transformsToRun.push(migrateBorderWidth);
+  transformsToRun.push(migratePaletteTypes);
+  transformsToRun.push(migrateUseSpectrum);
 
   // Apply all selected transforms in sequence
   let source = file.source;

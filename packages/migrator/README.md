@@ -38,7 +38,24 @@ Codemod transformations to help upgrade your Coinbase Design System (CDS) codeba
 
 For migrating to CDS v8.0.0 and later, use the included CLI wrapper. The `update-8-0-0` transform **requires** the `--platform` option.
 
-### Recommended: CLI Wrapper
+### Recommended: Using `npx` (No Installation Required)
+
+**Note:** Since this is a private package, `npx` requires your npm to be configured with access to Coinbase's private registry.
+
+```sh
+# General syntax with npx
+npx @cbhq/cds-migrator update-8-0-0 <paths...> -- --platform=<web|mobile> [other-jscodeshift-options]
+
+# Example: Run the v8 migration for the 'web' platform on the 'src' directory
+npx @cbhq/cds-migrator update-8-0-0 src -- --platform=web
+
+# Example: Run the v8 migration for the 'mobile' platform
+npx @cbhq/cds-migrator update-8-0-0 app/components -- --platform=mobile
+```
+
+### Alternative: CLI Wrapper
+
+You can also run the migrator with the @cbhq/cds-migrator package installed:
 
 ```sh
 # General syntax for v8+ transforms
@@ -55,6 +72,8 @@ yarn cds-migrator-codemod update-8-0-0 app/components -- --platform=mobile
 
 You can pass any other standard `jscodeshift` options _after_ the required `--platform` option.
 
+**With yarn:**
+
 ```sh
 # Dry run for web
 yarn cds-migrator-codemod update-8-0-0 src -- --platform=web --dry
@@ -69,9 +88,27 @@ yarn cds-migrator-codemod update-8-0-0 src -- --platform=web --print
 yarn cds-migrator-codemod update-8-0-0 src test -- --platform=web --dry -v=2
 ```
 
+**With npx:**
+
+```sh
+# Dry run for web
+npx @cbhq/cds-migrator update-8-0-0 src -- --platform=web --dry
+
+# Verbose output for mobile (level 2)
+npx @cbhq/cds-migrator update-8-0-0 src -- --platform=mobile -v=2
+
+# Print transformed files to stdout for web
+npx @cbhq/cds-migrator update-8-0-0 src -- --platform=web --print
+
+# Combine options for web
+npx @cbhq/cds-migrator update-8-0-0 src test -- --platform=web --dry -v=2
+```
+
 ##### Ignoring Directories (e.g., node_modules)
 
 By default, `jscodeshift` (and thus the codemod CLI) does not ignore `node_modules`. If you run the command on broad paths like `.` (current directory), you should explicitly ignore `node_modules` and potentially other build artifact directories.
+
+**With yarn:**
 
 ```sh
 # Run on current directory, ignoring node_modules
@@ -79,6 +116,16 @@ yarn cds-migrator-codemod update-8-0-0 . -- --platform=mobile --ignore-pattern=n
 
 # Ignore multiple patterns
 yarn cds-migrator-codemod update-8-0-0 . -- --platform=web --ignore-pattern='**/node_modules/**' --ignore-pattern='**/dist/**'
+```
+
+**With npx:**
+
+```sh
+# Run on current directory, ignoring node_modules
+npx @cbhq/cds-migrator update-8-0-0 . -- --platform=mobile --ignore-pattern=node_modules
+
+# Ignore multiple patterns
+npx @cbhq/cds-migrator update-8-0-0 . -- --platform=web --ignore-pattern='**/node_modules/**' --ignore-pattern='**/dist/**'
 ```
 
 Refer to the [jscodeshift documentation](https://github.com/facebook/jscodeshift#usage-cli) for all available options.
@@ -92,7 +139,7 @@ yarn cds-migrator-codemod update-8-0-0 src -- --platform=web -v=2 > migration.lo
 
 ### Advanced: Using `jscodeshift` Directly
 
-While the CLI wrapper is recommended, you can run specific v8+ transforms directly using `jscodeshift`. Remember to include the `--platform` option and potentially `--ignore-pattern`.
+You can run specific v8+ transforms directly using `jscodeshift`. Remember to include the `--platform` option and potentially `--ignore-pattern`.
 
 ```sh
 # Example for web (path may vary depending on the specific transform)
@@ -239,6 +286,11 @@ Whenever you modify a file, make sure you write the changes to the disc file sys
 
 ## Troubleshooting (General)
 
+- **404 Not Found Error when using `npx` commands (`@cbhq/cds-migrator@* is not in this registry`):**
+  (Applies to v8+ migrations) This package is private and requires access to Coinbase's internal npm registry. Ensure:
+  - You have access to Coinbase's private npm registry
+  - Your `.npmrc` is configured with the correct registry URL and authentication
+  - Contact your team lead or IT support for registry access if needed
 - **Permission Denied Error (`sh: .../.bin/jscodeshift: Permission denied`):**
   (Applies to v8+ migrations) The `jscodeshift` executable needs execute permissions.
   ```sh

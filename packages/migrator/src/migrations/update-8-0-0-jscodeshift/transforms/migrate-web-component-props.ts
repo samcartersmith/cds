@@ -67,6 +67,12 @@ const cellPropMapping = {
   compact: '',
 } as const;
 
+const linkComponents = ['Link'] as const;
+
+const linkPropMapping = {
+  variant: 'font',
+} as const;
+
 const CDS_PACKAGES = ['@cbhq/cds-web'];
 
 // Create component prop mappings for all text components and tooltip components
@@ -74,6 +80,7 @@ const componentPropMapping = Object.fromEntries([
   ...textComponents.map((component) => [component, textPropMapping]),
   ...tooltipComponents.map((component) => [component, tooltipPropMapping]),
   ...CellComponents.map((component) => [component, cellPropMapping]),
+  ...linkComponents.map((component) => [component, linkPropMapping]),
 ]) as Record<
   | (typeof textComponents)[number]
   | (typeof tooltipComponents)[number]
