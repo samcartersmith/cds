@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/test';
 import { IconButton } from '../IconButton';
 
@@ -84,23 +85,35 @@ describe('IconButton', () => {
       const spy = jest.fn();
       render(
         <DefaultThemeProvider>
-          <IconButton loading name={name} onClick={spy} />
+          <IconButton loading accessibilityLabel="click me" name={name} onClick={spy} />
         </DefaultThemeProvider>,
       );
 
       fireEvent.click(screen.getByRole('button'));
 
       expect(spy).not.toHaveBeenCalled();
+      expect(screen.getByLabelText('click me, loading')).toBeInTheDocument();
     });
 
     it('passes accessibility', async () => {
       expect(
         await renderA11y(
           <DefaultThemeProvider>
-            <IconButton loading accessibilityLabel="test-label" name={name} />
+            <IconButton loading name={name} />
           </DefaultThemeProvider>,
         ),
       ).toHaveNoViolations();
+    });
+
+    it('handles loading state without accessibility label', () => {
+      render(
+        <DefaultThemeProvider>
+          <IconButton loading name={name} testID="icon-button" />
+        </DefaultThemeProvider>,
+      );
+
+      const button = screen.getByRole('button');
+      expect(button).toHaveAttribute('aria-label', ', loading');
     });
   });
 
@@ -123,5 +136,40 @@ describe('IconButton', () => {
     );
 
     expect(screen.getByTestId('test-test-id')).toBeDefined();
+  });
+
+  it('renders Spinner when loading and not Icon', () => {
+    render(
+      <DefaultThemeProvider>
+        <IconButton loading name={name} testID="icon-button" />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('icon-button-spinner')).toBeInTheDocument();
+    expect(screen.queryByTestId(`icon-${name}`)).not.toBeInTheDocument(); // Assuming Icon component adds a testID like this or similar identifiable attribute
+  });
+
+  it('renders Spinner with correct size when loading and compact', () => {
+    render(
+      <DefaultThemeProvider>
+        <IconButton compact loading name={name} testID="icon-button" />
+      </DefaultThemeProvider>,
+    );
+    const spinner = screen.getByTestId('icon-button-spinner');
+    expect(spinner).toBeInTheDocument();
+    expect(spinner).toHaveStyle(`width: ${defaultTheme.iconSize.s}px`);
+    expect(spinner).toHaveStyle(`height: ${defaultTheme.iconSize.s}px`);
+  });
+
+  it('renders Spinner with correct size when loading and not compact', () => {
+    render(
+      <DefaultThemeProvider>
+        <IconButton loading compact={false} name={name} testID="icon-button" />
+      </DefaultThemeProvider>,
+    );
+    const spinner = screen.getByTestId('icon-button-spinner');
+    expect(spinner).toBeInTheDocument();
+    expect(spinner).toHaveStyle(`width: ${defaultTheme.iconSize.m}px`);
+    expect(spinner).toHaveStyle(`height: ${defaultTheme.iconSize.m}px`);
   });
 });

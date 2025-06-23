@@ -35,6 +35,7 @@ When you are generating code for a new React component or updating an existing R
 
 - Make sure to also export types in component files (e.g., `ButtonProps`, `TextInputProps`)
 - Prefer to reuse types via utilities, Pick being preferred then secondarily Omit/Exclude
+
 ## Code Cleanliness
 
 - Prefer constants over magic numbers: replace hard-coded values with descriptively named constants, in camel case, storing at the top of the file

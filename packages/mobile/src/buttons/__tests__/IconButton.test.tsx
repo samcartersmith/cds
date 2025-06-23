@@ -71,13 +71,15 @@ describe('IconButton', () => {
     const spy = jest.fn();
     render(
       <DefaultThemeProvider>
-        <IconButton loading name={name} onPress={spy} />
+        <IconButton loading accessibilityLabel="click me" name={name} onPress={spy} />
       </DefaultThemeProvider>,
     );
 
     fireEvent.press(screen.getByRole('button'));
 
     expect(spy).not.toHaveBeenCalled();
+    // Check that the accessibility label includes ", loading" when loading is true
+    expect(screen.getByLabelText('click me, loading')).toBeTruthy();
     // we want to check that loading state maps to busy accessibility state but
     // that's not actually covered by react-native-accessibility-engine yet
     expect(screen.getByRole('button')).toBeAccessible();
@@ -91,5 +93,37 @@ describe('IconButton', () => {
     );
 
     expect(screen.getByTestId('test-test-id')).toBeTruthy();
+  });
+
+  it('does not render ActivityIndicator when not loading', () => {
+    render(
+      <DefaultThemeProvider>
+        <IconButton name={name} testID="icon-button" />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.queryByTestId('icon-button-activity-indicator')).toBeNull();
+  });
+
+  it('renders ActivityIndicator when loading', () => {
+    render(
+      <DefaultThemeProvider>
+        <IconButton loading name={name} testID="icon-button" />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('icon-button-activity-indicator')).toBeTruthy();
+  });
+
+  it('handles loading state without accessibility label', () => {
+    render(
+      <DefaultThemeProvider>
+        <IconButton loading name={name} testID="icon-button" />
+      </DefaultThemeProvider>,
+    );
+
+    const button = screen.getByRole('button');
+    // Should be "loading" when no accessibility label is provided
+    expect(button.props.accessibilityLabel).toBe(', loading');
   });
 });

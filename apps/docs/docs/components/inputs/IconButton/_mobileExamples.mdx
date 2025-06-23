@@ -32,25 +32,69 @@ label node (See [Composed example](#composed-example)).
     variant="foregroundMuted"
     onPress={console.log}
   />
+</HStack>
+```
+
+### Transparent variant
+
+Use the `transparent` prop to make the background and border transparent until the user interacts with the button.
+
+```jsx
+<IconButton
+  name="orderHistory"
+  accessibilityLabel="View past order history"
+  variant="primary"
+  transparent
+  onPress={console.log}
+/>
+```
+
+### Loading state
+
+Use the `loading` prop to show a spinner and make the button non-interactive during async operations.
+
+```jsx
+<IconButton
+  name="orderHistory"
+  accessibilityLabel="Loading transaction history"
+  variant="primary"
+  loading
+  onPress={console.log}
+/>
+```
+
+### Disabled state
+
+Use the `disabled` prop to prevent interaction and show a disabled visual state.
+
+```jsx
+<IconButton
+  name="orderHistory"
+  accessibilityLabel="View transaction history"
+  variant="primary"
+  disabled
+  onPress={console.log}
+/>
+```
+
+### Sizing
+
+IconButtons are compact by default. Set the `compact` prop to `false` for larger touch targets.
+
+```jsx
+<HStack gap={2} alignItems="center">
   <IconButton
-    name="orderHistory"
-    accessibilityLabel="View past order history"
+    name="gear"
+    accessibilityLabel="Settings - compact"
     variant="primary"
-    transparent
+    compact
     onPress={console.log}
   />
   <IconButton
     name="gear"
-    accessibilityLabel="Update settings"
-    variant="secondary"
-    transparent
-    onPress={console.log}
-  />
-  <IconButton
-    name="checkmark"
-    accessibilityLabel="Verify your identity"
-    variant="foregroundMuted"
-    transparent
+    accessibilityLabel="Settings - regular"
+    variant="primary"
+    compact={false}
     onPress={console.log}
   />
 </HStack>

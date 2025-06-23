@@ -1,10 +1,11 @@
 import React, { memo, useCallback, useMemo } from 'react';
-import type { PressableStateCallbackType, ViewStyle } from 'react-native';
+import { ActivityIndicator, type PressableStateCallbackType, type ViewStyle } from 'react-native';
 import { transparentVariants, variants } from '@cbhq/cds-common/tokens/button';
 import { interactableHeight } from '@cbhq/cds-common/tokens/interactableHeight';
 import type { IconButtonVariant, IconName, SharedProps } from '@cbhq/cds-common/types';
 import { getButtonSpacingProps } from '@cbhq/cds-common/utils/getButtonSpacingProps';
 
+import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
 import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
@@ -12,7 +13,7 @@ import type { ButtonBaseProps } from './Button';
 
 export type IconButtonBaseProps = SharedProps &
   Omit<PressableBaseProps, 'children'> &
-  Pick<ButtonBaseProps, 'disabled' | 'transparent' | 'compact' | 'flush'> & {
+  Pick<ButtonBaseProps, 'disabled' | 'transparent' | 'compact' | 'flush' | 'loading'> & {
     /** Name of the icon, as defined in Figma. */
     name: IconName;
     /**
@@ -36,9 +37,13 @@ export const IconButton = memo(function IconButton({
   borderRadius = 1000,
   feedback = compact ? 'light' : 'normal',
   flush,
+  loading,
   style,
+  accessibilityHint,
+  accessibilityLabel,
   ...props
 }: IconButtonProps) {
+  const theme = useTheme();
   const iconSize = compact ? 's' : 'm';
 
   const variantMap = transparent ? transparentVariants : variants;
@@ -73,19 +78,31 @@ export const IconButton = memo(function IconButton({
 
   return (
     <Pressable
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={loading ? `${accessibilityLabel ?? ''}, loading` : accessibilityLabel}
       background={backgroundValue}
       borderColor={borderColorValue}
       borderRadius={borderRadius}
       borderWidth={borderWidth}
       feedback={feedback}
+      loading={loading}
       marginEnd={marginEnd}
       marginStart={marginStart}
       style={pressableStyle}
       transparentWhileInactive={transparent}
       {...props}
     >
-      {/* TO DO: test using currentColor like web2 does on Icon here */}
-      <Icon color={colorValue} name={name} size={iconSize} style={sizingStyle} />
+      {loading ? (
+        <ActivityIndicator
+          color={theme.color[colorValue]}
+          size="small"
+          style={sizingStyle}
+          testID={props.testID ? `${props.testID}-activity-indicator` : undefined}
+        />
+      ) : (
+        /* TO DO: test using currentColor like web2 does on Icon here */
+        <Icon color={colorValue} name={name} size={iconSize} style={sizingStyle} />
+      )}
     </Pressable>
   );
 });

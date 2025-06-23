@@ -1,13 +1,22 @@
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef, memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
 import { transparentVariants, variants } from '@cbhq/cds-common/tokens/button';
 import type { IconButtonVariant, IconName } from '@cbhq/cds-common/types';
 
 import type { Polymorphic } from '../core/polymorphism';
+import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
+import { Spinner } from '../loaders/Spinner';
 import { Pressable, type PressableBaseProps } from '../system/Pressable';
 
-import type { ButtonBaseProps } from './Button';
+import { type ButtonBaseProps, spinnerHeight } from './Button';
+
+const baseSpinnerStyles = css`
+  border: 2px solid;
+  border-top-color: var(--color-transparent);
+  border-right-color: var(--color-transparent);
+  border-left-color: var(--color-transparent);
+`;
 
 export const iconButtonDefaultElement = 'button';
 
@@ -71,12 +80,26 @@ export const IconButton: IconButtonComponent = memo(
         className,
         name,
         flush,
+        loading,
+        accessibilityLabel,
+        accessibilityHint,
         ...props
       }: IconButtonProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
     ) => {
       const Component = (as ?? iconButtonDefaultElement) satisfies React.ElementType;
+      const theme = useTheme();
+
       const iconSize = compact ? 's' : 'm';
+      const iconSizeValue = theme.iconSize[iconSize];
+
+      const spinnerSizeStyles = useMemo(
+        () => ({
+          width: iconSizeValue,
+          height: iconSizeValue,
+        }),
+        [iconSizeValue],
+      );
 
       const variantMap = transparent ? transparentVariants : variants;
       const variantStyle = variantMap[variant];
@@ -88,6 +111,8 @@ export const IconButton: IconButtonComponent = memo(
       return (
         <Pressable
           ref={ref}
+          accessibilityHint={accessibilityHint}
+          accessibilityLabel={loading ? `${accessibilityLabel ?? ''}, loading` : accessibilityLabel}
           alignItems={alignItems}
           as={Component}
           background={backgroundValue}
@@ -103,11 +128,22 @@ export const IconButton: IconButtonComponent = memo(
           color={colorValue}
           height={height}
           justifyContent={justifyContent}
+          loading={loading}
           transparentWhileInactive={transparent}
           width={width}
           {...props}
         >
-          <Icon color="currentColor" name={name} size={iconSize} />
+          {loading ? (
+            <Spinner
+              className={baseSpinnerStyles}
+              color="currentColor"
+              size={spinnerHeight}
+              style={spinnerSizeStyles}
+              testID={props.testID ? `${props.testID}-spinner` : undefined}
+            />
+          ) : (
+            <Icon color="currentColor" name={name} size={iconSize} />
+          )}
         </Pressable>
       );
     },

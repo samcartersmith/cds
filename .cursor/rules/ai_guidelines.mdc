@@ -29,3 +29,11 @@ When asked to review a component, check for the following
 
 - Link to real files: when referring to existing code, provide a link to the actual file
 - Leverage examples: if unsure about an implementation, look for similar examples in the codebase. It's preferable to follow established patterns in CDS rather than introducing new ones
+
+## Tests
+
+Whenever you make changes, you should run the specific test files or test the entire package you have modified
+
+- To run tests by package, run `yarn nx run [package]:test`, such as `yarn nx run mobile:test`
+- You can also run specific files or tests via `--testPathPattern` and `--testNamePattern` props
+  - For example, running `yarn nx run mobile:test --testPathPattern=IconButton.test.tsx` would test IconButton in mobile

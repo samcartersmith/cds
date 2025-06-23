@@ -6,58 +6,59 @@ import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';
 import { Box } from '../../layout/Box';
 import { Text } from '../../typography/Text';
-import { IconButton } from '../IconButton';
+import { IconButton, type IconButtonProps } from '../IconButton';
 
 function onPress(event: GestureResponderEvent) {
   console.log('Pressed', event.type || 'GestureResponderEvent');
 }
 
 const iconName = 'arrowsHorizontal';
+const accessibilityLabel = 'Horizontal arrows';
+
 const variants = [
   {
-    component: <IconButton accessibilityLabel={iconName} name={iconName} variant="primary" />,
+    component: (props?: Partial<IconButtonProps>) => (
+      <IconButton name={iconName} variant="primary" {...props} />
+    ),
     title: <Text font="body">Primary</Text>,
   },
   {
-    component: (
-      <IconButton transparent accessibilityLabel={iconName} name={iconName} variant="primary" />
+    component: (props?: Partial<IconButtonProps>) => (
+      <IconButton transparent name={iconName} variant="primary" {...props} />
     ),
     title: <Text font="body">Primary transparent</Text>,
   },
   {
-    component: <IconButton accessibilityLabel={iconName} name={iconName} variant="secondary" />,
+    component: (props?: Partial<IconButtonProps>) => (
+      <IconButton name={iconName} variant="secondary" {...props} />
+    ),
     title: <Text font="body">Secondary</Text>,
   },
   {
-    component: (
-      <IconButton transparent accessibilityLabel={iconName} name={iconName} variant="secondary" />
+    component: (props?: Partial<IconButtonProps>) => (
+      <IconButton transparent name={iconName} variant="secondary" {...props} />
     ),
     title: <Text font="body">Secondary transparent</Text>,
   },
   {
-    component: (
-      <IconButton accessibilityLabel={iconName} name={iconName} variant="foregroundMuted" />
+    component: (props?: Partial<IconButtonProps>) => (
+      <IconButton name={iconName} variant="foregroundMuted" {...props} />
     ),
     title: <Text font="body">ForegroundMuted</Text>,
   },
   {
-    component: (
+    component: (props?: Partial<IconButtonProps>) => (
       <IconButton
-        accessibilityLabel={iconName}
         name={iconName}
         style={{ padding: 10, borderRadius: 15, transform: 'scale(0.5)' }}
+        {...props}
       />
     ),
     title: <Text font="body">Custom style</Text>,
   },
   {
-    component: (
-      <IconButton
-        transparent
-        accessibilityLabel={iconName}
-        name={iconName}
-        variant="foregroundMuted"
-      />
+    component: (props?: Partial<IconButtonProps>) => (
+      <IconButton transparent name={iconName} variant="foregroundMuted" {...props} />
     ),
     title: <Text font="body">ForegroundMuted transparent</Text>,
   },
@@ -67,17 +68,22 @@ const IconButtonScreen = () => {
   return (
     <ExampleScreen>
       <Example inline title="Default">
-        <IconButton accessibilityLabel={iconName} name={iconName} onPress={onPress} />
+        <IconButton accessibilityLabel={accessibilityLabel} name={iconName} onPress={onPress} />
       </Example>
 
       <Example inline title="States">
         <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
-          <IconButton disabled accessibilityLabel={iconName} name={iconName} variant="primary" />
+          <IconButton
+            disabled
+            accessibilityLabel={accessibilityLabel}
+            name={iconName}
+            variant="primary"
+          />
           <Text font="body">Disabled primary</Text>
         </Box>
 
         <Box alignItems="center" flexDirection="row" justifyContent="space-between" width={350}>
-          <IconButton disabled accessibilityLabel={iconName} name={iconName} />
+          <IconButton disabled accessibilityLabel={accessibilityLabel} name={iconName} />
           <Text font="body">Disabled secondary</Text>
         </Box>
       </Example>
@@ -92,7 +98,7 @@ const IconButtonScreen = () => {
               justifyContent="space-between"
               width={350}
             >
-              {variant.component}
+              {variant.component({ accessibilityLabel })}
               {variant.title}
             </Box>
           );
@@ -102,11 +108,31 @@ const IconButtonScreen = () => {
         {names.map((name) => {
           return (
             <HStack key={`icon-wrapper-${name}`} flexWrap="wrap" gap={2}>
-              <IconButton accessibilityLabel={name} name={name} variant="primary" />
-              <IconButton accessibilityLabel={name} name={name} variant="secondary" />
-              <IconButton accessibilityLabel={name} name={name} variant="foregroundMuted" />
-              <IconButton accessibilityLabel={name} name={name} />
+              <IconButton accessibilityLabel={accessibilityLabel} name={name} variant="primary" />
+              <IconButton accessibilityLabel={accessibilityLabel} name={name} variant="secondary" />
+              <IconButton
+                accessibilityLabel={accessibilityLabel}
+                name={name}
+                variant="foregroundMuted"
+              />
+              <IconButton accessibilityLabel={accessibilityLabel} name={name} />
             </HStack>
+          );
+        })}
+      </Example>
+      <Example inline title="Variants Loading">
+        {variants.map((variant, index) => {
+          return (
+            <Box
+              key={index}
+              alignItems="center"
+              flexDirection="row"
+              justifyContent="space-between"
+              width={350}
+            >
+              {variant.component({ accessibilityLabel, loading: true })}
+              {variant.title}
+            </Box>
           );
         })}
       </Example>
