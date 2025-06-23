@@ -1,18 +1,13 @@
-const cbConfig = require('@cbhq/metro-config');
+const exclusionList = require('metro-config/src/defaults/exclusionList');
+const { resolve } = require('metro-resolver');
 const { getDefaultConfig } = require('expo/metro-config');
 const { mergeConfig } = require('@react-native/metro-config');
 const path = require('node:path');
+const { resolve: resolveExports } = require('resolve.exports');
 
 // Learn more https://docs.expo.io/guides/customizing-metro
 const expoConfig = getDefaultConfig(__dirname);
-
-const getBaseModule = (moduleName) => {
-  const parts = moduleName.split('/');
-  if (!moduleName.startsWith('@')) return parts[0];
-  return `${parts[0]}/${parts[1]}`;
-};
-
-const cbResolveRequest = cbConfig.resolver.resolveRequest;
+const defaultSourceExts = ['ts', 'tsx', 'js', 'jsx', 'json', 'd.ts', 'cjs'];
 
 const aliases = {
   '@cbhq/cds-common': path.resolve(__dirname, '../../packages/common/src'),
@@ -29,34 +24,77 @@ const aliases = {
   '@cbhq/ui-mobile-playground': path.resolve(__dirname, '../../packages/ui-mobile-playground/src'),
   '@cbhq/ui-mobile-visreg': path.resolve(__dirname, '../../packages/ui-mobile-visreg/src'),
 };
+const pkgCache = {};
+
+const getBaseModule = (moduleName) => {
+  const parts = moduleName.split('/');
+  if (!moduleName.startsWith('@')) return parts[0];
+  return `${parts[0]}/${parts[1]}`;
+};
+
+function loadPackageJson(pkgPath) {
+  if (!pkgCache[pkgPath]) {
+    pkgCache[pkgPath] = require(pkgPath);
+  }
+
+  return pkgCache[pkgPath];
+}
 
 // This custom Metro resolver will try to use the aliases defined above.
 const customResolveRequest = (context, baseModuleName, platform) => {
+  const { resolveRequest: resolveRequestInner, ...ctx } = context;
+
   const moduleName = context.redirectModulePath(baseModuleName);
   const baseModule = moduleName && getBaseModule(moduleName);
 
-  if (baseModule && aliases[baseModule]) {
+  // Custom resolver to map local package aliases to exports
+  if (
+    process.env.CI !== 'true' &&
+    process.env.NODE_ENV !== 'production' &&
+    process.env.CDS_METRO_RESOLVER !== 'false' &&
+    baseModule &&
+    aliases[baseModule]
+  ) {
     const aliasPath = moduleName.replace(baseModule, aliases[baseModule]);
     return context.resolveRequest(context, aliasPath, platform);
   }
 
-  return cbResolveRequest(context, baseModuleName, platform);
-};
+  if (moduleName === false) {
+    return {
+      type: 'empty',
+    };
+  }
 
-// Only use our custom resolver when not running in CI or production
-if (
-  process.env.CI !== 'true' &&
-  process.env.NODE_ENV !== 'production' &&
-  process.env.CDS_METRO_RESOLVER !== 'false'
-) {
-  console.log(
-    'Using custom Metro resolver: mapping some packages to source code via "aliases" in metro.config.js',
-  );
-  cbConfig.resolver.resolveRequest = customResolveRequest;
-} else
-  console.log(
-    'No custom Metro resolver: packages will be resolved via package.json "exports" (and so must be built)',
-  );
+  /**
+   * This custom resolver checks for an "exports" field in package.json and resolves accordingly.
+   * NOTE: This mimics the behavior of unstable_enablePackageExports which is unable to be used by CDS for some reason.
+   */
+  if (moduleName.startsWith('@cb')) {
+    const pkgPath = require.resolve(`${getBaseModule(moduleName)}/package.json`);
+    const pkg = loadPackageJson(pkgPath);
+
+    if ('exports' in pkg) {
+      const entryPoint = resolveExports(pkg, moduleName, {
+        conditions: ['react-native', 'browser', 'module', 'require', 'node', 'default'],
+        unsafe: true,
+      });
+
+      if (entryPoint) {
+        return {
+          filePath: path.join(path.dirname(pkgPath), String(entryPoint)),
+          type: 'sourceFile',
+        };
+      }
+    }
+  }
+
+  if (resolveRequestInner) {
+    // Nothing found, fallback to metro
+    return resolveRequestInner(context, moduleName, platform);
+  }
+
+  return resolve(ctx, moduleName, platform);
+};
 
 /**
  * Metro configuration
@@ -64,6 +102,16 @@ if (
  *
  * @type {import('metro-config').MetroConfig}
  */
-const metroConfig = mergeConfig(expoConfig, cbConfig);
+const metroConfig = mergeConfig(expoConfig, {
+  resetCache: true,
+  resolver: {
+    blacklistRE: exclusionList([/dist\/@cb\/.*/]),
+    // https://github.com/wix/Detox/blob/master/docs/Guide.Mocking.md#Configuration
+    sourceExts: process.env.RN_SRC_EXT
+      ? process.env.RN_SRC_EXT.split(',').concat(defaultSourceExts)
+      : defaultSourceExts,
+    resolveRequest: customResolveRequest,
+  },
+});
 
 module.exports = metroConfig;

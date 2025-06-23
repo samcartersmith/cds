@@ -1,6 +1,6 @@
 # How to Upgrade a Mobile Dependency
 
-Expo handles react native upgrades through their [SDK](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/). Their SDK will handle updating native modules, as well as recommend native package versions that are compatible with the new react native version. **The only native config that isn't managed by expo is @cbhq/metro-config, which App Infra manages**.
+Expo handles react native upgrades through their [SDK](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/). Their SDK will handle updating native modules, as well as recommend native package versions that are compatible with the new react native version.
 
 Check out this doc [for more about mobile builds in general](/apps/mobile-app/docs/building-mobile.md)
 

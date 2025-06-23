@@ -1,6 +1,0 @@
-scanner_configs:
-  YarnAudit:
-    scan_depth:
-      - recursive
-    exclude_groups:
-      - devDependencies # dev only dependencies

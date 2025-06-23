@@ -1,6 +1,6 @@
 # How to Upgrade to Next React Native version
 
-Expo handles react native upgrades through their [SDK](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/). Their SDK will handle updating native modules, as well as recommend native package versions that are compatible with the new react native version. **The only native config that isn't managed by expo is @cbhq/metro-config, which App Infra manages**. We can stray from their recommendations, but with caution. Here's an [example PR](https://github.cbhq.net/frontend/cds/pull/2090) to use as a reference.
+Expo handles react native upgrades through their [SDK](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/). Their SDK will handle updating native modules, as well as recommend native package versions that are compatible with the new react native version. We can stray from their recommendations, but with caution. Here's an [example PR](https://github.cbhq.net/frontend/cds/pull/2090) to use as a reference.
 
 1.  Update to the new SDK version from root. You can check the [latest patch version on npm](https://www.npmjs.com/package/expo):
 
@@ -18,9 +18,7 @@ cd apps/mobile-app && npx expo install --fix
 
 **This is super important because that native versions must match for the mobile-app build to be successful**
 
-4. Upgrade @cbhq/metro-config if applicable. Sometimes metro changes are necessary to resolve react native bump errors. App Infra will update @cbhq/metro-config and expo handles the default expo configurations automatically.
-
-5. Nuke your repo. Cached versions will be compiled in the expo build step and lead to version mismatches. .nx, apps/mobile-app/expo, apps/mobile-app/ios, apps/mobile-app/android should all be removed. Node Modules should be removed because of version mismatches as well. Start fresh :)
+4. Nuke your repo. Cached versions will be compiled in the expo build step and lead to version mismatches. .nx, apps/mobile-app/expo, apps/mobile-app/ios, apps/mobile-app/android should all be removed. Node Modules should be removed because of version mismatches as well. Start fresh :)
 
 ```shell
 cd ../../ && yarn clean-expo && yarn clean && rm -rf node_modules

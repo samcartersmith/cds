@@ -3328,42 +3328,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cbhq/metro-config@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "@cbhq/metro-config@npm:0.1.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmetro-config%2F-%2F%40cbhq%2Fmetro-config-0.1.2.tgz"
-  dependencies:
-    metro: "npm:0.76.7"
-    metro-config: "npm:0.76.7"
-    metro-resolver: "npm:0.76.7"
-    resolve.exports: "npm:^1.1.1"
-    type-fest: "npm:^3.13.1"
-  peerDependencies:
-    react-native: ^0.72.0
-  checksum: 10c0/93453d2617f5921fc8223141741e264d2b771d52d1d9e7d0fcf17c9f8df84027e944f0b0ca93b47a40c57fb76634c7074715a7bdf1a04b380a350155e3054f57
-  languageName: node
-  linkType: hard
-
-"@cbhq/mobile-runtime@npm:0.3.2":
-  version: 0.3.2
-  resolution: "@cbhq/mobile-runtime@npm:0.3.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmobile-runtime%2F-%2F%40cbhq%2Fmobile-runtime-0.3.2.tgz"
-  dependencies:
-    "@expo/metro-config": "npm:~0.18.11"
-    chalk: "npm:^4.1.2"
-    execa: "npm:^5.1.1"
-    find-yarn-workspace-root: "npm:^2.0.0"
-    inquirer: "npm:^8.2.4"
-    resolve.exports: "npm:^1.1.1"
-    semver: "npm:^7.6.3"
-  peerDependencies:
-    metro: "*"
-    metro-config: "*"
-    metro-resolver: "*"
-  bin:
-    mobile-runtime: ./lib/cli.js
-  checksum: 10c0/ba35b7991658b33c855dbd006f5be1ede2cd9fb68e27fa0e0bf6ab4277ae531fb45cff384aff03ee80c4d68303ed107cef4978f7119309181e4ceb0a8cf6afd1
-  languageName: node
-  linkType: hard
-
 "@cbhq/mono-env@npm:^0.3.1":
   version: 0.3.1
   resolution: "@cbhq/mono-env@npm:0.3.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmono-env%2F-%2F%40cbhq%2Fmono-env-0.3.1.tgz"
@@ -5849,7 +5813,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/metro-config@npm:0.18.11, @expo/metro-config@npm:~0.18.11":
+"@expo/metro-config@npm:0.18.11":
   version: 0.18.11
   resolution: "@expo/metro-config@npm:0.18.11::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40expo%2Fmetro-config%2F-%2Fmetro-config-0.18.11.tgz"
   dependencies:
@@ -24716,7 +24680,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-yarn-workspace-root@npm:^2.0.0, find-yarn-workspace-root@npm:~2.0.0":
+"find-yarn-workspace-root@npm:~2.0.0":
   version: 2.0.0
   resolution: "find-yarn-workspace-root@npm:2.0.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ffind-yarn-workspace-root%2F-%2Ffind-yarn-workspace-root-2.0.0.tgz"
   dependencies:
@@ -27477,7 +27441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inquirer@npm:^8.2.4, inquirer@npm:^8.2.6":
+"inquirer@npm:^8.2.6":
   version: 8.2.6
   resolution: "inquirer@npm:8.2.6::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Finquirer%2F-%2Finquirer-8.2.6.tgz"
   dependencies:
@@ -33796,8 +33760,6 @@ __metadata:
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-mobile": "workspace:^"
     "@cbhq/cds-mobile-visualization": "workspace:^"
-    "@cbhq/metro-config": "npm:^0.1.2"
-    "@cbhq/mobile-runtime": "npm:0.3.2"
     "@cbhq/ui-mobile-playground": "workspace:^"
     "@cbhq/ui-mobile-visreg": "workspace:^"
     "@config-plugins/detox": "npm:^6.0.0"
@@ -39610,7 +39572,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve.exports@npm:^1.1.0, resolve.exports@npm:^1.1.1":
+"resolve.exports@npm:^1.1.0":
   version: 1.1.1
   resolution: "resolve.exports@npm:1.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fresolve.exports%2F-%2Fresolve.exports-1.1.1.tgz"
   checksum: 10c0/902ac0c643d03385b2719f3aed8c289e9d4b2dd42c993de946de5b882bc18b74fad07d672d29f71a63c251be107f6d0d343e2390ca224c04ba9a8b8e35d1653a
@@ -43606,13 +43568,6 @@ __metadata:
   version: 2.19.0
   resolution: "type-fest@npm:2.19.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftype-fest%2F-%2Ftype-fest-2.19.0.tgz"
   checksum: 10c0/a5a7ecf2e654251613218c215c7493574594951c08e52ab9881c9df6a6da0aeca7528c213c622bc374b4e0cb5c443aa3ab758da4e3c959783ce884c3194e12cb
-  languageName: node
-  linkType: hard
-
-"type-fest@npm:^3.13.1":
-  version: 3.13.1
-  resolution: "type-fest@npm:3.13.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Ftype-fest%2F-%2Ftype-fest-3.13.1.tgz"
-  checksum: 10c0/547d22186f73a8c04590b70dcf63baff390078c75ea8acd366bbd510fd0646e348bd1970e47ecf795b7cff0b41d26e9c475c1fedd6ef5c45c82075fbf916b629
   languageName: node
   linkType: hard
 

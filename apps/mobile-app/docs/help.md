@@ -89,7 +89,7 @@ To resolve from root:
 This error can be caused by two things:
 
 - The packages are incorrectly built. All packages should be built in the preinstall `eas-build-pre-install` script found in the `mobile-app/package.json` file. If the package has an empty or missing `lib` in the expo temp directory, it didn't correctly build.
-- Metro error. Package exports are processed from the metro.config.js. We outsource this logic to [@cbhq/metro-config currently](https://github.cbhq.net/consumer/react-native/pull/22378). Both "metro" and "metro-config" npm library versions need to align for all of expo config dependencies & @cbhq/metro-config. You can verify through `yarn.lock`.
+- Metro error. Package exports are processed from the metro.config.js for local development. You can verify through `yarn.lock`.
 
 9. I'm seeing lots of warnings about watchman recrawling. How can I remove these from my terminal output?
 

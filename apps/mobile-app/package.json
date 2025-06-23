@@ -16,8 +16,6 @@
     "@cbhq/cds-illustrations": "workspace:^",
     "@cbhq/cds-mobile": "workspace:^",
     "@cbhq/cds-mobile-visualization": "workspace:^",
-    "@cbhq/metro-config": "^0.1.2",
-    "@cbhq/mobile-runtime": "0.3.2",
     "@cbhq/ui-mobile-playground": "workspace:^",
     "@cbhq/ui-mobile-visreg": "workspace:^",
     "@config-plugins/detox": "^6.0.0",
