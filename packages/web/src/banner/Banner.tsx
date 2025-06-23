@@ -235,7 +235,7 @@ export const Banner = memo(
             {...props}
           >
             {/** Start */}
-            <Box padding={0.5}>
+            <Box paddingX={0.5} paddingY={0.25}>
               <Icon
                 accessibilityLabel={startIconAccessibilityLabel}
                 color={iconColor}

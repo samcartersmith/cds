@@ -217,7 +217,8 @@ export const Banner = memo(
             <Icon
               color={iconColor}
               name={startIcon}
-              padding={0.5}
+              paddingX={0.5}
+              paddingY={0.25}
               size="s"
               testID={`${testID}-icon`}
             />
