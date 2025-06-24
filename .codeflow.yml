@@ -13,9 +13,21 @@ build:
         path: ./apps/docs/production.Dockerfile
         autobuild: true
     - BaldurECR:
+        name: cds-v7-docs
+        path: ./apps/docs/production.Dockerfile
+        autobuild: false
+    - BaldurECR:
+        name: cds-docs-dev
+        path: ./apps/docs/development.Dockerfile
+        autobuild: false
+    - BaldurECR:
         name: cds-storybook
         path: ./apps/storybook/production.Dockerfile
         autobuild: true
+    - BaldurECR:
+        name: cds-storybook-dev
+        path: ./apps/storybook/development.Dockerfile
+        autobuild: false
     # Packages
     - BaldurNode:
         name: package-common
