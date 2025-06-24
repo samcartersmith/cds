@@ -104,6 +104,9 @@ const LogoScreen = () => {
             <SubBrandLogoMark type="one" />
           </Box>
           <Box height={50} padding={1}>
+            <SubBrandLogoMark type="business" />
+          </Box>
+          <Box height={50} padding={1}>
             <SubBrandLogoMark foreground type="privateClient" />
           </Box>
           <Box height={50} padding={1}>
@@ -161,6 +164,9 @@ const LogoScreen = () => {
           </Box>
           <Box height={50} padding={1}>
             <SubBrandLogoWordmark type="one" />
+          </Box>
+          <Box height={50} padding={1}>
+            <SubBrandLogoWordmark type="business" />
           </Box>
           <Box height={50} padding={1}>
             <SubBrandLogoWordmark foreground type="privateClient" />
