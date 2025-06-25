@@ -1,4 +1,4 @@
-import React, { forwardRef, memo, useCallback } from 'react';
+import React, { forwardRef, memo } from 'react';
 import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
 
 import { type BoxBaseProps, Group } from '../layout';
@@ -6,17 +6,7 @@ import type { GroupBaseProps } from '../layout/Group';
 import type { FilteredHTMLAttributes } from '../types';
 
 import { Radio, type RadioProps } from './Radio';
-
-export { Radio, RadioProps };
-
-export function useHandleRadioSelect<T extends string>(onChange?: (value: T) => void) {
-  return useCallback<React.ChangeEventHandler<HTMLInputElement>>(
-    (event) => {
-      onChange?.(event.target.value as T);
-    },
-    [onChange],
-  );
-}
+import { useHandleRadioSelect } from './useHandleRadioSelect';
 
 export type RadioGroupBaseProps<T extends string> = FilteredHTMLAttributes<
   React.HTMLAttributes<HTMLDivElement>,
@@ -72,3 +62,5 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
 
 export const RadioGroup = memo(RadioGroupWithRef) as typeof RadioGroupWithRef &
   React.MemoExoticComponent<typeof RadioGroupWithRef>;
+
+export { Radio, RadioProps, useHandleRadioSelect };
