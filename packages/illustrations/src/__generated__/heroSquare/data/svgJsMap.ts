@@ -4,7 +4,7 @@ import type { HeroSquareName } from '../types/HeroSquareName';
 
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 const svgJsMap = {
@@ -529,8 +529,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/documentSuccess-3').content,
   },
   downloadCoinbaseWallet: {
-    light: () => require('../svgJs/light/downloadCoinbaseWallet-3').content,
-    dark: () => require('../svgJs/dark/downloadCoinbaseWallet-3').content,
+    light: () => require('../svgJs/light/downloadCoinbaseWallet-4').content,
+    dark: () => require('../svgJs/dark/downloadCoinbaseWallet-4').content,
   },
   earn: {
     light: () => require('../svgJs/light/earn-3').content,
@@ -677,8 +677,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/exchangeEmptyState-5').content,
   },
   exploreDecentralizedApps: {
-    light: () => require('../svgJs/light/exploreDecentralizedApps-4').content,
-    dark: () => require('../svgJs/dark/exploreDecentralizedApps-4').content,
+    light: () => require('../svgJs/light/exploreDecentralizedApps-5').content,
+    dark: () => require('../svgJs/dark/exploreDecentralizedApps-5').content,
   },
   faceMatchReal: {
     light: () => require('../svgJs/light/faceMatchReal-4').content,
@@ -873,8 +873,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/limitOrders-5').content,
   },
   linkingYourWalletToYourCoinbaseAccount: {
-    light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-5').content,
-    dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-5').content,
+    light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-6').content,
+    dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-6').content,
   },
   liquidationBufferGreen: {
     light: () => require('../svgJs/light/liquidationBufferGreen-1').content,
@@ -1145,8 +1145,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/referralsGenericCoin-1').content,
   },
   referralsWalletPhones: {
-    light: () => require('../svgJs/light/referralsWalletPhones-4').content,
-    dark: () => require('../svgJs/dark/referralsWalletPhones-4').content,
+    light: () => require('../svgJs/light/referralsWalletPhones-5').content,
+    dark: () => require('../svgJs/dark/referralsWalletPhones-5').content,
   },
   refresh: {
     light: () => require('../svgJs/light/refresh-0').content,
@@ -1401,8 +1401,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/vote-1').content,
   },
   walletAsset: {
-    light: () => require('../svgJs/light/walletAsset-4').content,
-    dark: () => require('../svgJs/dark/walletAsset-4').content,
+    light: () => require('../svgJs/light/walletAsset-5').content,
+    dark: () => require('../svgJs/dark/walletAsset-5').content,
   },
   walletConfirmation: {
     light: () => require('../svgJs/light/walletConfirmation-2').content,
@@ -1425,8 +1425,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/walletSecurity-5').content,
   },
   walletUi: {
-    light: () => require('../svgJs/light/walletUi-4').content,
-    dark: () => require('../svgJs/dark/walletUi-4').content,
+    light: () => require('../svgJs/light/walletUi-5').content,
+    dark: () => require('../svgJs/dark/walletUi-5').content,
   },
   walletWarning: {
     light: () => require('../svgJs/light/walletWarning-1').content,

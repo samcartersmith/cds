@@ -4,7 +4,7 @@ import type { SpotSquareName } from '../types/SpotSquareName';
 
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 const svgJsMap = {
@@ -501,8 +501,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/lightningNetworkSend-1').content,
   },
   linkCoinbaseWallet: {
-    light: () => require('../svgJs/light/linkCoinbaseWallet-3').content,
-    dark: () => require('../svgJs/dark/linkCoinbaseWallet-3').content,
+    light: () => require('../svgJs/light/linkCoinbaseWallet-4').content,
+    dark: () => require('../svgJs/dark/linkCoinbaseWallet-4').content,
   },
   linkingYourWalletToYourCoinbaseAccount: {
     light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-4').content,
@@ -793,8 +793,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/waitlistSignup-5').content,
   },
   walletApp: {
-    light: () => require('../svgJs/light/walletApp-6').content,
-    dark: () => require('../svgJs/dark/walletApp-6').content,
+    light: () => require('../svgJs/light/walletApp-7').content,
+    dark: () => require('../svgJs/dark/walletApp-7').content,
   },
   walletNotifications: {
     light: () => require('../svgJs/light/walletNotifications-3').content,

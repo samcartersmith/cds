@@ -1,6 +1,6 @@
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 import type { PictogramName } from '../types/PictogramName';
@@ -52,7 +52,7 @@ const versionMap: Record<PictogramName, number> = {
   tryAgainLater: 3,
   selfCustodyWallet: 5,
   walletDeposit: 3,
-  coinbaseWalletApp: 3,
+  coinbaseWalletApp: 4,
   taxBeta: 3,
   mobileNotifcation: 3,
   agent: 5,
@@ -106,7 +106,7 @@ const versionMap: Record<PictogramName, number> = {
   takeQuiz: 3,
   commerceNavigation: 6,
   institutionalNavigation: 6,
-  linkYourAccount: 3,
+  linkYourAccount: 4,
   receipt: 3,
   sideChainSide: 3,
   governance: 4,
@@ -173,7 +173,7 @@ const versionMap: Record<PictogramName, number> = {
   clock: 3,
   derivativesNavigation: 6,
   coinbaseLogoNavigation: 4,
-  walletLogoNavigation: 4,
+  walletLogoNavigation: 5,
   delegateNavigation: 5,
   accountsNavigation: 6,
   directDepositNavigation: 6,
@@ -287,7 +287,7 @@ const versionMap: Record<PictogramName, number> = {
   manageWeb3SignersAcct: 1,
   walletAsServiceNavigation: 6,
   planet: 5,
-  baseLogoNavigation: 4,
+  baseLogoNavigation: 5,
   passport: 2,
   standWithCryptoLogoNavigation: 3,
   learningRewardsProduct: 1,
@@ -323,14 +323,14 @@ const versionMap: Record<PictogramName, number> = {
   accreditedInvestor: 1,
   premiumInvestor: 2,
   usdcLoan: 2,
-  baseLogo: 1,
+  baseLogo: 2,
   coinbaseOneEarnCoinsLogo: 0,
   sparkleCoinbaseOne: 0,
   twoBonus: 0,
   avatarFb: 0,
   avatarHj: 0,
   avatarHi: 0,
-  avatarHg: 1,
+  avatarHg: 2,
   avatarHf: 0,
   avatarHd: 0,
   avatarHb: 0,

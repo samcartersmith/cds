@@ -4,7 +4,7 @@ import type { PictogramName } from '../types/PictogramName';
 
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 const svgJsMap = {
@@ -433,8 +433,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/avatarHf-0').content,
   },
   avatarHg: {
-    light: () => require('../svgJs/light/avatarHg-1').content,
-    dark: () => require('../svgJs/dark/avatarHg-1').content,
+    light: () => require('../svgJs/light/avatarHg-2').content,
+    dark: () => require('../svgJs/dark/avatarHg-2').content,
   },
   avatarHh: {
     light: () => require('../svgJs/light/avatarHh-1').content,
@@ -533,12 +533,12 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/barChart-2').content,
   },
   baseLogo: {
-    light: () => require('../svgJs/light/baseLogo-1').content,
-    dark: () => require('../svgJs/dark/baseLogo-1').content,
+    light: () => require('../svgJs/light/baseLogo-2').content,
+    dark: () => require('../svgJs/dark/baseLogo-2').content,
   },
   baseLogoNavigation: {
-    light: () => require('../svgJs/light/baseLogoNavigation-4').content,
-    dark: () => require('../svgJs/dark/baseLogoNavigation-4').content,
+    light: () => require('../svgJs/light/baseLogoNavigation-5').content,
+    dark: () => require('../svgJs/dark/baseLogoNavigation-5').content,
   },
   bitcoin: {
     light: () => require('../svgJs/light/bitcoin-1').content,
@@ -697,8 +697,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/coinbaseOneTrusted-5').content,
   },
   coinbaseWalletApp: {
-    light: () => require('../svgJs/light/coinbaseWalletApp-3').content,
-    dark: () => require('../svgJs/dark/coinbaseWalletApp-3').content,
+    light: () => require('../svgJs/light/coinbaseWalletApp-4').content,
+    dark: () => require('../svgJs/dark/coinbaseWalletApp-4').content,
   },
   coinFocus: {
     light: () => require('../svgJs/light/coinFocus-3').content,
@@ -1085,8 +1085,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/lightningNetworkSend-1').content,
   },
   linkYourAccount: {
-    light: () => require('../svgJs/light/linkYourAccount-3').content,
-    dark: () => require('../svgJs/dark/linkYourAccount-3').content,
+    light: () => require('../svgJs/light/linkYourAccount-4').content,
+    dark: () => require('../svgJs/dark/linkYourAccount-4').content,
   },
   listingFees: {
     light: () => require('../svgJs/light/listingFees-5').content,
@@ -1625,8 +1625,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/walletLinkNavigation-4').content,
   },
   walletLogoNavigation: {
-    light: () => require('../svgJs/light/walletLogoNavigation-4').content,
-    dark: () => require('../svgJs/dark/walletLogoNavigation-4').content,
+    light: () => require('../svgJs/light/walletLogoNavigation-5').content,
+    dark: () => require('../svgJs/dark/walletLogoNavigation-5').content,
   },
   walletNavigation: {
     light: () => require('../svgJs/light/walletNavigation-6').content,

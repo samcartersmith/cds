@@ -4,7 +4,7 @@ import type { SpotIconName } from '../types/SpotIconName';
 
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 const svgJsMap = {
@@ -33,8 +33,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/bank-3').content,
   },
   base: {
-    light: () => require('../svgJs/light/base-3').content,
-    dark: () => require('../svgJs/dark/base-3').content,
+    light: () => require('../svgJs/light/base-4').content,
+    dark: () => require('../svgJs/dark/base-4').content,
   },
   borrowProduct: {
     light: () => require('../svgJs/light/borrowProduct-3').content,
@@ -241,8 +241,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/walletAsAServiceProduct-3').content,
   },
   walletLogo: {
-    light: () => require('../svgJs/light/walletLogo-2').content,
-    dark: () => require('../svgJs/dark/walletLogo-2').content,
+    light: () => require('../svgJs/light/walletLogo-3').content,
+    dark: () => require('../svgJs/dark/walletLogo-3').content,
   },
   warning: {
     light: () => require('../svgJs/light/warning-1').content,

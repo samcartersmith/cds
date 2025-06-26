@@ -8,6 +8,78 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.11.0 (6/26/2025 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 06/26/2025. [[#4110](https://github.cbhq.net/frontend/cds/pull/4110)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync-illustrations`
+
+#### Pictogram
+
+- avatarHa
+- avatarHb
+- avatarHc
+- avatarHd
+- avatarHe
+- avatarHf
+- avatarHg
+- avatarHh
+- avatarHi
+- avatarHj
+- futures
+
+#### Hero Square
+
+- errorWeb404
+
+#### Spot Icon
+
+- derivativesProduct
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync-illustrations`
+
+#### Pictogram
+
+- avatarHg
+- baseLogo
+- baseLogoNavigation
+- coinbaseWalletApp
+- linkYourAccount
+- walletLogoNavigation
+
+#### Hero Square
+
+- downloadCoinbaseWallet
+- exploreDecentralizedApps
+- linkingYourWalletToYourCoinbaseAccount
+- referralsWalletPhones
+- walletAsset
+- walletUi
+
+#### Spot Rectangle
+
+- downloadCoinbaseWalletArrow
+- ethTrading
+- exploreDecentralizedApps
+- linkCoinbaseWallet
+- linkingYourWalletToYourCoinbaseAccount
+
+#### Spot Square
+
+- linkCoinbaseWallet
+- walletApp
+
+#### Spot Icon
+
+- base
+- walletLogo
+
 ## 4.10.1 (6/18/2025 PST)
 
 #### 🐞 Fixes

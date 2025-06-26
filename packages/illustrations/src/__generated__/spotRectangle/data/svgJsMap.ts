@@ -4,7 +4,7 @@ import type { SpotRectangleName } from '../types/SpotRectangleName';
 
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 const svgJsMap = {
@@ -269,8 +269,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/documentSuccess-3').content,
   },
   downloadCoinbaseWalletArrow: {
-    light: () => require('../svgJs/light/downloadCoinbaseWalletArrow-4').content,
-    dark: () => require('../svgJs/dark/downloadCoinbaseWalletArrow-4').content,
+    light: () => require('../svgJs/light/downloadCoinbaseWalletArrow-5').content,
+    dark: () => require('../svgJs/dark/downloadCoinbaseWalletArrow-5').content,
   },
   downloadingStatement: {
     light: () => require('../svgJs/light/downloadingStatement-3').content,
@@ -337,8 +337,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/ethStakingRewards-4').content,
   },
   ethTrading: {
-    light: () => require('../svgJs/light/ethTrading-5').content,
-    dark: () => require('../svgJs/dark/ethTrading-5').content,
+    light: () => require('../svgJs/light/ethTrading-6').content,
+    dark: () => require('../svgJs/dark/ethTrading-6').content,
   },
   ethTradingTwo: {
     light: () => require('../svgJs/light/ethTradingTwo-4').content,
@@ -349,8 +349,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/ethWrappedStakingRewards-4').content,
   },
   exploreDecentralizedApps: {
-    light: () => require('../svgJs/light/exploreDecentralizedApps-3').content,
-    dark: () => require('../svgJs/dark/exploreDecentralizedApps-3').content,
+    light: () => require('../svgJs/light/exploreDecentralizedApps-4').content,
+    dark: () => require('../svgJs/dark/exploreDecentralizedApps-4').content,
   },
   faceId: {
     light: () => require('../svgJs/light/faceId-1').content,
@@ -449,12 +449,12 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/lightningNetworkSend-1').content,
   },
   linkCoinbaseWallet: {
-    light: () => require('../svgJs/light/linkCoinbaseWallet-4').content,
-    dark: () => require('../svgJs/dark/linkCoinbaseWallet-4').content,
+    light: () => require('../svgJs/light/linkCoinbaseWallet-5').content,
+    dark: () => require('../svgJs/dark/linkCoinbaseWallet-5').content,
   },
   linkingYourWalletToYourCoinbaseAccount: {
-    light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-5').content,
-    dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-5').content,
+    light: () => require('../svgJs/light/linkingYourWalletToYourCoinbaseAccount-6').content,
+    dark: () => require('../svgJs/dark/linkingYourWalletToYourCoinbaseAccount-6').content,
   },
   liquidationBufferGreen: {
     light: () => require('../svgJs/light/liquidationBufferGreen-1').content,

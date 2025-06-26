@@ -1,6 +1,6 @@
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 import type { HeroSquareName } from '../types/HeroSquareName';
@@ -39,7 +39,7 @@ const versionMap: Record<HeroSquareName, number> = {
   borrowWallet: 5,
   walletSecurity: 5,
   videoRequest: 4,
-  downloadCoinbaseWallet: 3,
+  downloadCoinbaseWallet: 4,
   accessToAdvancedCharts: 5,
   errorRefresh: 4,
   tradeImmediately: 4,
@@ -51,7 +51,7 @@ const versionMap: Record<HeroSquareName, number> = {
   notificationsAndUpdates: 3,
   camera: 4,
   cardBoosted: 3,
-  linkingYourWalletToYourCoinbaseAccount: 5,
+  linkingYourWalletToYourCoinbaseAccount: 6,
   sidechain: 3,
   discardAssets: 5,
   cryptoWallet: 5,
@@ -147,7 +147,7 @@ const versionMap: Record<HeroSquareName, number> = {
   emptyStateNftSoldOut: 4,
   emptyStateCheckBackLater: 5,
   emptyCollection: 5,
-  walletAsset: 4,
+  walletAsset: 5,
   primeEarn: 5,
   primeStaking: 5,
   advancedTradingChartsIndicatorsCandles: 3,
@@ -170,7 +170,7 @@ const versionMap: Record<HeroSquareName, number> = {
   buyFirstCrypto: 4,
   stayInControlSelfHostedWalletsStorage: 5,
   stressTestedColdStorage: 4,
-  referralsWalletPhones: 4,
+  referralsWalletPhones: 5,
   whyNotBoth: 4,
   documentCertified: 3,
   digitalCollectibles: 5,
@@ -212,10 +212,10 @@ const versionMap: Record<HeroSquareName, number> = {
   twoIdVerify: 3,
   earn: 3,
   yourContacts: 4,
-  exploreDecentralizedApps: 4,
+  exploreDecentralizedApps: 5,
   networkWarning: 5,
   ledgerPlugin: 4,
-  walletUi: 4,
+  walletUi: 5,
   browserExtension: 4,
   margin: 3,
   secureGlobalTransactions: 5,

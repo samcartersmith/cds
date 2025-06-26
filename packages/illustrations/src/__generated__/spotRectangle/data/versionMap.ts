@@ -1,6 +1,6 @@
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 import type { SpotRectangleName } from '../types/SpotRectangleName';
@@ -48,12 +48,12 @@ const versionMap: Record<SpotRectangleName, number> = {
   coinbaseOnePhoneLightning: 4,
   creditCardExcitement: 4,
   sendingCrypto: 4,
-  downloadCoinbaseWalletArrow: 4,
+  downloadCoinbaseWalletArrow: 5,
   primeOrderConfirmation: 3,
   focusLimitOrders: 4,
   advancedTradeCharts: 2,
   switchAdvancedToSimpleTrading: 5,
-  linkCoinbaseWallet: 4,
+  linkCoinbaseWallet: 5,
   portfolioOverview: 4,
   sendCryptoFaster: 4,
   uob: 4,
@@ -118,7 +118,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   watchVideos: 4,
   collectingNfts: 5,
   quickAndSimple: 5,
-  linkingYourWalletToYourCoinbaseAccount: 5,
+  linkingYourWalletToYourCoinbaseAccount: 6,
   earn: 4,
   digitalCollectibles: 3,
   gasFeesNetworkFees: 4,
@@ -147,7 +147,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   connectWalletTutorial: 4,
   wrapEth: 4,
   eth2SendSell: 4,
-  ethTrading: 5,
+  ethTrading: 6,
   ethTradingTwo: 4,
   eth2SendSellTwo: 3,
   ethStakeOrWrapTwo: 3,
@@ -184,7 +184,7 @@ const versionMap: Record<SpotRectangleName, number> = {
   coinbaseCardPocket: 3,
   advancedTradingUi: 2,
   defiHow: 3,
-  exploreDecentralizedApps: 3,
+  exploreDecentralizedApps: 4,
   bigBtc: 3,
   onTheList: 3,
   documentCertified: 3,

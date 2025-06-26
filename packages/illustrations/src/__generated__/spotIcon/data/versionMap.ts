@@ -1,6 +1,6 @@
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 import type { SpotIconName } from '../types/SpotIconName';
@@ -22,7 +22,7 @@ const versionMap: Record<SpotIconName, number> = {
   productCoinbaseCard: 3,
   productWallet: 3,
   wallet: 2,
-  walletLogo: 2,
+  walletLogo: 3,
   helpCenterProduct: 3,
   assetHubProduct: 2,
   assetManagementProduct: 3,
@@ -32,7 +32,7 @@ const versionMap: Record<SpotIconName, number> = {
   nodeProduct: 2,
   internationalExchangeProduct: 1,
   institutionalProduct: 2,
-  base: 3,
+  base: 4,
   coinbase: 1,
   derivativesProduct: 5,
   learningRewardsProduct: 3,

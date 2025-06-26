@@ -1,6 +1,6 @@
 /**
  * DO NOT MODIFY
- * Generated from yarn nx run illustrations:sync
+ * Generated from yarn nx run illustration-tasks:sync-illustrations
  */
 
 import type { SpotSquareName } from '../types/SpotSquareName';
@@ -24,7 +24,7 @@ const versionMap: Record<SpotSquareName, number> = {
   bridging: 3,
   dappWallet: 4,
   offersEmpty: 5,
-  linkCoinbaseWallet: 3,
+  linkCoinbaseWallet: 4,
   pixBankDeposits: 5,
   pixDeposits: 6,
   coinbaseOneStakeOrWrap: 3,
@@ -101,7 +101,7 @@ const versionMap: Record<SpotSquareName, number> = {
   assetForward: 5,
   nuxPopularAssets: 5,
   assetRefresh: 5,
-  walletApp: 6,
+  walletApp: 7,
   transferringCrypto: 6,
   rewardExpiring: 5,
   recommendInvestments: 5,
