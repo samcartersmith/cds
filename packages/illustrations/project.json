@@ -35,7 +35,7 @@
       ],
       "options": {
         "commands": [
-          "nx run illustrations:sync",
+          "nx run illustration-tasks:sync-illustrations",
           "nx run illustrations:generate-stories"
         ],
         "parallel": false

@@ -101,7 +101,7 @@ export type SparklineInteractiveHeaderProps = SharedProps & {
   compact?: boolean;
 };
 
-const interpolateSubHeadText = (subHead: SparklineInteractiveSubHead) => {
+export const interpolateSubHeadText = (subHead: SparklineInteractiveSubHead) => {
   if (subHead.priceChange && subHead.percent) {
     return `${subHead.priceChange} (${subHead.percent})`;
   }
