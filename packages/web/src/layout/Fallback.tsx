@@ -1,8 +1,8 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
+import type { Shape } from '@cbhq/cds-common/types';
 
 import type { Polymorphic } from '../core/polymorphism';
-import { Shape } from '../types/Shape';
 
 import { Box, type BoxBaseProps } from './Box';
 
