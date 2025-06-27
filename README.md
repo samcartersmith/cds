@@ -43,6 +43,3 @@ Once you have run commands above you are ready to start contributing.
 - [Engineer's Guide to Contentful](./docs/contentful.md)
 - [Deprecations Process](./docs/deprecations.md)
 - [Design System Package Decomposition](./docs/package-decomposition.md)
-- Version Management (coming soon)
-- Best practice usage of our build tool - [NX](https://nx.dev/) (coming soon)
-- Upgrading React Native in the Mobile Playground (coming soon)
