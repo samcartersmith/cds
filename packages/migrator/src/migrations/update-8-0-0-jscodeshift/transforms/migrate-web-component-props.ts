@@ -73,6 +73,18 @@ const linkPropMapping = {
   variant: 'font',
 } as const;
 
+const pressableComponents = [
+  'Button',
+  'IconButton',
+  'Link',
+  'Pressable',
+  'PressableOpacity',
+] as const;
+
+const pressablePropMapping = {
+  to: 'href',
+} as const;
+
 const CDS_PACKAGES = ['@cbhq/cds-web'];
 
 // Create component prop mappings for all text components and tooltip components
@@ -81,6 +93,7 @@ const componentPropMapping = Object.fromEntries([
   ...tooltipComponents.map((component) => [component, tooltipPropMapping]),
   ...CellComponents.map((component) => [component, cellPropMapping]),
   ...linkComponents.map((component) => [component, linkPropMapping]),
+  ...pressableComponents.map((component) => [component, pressablePropMapping]),
 ]) as Record<
   | (typeof textComponents)[number]
   | (typeof tooltipComponents)[number]

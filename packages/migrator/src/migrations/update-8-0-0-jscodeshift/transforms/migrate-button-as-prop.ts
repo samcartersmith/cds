@@ -34,6 +34,7 @@ import {
 } from 'jscodeshift';
 
 const BUTTON_COMPONENT_NAME = 'Button';
+const ICON_BUTTON_COMPONENT_NAME = 'IconButton';
 const PROPS_TO_CHECK = ['href', 'to'];
 const PROP_TO_ADD_OR_MODIFY = { name: 'as', value: 'a' };
 
@@ -155,9 +156,10 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   }
 
   // Get all references for Button, Link, Pressable, and PressableOpacity components
-  const buttonRefs = findComponentReferences(j, root, CDS_PACKAGES, 'Button');
-  const linkRefs = findComponentReferences(j, root, CDS_PACKAGES, 'Link');
-  const pressableRefs = findComponentReferences(j, root, CDS_PACKAGES, 'Pressable');
+  const buttonRefs = findComponentReferences(j, root, CDS_PACKAGES, BUTTON_COMPONENT_NAME);
+  const iconButtonRefs = findComponentReferences(j, root, CDS_PACKAGES, ICON_BUTTON_COMPONENT_NAME);
+  const linkRefs = findComponentReferences(j, root, CDS_PACKAGES, LINK_COMPONENT_NAME);
+  const pressableRefs = findComponentReferences(j, root, CDS_PACKAGES, PRESSABLE_COMPONENT_NAME);
   const pressableOpacityRefs = findComponentReferences(
     j,
     root,
@@ -167,16 +169,19 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
 
   const combinedAsAComponentNames = new Set([
     BUTTON_COMPONENT_NAME,
+    ICON_BUTTON_COMPONENT_NAME,
     PRESSABLE_COMPONENT_NAME,
     PRESSABLE_OPACITY_COMPONENT_NAME,
   ]);
   const combinedAsARelevantTagNames = new Set([
     ...buttonRefs.relevantTagNames,
+    ...iconButtonRefs.relevantTagNames,
     ...pressableRefs.relevantTagNames,
     ...pressableOpacityRefs.relevantTagNames,
   ]);
   const combinedAsAComponentNamespaceNames = new Set([
     ...buttonRefs.componentNamespaceNames,
+    ...iconButtonRefs.componentNamespaceNames,
     ...pressableRefs.componentNamespaceNames,
     ...pressableOpacityRefs.componentNamespaceNames,
   ]);

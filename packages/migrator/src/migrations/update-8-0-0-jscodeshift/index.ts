@@ -6,6 +6,7 @@ import migrateBorderWidth from './transforms/migrate-border-width';
 import migrateButtonAsProp from './transforms/migrate-button-as-prop';
 import migrateColors from './transforms/migrate-colors';
 import migrateCssVariables from './transforms/migrate-css-variables';
+import migrateGeneralPaths from './transforms/migrate-general-paths';
 // import migrateDefaultText from './transforms/migrate-default-text';
 import migrateMobileComponentProps from './transforms/migrate-mobile-component-props';
 import migrateOnKeypressToOnKeydown from './transforms/migrate-onKeyPress-to-onKeyDown';
@@ -38,6 +39,8 @@ export default function mainTransform(file: FileInfo, api: API, options: Options
 
   const transformsToRun: TransformFunction[] = [];
 
+  // This needs to run first to ensure the general paths are migrated before the renamed common types
+  transformsToRun.push(migrateGeneralPaths);
   // Base prop path and renamed common types migration
   transformsToRun.push(migrateRenamedCommonTypes);
   transformsToRun.push(migrateBasePropsPath);

@@ -85,6 +85,10 @@ const PALETTE_TYPES_TO_MIGRATE = {
   PaletteOrTransparentColor: 'ThemeVars.Color',
   PaletteValue: 'ThemeVars.SpectrumColor',
   Spectrum: 'ColorScheme',
+  SpectrumAlias: 'ThemeVars.SpectrumColor',
+  BorderRadius: 'ThemeVars.BorderRadius',
+  SpacingScale: 'ThemeVars.Space',
+  Typography: 'ThemeVars.FontFamily',
 };
 
 const CDS_COMMON_PACKAGE = '@cbhq/cds-common';
@@ -158,7 +162,75 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     return file.source;
   }
 
-  // Step 2: Check usage and replace palette types with their mapped types
+  // Step 2: Check for non-type usages before we start replacing types
+  // This will help us determine which imports can be safely removed
+  const nonTypeUsages = new Set<string>();
+
+  paletteImports.forEach(({ localName }) => {
+    // Check for usage as values, not just types
+    const valueUsages = root.find(j.Identifier, { name: localName }).filter((idPath) => {
+      const parent = idPath.parentPath?.node;
+      const grandParent = idPath.parentPath?.parentPath?.node;
+
+      // Skip import statements - this is the key fix
+      if (parent?.type === 'ImportSpecifier') return false;
+
+      // Skip if this identifier is part of an import declaration
+      let currentPath = idPath.parentPath;
+      while (currentPath) {
+        if (currentPath.node.type === 'ImportDeclaration') return false;
+        currentPath = currentPath.parentPath;
+      }
+
+      // Skip type references - these will be replaced
+      if (parent?.type === 'TSTypeReference') return false;
+
+      // Skip type annotations - these will be replaced
+      if (parent?.type === 'TSTypeAnnotation') return false;
+
+      // Skip type parameters - these will be replaced
+      if (parent?.type === 'TSTypeParameterInstantiation') return false;
+
+      // Skip union/intersection types - these will be replaced
+      if (parent?.type === 'TSUnionType' || parent?.type === 'TSIntersectionType') return false;
+
+      // Skip array types - these will be replaced
+      if (parent?.type === 'TSArrayType') return false;
+
+      // Skip qualified names that are part of type references
+      if (parent?.type === 'TSQualifiedName') return false;
+
+      // Skip property signatures in type literals - these will be replaced
+      if (parent?.type === 'TSPropertySignature') return false;
+
+      // Skip type assertions - these will be replaced but logged
+      if (parent?.type === 'TSAsExpression' || parent?.type === 'TSTypeAssertion') return false;
+
+      // Skip if inside a type literal that's used as a type parameter
+      if (grandParent?.type === 'TSTypeLiteral') return false;
+
+      // Skip if this is part of a type parameter declaration
+      if (parent?.type === 'TSTypeParameter') return false;
+
+      // Skip if this is part of a mapped type
+      if (parent?.type === 'TSMappedType') return false;
+
+      // Skip if this is part of a conditional type
+      if (parent?.type === 'TSConditionalType') return false;
+
+      // Skip if this is part of an index signature
+      if (parent?.type === 'TSIndexSignature') return false;
+
+      // Count everything else as non-type usage
+      return true;
+    });
+
+    if (valueUsages.length > 0) {
+      nonTypeUsages.add(localName);
+    }
+  });
+
+  // Step 3: Check usage and replace palette types with their mapped types
   const typesWithUsage = new Set<string>();
   const typesInAssertions = new Set<string>();
 
@@ -260,6 +332,102 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
 
         path.node.elementType = createTypeReference(originalName);
         foundUsages = true;
+      }
+    });
+
+    // 4a. Handle type annotations in variable declarations (e.g., const x: SpacingScale[] = ...)
+    root.find(j.TSTypeAnnotation).forEach((path) => {
+      const typeAnnotation = path.node.typeAnnotation;
+
+      // Direct type reference in type annotation
+      if (
+        typeAnnotation.type === 'TSTypeReference' &&
+        typeAnnotation.typeName.type === 'Identifier' &&
+        typeAnnotation.typeName.name === localName
+      ) {
+        path.node.typeAnnotation = createTypeReference(originalName);
+        foundUsages = true;
+      }
+
+      // Array type in type annotation (e.g., const x: SpacingScale[] = ...)
+      if (
+        typeAnnotation.type === 'TSArrayType' &&
+        typeAnnotation.elementType.type === 'TSTypeReference' &&
+        typeAnnotation.elementType.typeName.type === 'Identifier' &&
+        typeAnnotation.elementType.typeName.name === localName
+      ) {
+        typeAnnotation.elementType = createTypeReference(originalName);
+        foundUsages = true;
+      }
+
+      // Union type in type annotation (e.g., const x: SpacingScale | undefined = ...)
+      if (typeAnnotation.type === 'TSUnionType' && typeAnnotation.types) {
+        let unionChanged = false;
+        typeAnnotation.types = typeAnnotation.types.map((unionType: any) => {
+          if (
+            unionType.type === 'TSTypeReference' &&
+            unionType.typeName &&
+            unionType.typeName.type === 'Identifier' &&
+            unionType.typeName.name === localName
+          ) {
+            unionChanged = true;
+            return createTypeReference(originalName);
+          }
+          return unionType;
+        });
+        if (unionChanged) foundUsages = true;
+      }
+    });
+
+    // 4b. Handle type annotations on variable declarators (e.g., const [x, y]: SpacingScale[] = ...)
+    root.find(j.VariableDeclarator).forEach((path) => {
+      const declarator = path.node;
+      if (
+        declarator.id &&
+        'typeAnnotation' in declarator.id &&
+        declarator.id.typeAnnotation &&
+        declarator.id.typeAnnotation.type === 'TSTypeAnnotation'
+      ) {
+        const typeAnnotation = declarator.id.typeAnnotation.typeAnnotation;
+
+        // Direct type reference in variable declarator type annotation
+        if (
+          typeAnnotation.type === 'TSTypeReference' &&
+          typeAnnotation.typeName.type === 'Identifier' &&
+          typeAnnotation.typeName.name === localName
+        ) {
+          declarator.id.typeAnnotation.typeAnnotation = createTypeReference(originalName);
+          foundUsages = true;
+        }
+
+        // Array type in variable declarator type annotation (e.g., const [x, y]: SpacingScale[] = ...)
+        if (
+          typeAnnotation.type === 'TSArrayType' &&
+          typeAnnotation.elementType.type === 'TSTypeReference' &&
+          typeAnnotation.elementType.typeName.type === 'Identifier' &&
+          typeAnnotation.elementType.typeName.name === localName
+        ) {
+          typeAnnotation.elementType = createTypeReference(originalName);
+          foundUsages = true;
+        }
+
+        // Union type in variable declarator type annotation
+        if (typeAnnotation.type === 'TSUnionType' && typeAnnotation.types) {
+          let unionChanged = false;
+          typeAnnotation.types = typeAnnotation.types.map((unionType: any) => {
+            if (
+              unionType.type === 'TSTypeReference' &&
+              unionType.typeName &&
+              unionType.typeName.type === 'Identifier' &&
+              unionType.typeName.name === localName
+            ) {
+              unionChanged = true;
+              return createTypeReference(originalName);
+            }
+            return unionType;
+          });
+          if (unionChanged) foundUsages = true;
+        }
       }
     });
 
@@ -430,7 +598,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     return file.source;
   }
 
-  // Step 3: Add new type imports if they don't exist
+  // Step 4: Add new type imports if they don't exist
   const needsThemeVarsImport = paletteImports.some(({ originalName }) =>
     PALETTE_TYPES_TO_MIGRATE[originalName as keyof typeof PALETTE_TYPES_TO_MIGRATE].startsWith(
       'ThemeVars.',
@@ -484,29 +652,14 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     }
   }
 
-  // Step 4: Remove imports only for types that have no remaining usage in the file
+  // Step 5: Remove imports for types that were successfully replaced and have no non-type usages
   paletteImports.forEach(({ localName, specifier, importPath }) => {
-    // Check if there are any remaining TSTypeReference nodes using this palette type
-    // (This excludes the new type references we just created)
-    const remainingTypeUsages = root.find(j.TSTypeReference).filter((path) => {
-      return path.node.typeName.type === 'Identifier' && path.node.typeName.name === localName;
-    });
+    // Only remove imports for types that:
+    // 1. Had their type usages successfully replaced (in typesWithUsage)
+    // 2. Have no remaining non-type usages (not in nonTypeUsages)
+    const shouldRemoveImport = typesWithUsage.has(localName) && !nonTypeUsages.has(localName);
 
-    // Also check for other kinds of usage (like in expressions, variable names, etc.)
-    const remainingIdentifierUsages = root
-      .find(j.Identifier, { name: localName })
-      .filter((idPath) => {
-        const parent = idPath.parentPath?.node;
-        // Exclude the import statement itself
-        if (parent?.type === 'ImportSpecifier') return false;
-        // Exclude TSTypeReference (we already checked those above)
-        if (parent?.type === 'TSTypeReference') return false;
-        // Count everything else as usage
-        return true;
-      });
-
-    // Only remove the import if there are NO remaining usages of any kind
-    if (remainingTypeUsages.length === 0 && remainingIdentifierUsages.length === 0) {
+    if (shouldRemoveImport) {
       const specifiers = importPath.node.specifiers;
       if (specifiers) {
         const index = specifiers.indexOf(specifier);
@@ -521,7 +674,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     }
   });
 
-  // Step 5: Log types used in assertions for manual review
+  // Step 6: Log types used in assertions for manual review
   if (typesInAssertions.size > 0) {
     const assertionTypes = Array.from(typesInAssertions).join(', ');
     logManualMigration(

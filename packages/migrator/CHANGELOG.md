@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.6 (6/26/2025 PST)
+
+#### 🚀 Updates
+
+- Migrate path, types, variables and props. [[#4116](https://github.cbhq.net/frontend/cds/pull/4116)]
+
 ## 0.2.5 (6/20/2025 PST)
 
 #### 🚀 Updates

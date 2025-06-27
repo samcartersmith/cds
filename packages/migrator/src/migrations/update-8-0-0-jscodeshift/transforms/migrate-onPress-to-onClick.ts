@@ -25,6 +25,7 @@ import {
 
 const propMapping = {
   onPress: 'onClick',
+  onBackButtonPress: 'onBackButtonClick',
 } as const;
 
 const CDS_PACKAGES = ['@cbhq/cds-web'];

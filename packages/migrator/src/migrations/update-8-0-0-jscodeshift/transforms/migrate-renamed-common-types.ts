@@ -1,5 +1,5 @@
 /**
- * Codemod to migrate common types from @cbhq/cds-common/types/* that were renamed or moved in v8.
+ * Codemod to migrate common types or variable from @cbhq/cds-common/* that were renamed or moved in v8.
  *
  * Example transformations:
  * Before:
@@ -45,9 +45,20 @@ const typesWithNewPathOrRenamed: Record<string, { name?: string; path?: string }
     name: 'BoxBaseProps',
     path: 'layout/Box',
   },
+  SpacingProps: {
+    name: 'PaddingProps',
+  },
+  spacingHorizontal: {
+    name: 'tooltipPaddingX',
+  },
+  spacingVertical: {
+    name: 'tooltipPaddingY',
+  },
+  maxWidth: {
+    name: 'tooltipMaxWidth',
+  },
 };
 
-const CDS_COMMON_TYPES_PREFIX = '@cbhq/cds-common/types';
 const CDS_COMMON_PACKAGE = '@cbhq/cds-common';
 
 export default function transformer(file: FileInfo, api: API, options: Options) {
@@ -78,10 +89,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     .find(j.ImportDeclaration)
     .filter((path: ASTPath<ImportDeclaration>) => {
       const sourceValue = path.value.source.value;
-      return (
-        typeof sourceValue === 'string' &&
-        (sourceValue.startsWith(CDS_COMMON_TYPES_PREFIX) || sourceValue === CDS_COMMON_PACKAGE)
-      );
+      return typeof sourceValue === 'string' && sourceValue.startsWith(CDS_COMMON_PACKAGE);
     })
     .forEach((importPath: ASTPath<ImportDeclaration>) => {
       const specifiersToKeep: (ImportSpecifier | any)[] = []; // Allow other specifier types for keeping
@@ -116,7 +124,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
             finalLocalName = newTargetImportedName;
 
             console.log(
-              `DEBUG [${file.path}]: Renaming type usages of '${originalLocalName}' to '${finalLocalName}'`,
+              `DEBUG [${file.path}]: Renaming type/variable usages of '${originalLocalName}' to '${finalLocalName}'`,
             );
 
             // --- TYPE-FOCUSED Usage Renaming ---
@@ -165,6 +173,71 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
                 j(idPath).replaceWith(j.identifier(finalLocalName));
               });
             // --- End TYPE-FOCUSED Usage Renaming ---
+
+            // --- VARIABLE-FOCUSED Usage Renaming ---
+            // 3. Rename variable identifiers (excluding type contexts and import/export declarations)
+            root
+              .find(j.Identifier, { name: originalLocalName })
+              .filter((idPath) => {
+                const parent = idPath.parentPath.node;
+
+                // Skip if it's in an import/export declaration
+                if (parent.type === 'ImportSpecifier' || parent.type === 'ExportSpecifier') {
+                  return false;
+                }
+
+                // Skip if it's in a type context (already handled above)
+                if (parent.type === 'TSTypeReference') return false;
+                if (parent.type === 'ClassDeclaration' || parent.type === 'ClassExpression') {
+                  if (parent.superClass === idPath.node) return false;
+                  if (
+                    parent.implements &&
+                    parent.implements.some((imp: any) => imp.expression === idPath.node)
+                  )
+                    return false;
+                }
+                if (
+                  parent.type === 'TSInterfaceDeclaration' &&
+                  parent.extends &&
+                  parent.extends.some((ext: any) => ext.expression === idPath.node)
+                )
+                  return false;
+                if (
+                  parent.type === 'BinaryExpression' &&
+                  parent.operator === 'instanceof' &&
+                  parent.right === idPath.node
+                )
+                  return false;
+
+                // Skip if it's a property key in an object (unless computed)
+                if (parent.type === 'Property' && parent.key === idPath.node && !parent.computed) {
+                  return false;
+                }
+
+                // Skip if it's a method name in a class or object
+                if (
+                  parent.type === 'MethodDefinition' &&
+                  parent.key === idPath.node &&
+                  !parent.computed
+                ) {
+                  return false;
+                }
+
+                // Skip if it's a function/variable declaration name
+                if (
+                  (parent.type === 'FunctionDeclaration' || parent.type === 'VariableDeclarator') &&
+                  parent.id === idPath.node
+                ) {
+                  return false;
+                }
+
+                // Include variable references (expressions, member expressions, etc.)
+                return true;
+              })
+              .forEach((idPath) => {
+                j(idPath).replaceWith(j.identifier(finalLocalName));
+              });
+            // --- End VARIABLE-FOCUSED Usage Renaming ---
           }
 
           const newSpecifierNode = j.importSpecifier(

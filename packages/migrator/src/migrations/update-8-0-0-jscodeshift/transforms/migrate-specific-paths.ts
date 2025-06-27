@@ -19,6 +19,13 @@ const specificPathMigrationMap: Record<string, string> = {
   '@cbhq/cds-web/animation/FramerMotionProvider': '@cbhq/cds-web/system/FramerMotionProvider',
   '@cbhq/cds-web/overlays/useAlert': '@cbhq/cds-common/overlays/useAlert',
   '@cbhq/cds-web/alpha/banner/Banner': '@cbhq/cds-web/banner/Banner',
+  '@cbhq/cds-web/overlays/Modal/ModalFooter': '@cbhq/cds-web/overlays/modal/ModalFooter',
+  '@cbhq/cds-web/overlays/Modal/ModalBody': '@cbhq/cds-web/overlays/modal/ModalBody',
+  '@cbhq/cds-web/overlays/Modal/ModalHeader': '@cbhq/cds-web/overlays/modal/ModalHeader',
+  '@cbhq/cds-web/overlays/Modal/Modal': '@cbhq/cds-web/overlays/modal/Modal',
+  '@cbhq/cds-web/overlays/Modal/ModalWrapper': '@cbhq/cds-web/overlays/modal/ModalWrapper',
+  '@cbhq/cds-web/overlays/Modal/FullscreenModal': '@cbhq/cds-web/overlays/modal/FullscreenModal',
+  '@cbhq/cds-web/tables/types/tableTypes': '@cbhq/cds-web/tables/Table',
 };
 
 export default function transformer(file: FileInfo, api: API, options: Options) {
