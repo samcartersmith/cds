@@ -2698,7 +2698,8 @@ __metadata:
     "@cbhq/cds-illustrations": "workspace:^"
     "@cbhq/cds-utils": "workspace:^"
     "@cbhq/client-analytics": "npm:^10.9.1"
-    "@modelcontextprotocol/sdk": "npm:^1.12.1"
+    "@cbhq/mcp": "npm:^0.0.3"
+    "@modelcontextprotocol/sdk": "npm:^1.13.1"
     "@types/react": "npm:^18.3.12"
     d3-array: "npm:^3.2.4"
     d3-color: "npm:^3.1.0"
@@ -2711,9 +2712,11 @@ __metadata:
     type-fest: "npm:^2.19.0"
     zod: "npm:3.24.3"
   peerDependencies:
-    "@cbhq/client-analytics": "*"
     react: ^18.3.1
     react-dom: ^18.3.1
+  dependenciesMeta:
+    "@cbhq/mcp":
+      optional: true
   bin:
     cds-mcp: ./esm/mcp/server.js
     cds-mcp-setup: ./esm/mcp/setup.js
@@ -2913,7 +2916,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cbhq/cds-usage-mcp@workspace:libs/cds-usage-mcp"
   dependencies:
-    "@modelcontextprotocol/sdk": "npm:^1.12.1"
+    "@modelcontextprotocol/sdk": "npm:^1.13.1"
     "@sourcegraph/src": "npm:^6.2.0"
     zod: "npm:3.24.3"
   languageName: unknown
@@ -3110,16 +3113,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cbhq/client-analytics@npm:^12.7.2":
-  version: 12.8.2
-  resolution: "@cbhq/client-analytics@npm:12.8.2::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-12.8.2.tgz"
+"@cbhq/client-analytics@npm:^12.10.1, @cbhq/client-analytics@npm:^12.7.2":
+  version: 12.10.1
+  resolution: "@cbhq/client-analytics@npm:12.10.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-12.10.1.tgz"
   dependencies:
     idb: "npm:^7.0.2"
     perfume.js: "npm:^9.4.0"
     ua-parser-js: "npm:^1.0.35"
   peerDependencies:
     react: ">=17.0.0"
-  checksum: 10c0/0626f74d85d2908f321af68dd0de79b67b7e0223fb1b4baa7da7f66c8ab2dd49af39e324986f9431501ec071d8c713ed607357e3259aa0e04c3e49c84b18d113
+  checksum: 10c0/639ecab4ffbbe6f79143c08415a761e59f0c2b681d783950e3a115ecc6abccc0a4f1bbc8d8303ce0aaa4731cc0c69885115d13b2bbedad144c4c1c6b19750516
   languageName: node
   linkType: hard
 
@@ -3327,6 +3330,20 @@ __metadata:
     webfont: "npm:11.2.26"
   languageName: unknown
   linkType: soft
+
+"@cbhq/mcp@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@cbhq/mcp@npm:0.0.3::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fmcp%2F-%2F%40cbhq%2Fmcp-0.0.3.tgz"
+  dependencies:
+    "@cbhq/client-analytics": "npm:^12.10.1"
+    "@modelcontextprotocol/sdk": "npm:1.13.1"
+  peerDependencies:
+    zod: ^3.0.0
+  bin:
+    mcp-dev-config: ./bin/mcp-dev-config.js
+  checksum: 10c0/c6df378db2c7f99cab26f7d6b889a9d026773e7a07f817f85deadb45a54c3cb676bb4deb0cd82b89032158293e887f1d4e8f5a6f5aa4f2c540acb39f5c017718
+  languageName: node
+  linkType: hard
 
 "@cbhq/mono-env@npm:^0.3.1":
   version: 0.3.1
@@ -7885,9 +7902,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@modelcontextprotocol/sdk@npm:^1.12.1":
-  version: 1.12.1
-  resolution: "@modelcontextprotocol/sdk@npm:1.12.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40modelcontextprotocol%2Fsdk%2F-%2Fsdk-1.12.1.tgz"
+"@modelcontextprotocol/sdk@npm:1.13.1, @modelcontextprotocol/sdk@npm:^1.13.1":
+  version: 1.13.1
+  resolution: "@modelcontextprotocol/sdk@npm:1.13.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40modelcontextprotocol%2Fsdk%2F-%2Fsdk-1.13.1.tgz"
   dependencies:
     ajv: "npm:^6.12.6"
     content-type: "npm:^1.0.5"
@@ -7900,7 +7917,7 @@ __metadata:
     raw-body: "npm:^3.0.0"
     zod: "npm:^3.23.8"
     zod-to-json-schema: "npm:^3.24.1"
-  checksum: 10c0/19daf4bc01373a8bd816faa6e8b139c20a56ae4c9cf25c6e900fab443b34e44bcf699a61612cf421c6480d803230003576b12823a04804dc71d7007f530677ac
+  checksum: 10c0/daeedc17ac781b16d6f2a44de36e3d31dff5ff8965456534e25ef4878f54a0ace879c1c3c8ee12b8dcb776b9198ed761555def1b618bda6d4a369e394dd9dab9
   languageName: node
   linkType: hard
 

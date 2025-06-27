@@ -6,7 +6,7 @@
   "type": "module",
   "main": "dist/index.js",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.12.1",
+    "@modelcontextprotocol/sdk": "^1.13.1",
     "@sourcegraph/src": "^6.2.0",
     "zod": "3.24.3"
   }

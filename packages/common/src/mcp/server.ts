@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { readFile } from 'fs/promises';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { z } from 'zod';
 
-import { initAnalytics, logEvent } from './analytics.js';
-import { getVersion, log } from './utils.js';
+import { loadMcpLibrary, log, version } from './utils.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DOCS_PATH = join(__dirname, '../../mcp-docs');
@@ -23,9 +20,11 @@ async function fetchRoute(route: string) {
   }
 }
 
+const { McpServer, StdioServerTransport } = await loadMcpLibrary();
+
 const server = new McpServer({
   name: 'cds_mcp',
-  version: getVersion(),
+  version,
   capabilities: {
     resources: {},
     tools: {},
@@ -46,14 +45,12 @@ server.tool(
     const content = await fetchRoute(join(platform, 'routes.txt'));
 
     if (!content) {
-      await logEvent('cds_mcp.list_cds_routes_error');
       return {
         content: [{ type: 'text', text: 'Error: No routes found' }],
         isError: true,
       };
     }
 
-    await logEvent('cds_mcp.list_cds_routes_success');
     return {
       content: [{ type: 'text', text: content }],
     };
@@ -74,30 +71,20 @@ server.tool(
     const content = await fetchRoute(route);
 
     if (!content) {
-      await logEvent('cds_mcp.get_cds_doc_error', route);
       return {
         content: [{ type: 'text', text: `Error: route ${route} not found` }],
         isError: true,
       };
     }
 
-    await logEvent('cds_mcp.get_cds_doc_success', route);
     return {
       content: [{ type: 'text', text: content }],
     };
   },
 );
 
-async function main() {
-  initAnalytics();
+const transport = new StdioServerTransport();
 
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
+log(`🚀 Starting MCP Server version ${version}`);
 
-  log(`CDS MCP Server ${getVersion()} is running... `);
-}
-
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+await server.connect(transport);
