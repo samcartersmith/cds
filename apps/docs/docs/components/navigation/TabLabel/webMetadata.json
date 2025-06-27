@@ -1,5 +1,11 @@
 {
   "import": "import { TabLabel } from '@cbhq/cds-web/tabs/TabLabel';",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tabs/TabLabel.tsx",
-  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-tabs-tablabel--default"
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-tabs-tablabel--default",
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
+  ]
 }

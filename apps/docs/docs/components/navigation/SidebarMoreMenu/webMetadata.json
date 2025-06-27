@@ -9,5 +9,11 @@
       "label": "Sidebar",
       "url": "/components/navigation/Sidebar/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

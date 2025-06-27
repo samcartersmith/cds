@@ -1,0 +1,212 @@
+import { MDXSection } from '@site/src/components/page/MDXSection';
+import { MDXArticle } from '@site/src/components/page/MDXArticle';
+
+<MDXSection>
+<MDXArticle>
+## What is a Theme?
+
+A theme in CDS is a collection of variables that define the visual design of an application. These variables include:
+
+<ul>
+  <li>
+    <strong>Colors</strong>: Define text, background, and accent colors.
+  </li>
+  <li>
+    <strong>Typography</strong>: Control font sizes, weights, and line heights.
+  </li>
+  <li>
+    <strong>Spacing</strong>: Set padding, margins, and gaps.
+  </li>
+  <li>
+    <strong>Other Styles</strong>: Configure borders, shadows, z-indexes, and more.
+  </li>
+</ul>
+
+CDS uses these variables to style components consistently across web and mobile platforms.
+
+</MDXArticle>
+
+<MDXArticle>
+## The ThemeProvider
+
+The `ThemeProvider` is the foundation of theming in CDS. It:
+
+<ul>
+  <li>Provides the theme to all components within its context.</li>
+  <li>Dynamically updates the theme when changes are made.</li>
+  <li>Inserts React Context to manage styles efficiently.</li>
+</ul>
+
+### Setting Up the ThemeProvider
+
+Wrap your application with the `ThemeProvider` at the root level:
+
+```tsx
+import { ThemeProvider } from '@cbhq/cds-mobile';
+
+<ThemeProvider>
+  <App />
+</ThemeProvider>;
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Default Theme
+
+CDS provides a default theme out of the box, which includes a carefully curated set of variables:
+
+### Colors
+
+```tsx
+const defaultColors = {
+  bgPrimary: 'rgb(255, 255, 255)',
+  bgSecondary: 'rgb(245, 245, 245)',
+  fgPrimary: 'rgb(0, 0, 0)',
+  fgSecondary: 'rgb(102, 102, 102)',
+  accentPrimaryBold: 'rgb(0, 122, 255)',
+};
+```
+
+### Spacing
+
+```tsx
+const defaultSpacing = {
+  0: '0px',
+  1: '4px',
+  2: '8px',
+  3: '16px',
+  4: '24px',
+};
+```
+
+### Typography
+
+```tsx
+const defaultTypography = {
+  fontSizeBody: '16px',
+  fontSizeCaption: '14px',
+  fontWeightRegular: '400',
+  fontWeightBold: '700',
+};
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Customizing the Theme
+
+You can override the default theme by providing a custom theme to the `ThemeProvider`:
+
+```tsx
+const customTheme = {
+  color: {
+    bgPrimary: '#000000',
+    textPrimary: '#FFFFFF',
+    accentPrimary: '#FF5733',
+  },
+  space: {
+    0: '0px',
+    1: '8px',
+    2: '16px',
+  },
+};
+
+<ThemeProvider theme={customTheme}>
+  <App />
+</ThemeProvider>;
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Dynamic Theming
+
+Dynamic theming allows your application to switch between themes at runtime. This is particularly useful for implementing light and dark mode:
+
+### Example: Light and Dark Mode
+
+```tsx
+const lightTheme = {
+  color: {
+    bgPrimary: '#FFFFFF',
+    textPrimary: '#000000',
+  },
+};
+
+const darkTheme = {
+  color: {
+    bgPrimary: '#000000',
+    textPrimary: '#FFFFFF',
+  },
+};
+
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = React.useState(false);
+
+  return (
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <button onClick={() => setIsDarkMode(!isDarkMode)}>Toggle Theme</button>
+      <YourComponents />
+    </ThemeProvider>
+  );
+};
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Accessing Theme Variables
+
+Access theme variables through the `useTheme` hook:
+
+```tsx
+import { useTheme } from '@cbhq/cds-mobile';
+
+const MyComponent = () => {
+  const theme = useTheme();
+
+  return (
+    <View style={{ backgroundColor: theme.color.bgPrimary }}>
+      <Text style={{ color: theme.color.fgPrimary }}>Hello, Theming!</Text>
+    </View>
+  );
+};
+```
+
+</MDXArticle>
+
+<MDXArticle>
+## Best Practices
+
+<ul>
+  <li><strong>Use the `ThemeProvider`</strong>: Ensure your application is wrapped with the `ThemeProvider` to enable theming.</li>
+  <li><strong>Prefer Theme Variables</strong>: Use theme variables for styles to maintain consistency and support dynamic theming.</li>
+  <li><strong>Test Multiple Themes</strong>: Validate your application with light and dark themes to ensure proper functionality.</li>
+</ul>
+</MDXArticle>
+</MDXSection>
+
+<MDXSection>
+<MDXArticle hideDivider>
+## Next Steps
+
+<ul>
+  <li>
+    <a href="/getting-started/styling">Styling</a>: Learn how to style components with `StyleProps`
+    and responsive design.
+  </li>
+  <li>
+    <a href="/components">Component Library</a>: Explore the full set of components available in
+    CDS.
+  </li>
+  <li>
+    <a href="/getting-started/api-overview">API Overview</a>: Understand the core APIs provided by
+    CDS.
+  </li>
+</ul>
+
+Leverage the power of theming in the Coinbase Design System to create visually consistent and customizable applications!
+
+</MDXArticle>
+</MDXSection>

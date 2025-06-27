@@ -1,5 +1,15 @@
 {
   "import": "import { Overlay } from '@cbhq/cds-mobile/overlays/overlay/Overlay'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/overlays/overlay/Overlay.tsx",
-  "description": "A component that creates a semi-transparent layer over content, optimized for mobile platforms. It supports animated opacity transitions and is commonly used as a backdrop for modals, dialogs, or to indicate that the underlying content is inactive."
+  "description": "A component that creates a semi-transparent layer over content, optimized for mobile platforms. It supports animated opacity transitions and is commonly used as a backdrop for modals, dialogs, or to indicate that the underlying content is inactive.",
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
+    }
+  ]
 }

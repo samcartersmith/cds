@@ -6,12 +6,18 @@
   "description": "Segmented Tabs allow users to switch through different views of content on a page.",
   "relatedComponents": [
     {
-      "label": "Buttons",
+      "label": "Button",
       "url": "/components/inputs/Button/"
     },
     {
       "label": "TabNavigation",
       "url": "/components/navigation/TabNavigation/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
     }
   ]
 }

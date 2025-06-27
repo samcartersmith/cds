@@ -12,6 +12,32 @@
     {
       "label": "Alert",
       "url": "/components/overlay/Alert/"
+    },
+    {
+      "label": "ModalHeader",
+      "url": "/components/overlay/ModalHeader/"
+    },
+    {
+      "label": "ModalBody",
+      "url": "/components/overlay/ModalBody/"
+    },
+    {
+      "label": "ModalFooter",
+      "url": "/components/overlay/ModalFooter/"
+    },
+    {
+      "label": "Overlay",
+      "url": "/components/overlay/Overlay/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "framer-motion",
+      "version": "^10.18.0"
+    },
+    {
+      "name": "react",
+      "version": "^18.3.1"
     }
   ]
 }

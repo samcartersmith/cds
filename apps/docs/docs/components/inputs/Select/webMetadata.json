@@ -13,5 +13,11 @@
       "label": "RadioGroup",
       "url": "/components/inputs/RadioGroup/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

@@ -11,5 +11,11 @@
       "label": "HStack",
       "url": "/components/layout/HStack/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

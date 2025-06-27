@@ -2,5 +2,11 @@
   "import": "import { ModalBody } from '@cbhq/cds-web/overlays/modal/ModalBody'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/Modal/ModalBody.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-modal--basic-modal",
-  "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-1053"
+  "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-1053",
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
+  ]
 }

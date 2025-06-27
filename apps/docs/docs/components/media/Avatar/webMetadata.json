@@ -12,5 +12,11 @@
       "label": "DotCount",
       "url": "/components/other/DotCount/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

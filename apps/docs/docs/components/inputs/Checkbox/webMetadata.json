@@ -3,5 +3,15 @@
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/controls/Checkbox.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-checkbox--normal",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=415-14028&t=8hgl6nX25pIzCo0y-1",
-  "description": "Checkbox is a type of control component that allows user to select one or more options from a set. They can also be used alone to switch between on and off."
+  "description": "Checkbox is a type of control component that allows user to select one or more options from a set. They can also be used alone to switch between on and off.",
+  "dependencies": [
+    {
+      "name": "framer-motion",
+      "version": "^10.18.0"
+    },
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
+  ]
 }

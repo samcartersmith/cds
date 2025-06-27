@@ -2,5 +2,6 @@
   "import": "import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/Pictogram.tsx",
   "figma": "https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-401&m=dev",
-  "description": "Pictograms are elevated product icons. They should be literal, concise, and used for glanceability purposes but the intention here is to grab the attention of users."
+  "description": "Pictograms are elevated product icons. They should be literal, concise, and used for glanceability purposes but the intention here is to grab the attention of users.",
+  "dependencies": []
 }

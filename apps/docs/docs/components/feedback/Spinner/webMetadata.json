@@ -2,5 +2,17 @@
   "import": "import { Spinner } from '@cbhq/cds-web/loaders/Spinner'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/loaders/Spinner.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-loaders-spinner--spinner-default",
-  "description": "A component that displays a spinning animation."
+  "description": "A component that displays a spinning animation.",
+  "relatedComponents": [
+    {
+      "label": "Fallback",
+      "url": "/components/feedback/Fallback/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
+  ]
 }

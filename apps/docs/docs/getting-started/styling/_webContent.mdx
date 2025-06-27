@@ -1,19 +1,5 @@
----
-id: styling
-title: Styling
-hide_title: true
----
-
 import { MDXSection } from '@site/src/components/page/MDXSection';
 import { MDXArticle } from '@site/src/components/page/MDXArticle';
-import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
-import { GettingStartedBanner } from '@site/src/components/page/ComponentBanner/GettingStartedBanner';
-
-<ComponentHeader
-  title="Styling"
-  description="Styling with the Coinbase Design System (CDS) is designed to be intuitive, efficient, and consistent. CDS provides a flexible styling API that leverages both CSS Variables (for web) and dynamic React Context-based theming (for React Native)."
-  banner={<GettingStartedBanner />}
-/>
 
 <MDXSection>
 <MDXArticle>
@@ -33,8 +19,6 @@ CDS styling is built on the following principles:
 
 Theming is a central feature of CDS. The `ThemeProvider` component is required to inject theme variables and manage theming across your application.
 
-### Web Theming
-
 <ul>
   <li>
     <strong>CSS Variables</strong>: CDS components use CSS Variables to style elements efficiently.
@@ -49,28 +33,6 @@ Example:
 
 ```tsx
 import { ThemeProvider } from '@cbhq/cds-web';
-
-<ThemeProvider>
-  <App />
-</ThemeProvider>;
-```
-
-### React Native Theming
-
-<ul>
-  <li>
-    <strong>React Context</strong>: In React Native, CDS uses a theme Context to broadcast theme
-    values.
-  </li>
-  <li>
-    <strong>Dynamic Styling</strong>: Access theme variables via the <code>useTheme</code> hook.
-  </li>
-</ul>
-
-Example:
-
-```tsx
-import { ThemeProvider } from '@cbhq/cds-mobile';
 
 <ThemeProvider>
   <App />
@@ -93,8 +55,7 @@ CDS distinguishes between static and dynamic style props:
     <strong>Static Props</strong>: Map directly to predefined class names for optimal performance.
   </li>
   <li>
-    <strong>Dynamic Props</strong>: Apply inline styles using CSS Variables (web) or the{' '}
-    <code>StyleSheet</code> API (React Native).
+    <strong>Dynamic Props</strong>: Apply inline styles using CSS Variables.
   </li>
 </ul>
 
@@ -152,8 +113,6 @@ CDS exposes a robust set of theme variables that you can use to style components
 
 ### Using Theme Variables
 
-#### Web
-
 Access theme variables directly using CSS Variables:
 
 ```css
@@ -161,23 +120,6 @@ Access theme variables directly using CSS Variables:
   background-color: var(--color-bgPrimary);
   padding: var(--space-4);
 }
-```
-
-#### React Native
-
-Use the `useTheme` hook to retrieve theme values:
-
-```tsx
-import { useTheme } from '@cbhq/cds-mobile';
-
-const MyComponent = () => {
-  const theme = useTheme();
-  return (
-    <View style={{ backgroundColor: theme.color.bgPrimary, padding: theme.space[4] }}>
-      <Text>Styled with CDS</Text>
-    </View>
-  );
-};
 ```
 
 </MDXArticle>
@@ -214,18 +156,10 @@ const customTheme = {
 <MDXArticle>
 ## Inline Styles and Class Names
 
-In addition to `StyleProps`, CDS components support `className` (web) and `style` (web and React Native) props for advanced customization.
-
-### Web
+In addition to `StyleProps`, CDS components support `className` and `style` props for advanced customization.
 
 ```tsx
 <Box className="custom-class" style={{ backgroundColor: 'red' }} />
-```
-
-### React Native
-
-```tsx
-<Box style={{ backgroundColor: 'blue' }} />
 ```
 
 </MDXArticle>

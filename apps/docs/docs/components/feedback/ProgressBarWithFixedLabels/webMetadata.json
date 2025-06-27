@@ -15,5 +15,11 @@
       "label": "ProgressBarWithFloatLabel",
       "url": "/components/feedback/ProgressBarWithFloatLabel"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

@@ -1,19 +1,5 @@
----
-id: api-overview
-title: API Overview
-hide_title: true
----
-
 import { MDXSection } from '@site/src/components/page/MDXSection';
 import { MDXArticle } from '@site/src/components/page/MDXArticle';
-import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
-import { GettingStartedBanner } from '@site/src/components/page/ComponentBanner/GettingStartedBanner';
-
-<ComponentHeader
-  title="API Overview"
-  description="The Coinbase Design System (CDS) provides a robust set of APIs to streamline development and create consistent, accessible, and high-performance applications. This page provides an overview of the key APIs and concepts in CDS to help you get started."
-  banner={<GettingStartedBanner />}
-/>
 
 <MDXSection>
 <MDXArticle>
@@ -49,7 +35,6 @@ CDS components support a powerful `StyleProps` API that simplifies applying styl
 <ul>
   <li>Is connected to the ThemeProvider.</li>
   <li>Reduces the need for custom CSS or inline styles.</li>
-  <li>Supports responsive design out of the box on web.</li>
   <li>Minimizes CSS output with atomic CSS.</li>
 </ul>
 
@@ -64,42 +49,14 @@ Example:
 />
 ```
 
-### Polymorphic Components on web
-
-Many CDS web components are polymorphic, meaning they can render different HTML elements based on the `as` prop. This flexibility allows developers to tailor components to specific use cases while maintaining consistent styles and behavior.
-
-Example:
-
-```tsx
-<Button as="a" href="https://coinbase.com">
-  Go to Coinbase
-</Button>
-```
-
 </MDXArticle>
 
-<MDXArticle>
-### Responsive Design on web
-
-CDS supports responsive design with a declarative syntax. You can specify different styles for various breakpoints directly in your components without writing media queries manually.
-
-Example:
-
-```tsx
-<Grid gap={{ base: 2, desktop: 4 }} templateColumns={{ base: '1fr', tablet: 'repeat(2, 1fr)' }}>
-  <Box>Item 1</Box>
-  <Box>Item 2</Box>
-</Grid>
-```
-
-</MDXArticle>
 <MDXArticle>
 ### Common Props
 
 Most CDS components support the following common props:
 
 - StyleProps
-- `className` (web only): Pass custom class names for additional styling.
 - `style`: Apply inline styles.
 - Native properties for the specific platform (web or React Native)
 
@@ -137,14 +94,6 @@ const MyComponent = () => {
   const theme = useTheme();
   return <View style={{ backgroundColor: theme.color.bgPrimary }}>Hello world</View>;
 };
-```
-
-Prefer to use CSS Variables directly on web for better performance:
-
-```css
-.my-class {
-  background-color: var(--color-bgPrimary);
-}
 ```
 
 </MDXArticle>
@@ -190,7 +139,7 @@ CDS components integrate seamlessly with third-party libraries, such as:
 
 - [Component Library](/components/layout/Accordion): Explore all the components available in CDS.
 - [Theming](/getting-started/theming#setting-up-the-themeprovider): Learn how to customize your application's theme.
-- [StyleProps Guide](/getting-started/styling) Dive deeper into the powerful StyleProps API.
+- [StyleProps Guide](/getting-started/styling#styleprops-api) Dive deeper into the powerful StyleProps API.
 
 Unlock the full potential of the Coinbase Design System and start building high-quality applications today!
 

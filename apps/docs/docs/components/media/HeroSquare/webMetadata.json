@@ -3,5 +3,6 @@
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/illustrations/HeroSquare.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-herosquare--default",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-975",
-  "description": "HeroSquare is a component that displays a square-shaped hero illustration with customizable content."
+  "description": "HeroSquare is a component that displays a square-shaped hero illustration with customizable content.",
+  "dependencies": []
 }

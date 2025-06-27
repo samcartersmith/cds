@@ -32,5 +32,11 @@
       "label": "TableHeader",
       "url": "/components/data-display/TableHeader"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

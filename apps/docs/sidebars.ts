@@ -13,10 +13,10 @@ const sidebars: SidebarsConfig = {
       label: 'Get started',
       items: [
         'getting-started/introduction',
-        'getting-started/installation',
-        'getting-started/api-overview',
-        'getting-started/theming',
-        'getting-started/styling',
+        'getting-started/installation/installation',
+        'getting-started/api-overview/api-overview',
+        'getting-started/theming/theming',
+        'getting-started/styling/styling',
         'getting-started/templates',
       ],
       customProps: {

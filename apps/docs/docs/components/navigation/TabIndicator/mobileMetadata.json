@@ -1,4 +1,20 @@
 {
   "import": "import { TabIndicator } from '@cbhq/cds-mobile/navigation/TabIndicator'",
-  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tabs/TabIndicator.tsx"
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tabs/TabIndicator.tsx",
+  "relatedComponents": [
+    {
+      "label": "TabNavigation",
+      "url": "/components/navigation/TabNavigation/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
+    }
+  ]
 }

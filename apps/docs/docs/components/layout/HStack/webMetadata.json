@@ -13,5 +13,11 @@
       "label": "Box",
       "url": "/components/layout/Box/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

@@ -6,8 +6,22 @@
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-chips-inputchip--default",
   "relatedComponents": [
     {
+      "label": "Chip",
+      "url": "/components/inputs/Chip/"
+    },
+    {
       "label": "SelectChip",
       "url": "/components/inputs/SelectChip/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
     }
   ]
 }

@@ -3,5 +3,17 @@
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/accordion/Accordion.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-accordion--basic-accordion",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=61-569&t=8hgl6nX25pIzCo0y-1",
-  "description": "Accordion is a cross-platform component used for displaying auxiliary (not vital) content to the end-user."
+  "description": "Accordion is a cross-platform component used for displaying auxiliary (not vital) content to the end-user.",
+  "relatedComponents": [
+    {
+      "label": "AccordionItem",
+      "url": "/components/layout/AccordionItem/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
+  ]
 }

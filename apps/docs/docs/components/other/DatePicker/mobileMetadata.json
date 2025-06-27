@@ -5,9 +5,16 @@
   "description": "Date Picker allows our global users to input past, present, future and important dates into our interface in a simple and intuitive manner. Date Picker offers both manual and calendar entry options - accommodating both internationalization and accessibility needs while being adaptable across screen platforms.",
   "dependencies": [
     {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
+    },
+    {
       "name": "react-native-date-picker",
-      "version": "^4.4.2",
-      "url": "https://www.npmjs.com/package/react-native-date-picker/v/4.4.2"
+      "version": "^4.4.2"
     }
   ]
 }

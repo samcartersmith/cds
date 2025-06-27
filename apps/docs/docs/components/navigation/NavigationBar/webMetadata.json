@@ -17,5 +17,11 @@
       "label": "TabNavigation",
       "url": "/components/navigation/TabNavigation/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

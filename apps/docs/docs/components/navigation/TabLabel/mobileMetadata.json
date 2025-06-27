@@ -1,4 +1,14 @@
 {
   "import": "import { TabLabel } from '@cbhq/cds-mobile/navigation/TabLabel'",
-  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tabs/TabLabel.tsx"
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tabs/TabLabel.tsx",
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
+    }
+  ]
 }

@@ -9,5 +9,11 @@
       "label": "NudgeCard",
       "url": "/components/cards/NudgeCard/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

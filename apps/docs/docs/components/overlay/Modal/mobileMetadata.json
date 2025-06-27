@@ -11,6 +11,32 @@
     {
       "label": "Alert",
       "url": "/components/overlay/Alert/"
+    },
+    {
+      "label": "ModalHeader",
+      "url": "/components/overlay/ModalHeader/"
+    },
+    {
+      "label": "ModalBody",
+      "url": "/components/overlay/ModalBody/"
+    },
+    {
+      "label": "ModalFooter",
+      "url": "/components/overlay/ModalFooter/"
+    },
+    {
+      "label": "Overlay",
+      "url": "/components/overlay/Overlay/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
     }
   ]
 }

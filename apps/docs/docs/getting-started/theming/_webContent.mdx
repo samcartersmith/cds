@@ -1,19 +1,5 @@
----
-id: theming
-title: Theming
-hide_title: true
----
-
 import { MDXSection } from '@site/src/components/page/MDXSection';
 import { MDXArticle } from '@site/src/components/page/MDXArticle';
-import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
-import { GettingStartedBanner } from '@site/src/components/page/ComponentBanner/GettingStartedBanner';
-
-<ComponentHeader
-  title="Theming"
-  description="The Coinbase Design System (CDS) provides a powerful and flexible theming system that ensures a consistent look and feel across applications. By using the ThemeProvider, you can customize and manage theme variables globally, enabling dynamic theming, brand alignment, and support for features like light and dark modes."
-  banner={<GettingStartedBanner />}
-/>
 
 <MDXSection>
 <MDXArticle>
@@ -48,27 +34,15 @@ The `ThemeProvider` is the foundation of theming in CDS. It:
 <ul>
   <li>Provides the theme to all components within its context.</li>
   <li>Dynamically updates the theme when changes are made.</li>
-  <li>Inserts CSS Variables (web) or React Context (React Native) to manage styles efficiently.</li>
+  <li>Inserts CSS Variables to manage styles efficiently.</li>
 </ul>
 
 ### Setting Up the ThemeProvider
 
 Wrap your application with the `ThemeProvider` at the root level:
 
-#### Web
-
 ```tsx
 import { ThemeProvider } from '@cbhq/cds-web';
-
-<ThemeProvider>
-  <App />
-</ThemeProvider>;
-```
-
-#### React Native
-
-```tsx
-import { ThemeProvider } from '@cbhq/cds-mobile';
 
 <ThemeProvider>
   <App />
@@ -184,8 +158,6 @@ const App = () => {
 <MDXArticle>
 ## Accessing Theme Variables
 
-### Web
-
 Use CSS Variables directly in your custom styles:
 
 ```css
@@ -193,24 +165,6 @@ Use CSS Variables directly in your custom styles:
   background-color: var(--color-bgPrimary);
   padding: var(--space-4);
 }
-```
-
-### React Native
-
-Access theme variables through the `useTheme` hook:
-
-```tsx
-import { useTheme } from '@cbhq/cds-mobile';
-
-const MyComponent = () => {
-  const theme = useTheme();
-
-  return (
-    <View style={{ backgroundColor: theme.color.bgPrimary }}>
-      <Text style={{ color: theme.color.fgPrimary }}>Hello, Theming!</Text>
-    </View>
-  );
-};
 ```
 
 </MDXArticle>

@@ -23,7 +23,7 @@ type RelatedComponent = {
   label: string;
 };
 
-type Dependency = {
+export type Dependency = {
   /** The name of the dependency package */
   name: string;
   /** Optional version requirement */
@@ -43,7 +43,7 @@ type MetadataType = {
   dependencies?: Dependency[];
 };
 
-type ComponentHeaderProps = {
+type ContentHeaderProps = {
   /** The title of the component */
   title: string;
   /** Optional description of the component */
@@ -86,7 +86,7 @@ export const ComponentHeader = memo(
     mobileMetadata,
     banner = <DefaultBanner />,
     bannerDark,
-  }: ComponentHeaderProps) => {
+  }: ContentHeaderProps) => {
     const { platform } = usePlatformContext();
     const { colorScheme } = useDocsTheme();
     const toast = useToast();
@@ -229,7 +229,7 @@ export const ComponentHeader = memo(
                       ) : (
                         dependency.name
                       )}
-                      {dependency.version && <span>{`@${dependency.version}`}</span>}
+                      {dependency.version && <span>{`: ${dependency.version}`}</span>}
                       {index < dependencies.length - 1 && ', '}
                     </Text>
                   </li>

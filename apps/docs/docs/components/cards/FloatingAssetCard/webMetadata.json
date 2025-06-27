@@ -13,5 +13,11 @@
       "label": "ContainedAssetCard",
       "url": "/components/cards/ContainedAssetCard/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

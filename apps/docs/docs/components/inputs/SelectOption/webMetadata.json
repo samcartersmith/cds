@@ -8,6 +8,16 @@
     {
       "label": "Select",
       "url": "/components/inputs/Select/"
+    },
+    {
+      "label": "ListCell",
+      "url": "/components/data-display/ListCell/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
     }
   ]
 }

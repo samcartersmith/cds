@@ -31,5 +31,11 @@
       "label": "TableRow",
       "url": "/components/data-display/TableRow"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

@@ -13,5 +13,11 @@
       "label": "FullscreenModal",
       "url": "/components/overlay/FullscreenModal/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

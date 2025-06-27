@@ -20,6 +20,11 @@ function generateGettingStartedDocs(docsPath, platform, outputPath) {
   const routes = [];
 
   for (const doc of docs) {
+    // Skip directories, only process files
+    if (fs.statSync(doc).isDirectory()) {
+      continue;
+    }
+
     const { name } = path.parse(doc);
     const outputPath = path.join(docsOutputPath, `${name}.txt`);
     const docContent = fs.readFileSync(doc, 'utf-8');

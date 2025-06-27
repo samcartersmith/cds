@@ -1,5 +1,21 @@
 {
   "import": "import { Spinner } from '@cbhq/cds-mobile/loaders/Spinner'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/loaders/Spinner.tsx",
-  "description": "A component that displays a spinning animation."
+  "description": "A component that displays a spinning animation.",
+  "relatedComponents": [
+    {
+      "label": "Fallback",
+      "url": "/components/feedback/Fallback/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
+    }
+  ]
 }

@@ -3,5 +3,11 @@
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web-visualization/src/sparkline/sparkline-interactive/SparklineInteractive.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/visualization-sparklineinteractive--default",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=155-12194",
-  "description": "The SparklineInteractive is used to display a Sparkline that has multiple time periods"
+  "description": "The SparklineInteractive is used to display a Sparkline that has multiple time periods",
+  "relatedComponents": [
+    {
+      "label": "SparklineInteractiveHeader",
+      "url": "/components/graphs/SparklineInteractiveHeader/"
+    }
+  ]
 }

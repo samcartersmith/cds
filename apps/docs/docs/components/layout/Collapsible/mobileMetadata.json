@@ -2,5 +2,19 @@
   "import": "import { Collapsible } from '@cbhq/cds-mobile/layout/Collapsible'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/Collapsible.tsx",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-975",
-  "description": "Collapsible is a layout component that provides an expandable/collapsible container with smooth animations and customizable content."
+  "description": "Collapsible is a layout component that provides an expandable/collapsible container with smooth animations and customizable content.",
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
+    },
+    {
+      "name": "react-native-reanimated",
+      "version": "^3.14.0"
+    }
+  ]
 }

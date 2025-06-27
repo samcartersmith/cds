@@ -1,5 +1,15 @@
 {
   "import": "import { ModalBody } from '@cbhq/cds-mobile/overlays/modal/ModalBody'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/overlays/Modal/ModalBody.tsx",
-  "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-1053"
+  "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-1053",
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
+    }
+  ]
 }

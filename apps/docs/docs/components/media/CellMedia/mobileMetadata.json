@@ -11,5 +11,15 @@
       "label": "ListCell",
       "url": "/components/data-display/ListCell"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
+    }
   ]
 }

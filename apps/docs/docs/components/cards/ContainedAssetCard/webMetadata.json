@@ -8,10 +8,12 @@
     {
       "label": "FloatingAssetCard",
       "url": "/components/cards/FloatingAssetCard/"
-    },
+    }
+  ],
+  "dependencies": [
     {
-      "label": "NudgeCard",
-      "url": "/components/cards/NudgeCard/"
+      "name": "react",
+      "version": "^18.3.1"
     }
   ]
 }

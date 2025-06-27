@@ -16,5 +16,11 @@
       "label": "ContentCardFooter",
       "url": "/components/cards/ContentCardFooter/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

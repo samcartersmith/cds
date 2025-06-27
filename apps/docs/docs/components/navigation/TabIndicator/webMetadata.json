@@ -1,5 +1,21 @@
 {
   "import": "import { TabIndicator } from '@cbhq/cds-web/tabs/TabIndicator';",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tabs/TabIndicator.tsx",
-  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-tabs-tabindicator--default"
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-tabs-tabindicator--default",
+  "relatedComponents": [
+    {
+      "label": "TabNavigation",
+      "url": "/components/navigation/TabNavigation/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "framer-motion",
+      "version": "^10.18.0"
+    },
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
+  ]
 }

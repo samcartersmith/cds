@@ -1,5 +1,25 @@
 {
   "import": "import { FullscreenAlert } from '@cbhq/cds-web/overlays/FullscreenAlert'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/FullscreenAlert.tsx",
-  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-fullscreenalert--basic"
+  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-fullscreenalert--basic",
+  "relatedComponents": [
+    {
+      "label": "Alert",
+      "url": "/components/overlay/Alert/"
+    },
+    {
+      "label": "FullscreenModal",
+      "url": "/components/overlay/FullscreenModal/"
+    },
+    {
+      "label": "Modal",
+      "url": "/components/overlay/Modal/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
+  ]
 }

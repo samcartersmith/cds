@@ -5,8 +5,22 @@
   "description": "`SelectChip` is a control component that allows users to select one or more options from a list.",
   "relatedComponents": [
     {
+      "label": "Chip",
+      "url": "/components/inputs/Chip/"
+    },
+    {
       "label": "TabbedChip",
       "url": "/components/navigation/TabbedChips/"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    },
+    {
+      "name": "react-native",
+      "version": "^0.74.5"
     }
   ]
 }

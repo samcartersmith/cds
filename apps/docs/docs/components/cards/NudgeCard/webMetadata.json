@@ -17,5 +17,11 @@
       "label": "ContentCard",
       "url": "/components/cards/ContentCard/"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
   ]
 }

@@ -3,5 +3,15 @@
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/controls/Switch.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-switch--normal",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=466-13810&t=K73gadcWiDv2aYlS-1",
-  "description": "A control component that allows user to toggle between on and off."
+  "description": "A control component that allows user to toggle between on and off.",
+  "dependencies": [
+    {
+      "name": "framer-motion",
+      "version": "^10.18.0"
+    },
+    {
+      "name": "react",
+      "version": "^18.3.1"
+    }
+  ]
 }
