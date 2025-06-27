@@ -183,7 +183,7 @@ describe('ContentCell', () => {
   it('renders media', () => {
     render(
       <DefaultThemeProvider>
-        <ContentCell media={<CellMedia name="add" testID="media" type="icon" />} />
+        <ContentCell media={<CellMedia active name="add" testID="media" type="icon" />} />
       </DefaultThemeProvider>,
     );
 
@@ -194,7 +194,7 @@ describe('ContentCell', () => {
     render(
       <DefaultThemeProvider>
         <ContentCell
-          media={<CellMedia name="add" testID="media" type="icon" />}
+          media={<CellMedia active name="add" testID="media" type="icon" />}
           testID="cell-with-media"
         />
       </DefaultThemeProvider>,

@@ -144,12 +144,12 @@ export class Manifest<
   }
 
   private renameOutput(renameFn: (output: string) => string) {
-    return async (output: string) => {
+    return (output: string) => {
       const oldPath = path.normalize(`${this.generatedDirectory}/${output}`);
       const newPath = renameFn(oldPath);
 
       if (fs.existsSync(oldPath)) {
-        return fs.promises.rename(oldPath, newPath);
+        return fs.renameSync(oldPath, newPath);
       }
 
       return undefined;
@@ -161,7 +161,7 @@ export class Manifest<
 
     if (outputs) {
       // rename item output files
-      await Promise.all(Object.values(outputs).map(this.renameOutput(renameFn)));
+      Object.values(outputs).map(this.renameOutput(renameFn));
 
       // empty out existing item outputs
       item.addToOutputs({});

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { imageSize, mediaSize } from '@cbhq/cds-common/tokens/cell';
-import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
+import { glyphMap } from '@cbhq/cds-icons/glyphMap';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Pictogram } from '../../illustrations/Pictogram';
@@ -119,7 +119,7 @@ describe('CellMedia', () => {
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByText(glyphMap['ui-arrowUp-16'])).toBeVisible();
+    expect(screen.getByText(glyphMap['arrowUp-16-inactive'])).toBeVisible();
   });
 
   it('renders an asset', () => {

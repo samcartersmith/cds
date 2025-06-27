@@ -31,7 +31,6 @@ export * from './LottiePlayer';
 export * from './LottieSource';
 export * from './LottieStatusAnimationProps';
 export * from './Motion';
-export * from './NavigationBaseIconProps';
 export * from './OverlayLifecycleProps';
 export * from './Palette';
 export * from './Placement';

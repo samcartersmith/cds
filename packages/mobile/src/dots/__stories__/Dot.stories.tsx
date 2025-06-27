@@ -223,7 +223,7 @@ const DotSymbolPlacements = () => {
             <Avatar shape="square" size="xl" />
           </DotSymbol>
           <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
-            <Icon name="airdrop" size="l" />
+            <Icon active name="airdrop" size="l" />
           </DotSymbol>
         </VStack>
       ))}
@@ -260,6 +260,7 @@ const DotSymbolIcon = () => {
               {avatarIconSizeMap[avatarSize]}
             </Text>
             <DotSymbol
+              active
               iconName="safe"
               overlap="circular"
               pin={pinDirection}

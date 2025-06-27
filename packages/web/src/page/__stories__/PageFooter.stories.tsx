@@ -18,7 +18,7 @@ const exampleProps = {
       testID="header-back-button"
     />
   ),
-  end: <Icon accessibilityLabel="Show info" name="info" size="s" />,
+  end: <Icon active accessibilityLabel="Show info" name="info" size="s" />,
   endButton: <Button accessibilityLabel="Go Next">Next</Button>,
   endButtons: (
     <ButtonGroup accessibilityLabel="Group">

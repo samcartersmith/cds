@@ -74,6 +74,7 @@ const exampleProps = {
   ),
   end1: (
     <IconButton
+      active
       transparent
       accessibilityLabel="Show info"
       name="info"

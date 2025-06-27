@@ -103,7 +103,7 @@ export const Props = () => {
         <DateInput
           {...sharedProps}
           {...props}
-          end={<Icon name="camera" padding={2} size="m" />}
+          end={<Icon active name="camera" padding={2} size="m" />}
           placeholder="Hello world"
           start={<Icon name="blockchain" padding={2} size="m" />}
         />

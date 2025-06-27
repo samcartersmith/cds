@@ -173,6 +173,7 @@ const SearchInputScreen = () => {
         <CustomEndNode
           end={
             <InputIconButton
+              active
               accessibilityHint="Warning text"
               accessibilityLabel="Warning text"
               name="warning"

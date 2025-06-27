@@ -8,7 +8,7 @@ Check [here](/components/layout/AccordionItem) for AccordionItem Props.
     itemKey="1"
     title="Accordion #1"
     subtitle="subtitle1"
-    media={<CellMedia type="icon" name="wallet" title="BTC" />}
+    media={<CellMedia active type="icon" name="wallet" title="BTC" />}
   >
     <TextInput
       compact
@@ -23,7 +23,7 @@ Check [here](/components/layout/AccordionItem) for AccordionItem Props.
     itemKey="2"
     title="Accordion #2"
     subtitle="subtitle2"
-    media={<CellMedia type="icon" name="wallet" title="BTC" />}
+    media={<CellMedia active type="icon" name="wallet" title="BTC" />}
     onClick={(itemKey) => console.log(itemKey)}
   >
     <TextBody as="p">{loremIpsum.repeat(20)}</TextBody>

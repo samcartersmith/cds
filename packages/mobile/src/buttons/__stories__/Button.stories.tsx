@@ -72,14 +72,10 @@ const ButtonScreen = () => {
             <Button end={<Icon color="fg" name="caretRight" size="s" />}>
               <Text font="label1">Test</Text>
             </Button>
-            <Button end={<Icon color="fg" name="add" size="s" />} variant="secondary">
+            <Button end={<Icon active color="fg" name="add" size="s" />} variant="secondary">
               <Text font="label1">Test</Text>
             </Button>
-            <Button
-              end={<Icon color="fg" name="airdrop" size="s" />}
-              endIcon="airdrop"
-              variant="secondary"
-            >
+            <Button end={<Icon active color="fg" name="airdrop" size="s" />} variant="secondary">
               <Text font="label1">Test</Text>
             </Button>
           </ButtonGroup>

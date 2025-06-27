@@ -34,7 +34,7 @@ const MockAccordion = ({
     >
       <AccordionItem
         itemKey="1"
-        media={<CellMedia name="wallet" testID="mock-accordion-item1-media" type="icon" />}
+        media={<CellMedia active name="wallet" testID="mock-accordion-item1-media" type="icon" />}
         onPress={onPress1}
         subtitle="subtitle1"
         testID="mock-accordion-item1"
@@ -44,7 +44,7 @@ const MockAccordion = ({
       </AccordionItem>
       <AccordionItem
         itemKey="2"
-        media={<CellMedia name="wallet" testID="mock-accordion-item2-media" type="icon" />}
+        media={<CellMedia active name="wallet" testID="mock-accordion-item2-media" type="icon" />}
         onPress={onPress2}
         subtitle="subtitle2"
         testID="mock-accordion-item2"

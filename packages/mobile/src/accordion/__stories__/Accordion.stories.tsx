@@ -22,7 +22,7 @@ const BasicAccordion = () => {
     <Accordion defaultActiveKey="2" onChange={handlePress}>
       <AccordionItem
         itemKey="1"
-        media={<CellMedia name="wallet" type="icon" />}
+        media={<CellMedia active name="wallet" type="icon" />}
         subtitle="subtitle1"
         title="Accordion #1"
       >
@@ -30,7 +30,7 @@ const BasicAccordion = () => {
       </AccordionItem>
       <AccordionItem
         itemKey="2"
-        media={<CellMedia name="wallet" type="icon" />}
+        media={<CellMedia active name="wallet" type="icon" />}
         onPress={handlePress}
         subtitle="subtitle2"
         title="Accordion #2"
@@ -59,14 +59,14 @@ const NoSubtitle = () => {
     <Accordion defaultActiveKey="1" onChange={handlePress}>
       <AccordionItem
         itemKey="1"
-        media={<CellMedia name="wallet" type="icon" />}
+        media={<CellMedia active name="wallet" type="icon" />}
         title="Accordion #1"
       >
         <TextInput compact label="Amount" placeholder="8293323.23" suffix="USD" />
       </AccordionItem>
       <AccordionItem
         itemKey="2"
-        media={<CellMedia name="wallet" type="icon" />}
+        media={<CellMedia active name="wallet" type="icon" />}
         onPress={handlePress}
         title="Accordion #2"
       >
@@ -139,7 +139,7 @@ const AccordionScreen = () => {
         >
           <AccordionItem
             itemKey="1"
-            media={<CellMedia name="wallet" type="icon" />}
+            media={<CellMedia active name="wallet" type="icon" />}
             subtitle="subtitle1"
             title="Accordion #1"
           >
@@ -153,7 +153,7 @@ const AccordionScreen = () => {
           </AccordionItem>
           <AccordionItem
             itemKey="2"
-            media={<CellMedia name="wallet" type="icon" />}
+            media={<CellMedia active name="wallet" type="icon" />}
             onPress={noop}
             style={{
               paddingHorizontal: 20,
@@ -171,7 +171,7 @@ const AccordionScreen = () => {
             <AccordionItem
               key={itemKey}
               itemKey={itemKey}
-              media={<CellMedia name="wallet" type="icon" />}
+              media={<CellMedia active name="wallet" type="icon" />}
               title={`Item ${itemKey}`}
             >
               <Button onPress={() => setActiveKey(nextKey)}>

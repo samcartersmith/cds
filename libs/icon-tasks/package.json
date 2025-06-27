@@ -1,0 +1,44 @@
+{
+  "name": "@cbhq/icon-tasks",
+  "version": "0.0.0",
+  "private": true,
+  "description": "CDS icon tasks",
+  "repository": {
+    "type": "git",
+    "url": "git@github.cbhq.net:frontend/cds.git",
+    "directory": "libs/icon-tasks"
+  },
+  "type": "commonjs",
+  "main": "./cjs/index.js",
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dts/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "default": "./cjs/*.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "cjs",
+    "dts",
+    "CHANGELOG"
+  ],
+  "dependencies": {
+    "@cbhq/figma-api": "workspace:^",
+    "@cbhq/script-utils": "workspace:^",
+    "dotenv": "^16.4.7",
+    "sharp": "^0.31.2",
+    "svgo": "^3.0.2",
+    "webfont": "11.2.26"
+  },
+  "devDependencies": {
+    "@types/sharp": "^0.31.0",
+    "@types/svgo": "^2.6.4",
+    "tsx": "^4.19.1"
+  }
+}

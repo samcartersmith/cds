@@ -20,6 +20,7 @@ type ListItem = {
   icon: IconName;
   title: string;
   description: string;
+  active?: boolean;
 };
 
 type SocialMediaItem = {
@@ -107,6 +108,7 @@ const exampleProps: MultiContentModuleProps = {
 const listItems: ListItem[] = [
   {
     icon: 'wallet',
+    active: true,
     title: 'Enhanced security',
     description: 'Use your connected wallet to verify instead of your email and password',
   },
@@ -137,7 +139,7 @@ const socialMediaItems: SocialMediaItem[] = [
   },
   {
     name: 'Wallet',
-    icon: <Icon color="fg" name="wallet" size="m" />,
+    icon: <Icon active color="fg" name="wallet" size="m" />,
   },
 ];
 
@@ -168,12 +170,12 @@ const Default = () => (
               onActionPress={closeModal}
               {...exampleProps}
             >
-              {listItems.map(({ icon, title, description }, index) => (
+              {listItems.map(({ active, icon, title, description }, index) => (
                 <ListCell
                   key={index}
                   multiline
                   description={description}
-                  media={<CellMedia name={icon} type="icon" />}
+                  media={<CellMedia active={active} name={icon} type="icon" />}
                   outerSpacing={{ paddingX: 0 }}
                   title={title}
                 />
@@ -302,12 +304,12 @@ export const WithLongContent = () => {
                 title="Lorem Ipsum is dummy text of the printing and typesetting industry."
               >
                 {[...listItems, ...listItems, ...listItems].map(
-                  ({ icon, title, description }, index) => (
+                  ({ icon, active, title, description }, index) => (
                     <ListCell
                       key={index}
                       multiline
                       description={description}
-                      media={<CellMedia name={icon} type="icon" />}
+                      media={<CellMedia active={active} name={icon} type="icon" />}
                       outerSpacing={{ paddingX: 0 }}
                       title={title}
                     />

@@ -26,7 +26,7 @@ const Basic = () => {
           key={`${variant}-inputicon`}
           editable={__DEV__}
           label={variant}
-          start={<InputIcon color={variantColorMap[variant]} name="add" />}
+          start={<InputIcon active color={variantColorMap[variant]} name="add" />}
           variant={variant}
         />
       ))}
@@ -40,7 +40,7 @@ const AccessibleInputIcon = () => {
       accessibilityLabel="Search add an item"
       editable={__DEV__}
       label="Add"
-      start={<InputIcon name="add" />}
+      start={<InputIcon active name="add" />}
     />
   );
 };
@@ -68,7 +68,7 @@ const SetColorAndInheritFocusStyle = () => {
 };
 
 const BasicEnd = () => {
-  return <TextInput editable={__DEV__} end={<InputIcon name="add" />} label="Label" />;
+  return <TextInput editable={__DEV__} end={<InputIcon active name="add" />} label="Label" />;
 };
 
 const AddCustomColor = () => {
@@ -76,7 +76,7 @@ const AddCustomColor = () => {
     <TextInput
       editable={__DEV__}
       label="Label"
-      start={<InputIcon disableInheritFocusStyle color="fg" name="add" />}
+      start={<InputIcon active disableInheritFocusStyle color="fg" name="add" />}
     />
   );
 };
@@ -85,7 +85,7 @@ const AddCustomColorEnd = () => {
   return (
     <TextInput
       editable={__DEV__}
-      end={<InputIcon disableInheritFocusStyle color="fg" name="add" />}
+      end={<InputIcon active disableInheritFocusStyle color="fg" name="add" />}
       label="Label"
     />
   );
@@ -94,7 +94,7 @@ const AddCustomColorEnd = () => {
 const InvalidPlacement = () => {
   return (
     <Box background="bgAlternate">
-      <InputIcon name="add" />
+      <InputIcon active name="add" />
     </Box>
   );
 };

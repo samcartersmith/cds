@@ -48,8 +48,8 @@ function NavigationWithPress() {
       }
       end={
         <HStack gap={1} alignItems="center">
-          <NavigationIconButton accessibilityLabel="Language" active={false} name="globe" />
-          <NavigationIconButton accessibilityLabel="Notifications" active={false} name="bell" />
+          <IconButton accessibilityLabel="Language" active={false} name="globe" />
+          <IconButton accessibilityLabel="Notifications" active name="bell" />
         </HStack>
       }
       bottom={<TabNavigation tabs={tabs} value={value} onChange={setValue} />}

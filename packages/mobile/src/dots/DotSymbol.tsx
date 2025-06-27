@@ -29,22 +29,25 @@ export type DotSymbolBaseProps = SharedProps &
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
   > & {
-    /** Add an icon to the dot. IconName can be any CDS icon name. */
+    /** Icon name to add to the dot. */
     iconName?: IconName;
-    /** The color of the Icon rendered */
+    /** Size of the dot */
+    size?: DotSize;
+    /** Whether the icon is active */
+    active?: boolean;
+    /** The color of the icon */
     color?: IconProps['color'];
-    /** Add an arbitrary ReactNode to the dot. */
-    symbol?: React.ReactNode;
     background?: BoxBaseProps['background'];
     borderColor?: BoxBaseProps['borderColor'];
-    /** Position of dot relative to its parent */
+    /** Position of the dot */
     pin?: PinPlacement;
-    /** Children of where the dot will anchor to */
+    /** The element that the dot will anchor to */
     children?: React.ReactNode;
-    /** Size of dot */
-    size?: DotSize;
-    /** Indicates what shape Dot is overlapping */
+    /** Indicates what shape dot is overlapping */
     overlap?: DotOverlap;
+    /** Add an arbitrary ReactNode to the dot instead of an icon. */
+    symbol?: React.ReactNode;
+    /** Image source path */
     source?: ImageSourcePropType | string;
     style?: StyleProp<ViewStyle>;
     iconStyle?: StyleProp<ViewStyle>;
@@ -62,6 +65,7 @@ export const DotSymbol = memo(
     overlap,
     iconName,
     size = 's',
+    active,
     color = 'fgInverse',
     background = 'bgPrimary',
     borderColor = 'bgSecondary',
@@ -142,7 +146,7 @@ export const DotSymbol = memo(
                 padding={0.5}
                 style={[iconBorderStyle, iconStyle]}
               >
-                <Icon color={color} name={iconName} size={size} />
+                <Icon active={active} color={color} name={iconName} size={size} />
               </Box>
             )}
             {symbol}

@@ -177,7 +177,7 @@ function handlePress() {
 const HeaderLabel = () => {
   return (
     <HStack alignItems="center" gap={1} paddingBottom={0}>
-      <Icon name="wallet" size="s" />
+      <Icon active name="wallet" size="s" />
       <TextTitle3>CustomHeader</TextTitle3>
     </HStack>
   );
@@ -521,7 +521,7 @@ const SparklineInteractiveHeaderScreen = () => {
   const trailing = useMemo(() => {
     return (
       <HStack gap={1}>
-        <IconButton feedback="heavy" name="starActive" onPress={handlePress} variant="secondary" />
+        <IconButton active feedback="heavy" name="star" onPress={handlePress} variant="secondary" />
         <IconButton feedback="heavy" name="share" onPress={handlePress} variant="secondary" />
       </HStack>
     );

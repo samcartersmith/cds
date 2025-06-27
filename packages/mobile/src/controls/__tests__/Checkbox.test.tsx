@@ -1,6 +1,6 @@
 import { Pressable } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
+import { glyphMap } from '@cbhq/cds-icons/glyphMap';
 
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Checkbox } from '../Checkbox';
@@ -32,7 +32,7 @@ describe('Checkbox', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-checkmark-24']);
+    const icon = screen.getByText(glyphMap['checkmark-24-inactive']);
     expect(icon).toBeTruthy();
   });
   it('checked Checkbox passes a11y', () => {
@@ -53,7 +53,7 @@ describe('Checkbox', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-minus-24']);
+    const icon = screen.getByText(glyphMap['minus-24-inactive']);
     expect(icon).toBeTruthy();
   });
   it('indeterminate Checkbox passes a11y', () => {

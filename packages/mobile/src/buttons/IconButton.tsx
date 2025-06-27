@@ -16,6 +16,8 @@ export type IconButtonBaseProps = SharedProps &
   Pick<ButtonBaseProps, 'disabled' | 'transparent' | 'compact' | 'flush' | 'loading'> & {
     /** Name of the icon, as defined in Figma. */
     name: IconName;
+    /** Whether the icon is active */
+    active?: boolean;
     /**
      * Toggle design and visual variants.
      * @default primary
@@ -27,6 +29,7 @@ export type IconButtonProps = IconButtonBaseProps;
 
 export const IconButton = memo(function IconButton({
   name,
+  active,
   variant = 'secondary',
   transparent,
   compact = true,
@@ -100,8 +103,8 @@ export const IconButton = memo(function IconButton({
           testID={props.testID ? `${props.testID}-activity-indicator` : undefined}
         />
       ) : (
-        /* TO DO: test using currentColor like web2 does on Icon here */
-        <Icon color={colorValue} name={name} size={iconSize} style={sizingStyle} />
+        /* TO DO: test using currentColor like web does on Icon here */
+        <Icon active={active} color={colorValue} name={name} size={iconSize} style={sizingStyle} />
       )}
     </Pressable>
   );

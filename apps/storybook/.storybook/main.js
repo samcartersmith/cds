@@ -48,12 +48,8 @@ const config = {
       to: '@cbhq/cds-icons/fonts/web',
     },
     {
-      from: '../../../packages/icons/src/__generated__/ui/svg',
-      to: '@cbhq/cds-icons/__generated__/ui/svg',
-    },
-    {
-      from: '../../../packages/icons/src/__generated__/nav/svg',
-      to: '@cbhq/cds-icons/__generated__/nav/svg',
+      from: '../../../packages/icons/src/svgs',
+      to: '@cbhq/cds-icons/svgs',
     },
     {
       from: '../../../packages/illustrations/src/__generated__/heroSquare/svg',

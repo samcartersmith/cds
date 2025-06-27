@@ -125,6 +125,7 @@ describe('Search', () => {
         <SearchInput
           end={
             <InputIconButton
+              active
               accessibilityHint="Warning text"
               accessibilityLabel="Warning text"
               name="warning"

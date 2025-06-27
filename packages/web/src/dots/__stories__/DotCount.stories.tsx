@@ -43,7 +43,7 @@ const DotCountDynamic = () => {
   return (
     <Box alignItems="flex-start" minHeight={100} padding={1}>
       <DotCount count={count}>
-        <Icon name="airdrop" size="m" />
+        <Icon active name="airdrop" size="m" />
       </DotCount>
     </Box>
   );
@@ -192,7 +192,7 @@ export const DotCountPressable = () => {
                 pin="top-end"
                 testID="notification-bell-badge"
               >
-                <Icon color="fg" name="bell" size="s" testID="notification-bell-icon" />
+                <Icon active color="fg" name="bell" size="s" testID="notification-bell-icon" />
               </DotCount>
             </Box>
           </Pressable>

@@ -20,6 +20,7 @@ type ExampleProps = Pick<
   | 'children'
   | 'marginX'
   | 'startIcon'
+  | 'startIconActive'
   | 'startIconAccessibilityLabel'
   | 'closeAccessibilityLabel'
 >;
@@ -27,6 +28,7 @@ type ExampleProps = Pick<
 const exampleProps: ExampleProps = {
   title: 'Failure Message',
   startIcon: 'error',
+  startIconActive: true,
   startIconAccessibilityLabel: 'Error',
   closeAccessibilityLabel: 'Close',
 };
@@ -42,6 +44,7 @@ const styleProps: MobileBannerProps[] = [
     variant: 'warning',
     title: 'Warning message',
     startIcon: 'warning',
+    startIconActive: true,
     children: shortMessage,
     startIconAccessibilityLabel: 'Warning',
     closeAccessibilityLabel: 'Close',
@@ -50,6 +53,7 @@ const styleProps: MobileBannerProps[] = [
     variant: 'informational',
     title: 'Informative message',
     startIcon: 'info',
+    startIconActive: true,
     children: shortMessage,
     startIconAccessibilityLabel: 'Information',
     closeAccessibilityLabel: 'Close',
@@ -58,6 +62,7 @@ const styleProps: MobileBannerProps[] = [
     variant: 'promotional',
     title: 'Promotional message',
     startIcon: 'info',
+    startIconActive: true,
     children: shortMessage,
     startIconAccessibilityLabel: 'Information',
     closeAccessibilityLabel: 'Close',
@@ -66,6 +71,7 @@ const styleProps: MobileBannerProps[] = [
     variant: 'error',
     title: 'Error message',
     startIcon: 'error',
+    startIconActive: true,
     children: shortMessage,
     startIconAccessibilityLabel: 'Error',
     closeAccessibilityLabel: 'Close',
@@ -156,6 +162,7 @@ const BannerScreen = () => {
           <Text font="title1">Global</Text>
           <Banner
             showDismiss
+            startIconActive
             closeAccessibilityLabel="Close"
             primaryAction={primaryAction}
             secondaryAction={secondaryAction}
@@ -173,6 +180,7 @@ const BannerScreen = () => {
           <Text font="title1">Inline</Text>
           <Banner
             showDismiss
+            startIconActive
             closeAccessibilityLabel="Close"
             primaryAction={primaryAction}
             secondaryAction={secondaryAction}
@@ -189,6 +197,7 @@ const BannerScreen = () => {
           <Text font="title1">Contextual</Text>
           <Banner
             showDismiss
+            startIconActive
             closeAccessibilityLabel="Close"
             label={label}
             primaryAction={primaryAction}
@@ -224,6 +233,7 @@ const BannerScreen = () => {
           />
           <Banner
             {...examplePropsWithOffset}
+            startIconActive
             startIcon="warning"
             startIconAccessibilityLabel="Warning"
             styleVariant="global"
@@ -249,6 +259,7 @@ const BannerScreen = () => {
           />
           <Banner
             {...examplePropsWithOffset}
+            startIconActive
             startIcon="warning"
             startIconAccessibilityLabel="Warning"
             styleVariant="inline"
@@ -283,6 +294,7 @@ const BannerScreen = () => {
           <Banner
             {...exampleProps}
             showDismiss
+            startIconActive
             alignItems="center"
             startIcon="warning"
             startIconAccessibilityLabel="Warning"

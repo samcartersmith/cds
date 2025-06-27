@@ -11,7 +11,7 @@ const IconCounterButtonScreen = () => {
     <ExampleScreen>
       <Example title="Normal">
         <HStack gap={4}>
-          <IconCounterButton accessibilityLabel="99 likes, like" count={99} icon="heartInactive" />
+          <IconCounterButton accessibilityLabel="99 likes, like" count={99} icon="heart" />
           <IconCounterButton
             accessibilityLabel="4200 comments, comment"
             count={4200}
@@ -27,10 +27,11 @@ const IconCounterButtonScreen = () => {
       <Example title="Colored">
         <HStack gap={4}>
           <IconCounterButton
+            active
             accessibilityLabel="99 likes, like"
             color="fgNegative"
             count={99}
-            icon="heartActive"
+            icon="heart"
           />
           <IconCounterButton
             accessibilityLabel="4200 comments, comment"

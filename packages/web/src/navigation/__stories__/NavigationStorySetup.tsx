@@ -40,7 +40,7 @@ export const items: Items = [
   { title: 'Assets', icon: 'chartPie' },
   { title: 'Trade', icon: 'trading' },
   { title: 'Pay', icon: 'pay' },
-  { title: 'For you', icon: 'newsfeed' },
+  { title: 'For you', icon: 'newsFeed' },
   { title: 'Earn', icon: 'giftBox' },
   { title: 'Borrow', icon: 'cash' },
   { title: 'DeFi', icon: 'defi' },
@@ -118,12 +118,13 @@ export function NavigationBarFullExample({
         <HStack alignItems="center" gap={1}>
           <IconButton name="helpCenterQuestionMark" />
           <IconButton
+            active
             accessibilityLabel="Notifications"
             name="bell"
             onClick={() => handlePress('Notifications')}
           />
           <IconButton name="appSwitcher" />
-          <IconButton name="profile" />
+          <IconButton active name="profile" />
         </HStack>
       }
       start={
@@ -149,6 +150,7 @@ export const NavigationBarTitle = () => {
       end={
         <HStack alignItems="center" gap={1}>
           <IconButton
+            active
             accessibilityLabel="Notifications"
             name="bell"
             onClick={() => handlePress('Notifications')}

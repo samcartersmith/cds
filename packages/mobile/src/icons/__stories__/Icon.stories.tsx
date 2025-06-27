@@ -52,12 +52,13 @@ const IconScreen = () => {
 
   const animatedIcon = (
     <Icon
+      active
       animated
       dangerouslySetColor={animationRef.interpolate({
         inputRange: [0, 1],
         outputRange: [theme.color.bgLine, theme.color.fgPrimary],
       })}
-      name="starActive"
+      name="star"
       size="l"
     />
   );
@@ -67,11 +68,11 @@ const IconScreen = () => {
       <Example title="Nesting icons">
         <VStack gap={1}>
           <Text align="end" font="body">
-            <TextIcon name="dot" size="xs" />
+            <TextIcon active name="dot" size="xs" />
             <Text font="body">This is some text</Text>
           </Text>
           <Text align="end" font="body">
-            <TextIcon name="dot" size="xs" />
+            <TextIcon active name="dot" size="xs" />
             <Text font="body">
               This is soooooooooooooome reallllllllllllllllly loooooooonnngggggg text
             </Text>

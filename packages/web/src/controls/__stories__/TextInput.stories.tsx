@@ -176,7 +176,7 @@ export const Disabled = function Disabled() {
       <TextInput
         disabled
         label="Label"
-        start={<InputIconButton transparent accessibilityLabel="Add" name="add" />}
+        start={<InputIconButton active transparent accessibilityLabel="Add" name="add" />}
       />
     </>
   );
@@ -230,7 +230,7 @@ export const Suffix = function Suffix() {
 export const SuffixAndEndContent = function SuffixAndEndContent() {
   return (
     <TextInput
-      end={<InputIconButton transparent accessibilityLabel="Add" name="add" />}
+      end={<InputIconButton active transparent accessibilityLabel="Add" name="add" />}
       label="Label"
       suffix="USD"
     />
@@ -487,7 +487,7 @@ export const CopyTextInput = function CopyTextInput() {
             <Link as="button" color={variantColorMap[variant]} font="legal" onClick={handleOnClick}>
               {copied ? 'copied' : 'copy'}
             </Link>
-            <InputIcon name="visibleActive" />
+            <InputIcon active name="visible" />
           </HStack>
         }
         helperText="Warning: Something interesting"

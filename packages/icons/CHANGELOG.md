@@ -8,6 +8,80 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 5.0.0 (6/25/2025 PST)
+
+#### 💥 Breaking
+
+- Publish icons 06/25/2025.
+- Removed ui/nav icon designations and updated export paths.
+- Regenerated icon font unicode mapping to ensure it stays within the Basic Multilingual Plane.
+
+### 🚀 Added (7):
+
+- baseApps
+- baseFeed
+- baseNotification
+- baseSquare
+- baseTransact
+- baseWallet
+- diamondIncentives
+
+### ☠️ Deleted (30):
+
+- bellInactive
+- bookmarkInactive
+- commentActive
+- diamondActive
+- diamondInactive
+- directDepositIconInactive
+- dropsActive
+- dropsInactive
+- faucetActive
+- faucetInactive
+- ghostActive
+- ghostInactive
+- hammerActive
+- hammerInactive
+- heartActive
+- heartInactive
+- infoInactive
+- nftBuyInactive
+- nftOfferInactive
+- nftSaleInactive
+- planetActive
+- planetInactive
+- reportInactive
+- royaltyActive
+- royaltyInactive
+- starInactive
+- sortDownCenterInactive
+- sortUpCenterInactive
+- taxesReceiptInactive
+- visibleActive
+
+### 🔄 Renamed (17):
+
+- bookmarkActive → bookmark
+- directDepositIconActive → directDepositIcon
+- followActive → following
+- followInactive → followAdd
+- nftBuyActive → nftBuy
+- nftOfferActive → nftOffer
+- nftSaleActive → nftSale
+- reportActive → report
+- rocketInactive → noRocket
+- seenActive → seen
+- starActive → star
+- visibleFilled → visible
+- visibleInactive → invisible
+
+### 🎉 Updated (4):
+
+- coinbaseOneCard
+- coinbaseRewards
+- crypto
+- privateClientProduct
+
 ## 4.6.2 (6/18/2025 PST)
 
 #### 🐞 Fixes
@@ -87,7 +161,7 @@ Generated with `yarn nx run icons:sync`
 - concierge
 - conciergeBell
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -548,7 +622,7 @@ Generated with `yarn nx run icons:sync`
 
 - payments
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -583,7 +657,7 @@ Generated with `yarn nx run icons:sync`
 
 - invoice
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1004,7 +1078,7 @@ Generated with `yarn nx run icons:sync`
 - walletLogo
 - walletProduct
 
-### 💥 Deleted
+### ☠️ Deleted
 
 Generated with `yarn nx run icons:sync`
 
@@ -1042,7 +1116,7 @@ Generated with `yarn nx run icons:sync`
 
 - orderBook
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1084,7 +1158,7 @@ Generated with `yarn nx run icons:sync`
 - priceAlertsCheck
 - verifiedPools
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1149,7 +1223,7 @@ Generated with `yarn nx run icons:sync`
 - folderOpen
 - priceAlerts
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1237,7 +1311,7 @@ Generated with `yarn nx run icons:sync`
 - login
 - logout
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1252,7 +1326,7 @@ Generated with `yarn nx run icons:sync`
 
 - Publish icons 4/1/2024. [[#2892](https://github.cbhq.net/frontend/cds/pull/2892)]
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1281,7 +1355,7 @@ Generated with `yarn nx run icons:sync`
 - coinbaseOneLogo
 - qrCode
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1320,7 +1394,7 @@ Generated with `yarn nx run icons:sync`
 - gaugeLow
 - gaugeMedium
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1350,7 +1424,7 @@ Generated with `yarn nx run icons:sync`
 
 - helpCenterQuestionMark
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1399,7 +1473,7 @@ Generated with `yarn nx run icons:sync`
 
 - support
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1443,7 +1517,7 @@ Generated with `yarn nx run icons:sync`
 - staking
 - waasProduct
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1474,7 +1548,7 @@ Generated with `yarn nx run icons:sync`
 - securityKey
 - walletLogo
 
-### 🐞 Renames
+### 🔄 Renamed
 
 Generated with `yarn nx run icons:sync`
 
@@ -1498,7 +1572,7 @@ Generated with `yarn nx run icons:sync`
 
 - Publish icons 08/14/2023. [[#2157](https://github.cbhq.net/frontend/cds/pull/2157)]
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1764,7 +1838,7 @@ Generated with `yarn nx run icons:sync`
 - regulatedFutures
 - rollingSpot
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -1793,7 +1867,7 @@ Generated with `yarn nx run icons:sync`
 
 - derivatives
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -2142,7 +2216,7 @@ Generated with `yarn nx run icons:sync`
 
 - passport
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -2274,7 +2348,7 @@ Generated with `yarn nx run icons:sync`
 
 - faucet
 
-### 🐞 Updated
+### 🎉 Updated
 
 Generated with `yarn nx run icons:sync`
 
@@ -2338,7 +2412,7 @@ Generated with `yarn nx run icons:sync`
 - transactions
 - wrapToken
 
-### 🐞 Renames
+### 🔄 Renamed
 
 #### Nav
 
@@ -2351,7 +2425,7 @@ Generated with `yarn nx run icons:sync`
 - heartNav -> heart
 - royaltyNav -> royalty
 
-### 💥 Deleted
+### ☠️ Deleted
 
 #### Ui
 

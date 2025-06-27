@@ -3308,6 +3308,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cbhq/icon-tasks@workspace:libs/icon-tasks":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/icon-tasks@workspace:libs/icon-tasks"
+  dependencies:
+    "@cbhq/figma-api": "workspace:^"
+    "@cbhq/script-utils": "workspace:^"
+    "@types/sharp": "npm:^0.31.0"
+    "@types/svgo": "npm:^2.6.4"
+    dotenv: "npm:^16.4.7"
+    sharp: "npm:^0.31.2"
+    svgo: "npm:^3.0.2"
+    tsx: "npm:^4.19.1"
+    webfont: "npm:11.2.26"
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/illustration-tasks@workspace:libs/illustration-tasks":
   version: 0.0.0-use.local
   resolution: "@cbhq/illustration-tasks@workspace:libs/illustration-tasks"

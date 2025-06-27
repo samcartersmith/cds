@@ -29,7 +29,7 @@ const exampleProps: SectionHeaderProps = {
   start: <RemoteImage shape="circle" size="m" source={assets.btc.imageUrl} />,
   icon: (
     <Tooltip content="Tooltip content" placement="right">
-      <Icon color="fg" name="info" size="xs" />
+      <Icon active color="fg" name="info" size="xs" />
     </Tooltip>
   ),
   balance: (

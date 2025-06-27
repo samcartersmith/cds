@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
-import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
+import { glyphMap } from '@cbhq/cds-icons/glyphMap';
 
 import { Pictogram } from '../../illustrations';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
@@ -189,7 +189,7 @@ describe('CellMedia', () => {
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByText(glyphMap['ui-arrowUp-24'])).toBeTruthy();
+    expect(screen.getByText(glyphMap['arrowUp-24-inactive'])).toBeTruthy();
   });
 
   it('renders an asset', () => {

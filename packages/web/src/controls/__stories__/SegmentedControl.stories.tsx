@@ -56,6 +56,7 @@ const iconOptions1: IconOptions = [
     label: 'ethereum',
     value: 'eth',
     accessibilityLabel: 'Ethereum',
+    active: true,
   },
   {
     label: 'cashUSD',

@@ -1,5 +1,5 @@
 import React, { forwardRef, memo } from 'react';
-import type { UiIconName } from '@cbhq/cds-icons';
+import type { IconName } from '@cbhq/cds-icons';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { Icon } from '../icons';
@@ -13,8 +13,10 @@ export type SectionHeaderBaseProps = {
   /* ReactNode (icon, asset, image, etc) to display before title. */
   start?: React.ReactNode;
   /* Icon or ReactNode to display after title. */
-  icon?: Exclude<React.ReactNode, 'string'> | UiIconName;
-  /** ReactNode or UiIconName to present balances wherever it is necessary */
+  icon?: Exclude<React.ReactNode, 'string'> | IconName;
+  /** Whether the icon is active */
+  iconActive?: boolean;
+  /** ReactNode or IconName to present balances wherever it is necessary */
   balance?: React.ReactNode;
   /** ReactNode to display up to 2 lines of copy that frames the section's purpose and relevance */
   description?: React.ReactNode;
@@ -33,6 +35,7 @@ export const SectionHeader = memo(
       title,
       start,
       icon,
+      iconActive,
       balance,
       description,
       end,
@@ -66,7 +69,7 @@ export const SectionHeader = memo(
               title
             )}
             {typeof icon === 'string' ? (
-              <Icon color="fg" name={icon as UiIconName} size="xs" />
+              <Icon active={iconActive} color="fg" name={icon as IconName} size="xs" />
             ) : (
               icon
             )}

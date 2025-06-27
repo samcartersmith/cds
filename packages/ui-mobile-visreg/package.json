@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/ui-mobile-visreg",
-  "version": "4.0.0",
+  "version": "4.0.0-rc.6",
+  "private": true,
   "description": "Visreg Helpers",
   "repository": {
     "type": "git",

@@ -18,6 +18,7 @@ type ListItem = {
   icon: IconName;
   title: string;
   description: string;
+  active?: boolean;
 };
 
 type SocialMediaItem = {
@@ -143,6 +144,7 @@ const listItems: ListItem[] = [
     icon: 'wallet',
     title: 'Enhanced security',
     description: 'Use your connected wallet to verify instead of your email and password',
+    active: true,
   },
   {
     icon: 'defi',
@@ -171,7 +173,7 @@ const socialMediaItems: SocialMediaItem[] = [
   },
   {
     name: 'Wallet',
-    icon: <Icon color="fg" name="wallet" size="m" />,
+    icon: <Icon active color="fg" name="wallet" size="m" />,
   },
 ];
 
@@ -187,12 +189,12 @@ export const Default = () => {
         onActionPress={onClickConsole}
         {...exampleProps}
       >
-        {listItems.map(({ icon, title, description }, index) => (
+        {listItems.map(({ icon, active, title, description }, index) => (
           <ListCell
             key={index}
             multiline
             description={description}
-            media={<CellMedia name={icon} type="icon" />}
+            media={<CellMedia active={active} name={icon} type="icon" />}
             outerSpacing={{ paddingX: 0 }}
             title={title}
           />

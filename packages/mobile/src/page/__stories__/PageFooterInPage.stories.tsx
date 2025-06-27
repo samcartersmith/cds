@@ -11,7 +11,7 @@ import { Text } from '../../typography/Text';
 import { PageFooter } from '../PageFooter';
 
 const exampleProps = {
-  end: <Icon accessibilityLabel="Show info" name="info" size="s" />,
+  end: <Icon active accessibilityLabel="Show info" name="info" size="s" />,
   endButton: <Button accessibilityLabel="Go Next">Next</Button>,
   endButtons: (
     <ButtonGroup accessibilityLabel="Group">

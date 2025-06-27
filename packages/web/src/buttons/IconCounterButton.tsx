@@ -2,7 +2,7 @@ import React, { forwardRef, memo } from 'react';
 import { ThemeVars } from '@cbhq/cds-common/core/theme';
 import type { IconSize, ValidateProps } from '@cbhq/cds-common/types';
 import { formatCount } from '@cbhq/cds-common/utils/formatCount';
-import type { UiIconName } from '@cbhq/cds-icons';
+import type { IconName } from '@cbhq/cds-icons';
 
 import { Icon } from '../icons/Icon';
 import { HStack } from '../layout/HStack';
@@ -10,10 +10,15 @@ import { Pressable, type PressableDefaultElement, type PressableProps } from '..
 import { Text } from '../typography/Text';
 
 export type IconCounterButtonBaseProps = {
-  /** Name of the icon or ReactNode */
-  icon: Exclude<React.ReactNode, 'string'> | UiIconName;
-  /** Size for given icon. */
+  /** Name of the icon or a ReactNode */
+  icon: Exclude<React.ReactNode, 'string'> | IconName;
+  /** @deprecated Use `size` instead. */
   iconSize?: IconSize;
+  /** Size for given icon. */
+  size?: IconSize;
+  /** Whether the icon is active */
+  active?: boolean;
+  /** Number to display */
   count?: number;
   /** Color of the icon */
   color?: ThemeVars.Color;
@@ -31,6 +36,8 @@ export const IconCounterButton = memo(
     {
       icon,
       iconSize = 's',
+      size = iconSize,
+      active,
       count = 0,
       color = 'fg',
       dangerouslySetColor,
@@ -51,10 +58,11 @@ export const IconCounterButton = memo(
         <HStack alignItems="center" gap={1}>
           {typeof icon === 'string' ? (
             <Icon
+              active={active}
               color={color}
               dangerouslySetColor={dangerouslySetColor}
-              name={icon as UiIconName}
-              size={iconSize}
+              name={icon as IconName}
+              size={size}
             />
           ) : (
             icon

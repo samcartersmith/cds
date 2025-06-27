@@ -18,7 +18,7 @@ export const IconCounterButtonExample = () => {
         Normal
       </Text>
       <HStack gap={4}>
-        <IconCounterButton count={99} icon="heartInactive" />
+        <IconCounterButton count={99} icon="heart" />
         <IconCounterButton count={4200} icon="comment" />
         <IconCounterButton count={9900000} icon="arrowsHorizontal" />
       </HStack>
@@ -27,7 +27,7 @@ export const IconCounterButtonExample = () => {
         Colored
       </Text>
       <HStack gap={4}>
-        <IconCounterButton color="fgNegative" count={99} icon="heartActive" />
+        <IconCounterButton active color="fgNegative" count={99} icon="heart" />
         <IconCounterButton color="fgPrimary" count={4200} icon="comment" />
         <IconCounterButton count={69000000} dangerouslySetColor="orange" icon="arrowsHorizontal" />
       </HStack>

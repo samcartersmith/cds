@@ -159,7 +159,7 @@ const InputScreen = () => {
       </Example>
       <Example inline title="TextInput endNode">
         <MockTextInput
-          end={<InputIcon name="lightningBolt" />}
+          end={<InputIcon active name="lightningBolt" />}
           helperText="Search for assets here"
           label="Search"
           placeholder="ex. Bitcoin"
@@ -206,7 +206,7 @@ const InputScreen = () => {
       </Example>
       <Example inline title="TextInput endNode 50%">
         <MockTextInput
-          end={<InputIcon name="lightningBolt" />}
+          end={<InputIcon active name="lightningBolt" />}
           helperText="Search for assets here"
           label="Search"
           placeholder="ex. Bitcoin"

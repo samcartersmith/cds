@@ -62,6 +62,7 @@ const NumpadExample1 = () => {
     if (value === '')
       return (
         <Banner
+          startIconActive
           bordered={false}
           numberOfLines={1}
           startIcon="error"
@@ -74,6 +75,7 @@ const NumpadExample1 = () => {
     if (parseFloat(value) >= VALUE_MAX) {
       return (
         <Banner
+          startIconActive
           bordered={false}
           numberOfLines={1}
           startIcon="error"

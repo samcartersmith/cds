@@ -4,10 +4,8 @@ import { throttle } from 'lodash';
 import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
 import { IconSize } from '@cbhq/cds-common/types';
 import type { IconName } from '@cbhq/cds-common/types/IconName';
-import navIconDescriptionMap from '@cbhq/cds-icons/__generated__/nav/data/descriptionMap';
-import navIconNames from '@cbhq/cds-icons/__generated__/nav/data/names';
-import uiIconDescriptionMap from '@cbhq/cds-icons/__generated__/ui/data/descriptionMap';
-import uiIconNames from '@cbhq/cds-icons/__generated__/ui/data/names';
+import { descriptionMap } from '@cbhq/cds-icons/descriptionMap';
+import { names } from '@cbhq/cds-icons/names';
 import { TileButton } from '@cbhq/cds-web/buttons/TileButton';
 import { SearchInput, Switch } from '@cbhq/cds-web/controls';
 import { Icon } from '@cbhq/cds-web/icons/Icon';
@@ -18,9 +16,7 @@ import { Text } from '@cbhq/cds-web/typography';
 import { SheetTabs } from '../SheetTabs';
 
 // use a set to dedupe the icons that existed in both the navigation icons set and the ui icons set
-const names = [...new Set([...navIconNames, ...uiIconNames])];
-const descriptionMap = { ...uiIconDescriptionMap, ...navIconDescriptionMap };
-const alphabeticallySortedNames = names.sort(sortByAlphabet);
+const alphabeticallySortedNames = [...names].sort(sortByAlphabet);
 
 const queryMatchesName = (query: string, name: string) => {
   const queryRe = new RegExp(query.trim().toLowerCase(), 'gi');

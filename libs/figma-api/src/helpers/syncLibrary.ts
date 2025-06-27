@@ -51,7 +51,9 @@ type SyncLibraryParams = {
 };
 
 export type SyncedLibrary = SyncedNodesAndImageUrls & {
+  /** The ids of every node of the requested type */
   remoteIds: string[];
+  /** The ids of the nodes of the requested type that have been updated since the last update */
   recentlyUpdatedIds: string[];
 };
 
@@ -63,10 +65,13 @@ export async function syncLibrary({
   filter = () => true,
   batchSize,
 }: SyncLibraryParams): Promise<SyncedLibrary> {
+  // Gets the entire file data from Figma
   const file = await getNormalizedFile(fileId, requestType);
-
+  // Filters the nodes for the requested node type
   const nodesForRequestType = Object.values(file.items).filter(filter);
+  // Gets the ids of every node of the requested type
   const remoteIds = nodesForRequestType.map((item) => item.node_id);
+  // Gets the ids of the nodes of the requested type that have been updated since the last update
   const recentlyUpdatedIds = getRecentlyUpdated({ lastUpdated, nodes: nodesForRequestType });
 
   const downloadedFormatsAndNodes = await getNodesAndImageUrls({

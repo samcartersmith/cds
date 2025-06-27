@@ -126,7 +126,7 @@ const Playground = memo(function Playground({
                   font="label1"
                   userSelect="none"
                 >
-                  <Icon color="fgMuted" name="pencil" paddingEnd={0.5} size="xs" /> Live Code
+                  <Icon active color="fgMuted" name="pencil" paddingEnd={0.5} size="xs" /> Live Code
                 </Text>
               </Box>
               <LiveEditor className={styles.playgroundEditor} />

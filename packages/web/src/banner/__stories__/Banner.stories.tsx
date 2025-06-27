@@ -22,6 +22,7 @@ type ExampleProps = Pick<
   | 'children'
   | 'marginX'
   | 'startIcon'
+  | 'startIconActive'
   | 'startIconAccessibilityLabel'
   | 'closeAccessibilityLabel'
 >;
@@ -29,6 +30,7 @@ type ExampleProps = Pick<
 const exampleProps: ExampleProps = {
   title: 'Failure Message',
   startIcon: 'error',
+  startIconActive: true,
   startIconAccessibilityLabel: 'Error',
   closeAccessibilityLabel: 'Close',
 };
@@ -44,6 +46,7 @@ const styleProps: BannerProps[] = [
     variant: 'warning',
     title: 'Warning message',
     startIcon: 'warning',
+    startIconActive: true,
     children: shortMessage,
     startIconAccessibilityLabel: 'Warning',
     closeAccessibilityLabel: 'Close',
@@ -52,6 +55,7 @@ const styleProps: BannerProps[] = [
     variant: 'informational',
     title: 'Informative message',
     startIcon: 'info',
+    startIconActive: true,
     children: shortMessage,
     startIconAccessibilityLabel: 'Information',
     closeAccessibilityLabel: 'Close',
@@ -60,6 +64,7 @@ const styleProps: BannerProps[] = [
     variant: 'promotional',
     title: 'Promotional message',
     startIcon: 'info',
+    startIconActive: true,
     children: shortMessage,
     startIconAccessibilityLabel: 'Information',
     closeAccessibilityLabel: 'Close',
@@ -68,6 +73,7 @@ const styleProps: BannerProps[] = [
     variant: 'error',
     title: 'Error message',
     startIcon: 'error',
+    startIconActive: true,
     children: shortMessage,
     startIconAccessibilityLabel: 'Error',
     closeAccessibilityLabel: 'Close',
@@ -176,6 +182,7 @@ export const BannerWithLink = () => {
       </Text>
       <Banner
         showDismiss
+        startIconActive
         closeAccessibilityLabel="Close"
         primaryAction={primaryAction}
         secondaryAction={secondaryAction}
@@ -194,6 +201,7 @@ export const BannerWithLink = () => {
       </Text>
       <Banner
         showDismiss
+        startIconActive
         closeAccessibilityLabel="Close"
         primaryAction={primaryAction}
         secondaryAction={secondaryAction}
@@ -212,6 +220,7 @@ export const BannerWithLink = () => {
       </Text>
       <Banner
         showDismiss
+        startIconActive
         closeAccessibilityLabel="Close"
         label={label}
         primaryAction={primaryAction}
@@ -252,6 +261,7 @@ export const CustomMargin = () => {
       />
       <Banner
         {...examplePropsWithMargin}
+        startIconActive
         startIcon="warning"
         startIconAccessibilityLabel="Warning"
         styleVariant="global"
@@ -279,6 +289,7 @@ export const CustomMargin = () => {
       />
       <Banner
         {...examplePropsWithMargin}
+        startIconActive
         startIcon="warning"
         startIconAccessibilityLabel="Warning"
         styleVariant="inline"
@@ -323,6 +334,7 @@ export const CustomAlignment = () => {
       <Banner
         {...exampleProps}
         showDismiss
+        startIconActive
         alignItems={{
           base: 'flex-start',
           tablet: 'center',

@@ -51,11 +51,7 @@ export const LikeButton = memo(function LikeButton({
         minHeight={size}
         minWidth={size}
       >
-        <Icon
-          color={liked ? 'fgNegative' : 'fg'}
-          name={liked ? 'heartActive' : 'heartInactive'}
-          size={iconSize}
-        />
+        <Icon active={liked} color={liked ? 'fgNegative' : 'fg'} name="heart" size={iconSize} />
         {count > 0 ? (
           <Text mono as="p" display="block" font="label1">
             {count}

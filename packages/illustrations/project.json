@@ -7,15 +7,6 @@
     "build": {
       "command": "rm -rf esm && babel ./src --out-dir esm --extensions .ts,.tsx,.js,.jsx --copy-files --no-copy-ignored"
     },
-    "mobile-build": {
-      "executor": "nx:run-commands",
-      "dependsOn": [
-        "build"
-      ],
-      "options": {
-        "command": "echo 'Building illustrations for mobile'"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
     },

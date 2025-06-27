@@ -129,7 +129,7 @@ with a TypeAhead component.
       helperText="Valid BTC address"
       variant="positive"
       placeholder="HaeJiWplJohn6W42eCq0Qqft0"
-      end={<InputIcon color="fgPositive" name="visibleActive" />}
+      end={<InputIcon active color="fgPositive" name="visible" />}
     />
   </VStack>
 
@@ -140,7 +140,7 @@ with a TypeAhead component.
       helperText="Invalid BTC address"
       variant="negative"
       placeholder="HaeJiWplJohn6W42eCq0Qqft0"
-      end={<InputIcon color="fgNegative" name="visibleActive" />}
+      end={<InputIcon active color="fgNegative" name="visible" />}
     />
   </VStack>
 </VStack>
@@ -379,7 +379,7 @@ function CopyTextField() {
           <Link onClick={() => setCopied(true)} variant="caption" color={variant}>
             {copied ? 'copied' : 'copy'}
           </Link>
-          <InputIcon color="primary" name="visibleActive" />
+          <InputIcon active color="primary" name="visible" />
         </HStack>
       }
       onChange={handleOnChange}
@@ -521,7 +521,7 @@ function testExample() {
           />
         </Box>
       }
-      end={<InputIcon color="primary" name="visibleActive" />}
+      end={<InputIcon active color="primary" name="visible" />}
     />
   );
 }

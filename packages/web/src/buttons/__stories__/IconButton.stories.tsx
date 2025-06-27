@@ -1,5 +1,5 @@
 import React from 'react';
-import names from '@cbhq/cds-icons/__generated__/ui/data/names';
+import { names } from '@cbhq/cds-icons/names';
 
 import { HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
@@ -103,49 +103,27 @@ export const Default = () => (
   </VStack>
 );
 
-export const All1 = () => {
-  const startIndex = 0;
-  const endIndex = 160;
-
+const IconButtonSheet = ({ startIndex, endIndex }: { startIndex: number; endIndex: number }) => {
   return (
     <HStack flexWrap="wrap" gap={2} paddingBottom={2}>
-      {names.slice(startIndex, endIndex).map((name) => {
-        return (
-          <VStack key={`icon-wrapper-${name}`} gap={2}>
-            <HStack alignItems="center" gap={2}>
-              <IconButton accessibilityLabel={name} name={name} variant="primary" />
-              <IconButton accessibilityLabel={name} name={name} variant="secondary" />
-              <IconButton accessibilityLabel={name} name={name} variant="foregroundMuted" />
-              <IconButton accessibilityLabel={name} name={name} />
-            </HStack>
-          </VStack>
-        );
-      })}
+      {names.slice(startIndex, endIndex).map((name) => (
+        <VStack key={name}>
+          <HStack alignItems="center" gap={2}>
+            <IconButton accessibilityLabel={name} name={name} variant="primary" />
+            <IconButton accessibilityLabel={name} name={name} variant="secondary" />
+            <IconButton accessibilityLabel={name} name={name} variant="foregroundMuted" />
+          </HStack>
+        </VStack>
+      ))}
     </HStack>
   );
 };
 
-export const All2 = () => {
-  const startIndex = 160;
-  const endIndex = 320;
-
-  return (
-    <HStack flexWrap="wrap" gap={2} paddingBottom={2}>
-      {names.slice(startIndex, endIndex).map((name) => {
-        return (
-          <VStack key={`icon-wrapper-${name}`} gap={2}>
-            <HStack alignItems="center" gap={2}>
-              <IconButton accessibilityLabel={name} name={name} variant="primary" />
-              <IconButton accessibilityLabel={name} name={name} variant="secondary" />
-              <IconButton accessibilityLabel={name} name={name} variant="foregroundMuted" />
-              <IconButton accessibilityLabel={name} name={name} />
-            </HStack>
-          </VStack>
-        );
-      })}
-    </HStack>
-  );
-};
+// single sheet is too large for Percy, need to split up in chunks of 160 to stay under resource limit
+export const Sheet1 = () => <IconButtonSheet endIndex={160} startIndex={0} />;
+export const Sheet2 = () => <IconButtonSheet endIndex={320} startIndex={160} />;
+export const Sheet3 = () => <IconButtonSheet endIndex={480} startIndex={320} />;
+export const Sheet4 = () => <IconButtonSheet endIndex={640} startIndex={480} />;
 
 export default {
   title: 'Core Components/Buttons/IconButton',

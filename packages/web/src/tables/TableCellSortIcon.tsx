@@ -16,6 +16,7 @@ export const TableCellSortIcon = memo(({ direction }: TableCellSortIconProps) =>
     <VStack gap={0.5}>
       <Box marginBottom={-0.5}>
         <Icon
+          active
           aria-hidden="true"
           color={upColor}
           name="sortUpCenter"
@@ -25,6 +26,7 @@ export const TableCellSortIcon = memo(({ direction }: TableCellSortIconProps) =>
       </Box>
       <Box marginTop={-0.5}>
         <Icon
+          active
           aria-hidden="true"
           color={downColor}
           name="sortDownCenter"

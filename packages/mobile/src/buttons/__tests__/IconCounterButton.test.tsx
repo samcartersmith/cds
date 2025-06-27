@@ -45,7 +45,7 @@ describe('IconCounterButton', () => {
     const ref = React.createRef<View>();
     render(
       <DefaultThemeProvider>
-        <IconCounterButton ref={ref} icon="heartActive" />
+        <IconCounterButton ref={ref} active icon="heart" />
       </DefaultThemeProvider>,
     );
 

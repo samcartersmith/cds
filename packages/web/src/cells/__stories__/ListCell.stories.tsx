@@ -459,10 +459,10 @@ const WithAccessory = () => (
 
 const WithMedia = () => (
   <>
-    <ListCell media={<CellMedia name="email" type="icon" />} title="Icon" />
+    <ListCell media={<CellMedia active name="email" type="icon" />} title="Icon" />
 
     <ListCell
-      media={<CellMedia name="email" type="icon" />}
+      media={<CellMedia active name="email" type="icon" />}
       onClick={onClickConsole}
       title="Icon (pressable)"
     />

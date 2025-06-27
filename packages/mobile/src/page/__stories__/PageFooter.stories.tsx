@@ -9,7 +9,7 @@ import { Divider } from '../../layout';
 import { PageFooter } from '../PageFooter';
 
 const exampleProps = {
-  end: <Icon name="info" size="s" />,
+  end: <Icon active name="info" size="s" />,
   endButton: <Button>Next</Button>,
   endButtons: (
     <ButtonGroup accessibilityLabel="Group">

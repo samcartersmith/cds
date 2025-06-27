@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
+import { glyphMap } from '@cbhq/cds-icons/glyphMap';
 
 import { DefaultThemeProvider } from '../../utils/test';
 import { Checkbox } from '../Checkbox';
@@ -15,7 +15,7 @@ describe('Checkbox', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-checkmark-16']);
+    const icon = screen.getByText(glyphMap['checkmark-16-inactive']);
     expect(icon).toBeTruthy();
   });
 
@@ -28,7 +28,7 @@ describe('Checkbox', () => {
       </DefaultThemeProvider>,
     );
 
-    const icon = screen.getByText(glyphMap['ui-minus-16']);
+    const icon = screen.getByText(glyphMap['minus-16-inactive']);
     expect(icon).toBeTruthy();
   });
 });

@@ -24,13 +24,19 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
 
 export const AddCustomColor = () => {
   return (
-    <TextInput label="Label" start={<InputIcon disableInheritFocusStyle color="fg" name="add" />} />
+    <TextInput
+      label="Label"
+      start={<InputIcon active disableInheritFocusStyle color="fg" name="add" />}
+    />
   );
 };
 
 export const AddCustomColorEnd = () => {
   return (
-    <TextInput end={<InputIcon disableInheritFocusStyle color="fg" name="add" />} label="Label" />
+    <TextInput
+      end={<InputIcon active disableInheritFocusStyle color="fg" name="add" />}
+      label="Label"
+    />
   );
 };
 
@@ -41,7 +47,7 @@ export const Basic = () => {
         <TextInput
           key={`${variant}-inputicon`}
           label={variant}
-          start={<InputIcon color={variantColorMap[variant]} name="add" />}
+          start={<InputIcon active color={variantColorMap[variant]} name="add" />}
           variant={variant}
         />
       ))}
@@ -50,7 +56,7 @@ export const Basic = () => {
 };
 
 export const BasicEnd = () => {
-  return <TextInput end={<InputIcon name="add" />} label="Label" />;
+  return <TextInput end={<InputIcon active name="add" />} label="Label" />;
 };
 
 export const DefaultsToForeground = () => {
@@ -60,7 +66,7 @@ export const DefaultsToForeground = () => {
 export const InvalidPlacement = () => {
   return (
     <Box background="bgAlternate">
-      <InputIcon name="add" />
+      <InputIcon active name="add" />
     </Box>
   );
 };

@@ -13,6 +13,8 @@ export type CellMediaType = 'asset' | 'avatar' | 'image' | 'icon' | 'pictogram';
 export type CellMediaIconProps = {
   type: Extract<CellMediaType, 'icon'>;
   name: IconName;
+  /** Whether the icon is active */
+  active?: boolean;
   color?: Extract<ThemeVars.Color, 'fgPrimary' | 'fg' | 'fgMuted'>;
 };
 
@@ -48,6 +50,7 @@ export const CellMedia = memo(function CellMedia(props: CellMediaProps) {
     content = (
       <Icon
         accessibilityLabel={props.accessibilityLabel}
+        active={props.active}
         color={props.color ?? 'fg'}
         name={props.name}
         size="s"

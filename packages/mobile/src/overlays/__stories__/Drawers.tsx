@@ -54,7 +54,7 @@ export const navOptions: NavOptionProps[] = [
   },
   {
     label: 'Invite friends',
-    icon: 'followActive',
+    icon: 'following',
   },
   {
     label: 'Send a gift',

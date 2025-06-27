@@ -38,6 +38,8 @@ export type BannerBaseProps = SharedProps & {
   variant: BannerVariant;
   /** Name of icon to be shown in the banner */
   startIcon: IconName;
+  /** Whether the start icon is active */
+  startIconActive?: boolean;
   /** Provide a CDS Link component to be used as a primary action. It will inherit colors depending on the provided variant */
   primaryAction?: React.ReactNode;
   /** Provide a CDS Link component to be used as a secondary action. It will inherit colors depending on the provided tone */
@@ -85,6 +87,7 @@ export const Banner = memo(
     {
       variant,
       startIcon,
+      startIconActive,
       onClose,
       primaryAction,
       secondaryAction,
@@ -215,6 +218,7 @@ export const Banner = memo(
             accessible={!!startIconAccessibilityLabel}
           >
             <Icon
+              active={startIconActive}
               color={iconColor}
               name={startIcon}
               paddingX={0.5}

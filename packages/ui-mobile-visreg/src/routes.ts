@@ -265,11 +265,6 @@ export const routes = [
         .default,
   },
   {
-    key: 'NavigationIcon',
-    getComponent: () =>
-      require('@cbhq/cds-mobile/icons/__stories__/NavigationIcon.stories').default,
-  },
-  {
     key: 'NudgeCard',
     getComponent: () => require('@cbhq/cds-mobile/cards/__stories__/NudgeCard.stories').default,
   },

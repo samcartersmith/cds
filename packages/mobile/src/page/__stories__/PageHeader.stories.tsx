@@ -47,6 +47,7 @@ const exampleProps = {
   ),
   end1: (
     <IconButton
+      active
       transparent
       accessibilityLabel="Show Info"
       name="info"
@@ -90,6 +91,7 @@ const exampleProps = {
   ),
   end4: (
     <IconButton
+      active
       transparent
       accessibilityLabel="Show Info"
       name="info"

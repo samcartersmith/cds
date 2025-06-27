@@ -1,6 +1,6 @@
 import React from 'react';
 import { GestureResponderEvent } from 'react-native';
-import names from '@cbhq/cds-icons/__generated__/ui/data/names';
+import { names } from '@cbhq/cds-icons/names';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { HStack } from '../../layout';

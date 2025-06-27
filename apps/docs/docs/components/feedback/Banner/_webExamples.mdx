@@ -7,6 +7,7 @@ The global warning banner is used to communicate important alerts or warnings to
   showDismiss
   label="Message last updated today at 3:33pm"
   startIcon="warning"
+  startIconActive
   styleVariant="global"
   title="Some features are temporarily unavailable"
   variant="warning"
@@ -27,6 +28,7 @@ The In-line Error Banner is used to display specific error messages directly ben
 ```jsx live
 <Banner
   startIcon="info"
+  startIconActive
   styleVariant="inline"
   title="Some features are temporarily unavailable"
   variant="error"
@@ -47,6 +49,7 @@ The Contextual Promotional Banner is used to highlight special offers, promotion
 ```jsx live
 <Banner
   startIcon="info"
+  startIconActive
   styleVariant="contextual"
   title="Some features are temporarily unavailable"
   variant="promotional"
@@ -66,6 +69,7 @@ The in-line Informational Banner is used to provide users with additional inform
 <VStack gap={2}>
   <Banner
     startIcon="info"
+    startIconActive
     styleVariant="inline"
     title="Some features are temporarily unavailable"
     variant="informational"
@@ -79,6 +83,7 @@ The in-line Informational Banner is used to provide users with additional inform
   </Banner>
   <Banner
     startIcon="warning"
+    startIconActive
     styleVariant="inline"
     title="Some features are temporarily unavailable"
     variant="warning"

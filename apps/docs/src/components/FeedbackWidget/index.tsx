@@ -83,6 +83,7 @@ export function FeedbackWidget() {
           <HStack aria-label="Page feedback options" gap={2} role="group">
             <Button
               compact
+              startIconActive
               accessibilityLabel="Yes, this page is useful"
               data-feedback-type="positive"
               onClick={handleClick}
@@ -93,6 +94,7 @@ export function FeedbackWidget() {
             </Button>
             <Button
               compact
+              startIconActive
               accessibilityLabel="No, this page is not useful"
               data-feedback-type="negative"
               onClick={handleClick}

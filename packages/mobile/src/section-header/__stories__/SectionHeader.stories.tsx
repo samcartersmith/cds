@@ -18,7 +18,7 @@ import { SectionHeader } from '../SectionHeader';
 const defaultProps: SectionHeaderProps = {
   title: 'SectionHeader',
   start: <RemoteImage shape="circle" size="m" source={assets.btc.imageUrl} />,
-  icon: <Icon color="fg" name="info" size="xs" />,
+  icon: <Icon active color="fg" name="info" size="xs" />,
   balance: (
     <HStack alignItems="flex-end" flexWrap="wrap" gap={0.5}>
       <Text color="fgMuted" font="title3" numberOfLines={1}>

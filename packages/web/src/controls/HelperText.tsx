@@ -45,6 +45,7 @@ export const HelperText = memo(function HelperTex({
       {color === 'fgNegative' && (
         <Box as="span" className={iconStyle}>
           <Icon
+            active
             accessibilityLabel={errorIconAccessibilityLabel}
             color="fgNegative"
             dangerouslySetColor={dangerouslySetColor}

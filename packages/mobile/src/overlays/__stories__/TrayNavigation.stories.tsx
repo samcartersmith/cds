@@ -29,7 +29,7 @@ const NavigationTray = () => {
     <>
       <HStack gap={2} justifyContent="flex-end" minHeight={200}>
         <IconButton name="hamburger" onPress={handleAppSwitcherPress} />
-        <IconButton name="profile" onPress={NoopFn} />
+        <IconButton active name="profile" onPress={NoopFn} />
       </HStack>
       {isTrayVisible && (
         <Tray ref={trayRef} onCloseComplete={setIsTrayVisibleToFalse}>

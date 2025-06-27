@@ -1,4 +1,4 @@
-import { UiIconName } from '@cbhq/cds-icons';
+import { IconName } from '@cbhq/cds-icons';
 
 import { SharedAccessibilityProps } from './SharedAccessibilityProps';
 import { SharedProps } from './SharedProps';
@@ -10,7 +10,9 @@ export type SectionHeaderProps = {
   /* ReactNode (icon, asset, image, etc) to display before title. */
   start?: React.ReactNode;
   /* Icon or ReactNode to display after title. */
-  icon?: Exclude<React.ReactNode, 'string'> | UiIconName;
+  icon?: Exclude<React.ReactNode, 'string'> | IconName;
+  /** Whether the icon is active */
+  iconActive?: boolean;
   /** ReactNode or UiIconName to present balances wherever it is necessary */
   balance?: React.ReactNode;
   /** ReactNode to display up to 2 lines of copy that frames the section's purpose and relevance */

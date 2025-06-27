@@ -6,7 +6,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 4.0.0-rc.6 (6/27/2025 PST)
+
+#### 🚀 Updates
+
+- Remove NavigationIcon routes.
 
 #### 📘 Misc
 

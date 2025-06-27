@@ -122,7 +122,7 @@ function generateSubHead(
 const HeaderLabel = () => {
   return (
     <HStack alignItems="center" gap={1} paddingBottom={0}>
-      <Icon name="wallet" size="s" />
+      <Icon active name="wallet" size="s" />
       <TextTitle3 as="span">CustomHeader</TextTitle3>
     </HStack>
   );

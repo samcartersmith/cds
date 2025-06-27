@@ -27,26 +27,8 @@
         }
       }
     },
-    "mobile-build": {
-      "executor": "nx:run-commands",
-      "dependsOn": [
-        "build"
-      ],
-      "options": {
-        "command": "echo 'Building icons for mobile'"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
-    },
-    "generate-stories": {
-      "command": "tsx ./scripts/generateStories.ts",
-      "dependsOn": [
-        "^build"
-      ],
-      "options": {
-        "cwd": "packages/icons"
-      }
     }
   }
 }

@@ -41,7 +41,7 @@ const ToolTipWithA11y = ({ tooltipText, yShiftByStatusBarHeight }: Omit<ContentT
       yShiftByStatusBarHeight={yShiftByStatusBarHeight}
     >
       <View ref={triggerRef}>
-        <Icon name="info" size="s" />
+        <Icon active name="info" size="s" />
       </View>
     </Tooltip>
   );
@@ -106,7 +106,7 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
-            <Icon name="info" size="s" />
+            <Icon active name="info" size="s" />
           </Tooltip>
           <Tooltip
             accessibilityLabel="Info"
@@ -114,7 +114,7 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
-            <Icon name="info" size="s" />
+            <Icon active name="info" size="s" />
           </Tooltip>
           <Tooltip
             accessibilityLabel="Info"
@@ -122,7 +122,7 @@ const Content = ({ title, tooltipText, yShiftByStatusBarHeight }: ContentTypes) 
             placement="bottom"
             yShiftByStatusBarHeight={yShiftByStatusBarHeight}
           >
-            <Icon name="info" size="s" />
+            <Icon active name="info" size="s" />
           </Tooltip>
         </HStack>
         <HStack justifyContent="space-evenly">

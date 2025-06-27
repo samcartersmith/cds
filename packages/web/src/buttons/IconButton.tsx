@@ -27,6 +27,8 @@ export type IconButtonBaseProps = Polymorphic.ExtendableProps<
   Pick<ButtonBaseProps, 'disabled' | 'transparent' | 'compact' | 'flush'> & {
     /** Name of the icon, as defined in Figma. */
     name: IconName;
+    /** Whether the icon is active */
+    active?: boolean;
     /**
      * Toggle design and visual variants.
      * @default primary
@@ -79,6 +81,7 @@ export const IconButton: IconButtonComponent = memo(
         width = compact ? 40 : 56,
         className,
         name,
+        active,
         flush,
         loading,
         accessibilityLabel,
@@ -142,7 +145,7 @@ export const IconButton: IconButtonComponent = memo(
               testID={props.testID ? `${props.testID}-spinner` : undefined}
             />
           ) : (
-            <Icon color="currentColor" name={name} size={iconSize} />
+            <Icon active={active} color="currentColor" name={name} size={iconSize} />
           )}
         </Pressable>
       );

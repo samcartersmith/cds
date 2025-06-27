@@ -97,9 +97,9 @@ const WithAccessory = () => (
 
 const WithMedia = () => (
   <>
-    <ContentCell media={<CellMedia name="email" type="icon" />} title="Icon" />
+    <ContentCell media={<CellMedia active name="email" type="icon" />} title="Icon" />
     <ContentCell
-      media={<CellMedia name="email" type="icon" />}
+      media={<CellMedia active name="email" type="icon" />}
       onPress={onPressConsole}
       title="Icon (pressable)"
     />

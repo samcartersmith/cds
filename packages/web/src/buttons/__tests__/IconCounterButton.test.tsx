@@ -10,7 +10,7 @@ describe('IconCounterButton', () => {
   it('renders without crashing', () => {
     render(
       <DefaultThemeProvider>
-        <IconCounterButton icon="heartActive" />
+        <IconCounterButton active icon="heart" />
       </DefaultThemeProvider>,
     );
     expect(screen.getByRole('button')).toBeInTheDocument();
@@ -43,17 +43,17 @@ describe('IconCounterButton', () => {
   it('displays the correct icon', () => {
     render(
       <DefaultThemeProvider>
-        <IconCounterButton icon="heartActive" />
+        <IconCounterButton active icon="heart" />
       </DefaultThemeProvider>,
     );
-    expect(screen.getByTestId('icon-base-glyph')).toHaveAttribute('data-icon-name', 'heartActive');
+    expect(screen.getByTestId('icon-base-glyph')).toHaveAttribute('data-icon-name', 'heart');
   });
 
   it('forwards ref correctly', () => {
     const ref = React.createRef<HTMLButtonElement>();
     render(
       <DefaultThemeProvider>
-        <IconCounterButton ref={ref} icon="heartActive" />
+        <IconCounterButton ref={ref} active icon="heart" />
       </DefaultThemeProvider>,
     );
 
@@ -64,7 +64,7 @@ describe('IconCounterButton', () => {
   it('passes testId correctly', () => {
     render(
       <DefaultThemeProvider>
-        <IconCounterButton icon="heartActive" testID="icon-counter-button-test-id" />
+        <IconCounterButton active icon="heart" testID="icon-counter-button-test-id" />
       </DefaultThemeProvider>,
     );
 
@@ -74,7 +74,7 @@ describe('IconCounterButton', () => {
   it('displays the count correctly when count is less than 1000', () => {
     render(
       <DefaultThemeProvider>
-        <IconCounterButton count={999} icon="heartActive" />
+        <IconCounterButton active count={999} icon="heart" />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('999')).toBeInTheDocument();
@@ -83,7 +83,7 @@ describe('IconCounterButton', () => {
   it('displays the count correctly when count is 1000', () => {
     render(
       <DefaultThemeProvider>
-        <IconCounterButton count={1000} icon="heartActive" />
+        <IconCounterButton active count={1000} icon="heart" />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('1K')).toBeInTheDocument();
@@ -92,7 +92,7 @@ describe('IconCounterButton', () => {
   it('displays the count correctly when count is 1500', () => {
     render(
       <DefaultThemeProvider>
-        <IconCounterButton count={1500} icon="heartActive" />
+        <IconCounterButton active count={1500} icon="heart" />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('1.5K')).toBeInTheDocument();
@@ -101,7 +101,7 @@ describe('IconCounterButton', () => {
   it('displays the count correctly when count is 1000000', () => {
     render(
       <DefaultThemeProvider>
-        <IconCounterButton count={1000000} icon="heartActive" />
+        <IconCounterButton active count={1000000} icon="heart" />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('1M')).toBeInTheDocument();
@@ -110,7 +110,7 @@ describe('IconCounterButton', () => {
   it('displays the count correctly when count is 1500000', () => {
     render(
       <DefaultThemeProvider>
-        <IconCounterButton count={1500000} icon="heartActive" />
+        <IconCounterButton active count={1500000} icon="heart" />
       </DefaultThemeProvider>,
     );
     expect(screen.getByText('1.5M')).toBeInTheDocument();

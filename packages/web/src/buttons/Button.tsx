@@ -147,10 +147,14 @@ export type ButtonBaseProps = Polymorphic.ExtendableProps<
       start?: React.ReactNode;
       /** Icon to render at the start of the button. */
       startIcon?: IconName;
+      /** Whether the start icon is active */
+      startIconActive?: boolean;
       /** Set the end node */
       end?: React.ReactNode;
       /** Icon to render at the end of the button. */
       endIcon?: IconName;
+      /** Whether the end icon is active */
+      endIconActive?: boolean;
       /** Ensure the button aligns flush on the left or right.
        * This prop will translate the entire button left/right,
        * so take care to ensure it is not overflowing awkwardly
@@ -191,8 +195,10 @@ export const Button: ButtonComponent = memo(
         children,
         start,
         startIcon,
+        startIconActive,
         end,
         endIcon,
+        endIconActive,
         flush,
         noScaleOnPress,
         numberOfLines,
@@ -251,7 +257,12 @@ export const Button: ButtonComponent = memo(
             <span className={startNodeStyle}>{start}</span>
           ) : startIcon ? (
             <span className={startNodeStyle}>
-              <Icon color="currentColor" name={startIcon} size={iconSize} />
+              <Icon
+                active={startIconActive}
+                color="currentColor"
+                name={startIcon}
+                size={iconSize}
+              />
             </span>
           ) : null}
 
@@ -275,7 +286,7 @@ export const Button: ButtonComponent = memo(
             <span className={endNodeStyle}>{end}</span>
           ) : endIcon ? (
             <span className={endNodeStyle}>
-              <Icon color="currentColor" name={endIcon} size={iconSize} />
+              <Icon active={endIconActive} color="currentColor" name={endIcon} size={iconSize} />
             </span>
           ) : null}
         </Pressable>

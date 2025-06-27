@@ -31,7 +31,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Components',
       customProps: {
-        icon: 'newsfeed',
+        icon: 'newsFeed',
         kbar: {
           description: 'Design guidelines, figma resources and code components',
         },

@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
 import { ThemeVars } from '@cbhq/cds-common/core/theme';
-import glyphMap from '@cbhq/cds-icons/__generated__/glyphMap';
+import { glyphMap } from '@cbhq/cds-icons/glyphMap';
 
 import { useTheme } from '../hooks/useTheme';
 import { getIconSourceSize } from '../icons/Icon';
@@ -31,7 +31,7 @@ export const HelperText = memo(function HelperText({
   // Get info icon for negative variant
   const iconSize = theme.iconSize.xs;
   const sourceSize = getIconSourceSize(iconSize);
-  const glyphKey = `ui-info-${sourceSize}` as const;
+  const glyphKey = `info-${sourceSize}-active` as const;
   const glyph = glyphMap[glyphKey];
 
   const iconStyle = useMemo(

@@ -1,3 +1,4 @@
+// import { useEffect, useState } from 'react';
 import { Inter_400Regular } from '@expo-google-fonts/inter/400Regular';
 import { Inter_600SemiBold } from '@expo-google-fonts/inter/600SemiBold';
 import { useFonts as useFontsInter } from '@expo-google-fonts/inter/useFonts';
@@ -7,7 +8,7 @@ import { useFonts as useFontsSourceCodePro } from '@expo-google-fonts/source-cod
 import { useFonts as useFontsExpo } from 'expo-font';
 
 const localFonts = {
-  CoinbaseIcons: require('../../assets/fonts/CoinbaseIcons.ttf') as string,
+  CoinbaseIcons: require('@cbhq/cds-icons/fonts/native/CoinbaseIcons.ttf') as string,
 };
 
 const interFonts = {

@@ -34,8 +34,8 @@ const FrontierExampleScreen = () => (
           <Button transparent variant="secondary">
             Secondary button transparent
           </Button>
-          <IconButton name="add" variant="secondary" />
-          <IconButton transparent name="add" variant="secondary" />
+          <IconButton active name="add" variant="secondary" />
+          <IconButton active transparent name="add" variant="secondary" />
         </VStack>
         <VStack bordered borderRadius={400} padding={2}>
           <Text font="body" paddingBottom={3}>

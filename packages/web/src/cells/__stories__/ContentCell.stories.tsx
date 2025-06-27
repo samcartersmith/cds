@@ -101,9 +101,9 @@ export const WithAccessory = () => (
 
 export const WithMedia = () => (
   <>
-    <ContentCell media={<CellMedia name="email" type="icon" />} title="Icon" />
+    <ContentCell media={<CellMedia active name="email" type="icon" />} title="Icon" />
     <ContentCell
-      media={<CellMedia name="email" type="icon" />}
+      media={<CellMedia active name="email" type="icon" />}
       onClick={onClickConsole}
       title="Icon (pressable)"
     />

@@ -62,10 +62,14 @@ export type ButtonBaseProps = SharedProps &
     start?: React.ReactNode;
     /** Icon to render at the start of the button. */
     startIcon?: IconName;
+    /** Whether the start icon is active */
+    startIconActive?: boolean;
     /** Set the end node */
     end?: React.ReactNode;
     /** Icon to render at the end of the button. */
     endIcon?: IconName;
+    /** Whether the end icon is active */
+    endIconActive?: boolean;
     /** Ensure the button aligns flush on the left or right.
      * This prop will translate the entire button left/right,
      * so take care to ensure it is not overflowing awkwardly
@@ -95,8 +99,10 @@ export const Button = memo(
       children,
       start,
       startIcon,
+      startIconActive,
       end,
       endIcon,
+      endIconActive,
       flush,
       noScaleOnPress,
       numberOfLines = 1,
@@ -200,6 +206,7 @@ export const Button = memo(
               {start ??
                 (startIcon ? (
                   <Icon
+                    active={startIconActive}
                     color={colorValue}
                     name={startIcon}
                     paddingEnd={1}
@@ -212,6 +219,7 @@ export const Button = memo(
               {end ??
                 (endIcon ? (
                   <Icon
+                    active={endIconActive}
                     color={colorValue}
                     name={endIcon}
                     paddingStart={1}

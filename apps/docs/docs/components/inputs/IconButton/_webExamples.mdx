@@ -18,12 +18,14 @@ label node (See [Composed example](#composed-example)).
     <Text font="title3">Basic variants</Text>
     <HStack gap={2}>
       <IconButton
+        active
         name="orderHistory"
         accessibilityLabel="View transaction history"
         variant="primary"
         onClick={console.log}
       />
       <IconButton
+        active
         name="gear"
         accessibilityLabel="View settings"
         variant="secondary"
@@ -42,6 +44,7 @@ label node (See [Composed example](#composed-example)).
     <Text font="title3">Transparent variants</Text>
     <HStack gap={2}>
       <IconButton
+        active
         name="orderHistory"
         accessibilityLabel="View past order history"
         variant="primary"
@@ -49,6 +52,7 @@ label node (See [Composed example](#composed-example)).
         onClick={console.log}
       />
       <IconButton
+        active
         name="gear"
         accessibilityLabel="Update settings"
         variant="secondary"
@@ -69,6 +73,7 @@ label node (See [Composed example](#composed-example)).
     <Text font="title3">Loading states</Text>
     <HStack gap={2}>
       <IconButton
+        active
         name="orderHistory"
         accessibilityLabel="Loading transaction history"
         variant="primary"
@@ -76,6 +81,7 @@ label node (See [Composed example](#composed-example)).
         onClick={console.log}
       />
       <IconButton
+        active
         name="gear"
         accessibilityLabel="Loading settings"
         variant="secondary"
@@ -96,6 +102,7 @@ label node (See [Composed example](#composed-example)).
     <Text font="title3">Disabled states</Text>
     <HStack gap={2}>
       <IconButton
+        active
         name="orderHistory"
         accessibilityLabel="View transaction history"
         variant="primary"
@@ -103,6 +110,7 @@ label node (See [Composed example](#composed-example)).
         onClick={console.log}
       />
       <IconButton
+        active
         name="gear"
         accessibilityLabel="View settings"
         variant="secondary"
@@ -123,6 +131,7 @@ label node (See [Composed example](#composed-example)).
     <Text font="title3">Sizing</Text>
     <HStack gap={2} alignItems="center">
       <IconButton
+        active
         name="gear"
         accessibilityLabel="Settings - compact"
         variant="primary"
@@ -130,6 +139,7 @@ label node (See [Composed example](#composed-example)).
         onClick={console.log}
       />
       <IconButton
+        active
         name="gear"
         accessibilityLabel="Settings - regular"
         variant="primary"
@@ -211,8 +221,15 @@ IconButtons come in two sizes: compact (default) and regular. Use `compact={fals
 
 ```jsx live
 <HStack gap={2} alignItems="center">
-  <IconButton name="gear" accessibilityLabel="Settings - compact" variant="primary" compact />
   <IconButton
+    active
+    name="gear"
+    accessibilityLabel="Settings - compact"
+    variant="primary"
+    compact
+  />
+  <IconButton
+    active
     name="gear"
     accessibilityLabel="Settings - regular"
     variant="primary"

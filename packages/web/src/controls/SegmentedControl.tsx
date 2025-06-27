@@ -135,14 +135,15 @@ const radioStyle = css`
 type LabelProps = Pick<SegmentedControlProps, 'type'> & {
   option: SegmentedControlProps['options'][number]['label'];
   iconSize: IconSize;
+  iconActive?: boolean;
   hidden?: boolean;
 };
 
-function Label({ type, option, iconSize, hidden }: LabelProps) {
+function Label({ type, option, iconSize, iconActive, hidden }: LabelProps) {
   return (
     <span aria-hidden={hidden} className={cx(optionStyle, hidden && hiddenLabel)}>
       {type === 'icon' ? (
-        <Icon color="currentColor" name={option as IconName} size={iconSize} />
+        <Icon active={iconActive} color="currentColor" name={option as IconName} size={iconSize} />
       ) : (
         option
       )}
@@ -184,6 +185,8 @@ type TextOptionProps = {
 type IconOption = {
   /** The option icon to display in the control */
   label: IconName;
+  /** Whether the icon is active */
+  active?: boolean;
 } & BaseOption;
 
 type IconOptionProps = {
@@ -214,33 +217,36 @@ function SegmentedControlInternal(
 
   return (
     <div ref={ref} className={containerStyle} style={styles}>
-      {options.map(({ label, value, accessibilityLabel }) => (
-        <Fragment key={value}>
-          <input
-            aria-label={accessibilityLabel}
-            checked={selectedValue === value}
-            className={cx(radioStyle, insetFocusRing)}
-            data-testid={testID ? `${testID}-${value}` : undefined}
-            disabled={disabled}
-            id={`${name}-${value}`}
-            name={name}
-            onChange={handleChange}
-            type="radio"
-            value={value}
-          />
-          <Interactable
-            as="label"
-            background="bgAlternate"
-            className={labelStyle}
-            disabled={disabled}
-            htmlFor={`${name}-${value}`}
-          >
-            {/* Hidden label is used to mitigate resizing */}
-            <Label hidden iconSize={size} option={label} type={type} />
-            <Label iconSize={size} option={label} type={type} />
-          </Interactable>
-        </Fragment>
-      ))}
+      {options.map(({ label, value, accessibilityLabel, ...props }) => {
+        const active = (props as any)?.active;
+        return (
+          <Fragment key={value}>
+            <input
+              aria-label={accessibilityLabel}
+              checked={selectedValue === value}
+              className={cx(radioStyle, insetFocusRing)}
+              data-testid={testID ? `${testID}-${value}` : undefined}
+              disabled={disabled}
+              id={`${name}-${value}`}
+              name={name}
+              onChange={handleChange}
+              type="radio"
+              value={value}
+            />
+            <Interactable
+              as="label"
+              background="bgAlternate"
+              className={labelStyle}
+              disabled={disabled}
+              htmlFor={`${name}-${value}`}
+            >
+              {/* Hidden label is used to mitigate resizing */}
+              <Label hidden iconActive={active} iconSize={size} option={label} type={type} />
+              <Label iconActive={active} iconSize={size} option={label} type={type} />
+            </Interactable>
+          </Fragment>
+        );
+      })}
     </div>
   );
 }

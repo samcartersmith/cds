@@ -1,7 +1,7 @@
 import React, { forwardRef, memo } from 'react';
 import { View } from 'react-native';
 import { SectionHeaderProps } from '@cbhq/cds-common';
-import { UiIconName } from '@cbhq/cds-icons';
+import { IconName } from '@cbhq/cds-icons';
 
 import { Icon } from '../icons';
 import { HStack, VStack } from '../layout';
@@ -13,6 +13,7 @@ export const SectionHeader = memo(
       title,
       start,
       icon,
+      iconActive,
       testID,
       balance,
       description,
@@ -45,7 +46,7 @@ export const SectionHeader = memo(
               title
             )}
             {typeof icon === 'string' ? (
-              <Icon color="fg" name={icon as UiIconName} size="xs" />
+              <Icon active={iconActive} color="fg" name={icon as IconName} size="xs" />
             ) : (
               icon
             )}

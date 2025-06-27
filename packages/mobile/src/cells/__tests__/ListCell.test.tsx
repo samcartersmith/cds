@@ -171,7 +171,7 @@ describe('ListCell', () => {
   it('renders media', () => {
     render(
       <DefaultThemeProvider>
-        <ListCell media={<CellMedia name="add" testID="media" type="icon" />} />
+        <ListCell media={<CellMedia active name="add" testID="media" type="icon" />} />
       </DefaultThemeProvider>,
     );
 
@@ -182,7 +182,7 @@ describe('ListCell', () => {
     render(
       <DefaultThemeProvider>
         <ListCell
-          media={<CellMedia name="add" testID="media" type="icon" />}
+          media={<CellMedia active name="add" testID="media" type="icon" />}
           testID="listcell-with-media"
         />
       </DefaultThemeProvider>,

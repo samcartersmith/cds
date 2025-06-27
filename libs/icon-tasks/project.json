@@ -1,0 +1,20 @@
+{
+  "name": "icon-tasks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/icon-tasks/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "typecheck": {
+      "command": "tsc --build --pretty --verbose"
+    },
+    "sync-icons": {
+      "command": "tsx ./src/sync-icons/index.ts",
+      "options": {
+        "cwd": "libs/icon-tasks"
+      }
+    }
+  }
+}

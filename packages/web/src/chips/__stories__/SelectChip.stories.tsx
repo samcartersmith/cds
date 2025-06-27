@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
-import { UiIconName } from '@cbhq/cds-icons';
+import { IconName } from '@cbhq/cds-icons';
 
 import { SelectOption } from '../../controls/SelectOption';
 import { Icon } from '../../icons/Icon';
@@ -65,7 +65,7 @@ type ValueObject = {
   label: string;
   title: string;
   value: string;
-  iconName: UiIconName;
+  iconName: IconName;
 };
 
 export const ObjectValueModel = () => {

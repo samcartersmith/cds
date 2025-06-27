@@ -103,6 +103,7 @@ export const Default = () => (
     <CustomEndNode
       end={
         <InputIconButton
+          active
           accessibilityHint="Warning text"
           accessibilityLabel="Warning text"
           name="warning"

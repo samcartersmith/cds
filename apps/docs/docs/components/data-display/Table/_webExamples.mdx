@@ -115,7 +115,7 @@ function Example() {
             return (
               <TableRow key={`row--${account.name}`}>
                 <TableCell
-                  start={<Icon name="currencies" size="m" />}
+                  start={<Icon active name="currencies" size="m" />}
                   title={account.name}
                   subtitle={account.currency.name}
                 />
@@ -315,7 +315,7 @@ function SortingExample() {
           return (
             <TableRow key={`row--${account.name}`}>
               <TableCell
-                start={<Icon name="currencies" size="m" />}
+                start={<Icon active name="currencies" size="m" />}
                 title={account.name}
                 subtitle={account.currency.name}
               />

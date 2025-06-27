@@ -10,14 +10,13 @@ import { sparklineInteractiveData } from '@cbhq/cds-common/internal/visualizatio
 import { gutter } from '@cbhq/cds-common/tokens/sizing';
 import type { IconName } from '@cbhq/cds-common/types';
 import { NoopFn } from '@cbhq/cds-common/utils/mockUtils';
-import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
 import { Accordion, AccordionItem } from '@cbhq/cds-web/accordion';
 import { Button, IconButton } from '@cbhq/cds-web/buttons';
 import { Card, CardBody, CardFooter, CardGroup, FeedCard, UpsellCard } from '@cbhq/cds-web/cards';
 import { ListCell } from '@cbhq/cds-web/cells';
 import { Checkbox, Select, SelectOption, Switch } from '@cbhq/cds-web/controls';
 import { Dropdown } from '@cbhq/cds-web/dropdown/Dropdown';
-import { Icon, LogoMark, NavigationIconProps } from '@cbhq/cds-web/icons';
+import { Icon, LogoMark } from '@cbhq/cds-web/icons';
 import { Pictogram } from '@cbhq/cds-web/illustrations';
 import { Box, Divider, Group, HStack, VStack } from '@cbhq/cds-web/layout';
 import { Avatar } from '@cbhq/cds-web/media';
@@ -55,6 +54,7 @@ import {
   ProgressBarWithFloatLabel,
   ProgressCircle,
 } from '@cbhq/cds-web/visualizations';
+import { SparklineInteractive, SparklineInteractiveHeader } from '@cbhq/cds-web-visualization';
 
 // const SparklineInteractiveWithHeaderBuild = sparklineInteractiveWithHeaderBuilder({
 //   SparklineInteractive,

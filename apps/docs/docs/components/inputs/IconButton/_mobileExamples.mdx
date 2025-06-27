@@ -15,12 +15,14 @@ label node (See [Composed example](#composed-example)).
 ```jsx
 <HStack gap={2}>
   <IconButton
+    active
     name="orderHistory"
     accessibilityLabel="View transaction history"
     variant="primary"
     onPress={console.log}
   />
   <IconButton
+    active
     name="gear"
     accessibilityLabel="View settings"
     variant="secondary"
@@ -41,6 +43,7 @@ Use the `transparent` prop to make the background and border transparent until t
 
 ```jsx
 <IconButton
+  active
   name="orderHistory"
   accessibilityLabel="View past order history"
   variant="primary"
@@ -55,6 +58,7 @@ Use the `loading` prop to show a spinner and make the button non-interactive dur
 
 ```jsx
 <IconButton
+  active
   name="orderHistory"
   accessibilityLabel="Loading transaction history"
   variant="primary"
@@ -69,6 +73,7 @@ Use the `disabled` prop to prevent interaction and show a disabled visual state.
 
 ```jsx
 <IconButton
+  active
   name="orderHistory"
   accessibilityLabel="View transaction history"
   variant="primary"
@@ -84,6 +89,7 @@ IconButtons are compact by default. Set the `compact` prop to `false` for larger
 ```jsx
 <HStack gap={2} alignItems="center">
   <IconButton
+    active
     name="gear"
     accessibilityLabel="Settings - compact"
     variant="primary"
@@ -91,6 +97,7 @@ IconButtons are compact by default. Set the `compact` prop to `false` for larger
     onPress={console.log}
   />
   <IconButton
+    active
     name="gear"
     accessibilityLabel="Settings - regular"
     variant="primary"

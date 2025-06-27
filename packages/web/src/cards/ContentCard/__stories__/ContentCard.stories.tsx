@@ -34,7 +34,7 @@ const exampleProps: {
         <IconButton
           transparent
           accessibilityLabel="favorite coinDesk card news"
-          name="starInactive"
+          name="star"
           variant="secondary"
         />
         <IconButton
@@ -230,7 +230,7 @@ export const Default = (): JSX.Element => {
         <ContentCardBody {...exampleProps.contentBodyProps} label={null} media={null} />
         <ContentCardFooter>
           <HStack gap={4} justifyContent="space-between" paddingTop={0.5}>
-            <IconCounterButton count={99} icon="heartInactive" />
+            <IconCounterButton count={99} icon="heart" />
             <IconCounterButton count={4200} icon="comment" />
             <IconCounterButton count={9900000} icon="arrowsHorizontal" />
           </HStack>

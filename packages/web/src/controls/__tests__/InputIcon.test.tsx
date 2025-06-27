@@ -13,7 +13,7 @@ describe('Test InputIcon inheritFocusedVariant interaction', () => {
           <TextInput
             key={`${variant}-inputicon`}
             label="Label"
-            start={<InputIcon name="add" testID="input-icon" />}
+            start={<InputIcon active name="add" testID="input-icon" />}
             testID="text-input"
             variant={variant as InputVariant}
           />
@@ -36,7 +36,7 @@ describe('InputIcon', () => {
         <TextInput
           key={`${variant}-inputicon`}
           label="Label"
-          start={<InputIcon color={variant} name="add" testID="input-icon" />}
+          start={<InputIcon active color={variant} name="add" testID="input-icon" />}
           testID="text-input"
           variant={variant as InputVariant}
         />

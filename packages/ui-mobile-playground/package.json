@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/ui-mobile-playground",
   "version": "4.0.0-rc.6",
+  "private": true,
   "description": "Mobile UI Components in a Playground",
   "repository": {
     "type": "git",

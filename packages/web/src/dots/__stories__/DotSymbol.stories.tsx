@@ -41,7 +41,7 @@ const DotSymbolPlacements = () => {
             <Avatar alt="Sneezy" shape="square" size="xl" />
           </DotSymbol>
           <DotSymbol pin={pinDirection} size="m" source={assets.eth.imageUrl}>
-            <Icon name="airdrop" size="l" />
+            <Icon active name="airdrop" size="l" />
           </DotSymbol>
         </VStack>
       ))}
@@ -78,6 +78,7 @@ const DotSymbolIcon = () => {
               {avatarIconSizeMap[avatarSize]}
             </Text>
             <DotSymbol
+              active
               iconName="safe"
               overlap="circular"
               pin={pinDirection}
@@ -176,7 +177,7 @@ export const AllDotSymbol = () => {
 export const CustomSymbol = () => {
   return (
     <DotSymbol pin="bottom-end" symbol={<Spinner size={1} />}>
-      <Icon name="airdrop" size="l" />
+      <Icon active name="airdrop" size="l" />
     </DotSymbol>
   );
 };
