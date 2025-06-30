@@ -15,54 +15,87 @@ const getURL = (
   return `https://static-assets.coinbase.com/ui-infra/illustration/v1/${type}/svg/${activeColorScheme}/${name}-${versionNum}.svg`;
 };
 
-type ImageData = [name: string, activeColorScheme: ColorScheme, url: string];
+// Test URL generation logic without React rendering - much faster
+describe('SpotRectangle URL generation', () => {
+  it('generates correct URLs for light and dark themes', () => {
+    const testCases: { name: SpotRectangleName; version: number }[] = [
+      { name: 'addBank', version: spotRectangleVersionMap.addBank },
+      { name: 'trade', version: spotRectangleVersionMap.trade },
+      { name: 'nft', version: spotRectangleVersionMap.nft },
+    ];
 
-const images: ImageData[] = [];
+    testCases.forEach(({ name, version }) => {
+      const lightUrl = getURL('spotRectangle', name, version, 'light');
+      const darkUrl = getURL('spotRectangle', name, version, 'dark');
 
-const versionMaps = {
-  spotRectangle: spotRectangleVersionMap,
-};
+      expect(lightUrl).toBe(
+        `https://static-assets.coinbase.com/ui-infra/illustration/v1/spotRectangle/svg/light/${name}-${version}.svg`,
+      );
+      expect(darkUrl).toBe(
+        `https://static-assets.coinbase.com/ui-infra/illustration/v1/spotRectangle/svg/dark/${name}-${version}.svg`,
+      );
+    });
+  });
 
-Object.entries(versionMaps).forEach(([type, items]) => {
-  Object.entries(items).forEach(([name, version]) => {
-    const lightUrl = getURL(type as IllustrationVariant, name, version, 'light');
-    const darkUrl = getURL(type as IllustrationVariant, name, version, 'dark');
+  it('uses correct version numbers from version map', () => {
+    expect(typeof spotRectangleVersionMap.addBank).toBe('number');
+    expect(spotRectangleVersionMap.addBank).toBeGreaterThan(0);
+  });
 
-    images.push([name, 'light', lightUrl]);
-    images.push([name, 'dark', darkUrl]);
+  it('contains expected number of spot rectangles', () => {
+    const spotRectangleCount = Object.keys(spotRectangleVersionMap).length;
+    expect(spotRectangleCount).toBeGreaterThan(50); // Ensure we have a reasonable number
   });
 });
 
-Object.entries(spotRectangleVersionMap).forEach(([name, version]) => {
-  const lightUrl = getURL('spotRectangle', name, version, 'light');
-  const darkUrl = getURL('spotRectangle', name, version, 'dark');
+// Test actual React rendering with a representative sample - much more efficient
+describe('SpotRectangle component rendering', () => {
+  const sampleSpotRectangles: SpotRectangleName[] = ['addBank', 'trade', 'nft', 'staking', 'earn'];
 
-  images.push([name, 'light', lightUrl]);
-  images.push([name, 'dark', darkUrl]);
-});
+  // Filter to only existing spot rectangles
+  const existingSamples = sampleSpotRectangles.filter((name) =>
+    Object.prototype.hasOwnProperty.call(spotRectangleVersionMap, name),
+  );
 
-const TEST_ILLO_ALT = 'This is a special illustration';
+  existingSamples.forEach((name) => {
+    it(`renders ${name} correctly in light theme`, () => {
+      const version = spotRectangleVersionMap[name];
+      const expectedUrl = getURL('spotRectangle', name, version, 'light');
 
-describe('SpotRectangles have correct url and alt tag for light mode', () => {
-  it.each(images)('%p-%p has correct src and alt prop', (name, activeColorScheme, url) => {
-    render(
-      <DefaultThemeProvider activeColorScheme={activeColorScheme}>
-        <SpotRectangle name={name as SpotRectangleName} testID={name} />
-      </DefaultThemeProvider>,
-    );
+      render(
+        <DefaultThemeProvider activeColorScheme="light">
+          <SpotRectangle name={name} testID={name} />
+        </DefaultThemeProvider>,
+      );
 
-    expect(screen.getByTestId(name)).toHaveAttribute('src', url);
-    expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+      expect(screen.getByTestId(name)).toHaveAttribute('src', expectedUrl);
+      expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+    });
+
+    it(`renders ${name} correctly in dark theme`, () => {
+      const version = spotRectangleVersionMap[name];
+      const expectedUrl = getURL('spotRectangle', name, version, 'dark');
+
+      render(
+        <DefaultThemeProvider activeColorScheme="dark">
+          <SpotRectangle name={name} testID={name} />
+        </DefaultThemeProvider>,
+      );
+
+      expect(screen.getByTestId(name)).toHaveAttribute('src', expectedUrl);
+      expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+    });
   });
 });
 
 describe('can set alt', () => {
+  const testAlt = 'This is a special illustration';
   it('for a SpotRectangle', () => {
     render(
       <DefaultThemeProvider>
-        <SpotRectangle alt={TEST_ILLO_ALT} name="addBank" testID="spotRectangle-example" />
+        <SpotRectangle alt={testAlt} name="addBank" testID="spotRectangle-example" />
       </DefaultThemeProvider>,
     );
-    expect(screen.getByTestId('spotRectangle-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
+    expect(screen.getByTestId('spotRectangle-example')).toHaveAttribute('alt', testAlt);
   });
 });

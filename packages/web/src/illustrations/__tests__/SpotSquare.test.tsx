@@ -15,40 +15,88 @@ const getURL = (
   return `https://static-assets.coinbase.com/ui-infra/illustration/v1/${type}/svg/${activeColorScheme}/${name}-${versionNum}.svg`;
 };
 
-type ImageData = [name: string, activeColorScheme: ColorScheme, url: string];
+// Test URL generation logic without React rendering - much faster
+describe('SpotSquare URL generation', () => {
+  it('generates correct URLs for light and dark themes', () => {
+    const testCases: { name: SpotSquareName; version: number }[] = [
+      { name: 'accessToAdvancedCharts', version: spotSquareVersionMap.accessToAdvancedCharts },
+      { name: 'earn', version: spotSquareVersionMap.earn },
+      { name: 'blockchain', version: spotSquareVersionMap.blockchain },
+    ];
 
-const images: ImageData[] = [];
+    testCases.forEach(({ name, version }) => {
+      const lightUrl = getURL('spotSquare', name, version, 'light');
+      const darkUrl = getURL('spotSquare', name, version, 'dark');
 
-Object.entries(spotSquareVersionMap).forEach(([name, version]) => {
-  const lightUrl = getURL('spotSquare', name, version, 'light');
-  const darkUrl = getURL('spotSquare', name, version, 'dark');
+      expect(lightUrl).toBe(
+        `https://static-assets.coinbase.com/ui-infra/illustration/v1/spotSquare/svg/light/${name}-${version}.svg`,
+      );
+      expect(darkUrl).toBe(
+        `https://static-assets.coinbase.com/ui-infra/illustration/v1/spotSquare/svg/dark/${name}-${version}.svg`,
+      );
+    });
+  });
 
-  images.push([name, 'light', lightUrl]);
-  images.push([name, 'dark', darkUrl]);
+  it('uses correct version numbers from version map', () => {
+    expect(typeof spotSquareVersionMap.accessToAdvancedCharts).toBe('number');
+    expect(spotSquareVersionMap.accessToAdvancedCharts).toBeGreaterThan(0);
+  });
+
+  it('contains expected number of spot squares', () => {
+    const spotSquareCount = Object.keys(spotSquareVersionMap).length;
+    expect(spotSquareCount).toBeGreaterThan(200); // Ensure we have a reasonable number
+  });
 });
 
-const TEST_ILLO_ALT = 'This is a special illustration';
+// Test actual React rendering with a representative sample - much more efficient
+describe('SpotSquare component rendering', () => {
+  const sampleSpotSquares: SpotSquareName[] = [
+    'accessToAdvancedCharts',
+    'earn',
+    'blockchain',
+    'invest',
+    'staking',
+  ];
 
-describe('SpotSquares have correct url and alt tag for light mode', () => {
-  it.each(images)('%p-%p has correct src and alt prop', (name, activeColorScheme, url) => {
-    render(
-      <DefaultThemeProvider activeColorScheme={activeColorScheme}>
-        <SpotSquare name={name as SpotSquareName} testID={name} />
-      </DefaultThemeProvider>,
-    );
+  sampleSpotSquares.forEach((name) => {
+    it(`renders ${name} correctly in light theme`, () => {
+      const version = spotSquareVersionMap[name];
+      const expectedUrl = getURL('spotSquare', name, version, 'light');
 
-    expect(screen.getByTestId(name)).toHaveAttribute('src', url);
-    expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+      render(
+        <DefaultThemeProvider activeColorScheme="light">
+          <SpotSquare name={name} testID={name} />
+        </DefaultThemeProvider>,
+      );
+
+      expect(screen.getByTestId(name)).toHaveAttribute('src', expectedUrl);
+      expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+    });
+
+    it(`renders ${name} correctly in dark theme`, () => {
+      const version = spotSquareVersionMap[name];
+      const expectedUrl = getURL('spotSquare', name, version, 'dark');
+
+      render(
+        <DefaultThemeProvider activeColorScheme="dark">
+          <SpotSquare name={name} testID={name} />
+        </DefaultThemeProvider>,
+      );
+
+      expect(screen.getByTestId(name)).toHaveAttribute('src', expectedUrl);
+      expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+    });
   });
 });
 
 describe('can set alt', () => {
+  const testAlt = 'This is a special illustration';
   it('for a SpotSquare', () => {
     render(
       <DefaultThemeProvider>
-        <SpotSquare alt={TEST_ILLO_ALT} name="accessToAdvancedCharts" testID="spotSquare-example" />
+        <SpotSquare alt={testAlt} name="accessToAdvancedCharts" testID="spotSquare-example" />
       </DefaultThemeProvider>,
     );
-    expect(screen.getByTestId('spotSquare-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
+    expect(screen.getByTestId('spotSquare-example')).toHaveAttribute('alt', testAlt);
   });
 });

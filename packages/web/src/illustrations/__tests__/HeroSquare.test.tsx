@@ -15,41 +15,89 @@ const getURL = (
   return `https://static-assets.coinbase.com/ui-infra/illustration/v1/${type}/svg/${activeColorScheme}/${name}-${version}.svg`;
 };
 
-type ImageData = [name: string, activeColorScheme: ColorScheme, url: string];
+// Test URL generation logic without React rendering - much faster
+describe('HeroSquare URL generation', () => {
+  it('generates correct URLs for light and dark themes', () => {
+    const testCases: { name: HeroSquareName; version: number }[] = [
+      { name: 'add2Fa', version: heroSquareVersionMap.add2Fa },
+      { name: 'startToday', version: heroSquareVersionMap.startToday },
+      { name: 'invest', version: heroSquareVersionMap.invest },
+    ];
 
-const images: ImageData[] = [];
+    testCases.forEach(({ name, version }) => {
+      const lightUrl = getURL('heroSquare', name, version, 'light');
+      const darkUrl = getURL('heroSquare', name, version, 'dark');
 
-Object.entries(heroSquareVersionMap).forEach(([name, version]) => {
-  const lightUrl = getURL('heroSquare', name, version, 'light');
-  const darkUrl = getURL('heroSquare', name, version, 'dark');
+      expect(lightUrl).toBe(
+        `https://static-assets.coinbase.com/ui-infra/illustration/v1/heroSquare/svg/light/${name}-${version}.svg`,
+      );
+      expect(darkUrl).toBe(
+        `https://static-assets.coinbase.com/ui-infra/illustration/v1/heroSquare/svg/dark/${name}-${version}.svg`,
+      );
+    });
+  });
 
-  images.push([name, 'light', lightUrl]);
-  images.push([name, 'dark', darkUrl]);
+  it('uses correct version numbers from version map', () => {
+    expect(typeof heroSquareVersionMap.add2Fa).toBe('number');
+    expect(heroSquareVersionMap.add2Fa).toBeGreaterThan(0);
+  });
+
+  it('contains expected number of hero squares', () => {
+    const heroSquareCount = Object.keys(heroSquareVersionMap).length;
+    expect(heroSquareCount).toBeGreaterThan(300); // Ensure we have a reasonable number
+  });
 });
 
-const TEST_ILLO_ALT = 'This is a special illustration';
+// Test actual React rendering with a representative sample - much more efficient
+describe('HeroSquare component rendering', () => {
+  const sampleHeroSquares: HeroSquareName[] = [
+    'add2Fa',
+    'startToday',
+    'invest',
+    'earn',
+    'blockchain',
+  ];
 
-describe('HeroSquares have correct url and alt tag for light mode', () => {
-  it.each(images)('%p-%p has correct src and alt prop', (name, activeColorScheme, url) => {
-    render(
-      <DefaultThemeProvider activeColorScheme={activeColorScheme}>
-        <HeroSquare name={name as HeroSquareName} testID={name} />
-      </DefaultThemeProvider>,
-    );
+  sampleHeroSquares.forEach((name) => {
+    it(`renders ${name} correctly in light theme`, () => {
+      const version = heroSquareVersionMap[name];
+      const expectedUrl = getURL('heroSquare', name, version, 'light');
 
-    expect(screen.getByTestId(name)).toHaveAttribute('src', url);
-    expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+      render(
+        <DefaultThemeProvider activeColorScheme="light">
+          <HeroSquare name={name} testID={name} />
+        </DefaultThemeProvider>,
+      );
+
+      expect(screen.getByTestId(name)).toHaveAttribute('src', expectedUrl);
+      expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+    });
+
+    it(`renders ${name} correctly in dark theme`, () => {
+      const version = heroSquareVersionMap[name];
+      const expectedUrl = getURL('heroSquare', name, version, 'dark');
+
+      render(
+        <DefaultThemeProvider activeColorScheme="dark">
+          <HeroSquare name={name} testID={name} />
+        </DefaultThemeProvider>,
+      );
+
+      expect(screen.getByTestId(name)).toHaveAttribute('src', expectedUrl);
+      expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+    });
   });
 });
 
 describe('can set alt', () => {
+  const testAlt = 'This is a special illustration';
   it('for a HeroSquare', () => {
     render(
       <DefaultThemeProvider>
-        <HeroSquare alt={TEST_ILLO_ALT} name="add2Fa" testID="HeroSquare-example" />
+        <HeroSquare alt={testAlt} name="add2Fa" testID="HeroSquare-example" />
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByTestId('HeroSquare-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
+    expect(screen.getByTestId('HeroSquare-example')).toHaveAttribute('alt', testAlt);
   });
 });

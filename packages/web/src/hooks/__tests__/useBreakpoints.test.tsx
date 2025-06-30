@@ -19,6 +19,7 @@ describe('useBreakpoints hook', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     global.matchMedia = mockMatchMedia;
+    mockSubscribe.mockReturnValue(jest.fn());
   });
 
   it('throws an error if used outside of MediaQueryProvider', () => {

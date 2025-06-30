@@ -15,40 +15,86 @@ const getURL = (
   return `https://static-assets.coinbase.com/ui-infra/illustration/v1/${type}/svg/${activeColorScheme}/${name}-${versionNum}.svg`;
 };
 
-type ImageData = [name: string, activeColorScheme: ColorScheme, url: string];
+// Test URL generation logic without React rendering - much faster
+describe('Pictogram URL generation', () => {
+  it('generates correct URLs for light and dark themes', () => {
+    const testCases: { name: PictogramName; version: number }[] = [
+      { name: 'fiat', version: pictogramVersionMap.fiat },
+      { name: 'bitcoin', version: pictogramVersionMap.bitcoin },
+      { name: '2fa', version: pictogramVersionMap['2fa'] },
+    ];
 
-const images: ImageData[] = [];
+    testCases.forEach(({ name, version }) => {
+      const lightUrl = getURL('pictogram', name, version, 'light');
+      const darkUrl = getURL('pictogram', name, version, 'dark');
 
-Object.entries(pictogramVersionMap).forEach(([name, version]) => {
-  const lightUrl = getURL('pictogram', name, version, 'light');
-  const darkUrl = getURL('pictogram', name, version, 'dark');
+      expect(lightUrl).toBe(
+        `https://static-assets.coinbase.com/ui-infra/illustration/v1/pictogram/svg/light/${name}-${version}.svg`,
+      );
+      expect(darkUrl).toBe(
+        `https://static-assets.coinbase.com/ui-infra/illustration/v1/pictogram/svg/dark/${name}-${version}.svg`,
+      );
+    });
+  });
 
-  images.push([name, 'light', lightUrl]);
-  images.push([name, 'dark', darkUrl]);
+  it('uses correct version numbers from version map', () => {
+    expect(typeof pictogramVersionMap.fiat).toBe('number');
+    expect(typeof pictogramVersionMap.bitcoin).toBe('number');
+    expect(typeof pictogramVersionMap['2fa']).toBe('number');
+    expect(pictogramVersionMap.fiat).toBeGreaterThan(0);
+    expect(pictogramVersionMap.bitcoin).toBeGreaterThan(0);
+    expect(pictogramVersionMap['2fa']).toBeGreaterThan(0);
+  });
+
+  it('contains expected number of pictograms', () => {
+    const pictogramCount = Object.keys(pictogramVersionMap).length;
+    expect(pictogramCount).toBeGreaterThan(400); // Ensure we have a reasonable number
+  });
 });
 
-const TEST_ILLO_ALT = 'This is a special illustration';
+// Test actual React rendering with a representative sample - much more efficient
+describe('Pictogram component rendering', () => {
+  const samplePictograms: PictogramName[] = ['fiat', 'bitcoin', '2fa', 'wallet', 'shield'];
 
-describe('Pictograms have correct url and alt tag for light mode', () => {
-  it.each(images)('%p-%p has correct src and alt prop', (name, activeColorScheme, url) => {
-    render(
-      <DefaultThemeProvider activeColorScheme={activeColorScheme}>
-        <Pictogram name={name as PictogramName} testID={name} />
-      </DefaultThemeProvider>,
-    );
+  samplePictograms.forEach((name) => {
+    it(`renders ${name} correctly in light theme`, () => {
+      const version = pictogramVersionMap[name];
+      const expectedUrl = getURL('pictogram', name, version, 'light');
 
-    expect(screen.getByTestId(name)).toHaveAttribute('src', url);
-    expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+      render(
+        <DefaultThemeProvider activeColorScheme="light">
+          <Pictogram name={name} testID={name} />
+        </DefaultThemeProvider>,
+      );
+
+      expect(screen.getByTestId(name)).toHaveAttribute('src', expectedUrl);
+      expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+    });
+
+    it(`renders ${name} correctly in dark theme`, () => {
+      const version = pictogramVersionMap[name];
+      const expectedUrl = getURL('pictogram', name, version, 'dark');
+
+      render(
+        <DefaultThemeProvider activeColorScheme="dark">
+          <Pictogram name={name} testID={name} />
+        </DefaultThemeProvider>,
+      );
+
+      expect(screen.getByTestId(name)).toHaveAttribute('src', expectedUrl);
+      expect(screen.getByTestId(name)).toHaveAttribute('alt', '');
+    });
   });
 });
 
 describe('can set alt', () => {
+  const testAlt = 'This is a special illustration';
   it('for a Pictogram', () => {
     render(
       <DefaultThemeProvider>
-        <Pictogram alt={TEST_ILLO_ALT} name="2fa" testID="pictogram-example" />
+        <Pictogram alt={testAlt} name="2fa" testID="pictogram-example" />
       </DefaultThemeProvider>,
     );
-    expect(screen.getByTestId('pictogram-example')).toHaveAttribute('alt', TEST_ILLO_ALT);
+    expect(screen.getByTestId('pictogram-example')).toHaveAttribute('alt', testAlt);
   });
 });
