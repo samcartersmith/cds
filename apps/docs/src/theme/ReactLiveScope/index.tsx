@@ -22,8 +22,10 @@ import { avatarDotSizeMap, avatarIconSizeMap } from '@cbhq/cds-common/tokens/dot
 import { useTourContext } from '@cbhq/cds-common/tour/TourContext';
 import { useSparklineArea } from '@cbhq/cds-common/visualizations/useSparklineArea';
 import { useSparklinePath } from '@cbhq/cds-common/visualizations/useSparklinePath';
+import * as CDSLottie from '@cbhq/cds-lottie-files';
 import { Accordion } from '@cbhq/cds-web/accordion/Accordion';
 import { AccordionItem } from '@cbhq/cds-web/accordion/AccordionItem';
+import { Lottie, LottieStatusAnimation } from '@cbhq/cds-web/animation';
 import { Banner } from '@cbhq/cds-web/banner/Banner';
 import * as CDSButtons from '@cbhq/cds-web/buttons';
 import { ContainedAssetCard } from '@cbhq/cds-web/cards/ContainedAssetCard';
@@ -91,6 +93,9 @@ const ReactLiveScope: Record<string, unknown> = {
   Accordion,
   AccordionItem,
   Dropdown,
+  ...CDSLottie,
+  Lottie,
+  LottieStatusAnimation,
   MultiContentModule,
   SectionHeader,
   // data display

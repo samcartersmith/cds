@@ -484,6 +484,22 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: 'Animation',
+          items: [
+            {
+              type: 'doc',
+              id: 'components/animation/Lottie/lottie',
+              label: 'Lottie',
+            },
+            {
+              type: 'doc',
+              id: 'components/animation/LottieStatusAnimation/lottie-status-animation',
+              label: 'LottieStatusAnimation',
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Other',
           items: [
             { type: 'doc', id: 'components/other/DatePicker/date-picker', label: 'DatePicker' },
