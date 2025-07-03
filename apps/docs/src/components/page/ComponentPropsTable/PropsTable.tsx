@@ -1,12 +1,9 @@
-import React from 'react';
-
 import PropsTableRow from './PropsTableRow';
-import styles from './styles.module.css';
 import { PropsTableProps } from './types';
 
 function PropsTable({ props, sharedTypeAliases, searchTerm }: PropsTableProps) {
   return (
-    <table className={styles.propsTable}>
+    <table>
       <thead>
         <tr>
           <th style={{ width: '40%' }}>Name</th>

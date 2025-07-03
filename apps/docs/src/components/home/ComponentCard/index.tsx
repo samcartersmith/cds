@@ -77,8 +77,7 @@ export const ComponentCard = ({
           lineHeight={componentCountFontConfig}
           paddingX={0.5}
           paddingY={0.25}
-          // TODO: remove this once we have a new color token for this
-          style={{ backgroundColor: 'var(--color-bgTertiary)' }}
+          style={{ backgroundColor: `rgb(var(--gray${colorScheme === 'dark' ? '5' : '15'}))` }}
         >
           {count}
         </Text>

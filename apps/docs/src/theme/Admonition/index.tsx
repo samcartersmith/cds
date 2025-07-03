@@ -3,6 +3,8 @@ import { processAdmonitionProps } from '@docusaurus/theme-common';
 import type { Props } from '@theme/Admonition';
 import { Banner, BannerProps } from '@cbhq/cds-web/banner/Banner';
 
+import styles from './styles.module.css';
+
 export default function Admonition(unprocessedProps: Props): React.ReactNode {
   const props = processAdmonitionProps(unprocessedProps);
   const { title, children, type } = props;
@@ -21,5 +23,5 @@ export default function Admonition(unprocessedProps: Props): React.ReactNode {
           return { variant: 'informational', title: title ?? 'Note', children, startIcon: 'info' };
       }
     }, [title, children, type]);
-  return <Banner minWidth={0} {...bannerProps} />;
+  return <Banner className={styles.docsAdmonition} minWidth={0} {...bannerProps} />;
 }

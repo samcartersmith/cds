@@ -113,10 +113,10 @@ function PropsTableRow({ prop, sharedTypeAliases, searchTerm = '' }: PropsTableR
 
   const nameContent = useMemo(() => {
     return (
-      <VStack as="h3" className={cx(styles.propsTableWrapper, 'anchor')} id={name}>
+      <VStack as="h3" className={cx(styles.propsNameWrapper, 'anchor')} id={name}>
         <TextBody as="p">
           {highlightedName}
-          {required && <span style={{ color: 'rgb(var(--red50))' }}>*</span>}
+          {required && <TextBody color="fgNegative">*</TextBody>}
         </TextBody>
         <TextLabel2 as="p" color="fgMuted" overflow="break" paddingTop={0.5}>
           {description}

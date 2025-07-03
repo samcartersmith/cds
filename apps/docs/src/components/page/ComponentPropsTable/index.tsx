@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useIsSticky } from '@site/src/utils/useIsSticky';
 import { SearchInput } from '@cbhq/cds-web/controls/SearchInput';
 import { Box, VStack } from '@cbhq/cds-web/layout';
@@ -11,6 +11,7 @@ import {
 
 import ParentTypesList from './ParentTypesList';
 import PropsTable from './PropsTable';
+import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions';
 
 type ComponentPropsTableProps = {
   props: {
@@ -42,6 +43,14 @@ function ComponentPropsTable({
     top: stickyTopOffset,
   });
 
+  useDimensions({
+    ref: stickyElementRef,
+    useBorderBoxSize: true,
+    onResize: ({ height }) => {
+      document.documentElement.style.setProperty('--props-table-search-bar-height', `${height}px`);
+    },
+  });
+
   return (
     <VStack maxWidth="100%" width="100%">
       <VStack
@@ -49,6 +58,7 @@ function ComponentPropsTable({
         background="bgAlternate"
         borderedBottom={isSticky}
         gap={1}
+        id="component-props-table-search-bar-container"
         paddingBottom={1}
         paddingTop={2}
         paddingX={4}
@@ -72,7 +82,7 @@ function ComponentPropsTable({
         />
       </VStack>
       {filteredProps.length > 0 ? (
-        <Box maxWidth="100%" overflow="hidden" paddingBottom={4} paddingX={4}>
+        <Box maxWidth="100%" paddingBottom={4} paddingX={4}>
           <PropsTable
             props={filteredProps}
             searchTerm={searchValue}

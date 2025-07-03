@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { type Platform, usePlatformContext } from '@site/src/utils/PlatformContext';
 import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
 import { TabsActiveIndicator } from '@cbhq/cds-web/tabs';

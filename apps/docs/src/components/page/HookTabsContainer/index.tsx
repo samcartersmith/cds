@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { TOCItem } from '@docusaurus/mdx-loader';
+import { useHistory, useLocation } from '@docusaurus/router';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
+import { useTabsContext } from '@cbhq/cds-common/tabs/TabsContext';
+import type { TabValue } from '@cbhq/cds-common/tabs/useTabs';
 import { Box, Divider, VStack } from '@cbhq/cds-web/layout';
-import { TabNavigation } from '@cbhq/cds-web/tabs/TabNavigation';
+import { Pressable } from '@cbhq/cds-web/system';
+import { Tabs, TabsActiveIndicator, type TabsActiveIndicatorProps } from '@cbhq/cds-web/tabs';
 
 import { TOCUpdater } from '../../../utils/toc/TOCManager';
 
 const tabs = [
-  { id: 'examples-tab', label: 'Examples' },
-  { id: 'api-tab', label: 'API' },
+  { id: 'examples', label: 'Examples' },
+  { id: 'api', label: 'API' },
 ];
 
 type HookTabsContainerProps = {
@@ -22,6 +26,26 @@ type HookTabsContainerProps = {
   mobileExamplesToc?: TOCItem[];
 };
 
+const CustomTab = ({ id, label }: TabValue) => {
+  const { activeTab, updateActiveTab } = useTabsContext();
+  const isActive = activeTab?.id === id;
+  return (
+    <Pressable
+      color={isActive ? 'fgPrimary' : 'fg'}
+      font="headline"
+      onClick={() => updateActiveTab(id)}
+      paddingBottom={0.75}
+      paddingTop={0.5}
+    >
+      {label}
+    </Pressable>
+  );
+};
+
+const CustomTabsActiveIndicator = (props: TabsActiveIndicatorProps) => {
+  return <TabsActiveIndicator {...props} background="bgPrimary" bottom={0} height={2} />;
+};
+
 export const HookTabsContainer: React.FC<HookTabsContainerProps> = ({
   webExamples,
   mobileExamples,
@@ -32,16 +56,40 @@ export const HookTabsContainer: React.FC<HookTabsContainerProps> = ({
   webApiToc,
   mobileApiToc,
 }) => {
-  const [activeTab, setActiveTab] = useState<string>('examples-tab');
   const { platform } = usePlatformContext();
-  const shouldRenderExamples = activeTab === tabs[0].id;
-  const shouldRenderApi = activeTab === tabs[1].id;
+
   const isWeb = platform === 'web';
   const isMobile = platform === 'mobile';
 
+  const { search } = useLocation();
+  const history = useHistory();
+
+  const activeTab = useMemo(() => {
+    const tabId = new URLSearchParams(search).get('tab');
+    return tabs.find((tab) => tab.id === tabId) ?? tabs[0];
+  }, [search]);
+
+  const setActiveTab = useCallback(
+    (tab: TabValue | null) => {
+      const searchParams = new URLSearchParams(search);
+      searchParams.set('tab', tab?.id ?? tabs[0].id);
+      history.replace({ search: searchParams.toString() });
+    },
+    [history, search],
+  );
+
+  const shouldRenderExamples = activeTab?.id === tabs[0].id;
+  const shouldRenderApi = activeTab?.id === tabs[1].id;
+
   return (
     <VStack as="section">
-      <VStack background="bg" position="sticky" top="var(--ifm-navbar-height)" zIndex={1}>
+      <VStack
+        background="bg"
+        id="tabs-container"
+        position="sticky"
+        top="var(--ifm-navbar-height)"
+        zIndex={1}
+      >
         <Box
           background="bgAlternate"
           borderTopLeftRadius={500}
@@ -49,7 +97,16 @@ export const HookTabsContainer: React.FC<HookTabsContainerProps> = ({
           paddingTop={1}
           paddingX={4}
         >
-          <TabNavigation onChange={setActiveTab} tabs={tabs} value={activeTab} />
+          <Tabs
+            TabComponent={CustomTab}
+            TabsActiveIndicatorComponent={CustomTabsActiveIndicator}
+            accessibilityLabel="Component documentation sections"
+            activeTab={activeTab}
+            aria-controls={`tabpanel--${activeTab}`}
+            gap={4}
+            onChange={setActiveTab}
+            tabs={tabs}
+          />
         </Box>
         <Divider />
       </VStack>

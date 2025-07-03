@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { TOCItem } from '@docusaurus/mdx-loader';
+import { useHistory, useLocation } from '@docusaurus/router';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import { useTabsContext } from '@cbhq/cds-common/tabs/TabsContext';
 import { TabValue } from '@cbhq/cds-common/tabs/useTabs';
+import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions';
 import { Box, VStack } from '@cbhq/cds-web/layout';
 import { Pressable } from '@cbhq/cds-web/system';
 import { Tabs, TabsActiveIndicator, TabsActiveIndicatorProps } from '@cbhq/cds-web/tabs/Tabs';
@@ -10,8 +12,8 @@ import { Tabs, TabsActiveIndicator, TabsActiveIndicatorProps } from '@cbhq/cds-w
 import { PropsTOCUpdater } from '../../../utils/toc/PropsTOCManager';
 import { TOCUpdater } from '../../../utils/toc/TOCManager';
 
-const examplesTab = { id: 'examples-tab', label: 'Examples' };
-const propsTab = { id: 'props-tab', label: 'Props' };
+const examplesTab = { id: 'examples', label: 'Examples' };
+const propsTab = { id: 'props', label: 'Props' };
 const tabs = [examplesTab, propsTab];
 
 type ComponentMetaContainerProps = {
@@ -55,16 +57,48 @@ export const ComponentTabsContainer: React.FC<ComponentMetaContainerProps> = ({
   webPropsToc,
   mobilePropsToc,
 }) => {
-  const [activeTab, setActiveTab] = useState<TabValue | null>(tabs[0]);
   const { platform } = usePlatformContext();
-  const shouldRenderExamples = activeTab?.id === examplesTab.id;
-  const shouldRenderProps = activeTab?.id === propsTab.id;
   const isWeb = platform === 'web';
   const isMobile = platform === 'mobile';
+  const history = useHistory();
+  const { search } = useLocation();
+  const activeTab = useMemo(() => {
+    const tabId = new URLSearchParams(search).get('tab');
+    return tabs.find((tab) => tab.id === tabId) ?? tabs[0];
+  }, [search]);
+
+  const tabsWrapperRef = useRef<HTMLDivElement>(null);
+
+  useDimensions({
+    ref: tabsWrapperRef,
+    useBorderBoxSize: true,
+    onResize: ({ height }) => {
+      document.documentElement.style.setProperty('--tabs-wrapper-height', `${height}px`);
+    },
+  });
+
+  const setActiveTab = useCallback(
+    (tab: TabValue | null) => {
+      const searchParams = new URLSearchParams(search);
+      searchParams.set('tab', tab?.id ?? tabs[0].id);
+      history.replace({ search: searchParams.toString() });
+    },
+    [history, search],
+  );
+
+  const shouldRenderExamples = activeTab?.id === examplesTab.id;
+  const shouldRenderProps = activeTab?.id === propsTab.id;
 
   return (
     <VStack as="section">
-      <VStack background="bg" position="sticky" top="var(--ifm-navbar-height)" zIndex={2}>
+      <VStack
+        ref={tabsWrapperRef}
+        background="bg"
+        id="tabs-container"
+        position="sticky"
+        top="var(--ifm-navbar-height)"
+        zIndex={2}
+      >
         <Box
           borderedBottom
           background="bgAlternate"

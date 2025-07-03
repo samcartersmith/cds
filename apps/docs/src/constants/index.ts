@@ -8,12 +8,10 @@ export const docsTheme = {
   lightColor: {
     ...defaultTheme.lightColor,
     bgAlternate: `rgb(${defaultTheme.lightSpectrum.gray5})`, // instead of gray10
-    bgTertiary: `rgb(${defaultTheme.lightSpectrum.gray15})`, // instead of gray20
   },
   darkColor: {
     ...defaultTheme.darkColor,
     bg: `rgb(${defaultTheme.darkSpectrum.gray10})`, // instead of gray0
     bgSecondary: `rgb(${defaultTheme.darkSpectrum.gray20})`, // instead of gray15
-    bgTertiary: `rgb(${defaultTheme.darkSpectrum.gray5})`, // instead of gray20
   },
 } as const satisfies ThemeConfig;

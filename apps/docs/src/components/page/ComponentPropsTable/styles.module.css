@@ -1,15 +1,11 @@
-.propsTableWrapper {
-  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+.propsNameWrapper {
+  scroll-margin-top: calc(
+    var(--ifm-navbar-height) + var(--tabs-wrapper-height) + var(--props-table-search-bar-height) +
+      var(--space-2)
+  );
 }
 
 .propsTable {
   width: 100%;
   display: table;
-  border-collapse: separate;
-  border-spacing: 0;
-  overflow: hidden;
-}
-
-.propsTableCell {
-  vertical-align: top;
 }

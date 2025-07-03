@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import NavbarThemeToggle from '@site/src/components/nav/NavbarThemeToggle';
 import { useWindowSizeWithBreakpointOverride } from '@site/src/utils/useWindowSizeWithBreakpointOverride';
@@ -7,6 +7,7 @@ import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarItem, { type Props as NavbarItemConfig } from '@theme/NavbarItem';
 import SearchBar from '@theme/SearchBar';
+import { useDimensions } from '@cbhq/cds-web/hooks/useDimensions';
 import { HStack } from '@cbhq/cds-web/layout';
 
 function useNavbarItems() {
@@ -23,9 +24,19 @@ export default function NavbarContent(): JSX.Element {
     [items],
   );
   const searchBarItem = useMemo(() => items.find((item) => item.type === 'search'), [items]);
+  const navbarRef = useRef(null);
 
+  useDimensions({
+    ref: navbarRef,
+    useBorderBoxSize: true,
+    onResize: ({ height }) => {
+      console.log(height);
+      document.documentElement.style.setProperty('--ifm-navbar-height', `${height}px`);
+    },
+  });
   return (
     <HStack
+      ref={navbarRef}
       flexGrow={1}
       justifyContent="space-between"
       paddingEnd={{ base: 4, phone: 3 }}
