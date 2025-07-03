@@ -8,6 +8,107 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.12.0 (7/3/2025 PST)
+
+#### 🚀 Updates
+
+- Publish illustrations 07/03/2025. [[#4130](https://github.cbhq.net/frontend/cds/pull/4130)]
+
+### 🚀 Added
+
+Generated with `yarn nx run illustrations:sync-illustrations`
+
+#### Pictogram
+
+- baseChartSmall
+- baseCheckSmall
+- baseCoinCryptoSmall
+- baseCoinNetworkSmall
+- baseConnectSmall
+- baseDecentralizationSmall
+- baseDiamondSmall
+- baseDiamondTrophy
+- baseEmptySmall
+- baseErrorButterflySmall
+- baseErrorSmall
+- baseLoadingSmall
+- baseLocationSmall
+- baseMintNftSmall
+- baseNetworkSmall
+- baseNftSmall
+- basePaycoinSmall
+- basePeopleSmall
+- basePiechartSmall
+- baseSecuritySmall
+- baseSendSmall
+- baseTargetSmall
+
+#### Spot Square
+
+- baseCautionMedium
+- baseChartMedium
+- baseCheckMedium
+- baseCheckTrophyMedium
+- baseCoinCryptoMedium
+- baseCoinNetworkMedium
+- baseConnectMedium
+- baseDecentralizationMedium
+- baseDiamondMedium
+- baseEmptyMedium
+- baseErrorButterflyMedium
+- baseErrorMedium
+- baseIdMedium
+- baseLoadingMedium
+- baseLocationMedium
+- baseMintNftMedium
+- baseNetworkMedium
+- baseNftMedium
+- basePaycoinMedium
+- basePeopleMedium
+- basePiechartMedium
+- baseSecurityMedium
+- baseSendMedium
+- baseTargetMedium
+- baseUsdcMedium
+
+#### Hero Square
+
+- baseChartLarge
+- baseCheck
+- baseCoinCryptoLarge
+- baseCoinNetworkLarge
+- baseConnectLarge
+- baseDecentralizationLarge
+- baseEmptyLarge
+- baseErrorButterfly
+- baseErrorLarge
+- baseLoadingLarge
+- baseLocationLarge
+- baseMintNftLarge
+- baseNetworkLarge
+- baseNftLarge
+- basePaycoinLarge
+- basePeopleLarge
+- basePiechartLarge
+- baseRewardsCalmLarge
+- baseSecurityLarge
+- baseSendLarge
+- baseTargetLarge
+
+#### Spot Rectangle
+
+- cryptoEconomyCoin
+- cryptoEconomyEurc
+- cryptoEconomyUSDC
+
+### 🐞 Updated
+
+Generated with `yarn nx run illustrations:sync-illustrations`
+
+#### Pictogram
+
+- cb1BankTransfers
+
 ## 4.11.0 (6/26/2025 PST)
 
 #### 🚀 Updates

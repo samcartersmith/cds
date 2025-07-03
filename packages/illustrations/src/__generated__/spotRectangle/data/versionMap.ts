@@ -209,6 +209,9 @@ const versionMap: Record<SpotRectangleName, number> = {
   concierge: 1,
   liquidationBufferYellow: 1,
   creditCardExcitementCoinbaseOne: 0,
+  cryptoEconomyUSDC: 0,
+  cryptoEconomyCoin: 0,
+  cryptoEconomyEurc: 0,
 };
 
 export default versionMap;

@@ -204,6 +204,18 @@ const svgJsMap = {
     light: () => require('../svgJs/light/cryptoEconomy-3').content,
     dark: () => require('../svgJs/dark/cryptoEconomy-3').content,
   },
+  cryptoEconomyCoin: {
+    light: () => require('../svgJs/light/cryptoEconomyCoin-0').content,
+    dark: () => require('../svgJs/dark/cryptoEconomyCoin-0').content,
+  },
+  cryptoEconomyEurc: {
+    light: () => require('../svgJs/light/cryptoEconomyEurc-0').content,
+    dark: () => require('../svgJs/dark/cryptoEconomyEurc-0').content,
+  },
+  cryptoEconomyUSDC: {
+    light: () => require('../svgJs/light/cryptoEconomyUSDC-0').content,
+    dark: () => require('../svgJs/dark/cryptoEconomyUSDC-0').content,
+  },
   cryptoForBeginners: {
     light: () => require('../svgJs/light/cryptoForBeginners-5').content,
     dark: () => require('../svgJs/dark/cryptoForBeginners-5').content,

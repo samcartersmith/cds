@@ -1,6 +1,6 @@
 {
   "executor": "sync-illustrations",
-  "lastUpdated": "2025-06-26T17:11:26.986Z",
+  "lastUpdated": "2025-07-03T20:07:11.165Z",
   "items": {
     "2:33979": {
       "type": "heroSquare",
@@ -21630,7 +21630,7 @@
       "height": 96,
       "description": "Coinbase, One, Concierge, person, attendant",
       "createdAt": "2024-09-13T15:01:37.911Z",
-      "lastUpdated": "2025-06-25T20:21:40.824Z",
+      "lastUpdated": "2025-07-03T14:26:31.651Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/coinbaseOneConcierge-2.svg",
         "svgDark": "./spotSquare/svg/dark/coinbaseOneConcierge-2.svg",
@@ -21985,22 +21985,22 @@
     "12487:70": {
       "type": "pictogram",
       "name": "cb1BankTransfers",
-      "hash": "KNcWV4eE2JTAgrJzGe/hL3WI8SyXTYYfCxi1qmf+en0=",
+      "hash": "iEiR9AIWif4SoHi1MLvsG5Mr4w+GdYDm9wuQ/bllvPg=",
       "width": 48,
-      "height": 48,
+      "height": 40,
       "description": "",
       "createdAt": "2024-10-25T15:28:55.715Z",
-      "lastUpdated": "2025-06-25T20:20:09.763Z",
+      "lastUpdated": "2025-07-03T14:26:31.640Z",
       "outputs": {
-        "svgLight": "./pictogram/svg/light/cb1BankTransfers-1.svg",
-        "svgDark": "./pictogram/svg/dark/cb1BankTransfers-1.svg",
-        "svgThemed": "./pictogram/svg/themeable/cb1BankTransfers-1.svg",
-        "svgJsLight": "./pictogram/svgJs/light/cb1BankTransfers-1.js",
-        "svgJsDark": "./pictogram/svgJs/dark/cb1BankTransfers-1.js",
-        "pngLight": "./pictogram/png/light/cb1BankTransfers-1.png",
-        "pngDark": "./pictogram/png/dark/cb1BankTransfers-1.png"
+        "svgLight": "./pictogram/svg/light/cb1BankTransfers-2.svg",
+        "svgDark": "./pictogram/svg/dark/cb1BankTransfers-2.svg",
+        "svgThemed": "./pictogram/svg/themeable/cb1BankTransfers-2.svg",
+        "svgJsLight": "./pictogram/svgJs/light/cb1BankTransfers-2.js",
+        "svgJsDark": "./pictogram/svgJs/dark/cb1BankTransfers-2.js",
+        "pngLight": "./pictogram/png/light/cb1BankTransfers-2.png",
+        "pngDark": "./pictogram/png/dark/cb1BankTransfers-2.png"
       },
-      "version": 1
+      "version": 2
     },
     "12487:86": {
       "type": "spotRectangle",
@@ -22070,7 +22070,7 @@
       "height": 48,
       "description": "usdc, send, loan, coin, portal, stars",
       "createdAt": "2024-11-14T22:12:21.263Z",
-      "lastUpdated": "2025-06-25T20:20:09.956Z",
+      "lastUpdated": "2025-07-03T14:26:31.645Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/usdcLoan-2.svg",
         "svgDark": "./pictogram/svg/dark/usdcLoan-2.svg",
@@ -22610,7 +22610,7 @@
       "height": 48,
       "description": "usdc, USDCoin, coin, USD, coins, earn, interest, dollar, rewards, awards",
       "createdAt": "2025-05-14T21:06:18.097Z",
-      "lastUpdated": "2025-06-25T20:20:09.434Z",
+      "lastUpdated": "2025-07-03T14:26:31.635Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/twoBonus-0.svg",
         "svgDark": "./pictogram/svg/dark/twoBonus-0.svg",
@@ -24230,7 +24230,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.123Z",
-      "lastUpdated": "2025-06-25T20:20:09.998Z",
+      "lastUpdated": "2025-07-02T17:06:33.324Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJj-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJj-0.svg",
@@ -24250,7 +24250,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.113Z",
-      "lastUpdated": "2025-06-25T20:20:09.529Z",
+      "lastUpdated": "2025-07-02T17:06:33.308Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJi-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJi-0.svg",
@@ -24270,7 +24270,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.105Z",
-      "lastUpdated": "2025-06-25T20:20:10.664Z",
+      "lastUpdated": "2025-07-02T17:06:33.349Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJh-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJh-0.svg",
@@ -24290,7 +24290,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.080Z",
-      "lastUpdated": "2025-06-25T20:20:09.745Z",
+      "lastUpdated": "2025-07-02T17:06:33.319Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJg-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJg-0.svg",
@@ -24310,7 +24310,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.073Z",
-      "lastUpdated": "2025-06-25T20:20:09.609Z",
+      "lastUpdated": "2025-07-02T17:06:33.314Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJf-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJf-0.svg",
@@ -24330,7 +24330,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.066Z",
-      "lastUpdated": "2025-06-25T20:20:09.382Z",
+      "lastUpdated": "2025-07-02T17:06:33.301Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJe-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJe-0.svg",
@@ -24350,7 +24350,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.059Z",
-      "lastUpdated": "2025-06-25T20:20:10.483Z",
+      "lastUpdated": "2025-07-02T17:06:33.344Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJd-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJd-0.svg",
@@ -24370,7 +24370,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.053Z",
-      "lastUpdated": "2025-06-25T20:20:10.096Z",
+      "lastUpdated": "2025-07-02T17:06:33.338Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJc-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJc-0.svg",
@@ -24390,7 +24390,7 @@
       "height": 40,
       "description": "avatar",
       "createdAt": "2025-05-28T20:45:28.046Z",
-      "lastUpdated": "2025-06-25T20:20:10.080Z",
+      "lastUpdated": "2025-07-02T17:06:33.330Z",
       "outputs": {
         "svgLight": "./pictogram/svg/light/avatarJb-0.svg",
         "svgDark": "./pictogram/svg/dark/avatarJb-0.svg",
@@ -24670,7 +24670,7 @@
       "height": 96,
       "description": "CoinbaseOne, CoinbaseOneCard, card, coinbase, One, cb1, coin,",
       "createdAt": "2025-06-11T18:02:33.992Z",
-      "lastUpdated": "2025-06-25T20:20:39.467Z",
+      "lastUpdated": "2025-07-03T14:26:31.630Z",
       "outputs": {
         "svgLight": "./spotSquare/svg/light/coinbaseOneBoostedCardCB1-0.svg",
         "svgDark": "./spotSquare/svg/dark/coinbaseOneBoostedCardCB1-0.svg",
@@ -24699,6 +24699,1426 @@
         "svgJsDark": "./spotRectangle/svgJs/dark/creditCardExcitementCoinbaseOne-0.js",
         "pngLight": "./spotRectangle/png/light/creditCardExcitementCoinbaseOne-0.png",
         "pngDark": "./spotRectangle/png/dark/creditCardExcitementCoinbaseOne-0.png"
+      },
+      "version": 0
+    },
+    "18592:1419": {
+      "type": "heroSquare",
+      "name": "baseErrorButterfly",
+      "hash": "zK8wH0hEp6I0o63HQSfZoB6vj6Wa7LJmf8cA2K3WC5g=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-01T21:06:20.551Z",
+      "lastUpdated": "2025-07-03T14:26:31.656Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseErrorButterfly-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseErrorButterfly-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseErrorButterfly-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseErrorButterfly-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseErrorButterfly-0.js",
+        "pngLight": "./heroSquare/png/light/baseErrorButterfly-0.png",
+        "pngDark": "./heroSquare/png/dark/baseErrorButterfly-0.png"
+      },
+      "version": 0
+    },
+    "18659:36": {
+      "type": "heroSquare",
+      "name": "baseCheck",
+      "hash": "VS9YEsDP6EzIMaqcOhS0c/eK0AqyROHSaPZ5ad2EN9Q=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.504Z",
+      "lastUpdated": "2025-07-03T14:26:31.504Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseCheck-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseCheck-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseCheck-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseCheck-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseCheck-0.js",
+        "pngLight": "./heroSquare/png/light/baseCheck-0.png",
+        "pngDark": "./heroSquare/png/dark/baseCheck-0.png"
+      },
+      "version": 0
+    },
+    "18659:61": {
+      "type": "heroSquare",
+      "name": "baseCoinCryptoLarge",
+      "hash": "K9YdJgUB73zZFy4U3vfih+aUUBGH6Ksh5NUDfUWZT4Q=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.499Z",
+      "lastUpdated": "2025-07-03T14:26:31.499Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseCoinCryptoLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseCoinCryptoLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseCoinCryptoLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseCoinCryptoLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseCoinCryptoLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseCoinCryptoLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseCoinCryptoLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:77": {
+      "type": "spotSquare",
+      "name": "baseCoinCryptoMedium",
+      "hash": "TWpgqB54gNcDhuE95vlC+Mlu0BClVdfMTlM1DAhu51I=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.396Z",
+      "lastUpdated": "2025-07-03T14:26:31.396Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseCoinCryptoMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseCoinCryptoMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseCoinCryptoMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseCoinCryptoMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseCoinCryptoMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseCoinCryptoMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseCoinCryptoMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:93": {
+      "type": "heroSquare",
+      "name": "basePiechartLarge",
+      "hash": "4jMDIlMBiuiEIIUIV72csHUTFEkDB+B2NjGvkZz3lOI=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.493Z",
+      "lastUpdated": "2025-07-03T14:26:31.493Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/basePiechartLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/basePiechartLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/basePiechartLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/basePiechartLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/basePiechartLarge-0.js",
+        "pngLight": "./heroSquare/png/light/basePiechartLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/basePiechartLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:117": {
+      "type": "spotSquare",
+      "name": "basePiechartMedium",
+      "hash": "QbCr+cKsRMAXpWhf/pseG93tuiO498u1JkDxGcKeNHE=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.391Z",
+      "lastUpdated": "2025-07-03T14:26:31.391Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/basePiechartMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/basePiechartMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/basePiechartMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/basePiechartMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/basePiechartMedium-0.js",
+        "pngLight": "./spotSquare/png/light/basePiechartMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/basePiechartMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:133": {
+      "type": "pictogram",
+      "name": "basePiechartSmall",
+      "hash": "I/fr6eriSNtv+9ZPuicRaGwEGCAw9lPFRW8rfNLThm4=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.301Z",
+      "lastUpdated": "2025-07-03T14:26:31.301Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/basePiechartSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/basePiechartSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/basePiechartSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/basePiechartSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/basePiechartSmall-0.js",
+        "pngLight": "./pictogram/png/light/basePiechartSmall-0.png",
+        "pngDark": "./pictogram/png/dark/basePiechartSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:155": {
+      "type": "heroSquare",
+      "name": "baseMintNftLarge",
+      "hash": "uO23s79MeRSRU3qeTbBoVbZqrAd2/OgZXiltAG0loQ4=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.488Z",
+      "lastUpdated": "2025-07-03T14:26:31.488Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseMintNftLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseMintNftLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseMintNftLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseMintNftLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseMintNftLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseMintNftLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseMintNftLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:185": {
+      "type": "heroSquare",
+      "name": "baseChartLarge",
+      "hash": "TEd2pWS8UVAhsx9NjJumE5nTDvECMXOAQ+SS9ETl28Q=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.483Z",
+      "lastUpdated": "2025-07-03T14:26:31.483Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseChartLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseChartLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseChartLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseChartLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseChartLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseChartLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseChartLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:195": {
+      "type": "spotSquare",
+      "name": "baseChartMedium",
+      "hash": "dN+p9N/uIgd+UnXU/XN7+1Z2/zZi0lFXTYDMArT21Ro=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.387Z",
+      "lastUpdated": "2025-07-03T14:26:31.387Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseChartMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseChartMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseChartMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseChartMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseChartMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseChartMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseChartMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:205": {
+      "type": "pictogram",
+      "name": "baseChartSmall",
+      "hash": "INcGCQbwwzBTD0x1HlJvJz7USUfwAupUxt1lMdTCp4c=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.534Z",
+      "lastUpdated": "2025-07-03T14:26:31.534Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseChartSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseChartSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseChartSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseChartSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseChartSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseChartSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseChartSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:231": {
+      "type": "spotSquare",
+      "name": "basePaycoinMedium",
+      "hash": "Fe4OQhR4w3J1GRHwhdnAOeBDuIhSlVIcKa/um7fATl8=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.571Z",
+      "lastUpdated": "2025-07-03T14:26:31.571Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/basePaycoinMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/basePaycoinMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/basePaycoinMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/basePaycoinMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/basePaycoinMedium-0.js",
+        "pngLight": "./spotSquare/png/light/basePaycoinMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/basePaycoinMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:239": {
+      "type": "pictogram",
+      "name": "basePaycoinSmall",
+      "hash": "BTdzW7b+p6n9f+Z9tpcVjDI/7qIXxHcMbHiY/BIgCIY=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.561Z",
+      "lastUpdated": "2025-07-03T14:26:31.561Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/basePaycoinSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/basePaycoinSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/basePaycoinSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/basePaycoinSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/basePaycoinSmall-0.js",
+        "pngLight": "./pictogram/png/light/basePaycoinSmall-0.png",
+        "pngDark": "./pictogram/png/dark/basePaycoinSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:250": {
+      "type": "heroSquare",
+      "name": "basePeopleLarge",
+      "hash": "ZXpFDQOFdQzrS0zqRMrPbUI1lDtuAUgQW47Aqq1z5Pc=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.474Z",
+      "lastUpdated": "2025-07-03T14:26:31.474Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/basePeopleLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/basePeopleLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/basePeopleLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/basePeopleLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/basePeopleLarge-0.js",
+        "pngLight": "./heroSquare/png/light/basePeopleLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/basePeopleLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:266": {
+      "type": "spotSquare",
+      "name": "baseCheckMedium",
+      "hash": "trrR5u9c8cw+cbSEL8jCMzH1RmM+BEK7Sq5R2nQjwe4=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.382Z",
+      "lastUpdated": "2025-07-03T14:26:31.382Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseCheckMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseCheckMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseCheckMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseCheckMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseCheckMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseCheckMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseCheckMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:272": {
+      "type": "spotSquare",
+      "name": "baseErrorButterflyMedium",
+      "hash": "0gEosNg91avzs9GYFo4edLLdrL9W4OADvrxz3am4d9E=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.423Z",
+      "lastUpdated": "2025-07-03T14:26:31.423Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseErrorButterflyMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseErrorButterflyMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseErrorButterflyMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseErrorButterflyMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseErrorButterflyMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseErrorButterflyMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseErrorButterflyMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:289": {
+      "type": "spotSquare",
+      "name": "baseMintNftMedium",
+      "hash": "EEngOyOdzUxAkinXmcE8G24nTkrlb2fgGN2R1d4GWY0=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.376Z",
+      "lastUpdated": "2025-07-03T14:26:31.376Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseMintNftMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseMintNftMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseMintNftMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseMintNftMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseMintNftMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseMintNftMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseMintNftMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:318": {
+      "type": "spotSquare",
+      "name": "basePeopleMedium",
+      "hash": "zGw9aXa06nu2nfroaaA4zh7LRNJn1eq7SW7yxNR6mBo=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.371Z",
+      "lastUpdated": "2025-07-03T14:26:31.371Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/basePeopleMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/basePeopleMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/basePeopleMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/basePeopleMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/basePeopleMedium-0.js",
+        "pngLight": "./spotSquare/png/light/basePeopleMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/basePeopleMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:332": {
+      "type": "pictogram",
+      "name": "baseCheckSmall",
+      "hash": "2cbCTxABh2HV0sqwablxHqO0FUb+Mm2pAR2Qv/0Jj8g=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.306Z",
+      "lastUpdated": "2025-07-03T14:26:31.306Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseCheckSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseCheckSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseCheckSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseCheckSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseCheckSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseCheckSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseCheckSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:338": {
+      "type": "pictogram",
+      "name": "baseErrorButterflySmall",
+      "hash": "D/HOAoRfqdWCGAltxA08EjlcoSvw0NDLXbGjXHBZUM8=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.311Z",
+      "lastUpdated": "2025-07-03T14:26:31.311Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseErrorButterflySmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseErrorButterflySmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseErrorButterflySmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseErrorButterflySmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseErrorButterflySmall-0.js",
+        "pngLight": "./pictogram/png/light/baseErrorButterflySmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseErrorButterflySmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:354": {
+      "type": "pictogram",
+      "name": "baseMintNftSmall",
+      "hash": "jkpgy+VCOReCKZiQAXJQ2nqYr5oNhzA8eCUXbagGHtY=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.315Z",
+      "lastUpdated": "2025-07-03T14:26:31.315Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseMintNftSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseMintNftSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseMintNftSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseMintNftSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseMintNftSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseMintNftSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseMintNftSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:386": {
+      "type": "pictogram",
+      "name": "baseCoinCryptoSmall",
+      "hash": "5r0iI0Ar++4q9Smh4f3kqBHeREL9eGvuZ4CAoqK9PSQ=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.297Z",
+      "lastUpdated": "2025-07-03T14:26:31.297Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseCoinCryptoSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseCoinCryptoSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseCoinCryptoSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseCoinCryptoSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseCoinCryptoSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseCoinCryptoSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseCoinCryptoSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:402": {
+      "type": "pictogram",
+      "name": "baseConnectSmall",
+      "hash": "qQzK5CXUMCh60nbaDVikkdpA+tZsvBvdO7L4ww9Jt08=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.578Z",
+      "lastUpdated": "2025-07-03T14:26:31.578Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseConnectSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseConnectSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseConnectSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseConnectSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseConnectSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseConnectSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseConnectSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:431": {
+      "type": "pictogram",
+      "name": "basePeopleSmall",
+      "hash": "/dKx4PQuPD3fzAESdMhgW2SLKEWNU+RbO4IQKfffzaI=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.441Z",
+      "lastUpdated": "2025-07-03T14:26:31.441Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/basePeopleSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/basePeopleSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/basePeopleSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/basePeopleSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/basePeopleSmall-0.js",
+        "pngLight": "./pictogram/png/light/basePeopleSmall-0.png",
+        "pngDark": "./pictogram/png/dark/basePeopleSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:471": {
+      "type": "heroSquare",
+      "name": "baseConnectLarge",
+      "hash": "7fn8R7Az5QzCFsWLTivc28n3QhUvjOkJIOy9ViL2LHQ=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.409Z",
+      "lastUpdated": "2025-07-03T14:26:31.409Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseConnectLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseConnectLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseConnectLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseConnectLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseConnectLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseConnectLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseConnectLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:497": {
+      "type": "spotSquare",
+      "name": "baseConnectMedium",
+      "hash": "c6vllnFo1wI4uVjkoIDBGRx2TxFLIZQtw0/sed/T5CA=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.365Z",
+      "lastUpdated": "2025-07-03T14:26:31.365Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseConnectMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseConnectMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseConnectMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseConnectMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseConnectMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseConnectMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseConnectMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:530": {
+      "type": "heroSquare",
+      "name": "baseLocationLarge",
+      "hash": "0KXrYeTHibSYe5Wcgz0ObS6tBea09ZutwoUyysykMPk=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.582Z",
+      "lastUpdated": "2025-07-03T14:26:31.582Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseLocationLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseLocationLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseLocationLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseLocationLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseLocationLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseLocationLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseLocationLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:543": {
+      "type": "spotSquare",
+      "name": "baseLocationMedium",
+      "hash": "cIWLJ7I7RzYwEa53A65DBcHzfnQjGcm9Cor292QAeRE=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.404Z",
+      "lastUpdated": "2025-07-03T14:26:31.404Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseLocationMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseLocationMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseLocationMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseLocationMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseLocationMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseLocationMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseLocationMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:553": {
+      "type": "pictogram",
+      "name": "baseLocationSmall",
+      "hash": "dSIfFJgdnN4bP+HuWX/uCNXrSVEAyweKg4Vsk1tSpww=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.513Z",
+      "lastUpdated": "2025-07-03T14:26:31.513Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseLocationSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseLocationSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseLocationSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseLocationSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseLocationSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseLocationSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseLocationSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:571": {
+      "type": "spotSquare",
+      "name": "baseNetworkMedium",
+      "hash": "9x9CNp8BCcKTOmo/erGi9jikqwmeNHfyZbdOuKIdeTo=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.360Z",
+      "lastUpdated": "2025-07-03T14:26:31.360Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseNetworkMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseNetworkMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseNetworkMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseNetworkMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseNetworkMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseNetworkMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseNetworkMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:580": {
+      "type": "pictogram",
+      "name": "baseNetworkSmall",
+      "hash": "wextwCijuuZbmWK5/99m3+FmlMm/T6LmNPmOWyKg4Mo=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.292Z",
+      "lastUpdated": "2025-07-03T14:26:31.292Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseNetworkSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseNetworkSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseNetworkSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseNetworkSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseNetworkSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseNetworkSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseNetworkSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:592": {
+      "type": "heroSquare",
+      "name": "baseSecurityLarge",
+      "hash": "BpxOin++LWFFi5uaJGcgi9ZbDz88v0q3twC7/8YkHag=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.539Z",
+      "lastUpdated": "2025-07-03T14:26:31.539Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseSecurityLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseSecurityLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseSecurityLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseSecurityLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseSecurityLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseSecurityLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseSecurityLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:612": {
+      "type": "spotSquare",
+      "name": "baseSecurityMedium",
+      "hash": "BUWlJpUGGWZRVlWwBXOOYmVYC3iohw/qyYPYbyLMctc=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.355Z",
+      "lastUpdated": "2025-07-03T14:26:31.355Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseSecurityMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseSecurityMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseSecurityMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseSecurityMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseSecurityMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseSecurityMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseSecurityMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:632": {
+      "type": "pictogram",
+      "name": "baseSecuritySmall",
+      "hash": "Vqygu9ElMPq2PS8N9/niLXVzsU2Xgts7jZaf0s1hWEg=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.436Z",
+      "lastUpdated": "2025-07-03T14:26:31.436Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseSecuritySmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseSecuritySmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseSecuritySmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseSecuritySmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseSecuritySmall-0.js",
+        "pngLight": "./pictogram/png/light/baseSecuritySmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseSecuritySmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:639": {
+      "type": "heroSquare",
+      "name": "baseLoadingLarge",
+      "hash": "Ja53RcI5HcJXhKxlFgNPLpojLMGBiomBOeU5MBab/JI=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.432Z",
+      "lastUpdated": "2025-07-03T14:26:31.432Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseLoadingLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseLoadingLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseLoadingLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseLoadingLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseLoadingLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseLoadingLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseLoadingLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:651": {
+      "type": "spotSquare",
+      "name": "baseLoadingMedium",
+      "hash": "DVn8L8R9fhmW2pmt1994eg2tLb1cFpwnlnbz8+euqaA=",
+      "width": 96.0013427734375,
+      "height": 95.9993667602539,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.418Z",
+      "lastUpdated": "2025-07-03T14:26:31.418Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseLoadingMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseLoadingMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseLoadingMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseLoadingMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseLoadingMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseLoadingMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseLoadingMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:661": {
+      "type": "heroSquare",
+      "name": "baseErrorLarge",
+      "hash": "s43TkzB4BXiZYWzpzOLWtmrGFWLKwbr6AjBUTC9U/VQ=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.523Z",
+      "lastUpdated": "2025-07-03T14:26:31.523Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseErrorLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseErrorLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseErrorLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseErrorLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseErrorLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseErrorLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseErrorLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:672": {
+      "type": "spotSquare",
+      "name": "baseErrorMedium",
+      "hash": "Ug4a/TxYxu5lZtPYUH2rT1lJVaWVq/usEFq5r2gSuyA=",
+      "width": 96.00074005126953,
+      "height": 96.00069427490234,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.348Z",
+      "lastUpdated": "2025-07-03T14:26:31.348Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseErrorMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseErrorMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseErrorMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseErrorMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseErrorMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseErrorMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseErrorMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:683": {
+      "type": "pictogram",
+      "name": "baseErrorSmall",
+      "hash": "bvcbCMs6yY4Br2Gl/Qba0DAaH1ayOsIPe4oXXWdZX4k=",
+      "width": 47.998416900634766,
+      "height": 47.99937057495117,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.324Z",
+      "lastUpdated": "2025-07-03T14:26:31.324Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseErrorSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseErrorSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseErrorSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseErrorSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseErrorSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseErrorSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseErrorSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:705": {
+      "type": "heroSquare",
+      "name": "baseDecentralizationLarge",
+      "hash": "1z//8JVgBA75v/EogpdMjx5iGrUs5+M4OqbXDA9trg0=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.469Z",
+      "lastUpdated": "2025-07-03T14:26:31.469Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseDecentralizationLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseDecentralizationLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseDecentralizationLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseDecentralizationLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseDecentralizationLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseDecentralizationLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseDecentralizationLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:723": {
+      "type": "spotSquare",
+      "name": "baseDecentralizationMedium",
+      "hash": "XsAPwRkzlFGG1pjk2pCgaXsrg4knKB0Bp6EHpqk6H+w=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.556Z",
+      "lastUpdated": "2025-07-03T14:26:31.556Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseDecentralizationMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseDecentralizationMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseDecentralizationMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseDecentralizationMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseDecentralizationMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseDecentralizationMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseDecentralizationMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:744": {
+      "type": "pictogram",
+      "name": "baseDecentralizationSmall",
+      "hash": "jeQb0Egt6fpgnL4uzTDBzStNlYlKfxwTnk7PHOVZ5vc=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.288Z",
+      "lastUpdated": "2025-07-03T14:26:31.288Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseDecentralizationSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseDecentralizationSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseDecentralizationSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseDecentralizationSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseDecentralizationSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseDecentralizationSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseDecentralizationSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:782": {
+      "type": "pictogram",
+      "name": "baseLoadingSmall",
+      "hash": "YBkBXwHaYRKWgKvdYPO8hgpkHtobIGFWA0yrMAEzakk=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.283Z",
+      "lastUpdated": "2025-07-03T14:26:31.283Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseLoadingSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseLoadingSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseLoadingSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseLoadingSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseLoadingSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseLoadingSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseLoadingSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:792": {
+      "type": "heroSquare",
+      "name": "baseCoinNetworkLarge",
+      "hash": "rM9mXyxPTh/YiqAcVvmPnkz9JIT/hd4y/kXZFmhLmys=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.464Z",
+      "lastUpdated": "2025-07-03T14:26:31.464Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseCoinNetworkLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseCoinNetworkLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseCoinNetworkLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseCoinNetworkLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseCoinNetworkLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseCoinNetworkLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseCoinNetworkLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:810": {
+      "type": "spotSquare",
+      "name": "baseCoinNetworkMedium",
+      "hash": "ZgoNgTRSocJVIULrMxN6rlHaZYyePx2j6GStQ4aA4GQ=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.508Z",
+      "lastUpdated": "2025-07-03T14:26:31.508Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseCoinNetworkMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseCoinNetworkMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseCoinNetworkMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseCoinNetworkMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseCoinNetworkMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseCoinNetworkMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseCoinNetworkMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:827": {
+      "type": "pictogram",
+      "name": "baseCoinNetworkSmall",
+      "hash": "ueOpK5XI3ORS2gt//MrC1EazZvMEk1A2/GjVKmtd73Q=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.587Z",
+      "lastUpdated": "2025-07-03T14:26:31.587Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseCoinNetworkSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseCoinNetworkSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseCoinNetworkSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseCoinNetworkSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseCoinNetworkSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseCoinNetworkSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseCoinNetworkSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:836": {
+      "type": "heroSquare",
+      "name": "baseTargetLarge",
+      "hash": "f5TVzo9pUM+a1M4Ka26EaNF4KMf9LXUpIuBs41r0sXY=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.597Z",
+      "lastUpdated": "2025-07-03T14:26:31.597Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseTargetLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseTargetLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseTargetLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseTargetLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseTargetLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseTargetLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseTargetLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:858": {
+      "type": "spotSquare",
+      "name": "baseTargetMedium",
+      "hash": "FvUMUHTvTCNouwwsD3zxI3kLn5FbfndWkKYspqLhZ04=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.518Z",
+      "lastUpdated": "2025-07-03T14:26:31.518Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseTargetMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseTargetMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseTargetMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseTargetMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseTargetMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseTargetMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseTargetMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:874": {
+      "type": "pictogram",
+      "name": "baseTargetSmall",
+      "hash": "BFZWbNRci3Kx7KOPcBj3NlIpn7I8mgVLzSzRO5KywaM=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.320Z",
+      "lastUpdated": "2025-07-03T14:26:31.320Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseTargetSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseTargetSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseTargetSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseTargetSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseTargetSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseTargetSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseTargetSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:900": {
+      "type": "heroSquare",
+      "name": "baseEmptyLarge",
+      "hash": "Ak3U9fJzKiOfJbh9vcV+NaEZ/7TIqkMyl8+td5G6fGA=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.459Z",
+      "lastUpdated": "2025-07-03T14:26:31.459Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseEmptyLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseEmptyLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseEmptyLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseEmptyLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseEmptyLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseEmptyLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseEmptyLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:908": {
+      "type": "spotSquare",
+      "name": "baseEmptyMedium",
+      "hash": "nZgC0RLITtfJFP/Qi7KJmxsPdgsl8Mdjqam/boXEaoI=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.343Z",
+      "lastUpdated": "2025-07-03T14:26:31.343Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseEmptyMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseEmptyMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseEmptyMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseEmptyMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseEmptyMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseEmptyMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseEmptyMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:916": {
+      "type": "pictogram",
+      "name": "baseEmptySmall",
+      "hash": "lxk8V0OV3aZf6Y9vV5W1xNpGr/HNUFT1Dk4B9TwaEgo=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.279Z",
+      "lastUpdated": "2025-07-03T14:26:31.279Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseEmptySmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseEmptySmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseEmptySmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseEmptySmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseEmptySmall-0.js",
+        "pngLight": "./pictogram/png/light/baseEmptySmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseEmptySmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:933": {
+      "type": "heroSquare",
+      "name": "baseSendLarge",
+      "hash": "EWf7ZQv4MTMC7M1iYP++rniTAgwXl4bd0Cjkkro7FtI=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.550Z",
+      "lastUpdated": "2025-07-03T14:26:31.550Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseSendLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseSendLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseSendLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseSendLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseSendLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseSendLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseSendLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:942": {
+      "type": "spotSquare",
+      "name": "baseSendMedium",
+      "hash": "57L0kWCSIsPgnsgRL8SsuMZ61MzuNoiUqtgjlYa7Jok=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.338Z",
+      "lastUpdated": "2025-07-03T14:26:31.338Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseSendMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseSendMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseSendMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseSendMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseSendMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseSendMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseSendMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:951": {
+      "type": "pictogram",
+      "name": "baseSendSmall",
+      "hash": "TQWwRGhPAOMz85cCyWSH3LZ6WF9BAhl/n+AtimPpnE8=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.272Z",
+      "lastUpdated": "2025-07-03T14:26:31.272Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseSendSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseSendSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseSendSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseSendSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseSendSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseSendSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseSendSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:965": {
+      "type": "heroSquare",
+      "name": "baseNftLarge",
+      "hash": "oM4di8TXTeJxNpoi4I7CcVNumecjUcBQLXEpIM+9T5E=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.545Z",
+      "lastUpdated": "2025-07-03T14:26:31.545Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseNftLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseNftLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseNftLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseNftLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseNftLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseNftLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseNftLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:998": {
+      "type": "spotSquare",
+      "name": "baseNftMedium",
+      "hash": "yfheXiCbJC7+RrjLRYOYutOyXwnMcIFZMvv9ZVAXwlM=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.427Z",
+      "lastUpdated": "2025-07-03T14:26:31.427Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseNftMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseNftMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseNftMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseNftMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseNftMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseNftMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseNftMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:1018": {
+      "type": "pictogram",
+      "name": "baseNftSmall",
+      "hash": "y00Xz1XM+hQx+7mpnvB1vP9D2GyvHupk12BVpASOEsY=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.450Z",
+      "lastUpdated": "2025-07-03T14:26:31.450Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseNftSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseNftSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseNftSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseNftSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseNftSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseNftSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseNftSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:1050": {
+      "type": "spotSquare",
+      "name": "baseIdMedium",
+      "hash": "IXZjhKeeZghqYyyC3gj/pgCtZceGdAXtFBL4XEudK54=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.445Z",
+      "lastUpdated": "2025-07-03T14:26:31.445Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseIdMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseIdMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseIdMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseIdMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseIdMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseIdMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseIdMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:1061": {
+      "type": "spotSquare",
+      "name": "baseUsdcMedium",
+      "hash": "sBseZ1ozGy5EnLLzRp0z8g5HAlYORtJNxB7H1VUw1qI=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.567Z",
+      "lastUpdated": "2025-07-03T14:26:31.567Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseUsdcMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseUsdcMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseUsdcMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseUsdcMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseUsdcMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseUsdcMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseUsdcMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:1083": {
+      "type": "spotSquare",
+      "name": "baseCheckTrophyMedium",
+      "hash": "f+CTpa52DDOiEZdvnv5k/NqIFsJG5xkxYTkhXQbTAjI=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.334Z",
+      "lastUpdated": "2025-07-03T14:26:31.334Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseCheckTrophyMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseCheckTrophyMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseCheckTrophyMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseCheckTrophyMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseCheckTrophyMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseCheckTrophyMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseCheckTrophyMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:1090": {
+      "type": "spotSquare",
+      "name": "baseCautionMedium",
+      "hash": "6F0Lve8RZPsrGnvYuHJINA7G8EIlTBGM4iRDhmvem0k=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.329Z",
+      "lastUpdated": "2025-07-03T14:26:31.329Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseCautionMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseCautionMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseCautionMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseCautionMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseCautionMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseCautionMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseCautionMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:1099": {
+      "type": "heroSquare",
+      "name": "baseRewardsCalmLarge",
+      "hash": "Pw/BP3CMAqiBAXQ0Q3MqMH2lb2pwxdcuLmw60T2NtcQ=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.413Z",
+      "lastUpdated": "2025-07-03T14:26:31.413Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseRewardsCalmLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseRewardsCalmLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseRewardsCalmLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseRewardsCalmLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseRewardsCalmLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseRewardsCalmLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseRewardsCalmLarge-0.png"
+      },
+      "version": 0
+    },
+    "18659:1113": {
+      "type": "spotSquare",
+      "name": "baseDiamondMedium",
+      "hash": "dM2jC8WcAB7pV7jThpyDR9luHiqvKPFShP85l29yMIg=",
+      "width": 96,
+      "height": 96,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.528Z",
+      "lastUpdated": "2025-07-03T14:26:31.528Z",
+      "outputs": {
+        "svgLight": "./spotSquare/svg/light/baseDiamondMedium-0.svg",
+        "svgDark": "./spotSquare/svg/dark/baseDiamondMedium-0.svg",
+        "svgThemed": "./spotSquare/svg/themeable/baseDiamondMedium-0.svg",
+        "svgJsLight": "./spotSquare/svgJs/light/baseDiamondMedium-0.js",
+        "svgJsDark": "./spotSquare/svgJs/dark/baseDiamondMedium-0.js",
+        "pngLight": "./spotSquare/png/light/baseDiamondMedium-0.png",
+        "pngDark": "./spotSquare/png/dark/baseDiamondMedium-0.png"
+      },
+      "version": 0
+    },
+    "18659:1125": {
+      "type": "pictogram",
+      "name": "baseDiamondSmall",
+      "hash": "eJUMGaz9PgsOC0srKd7lmsKJ05nDe/Blq/cwhYAmZNo=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.400Z",
+      "lastUpdated": "2025-07-03T14:26:31.400Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseDiamondSmall-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseDiamondSmall-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseDiamondSmall-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseDiamondSmall-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseDiamondSmall-0.js",
+        "pngLight": "./pictogram/png/light/baseDiamondSmall-0.png",
+        "pngDark": "./pictogram/png/dark/baseDiamondSmall-0.png"
+      },
+      "version": 0
+    },
+    "18659:1131": {
+      "type": "pictogram",
+      "name": "baseDiamondTrophy",
+      "hash": "cA0Z3FBpwi+OPgcKF2vX7PjBzvqU88Cj0Tgk4+D45zs=",
+      "width": 48,
+      "height": 48,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.592Z",
+      "lastUpdated": "2025-07-03T14:26:31.592Z",
+      "outputs": {
+        "svgLight": "./pictogram/svg/light/baseDiamondTrophy-0.svg",
+        "svgDark": "./pictogram/svg/dark/baseDiamondTrophy-0.svg",
+        "svgThemed": "./pictogram/svg/themeable/baseDiamondTrophy-0.svg",
+        "svgJsLight": "./pictogram/svgJs/light/baseDiamondTrophy-0.js",
+        "svgJsDark": "./pictogram/svgJs/dark/baseDiamondTrophy-0.js",
+        "pngLight": "./pictogram/png/light/baseDiamondTrophy-0.png",
+        "pngDark": "./pictogram/png/dark/baseDiamondTrophy-0.png"
+      },
+      "version": 0
+    },
+    "18668:1358": {
+      "type": "heroSquare",
+      "name": "baseNetworkLarge",
+      "hash": "nUvZ6f/Ygm8AkqDcw38nuPq7WFoDFbdORsBVrm9Px9c=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.455Z",
+      "lastUpdated": "2025-07-03T14:26:31.455Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/baseNetworkLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/baseNetworkLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/baseNetworkLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/baseNetworkLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/baseNetworkLarge-0.js",
+        "pngLight": "./heroSquare/png/light/baseNetworkLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/baseNetworkLarge-0.png"
+      },
+      "version": 0
+    },
+    "18668:1359": {
+      "type": "heroSquare",
+      "name": "basePaycoinLarge",
+      "hash": "T5dD9KzDdQNqqX85Ple5oryNf1nTa5O9m12Ts2Z6wfQ=",
+      "width": 240,
+      "height": 240,
+      "description": "",
+      "createdAt": "2025-07-03T14:26:31.478Z",
+      "lastUpdated": "2025-07-03T14:26:31.478Z",
+      "outputs": {
+        "svgLight": "./heroSquare/svg/light/basePaycoinLarge-0.svg",
+        "svgDark": "./heroSquare/svg/dark/basePaycoinLarge-0.svg",
+        "svgThemed": "./heroSquare/svg/themeable/basePaycoinLarge-0.svg",
+        "svgJsLight": "./heroSquare/svgJs/light/basePaycoinLarge-0.js",
+        "svgJsDark": "./heroSquare/svgJs/dark/basePaycoinLarge-0.js",
+        "pngLight": "./heroSquare/png/light/basePaycoinLarge-0.png",
+        "pngDark": "./heroSquare/png/dark/basePaycoinLarge-0.png"
+      },
+      "version": 0
+    },
+    "18732:61": {
+      "type": "spotRectangle",
+      "name": "cryptoEconomyUSDC",
+      "hash": "T9NYww3zwcdiG5uJqVep8H6205j945rcAX3rNtaDJ48=",
+      "width": 240,
+      "height": 120,
+      "description": "globe, international, economy, freedom, growth, crypto, economic, money, coins",
+      "createdAt": "2025-07-03T15:05:40.210Z",
+      "lastUpdated": "2025-07-03T15:05:40.210Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/cryptoEconomyUSDC-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/cryptoEconomyUSDC-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/cryptoEconomyUSDC-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/cryptoEconomyUSDC-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/cryptoEconomyUSDC-0.js",
+        "pngLight": "./spotRectangle/png/light/cryptoEconomyUSDC-0.png",
+        "pngDark": "./spotRectangle/png/dark/cryptoEconomyUSDC-0.png"
+      },
+      "version": 0
+    },
+    "18737:8": {
+      "type": "spotRectangle",
+      "name": "cryptoEconomyEurc",
+      "hash": "QPz6Y6B9glg1UC36v+0KiE1//O4AcY3gsrss6DA/Od4=",
+      "width": 240,
+      "height": 120,
+      "description": "globe, international, economy, freedom, growth, crypto, economic, money, coins",
+      "createdAt": "2025-07-03T15:44:26.151Z",
+      "lastUpdated": "2025-07-03T15:44:26.151Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/cryptoEconomyEurc-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/cryptoEconomyEurc-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/cryptoEconomyEurc-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/cryptoEconomyEurc-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/cryptoEconomyEurc-0.js",
+        "pngLight": "./spotRectangle/png/light/cryptoEconomyEurc-0.png",
+        "pngDark": "./spotRectangle/png/dark/cryptoEconomyEurc-0.png"
+      },
+      "version": 0
+    },
+    "18737:67": {
+      "type": "spotRectangle",
+      "name": "cryptoEconomyCoin",
+      "hash": "kut+lJAC7S4PZcTm2Dg1NsAY/S6T5uCs/Cfnt/6zfXE=",
+      "width": 240,
+      "height": 120,
+      "description": "globe, international, economy, freedom, growth, crypto, economic, money, coins",
+      "createdAt": "2025-07-03T15:44:26.142Z",
+      "lastUpdated": "2025-07-03T15:44:26.142Z",
+      "outputs": {
+        "svgLight": "./spotRectangle/svg/light/cryptoEconomyCoin-0.svg",
+        "svgDark": "./spotRectangle/svg/dark/cryptoEconomyCoin-0.svg",
+        "svgThemed": "./spotRectangle/svg/themeable/cryptoEconomyCoin-0.svg",
+        "svgJsLight": "./spotRectangle/svgJs/light/cryptoEconomyCoin-0.js",
+        "svgJsDark": "./spotRectangle/svgJs/dark/cryptoEconomyCoin-0.js",
+        "pngLight": "./spotRectangle/png/light/cryptoEconomyCoin-0.png",
+        "pngDark": "./spotRectangle/png/dark/cryptoEconomyCoin-0.png"
       },
       "version": 0
     }

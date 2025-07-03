@@ -76,9 +76,93 @@ const svgJsMap = {
     light: () => require('../svgJs/light/backedByUsDollar-5').content,
     dark: () => require('../svgJs/dark/backedByUsDollar-5').content,
   },
+  baseChartLarge: {
+    light: () => require('../svgJs/light/baseChartLarge-0').content,
+    dark: () => require('../svgJs/dark/baseChartLarge-0').content,
+  },
+  baseCheck: {
+    light: () => require('../svgJs/light/baseCheck-0').content,
+    dark: () => require('../svgJs/dark/baseCheck-0').content,
+  },
+  baseCoinCryptoLarge: {
+    light: () => require('../svgJs/light/baseCoinCryptoLarge-0').content,
+    dark: () => require('../svgJs/dark/baseCoinCryptoLarge-0').content,
+  },
+  baseCoinNetworkLarge: {
+    light: () => require('../svgJs/light/baseCoinNetworkLarge-0').content,
+    dark: () => require('../svgJs/dark/baseCoinNetworkLarge-0').content,
+  },
+  baseConnectLarge: {
+    light: () => require('../svgJs/light/baseConnectLarge-0').content,
+    dark: () => require('../svgJs/dark/baseConnectLarge-0').content,
+  },
+  baseDecentralizationLarge: {
+    light: () => require('../svgJs/light/baseDecentralizationLarge-0').content,
+    dark: () => require('../svgJs/dark/baseDecentralizationLarge-0').content,
+  },
   basedInUsa: {
     light: () => require('../svgJs/light/basedInUsa-5').content,
     dark: () => require('../svgJs/dark/basedInUsa-5').content,
+  },
+  baseEmptyLarge: {
+    light: () => require('../svgJs/light/baseEmptyLarge-0').content,
+    dark: () => require('../svgJs/dark/baseEmptyLarge-0').content,
+  },
+  baseErrorButterfly: {
+    light: () => require('../svgJs/light/baseErrorButterfly-0').content,
+    dark: () => require('../svgJs/dark/baseErrorButterfly-0').content,
+  },
+  baseErrorLarge: {
+    light: () => require('../svgJs/light/baseErrorLarge-0').content,
+    dark: () => require('../svgJs/dark/baseErrorLarge-0').content,
+  },
+  baseLoadingLarge: {
+    light: () => require('../svgJs/light/baseLoadingLarge-0').content,
+    dark: () => require('../svgJs/dark/baseLoadingLarge-0').content,
+  },
+  baseLocationLarge: {
+    light: () => require('../svgJs/light/baseLocationLarge-0').content,
+    dark: () => require('../svgJs/dark/baseLocationLarge-0').content,
+  },
+  baseMintNftLarge: {
+    light: () => require('../svgJs/light/baseMintNftLarge-0').content,
+    dark: () => require('../svgJs/dark/baseMintNftLarge-0').content,
+  },
+  baseNetworkLarge: {
+    light: () => require('../svgJs/light/baseNetworkLarge-0').content,
+    dark: () => require('../svgJs/dark/baseNetworkLarge-0').content,
+  },
+  baseNftLarge: {
+    light: () => require('../svgJs/light/baseNftLarge-0').content,
+    dark: () => require('../svgJs/dark/baseNftLarge-0').content,
+  },
+  basePaycoinLarge: {
+    light: () => require('../svgJs/light/basePaycoinLarge-0').content,
+    dark: () => require('../svgJs/dark/basePaycoinLarge-0').content,
+  },
+  basePeopleLarge: {
+    light: () => require('../svgJs/light/basePeopleLarge-0').content,
+    dark: () => require('../svgJs/dark/basePeopleLarge-0').content,
+  },
+  basePiechartLarge: {
+    light: () => require('../svgJs/light/basePiechartLarge-0').content,
+    dark: () => require('../svgJs/dark/basePiechartLarge-0').content,
+  },
+  baseRewardsCalmLarge: {
+    light: () => require('../svgJs/light/baseRewardsCalmLarge-0').content,
+    dark: () => require('../svgJs/dark/baseRewardsCalmLarge-0').content,
+  },
+  baseSecurityLarge: {
+    light: () => require('../svgJs/light/baseSecurityLarge-0').content,
+    dark: () => require('../svgJs/dark/baseSecurityLarge-0').content,
+  },
+  baseSendLarge: {
+    light: () => require('../svgJs/light/baseSendLarge-0').content,
+    dark: () => require('../svgJs/dark/baseSendLarge-0').content,
+  },
+  baseTargetLarge: {
+    light: () => require('../svgJs/light/baseTargetLarge-0').content,
+    dark: () => require('../svgJs/dark/baseTargetLarge-0').content,
   },
   bigBtc: {
     light: () => require('../svgJs/light/bigBtc-6').content,

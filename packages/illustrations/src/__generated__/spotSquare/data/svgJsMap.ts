@@ -68,9 +68,109 @@ const svgJsMap = {
     light: () => require('../svgJs/light/backedByUsDollar-5').content,
     dark: () => require('../svgJs/dark/backedByUsDollar-5').content,
   },
+  baseCautionMedium: {
+    light: () => require('../svgJs/light/baseCautionMedium-0').content,
+    dark: () => require('../svgJs/dark/baseCautionMedium-0').content,
+  },
+  baseChartMedium: {
+    light: () => require('../svgJs/light/baseChartMedium-0').content,
+    dark: () => require('../svgJs/dark/baseChartMedium-0').content,
+  },
+  baseCheckMedium: {
+    light: () => require('../svgJs/light/baseCheckMedium-0').content,
+    dark: () => require('../svgJs/dark/baseCheckMedium-0').content,
+  },
+  baseCheckTrophyMedium: {
+    light: () => require('../svgJs/light/baseCheckTrophyMedium-0').content,
+    dark: () => require('../svgJs/dark/baseCheckTrophyMedium-0').content,
+  },
+  baseCoinCryptoMedium: {
+    light: () => require('../svgJs/light/baseCoinCryptoMedium-0').content,
+    dark: () => require('../svgJs/dark/baseCoinCryptoMedium-0').content,
+  },
+  baseCoinNetworkMedium: {
+    light: () => require('../svgJs/light/baseCoinNetworkMedium-0').content,
+    dark: () => require('../svgJs/dark/baseCoinNetworkMedium-0').content,
+  },
+  baseConnectMedium: {
+    light: () => require('../svgJs/light/baseConnectMedium-0').content,
+    dark: () => require('../svgJs/dark/baseConnectMedium-0').content,
+  },
+  baseDecentralizationMedium: {
+    light: () => require('../svgJs/light/baseDecentralizationMedium-0').content,
+    dark: () => require('../svgJs/dark/baseDecentralizationMedium-0').content,
+  },
+  baseDiamondMedium: {
+    light: () => require('../svgJs/light/baseDiamondMedium-0').content,
+    dark: () => require('../svgJs/dark/baseDiamondMedium-0').content,
+  },
   basedInUsa: {
     light: () => require('../svgJs/light/basedInUsa-4').content,
     dark: () => require('../svgJs/dark/basedInUsa-4').content,
+  },
+  baseEmptyMedium: {
+    light: () => require('../svgJs/light/baseEmptyMedium-0').content,
+    dark: () => require('../svgJs/dark/baseEmptyMedium-0').content,
+  },
+  baseErrorButterflyMedium: {
+    light: () => require('../svgJs/light/baseErrorButterflyMedium-0').content,
+    dark: () => require('../svgJs/dark/baseErrorButterflyMedium-0').content,
+  },
+  baseErrorMedium: {
+    light: () => require('../svgJs/light/baseErrorMedium-0').content,
+    dark: () => require('../svgJs/dark/baseErrorMedium-0').content,
+  },
+  baseIdMedium: {
+    light: () => require('../svgJs/light/baseIdMedium-0').content,
+    dark: () => require('../svgJs/dark/baseIdMedium-0').content,
+  },
+  baseLoadingMedium: {
+    light: () => require('../svgJs/light/baseLoadingMedium-0').content,
+    dark: () => require('../svgJs/dark/baseLoadingMedium-0').content,
+  },
+  baseLocationMedium: {
+    light: () => require('../svgJs/light/baseLocationMedium-0').content,
+    dark: () => require('../svgJs/dark/baseLocationMedium-0').content,
+  },
+  baseMintNftMedium: {
+    light: () => require('../svgJs/light/baseMintNftMedium-0').content,
+    dark: () => require('../svgJs/dark/baseMintNftMedium-0').content,
+  },
+  baseNetworkMedium: {
+    light: () => require('../svgJs/light/baseNetworkMedium-0').content,
+    dark: () => require('../svgJs/dark/baseNetworkMedium-0').content,
+  },
+  baseNftMedium: {
+    light: () => require('../svgJs/light/baseNftMedium-0').content,
+    dark: () => require('../svgJs/dark/baseNftMedium-0').content,
+  },
+  basePaycoinMedium: {
+    light: () => require('../svgJs/light/basePaycoinMedium-0').content,
+    dark: () => require('../svgJs/dark/basePaycoinMedium-0').content,
+  },
+  basePeopleMedium: {
+    light: () => require('../svgJs/light/basePeopleMedium-0').content,
+    dark: () => require('../svgJs/dark/basePeopleMedium-0').content,
+  },
+  basePiechartMedium: {
+    light: () => require('../svgJs/light/basePiechartMedium-0').content,
+    dark: () => require('../svgJs/dark/basePiechartMedium-0').content,
+  },
+  baseSecurityMedium: {
+    light: () => require('../svgJs/light/baseSecurityMedium-0').content,
+    dark: () => require('../svgJs/dark/baseSecurityMedium-0').content,
+  },
+  baseSendMedium: {
+    light: () => require('../svgJs/light/baseSendMedium-0').content,
+    dark: () => require('../svgJs/dark/baseSendMedium-0').content,
+  },
+  baseTargetMedium: {
+    light: () => require('../svgJs/light/baseTargetMedium-0').content,
+    dark: () => require('../svgJs/dark/baseTargetMedium-0').content,
+  },
+  baseUsdcMedium: {
+    light: () => require('../svgJs/light/baseUsdcMedium-0').content,
+    dark: () => require('../svgJs/dark/baseUsdcMedium-0').content,
   },
   bigBtc: {
     light: () => require('../svgJs/light/bigBtc-4').content,
