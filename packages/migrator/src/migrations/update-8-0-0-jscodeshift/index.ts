@@ -7,6 +7,7 @@ import migrateButtonAsProp from './transforms/migrate-button-as-prop';
 import migrateColors from './transforms/migrate-colors';
 import migrateCssVariables from './transforms/migrate-css-variables';
 import migrateGeneralPaths from './transforms/migrate-general-paths';
+import migrateIcons from './transforms/migrate-icons';
 // import migrateDefaultText from './transforms/migrate-default-text';
 import migrateMobileComponentProps from './transforms/migrate-mobile-component-props';
 import migrateOnKeypressToOnKeydown from './transforms/migrate-onKeyPress-to-onKeyDown';
@@ -14,6 +15,7 @@ import migrateOnPressToOnClick from './transforms/migrate-onPress-to-onClick';
 import migratePaletteTypes from './transforms/migrate-palette-types';
 import migratePaletteValueToCssVar from './transforms/migrate-paletteValueToCssVar';
 import migrateRenamedCommonTypes from './transforms/migrate-renamed-common-types';
+import migrateRenamedIcons from './transforms/migrate-renamed-icons';
 import migrateResponsiveConfig from './transforms/migrate-responsive-config';
 import migrateSpacerGapToGap from './transforms/migrate-spacerGap-to-gap';
 import migrateSpacingMargin from './transforms/migrate-spacing-margin';
@@ -75,6 +77,9 @@ export default function mainTransform(file: FileInfo, api: API, options: Options
   transformsToRun.push(migrateBorderWidth);
   transformsToRun.push(migratePaletteTypes);
   transformsToRun.push(migrateUseSpectrum);
+  // migrateRenamedIcons needs to run first before migrateIcons
+  transformsToRun.push(migrateRenamedIcons);
+  transformsToRun.push(migrateIcons);
 
   // Apply all selected transforms in sequence
   let source = file.source;

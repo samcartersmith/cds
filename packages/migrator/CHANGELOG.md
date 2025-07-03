@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.7 (7/3/2025 PST)
+
+#### 🚀 Updates
+
+- Add icon migration script. [[#4126](https://github.cbhq.net/frontend/cds/pull/4126)]
+
 ## 0.2.6 (6/26/2025 PST)
 
 #### 🚀 Updates

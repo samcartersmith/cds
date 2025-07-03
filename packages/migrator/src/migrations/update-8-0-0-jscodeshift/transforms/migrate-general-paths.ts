@@ -26,6 +26,7 @@ const commonPathMigrationMap: Record<string, string> = {
   ChartDataPoint: '@cbhq/cds-common',
   BaseTooltipPlacement: '@cbhq/cds-common',
   NavigationIconName: '@cbhq/cds-common',
+  SharedProps: '@cbhq/cds-common',
 };
 
 // Define the mapping for web-only imports
