@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
+import { VStack } from '../../layout';
 import { Box } from '../../layout/Box';
+import { ThemeProvider } from '../../system';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { Text } from '../../typography/Text';
 import { Radio, RadioGroup } from '../RadioGroup';
 
@@ -11,6 +14,33 @@ export const Normal = () => {
     <Radio checked={checked} name="normal-radio" onChange={() => setChecked((s) => !s)}>
       Normal
     </Radio>
+  );
+};
+
+export const CustomColors = () => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <VStack gap={2}>
+      <Radio
+        checked={checked}
+        controlColor="bgPositive"
+        name="normal-radio"
+        onChange={() => setChecked((s) => !s)}
+      >
+        Control color prop
+      </Radio>
+      <Radio
+        background={checked ? 'accentBoldPurple' : 'bg'}
+        borderColor={checked ? 'bgNegative' : 'bgWarning'}
+        checked={checked}
+        color="bgPrimary"
+        controlColor="bgPositive"
+        name="normal-radio"
+        onChange={() => setChecked((s) => !s)}
+      >
+        Style props
+      </Radio>
+    </VStack>
   );
 };
 

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Text } from '../../typography/Text';
@@ -39,6 +39,46 @@ describe('RadioGroup.test', () => {
     );
 
     expect(screen.getByTestId('test-radio')).toBeTruthy();
+  });
+
+  it('has default color when checked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Radio checked onChange={jest.fn()} testID="test-radio" />
+      </DefaultThemeProvider>,
+    );
+
+    const radio = screen.getByTestId('test-radio-parent');
+    const outlineElement = within(radio).getByRole('presentation');
+
+    expect(outlineElement).toHaveStyle({
+      borderColor: 'var(--color-bgPrimary)',
+    });
+
+    const dotElement = within(radio).getByTestId('radio-icon');
+    expect(dotElement).toHaveStyle({
+      color: 'var(--color-bgPrimary)',
+    });
+  });
+
+  it('applies custom controlColor prop when checked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Radio checked controlColor="bgPositive" onChange={jest.fn()} testID="test-radio" />
+      </DefaultThemeProvider>,
+    );
+
+    const radio = screen.getByTestId('test-radio-parent');
+    const outlineElement = within(radio).getByRole('presentation');
+
+    expect(outlineElement).toHaveStyle({
+      borderColor: 'var(--color-bgPositive)',
+    });
+
+    const dotElement = within(radio).getByTestId('radio-icon');
+    expect(dotElement).toHaveStyle({
+      color: 'var(--color-bgPositive)',
+    });
   });
 
   it('renders options', () => {

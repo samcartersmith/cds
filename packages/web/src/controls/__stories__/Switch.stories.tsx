@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { css } from '@linaria/core';
 
-import { ThemeConfig } from '../../core/theme';
 import { useTheme } from '../../hooks/useTheme';
 import { Box } from '../../layout/Box';
+import { VStack } from '../../layout/VStack';
 import { ThemeProvider } from '../../system/ThemeProvider';
-import { defaultTheme } from '../../themes/defaultTheme';
 import { Switch } from '../Switch';
 
 const DarkModeWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -35,6 +34,31 @@ export const Normal = () => {
   );
 };
 
+export const CustomColors = () => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <VStack gap={2}>
+      <Switch
+        checked={checked}
+        controlColor="bgNegative"
+        onChange={() => setChecked((prevChecked) => !prevChecked)}
+      >
+        Control color prop
+      </Switch>
+      <Switch
+        background={checked ? 'accentBoldPurple' : 'bgNegative'}
+        borderColor={checked ? 'bgPositive' : 'bgPrimary'}
+        borderWidth={200}
+        checked={checked}
+        color="bgPrimary"
+        controlColor="bgPositive"
+        onChange={() => setChecked((prevChecked) => !prevChecked)}
+      >
+        Style props
+      </Switch>
+    </VStack>
+  );
+};
 export const DarkNormal = () => {
   const [checked, setChecked] = useState(false);
   return (
@@ -94,25 +118,6 @@ export const MultiLineLabel = () => (
     </Switch>
   </Box>
 );
-
-const customTheme: ThemeConfig = {
-  ...defaultTheme,
-  lightColor: {
-    ...defaultTheme.lightColor,
-    bgPrimary: 'rgb(var(--pink50))',
-  },
-};
-
-export const CustomPalette = () => {
-  const [checked, setChecked] = useState(true);
-  return (
-    <ThemeProvider activeColorScheme="light" theme={customTheme}>
-      <Switch checked={checked} onChange={() => setChecked((prevChecked) => !prevChecked)}>
-        Custom Palette
-      </Switch>
-    </ThemeProvider>
-  );
-};
 
 export default {
   title: 'Core Components/Switch',

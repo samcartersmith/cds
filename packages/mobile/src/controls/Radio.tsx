@@ -31,8 +31,12 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
   pressed,
   disabled,
   checked,
+  background = 'bg',
+  borderRadius = 1000,
   animatedScaleValue,
   animatedOpacityValue,
+  controlColor = 'bgPrimary',
+  borderColor = checked ? controlColor : 'bgLineHeavy',
   testID,
 }) => {
   const theme = useTheme();
@@ -40,9 +44,9 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
 
   return (
     <Interactable
-      background="bg"
-      borderColor={checked ? 'bgPrimary' : 'bgLineHeavy'}
-      borderRadius={1000}
+      background={background}
+      borderColor={borderColor}
+      borderRadius={borderRadius}
       borderWidth={100}
       disabled={disabled}
       pressed={pressed}
@@ -59,7 +63,7 @@ const RadioIcon: React.FC<React.PropsWithChildren<ControlIconProps>> = ({
         style={{ transform: [{ scale: animatedScaleValue }], opacity: animatedOpacityValue }}
       >
         <Box testID="radio-icon">
-          <DotSvg color={theme.color.fgPrimary} width={radioSize} />
+          <DotSvg color={theme.color[controlColor]} width={radioSize} />
         </Box>
       </Animated.View>
     </Interactable>
@@ -80,11 +84,11 @@ const RadioWithRef = forwardRef(function Radio<T extends string>(
       {...props}
       ref={ref}
       accessibilityHint={accessibilityHint}
+      hitSlop={5}
+      label={children}
       accessibilityLabel={accessibilityLabelValue}
       // TO DO: This should be `accessibilityRole="radio"` but RN has an issue https://github.com/facebook/react-native/issues/43266
       accessibilityRole="button"
-      hitSlop={5}
-      label={children}
     >
       {RadioIcon}
     </Control>

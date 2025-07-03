@@ -1,25 +1,30 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
+import { ThemeVars } from '@cbhq/cds-common/core/theme';
+import {
+  checkboxOpacityEnterConfig,
+  checkboxOpacityExitConfig,
+  checkboxScaleEnterConfig,
+  checkboxScaleExitConfig,
+} from '@cbhq/cds-common/motion/checkbox';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
+import { Box } from '../layout';
+import { useMotionProps } from '../motion/useMotionProps';
 
 import { Control, type ControlBaseProps } from './Control';
-import { useControlMotionProps } from './useControlMotionProps';
 
 const checkboxStyle = css`
   position: relative;
   width: var(--controlSize-checkboxSize);
   height: var(--controlSize-checkboxSize);
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   border-style: solid;
   border-width: var(--borderWidth-100);
+
+  transition: border-color, background-color 0.1s linear;
 
   /* Disable default focus ring before adding custom focus ring styles */
   &:focus {
@@ -33,10 +38,23 @@ const checkboxStyle = css`
   }
 `;
 
-export type CheckboxProps<T extends string> = ControlBaseProps<T>;
+export type CheckboxProps<T extends string> = ControlBaseProps<T> & {
+  /** Sets the checked/active color of the control.
+   * @default fgInverse
+   */
+  controlColor?: ThemeVars.Color;
+};
 
 const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
-  { children, checked, indeterminate, ...props }: CheckboxProps<T>,
+  {
+    children,
+    checked,
+    indeterminate,
+    controlColor = 'fgInverse',
+    background = checked || indeterminate ? 'bgPrimary' : 'bg',
+    borderColor = checked || indeterminate ? 'bgPrimary' : 'bgLineHeavy',
+    ...props
+  }: CheckboxProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   const filled = checked || indeterminate;
@@ -45,8 +63,10 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
   const iconPadding = checkboxSize / 5;
   const iconSize = checkboxSize - iconPadding;
 
-  const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
-    checked: filled,
+  const innerContainerMotionProps = useMotionProps({
+    enterConfigs: [checkboxOpacityEnterConfig, checkboxScaleEnterConfig],
+    exitConfigs: [checkboxOpacityExitConfig, checkboxScaleExitConfig],
+    animate: filled ? 'enter' : 'exit',
   });
 
   const iconStyle = useMemo(
@@ -70,22 +90,28 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
       type="checkbox"
       {...props}
     >
-      <motion.div
+      <Box
         key={theme.activeColorScheme}
+        alignItems="center"
+        background={background}
+        borderColor={borderColor}
         className={checkboxStyle}
         data-filled={filled}
+        flexShrink={0}
+        justifyContent="center"
         role="presentation"
-        {...outerContainerMotionProps}
+        testID="checkbox-outer"
       >
-        <motion.div {...innerContainerMotionProps}>
+        <motion.div {...innerContainerMotionProps} data-testid="checkbox-inner">
           <Icon
-            color="fgInverse"
+            color={controlColor}
             name={checked ? 'checkmark' : 'minus'}
             size="s"
             styles={iconStyle}
+            testID="checkbox-icon"
           />
         </motion.div>
-      </motion.div>
+      </Box>
     </Control>
   );
 }) as <T extends string>(

@@ -1,6 +1,6 @@
 import React, { forwardRef, memo } from 'react';
 import { AccessibilityProps, View } from 'react-native';
-import { SharedProps } from '@cbhq/cds-common';
+import type { SharedProps } from '@cbhq/cds-common';
 import { entries } from '@cbhq/cds-utils';
 import { isDevelopment } from '@cbhq/cds-utils/env';
 
@@ -28,7 +28,10 @@ export type RadioGroupBaseProps<T extends string> = Omit<
     value?: T;
     /** Handle change event when pressing on a radio option. */
     onChange?: RadioProps<T>['onChange'];
-
+    /** Sets the checked/active color of each control in the group.
+     * @default bgPrimary
+     */
+    controlColor?: RadioProps<T>['controlColor'];
     /** A11Y label to indicate order of radio buttons when focused on one button */
     radioAccessibilityLabel?: string;
   };
@@ -42,6 +45,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
     onChange,
     options,
     testID,
+    controlColor = 'bgPrimary',
     accessibilityLabel,
     accessibilityHint,
     radioAccessibilityLabel,
@@ -90,6 +94,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
             key={optionValue}
             accessibilityLabel={accessibilityLabel}
             checked={checked}
+            controlColor={controlColor}
             onChange={onChange}
             testID={testID ? `${testID}-${optionValue}` : undefined}
             value={optionValue}

@@ -1,5 +1,5 @@
 import React, { forwardRef, memo } from 'react';
-import type { SharedAccessibilityProps, SharedProps } from '@cbhq/cds-common/types';
+import type { SharedAccessibilityProps, SharedProps, ThemeVars } from '@cbhq/cds-common';
 
 import { type BoxBaseProps, Group } from '../layout';
 import type { GroupBaseProps } from '../layout/Group';
@@ -28,12 +28,25 @@ export type RadioGroupBaseProps<T extends string> = FilteredHTMLAttributes<
     name: string;
     /** Handle change event when pressing on a radio option. */
     onChange?: (value: T) => void;
+    /** Sets the checked/active color of each control in the group.
+     * @default bgPrimary
+     */
+    controlColor?: ThemeVars.Color;
   };
 
 export type RadioGroupProps<T extends string> = RadioGroupBaseProps<T>;
 
 const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
-  { label, value, onChange, options, name, testID, ...props }: RadioGroupProps<T>,
+  {
+    label,
+    value,
+    onChange,
+    options,
+    name,
+    testID,
+    controlColor = 'bgPrimary',
+    ...props
+  }: RadioGroupProps<T>,
   ref: React.ForwardedRef<HTMLDivElement>,
 ) {
   const handleSelect = useHandleRadioSelect<T>(onChange);
@@ -45,6 +58,7 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
         <Radio
           key={optionValue}
           checked={value === optionValue}
+          controlColor={controlColor}
           id={`${name}-${optionValue}`}
           name={name}
           onChange={handleSelect}

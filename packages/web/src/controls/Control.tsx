@@ -53,11 +53,14 @@ const interactableStyle = css`
 
 export type ControlBaseProps<T extends string> = FilteredHTMLAttributes<
   React.InputHTMLAttributes<HTMLInputElement>,
-  'value'
+  'value' | 'color'
 > &
   SharedProps &
   Partial<
-    Pick<InteractableBaseProps, 'background' | 'borderColor' | 'borderRadius' | 'borderWidth'>
+    Pick<
+      InteractableBaseProps,
+      'background' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'color'
+    >
   > & {
     /** Label for the control option. */
     children?: React.ReactNode;
@@ -89,6 +92,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     type,
     checked,
     disabled,
+    indeterminate,
     readOnly,
     required,
     value,
@@ -99,6 +103,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     borderColor,
     borderRadius,
     borderWidth,
+    color = checked || indeterminate ? 'fg' : 'fgMuted',
     testID,
     iconStyle,
     labelStyle,
@@ -124,7 +129,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       <Interactable
         transparentWhileInactive
         as="div"
-        background={background ?? (checked ? 'bgPrimary' : 'bg')}
+        background={background}
         borderColor={borderColor}
         borderRadius={borderRadius}
         borderWidth={borderWidth}
@@ -188,18 +193,13 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
           <Box alignItems="center" height="var(--lineHeight-body)" role="presentation">
             {iconElement}
           </Box>
-          <Text
-            color={checked ? 'fg' : 'fgMuted'}
-            disabled={disabled || readOnly}
-            font="body"
-            id={labelId}
-          >
+          <Text color={color} disabled={disabled || readOnly} font="body" id={labelId}>
             {label}
           </Text>
         </Box>
       </label>
     );
-  }, [iconElement, checked, disabled, inputId, label, labelId, readOnly, labelStyle]);
+  }, [label, iconElement, inputId, labelStyle, color, disabled, readOnly, labelId]);
 
   // If no label is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.
   return controlElement;

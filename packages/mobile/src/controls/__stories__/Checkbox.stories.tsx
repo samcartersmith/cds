@@ -100,6 +100,36 @@ const CheckboxScreen = () => {
           );
         }}
       </Example>
+
+      <Example inline title="Custom Color">
+        <Checkbox
+          checked={checked}
+          controlColor="bgNegative"
+          onChange={() => setChecked((s) => !s)}
+        >
+          Control color
+        </Checkbox>
+        <Checkbox
+          background={checked ? 'bgNegative' : 'bg'}
+          borderColor={checked ? 'bgNegative' : 'bgPositive'}
+          checked={checked}
+          controlColor="fg"
+          onChange={() => setChecked((s) => !s)}
+        >
+          Style props
+        </Checkbox>
+        <Checkbox
+          background={checked ? 'bgNegative' : 'bg'}
+          borderColor={checked ? 'bgNegative' : 'bgPositive'}
+          borderRadius={1000}
+          color="fgPrimary"
+          controlColor="fg"
+          indeterminate={checked}
+          onChange={() => setChecked((s) => !s)}
+        >
+          Style props indeterminate
+        </Checkbox>
+      </Example>
     </ExampleScreen>
   );
 };

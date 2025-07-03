@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
+import { VStack } from '../../layout';
+import { ThemeProvider } from '../../system';
+import { defaultTheme } from '../../themes/defaultTheme';
 import { Text } from '../../typography/Text';
 import { Radio, RadioGroup } from '../RadioGroup';
 
@@ -98,6 +101,30 @@ const RadioGroupScreen = () => {
                 value={group4}
               />
             </>
+          );
+        }}
+      </Example>
+
+      <Example inline title="Custom Color">
+        {() => {
+          const toggleChecked = () => setChecked((prevChecked) => !prevChecked);
+
+          return (
+            <VStack gap={2}>
+              <Radio checked={checked} controlColor="bgPositive" onChange={toggleChecked}>
+                Control color prop
+              </Radio>
+              <Radio
+                background={checked ? 'accentBoldPurple' : 'bg'}
+                borderColor={checked ? 'bgNegative' : 'bgWarning'}
+                checked={checked}
+                color="bgPrimary"
+                controlColor="bgPositive"
+                onChange={toggleChecked}
+              >
+                Style props
+              </Radio>
+            </VStack>
           );
         }}
       </Example>

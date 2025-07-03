@@ -1,7 +1,8 @@
 import { Pressable } from 'react-native';
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
 import { glyphMap } from '@cbhq/cds-icons/glyphMap';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { Checkbox } from '../Checkbox';
 
@@ -14,6 +15,7 @@ describe('Checkbox', () => {
     );
     expect(screen.getByTestId('mock-checkbox')).toBeAccessible();
   });
+
   it('renders a Pressable', () => {
     render(
       <DefaultThemeProvider>
@@ -56,6 +58,7 @@ describe('Checkbox', () => {
     const icon = screen.getByText(glyphMap['minus-24-inactive']);
     expect(icon).toBeTruthy();
   });
+
   it('indeterminate Checkbox passes a11y', () => {
     render(
       <DefaultThemeProvider>
@@ -170,5 +173,82 @@ describe('Checkbox', () => {
     fireEvent.press(screen.getByText('Checkbox'));
 
     expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('has default color when unchecked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Checkbox testID="test-checkbox">Unchecked</Checkbox>
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('test-checkbox')).toHaveStyle({
+      backgroundColor: defaultTheme.lightColor.bg,
+      borderColor: defaultTheme.lightColor.bgLineHeavy,
+    });
+  });
+
+  it('has default color when checked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Checkbox checked testID="test-checkbox">
+          Checked
+        </Checkbox>
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('test-checkbox')).toHaveStyle({
+      backgroundColor: defaultTheme.lightColor.bgPrimary,
+      borderColor: defaultTheme.lightColor.bgPrimary,
+    });
+  });
+
+  it('applies custom controlColor prop when checked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Checkbox checked controlColor="bgPositive" testID="test-checkbox">
+          Checked
+        </Checkbox>
+      </DefaultThemeProvider>,
+    );
+
+    const iconBox = screen.getByTestId('checkbox-icon');
+    // The icon glyph is inside the Box, find the Text element by role
+    const iconText = within(iconBox).getByRole('image');
+    expect(iconText).toHaveStyle({
+      color: defaultTheme.lightColor.bgPositive,
+    });
+  });
+
+  it('applies custom controlColor prop when indeterminate', () => {
+    render(
+      <DefaultThemeProvider>
+        <Checkbox indeterminate controlColor="bgWarning" testID="test-checkbox">
+          Indeterminate
+        </Checkbox>
+      </DefaultThemeProvider>,
+    );
+
+    const iconBox = screen.getByTestId('checkbox-icon');
+    // The icon glyph is inside the Box, find the Text element by role
+    const iconText = within(iconBox).getByRole('image');
+    expect(iconText).toHaveStyle({
+      color: defaultTheme.lightColor.bgWarning,
+    });
+  });
+
+  it('uses bg color when unchecked regardless of controlColor prop', () => {
+    render(
+      <DefaultThemeProvider>
+        <Checkbox controlColor="bgPositive" testID="test-checkbox">
+          Unchecked
+        </Checkbox>
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('test-checkbox')).toHaveStyle({
+      backgroundColor: defaultTheme.lightColor.bg,
+      borderColor: defaultTheme.lightColor.bgLineHeavy,
+    });
   });
 });

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Box } from '../../layout/Box';
-import { TextProps } from '../Text';
+import { Text, TextProps } from '../Text';
 
 const TextExamplesScreen = ({
   component: TextComponent,

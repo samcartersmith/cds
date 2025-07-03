@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { css } from '@linaria/core';
 
 import { useCheckboxGroupState } from '../../hooks/useCheckboxGroupState';
-import { Box } from '../../layout/Box';
+import { Box, VStack } from '../../layout';
 import { ThemeProvider } from '../../system/ThemeProvider';
 import { defaultTheme } from '../../themes/defaultTheme';
 import { Text } from '../../typography/Text';
@@ -15,6 +15,43 @@ export const Normal = () => {
     <Checkbox checked={checked} name="normal-checkbox" onChange={() => setChecked((s) => !s)}>
       Normal
     </Checkbox>
+  );
+};
+
+export const CustomColor = () => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <VStack gap={2}>
+      <Checkbox
+        checked={checked}
+        controlColor="bgNegative"
+        name="control-color-checkbox"
+        onChange={() => setChecked((s) => !s)}
+      >
+        Control color
+      </Checkbox>
+      <Checkbox
+        background={checked ? 'bgNegative' : 'bg'}
+        borderColor={checked ? 'bgNegative' : 'bgPositive'}
+        checked={checked}
+        controlColor="fg"
+        name="style-props-checkbox"
+        onChange={() => setChecked((s) => !s)}
+      >
+        Style props
+      </Checkbox>
+      <Checkbox
+        background={checked ? 'bgNegative' : 'bg'}
+        borderColor={checked ? 'bgNegative' : 'bgPositive'}
+        color="bgPrimary"
+        controlColor="fg"
+        indeterminate={checked}
+        name="indeterminate-checkbox"
+        onChange={() => setChecked((s) => !s)}
+      >
+        Style props indeterminate
+      </Checkbox>
+    </VStack>
   );
 };
 

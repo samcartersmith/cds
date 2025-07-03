@@ -129,4 +129,33 @@ describe('Radio', () => {
 
     expect(screen.getByText('Custom ReactNode')).toBeTruthy();
   });
+
+  it('has default color when checked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Radio checked testID="test-radio">
+          Radio
+        </Radio>
+      </DefaultThemeProvider>,
+    );
+
+    // The outer container should have the default border color for checked state
+    expect(screen.getByTestId('test-radio')).toHaveStyle({
+      borderColor: 'rgb(0,82,255)', // This corresponds to bgPrimary in defaultTheme
+    });
+  });
+
+  it('applies custom controlColor prop when checked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Radio checked controlColor="bgPositive" testID="test-radio">
+          Radio
+        </Radio>
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('test-radio')).toHaveStyle({
+      borderColor: 'rgb(9,133,81)', // This corresponds to bgPositive in defaultTheme
+    });
+  });
 });

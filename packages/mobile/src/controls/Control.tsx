@@ -16,6 +16,7 @@ import { accessibleOpacityDisabled, opacityPressed } from '@cbhq/cds-common/toke
 import { isDevelopment } from '@cbhq/cds-utils';
 
 import { useTheme } from '../hooks/useTheme';
+import type { InteractableBaseProps } from '../system';
 import { Text, TextProps } from '../typography/Text';
 import { Haptics } from '../utils/haptics';
 
@@ -26,7 +27,11 @@ export type ControlIconProps = SharedProps & {
   checked?: boolean;
   indeterminate?: boolean;
   disabled?: boolean;
-  backgroundColor: ThemeVars.Color;
+  controlColor?: ThemeVars.Color;
+  background?: ThemeVars.Color;
+  borderColor?: ThemeVars.Color;
+  borderRadius?: ThemeVars.BorderRadius;
+  borderWidth?: ThemeVars.BorderWidth;
   animatedScaleValue: Animated.Value;
   animatedOpacityValue: Animated.Value;
 };
@@ -34,25 +39,35 @@ export type ControlIconProps = SharedProps & {
 export type ControlBaseProps<T extends string> = Omit<
   PressableProps,
   'disabled' | 'children' | 'style'
-> & {
-  /** Label for the control option. */
-  children?: React.ReactNode;
-  /** Set the control to selected/on. */
-  checked?: boolean;
-  /** Disable user interaction. */
-  disabled?: boolean;
-  /** Set the control to ready-only. Similar effect as disabled. */
-  readOnly?: boolean;
-  /** Value of the option. Useful for multiple choice. */
-  value?: T;
-  /** Accessibility label describing the element. */
-  accessibilityLabel?: string;
-  /** Enable indeterminate state. Useful when you want to indicate that sub-items of a control are partially filled. */
-  indeterminate?: boolean;
-  /** Toggle control selected state. */
-  onChange?: (value?: T) => void;
-  style?: ViewStyle;
-};
+> &
+  Partial<
+    Pick<
+      InteractableBaseProps,
+      'background' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'color'
+    >
+  > & {
+    /** Label for the control option. */
+    children?: React.ReactNode;
+    /** Set the control to selected/on. */
+    checked?: boolean;
+    /** Disable user interaction. */
+    disabled?: boolean;
+    /** Set the control to ready-only. Similar effect as disabled. */
+    readOnly?: boolean;
+    /** Value of the option. Useful for multiple choice. */
+    value?: T;
+    /** Accessibility label describing the element. */
+    accessibilityLabel?: string;
+    /** Enable indeterminate state. Useful when you want to indicate that sub-items of a control are partially filled. */
+    indeterminate?: boolean;
+    /** Toggle control selected state. */
+    onChange?: (value?: T) => void;
+    /** Sets the checked/active color of the control.
+     * @default bgPrimary
+     */
+    controlColor?: ThemeVars.Color;
+    style?: ViewStyle;
+  };
 
 export type ControlProps<T extends string> = Omit<ControlBaseProps<T>, 'children'> & {
   /** Control icon to show. */
@@ -74,12 +89,17 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     onChange,
     hitSlop = 4,
     value,
+    controlColor,
     accessibilityRole,
     accessibilityLabel,
     accessibilityHint,
     children: ControlIcon,
     shouldUseSwitchTransition,
     style,
+    color,
+    background,
+    borderColor,
+    borderWidth,
     ...props
   }: ControlProps<T>,
   ref: React.ForwardedRef<View>,
@@ -135,15 +155,17 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
 
   const getLabelStyle = useCallback(
     (state: PressableStateCallbackType) => ({
-      color: animatedBoxValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [theme.color.fgMuted, theme.color.fg],
-      }),
+      color: color
+        ? theme.color[color]
+        : animatedBoxValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [theme.color.fgMuted, theme.color.fg],
+          }),
       // Prevent text element from expanding beyond available width.
       flexShrink: 1,
       opacity: state.pressed ? opacityPressed : pressDisabled ? accessibleOpacityDisabled : 1,
     }),
-    [animatedBoxValue, pressDisabled, theme.color.fg, theme.color.fgMuted],
+    [color, pressDisabled, theme.color],
   );
 
   const accessibilityActions = useMemo(() => [{ name: 'activate' }], []);
@@ -175,8 +197,11 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         <ControlIcon
           animatedOpacityValue={animatedOpacityValue}
           animatedScaleValue={animatedScaleValue}
-          backgroundColor={checked || indeterminate ? 'bgPrimary' : 'bg'}
+          background={background}
+          borderColor={borderColor}
+          borderWidth={borderWidth}
           checked={checked}
+          controlColor={controlColor}
           disabled={pressDisabled}
           indeterminate={indeterminate}
           pressed={pressed}
@@ -190,7 +215,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
           <View style={iconWrapperStyles}>{iconElement}</View>
           <Text
             animated
-            color={checked || indeterminate ? 'fg' : 'fgMuted'}
+            disabled={disabled || readOnly}
             font="body"
             style={getLabelStyle({ pressed })}
             testID={`${testID}Label`}
@@ -204,12 +229,18 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       ControlIcon,
       animatedOpacityValue,
       animatedScaleValue,
+      background,
+      borderColor,
+      borderWidth,
       checked,
+      controlColor,
+      disabled,
       getLabelStyle,
       iconWrapperStyles,
       indeterminate,
       label,
       pressDisabled,
+      readOnly,
       testID,
     ],
   );

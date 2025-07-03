@@ -99,11 +99,9 @@ describe('Switch.test', () => {
       </DefaultThemeProvider>,
     );
 
-    const parent = screen.getByTestId('test-switch-parent');
+    const track = screen.getByTestId('switch-track');
 
-    expect(parent).toHaveStyle({
-      '--interactable-background': 'var(--color-bgTertiary)',
-    });
+    expect(track.className).toContain('bgTertiary');
   });
 
   it('has default color when checked', () => {
@@ -113,10 +111,32 @@ describe('Switch.test', () => {
       </DefaultThemeProvider>,
     );
 
-    const parent = screen.getByTestId('test-switch-parent');
+    const track = screen.getByTestId('switch-track');
 
-    expect(parent).toHaveStyle({
-      '--interactable-background': 'var(--color-bgPrimary)',
-    });
+    expect(track.className).toContain('bgPrimary');
+  });
+
+  it('applies custom controlColor prop when checked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Switch checked controlColor="bgPositive" onChange={jest.fn()} testID="test-switch" />
+      </DefaultThemeProvider>,
+    );
+
+    const thumb = screen.getByTestId('switch-thumb');
+
+    expect(thumb.className).toContain('bgPositive');
+  });
+
+  it('uses bgTertiary color when unchecked regardless of controlColor prop', () => {
+    render(
+      <DefaultThemeProvider>
+        <Switch controlColor="bgPositive" onChange={jest.fn()} testID="test-switch" />
+      </DefaultThemeProvider>,
+    );
+
+    const track = screen.getByTestId('switch-track');
+
+    expect(track.className).toContain('bgTertiary');
   });
 });

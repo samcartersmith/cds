@@ -1,12 +1,19 @@
 import React, { forwardRef, memo } from 'react';
 import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
+import { ThemeVars } from '@cbhq/cds-common/core/theme';
+import {
+  checkboxOpacityEnterConfig,
+  checkboxOpacityExitConfig,
+  checkboxScaleEnterConfig,
+  checkboxScaleExitConfig,
+} from '@cbhq/cds-common/motion/checkbox';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout';
+import { useMotionProps } from '../motion/useMotionProps';
 
 import { Control, type ControlBaseProps } from './Control';
-import { useControlMotionProps } from './useControlMotionProps';
 
 const DotSvg = ({
   color = 'black',
@@ -24,19 +31,14 @@ const DotSvg = ({
 
 const baseStyle = css`
   position: relative;
-  width: var(--controlSize-radioSize);
   appearance: radio;
+  width: var(--controlSize-radioSize);
   height: var(--controlSize-radioSize);
-  flex-shrink: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--color-bg);
   border-style: solid;
   border-width: var(--borderWidth-100);
   border-radius: var(--borderRadius-1000);
+  transition: border-color 0.2s linear;
 
   /* Disable default focus ring before adding custom focus ring styles */
   &:focus {
@@ -50,37 +52,54 @@ const baseStyle = css`
   }
 `;
 
-export type RadioProps<T extends string> = ControlBaseProps<T>;
+export type RadioProps<T extends string> = ControlBaseProps<T> & {
+  /** Sets the checked/active color of the control.
+   * @default bgPrimary
+   */
+  controlColor?: ThemeVars.Color;
+};
 
 const RadioWithRef = forwardRef(function RadioWithRef<T extends string>(
-  { children, ...props }: RadioProps<T>,
+  {
+    children,
+    controlColor = 'bgPrimary',
+    checked = false,
+    background = 'bg',
+    borderColor = checked ? controlColor : 'bgLineHeavy',
+    ...props
+  }: RadioProps<T>,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   const theme = useTheme();
   const iconWidth = theme.controlSize.radioSize;
 
-  const { checked = false } = props;
-  const { outerContainerMotionProps, innerContainerMotionProps } = useControlMotionProps({
-    checked,
-    shouldAnimateBackground: false,
+  const innerContainerMotionProps = useMotionProps({
+    enterConfigs: [checkboxOpacityEnterConfig, checkboxScaleEnterConfig],
+    exitConfigs: [checkboxOpacityExitConfig, checkboxScaleExitConfig],
+    animate: checked ? 'enter' : 'exit',
   });
 
   return (
-    <Control ref={ref} background="bg" borderRadius={1000} label={children} type="radio" {...props}>
-      <motion.div
+    <Control ref={ref} checked={checked} label={children} type="radio" {...props}>
+      <Box
+        alignItems="center"
+        background={background}
+        borderColor={borderColor}
         className={baseStyle}
         data-filled={checked}
+        flexShrink={0}
+        justifyContent="center"
         role="presentation"
-        {...outerContainerMotionProps}
       >
         <motion.div {...innerContainerMotionProps}>
           {checked && (
-            <Box color="fgPrimary" testID="radio-icon">
+            // setting inner dot to match color of the radio outline
+            <Box color={controlColor} testID="radio-icon">
               <DotSvg color="currentColor" width={iconWidth} />
             </Box>
           )}
         </motion.div>
-      </motion.div>
+      </Box>
     </Control>
   );
 }) as <T extends string>(

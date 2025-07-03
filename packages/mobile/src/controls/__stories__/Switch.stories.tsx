@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
-import { ThemeProvider } from '../../system';
-import { defaultTheme } from '../../themes/defaultTheme';
+import { VStack } from '../../layout';
 import { Switch } from '../Switch';
 
 const SwitchScreen = () => {
@@ -35,21 +34,26 @@ const SwitchScreen = () => {
           label.
         </Switch>
       </Example>
-      <Example inline title="Custom Palette">
+      <Example inline title="Custom Color">
         {() => {
           const toggleChecked = () => setIsChecked2((prevChecked) => !prevChecked);
           return (
-            <ThemeProvider
-              activeColorScheme="light"
-              theme={{
-                ...defaultTheme,
-                lightColor: { ...defaultTheme.lightColor, bgPrimary: 'pink' },
-              }}
-            >
-              <Switch checked={isChecked2} onChange={toggleChecked}>
-                Default
+            <VStack gap={2}>
+              <Switch checked={isChecked2} controlColor="bgNegative" onChange={toggleChecked}>
+                Control color prop
               </Switch>
-            </ThemeProvider>
+              <Switch
+                background={isChecked2 ? 'accentBoldPurple' : 'bgNegative'}
+                borderColor={isChecked2 ? 'bgPositive' : 'bgPrimary'}
+                borderWidth={200}
+                checked={isChecked2}
+                color="bgPrimary"
+                controlColor="bgPositive"
+                onChange={toggleChecked}
+              >
+                Style props
+              </Switch>
+            </VStack>
           );
         }}
       </Example>

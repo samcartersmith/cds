@@ -68,3 +68,43 @@ function CheckboxGroupDemo() {
   );
 }
 ```
+
+### Customizing Colors
+
+Like other control components (i.e. Radio, Switch), you can customize the color of the Checkbox by setting the `controlColor` prop.
+
+```jsx live
+function CustomColors() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <Checkbox
+      controlColor="accentBoldGreen"
+      onChange={() => setChecked((s) => !s)}
+      checked={checked}
+    >
+      Custom control color
+    </Checkbox>
+  );
+}
+```
+
+For more advanced color customization, you can use additional style props like `background` and `borderColor`:
+
+```jsx live
+function AdvancedCustomColors() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <Checkbox
+      background={checked ? 'accentBoldPurple' : 'bgNegative'}
+      borderColor={checked ? 'bgPositive' : 'bgPrimary'}
+      checked={checked}
+      controlColor="bgPositive"
+      onChange={() => setChecked((s) => !s)}
+    >
+      Advanced styling
+    </Checkbox>
+  );
+}
+```

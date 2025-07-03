@@ -152,4 +152,29 @@ describe('Switch.test', () => {
       backgroundColor: defaultTheme.lightColor.bgPrimary,
     });
   });
+
+  it('applies custom controlColor prop when checked', () => {
+    render(
+      <DefaultThemeProvider>
+        <Switch checked controlColor="bgPositive" onChange={jest.fn()} testID="test-test-id" />
+      </DefaultThemeProvider>,
+    );
+
+    const thumb = screen.getByTestId('switch-thumb');
+    expect(thumb).toHaveStyle({
+      backgroundColor: defaultTheme.lightColor.bgPositive,
+    });
+  });
+
+  it('uses bgTertiary color when unchecked regardless of controlColor prop', () => {
+    render(
+      <DefaultThemeProvider>
+        <Switch controlColor="bgPositive" onChange={jest.fn()} testID="test-test-id" />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByTestId('test-test-id')).toHaveStyle({
+      backgroundColor: defaultTheme.lightColor.bgTertiary,
+    });
+  });
 });

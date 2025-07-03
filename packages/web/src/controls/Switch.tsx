@@ -1,46 +1,44 @@
 import React, { forwardRef, memo } from 'react';
-import { css, cx } from '@linaria/core';
+import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
+import { ThemeVars } from '@cbhq/cds-common/core/theme';
 import { switchTransitionConfig } from '@cbhq/cds-common/motion/switch';
 
+import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 import { convertTransition } from '../motion/utils';
 
 import { Control, type ControlBaseProps } from './Control';
-import { useControlMotionProps } from './useControlMotionProps';
 
-const track = css`
+const trackStyle = css`
   width: var(--controlSize-switchWidth);
   height: var(--controlSize-switchHeight);
-  border-radius: var(--borderRadius-1000);
   flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   padding: 1px;
+
+  transition: border-color, background-color 0.2s linear;
 
   &[data-filled='true'] {
     justify-content: flex-end;
   }
 `;
 
-const thumb = css`
+const thumbStyle = css`
   width: var(--controlSize-switchThumbSize);
   height: var(--controlSize-switchThumbSize);
-  background-color: var(--color-bg);
-  border: 0.5 solid var(--color-bgLine);
+  border: 0.5px solid var(--color-bgLine);
 
   position: absolute;
   top: 1px;
   left: 1px;
 `;
 
-const thumbBackgroundStyle = css`
-  background-color: rgb(255, 255, 255);
-`;
-
-export type SwitchProps = Omit<ControlBaseProps<string>, 'value'>;
+export type SwitchProps = Omit<ControlBaseProps<string>, 'value'> & {
+  /** Sets the checked/active color of the control.
+   * @default bgPrimary
+   */
+  controlColor?: ThemeVars.Color;
+};
 
 const MotionBox = motion(Box);
 
@@ -54,19 +52,25 @@ const thumbMotionVariants = {
 };
 
 const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchWithRef(
-  { children, checked, disabled, ...props },
+  {
+    children,
+    checked,
+    disabled,
+    controlColor,
+    background = checked ? 'bgPrimary' : 'bgTertiary',
+    borderColor,
+    borderRadius = 1000,
+    borderWidth,
+    ...props
+  },
   ref,
 ) {
-  const { outerContainerMotionProps } = useControlMotionProps({
-    checked,
-    initialBackground: 'var(--color-bgTertiary)',
-  });
-
+  const { activeColorScheme } = useTheme();
+  const defaultControlColor = activeColorScheme === 'dark' ? 'fg' : 'fgInverse';
   const switchNode = (
     <Control
       ref={ref}
-      background={checked ? 'bgPrimary' : 'bgTertiary'}
-      borderRadius={400}
+      borderRadius={1000}
       checked={checked}
       disabled={disabled}
       label={children}
@@ -74,17 +78,30 @@ const SwitchWithRef = forwardRef<HTMLInputElement, SwitchProps>(function SwitchW
       type="checkbox"
       {...props}
     >
-      <motion.div className={cx(track)} data-filled={checked} {...outerContainerMotionProps}>
+      <Box
+        alignItems="center"
+        background={background}
+        borderColor={borderColor}
+        borderRadius={borderRadius}
+        borderWidth={borderWidth}
+        className={trackStyle}
+        data-filled={checked}
+        justifyContent="flex-start"
+        testID="switch-track"
+      >
         <MotionBox
           animate={checked ? 'checked' : 'unchecked'}
+          background={controlColor ?? defaultControlColor}
           borderRadius={1000}
-          className={cx(thumb, thumbBackgroundStyle)}
+          className={thumbStyle}
+          data-testid="switch-thumb"
           elevation={1}
           initial={false}
+          testID="switch-thumb"
           transition={convertTransition(switchTransitionConfig)}
           variants={thumbMotionVariants}
         />
-      </motion.div>
+      </Box>
     </Control>
   );
 

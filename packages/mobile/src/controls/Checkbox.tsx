@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { Animated, View } from 'react-native';
+import type { ThemeVars } from '@cbhq/cds-common';
 
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
@@ -9,7 +10,12 @@ import { Control, type ControlBaseProps, ControlIconProps } from './Control';
 
 export type CheckboxBaseProps<T extends string> = ControlBaseProps<T>;
 
-export type CheckboxProps<T extends string> = CheckboxBaseProps<T>;
+export type CheckboxProps<T extends string> = ControlBaseProps<T> & {
+  /** Sets the checked/active color of the control.
+   * @default bgPrimary
+   */
+  controlColor?: ThemeVars.Color;
+};
 
 const CheckboxIcon = memo(
   ({
@@ -17,6 +23,10 @@ const CheckboxIcon = memo(
     checked,
     indeterminate,
     disabled,
+    controlColor = 'fgInverse',
+    background = checked || indeterminate ? 'bgPrimary' : 'bg',
+    borderColor = checked || indeterminate ? 'bgPrimary' : 'bgLineHeavy',
+    borderRadius,
     animatedScaleValue,
     animatedOpacityValue,
     testID,
@@ -48,8 +58,9 @@ const CheckboxIcon = memo(
     return (
       <Interactable
         alignItems="center"
-        background={filled ? 'bgPrimary' : 'bg'}
-        borderColor={disabled && filled ? 'transparent' : filled ? 'bgPrimary' : 'bgLineHeavy'}
+        background={background}
+        borderColor={borderColor}
+        borderRadius={borderRadius}
         borderWidth={100}
         disabled={disabled}
         height={checkboxSize}
@@ -60,10 +71,11 @@ const CheckboxIcon = memo(
       >
         <Animated.View style={animatedStyle}>
           <Icon
-            color="fgInverse"
+            color={controlColor}
             name={checked ? 'checkmark' : 'minus'}
             size="s"
             styles={iconStyle}
+            testID="checkbox-icon"
           />
         </Animated.View>
       </Interactable>

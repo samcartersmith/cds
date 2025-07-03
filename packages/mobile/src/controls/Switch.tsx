@@ -1,5 +1,6 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
+import type { ThemeVars } from '@cbhq/cds-common';
 
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
@@ -18,10 +19,19 @@ const SwitchIcon = ({
   pressed,
   checked,
   disabled,
+  controlColor,
+  background = checked ? 'bgPrimary' : 'bgTertiary',
+  borderColor,
+  borderRadius = 1000,
+  borderWidth = 0,
   animatedScaleValue,
   testID,
 }: ControlIconProps) => {
   const theme = useTheme();
+
+  const borderSize = theme.borderWidth[borderWidth];
+  const defaultControlColor = theme.activeColorScheme === 'dark' ? 'fg' : 'fgInverse';
+
   const { switchWidth, switchHeight, switchThumbSize } = theme.controlSize;
 
   const trackStyle = useMemo(
@@ -29,7 +39,7 @@ const SwitchIcon = ({
       {
         width: switchWidth,
         height: switchHeight,
-      },
+      } as const,
     ],
     [switchWidth, switchHeight],
   );
@@ -40,6 +50,11 @@ const SwitchIcon = ({
       {
         width: switchThumbSize,
         height: switchThumbSize,
+        position: 'absolute',
+        top: 1 - borderSize,
+        left: 1 - borderSize,
+      } as const,
+      {
         transform: [
           {
             translateX: animatedScaleValue.interpolate({
@@ -50,27 +65,29 @@ const SwitchIcon = ({
         ],
       },
     ],
-    [animatedScaleValue, switchThumbSize, switchWidth],
+    [animatedScaleValue, borderSize, switchThumbSize, switchWidth],
   );
 
   return (
     <Interactable
-      background={checked ? 'bgPrimary' : 'bgTertiary'}
-      borderRadius={400}
-      borderWidth={0}
+      background={background}
+      borderColor={borderColor}
+      borderRadius={borderRadius}
+      borderWidth={borderWidth}
       disabled={disabled}
       pressed={pressed}
       style={trackStyle}
       testID={testID}
     >
       <Interactable
-        background={theme.activeColorScheme === 'dark' ? 'bgInverse' : 'bg'}
+        background={controlColor ?? defaultControlColor}
         borderColor="bgLine"
-        borderRadius={1000}
+        borderRadius={borderRadius}
         borderWidth={100}
         disabled={disabled}
         pressed={pressed}
         style={thumbStyle}
+        testID="switch-thumb"
       />
     </Interactable>
   );
