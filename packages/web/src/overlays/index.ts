@@ -1,6 +1,8 @@
 export * from './Alert';
 export * from './FullscreenAlert';
 export * from './modal/FullscreenModal';
+export * from './modal/FullscreenModalHeader';
+export * from './modal/FullscreenModalLayout';
 export * from './modal/Modal';
 export * from './modal/ModalBody';
 export * from './modal/ModalFooter';
@@ -12,3 +14,4 @@ export * from './popover/usePopper';
 export * from './PortalProvider';
 export * from './Toast';
 export * from './tooltip/Tooltip';
+export * from './tray/Tray';

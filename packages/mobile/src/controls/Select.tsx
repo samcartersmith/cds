@@ -14,10 +14,6 @@ import { ThemeVars } from '@cbhq/cds-common/core/theme';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
 import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
 import {
-  selectTriggerCompactMinHeight,
-  selectTriggerMinHeight,
-} from '@cbhq/cds-common/tokens/select';
-import {
   InputVariant,
   SharedAccessibilityProps,
   SharedInputProps,
@@ -38,18 +34,25 @@ import { InputStack, type InputStackBaseProps } from './InputStack';
 import { SelectProvider } from './SelectContext';
 import { useSelect } from './useSelect';
 
+const selectTriggerMinHeight = 56;
+const selectTriggerCompactMinHeight = 40;
+const selectTriggerInsideLabelMinHeight = 24;
+
 const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   primary: 'fgPrimary',
   positive: 'fgPositive',
   negative: 'fgNegative',
   foreground: 'fg',
   foregroundMuted: 'fgMuted',
-  secondary: 'bgSecondary',
+  secondary: 'fgMuted',
 };
 
 export type SelectBaseProps = SharedProps &
   Omit<SharedInputProps, 'label'> &
-  Pick<InputStackBaseProps, 'width' | 'disabled' | 'variant' | 'focused' | 'startNode'> &
+  Pick<
+    InputStackBaseProps,
+    'width' | 'disabled' | 'variant' | 'focused' | 'startNode' | 'labelVariant'
+  > &
   Pick<
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
@@ -89,14 +92,15 @@ export const Select = memo(
         onPress,
         startNode,
         onChange,
+        labelVariant = 'outside',
       }: SelectProps,
       ref: ForwardedRef<TouchableWithoutFeedback>,
     ) => {
       const { rotateAnimation, animateRotateIn, animateRotateOut, rotateAnimationStyles } =
         useRotateAnimation(animateCaretInConfig, animateCaretOutConfig, 180);
       const [isSelectTrayOpen, toggleSelectTray] = useState(false);
-      const toggleSelecTrayOff = useCallback(() => toggleSelectTray(false), [toggleSelectTray]);
-      const toggleSelecTrayOn = useCallback(() => toggleSelectTray(true), [toggleSelectTray]);
+      const toggleSelectTrayOff = useCallback(() => toggleSelectTray(false), [toggleSelectTray]);
+      const toggleSelectTrayOn = useCallback(() => toggleSelectTray(true), [toggleSelectTray]);
       const focusedVariant = useInputVariant(!!isSelectTrayOpen, variant);
       const sanitizedValue = defaultValue === '' ? undefined : defaultValue;
       const internalRef = useRef(null);
@@ -105,7 +109,11 @@ export const Select = memo(
       const { value } = context;
       const { setA11yFocus, announceForA11y } = useA11y();
       const getSpacingStart = compact ? 1 : 2;
-      const minHeight = compact ? selectTriggerCompactMinHeight : selectTriggerMinHeight;
+      const minTriggerHeight = compact
+        ? selectTriggerCompactMinHeight
+        : labelVariant === 'inside' && Boolean(label)
+        ? selectTriggerInsideLabelMinHeight
+        : selectTriggerMinHeight;
 
       const { borderFocusedStyle, borderUnfocusedStyle } = useInputBorderStyle(
         !!isSelectTrayOpen,
@@ -134,20 +142,20 @@ export const Select = memo(
             handleA11y();
           }
         });
-        toggleSelecTrayOff();
+        toggleSelectTrayOff();
       }, [
         animateRotateIn,
         animateRotateOut,
         children,
         rotateAnimation,
-        toggleSelecTrayOff,
+        toggleSelectTrayOff,
         handleA11y,
       ]);
 
       const handleOnSubjectPress = useCallback(() => {
         onPress?.();
-        toggleSelecTrayOn();
-      }, [onPress, toggleSelecTrayOn]);
+        toggleSelectTrayOn();
+      }, [onPress, toggleSelectTrayOn]);
 
       const accessibilityState = useMemo(() => ({ disabled: !!disabled }), [disabled]);
 
@@ -156,6 +164,9 @@ export const Select = memo(
         (label ? `${label}, ` : '') +
         (value ?? placeholder ? `${value ?? placeholder}, ` : '') +
         (typeof helperText === 'string' ? helperText : '');
+
+      const inputNodePaddingY = labelVariant === 'inside' && Boolean(label) ? 0 : compact ? 1 : 2;
+      const inputNodePaddingStart = startNode ? 0 : getSpacingStart;
 
       return (
         <TextInputFocusVariantContext.Provider value={focusedVariant}>
@@ -202,32 +213,40 @@ export const Select = memo(
                 inputNode={
                   <HStack
                     alignItems="center"
-                    background="bg"
                     borderRadius={200}
                     flexBasis={1}
                     flexGrow={1}
                     flexShrink={1}
                     justifyContent={compact ? 'flex-end' : 'flex-start'}
-                    minHeight={minHeight}
-                    paddingStart={startNode ? 0 : getSpacingStart}
-                    paddingY={compact ? 1 : 2}
+                    minHeight={minTriggerHeight}
+                    paddingStart={inputNodePaddingStart}
+                    paddingY={inputNodePaddingY}
                   >
                     <Text
                       accessibilityState={accessibilityState}
                       align={compact ? 'end' : 'start'}
-                      color="fgMuted"
+                      color={valueLabel || value ? 'fg' : 'fgMuted'}
                       disabled={disabled}
                       ellipsize="tail"
                       font="body"
                     >
-                      {valueLabel ?? value ?? placeholder ?? (!compact && label)}
+                      {valueLabel ?? value ?? placeholder}
                     </Text>
                   </HStack>
                 }
                 labelNode={
                   !compact &&
-                  Boolean(label) && <InputLabel color={labelTextColor}>{label}</InputLabel>
+                  Boolean(label) && (
+                    <InputLabel
+                      color={labelTextColor}
+                      paddingStart={labelVariant === 'outside' || startNode ? 0 : getSpacingStart}
+                      paddingY={labelVariant === 'inside' ? 0 : 0.5}
+                    >
+                      {label}
+                    </InputLabel>
+                  )
                 }
+                labelVariant={labelVariant}
                 startNode={
                   <>
                     {compact && (
@@ -240,7 +259,7 @@ export const Select = memo(
                     {!!startNode && <HStack alignItems="center">{startNode}</HStack>}
                   </>
                 }
-                variant={focusedVariant}
+                variant={variant}
                 width={width}
               />
             </TouchableWithoutFeedback>

@@ -204,17 +204,17 @@ export const RemoteImage = memo(function RemoteImage({
           aspectRatio: aspectRatio ? aspectRatio[0] / aspectRatio[1] : undefined,
           borderRadius: borderRadius ?? shapeRadius,
         } as const,
-        style,
         darkModeStyles,
         borderStyles,
+        style,
       ].filter(Boolean),
     [aspectRatio, shapeRadius, borderRadius, borderStyles, style, darkModeStyles],
   );
 
   const stylesWithDimensions = useMemo(
     () => [
-      ...styles,
       { width: computedWidth as DimensionValue, height: computedHeight as DimensionValue },
+      ...styles,
     ],
     [computedHeight, computedWidth, styles],
   );

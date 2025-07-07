@@ -4,6 +4,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { Button } from '../../buttons';
 import { DefaultThemeProvider } from '../../utils/test';
+import { CellHelperText } from '../CellHelperText';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
@@ -127,6 +128,16 @@ describe('ListCell', () => {
     );
 
     expect(screen.getByTestId('subdetail')).toBeVisible();
+  });
+
+  it('renders a helperText', () => {
+    render(
+      <DefaultThemeProvider>
+        <ListCell helperText={<CellHelperText>helperText</CellHelperText>} />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByText('helperText')).toBeVisible();
   });
 
   it('renders media', () => {

@@ -84,6 +84,33 @@ const Fallbacks = () => {
         innerSpacing={innerSpacing}
         outerSpacing={outerSpacing}
       />
+      <ListCellFallback disableRandomRectWidth helperText />
+      <ListCellFallback disableRandomRectWidth helperText title />
+      <ListCellFallback
+        description
+        detail
+        disableRandomRectWidth
+        helperText
+        subdetail
+        title
+        media="image"
+        styles={{ helperText: { paddingLeft: 64 } }}
+      />
+      <ListCellFallback
+        disableRandomRectWidth
+        helperText
+        title
+        media="icon"
+        styles={{ helperText: { paddingLeft: 48 } }}
+      />
+      <ListCellFallback
+        compact
+        disableRandomRectWidth
+        helperText
+        title
+        media="icon"
+        styles={{ helperText: { paddingLeft: 48 } }}
+      />
     </>
   );
 };

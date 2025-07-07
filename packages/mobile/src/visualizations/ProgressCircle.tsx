@@ -1,7 +1,7 @@
-import React, { forwardRef, memo, useEffect, useRef } from 'react';
-import { Animated, View } from 'react-native';
+import React, { forwardRef, memo, useEffect, useMemo, useRef } from 'react';
+import { Animated, type StyleProp, View, type ViewStyle } from 'react-native';
 import { Circle, CircleProps, G, Svg } from 'react-native-svg';
-import { SharedProps } from '@cbhq/cds-common';
+import { SharedProps, type ThemeVars } from '@cbhq/cds-common';
 import { animateProgressBaseSpec } from '@cbhq/cds-common/animation/progress';
 import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
 import { getProgressCircleParams } from '@cbhq/cds-common/visualizations/getProgressCircleParams';
@@ -10,44 +10,94 @@ import { isTest } from '@cbhq/cds-utils';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
 import { useTheme } from '../hooks/useTheme';
-import { Box } from '../layout';
+import { Box, type BoxProps } from '../layout';
 
+import { DefaultProgressCircleContent } from './DefaultProgressCircleContent';
 import type { ProgressBaseProps } from './ProgressBar';
-import { ProgressTextLabel } from './ProgressTextLabel';
 import {
   VisualizationContainer,
   type VisualizationContainerDimension,
 } from './VisualizationContainer';
 
+type CircleType = React.ComponentClass<CircleProps & SharedProps>;
+const AnimatedCircle = Animated.createAnimatedComponent(Circle as CircleType);
+
 export type ProgressCircleBaseProps = ProgressBaseProps & {
-  /** Toggle used to hide the inner circle percentage */
+  /**
+   * Toggle used to hide the content node rendered inside the circle.
+   */
+  hideContent?: boolean;
+  /**
+   * @deprecated Use hideContent instead
+   * Toggle used to hide the text rendered inside the circle.
+   */
   hideText?: boolean;
-  /** Optional size in px for the visualization. This is useful if the visualization is used in an HStack. If this is omitted the visualization will fill the parent width or height. Since it's a circular visualization it will fill the smaller of the parent width or height. */
+  /**
+   * Optional size in px for the visualization.
+   * This is useful if the visualization is used in an HStack.
+   * If this is omitted the visualization will fill the parent width or height.
+   * Since it's a circular visualization it will fill the smaller of the parent width or height
+   */
   size?: number;
+  /**
+   * Optional component to override the default content rendered inside the circle.
+   */
+  contentNode?: React.ReactNode;
 };
 
-export type ProgressCircleTextBaseProps = Pick<ProgressCircleBaseProps, 'progress' | 'disabled'>;
+export type ProgressCircleProps = ProgressCircleBaseProps & {
+  /**
+   * Custom styles for the progress circle root.
+   */
+  style?: StyleProp<ViewStyle>;
+  /**
+   * Custom styles for the progress circle.
+   */
+  styles?: {
+    /**
+     * Custom styles for the progress circle root.
+     */
+    root?: StyleProp<ViewStyle>;
+    /**
+     * Custom styles for the progress circle svg container.
+     */
+    svgContainer?: StyleProp<ViewStyle>;
+    /**
+     * Custom styles for the progress circle svg.
+     */
+    svg?: StyleProp<ViewStyle>;
+    /**
+     * Custom styles for the text container.
+     */
+    textContainer?: StyleProp<ViewStyle>;
+    /**
+     * Custom styles for the progress circle inner.
+     */
+    progress?: Partial<CircleProps>;
+    /**
+     * Custom styles for the progress circle inner.
+     */
+    circle?: Partial<CircleProps>;
+  };
+};
 
-export type ProgressInnerCircleBaseProps = Pick<
+export type ProgressCircleContentProps = Pick<ProgressCircleBaseProps, 'progress' | 'disabled'> &
+  BoxProps & {
+    /**
+     * Custom text color.
+     * @default fgMuted
+     */
+    color?: ThemeVars.Color;
+  };
+
+type ProgressInnerCircleProps = Pick<
   ProgressCircleBaseProps,
   'progress' | 'onAnimationEnd' | 'onAnimationStart'
 > &
   Required<Pick<ProgressCircleBaseProps, 'size' | 'weight' | 'color'>> & {
     visuallyDisabled?: boolean;
+    style?: Partial<CircleProps>;
   };
-
-type CircleType = React.ComponentClass<CircleProps & SharedProps>;
-const AnimatedCircle = Animated.createAnimatedComponent(Circle as CircleType);
-
-const ProgressCircleText = memo(({ progress, disabled }: ProgressCircleTextBaseProps) => {
-  return (
-    <Box alignItems="center" height="100%" justifyContent="center" position="absolute" width="100%">
-      <Box alignSelf="center" flexGrow={0} flexShrink={0}>
-        <ProgressTextLabel color="fgMuted" disabled={disabled} value={Math.round(progress * 100)} />
-      </Box>
-    </Box>
-  );
-});
 
 const ProgressCircleInner = memo(
   ({
@@ -56,9 +106,10 @@ const ProgressCircleInner = memo(
     color,
     weight,
     visuallyDisabled,
+    style,
     onAnimationEnd,
     onAnimationStart,
-  }: ProgressInnerCircleBaseProps) => {
+  }: ProgressInnerCircleProps) => {
     const strokeWidth = useProgressSize(weight);
     const theme = useTheme();
     const circleRef = useRef<React.Component<CircleProps>>(null);
@@ -95,6 +146,7 @@ const ProgressCircleInner = memo(
           strokeWidth,
           stroke: !visuallyDisabled ? theme.color[color] : theme.color.bgLineHeavy,
         })}
+        {...(style || {})}
       />
     );
   },
@@ -112,17 +164,29 @@ export const ProgressCircle = memo(
         color = 'bgPrimary',
         disabled = false,
         testID,
+        hideContent,
         hideText,
         size,
+        contentNode,
+        style,
+        styles,
         onAnimationEnd,
         onAnimationStart,
-      }: ProgressCircleBaseProps,
+      }: ProgressCircleProps,
       forwardedRef: React.ForwardedRef<View>,
     ) => {
       const theme = useTheme();
       const strokeWidth = useProgressSize(weight);
 
       const visSize = size ?? '100%';
+
+      const rootStyle = useMemo(() => [style, styles?.root], [style, styles?.root]);
+
+      const textContainerStyle = useMemo(
+        () => [{ padding: strokeWidth }, styles?.textContainer],
+        [strokeWidth, styles?.textContainer],
+      );
+
       return (
         <VisualizationContainer height={visSize} width={visSize}>
           {({ width, height, circleSize }: VisualizationContainerDimension) => (
@@ -139,13 +203,21 @@ export const ProgressCircle = memo(
               alignItems="center"
               height={height}
               justifyContent="center"
+              style={rootStyle}
               testID={testID}
               width={width}
             >
-              <Box flexGrow={0} flexShrink={0} height={circleSize} width={circleSize}>
+              <Box
+                flexGrow={0}
+                flexShrink={0}
+                height={circleSize}
+                style={styles?.svgContainer}
+                width={circleSize}
+              >
                 <Svg
                   key={circleSize}
                   height={circleSize}
+                  style={styles?.svg}
                   viewBox={`0 0 ${circleSize} ${circleSize}`}
                   width={circleSize}
                 >
@@ -156,6 +228,7 @@ export const ProgressCircle = memo(
                         strokeWidth,
                         stroke: theme.color.bgLine,
                       })}
+                      {...(styles?.circle || {})}
                     />
                     <ProgressCircleInner
                       color={color}
@@ -163,12 +236,29 @@ export const ProgressCircle = memo(
                       onAnimationStart={onAnimationStart}
                       progress={progress}
                       size={circleSize}
+                      style={styles?.progress}
                       visuallyDisabled={disabled}
                       weight={weight}
                     />
                   </G>
                 </Svg>
-                {!hideText && <ProgressCircleText disabled={disabled} progress={progress} />}
+                {!hideText && !hideContent && (
+                  <Box height="100%" position="absolute" style={textContainerStyle} width="100%">
+                    {/* We clip the content node to the circle to prevent the node from overflowing over the circle */}
+                    <Box
+                      alignItems="center"
+                      borderRadius={1000}
+                      height="100%"
+                      justifyContent="center"
+                      overflow="hidden"
+                      width="100%"
+                    >
+                      {contentNode ?? (
+                        <DefaultProgressCircleContent disabled={disabled} progress={progress} />
+                      )}
+                    </Box>
+                  </Box>
+                )}
               </Box>
             </Box>
           )}

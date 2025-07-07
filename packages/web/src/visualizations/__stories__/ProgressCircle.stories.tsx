@@ -1,8 +1,16 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
+import { css } from '@linaria/core';
+import { assets } from '@cbhq/cds-common/internal/data/assets';
+import { avatarSizes } from '@cbhq/cds-common/internal/data/avatars';
 
-import { HStack } from '../../layout/HStack';
-import { VStack } from '../../layout/VStack';
+import { Button } from '../../buttons';
+import { Icon } from '../../icons';
+import { Box, HStack, VStack } from '../../layout';
+import { RemoteImage } from '../../media';
+import { defaultTheme } from '../../themes/defaultTheme';
+import { TextTitle1 } from '../../typography';
 import { Text } from '../../typography/Text';
+import { DefaultProgressCircleContent } from '../DefaultProgressCircleContent';
 import { ProgressCircle } from '../ProgressCircle';
 import { ProgressContainerWithButtons } from '../ProgressContainerWithButtons';
 
@@ -46,8 +54,8 @@ export const NoText = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <HStack gap={2}>
-          <ProgressCircle hideText progress={calculateProgress(0)} size={100} />
-          <ProgressCircle hideText progress={calculateProgress(0.2)} size={100} />
+          <ProgressCircle hideContent progress={calculateProgress(0)} size={100} />
+          <ProgressCircle hideContent progress={calculateProgress(0.2)} size={100} />
         </HStack>
       )}
     </ProgressContainerWithButtons>
@@ -136,3 +144,208 @@ export const FillParent = () => {
   );
 };
 FillParent.parameters = { percy: { enableJavaScript: true } };
+
+export const CustomTextColor = () => {
+  return (
+    <ProgressContainerWithButtons>
+      {({ calculateProgress }) => (
+        <HStack gap={2}>
+          <ProgressCircle
+            color="fgPrimary"
+            contentNode={
+              <DefaultProgressCircleContent color="fgPrimary" progress={calculateProgress(0.2)} />
+            }
+            progress={calculateProgress(0.2)}
+            size={100}
+          />
+          <ProgressCircle
+            color="fgPositive"
+            contentNode={
+              <DefaultProgressCircleContent color="fgPositive" progress={calculateProgress(0.2)} />
+            }
+            progress={calculateProgress(0.2)}
+            size={100}
+          />
+        </HStack>
+      )}
+    </ProgressContainerWithButtons>
+  );
+};
+CustomTextColor.parameters = { percy: { enableJavaScript: true } };
+
+export const WithAsset = () => {
+  return (
+    <VStack gap={2}>
+      <HStack gap={2}>
+        <ProgressCircle
+          contentNode={
+            <Box height="100%" padding={0.25} width="100%">
+              <RemoteImage
+                alt={assets.eth.name}
+                shape="circle"
+                source={assets.eth.imageUrl}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </Box>
+          }
+          progress={1}
+          size={defaultTheme.avatarSize.xxxl}
+          styles={{
+            progress: {
+              stroke: assets.eth.color,
+            },
+          }}
+          weight="thin"
+        />
+        <ProgressCircle
+          contentNode={
+            <Box height="100%" padding={0.25} width="100%">
+              <RemoteImage
+                alt={assets.ltc.name}
+                shape="circle"
+                source={assets.ltc.imageUrl}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </Box>
+          }
+          progress={0.75}
+          size={defaultTheme.avatarSize.xxxl}
+          styles={{
+            progress: {
+              stroke: assets.ltc.color,
+            },
+          }}
+          weight="thin"
+        />
+        <ProgressCircle
+          contentNode={
+            <Box height="100%" padding={0.25} width="100%">
+              <RemoteImage
+                alt={assets.dai.name}
+                shape="circle"
+                source={assets.dai.imageUrl}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </Box>
+          }
+          progress={0.5}
+          size={defaultTheme.avatarSize.xxxl}
+          styles={{
+            progress: {
+              stroke: assets.dai.color,
+            },
+          }}
+          weight="thin"
+        />
+        <ProgressCircle
+          contentNode={
+            <Box height="100%" padding={0.25} width="100%">
+              <RemoteImage
+                alt={assets.sushi.name}
+                shape="circle"
+                source={assets.sushi.imageUrl}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </Box>
+          }
+          progress={0.25}
+          size={defaultTheme.avatarSize.xxxl}
+          styles={{
+            progress: {
+              stroke: assets.sushi.color,
+            },
+          }}
+          weight="thin"
+        />
+        <ProgressCircle
+          contentNode={
+            <Box padding={0.25}>
+              <RemoteImage
+                alt={assets.xrp.name}
+                shape="circle"
+                source={assets.xrp.imageUrl}
+                style={{ width: '100%', height: '100%' }}
+              />
+            </Box>
+          }
+          progress={0}
+          size={defaultTheme.avatarSize.xxxl}
+          styles={{
+            progress: {
+              stroke: assets.xrp.color,
+            },
+          }}
+          weight="thin"
+        />
+      </HStack>
+      <HStack gap={2}>
+        {avatarSizes
+          .filter((size) => size !== 's')
+          .map((avatarSize) => (
+            <ProgressCircle
+              key={`${avatarSize}-progress-circle`}
+              classNames={{
+                progress: css`
+                  stroke: ${assets.btc.color};
+                `,
+              }}
+              contentNode={
+                <Box height="100%" padding={0.25} width="100%">
+                  <RemoteImage
+                    alt={assets.btc.name}
+                    shape="circle"
+                    source={assets.btc.imageUrl}
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </Box>
+              }
+              progress={0.24}
+              size={defaultTheme.avatarSize[avatarSize]}
+              weight="thin"
+            />
+          ))}
+      </HStack>
+    </VStack>
+  );
+};
+
+export const CustomStyles = () => {
+  const [disabled, setDisabled] = useState(false);
+  return (
+    <VStack gap={2}>
+      <HStack gap={2}>
+        <ProgressCircle
+          contentNode={<TextTitle1 color={disabled ? 'fgMuted' : 'fgPrimary'}>40%</TextTitle1>}
+          disabled={disabled}
+          progress={0.4}
+          size={100}
+          styles={{
+            circle: {
+              stroke: 'transparent',
+            },
+          }}
+          weight="semiheavy"
+        />
+        <ProgressCircle
+          color="fgPositive"
+          contentNode={
+            <Icon
+              color={disabled ? 'fgMuted' : 'fgPositive'}
+              name={disabled ? 'circleCross' : 'circleCheckmark'}
+              size="l"
+            />
+          }
+          disabled={disabled}
+          progress={0.6}
+          size={100}
+          styles={{
+            progress: {
+              strokeLinecap: 'square',
+            },
+          }}
+        />
+      </HStack>
+      <Button onClick={() => setDisabled(!disabled)}>Toggle Disabled</Button>
+    </VStack>
+  );
+};

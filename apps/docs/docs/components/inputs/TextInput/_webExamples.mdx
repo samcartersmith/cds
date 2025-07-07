@@ -181,13 +181,13 @@ with a TypeAhead component.
 <VStack gap={3}>
   <VStack>
     <Text as="p">
-      <strong>Left aligned: </strong>This is the default setting.
+      <strong>Left aligned (default): </strong>
     </Text>
     <TextInput label="City/town" placeholder="Oakland" />
   </VStack>
 
   <VStack>
-    <Text as="p">Right aligned Used with compact</Text>
+    <Text as="p">Right aligned (with compact):</Text>
     <TextInput
       label="Limit price"
       compact
@@ -196,6 +196,59 @@ with a TypeAhead component.
       step="0.01"
       placeholder="29.3"
       suffix="USD"
+    />
+  </VStack>
+</VStack>
+```
+
+### Label Variants
+
+TextInput supports two label variants: `outside` (default) and `inside`. Note that the `compact` prop, when set to true, will override label variant preference.
+
+:::warning
+
+When using the `inside` label variant, you should always include a `placeholder` prop.
+
+:::
+
+```jsx live
+<VStack gap={3}>
+  <VStack>
+    <Text as="p">
+      <strong>Outside label (default):</strong>
+    </Text>
+    <TextInput label="Email Address" placeholder="Enter your email" />
+  </VStack>
+
+  <VStack>
+    <Text as="p">
+      <strong>Inside label:</strong>
+    </Text>
+    <TextInput label="Email Address" labelVariant="inside" placeholder="Enter your email" />
+  </VStack>
+
+  <VStack>
+    <Text as="p">
+      <strong>Inside label (with start content):</strong>
+    </Text>
+    <TextInput
+      label="Search"
+      labelVariant="inside"
+      start={<InputIconButton name="search" />}
+      placeholder="Search for anything"
+    />
+  </VStack>
+
+  <VStack>
+    <Text as="p">
+      <strong>Inside label (with end content):</strong>
+    </Text>
+    <TextInput
+      label="Password"
+      labelVariant="inside"
+      type="password"
+      end={<InputIconButton name="visibleInactive" />}
+      placeholder="Enter your password"
     />
   </VStack>
 </VStack>

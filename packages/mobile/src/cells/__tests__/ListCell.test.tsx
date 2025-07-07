@@ -4,6 +4,7 @@ import { noop } from '@cbhq/cds-utils';
 
 import { Button } from '../../buttons';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
+import { CellHelperText } from '../CellHelperText';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
@@ -248,6 +249,16 @@ describe('ListCell', () => {
     );
 
     expect(screen.getByTestId('listcell-with-action')).toBeAccessible();
+  });
+
+  it('renders helperText', () => {
+    render(
+      <DefaultThemeProvider>
+        <ListCell helperText={<CellHelperText>Helper Text</CellHelperText>} />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByText('Helper Text')).toBeTruthy();
   });
 
   it('renders empty strings without crashing', () => {

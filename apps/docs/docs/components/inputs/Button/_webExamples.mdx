@@ -18,6 +18,16 @@ These buttons have a medium level of emphasis that should be used for non-critic
 </Button>
 ```
 
+### Tertiary Button
+
+These buttons provide high contrast with the background through the use of the themable inverted background color.
+
+```jsx live
+<Button onClick={console.log} variant="tertiary">
+  Tertiary
+</Button>
+```
+
 ### Negative Button
 
 Negative buttons should be used sparingly for destructive actions that will result in data loss, can’t be undone, or will have significant consequences. They commonly appear in confirmation dialogs as the final confirmation before deleting.
@@ -38,6 +48,9 @@ Transparent buttons are used for less important actions that are supplementary. 
     Primary
   </Button>
   <Button onClick={console.log} variant="secondary" transparent>
+    Secondary
+  </Button>
+  <Button onClick={console.log} variant="tertiary" transparent>
     Secondary
   </Button>
   <Button onClick={console.log} variant="negative" transparent>

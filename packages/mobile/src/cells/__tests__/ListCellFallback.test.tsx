@@ -59,6 +59,15 @@ describe('ListCellFallback', () => {
     expect(screen.getByTestId('list-cell-fallback-media')).toBeTruthy();
   });
 
+  it('renders a Fallback component if helperText is passed', () => {
+    render(
+      <DefaultThemeProvider>
+        <ListCellFallback helperText />
+      </DefaultThemeProvider>,
+    );
+    expect(screen.getByTestId('list-cell-fallback-helper-text')).toBeTruthy();
+  });
+
   it('renders ListCellFallback component with innerSpacing and outerSpacing', () => {
     const innerSpacing: CellSpacing = {
       paddingX: 3,

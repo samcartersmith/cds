@@ -266,6 +266,51 @@ function StartContentExamples() {
 </VStack>
 ```
 
+### Label Variants
+
+TextInput supports two label variants: `outside` (default) and `inside`. Note that the `compact` prop, when set to true, will override label variant preference.
+
+:::warning
+
+When using the `inside` label variant, you should always include a `placeholder` prop.
+
+:::
+
+#### Outside label (default)
+
+```jsx
+<TextInput label="Email Address" placeholder="Enter your email" />
+```
+
+#### Inside label
+
+```jsx
+<TextInput label="Email Address" labelVariant="inside" placeholder="Enter your email" />
+```
+
+#### Inside label (with start content)
+
+```jsx
+<TextInput
+  label="Search"
+  labelVariant="inside"
+  start={<InputIconButton name="search" />}
+  placeholder="Search for anything"
+/>
+```
+
+#### Inside label (with end content)
+
+```jsx
+<TextInput
+  label="Password"
+  labelVariant="inside"
+  secureTextEntry
+  end={<InputIconButton name="visibleInactive" />}
+  placeholder="Enter your password"
+/>
+```
+
 ## Example of Input Objects placed at the End
 
 Here are some examples and best practices when using end content in a TextField.
@@ -300,7 +345,7 @@ Here are some examples and best practices when using end content in a TextField.
 
   <VStack>
     <Text as="p">
-      You can add a Text Button object at the end of an Input. “Copy” is a great example of this.
+      You can add a Text Button object at the end of an Input. "Copy" is a great example of this.
     </Text>
     <TextInput
       label="API Access Token"

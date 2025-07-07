@@ -7,9 +7,7 @@ import { usePreviousValues } from '@cbhq/cds-common/hooks/usePreviousValues';
 import type { SharedAccessibilityProps, SharedProps, Weight } from '@cbhq/cds-common/types';
 import { useProgressSize } from '@cbhq/cds-common/visualizations/useProgressSize';
 
-import { Box } from '../layout/Box';
-import { HStack } from '../layout/HStack';
-import { VStack } from '../layout/VStack';
+import { Box, HStack, VStack } from '../layout';
 import type { HintMotionBaseProps } from '../motion/types';
 import { useMotionProps } from '../motion/useMotionProps';
 import { isRtl } from '../utils/isRtl';

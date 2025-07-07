@@ -48,6 +48,34 @@
 />
 ```
 
+### With Helper Text
+
+```tsx
+<VStack gap={3}>
+  <ListCell
+    title="List Cell with Helper Text"
+    description="Shows usage with helper text below the cell"
+    helperText={<CellHelperText>This is a default helper message.</CellHelperText>}
+    media={<CellMedia srouce={assets.btc.imageUrl} type="asset" />}
+    action={<Button compact>Action</Button>}
+  />
+  <ListCell
+    title="List Cell with Warning"
+    description="Shows usage with a warning message"
+    helperText={<CellHelperText variant="warning">This is a warning message.</CellHelperText>}
+    media={<CellMedia source={assets.btc.imageUrl} type="asset" />}
+    action={<Button compact>Action</Button>}
+  />
+  <ListCell
+    title="List Cell with Error"
+    description="Shows usage with an error message"
+    helperText={<CellHelperText variant="error">This is an error message.</CellHelperText>}
+    media={<CellMedia source={assets.btc.imageUrl} type="asset" />}
+    action={<Button compact>Action</Button>}
+  />
+</VStack>
+```
+
 ### Compact Mode
 
 ```tsx

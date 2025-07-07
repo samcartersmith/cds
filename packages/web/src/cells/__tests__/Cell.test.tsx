@@ -4,6 +4,7 @@ import { renderA11y } from '@cbhq/cds-web-utils/jest';
 
 import { DefaultThemeProvider } from '../../utils/test';
 import { Cell } from '../Cell';
+import { CellHelperText } from '../CellHelperText';
 
 const CELL_TEXT = 'Some cell text';
 const EXPECTED_TEXT = 'Some expected text';
@@ -127,6 +128,16 @@ describe('Cell', () => {
     render(
       <DefaultThemeProvider>
         <Cell accessory={<div>{EXPECTED_TEXT}</div>}>{CELL_TEXT}</Cell>
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.getByText(EXPECTED_TEXT)).toBeVisible();
+  });
+
+  it('renders bottomContent', () => {
+    render(
+      <DefaultThemeProvider>
+        <Cell bottomContent={<CellHelperText>{EXPECTED_TEXT}</CellHelperText>}>{CELL_TEXT}</Cell>
       </DefaultThemeProvider>,
     );
 

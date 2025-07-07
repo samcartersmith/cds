@@ -42,9 +42,9 @@
 
 ```jsx live
 <HStack gap={2}>
-  <ProgressCircle progress={0} hideText size={25} />
-  <ProgressCircle progress={0.5} hideText size={25} />
-  <ProgressCircle progress={1} hideText size={25} />
+  <ProgressCircle progress={0} hideContent size={25} />
+  <ProgressCircle progress={0.5} hideContent size={25} />
+  <ProgressCircle progress={1} hideContent size={25} />
 </HStack>
 ```
 
@@ -62,10 +62,10 @@
 
 ```jsx live
 <HStack gap={2}>
-  <ProgressCircle progress={0.5} color="fgPositive" size={100} />
-  <ProgressCircle progress={0.5} color="fgNegative" size={100} />
-  <ProgressCircle progress={0.5} color="primary" size={100} />
-  <ProgressCircle progress={0.5} color="foreground" size={100} />
+  <ProgressCircle progress={0.5} color="bgPositive" size={100} />
+  <ProgressCircle progress={0.5} color="bgNegative" size={100} />
+  <ProgressCircle progress={0.5} color="bgPrimary" size={100} />
+  <ProgressCircle progress={0.5} color="fg" size={100} />
 </HStack>
 ```
 
@@ -84,6 +84,275 @@ The progress circle can be dynamically sized to fit its parent. If you drag the 
   <div style={{ height: '5vw', width: '5vw', minWidth: '60px', minHeight: '60px' }}>
     <ProgressCircle progress={1} />
   </div>
+</HStack>
+```
+
+## Content Node Customization
+
+You can override the default content node to display a custom node. Note that the content node is clipped to the circle.
+
+### With Asset
+
+You can provide an image, such as an asset, as the content node.
+
+```jsx live
+<VStack gap={2}>
+  <HStack gap={2}>
+    <ProgressCircle
+      progress={1}
+      size={56}
+      styles={{
+        progress: {
+          stroke: assets.eth.color,
+        },
+      }}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.eth.name}
+            shape="circle"
+            source={assets.eth.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+
+    <ProgressCircle
+      progress={0.75}
+      size={56}
+      styles={{
+        progress: {
+          stroke: assets.ltc.color,
+        },
+      }}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.ltc.name}
+            shape="circle"
+            source={assets.ltc.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+    <ProgressCircle
+      progress={0.5}
+      size={56}
+      styles={{
+        progress: {
+          stroke: assets.dai.color,
+        },
+      }}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            shape="circle"
+            source={assets.dai.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+    <ProgressCircle
+      progress={0.25}
+      size={56}
+      styles={{
+        progress: {
+          stroke: assets.sushi.color,
+        },
+      }}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.sushi.name}
+            shape="circle"
+            source={assets.sushi.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+    <ProgressCircle
+      progress={0}
+      size={56}
+      styles={{
+        progress: {
+          stroke: assets.xrp.color,
+        },
+      }}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.xrp.name}
+            shape="circle"
+            source={assets.xrp.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+  </HStack>
+  <HStack gap={2}>
+    <ProgressCircle
+      styles={{
+        progress: {
+          stroke: assets.btc.color,
+        },
+      }}
+      progress={0.24}
+      size={24}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.btc.name}
+            shape="circle"
+            source={assets.btc.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+    <ProgressCircle
+      styles={{
+        progress: {
+          stroke: assets.btc.color,
+        },
+      }}
+      progress={0.24}
+      size={32}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.btc.name}
+            shape="circle"
+            source={assets.btc.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+    <ProgressCircle
+      styles={{
+        progress: {
+          stroke: assets.btc.color,
+        },
+      }}
+      progress={0.24}
+      size={40}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.btc.name}
+            shape="circle"
+            source={assets.btc.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+    <ProgressCircle
+      styles={{
+        progress: {
+          stroke: assets.btc.color,
+        },
+      }}
+      progress={0.24}
+      size={48}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.btc.name}
+            shape="circle"
+            source={assets.btc.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+    <ProgressCircle
+      styles={{
+        progress: {
+          stroke: assets.btc.color,
+        },
+      }}
+      progress={0.24}
+      size={56}
+      contentNode={
+        <Box height="100%" padding={0.25} width="100%">
+          <RemoteImage
+            alt={assets.btc.name}
+            shape="circle"
+            source={assets.btc.imageUrl}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Box>
+      }
+      weight="thin"
+    />
+  </HStack>
+</VStack>
+```
+
+### Custom Text Color
+
+The progress circle's default content can be customized to display a custom text color.
+
+```jsx live
+<HStack gap={2}>
+  <ProgressCircle
+    color="fgPrimary"
+    progress={0.2}
+    size={100}
+    contentNode={<DefaultProgressCircleContent color="fgPrimary" progress={0.2} />}
+  />
+  <ProgressCircle
+    color="fgPositive"
+    progress={0.4}
+    size={100}
+    contentNode={<DefaultProgressCircleContent color="fgPositive" progress={0.4} />}
+  />
+</HStack>
+```
+
+## Custom Styles
+
+The progress circle can be customized with styles and class names.
+
+```jsx live
+<HStack gap={2}>
+  <ProgressCircle
+    progress={0.4}
+    size={100}
+    styles={{
+      circle: {
+        stroke: 'transparent',
+      },
+    }}
+    contentNode={<TextTitle1 color="fgPrimary">40%</TextTitle1>}
+    weight="semiheavy"
+  />
+  <ProgressCircle
+    color="fgPositive"
+    progress={0.6}
+    size={100}
+    styles={{
+      progress: {
+        strokeLinecap: 'square',
+      },
+    }}
+    contentNode={<Icon color="fgPositive" name="circleCheckmark" size="l" />}
+  />
 </HStack>
 ```
 

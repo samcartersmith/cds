@@ -12,6 +12,7 @@ import { ButtonGroup } from '../ButtonGroup';
 const buttonStories: Omit<ButtonProps, 'children'>[] = [
   { variant: 'foregroundMuted' },
   { variant: 'secondary' },
+  { variant: 'tertiary' },
   { variant: 'positive' },
   { variant: 'negative' },
   { variant: 'secondary', transparent: true },

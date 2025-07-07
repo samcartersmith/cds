@@ -24,10 +24,14 @@ export type ListCellBaseProps = CellDetailProps &
      */
     disableSelectionAccessory?: boolean;
     /**
-     *  @default false
-     *  When there is no description the title will take up two lines by default. When this is set to true multiline title behavior is overwritten and regardless of description text state the title will take up a single line truncating with ellipses.
-     *   */
+     * @default false
+     * When there is no description the title will take up two lines by default.
+     * When this is set to true multiline title behavior is overwritten, and regardless of description text state
+     * the title will take up a single line truncating with ellipses.
+     */
     disableMultilineTitle?: boolean;
+    /** Assitive message to display below the cell content */
+    helperText?: React.ReactNode;
     /** For internal use only. */
     intermediary?: React.ReactNode;
     /* Media (icon, asset, image, etc) to display at the start of the cell. */
@@ -55,6 +59,7 @@ export const ListCell = memo(function ListCell({
   outerSpacing,
   disabled,
   disableSelectionAccessory,
+  helperText,
   media,
   multiline,
   selected,
@@ -70,6 +75,7 @@ export const ListCell = memo(function ListCell({
   return (
     <Cell
       accessory={accessoryType ? <CellAccessory type={accessoryType} /> : undefined}
+      bottomContent={helperText}
       detail={
         action ||
         (hasDetails && (

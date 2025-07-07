@@ -29,7 +29,14 @@ const nativeInputCustomCSS = css`
   background-color: transparent;
 `;
 
-const variants = ['positive', 'negative', 'foregroundMuted'] as const;
+const variants = [
+  'positive',
+  'negative',
+  'foregroundMuted',
+  'foreground',
+  'primary',
+  'secondary',
+] as const;
 
 const customContainerPaddingStyle = css`
   padding: var(--space-4);
@@ -49,6 +56,42 @@ export const Basic = function Basic() {
   }, []);
 
   return <TextInput label="Label" onBlur={onBlur} onFocus={onFocus} />;
+};
+
+export const InsideLabel = function InsideLabel() {
+  return (
+    <VStack gap={2}>
+      <TextInput label="Inside Label" labelVariant="inside" placeholder="Placeholder" />
+      <TextInput
+        label="Secondary Start"
+        labelVariant="inside"
+        placeholder="Placeholder"
+        start={<InputIconButton transparent accessibilityLabel="Add" name="add" />}
+        variant="secondary"
+      />
+      <TextInput
+        end={<InputIconButton transparent accessibilityLabel="Add" name="add" />}
+        label=" Secondary End"
+        labelVariant="inside"
+        placeholder="Placeholder"
+        variant="secondary"
+      />
+      <TextInput
+        compact
+        label="Compact+Inside"
+        labelVariant="inside"
+        placeholder="Placeholder"
+        variant="secondary"
+      />
+      <TextInput
+        helperText="Error: Your favorite color is not orange"
+        label="Error state"
+        labelVariant="inside"
+        placeholder="Enter your favorite color"
+        variant="negative"
+      />
+    </VStack>
+  );
 };
 
 export const Placeholder = function Placeholder() {
@@ -496,22 +539,6 @@ export const CopyTextInput = function CopyTextInput() {
         variant={variant}
       />
     </div>
-  );
-};
-
-export const CustomStyle = function Align() {
-  const customStyle = {
-    backgroundColor: 'rgb(var(--gray10))',
-  } as const;
-
-  return (
-    <TextInput
-      align="end"
-      helperText="helperText"
-      label="Label"
-      placeholder="placeholder"
-      style={customStyle}
-    />
   );
 };
 

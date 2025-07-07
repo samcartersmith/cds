@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import useMeasure from 'react-use-measure';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';
@@ -235,5 +235,131 @@ describe('Select', () => {
     );
 
     expect(screen.queryByTestId('select-error-icon')).toBeFalsy();
+  });
+
+  it('renders label outside by default', () => {
+    render(
+      <MediaQueryProvider>
+        <DefaultThemeProvider>
+          <MockSelect label="Outside Label" />
+        </DefaultThemeProvider>
+      </MediaQueryProvider>,
+    );
+
+    const label = screen.getByText('Outside Label');
+    const inputArea = screen.getByTestId('input-interactable-area');
+
+    expect(label).toBeInTheDocument();
+    expect(inputArea).toBeInTheDocument();
+
+    expect(inputArea).not.toContainElement(label);
+  });
+
+  it('renders label inside when labelVariant="inside"', () => {
+    const SelectWithInsideLabel = () => {
+      const [value, setValue] = useState<string | undefined>('');
+      return (
+        <Select
+          label="Inside Label"
+          labelVariant="inside"
+          onChange={setValue}
+          placeholder="Choose something"
+          value={value}
+        >
+          {exampleOptions.map((option) => (
+            <SelectOption key={option} title={option} value={option} />
+          ))}
+        </Select>
+      );
+    };
+
+    render(
+      <MediaQueryProvider>
+        <DefaultThemeProvider>
+          <SelectWithInsideLabel />
+        </DefaultThemeProvider>
+      </MediaQueryProvider>,
+    );
+
+    const label = screen.getByText('Inside Label');
+    const inputArea = screen.getByTestId('input-interactable-area');
+
+    expect(label).toBeInTheDocument();
+    expect(inputArea).toBeInTheDocument();
+    // Label should be inside the input area
+    expect(inputArea).toContainElement(label);
+  });
+
+  it('overrides inside label variant when compact is true', () => {
+    const CompactSelect = () => {
+      const [value, setValue] = useState<string | undefined>('');
+      return (
+        <Select
+          compact
+          label="Compact Label"
+          labelVariant="inside"
+          onChange={setValue}
+          placeholder="Choose something"
+          value={value}
+        >
+          {exampleOptions.map((option) => (
+            <SelectOption key={option} compact title={option} value={option} />
+          ))}
+        </Select>
+      );
+    };
+
+    render(
+      <MediaQueryProvider>
+        <DefaultThemeProvider>
+          <CompactSelect />
+        </DefaultThemeProvider>
+      </MediaQueryProvider>,
+    );
+
+    const label = screen.getByText('Compact Label');
+    const inputArea = screen.getByTestId('input-interactable-area');
+
+    expect(label).toBeInTheDocument();
+    expect(inputArea).toBeInTheDocument();
+
+    expect(inputArea).toContainElement(label);
+  });
+
+  it('positions label correctly with inside variant and start content', () => {
+    const SelectWithStartContent = () => {
+      const [value, setValue] = useState<string | undefined>('');
+      return (
+        <Select
+          label="Inside Label with Start"
+          labelVariant="inside"
+          onChange={setValue}
+          placeholder="Choose something"
+          startNode={<span data-testid="start-content">Start</span>}
+          value={value}
+        >
+          {exampleOptions.map((option) => (
+            <SelectOption key={option} title={option} value={option} />
+          ))}
+        </Select>
+      );
+    };
+
+    render(
+      <MediaQueryProvider>
+        <DefaultThemeProvider>
+          <SelectWithStartContent />
+        </DefaultThemeProvider>
+      </MediaQueryProvider>,
+    );
+
+    const label = screen.getByText('Inside Label with Start');
+    const startContent = screen.getByTestId('start-content');
+    const inputArea = screen.getByTestId('input-interactable-area');
+
+    expect(label).toBeInTheDocument();
+    expect(startContent).toBeInTheDocument();
+    expect(inputArea).toContainElement(label);
+    expect(inputArea).toContainElement(startContent);
   });
 });

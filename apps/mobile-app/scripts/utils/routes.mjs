@@ -394,6 +394,10 @@ export const routes = [
       require('@cbhq/cds-mobile/controls/__stories__/SelectOption.stories').default,
   },
   {
+    key: 'SlideButton',
+    getComponent: () => require('@cbhq/cds-mobile/buttons/__stories__/SlideButton.stories').default,
+  },
+  {
     key: 'Spacer',
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Spacer.stories').default,
   },

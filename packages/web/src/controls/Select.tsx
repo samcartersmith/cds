@@ -21,7 +21,7 @@ import { useRefocusTrigger } from './useRefocusTrigger';
 
 export type SelectBaseProps = SharedProps &
   Omit<SharedInputProps, 'label'> &
-  Pick<InputStackBaseProps, 'disabled' | 'focused' | 'startNode'> &
+  Pick<InputStackBaseProps, 'disabled' | 'focused' | 'startNode' | 'variant' | 'labelVariant'> &
   Pick<
     SharedAccessibilityProps,
     'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
@@ -38,12 +38,6 @@ export type SelectBaseProps = SharedProps &
     label?: string;
     /** Callback that is fired whenever a select option is selected */
     onChange?: ((newValue: string) => void) | React.Dispatch<React.SetStateAction<string>>;
-    /**
-     * Determines the sentiment of the input.
-     * Sets styles on the input border and helper text.
-     * @default foregroundMuted
-     */
-    variant?: Exclude<InputStackBaseProps['variant'], 'secondary'>;
   };
 
 export type SelectProps = SelectBaseProps;

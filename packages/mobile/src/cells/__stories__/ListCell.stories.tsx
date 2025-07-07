@@ -9,6 +9,7 @@ import { IconButton } from '../../buttons/IconButton';
 import { Example, ExampleScreen } from '../../examples/ExampleScreen';
 import { Pictogram } from '../../illustrations/Pictogram';
 import type { CellSpacing } from '../Cell';
+import { CellHelperText } from '../CellHelperText';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
@@ -490,6 +491,72 @@ const WithIntermediary = () => (
   </>
 );
 
+const WithHelperText = () => (
+  <>
+    <ListCell
+      helperText={<CellHelperText>Helper text</CellHelperText>}
+      onPress={onPressConsole}
+      title="Title"
+    />
+    <ListCell
+      description="Description"
+      helperText={<CellHelperText>Helper text</CellHelperText>}
+      onPress={onPressConsole}
+      title="Title"
+    />
+    <ListCell
+      description="Description"
+      detail="Detail"
+      helperText={<CellHelperText variant="warning">Warning text</CellHelperText>}
+      onPress={onPressConsole}
+      title="Title"
+    />
+    <ListCell
+      description="Description"
+      detail="Detail"
+      helperText={<CellHelperText variant="error">Error text</CellHelperText>}
+      onPress={onPressConsole}
+      subdetail="Subdetail"
+      title="Title"
+    />
+    <ListCell
+      disabled
+      description="Description"
+      detail="Detail"
+      helperText={<CellHelperText variant="error">Disabled error text</CellHelperText>}
+      onPress={onPressConsole}
+      subdetail="Subdetail"
+      title="Title"
+    />
+    <ListCell
+      description="Description"
+      helperText={<CellHelperText paddingStart={6}>Helper text with media</CellHelperText>}
+      media={<CellMedia source={assets.eth.imageUrl} type="avatar" />}
+      onPress={onPressConsole}
+      title="Title"
+    />
+    <ListCell
+      action={<Button compact>Action</Button>}
+      description="Description"
+      helperText={<CellHelperText variant="warning">Helper text with action</CellHelperText>}
+      title="Title"
+    />
+    <ListCell
+      accessory="more"
+      action={<Button compact>Action</Button>}
+      description="Description also has a very long length that will wrap to 2 lines maximum. This is different from subtitle that only supports 1 line."
+      helperText={
+        <CellHelperText paddingStart={6} variant="error">
+          Helper text with media, action, and accessory and very long text
+        </CellHelperText>
+      }
+      media={<CellMedia source={assets.eth.imageUrl} type="avatar" />}
+      priority="end"
+      title="Title"
+    />
+  </>
+);
+
 const CustomSpacing = () => (
   <>
     <ListCell
@@ -546,6 +613,9 @@ const ListCellScreen = () => {
       </Example>
       <Example inline paddingX={0} title="WithIntermediary" titlePadding={titlePadding}>
         <WithIntermediary />
+      </Example>
+      <Example inline paddingX={0} title="WithHelperText" titlePadding={titlePadding}>
+        <WithHelperText />
       </Example>
       <Example inline paddingX={0} title="CustomSpacing" titlePadding={titlePadding}>
         <CustomSpacing />

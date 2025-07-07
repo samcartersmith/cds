@@ -1,4 +1,4 @@
-import { act } from 'react';
+import React, { act } from 'react';
 import { ReactTestInstance } from 'react-test-renderer';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';

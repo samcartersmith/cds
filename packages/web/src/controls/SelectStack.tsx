@@ -12,7 +12,10 @@ import type { SelectBaseProps } from './Select';
 export type SelectStackProps = {
   children: React.ReactElement;
   helperTextErrorIconAccessibilityLabel?: string;
-} & Pick<SelectBaseProps, 'compact' | 'label' | 'disabled' | 'helperText' | 'variant' | 'focused'> &
+} & Pick<
+  SelectBaseProps,
+  'compact' | 'label' | 'disabled' | 'helperText' | 'variant' | 'focused' | 'labelVariant'
+> &
   Pick<SharedAccessibilityProps, 'accessibilityLabelId' | 'accessibilityDescriptionId'>;
 
 const variantToHelperTextColor: Record<
@@ -24,6 +27,7 @@ const variantToHelperTextColor: Record<
   negative: 'fgNegative',
   primary: 'fgPrimary',
   foregroundMuted: 'fgMuted',
+  secondary: 'fgMuted',
 };
 
 export const SelectStack = memo(
@@ -39,6 +43,7 @@ export const SelectStack = memo(
       accessibilityLabelId,
       accessibilityDescriptionId,
       helperTextErrorIconAccessibilityLabel = 'error',
+      labelVariant = 'outside',
     },
     ref,
   ) {
@@ -69,6 +74,7 @@ export const SelectStack = memo(
         inputNode={children}
         labelNode={
           !compact &&
+          labelVariant !== 'inside' &&
           !!label && (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={handlePreventPropagation}>
@@ -78,6 +84,7 @@ export const SelectStack = memo(
             </div>
           )
         }
+        labelVariant={labelVariant}
         variant={variant}
         width="100%"
       />

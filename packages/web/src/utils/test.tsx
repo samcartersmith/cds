@@ -1,4 +1,5 @@
 import React from 'react';
+import { waitFor, waitForOptions } from '@testing-library/react';
 import { ColorScheme } from '@cbhq/cds-common/core/theme';
 
 import { ThemeConfig } from '../core/theme';
@@ -20,3 +21,8 @@ export const DefaultThemeProvider = ({
     {children}
   </ThemeProvider>
 );
+
+// Test util that allows for us to test that an async thing does NOT occur within a timeframe
+export async function waitForNotToHappen<T>(callback: () => Promise<T> | T, opts?: waitForOptions) {
+  return expect(waitFor(callback, { ...opts, timeout: opts?.timeout ?? 100 })).rejects.toThrow();
+}

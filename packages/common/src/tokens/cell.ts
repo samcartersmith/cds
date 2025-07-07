@@ -1,3 +1,5 @@
+import type { IconName, ThemeVars } from '..';
+
 import { gutter } from './sizing';
 
 export const mediaSize = 32;
@@ -30,3 +32,24 @@ export const defaultSpacingConfig = {
 export const selectOptionHeight = 56;
 
 export const cellPriorities = ['start', 'middle', 'end'] as const;
+
+export const cellHelperTextVariants: Record<
+  'information' | 'warning' | 'error',
+  {
+    iconName: IconName;
+    color: ThemeVars.Color;
+  }
+> = {
+  information: {
+    iconName: 'info',
+    color: 'fgMuted',
+  },
+  warning: {
+    iconName: 'warning',
+    color: 'fgWarning',
+  },
+  error: {
+    iconName: 'error',
+    color: 'fgNegative',
+  },
+};

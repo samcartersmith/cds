@@ -116,20 +116,21 @@ export function NavigationBarFullExample({
       bottom={<TabNavigation onChange={handleTabChange} tabs={tabs} value={value} />}
       end={
         <HStack alignItems="center" gap={1}>
-          <IconButton name="helpCenterQuestionMark" />
+          <IconButton active name="helpCenterQuestionMark" />
           <IconButton
             active
             accessibilityLabel="Notifications"
             name="bell"
             onClick={() => handlePress('Notifications')}
           />
-          <IconButton name="appSwitcher" />
+          <IconButton active name="appSwitcher" />
           <IconButton active name="profile" />
         </HStack>
       }
       start={
         showBackButton && (
           <IconButton
+            active
             compact
             accessibilityLabel="Back"
             name="backArrow"

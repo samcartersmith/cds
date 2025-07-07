@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 
-import { HStack } from '../../layout/HStack';
-import { VStack } from '../../layout/VStack';
+import { HStack, VStack } from '../../layout';
 import { Text } from '../../typography/Text';
 import { ProgressBar } from '../ProgressBar';
 import { ProgressBarWithFixedLabels } from '../ProgressBarWithFixedLabels';

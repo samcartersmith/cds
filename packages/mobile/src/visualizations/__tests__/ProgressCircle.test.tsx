@@ -1,8 +1,10 @@
+import React from 'react';
 import { View } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 import { getCircumference, getRadius } from '@cbhq/cds-common/utils/circle';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 
+import { TextLabel1 } from '../../typography';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { ProgressCircle } from '../ProgressCircle';
 
@@ -155,5 +157,57 @@ describe('ProgressCircle tests and passes a11y', () => {
     // Animation should end
     expect(onAnimationEnd).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
+  });
+
+  it('renders custom content node when provided', () => {
+    const size = 100;
+    const customText = 'Custom Content';
+    const progress = 0.75;
+    const contentNode = (
+      <View testID="custom-content-node">
+        <TextLabel1>
+          {customText} {progress * 100}%
+        </TextLabel1>
+      </View>
+    );
+
+    render(
+      <DefaultThemeProvider>
+        <ProgressCircle
+          contentNode={contentNode}
+          progress={progress}
+          size={size}
+          testID="mock-progress-circle"
+        />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.queryAllByText(`${progress * 100}%`)).toHaveLength(0);
+    expect(screen.getByText(`${customText} ${progress * 100}%`)).toBeDefined();
+    expect(screen.getByTestId('custom-content-node')).toBeDefined();
+    expect(screen.getByTestId('mock-progress-circle')).toBeAccessible();
+  });
+
+  it('does not render content node when hideContent is true', () => {
+    const size = 100;
+    const customText = 'Custom Content';
+    const progress = 0.75;
+    const contentNode = (
+      <View testID="custom-content-node">
+        <TextLabel1>
+          {customText} {progress * 100}%
+        </TextLabel1>
+      </View>
+    );
+
+    render(
+      <DefaultThemeProvider>
+        <ProgressCircle hideContent contentNode={contentNode} progress={progress} size={size} />
+      </DefaultThemeProvider>,
+    );
+
+    expect(screen.queryAllByText(`${progress * 100}%`)).toHaveLength(0);
+    expect(screen.queryByText(`${customText} ${progress * 100}%`)).toBeNull();
+    expect(screen.queryByTestId('custom-content-node')).toBeNull();
   });
 });

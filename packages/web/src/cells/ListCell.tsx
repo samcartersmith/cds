@@ -33,10 +33,18 @@ export type ListCellBaseProps = Polymorphic.ExtendableProps<
     /** Description of content. Max 1 line (with title) or 2 lines (without), otherwise will truncate. */
     description?: React.ReactNode;
     /**
+     * When there is no description the title will take up two lines by default.
+     * When this is set to true multiline title behavior is overwritten, and regardless of description text state
+     * the title will take up a single line truncating with ellipses.
+     */
+    disableMultilineTitle?: boolean;
+    /**
      * Disable the default accessory that is displayed when the cell is selected.
      * If `accessory` is provided, that will continue to be displayed, otherwise no accessory will be displayed when the cell is selected.
      */
     disableSelectionAccessory?: boolean;
+    /** Assitive message to display below the cell content */
+    helperText?: React.ReactNode;
     /** For internal use only. */
     intermediary?: React.ReactNode;
     /* Media (icon, asset, image, etc) to display at the start of the cell. */
@@ -70,7 +78,9 @@ export const ListCell: ListCellComponent = memo(
         description,
         detail,
         disabled,
+        disableMultilineTitle = false,
         disableSelectionAccessory,
+        helperText,
         media,
         multiline,
         selected,
@@ -105,6 +115,7 @@ export const ListCell: ListCellComponent = memo(
           ref={ref}
           accessory={accessoryType && <CellAccessory type={accessoryType} />}
           as={Component}
+          bottomContent={helperText}
           detail={end}
           detailWidth={detailWidth}
           disabled={disabled}
@@ -119,7 +130,13 @@ export const ListCell: ListCellComponent = memo(
         >
           <VStack>
             {!!title && (
-              <Text as="div" display="block" font="headline" overflow="truncate">
+              <Text
+                as="div"
+                display="block"
+                font="headline"
+                numberOfLines={description || disableMultilineTitle ? 1 : 2}
+                overflow="wrap"
+              >
                 {title}
               </Text>
             )}

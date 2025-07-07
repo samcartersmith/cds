@@ -8,6 +8,7 @@ import { useCellSpacing } from '../hooks/useCellSpacing';
 import { useTheme } from '../hooks/useTheme';
 import { Box, type BoxBaseProps, type BoxProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
+import { VStack } from '../layout/VStack';
 import { LinkableProps, Pressable } from '../system/Pressable';
 
 import type { CellAccessoryProps } from './CellAccessory';
@@ -50,6 +51,8 @@ export type CellBaseProps = SharedProps &
     outerSpacing?: CellSpacing;
     /** The spacing to use on the inner content of Cell */
     innerSpacing?: CellSpacing;
+    /** The content to display below the main cell content. */
+    bottomContent?: React.ReactNode;
     /** Measure the dimensions of the cell. */
     onLayout?: ViewProps['onLayout'];
   };
@@ -75,27 +78,40 @@ export const Cell = memo(function Cell({
   testID,
   accessibilityLabel,
   accessibilityHint,
-  innerSpacing,
-  outerSpacing,
+  gap = 2,
+  columnGap,
+  rowGap = 1,
+  innerSpacing: innerSpacingProp,
+  outerSpacing: outerSpacingProp,
+  bottomContent,
   ...props
 }: CellProps) {
   const theme = useTheme();
-  const spacing = useCellSpacing({ innerSpacing, outerSpacing });
+  const { inner: innerSpacing, outer: outerSpacing } = useCellSpacing({
+    innerSpacing: innerSpacingProp,
+    outerSpacing: outerSpacingProp,
+  });
 
-  const content = useMemo(
-    () => (
-      <HStack
-        alignItems={alignItems}
-        background={selected ? 'bgAlternate' : undefined}
-        borderRadius={borderRadius}
-        flexGrow={1}
-        gap={2}
-        renderToHardwareTextureAndroid={disabled}
-        testID={testID}
-        width="100%"
-        {...spacing.inner}
-        marginX={onPress ? undefined : spacing.inner.marginX}
-      >
+  const { marginX: innerSpacingMarginX, ...innerSpacingWithoutMarginX } = innerSpacing;
+
+  const content = useMemo(() => {
+    const contentContainerProps = {
+      borderRadius,
+      testID,
+      renderToHardwareTextureAndroid: disabled,
+      ...(selected ? { background: 'bgAlternate' as const } : {}),
+      ...(onPress ? innerSpacingWithoutMarginX : innerSpacing),
+    };
+
+    const topContentContainerProps = {
+      alignItems,
+      flexGrow: 1,
+      gap: columnGap || gap,
+      width: '100%',
+    } as const;
+
+    const topContent = (
+      <>
         {!!media && (
           <Box flexGrow={0} flexShrink={0}>
             {media}
@@ -137,30 +153,53 @@ export const Cell = memo(function Cell({
             {accessory}
           </Box>
         )}
-      </HStack>
-    ),
-    [
-      accessory,
-      alignItems,
-      borderRadius,
-      children,
-      detail,
-      detailWidth,
-      disabled,
-      intermediary,
-      media,
-      onPress,
-      priority,
-      selected,
-      spacing.inner,
-      testID,
-    ],
-  );
+      </>
+    );
+    if (!bottomContent) {
+      return (
+        <HStack {...topContentContainerProps} {...contentContainerProps}>
+          {topContent}
+        </HStack>
+      );
+    }
+    return (
+      <VStack
+        alignItems="stretch"
+        flexGrow={1}
+        gap={rowGap}
+        width="100%"
+        {...contentContainerProps}
+      >
+        <HStack {...topContentContainerProps}>{topContent}</HStack>
+        <Box>{bottomContent}</Box>
+      </VStack>
+    );
+  }, [
+    borderRadius,
+    testID,
+    disabled,
+    selected,
+    onPress,
+    innerSpacingWithoutMarginX,
+    innerSpacing,
+    alignItems,
+    columnGap,
+    gap,
+    media,
+    priority,
+    children,
+    intermediary,
+    detail,
+    detailWidth,
+    accessory,
+    bottomContent,
+    rowGap,
+  ]);
 
   const wrappedContent = useMemo(() => {
     if (onPress) {
       const offsetStyle = {
-        marginHorizontal: -theme.space[(spacing.inner.marginX * -1) as ThemeVars.Space],
+        marginHorizontal: -theme.space[(innerSpacingMarginX * -1) as ThemeVars.Space],
       };
       return (
         <Pressable
@@ -189,7 +228,7 @@ export const Cell = memo(function Cell({
     content,
     disabled,
     onPress,
-    spacing.inner.marginX,
+    innerSpacingMarginX,
     theme.space,
   ]);
 
@@ -201,7 +240,7 @@ export const Cell = memo(function Cell({
       minHeight={minHeight}
       onLayout={onLayout}
       width="100%"
-      {...spacing.outer}
+      {...outerSpacing}
       {...props}
     >
       {wrappedContent}

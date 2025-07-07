@@ -6,6 +6,7 @@ import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue';
 import { useRefMap } from '@cbhq/cds-common/hooks/useRefMap';
 import { useSort } from '@cbhq/cds-common/hooks/useSort';
 import { accounts } from '@cbhq/cds-common/internal/data/accounts';
+import * as CDSDataAccounts from '@cbhq/cds-common/internal/data/accounts';
 import * as CDSDataAssets from '@cbhq/cds-common/internal/data/assets';
 import { loremIpsum } from '@cbhq/cds-common/internal/data/loremIpsum';
 import { prices } from '@cbhq/cds-common/internal/data/prices';
@@ -60,6 +61,8 @@ import * as CDSOverlays from '@cbhq/cds-web/overlays';
 import { useToast } from '@cbhq/cds-web/overlays/useToast';
 import { PageFooter } from '@cbhq/cds-web/page/PageFooter';
 import { PageHeader } from '@cbhq/cds-web/page/PageHeader';
+import { Pagination } from '@cbhq/cds-web/pagination/Pagination';
+import { usePagination } from '@cbhq/cds-web/pagination/usePagination';
 import { SectionHeader } from '@cbhq/cds-web/section-header/SectionHeader';
 import * as CDSSystem from '@cbhq/cds-web/system';
 import * as CDSTables from '@cbhq/cds-web/tables';
@@ -101,6 +104,8 @@ const ReactLiveScope: Record<string, unknown> = {
   // data display
   ...CDSCells,
   ...CDSTables,
+  // cells
+  ...CDSCells,
   useSort,
   useSortableCell,
   // overlays
@@ -108,6 +113,7 @@ const ReactLiveScope: Record<string, unknown> = {
   // navigation
   ...CDSNavigation,
   ...CDSTabs,
+  Pagination,
   PageHeader,
   PageFooter,
   // tour
@@ -152,6 +158,7 @@ const ReactLiveScope: Record<string, unknown> = {
   Banner,
   // utils
   ...CDSDataAssets,
+  ...CDSDataAccounts,
   loremIpsum,
   prices,
   accounts,
@@ -167,6 +174,7 @@ const ReactLiveScope: Record<string, unknown> = {
   useMergeRefs,
   useRefMap,
   useEventHandler,
+  usePagination,
 };
 
 export default ReactLiveScope;

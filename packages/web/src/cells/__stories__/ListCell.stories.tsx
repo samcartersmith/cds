@@ -8,6 +8,7 @@ import type { CellSpacing } from '../../cells/Cell';
 import { Checkbox } from '../../controls/Checkbox';
 import { Pictogram } from '../../illustrations/Pictogram';
 import { VStack } from '../../layout';
+import { CellHelperText } from '../CellHelperText';
 import { CellMedia } from '../CellMedia';
 import { ListCell } from '../ListCell';
 
@@ -566,6 +567,67 @@ const WithIntermediary = () => (
   </>
 );
 
+const WithHelperText = () => (
+  <VStack gap={4}>
+    <ListCell
+      description="This cell provides additional context below."
+      detail="Info"
+      helperText={
+        <CellHelperText variant="information">
+          This is helpful information to guide the user
+        </CellHelperText>
+      }
+      subdetail="FYI"
+      title="Information Helper Text"
+    />
+
+    <ListCell
+      multiline
+      accessory="more"
+      action={<Button compact>Action</Button>}
+      description="Action required"
+      helperText={
+        <CellHelperText paddingStart={6} variant="warning">
+          Please review this information carefully before proceeding
+        </CellHelperText>
+      }
+      media={<CellMedia source={assets.eth.imageUrl} type="asset" />}
+      priority="end"
+      title="With Media and Helper Text"
+    />
+
+    <ListCell
+      multiline
+      accessory="more"
+      action={<Button compact>Action</Button>}
+      description="Perform an action based on this information"
+      helperText={
+        <CellHelperText paddingStart={6} variant="error">
+          This field contains an error that needs to be corrected
+        </CellHelperText>
+      }
+      media={<CellMedia source={assets.eth.imageUrl} type="asset" />}
+      priority="end"
+      title="With Detail and Helper Text"
+      variant="negative"
+    />
+    <ListCell
+      multiline
+      accessory="more"
+      action={<Button compact>Action</Button>}
+      description="Perform an action based on this information."
+      helperText={
+        <CellHelperText paddingStart={6} variant="information">
+          This action cannot be undone.
+        </CellHelperText>
+      }
+      media={<CellMedia source={assets.eth.imageUrl} type="asset" />}
+      priority="end"
+      title="With Media and Action"
+    />
+  </VStack>
+);
+
 export {
   CompactContent,
   CompactPressableContent,
@@ -575,6 +637,7 @@ export {
   PriorityContent,
   WithAccessory,
   WithActions,
+  WithHelperText,
   WithIntermediary,
   WithMedia,
 };

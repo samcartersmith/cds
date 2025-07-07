@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 8.1.0 (7/7/2025 PST)
+
+#### 🚀 Updates
+
+- Add ability to render helper text in the List Cell Component. [[#4120](https://github.cbhq.net/frontend/cds/pull/4120)]
+- Add new SlideButton mobile component. [[#3924](https://github.cbhq.net/frontend/cds/pull/3924)]
+- Add new Pagination component. [[#4111](https://github.cbhq.net/frontend/cds/pull/4111)]
+- Add new FullScreenModalLayout component. [[#4102](https://github.cbhq.net/frontend/cds/pull/4102)]
+- Add new Tray for web component. [[#4093](https://github.cbhq.net/frontend/cds/pull/4093)]
+- Add new TopNavBar mobile component. [[#4030](https://github.cbhq.net/frontend/cds/pull/4030)]
+- Update ProgressCircle component to support content node. [[#3991](https://github.cbhq.net/frontend/cds/pull/3991)]
+- Add tertiary variant to button component. [[#4095](https://github.cbhq.net/frontend/cds/pull/4095)]
+- Add input label variants to Select and TextInput. [[#4020](https://github.cbhq.net/frontend/cds/pull/4102)]
+
 ## 8.0.0 (7/7/2025 PST)
 
 #### 💥 Breaking

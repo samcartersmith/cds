@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 
+import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { UseCounterParams } from '@cbhq/cds-common/visualizations/useCounter';
 import { renderA11y } from '@cbhq/cds-web-utils/jest';

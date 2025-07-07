@@ -9,6 +9,7 @@ export const zIndex = {
   tooltip: 5,
   toast: 6,
   alert: 7,
+  tray: 4,
   // End portal components
   max: 2147483647,
 } as const;

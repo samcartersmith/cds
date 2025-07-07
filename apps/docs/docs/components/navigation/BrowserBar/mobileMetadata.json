@@ -1,0 +1,11 @@
+{
+  "import": "import { BrowserBar } from '@cbhq/cds-mobile/navigation/BrowserBar'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/navigation/BrowserBar.tsx",
+  "description": "A navigation bar designed for browser-like interfaces, featuring slots for start, end, and central content. It provides a structured layout for controls and information within a browser context.",
+  "relatedComponents": [
+    {
+      "label": "TopNavBar",
+      "url": "/components/navigation/TopNavBar/"
+    }
+  ]
+}

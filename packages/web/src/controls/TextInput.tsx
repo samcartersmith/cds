@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { css } from '@linaria/core';
+import { css, cx } from '@linaria/core';
 import { ThemeVars } from '@cbhq/cds-common/core/theme';
 import { useMergeRefs } from '@cbhq/cds-common/hooks/useMergeRefs';
 import { usePrefixedId } from '@cbhq/cds-common/hooks/usePrefixedId';
@@ -27,22 +27,45 @@ import { InputStack } from './InputStack';
 import { NativeInput } from './NativeInput';
 
 /**
- * If start exist, the padding
- * between input area and icon should be 0.5 (4px).
- * This is not the case when there is no start.
- * In normal circumstances, padding horizontal should be 2 (16px)
+ * In normal circumstances, padding horizontal should be 2 (16px).
+ * If compact is true, the padding top should be 1.
+ * If labelVariant is 'inside', the padding top should be 3.5 (28px).
+ * This gives the absolute positioning of the label space.
+ * The bottom will be 1 (8px) in this case to equal padding of inside label.
+ * If start exist, the padding between input area and icon should be 0.5 (4px).
  */
 const nativeInputContainerStyle = css`
   padding-top: var(--space-2);
   padding-bottom: var(--space-2);
-  padding-inline-start: var(--space-0_5);
+  padding-inline-start: var(--space-2);
   padding-inline-end: var(--space-2);
+
+  &[data-labelvariant='inside'] {
+    padding-top: 0;
+    padding-bottom: var(--space-1);
+  }
+
+  &[data-start='true'] {
+    padding-inline-start: var(--space-0_5);
+  }
 
   &[data-compact='true'] {
     padding-top: var(--space-1);
     padding-bottom: var(--space-1);
+    padding-inline-start: var(--space-1);
     padding-inline-end: var(--space-1);
   }
+`;
+
+const insideLabelStyle = css`
+  padding-top: var(--space-1);
+  padding-bottom: 0;
+  padding-inline-start: var(--space-2);
+  padding-inline-end: var(--space-2);
+`;
+
+const insideLabelStyleStart = css`
+  padding-inline-start: var(--space-0_5);
 `;
 
 export type TextInputBaseProps = {
@@ -99,9 +122,15 @@ export type TextInputBaseProps = {
   SharedInputProps &
   Pick<
     InputStackBaseProps,
-    'height' | 'variant' | 'width' | 'disabled' | 'borderRadius' | 'enableColorSurge'
+    | 'height'
+    | 'variant'
+    | 'width'
+    | 'disabled'
+    | 'borderRadius'
+    | 'enableColorSurge'
+    | 'labelVariant'
   > &
-  Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width'>;
+  Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width' | 'className'>;
 
 export type TextInputProps = TextInputBaseProps;
 
@@ -118,7 +147,7 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   negative: 'fgNegative',
   foreground: 'fg',
   foregroundMuted: 'fgMuted',
-  secondary: 'bgSecondary',
+  secondary: 'fg',
 };
 
 export const TextInput = memo(
@@ -145,6 +174,7 @@ export const TextInput = memo(
       bordered = true,
       enableColorSurge = false,
       helperTextErrorIconAccessibilityLabel = 'error',
+      labelVariant = 'outside',
       ...htmlInputElmProps
     }: TextInputProps,
     ref: React.ForwardedRef<HTMLInputElement>,
@@ -185,7 +215,7 @@ export const TextInput = memo(
     }, [setFocused, internalRef]);
 
     // Define a distinct read-only style to differentiate it from the disabled style.
-    const startEndBackground = useMemo(() => {
+    const inputBackground = useMemo(() => {
       if (!disabled && htmlInputElmProps.readOnly) {
         return 'bgSecondary';
       }
@@ -217,8 +247,10 @@ export const TextInput = memo(
           align={align}
           aria-invalid={variant === 'negative'}
           compact={compact}
-          containerSpacing={start ? nativeInputContainerStyle : undefined}
+          containerSpacing={nativeInputContainerStyle}
           data-compact={compact}
+          data-labelvariant={compact || !label ? 'outside' : labelVariant}
+          data-start={!!start || compact}
           disabled={disabled}
           id={shouldSetLabelId ? labelId : undefined}
           onBlur={handleOnBlur}
@@ -229,22 +261,23 @@ export const TextInput = memo(
       );
     }, [
       inputNode,
-      align,
+      refs,
+      shouldSetHelperTextId,
+      helperTextId,
       accessibilityLabel,
       label,
-      helperTextId,
-      start,
-      handleOnFocus,
-      handleOnBlur,
-      disabled,
-      compact,
-      testID,
+      align,
       variant,
-      refs,
-      htmlInputElmProps,
-      shouldSetHelperTextId,
+      compact,
+      labelVariant,
+      start,
+      disabled,
       shouldSetLabelId,
       labelId,
+      handleOnBlur,
+      handleOnFocus,
+      testID,
+      htmlInputElmProps,
     ]);
 
     return (
@@ -261,7 +294,7 @@ export const TextInput = memo(
             (suffix !== '' || !!end) && (
               <HStack
                 alignItems="center"
-                background={startEndBackground}
+                background={inputBackground}
                 gap={2}
                 justifyContent="center"
                 onClick={handleNodePress}
@@ -301,6 +334,11 @@ export const TextInput = memo(
             !compact &&
             !!label && (
               <InputLabel
+                background={labelVariant === 'inside' ? inputBackground : undefined}
+                className={cx(
+                  labelVariant === 'inside' && insideLabelStyle,
+                  labelVariant === 'inside' && !!start && insideLabelStyleStart,
+                )}
                 htmlFor={shouldSetLabelId ? labelId : undefined}
                 testID={testIDMap?.label ?? ''}
               >
@@ -308,11 +346,12 @@ export const TextInput = memo(
               </InputLabel>
             )
           }
+          labelVariant={labelVariant}
           startNode={
             (compact || !!start) && (
               <HStack
                 alignItems="center"
-                background={startEndBackground}
+                background={inputBackground}
                 gap={2}
                 justifyContent="center"
                 onClick={handleNodePress}

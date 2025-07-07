@@ -1,36 +1,15 @@
 import React, { memo, useMemo } from 'react';
 import { css, cx } from '@linaria/core';
-import { m as motion } from 'framer-motion';
-import {
-  animateInOpacityConfig,
-  animateInOverlayOpacityConfig,
-  animateInTranslateYConfig,
-  animateOutOpacityConfig,
-  animateOutOverlayOpacityConfig,
-  animateOutTranslateYConfig,
-} from '@cbhq/cds-common/animation/fullscreenModal';
-import {
-  OverlayContentContext,
-  type OverlayContentContextValue,
-} from '@cbhq/cds-common/overlays/OverlayContentContext';
 
-import { IconButton } from '../../buttons';
 import { useA11yLabels } from '../../hooks/useA11yLabels';
-import { LogoMark } from '../../icons/LogoMark';
-import { Box, HStack, VStack } from '../../layout';
-import { useMotionProps } from '../../motion/useMotionProps';
+import { VStack } from '../../layout';
 import { breakpoints } from '../../styles/media';
-import { Text } from '../../typography/Text';
-import { FocusTrap, type FocusTrapProps } from '../FocusTrap';
-import { Overlay } from '../overlay/Overlay';
+import { type FocusTrapProps } from '../FocusTrap';
 
+import { FullscreenModalHeader } from './FullscreenModalHeader';
+import { FullscreenModalLayout } from './FullscreenModalLayout';
 import { ModalProps } from './Modal';
 import { ModalHeaderProps } from './ModalHeader';
-import { ModalWrapper } from './ModalWrapper';
-
-const overlayContentContextValue: OverlayContentContextValue = {
-  isModal: true,
-};
 
 export type FullscreenModalProps = {
   /**
@@ -97,11 +76,6 @@ const secondaryContentWidth = 400;
 const paddingStartSmall = 80;
 const paddingStartLarge = 240;
 
-const containerStyles = css`
-  width: 100%;
-  height: 100%;
-`;
-
 const primaryContentContainerStyles = css`
   margin-bottom: var(--space-4);
 
@@ -167,40 +141,6 @@ const contentClassName = css`
   }
 `;
 
-const headerLogoStyles = css`
-  display: none;
-
-  @media only screen and (min-width: ${breakpoints.phoneLandscape}px) {
-    display: flex;
-    width: ${paddingStartSmall}px;
-  }
-
-  @media only screen and (min-width: ${breakpoints.tablet}px) {
-    display: flex;
-    width: ${paddingStartSmall}px;
-  }
-
-  @media only screen and (min-width: ${breakpoints.desktop}px) {
-    width: ${paddingStartLarge}px;
-  }
-`;
-
-const headerLogoInnerStyles = css`
-  display: flex;
-
-  @media only screen and (min-width: ${breakpoints.phoneLandscape}px) {
-    display: none;
-  }
-`;
-
-const pinStyles = css`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-`;
-
 export const FullscreenModal = memo(function FullscreenModal({
   focusTabIndexElements,
   logo,
@@ -231,54 +171,6 @@ export const FullscreenModal = memo(function FullscreenModal({
     accessibilityLabelledBy,
     accessibilityLabel,
   });
-
-  const overlayMotionProps = useMotionProps({
-    enterConfigs: [animateInOverlayOpacityConfig],
-    exitConfigs: [animateOutOverlayOpacityConfig],
-    exit: 'exit',
-  });
-
-  const dialogMotionProps = useMotionProps({
-    enterConfigs: [animateInOpacityConfig, animateInTranslateYConfig],
-    exitConfigs: [animateOutOpacityConfig, animateOutTranslateYConfig],
-    exit: 'exit',
-  });
-
-  const overlay = (
-    <motion.div {...overlayMotionProps}>
-      <Overlay />
-    </motion.div>
-  );
-
-  const header = useMemo(
-    () => (
-      <HStack alignItems="center" borderedBottom={!hideDivider} paddingX={4} paddingY={2}>
-        <Box className={headerLogoStyles} paddingEnd={3}>
-          {logo ?? <LogoMark size={32} />}
-        </Box>
-        <Box flexGrow={1}>
-          {title ? (
-            <Text as="h1" display="block" font="title1" id={labelledBySource}>
-              {title}
-            </Text>
-          ) : (
-            <div className={headerLogoInnerStyles}>
-              <LogoMark size={32} />
-            </div>
-          )}
-          <Box flexGrow={1} justifyContent="flex-end">
-            <IconButton
-              transparent
-              aria-label={closeAccessibilityLabel}
-              name="close"
-              onClick={onRequestClose}
-            />
-          </Box>
-        </Box>
-      </HStack>
-    ),
-    [closeAccessibilityLabel, hideDivider, labelledBySource, logo, onRequestClose, title],
-  );
 
   const content = useMemo(
     () => (
@@ -319,33 +211,32 @@ export const FullscreenModal = memo(function FullscreenModal({
   );
 
   return (
-    <OverlayContentContext.Provider value={overlayContentContextValue}>
-      <ModalWrapper
-        hideOverlay
-        accessibilityLabel={label}
-        accessibilityLabelledBy={labelledBy}
-        disablePortal={disablePortal}
-        onDidClose={onDidClose}
-        role={role}
-        testID={testID}
-        visible={visible}
-        zIndex={zIndex}
-      >
-        {overlay}
-        <motion.div {...dialogMotionProps} className={pinStyles}>
-          <FocusTrap
-            disableFocusTrap={disableFocusTrap}
-            focusTabIndexElements={focusTabIndexElements}
-            onEscPress={shouldCloseOnEscPress ? onRequestClose : undefined}
-            restoreFocusOnUnmount={restoreFocusOnUnmount}
-          >
-            <VStack background="bg" className={containerStyles}>
-              {header}
-              {content}
-            </VStack>
-          </FocusTrap>
-        </motion.div>
-      </ModalWrapper>
-    </OverlayContentContext.Provider>
+    <FullscreenModalLayout
+      accessibilityLabel={label}
+      accessibilityLabelledBy={labelledBy}
+      disableFocusTrap={disableFocusTrap}
+      disablePortal={disablePortal}
+      focusTabIndexElements={focusTabIndexElements}
+      onDidClose={onDidClose}
+      onRequestClose={onRequestClose}
+      restoreFocusOnUnmount={restoreFocusOnUnmount}
+      role={role}
+      shouldCloseOnEscPress={shouldCloseOnEscPress}
+      testID={testID}
+      visible={visible}
+      zIndex={zIndex}
+    >
+      <VStack background="bg" height="100%" width="100%">
+        <FullscreenModalHeader
+          closeAccessibilityLabel={closeAccessibilityLabel}
+          hideDivider={hideDivider}
+          labelledBySource={labelledBySource}
+          logo={logo}
+          onRequestClose={onRequestClose}
+          title={title}
+        />
+        {content}
+      </VStack>
+    </FullscreenModalLayout>
   );
 });

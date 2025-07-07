@@ -55,6 +55,16 @@ export const routes = [
     getComponent: () => require('@cbhq/cds-mobile/layout/__stories__/Box.stories').default,
   },
   {
+    key: 'BrowserBar',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/navigation/__stories__/BrowserBar.stories').default,
+  },
+  {
+    key: 'BrowserBarSearchInput',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/navigation/__stories__/BrowserBarSearchInput.stories').default,
+  },
+  {
     key: 'Button',
     getComponent: () => require('@cbhq/cds-mobile/buttons/__stories__/Button.stories').default,
   },
@@ -265,6 +275,26 @@ export const routes = [
         .default,
   },
   {
+    key: 'NavBarIconButton',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/navigation/__stories__/NavBarIconButton.stories').default,
+  },
+  {
+    key: 'NavigationSubtitle',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/navigation/__stories__/NavigationSubtitle.stories').default,
+  },
+  {
+    key: 'NavigationTitle',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/navigation/__stories__/NavigationTitle.stories').default,
+  },
+  {
+    key: 'NavigationTitleSelect',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/navigation/__stories__/NavigationTitleSelect.stories').default,
+  },
+  {
     key: 'NudgeCard',
     getComponent: () => require('@cbhq/cds-mobile/cards/__stories__/NudgeCard.stories').default,
   },
@@ -392,6 +422,10 @@ export const routes = [
     key: 'SelectOption',
     getComponent: () =>
       require('@cbhq/cds-mobile/controls/__stories__/SelectOption.stories').default,
+  },
+  {
+    key: 'SlideButton',
+    getComponent: () => require('@cbhq/cds-mobile/buttons/__stories__/SlideButton.stories').default,
   },
   {
     key: 'Spacer',
@@ -569,6 +603,11 @@ export const routes = [
   {
     key: 'TooltipV2',
     getComponent: () => require('@cbhq/cds-mobile/overlays/__stories__/TooltipV2.stories').default,
+  },
+  {
+    key: 'TopNavBar',
+    getComponent: () =>
+      require('@cbhq/cds-mobile/navigation/__stories__/TopNavBar.stories').default,
   },
   {
     key: 'Tour',

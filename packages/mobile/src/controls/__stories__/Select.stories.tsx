@@ -8,7 +8,7 @@ import { Box, HStack, VStack } from '../../layout';
 import { RemoteImage } from '../../media';
 import { Tray } from '../../overlays/tray/Tray';
 import { InputIcon } from '../InputIcon';
-import { Select } from '../Select';
+import { Select, type SelectProps } from '../Select';
 import { SelectOption } from '../SelectOption';
 import { TextInput } from '../TextInput';
 
@@ -87,7 +87,7 @@ const LongTextSelect = ({ trayTitle, hasDescription, hideHandleBar, ...props }: 
   );
 };
 
-const AssetSelect = () => {
+const AssetSelect = (props: SelectProps) => {
   const [isTrayVisible, setIsTrayVisible] = useState(false);
   const [asset, setAsset] = useState<string | undefined>('btc');
 
@@ -111,6 +111,7 @@ const AssetSelect = () => {
       }
       value={asset}
       valueLabel={assetConfig.name}
+      {...props}
     >
       {isTrayVisible && (
         <Tray onCloseComplete={closeTray}>
@@ -256,6 +257,28 @@ const SelectForm = () => {
   );
 };
 
+const LabelVariants = () => {
+  return (
+    <VStack gap={2}>
+      <DefaultSelect label="Outside Label No Placeholder" />
+      <DefaultSelect label="Outside Label" placeholder="Select from list" />
+      <DefaultSelect label="Inside Label No Placeholder" labelVariant="inside" />
+      <DefaultSelect label="Inside Label" labelVariant="inside" placeholder="Select from list" />
+      <DefaultSelect
+        label="Inside Label with Start Node"
+        labelVariant="inside"
+        placeholder="Search and select"
+        startNode={<InputIcon name="search" />}
+      />
+      <DefaultSelect
+        label="Inside Label with Secondary Variant"
+        labelVariant="inside"
+        variant="secondary"
+      />
+    </VStack>
+  );
+};
+
 const SelectScreen = () => {
   return (
     <ExampleScreen>
@@ -319,11 +342,30 @@ const SelectScreen = () => {
           variant="positive"
         />
       </Example>
+      <Example title="Foreground Muted">
+        <DefaultSelect
+          helperText="Helpful muted text"
+          label="Muted helpful"
+          placeholder="Select a muted option"
+          variant="foregroundMuted"
+        />
+      </Example>
+      <Example title="Secondary">
+        <DefaultSelect
+          helperText="Helpful secondary text"
+          label="Secondary helpful"
+          placeholder="Select a secondary option"
+          variant="secondary"
+        />
+      </Example>
       <Example title="Select Filters">
         <SelectFilter />
       </Example>
       <Example title="Select in a Form">
         <SelectForm />
+      </Example>
+      <Example title="Label Variants">
+        <LabelVariants />
       </Example>
     </ExampleScreen>
   );

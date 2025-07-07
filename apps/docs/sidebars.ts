@@ -105,6 +105,11 @@ const sidebars: SidebarsConfig = {
             { type: 'doc', id: 'components/inputs/Button/button', label: 'Button' },
             {
               type: 'doc',
+              id: 'components/inputs/SlideButton/slideButton',
+              label: 'SlideButton',
+            },
+            {
+              type: 'doc',
               id: 'components/inputs/Checkbox/checkbox',
               label: 'Checkbox',
             },
@@ -357,6 +362,11 @@ const sidebars: SidebarsConfig = {
               id: 'components/overlay/FullscreenModal/fullScreenModal',
               label: 'FullscreenModal',
             },
+            {
+              type: 'doc',
+              id: 'components/overlay/FullscreenModalLayout/fullscreenModalLayout',
+              label: 'FullscreenModalLayout',
+            },
             { type: 'doc', id: 'components/overlay/Modal/modal', label: 'Modal' },
             { type: 'doc', id: 'components/overlay/ModalHeader/modalHeader', label: 'ModalHeader' },
             { type: 'doc', id: 'components/overlay/ModalBody/modalBody', label: 'ModalBody' },
@@ -393,6 +403,16 @@ const sidebars: SidebarsConfig = {
               type: 'doc',
               id: 'components/navigation/NavigationTitle/navigationTitle',
               label: 'NavigationTitle',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/NavigationTitleSelect/navigationTitleSelect',
+              label: 'NavigationTitleSelect',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/Pagination/pagination',
+              label: 'Pagination',
             },
             {
               type: 'doc',
@@ -453,6 +473,16 @@ const sidebars: SidebarsConfig = {
               type: 'doc',
               id: 'components/navigation/Tour/tour',
               label: 'Tour',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/TopNavBar/topNavBar',
+              label: 'TopNavBar',
+            },
+            {
+              type: 'doc',
+              id: 'components/navigation/BrowserBar/browserBar',
+              label: 'BrowserBar',
             },
           ],
         },

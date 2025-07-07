@@ -1,3 +1,9 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+
 # Component Documentation Rule
 
 ## Required Setup Steps
@@ -10,7 +16,7 @@ In `apps/docs/src/components/page/ReactLiveScope.ts`, add the component imports 
 
 ```ts
 // Add imports
-import { ComponentName } from '@cbhq/cds-web2';
+import { ComponentName } from '@cbhq/cds-web';
 
 // Add to scope object
 const ReactLiveScope = {
@@ -79,8 +85,8 @@ This rule provides a standardized approach for creating component documentation 
 First, verify where the component exists:
 
 ```bash
-packages/cds-web2/src/[source-category]/[ComponentName].tsx    # for web
-packages/cds-mobile2/src/[source-category]/[ComponentName].tsx # for mobile
+packages/cds-web/src/[source-category]/[ComponentName].tsx    # for web
+packages/cds-mobile/src/[source-category]/[ComponentName].tsx # for mobile
 ```
 
 ### 2. Create Directory Structure
@@ -139,7 +145,7 @@ apps/docs/docs/components/[docs-category]/[ComponentName]/
 
 ```mdx
 import ComponentPropsTable from '@site/src/components/page/ComponentPropsTable';
-import webPropsData from ':docgen/cds-web2/[source-category]/[ComponentName]/data';
+import webPropsData from ':docgen/cds-web/[source-category]/[ComponentName]/data';
 import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 
@@ -154,7 +160,7 @@ import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 
 ```mdx
 import ComponentPropsTable from '@site/src/components/page/ComponentPropsTable';
-import webPropsData from ':docgen/cds-mobile2/[source-category]/[ComponentName]/data';
+import webPropsData from ':docgen/cds-mobile/[source-category]/[ComponentName]/data';
 import { sharedParentTypes } from ':docgen/_types/sharedParentTypes';
 import { sharedTypeAliases } from ':docgen/_types/sharedTypeAliases';
 
@@ -177,11 +183,11 @@ platform_switcher_options: { web: true, mobile: false }
 hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
 import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
 
-import webPropsToc from ':docgen/cds-web2/[source-category]/[ComponentName]/toc-props';
+import webPropsToc from ':docgen/cds-web/[source-category]/[ComponentName]/toc-props';
 import WebPropsTable from './_webPropsTable.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
 import webMetadata from './webMetadata.json';
@@ -207,11 +213,11 @@ platform_switcher_options: { web: false, mobile: true }
 hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
 import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
 
-import mobilePropsToc from ':docgen/cds-mobile2/[source-category]/[ComponentName]/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile/[source-category]/[ComponentName]/toc-props';
 import MobilePropsTable from './_mobilePropsTable.mdx';
 import MobileExamples, { toc as mobileExamplesToc } from './_mobileExamples.mdx';
 import mobileMetadata from './mobileMetadata.json';
@@ -237,12 +243,12 @@ platform_switcher_options: { web: true, mobile: true }
 hide_title: true
 ---
 
-import { VStack } from '@cbhq/cds-web2/layout';
+import { VStack } from '@cbhq/cds-web/layout';
 import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
 import { ComponentTabsContainer } from '@site/src/components/page/ComponentTabsContainer';
 
-import webPropsToc from ':docgen/cds-web2/[source-category]/[ComponentName]/toc-props';
-import mobilePropsToc from ':docgen/cds-mobile2/[source-category]/[ComponentName]/toc-props';
+import webPropsToc from ':docgen/cds-web/[source-category]/[ComponentName]/toc-props';
+import mobilePropsToc from ':docgen/cds-mobile/[source-category]/[ComponentName]/toc-props';
 import WebPropsTable from './_webPropsTable.mdx';
 import MobilePropsTable from './_mobilePropsTable.mdx';
 import WebExamples, { toc as webExamplesToc } from './_webExamples.mdx';
@@ -331,12 +337,12 @@ import mobileMetadata from './mobileMetadata.json';
 
 ## Final Checklist
 
-- [ ] Verified component existence in web2/mobile2
+- [ ] Verified component existence in web/mobile2
 - [ ] Created only necessary platform-specific files
 - [ ] Set correct `platform_switcher_options`
 - [ ] Metadata files have correct package imports
 - [ ] Props tables import from correct package
-- [ ] Examples use components correctly in the code snippet. Check the implementation of the components in cds-web2 or cds-mobile2 package to verify.
+- [ ] Examples use components correctly in the code snippet. Check the implementation of the components in cds-web or cds-mobile package to verify.
 - [ ] ComponentTabsContainer includes only existing platform props
 - [ ] All imports use correct source categories
 - [ ] Component description is clear and helpful

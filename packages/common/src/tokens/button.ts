@@ -20,6 +20,11 @@ export const variants = {
     background: 'bgSecondary',
     borderColor: 'bgSecondary',
   },
+  tertiary: {
+    color: 'fgInverse',
+    background: 'bgInverse',
+    borderColor: 'bgInverse',
+  },
   foregroundMuted: {
     color: 'fgMuted',
     background: 'bgSecondary',
@@ -44,6 +49,11 @@ export const transparentVariants = {
     borderColor: 'transparent',
   },
   secondary: {
+    color: 'fg',
+    background: 'bg',
+    borderColor: 'transparent',
+  },
+  tertiary: {
     color: 'fg',
     background: 'bg',
     borderColor: 'transparent',

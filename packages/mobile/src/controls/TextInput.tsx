@@ -15,6 +15,7 @@ import {
   TextInput as RNTextInput,
   TextInputFocusEventData,
   TextInputProps as RNTextInputProps,
+  ViewStyle,
 } from 'react-native';
 import { ThemeVars } from '@cbhq/cds-common/core/theme';
 import { useInputVariant } from '@cbhq/cds-common/hooks/useInputVariant';
@@ -49,7 +50,13 @@ export type TextInputBaseProps = SharedProps &
   SharedInputProps &
   Pick<
     InputStackBaseProps,
-    'height' | 'variant' | 'width' | 'disabled' | 'borderRadius' | 'enableColorSurge'
+    | 'height'
+    | 'variant'
+    | 'width'
+    | 'disabled'
+    | 'borderRadius'
+    | 'enableColorSurge'
+    | 'labelVariant'
   > & {
     /**
      * Aligns text inside input and helperText
@@ -131,7 +138,8 @@ export const TextInput = memo(
         borderRadius,
         enableColorSurge = false,
         helperTextErrorIconAccessibilityLabel = 'error',
-        bordered,
+        bordered = true,
+        labelVariant = 'outside',
         ...editableInputProps
       }: TextInputProps,
       ref: ForwardedRef<RNTextInput>,
@@ -161,17 +169,24 @@ export const TextInput = memo(
       };
 
       const handleNodePress = useCallback(() => {
-        setFocused(true);
-        internalRef.current?.focus();
-      }, [setFocused, internalRef]);
+        if (!editableInputAddonProps.readOnly) {
+          setFocused(true);
+          internalRef.current?.focus();
+        }
+      }, [setFocused, internalRef, editableInputAddonProps.readOnly]);
 
-      /**
-       * If startContent exist, the padding
-       * between input area and icon should be 0.5 (4px).
-       * This is not the case when there is no startContent.
-       * In normal circumstances, spacing horizontal should be 2 (16px)
-       */
-      const startSpacing = { paddingStart: theme.space[0.5] };
+      const containerSpacing: ViewStyle = useMemo(
+        () => ({
+          ...(!!start && { paddingStart: theme.space[0.5] }),
+          ...(labelVariant === 'inside' &&
+            Boolean(label) &&
+            !compact && {
+              paddingBottom: 0,
+              paddingTop: 0,
+            }),
+        }),
+        [start, labelVariant, theme.space, compact, label],
+      );
 
       // Get the accessability label from the start node child
       const startIconA11yLabel = useMemo(() => {
@@ -197,7 +212,7 @@ export const TextInput = memo(
         return start;
       }, [start]);
 
-      const startEndBackground = useMemo(() => {
+      const inputBackground = useMemo(() => {
         if (!disabled && editableInputAddonProps.readOnly) {
           return 'bgSecondary';
         }
@@ -215,7 +230,7 @@ export const TextInput = memo(
             (suffix !== '' || !!end) && (
               <HStack
                 alignItems="center"
-                background={startEndBackground}
+                background={inputBackground}
                 gap={2}
                 justifyContent="center"
                 testID={testIDMap?.end ?? ''}
@@ -261,20 +276,37 @@ export const TextInput = memo(
               accessibilityLabel={accessibilityLabel ?? label}
               align={align}
               compact={compact}
-              containerSpacing={start ? startSpacing : {}}
+              containerSpacing={containerSpacing}
               disabled={disabled}
               testID={testID}
               {...editableInputAddonProps}
             />
           }
           labelNode={
-            !compact && !!label && <InputLabel testID={testIDMap?.label ?? ''}>{label}</InputLabel>
+            !compact &&
+            !!label && (
+              <Pressable accessibilityRole="button" disabled={disabled} onPress={handleNodePress}>
+                <InputLabel
+                  {...(labelVariant === 'inside' && {
+                    paddingTop: 0,
+                    paddingBottom: 0,
+                    paddingStart: start ? 0.5 : 2,
+                    paddingEnd: 2,
+                    background: inputBackground,
+                  })}
+                  testID={testIDMap?.label ?? ''}
+                >
+                  {label}
+                </InputLabel>
+              </Pressable>
+            )
           }
+          labelVariant={labelVariant}
           startNode={
             ((compact && !!label) || !!start) && (
               <Box
                 alignItems="center"
-                background={startEndBackground}
+                background={inputBackground}
                 justifyContent="center"
                 testID={testIDMap?.start}
               >

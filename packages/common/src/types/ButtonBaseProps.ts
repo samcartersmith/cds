@@ -1,1 +1,7 @@
-export type ButtonVariant = 'primary' | 'secondary' | 'positive' | 'negative' | 'foregroundMuted';
+export type ButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'positive'
+  | 'negative'
+  | 'foregroundMuted';

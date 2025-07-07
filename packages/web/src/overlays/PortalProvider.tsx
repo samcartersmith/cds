@@ -23,6 +23,7 @@ export const modalContainerId = 'modalsContainer';
 export const alertContainerId = 'alertsContainer';
 export const toastContainerId = 'toastsContainer';
 export const tooltipContainerId = 'tooltipContainer';
+export const trayContainerId = 'trayContainer';
 
 const safeDocument = getBrowserGlobals()?.document;
 
@@ -80,6 +81,11 @@ export const PortalHost: React.FC = memo(() => {
         data-testid="portal-tooltip-container"
         id={tooltipContainerId}
         style={{ zIndex: zIndex.tooltip }}
+      />
+      <div
+        data-testid="portal-tray-container"
+        id={trayContainerId}
+        style={{ zIndex: zIndex.tray }}
       />
     </>,
     portalRoot,

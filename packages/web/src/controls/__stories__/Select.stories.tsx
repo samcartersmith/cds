@@ -23,17 +23,26 @@ const Default = ({
   variant,
   label,
   helperText,
-}: Pick<SelectProps, 'variant' | 'label' | 'helperText'>) => {
+  labelVariant,
+  startNode,
+  compact,
+  placeholder,
+}: Pick<
+  SelectProps,
+  'variant' | 'label' | 'helperText' | 'labelVariant' | 'startNode' | 'compact' | 'placeholder'
+>) => {
   const [value, setValue] = useState<string | undefined>('');
 
   return (
     <VStack padding={2}>
       <Select
-        accessibilityLabel="select story"
+        compact={compact}
         helperText={helperText}
         label={label}
+        labelVariant={labelVariant}
         onChange={setValue}
-        placeholder="Choose something"
+        placeholder={placeholder}
+        startNode={startNode}
         value={value}
         variant={variant}
       >
@@ -67,7 +76,6 @@ const LongTextSelect = ({
   return (
     <VStack padding={2}>
       <Select
-        accessibilityLabel="select story"
         helperText={helperText}
         label={label}
         onChange={setValue}
@@ -89,7 +97,7 @@ const LongTextSelect = ({
   );
 };
 
-const AssetSelect = () => {
+const AssetSelect = (props: SelectProps) => {
   const [asset, setAsset] = useState<string | undefined>('btc');
   const assetConfig = assets[(asset as AssetKey) ?? 'btc'];
   const ethLogo = assets.eth.imageUrl;
@@ -97,7 +105,6 @@ const AssetSelect = () => {
   return (
     <VStack minHeight={100} padding={2}>
       <Select
-        accessibilityLabel="select story"
         label="Select Asset"
         onChange={setAsset}
         startNode={
@@ -109,6 +116,7 @@ const AssetSelect = () => {
         }
         value={asset}
         valueLabel={assetConfig.name}
+        {...props}
       >
         {Object.values(assets).map(({ name, imageUrl }, idx) => (
           <SelectOption
@@ -164,7 +172,6 @@ const Disabled = () => {
     <VStack minHeight={100} padding={2}>
       <Select
         disabled
-        accessibilityLabel="select story"
         helperText="You can only choose one option"
         label="How many would you like?"
         onChange={setValue}
@@ -192,7 +199,6 @@ const Compact = () => {
     <VStack minHeight={100} padding={2}>
       <Select
         compact
-        accessibilityLabel="select story"
         helperText="You only get one choice"
         label="How many would you like? "
         onChange={setValue}
@@ -217,11 +223,42 @@ const Compact = () => {
 const Variants = () => {
   return (
     <VStack>
-      <Default helperText="I am helpful text" label="I am a label" variant="foreground" />
-      <Default helperText="I am helpful text" label="I am a label" variant="foregroundMuted" />
-      <Default helperText="I am helpful text" label="I am a label" variant="primary" />
-      <Default helperText="I am helpful text" label="I am a label" variant="positive" />
-      <Default helperText="I am helpful text" label="I am a label" variant="negative" />
+      <Default
+        helperText="I am helpful text"
+        label="I am a label"
+        placeholder="Choose something"
+        variant="foreground"
+      />
+      <Default
+        helperText="I am helpful text"
+        label="I am a label"
+        placeholder="Choose something"
+        variant="foregroundMuted"
+      />
+      <Default
+        helperText="I am helpful text"
+        label="I am a label"
+        placeholder="Choose something"
+        variant="primary"
+      />
+      <Default
+        helperText="I am helpful text"
+        label="I am a label"
+        placeholder="Choose something"
+        variant="positive"
+      />
+      <Default
+        helperText="I am helpful text"
+        label="I am a label"
+        placeholder="Choose something"
+        variant="negative"
+      />
+      <Default
+        helperText="I am helpful text"
+        label="I am a label"
+        placeholder="Choose something"
+        variant="secondary"
+      />
     </VStack>
   );
 };
@@ -232,15 +269,40 @@ const LongText = () => {
 
   return (
     <VStack minHeight={100} padding={2}>
-      <Select
-        ref={selectRef}
-        accessibilityLabel="select story"
-        onChange={setValue}
-        placeholder="Choose an amount"
-        value={value}
-      >
+      <Select ref={selectRef} onChange={setValue} placeholder="Choose an amount" value={value}>
         <SelectOption compact description="BTC" title={loremIpsum} value={loremIpsum} />
       </Select>
+    </VStack>
+  );
+};
+
+const LabelVariants = () => {
+  return (
+    <VStack>
+      <Default label="Outside Label No Placeholder" />
+      <Default label="Outside Label" placeholder="Choose something" />
+      <Default label="Inside Label No Placeholder" labelVariant="inside" />
+      <Default label="Inside Label" placeholder="Choose something" />
+      <AssetSelect labelVariant="inside" />
+      <Default
+        helperText="I am helpful text"
+        label="Start Node"
+        labelVariant="inside"
+        startNode={<InputIcon name="calendar" />}
+      />
+      <Default
+        helperText="I am helpful text"
+        label="I am a label"
+        labelVariant="inside"
+        variant="secondary"
+      />
+      <Default
+        compact
+        helperText="I am helpful text"
+        label="Compact + inside"
+        labelVariant="inside"
+        variant="secondary"
+      />
     </VStack>
   );
 };
@@ -251,6 +313,7 @@ export {
   Default,
   Disabled,
   InputStackOptions,
+  LabelVariants,
   LongText,
   LongTextSelect,
   Variants,

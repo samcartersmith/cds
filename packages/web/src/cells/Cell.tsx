@@ -8,6 +8,7 @@ import type { Polymorphic } from '../core/polymorphism';
 import { useCellSpacing } from '../hooks/useCellSpacing';
 import { Box, type BoxBaseProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
+import { VStack } from '../layout/VStack';
 import { Pressable, type PressableProps } from '../system/Pressable';
 
 import type { CellAccessoryProps } from './CellAccessory';
@@ -96,6 +97,8 @@ export type CellBaseProps = Polymorphic.ExtendableProps<
     outerSpacing?: CellSpacing;
     /** The spacing to use on the inner content of Cell */
     innerSpacing?: CellSpacing;
+    /** The content to display below the main cell content */
+    bottomContent?: React.ReactNode;
   }
 >;
 
@@ -124,6 +127,8 @@ export const Cell: CellComponent = memo(
         detailWidth,
         disabled,
         gap = 2,
+        columnGap,
+        rowGap = 1,
         intermediary,
         media,
         minHeight,
@@ -147,33 +152,46 @@ export const Cell: CellComponent = memo(
         accessibilityLabel,
         accessibilityLabelledBy,
         accessibilityHint,
-        innerSpacing,
-        outerSpacing,
+        innerSpacing: innerSpacingProp,
+        outerSpacing: outerSpacingProp,
+        bottomContent: bottom,
         ...props
       }: CellProps<AsComponent>,
       ref?: Polymorphic.Ref<AsComponent>,
     ) => {
       const Component = (as ?? cellDefaultElement) satisfies React.ElementType;
 
-      const spacing = useCellSpacing({ innerSpacing, outerSpacing });
+      const { inner: innerSpacing, outer: outerSpacing } = useCellSpacing({
+        innerSpacing: innerSpacingProp,
+        outerSpacing: outerSpacingProp,
+      });
+      const { marginX: innerSpacingMarginX, ...innerSpacingWithoutMarginX } = innerSpacing;
       const isAnchor = Boolean(href);
       const isButton = Boolean(onClick ?? onKeyDown ?? onKeyUp);
       const linkable = isAnchor || isButton;
       const contentTruncationStyle = cx(baseStyle, !shouldOverflow && truncationStyle);
-      const content = useMemo(
-        () => (
-          <HStack
-            alignItems={alignItems}
-            background={selected ? 'bgAlternate' : undefined}
-            borderRadius={borderRadius}
-            className={contentClassName}
-            flexGrow={1}
-            gap={gap}
-            testID={testID}
-            width="100%"
-            {...spacing.inner}
-            marginX={linkable ? undefined : spacing.inner.marginX}
-          >
+      const content = useMemo(() => {
+        // props for the entire inner container that wraps the top content
+        // (media, children, intermediary, detail, accessory) and the bottom content
+        const innerContainerProps = {
+          borderRadius,
+          className: contentClassName,
+          testID,
+          ...(selected ? { background: 'bgAlternate' as const } : {}),
+          ...(linkable ? innerSpacingWithoutMarginX : innerSpacing),
+        };
+
+        // props for the container of the top content only(media, children, intermediary, detail, accessory)
+        const topContentContainerProps = {
+          alignItems: alignItems,
+          flexGrow: 1,
+          gap: columnGap || gap,
+          width: '100%',
+        } as const;
+
+        // content that is displayed horizontally above the bottom content
+        const topContent = (
+          <>
             {media && (
               <Box flexGrow={0} flexShrink={0}>
                 {media}
@@ -219,77 +237,84 @@ export const Cell: CellComponent = memo(
                 {accessory}
               </Box>
             )}
-          </HStack>
-        ),
-        [
-          accessory,
-          alignItems,
-          borderRadius,
-          children,
-          contentClassName,
-          contentTruncationStyle,
-          detail,
-          detailWidth,
-          gap,
-          intermediary,
-          linkable,
-          media,
-          priority,
-          selected,
-          spacing.inner,
-          testID,
-        ],
-      );
+          </>
+        );
+
+        if (!bottom) {
+          return (
+            <HStack {...topContentContainerProps} {...innerContainerProps}>
+              {topContent}
+            </HStack>
+          );
+        }
+
+        return (
+          <VStack
+            alignItems="stretch"
+            flexGrow={1}
+            gap={rowGap}
+            width="100%"
+            {...innerContainerProps}
+          >
+            <HStack {...topContentContainerProps}>{topContent}</HStack>
+            <Box>{bottom}</Box>
+          </VStack>
+        );
+      }, [
+        borderRadius,
+        contentClassName,
+        testID,
+        selected,
+        linkable,
+        innerSpacingWithoutMarginX,
+        innerSpacing,
+        alignItems,
+        columnGap,
+        gap,
+        media,
+        contentTruncationStyle,
+        priority,
+        children,
+        intermediary,
+        detail,
+        detailWidth,
+        accessory,
+        bottom,
+        rowGap,
+      ]);
 
       const wrappedContent = useMemo(() => {
+        const pressableSharedProps = {
+          noScaleOnPress: true,
+          transparentWhileInactive: true,
+          accessibilityHint,
+          accessibilityLabel,
+          accessibilityLabelledBy,
+          background: 'bg' as const,
+          borderRadius,
+          className: cx(pressClassName, insetFocusRingStyle),
+          disabled,
+          marginX: innerSpacingMarginX,
+          onClick,
+          onKeyDown,
+          onKeyUp,
+          tabIndex,
+          testID: testID && `${testID}-cell-pressable`,
+        };
         if (isAnchor)
           return (
-            <Pressable
-              noScaleOnPress
-              transparentWhileInactive
-              accessibilityHint={accessibilityHint}
-              accessibilityLabel={accessibilityLabel}
-              accessibilityLabelledBy={accessibilityLabelledBy}
-              as="a"
-              background="bg"
-              borderRadius={borderRadius}
-              className={cx(pressClassName, insetFocusRingStyle)}
-              disabled={disabled}
-              href={href}
-              marginX={spacing.inner.marginX}
-              onClick={onClick}
-              onKeyDown={onKeyDown}
-              onKeyUp={onKeyUp}
-              tabIndex={tabIndex}
-              target={target}
-              testID={testID && `${testID}-cell-pressable`}
-            >
+            <Pressable as="a" href={href} target={target} {...pressableSharedProps}>
               {content}
             </Pressable>
           );
+
         if (isButton)
           return (
-            <Pressable
-              noScaleOnPress
-              transparentWhileInactive
-              accessibilityHint={accessibilityHint}
-              accessibilityLabel={accessibilityLabel}
-              accessibilityLabelledBy={accessibilityLabelledBy}
-              as="button"
-              background="bg"
-              borderRadius={borderRadius}
-              className={cx(pressClassName, insetFocusRingStyle)}
-              disabled={disabled}
-              marginX={spacing.inner.marginX}
-              onClick={onClick}
-              onKeyDown={onKeyDown}
-              onKeyUp={onKeyUp}
-              tabIndex={tabIndex}
-              testID={testID && `${testID}-cell-pressable`}
-            >
+            <Pressable as="button" {...pressableSharedProps}>
               {content}
             </Pressable>
           );
+
         return content;
       }, [
         isButton,
@@ -298,7 +323,7 @@ export const Cell: CellComponent = memo(
         accessibilityLabelledBy,
         borderRadius,
         disabled,
-        spacing.inner.marginX,
+        innerSpacingMarginX,
         onClick,
         onKeyDown,
         onKeyUp,
@@ -319,7 +344,7 @@ export const Cell: CellComponent = memo(
           maxHeight={maxHeight}
           minHeight={minHeight}
           width="100%"
-          {...spacing.outer}
+          {...outerSpacing}
           {...props}
         >
           {wrappedContent}

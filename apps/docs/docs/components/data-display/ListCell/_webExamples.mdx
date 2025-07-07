@@ -49,6 +49,42 @@ The `title`, `description`, `detail` and `subdetail` props are only intended to 
 />
 ```
 
+### With Helper Text
+
+```tsx live
+<VStack gap={3}>
+  <ListCell
+    title="List Cell with Helper Text"
+    description="Shows usage with helper text below the cell"
+    helperText={<CellHelperText paddingStart={6}>This is a default helper message.</CellHelperText>}
+    media={<CellMedia type="asset" source={assets.btc.imageUrl} />}
+    action={<Button compact>Action</Button>}
+  />
+  <ListCell
+    title="List Cell with Warning"
+    description="Shows usage with a warning message"
+    helperText={
+      <CellHelperText variant="warning" paddingStart={6}>
+        This is a warning message.
+      </CellHelperText>
+    }
+    media={<CellMedia type="asset" source={assets.btc.imageUrl} />}
+    action={<Button compact>Action</Button>}
+  />
+  <ListCell
+    title="List Cell with Error"
+    description="Shows usage with an error message"
+    helperText={
+      <CellHelperText variant="error" paddingStart={6}>
+        This is an error message.
+      </CellHelperText>
+    }
+    media={<CellMedia type="asset" source={assets.btc.imageUrl} />}
+    action={<Button compact>Action</Button>}
+  />
+</VStack>
+```
+
 ### Multiline Description
 
 ```tsx live
@@ -80,9 +116,11 @@ The ListCellFallback component provides loading state representations of ListCel
     description
     detail
     subdetail
+    helperText
     media="icon"
     rectWidthVariant={2} // Creates a deterministic variant of the loading state
     disableRandomRectWidth
+    styles={{ helperText: { paddingLeft: 48 } }}
   />
 </VStack>
 ```

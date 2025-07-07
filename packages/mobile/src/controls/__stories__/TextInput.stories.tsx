@@ -407,6 +407,51 @@ const InputScreen = () => {
           placeholder="Placeholder"
         />
       </Example>
+      <Example inline title="TextInput with inside label">
+        <MockTextInput label="Username" labelVariant="inside" placeholder="john.doe@coinbase.com" />
+      </Example>
+      <Example inline title="TextInput with inside label and start node">
+        <MockTextInput
+          label="Username"
+          labelVariant="inside"
+          placeholder="john.doe@coinbase.com"
+          start={<InputIconButton transparent name="search" />}
+        />
+      </Example>
+      <Example inline title="TextInput with inside label and end node">
+        <MockTextInput
+          end={<InputIconButton transparent name="lightningBolt" />}
+          label="Username"
+          labelVariant="inside"
+          placeholder="john.doe@coinbase.com"
+        />
+      </Example>
+      <Example inline title="TextInput with inside label and both nodes">
+        <MockTextInput
+          end={<InputIconButton transparent name="close" />}
+          label="Username"
+          labelVariant="inside"
+          placeholder="john.doe@coinbase.com"
+          start={<InputIconButton transparent name="search" />}
+        />
+      </Example>
+      <Example inline title="TextInput with inside label and compact">
+        <MockTextInput
+          compact
+          label="Username"
+          labelVariant="inside"
+          placeholder="john.doe@coinbase.com"
+        />
+      </Example>
+      <Example inline title="TextInput with inside label and error state">
+        <MockTextInput
+          helperText="Error: Your favorite color is not orange"
+          label="Error state"
+          labelVariant="inside"
+          placeholder="Enter your favorite color"
+          variant="negative"
+        />
+      </Example>
     </ExampleScreen>
   );
 };

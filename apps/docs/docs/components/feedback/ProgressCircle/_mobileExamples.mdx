@@ -42,9 +42,9 @@
 
 ```jsx
 <HStack gap={2}>
-  <ProgressCircle progress={0} hideText size={25} />
-  <ProgressCircle progress={0.5} hideText size={25} />
-  <ProgressCircle progress={1} hideText size={25} />
+  <ProgressCircle progress={0} hideContent size={25} />
+  <ProgressCircle progress={0.5} hideContent size={25} />
+  <ProgressCircle progress={1} hideContent size={25} />
 </HStack>
 ```
 
@@ -63,9 +63,9 @@
 ```jsx
 <HStack gap={2}>
   <ProgressCircle progress={0.5} color="fgPositive" size={100} />
-  <ProgressCircle progress={0.5} color="fgNegative" size={100} />
-  <ProgressCircle progress={0.5} color="primary" size={100} />
-  <ProgressCircle progress={0.5} color="foreground" size={100} />
+  <ProgressCircle progress={0.5} color="bgNegative" size={100} />
+  <ProgressCircle progress={0.5} color="bgPrimary" size={100} />
+  <ProgressCircle progress={0.5} color="fg" size={100} />
 </HStack>
 ```
 
@@ -84,6 +84,89 @@ The progress circle can be dynamically sized to fit its parent. If you drag the 
   <div style={{ height: '5vw', width: '5vw', minWidth: '60px', minHeight: '60px' }}>
     <ProgressCircle progress={1} />
   </div>
+</HStack>
+```
+
+## Content Node Customization
+
+You can override the default content node to display a custom node. Note that the content node is clipped to the circle.
+
+### With Asset
+
+You can provide an image, such as an asset, as the content node.
+
+```jsx
+<ProgressCircle
+  progress={1}
+  size={56}
+  styles={{
+    progress: {
+      stroke: assets.eth.color,
+    },
+  }}
+  contentNode={
+    <Box height="100%" padding={0.25} width="100%">
+      <RemoteImage
+        alt={assets.eth.name}
+        shape="circle"
+        source={assets.eth.imageUrl}
+        style={{ width: '100%', height: '100%' }}
+      />
+    </Box>
+  }
+  weight="thin"
+/>
+```
+
+### Custom Text Color
+
+The progress circle's default content can be customized to display a custom text color.
+
+```jsx
+<HStack gap={2}>
+  <ProgressCircle
+    color="fgPrimary"
+    progress={0.2}
+    size={100}
+    contentNode={<DefaultProgressCircleContent color="fgPrimary" progress={0.2} />}
+  />
+  <ProgressCircle
+    color="fgPositive"
+    progress={0.4}
+    size={100}
+    contentNode={<DefaultProgressCircleContent color="fgPositive" progress={0.4} />}
+  />
+</HStack>
+```
+
+## Custom Styles
+
+The progress circle can be customized with styles.
+
+```jsx
+<HStack gap={2}>
+  <ProgressCircle
+    progress={0.4}
+    size={100}
+    styles={{
+      circle: {
+        stroke: 'transparent',
+      },
+    }}
+    contentNode={<TextTitle1 color="fgPrimary">40%</TextTitle1>}
+    weight="semiheavy"
+  />
+  <ProgressCircle
+    color="fgPositive"
+    progress={0.6}
+    size={100}
+    styles={{
+      progress: {
+        strokeLinecap: 'square',
+      },
+    }}
+    contentNode={<Icon color="fgPositive" name="circleCheckmark" size="l" />}
+  />
 </HStack>
 ```
 

@@ -267,4 +267,111 @@ describe('TextInput', () => {
     expect(onFocus).toHaveBeenCalledTimes(1);
     expect(onBlur).toHaveBeenCalledTimes(1);
   });
+
+  it('renders label outside by default', () => {
+    const labelTestID = 'label-test';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Outside Label"
+          testIDMap={{ label: labelTestID }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const label = screen.getByTestId(labelTestID);
+    expect(label).toBeTruthy();
+    expect(label).toHaveTextContent('Outside Label');
+  });
+
+  it('renders label inside when labelVariant="inside"', () => {
+    const labelTestID = 'label-test';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Inside Label"
+          labelVariant="inside"
+          testIDMap={{ label: labelTestID }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const label = screen.getByTestId(labelTestID);
+    expect(label).toBeTruthy();
+    expect(label).toHaveTextContent('Inside Label');
+  });
+
+  it('overrides inside label variant when compact is true', () => {
+    const startTestID = 'start-test';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Compact Label"
+          labelVariant="inside"
+          testIDMap={{
+            start: startTestID,
+          }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const startNode = screen.getByTestId(startTestID);
+    expect(startNode).toBeTruthy();
+    expect(startNode).toHaveTextContent('Compact Label');
+
+    expect(screen.getByText('Compact Label')).toBeTruthy();
+  });
+
+  it('positions label correctly with inside variant and start content', () => {
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Inside Label with Start"
+          labelVariant="inside"
+          start={<Text testID="start-content">Start</Text>}
+          testIDMap={{ label: 'label-test' }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const label = screen.getByTestId('label-test');
+    const startContent = screen.getByTestId('start-content');
+
+    expect(label).toBeTruthy();
+    expect(startContent).toBeTruthy();
+    expect(label).toHaveTextContent('Inside Label with Start');
+    expect(startContent).toHaveTextContent('Start');
+  });
+
+  it('positions label correctly with inside variant and end content', () => {
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          end={<Text testID="end-content">End</Text>}
+          label="Inside Label with End"
+          labelVariant="inside"
+          testIDMap={{ label: 'label-test' }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const label = screen.getByTestId('label-test');
+    const endContent = screen.getByTestId('end-content');
+
+    expect(label).toBeTruthy();
+    expect(endContent).toBeTruthy();
+    expect(label).toHaveTextContent('Inside Label with End');
+    expect(endContent).toHaveTextContent('End');
+  });
 });

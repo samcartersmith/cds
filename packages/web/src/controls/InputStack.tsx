@@ -40,7 +40,7 @@ const baseStyle = css`
   }
 `;
 
-// Fixes a problem found in Accordian children element.
+// Fixes a problem found in Accordion children element.
 // When `overflow: auto` is set the thickened border when focused is not accounted for
 // hence you see a cutoff.
 // Fix was to add this so there is always 2px outer layer space
@@ -121,6 +121,11 @@ export type InputStackBaseProps = SharedProps & {
    * Enable Color Surge motion
    */
   enableColorSurge?: boolean;
+  /**
+   * The variant of the label. Only used when compact is not true.
+   * @default 'outside'
+   */
+  labelVariant?: 'inside' | 'outside';
 };
 
 export type InputStackProps = Omit<
@@ -150,6 +155,7 @@ export const InputStack = memo(
         height,
         disableFocusedStyle = false,
         enableColorSurge,
+        labelVariant = 'outside',
         ...props
       },
       ref,
@@ -197,7 +203,7 @@ export const InputStack = memo(
         return `var(--color-${variantColorMap[variant]})`;
       }, [variant]);
 
-      const defaultBorderStyle = useMemo(() => {
+      const inputAreaStyles = useMemo(() => {
         return {
           '--border-color-unfocused': borderColorUnfocused,
           '--border-color-focused': borderColorFocused,
@@ -214,9 +220,9 @@ export const InputStack = memo(
           width={width}
           {...props}
         >
-          {!!labelNode && (
-            <>{typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode}</>
-          )}
+          {!!labelNode &&
+            labelVariant === 'outside' &&
+            (typeof labelNode === 'string' ? <InputLabel>{labelNode}</InputLabel> : labelNode)}
           <HStack>
             {!!prependNode && <>{prependNode}</>}
             <div className={inputAreaContainerStyles}>
@@ -229,14 +235,21 @@ export const InputStack = memo(
                 className={cx(baseStyle, focused && persistedFocusStyle)}
                 disabled={disabled}
                 height={height}
-                style={defaultBorderStyle}
+                style={inputAreaStyles}
                 testID="input-interactable-area"
               >
                 {!!focused && !!enableColorSurge && (
                   <ColorSurge background={variantColorMap[focusedVariant]} />
                 )}
                 {!!startNode && <>{startNode}</>}
-                {inputNode}
+                {!!labelNode && labelVariant === 'inside' ? (
+                  <VStack flexGrow={1}>
+                    {labelNode}
+                    {inputNode}
+                  </VStack>
+                ) : (
+                  inputNode
+                )}
                 {!!endNode && <>{endNode}</>}
               </Interactable>
             </div>

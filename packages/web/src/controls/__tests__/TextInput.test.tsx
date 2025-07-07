@@ -1,5 +1,6 @@
 // Disabling this because its just testing
 
+import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderA11y } from '@cbhq/cds-web-utils';
 
@@ -333,5 +334,96 @@ describe('TextInput', () => {
     const labelForAttribute = screen.getByTestId(labelTestID).getAttribute('for');
     expect(labelForAttribute?.startsWith('cds-textinput-label')).toBe(true);
     expect(screen.getByRole('textbox')).toHaveAttribute('id', labelForAttribute);
+  });
+
+  it('renders label outside by default', () => {
+    const labelTestID = 'label-test';
+    render(
+      <DefaultThemeProvider>
+        <TextInput label="Outside Label" testIDMap={{ label: labelTestID }} />
+      </DefaultThemeProvider>,
+    );
+
+    const label = screen.getByTestId(labelTestID);
+    expect(label).toBeInTheDocument();
+
+    const inputArea = screen.getByTestId('input-interactable-area');
+    expect(inputArea).not.toContainElement(label);
+  });
+
+  it('renders label inside when labelVariant="inside"', () => {
+    const labelTestID = 'label-test';
+    render(
+      <DefaultThemeProvider>
+        <TextInput label="Inside Label" labelVariant="inside" testIDMap={{ label: labelTestID }} />
+      </DefaultThemeProvider>,
+    );
+
+    const label = screen.getByTestId(labelTestID);
+    const inputArea = screen.getByTestId('input-interactable-area');
+    expect(label).toBeInTheDocument();
+    expect(inputArea).toContainElement(label);
+  });
+
+  it('overrides inside label variant when compact is true', () => {
+    const startTestID = 'start-test';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          label="Compact Label"
+          labelVariant="inside"
+          testIDMap={{
+            start: startTestID,
+          }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const startNode = screen.getByTestId(startTestID);
+    expect(startNode).toBeTruthy();
+    expect(startNode).toHaveTextContent('Compact Label');
+
+    expect(screen.getByText('Compact Label')).toBeTruthy();
+  });
+
+  it('positions label correctly with inside variant and start content', () => {
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          label="Inside Label with Start"
+          labelVariant="inside"
+          start={<span data-testid="start-content">Start</span>}
+          testIDMap={{ label: 'label-test' }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const label = screen.getByTestId('label-test');
+    const startContent = screen.getByTestId('start-content');
+    const inputArea = screen.getByTestId('input-interactable-area');
+
+    expect(inputArea).toContainElement(label);
+    expect(inputArea).toContainElement(startContent);
+  });
+
+  it('positions label correctly with inside variant and end content', () => {
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          end={<span data-testid="end-content">End</span>}
+          label="Inside Label with End"
+          labelVariant="inside"
+          testIDMap={{ label: 'label-test' }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const label = screen.getByTestId('label-test');
+    const endContent = screen.getByTestId('end-content');
+    const inputArea = screen.getByTestId('input-interactable-area');
+
+    expect(inputArea).toContainElement(label);
+    expect(inputArea).toContainElement(endContent);
   });
 });

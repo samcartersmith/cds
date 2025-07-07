@@ -4,10 +4,6 @@ import { gutter } from './sizing';
 
 export const labelTextColor: InputVariant = 'foreground';
 
-export const selectTriggerMinHeight = 56;
-
-export const selectTriggerCompactMinHeight = 40;
-
 /** Spacing config for Select Option (web) */
 export const selectCellSpacingConfig: CellSpacingConfig = {
   outerSpacing: { paddingX: 0, paddingY: 0 },

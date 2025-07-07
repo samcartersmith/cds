@@ -35,10 +35,56 @@ export const Fallbacks = () => {
       <ListCellFallback description detail subdetail title media="asset" rectWidthVariant={0} />
       <ListCellFallback description detail subdetail title media="asset" rectWidthVariant={1} />
       <ListCellFallback description detail subdetail title media="asset" rectWidthVariant={2} />
+      <ListCellFallback disableRandomRectWidth helperText title />
+      <ListCellFallback description disableRandomRectWidth helperText title />
       <ListCellFallback
+        description
         disableRandomRectWidth
+        helperText
+        title
+        media="pictogram"
+        styles={{
+          helperText: {
+            paddingLeft: 48,
+          },
+        }}
+      />
+      <ListCellFallback
+        description
+        detail
+        disableRandomRectWidth
+        helperText
+        subdetail
+        title
+        media="asset"
+        styles={{
+          helperText: {
+            paddingLeft: 48,
+          },
+        }}
+      />
+      <ListCellFallback
+        description
+        detail
+        disableRandomRectWidth
+        helperText
+        subdetail
+        title
+        media="image"
+        styles={{
+          helperText: {
+            paddingLeft: 64,
+          },
+        }}
+      />
+      <ListCellFallback
+        description
+        detail
+        disableRandomRectWidth
+        subdetail
         title
         innerSpacing={innerSpacing}
+        media="asset"
         outerSpacing={outerSpacing}
       />
     </>

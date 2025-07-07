@@ -64,6 +64,11 @@ export type InputStackBaseProps = SharedProps & {
   borderStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
   /** Border overlay to animate border when focused */
   borderFocusedStyle?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
+  /**
+   * The variant of the label. Only used when compact is not true.
+   * @default 'outside'
+   */
+  labelVariant?: 'inside' | 'outside';
 };
 
 export type InputStackProps = Omit<BoxProps, 'width' | 'height' | 'borderRadius'> &
@@ -96,6 +101,7 @@ export const InputStack = memo(function InputStack({
   borderFocusedStyle,
   focused,
   enableColorSurge,
+  labelVariant = 'outside',
   ...props
 }: InputStackProps) {
   const theme = useTheme();
@@ -164,7 +170,7 @@ export const InputStack = memo(function InputStack({
       width={width}
       {...props}
     >
-      {!!labelNode && <>{labelNode}</>}
+      {!!labelNode && labelVariant === 'outside' && <>{labelNode}</>}
       <HStack>
         {!!prependNode && <>{prependNode}</>}
         <View style={styles.inputAreaContainerStyle}>
@@ -178,7 +184,14 @@ export const InputStack = memo(function InputStack({
               <ColorSurge background={variant ? variantColorMap[variant] : undefined} />
             )}
             {!!startNode && <>{startNode}</>}
-            {inputNode}
+            {!!labelNode && labelVariant === 'inside' ? (
+              <VStack flexGrow={1} minHeight={60} paddingY={1}>
+                {labelNode}
+                {inputNode}
+              </VStack>
+            ) : (
+              inputNode
+            )}
             {!!endNode && <>{endNode}</>}
           </Animated.View>
         </View>
@@ -189,7 +202,7 @@ export const InputStack = memo(function InputStack({
   );
 });
 
-// Fixes a problem found in Accordian children element.
+// Fixes a problem found in Accordion children element.
 // When `overflow: auto` is set the thickened border when focused is not accounted for
 // hence you see a cutoff.
 // Fix was to add this so there is always 2px outer layer space

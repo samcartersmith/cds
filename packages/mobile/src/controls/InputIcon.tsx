@@ -25,7 +25,7 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
   negative: 'fgNegative',
   foreground: 'fg',
   foregroundMuted: 'fgMuted',
-  secondary: 'bgSecondary',
+  secondary: 'fgMuted',
 };
 
 export const InputIcon = memo(function InputIcon({

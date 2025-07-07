@@ -1,0 +1,34 @@
+### Basic Usage
+
+A `BrowserBar` can be used to display information and actions, like in a web browser.
+
+```tsx
+<BrowserBar
+  start={<IconButton icon="arrow-left" accessibilityLabel="Back" />}
+  end={<IconButton icon="more-horizontal" accessibilityLabel="More options" />}
+>
+  <NavigationTitle>Coinbase</NavigationTitle>
+</BrowserBar>
+```
+
+### With Search Input
+
+A common use case is to include a search or URL input field.
+
+```tsx
+<BrowserBar
+  start={<IconButton icon="lock" accessibilityLabel="Secure" />}
+  end={
+    <HStack>
+      <IconButton icon="share" accessibilityLabel="Share" />
+      <IconButton icon="bookmark" accessibilityLabel="Bookmark" />
+    </HStack>
+  }
+>
+  <BrowserBarSearchInput value="coinbase.com" />
+</BrowserBar>
+```
+
+### Contextual Hiding
+
+`BrowserBar` provides a `BrowserBarContext`. Components rendered inside the `BrowserBar` can use the `useBrowserBarContext` hook to gain access to `setHideStart` and `setHideEnd` functions. These functions allow children components to dynamically hide the `start` and `end` content of the `BrowserBar`, which can be useful to maximize space for the primary content.

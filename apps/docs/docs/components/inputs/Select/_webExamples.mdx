@@ -1,8 +1,6 @@
-### Web Implementation
+### Default Composition
 
 `Select` can take anything as a child, however, we strongly recommend that you use `SelectOption`. It has the same API as a `ListCell`, but with custom styles specific to usage within a `Select`. `SelectOption` also comes with a lot of baked in functionality, like keyboard navigation, accessibility properties, and focus behaviors.
-
-#### Default Composition
 
 ```jsx live
 function DefaultSelect() {
@@ -20,7 +18,7 @@ function DefaultSelect() {
 }
 ```
 
-#### Value/Label Object Model
+### Value/Label Object Model
 
 Sometimes you may want to surface a label instead of the select value. You can pass a `valueLabel` prop with the currently selected value's corresponding label, which will appear to be the value of the Select.
 
@@ -86,7 +84,7 @@ function LabelHelperTextSelect() {
 }
 ```
 
-#### Compact
+### Compact
 
 When space is tight, this brings the label inside of the Input. Should be used with a `compact` `SelectOption`.
 
@@ -112,7 +110,7 @@ function CompactSelect() {
 }
 ```
 
-#### Variants
+### Variants
 
 Variants can be used to surface positive or negative feedback.
 
@@ -136,4 +134,56 @@ function Variant() {
     </VStack>
   );
 }
+```
+
+### Label Variants
+
+Select supports two label variants: `outside` (default) and `inside`. Note that the `compact` prop, when set to true, will override label variant preference.
+
+:::warning
+
+When using the `inside` label variant, you should always include a `placeholder` prop.
+
+:::
+
+```jsx live
+<VStack gap={3}>
+  <VStack>
+    <Text as="p">
+      <strong>Outside label (default):</strong>
+    </Text>
+    <Select placeholder="Choose an option">
+      <SelectOption value="option1" title="Option 1" description="Description" />
+      <SelectOption value="option2" title="Option 2" description="Description" />
+      <SelectOption value="option3" title="Option 3" description="Description" />
+    </Select>
+  </VStack>
+
+  <VStack>
+    <Text as="p">
+      <strong>Inside label:</strong>
+    </Text>
+    <Select label="Choose Option" labelVariant="inside" placeholder="Select from list">
+      <SelectOption value="option1" title="Option 1" description="Description" />
+      <SelectOption value="option2" title="Option 2" description="Description" />
+      <SelectOption value="option3" title="Option 3" description="Description" />
+    </Select>
+  </VStack>
+
+  <VStack>
+    <Text as="p">
+      <strong>Inside label (with start content):</strong>
+    </Text>
+    <Select
+      label="Filter Options"
+      labelVariant="inside"
+      startNode={<InputIcon name="search" />}
+      placeholder="Search and select"
+    >
+      <SelectOption value="option1" title="Option 1" description="Description" />
+      <SelectOption value="option2" title="Option 2" description="Description" />
+      <SelectOption value="option3" title="Option 3" description="Description" />
+    </Select>
+  </VStack>
+</VStack>
 ```

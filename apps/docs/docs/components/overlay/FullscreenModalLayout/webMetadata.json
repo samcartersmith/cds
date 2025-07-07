@@ -1,0 +1,15 @@
+{
+  "import": "import { FullscreenModalLayout } from '@cbhq/cds-web/overlays/modal/FullscreenModalLayout'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/cds-web/src/overlays/modal/FullscreenModalLayout.tsx",
+  "description": "Provides the layout structure, overlay, focus trapping, and animations for fullscreen modals. Intended for internal use within Modal component variants.",
+  "relatedComponents": [
+    {
+      "label": "Modal",
+      "url": "/components/overlay/Modal"
+    },
+    {
+      "label": "FullscreenModal",
+      "url": "/components/overlay/FullscreenModal"
+    }
+  ]
+}
