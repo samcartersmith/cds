@@ -5,14 +5,6 @@
   "description": "Collapsible is a layout component that provides an expandable/collapsible container with smooth animations and customizable content.",
   "dependencies": [
     {
-      "name": "react",
-      "version": "^18.3.1"
-    },
-    {
-      "name": "react-native",
-      "version": "^0.74.5"
-    },
-    {
       "name": "react-native-reanimated",
       "version": "^3.14.0"
     }

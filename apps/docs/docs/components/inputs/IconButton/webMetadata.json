@@ -10,10 +10,5 @@
       "url": "/components/media/Icon/"
     }
   ],
-  "dependencies": [
-    {
-      "name": "react",
-      "version": "^18.3.1"
-    }
-  ]
+  "dependencies": []
 }

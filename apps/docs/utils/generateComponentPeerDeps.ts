@@ -18,6 +18,8 @@ interface PackageAnalysis {
   mobile: ComponentPeerDeps;
 }
 
+const PEER_DEPS_TO_IGNORE = ['react', 'react-native'];
+
 function extractImports(fileContent: string): string[] {
   const importRegex = /import[\s\S]*?from\s+['"]([^'"]+)['"]/g;
   const imports: string[] = [];
@@ -72,7 +74,10 @@ async function analyzePackageForDocs(
       for (const importPath of imports) {
         if (isExternalDependency(importPath)) {
           const packageName = getPackageName(importPath);
-          if (Object.keys(packagePeerDependencies).includes(packageName)) {
+          if (
+            Object.keys(packagePeerDependencies).includes(packageName) &&
+            !PEER_DEPS_TO_IGNORE.includes(packageName)
+          ) {
             peerDependencies.push({
               name: packageName,
               version: packagePeerDependencies[packageName],

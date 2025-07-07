@@ -5,14 +5,6 @@
   "description": "A React component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.",
   "dependencies": [
     {
-      "name": "react",
-      "version": "^18.3.1"
-    },
-    {
-      "name": "react-native",
-      "version": "^0.74.5"
-    },
-    {
       "name": "react-native-svg",
       "version": "^14.1.0"
     },

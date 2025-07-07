@@ -4,10 +4,5 @@
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-layout-divider--default",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=419-16182",
   "description": "A divider is a component that separates content into sections.",
-  "dependencies": [
-    {
-      "name": "react",
-      "version": "^18.3.1"
-    }
-  ]
+  "dependencies": []
 }

@@ -7,5 +7,11 @@
       "label": "LottieStatusAnimation",
       "url": "/components/animation/LottieStatusAnimation"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "lottie-react-native",
+      "version": "^6.7.0"
+    }
   ]
 }
