@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 3.0.0 (7/7/2025 PST)
+
+#### 💥 Breaking
+
+- [Release CDS v8](https://cds.cbhq.net/blog/v8)
+
 ## 3.0.0-rc.7 (6/27/2025 PST)
 
 #### 🚀 Updates
