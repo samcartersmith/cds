@@ -140,6 +140,14 @@ const config: Config = {
 
   themeConfig: {
     defaultMode: 'dark',
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        'Looking for the old docs? <a href="https://cds-v7.cbhq.net/">See the CDS v7 docs here →</a>',
+      backgroundColor: 'rgb(var(--purple20))',
+      textColor: 'var(--color-fgPrimary)',
+      isCloseable: false,
+    },
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     metadata: [
