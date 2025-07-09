@@ -2,6 +2,7 @@ import {
   ActionType,
   AnalyticsEventImportance,
   ComponentType,
+  flushQueue,
   init,
   logEvent,
   logMetric,
@@ -208,8 +209,12 @@ async function sendScores(
     totalNumberOfComponentsWithTest,
   );
 
+  // Force send metrics to remove potential discrepancies.
+  // See here for more details: https://docs.cbhq.net/frontend/analytics/log-metrics#force-send-metrics
+  await flushQueue();
+
   // delay that gives enough time to send event
-  await sleep(1000);
+  await sleep(5000);
 }
 
 function constructJestArgs(options: TestOptions, task: Task): string[] {

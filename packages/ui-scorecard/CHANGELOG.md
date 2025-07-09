@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.8 (7/8/2025 PST)
+
+#### 🐞 Fixes
+
+- Add force send call for a11y scores metrics. [[#4140](https://github.cbhq.net/frontend/cds/pull/4140)]
+
 ## 0.2.7 (5/30/2025 PST)
 
 #### 🐞 Fixes
