@@ -1,0 +1,31 @@
+---
+id: mcp-server
+title: MCP Server
+hide_title: true
+---
+
+import { MDXSection } from '@site/src/components/page/MDXSection';
+import { MDXArticle } from '@site/src/components/page/MDXArticle';
+import { ContentHeader } from '@site/src/components/page/ContentHeader';
+
+<ContentHeader
+  title="MCP Server"
+  description="CDS includes an MCP Server that is automatically updated every time a new version is published."
+/>
+
+<MDXSection>
+<MDXArticle>
+## Getting started with Cursor
+
+The CDS MCP server is included in the `@cbhq/cds-common` package which is installed by default for anyone using CDS.
+
+Run `npx cds-mcp-setup` to setup the MCP server.
+
+This installs the MCP server in `<workspace_root>/.cursor/mcp.json` and adds Cursor rules for CDS in `<workspace_root>/.cursor/rules/cds.mcp`.
+
+:::tip
+Make sure to enable the MCP server after installation. Go to `Cursor Settings` &rarr; `Tools & Integrations` &rarr; `MCP Tools` to check which MCP servers are installed.
+:::
+
+</MDXArticle>
+</MDXSection>

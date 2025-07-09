@@ -2,6 +2,16 @@
   "import": "import { TabNavigation } from '@cbhq/cds-mobile/navigation/TabNavigation'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/tabs/TabNavigation.tsx",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=240-10484&t=Qy6RCJCgjp5sUPUq-0",
-  "description": "Tabs organize content across different screens, data sets, and other interactions.",
+  "description": "A component for organizing content across different screens or data sets.",
+  "relatedComponents": [
+    {
+      "label": "TopNavBar",
+      "url": "/components/navigation/TopNavBar/"
+    },
+    {
+      "label": "SegmentedTabs",
+      "url": "/components/navigation/SegmentedTabs/"
+    }
+  ],
   "dependencies": []
 }

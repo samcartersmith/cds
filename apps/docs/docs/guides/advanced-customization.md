@@ -5,7 +5,7 @@ title: Advanced Customization
 
 # Advanced Customization
 
-The Coinbase Design System (CDS) provides a wide range of customization options, enabling you to adapt components to fit your application's unique design and functionality requirements. This guide covers advanced techniques for extending and customizing CDS components while maintaining consistency and performance.
+CDS provides a wide range of customization options, enabling you to adapt components to fit your application's unique design and functionality requirements. This guide covers advanced techniques for extending and customizing CDS components while maintaining consistency and performance.
 
 ## Core Principles of Customization
 

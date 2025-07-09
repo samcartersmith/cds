@@ -1,6 +1,25 @@
 {
-  "import": "import { Pictogram } from '@cbhq/cds-mobile/illustrations/Pictogram'",
-  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/Pictogram.tsx",
-  "figma": "https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=2-400&m=dev",
+  "import": "import { SpotSquare } from '@cbhq/cds-mobile/illustratations/SpotSquare'",
+  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/illustrations/SpotSquare.tsx",
+  "figma": "https://www.figma.com/design/LmkJatvMRVzNgfiIkJDb99/%E2%9C%A8-Illustrations?node-id=3668-22&m=dev",
+  "description": "A square-shaped illustration component for displaying spot graphics.",
+  "relatedComponents": [
+    {
+      "label": "SpotIcon",
+      "url": "/components/media/SpotIcon/"
+    },
+    {
+      "label": "SpotRectangle",
+      "url": "/components/media/SpotRectangle/"
+    },
+    {
+      "label": "HeroSquare",
+      "url": "/components/media/HeroSquare/"
+    },
+    {
+      "label": "Pictogram",
+      "url": "/components/media/Pictogram/"
+    }
+  ],
   "dependencies": []
 }

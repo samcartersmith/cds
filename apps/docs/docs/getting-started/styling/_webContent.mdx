@@ -1,198 +1,132 @@
-import { MDXSection } from '@site/src/components/page/MDXSection';
-import { MDXArticle } from '@site/src/components/page/MDXArticle';
+import { media } from '@cbhq/cds-web/styles/media';
 
-<MDXSection>
-<MDXArticle>
-## Core Styling Principles
+## The `StyleProps` API
 
-CDS styling is built on the following principles:
+Most components support the StyleProps API. StyleProps automatically have access to the values in the theme, and some StyleProps are limited to only the theme values. [See the full list of StyleProps here.](/components/layout/Box/?platform=web&tab=props)
 
-<ul>
-  <li><strong>Consistency</strong>: Use shared theme variables to ensure uniform styling across components and platforms.</li>
-  <li><strong>Performance</strong>: Utilize CSS Variables on the web to minimize re-renders and enhance performance.</li>
-  <li><strong>Flexibility</strong>: Support for dynamic and responsive styles out of the box.</li>
-</ul>
-</MDXArticle>
+```jsx
+// ✅ The `bgNegative` token will automatically update with the theme!
+<Box background="bgNegative" width={100} />
 
-<MDXArticle>
-## Theming
-
-Theming is a central feature of CDS. The `ThemeProvider` component is required to inject theme variables and manage theming across your application.
-
-<ul>
-  <li>
-    <strong>CSS Variables</strong>: CDS components use CSS Variables to style elements efficiently.
-  </li>
-  <li>
-    <strong>Dynamic Updates</strong>: Switching themes (e.g., light and dark mode) dynamically
-    updates styles.
-  </li>
-</ul>
-
-Example:
-
-```tsx
-import { ThemeProvider } from '@cbhq/cds-web';
-
-<ThemeProvider>
-  <App />
-</ThemeProvider>;
+// ❌ Error: Type '"#0000ff"' is not assignable to type 'Color | undefined'.
+<Box background="#0000ff" width={100} />
 ```
 
-</MDXArticle>
+:::tip
+The docs page of every component has a props table listing all the available props!
+:::
 
-<MDXArticle>
-## StyleProps API
+:::note
+The StyleProps API applies static atomic classnames under the hood. These classnames reference CSS Variables set by the ThemeProvider to enable dynamic theming.
+:::
 
-The `StyleProps` API is a powerful feature of CDS, allowing you to apply styles directly to components without writing custom CSS or stylesheets.
+## Responsive styles
 
-### Static and Dynamic Props
+All StyleProps support an optional responsive syntax for device-specific styles.
 
-CDS distinguishes between static and dynamic style props:
-
-<ul>
-  <li>
-    <strong>Static Props</strong>: Map directly to predefined class names for optimal performance.
-  </li>
-  <li>
-    <strong>Dynamic Props</strong>: Apply inline styles using CSS Variables.
-  </li>
-</ul>
-
-Example:
-
-```tsx
-<Box color="bgPrimary" padding={4} margin={{ base: 2, tablet: 4 }} width="100%" />
+```jsx
+<Box
+  width={{ base: 200, tablet: 200, desktop: 400 }}
+  background={{ base: 'bgPrimary', phone: 'bgSecondary' }}
+/>
 ```
 
-### Responsive Design
+- **base:** no media query
+- **phone:** <code>{media.phone}</code>
+- **tablet:** <code>{media.tablet}</code>
+- **desktop:** <code>{media.desktop}</code>
 
-CDS makes it easy to create responsive designs by supporting breakpoint-based styles in the `StyleProps` API.
+It is not possible to customize the breakpoint values at this time.
 
-Example:
+Import the `media` object to use CDS breakpoints and media queries in your own custom styles.
 
-```tsx
-<Box padding={{ base: 2, tablet: 4, desktop: 6 }} width={{ base: '100%', desktop: '50%' }} />
+```jsx
+import styled from 'styled-components';
+import { media } from '@cbhq/cds-web/styles/media';
+
+const MyCustomThing = styled.div`
+  ${media.phone} {
+    width: 100px;
+  }
+`;
 ```
 
-This eliminates the need for custom media queries in CSS.
+## `style` and `styles` props
 
-</MDXArticle>
+Most components support the native `style` prop for inline styles.
 
-<MDXArticle>
-### Polymorphic Components
-
-CDS components like `Box` and `Text` are polymorphic, meaning they can render different underlying elements using the `as` prop.
-
-Example:
-
-```tsx
-<Text as="h1" fontSize="display1">
-  Welcome to CDS
-</Text>
+```jsx
+<Box style={{ backgroundColor: '#0000ff' }} />
 ```
 
-</MDXArticle>
+Some complex components support passing inline styles to subcomponents with the `styles` prop.
 
-<MDXArticle>
-## Theme Variables
-
-CDS exposes a robust set of theme variables that you can use to style components. These include:
-
-<ul>
-  <li>
-    <strong>Colors</strong>: <code>color.bgPrimary</code>, <code>color.fgPrimary</code>, etc.
-  </li>
-  <li>
-    <strong>Spacing</strong>: <code>space.0</code>, <code>space.1</code>, etc.
-  </li>
-  <li>
-    <strong>Typography</strong>: <code>fontSize.body</code>, <code>lineHeight.body</code>, etc.
-  </li>
-</ul>
-
-### Using Theme Variables
-
-Access theme variables directly using CSS Variables:
-
-```css
-.my-class {
-  background-color: var(--color-bgPrimary);
-  padding: var(--space-4);
-}
+```jsx
+<ProgressCircle
+  styles={{
+    circle: {
+      stroke: 'transparent',
+    },
+    progress: {
+      strokeLinecap: 'square',
+    },
+  }}
+  color="fgPositive"
+  progress={0.75}
+  size={100}
+/>
 ```
 
-</MDXArticle>
+:::note
+We will continue to add the `styles` prop to more components over time. Please feel free to request specific components that you think would benefit from this API.
+:::
 
-<MDXArticle>
-## Customizing Themes
+## `className` and `classNames` props
 
-You can customize the default CDS theme by providing your own values to the `ThemeProvider`.
+Most components support the native `className` prop for inline styles.
 
-Example:
-
-```tsx
-const customTheme = {
-  color: {
-    bgPrimary: '#000000',
-    fgPrimary: '#FFFFFF',
-  },
-  space: {
-    0: '0px',
-    1: '4px',
-    2: '8px',
-    3: '16px',
-    4: '24px',
-  },
-};
-
-<ThemeProvider theme={customTheme}>
-  <App />
-</ThemeProvider>;
+```jsx
+<Box className="my-custom-box" />
 ```
 
-</MDXArticle>
+Some complex components support passing classnames to subcomponents with the `classNames` prop.
 
-<MDXArticle>
-## Inline Styles and Class Names
-
-In addition to `StyleProps`, CDS components support `className` and `style` props for advanced customization.
-
-```tsx
-<Box className="custom-class" style={{ backgroundColor: 'red' }} />
+```jsx
+<ProgressCircle
+  classNames={{
+    circle: 'my-custom-circle',
+    progress: 'my-custom-progress',
+  }}
+  color="fgPositive"
+  progress={0.75}
+  size={100}
+/>
 ```
 
-</MDXArticle>
+:::note
+We will continue to add the `classNames` prop to more components over time. Please feel free to request specific components that you think would benefit from this API.
+:::
 
-<MDXArticle>
-## Best Practices
+## Component specific props
 
-<ul>
-  <li><strong>Use `StyleProps`</strong>: Leverage the built-in <code>StyleProps</code> API for consistent and responsive designs.</li>
-  <li><strong>Minimize Inline Styles</strong>: Prefer theme variables and <code>StyleProps</code> over inline styles for performance and maintainability.</li>
-  <li><strong>Customize Themes</strong>: Tailor the CDS theme to align with your brand's design language.</li>
-</ul>
-</MDXArticle>
-</MDXSection>
+Many components have their own specific props that can affect styling.
 
-<MDXSection>
-<MDXArticle hideDivider>
-## Next Steps
+```jsx
+<Button compact variant="primary">
+  Click me
+</Button>
+```
 
-<ul>
-  <li>
-    <a href="/getting-started/api-overview">API Overview</a>: Learn about the core APIs in CDS.
-  </li>
-  <li>
-    <a href="/components">Component Library</a>: Explore the available components and their styling
-    options.
-  </li>
-  <li>
-    <a href="/getting-started/theming">Theming Guide</a>: Dive deeper into theming with CDS.
-  </li>
-</ul>
+## Combining techniques
 
-Harness the power of the Coinbase Design System to create visually stunning and highly performant applications!
+Mix and match these styling techniques for complete customization!
 
-</MDXArticle>
-</MDXSection>
+```jsx
+<Button variant="primary" borderColor="accentBoldPurple" style={{ fontFamily: 'Times' }}>
+  Click me
+</Button>
+```
+
+## Global CSS reset
+
+CDS web global styles include a CSS reset which override the browser default styles for some elements. This ensures that polymorphic components render correctly, regardless of their HTML element. [See the full style reset here](https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/styles/global.ts).

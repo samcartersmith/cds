@@ -1,7 +1,7 @@
 {
   "import": "import { Lottie } from '@cbhq/cds-mobile/animation/Lottie'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/animation/Lottie.tsx",
-  "description": "Lottie is a component for rendering After Effects animations as vectors on mobile. It supports loops, autoplay, and color filters with automatic aspect ratio handling.",
+  "description": "A component for rendering After Effects animations as vectors.",
   "relatedComponents": [
     {
       "label": "LottieStatusAnimation",

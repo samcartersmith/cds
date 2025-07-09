@@ -1,7 +1,7 @@
 {
   "import": "import { ProgressBar } from '@cbhq/cds-mobile/visualizations/ProgressBar'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/visualizations/ProgressBar.tsx",
-  "description": "A ProgressBar provides a visual representation of completion status for a process with a known end state.",
+  "description": "A visual indicator of completion progress.",
   "relatedComponents": [
     {
       "label": "ProgressCircle",

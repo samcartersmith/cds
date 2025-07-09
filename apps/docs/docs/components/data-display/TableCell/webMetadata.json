@@ -1,7 +1,7 @@
 {
   "import": "import { TableCell } from '@cbhq/cds-web/tables/TableCell'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tables/TableCell.tsx",
-  "description": "TableCell is a component used to define individual cells within a table. It provides a flexible container for displaying content with support for titles, subtitles, start/end accessories, and responsive spacing.",
+  "description": "A component for defining individual cells within a Table.",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-table-tablecell--cell-spacing",
   "relatedComponents": [
     {

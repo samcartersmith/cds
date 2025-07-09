@@ -5,7 +5,7 @@ title: Integrate With Build Tools
 
 # Integrating with Build Tools
 
-The Coinbase Design System (CDS) is designed to seamlessly integrate with modern build tools for both web and React Native applications. This page provides guidance on configuring your build environment to fully leverage CDS's capabilities, such as CSS imports for web and optimized theming for React Native.
+CDS is designed to seamlessly integrate with modern build tools for both web and React Native applications. This page provides guidance on configuring your build environment to fully leverage CDS's capabilities, such as CSS imports for web and optimized theming for React Native.
 
 ## Web Integration
 

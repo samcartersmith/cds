@@ -1,7 +1,7 @@
 {
   "import": "import { Table } from '@cbhq/cds-web/tables/Table'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tables/Table.tsx",
-  "description": "Table is a component that displays data in rows and columns. It supports different variants for styling, fixed or auto layouts, and customizable cell spacing.",
+  "description": "A component for displaying data in rows and columns.",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-table-table--sample-table",
   "relatedComponents": [
     {

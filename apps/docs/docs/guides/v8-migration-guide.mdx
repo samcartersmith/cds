@@ -6,8 +6,9 @@ hide_title: true
 
 import { MDXSection } from '@site/src/components/page/MDXSection';
 import { MDXArticle } from '@site/src/components/page/MDXArticle';
-import { ComponentHeader } from '@site/src/components/page/ComponentHeader';
-import { GettingStartedBanner } from '@site/src/components/page/ComponentBanner/GettingStartedBanner';
+import { ContentHeader } from '@site/src/components/page/ContentHeader';
+
+<ContentHeader title="v8 Migration Guide" />
 
 <MDXSection>
 <MDXArticle>
@@ -23,12 +24,31 @@ CDS v8 is our most feature packed release ever! Including but not limited to:
 
 To enable global theming and style customization for all CDS components, some APIs were deprecated or outright deleted. We appreciate the impact this will have on teams adopting CDS v8 and are committed to supporting developers through this upgrade 🏎️
 
-If you experience any trouble migrating we're ready to help! Just reach out in #ask-ui-systems
+If you experience any trouble migrating we're ready to help! Just reach out in [#ask-cds](https://coinbase.enterprise.slack.com/archives/C05H922EYP7)
 
+</MDXArticle>
+
+<MDXArticle>
+## New packages
+
+- `@cbhq/cds-common@8.1.0`
+- `@cbhq/cds-mobile@8.1.0`
+- `@cbhq/cds-mobile-visualization@3.0.0`
+- `@cbhq/cds-web@8.1.0`
+- `@cbhq/cds-web-visualization@3.0.0`
+- `@cbhq/cds-icons@5.0.0`
+- `@cbhq/cds-lottie-files@3.0.0`
+
+</MDXArticle>
+
+<MDXArticle>
 ## Dependencies
 
 TO DO...
 
+</MDXArticle>
+
+<MDXArticle>
 ## Styles
 
 CDS components support more flexible styling and improved customization options, including polymorphism on web.
@@ -164,6 +184,9 @@ This table maps the old border radius tokens to the new border radius tokens:
 | roundedXLarge            | 500                      |
 | roundedFull              | 1000                     |
 
+</MDXArticle>
+
+<MDXArticle>
 ## Theming and Providers
 
 CDS components are now able to be extensively themed through the ThemeProvider, which has an all new API. All CDS components that render UI must now be inside a ThemeProvider.

@@ -1,7 +1,7 @@
 {
   "import": "import { TableCaption } from '@cbhq/cds-web/tables/TableCaption'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tables/TableCaption.tsx",
-  "description": "TableCaption is a component used to set an accessible title or caption for a Table. It provides a semantic caption element with support for both string and custom content.",
+  "description": "A component for setting an accessible title or caption for Table.",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-table-tablecaption--spacing-examples",
   "relatedComponents": [
     {

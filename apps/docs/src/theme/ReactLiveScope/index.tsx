@@ -69,6 +69,7 @@ import * as CDSTables from '@cbhq/cds-web/tables';
 import { useSortableCell } from '@cbhq/cds-web/tables/hooks/useSortableCell';
 import * as CDSTabs from '@cbhq/cds-web/tabs';
 import { Tag } from '@cbhq/cds-web/tag/Tag';
+import { defaultTheme } from '@cbhq/cds-web/themes/defaultTheme';
 import { Tour } from '@cbhq/cds-web/tour/Tour';
 import { TourStep } from '@cbhq/cds-web/tour/TourStep';
 import * as CDSTypography from '@cbhq/cds-web/typography';
@@ -80,6 +81,7 @@ import { SparklineInteractivePrice, SparklineInteractivePriceWithHeader } from '
 const ReactLiveScope: Record<string, unknown> = {
   React,
   ...React,
+  defaultTheme,
   // CDS tokens
   avatarDotSizeMap,
   avatarIconSizeMap,

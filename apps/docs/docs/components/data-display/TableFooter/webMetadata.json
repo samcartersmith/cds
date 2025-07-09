@@ -1,7 +1,7 @@
 {
   "import": "import { TableFooter } from '@cbhq/cds-web/tables/TableFooter'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tables/TableFooter.tsx",
-  "description": "TableFooter is a component used to define the footer section of a Table component. It provides a semantic container for table footer rows and cells.",
+  "description": "A component for defining the footer section of Table.",
   "relatedComponents": [
     {
       "label": "Table",

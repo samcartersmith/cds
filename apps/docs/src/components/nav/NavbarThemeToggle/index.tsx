@@ -1,19 +1,13 @@
 import React, { useCallback, useRef } from 'react';
 import {
+  type ThemeOption,
   themeOptions,
   useDocsTheme,
   useUnifiedTheme,
 } from '@site/src/theme/Layout/Provider/UnifiedThemeContext';
-import type { Property } from 'csstype';
 import { Dropdown } from '@cbhq/cds-web/dropdown';
 import { Box, VStack } from '@cbhq/cds-web/layout';
 import { Pressable } from '@cbhq/cds-web/system';
-
-type ThemeOption = {
-  label: string;
-  lightValue: Property.Color;
-  darkValue: Property.Color;
-};
 
 const NavbarThemeToggle = () => {
   const { theme: docsTheme, colorScheme } = useDocsTheme();
@@ -58,7 +52,8 @@ const NavbarThemeToggle = () => {
           role="radiogroup"
         >
           {themeOptions.map((themeOption) => {
-            const color = colorScheme === 'light' ? themeOption.lightValue : themeOption.darkValue;
+            const color =
+              colorScheme === 'light' ? themeOption.light.bgPrimary : themeOption.dark.bgPrimary;
             return (
               <Box
                 key={themeOption.label}

@@ -82,6 +82,7 @@ const MetadataItem = ({ label, children }: MetadataItemProps) => (
 export const ContentHeader = memo(
   ({
     title,
+    description,
     webMetadata,
     mobileMetadata,
     banner = <DefaultBanner />,
@@ -115,10 +116,11 @@ export const ContentHeader = memo(
       source,
       storybook,
       figma,
-      description,
       relatedComponents,
       dependencies,
-    } = activeMetadata || {};
+    } = activeMetadata ?? {};
+
+    const descriptionText = activeMetadata?.description ?? description;
 
     return (
       <VStack background="bgAlternate" borderRadius={600} overflow="hidden" width="100%">
@@ -136,7 +138,7 @@ export const ContentHeader = memo(
         <VStack gap={4} padding={4} paddingTop={4}>
           <VStack gap={3}>
             <Text font="display2">{title}</Text>
-            {description && <Text font="title4">{description}</Text>}
+            {descriptionText && <Text font="title4">{descriptionText}</Text>}
           </VStack>
           {activeMetadata && (
             <Grid
@@ -208,7 +210,7 @@ export const ContentHeader = memo(
           <>
             <Divider />
             <VStack gap={1} padding={4}>
-              <Text font="label1">Dependencies</Text>
+              <Text font="label1">Peer dependencies</Text>
               <HStack
                 as="ul"
                 flexWrap="wrap"

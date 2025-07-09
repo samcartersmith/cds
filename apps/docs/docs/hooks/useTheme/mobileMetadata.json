@@ -1,5 +1,5 @@
 {
   "import": "import { useTheme } from '@cbhq/cds-mobile/hooks/useTheme'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/hooks/useTheme.ts",
-  "description": "A React hook that provides access to the current theme configuration in React Native applications, including color schemes, spacing, typography, and other design tokens specific to mobile platforms."
+  "description": "Provides access to the current theme configuration in React Native applications, including color schemes, spacing, typography, and other design tokens specific to mobile platforms."
 }

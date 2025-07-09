@@ -82,12 +82,7 @@ Example:
 <MDXArticle>
 ### Common Props
 
-Most CDS components support the following common props:
-
-- StyleProps
-- `className` (web only): Pass custom class names for additional styling.
-- `style`: Apply inline styles.
-- Native properties for the specific platform (web or React Native)
+Most CDS components support the StyleProps API, the `style` prop for inline styles, and the `className` prop for class styles.
 
 ### Component-Specific Props
 
@@ -110,7 +105,7 @@ Example:
 CDS exposes theme variables that allow you to create custom styles based on the current theme. These variables include:
 
 - Colors (`color.fgPrimary`, `color.bgPrimary`, etc.)
-- Spacing (`space.0`, `space.1`, etc.)
+- Spacing (`space[0]`, `space[1]`, etc.)
 - Typography (`fontSize.body`, `lineHeight.body`, etc.)
 - And more.
 

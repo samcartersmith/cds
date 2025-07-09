@@ -2,7 +2,7 @@
   "import": "import { NudgeCard } from '@cbhq/cds-mobile/cards/NudgeCard'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/cards/NudgeCard.tsx",
   "figma": "https://www.figma.com/file/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-Normal-Components?type=design&node-id=10085%3A3191&mode=design&t=CXWB883JGKycJnlr-1",
-  "description": "Nudge Cards are designed to encourage users to take essential actions that will enhance their experience or gain greater benefits from the app. They should be engaging and persuasive without being intrusive.",
+  "description": "A card component designed to encourage users to take essential actions.",
   "relatedComponents": [
     {
       "label": "Banner",

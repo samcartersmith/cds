@@ -1,9 +1,8 @@
 {
   "import": "import { InputChip } from '@cbhq/cds-mobile/chips/InputChip'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/chips/InputChip.tsx",
-  "description": "Input chips are a great way to give the user visual clues about the selections they have made to refine a data set, and provide on-the-spot control to change that view.",
+  "description": "A Chip used for removable selections.",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=10177-4850&t=YbvYrnHXUU8AZpH5-4",
-  "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-chips-inputchip--default",
   "relatedComponents": [
     {
       "label": "Chip",
@@ -14,14 +13,5 @@
       "url": "/components/inputs/SelectChip/"
     }
   ],
-  "dependencies": [
-    {
-      "name": "react",
-      "version": "^18.3.1"
-    },
-    {
-      "name": "react-native",
-      "version": "^0.74.5"
-    }
-  ]
+  "dependencies": []
 }

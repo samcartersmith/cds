@@ -1,7 +1,7 @@
 {
   "import": "import { ProgressCircle } from '@cbhq/cds-mobile/visualizations/ProgressCircle'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/visualizations/ProgressCircle.tsx",
-  "description": "A ProgressCircle provides a circular visual representation of completion status for a process with a known end state.",
+  "description": "A circular visual indicator of completion progress.",
   "relatedComponents": [
     {
       "label": "ProgressBar",

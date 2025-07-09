@@ -1,7 +1,7 @@
 {
   "import": "import { VStack } from '@cbhq/cds-mobile/layout/VStack'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/layout/VStack.tsx",
-  "description": "A Box with flexDirection='column' set by default.",
+  "description": "A Box with flexDirection=\"column\" set by default.",
   "relatedComponents": [
     {
       "label": "Box",
@@ -10,6 +10,10 @@
     {
       "label": "HStack",
       "url": "/components/layout/HStack/"
+    },
+    {
+      "label": "Grid",
+      "url": "/components/layout/Grid/"
     }
   ],
   "dependencies": []

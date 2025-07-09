@@ -2,19 +2,20 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import { useColorMode } from '@docusaurus/theme-common';
 import { docsTheme } from '@site/src/constants';
 import type { Property } from 'csstype';
-import { ColorScheme } from '@cbhq/cds-common/core/theme';
+import { ColorScheme, type ThemeVars } from '@cbhq/cds-common/core/theme';
 import type { ThemeConfig } from '@cbhq/cds-web/core/theme';
 import { useHasMounted } from '@cbhq/cds-web/hooks/useHasMounted';
 import { useMediaQuery } from '@cbhq/cds-web/hooks/useMediaQuery';
 import { defaultTheme } from '@cbhq/cds-web/themes/defaultTheme';
 
-type ThemeOption = {
+export type ThemeOption = {
+  id: string;
   label: string;
-  lightValue: Property.Color;
-  darkValue: Property.Color;
+  light: { [key in ThemeVars.Color]?: Property.Color };
+  dark: { [key in ThemeVars.Color]?: Property.Color };
 };
 
-type UnifiedThemeContextValue = {
+export type UnifiedThemeContextValue = {
   /** The activeColorScheme for the docs ThemeProvider */
   docsColorScheme: ColorScheme;
   /** Set the activeColorScheme for the docs ThemeProvider */
@@ -37,24 +38,60 @@ type UnifiedThemeContextValue = {
 
 export const themeOptions: ThemeOption[] = [
   {
+    id: 'blue',
     label: 'Blue theme',
-    lightValue: `rgb(${defaultTheme.lightSpectrum.blue50})`,
-    darkValue: `rgb(${defaultTheme.darkSpectrum.blue70})`,
+    light: {
+      bgPrimary: `rgb(${defaultTheme.lightSpectrum.blue50})`,
+      bgPrimaryWash: defaultTheme.lightColor.accentSubtleBlue,
+      fgPrimary: `rgb(${defaultTheme.lightSpectrum.blue50})`,
+    },
+    dark: {
+      bgPrimary: `rgb(${defaultTheme.darkSpectrum.blue70})`,
+      bgPrimaryWash: defaultTheme.darkColor.accentSubtleBlue,
+      fgPrimary: `rgb(${defaultTheme.darkSpectrum.blue70})`,
+    },
   },
   {
+    id: 'green',
     label: 'Green theme',
-    lightValue: `rgb(${defaultTheme.lightSpectrum.green50})`,
-    darkValue: `rgb(${defaultTheme.darkSpectrum.green60})`,
+    light: {
+      bgPrimary: `rgb(${defaultTheme.lightSpectrum.green50})`,
+      bgPrimaryWash: defaultTheme.lightColor.accentSubtleGreen,
+      fgPrimary: `rgb(${defaultTheme.lightSpectrum.green50})`,
+    },
+    dark: {
+      bgPrimary: `rgb(${defaultTheme.darkSpectrum.green60})`,
+      bgPrimaryWash: defaultTheme.darkColor.accentSubtleGreen,
+      fgPrimary: `rgb(${defaultTheme.darkSpectrum.green60})`,
+    },
   },
   {
+    id: 'red',
     label: 'Red theme',
-    lightValue: `rgb(${defaultTheme.lightSpectrum.red50})`,
-    darkValue: `rgb(${defaultTheme.darkSpectrum.red60})`,
+    light: {
+      bgPrimary: `rgb(${defaultTheme.lightSpectrum.red50})`,
+      bgPrimaryWash: defaultTheme.lightColor.accentSubtleRed,
+      fgPrimary: `rgb(${defaultTheme.lightSpectrum.red50})`,
+    },
+    dark: {
+      bgPrimary: `rgb(${defaultTheme.darkSpectrum.red60})`,
+      bgPrimaryWash: defaultTheme.darkColor.accentSubtleRed,
+      fgPrimary: `rgb(${defaultTheme.darkSpectrum.red60})`,
+    },
   },
   {
+    id: 'purple',
     label: 'Purple theme',
-    lightValue: `rgb(${defaultTheme.lightSpectrum.purple50})`,
-    darkValue: `rgb(${defaultTheme.darkSpectrum.purple60})`,
+    light: {
+      bgPrimary: `rgb(${defaultTheme.lightSpectrum.purple50})`,
+      bgPrimaryWash: defaultTheme.lightColor.accentSubtlePurple,
+      fgPrimary: `rgb(${defaultTheme.lightSpectrum.purple50})`,
+    },
+    dark: {
+      bgPrimary: `rgb(${defaultTheme.darkSpectrum.purple60})`,
+      bgPrimaryWash: defaultTheme.darkColor.accentSubtlePurple,
+      fgPrimary: `rgb(${defaultTheme.darkSpectrum.purple60})`,
+    },
   },
 ] as const;
 
@@ -110,14 +147,12 @@ export const UnifiedThemeProvider = ({
       lightColor: {
         ...defaultTheme.lightColor,
         ...baseDocsTheme.lightColor,
-        bgPrimary: themeOption.lightValue,
-        fgPrimary: themeOption.lightValue,
+        ...themeOption.light,
       },
       darkColor: {
         ...defaultTheme.darkColor,
         ...baseDocsTheme.darkColor,
-        bgPrimary: themeOption.darkValue,
-        fgPrimary: themeOption.darkValue,
+        ...themeOption.dark,
       },
     } satisfies ThemeConfig;
   }, [baseDocsTheme, themeOption]);
@@ -128,14 +163,12 @@ export const UnifiedThemeProvider = ({
       lightColor: {
         ...defaultTheme.lightColor,
         ...basePlaygroundTheme.lightColor,
-        bgPrimary: themeOption.lightValue,
-        fgPrimary: themeOption.lightValue,
+        ...themeOption.light,
       },
       darkColor: {
         ...defaultTheme.darkColor,
         ...basePlaygroundTheme.darkColor,
-        bgPrimary: themeOption.darkValue,
-        fgPrimary: themeOption.darkValue,
+        ...themeOption.dark,
       },
     } satisfies ThemeConfig;
   }, [basePlaygroundTheme, themeOption]);

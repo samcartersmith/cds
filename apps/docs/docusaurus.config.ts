@@ -129,6 +129,9 @@ const config: Config = {
           routeBasePath: '/',
         },
         blog: {
+          blogTitle: 'CDS Blog',
+          blogDescription: 'Coinbase Design System news and updates',
+          blogSidebarCount: 0, // Disable blog left sidebar
           showReadingTime: true,
         },
         theme: {

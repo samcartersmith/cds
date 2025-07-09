@@ -1,5 +1,5 @@
 {
-  "description": "The useIsoEffect hook is a React hook that runs an effect in the browser and the server. It is a combination of useEffect and useLayoutEffect.",
+  "import": "import { useIsoEffect } from '@cbhq/cds-web/hooks/useIsoEffect'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/hooks/useIsoEffect.ts",
-  "import": "import { useIsoEffect } from '@cbhq/cds-web/hooks/useIsoEffect'"
+  "description": "Runs an effect in the browser and the server. It is a combination of useEffect and useLayoutEffect."
 }

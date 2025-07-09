@@ -5,7 +5,7 @@ title: Polymorphic Components
 
 # Polymorphic Components
 
-The Coinbase Design System (CDS) introduces polymorphic components to provide maximum flexibility while maintaining consistent styling and accessibility. Polymorphic components allow you to specify the underlying HTML element or React Native view that a component renders, making it easy to tailor components to specific use cases without losing the benefits of CDS.
+CDS introduces polymorphic components to provide maximum flexibility while maintaining consistent styling and accessibility. Polymorphic components allow you to specify the underlying HTML element or React Native view that a component renders, making it easy to tailor components to specific use cases without losing the benefits of CDS.
 
 ## What Are Polymorphic Components?
 

@@ -3,11 +3,20 @@
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/overlays/Tooltip/Tooltip.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-tooltip-tooltip--default",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?m=auto&node-id=276-12450&t=DUt8mdNXuSP7tZkd-1",
-  "description": "The Tooltip component is used to display additional information when a user hovers over an element",
-  "dependencies": [
+  "description": "A component that displays additional information on hover.",
+  "relatedComponents": [
     {
-      "name": "react",
-      "version": "^18.3.1"
+      "label": "Modal",
+      "url": "/components/overlay/Modal/"
+    },
+    {
+      "label": "Alert",
+      "url": "/components/overlay/Alert/"
+    },
+    {
+      "label": "Toast",
+      "url": "/components/overlay/Toast/"
     }
-  ]
+  ],
+  "dependencies": []
 }

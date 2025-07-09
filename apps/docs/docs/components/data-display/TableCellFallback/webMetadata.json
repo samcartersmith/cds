@@ -1,7 +1,7 @@
 {
   "import": "import { TableCellFallback } from '@cbhq/cds-web/tables/TableCellFallback'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tables/TableCellFallback.tsx",
-  "description": "TableCellFallback is a component used to show a loading state for table cells. It provides shimmer effects for title, subtitle, and media elements, making it ideal for use with Suspense or loading states.",
+  "description": "A component for showing a loading state for Table cells.",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-table-tablecellfallback--table-cell-fallback-example",
   "relatedComponents": [
     {

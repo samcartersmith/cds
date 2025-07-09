@@ -1,7 +1,7 @@
 {
   "import": "import { TableRow } from '@cbhq/cds-web/tables/TableRow'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tables/TableRow.tsx",
-  "description": "TableRow is a component used to define rows within a table. It provides support for hover states, background colors, full-width content, and interactive behaviors.",
+  "description": "A component for defining rows within a Table.",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-table-tablerow--table-row-example",
   "relatedComponents": [
     {

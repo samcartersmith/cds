@@ -1,7 +1,7 @@
 {
   "import": "import { TableHeader } from '@cbhq/cds-web/tables/TableHeader'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/tables/TableHeader.tsx",
-  "description": "TableHeader is a component used to define the header section of a Table component. It provides a semantic container for table header rows and cells, with optional sticky positioning.",
+  "description": "A component for defining the header section of Table.",
   "relatedComponents": [
     {
       "label": "Table",

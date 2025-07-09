@@ -1,7 +1,7 @@
 {
   "import": "import { Chip } from '@cbhq/cds-mobile/chips/Chip'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/chips/Chip.tsx",
-  "description": "A Chip is a compact element that represents an input, attribute, or action. Chips allow users to enter information, make selections, filter content, or trigger actions.",
+  "description": "A compact, interactive content element.",
   "relatedComponents": [
     {
       "label": "InputChip",
@@ -12,14 +12,5 @@
       "url": "/components/inputs/SelectChip/"
     }
   ],
-  "dependencies": [
-    {
-      "name": "react",
-      "version": "^18.3.1"
-    },
-    {
-      "name": "react-native",
-      "version": "^0.74.5"
-    }
-  ]
+  "dependencies": []
 }

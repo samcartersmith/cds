@@ -18,6 +18,7 @@ const sidebars: SidebarsConfig = {
         'getting-started/theming/theming',
         'getting-started/styling/styling',
         'getting-started/templates',
+        'getting-started/mcp-server',
       ],
       customProps: {
         icon: 'compass',

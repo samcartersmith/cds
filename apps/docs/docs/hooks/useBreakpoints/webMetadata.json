@@ -1,5 +1,5 @@
 {
   "import": "import { useBreakpoints } from '@cbhq/cds-web/hooks/useBreakpoints'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/hooks/useBreakpoints.ts",
-  "description": "The useBreakpoints hook is a React hook that returns an object with a boolean for each breakpoint of the window. It is useful for conditionally rendering components or tree of components based on the current breakpoint."
+  "description": "Returns an object with a boolean for each breakpoint of the window. It is useful for conditionally rendering components or tree of components based on the current breakpoint."
 }

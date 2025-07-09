@@ -3,15 +3,19 @@
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/buttons/AvatarButton.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-buttons-avatarbutton--default",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=419-15517&t=9DVu24xHrsG2aEcn-0",
-  "description": "Avatars allow the user to display a profile picture that represents them. The AvatarButton provides an Avatar that responds to user presses.",
+  "description": "A pressable Avatar.",
   "relatedComponents": [
     {
       "label": "Avatar",
       "url": "/components/media/Avatar/"
     },
     {
-      "label": "IconButton",
-      "url": "/components/inputs/IconButton/"
+      "label": "Button",
+      "url": "/components/inputs/Button/"
+    },
+    {
+      "label": "Pressable",
+      "url": "/components/inputs/Pressable/"
     }
   ],
   "dependencies": []

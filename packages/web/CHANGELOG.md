@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file!
 
 <!-- template-start -->
 
+## 8.1.1 (7/7/2025 PST)
+
+#### 🐞 Fixes
+
+- Update root barrel file to include ThemeProvider and useTheme. [[#4137](https://github.cbhq.net/frontend/cds/pull/4137)]
+
 ## 8.1.0 (7/7/2025 PST)
 
 #### 🚀 Updates

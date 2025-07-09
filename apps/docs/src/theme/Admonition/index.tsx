@@ -12,15 +12,42 @@ export default function Admonition(unprocessedProps: Props): React.ReactNode {
     useMemo(() => {
       switch (type) {
         case 'warning':
-          return { variant: 'warning', title: title ?? 'Warning', children, startIcon: 'warning' };
+          return {
+            variant: 'warning',
+            title: title ?? 'Warning',
+            children,
+            startIcon: 'warning',
+            borderWidth: 100,
+            borderColor: 'bgWarning',
+          };
         case 'danger':
-          return { variant: 'error', title: title ?? 'Danger', children, startIcon: 'error' };
+          return {
+            variant: 'error',
+            title: title ?? 'Danger',
+            children,
+            startIcon: 'error',
+            borderWidth: 100,
+            borderColor: 'bgNegative',
+          };
         case 'tip':
-          return { variant: 'promotional', title: title ?? 'Tip', children, startIcon: 'info' };
+          return {
+            variant: 'promotional',
+            title: title ?? 'Tip',
+            children,
+            startIcon: 'info',
+            borderWidth: 100,
+            borderColor: 'bgPrimary',
+          };
         case 'note':
-          return { variant: 'informational', title: title ?? 'Note', children, startIcon: 'info' };
         default:
-          return { variant: 'informational', title: title ?? 'Note', children, startIcon: 'info' };
+          return {
+            variant: 'informational',
+            title: title ?? 'Note',
+            children,
+            startIcon: 'info',
+            borderWidth: 100,
+            borderColor: 'bgLine',
+          };
       }
     }, [title, children, type]);
   return <Banner className={styles.docsAdmonition} minWidth={0} {...bannerProps} />;

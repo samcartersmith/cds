@@ -1,7 +1,7 @@
 {
   "import": "import { LottieStatusAnimation } from '@cbhq/cds-mobile/animation/LottieStatusAnimation'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/animation/LottieStatusAnimation.tsx",
-  "description": "LottieStatusAnimation is a specialized component for displaying trade status animations on mobile. It automatically handles status transitions and provides visual feedback for loading, success, failure, and pending states.",
+  "description": "A specialized component for displaying trade status animations.",
   "relatedComponents": [
     {
       "label": "Lottie",

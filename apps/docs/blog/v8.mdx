@@ -1,0 +1,98 @@
+---
+title: Introducing CDS v8
+slug: v8
+authors:
+  - name: Cody Nova
+    title: UI Systems Tech Lead
+    url: https://github.cbhq.net/cody-nova
+    image_url: https://github.com/codynova.png
+hide_table_of_contents: true
+---
+
+import { CDS8Hero } from '@site/src/components/CDS8Hero';
+
+<CDS8Hero />
+
+<article>
+**We're thrilled to announce the release of Coinbase Design System v8!**
+
+**This release includes full support for theming and customization, drastically improved performance, powerful new APIs, a new CDS MCP server, and more!**
+
+This major rewrite represents months of engineering effort to deliver a faster, more flexible, and more powerful design system that will transform how you build Coinbase products.
+
+## Theming and customization
+
+**CDS now supports full customization with theming and component style overrides!**
+
+See the [API overview](/getting-started/api-overview) for a high level summary, or check out our new [theming](/getting-started/theming) and [styling](/getting-started/styling) docs for all the details.
+
+## Improved performance
+
+Component styling architecture was rewritten from the ground up and optimized for static styles.
+
+## CDS MCP server
+
+**CDS now includes an MCP server that's updated with every new release!**
+
+Anyone who installs CDS will automatically have a correctly versioned MCP server to accelerate development, just run `npx cds-mcp-setup` to get started. We'd love your feedback on how this MCP server integrates with your development process.
+
+See the [CDS MCP docs here](/getting-started/mcp-server) for more info.
+
+## Powerful new APIs
+
+We've developed a slew of new APIs that allow you to change CDS to meet your needs:
+
+- **ThemeProvider and `useTheme`:** the ThemeProvider has been reworked to support dynamic runtime style customization. Access the theme values via CSS variables on web, and via the new `useTheme` hook on both web and mobile. Extend the theme by adding new custom style token names and values.
+
+- **`styles` prop:** the new `styles` prop allows passing inline styles to the subcomponents of complex components
+
+- **`classNames` prop:** (web only) the new `classNames` prop allows passing className strings to the subcomponents of complex components
+
+- **MediaQueryProvider and `useMediaQuery`:** (web only) the new MediaQueryProvider and `useMediaQuery` hook include support for setting default values on the server
+
+## Additional features
+
+- **React 19 support**
+- **Improved types, especially for polymorphic components**
+- **Improved CSS tree shaking**
+- **Easier style overrides:** CDS styles use a CSS layer so your custom styles have higher specificity
+- **Deterministic styles:** lazy-loading and module import order will not change output styles
+- **Improved accessibility:** resolved all longstanding a11y bugs and adopted new features like `:focus-visible`
+
+## New components in 8.1
+
+CDS v8 makes shipping components easier than ever, and the team has been hard at work!
+
+We're proud to announce that CDS v8.1 has already released, and includes 8 new components and features:
+
+New Components:
+
+- [SlideButton](/components/inputs/SlideButton)
+- [Pagination](/components/navigation/Pagination)
+- [FullScreenModalLayout](/components/overlay/FullScreenModalLayout)
+- [TopNavBar (mobile only)](/components/navigation/TopNavBar/)
+- [Tray (for web, mobile already existed)](/components/overlay/Tray)
+
+New Features:
+
+- [Button variant `tertiary`](/components/inputs/Button)
+- [ProgressCircle `contentNode` prop](/components/feedback/ProgressCircle)
+- Input label variants for [Select](/components/inputs/Select) and [TextInput](/components/inputs/TextInput)
+
+## Migrating
+
+## Troubleshooting
+
+If you experience any trouble migrating we're ready to help! Just reach out in [#ask-cds](https://coinbase.enterprise.slack.com/archives/C05H922EYP7)
+
+## New packages
+
+- `@cbhq/cds-common@8.1.0`
+- `@cbhq/cds-mobile@8.1.0`
+- `@cbhq/cds-mobile-visualization@3.0.0`
+- `@cbhq/cds-web@8.1.0`
+- `@cbhq/cds-web-visualization@3.0.0`
+- `@cbhq/cds-icons@5.0.0`
+- `@cbhq/cds-lottie-files@3.0.0`
+
+</article>

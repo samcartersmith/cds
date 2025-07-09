@@ -1,7 +1,26 @@
 {
-  "import": "import { Pagination } from '@cbhq/cds-web/pagination/Pagination';",
+  "import": "import { Pagination } from '@cbhq/cds-web/pagination/Pagination'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/pagination/Pagination.tsx",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-pagination--pagination-examples",
   "figma": "https://www.figma.com/design/GKmllr9PNE3pWFP8aHQ5iI/Pagination?node-id=26294-615",
-  "description": "Pagination is used to navigate through a list of items."
+  "description": "Pagination is used to navigate through a list of items.",
+  "relatedComponents": [
+    {
+      "label": "NavigationBar",
+      "url": "/components/navigation/NavigationBar/"
+    },
+    {
+      "label": "Button",
+      "url": "/components/inputs/Button/"
+    },
+    {
+      "label": "IconButton",
+      "url": "/components/inputs/IconButton/"
+    },
+    {
+      "label": "Table",
+      "url": "/components/data-display/Table/"
+    }
+  ],
+  "dependencies": []
 }

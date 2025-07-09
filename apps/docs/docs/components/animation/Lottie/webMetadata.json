@@ -1,7 +1,7 @@
 {
   "import": "import { Lottie } from '@cbhq/cds-web/animation/Lottie'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/animation/Lottie.tsx",
-  "description": "Lottie is a component for rendering After Effects animations as vectors. It supports loops, autoplay, and custom animation controls with markers for interactive animations.",
+  "description": "A component for rendering After Effects animations as vectors.",
   "storybook": "https://cds-storybook.cbhq.net/?path=/story/core-components-lottie--default",
   "relatedComponents": [
     {

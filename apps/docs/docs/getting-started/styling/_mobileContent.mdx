@@ -1,205 +1,69 @@
-import { MDXSection } from '@site/src/components/page/MDXSection';
-import { MDXArticle } from '@site/src/components/page/MDXArticle';
+## The `StyleProps` API
 
-<MDXSection>
-<MDXArticle>
-## Core Styling Principles
+Most components support the StyleProps API. StyleProps automatically have access to the values in the theme, and some StyleProps are limited to only the theme values. [See the full list of StyleProps here.](/components/layout/Box/?platform=mobile&tab=props)
 
-CDS styling is built on the following principles:
+```jsx
+// ✅ The `bgNegative` token will automatically update with the theme!
+<Box background="bgNegative" width={100} />
 
-<ul>
-  <li><strong>Consistency</strong>: Use shared theme variables to ensure uniform styling across components and platforms.</li>
-  <li><strong>Performance</strong>: Utilize CSS Variables on the web to minimize re-renders and enhance performance.</li>
-  <li><strong>Flexibility</strong>: Support for dynamic and responsive styles out of the box.</li>
-</ul>
-</MDXArticle>
-
-<MDXArticle>
-## Theming
-
-Theming is a central feature of CDS. The `ThemeProvider` component is required to inject theme variables and manage theming across your application.
-
-<ul>
-  <li>
-    <strong>React Context</strong>: In React Native, CDS uses a theme Context to broadcast theme
-    values.
-  </li>
-  <li>
-    <strong>Dynamic Styling</strong>: Access theme variables via the <code>useTheme</code> hook.
-  </li>
-</ul>
-
-Example:
-
-```tsx
-import { ThemeProvider } from '@cbhq/cds-mobile';
-
-<ThemeProvider>
-  <App />
-</ThemeProvider>;
+// ❌ Error: Type '"#0000ff"' is not assignable to type 'Color | undefined'.
+<Box background="#0000ff" width={100} />
 ```
 
-</MDXArticle>
+:::tip
+The docs page of every component has a props table listing all the available props!
+:::
 
-<MDXArticle>
-## StyleProps API
+:::note
+The StyleProps API uses the ThemeProvider Context under the hood to enable dynamic theming.
+:::
 
-The `StyleProps` API is a powerful feature of CDS, allowing you to apply styles directly to components without writing custom CSS or stylesheets.
+## `style` and `styles` props
 
-### Static and Dynamic Props
+Most components support the native `style` prop for inline styles.
 
-CDS distinguishes between static and dynamic style props:
-
-<ul>
-  <li>
-    <strong>Static Props</strong>: Map directly to predefined class names for optimal performance.
-  </li>
-  <li>
-    <strong>Dynamic Props</strong>: Apply inline styles using the <code>StyleSheet</code> API (React
-    Native).
-  </li>
-</ul>
-
-Example:
-
-```tsx
-<Box color="bgPrimary" padding={4} margin={{ base: 2, tablet: 4 }} width="100%" />
+```jsx
+<Box style={{ backgroundColor: '#0000ff' }} />
 ```
 
-### Responsive Design
+Some complex components support passing inline styles to subcomponents with the `styles` prop.
 
-CDS makes it easy to create responsive designs by supporting breakpoint-based styles in the `StyleProps` API.
-
-Example:
-
-```tsx
-<Box padding={{ base: 2, tablet: 4, desktop: 6 }} width={{ base: '100%', desktop: '50%' }} />
+```jsx
+<ProgressCircle
+  styles={{
+    circle: {
+      stroke: 'transparent',
+    },
+    progress: {
+      strokeLinecap: 'square',
+    },
+  }}
+  color="fgPositive"
+  progress={0.75}
+  size={100}
+/>
 ```
 
-This eliminates the need for custom media queries in CSS.
+:::note
+We will continue to add the `styles` prop to more components over time. Please feel free to request specific components that you think would benefit from this API.
+:::
 
-</MDXArticle>
+## Component specific props
 
-<MDXArticle>
-### Polymorphic Components
+Many components have their own specific props that can affect styling.
 
-CDS components like `Box` and `Text` are polymorphic, meaning they can render different underlying elements using the `as` prop.
-
-Example:
-
-```tsx
-<Text as="h1" fontSize="display1">
-  Welcome to CDS
-</Text>
+```jsx
+<Button compact variant="primary">
+  Click me
+</Button>
 ```
 
-</MDXArticle>
+## Combining techniques
 
-<MDXArticle>
-## Theme Variables
+Mix and match these styling techniques for complete customization!
 
-CDS exposes a robust set of theme variables that you can use to style components. These include:
-
-<ul>
-  <li>
-    <strong>Colors</strong>: <code>color.bgPrimary</code>, <code>color.fgPrimary</code>, etc.
-  </li>
-  <li>
-    <strong>Spacing</strong>: <code>space.0</code>, <code>space.1</code>, etc.
-  </li>
-  <li>
-    <strong>Typography</strong>: <code>fontSize.body</code>, <code>lineHeight.body</code>, etc.
-  </li>
-</ul>
-
-### Using Theme Variables
-
-Use the `useTheme` hook to retrieve theme values:
-
-```tsx
-import { useTheme } from '@cbhq/cds-mobile';
-
-const MyComponent = () => {
-  const theme = useTheme();
-  return (
-    <View style={{ backgroundColor: theme.color.bgPrimary, padding: theme.space[4] }}>
-      <Text>Styled with CDS</Text>
-    </View>
-  );
-};
+```jsx
+<Button variant="primary" borderColor="accentBoldPurple" style={{ fontFamily: 'Times' }}>
+  Click me
+</Button>
 ```
-
-</MDXArticle>
-
-<MDXArticle>
-## Customizing Themes
-
-You can customize the default CDS theme by providing your own values to the `ThemeProvider`.
-
-Example:
-
-```tsx
-const customTheme = {
-  color: {
-    bgPrimary: '#000000',
-    fgPrimary: '#FFFFFF',
-  },
-  space: {
-    0: '0px',
-    1: '4px',
-    2: '8px',
-    3: '16px',
-    4: '24px',
-  },
-};
-
-<ThemeProvider theme={customTheme}>
-  <App />
-</ThemeProvider>;
-```
-
-</MDXArticle>
-
-<MDXArticle>
-## Inline Styles and Class Names
-
-In addition to `StyleProps`, CDS components support `style` prop for advanced customization.
-
-```tsx
-<Box style={{ backgroundColor: 'blue' }} />
-```
-
-</MDXArticle>
-
-<MDXArticle>
-## Best Practices
-
-<ul>
-  <li><strong>Use `StyleProps`</strong>: Leverage the built-in <code>StyleProps</code> API for consistent and responsive designs.</li>
-  <li><strong>Minimize Inline Styles</strong>: Prefer theme variables and <code>StyleProps</code> over inline styles for performance and maintainability.</li>
-  <li><strong>Customize Themes</strong>: Tailor the CDS theme to align with your brand's design language.</li>
-</ul>
-</MDXArticle>
-</MDXSection>
-
-<MDXSection>
-<MDXArticle hideDivider>
-## Next Steps
-
-<ul>
-  <li>
-    <a href="/getting-started/api-overview">API Overview</a>: Learn about the core APIs in CDS.
-  </li>
-  <li>
-    <a href="/components">Component Library</a>: Explore the available components and their styling
-    options.
-  </li>
-  <li>
-    <a href="/getting-started/theming">Theming Guide</a>: Dive deeper into theming with CDS.
-  </li>
-</ul>
-
-Harness the power of the Coinbase Design System to create visually stunning and highly performant applications!
-
-</MDXArticle>
-</MDXSection>

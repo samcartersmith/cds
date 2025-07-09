@@ -39,14 +39,14 @@ CDS requires a `ThemeProvider` at the root of your application to provide consis
 Wrap your application with the `ThemeProvider` from `@cbhq/cds-mobile`. Here's an example:
 
 ```tsx
-import React from 'react';
-import { ThemeProvider } from '@cbhq/cds-mobile';
 import { NavigationContainer } from '@react-navigation/native';
+import { ThemeProvider } from '@cbhq/cds-mobile';
+import { defaultTheme } from '@cbhq/cds-mobile/themes/defaultTheme';
 import App from './App';
 
-export default function Main() {
+export default function Index() {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={defaultTheme} activeColorScheme="light">
       <NavigationContainer>
         <App />
       </NavigationContainer>
@@ -63,11 +63,10 @@ export default function Main() {
 To ensure everything is set up correctly, try importing and using a simple CDS component. For example:
 
 ```tsx
-import React from 'react';
-import { Button } from '@cbhq/cds-mobile';
+import { Button } from '@cbhq/cds-mobile/buttons';
 import { View } from 'react-native';
 
-export default function App() {
+export default function Test() {
   return (
     <View>
       <Button>Click Me</Button>

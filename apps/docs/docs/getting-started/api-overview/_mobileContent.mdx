@@ -41,12 +41,7 @@ CDS components support a powerful `StyleProps` API that simplifies applying styl
 Example:
 
 ```tsx
-<Box
-  color="fgMuted"
-  background="bgAlternate"
-  padding={{ base: 2, tablet: 4, desktop: 6 }}
-  width={{ base: '100%', desktop: '50%' }}
-/>
+<Box color="fgMuted" background="bgAlternate" padding={4} width="100%" />
 ```
 
 </MDXArticle>
@@ -54,11 +49,7 @@ Example:
 <MDXArticle>
 ### Common Props
 
-Most CDS components support the following common props:
-
-- StyleProps
-- `style`: Apply inline styles.
-- Native properties for the specific platform (web or React Native)
+Most CDS components support both the StyleProps API and the `style` prop for inline styles.
 
 ### Component-Specific Props
 
@@ -81,7 +72,7 @@ Example:
 CDS exposes theme variables that allow you to create custom styles based on the current theme. These variables include:
 
 - Colors (`color.fgPrimary`, `color.bgPrimary`, etc.)
-- Spacing (`space.0`, `space.1`, etc.)
+- Spacing (`space[0]`, `space[1]`, etc.)
 - Typography (`fontSize.body`, `lineHeight.body`, etc.)
 - And more.
 

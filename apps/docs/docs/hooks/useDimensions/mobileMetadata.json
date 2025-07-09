@@ -1,5 +1,5 @@
 {
   "import": "import { useDimensions } from '@cbhq/cds-mobile/hooks/useDimensions'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/hooks/useDimensions.ts",
-  "description": "A React hook that provides access to screen dimensions (width and height) and status bar height, essential for building responsive mobile layouts and handling device-specific UI adjustments."
+  "description": "Provides access to screen dimensions (width and height) and status bar height, essential for building responsive mobile layouts and handling device-specific UI adjustments."
 }

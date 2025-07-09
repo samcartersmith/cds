@@ -10,7 +10,7 @@ function Example() {
   return (
     <VStack gap={2}>
       <Box padding={3} background="bgAlternate" borderRadius={300}>
-        <Text>Current Color Scheme: {theme.colorScheme}</Text>
+        <Text>Current Color Scheme: {theme.activeColorScheme}</Text>
       </Box>
 
       <Box padding={3} background="bgAlternate" borderRadius={300}>
@@ -74,7 +74,7 @@ function Example() {
 ```tsx
 function Example() {
   const theme = useTheme();
-  const isDarkMode = theme.colorScheme === 'dark';
+  const isDarkMode = theme.activeColorScheme === 'dark';
 
   return (
     <Box padding={3} background={isDarkMode ? 'bgElevation1' : 'bgAlternate'} borderRadius={300}>

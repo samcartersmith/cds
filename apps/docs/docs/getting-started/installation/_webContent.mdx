@@ -10,7 +10,7 @@ Before you begin, make sure your development environment meets the following req
 - **Node.js**: Version 18 or later.
 - **React**: Version 18 or later.
 
-For web projects, ensure your build system supports importing CSS files.
+**For web projects, ensure your build system supports importing CSS files.**
 
 </MDXArticle>
 
@@ -39,16 +39,18 @@ CDS requires a `ThemeProvider` at the root of your application to provide consis
 Wrap your application with the `ThemeProvider` from `@cbhq/cds-web`. Here's an example:
 
 ```tsx
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@cbhq/cds-web';
+import { defaultTheme } from '@cbhq/cds-web/themes/defaultTheme';
 import App from './App';
 
-ReactDOM.render(
-  <ThemeProvider>
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
+
+root.render(
+  <ThemeProvider theme={defaultTheme} activeColorScheme="light">
     <App />
   </ThemeProvider>,
-  document.getElementById('root'),
 );
 ```
 
@@ -60,10 +62,9 @@ ReactDOM.render(
 To ensure everything is set up correctly, try importing and using a simple CDS component. For example:
 
 ```tsx
-import React from 'react';
-import { Button } from '@cbhq/cds-web';
+import { Button } from '@cbhq/cds-web/buttons';
 
-export default function App() {
+export default function Test() {
   return <Button>Click Me</Button>;
 }
 ```

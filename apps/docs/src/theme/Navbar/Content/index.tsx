@@ -30,7 +30,6 @@ export default function NavbarContent(): JSX.Element {
     ref: navbarRef,
     useBorderBoxSize: true,
     onResize: ({ height }) => {
-      console.log(height);
       document.documentElement.style.setProperty('--ifm-navbar-height', `${height}px`);
     },
   });

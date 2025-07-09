@@ -222,7 +222,14 @@ export default function DocSidebarItemCategory({
         paddingStart={level === 1 ? 0 : 1.5}
         paddingTop={level === 1 ? 2 : 1}
       >
-        <VStack as="ul" gap={1} id={controlsId} paddingStart={0} width="100%">
+        <VStack
+          as="ul"
+          borderColor="bgLine"
+          borderStartWidth={100}
+          id={controlsId}
+          paddingStart={0}
+          width="100%"
+        >
           <DocSidebarItems
             activePath={activePath}
             items={items}

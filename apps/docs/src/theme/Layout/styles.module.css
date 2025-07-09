@@ -1,4 +1,7 @@
 .mainWrapper {
+  position: relative;
+  /* Prevent main wrapper contents from rendering over the navbar */
+  z-index: 1;
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;

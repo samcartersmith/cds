@@ -2,15 +2,20 @@
   "import": "import { ModalHeader } from '@cbhq/cds-mobile/overlays/modal/ModalHeader'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/mobile/src/overlays/Modal/ModalHeader.tsx",
   "figma": "https://www.figma.com/design/k5CtyJccNQUGMI5bI4lJ2g/%E2%9C%A8-CDS-Components?node-id=68-1053",
-  "description": "ModalHeader is a component that provides a consistent header section for modal dialogs, typically containing the title and close button.",
-  "dependencies": [
+  "description": "A component that provides a consistent header section for Modal.",
+  "relatedComponents": [
     {
-      "name": "react",
-      "version": "^18.3.1"
+      "label": "Modal",
+      "url": "/components/overlay/Modal/"
     },
     {
-      "name": "react-native",
-      "version": "^0.74.5"
+      "label": "ModalBody",
+      "url": "/components/overlay/ModalBody/"
+    },
+    {
+      "label": "ModalFooter",
+      "url": "/components/overlay/ModalFooter/"
     }
-  ]
+  ],
+  "dependencies": []
 }

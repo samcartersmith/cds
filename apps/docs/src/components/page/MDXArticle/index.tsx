@@ -15,7 +15,7 @@ export function MDXArticle({
       <Box as="article" className={styles.articleContainer} display="block" padding={4}>
         {children}
       </Box>
-      {!hideDivider && <Divider />}
+      {!hideDivider && <Divider className={styles.divider} />}
     </>
   );
 }

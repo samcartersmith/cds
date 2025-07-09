@@ -1,5 +1,5 @@
 {
-  "import": "import { useHasMounted } from '@cbhq/cds-common/hooks/useHasMounted'",
+  "import": "import { usePreviousValue } from '@cbhq/cds-common/hooks/usePreviousValue'",
   "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/common/src/hooks/usePreviousValue.ts",
-  "description": "The useHasMounted hook is a React hook that returns a boolean indicating if the component has mounted."
+  "description": "Returns the previous value of a given variable, useful for comparing current and previous states in effects or for tracking changes over time."
 }
