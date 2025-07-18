@@ -1,6 +1,7 @@
 {
   "name": "@cbhq/profile-package",
   "version": "0.0.3",
+  "private": true,
   "description": "Utilities and CLI for profiling JavaScript package exports",
   "type": "module",
   "main": "./esm/index.js",
@@ -40,6 +41,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-terser": "^0.4.4",
+    "@types/diff": "^5.0.9",
     "rollup": "^4.22.4",
     "tslib": "^2",
     "typescript": "~5.7.2"

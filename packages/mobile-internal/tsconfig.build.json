@@ -17,25 +17,7 @@
   ],
   "references": [
     {
-      "path": "../../packages/common"
-    },
-    {
-      "path": "../../packages/mobile"
-    },
-    {
       "path": "../../packages/fonts"
-    },
-    {
-      "path": "../../packages/icons"
-    },
-    {
-      "path": "../../packages/illustrations"
-    },
-    {
-      "path": "../../packages/lottie-files"
-    },
-    {
-      "path": "../../packages/utils"
     }
   ]
 }

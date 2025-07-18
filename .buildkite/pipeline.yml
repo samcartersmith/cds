@@ -24,11 +24,6 @@ _docker_shared: &docker_shared
           - 'AWS_ACCESS_KEY_ID'
           - 'AWS_SECRET_ACCESS_KEY'
           - 'AWS_SESSION_TOKEN'
-    - file:///buildkite/plugins/cache: &cache_plugin_yarn
-        key: yarn-node-modules-{{ checksum "yarn.lock" }}-v1
-        paths:
-          - ./.yarn/cache
-          - ./.yarn/install-state.gz
 
 _k8s_medium: &k8s_medium
   <<: *docker_shared
@@ -37,18 +32,7 @@ _k8s_medium: &k8s_medium
     agent-size: medium
 
 steps:
-  - label: 'Visreg (Mobile - All)'
+  - label: 'Test'
     <<: *k8s_medium
-    if: build.branch == 'master' || build.pull_request.labels includes 'visreg'
-    env:
-      DETOX_RUN_ALL: true
     commands:
-      - tools/ci/setup.sh
-      - yarn nx run mobile-app:visreg
-
-  - label: 'Visreg (Mobile - Affected)'
-    <<: *k8s_medium
-    if: build.branch != 'master' && !(build.pull_request.labels	includes 'visreg')
-    commands:
-      - tools/ci/setup.sh
-      - (yarn workspace mobile-app should-run-visreg && yarn nx run mobile-app:visreg) || echo 'Skipping Percy (Mobile)'
+      - echo "Nothing to do"

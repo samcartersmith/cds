@@ -15,9 +15,5 @@
     "**/*.test.*",
     "**/*.spec.*"
   ],
-  "references": [
-    {
-      "path": "../../packages/utils"
-    }
-  ]
+  "references": []
 }

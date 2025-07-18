@@ -15,18 +15,5 @@
     "**/*.test.*",
     "**/*.spec.*"
   ],
-  "references": [
-    {
-      "path": "../../packages/common"
-    },
-    {
-      "path": "../../packages/icons"
-    },
-    {
-      "path": "../../packages/illustrations"
-    },
-    {
-      "path": "../../packages/utils"
-    }
-  ]
+  "references": []
 }

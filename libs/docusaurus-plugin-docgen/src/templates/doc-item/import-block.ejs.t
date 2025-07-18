@@ -1,1 +1,0 @@
-<ImportBlock name="<%- data.importBlock.name %>" from="<%- data.importBlock.from %>" />

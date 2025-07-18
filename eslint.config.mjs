@@ -12,7 +12,6 @@ import eslintJsxA11y from 'eslint-plugin-jsx-a11y';
 import eslintReactNativeA11y from 'eslint-plugin-react-native-a11y';
 import eslintReactNative from 'eslint-plugin-react-native';
 import eslintCodegen from 'eslint-plugin-codegen';
-import internalPlugin from '@cbhq/eslint-plugin-internal';
 
 const commonSettings = {
   react: {
@@ -132,7 +131,6 @@ export default tseslint.config(
       eslintReactHooks.configs['recommended-latest'],
       eslintReactPerf.configs.flat.recommended,
       eslintJsxA11y.flatConfigs.recommended,
-      internalPlugin.configs.importRules,
     ],
     plugins: {
       'simple-import-sort': eslintSimpleImportSort,
@@ -154,7 +152,6 @@ export default tseslint.config(
       eslintReactHooks.configs['recommended-latest'],
       eslintReactPerf.configs.flat.recommended,
       eslintJsxA11y.flatConfigs.recommended,
-      internalPlugin.configs.allRules,
     ],
     plugins: {
       'simple-import-sort': eslintSimpleImportSort,
@@ -167,7 +164,6 @@ export default tseslint.config(
       'no-loss-of-precision': 'off',
       'jsx-a11y/label-has-associated-control': 'off',
       'codegen/codegen': 'error',
-      'internal/safely-spread-props': 'warn',
     },
   },
   {
@@ -180,7 +176,6 @@ export default tseslint.config(
       eslintReactHooks.configs['recommended-latest'],
       eslintReactPerf.configs.flat.recommended,
       eslintJsxA11y.flatConfigs.recommended,
-      internalPlugin.configs.importRules,
     ],
     plugins: {
       'react-native': eslintReactNative,
@@ -207,7 +202,6 @@ export default tseslint.config(
       eslintJest.configs['flat/recommended'],
       eslintTestingLibrary.configs['flat/react'],
       eslintJsxA11y.flatConfigs.recommended,
-      internalPlugin.configs.importRules,
     ],
     languageOptions: {
       globals: {

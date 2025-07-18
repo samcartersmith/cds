@@ -34,12 +34,12 @@
     "react-dom": "^18.3.1"
   },
   "dependencies": {
-    "@cbhq/cds-common": "workspace:^",
-    "@cbhq/cds-icons": "workspace:^",
-    "@cbhq/cds-illustrations": "workspace:^",
-    "@cbhq/cds-lottie-files": "workspace:^",
-    "@cbhq/cds-utils": "workspace:^",
-    "@cbhq/cds-web": "workspace:^",
+    "@cbhq/cds-common": "8.1.0",
+    "@cbhq/cds-icons": "^5.0.0",
+    "@cbhq/cds-illustrations": "^4.12.0",
+    "@cbhq/cds-lottie-files": "^3.0.0",
+    "@cbhq/cds-utils": "^2.0.0",
+    "@cbhq/cds-web": "8.1.0",
     "@floating-ui/react-dom": "^2.1.1",
     "@linaria/core": "^3.0.0-beta.22",
     "@popperjs/core": "^2.9.0",

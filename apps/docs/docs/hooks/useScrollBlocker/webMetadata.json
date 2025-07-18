@@ -1,5 +1,0 @@
-{
-  "import": "import { useScrollBlocker } from '@cbhq/cds-web/hooks/useScrollBlocker'",
-  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/hooks/useScrollBlocker.ts",
-  "description": "Block and unblock page scrolling."
-}

@@ -1,5 +1,0 @@
-{
-  "import": "import { useHasMounted } from '@cbhq/cds-web/hooks/useHasMounted'",
-  "source": "https://github.cbhq.net/frontend/cds/blob/master/packages/web/src/hooks/useHasMounted.ts",
-  "description": "Returns a boolean indicating if the component has mounted."
-}
