@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2025-06-27T18:11:23.258Z",
-  "lastUnicode": 985362,
+  "lastUpdated": "2025-07-30T15:00:51.603Z",
+  "lastUnicode": 985404,
   "iconSets": [
     {
       "nodeId": "4:39245",
@@ -18188,6 +18188,335 @@
           "active": true,
           "size": 12,
           "unicode": 983245
+        }
+      ]
+    },
+    {
+      "nodeId": "4332:272",
+      "name": "dinnerPlate",
+      "description": "dinner, plate, food, eat",
+      "assetsHash": "d3PUppbTSgInIjRNhREdO7IJElsgKu2JVXtAmMOiZ0E=",
+      "nameHash": "kp9l2fHpDj4uaFNiHNwR07OpFdnRcM4Eu7vd16swBaM=",
+      "createdAt": "2025-07-25T17:28:44.084Z",
+      "lastUpdated": "2025-07-25T17:28:44.084Z",
+      "svgs": [
+        {
+          "name": "dinnerPlate-24-inactive",
+          "active": false,
+          "size": 24,
+          "unicode": 985386
+        },
+        {
+          "name": "dinnerPlate-24-active",
+          "active": true,
+          "size": 24,
+          "unicode": 985385
+        },
+        {
+          "name": "dinnerPlate-16-inactive",
+          "active": false,
+          "size": 16,
+          "unicode": 985384
+        },
+        {
+          "name": "dinnerPlate-16-active",
+          "active": true,
+          "size": 16,
+          "unicode": 985383
+        },
+        {
+          "name": "dinnerPlate-12-inactive",
+          "active": false,
+          "size": 12,
+          "unicode": 985382
+        },
+        {
+          "name": "dinnerPlate-12-active",
+          "active": true,
+          "size": 12,
+          "unicode": 985381
+        }
+      ]
+    },
+    {
+      "nodeId": "4332:246",
+      "name": "wellness",
+      "description": "wellness, peace, love, tea",
+      "assetsHash": "Yyxwf5f/vNE/Qx5zEufCCV1EjQ8B4+zVmatJ1sTbLEg=",
+      "nameHash": "yaN5Yg9zgTb2I36MtZAyJIY46Su2qPEN182SyVja1gk=",
+      "createdAt": "2025-07-25T17:28:44.090Z",
+      "lastUpdated": "2025-07-25T17:28:44.090Z",
+      "svgs": [
+        {
+          "name": "wellness-24-inactive",
+          "active": false,
+          "size": 24,
+          "unicode": 985404
+        },
+        {
+          "name": "wellness-24-active",
+          "active": true,
+          "size": 24,
+          "unicode": 985403
+        },
+        {
+          "name": "wellness-16-inactive",
+          "active": false,
+          "size": 16,
+          "unicode": 985402
+        },
+        {
+          "name": "wellness-16-active",
+          "active": true,
+          "size": 16,
+          "unicode": 985401
+        },
+        {
+          "name": "wellness-12-inactive",
+          "active": false,
+          "size": 12,
+          "unicode": 985400
+        },
+        {
+          "name": "wellness-12-active",
+          "active": true,
+          "size": 12,
+          "unicode": 985399
+        }
+      ]
+    },
+    {
+      "nodeId": "4332:233",
+      "name": "cross",
+      "description": "cross, health, healthcare, nurse",
+      "assetsHash": "SCw97a5fbLkmDb5jOBnHqpAY9LBh6jN8xaNfxrI4FhY=",
+      "nameHash": "g++X5Q1x25ilfmcUHGZ2J8WqAXyrpNnn8vU7XN/XjUY=",
+      "createdAt": "2025-07-25T17:28:44.094Z",
+      "lastUpdated": "2025-07-25T17:28:44.094Z",
+      "svgs": [
+        {
+          "name": "cross-24-inactive",
+          "active": false,
+          "size": 24,
+          "unicode": 985380
+        },
+        {
+          "name": "cross-24-active",
+          "active": true,
+          "size": 24,
+          "unicode": 985379
+        },
+        {
+          "name": "cross-16-inactive",
+          "active": false,
+          "size": 16,
+          "unicode": 985378
+        },
+        {
+          "name": "cross-16-active",
+          "active": true,
+          "size": 16,
+          "unicode": 985377
+        },
+        {
+          "name": "cross-12-inactive",
+          "active": false,
+          "size": 12,
+          "unicode": 985376
+        },
+        {
+          "name": "cross-12-active",
+          "active": true,
+          "size": 12,
+          "unicode": 985375
+        }
+      ]
+    },
+    {
+      "nodeId": "4332:220",
+      "name": "car",
+      "description": "car, travel, transportation, speed",
+      "assetsHash": "pB1bx3A01zOV9n3v/E0lal4VS9KHmvjB3ZLDyMJxKXw=",
+      "nameHash": "u+GaeFQaFQFYg7tUFaJmOMRK8JD2wz5GQhllQtnZ2OE=",
+      "createdAt": "2025-07-25T17:28:44.099Z",
+      "lastUpdated": "2025-07-25T17:28:44.099Z",
+      "svgs": [
+        {
+          "name": "car-24-inactive",
+          "active": false,
+          "size": 24,
+          "unicode": 985368
+        },
+        {
+          "name": "car-24-active",
+          "active": true,
+          "size": 24,
+          "unicode": 985367
+        },
+        {
+          "name": "car-16-inactive",
+          "active": false,
+          "size": 16,
+          "unicode": 985366
+        },
+        {
+          "name": "car-16-active",
+          "active": true,
+          "size": 16,
+          "unicode": 985365
+        },
+        {
+          "name": "car-12-inactive",
+          "active": false,
+          "size": 12,
+          "unicode": 985364
+        },
+        {
+          "name": "car-12-active",
+          "active": true,
+          "size": 12,
+          "unicode": 985363
+        }
+      ]
+    },
+    {
+      "nodeId": "4332:207",
+      "name": "plane",
+      "description": "plane, flight, flying, jet,",
+      "assetsHash": "ykaBj8j4fzTMQAsKLU2c0O7tMC1bLFyenQ88/rPRFnk=",
+      "nameHash": "cuUK4okmSTokPI2TJfeqXZOVlnEQoJhh62XdtNFh8UA=",
+      "createdAt": "2025-07-25T17:28:44.102Z",
+      "lastUpdated": "2025-07-25T17:28:44.102Z",
+      "svgs": [
+        {
+          "name": "plane-24-inactive",
+          "active": false,
+          "size": 24,
+          "unicode": 985392
+        },
+        {
+          "name": "plane-24-active",
+          "active": true,
+          "size": 24,
+          "unicode": 985391
+        },
+        {
+          "name": "plane-16-inactive",
+          "active": false,
+          "size": 16,
+          "unicode": 985390
+        },
+        {
+          "name": "plane-16-active",
+          "active": true,
+          "size": 16,
+          "unicode": 985389
+        },
+        {
+          "name": "plane-12-inactive",
+          "active": false,
+          "size": 12,
+          "unicode": 985388
+        },
+        {
+          "name": "plane-12-active",
+          "active": true,
+          "size": 12,
+          "unicode": 985387
+        }
+      ]
+    },
+    {
+      "nodeId": "4332:194",
+      "name": "clothing",
+      "description": "clothing, hanger, fashion, clothes",
+      "assetsHash": "8AYedWjDK77Vptza2DbHc45WbpuNu1tgeCzrZxkSY+8=",
+      "nameHash": "nspZU9CzLKSJGuHChKFXiBeuuWIjKJv8vLyyi+O5jPw=",
+      "createdAt": "2025-07-25T17:28:44.107Z",
+      "lastUpdated": "2025-07-25T17:28:44.107Z",
+      "svgs": [
+        {
+          "name": "clothing-24-inactive",
+          "active": false,
+          "size": 24,
+          "unicode": 985374
+        },
+        {
+          "name": "clothing-24-active",
+          "active": true,
+          "size": 24,
+          "unicode": 985373
+        },
+        {
+          "name": "clothing-16-inactive",
+          "active": false,
+          "size": 16,
+          "unicode": 985372
+        },
+        {
+          "name": "clothing-16-active",
+          "active": true,
+          "size": 16,
+          "unicode": 985371
+        },
+        {
+          "name": "clothing-12-inactive",
+          "active": false,
+          "size": 12,
+          "unicode": 985370
+        },
+        {
+          "name": "clothing-12-active",
+          "active": true,
+          "size": 12,
+          "unicode": 985369
+        }
+      ]
+    },
+    {
+      "nodeId": "4332:259",
+      "name": "powerTool",
+      "description": "powertool, tool, drill, equipment",
+      "assetsHash": "j5Eb7B7q/tA+f9O/cUczZa07J808V72OGjaqIUK6Ef0=",
+      "nameHash": "n22tjafc1v9RK+GeadCl5mY/hOPOC+oeUQacHmrkuRk=",
+      "createdAt": "2025-07-25T17:28:44.110Z",
+      "lastUpdated": "2025-07-25T17:28:44.110Z",
+      "svgs": [
+        {
+          "name": "powerTool-24-inactive",
+          "active": false,
+          "size": 24,
+          "unicode": 985398
+        },
+        {
+          "name": "powerTool-24-active",
+          "active": true,
+          "size": 24,
+          "unicode": 985397
+        },
+        {
+          "name": "powerTool-16-inactive",
+          "active": false,
+          "size": 16,
+          "unicode": 985396
+        },
+        {
+          "name": "powerTool-16-active",
+          "active": true,
+          "size": 16,
+          "unicode": 985395
+        },
+        {
+          "name": "powerTool-12-inactive",
+          "active": false,
+          "size": 12,
+          "unicode": 985394
+        },
+        {
+          "name": "powerTool-12-active",
+          "active": true,
+          "size": 12,
+          "unicode": 985393
         }
       ]
     }
