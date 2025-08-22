@@ -2445,30 +2445,6 @@ __metadata:
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/figma-tasks": "workspace:^"
-  languageName: unknown
-  linkType: soft
-
-"@cbhq/figma-tasks@workspace:^, @cbhq/figma-tasks@workspace:libs/figma-tasks":
-  version: 0.0.0-use.local
-  resolution: "@cbhq/figma-tasks@workspace:libs/figma-tasks"
-  dependencies:
-    "@babel/core": "npm:^7.20.12"
-    "@babel/preset-env": "npm:^7.20.2"
-    "@babel/preset-react": "npm:^7.18.6"
-    "@babel/preset-typescript": "npm:^7.18.6"
-    "@cbhq/figma-api": "workspace:^"
-    "@cbhq/mono-tasks": "npm:^1.16.0"
-    "@cbhq/script-utils": "workspace:^"
-    "@types/sharp": "npm:^0.31.0"
-    "@types/svgo": "npm:^2.6.4"
-    "@types/update-notifier": "npm:^5.1.0"
-    dotenv: "npm:^16.4.7"
-    lodash: "npm:^4.17.21"
-    sharp: "npm:^0.31.2"
-    svgo: "npm:^3.0.2"
-    update-notifier: "npm:^5.1.0"
-    webfont: "npm:11.2.26"
   languageName: unknown
   linkType: soft
 

@@ -14,10 +14,7 @@ export const task = {
     // Output path for CHANGELOG.md file in cds-next repo
     changelogFile: path.resolve(CDSNEXT_ROOT, 'packages/illustrations/CHANGELOG.md'),
     // Local manifest file to track sync state and changes between runs
-    manifestFile: path.resolve(
-      CDSNEXT_ROOT,
-      'packages/illustrations/src/__generated__/manifest.json',
-    ),
+    manifestFile: path.resolve(CDSNEXT_ROOT, 'packages/illustrations/manifest.json'),
     // Optional: Dark theme color styles manifest for generating themed SVGs
     darkModeManifestFile: 'libs/figma-styles/src/__generated__/illustration/dark/manifest.json',
     // Optional: Light theme color styles manifest for generating themed SVGs

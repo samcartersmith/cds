@@ -31,7 +31,7 @@ if (!fs.existsSync(CDSNEXT_ROOT)) throw Error('CDSNEXT_ROOT does not exist');
 export const config: SyncIconsConfig = {
   figmaFileId: '1J3XC4iA2xRzlnC3y0pl1N',
   changelogPath: path.resolve(CDSNEXT_ROOT, 'packages/icons/CHANGELOG.md'),
-  manifestPath: path.resolve(MONOREPO_ROOT, 'libs/icon-tasks/manifest.json'),
+  manifestPath: path.resolve(CDSNEXT_ROOT, 'packages/icons/manifest.json'),
   outputSvgPath: path.resolve(CDSNEXT_ROOT, 'packages/icons/src/svgs'),
   outputDataPath: path.resolve(CDSNEXT_ROOT, 'packages/icons/src'),
   outputFontPath: path.resolve(CDSNEXT_ROOT, 'packages/icons/src/fonts'),
