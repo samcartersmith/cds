@@ -1,0 +1,511 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+`@cbhq/cds-migrator` adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+<!-- template-start -->
+
+## 0.2.21 (8/21/2025 PST)
+
+#### 🚀 Updates
+
+- Add script to migrate elevated layout components.
+
+## 0.2.20 (8/20/2025 PST)
+
+#### 🚀 Updates
+
+- Enable erasableSyntaxOnly.
+
+## 0.2.19 (8/20/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix v7 subpath migration script.
+
+## 0.2.18 (8/19/2025 PST)
+
+#### 🚀 Updates
+
+- Add base transform for incremental v8 migration. [[#137](https://github.cbhq.net/frontend/cds-next/pull/137)]
+
+## 0.2.17 (8/18/2025 PST)
+
+#### 🐞 Fixes
+
+- Lint fixes. [[#124](https://github.cbhq.net/frontend/cds-next/pull/124)]
+
+## 0.2.16 (8/15/2025 PST)
+
+#### 🚀 Updates
+
+- Add script for Text display prop. [[#129](https://github.cbhq.net/frontend/cds-next/pull/129)]
+
+## 0.2.15 (8/6/2025 PST)
+
+#### 🐞 Fixes
+
+- Upgrade dependencies.
+
+## 0.2.14 (7/29/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix migration script ColorScheme to avoid duplicated names in v7 and v8.
+
+## 0.2.13 (7/23/2025 PST)
+
+#### 🚀 Updates
+
+- Migrate FlexAlignCommon type.
+
+## 0.2.12 (7/18/2025 PST)
+
+#### 🚀 Updates
+
+- Migrate WebBannerProps type to BannerProps.
+
+## 0.2.11 (7/17/2025 PST)
+
+#### 🚀 Updates
+
+- Add script to migrate useToast variant.
+
+## 0.2.10 (7/15/2025 PST)
+
+#### 🚀 Updates
+
+- Add scripts to migrate hook, paths, props and retail custom component. [[#58](https://github.cbhq.net/frontend/cds-next/pull/58)]
+
+## 0.2.9 (7/15/2025 PST)
+
+#### 🚀 Updates
+
+- Feat: migrator fro useAccessibleForeground
+
+1. added transformer for useAccessibleForeground
+2. added Tray path to migrate-mobile-paths. [[#78](https://github.cbhq.net/frontend/cds-next/pull/78)]
+
+## 0.2.8 (7/10/2025 PST)
+
+#### 🚀 Updates
+
+- Add script to migrate more types and paths. [[#45](https://github.cbhq.net/frontend/cds-next/pull/45)]
+
+## 0.2.7 (7/3/2025 PST)
+
+#### 🚀 Updates
+
+- Add icon migration script. [[#4126](https://github.cbhq.net/frontend/cds/pull/4126)]
+
+## 0.2.6 (6/26/2025 PST)
+
+#### 🚀 Updates
+
+- Migrate path, types, variables and props. [[#4116](https://github.cbhq.net/frontend/cds/pull/4116)]
+
+## 0.2.5 (6/20/2025 PST)
+
+#### 🚀 Updates
+
+- Add script to migrate palette types, paletteValueToCssVar, useSpectrum and Link prop. [[#4082](https://github.cbhq.net/frontend/cds/pull/4082)]
+
+## 0.2.4 (6/13/2025 PST)
+
+#### 🚀 Updates
+
+- Create scripts for CDS v8 upgrade. [[#3976](https://github.cbhq.net/frontend/cds/pull/3976)]
+
+## 0.2.3 (5/29/2025 PST)
+
+#### 🐞 Fixes
+
+- Add missing `@types/update-notifier` dev dependency.
+
+#### 📘 Misc
+
+- Fix lint issues. [[#3879](https://github.cbhq.net/frontend/cds/pull/3879)]
+
+## 0.2.2 (3/14/2025 PST)
+
+#### 🐞 Fixes
+
+- Formatting and linting. [[#3735](https://github.cbhq.net/frontend/cds/pull/3735)]
+
+## 0.2.1 (1/28/2025 PST)
+
+#### 🐞 Fixes
+
+- Update to Nx 21. [[#3527](https://github.cbhq.net/frontend/cds/pull/3527)]
+
+## 0.2.0 (11/7/2024 PST)
+
+#### 💥 Breaking
+
+- Release CDS v7. [Read more here](https://cds.cbhq.net/blog/cds-v7) [[#3389](https://github.cbhq.net/frontend/cds/pull/3389)]
+
+## 0.2.0-rc.0 (11/4/2024 PST)
+
+#### 💥 Breaking
+
+- Release CDS v7 rc 0. [[#3360](https://github.cbhq.net/frontend/cds/pull/3360)]
+
+## 0.1.50 (5/14/2024 PST)
+
+#### 🚀 Updates
+
+- Add banner migration script. [[#3027](https://github.cbhq.net/frontend/cds/pull/3027)] [[DX-3816](https://jira.coinbase-corp.com/browse/DX-3816)]
+
+## 0.1.49 (4/18/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: add gap migration script. [[#2941](https://github.cbhq.net/frontend/cds/pull/2941)]
+
+## 0.1.48 (4/2/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: Added CardBody migration script & Framer motion dependency addition [[DX-3490](https://jira.coinbase-corp.com/browse/DX-3490)] [[DX-3452](https://jira.coinbase-corp.com/browse/DX-3452)]
+
+## 0.1.47 (3/11/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: added default width to gondolin card migration script.
+
+## 0.1.46 (2/23/2024 PST)
+
+#### 🚀 Updates
+
+- Fixed a typo with frontier migrations.
+
+## 0.1.45 (2/22/2024 PST)
+
+#### 🚀 Updates
+
+- Added migrator scripts for removed alpha components.
+
+## 0.1.44 (2/14/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: added alpha component api migrations.
+
+## 0.1.43 (2/13/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: added gondolin card migrations scripts.
+
+## 0.1.42 (2/8/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: fixes found during CDS 6 release candidate testing.
+
+## 0.1.41 (1/31/2024 PST)
+
+#### 🚀 Updates
+
+- [trivial] chore: added card illustration migration scripts.
+
+## 0.1.40 (1/30/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] chore: removed web-overlays.
+
+## 0.1.39 (1/26/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix: cleaned up scripts for v6 migrations. [[#2646](https://github.cbhq.net/frontend/cds/pull/2646)]
+
+## 0.1.38 (1/24/2024 PST)
+
+#### 🐞 Fixes
+
+- Revert "Deprecate inner/outerSpacing props (#2483)". [[#2673](https://github.cbhq.net/frontend/cds/pull/2673)]
+
+## 0.1.37 (1/24/2024 PST)
+
+#### 🚀 Updates
+
+- Feat: added script for reverting web-overlays decomp. [[#2665](https://github.cbhq.net/frontend/cds/pull/2665)]
+
+## 0.1.36 (1/23/2024 PST)
+
+#### 🐞 Fixes
+
+- Deprecate props in RadioGroup and Pressable. [[#2652](https://github.cbhq.net/frontend/cds/pull/2652)]
+
+## 0.1.35 (1/23/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] chore: added missing migration scripts.
+
+## 0.1.34 (1/16/2024 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: cleaned up phrasing for v5 migrations.
+
+## 0.1.33 (1/16/2024 PST)
+
+#### 🚀 Updates
+
+- Added more checks for manual migrations. [[#2640](https://github.cbhq.net/frontend/cds/pull/2640)]
+
+## 0.1.32 (1/11/2024 PST)
+
+#### 🐞 Fixes
+
+- Fix @cbhq/cds-web-visualization package name. [[#2631](https://github.cbhq.net/frontend/cds/pull/2631)]
+
+## 0.1.31 (12/22/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: upgradeCDSPackages works for peer dependencies. [[DX-2983](https://jira.coinbase-corp.com/browse/DX-2983)]
+
+## 0.1.30 (12/5/2023 PST)
+
+#### 🚀 Updates
+
+- Deprecated selectContext in web package.
+
+## 0.1.29 (12/1/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] update: add inner/outerPadding props to cell component and add deprecation scripts for inner/outerSpacing props. [[#2483](https://github.cbhq.net/frontend/cds/pull/2483)]
+
+## 0.1.28 (11/30/2023 PST)
+
+#### 🐞 Fixes
+
+- Merge Q3 and Q4 deprecations in v6. [[#2495](https://github.cbhq.net/frontend/cds/pull/2495)] [[DX-2657](https://jira.coinbase-corp.com/browse/DX-2657)]
+
+## 0.1.27 (11/1/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] docs: added deprecations for FeatureEntry and Announcement cards.
+
+## 0.1.26 (11/7/2023 PST)
+
+#### 🐞 Fixes
+
+- Fix(CDS Migrator): Add package decomp packages to package.json if used. [[#2312](https://github.cbhq.net/frontend/cds/pull/2312)] [[DX-2332](https://jira.coinbase-corp.com/browse/DX-2332)]
+
+## 0.1.25 (11/7/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: import migrations now work for shallow imports.
+
+## 0.1.24 (11/2/2023 PST)
+
+#### 🚀 Updates
+
+- Add Script for Q3 Prop Deprecations. [[#2353](https://github.cbhq.net/frontend/cds/pull/2353)] [[DX-2326](https://jira.coinbase-corp.com/browse/DX-2326)]
+
+## 0.1.23 (11/2/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: pass projectConfig down to jsx migrations. [[DX-2650](https://jira.coinbase-corp.com/browse/DX-2650)]
+
+## 0.1.22 (10/24/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: v5 migrator should bump illo package to 2.1.0 or later to support SpotIcons. [[DX-2349](https://jira.coinbase-corp.com/browse/DX-2349)]
+
+## 0.1.21 (10/19/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: made component migrations more specific by checking import statements. [[#2345](https://github.cbhq.net/frontend/cds/pull/2345)]
+
+## 0.1.20 (10/18/2023 PST)
+
+#### 🐞 Fixes
+
+- Add PopoverProps and SelectProps to deprecations. [[#2344](https://github.cbhq.net/frontend/cds/pull/2344)]
+- Add web-visualization migration. [[#2344](https://github.cbhq.net/frontend/cds/pull/2344)]
+- Add missing mobile-visualization exports. [[#2344](https://github.cbhq.net/frontend/cds/pull/2344)]
+
+## 0.1.19 (10/10/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: added admonition about breaking spoticon changes and minor v5 prop migration fixes.
+
+#### 📘 Misc
+
+- Move private packages to libs directory. [[#2320](https://github.cbhq.net/frontend/cds/pull/2320)]
+
+## 0.1.18 (9/27/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2348] fix(CDS Migrator): Adds more logs for manual migrations and ensures all logs include path to deprecation usage. Added exported variables to migration guide for deleted files. [[#2276](https://github.cbhq.net/frontend/cds/pull/2276)] [[DX-2348](https://jira.coinbase-corp.com/browse/DX-2348)]
+
+## 0.1.17 (9/27/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-2337] chore: deprecated vertical prop. [[#2284](https://github.cbhq.net/frontend/cds/pull/2284)] [[DX-2337](https://jira.coinbase-corp.com/browse/DX-2337)]
+
+## 0.1.16 (9/19/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix(CDS Migrator): Consolidated types, shallow imports, and misc cleanup. [[#2266](https://github.cbhq.net/frontend/cds/pull/2266)]
+
+## 0.1.16 (9/15/2023 PST)
+
+#### 🚀 Updates
+
+- Added component migration script for Illustration. [[#2264](https://github.cbhq.net/frontend/cds/pull/2264)] [[DX-2297](https://jira.coinbase-corp.com/browse/DX-2297)]
+- Added prop migration script for frontier flag deprecation. [[#2264](https://github.cbhq.net/frontend/cds/pull/2264)] [[DX-2297](https://jira.coinbase-corp.com/browse/DX-2297)]
+
+## 0.1.15 (9/19/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix(CDS Migrator): upgradeCdsPackages works for root now. [[#2268](https://github.cbhq.net/frontend/cds/pull/2268)]
+
+## 0.1.14 (9/12/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: added warning for dynamic prop values and ternaries are now migratable. [[#2252](https://github.cbhq.net/frontend/cds/pull/2252)]
+
+## 0.1.13 (9/8/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: added package decomp migration script for jest.mocks. [[#2241](https://github.cbhq.net/frontend/cds/pull/2241)]
+
+## 0.1.12 (9/8/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: Package decomp works for multiple imported paths in a single file. [[#2238](https://github.cbhq.net/frontend/cds/pull/2238)]
+
+## 0.1.11 (9/7/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-2225] fix(Sparkline): Added mobile Sparkline to package decomp script. [[#2227](https://github.cbhq.net/frontend/cds/pull/2227)] [[DX-2225](https://jira.coinbase-corp.com/browse/DX-2225)]
+
+## 0.1.11 (8/30/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: Added migration scripts for API Alignment deprecations. [[#2208](https://github.cbhq.net/frontend/cds/pull/2208)]
+
+## 0.1.10 (8/22/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] chore: removed SidebarItem from package decomp migrator script. [[#2178](https://github.cbhq.net/frontend/cds/pull/2178)] [[DX-2145](https://jira.coinbase-corp.com/browse/DX-2145)]
+
+## 0.1.9 (8/9/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] chore: Align ts-morph version with root. [[#2137](https://github.cbhq.net/frontend/cds/pull/2137)]
+
+## 0.1.8 (8/1/2023 PST)
+
+#### 🚀 Updates
+
+- Added Q42023 Setup & migration script for FiatIcon cmpt deprecation. [[#2130](https://github.cbhq.net/frontend/cds/pull/2130)] [[DX-694](https://jira.coinbase-corp.com/browse/DX-694)]
+
+## 0.1.7 (7/28/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: peer dependencies work for upgrading packages. [[#2121](https://github.cbhq.net/frontend/cds/pull/2121)] [[DX-1864](https://jira.coinbase-corp.com/browse/DX-1864)]
+
+## 0.1.6 (7/17/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: Cleaned up file parsing logic and missing node error. [[#2104](https://github.cbhq.net/frontend/cds/pull/2104)] [[DX-1789](https://jira.coinbase-corp.com/browse/DX-1789)]
+
+## 0.1.5 (6/23/2023 PST)
+
+:::danger
+🚫 This release includes a regression, please use `@cbhq/cds-migrator@0.1.6` or higher.
+:::
+
+#### 🐞 Fixes
+
+- Use tsconfig.lib format. [[#2057](https://github.cbhq.net/frontend/cds/pull/2057)] [[DX-1739](https://jira.coinbase-corp.com/browse/DX-1739)]
+
+## 0.1.4 (6/15/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat(CDS Migrator): Added missing v5 migration scripts. [[#2029](https://github.cbhq.net/frontend/cds/pull/2029)]
+
+## 0.1.3 (6/2/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: Added scripts for package decomp migrations. [[#1998](https://github.cbhq.net/frontend/cds/pull/1998)]
+
+#### 🚀 Updates
+
+- [trivial] feat: improved file parsing performance. [[#2008](https://github.cbhq.net/frontend/cds/pull/2008)]
+
+## 0.1.2 (5/25/2023 PST)
+
+#### 🐞 Fixes
+
+- [trivial] fix: add peer dependencies to CDSDep check. [[#2002](https://github.cbhq.net/frontend/cds/pull/2002)]
+
+## 0.1.1 (5/14/2023 PST)
+
+#### 🚀 Updates
+
+- [trivial] feat: Added migration scripts for v5 release [[#1963](https://github.cbhq.net/frontend/cds/pull/1963)]
+
+## 0.1.0 (5/11/2023 PST)
+
+#### 🚀 Updates
+
+- Add new helper and v5 migrations for Vstack. [[#1965](https://github.cbhq.net/frontend/cds/pull/1965)] [[DX-990](https://jira.coinbase-corp.com/browse/DX-990)]
+
+#### 📘 Misc
+
+- Update release branch to latest master. [[#1961](https://github.cbhq.net/frontend/cds/pull/1961)]
+
+#### 💥 Breaking
+
+- Removed find/replace helper. [[#1982](https://github.cbhq.net/frontend/cds/pull/1982)]
+
+## 0.0.6 (4/24/2023 PST)
+
+#### 🚀 Updates
+
+- [DX-1148] fix(CDS Migrator): created reusable helpers that abstract a lot of ts-morph logic [[#1926](https://github.cbhq.net/frontend/cds/pull/1926)] [[DX-1148](https://jira.coinbase-corp.com/browse/DX-1148)]
+
+## 0.0.5 (4/21/2023 PST)
+
+#### 🐞 Fixes
+
+- [DX-1103] fix: fix cds-migrator when performing multiple migrations in a file by writing to the file system directly. [[#1947](https://github.cbhq.net/frontend/cds/pull/1947)] [[DX-1103](https://jira.coinbase-corp.com/browse/DX-1103)]
+
+## 0.0.4 (4/20/2023 PST)
+
+#### 🐞 Fixes
+
+- Revert helpers that caused a regression. [[#1937](https://github.cbhq.net/frontend/cds/pull/1937)]
