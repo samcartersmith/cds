@@ -271,16 +271,14 @@ export const main = async () => {
 
               const newContent = `
                     '${item.name}': {
-                      light: () => require('${relativeLight}').content,
-                      dark: () => require('${relativeDark}').content,
+                      light: () => require('${relativeLight}.js').content,
+                      dark: () => require('${relativeDark}.js').content,
                     },
                   `.trimStart();
               return `${acc}${newContent}`;
             }, '');
 
           return tokensTemplate`
-              /* eslint-disable global-require */
-
               import type { ${typescriptData.exportName} } from '${relativeTypes}';
               
               ${codegenHeader}
