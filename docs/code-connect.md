@@ -57,4 +57,101 @@ Figma logs only basic events for understanding Code Connect usage: when componen
 
 For more information about Figma's approach to privacy, see Figma's [Privacy Policy](https://www.figma.com/legal/privacy/).
 
-<hr />
+---
+
+## Developer Guide
+
+### Creating Code Connect Files for New Components
+
+When you create a new component in CDS, you should also create a corresponding Figma Code Connect file. Here's the streamlined process:
+
+#### 1. Ask Cursor to Generate the File
+
+Use any of these prompts to generate Code Connect files:
+
+```
+"Help me create a Figma Code Connect file for my CustomButton component"
+"Generate a Code Connect file for the NewInput component I just created"
+"Create Figma Code Connect for my Modal component"
+```
+
+Cursor will:
+
+- Find your component file automatically
+- Analyze the component's props and structure
+- Generate the appropriate Code Connect file with correct mappings
+- Place it in the correct `__figma__` directory
+
+#### 2. Complete the Setup
+
+Once Cursor creates the file, you need to:
+
+1. **Get the Figma node ID** from the design file
+2. **Update the URL** in the Code Connect file (replace `REPLACE_WITH_ACTUAL_NODE_ID`)
+3. **Update props** as needed to match Figma properties
+4. **Test and publish** the connection
+
+#### 3. Testing and Publishing
+
+```bash
+# Test the connection
+npx figma connect publish --token $FIGMA_CODE_CONNECT_TOKEN --dry-run
+
+# Publish when ready
+npx figma connect publish --token $FIGMA_CODE_CONNECT_TOKEN
+```
+
+#### 4. Testing Specific Files
+
+To test or publish only a specific Code Connect file, temporarily modify the `include` field in `figma.config.json`:
+
+**For Web Components:**
+
+```json
+// packages/web/figma.config.json
+{
+  "codeConnect": {
+    "parser": "react",
+    "label": "React",
+    "include": ["**/buttons/__figma__/CustomButton.figma.tsx"],
+    "exclude": ["**/__tests__/**", "**/__stories__/**", "**/__mocks__/**"]
+  }
+}
+```
+
+**For Mobile Components:**
+
+```json
+// packages/mobile/figma.config.json
+{
+  "codeConnect": {
+    "parser": "react",
+    "label": "React Native",
+    "include": ["**/buttons/__figma__/CustomButton.figma.tsx"],
+    "exclude": ["**/__tests__/**", "**/__stories__/**", "**/__mocks__/**"]
+  }
+}
+```
+
+Then run your test/publish commands as usual. **Remember to revert the `include` field back to `["**/\*.tsx"]` after testing!\*\*
+
+### File Structure
+
+Code Connect files follow this structure:
+
+- **Web**: `packages/web/src/[category]/__figma__/[ComponentName].figma.tsx`
+- **Mobile**: `packages/mobile/src/[category]/__figma__/[ComponentName].figma.tsx`
+- **Web Visualization**: `packages/web-visualization/src/[category]/__figma__/[ComponentName].figma.tsx`
+- **Mobile Visualization**: `packages/mobile-visualization/src/[category]/__figma__/[ComponentName].figma.tsx`
+
+### Validation Checklist
+
+Before considering your Code Connect file complete:
+
+- [ ] File is in correct `__figma__` directory
+- [ ] Import paths are correct for the platform
+- [ ] All Figma properties are mapped to component props
+- [ ] Example usage matches component API
+- [ ] Figma URL contains actual node-id (not placeholder)
+- [ ] `figma connect publish $FIGMA_CODE_CONNECT_TOKEN --dry-run` passes
+- [ ] File follows naming convention: `[ComponentName].figma.tsx`

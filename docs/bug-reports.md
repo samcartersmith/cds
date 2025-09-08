@@ -21,8 +21,8 @@ See the [web bugs](#web-bugs), [mobile bugs](#mobile-bugs), and [package bugs](#
 2. Install dependencies `cd cds && yarn`
 3. Create a new branch `git checkout -b bug/modal-oct4-2023`
 4. Run `yarn nx run next-app:start` to start the local NextJS dev server.
-5. Edit [`apps/next-app/pages/index.tsx`](/apps/next-app/pages/index.tsx) and replace the `<DemoPageContent />` component with a new component containing your minimum viable reproduction.
-6. Commit your changes and push up your new branch.
+5. Edit [`apps/vite-app/src/main.tsx`](/apps/vite-app/src/main.tsx) and replace the `<App />` component with a new component containing your minimum viable reproduction.
+6. Commit your changes and push up your new branch. You do not need to make a PR.
 
 ## Mobile bugs
 
@@ -33,7 +33,7 @@ See the [web bugs](#web-bugs), [mobile bugs](#mobile-bugs), and [package bugs](#
 5. Run `yarn nx run mobile-app:launch` to get the prebuilds onto your simulator.
 6. Run `yarn nx run mobile-app:start` to start developing. You can use local simulators or your own device. Note that you must have already opened the iOS simulator through Xcode to launch it from the terminal here.
 7. Edit [`apps/mobile-app/src/App.tsx`](/apps/mobile-app/src/App.tsx) and replace the `<Playground />` component with a new component containing your minimum viable reproduction.
-8. Commit your changes and push up your new branch.
+8. Commit your changes and push up your new branch. You do not need to make a PR.
 
 ## Package bugs
 

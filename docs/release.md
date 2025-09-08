@@ -12,7 +12,6 @@ This sections guides you through releasing the following:
 6. [UI Mobile Playground](./release/ui-mobile-playground.md)
 7. [Creating & using a release candidate branch](./release/release-candidate.md)
 8. [Creating a hotfix release](./release/hot-fix.md)
-9. [Publishing a new package](./release/new-package.md)
 
 ## Other Helpful links
 
