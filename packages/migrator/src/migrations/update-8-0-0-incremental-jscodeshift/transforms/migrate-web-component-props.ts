@@ -76,6 +76,7 @@ const linkPropMapping = {
 const pressableComponents = [
   'Button',
   'IconButton',
+  'AvatarButton',
   'Link',
   'Pressable',
   'PressableOpacity',

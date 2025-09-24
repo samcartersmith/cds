@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.35 (9/24/2025 PST)
+
+#### 🚀 Updates
+
+- Add more component migrations.
+
 ## 0.2.34 (9/18/2025 PST)
 
 #### 🚀 Updates

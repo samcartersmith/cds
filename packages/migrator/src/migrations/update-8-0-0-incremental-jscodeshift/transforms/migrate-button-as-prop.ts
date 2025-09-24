@@ -35,6 +35,7 @@ import type {
 
 const BUTTON_COMPONENT_NAME = 'Button';
 const ICON_BUTTON_COMPONENT_NAME = 'IconButton';
+const AVATAR_BUTTON_COMPONENT_NAME = 'AvatarButton';
 const PROPS_TO_CHECK = ['href', 'to'];
 const PROP_TO_ADD_OR_MODIFY = { name: 'as', value: 'a' };
 
@@ -49,6 +50,7 @@ const CDS_PACKAGES = ['@cbhq/cds-web']; // Only cds-web
 const ALL_TARGETED_COMPONENTS = [
   BUTTON_COMPONENT_NAME,
   ICON_BUTTON_COMPONENT_NAME,
+  AVATAR_BUTTON_COMPONENT_NAME,
   LINK_COMPONENT_NAME,
   PRESSABLE_COMPONENT_NAME,
   PRESSABLE_OPACITY_COMPONENT_NAME,
@@ -196,6 +198,13 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     ICON_BUTTON_COMPONENT_NAME,
     targetComponent,
   );
+  const avatarButtonRefs = findComponentReferences(
+    j,
+    root,
+    CDS_PACKAGES,
+    AVATAR_BUTTON_COMPONENT_NAME,
+    targetComponent,
+  );
   const linkRefs = findComponentReferences(
     j,
     root,
@@ -221,18 +230,21 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const combinedAsAComponentNames = new Set([
     BUTTON_COMPONENT_NAME,
     ICON_BUTTON_COMPONENT_NAME,
+    AVATAR_BUTTON_COMPONENT_NAME,
     PRESSABLE_COMPONENT_NAME,
     PRESSABLE_OPACITY_COMPONENT_NAME,
   ]);
   const combinedAsARelevantTagNames = new Set([
     ...buttonRefs.relevantTagNames,
     ...iconButtonRefs.relevantTagNames,
+    ...avatarButtonRefs.relevantTagNames,
     ...pressableRefs.relevantTagNames,
     ...pressableOpacityRefs.relevantTagNames,
   ]);
   const combinedAsAComponentNamespaceNames = new Set([
     ...buttonRefs.componentNamespaceNames,
     ...iconButtonRefs.componentNamespaceNames,
+    ...avatarButtonRefs.componentNamespaceNames,
     ...pressableRefs.componentNamespaceNames,
     ...pressableOpacityRefs.componentNamespaceNames,
   ]);
@@ -241,7 +253,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   console.log(combinedAsARelevantTagNames);
   console.log(combinedAsAComponentNamespaceNames);
 
-  // --- Process Button, Pressable, and PressableOpacity Components ---
+  // --- Process Button, IconButton, AvatarButton, Pressable, and PressableOpacity Components ---
   // Ensure components with 'href' or 'to' props have 'as="a"'
   root
     .find(j.JSXElement)
