@@ -175,6 +175,7 @@ cds-biweekly-update.md
 missing-files.json
 barrel-files.md
 base-props.json
+scripts/v8-adoption/output
 
 # temp directory created when running podium scripts. this gets deleted after the script is done, but for the sake of your sanity, let's not track it
 **/.podium/

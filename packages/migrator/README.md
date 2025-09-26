@@ -82,6 +82,20 @@ The script will guide you through the following questions:
   - **Miscellaneous**: Runs miscellaneous transforms (e.g., palette values).
   - **Everything applicable**: This is the most powerful option. It runs all component migrations and finalizes the import paths in a single pass.
 
+**View Current v8 Adoption Stats**
+
+You can print the current project’s CDS v8 adoption (counts and percentage of v7 vs v8 components) with the following command. This script only applies to projects with incremental migration strategy.
+
+```sh
+# From your project root
+yarn cds-migrator-v8-adoption-stats
+
+# Or pass a specific path to scan
+yarn cds-migrator-v8-adoption-stats ./path/to/repo
+```
+
+This outputs a formatted summary including the detected CDS version, counts of CDS vs v7 CDS component usages, total, and the v8 migration percentage.
+
 ### Manual Migration (Advanced)
 
 You can also run the transformations manually by passing flags directly. This is useful for scripting or CI environments. The main script is `update-8-0-0-incremental`, which requires the `--platform` option (`web` or `mobile`).

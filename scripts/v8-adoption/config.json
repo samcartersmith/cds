@@ -1,0 +1,97 @@
+{
+  "repos": [
+    {
+      "id": "retail-mobile",
+      "label": "Retail Mobile",
+      "github": "consumer/react-native",
+      "branch": "master",
+      "dependencyPath": "src/packages/app"
+    },
+    {
+      "id": "retail-web",
+      "label": "Retail Web",
+      "github": "frontend/coinbase-www",
+      "branch": "master"
+    },
+    {
+      "id": "identity-frontend",
+      "label": "Identity Frontend",
+      "github": "identity/frontend",
+      "branch": "master"
+    },
+    {
+      "id": "wallet-mobile",
+      "label": "Wallet Mobile",
+      "github": "wallet/wallet-mobile",
+      "branch": "master",
+      "paths": [
+        "workspaces"
+      ],
+      "dependencyPath": "workspaces/apps/rn",
+      "cdsAliases": [
+        ":rn/cds-wallet"
+      ]
+    },
+    {
+      "id": "cloud-frontend",
+      "label": "Cloud Frontend",
+      "github": "cloud/frontend",
+      "branch": "master",
+      "dependencyPath": "apps/cloud-console"
+    },
+    {
+      "id": "unified-identity-accounts",
+      "label": "Unified Identity Accounts",
+      "github": "frontend/unified-identity-accounts",
+      "branch": "master"
+    },
+    {
+      "id": "prime-mobile",
+      "label": "Prime Mobile",
+      "github": "prime/mobile",
+      "branch": "master"
+    },
+    {
+      "id": "institutional-frontend",
+      "label": "Institutional Frontend",
+      "github": "institutional/frontend",
+      "branch": "master",
+      "dependencyPath": "apps/prime"
+    },
+    {
+      "id": "commerce-frontend",
+      "label": "Commerce Frontend",
+      "github": "commerce/frontend",
+      "branch": "master",
+      "dependencyPath": "apps/commerce-merchant"
+    },
+    {
+      "id": "helpcenter-web",
+      "label": "Help Center Web",
+      "github": "data/helpcenter-web",
+      "branch": "master",
+      "dependencyPath": "apps/helpcenter"
+    },
+    {
+      "id": "cb-chat-ui",
+      "label": "CB Chat UI",
+      "github": "data/cb-chat-ui",
+      "branch": "master",
+      "dependencyPath": "apps/mobile-app"
+    },
+    {
+      "id": "tracer-ui",
+      "label": "Tracer UI",
+      "github": "data/tracer-ui",
+      "branch": "master",
+      "dependencyPath": "apps/tracer"
+    },
+    {
+      "id": "international-ui",
+      "label": "Institutional Neptune",
+      "github": "exchange/international-ui",
+      "branch": "master",
+      "dependencyPath": "apps/neptune"
+    }
+  ]
+}

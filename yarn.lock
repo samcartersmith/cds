@@ -2208,6 +2208,7 @@ __metadata:
   bin:
     cds-migrator-codemod: ./cjs/cli/codemod.js
     cds-migrator-interactive: ./cjs/cli/interactive-codemod.js
+    cds-migrator-v8-adoption-stats: ./cjs/cli/v8-adoption-stats.js
   languageName: unknown
   linkType: soft
 

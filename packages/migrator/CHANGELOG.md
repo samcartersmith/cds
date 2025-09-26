@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.36 (9/25/2025 PST)
+
+#### 🚀 Updates
+
+- Add cds-migrator-v8-adoption-stats CLI and script.
+
 ## 0.2.35 (9/24/2025 PST)
 
 #### 🚀 Updates
