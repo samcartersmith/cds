@@ -8,6 +8,13 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.37 (9/26/2025 PST)
+
+#### 🐞 Fixes
+
+- Ignore node_modules for non-base transforms.
+- Fix commonTypeImportPaths key.
+
 ## 0.2.36 (9/25/2025 PST)
 
 #### 🚀 Updates

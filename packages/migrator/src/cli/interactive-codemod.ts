@@ -66,6 +66,15 @@ async function run() {
     platform = _platform;
   }
 
+  const { ignorePattern } = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'ignorePattern',
+      message: 'Enter a glob pattern to ignore, or press enter to skip (e.g., **/node_modules/**)',
+      default: '**/node_modules/**',
+    },
+  ]);
+
   const { transformType } = await inquirer.prompt([
     {
       type: 'list',
@@ -113,6 +122,7 @@ async function run() {
         componentName: componentName,
         platform,
         transformStep: 'component',
+        ignorePattern,
       });
       break;
     }
@@ -126,7 +136,13 @@ async function run() {
           choices: Object.keys(hookTransformMap),
         },
       ]);
-      await executeJscodeshift({ directory, transformStep: 'hooks', platform, hookName });
+      await executeJscodeshift({
+        directory,
+        transformStep: 'hooks',
+        platform,
+        hookName,
+        ignorePattern,
+      });
       break;
     }
     case 'imports': {
@@ -157,6 +173,7 @@ async function run() {
           transformStep: 'imports',
           platform,
           importTransformName,
+          ignorePattern,
           ...(commonTypeName === 'all' ? {} : { typeName: commonTypeName }),
         });
       } else if (
@@ -189,6 +206,7 @@ async function run() {
           transformStep: 'imports',
           platform,
           importTransformName,
+          ignorePattern,
           ...(importPath === 'all' ? {} : { importPath }),
         });
       }
@@ -220,7 +238,8 @@ async function run() {
             directory,
             transformStep: 'imports',
             platform,
-            importTransformName: 'commonImportPaths',
+            importTransformName: 'commonTypeImportPaths',
+            ignorePattern,
           });
         }
       }
@@ -249,6 +268,7 @@ async function run() {
         transformStep: 'types',
         platform,
         typeTransformName,
+        ignorePattern,
         ...(typeName === 'all' ? {} : { typeName }),
       });
       break;
@@ -263,12 +283,18 @@ async function run() {
           choices: Object.keys(miscTransformMap),
         },
       ]);
-      await executeJscodeshift({ directory, transformStep: 'misc', platform, miscTransformName });
+      await executeJscodeshift({
+        directory,
+        transformStep: 'misc',
+        platform,
+        miscTransformName,
+        ignorePattern,
+      });
       break;
     }
     case 'everything':
       console.log('Running everything transforms...');
-      await executeJscodeshift({ directory, transformStep: 'everything', platform });
+      await executeJscodeshift({ directory, transformStep: 'everything', platform, ignorePattern });
       break;
     default:
       console.log('\n--- Running all component transforms ---\n');
@@ -276,6 +302,7 @@ async function run() {
         directory,
         transformStep: 'everything',
         platform,
+        ignorePattern,
       });
       break;
   }
