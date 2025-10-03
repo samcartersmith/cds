@@ -1,6 +1,12 @@
 {
   "repos": [
     {
+      "id": "retail-web",
+      "label": "Retail Web",
+      "github": "frontend/coinbase-www",
+      "branch": "master"
+    },
+    {
       "id": "retail-mobile",
       "label": "Retail Mobile",
       "github": "consumer/react-native",
@@ -8,15 +14,22 @@
       "dependencyPath": "src/packages/app"
     },
     {
-      "id": "retail-web",
-      "label": "Retail Web",
-      "github": "frontend/coinbase-www",
-      "branch": "master"
-    },
-    {
       "id": "identity-frontend",
       "label": "Identity Frontend",
       "github": "identity/frontend",
+      "branch": "master"
+    },
+    {
+      "id": "institutional-frontend",
+      "label": "Institutional Frontend",
+      "github": "institutional/frontend",
+      "branch": "master",
+      "dependencyPath": "apps/prime"
+    },
+    {
+      "id": "prime-mobile",
+      "label": "Prime Mobile",
+      "github": "prime/mobile",
       "branch": "master"
     },
     {
@@ -40,37 +53,10 @@
       "dependencyPath": "apps/cloud-console"
     },
     {
-      "id": "unified-identity-accounts",
-      "label": "Unified Identity Accounts",
-      "github": "frontend/unified-identity-accounts",
+      "id": "commerce-payment-mcp",
+      "label": "Commerce Payment MCP",
+      "github": "commerce/payments-mcp",
       "branch": "master"
-    },
-    {
-      "id": "prime-mobile",
-      "label": "Prime Mobile",
-      "github": "prime/mobile",
-      "branch": "master"
-    },
-    {
-      "id": "institutional-frontend",
-      "label": "Institutional Frontend",
-      "github": "institutional/frontend",
-      "branch": "master",
-      "dependencyPath": "apps/prime"
-    },
-    {
-      "id": "commerce-frontend",
-      "label": "Commerce Frontend",
-      "github": "commerce/frontend",
-      "branch": "master",
-      "dependencyPath": "apps/commerce-merchant"
-    },
-    {
-      "id": "helpcenter-web",
-      "label": "Help Center Web",
-      "github": "data/helpcenter-web",
-      "branch": "master",
-      "dependencyPath": "apps/helpcenter"
     },
     {
       "id": "cb-chat-ui",
@@ -87,11 +73,17 @@
       "dependencyPath": "apps/tracer"
     },
     {
-      "id": "international-ui",
-      "label": "Institutional Neptune",
-      "github": "exchange/international-ui",
+      "id": "unified-identity-accounts",
+      "label": "Unified Identity Accounts",
+      "github": "frontend/unified-identity-accounts",
+      "branch": "master"
+    },
+    {
+      "id": "helpcenter-web",
+      "label": "Help Center Web",
+      "github": "data/helpcenter-web",
       "branch": "master",
-      "dependencyPath": "apps/neptune"
+      "dependencyPath": "apps/helpcenter"
     }
   ]
 }
