@@ -1,3 +1,4 @@
+import { execSync } from 'node:child_process';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -8,6 +9,7 @@ import { downloadSvgImage, syncLibrary } from '@cbhq/figma-api';
 import { config } from './config';
 import { generateChangelog } from './generateChangelog';
 import { getDescriptionMap } from './getDescriptionMap';
+import { commitAndPushChanges, prepareTargetRepo, validateFreshRepo } from './git';
 import { sortByCreatedAt } from './sortByCreatedAt';
 import { stringToObject } from './stringToObject';
 import { svgoConfig } from './svgoConfig';
@@ -128,6 +130,11 @@ const emptyManifest: Manifest = { lastUpdated: '', lastUnicode: firstAllowedUnic
 
 const main = async () => {
   console.log('Starting icon sync...');
+
+  console.log('Validating current and target repos...');
+  validateFreshRepo(config.currentRepoRoot);
+  validateFreshRepo(config.targetRepoRoot);
+
   console.log('Validating config settings...');
 
   if (!fs.existsSync(config.outputSvgPath)) fs.mkdirSync(config.outputSvgPath, { recursive: true });
@@ -144,6 +151,18 @@ const main = async () => {
 
   if (!fs.existsSync(config.manifestPath))
     fs.writeFileSync(config.manifestPath, JSON.stringify(emptyManifest));
+
+  console.log('Preparing target repo branch...');
+  const newBranchName = prepareTargetRepo(config.targetRepoRoot);
+
+  process.on('exit', (code) => {
+    if (code === 0) return;
+    // Clean up the working branch if the icons sync fails
+    console.log('Icons sync failed, deleting working branch...');
+    execSync(`git checkout master && git branch -D ${newBranchName}`, {
+      cwd: config.targetRepoRoot,
+    });
+  });
 
   console.log('Loading manifest and changelog files...');
   const oldManifest = JSON.parse(fs.readFileSync(config.manifestPath, 'utf-8')) as Manifest;
@@ -524,6 +543,9 @@ export const descriptionMap: Record<string, IconName[]> = ${descriptionMapConten
   const breakingChanges = syncResults.deletedIconSets.length + syncResults.renamedIconSets.length;
   if (breakingChanges > 0)
     console.log(`\n⚠️ Warning: ${breakingChanges} breaking changes detected`);
+
+  console.log('Committing and pushing changes...');
+  commitAndPushChanges(config.targetRepoRoot);
 };
 
 process.on('exit', (code) => {
