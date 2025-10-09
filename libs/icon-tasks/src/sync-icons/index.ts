@@ -543,14 +543,13 @@ export const descriptionMap: Record<string, IconName[]> = ${descriptionMapConten
   const breakingChanges = syncResults.deletedIconSets.length + syncResults.renamedIconSets.length;
   if (breakingChanges > 0)
     console.log(`\n⚠️ Warning: ${breakingChanges} breaking changes detected`);
-
-  console.log('Committing and pushing changes...');
-  commitAndPushChanges(config.targetRepoRoot);
 };
 
 process.on('exit', (code) => {
-  if (code === 0) console.log('\n✅ Success: Icon sync completed successfully!');
-  else console.log('\n❌ Error: Something went wrong with the icon sync');
+  if (code !== 0) return console.log('\n❌ Error: Something went wrong with the icon sync');
+  console.log('\n✅ Success: Icon sync completed successfully!');
+  console.log('\nCommitting and pushing changes...\n');
+  commitAndPushChanges(config.targetRepoRoot);
 });
 
 main();

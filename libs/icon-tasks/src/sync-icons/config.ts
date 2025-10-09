@@ -29,9 +29,9 @@ type SyncIconsConfig = {
 const MONOREPO_ROOT = process.env.PROJECT_CWD ?? process.env.NX_MONOREPO_ROOT;
 if (!MONOREPO_ROOT) throw Error('MONOREPO_ROOT is undefined');
 
-const CDS_OSS_ROOT = path.resolve(MONOREPO_ROOT, '../temp-cds-oss');
+const CDS_OSS_ROOT = path.resolve(MONOREPO_ROOT, '../temp-oss-cds');
 if (!fs.existsSync(CDS_OSS_ROOT))
-  throw Error(`The "temp-cds-oss" directory does not exist at filepath: "${CDS_OSS_ROOT}"`);
+  throw Error(`The "temp-oss-cds" directory does not exist at filepath: "${CDS_OSS_ROOT}"`);
 
 export const config: SyncIconsConfig = {
   figmaFileId: '1J3XC4iA2xRzlnC3y0pl1N',

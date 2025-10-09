@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import { logInfo, Task } from '@cbhq/mono-tasks';
 import { getAbsolutePath, writePrettyFile } from '@cbhq/script-utils';
 
+import { generateChangelog } from './generateChangelog';
 import type { ItemShape, Manifest } from './Manifest';
 
 type ChangelogOptions = {
@@ -86,38 +87,24 @@ export class Changelog {
   }
 
   public async generateFile({ task, manifest, groupByType }: UpdateChangelogParams) {
-    const newContent = [];
-    const commandDescription = `Generated with \`yarn nx run ${task.projectName}:${task.targetName}\`\n`;
-    const mdParams = { groupByType };
-
     const insertionPoint = this.content.includes(UNRELEASED_HEADER)
       ? UNRELEASED_HEADER
       : TEMPLATE_START;
 
-    if (manifest.additions.size > 0) {
-      const addedContent = getMarkdownForItems(manifest.additions, mdParams);
-      newContent.push(`### 🚀 Added\n ${commandDescription} ${addedContent}`);
-    }
-
-    if (manifest.updates.size > 0) {
-      const updatedContent = getMarkdownForItems(manifest.updates, mdParams);
-      newContent.push(`### 🐞 Updated\n ${commandDescription} ${updatedContent}`);
-    }
-
-    if (manifest.renames.size > 0) {
-      const updatedContent = getMarkdownForItems(manifest.renames, mdParams);
-      newContent.push(`### 🐞 Renames\n ${commandDescription} ${updatedContent}`);
-    }
-
-    if (manifest.deletions.size > 0) {
-      const deletedContent = getMarkdownForItems(manifest.deletions, mdParams);
-      newContent.push(`### 💥 Deleted\n ${commandDescription} ${deletedContent}`);
-    }
+    const newContent = generateChangelog({
+      newIllustrationSets: [...manifest.additions],
+      deletedIllustrationSets: [...manifest.deletions],
+      renamedIllustrationSets: [...manifest.renames].map(([previous, next]) => ({
+        ...next,
+        oldName: previous.name,
+      })),
+      updatedIllustrationSets: [...manifest.updates],
+    });
 
     if (newContent.length > 0) {
       this.content = this.content.replace(
         `${insertionPoint}`,
-        `${insertionPoint}\n\n${newContent.join(`\n`)}`,
+        `${insertionPoint}\n\n${newContent}`,
       );
 
       await writePrettyFile(this.filePath, this.content);

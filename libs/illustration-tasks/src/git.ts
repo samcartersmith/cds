@@ -2,7 +2,7 @@ import { execSync, type ExecSyncOptions } from 'node:child_process';
 import path from 'node:path';
 
 const todaysDate = new Date().toISOString().slice(0, 10);
-const targetBranchName = `icons/${todaysDate}`;
+const targetBranchName = `illustrations/${todaysDate}`;
 
 const error = (message: string, ...args: unknown[]) => {
   console.error('\nERROR:', message, ...args);
@@ -75,6 +75,6 @@ export const prepareTargetRepo = (dirname: string) => {
 
 export const commitAndPushChanges = (dirname: string) => {
   const exec = createExec(dirname);
-  exec(`git add . && git commit -m "feat: Publish icons ${todaysDate}"`);
+  exec(`git add . && git commit -m "feat: Publish illustrations ${todaysDate}"`);
   exec(`git push origin ${targetBranchName}`);
 };

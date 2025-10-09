@@ -89,6 +89,13 @@ type ManifestOptions<PreviousManifest extends ManifestShape, TaskOptions = unkno
   task: Task<TaskOptions>;
 };
 
+export type IllustrationSyncResults = {
+  newIllustrationSets: ItemShape[];
+  deletedIllustrationSets: ItemShape[];
+  renamedIllustrationSets: (ItemShape & { oldName: string })[];
+  updatedIllustrationSets: ItemShape[];
+};
+
 export class Manifest<
   T extends ManifestShape = ManifestShape,
   TaskOptions extends ManifestTaskOptions = ManifestTaskOptions,

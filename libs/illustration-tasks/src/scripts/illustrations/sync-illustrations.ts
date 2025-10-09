@@ -5,6 +5,7 @@ process.env.DOTENV_CONFIG_PATH = path.resolve(MONOREPO_ROOT, '.env');
 
 import 'dotenv/config';
 
+import { execSync } from 'node:child_process';
 import path from 'node:path';
 import type { SyncedLibrary } from '@cbhq/figma-api';
 import {
@@ -17,6 +18,7 @@ import {
   writePrettyFile,
 } from '@cbhq/script-utils';
 
+import { commitAndPushChanges, prepareTargetRepo, validateFreshRepo } from '../../git';
 import { createDescriptionGraph } from '../../helpers/createDescriptionGraph';
 import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
@@ -52,6 +54,22 @@ export const main = async () => {
        * Generated from yarn nx run illustration-tasks:${task.targetName}
       */
     `;
+
+  console.log('Validating current and target repos...');
+  validateFreshRepo(task.currentRepoRoot);
+  validateFreshRepo(task.targetRepoRoot);
+
+  console.log('Preparing target repo branch...');
+  const newBranchName = prepareTargetRepo(task.targetRepoRoot);
+
+  process.on('exit', (code) => {
+    if (code === 0) return;
+    // Clean up the working branch if the illustrations sync fails
+    console.log('Illustrations sync failed, deleting working branch...');
+    execSync(`git checkout master && git branch -D ${newBranchName}`, {
+      cwd: task.targetRepoRoot,
+    });
+  });
 
   const { manifest, changelog, colorStyles } = await Manifest.init<
     IllustrationsManifestShape,
@@ -311,3 +329,11 @@ export const main = async () => {
 };
 
 main();
+
+process.on('exit', (code) => {
+  if (code !== 0)
+    return console.log('\n❌ Error: Something went wrong with the illustrations sync');
+  console.log('\n✅ Success: Illustrations sync completed successfully!');
+  console.log('\nCommitting and pushing changes...\n');
+  commitAndPushChanges(task.targetRepoRoot);
+});

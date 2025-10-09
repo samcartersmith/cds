@@ -10,13 +10,13 @@
 rm -rf temp-oss-cds temp-frontend-cds
 ```
 
-2. Clone the github.com/coinbase/cds repo with this name
+2. Clone the [github.com/coinbase/cds](https://github.com/coinbase/cds) repo with this name
 
 ```sh
 git clone git@github.com:coinbase/cds.git temp-oss-cds
 ```
 
-3. Clone the github.cbhq.net/frontend/cds repo as a sibling with this name
+3. Clone the [github.cbhq.net/frontend/cds](https://github.cbhq.net/frontend/cds) repo as a sibling with this name
 
 ```sh
 git clone git@github.cbhq.net:frontend/cds.git temp-frontend-cds
@@ -29,7 +29,7 @@ cd ../temp-frontend-cds
 yarn nx run icon-tasks:sync-icons
 ```
 
-5. Open a PR in the github.com/coinbase/cds repo. Title the PR exactly the same as the commit message: `feat: Publish icons YYYY/MM/DD`. Take note of the PR number for the next step
+5. Open a PR in the [github.com/coinbase/cds](https://github.com/coinbase/cds) repo. Title the PR exactly the same as the commit message: `feat: Publish icons YYYY/MM/DD`. Take note of the PR number for the next step
 
 6. Navigate into the `temp-oss-cds` repo and update the icons package changelog by completing the prompts as shown below
 
@@ -63,3 +63,7 @@ You can get the Percy link from the GitHub Actions "Visreg Web" job on your PR
 **IMPORTANT: Breaking change releases are a big deal. They should be performed extremely rarely, and should ALWAYS be accompanied by a migration plan. You are responsible for any breaking changes that you release.**
 
 10. DO NOT MERGE until the icons DRI has carefully reviewed and signed off on the changelog and the visual regression test results.
+
+## Troubleshooting
+
+You may see the task complete without any changes and the message: "There are no changes since the last update on XX/XX/XXXX". Verify this is expected with design.
