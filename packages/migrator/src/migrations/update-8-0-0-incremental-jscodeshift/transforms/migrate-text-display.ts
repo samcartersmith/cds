@@ -3,7 +3,7 @@
  * @cbhq/cds-web based on the `as` prop.
  *
  * If `as="li"`, it adds `display="list-item"`.
- * If `as="p"`, it adds `display="block"`.
+ * If `as="p"` or a heading (`h1`-`h6`), it adds `display="block"`.
  *
  * Example:
  * Before:
@@ -204,7 +204,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
         if (asAttribute.value?.type === 'StringLiteral') {
           if (asAttribute.value.value === 'li') {
             displayValue = 'list-item';
-          } else if (asAttribute.value.value === 'p') {
+          } else if (asAttribute.value.value === 'p' || /^h[1-6]$/.test(asAttribute.value.value)) {
             displayValue = 'block';
           }
         }

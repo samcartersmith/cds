@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.38 (10/20/2025 PST)
+
+#### 🚀 Updates
+
+- Update migrate text display transform to add display="block" for heading tags.
+
 ## 0.2.37 (9/26/2025 PST)
 
 #### 🐞 Fixes
