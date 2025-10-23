@@ -8,7 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 2.0.1 (10/20/2025 PST)
+
+#### 🚀 Updates
+
+- Added Condensed font variant.
+- Added italic and thickness variants for native.
 
 #### 📘 Misc
 

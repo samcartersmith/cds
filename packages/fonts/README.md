@@ -88,6 +88,24 @@ For React Native applications, the package also includes `.otf` font files in th
    }
    ```
 
+### Using Specific Font Variants
+
+For other font variants, such as italic, load the font directly using `useFonts` from `expo-font` and set the `fontFamily` directly:
+
+```tsx
+import { useFonts } from 'expo-font';
+
+const [loaded] = useFonts({
+  'CoinbaseSans-RegularItalic': require('@cbhq/cds-fonts/native/CoinbaseSans-RegularItalic.otf'),
+});
+```
+
+Then you can use
+
+```tsx
+<Text style={{ fontFamily: 'CoinbaseSans-RegularItalic' }}>...</Text>
+```
+
 ## Browser Support
 
 The fonts are provided in WOFF2 format, which is supported by all modern browsers. Fallback fonts are automatically applied for unsupported browsers.
