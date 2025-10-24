@@ -61,7 +61,7 @@ const tooltipPropMapping = {
   invertSpectrum: 'invertColorScheme',
 } as const;
 
-const CellComponents = ['Cell', 'ContentCell', 'ListCellFallback'] as const;
+const cellComponents = ['Cell', 'ContentCell', 'ListCellFallback'] as const;
 
 const cellPropMapping = {
   compact: '',
@@ -83,6 +83,8 @@ const pressableComponents = [
   'Card',
 ] as const;
 
+const cellComponentsWithLink = ['Cell', 'ContentCell', 'ListCell'] as const;
+
 const pressablePropMapping = {
   to: 'href',
 } as const;
@@ -93,7 +95,7 @@ const CDS_PACKAGES = ['@cbhq/cds-web'];
 const componentPropMapping = Object.fromEntries([
   ...textComponents.map((component) => [component, textPropMapping]),
   ...tooltipComponents.map((component) => [component, tooltipPropMapping]),
-  ...CellComponents.map((component) => [component, cellPropMapping]),
+  ...cellComponents.map((component) => [component, cellPropMapping]),
   ...linkComponents.map((component) => {
     // Link components can have both link and pressable prop mappings
     const linkMapping = { ...linkPropMapping };
@@ -102,15 +104,16 @@ const componentPropMapping = Object.fromEntries([
     }
     return [component, linkMapping];
   }),
-  ...pressableComponents
+  ...[...pressableComponents, ...cellComponentsWithLink]
     .filter((component) => !linkComponents.includes(component as any)) // Exclude Link since it's handled above
     .map((component) => [component, pressablePropMapping]),
 ]) as Record<
   | (typeof textComponents)[number]
   | (typeof tooltipComponents)[number]
-  | (typeof CellComponents)[number]
+  | (typeof cellComponents)[number]
   | (typeof linkComponents)[number]
-  | (typeof pressableComponents)[number],
+  | (typeof pressableComponents)[number]
+  | (typeof cellComponentsWithLink)[number],
   | typeof textPropMapping
   | typeof tooltipPropMapping
   | typeof cellPropMapping
@@ -121,7 +124,8 @@ const componentPropMapping = Object.fromEntries([
 const ALL_TARGETED_COMPONENTS = [
   ...textComponents,
   ...tooltipComponents,
-  ...CellComponents,
+  ...cellComponents,
+  ...cellComponentsWithLink,
   ...linkComponents,
   ...pressableComponents,
 ];
@@ -308,13 +312,16 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
       if (tooltipComponents.includes(componentName as any)) {
         propMapping = { ...propMapping, ...tooltipPropMapping };
       }
-      if (CellComponents.includes(componentName as any)) {
+      if (cellComponents.includes(componentName as any)) {
         propMapping = { ...propMapping, ...cellPropMapping };
       }
       if (linkComponents.includes(componentName as any)) {
         propMapping = { ...propMapping, ...linkPropMapping };
       }
-      if (pressableComponents.includes(componentName as any)) {
+      if (
+        pressableComponents.includes(componentName as any) ||
+        cellComponentsWithLink.includes(componentName as any)
+      ) {
         propMapping = { ...propMapping, ...pressablePropMapping };
       }
     } else if (componentName in componentPropMapping) {

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.39 (10/24/2025 PST)
+
+#### 🚀 Updates
+
+- Add migrate-v7-alias-and-path script and update migrate-web-component props script.
+
 ## 0.2.38 (10/20/2025 PST)
 
 #### 🚀 Updates
