@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.40 (10/24/2025 PST)
+
+#### 🚀 Updates
+
+- Added migrator for adding spacingVariant="condensed" for ListCell and ListCellFallback. [[#4188](https://github.cbhq.net/frontend/cds/pull/4188)]
+
 ## 0.2.39 (10/24/2025 PST)
 
 #### 🚀 Updates

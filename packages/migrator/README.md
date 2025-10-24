@@ -265,6 +265,29 @@ npx jscodeshift \
   src/**/*.{ts,tsx}
 ```
 
+### Post-v8 Codemods
+
+After completing your v8 migration, you can run targeted, post-v8 codemods. For example, to add `spacingVariant="condensed"` to `ListCell` and `ListCellFallback` where it is missing:
+
+```sh
+# Yarn
+yarn cds-migrator-codemod post-v8-codemods src -- --codemod=listcellSpacingVariant --ignore-pattern='**/node_modules/**'
+
+# NPX
+npx cds-migrator-codemod post-v8-codemods src -- --codemod=listcellSpacingVariant --ignore-pattern='**/node_modules/**'
+
+# Optional: dry run and verbose
+yarn cds-migrator-codemod post-v8-codemods src -- --codemod=listcellSpacingVariant --dry -v=2
+
+# Optional: single file
+yarn cds-migrator-codemod post-v8-codemods path/to/File.tsx -- --codemod=listcellSpacingVariant
+```
+
+Notes:
+
+- This codemod assume your project already imports `ListCell`/`ListCellFallback` from v8 `@cbhq/cds-web` or `@cbhq/cds-mobile` paths. Files still using `/v7` are skipped.
+- You can omit `--codemod` to run all registered post-v8 codemods; by default this currently runs the ListCell spacingVariant codemod.
+
 ### Post-Migration Formatting & Linting (Recommended)
 
 Codemods, especially those using `jscodeshift` and `recast` for parsing and printing code, can sometimes introduce minor formatting inconsistencies (like extra parentheses or slightly different spacing) or code patterns that violate linting rules, even when only necessary changes are made.
