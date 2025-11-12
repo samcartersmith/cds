@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.41 (11/12/2025 PST)
+
+#### 🚀 Updates
+
+- Added component flag for v7 alias migrator. [[#4190](https://github.cbhq.net/frontend/cds/pull/4190)]
+
 ## 0.2.40 (10/24/2025 PST)
 
 #### 🚀 Updates

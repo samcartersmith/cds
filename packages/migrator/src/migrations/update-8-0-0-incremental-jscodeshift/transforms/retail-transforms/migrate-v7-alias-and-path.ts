@@ -43,7 +43,9 @@ function removeV7FromPath(path: string): string {
 export default function transformer(file: FileInfo, api: API, _options: Options) {
   const j = api.jscodeshift;
   const root = j(file.source);
-  void _options;
+  // Optional filter: operate only on a specific component name (e.g., --component=HStack)
+  const componentFilter =
+    (typeof _options?.component === 'string' && _options.component) || undefined;
 
   // Check if the file has a CDS import
   const hasCDSImport = root
@@ -82,7 +84,9 @@ export default function transformer(file: FileInfo, api: API, _options: Options)
         if (spec.type === 'ImportSpecifier') {
           const imported = spec.imported as Identifier;
           // Consider base imported if imported name matches (alias does not matter)
-          nonV7ImportedBaseNames.add(imported.name);
+          if (!componentFilter || imported.name === componentFilter) {
+            nonV7ImportedBaseNames.add(imported.name);
+          }
         }
       });
     });
@@ -111,6 +115,11 @@ export default function transformer(file: FileInfo, api: API, _options: Options)
           if (spec.type === 'ImportSpecifier') {
             const imported = spec.imported as Identifier;
             const local = (spec.local || imported) as Identifier;
+
+            // If a component filter is provided, only operate on that component
+            if (componentFilter && imported.name !== componentFilter) {
+              return;
+            }
 
             if (local.name !== imported.name && /V7$/.test(local.name)) {
               // Found a V7 alias
