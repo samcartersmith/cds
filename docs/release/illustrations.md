@@ -40,7 +40,7 @@ yarn changelog illustrations
 ```
 
 > - **Type of change?:** Choose **"Breaking"** for breaking changes, otherwise choose **"Update"**
-> - **Changelog message?:** "Publish illustrations YYYY/MM/DD"
+> - **Changelog message?:** "feat: Publish illustrations YYYY/MM/DD"
 > - **PR number?:** Copy/paste your PR number
 > - Skip the rest (press enter to use defaults)
 
