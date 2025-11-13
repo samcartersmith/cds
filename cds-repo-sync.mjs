@@ -46,10 +46,11 @@ const error = (message, ...args) => {
  */
 const createExec = (dirname) => {
   return (command, options = {}) =>
-    childProcess
-      .execSync(command, { cwd: dirname, encoding: 'utf-8', ...options })
-      .toString()
-      .trim();
+    childProcess.execSync(command, {
+      cwd: dirname,
+      encoding: 'utf-8',
+      ...options,
+    });
 };
 
 /**
@@ -59,15 +60,15 @@ export const validateFreshRepo = (dirname) => {
   const repoName = path.basename(dirname);
   const exec = createExec(dirname);
   console.log(`Checking the current branch for the "${repoName}" repo`);
-  const gitBranch = exec('git branch --show-current');
+  const gitBranch = exec('git branch --show-current').toString().trim();
   if (gitBranch !== 'master') {
     error(`The "${repoName}" repo is not on the "master" branch`);
   }
   console.log(`Checking the status of the "${repoName}" repo`);
-  const gitStatus = exec('git status --short');
+  const gitStatus = exec('git status --short').toString().trim();
   if (gitStatus.length > 0) error(`The "${repoName}" repo is not clean`);
   console.log(`Checking the diff of the "${repoName}" repo`);
-  const gitDiff = exec('git diff --exit-code');
+  const gitDiff = exec('git diff --exit-code').toString().trim();
   if (gitDiff.length > 0) error(`The "${repoName}" repo has changes`);
   try {
     console.log(`Checking the "origin" remote for the "${repoName}" repo`);
@@ -84,7 +85,7 @@ export const validateFreshRepo = (dirname) => {
   console.log(
     `Checking for changes on the local master branch that are not on the origin/master branch`,
   );
-  const gitBranchChanges = exec('git log origin/master..master');
+  const gitBranchChanges = exec('git log origin/master..master').toString().trim();
   if (gitBranchChanges.length > 0) {
     error(
       `The "${repoName}" repo has changes on the local master branch that are not on the origin/master branch`,
@@ -93,7 +94,7 @@ export const validateFreshRepo = (dirname) => {
   console.log(
     `Checking for changes on the origin/master branch that are not on the local master branch`,
   );
-  const gitOriginChanges = exec('git log master..origin/master');
+  const gitOriginChanges = exec('git log master..origin/master').toString().trim();
   if (gitOriginChanges.length > 0) {
     error(
       `The "${repoName}" repo has changes on the origin/master branch that are not on the local master branch`,
@@ -139,7 +140,7 @@ const main = () => {
   const exec = createExec(__dirname);
 
   console.log('Checking if git-filter-repo is installed');
-  const gitFilterRepoInstalled = exec('which git-filter-repo').trim();
+  const gitFilterRepoInstalled = exec('which git-filter-repo').toString().trim();
 
   if (gitFilterRepoInstalled !== '/opt/homebrew/bin/git-filter-repo') {
     error(
@@ -167,9 +168,11 @@ const main = () => {
 
   const openSourceRepoCommitString = exec('git rev-parse HEAD', {
     cwd: openSourceRepoPath,
-  });
+  })
+    .toString()
+    .trim();
 
-  const openSourceRepoCommitId = openSourceRepoCommitString.trim().substring(0, 7);
+  const openSourceRepoCommitId = openSourceRepoCommitString.substring(0, 7);
 
   console.log(`The ${config.openSourceRepo.name} repo is at commit ${openSourceRepoCommitId}`);
 
@@ -205,9 +208,19 @@ const main = () => {
     cwd: internalRepoPath,
   });
 
-  exec("yarn && yarn dedupe && git add . && git commit -m 'Regen yarn.lock'", {
+  exec('yarn && yarn dedupe && git add .', {
     cwd: internalRepoPath,
   });
+
+  try {
+    exec("git commit -m 'Regen yarn.lock'", {
+      cwd: internalRepoPath,
+    });
+  } catch (err) {
+    if (!err.stdout.includes('nothing to commit, working tree clean')) {
+      error(`There was an error committing the changes:`, err);
+    }
+  }
 
   exec(`git push origin ${branchName}`, {
     cwd: internalRepoPath,
