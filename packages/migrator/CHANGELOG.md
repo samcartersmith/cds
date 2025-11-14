@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.42 (11/13/2025 PST)
+
+#### 🚀 Updates
+
+- Add migrate-RemoteImage script to transform width and height value.
+
 ## 0.2.41 (11/12/2025 PST)
 
 #### 🚀 Updates

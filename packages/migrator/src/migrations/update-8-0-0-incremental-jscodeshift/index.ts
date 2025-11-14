@@ -23,6 +23,7 @@ import migrateOnKeyPressToOnKeyDown from './transforms/migrate-onKeyPress-to-onK
 import migrateOnPressToOnClick from './transforms/migrate-onPress-to-onClick';
 import migratePaletteTypes from './transforms/migrate-palette-types';
 import migratePaletteValueToCssVar from './transforms/migrate-paletteValueToCssVar';
+import migrateRemoteImage from './transforms/migrate-RemoteImage';
 import migrateRenamedCommonTypes from './transforms/migrate-renamed-common-types';
 import migrateRenamedIcons from './transforms/migrate-renamed-icons';
 import migrateResponsiveConfig from './transforms/migrate-responsive-config';
@@ -153,7 +154,7 @@ export const componentTransformMap: Record<string, TransformFunction[]> = {
   Pictogram: [migrateBasePropsImportPath],
   Pressable: linkAndButtonTransforms,
   PressableOpacity: linkAndButtonTransforms,
-  RemoteImage: [migrateMobileImportPaths, migrateColors],
+  RemoteImage: [migrateBasePropsImportPath, migrateColors, migrateRemoteImage],
   Spacer: [], // only needs to run promoteImports
   SpotIcon: [migrateBasePropsImportPath],
   SpotRectangle: [migrateBasePropsImportPath],
