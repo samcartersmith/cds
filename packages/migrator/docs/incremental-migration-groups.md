@@ -10,3 +10,10 @@ When migrating any modal-related component, migrate the full set together:
 - ModalHeader
 - ModalBody
 - ModalFooter
+
+## Select components
+
+When migrating any select-related component, migrate the full set together:
+
+- Select
+- SelectOption

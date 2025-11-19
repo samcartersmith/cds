@@ -83,7 +83,7 @@ const pressableComponents = [
   'Card',
 ] as const;
 
-const cellComponentsWithLink = ['Cell', 'ContentCell', 'ListCell'] as const;
+const cellComponentsWithLink = ['Cell', 'ContentCell', 'ListCell', 'SelectOption'] as const;
 
 const pressablePropMapping = {
   to: 'href',
