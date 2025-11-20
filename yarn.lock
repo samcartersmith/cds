@@ -2271,7 +2271,7 @@ __metadata:
   resolution: "@cbhq/cds-usage-mcp@workspace:libs/cds-usage-mcp"
   dependencies:
     "@modelcontextprotocol/sdk": "npm:^1.13.1"
-    "@sourcegraph/src": "npm:^6.2.0"
+    "@sourcegraph/src": "npm:^6.10.0"
     zod: "npm:3.24.3"
   languageName: unknown
   linkType: soft
@@ -2416,15 +2416,15 @@ __metadata:
   linkType: hard
 
 "@cbhq/client-analytics@npm:^12.10.1, @cbhq/client-analytics@npm:^12.7.2":
-  version: 12.10.1
-  resolution: "@cbhq/client-analytics@npm:12.10.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-12.10.1.tgz"
+  version: 12.12.0
+  resolution: "@cbhq/client-analytics@npm:12.12.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40cbhq%2Fclient-analytics%2F-%2F%40cbhq%2Fclient-analytics-12.12.0.tgz"
   dependencies:
     idb: "npm:^7.0.2"
     perfume.js: "npm:^9.4.0"
     ua-parser-js: "npm:^1.0.35"
   peerDependencies:
     react: ">=17.0.0"
-  checksum: 10c0/639ecab4ffbbe6f79143c08415a761e59f0c2b681d783950e3a115ecc6abccc0a4f1bbc8d8303ce0aaa4731cc0c69885115d13b2bbedad144c4c1c6b19750516
+  checksum: 10c0/6874fdc03a1bdd4b84debd3c7d3bd62db40c7242e3ba0cbb0a09f210ec86ba45dfa43de482cdb740c607cb6538dab1f7c06c53287a87d6f17b5d3bc0f696e7e8
   languageName: node
   linkType: hard
 
@@ -2475,6 +2475,15 @@ __metadata:
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
+  languageName: unknown
+  linkType: soft
+
+"@cbhq/figma-dd-metrics@workspace:libs/figma-dd-metrics":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/figma-dd-metrics@workspace:libs/figma-dd-metrics"
+  dependencies:
+    "@cbhq/client-analytics": "npm:^10.9.1"
+    "@figma/rest-api-spec": "npm:^0.34.0"
   languageName: unknown
   linkType: soft
 
@@ -3130,6 +3139,13 @@ __metadata:
   version: 2.1.1
   resolution: "@fastify/busboy@npm:2.1.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40fastify%2Fbusboy%2F-%2Fbusboy-2.1.1.tgz"
   checksum: 10c0/6f8027a8cba7f8f7b736718b013f5a38c0476eea67034c94a0d3c375e2b114366ad4419e6a6fa7ffc2ef9c6d3e0435d76dd584a7a1cbac23962fda7650b579e3
+  languageName: node
+  linkType: hard
+
+"@figma/rest-api-spec@npm:^0.34.0":
+  version: 0.34.0
+  resolution: "@figma/rest-api-spec@npm:0.34.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40figma%2Frest-api-spec%2F-%2Frest-api-spec-0.34.0.tgz"
+  checksum: 10c0/0492739dc569417528ebc3dccd739824db9bd8428797f543c1fecfd4fbe582a90e7807c9c3e70708a491fcae87f3d83015b6885619eac8bd8ba3324cc0051056
   languageName: node
   linkType: hard
 
@@ -5494,14 +5510,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sourcegraph/src@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "@sourcegraph/src@npm:6.2.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40sourcegraph%2Fsrc%2F-%2Fsrc-6.2.0.tgz"
+"@sourcegraph/src@npm:^6.10.0":
+  version: 6.10.0
+  resolution: "@sourcegraph/src@npm:6.10.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2F%40sourcegraph%2Fsrc%2F-%2Fsrc-6.10.0.tgz"
   dependencies:
     tar: "npm:^7.1.0"
   bin:
     src: src.js
-  checksum: 10c0/3d45aa26a14d9e97c6ce1b26a408b9e7e23ff279c056875a954b5b458630006b933ffa5b13cebd6122a551ea04fa7295cfcc87ab620d2c3af24b9b8adfffe1e0
+  checksum: 10c0/2049cbd616b3de5758a4848e8cebb7a39a16b3380f5c55ecf1077d96ebf39743c89a0e38deb52a1c9e6f1b60c05715ffc7c048d42fb006f50139197b65b04731
   languageName: node
   linkType: hard
 
@@ -29458,11 +29474,11 @@ __metadata:
   linkType: hard
 
 "yaml@npm:^2.2.2, yaml@npm:^2.6.0":
-  version: 2.7.0
-  resolution: "yaml@npm:2.7.0::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fyaml%2F-%2Fyaml-2.7.0.tgz"
+  version: 2.8.1
+  resolution: "yaml@npm:2.8.1::__archiveUrl=https%3A%2F%2Fartifactory.cbhq.net%3A8081%2Fartifactory%2Fapi%2Fnpm%2Fcb-npm-master%2Fyaml%2F-%2Fyaml-2.8.1.tgz"
   bin:
     yaml: bin.mjs
-  checksum: 10c0/886a7d2abbd70704b79f1d2d05fe9fb0aa63aefb86e1cb9991837dced65193d300f5554747a872b4b10ae9a12bc5d5327e4d04205f70336e863e35e89d8f4ea9
+  checksum: 10c0/7c587be00d9303d2ae1566e03bc5bc7fe978ba0d9bf39cc418c3139d37929dfcb93a230d9749f2cb578b6aa5d9ebebc322415e4b653cb83acd8bc0bc321707f3
   languageName: node
   linkType: hard
 

@@ -59,6 +59,7 @@ mjs/
 /.cache-loader
 /.linaria-cache
 /build
+libs/figma-dd-metrics/output
 
 # Yarn
 .yarn/*

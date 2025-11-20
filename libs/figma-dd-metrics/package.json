@@ -1,0 +1,23 @@
+{
+  "name": "@cbhq/figma-dd-metrics",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Figma Library Analytics integration for design system adoption metrics",
+  "keywords": [
+    "figma",
+    "analytics",
+    "design-system",
+    "metrics"
+  ],
+  "types": "./index.ts",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "@cbhq/client-analytics": "^10.9.1"
+  },
+  "devDependencies": {
+    "@figma/rest-api-spec": "^0.34.0"
+  }
+}

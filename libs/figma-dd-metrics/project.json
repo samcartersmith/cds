@@ -1,0 +1,37 @@
+{
+  "name": "figma-dd-metrics",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/figma-dd-metrics/src",
+  "projectType": "library",
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{projectRoot}/jest.config.js"
+      }
+    },
+    "typecheck": {
+      "command": "tsc --build --pretty --verbose"
+    },
+    "run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx src/main.ts",
+        "cwd": "libs/figma-dd-metrics"
+      }
+    },
+    "dev-test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx src/main.ts --csv",
+        "cwd": "libs/figma-dd-metrics"
+      }
+    }
+  }
+}

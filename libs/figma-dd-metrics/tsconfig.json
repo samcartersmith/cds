@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.project.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "../../.nx/dts/libs/figma-dd-metrics"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [],
+  "references": []
+}

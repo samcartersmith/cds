@@ -1,0 +1,103 @@
+name: Figma Library Metrics Collection
+
+on:
+  # Run daily at 9am UTC
+  schedule:
+    - cron: '0 9 * * *'
+    # Run weekly on Saturdays at 9am UTC
+    #- cron: '0 9 * * 6'
+
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      verbose_logs:
+        description: 'Enable verbose logging'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  # CDS Core Library metrics collection
+  collect-cds-core-library-metrics:
+    name: Collect CDS Core Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for CDS Core Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: k5CtyJccNQUGMI5bI4lJ2g
+          FIGMA_LIBRARY_NAME: Core
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for CDS Core Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure()
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            Figma Library Metrics collection failed for the CDS Core Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
+
+  # Base Component Library metrics collection (runs in parallel)
+  collect-base-component-library-metrics:
+    name: Collect Base Component Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for Base Component Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: NWhucsh1BmgdZYRqddRAG8
+          FIGMA_LIBRARY_NAME: Base
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for Base Component Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure()
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            Figma Library Metrics collection failed for the Base Component Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
