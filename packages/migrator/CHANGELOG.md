@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.44 (11/25/2025 PST)
+
+#### 🚀 Updates
+
+- Add Dropdown and Pressable transform.
+
 ## 0.2.43 (11/18/2025 PST)
 
 #### 🚀 Updates

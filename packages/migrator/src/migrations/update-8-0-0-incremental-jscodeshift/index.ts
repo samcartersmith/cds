@@ -31,6 +31,7 @@ import migrateSpacerGapToGap from './transforms/migrate-spacerGap-to-gap';
 import migrateSpacingOffsetToPaddingMargin from './transforms/migrate-spacing-offset-to-padding-margin';
 import migrateSparklineInteractiveStrokeColor from './transforms/migrate-sparkline-interactive-strokeColor';
 import migrateTextDisplay from './transforms/migrate-text-display';
+import migratePressable from './transforms/migrate-Pressable';
 // hooks transforms
 import migrateUseAccessibleForeground from './transforms/migrate-useAccessibleForeground';
 import migrateUseLineHeightMap from './transforms/migrate-useLineHeightMap';
@@ -136,6 +137,7 @@ export const componentTransformMap: Record<string, TransformFunction[]> = {
   ContentCell: cellTransforms,
   ContentCellFallback: cellTransforms,
   Divider: [...boxTransforms],
+  Dropdown: [],
   Fallback: boxTransforms,
   FullscreenModal: [migrateWebImportPaths],
   Grid: [...boxTransforms, migrateElevatedComponents],
@@ -156,8 +158,8 @@ export const componentTransformMap: Record<string, TransformFunction[]> = {
   ModalWrapper: [migrateWebImportPaths],
   NativeTextArea: [migrateOnPressToOnClick],
   Pictogram: [migrateBasePropsImportPath],
-  Pressable: linkAndButtonTransforms,
-  PressableOpacity: linkAndButtonTransforms,
+  Pressable: [...linkAndButtonTransforms, migratePressable],
+  PressableOpacity: [...linkAndButtonTransforms, migratePressable],
   Radio: [],
   RadioGroup: [migrateBasePropsImportPath],
   RemoteImage: [migrateBasePropsImportPath, migrateColors, migrateRemoteImage],
@@ -202,28 +204,21 @@ export default function mainTransform(file: FileInfo, api: API, options: Options
   if (transformType === 'component' && componentName) {
     const transformsToRun =
       componentTransformMap[componentName as keyof typeof componentTransformMap];
-    if (transformsToRun.length) {
-      console.log(
-        `INFO [${file.path}]: Running incremental migration for component: '${componentName}'`,
-      );
-      let source = file.source;
-      for (const transform of [...transformsToRun, promoteImports]) {
-        try {
-          const newSource = transform({ ...file, source }, api, options);
-          if (newSource && newSource !== source) {
-            source = newSource;
-          }
-        } catch (error) {
-          logMigrationError(file.path, transform.name, error);
+    console.log(
+      `INFO [${file.path}]: Running incremental migration for component: '${componentName}'`,
+    );
+    let source = file.source;
+    for (const transform of [...transformsToRun, promoteImports]) {
+      try {
+        const newSource = transform({ ...file, source }, api, options);
+        if (newSource && newSource !== source) {
+          source = newSource;
         }
+      } catch (error) {
+        logMigrationError(file.path, transform.name, error);
       }
-      return source;
-    } else {
-      console.warn(
-        `WARN [${file.path}]: No component migration found for '${componentName}'. Skipping.`,
-      );
-      return file.source;
     }
+    return source;
   }
 
   if (transformType === 'hooks' && hookName) {
