@@ -33,6 +33,8 @@ import type {
   VariableDeclarator,
 } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
 const webPropMapping = {
   onPress: 'onClick',
   onBackButtonPress: 'onBackButtonClick',
@@ -42,11 +44,16 @@ const mobilePropMapping = {
   onBackButtonPress: 'onBackButtonClick',
 } as const;
 
+const CDS_PACKAGES = ['@cbhq/cds-web', '@cbhq/cds-mobile'];
+
 export default function transformer(file: FileInfo, api: API, options: Options) {
   const j = api.jscodeshift;
   const root = j(file.source);
 
   const platform = options.platform as 'web' | 'mobile' | undefined;
+
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
 
   if (!platform) {
     console.warn('No platform specified. Use --platform=web or --platform=mobile');
@@ -55,7 +62,6 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
 
   // Determine which prop mapping to use based on platform
   const propMapping = platform === 'web' ? webPropMapping : mobilePropMapping;
-  const packageName = platform === 'web' ? '@cbhq/cds-web' : '@cbhq/cds-mobile';
 
   // Check if the file has the relevant CDS import
   const hasCDSImport = root
@@ -64,7 +70,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
       (path: ASTPath<ImportDeclaration>) =>
         path.value.source &&
         typeof path.value.source.value === 'string' &&
-        path.value.source.value.startsWith(packageName),
+        PACKAGE_PATHS.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
     );
 
   if (!hasCDSImport) {
@@ -81,7 +87,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     .find(j.ImportDeclaration)
     .filter((path: ASTPath<ImportDeclaration>) => {
       const source = path.node.source.value;
-      return typeof source === 'string' && source.startsWith(packageName);
+      return typeof source === 'string' && PACKAGE_PATHS.some((pkg) => source.startsWith(pkg));
     })
     .forEach((path: ASTPath<ImportDeclaration>) => {
       path.node.specifiers?.forEach((spec) => {

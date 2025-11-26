@@ -32,6 +32,7 @@ import {
 } from 'jscodeshift';
 
 import { DEFAULT_PRINT_OPTIONS } from '../constants';
+import { getCustomPackages } from '../helpers/get-custom-packages';
 
 // Mapping of old foreground colors to new colors
 const foregroundColorMapping = {
@@ -87,13 +88,16 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const printOptions = options.printOptions || DEFAULT_PRINT_OPTIONS;
   const root = j(file.source);
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   const hasCDSImport = root
     .find(j.ImportDeclaration)
     .some(
       (path: ASTPath<ImportDeclaration>) =>
         path.value.source &&
         typeof path.value.source.value === 'string' &&
-        CDS_PACKAGES.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
+        PACKAGE_PATHS.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
     );
 
   if (!hasCDSImport) {
@@ -108,10 +112,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     .find(j.ImportDeclaration)
     .filter((path: ASTPath<ImportDeclaration>) => {
       const source = path.node.source.value;
-      return (
-        typeof source === 'string' &&
-        (source.startsWith(CDS_PACKAGES[0]) || source.startsWith(CDS_PACKAGES[1]))
-      );
+      return typeof source === 'string' && PACKAGE_PATHS.some((pkg) => source.startsWith(pkg));
     })
     .forEach((path: ASTPath<ImportDeclaration>) => {
       path.node.specifiers?.forEach((spec) => {
@@ -172,19 +173,24 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   // Find all JSX elements with color, background, borderColor, or labelColor props,  whose tag matches a relevant name or namespace
   const elements = root.find(j.JSXElement).filter((path: ASTPath<JSXElement>) => {
     const openingElement = path.node.openingElement;
-    let isRelevantComponent = false;
     let currentComponentName: string | undefined;
 
     if (openingElement.name.type === 'JSXIdentifier') {
       currentComponentName = openingElement.name.name;
-      // <Box ...> or <Title ...>
-      isRelevantComponent = relevantTagNames.has(currentComponentName);
-    } else if (openingElement.name.type === 'JSXMemberExpression') {
-      // <CDS.Box ...>
-      const object = openingElement.name.object;
-      if (object.type === 'JSXIdentifier') {
-        isRelevantComponent = componentNamespaceNames.has(object.name);
+      if (!relevantTagNames.has(currentComponentName)) {
+        return false;
       }
+    } else if (openingElement.name.type === 'JSXMemberExpression') {
+      const object = openingElement.name.object;
+      const property = openingElement.name.property;
+      if (object.type !== 'JSXIdentifier' || !componentNamespaceNames.has(object.name)) {
+        return false;
+      }
+      if (property.type === 'JSXIdentifier') {
+        currentComponentName = property.name;
+      }
+    } else {
+      return false;
     }
 
     // If a component name is passed, only transform that component

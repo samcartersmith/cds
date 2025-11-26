@@ -30,6 +30,7 @@ import type {
 } from 'jscodeshift';
 
 import { DEFAULT_PRINT_OPTIONS } from '../constants';
+import { getCustomPackages } from '../helpers/get-custom-packages';
 
 // Mapping of old border radius values to new values
 const borderWidthMapping = {
@@ -50,13 +51,16 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const printOptions = options.printOptions || DEFAULT_PRINT_OPTIONS;
   const root = j(file.source);
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   const hasCDSImport = root
     .find(j.ImportDeclaration)
     .some(
       (path: ASTPath<ImportDeclaration>) =>
         path.value.source &&
         typeof path.value.source.value === 'string' &&
-        CDS_PACKAGES.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
+        PACKAGE_PATHS.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
     );
 
   if (!hasCDSImport) {
@@ -71,10 +75,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     .find(j.ImportDeclaration)
     .filter((path: ASTPath<ImportDeclaration>) => {
       const source = path.node.source.value;
-      return (
-        typeof source === 'string' &&
-        (source.startsWith(CDS_PACKAGES[0]) || source.startsWith(CDS_PACKAGES[1]))
-      );
+      return typeof source === 'string' && PACKAGE_PATHS.some((pkg) => source.startsWith(pkg));
     })
     .forEach((path: ASTPath<ImportDeclaration>) => {
       path.node.specifiers?.forEach((spec) => {

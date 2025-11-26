@@ -13,6 +13,8 @@
  */
 import type { API, ASTPath, FileInfo, ImportDeclaration, Options } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
 const propMapping = {
   spacing: 'padding',
   spacingStart: 'paddingStart',
@@ -47,6 +49,9 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const j = api.jscodeshift;
   const root = j(file.source);
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   // Check if the file has CellSpacing imported from CDS packages
   const hasCellSpacingImport = root
     .find(j.ImportDeclaration)
@@ -54,7 +59,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
       const source = path.value.source;
       if (!source || typeof source.value !== 'string') return false;
 
-      const isFromCDSPackage = CDS_PACKAGES.some(
+      const isFromCDSPackage = PACKAGE_PATHS.some(
         (pkg) => source.value && typeof source.value === 'string' && source.value.startsWith(pkg),
       );
 

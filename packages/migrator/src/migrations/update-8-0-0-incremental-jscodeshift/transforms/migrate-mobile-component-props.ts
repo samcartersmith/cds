@@ -31,6 +31,8 @@ import type {
   VariableDeclarator,
 } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
 const textComponents = [
   'TextBody',
   'TextCaption',
@@ -89,6 +91,9 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   // Get target component from options
   const targetComponent = options.component as string | undefined;
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   // Validate target component if specified
   if (targetComponent && !ALL_TARGETED_COMPONENTS.includes(targetComponent as any)) {
     // If component is specified but not in ALL_TARGETED_COMPONENTS, skip transformation
@@ -99,7 +104,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const hasCDSImport = root
     .find(j.ImportDeclaration)
     .some((path: ASTPath<ImportDeclaration>) =>
-      CDS_PACKAGES.some(
+      PACKAGE_PATHS.some(
         (pkg) =>
           typeof path.node.source.value === 'string' && path.node.source.value.startsWith(pkg),
       ),
@@ -117,7 +122,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     .find(j.ImportDeclaration)
     .filter((path: ASTPath<ImportDeclaration>) => {
       const source = path.node.source.value;
-      return typeof source === 'string' && CDS_PACKAGES.some((pkg) => source.startsWith(pkg));
+      return typeof source === 'string' && PACKAGE_PATHS.some((pkg) => source.startsWith(pkg));
     })
     .forEach((path: ASTPath<ImportDeclaration>) => {
       if (!path.node.specifiers) return;

@@ -116,6 +116,20 @@ async function run() {
           choices: Object.keys(componentTransformMap),
         },
       ]);
+      const { customPackagesInput } = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'customPackagesInput',
+          message:
+            'Optional: enter comma-separated custom package names to include (press enter to skip)',
+          default: '',
+        },
+      ]);
+      const customPackages =
+        customPackagesInput
+          .split(',')
+          .map((s: string) => s.trim())
+          .filter((s: string) => s.length > 0) || [];
       console.log(`Running transform for ${componentName}...`);
       await executeJscodeshift({
         directory,
@@ -123,6 +137,7 @@ async function run() {
         platform,
         transformStep: 'component',
         ignorePattern,
+        customPackages,
       });
       break;
     }
@@ -320,6 +335,7 @@ async function executeJscodeshift({
   platform,
   typeName,
   importPath,
+  customPackages,
 }: {
   directory: string;
   transformStep?: string;
@@ -333,6 +349,7 @@ async function executeJscodeshift({
   typeTransformName?: string;
   typeName?: string;
   importPath?: string;
+  customPackages?: string[];
 }) {
   const jscodeshiftArgs = [
     directory,
@@ -381,6 +398,10 @@ async function executeJscodeshift({
 
   if (miscTransformName) {
     jscodeshiftArgs.push(`--miscTransform=${miscTransformName}`);
+  }
+
+  if (customPackages && customPackages.length > 0) {
+    jscodeshiftArgs.push(`--custom-packages=${JSON.stringify(customPackages)}`);
   }
 
   return new Promise<void>((resolve) => {

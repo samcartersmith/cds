@@ -76,6 +76,7 @@ The script will guide you through the following questions:
 - **"What platform do you want to run the transform on?"**: Choose `web` or `mobile`. You can also specify the platform as a command-line argument, e.g. `yarn cds-migrator-interactive src --mobile`.
 - **"What do you want to transform?"**:
   - **A specific component**: Choose a single component to migrate from a list.
+    - You will be asked: "Optional: enter comma-separated custom package names to include". Enter additional package name prefixes (e.g., `@cbhq/react-native-core`) to be treated as CDS packages during component migrations. Leave blank to skip.
   - **Hooks**: Runs only hook-related transforms (e.g., `useSpectrum`).
   - **Imports**: Runs only import path migrations. When selected, you can choose to run a specific import path migration or all of them.
   - **Types**: Runs only type-related transforms. When selected, you can choose to migrate a specific type or all of them.
@@ -120,6 +121,11 @@ After running the base transform, you can migrate different parts of your codeba
   ```sh
   # Example: Run all migrations for the Box component for web
   yarn cds-migrator-codemod update-8-0-0-incremental src -- --platform=web --component=Box
+  ```
+  You can include additional package prefixes to be treated as CDS packages during component migrations with `--custom-packages` (JSON array):
+  ```sh
+  # Example: Treat @cbhq/react-native-core as an additional CDS package prefix
+  yarn cds-migrator-codemod update-8-0-0-incremental src -- --platform=mobile --component=Box --custom-packages='["@cbhq/react-native-core"]'
   ```
 - **To migrate only hooks:**
   ```sh

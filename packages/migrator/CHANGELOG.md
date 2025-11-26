@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.45 (11/26/2025 PST)
+
+#### 🚀 Updates
+
+- Added support to pass custom packages flag on CDS migrator.
+
 ## 0.2.44 (11/25/2025 PST)
 
 #### 🚀 Updates

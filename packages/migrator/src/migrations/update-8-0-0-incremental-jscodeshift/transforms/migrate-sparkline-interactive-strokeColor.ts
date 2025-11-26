@@ -25,7 +25,9 @@ import type {
   Options,
 } from 'jscodeshift';
 
-const CDS_VIS_PACKAGES = ['@cbhq/cds-web-visualization', '@cbhq/cds-mobile-visualization'];
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
+const CDS_PACKAGES = ['@cbhq/cds-web-visualization', '@cbhq/cds-mobile-visualization'];
 
 const TARGET_IMPORTED_NAME = 'SparklineInteractive';
 
@@ -50,12 +52,15 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const j = api.jscodeshift;
   const root = j(file.source);
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   // Detect relevant imports first to avoid unnecessary re-printing
   const hasRelevantImport = root
     .find(j.ImportDeclaration)
     .some((path: ASTPath<ImportDeclaration>) => {
       const source = path.node.source.value;
-      return typeof source === 'string' && CDS_VIS_PACKAGES.some((pkg) => source.startsWith(pkg));
+      return typeof source === 'string' && PACKAGE_PATHS.some((pkg) => source.startsWith(pkg));
     });
 
   if (!hasRelevantImport) {
@@ -70,7 +75,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     .find(j.ImportDeclaration)
     .filter((path: ASTPath<ImportDeclaration>) => {
       const source = path.node.source.value;
-      return typeof source === 'string' && CDS_VIS_PACKAGES.some((pkg) => source.startsWith(pkg));
+      return typeof source === 'string' && PACKAGE_PATHS.some((pkg) => source.startsWith(pkg));
     })
     .forEach((path: ASTPath<ImportDeclaration>) => {
       if (!path.node.specifiers) return;

@@ -11,19 +11,26 @@
  * <RemoteImage source="https://example.com/image.jpg" width={32} height={32} />
  */
 
-import type { API, ASTPath, FileInfo, ImportDeclaration, JSXElement } from 'jscodeshift';
+import type { API, ASTPath, FileInfo, ImportDeclaration, JSXElement, Options } from 'jscodeshift';
 
-export default function transformer(file: FileInfo, api: API) {
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
+const CDS_PACKAGES = ['@cbhq/cds-web'];
+
+export default function transformer(file: FileInfo, api: API, options: Options) {
   const j = api.jscodeshift;
   const root = j(file.source);
   let modified = false;
+
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
 
   // Step 1: Collect RemoteImage local names imported from @cbhq/cds-web
   const remoteImageLocalNames: string[] = [];
 
   root.find(j.ImportDeclaration).forEach((path: ASTPath<ImportDeclaration>) => {
     const importPath = path.node.source.value;
-    if (typeof importPath === 'string' && importPath.includes('@cbhq/cds-web')) {
+    if (typeof importPath === 'string' && PACKAGE_PATHS.some((pkg) => importPath.startsWith(pkg))) {
       // Find the imported name (could be aliased)
       for (const spec of path.node.specifiers || []) {
         if (j.ImportSpecifier.check(spec) && spec.imported.name === 'RemoteImage') {

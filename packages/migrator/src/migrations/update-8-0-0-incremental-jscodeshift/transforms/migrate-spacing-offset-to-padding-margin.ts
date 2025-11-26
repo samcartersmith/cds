@@ -59,6 +59,8 @@ import type {
   VariableDeclarator,
 } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
 const propMapping = {
   spacing: 'padding',
   spacingStart: 'paddingStart',
@@ -93,6 +95,9 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const j = api.jscodeshift;
   const root = j(file.source);
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   // Check if the file has a CDS import
   const hasCDSImport = root
     .find(j.ImportDeclaration)
@@ -100,7 +105,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
       (path: ASTPath<ImportDeclaration>) =>
         path.value.source &&
         typeof path.value.source.value === 'string' &&
-        CDS_PACKAGES.some(
+        PACKAGE_PATHS.some(
           (pkg) =>
             typeof path.value.source.value === 'string' && path.value.source.value.startsWith(pkg),
         ),
@@ -120,10 +125,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     .find(j.ImportDeclaration)
     .filter((path: ASTPath<ImportDeclaration>) => {
       const source = path.node.source.value;
-      return (
-        typeof source === 'string' &&
-        (source.startsWith(CDS_PACKAGES[0]) || source.startsWith(CDS_PACKAGES[1]))
-      );
+      return typeof source === 'string' && PACKAGE_PATHS.some((pkg) => source.startsWith(pkg));
     })
     .forEach((path: ASTPath<ImportDeclaration>) => {
       path.node.specifiers?.forEach((spec) => {

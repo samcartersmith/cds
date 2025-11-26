@@ -22,6 +22,8 @@ import type {
   StringLiteral,
 } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
 const basePropToComponentPathMap: Record<string, string> = {
   // shared types
   VisualizationContainerBaseProps: 'visualizations/VisualizationContainer',
@@ -180,6 +182,9 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const root = j(file.source);
   let modified = false; // Initialize modified flag
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   const componentName = options.component as string | undefined;
   let targetMap = basePropToComponentPathMap;
 
@@ -226,7 +231,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
       (path: ASTPath<ImportDeclaration>) =>
         path.value.source &&
         typeof path.value.source.value === 'string' &&
-        CDS_PACKAGES.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
+        PACKAGE_PATHS.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
     );
   if (!hasCDSImport) {
     return file.source;
@@ -243,7 +248,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     .find(j.ImportDeclaration, {
       source: {
         value: (v: string | boolean | null | number | RegExp) =>
-          typeof v === 'string' && CDS_PACKAGES.some((pkg) => v.startsWith(pkg)),
+          typeof v === 'string' && PACKAGE_PATHS.some((pkg) => v.startsWith(pkg)),
       },
     })
     .forEach((generalImportPath: ASTPath<ImportDeclaration>) => {

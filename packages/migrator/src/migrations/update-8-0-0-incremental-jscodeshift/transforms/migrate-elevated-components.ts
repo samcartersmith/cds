@@ -19,6 +19,7 @@
  */
 import type { API, ASTPath, FileInfo, ImportDeclaration, Options } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
 import { logManualMigration } from '../helpers/manual-migration-logger';
 
 const targetedComponents = [
@@ -32,15 +33,17 @@ const targetedComponents = [
   'FeedCard',
 ];
 
+const CDS_PACKAGES = ['@cbhq/cds-web', '@cbhq/cds-mobile'];
+
 export default function transformer(file: FileInfo, api: API, options: Options) {
   const j = api.jscodeshift;
   const root = j(file.source);
   let modified = false;
 
-  // Get platform and target component from options
-  const platform = options.platform as string | undefined;
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   const targetComponent = options.component as string | undefined;
-  const targetPackage = platform === 'mobile' ? '@cbhq/cds-mobile' : '@cbhq/cds-web';
 
   // Validate target component if specified
   if (targetComponent && !targetedComponents.includes(targetComponent)) {
@@ -56,7 +59,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     const sourceValue = path.value.source.value;
     if (
       typeof sourceValue === 'string' &&
-      (sourceValue.startsWith('@cbhq/cds-web') || sourceValue.startsWith('@cbhq/cds-mobile'))
+      PACKAGE_PATHS.some((pkg) => sourceValue.startsWith(pkg))
     ) {
       hasCdsImport = true;
 

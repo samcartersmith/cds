@@ -48,6 +48,7 @@
  */
 import type { API, ASTPath, FileInfo, ImportDeclaration, Options } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
 import { logManualMigration } from '../helpers/manual-migration-logger';
 
 // Helper function to detect if a variable is potentially from props
@@ -202,15 +203,17 @@ const uiIconExceptions = [
   'wrapToken',
 ];
 
+const CDS_PACKAGES = ['@cbhq/cds-web', '@cbhq/cds-mobile'];
+
 export default function transformer(file: FileInfo, api: API, options: Options) {
   const j = api.jscodeshift;
   const root = j(file.source);
   let modified = false;
 
-  // Get platform and component from options
-  const platform = options.platform as string | undefined;
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   const targetComponent = options.component as string | undefined;
-  const targetPackage = platform === 'mobile' ? '@cbhq/cds-mobile' : '@cbhq/cds-web';
 
   // Validate target component if specified
   if (targetComponent && !Object.keys(componentPropMap).includes(targetComponent)) {
@@ -225,9 +228,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     const sourceValue = path.value.source.value;
     if (
       typeof sourceValue === 'string' &&
-      (sourceValue.startsWith(targetPackage) ||
-        sourceValue.startsWith(':rn/cds-wallet/components') || // TODO: remove this once wallet is migrated
-        sourceValue.startsWith('@cbhq/react-native-core/components/interactables')) // TODO: remove this once retail mobile is migrated
+      PACKAGE_PATHS.some((pkg) => sourceValue.startsWith(pkg))
     ) {
       path.value.specifiers?.forEach((spec) => {
         if (spec.type === 'ImportSpecifier') {

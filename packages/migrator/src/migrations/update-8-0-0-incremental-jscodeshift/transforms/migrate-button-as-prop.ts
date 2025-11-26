@@ -33,6 +33,8 @@ import type {
   VariableDeclarator,
 } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
 const BUTTON_COMPONENT_NAME = 'Button';
 const ICON_BUTTON_COMPONENT_NAME = 'IconButton';
 const AVATAR_BUTTON_COMPONENT_NAME = 'AvatarButton';
@@ -160,6 +162,9 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const root = j(file.source);
   let modified = false;
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   // Get target component from options
   const targetComponent = options.component as string | undefined;
 
@@ -176,7 +181,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
       (path: ASTPath<ImportDeclaration>) =>
         path.value.source &&
         typeof path.value.source.value === 'string' &&
-        CDS_PACKAGES.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
+        PACKAGE_PATHS.some((pkg) => (path.value.source.value as string).startsWith(pkg)),
     );
 
   if (!hasCDSImport) {
@@ -187,42 +192,42 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const buttonRefs = findComponentReferences(
     j,
     root,
-    CDS_PACKAGES,
+    PACKAGE_PATHS,
     BUTTON_COMPONENT_NAME,
     targetComponent,
   );
   const iconButtonRefs = findComponentReferences(
     j,
     root,
-    CDS_PACKAGES,
+    PACKAGE_PATHS,
     ICON_BUTTON_COMPONENT_NAME,
     targetComponent,
   );
   const avatarButtonRefs = findComponentReferences(
     j,
     root,
-    CDS_PACKAGES,
+    PACKAGE_PATHS,
     AVATAR_BUTTON_COMPONENT_NAME,
     targetComponent,
   );
   const linkRefs = findComponentReferences(
     j,
     root,
-    CDS_PACKAGES,
+    PACKAGE_PATHS,
     LINK_COMPONENT_NAME,
     targetComponent,
   );
   const pressableRefs = findComponentReferences(
     j,
     root,
-    CDS_PACKAGES,
+    PACKAGE_PATHS,
     PRESSABLE_COMPONENT_NAME,
     targetComponent,
   );
   const pressableOpacityRefs = findComponentReferences(
     j,
     root,
-    CDS_PACKAGES,
+    PACKAGE_PATHS,
     PRESSABLE_OPACITY_COMPONENT_NAME,
     targetComponent,
   );

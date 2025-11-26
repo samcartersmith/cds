@@ -36,6 +36,7 @@ import type {
 } from 'jscodeshift';
 
 import { DEFAULT_PRINT_OPTIONS } from '../constants';
+import { getCustomPackages } from '../helpers/get-custom-packages';
 
 const CDS_PACKAGES = ['@cbhq/cds-web'];
 const PRESSABLE_COMPONENT_NAME = 'Pressable';
@@ -126,12 +127,15 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const printOptions = options.printOptions || DEFAULT_PRINT_OPTIONS;
   let modified = false;
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   const targetComponent = options.component as string | undefined;
 
   const hasCDSImport = root
     .find(j.ImportDeclaration)
     .some((path: ASTPath<ImportDeclaration>) =>
-      CDS_PACKAGES.some(
+      PACKAGE_PATHS.some(
         (pkg) =>
           typeof path.value.source.value === 'string' && path.value.source.value.startsWith(pkg),
       ),
@@ -144,14 +148,14 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const pressableRefs = findComponentReferences(
     j,
     root,
-    CDS_PACKAGES,
+    PACKAGE_PATHS,
     PRESSABLE_COMPONENT_NAME,
     targetComponent,
   );
   const pressableOpacityRefs = findComponentReferences(
     j,
     root,
-    CDS_PACKAGES,
+    PACKAGE_PATHS,
     PRESSABLE_OPACITY_COMPONENT_NAME,
     targetComponent,
   );

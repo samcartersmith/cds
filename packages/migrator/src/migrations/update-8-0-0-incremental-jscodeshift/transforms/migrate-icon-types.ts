@@ -39,12 +39,9 @@ import type {
   Options,
 } from 'jscodeshift';
 
-const CDS_PACKAGES = [
-  '@cbhq/cds-web',
-  '@cbhq/cds-mobile',
-  ':rn/cds-wallet/components', // TODO remove this once wallet mobile is migrated
-  '@cbhq/react-native-core/components/interactables',
-]; // TODO remove this once retail mobile is migrated
+import { getCustomPackages } from '../helpers/get-custom-packages';
+
+const CDS_PACKAGES = ['@cbhq/cds-web', '@cbhq/cds-mobile'];
 const CDS_COMMON_PACKAGE = '@cbhq/cds-common';
 const CDS_ICONS_PACKAGE = '@cbhq/cds-icons';
 
@@ -63,6 +60,9 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const j = api.jscodeshift;
   const root = j(file.source);
   let modified = false;
+
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
 
   // Get type from options
   const targetType = options.typeName as string | undefined;
@@ -112,7 +112,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     const sourceValue = path.value.source.value;
     return (
       typeof sourceValue === 'string' &&
-      (CDS_PACKAGES.some((pkg) => sourceValue.startsWith(pkg)) ||
+      (PACKAGE_PATHS.some((pkg) => sourceValue.startsWith(pkg)) ||
         sourceValue.includes(CDS_ICONS_PACKAGE) ||
         sourceValue.startsWith(CDS_COMMON_PACKAGE))
     );
@@ -138,7 +138,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
 
     if (
       typeof sourceValue === 'string' &&
-      (CDS_PACKAGES.some((pkg) => sourceValue.startsWith(pkg)) ||
+      (PACKAGE_PATHS.some((pkg) => sourceValue.startsWith(pkg)) ||
         sourceValue.startsWith(CDS_ICONS_PACKAGE) ||
         sourceValue.startsWith(CDS_COMMON_PACKAGE))
     ) {

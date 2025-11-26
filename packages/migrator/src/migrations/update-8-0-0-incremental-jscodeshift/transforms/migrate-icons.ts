@@ -186,10 +186,9 @@ import type {
   ImportSpecifier,
   JSXAttribute,
   Options,
-  StringLiteral,
 } from 'jscodeshift';
-import { JSXElement } from 'jscodeshift';
 
+import { getCustomPackages } from '../helpers/get-custom-packages';
 import { logManualMigration } from '../helpers/manual-migration-logger';
 
 const componentPropMap: Record<string, string[] | [string, string][]> = {
@@ -226,12 +225,7 @@ function hasSuffix(iconName: string): boolean {
   return iconName.endsWith('Active') || iconName.endsWith('Inactive');
 }
 
-const CDS_PACKAGES = [
-  '@cbhq/cds-web',
-  '@cbhq/cds-mobile',
-  ':rn/cds-wallet/components', // TODO remove this once wallet mobile is migrated
-  '@cbhq/react-native-core/components/interactables',
-]; // TODO remove this once retail mobile is migrated
+const CDS_PACKAGES = ['@cbhq/cds-web', '@cbhq/cds-mobile'];
 const CDS_COMMON_PACKAGE = '@cbhq/cds-common';
 const CDS_ICONS_PACKAGE = '@cbhq/cds-icons';
 
@@ -263,12 +257,15 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const root = j(file.source);
   let modified = false;
 
+  const customPackages = getCustomPackages(options);
+  const PACKAGE_PATHS = [...CDS_PACKAGES, ...customPackages];
+
   // Step 1: Check if the file has CDS imports or icon-related content
   const hasCDSImport = root.find(j.ImportDeclaration).some((path: ASTPath<ImportDeclaration>) => {
     const sourceValue = path.value.source.value;
     return (
       typeof sourceValue === 'string' &&
-      (CDS_PACKAGES.some((pkg) => sourceValue.startsWith(pkg)) ||
+      (PACKAGE_PATHS.some((pkg) => sourceValue.startsWith(pkg)) ||
         sourceValue.includes(CDS_ICONS_PACKAGE) ||
         sourceValue.startsWith(CDS_COMMON_PACKAGE))
     );
@@ -289,7 +286,6 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
   const targetComponent = options.component as string | undefined;
   const isWebPlatform = platform === 'web';
   const isMobilePlatform = platform === 'mobile';
-  const targetPackage = platform === 'mobile' ? '@cbhq/cds-mobile' : '@cbhq/cds-web';
 
   // Validate target component if specified
   if (targetComponent && !Object.keys(componentPropMap).includes(targetComponent)) {
@@ -327,9 +323,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     const sourceValue = path.value.source.value;
     if (
       typeof sourceValue === 'string' &&
-      (sourceValue.startsWith(targetPackage) ||
-        sourceValue.startsWith(':rn/cds-wallet/components') || // TODO: remove this once wallet is migrated
-        sourceValue.startsWith('@cbhq/react-native-core/components/interactables')) // TODO: remove this once retail mobile is migrated
+      PACKAGE_PATHS.some((pkg) => sourceValue.startsWith(pkg))
     ) {
       path.value.specifiers?.forEach((spec) => {
         if (spec.type === 'ImportSpecifier') {
