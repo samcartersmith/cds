@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.46 (12/1/2025 PST)
+
+#### 🐞 Fixes
+
+- Fix Pressable migration.
+
 ## 0.2.45 (11/26/2025 PST)
 
 #### 🚀 Updates

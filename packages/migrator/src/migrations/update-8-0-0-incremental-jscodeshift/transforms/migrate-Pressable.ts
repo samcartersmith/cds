@@ -1,5 +1,5 @@
 /**
- * Codemod to add alignItems and justifyContent props to Pressable components.
+ * Codemod to add alignItems and justifyContent props to Pressable components. This is not required for all Pressable components.
  *
  * Example transformations:
  * Before:

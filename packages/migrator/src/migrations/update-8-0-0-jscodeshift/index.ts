@@ -17,7 +17,6 @@ import migrateOnKeypressToOnKeydown from './transforms/migrate-onKeyPress-to-onK
 import migrateOnPressToOnClick from './transforms/migrate-onPress-to-onClick';
 import migratePaletteTypes from './transforms/migrate-palette-types';
 import migratePaletteValueToCssVar from './transforms/migrate-paletteValueToCssVar';
-import migratePressable from './transforms/migrate-Pressable';
 import migrateRemoteImage from './transforms/migrate-RemoteImage';
 import migrateRenamedCommonTypes from './transforms/migrate-renamed-common-types';
 import migrateRenamedIcons from './transforms/migrate-renamed-icons';
@@ -71,7 +70,6 @@ export default function mainTransform(file: FileInfo, api: API, options: Options
     transformsToRun.push(migrateWebPaths);
     transformsToRun.push(migrateTextDisplay);
     transformsToRun.push(migrateRemoteImage);
-    transformsToRun.push(migratePressable);
     console.log(`INFO [${file.path}]: Added web-specific transforms.`);
   }
 

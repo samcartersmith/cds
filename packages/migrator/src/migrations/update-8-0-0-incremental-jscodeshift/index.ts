@@ -31,7 +31,6 @@ import migrateSpacerGapToGap from './transforms/migrate-spacerGap-to-gap';
 import migrateSpacingOffsetToPaddingMargin from './transforms/migrate-spacing-offset-to-padding-margin';
 import migrateSparklineInteractiveStrokeColor from './transforms/migrate-sparkline-interactive-strokeColor';
 import migrateTextDisplay from './transforms/migrate-text-display';
-import migratePressable from './transforms/migrate-Pressable';
 // hooks transforms
 import migrateUseAccessibleForeground from './transforms/migrate-useAccessibleForeground';
 import migrateUseLineHeightMap from './transforms/migrate-useLineHeightMap';
@@ -158,8 +157,8 @@ export const componentTransformMap: Record<string, TransformFunction[]> = {
   ModalWrapper: [migrateWebImportPaths],
   NativeTextArea: [migrateOnPressToOnClick],
   Pictogram: [migrateBasePropsImportPath],
-  Pressable: [...linkAndButtonTransforms, migratePressable],
-  PressableOpacity: [...linkAndButtonTransforms, migratePressable],
+  Pressable: [...linkAndButtonTransforms],
+  PressableOpacity: [...linkAndButtonTransforms],
   Radio: [],
   RadioGroup: [migrateBasePropsImportPath],
   RemoteImage: [migrateBasePropsImportPath, migrateColors, migrateRemoteImage],
