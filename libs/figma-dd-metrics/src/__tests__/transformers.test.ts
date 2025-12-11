@@ -7,7 +7,6 @@ import type {
 import { MetricType } from '@cbhq/client-analytics';
 
 import {
-  convertWeekToUnixTimestamp,
   transformActionsComponentData,
   transformActionsTeamData,
   transformUsageComponentData,
@@ -17,27 +16,6 @@ import {
 describe('transformers', () => {
   const mockLibraryFileKey = 'abc123';
   const mockLibraryName = 'Test Library';
-
-  describe('convertWeekToUnixTimestamp', () => {
-    it('should convert ISO 8601 week string to Unix timestamp in milliseconds', () => {
-      const weekString = '2024-11-10';
-      const result = convertWeekToUnixTimestamp(weekString);
-
-      // Verify it's a valid timestamp string
-      expect(result).toMatch(/^\d+$/);
-
-      // Verify it can be converted back to a date
-      const date = new Date(parseInt(result, 10));
-      expect(date.getTime()).toBe(new Date(weekString).getTime());
-    });
-
-    it('should handle different date formats', () => {
-      const weekString = '2023-01-01';
-      const result = convertWeekToUnixTimestamp(weekString);
-
-      expect(result).toBe(String(new Date(weekString).getTime()));
-    });
-  });
 
   describe('transformActionsTeamData', () => {
     const mockTeamData: LibraryAnalyticsComponentActionsByTeam[] = [
@@ -84,7 +62,6 @@ describe('transformers', () => {
           figma_team: 'Design Team',
           library_key: mockLibraryFileKey,
           library_name: mockLibraryName,
-          week_sampled: convertWeekToUnixTimestamp('2024-11-10'),
           action_type: 'insertion',
         },
       });
@@ -98,7 +75,6 @@ describe('transformers', () => {
           figma_team: 'Design Team',
           library_key: mockLibraryFileKey,
           library_name: mockLibraryName,
-          week_sampled: convertWeekToUnixTimestamp('2024-11-10'),
           action_type: 'detachment',
         },
       });

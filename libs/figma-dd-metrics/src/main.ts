@@ -31,12 +31,12 @@ function validateEnvironment(): {
   libraryFileKey: string;
   libraryName: string;
 } {
-  const accessToken = process.env.FIGMA_PERSONAL_ACCCESS_TOKEN;
+  const accessToken = process.env.FIGMA_ANALYTICS_ACCESS_TOKEN;
   const libraryFileKey = process.env.FIGMA_LIBRARY_FILE_KEY;
   const libraryName = process.env.FIGMA_LIBRARY_NAME;
 
   if (!accessToken) {
-    throw new Error('FIGMA_PERSONAL_ACCCESS_TOKEN environment variable is required');
+    throw new Error('FIGMA_ANALYTICS_ACCESS_TOKEN environment variable is required');
   }
 
   if (!libraryFileKey) {

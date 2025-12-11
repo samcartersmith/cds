@@ -42,9 +42,9 @@ function sleep(ms: number): Promise<void> {
  * Get Figma access token from environment
  */
 function getFigmaAccessToken(): string {
-  const token = process.env.FIGMA_PERSONAL_ACCCESS_TOKEN;
+  const token = process.env.FIGMA_ANALYTICS_ACCESS_TOKEN;
   if (!token) {
-    throw new Error('FIGMA_PERSONAL_ACCCESS_TOKEN environment variable is not set');
+    throw new Error('FIGMA_ANALYTICS_ACCESS_TOKEN environment variable is not set');
   }
   return token;
 }

@@ -16,7 +16,7 @@ Integration with Figma Library Analytics API for tracking design system usage me
 1. Log in to your Figma account
 2. Navigate to Settings → Security
 3. Under "Personal Access Tokens", click "Generate new token"
-4. Set the expiration and ensure the `library_analytics:read` scope is selected
+4. Set the expiration to `90` days and ensure the `library_analytics:read` scope is selected
 5. Copy the token securely
 
 The Figma API access token is securely stored in the internal Config Service under the [infra-buildkite-prod-use1/actions-context/frontend/cds-production](https://config.cbhq.net/infra-buildkite-prod-use1/actions-context/frontend/cds-production) scope.

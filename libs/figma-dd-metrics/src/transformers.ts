@@ -15,19 +15,9 @@ import { MetricType } from '@cbhq/client-analytics';
 import type { MetricData } from './analytics';
 
 /**
- * Convert ISO 8601 week string to Unix timestamp (milliseconds)
- * @param weekString - ISO 8601 week string (e.g., "2024-11-10")
- * @returns Unix timestamp in milliseconds
- */
-export function convertWeekToUnixTimestamp(weekString: string): string {
-  const date = new Date(weekString);
-  return String(date.getTime());
-}
-
-/**
  * Transform component actions data grouped by team into metric data
  * Metric: figma_lib.actions.team
- * Tags: figma_team, figma_workspace, library_key, library_name, week_sampled, action_type
+ * Tags: figma_team, figma_workspace, library_key, library_name, action_type
  */
 export function transformActionsTeamData(
   rows: LibraryAnalyticsComponentActionsByTeam[],
@@ -44,8 +34,6 @@ export function transformActionsTeamData(
       continue;
     }
 
-    const weekTimestamp = convertWeekToUnixTimestamp(row.week);
-
     // Create metric for insertions
     metrics.push({
       metricName: 'figma_lib.actions.team',
@@ -55,7 +43,6 @@ export function transformActionsTeamData(
         figma_team: row.team_name,
         library_key: libraryFileKey,
         library_name: libraryName,
-        week_sampled: weekTimestamp,
         action_type: 'insertion',
       },
     });
@@ -69,7 +56,6 @@ export function transformActionsTeamData(
         figma_team: row.team_name,
         library_key: libraryFileKey,
         library_name: libraryName,
-        week_sampled: weekTimestamp,
         action_type: 'detachment',
       },
     });
@@ -81,7 +67,7 @@ export function transformActionsTeamData(
 /**
  * Transform component actions data grouped by component into metric data
  * Metric: figma_lib.actions.component
- * Tags: component_key, component_name_extended, library_key, library_name, week_sampled, action_type
+ * Tags: component_key, component_name_extended, library_key, library_name, action_type
  */
 export function transformActionsComponentData(
   rows: LibraryAnalyticsComponentActionsByAsset[],
@@ -111,14 +97,12 @@ export function transformActionsComponentData(
     // we are not planning to collect attachment/detachment metrics for component variants at this time
     // // if the component is part of a component set, its name is really the component "Variant"
     // if (row.component_set_name !== undefined) {
-    //   const weekTimestamp = convertWeekToUnixTimestamp(row.week);
     //   const commonTags: MetricData['tags'] = {
     //     component_key: row.component_key,
     //     component_name: row.component_set_name ?? row.component_name,
     //     component_variant: row.component_name.replace(/, /g, '&'),
     //     library_key: libraryFileKey,
     //     library_name: libraryName,
-    //     week_sampled: weekTimestamp,
     //   };
 
     //   // Create metric for insertions
