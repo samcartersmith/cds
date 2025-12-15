@@ -1,6 +1,6 @@
 {
   "name": "@cbhq/cds-migrator",
-  "version": "0.2.46",
+  "version": "0.2.47",
   "description": "Codemod transformations to help upgrade your CDS codebase",
   "repository": {
     "type": "git",
@@ -11,6 +11,7 @@
   "bin": {
     "cds-migrator-codemod": "./cjs/cli/codemod.js",
     "cds-migrator-interactive": "./cjs/cli/interactive-codemod.js",
+    "cds-migrator-modal-descendant-check": "./cjs/cli/check-modal-descendants.js",
     "cds-migrator-v8-adoption-stats": "./cjs/cli/v8-adoption-stats.js"
   },
   "main": "./cjs/index.js",

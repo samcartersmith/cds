@@ -4,9 +4,7 @@
     "declarationDir": "dts",
     "rootDir": "src"
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/__tests__/__fixtures__/**/*"],
   "references": []
 }

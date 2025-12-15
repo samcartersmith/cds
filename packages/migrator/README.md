@@ -97,6 +97,25 @@ yarn cds-migrator-v8-adoption-stats ./path/to/repo
 
 This outputs a formatted summary including the detected CDS version, counts of CDS vs v7 CDS component usages, total, and the v8 migration percentage.
 
+### Modal Descendant Checker
+
+When migrating `Modal` to v8 you can validate that all nested CDS sub-components have also been upgraded (i.e. no `@cbhq/cds-web/v7` or `@cbhq/cds-mobile/v7` imports remain inside a Modal tree).
+
+The script prints every v7 CDS component still rendered as a descendant of `Modal`, along with the file/line and import path, and exits with a non-zero status if any are found so it can be wired into CI checks.
+
+> **Tip:** The checker automatically loads `tsconfig.json`/`tsconfig.base.json` from the target repo to honor `baseUrl` + `paths` aliases. Use `--tsconfig` if you need to point at a different config file.
+
+```sh
+# Scan every file in a directory
+yarn cds-migrator-modal-descendant-check src/features/dialogs
+
+# Or pass explicit globs
+yarn cds-migrator-modal-descendant-check "apps/**/Modal*.tsx"
+
+# Provide a specific tsconfig (used to resolve path aliases)
+yarn cds-migrator-modal-descendant-check --tsconfig=app/tsconfig.json src/features/dialogs
+```
+
 ### Manual Migration (Advanced)
 
 You can also run the transformations manually by passing flags directly. This is useful for scripting or CI environments. The main script is `update-8-0-0-incremental`, which requires the `--platform` option (`web` or `mobile`).

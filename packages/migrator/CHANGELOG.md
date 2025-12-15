@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.47 (12/12/2025 PST)
+
+#### 🚀 Updates
+
+- Add Modal Descendant Checker CLI to migrator.
+
 ## 0.2.46 (12/1/2025 PST)
 
 #### 🐞 Fixes
