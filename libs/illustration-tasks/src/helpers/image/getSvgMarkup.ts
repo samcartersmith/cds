@@ -1,4 +1,4 @@
-import { NodeResponseWithMetadata } from '@cbhq/figma-api';
+import type { NodeWithMetadata } from '../fetchIllustrationLibrary';
 
 import { ColorStyles } from '../../tools/ColorStyles';
 
@@ -23,7 +23,7 @@ function createSvgMarkup({ width, height, paths }: Omit<SvgData, 'darkPaths'>) {
   return optimizeSvg(svgString);
 }
 
-export function getSvgMarkup(node: NodeResponseWithMetadata, colorStyles?: ColorStyles): string {
+export function getSvgMarkup(node: NodeWithMetadata, colorStyles?: ColorStyles): string {
   const params = getSvgData(node, colorStyles);
   return createSvgMarkup(params);
 }

@@ -36,6 +36,15 @@
       "options": {
         "cwd": "libs/illustration-tasks"
       }
+    },
+    "verify-sync": {
+      "command": "tsx ./src/scripts/verify-sync-determinism.ts",
+      "dependsOn": [
+        "illustrations:build"
+      ],
+      "options": {
+        "cwd": "libs/illustration-tasks"
+      }
     }
   }
 }

@@ -4,10 +4,12 @@ import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';
 import fs from 'node:fs';
 import path from 'node:path';
-import { ImageFormats, RequestType, SyncedLibrary, syncLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
 import { getAbsolutePath, sortByAlphabet, writePrettyFile } from '@cbhq/script-utils';
 
+import type { SyncedLibrary } from '../helpers/fetchIllustrationLibrary';
+
+import { fetchIllustrationLibrary } from '../helpers/fetchIllustrationLibrary';
 import { getManifestFromDisk } from '../helpers/getManifestFromDisk';
 import { logSummary } from '../helpers/logSummary';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
@@ -35,7 +37,6 @@ export type ManifestShape<
   Metadata = Record<string, unknown>,
 > = {
   executor?: string;
-  imageFormats?: ImageFormats;
   lastUpdated: string;
   metadata: Metadata;
   /**
@@ -73,10 +74,6 @@ type InitManifestParams<
   T extends ManifestShape,
   TaskOptions extends ManifestTaskOptions = ManifestTaskOptions,
 > = {
-  /** The image formats to get image urls for when syncing Figma libraries */
-  imageFormats?: ImageFormats;
-  /** The request type to use when syncing a figma library */
-  requestType: RequestType;
   createItem: (manifest: Manifest<T>, taskOptions: TaskOptions) => Promise<void>;
   versioned?: boolean;
 };
@@ -375,16 +372,13 @@ export class Manifest<
     T extends ManifestShape,
     TaskOptions extends ManifestTaskOptions = ManifestTaskOptions,
   >(task: Task<TaskOptions>, params: InitManifestParams<T, TaskOptions>) {
-    const { imageFormats, requestType, createItem, versioned } = params;
+    const { createItem, versioned } = params;
 
     const manifestPath = getAbsolutePath(task, task.options.manifestFile);
     const previousManifest = await getManifestFromDisk<T>(manifestPath);
-    const syncedLibrary = await syncLibrary({
+    const syncedLibrary = await fetchIllustrationLibrary({
       fileId: task.options.figmaApiFileId,
-      requestType,
       lastUpdated: task.options.syncAll ? undefined : previousManifest.lastUpdated,
-      imageFormats,
-      batchSize: 500,
     });
 
     const manifest = new Manifest<T, TaskOptions>({

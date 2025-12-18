@@ -1,10 +1,17 @@
-import type { Node } from '@cbhq/figma-api';
-import { Color } from '@cbhq/figma-api';
+import type { ColorStop, NodeDocument } from './fetchIllustrationLibrary';
 
 type Fill = { type: 'solid'; value: string };
 type Gradient = { type: 'gradient'; value: { color: string; x?: number; y: number }[] };
 
 export type Paint = Fill | Gradient;
+
+// Derive Color type from the node structure
+type Color = {
+  r: number;
+  g: number;
+  b: number;
+  a: number;
+};
 
 export function figmaColorToRgbaArray(color: Color) {
   const { r, g, b, a } = color;
@@ -34,7 +41,7 @@ export function figmaColorToHex(color: Color): string {
   return `#${outParts.join('')}`;
 }
 
-export function getPaintFromNode(node: Node): Paint | undefined {
+export function getPaintFromNode(node: NodeDocument): Paint | undefined {
   if ('fills' in node) {
     const paint = node.fills[0];
     if (paint.type === 'SOLID') {
@@ -49,7 +56,7 @@ export function getPaintFromNode(node: Node): Paint | undefined {
       if (handlePositions && paint.gradientStops) {
         return {
           type: 'gradient',
-          value: paint.gradientStops.map((stop, index) => {
+          value: paint.gradientStops.map((stop: ColorStop, index: number) => {
             return {
               color: figmaColorToHex(stop.color),
               y: paint.type === 'GRADIENT_LINEAR' ? stop.position : handlePositions[index].y,

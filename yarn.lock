@@ -2476,6 +2476,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.20.2"
     "@babel/preset-react": "npm:^7.18.6"
     "@babel/preset-typescript": "npm:^7.18.6"
+    "@figma/rest-api-spec": "npm:^0.34.0"
   languageName: unknown
   linkType: soft
 
@@ -2484,18 +2485,7 @@ __metadata:
   resolution: "@cbhq/figma-dd-metrics@workspace:libs/figma-dd-metrics"
   dependencies:
     "@cbhq/client-analytics": "npm:^10.9.1"
-    "@figma/rest-api-spec": "npm:^0.34.0"
-  languageName: unknown
-  linkType: soft
-
-"@cbhq/figma-styles@workspace:libs/figma-styles":
-  version: 0.0.0-use.local
-  resolution: "@cbhq/figma-styles@workspace:libs/figma-styles"
-  dependencies:
-    "@babel/core": "npm:^7.20.12"
-    "@babel/preset-env": "npm:^7.20.2"
-    "@babel/preset-react": "npm:^7.18.6"
-    "@babel/preset-typescript": "npm:^7.18.6"
+    "@cbhq/figma-api": "workspace:^"
   languageName: unknown
   linkType: soft
 

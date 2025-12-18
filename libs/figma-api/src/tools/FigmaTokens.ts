@@ -1,5 +1,6 @@
+import type { GetFileResponse, Node, Paint, TypeStyle } from '@figma/rest-api-spec';
+
 import { getFile } from '../getFile';
-import type { FileResponse, Node, Paint, TypeStyle } from '../types';
 
 import { figmaColorToRgba } from './figmaColorToRgba';
 
@@ -75,11 +76,11 @@ function nameToKeyTuple(style: ParsedToken) {
 }
 
 export class FigmaTokens {
-  private readonly file: FileResponse;
+  private readonly file: GetFileResponse;
 
   private styles: Map<string, ParsedToken> = new Map();
 
-  constructor(file: FileResponse) {
+  constructor(file: GetFileResponse) {
     this.file = file;
     this.visitStyles(file.document);
   }
@@ -103,7 +104,7 @@ export class FigmaTokens {
               break;
             case 'stroke':
             case 'strokes':
-              if ('strokes' in node) {
+              if ('strokes' in node && node.strokes) {
                 this.styles.set(key, {
                   ...sharedValues,
                   ...FigmaTokens.parsePaints('stroke', node.strokes),
@@ -112,7 +113,7 @@ export class FigmaTokens {
               break;
             case 'fill':
             case 'fills':
-              if ('fills' in node) {
+              if ('fills' in node && node.fills) {
                 this.styles.set(key, {
                   ...sharedValues,
                   ...FigmaTokens.parsePaints('fill', node.fills),

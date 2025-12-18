@@ -1,8 +1,8 @@
 import { mapValues } from 'lodash';
-import type { NodeResponseWithMetadata, SyncedLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
 
 import { createHashFromObject } from '../helpers/createHashFromObject';
+import type { NodeWithMetadata, SyncedLibrary } from '../helpers/fetchIllustrationLibrary';
 import { getSize } from '../helpers/getSize';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { parseName } from '../helpers/parseName';
@@ -24,7 +24,7 @@ export type ComponentParams<Metadata extends MetadataShape = MetadataShape> = {
   width: number;
   createdAt: string;
   lastUpdated: string;
-  node: NodeResponseWithMetadata;
+  node: NodeWithMetadata;
   metadata?: Metadata;
   version?: number;
   outputs?: Record<string, string>;
@@ -48,7 +48,7 @@ export class Component<Metadata extends MetadataShape = MetadataShape> {
 
   public readonly name: string;
 
-  public readonly node: NodeResponseWithMetadata | undefined;
+  public readonly node: NodeWithMetadata | undefined;
 
   public readonly type: string;
 

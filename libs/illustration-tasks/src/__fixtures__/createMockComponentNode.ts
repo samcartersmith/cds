@@ -1,4 +1,4 @@
-import { NodeResponseWithMetadata } from '@cbhq/figma-api';
+import type { NodeWithMetadata } from '../helpers/fetchIllustrationLibrary';
 
 type CreateComponentNodeParams = {
   name: `${string}/${string}`;
@@ -12,15 +12,22 @@ export function createMockComponentNode({
   id = '123:123',
   width = 240,
   height = 240,
-}: CreateComponentNodeParams): NodeResponseWithMetadata {
+}: CreateComponentNodeParams): NodeWithMetadata {
   return {
     document: {
       id,
       name,
       type: 'COMPONENT',
+      scrollBehavior: 'SCROLLS',
       blendMode: 'PASS_THROUGH',
       children: [],
       absoluteBoundingBox: {
+        x: -1750.0,
+        y: 513.0,
+        width,
+        height,
+      },
+      absoluteRenderBounds: {
         x: -1750.0,
         y: 513.0,
         width,
@@ -55,6 +62,7 @@ export function createMockComponentNode({
         name,
         description: '',
         documentationLinks: [],
+        remote: false,
       },
     },
     componentSets: {},
@@ -63,7 +71,6 @@ export function createMockComponentNode({
     metadata: {
       key: '',
       name,
-      documentationLinks: [],
       node_id: '',
       thumbnail_url: '',
       created_at: '',
@@ -76,6 +83,5 @@ export function createMockComponentNode({
       file_key: '',
       description: '',
     },
-    status: 200,
   };
 }

@@ -6,15 +6,13 @@
  * into structured metrics for submission to Datadog.
  */
 
-import type {
-  LibraryAnalyticsComponentActionsByAsset,
-  LibraryAnalyticsComponentActionsByTeam,
-  LibraryAnalyticsComponentUsagesByAsset,
-  LibraryAnalyticsComponentUsagesByFile,
-} from '@figma/rest-api-spec';
-
 import { logMetricsInBatches, logMetricsToCsv, type MetricData, setupAnalytics } from './analytics';
-import { fetchAllComponentActions, fetchAllComponentUsages } from './figma-client';
+import {
+  type ComponentActionsRow,
+  type ComponentUsagesRow,
+  fetchAllComponentActions,
+  fetchAllComponentUsages,
+} from './data';
 import { logger } from './logger';
 import {
   transformActionsComponentData,
@@ -83,6 +81,21 @@ async function fetchAndFormatMetrics(
 
   logger.log('Starting parallel data fetching from Figma API...\n');
 
+  // Narrowed types using Extract for proper union discrimination
+  type ActionsByTeamRow = Extract<ComponentActionsRow, { team_name: string }>;
+  type ActionsByComponentRow = Extract<ComponentActionsRow, { component_key: string }>;
+  type UsagesByComponentRow = Extract<ComponentUsagesRow, { component_key: string }>;
+  type UsagesByFileRow = Extract<ComponentUsagesRow, { file_name: string }>;
+
+  // Type guards for narrowing row types
+  const isActionsByTeam = (row: ComponentActionsRow): row is ActionsByTeamRow => 'team_name' in row;
+  const isActionsByComponent = (row: ComponentActionsRow): row is ActionsByComponentRow =>
+    'component_key' in row;
+  const isUsagesByComponent = (row: ComponentUsagesRow): row is UsagesByComponentRow =>
+    'component_key' in row;
+  const isUsagesByFile = (row: ComponentUsagesRow): row is UsagesByFileRow =>
+    'file_name' in row && !('component_key' in row);
+
   // Fetch all data in parallel
   const [actionsTeamRows, actionsComponentRows, usageComponentRows, usageFileRows] =
     await Promise.all([
@@ -92,9 +105,7 @@ async function fetchAndFormatMetrics(
         start_date: startDate,
       }).then((rows) => {
         logger.verbose(`✓ Fetched ${rows.length} component actions rows (grouped by team)`);
-        return rows.filter(
-          (row): row is LibraryAnalyticsComponentActionsByTeam => 'team_name' in row,
-        );
+        return rows.filter(isActionsByTeam);
       }),
 
       // Fetch component actions grouped by component
@@ -103,9 +114,7 @@ async function fetchAndFormatMetrics(
         start_date: startDate,
       }).then((rows) => {
         logger.verbose(`✓ Fetched ${rows.length} component actions rows (grouped by component)`);
-        return rows.filter(
-          (row): row is LibraryAnalyticsComponentActionsByAsset => 'component_key' in row,
-        );
+        return rows.filter(isActionsByComponent);
       }),
 
       // Fetch component usages grouped by component
@@ -113,9 +122,7 @@ async function fetchAndFormatMetrics(
         group_by: 'component',
       }).then((rows) => {
         logger.verbose(`✓ Fetched ${rows.length} component usage rows (grouped by component)`);
-        return rows.filter(
-          (row): row is LibraryAnalyticsComponentUsagesByAsset => 'component_key' in row,
-        );
+        return rows.filter(isUsagesByComponent);
       }),
 
       // Fetch component usages grouped by file
@@ -123,10 +130,7 @@ async function fetchAndFormatMetrics(
         group_by: 'file',
       }).then((rows) => {
         logger.verbose(`✓ Fetched ${rows.length} component usage rows (grouped by file)`);
-        return rows.filter(
-          (row): row is LibraryAnalyticsComponentUsagesByFile =>
-            'file_name' in row && !('component_key' in row),
-        );
+        return rows.filter(isUsagesByFile);
       }),
     ]);
 

@@ -1,5 +1,4 @@
-import { NodeResponseWithMetadata } from '@cbhq/figma-api';
-
+import type { NodeWithMetadata } from '../helpers/fetchIllustrationLibrary';
 import { getSize } from '../helpers/getSize';
 
 import type { ComponentSet } from './ComponentSet';
@@ -126,7 +125,7 @@ function isNumeric(value: string) {
 export type ComponentSetChildParams<ChildShape extends ComponentSetChildShape> = {
   componentSet: ComponentSet<ChildShape>;
   metadata?: ComponentSetChildMetadata;
-  node: NodeResponseWithMetadata;
+  node: NodeWithMetadata;
   props: ComponentSetChildProps;
   hashSource: string;
 };
@@ -138,7 +137,7 @@ export class ComponentSetChild<ChildShape extends ComponentSetChildShape = Compo
 
   public readonly id: string;
 
-  public readonly node: NodeResponseWithMetadata;
+  public readonly node: NodeWithMetadata;
 
   public readonly width: number;
 

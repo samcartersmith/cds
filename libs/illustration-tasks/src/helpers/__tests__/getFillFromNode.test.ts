@@ -1,4 +1,4 @@
-import type { Node } from '@cbhq/figma-api';
+import type { NodeDocument } from '../fetchIllustrationLibrary';
 
 import {
   figmaColorToHex,
@@ -34,12 +34,12 @@ describe('getPaintFromNode', () => {
       fills: [{ type: 'SOLID', color: { r: 0.1, g: 0.2, b: 0.3, a: 1 } }],
     };
     const expected = { type: 'solid', value: '#1A334D' };
-    const result = getPaintFromNode(node as unknown as Node);
+    const result = getPaintFromNode(node as unknown as NodeDocument);
     expect(result).toEqual(expected);
   });
 
   test('getPaintFromNode returns undefined if the node does not have any fills', () => {
-    const node = {} as Node;
+    const node = {} as NodeDocument;
     const result = getPaintFromNode(node);
     expect(result).toBeUndefined();
   });

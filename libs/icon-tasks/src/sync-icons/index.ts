@@ -4,9 +4,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { optimize as svgoOptimize, type Output as SvgoOutput } from 'svgo';
 import { webfont } from 'webfont';
-import { downloadSvgImage, syncLibrary } from '@cbhq/figma-api';
+import { downloadSvgImage } from '@cbhq/figma-api';
 
 import { config } from './config';
+import { fetchIconLibrary } from './fetchIconLibrary';
 import { generateChangelog } from './generateChangelog';
 import { getDescriptionMap } from './getDescriptionMap';
 import { commitAndPushChanges, prepareTargetRepo, validateFreshRepo } from './git';
@@ -179,11 +180,8 @@ const main = async () => {
   }
 
   console.log('Fetching file data from Figma...');
-  const syncedLibrary = await syncLibrary({
+  const syncedLibrary = await fetchIconLibrary({
     fileId: config.figmaFileId,
-    requestType: 'component_sets',
-    imageFormats: ['svg'],
-    batchSize: 500,
     lastUpdated: doSyncAll ? undefined : oldManifest.lastUpdated,
   });
 

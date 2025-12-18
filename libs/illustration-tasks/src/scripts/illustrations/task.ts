@@ -21,10 +21,34 @@ export const task = {
     changelogFile: path.resolve(CDS_OSS_ROOT, 'packages/illustrations/CHANGELOG.md'),
     // Local manifest file to track sync state and changes between runs
     manifestFile: path.resolve(CDS_OSS_ROOT, 'packages/illustrations/manifest.json'),
-    // Optional: Dark theme color styles manifest for generating themed SVGs
-    darkModeManifestFile: 'libs/figma-styles/src/__generated__/illustration/dark/manifest.json',
-    // Optional: Light theme color styles manifest for generating themed SVGs
-    lightModeManifestFile: 'libs/figma-styles/src/__generated__/illustration/light/manifest.json',
+    /**
+     * Color Style Manifests - How These Were Originally Generated
+     *
+     * These manifest files contain color style definitions that were originally synced
+     * from Figma using the following process:
+     *
+     * 1. Connect to Figma API using file ID for the CDS Illustration Styles library
+     * 2. Fetch all color styles from the Figma file using getFileStyles()
+     * 3. For each style node, extract:
+     *    - key: Figma style unique identifier
+     *    - name: Semantic color name (e.g., "primary", "accent-1")
+     *    - paint: Color value (hex for solid, gradient stops for gradients)
+     * 4. Generate CSS variable names: --illustration-{name}
+     * 5. Output to manifest.json grouped by theme (light/dark)
+     *
+     * The light manifest maps color names to their light theme hex values.
+     * The dark manifest maps the same color names to dark theme hex values.
+     * ColorStyles.ts uses these to:
+     *   - Replace light hex values with dark equivalents for dark mode SVGs
+     *   - Replace hex values with CSS variables for themeable SVGs
+     *
+     * To rebuild sync capability, see libs/figma-api/ for Figma API utilities.
+     * Original sync command was: yarn nx run figma-styles:sync-illustration-{light|dark}-styles
+     */
+    // Dark theme color styles manifest for generating themed SVGs
+    darkModeManifestFile: 'libs/illustration-tasks/src/color-styles/dark.json',
+    // Light theme color styles manifest for generating themed SVGs
+    lightModeManifestFile: 'libs/illustration-tasks/src/color-styles/light.json',
     // Root directory for all generated output files (SVGs, PNGs, TypeScript, etc.)
     generatedDirectory: path.resolve(CDS_OSS_ROOT, 'packages/illustrations/src/__generated__'),
   },

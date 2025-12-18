@@ -1,30 +1,19 @@
 # @cbhq/illustration-tasks
 
-A collection of Nx executors for Figma integrations.
+Figma task to sync illustrations to the CDS OSS repo.
 
-## Installation
+Follow instructions in [docs/release/illustrations.md](../docs/release/illustrations.md).
 
-```shell
-yarn add --dev @cbhq/illustration-tasks
+## Sync Illustrations
+
+```sh
+yarn nx run illustration-tasks:sync-illustrations
 ```
 
-## Usage
+## Verify Sync Determinism
 
-Tasks provided by this package are configured as targets within a project's `project.json`. For example, if we wanted to sync icons from Figma, we would use the `sync-icons` task.
+Use this command to verify if your local changes create the same set of output files as what is on master.
 
-```json
-{
-  // ...
-  "targets": {
-    // ...
-    "build": {
-      "executor": "@cbhq/illustration-tasks:sync-icons",
-      "options": {
-        "fileId": "[FIGMA FILE ID]"
-      }
-    }
-  }
-}
+```sh
+yarn nx run illustration-tasks:verify-sync
 ```
-
-> View the `executors.json` file for a list of all supported tasks.

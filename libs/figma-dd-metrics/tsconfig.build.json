@@ -6,6 +6,18 @@
   "include": [
     "src/**/*"
   ],
-  "exclude": ["**/__tests__/**", "**/*.test.*", "**/*.spec.*"]
+  "exclude": [
+    "**/__stories__/**",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__fixtures__/**",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/*.spec.*"
+  ],
+  "references": [
+    {
+      "path": "../../libs/figma-api"
+    }
+  ]
 }
-

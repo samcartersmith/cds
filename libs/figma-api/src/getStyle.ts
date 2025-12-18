@@ -1,10 +1,9 @@
-import { createClient } from './createClient';
-import { StyleResponse } from './types';
+import type { GetStyleResponse } from '@figma/rest-api-spec';
 
-type GetStyleParams = never;
+import { createClient } from './createClient';
 
 /** https://www.figma.com/developers/api#get-style-endpoint */
 export async function getStyle(styleKey: string) {
-  const client = createClient<GetStyleParams, StyleResponse>();
+  const client = createClient<never, GetStyleResponse>();
   return client(`styles/${styleKey}`);
 }

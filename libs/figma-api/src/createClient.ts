@@ -1,58 +1,165 @@
 import https from 'node:https';
 import { URL } from 'node:url';
 
-import { Response } from './types';
+/**
+ * Base URL for Figma API
+ */
+const FIGMA_API_BASE_URL = 'https://api.figma.com/v1';
+
+/**
+ * Rate limiting configuration
+ * Figma API has rate limits, so we implement delays between requests
+ */
+const RATE_LIMIT_DELAY_MS = 100; // 100ms delay between requests
+
+/**
+ * Retry configuration for transient failures
+ */
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 1000;
 
 type Primitive = string | boolean | number;
 
-export function createClient<
-  ApiParams extends Record<string, Primitive>,
-  ClientResponse extends Response,
->() {
-  return async function api(path: string, params?: ApiParams) {
-    const figmaUrl = new URL(`https://api.figma.com/v1/${path}`);
+/**
+ * Sleep utility for rate limiting and retries
+ */
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-    Object.entries(params ?? {}).forEach(([param, paramValue]) => {
-      const value = typeof paramValue === 'string' ? paramValue : `${paramValue}`;
-      figmaUrl.searchParams.set(param, value);
-    });
+/**
+ * Get Figma access token from environment
+ */
+function getFigmaAccessToken(): string {
+  const token = process.env.FIGMA_ACCESS_TOKEN;
+  if (!token) {
+    throw new Error('FIGMA_ACCESS_TOKEN environment variable is not set');
+  }
+  return token;
+}
 
-    return new Promise<ClientResponse>((resolve, reject) => {
-      let resBody = '';
+/**
+ * Parse Figma API error response and create appropriate error type
+ */
+function parseFigmaError(statusCode: number, responseBody: string, url: string): Error {
+  let errorData: { err?: string; status?: number };
+  try {
+    errorData = JSON.parse(responseBody);
+  } catch {
+    errorData = {};
+  }
 
-      const req = https.request(
-        {
-          hostname: figmaUrl.hostname,
-          path: `${figmaUrl.pathname}?${figmaUrl.searchParams.toString()}`,
-          method: 'GET',
-          headers: {
-            'X-Figma-Token': process.env.FIGMA_ACCESS_TOKEN,
-          },
-        },
-        (res) => {
-          res.setEncoding('utf8');
-          res.on('data', (chunk: string) => {
-            resBody += chunk;
-          });
-          res.on('end', () => {
-            const data = JSON.parse(resBody) as ClientResponse;
+  const message = errorData.err || `HTTP ${statusCode} error from ${url}`;
 
-            // Figma API is not consistent with its response structure, endpoints don't always return a 200 status,
-            // but should always return a non 200 status
-            if (data.status && data.status !== 200) {
-              reject(new Error(`Status: ${data.status}, Message: ${data.err}, URL: ${figmaUrl}`));
-            } else {
-              resolve(data);
-            }
-          });
-        },
+  switch (statusCode) {
+    case 401:
+    case 403:
+      return new Error(
+        `${statusCode === 401 ? 'Authentication error' : 'Permission denied'}: ${message}`,
       );
+    case 404:
+      return new Error(`Not found: ${message}`);
+    case 429:
+      return new Error(`Rate limited: ${message}`);
+    default:
+      return new Error(`Unknown error: ${message}`);
+  }
+}
 
-      req.on('error', (e) => {
-        reject(e);
-      });
+/**
+ * Make HTTP request to Figma API with retries
+ */
+async function makeRequest<T>(
+  path: string,
+  queryParams: Record<string, string> = {},
+  retryCount = 0,
+): Promise<T> {
+  const figmaUrl = new URL(`${FIGMA_API_BASE_URL}/${path}`);
 
-      req.end();
+  // Add query parameters
+  Object.entries(queryParams).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== '') {
+      figmaUrl.searchParams.set(key, value);
+    }
+  });
+
+  return new Promise<T>((resolve, reject) => {
+    let responseBody = '';
+
+    const req = https.request(
+      {
+        hostname: figmaUrl.hostname,
+        path: `${figmaUrl.pathname}?${figmaUrl.searchParams.toString()}`,
+        method: 'GET',
+        headers: {
+          'X-Figma-Token': getFigmaAccessToken(),
+        },
+      },
+      (res) => {
+        res.setEncoding('utf8');
+        res.on('data', (chunk: string) => {
+          responseBody += chunk;
+        });
+        res.on('end', async () => {
+          const statusCode = res.statusCode || 0;
+
+          // Handle rate limiting with retry
+          if (statusCode === 429 && retryCount < MAX_RETRIES) {
+            await sleep(RETRY_DELAY_MS);
+            try {
+              const result = await makeRequest<T>(path, queryParams, retryCount + 1);
+              resolve(result);
+            } catch (error) {
+              reject(error);
+            }
+            return;
+          }
+
+          // Handle error status codes
+          if (statusCode < 200 || statusCode >= 300) {
+            reject(parseFigmaError(statusCode, responseBody, figmaUrl.toString()));
+            return;
+          }
+
+          // Parse and validate response
+          try {
+            const data = JSON.parse(responseBody) as T;
+            resolve(data);
+          } catch (error) {
+            reject(new Error(`Failed to parse response from ${figmaUrl.toString()}`));
+          }
+        });
+      },
+    );
+
+    req.on('error', (error) => {
+      // Retry on network errors
+      if (retryCount < MAX_RETRIES) {
+        sleep(RETRY_DELAY_MS)
+          .then(() => makeRequest<T>(path, queryParams, retryCount + 1))
+          .then(resolve)
+          .catch(reject);
+      } else {
+        reject(new Error(`Network error: ${error.message}`));
+      }
     });
+
+    req.end();
+  });
+}
+
+export function createClient<ApiParams extends Record<string, Primitive>, ClientResponse>() {
+  return async function api(path: string, params?: ApiParams): Promise<ClientResponse> {
+    // Apply rate limiting delay before making request
+    await sleep(RATE_LIMIT_DELAY_MS);
+
+    const queryParams: Record<string, string> = {};
+    if (params) {
+      Object.entries(params).forEach(([key, value]) => {
+        queryParams[key] = typeof value === 'string' ? value : `${value}`;
+      });
+    }
+
+    return makeRequest<ClientResponse>(path, queryParams);
   };
 }

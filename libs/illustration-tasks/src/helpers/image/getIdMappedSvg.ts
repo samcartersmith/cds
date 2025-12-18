@@ -1,6 +1,7 @@
 import type { Config } from 'svgo';
-import type { SyncedLibrary } from '@cbhq/figma-api';
 import { downloadSvgImage } from '@cbhq/figma-api';
+
+import type { SyncedLibrary } from '../fetchIllustrationLibrary';
 
 import { optimizeSvg } from './optimizeSvg';
 

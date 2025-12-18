@@ -1,6 +1,6 @@
-import { Node } from '@cbhq/figma-api';
+import type { NodeDocument } from './fetchIllustrationLibrary';
 
-export function getSize(document: Node) {
+export function getSize(document: NodeDocument) {
   let height = 0;
   let width = 0;
   if ('size' in document && document.size) {

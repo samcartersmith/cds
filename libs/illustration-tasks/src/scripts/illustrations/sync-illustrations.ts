@@ -7,7 +7,6 @@ import 'dotenv/config';
 
 import { execSync } from 'node:child_process';
 import path from 'node:path';
-import type { SyncedLibrary } from '@cbhq/figma-api';
 import {
   getAbsolutePath,
   pascalCase,
@@ -20,6 +19,7 @@ import {
 
 import { commitAndPushChanges, prepareTargetRepo, validateFreshRepo } from '../../git';
 import { createDescriptionGraph } from '../../helpers/createDescriptionGraph';
+import type { SyncedLibrary } from '../../helpers/fetchIllustrationLibrary';
 import { getOutputDirectories } from '../../helpers/getOutputDirectories';
 import { getRelativePathForImport } from '../../helpers/getRelativePathForImport';
 import { createPngContent } from '../../helpers/image/createPngContent';
@@ -75,8 +75,6 @@ export const main = async () => {
     IllustrationsManifestShape,
     SyncIllustrationsTaskOptions
   >(task as any, {
-    imageFormats: ['svg'],
-    requestType: 'components',
     createItem,
     versioned: true,
   });

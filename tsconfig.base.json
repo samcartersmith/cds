@@ -63,12 +63,6 @@
       "@cbhq/figma-api/*": [
         "libs/figma-api/src/*"
       ],
-      "@cbhq/figma-styles": [
-        "libs/figma-styles/src"
-      ],
-      "@cbhq/figma-styles/*": [
-        "libs/figma-styles/src/*"
-      ],
       "@cbhq/script-utils": [
         "libs/script-utils/src"
       ],

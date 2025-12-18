@@ -15,9 +15,7 @@
     ".": "./index.ts"
   },
   "dependencies": {
-    "@cbhq/client-analytics": "^10.9.1"
-  },
-  "devDependencies": {
-    "@figma/rest-api-spec": "^0.34.0"
+    "@cbhq/client-analytics": "^10.9.1",
+    "@cbhq/figma-api": "workspace:^"
   }
 }

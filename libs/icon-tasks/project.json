@@ -7,6 +7,12 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{projectRoot}/jest.config.js"
+      }
+    },
     "typecheck": {
       "command": "tsc --build --pretty --verbose"
     },

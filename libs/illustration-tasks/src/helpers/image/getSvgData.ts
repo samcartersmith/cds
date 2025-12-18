@@ -1,4 +1,4 @@
-import { NodeResponseWithMetadata } from '@cbhq/figma-api';
+import type { ChildNode, NodeWithMetadata, PathGeometry } from '../fetchIllustrationLibrary';
 
 import type { ColorStyles } from '../../tools/ColorStyles';
 import { getPaintFromNode } from '../getPaintFromNode';
@@ -20,7 +20,7 @@ export type SvgData = {
 };
 
 export function getSvgData(
-  { document, styles = {} }: NodeResponseWithMetadata,
+  { document, styles = {} }: NodeWithMetadata,
   colorStyles?: ColorStyles,
 ): SvgData {
   const paths: Path[] = [];
@@ -28,7 +28,7 @@ export function getSvgData(
   const { width, height } = getSize(document);
 
   if ('children' in document) {
-    document.children.forEach((child) => {
+    document.children.forEach((child: ChildNode) => {
       let fill: string | undefined;
 
       if ('styles' in child && child.styles !== undefined && 'fill' in child.styles) {
@@ -49,7 +49,7 @@ export function getSvgData(
         }
       }
       if ('fillGeometry' in child && child.fillGeometry !== undefined) {
-        child.fillGeometry.forEach((geometry) => {
+        child.fillGeometry.forEach((geometry: PathGeometry) => {
           const shared = {
             d: geometry.path,
             fillRule: geometry.windingRule.toLowerCase() as PathFillRule,

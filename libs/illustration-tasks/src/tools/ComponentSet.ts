@@ -1,9 +1,13 @@
 import { mapValues } from 'lodash';
-import type { NodeResponseWithMetadata, SyncedLibrary } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
 import { sortByAlphabet } from '@cbhq/script-utils';
 
 import { createHashFromObject } from '../helpers/createHashFromObject';
+import type {
+  ChildNode,
+  NodeWithMetadata,
+  SyncedIllustrationLibrary as SyncedLibrary,
+} from '../helpers/fetchIllustrationLibrary';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 import { parseName } from '../helpers/parseName';
 
@@ -29,7 +33,7 @@ export type ComponentSetParams<Metadata extends MetadataShape = MetadataShape> =
   description: string;
   name: string;
   type: string;
-  node: NodeResponseWithMetadata;
+  node: NodeWithMetadata;
   createdAt: string;
   lastUpdated: string;
   metadata?: Metadata;
@@ -56,7 +60,7 @@ export class ComponentSet<
 
   public readonly name: string;
 
-  public readonly node: NodeResponseWithMetadata | undefined;
+  public readonly node: NodeWithMetadata | undefined;
 
   public readonly type: string;
 
@@ -219,10 +223,12 @@ export class ComponentSet<
           const oldVersion = manifest.getPreviousItem({ id, type, name });
 
           const hashSourceMap = await Promise.all(
-            node.document.children.map(async (child) => {
+            node.document.children.map(async (child: ChildNode) => {
               return getHashSourceMapItem(child.id, manifest.syncedLibrary);
             }),
-          ).then((results) => results.reduce((acc, result) => ({ ...acc, ...result }), {}));
+          ).then((results) =>
+            results.reduce<Record<string, string>>((acc, result) => ({ ...acc, ...result }), {}),
+          );
 
           // generate a single hash for the entire set of components
           const hash = createHashFromObject(hashSourceMap);

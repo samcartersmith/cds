@@ -4,15 +4,16 @@
  * structured metrics ready for submission to Datadog.
  */
 
-import type {
-  LibraryAnalyticsComponentActionsByAsset,
-  LibraryAnalyticsComponentActionsByTeam,
-  LibraryAnalyticsComponentUsagesByAsset,
-  LibraryAnalyticsComponentUsagesByFile,
-} from '@figma/rest-api-spec';
 import { MetricType } from '@cbhq/client-analytics';
 
 import type { MetricData } from './analytics';
+import type { ComponentActionsRow, ComponentUsagesRow } from './data';
+
+// Narrowed types for rows grouped by specific dimensions using Extract
+type ActionsByTeamRow = Extract<ComponentActionsRow, { team_name: string }>;
+type ActionsByComponentRow = Extract<ComponentActionsRow, { component_key: string }>;
+type UsagesByComponentRow = Extract<ComponentUsagesRow, { component_key: string }>;
+type UsagesByFileRow = Extract<ComponentUsagesRow, { file_name: string }>;
 
 /**
  * Transform component actions data grouped by team into metric data
@@ -20,7 +21,7 @@ import type { MetricData } from './analytics';
  * Tags: figma_team, figma_workspace, library_key, library_name, action_type
  */
 export function transformActionsTeamData(
-  rows: LibraryAnalyticsComponentActionsByTeam[],
+  rows: ActionsByTeamRow[],
   libraryFileKey: string,
   libraryName: string,
 ): { metrics: MetricData[]; draftsOmitted: number } {
@@ -70,7 +71,7 @@ export function transformActionsTeamData(
  * Tags: component_key, component_name_extended, library_key, library_name, action_type
  */
 export function transformActionsComponentData(
-  rows: LibraryAnalyticsComponentActionsByAsset[],
+  rows: ActionsByComponentRow[],
   libraryFileKey: string,
   libraryName: string,
 ): MetricData[] {
@@ -166,7 +167,7 @@ export function transformActionsComponentData(
  * Tags: component_key, component_name_extended, library_key, library_name, usage_type
  */
 export function transformUsageComponentData(
-  rows: LibraryAnalyticsComponentUsagesByAsset[],
+  rows: UsagesByComponentRow[],
   libraryFileKey: string,
   libraryName: string,
 ): MetricData[] {
@@ -253,7 +254,7 @@ export function transformUsageComponentData(
  * Tags: file_name, figma_workspace, figma_team, library_key, library_name
  */
 export function transformUsageFileData(
-  rows: LibraryAnalyticsComponentUsagesByFile[],
+  rows: UsagesByFileRow[],
   libraryFileKey: string,
   libraryName: string,
 ): { metrics: MetricData[]; draftsOmitted: number } {

@@ -1,7 +1,7 @@
 import { mapValues } from 'lodash';
-import { NodeResponse } from '@cbhq/figma-api';
 import { Task } from '@cbhq/mono-tasks';
 
+import type { NodeWithMetadata } from '../helpers/fetchIllustrationLibrary';
 import { ColorMode, getColorModeAndName } from '../helpers/getColorModeAndName';
 import { getPaintFromNode, Paint } from '../helpers/getPaintFromNode';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
@@ -16,7 +16,7 @@ type ColorStyleTaskOptions = {
 };
 
 export type ColorStyleParams = {
-  node: NodeResponse;
+  node: NodeWithMetadata;
   task: Task;
   taskOptions: ColorStyleTaskOptions;
 };
@@ -36,7 +36,7 @@ export class ColorStyle {
 
   public readonly name: string;
 
-  public readonly node: NodeResponse;
+  public readonly node: NodeWithMetadata;
 
   public readonly paint: Paint;
 

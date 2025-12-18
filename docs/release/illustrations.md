@@ -69,10 +69,10 @@ You can get the Percy link from the GitHub Actions "Visreg Web" job on your PR
 
 - You may see the task complete without any changes and the message: "There are no changes since the last update on XX/XX/XXXX". Verify this is expected with design.
 
-- It is important to note that if an illustration asset is referencing a color style which was not present the last time the color syncs were run, then the `yarn nx run figma-styles:sync-*` commands will need to be run again before running `yarn nx run illustrations:release`.
+- The color style manifests are now static files located at `libs/illustration-tasks/src/color-styles/`. These files were originally synced from Figma and contain the light/dark theme color mappings. If a new illustration uses a color style not present in these manifests, you will need to manually add the color definition to both `light.json` and `dark.json`. See the documentation comment in `libs/illustration-tasks/src/scripts/illustrations/task.ts` for details on how these manifests were originally generated.
 
-- The `illustrations:release` command calls `illustrations:sync` which requires a `lightModeManifestFile` and `darkModeManifestFile` as inputs in `project.json` when generating the svg assets on the fly. If those files are stale, the executor will fallback to the hex value of the color style used (which will always be a light mode fill since that is the only asset design provides), thus making the light and dark mode images the same.
+- The `illustrations:release` command calls `illustrations:sync` which requires the `lightModeManifestFile` and `darkModeManifestFile` as inputs when generating the svg assets on the fly. If those files don't contain a color used in an illustration, the executor will fallback to the hex value of the color style used (which will always be a light mode fill since that is the only asset design provides), thus making the light and dark mode images the same.
 
-- The `release` script assumes that each light mode color style synced with `figma-styles:sync-illustration-light-styles` is assigned a unique hex value in Figma. If there are duplicate hex values (check the light mode manifest), dark mode variants generated during the `illustrations:release` task may not have the correct colors.
+- The light mode manifest assumes each color style is assigned a unique hex value. If there are duplicate hex values (check `libs/illustration-tasks/src/color-styles/light.json`), dark mode variants generated during the `illustrations:release` task may not have the correct colors.
 
 - If seeing this error: "Cannot read properties of undefined ('styles')", you need to update your FIGMA token to the new value.
