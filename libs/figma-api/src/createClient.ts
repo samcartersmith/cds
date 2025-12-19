@@ -42,27 +42,31 @@ function getFigmaAccessToken(): string {
  * Parse Figma API error response and create appropriate error type
  */
 function parseFigmaError(statusCode: number, responseBody: string, url: string): Error {
-  let errorData: { err?: string; status?: number };
+  let errorData: { err?: string; message?: string; status?: number };
   try {
     errorData = JSON.parse(responseBody);
   } catch {
     errorData = {};
   }
 
-  const message = errorData.err || `HTTP ${statusCode} error from ${url}`;
+  // Figma API uses inconsistent error response formats:
+  // - Some endpoints return { err: "..." }
+  // - Others return { message: "..." }
+  const message = errorData.err || errorData.message || `HTTP ${statusCode} error from ${url}`;
 
   switch (statusCode) {
+    case 400:
+      return new Error(`Bad request: ${message}`);
     case 401:
+      return new Error(`Authentication error: ${message}`);
     case 403:
-      return new Error(
-        `${statusCode === 401 ? 'Authentication error' : 'Permission denied'}: ${message}`,
-      );
+      return new Error(`Permission denied: ${message}`);
     case 404:
       return new Error(`Not found: ${message}`);
     case 429:
       return new Error(`Rate limited: ${message}`);
     default:
-      return new Error(`Unknown error: ${message}`);
+      return new Error(`HTTP ${statusCode} error: ${message}`);
   }
 }
 
@@ -125,7 +129,7 @@ async function makeRequest<T>(
           try {
             const data = JSON.parse(responseBody) as T;
             resolve(data);
-          } catch (error) {
+          } catch {
             reject(new Error(`Failed to parse response from ${figmaUrl.toString()}`));
           }
         });
@@ -156,7 +160,10 @@ export function createClient<ApiParams extends Record<string, Primitive>, Client
     const queryParams: Record<string, string> = {};
     if (params) {
       Object.entries(params).forEach(([key, value]) => {
-        queryParams[key] = typeof value === 'string' ? value : `${value}`;
+        // Filter out undefined and null values before converting to string
+        if (value !== undefined && value !== null) {
+          queryParams[key] = typeof value === 'string' ? value : `${value}`;
+        }
       });
     }
 

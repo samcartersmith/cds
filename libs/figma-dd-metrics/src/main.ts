@@ -45,6 +45,9 @@ function validateEnvironment(): {
     throw new Error('FIGMA_LIBRARY_NAME environment variable is required');
   }
 
+  // Set the token for @cbhq/figma-api which expects FIGMA_ACCESS_TOKEN
+  process.env.FIGMA_ACCESS_TOKEN = accessToken;
+
   logger.log('Environment validation passed');
   logger.log(`Library File Key: ${libraryFileKey}`);
   logger.log(`Library Name: ${libraryName}`);

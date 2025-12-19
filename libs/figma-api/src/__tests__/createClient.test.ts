@@ -99,6 +99,40 @@ describe('createClient', () => {
         expect.any(Function),
       );
     });
+
+    it('should skip undefined query parameters', async () => {
+      const responseData = { data: 'test' };
+      mockHttpResponse(200, responseData);
+
+      const client = createClient<{ cursor?: string; group_by: string }, typeof responseData>();
+      await client('analytics/libraries/test-key/component/usages', {
+        group_by: 'file',
+        cursor: undefined,
+      });
+
+      expect(mockHttps.request).toHaveBeenCalledWith(
+        expect.objectContaining({
+          path: '/v1/analytics/libraries/test-key/component/usages?group_by=file',
+        }),
+        expect.any(Function),
+      );
+    });
+
+    it('should skip null query parameters', async () => {
+      const responseData = { data: 'test' };
+      mockHttpResponse(200, responseData);
+
+      const client = createClient<{ param1?: string; param2?: string }, typeof responseData>();
+      // @ts-expect-error - null is not a valid value but testing it
+      await client('test', { param1: 'value1', param2: null });
+
+      expect(mockHttps.request).toHaveBeenCalledWith(
+        expect.objectContaining({
+          path: '/v1/test?param1=value1',
+        }),
+        expect.any(Function),
+      );
+    });
   });
 
   describe('error handling', () => {
@@ -112,6 +146,16 @@ describe('createClient', () => {
       );
     });
 
+    it('should handle 400 bad request errors with message field', async () => {
+      mockHttpResponse(400, { error: true, status: 400, message: 'Invalid cursor.', i18n: null });
+
+      const client = createClient<never, any>();
+
+      await expect(client('analytics/libraries/test-key/component/usages')).rejects.toThrow(
+        'Bad request: Invalid cursor.',
+      );
+    });
+
     it('should handle 401 authentication errors', async () => {
       mockHttpResponse(401, { err: 'Invalid token' });
 
@@ -120,12 +164,22 @@ describe('createClient', () => {
       await expect(client('files/test-key')).rejects.toThrow('Authentication error: Invalid token');
     });
 
-    it('should handle 403 permission errors', async () => {
+    it('should handle 403 permission errors with err field', async () => {
       mockHttpResponse(403, { err: 'Access denied' });
 
       const client = createClient<never, any>();
 
       await expect(client('files/test-key')).rejects.toThrow('Permission denied: Access denied');
+    });
+
+    it('should handle 403 permission errors with message field', async () => {
+      mockHttpResponse(403, { message: 'Insufficient permissions' });
+
+      const client = createClient<never, any>();
+
+      await expect(client('files/test-key')).rejects.toThrow(
+        'Permission denied: Insufficient permissions',
+      );
     });
 
     it('should handle 404 not found errors', async () => {
@@ -159,7 +213,7 @@ describe('createClient', () => {
 
       const client = createClient<never, any>();
 
-      await expect(client('files/test-key')).rejects.toThrow('Unknown error: HTTP 500 error');
+      await expect(client('files/test-key')).rejects.toThrow('HTTP 500 error: HTTP 500 error');
     });
 
     it('should handle JSON parse errors in successful responses', async () => {
