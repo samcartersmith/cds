@@ -4,8 +4,6 @@ on:
   # Run daily at 9am UTC
   schedule:
     - cron: '0 9 * * *'
-    # Run weekly on Saturdays at 9am UTC
-    #- cron: '0 9 * * 6'
 
   # Allow manual triggering
   workflow_dispatch:
@@ -52,12 +50,12 @@ jobs:
           echo "Figma Library Metrics collection completed successfully"
 
       - name: Report failure
-        if: failure()
+        if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
           channel: '#design-systems-eng-team'
           message: |
-            Figma Library Metrics collection failed for the CDS Core Library
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the CDS Core Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
             cc: <!subteam^S05HRM5A309>
 
@@ -93,11 +91,11 @@ jobs:
           echo "Figma Library Metrics collection completed successfully"
 
       - name: Report failure
-        if: failure()
+        if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
           channel: '#design-systems-eng-team'
           message: |
-            Figma Library Metrics collection failed for the Base Component Library
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Base Component Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
             cc: <!subteam^S05HRM5A309>
