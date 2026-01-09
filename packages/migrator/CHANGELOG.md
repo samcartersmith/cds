@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.48 (1/9/2026 PST)
+
+#### 🚀 Updates
+
+- Updated modal descendant check script to take in custom component name. [[#4214](https://github.cbhq.net/frontend/cds/pull/4214)]
+
 ## 0.2.47 (12/12/2025 PST)
 
 #### 🚀 Updates

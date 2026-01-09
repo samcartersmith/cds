@@ -99,7 +99,7 @@ This outputs a formatted summary including the detected CDS version, counts of C
 
 ### Modal Descendant Checker
 
-When migrating `Modal` to v8 you can validate that all nested CDS sub-components have also been upgraded (i.e. no `@cbhq/cds-web/v7` or `@cbhq/cds-mobile/v7` imports remain inside a Modal tree).
+When migrating `Modal` to v8 you can validate that all nested CDS sub-components have also been upgraded (i.e. no `@cbhq/cds-web/v7` or `@cbhq/cds-mobile/v7` imports remain inside a Modal tree). If your app uses a wrapper/renamed modal root (e.g. `CustomModalComponent`), you can scan that component instead.
 
 The script prints every v7 CDS component still rendered as a descendant of `Modal`, along with the file/line and import path, and exits with a non-zero status if any are found so it can be wired into CI checks.
 
@@ -111,6 +111,9 @@ yarn cds-migrator-modal-descendant-check src/features/dialogs
 
 # Or pass explicit globs
 yarn cds-migrator-modal-descendant-check "apps/**/Modal*.tsx"
+
+# Scan descendants under a custom root component instead of Modal
+yarn cds-migrator-modal-descendant-check --component CustomModalComponent src/features/dialogs
 
 # Provide a specific tsconfig (used to resolve path aliases)
 yarn cds-migrator-modal-descendant-check --tsconfig=app/tsconfig.json src/features/dialogs

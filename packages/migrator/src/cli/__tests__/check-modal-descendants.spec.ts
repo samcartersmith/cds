@@ -5,15 +5,11 @@ const CLI_PATH = path.resolve(__dirname, '../check-modal-descendants.ts');
 
 function runCli(fixtureName: string, extraArgs: string[] = []) {
   const cwd = path.resolve(__dirname, '__fixtures__', fixtureName);
-  const result = spawnSync(
-    'node',
-    ['-r', 'ts-node/register/transpile-only', CLI_PATH, '--quiet', ...extraArgs],
-    {
-      cwd,
-      encoding: 'utf-8',
-      env: { ...process.env, FORCE_COLOR: '0', NO_COLOR: '1' },
-    },
-  );
+  const result = spawnSync('node', ['--import', 'tsx', CLI_PATH, '--quiet', ...extraArgs], {
+    cwd,
+    encoding: 'utf-8',
+    env: { ...process.env, FORCE_COLOR: '0', NO_COLOR: '1' },
+  });
 
   if (result.error) {
     throw result.error;
@@ -28,6 +24,17 @@ describe('cds-migrator-modal-descendant-check', () => {
     expect(result.status).toBe(1);
     expect(result.stdout).toContain('ModalBody from @cbhq/cds-web/v7/overlays/Modal/ModalBody');
     expect(result.stdout).toContain('App.tsx');
+  });
+
+  it('supports configuring the root component name', () => {
+    const result = runCli('custom-root', ['--component', 'CustomModalComponent']);
+    expect(result.status).toBe(1);
+    expect(result.stdout).toContain('Checkbox from @cbhq/cds-web/v7/controls/Checkbox');
+    expect(result.stdout).toContain('inside CustomModalComponent > LayerOne > LayerTwoA');
+    expect(result.stdout).toContain(
+      'inside CustomModalComponent > LayerOne > LayerTwoA > LayerThreeA',
+    );
+    expect(result.stdout).toContain('Button from @cbhq/cds-web/v7/actions/Button');
   });
 
   it('detects styled modal wrappers that contain v7 descendants', () => {

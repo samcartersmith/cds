@@ -12,6 +12,7 @@ type CliArgs = {
   ignore: string[];
   quiet: boolean;
   tsconfig?: string;
+  component?: string;
 };
 
 type ImportMeta = {
@@ -34,6 +35,8 @@ type ImportContext = {
   modalIdentifiers: Set<string>;
   styledIdentifiers: Set<string>;
   localComponents: Map<string, LocalComponentBinding>;
+  rootComponentName: string;
+  allowNamespaceRootMatch: boolean;
 };
 
 type Issue = {
@@ -74,6 +77,7 @@ const SUPPORTED_PACKAGES = ['@cbhq/cds-web', '@cbhq/cds-mobile'];
 const FILE_RESOLUTION_EXTENSIONS = ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.cjs'];
 const COMPONENT_WRAPPER_NAMES = new Set(['memo', 'forwardRef']);
 const STYLED_MODULE_NAMES = ['styled-components', '@emotion/styled'];
+const DEFAULT_ROOT_COMPONENT_NAME = 'Modal';
 
 const sourceFileCache = new Map<string, ts.SourceFile>();
 const usageCache = new Map<string, ComponentUsage[]>();
@@ -81,6 +85,21 @@ const modalIssueCache = new Map<string, Issue[]>();
 const modalIssueInProgress = new Set<string>();
 const modalWrapperCache = new Map<string, boolean>();
 const modalWrapperInProgress = new Set<string>();
+
+function getRootConfig(args: { component?: string }): {
+  rootComponentName: string;
+  allowNamespaceRootMatch: boolean;
+} {
+  const rootComponentName = (args.component ?? DEFAULT_ROOT_COMPONENT_NAME).trim();
+  return {
+    rootComponentName,
+    allowNamespaceRootMatch: !args.component,
+  };
+}
+
+function modalCacheKey(filePath: string, rootComponentName: string): string {
+  return `${rootComponentName}::${filePath}`;
+}
 
 type PathMapping = {
   pattern: string;
@@ -131,6 +150,7 @@ function parseArgs(argv: string[]): CliArgs | null {
     ignore: [...DEFAULT_IGNORE_PATTERNS],
     quiet: false,
     tsconfig: undefined,
+    component: undefined,
   };
 
   for (let i = 2; i < argv.length; i += 1) {
@@ -142,6 +162,21 @@ function parseArgs(argv: string[]): CliArgs | null {
     }
     if (token === '--quiet') {
       args.quiet = true;
+      continue;
+    }
+    if (token.startsWith('--component=')) {
+      const value = token.split('=')[1];
+      if (value) {
+        args.component = value;
+      }
+      continue;
+    }
+    if (token === '--component') {
+      const next = argv[i + 1];
+      if (next) {
+        args.component = next;
+        i += 1;
+      }
       continue;
     }
     if (token.startsWith('--dir=')) {
@@ -215,12 +250,14 @@ function printHelp() {
     '  --dir=<path>       Root directory to scan (defaults to current working dir)',
     '  --ignore=a,b,c     Comma-separated glob patterns to ignore',
     '  --tsconfig <path>  Optional path to a tsconfig file for path alias resolution',
+    '  --component <Name> Root component name to scan under (defaults to Modal)',
     '  --quiet            Suppress progress output; only print results',
     '  -h, --help         Show this help message',
     '',
     'Examples:',
     `  ${chalk.cyan('cds-migrator-modal-descendant-check src/features/flows')}`,
     `  ${chalk.cyan('cds-migrator-modal-descendant-check "apps/**/*.tsx"')}`,
+    `  ${chalk.cyan('cds-migrator-modal-descendant-check --component CustomModalComponent src')}`,
     '',
   ];
   console.log(lines.join('\n'));
@@ -482,12 +519,18 @@ function collectFiles(rootDir: string, patterns: string[], ignore: string[]) {
 
 function buildImportContext(
   sourceFile: ts.SourceFile,
-  options?: { skipWrapperDetection?: boolean },
+  options?: {
+    skipWrapperDetection?: boolean;
+    rootComponentName?: string;
+    allowNamespaceRootMatch?: boolean;
+  },
 ): ImportContext {
   const components = new Map<string, ComponentBinding>();
   const namespaces = new Map<string, NamespaceBinding>();
   const modalIdentifiers = new Set<string>();
   const styledIdentifiers = new Set<string>();
+  const rootComponentName = options?.rootComponentName ?? DEFAULT_ROOT_COMPONENT_NAME;
+  const allowNamespaceRootMatch = options?.allowNamespaceRootMatch ?? true;
 
   sourceFile.statements.forEach((statement) => {
     if (!ts.isImportDeclaration(statement)) return;
@@ -524,7 +567,7 @@ function buildImportContext(
     if (clause.name) {
       const localName = clause.name.text;
       components.set(localName, { ...meta });
-      if (meta.isTracked && localName === 'Modal') modalIdentifiers.add(localName);
+      if (meta.isTracked && localName === rootComponentName) modalIdentifiers.add(localName);
     }
 
     if (clause.namedBindings) {
@@ -536,7 +579,12 @@ function buildImportContext(
           const importedName = (element.propertyName ?? element.name).text;
           const localName = element.name.text;
           components.set(localName, { ...meta, importedName });
-          if (meta.isTracked && importedName === 'Modal') modalIdentifiers.add(localName);
+          if (!meta.isTracked) return;
+          if (allowNamespaceRootMatch) {
+            if (importedName === rootComponentName) modalIdentifiers.add(localName);
+            return;
+          }
+          if (localName === rootComponentName) modalIdentifiers.add(localName);
         });
       }
     }
@@ -557,6 +605,8 @@ function buildImportContext(
     modalIdentifiers,
     styledIdentifiers,
     localComponents,
+    rootComponentName,
+    allowNamespaceRootMatch,
   };
 
   if (!options?.skipWrapperDetection) {
@@ -670,33 +720,48 @@ function markModalWrapperImports(context: ImportContext) {
   context.components.forEach((binding, localName) => {
     if (context.modalIdentifiers.has(localName)) return;
     if (!binding.filePath) return;
-    if (isFileModalWrapper(binding.filePath)) {
+    if (
+      isFileModalWrapper(
+        binding.filePath,
+        context.rootComponentName,
+        context.allowNamespaceRootMatch,
+      )
+    ) {
       binding.isModalWrapper = true;
       context.modalIdentifiers.add(localName);
     }
   });
 }
 
-function isFileModalWrapper(filePath: string): boolean {
-  if (modalWrapperCache.has(filePath)) {
-    return modalWrapperCache.get(filePath)!;
+function isFileModalWrapper(
+  filePath: string,
+  rootComponentName: string,
+  allowNamespaceRootMatch: boolean,
+): boolean {
+  const cacheKey = modalCacheKey(filePath, rootComponentName);
+  if (modalWrapperCache.has(cacheKey)) {
+    return modalWrapperCache.get(cacheKey)!;
   }
-  if (modalWrapperInProgress.has(filePath)) {
+  if (modalWrapperInProgress.has(cacheKey)) {
     return false;
   }
-  modalWrapperInProgress.add(filePath);
+  modalWrapperInProgress.add(cacheKey);
   const sourceFile = getSourceFile(filePath);
   if (!sourceFile) {
-    modalWrapperInProgress.delete(filePath);
-    modalWrapperCache.set(filePath, false);
+    modalWrapperInProgress.delete(cacheKey);
+    modalWrapperCache.set(cacheKey, false);
     return false;
   }
-  const context = buildImportContext(sourceFile, { skipWrapperDetection: true });
+  const context = buildImportContext(sourceFile, {
+    skipWrapperDetection: true,
+    rootComponentName,
+    allowNamespaceRootMatch,
+  });
   const modalElements = collectModalElements(sourceFile, context);
   const hasStyledWrapper = containsStyledModalWrapper(sourceFile, context);
   const result = modalElements.length > 0 || hasStyledWrapper;
-  modalWrapperCache.set(filePath, result);
-  modalWrapperInProgress.delete(filePath);
+  modalWrapperCache.set(cacheKey, result);
+  modalWrapperInProgress.delete(cacheKey);
   return result;
 }
 
@@ -744,8 +809,9 @@ function isModalTagName(tagName: ts.JsxTagNameExpression, ctx: ImportContext): b
     return ctx.modalIdentifiers.has(tagName.text);
   }
   if (ts.isPropertyAccessExpression(tagName)) {
+    if (!ctx.allowNamespaceRootMatch) return false;
     const root = getPropertyAccessRootIdentifier(tagName.expression);
-    if (!root || tagName.name.text !== 'Modal') return false;
+    if (!root || tagName.name.text !== ctx.rootComponentName) return false;
     return ctx.namespaces.has(root);
   }
   return false;
@@ -1162,18 +1228,23 @@ function collectLocalComponentUsages(
   return usages;
 }
 
-function getModalIssuesForFile(filePath: string): Issue[] {
+function getModalIssuesForFileWithRoot(
+  filePath: string,
+  rootComponentName: string,
+  allowNamespaceRootMatch: boolean,
+): Issue[] {
   if (!filePath) return [];
-  if (modalIssueCache.has(filePath)) {
-    return modalIssueCache.get(filePath)!;
+  const cacheKey = modalCacheKey(filePath, rootComponentName);
+  if (modalIssueCache.has(cacheKey)) {
+    return modalIssueCache.get(cacheKey)!;
   }
-  if (modalIssueInProgress.has(filePath)) {
+  if (modalIssueInProgress.has(cacheKey)) {
     return [];
   }
-  modalIssueInProgress.add(filePath);
-  const issues = analyzeFile(filePath) ?? [];
-  modalIssueCache.set(filePath, issues);
-  modalIssueInProgress.delete(filePath);
+  modalIssueInProgress.add(cacheKey);
+  const issues = analyzeFile(filePath, { rootComponentName, allowNamespaceRootMatch }) ?? [];
+  modalIssueCache.set(cacheKey, issues);
+  modalIssueInProgress.delete(cacheKey);
   return issues;
 }
 
@@ -1189,7 +1260,11 @@ function collectWrapperModalIssues(sourceFile: ts.SourceFile, ctx: ImportContext
     if (!binding || !binding.filePath) return;
     if (seen.has(binding.filePath)) return;
     seen.add(binding.filePath);
-    const nestedIssues = getModalIssuesForFile(binding.filePath);
+    const nestedIssues = getModalIssuesForFileWithRoot(
+      binding.filePath,
+      ctx.rootComponentName,
+      ctx.allowNamespaceRootMatch,
+    );
     if (!nestedIssues.length) return;
     nestedIssues.forEach((issue) => {
       issues.push({
@@ -1202,13 +1277,19 @@ function collectWrapperModalIssues(sourceFile: ts.SourceFile, ctx: ImportContext
   return issues;
 }
 
-function analyzeFile(filePath: string): Issue[] {
+function analyzeFile(
+  filePath: string,
+  root?: { rootComponentName: string; allowNamespaceRootMatch: boolean },
+): Issue[] {
   const sourceFile = getSourceFile(filePath);
   if (!sourceFile) {
     return [];
   }
 
-  const context = buildImportContext(sourceFile);
+  const context = buildImportContext(sourceFile, {
+    rootComponentName: root?.rootComponentName,
+    allowNamespaceRootMatch: root?.allowNamespaceRootMatch,
+  });
   const hasResolvableComponent = Array.from(context.components.values()).some((binding) =>
     Boolean(binding.filePath),
   );
@@ -1329,7 +1410,7 @@ async function main() {
   const parsed = parseArgs(process.argv);
   if (!parsed) return;
 
-  const { rootDir, patterns, ignore, quiet, tsconfig } = parsed;
+  const { rootDir, patterns, ignore, quiet, tsconfig, component } = parsed;
   initModuleResolution(rootDir, tsconfig);
   const files = await collectFiles(rootDir, patterns, ignore);
   if (!files.length) {
@@ -1345,9 +1426,10 @@ async function main() {
     );
   }
 
+  const rootConfig = getRootConfig({ component });
   const allIssues: Issue[] = [];
   files.forEach((filePath) => {
-    const fileIssues = analyzeFile(filePath);
+    const fileIssues = analyzeFile(filePath, rootConfig);
     if (fileIssues.length) allIssues.push(...fileIssues);
   });
 
