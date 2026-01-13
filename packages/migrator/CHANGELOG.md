@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.49 (1/12/2026 PST)
+
+#### 🐞 Fixes
+
+- Fix cds-migrator modal descendant checker to correctly detect CDS v7 descendants under custom root modal components imported from non-CDS sources (including local wrappers and aliased imports). [[#4215](https://github.cbhq.net/frontend/cds/pull/4215)]
+
 ## 0.2.48 (1/9/2026 PST)
 
 #### 🚀 Updates

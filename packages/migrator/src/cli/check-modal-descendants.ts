@@ -567,7 +567,13 @@ function buildImportContext(
     if (clause.name) {
       const localName = clause.name.text;
       components.set(localName, { ...meta });
-      if (meta.isTracked && localName === rootComponentName) modalIdentifiers.add(localName);
+      // When `--component <Name>` is provided, we want to treat *local wrapper components*
+      // (e.g., `RetailRedesignModal`) as Modal roots too. Previously, we only considered
+      // CDS-tracked imports as roots, which caused false negatives for custom wrappers.
+      // `allowNamespaceRootMatch` is `false` only when `--component` is set.
+      if ((meta.isTracked || !allowNamespaceRootMatch) && localName === rootComponentName) {
+        modalIdentifiers.add(localName);
+      }
     }
 
     if (clause.namedBindings) {
@@ -579,7 +585,18 @@ function buildImportContext(
           const importedName = (element.propertyName ?? element.name).text;
           const localName = element.name.text;
           components.set(localName, { ...meta, importedName });
-          if (!meta.isTracked) return;
+          // When `--component <Name>` is provided we intentionally treat non-CDS imports as eligible
+          // roots as long as the *local binding name* matches the requested root name. This covers
+          // common wrapper patterns like:
+          //   import { CustomModalComponent as RetailRedesignModal } from './RetailRedesignModal'
+          // where the source module is not a tracked CDS package (`meta.isTracked === false`), but
+          // we still want to scan descendants under <RetailRedesignModal />.
+          if (!meta.isTracked) {
+            if (!allowNamespaceRootMatch && localName === rootComponentName) {
+              modalIdentifiers.add(localName);
+            }
+            return;
+          }
           if (allowNamespaceRootMatch) {
             if (importedName === rootComponentName) modalIdentifiers.add(localName);
             return;
@@ -1411,6 +1428,9 @@ async function main() {
   if (!parsed) return;
 
   const { rootDir, patterns, ignore, quiet, tsconfig, component } = parsed;
+  if (!quiet && component) {
+    console.log(chalk.gray(`Using custom root component name via --component: ${component}`));
+  }
   initModuleResolution(rootDir, tsconfig);
   const files = await collectFiles(rootDir, patterns, ignore);
   if (!files.length) {

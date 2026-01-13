@@ -37,6 +37,20 @@ describe('cds-migrator-modal-descendant-check', () => {
     expect(result.stdout).toContain('Button from @cbhq/cds-web/v7/actions/Button');
   });
 
+  it('detects v7 descendants under a custom root imported from a local file (default import)', () => {
+    const result = runCli('custom-root-untracked-default', ['--component', 'RetailRedesignModal']);
+    expect(result.status).toBe(1);
+    expect(result.stdout).toContain('inside RetailRedesignModal');
+    expect(result.stdout).toContain('Button from @cbhq/cds-web/v7/actions/Button');
+  });
+
+  it('detects v7 descendants under a custom root imported from a local file (named import alias)', () => {
+    const result = runCli('custom-root-untracked-named', ['--component', 'RetailRedesignModal']);
+    expect(result.status).toBe(1);
+    expect(result.stdout).toContain('inside RetailRedesignModal');
+    expect(result.stdout).toContain('Button from @cbhq/cds-web/v7/actions/Button');
+  });
+
   it('detects styled modal wrappers that contain v7 descendants', () => {
     const result = runCli('styled-wrapper');
     expect(result.status).toBe(1);
