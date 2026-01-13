@@ -21,6 +21,19 @@ export function createProject(tsConfigFilePath: string): [Project, string] {
     '**/out/**',
     '**/coverage/**',
     '**/tmp/**',
+    // Exclude test and story files to reduce memory usage
+    '**/*.test.ts',
+    '**/*.test.tsx',
+    '**/*.spec.ts',
+    '**/*.spec.tsx',
+    '**/__tests__/**',
+    '**/__mocks__/**',
+    '**/*.stories.ts',
+    '**/*.stories.tsx',
+    '**/__stories__/**',
+    '**/*.d.ts',
+    '**/fixtures/**',
+    '**/testUtils/**',
   ];
 
   project.addSourceFilesAtPaths([
