@@ -22,10 +22,12 @@ git clone git@github.com:coinbase/cds.git temp-oss-cds
 git clone git@github.cbhq.net:frontend/cds.git temp-frontend-cds
 ```
 
-4. Navigate into the `temp-frontend-cds` repo and run the icon sync script. The script will create a new branch in the temp-oss-cds repo, sync the illustrations, then commit and push the changes
+4. Navigate into the `temp-frontend-cds` repo and run the illustration sync script. The script will create a new branch in the temp-oss-cds repo, sync the illustrations, then commit and push the changes
 
 ```sh
-cd ../temp-frontend-cds
+cd temp-frontend-cds
+nvm use
+yarn install
 yarn nx run illustration-tasks:sync-illustrations
 ```
 
@@ -35,6 +37,8 @@ yarn nx run illustration-tasks:sync-illustrations
 
 ```sh
 cd ../temp-oss-cds
+nvm use
+yarn install
 yarn nx run illustrations:release
 yarn changelog illustrations
 ```
@@ -54,8 +58,8 @@ git push origin illustrations/YYYY-MM-DD
 
 8. DM the illustrations DRI on Slack and share direct links to:
 
-- the icon changelog in your PR (example)
-- the Web Visual Regression results in Percy (example)
+- the illustration changelog in your PR
+- the Web Visual Regression results in Percy
 
 You can get the Percy link from the GitHub Actions "Visreg Web" job on your PR
 

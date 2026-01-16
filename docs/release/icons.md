@@ -25,7 +25,9 @@ git clone git@github.cbhq.net:frontend/cds.git temp-frontend-cds
 4. Navigate into the `temp-frontend-cds` repo and run the icon sync script. The script will create a new branch in the temp-oss-cds repo, sync the icons, then commit and push the changes
 
 ```sh
-cd ../temp-frontend-cds
+cd temp-frontend-cds
+nvm use
+yarn install
 yarn nx run icon-tasks:sync-icons
 ```
 
@@ -35,6 +37,8 @@ yarn nx run icon-tasks:sync-icons
 
 ```sh
 cd ../temp-oss-cds
+nvm use
+yarn install
 yarn changelog icons
 ```
 
@@ -53,8 +57,8 @@ git push origin icons/YYYY-MM-DD
 
 8. DM the icons DRI on Slack and share direct links to:
 
-- the icon changelog in your PR (example)
-- the Web Visual Regression results in Percy (example)
+- the icon changelog in your PR
+- the Web Visual Regression results in Percy
 
 You can get the Percy link from the GitHub Actions "Visreg Web" job on your PR
 
