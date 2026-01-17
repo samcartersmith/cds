@@ -60,6 +60,7 @@ mjs/
 /.linaria-cache
 /build
 libs/figma-dd-metrics/output
+libs/figma-analytics-export/dist
 
 # Yarn
 .yarn/*

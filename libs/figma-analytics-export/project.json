@@ -1,0 +1,44 @@
+{
+  "name": "figma-analytics-export",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/figma-analytics-export/src",
+  "projectType": "library",
+  "targets": {
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{projectRoot}/jest.config.js"
+      }
+    },
+    "typecheck": {
+      "command": "tsc --build --pretty --verbose"
+    },
+    "run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx src/main.ts",
+        "cwd": "libs/figma-analytics-export"
+      }
+    },
+    "illustration-usage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx src/main.ts --job=illustration-usage",
+        "cwd": "libs/figma-analytics-export"
+      }
+    },
+    "list-all-illustrations": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx src/main.ts --job=list-all-illustrations",
+        "cwd": "libs/figma-analytics-export"
+      }
+    }
+  }
+}

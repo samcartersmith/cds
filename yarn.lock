@@ -2468,6 +2468,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cbhq/figma-analytics-export@workspace:libs/figma-analytics-export":
+  version: 0.0.0-use.local
+  resolution: "@cbhq/figma-analytics-export@workspace:libs/figma-analytics-export"
+  dependencies:
+    "@cbhq/figma-api": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
 "@cbhq/figma-api@workspace:^, @cbhq/figma-api@workspace:libs/figma-api":
   version: 0.0.0-use.local
   resolution: "@cbhq/figma-api@workspace:libs/figma-api"

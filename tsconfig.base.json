@@ -57,6 +57,12 @@
       "@cbhq/cds-web-utils/*": [
         "libs/web-utils/src/*"
       ],
+      "@cbhq/figma-analytics-export": [
+        "libs/figma-analytics-export/src"
+      ],
+      "@cbhq/figma-analytics-export/*": [
+        "libs/figma-analytics-export/src/*"
+      ],
       "@cbhq/figma-api": [
         "libs/figma-api/src"
       ],
