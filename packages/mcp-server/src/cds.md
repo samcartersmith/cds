@@ -19,6 +19,7 @@
 - ALWAYS use the cds mcp server's list-cds-routes mcp tool to list all CDS routes before trying to use a component.
 - ALWAYS inspect the documentation for a component with the get-cds-route mcp tool before using it to understand how to import and how to use it.
 - ALWAYS check examples in the documentation before implementing.
+- ALWAYS read all getting started documentation
 - THOROUGHLY read all relevant documentation before making component suggestions.
 - CAREFULLY review the component APIs, props, and usage examples in the documentation.
 
@@ -27,6 +28,7 @@
 - MAINTAIN consistent styling and behavior with existing CDS implementations in the codebase.
 - FOLLOW CDS-specific theming and styling patterns.
 - RESPECT CDS component hierarchy and composition patterns.
+- FOLLOW all accessibility guidance and testing documentation
 - DO NOT mix CDS and non-CDS component styling approaches unless absolutely necessary.
 
 ## When Suggesting Code
