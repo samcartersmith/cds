@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 #### 🐞 Fixes
 
-- Fix(RadioCell): remove duplicate tab target by using Interactable instead of Pressable. [CDS-1170]
+- Fix(RadioCell): Adjusted Pressable to have a tabindex="-1" instead of 0. [CDS-1170]
 
 ## 8.38.5 (1/23/2026 PST)
 
