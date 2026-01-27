@@ -69,9 +69,8 @@ import type {
   VariableDeclarator,
 } from 'jscodeshift';
 
-import { getCustomPackages } from '../helpers/get-custom-packages';
-
 import { DEFAULT_PRINT_OPTIONS } from '../constants';
+import { getCustomPackages } from '../helpers/get-custom-packages';
 import { logManualMigration } from '../helpers/manual-migration-logger';
 
 const CDS_PACKAGES = ['@cbhq/cds-web', '@cbhq/cds-mobile'];

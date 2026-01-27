@@ -1,11 +1,13 @@
 import type { API, FileInfo, Options } from 'jscodeshift';
 
 import listcellSpacingVariant from './transforms/listcell-spacing-variant';
+import pressableOpacityToPressable from './transforms/pressable-opacity-to-pressable';
 
 type TransformFunction = (file: FileInfo, api: API, options: Options) => string | undefined;
 
 const codemodMap: Record<string, TransformFunction> = {
   listcellSpacingVariant: (file, api) => listcellSpacingVariant(file, api),
+  pressableOpacityToPressable: (file, api) => pressableOpacityToPressable(file, api),
 };
 
 export default function mainTransform(file: FileInfo, api: API, options: Options) {
@@ -30,7 +32,10 @@ export default function mainTransform(file: FileInfo, api: API, options: Options
     return file.source;
   }
 
-  const transformsToRun: TransformFunction[] = [codemodMap.listcellSpacingVariant];
+  const transformsToRun: TransformFunction[] = [
+    codemodMap.listcellSpacingVariant,
+    codemodMap.pressableOpacityToPressable,
+  ];
   console.log(`INFO [${file.path}]: Running post-v8 codemods (${transformsToRun.length}).`);
 
   let source = file.source;

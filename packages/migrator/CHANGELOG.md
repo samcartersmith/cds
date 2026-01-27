@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.50 (1/26/2026 PST)
+
+#### 🐞 Fixes
+
+- Added a migrator transform to migrate PressableOpacity to Pressable with transparent background and borderColor. [[#4225](https://github.cbhq.net/frontend/cds/pull/4225)]
+
 ## 0.2.49 (1/12/2026 PST)
 
 #### 🐞 Fixes
