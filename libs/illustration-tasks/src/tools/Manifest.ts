@@ -1,20 +1,19 @@
 import { output as devkitOutput } from '@nx/devkit';
-import { uniqBy } from 'lodash';
 import groupBy from 'lodash/groupBy';
 import mapValues from 'lodash/mapValues';
+import uniqBy from 'lodash/uniqBy';
 import fs from 'node:fs';
 import path from 'node:path';
 import { Task } from '@cbhq/mono-tasks';
 import { getAbsolutePath, sortByAlphabet, writePrettyFile } from '@cbhq/script-utils';
 
-import type { SyncedLibrary } from '../helpers/fetchIllustrationLibrary';
-
-import { fetchIllustrationLibrary } from '../helpers/fetchIllustrationLibrary';
+import { fetchIllustrationLibrary, SyncedLibrary } from '../helpers/fetchIllustrationLibrary';
 import { getManifestFromDisk } from '../helpers/getManifestFromDisk';
 import { logSummary } from '../helpers/logSummary';
 import { outputPathNormalizer } from '../helpers/outputPathNormalizer';
 
 import { Changelog } from './Changelog';
+import type { ColorStyleManifestType } from './ColorStyle';
 import { ColorStyles } from './ColorStyles';
 
 // Base type for items within the manifest. It defines the structure that all items should adhere to.
@@ -58,10 +57,10 @@ export type ManifestTaskOptions = {
   manifestFile: string;
   /** The CHANGELOG.md file to document changes to. */
   changelogFile?: string;
-  /** The manifest.json file which contains light color styles */
-  lightModeManifestFile?: string;
-  /** The manifest.json file which contains dark color styles */
-  darkModeManifestFile?: string;
+  /** Figma file ID containing color styles to fetch dynamically */
+  colorStylesFigmaFileId?: string;
+  /** Prefix for CSS variable names (e.g., "illustration" -> "--illustration-primary") */
+  colorStylesPrefix?: string;
   /** Sync all items regardless of when they were last updated */
   syncAll: boolean;
   /** Exit with an error when breaking changes are detected */
@@ -76,6 +75,7 @@ type InitManifestParams<
 > = {
   createItem: (manifest: Manifest<T>, taskOptions: TaskOptions) => Promise<void>;
   versioned?: boolean;
+  targetRepoRoot: string;
 };
 
 type ManifestOptions<PreviousManifest extends ManifestShape, TaskOptions = unknown> = {
@@ -122,6 +122,8 @@ export class Manifest<
   public readonly versioned: boolean;
 
   private outputs: Record<string, string> = {};
+
+  private colors: { light: ColorStyleManifestType; dark: ColorStyleManifestType } | undefined;
 
   constructor({
     previousManifest,
@@ -346,6 +348,13 @@ export class Manifest<
     this.outputs = { ...this.outputs, ...newOutputs };
   }
 
+  public setColors(colorStyles: ColorStyles) {
+    this.colors = {
+      light: colorStyles.lightManifest,
+      dark: colorStyles.darkManifest,
+    };
+  }
+
   public toJSON() {
     const normalizeOutputPath = outputPathNormalizer(this.task);
 
@@ -355,6 +364,14 @@ export class Manifest<
       ...(this.metadata ? { metadata: this.metadata } : {}),
       ...(Object.values(this.outputs).length
         ? { outputs: mapValues(this.outputs, normalizeOutputPath) }
+        : {}),
+      ...(this.colors
+        ? {
+            colors: {
+              light: this.colors.light.items.map(([_, item]) => item),
+              dark: this.colors.dark.items.map(([_, item]) => item),
+            },
+          }
         : {}),
       items: Object.fromEntries(this.itemEntries.sort(sortByAlphabet)),
     };
@@ -407,10 +424,22 @@ export class Manifest<
       process.exit();
     }
 
-    const [changelog, colorStyles] = await Promise.all([
-      Changelog.loadFromDisk(task),
-      ColorStyles.loadFromDisk(task),
-    ]);
+    const changelog = await Changelog.loadFromDisk(task);
+
+    let colorStyles: ColorStyles | undefined;
+    try {
+      if (!task.options.colorStylesFigmaFileId) {
+        throw new Error('Color styles Figma file ID is required');
+      }
+      colorStyles = await ColorStyles.loadFromFigma(
+        task.options.colorStylesFigmaFileId,
+        task.options.colorStylesPrefix ?? 'illustration',
+      );
+    } catch (error) {
+      console.error(
+        `Error loading color styles from Figma file: ${task.options.colorStylesFigmaFileId}. ${error}`,
+      );
+    }
 
     return { changelog, colorStyles, manifest };
   }

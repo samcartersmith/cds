@@ -1,4 +1,4 @@
-import { camelCase } from 'lodash';
+import camelCase from 'lodash/camelCase';
 import { splitName } from '@cbhq/script-utils';
 
 type NodeName = `${string}/${string}`;

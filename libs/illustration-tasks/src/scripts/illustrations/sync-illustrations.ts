@@ -77,7 +77,12 @@ export const main = async () => {
   >(task as any, {
     createItem,
     versioned: true,
+    targetRepoRoot: task.targetRepoRoot,
   });
+
+  if (colorStyles) {
+    manifest.setColors(colorStyles);
+  }
 
   const generatedDirectory = getAbsolutePath(
     {

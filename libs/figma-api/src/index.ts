@@ -11,6 +11,8 @@ export * from './getFileComponentSets';
 export * from './getFileImages';
 export * from './getFileNodes';
 export * from './getFileStyles';
+export * from './getLocalVariables';
+export * from './getPublishedVariables';
 export * from './getStyle';
 export * from './getStyleActions';
 export * from './getStyleUsages';

@@ -22,33 +22,27 @@ export const task = {
     // Local manifest file to track sync state and changes between runs
     manifestFile: path.resolve(CDS_OSS_ROOT, 'packages/illustrations/manifest.json'),
     /**
-     * Color Style Manifests - How These Were Originally Generated
+     * Color Variables Configuration
      *
-     * These manifest files contain color style definitions that were originally synced
-     * from Figma using the following process:
+     * Color variables are fetched dynamically from Figma using the Variables API.
+     * The fetchColorStyles helper:
+     * 1. Calls getPublishedVariables() to get the list of published variables
+     * 2. Calls getLocalVariables() to get actual values (published endpoint doesn't include them)
+     * 3. Matches published variables with their local values by variable ID
+     * 4. Determines light/dark mode based on mode names in variable collections
+     *    (e.g., modes named "Light", "Dark", "Light Mode", etc.)
+     * 5. Formats everything into light/dark manifests
      *
-     * 1. Connect to Figma API using file ID for the CDS Illustration Styles library
-     * 2. Fetch all color styles from the Figma file using getFileStyles()
-     * 3. For each style node, extract:
-     *    - key: Figma style unique identifier
-     *    - name: Semantic color name (e.g., "primary", "accent-1")
-     *    - paint: Color value (hex for solid, gradient stops for gradients)
-     * 4. Generate CSS variable names: --illustration-{name}
-     * 5. Output to manifest.json grouped by theme (light/dark)
+     * Note: This requires Enterprise org access and the file_variables:read scope.
      *
-     * The light manifest maps color names to their light theme hex values.
-     * The dark manifest maps the same color names to dark theme hex values.
      * ColorStyles.ts uses these to:
-     *   - Replace light hex values with dark equivalents for dark mode SVGs
-     *   - Replace hex values with CSS variables for themeable SVGs
-     *
-     * To rebuild sync capability, see libs/figma-api/ for Figma API utilities.
-     * Original sync command was: yarn nx run figma-styles:sync-illustration-{light|dark}-styles
+     * - Replace light hex values with dark equivalents for dark mode SVGs
+     * - Replace hex values with CSS variables for themeable SVGs
      */
-    // Dark theme color styles manifest for generating themed SVGs
-    darkModeManifestFile: 'libs/illustration-tasks/src/color-styles/dark.json',
-    // Light theme color styles manifest for generating themed SVGs
-    lightModeManifestFile: 'libs/illustration-tasks/src/color-styles/light.json',
+    // Figma file ID containing the color variables for illustrations (with light/dark modes)
+    colorStylesFigmaFileId: 'AH4N0fma2EvI30IltjBGPy',
+    // Prefix for CSS variable names (e.g., "illustration" -> "--illustration-primary")
+    colorStylesPrefix: 'illustration',
     // Root directory for all generated output files (SVGs, PNGs, TypeScript, etc.)
     generatedDirectory: path.resolve(CDS_OSS_ROOT, 'packages/illustrations/src/__generated__'),
   },

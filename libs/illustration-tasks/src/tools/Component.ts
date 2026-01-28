@@ -1,4 +1,4 @@
-import { mapValues } from 'lodash';
+import mapValues from 'lodash/mapValues';
 import { Task } from '@cbhq/mono-tasks';
 
 import { createHashFromObject } from '../helpers/createHashFromObject';

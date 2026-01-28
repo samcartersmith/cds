@@ -1,6 +1,11 @@
 import { Task } from '@cbhq/mono-tasks';
 import { getAbsolutePath } from '@cbhq/script-utils';
 
+import {
+  type ColorStyleItem,
+  type ColorStyleManifest,
+  fetchColorStyles,
+} from '../helpers/fetchColorStyles';
 import { getManifestFromDisk } from '../helpers/getManifestFromDisk';
 
 import type { ColorStyle, ColorStyleManifestType } from './ColorStyle';
@@ -37,9 +42,17 @@ export class ColorStyles {
 
   public readonly light: ColorStyleFromDisk;
 
+  /** Raw light mode manifest data for serialization */
+  public readonly lightManifest: ColorStyleManifestType;
+
+  /** Raw dark mode manifest data for serialization */
+  public readonly darkManifest: ColorStyleManifestType;
+
   private readonly lightToDarkTuple: [string, string][] = [];
 
   constructor({ light, dark }: ColorStylesOptions) {
+    this.lightManifest = light;
+    this.darkManifest = dark;
     this.light = normalizeColorStyleFromDisk(light);
     this.dark = normalizeColorStyleFromDisk(dark);
     this.light.items.forEach((colorStyle) => {
@@ -90,4 +103,41 @@ export class ColorStyles {
     }
     return undefined;
   }
+
+  /**
+   * Loads color styles dynamically from a Figma file.
+   *
+   * This fetches fresh color style data from the Figma API each time,
+   * ensuring the latest colors are always used.
+   *
+   * @param fileId - The Figma file ID containing the color styles
+   * @param prefix - CSS variable prefix (e.g., "illustration")
+   * @returns ColorStyles instance with light/dark color mappings
+   */
+  public static async loadFromFigma(fileId: string, prefix: string = 'illustration') {
+    const { light, dark } = await fetchColorStyles({ fileId, prefix });
+
+    // Convert the new ColorStyleManifest format to the format expected by ColorStyles
+    const lightManifest = convertToLegacyManifest(light);
+    const darkManifest = convertToLegacyManifest(dark);
+
+    return new ColorStyles({
+      light: lightManifest,
+      dark: darkManifest,
+    });
+  }
+}
+
+/**
+ * Converts the new ColorStyleManifest format to the legacy ManifestShape format
+ * expected by the ColorStyles constructor.
+ */
+function convertToLegacyManifest(manifest: ColorStyleManifest): ColorStyleManifestType {
+  const items: [string, ColorStyleItem][] = Object.entries(manifest.items);
+  return {
+    executor: manifest.executor,
+    lastUpdated: new Date().toISOString(),
+    metadata: {},
+    items: items as unknown as ColorStyleManifestType['items'],
+  };
 }
