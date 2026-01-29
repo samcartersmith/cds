@@ -28,6 +28,22 @@ function sleep(ms: number): Promise<void> {
 }
 
 /**
+ * Check if verbose logging is enabled
+ */
+function isVerboseLoggingEnabled(): boolean {
+  return process.env.VERBOSE_LOGS === '1';
+}
+
+/**
+ * Log a message if verbose logging is enabled
+ */
+function verboseLog(message: string): void {
+  if (isVerboseLoggingEnabled()) {
+    console.log(message);
+  }
+}
+
+/**
  * Get Figma access token from environment
  */
 function getFigmaAccessToken(): string {
@@ -52,21 +68,22 @@ function parseFigmaError(statusCode: number, responseBody: string, url: string):
   // Figma API uses inconsistent error response formats:
   // - Some endpoints return { err: "..." }
   // - Others return { message: "..." }
-  const message = errorData.err || errorData.message || `HTTP ${statusCode} error from ${url}`;
+  const message = errorData.err || errorData.message || `HTTP ${statusCode} error`;
 
+  // Always include the URL in error messages for easier debugging
   switch (statusCode) {
     case 400:
-      return new Error(`Bad request: ${message}`);
+      return new Error(`Bad request: ${message} (URL: ${url})`);
     case 401:
-      return new Error(`Authentication error: ${message}`);
+      return new Error(`Authentication error: ${message} (URL: ${url})`);
     case 403:
-      return new Error(`Permission denied: ${message}`);
+      return new Error(`Permission denied: ${message} (URL: ${url})`);
     case 404:
-      return new Error(`Not found: ${message}`);
+      return new Error(`Not found: ${message} (URL: ${url})`);
     case 429:
-      return new Error(`Rate limited: ${message}`);
+      return new Error(`Rate limited: ${message} (URL: ${url})`);
     default:
-      return new Error(`HTTP ${statusCode} error: ${message}`);
+      return new Error(`HTTP ${statusCode} error: ${message} (URL: ${url})`);
   }
 }
 
@@ -109,6 +126,11 @@ async function makeRequest<T>(
 
           // Handle rate limiting with retry
           if (statusCode === 429 && retryCount < MAX_RETRIES) {
+            verboseLog(
+              `[figma-api] Rate limited (429). Retry ${
+                retryCount + 1
+              }/${MAX_RETRIES} after ${RETRY_DELAY_MS}ms delay. URL: ${figmaUrl.toString()}`,
+            );
             await sleep(RETRY_DELAY_MS);
             try {
               const result = await makeRequest<T>(path, queryParams, retryCount + 1);
@@ -117,6 +139,13 @@ async function makeRequest<T>(
               reject(error);
             }
             return;
+          }
+
+          // Log when retries are exhausted for rate limiting
+          if (statusCode === 429) {
+            verboseLog(
+              `[figma-api] Rate limited (429). Max retries (${MAX_RETRIES}) exhausted. URL: ${figmaUrl.toString()}`,
+            );
           }
 
           // Handle error status codes
@@ -139,12 +168,22 @@ async function makeRequest<T>(
     req.on('error', (error) => {
       // Retry on network errors
       if (retryCount < MAX_RETRIES) {
+        verboseLog(
+          `[figma-api] Network error: ${error.message}. Retry ${
+            retryCount + 1
+          }/${MAX_RETRIES} after ${RETRY_DELAY_MS}ms delay. URL: ${figmaUrl.toString()}`,
+        );
         sleep(RETRY_DELAY_MS)
           .then(() => makeRequest<T>(path, queryParams, retryCount + 1))
           .then(resolve)
           .catch(reject);
       } else {
-        reject(new Error(`Network error: ${error.message}`));
+        verboseLog(
+          `[figma-api] Network error: ${
+            error.message
+          }. Max retries (${MAX_RETRIES}) exhausted. URL: ${figmaUrl.toString()}`,
+        );
+        reject(new Error(`Network error: ${error.message} (URL: ${figmaUrl.toString()})`));
       }
     });
 
