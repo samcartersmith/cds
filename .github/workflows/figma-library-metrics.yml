@@ -99,3 +99,290 @@ jobs:
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Base Component Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
             cc: <!subteam^S05HRM5A309>
+
+  # Advanced Product Library metrics collection (runs in parallel)
+  collect-advanced-product-library-metrics:
+    name: Collect Advanced Product Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for Advanced Product Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: 5jlcPo8JjEehlGkva1e6y2
+          FIGMA_LIBRARY_NAME: Advanced
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for Advanced Product Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure() && github.event_name == 'schedule'
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Advanced Product Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
+
+  # Insto Product Library metrics collection (runs in parallel)
+  collect-insto-product-library-metrics:
+    name: Collect Insto Product Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for Insto Product Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: xb1RKmQdJhMPT41lA4k5u5
+          FIGMA_LIBRARY_NAME: Insto
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for Insto Product Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure() && github.event_name == 'schedule'
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Insto Product Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
+
+  # Retail Product Library metrics collection (runs in parallel)
+  collect-retail-product-library-metrics:
+    name: Collect Retail Product Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for Retail Product Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: xfSEnVV1v83139CCux46Nx
+          FIGMA_LIBRARY_NAME: Retail
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for Retail Product Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure() && github.event_name == 'schedule'
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Retail Product Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
+
+  # Product Foundations Library metrics collection (runs in parallel)
+  collect-foundations-product-library-metrics:
+    name: Collect Product Foundations Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for Product Foundations Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: ZkznsR3ibeH1daPDwGZ9aT
+          FIGMA_LIBRARY_NAME: Foundations
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for Product Foundations Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure() && github.event_name == 'schedule'
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Product Foundations Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
+
+  # Developer Platform Product Library metrics collection (runs in parallel)
+  collect-developer-product-library-metrics:
+    name: Collect Developer Platform Product Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for Developer Platform Product Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: 7qAz66LboNEbMrDpP7aPjx
+          FIGMA_LIBRARY_NAME: Developer
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for Developer Platform Product Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure() && github.event_name == 'schedule'
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Developer Platform Product Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
+
+  # CDP 2.0 Components Library metrics collection (runs in parallel)
+  collect-developer-2-product-library-metrics:
+    name: Collect CDP 2.0 Components Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for CDP 2.0 Components Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: 4DW5u3Aq5hQiqGPQfQC6kK
+          FIGMA_LIBRARY_NAME: Developer-2.0
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for CDP 2.0 Components Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure() && github.event_name == 'schedule'
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the CDP 2.0 Components Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
+
+  # Business Product Library metrics collection (runs in parallel)
+  collect-business-product-library-metrics:
+    name: Collect Business Product Library Metrics
+    runs-on:
+      - default-config
+      - frontend-org-runner
+      - medium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup CDS
+        uses: ./.github/actions/setup
+        with:
+          yarn-install: 'true'
+
+      - name: Read Config Service
+        uses: infra/cb-action-config-service@master
+        with:
+          scope: actions-context/frontend/cds-production
+
+      - name: Run Figma metrics collection for Business Product Library
+        env:
+          FIGMA_LIBRARY_FILE_KEY: UeRvUx8twWEXbxbZtC8Hi7
+          FIGMA_LIBRARY_NAME: Business
+          VERBOSE_LOGS: ${{ inputs.verbose_logs && '1' || '' }}
+        run: |
+          echo "Starting Figma Library Metrics collection for Business Product Library..."
+          yarn nx run figma-dd-metrics:run || exit 1
+          echo "Figma Library Metrics collection completed successfully"
+
+      - name: Report failure
+        if: failure() && github.event_name == 'schedule'
+        uses: infra/cb-action-slack-send@master
+        with:
+          channel: '#design-systems-eng-team'
+          message: |
+            🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Business Product Library
+            Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
+            cc: <!subteam^S05HRM5A309>
