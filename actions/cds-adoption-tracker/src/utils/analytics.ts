@@ -1,7 +1,8 @@
 import { init, logMetric, MetricType, PlatformName } from '@cbhq/client-analytics';
 
-import { type ComponentStats } from '../types';
+import { type ComponentStats, type IllustrationStats } from '../types';
 const METRIC_NAME = 'cds_adoption.distribution';
+const ILLUSTRATION_METRIC_NAME = 'cds_adoption.illustration_usage';
 
 export function logCount(
   count: number,
@@ -50,6 +51,24 @@ export function logAllComponentStats(
       component.version,
       repo,
     );
+  }
+}
+
+export function logIllustrationStats(illustrationStats: IllustrationStats[], repo: string) {
+  for (const stat of illustrationStats) {
+    logMetric({
+      metricName: ILLUSTRATION_METRIC_NAME,
+      metricType: MetricType.distribution,
+      tags: {
+        component_type: stat.componentType,
+        illustration_name: stat.illustrationName,
+        page_key: 'ui_systems_adoption',
+        import_path: stat.importPath,
+        version: stat.version,
+        repo,
+      },
+      value: stat.timesUsed,
+    });
   }
 }
 

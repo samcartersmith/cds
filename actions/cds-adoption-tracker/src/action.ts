@@ -1,11 +1,12 @@
-import { logAllComponentStats, setupAnalytics } from './utils/analytics';
+import { logAllComponentStats, logIllustrationStats, setupAnalytics } from './utils/analytics';
 import {
   getExternalComponentImportStats,
+  getIllustrationNames,
   isPresentationalComponent,
 } from './utils/componentHelpers';
 import { getInputs } from './utils/inputs';
 import { createProject, getPackageJsonDependencies, loadPackageJson } from './utils/projectHelpers';
-import { type ComponentStats } from './types';
+import { type ComponentStats, type IllustrationStats } from './types';
 
 export async function run(): Promise<void> {
   try {
@@ -18,6 +19,7 @@ export async function run(): Promise<void> {
 
     const cdsComponentStats: ComponentStats[] = [];
     const nonCdsComponentStats: ComponentStats[] = [];
+    const illustrationStatsArr: IllustrationStats[] = [];
     let cdsComponentTotalCount = 0;
     let nonCdsComponentTotalCount = 0;
 
@@ -59,6 +61,26 @@ export async function run(): Promise<void> {
               version: externalImport.version,
             });
           }
+
+          const illustrationNames = getIllustrationNames(externalImport, sourceFile);
+          for (const illustrationName of illustrationNames) {
+            const existingIllustration = illustrationStatsArr.find(
+              (stat) =>
+                stat.componentType === externalImport.name &&
+                stat.illustrationName === illustrationName,
+            );
+            if (existingIllustration) {
+              existingIllustration.timesUsed++;
+            } else {
+              illustrationStatsArr.push({
+                componentType: externalImport.name,
+                illustrationName,
+                timesUsed: 1,
+                importPath: externalImport.importPath,
+                version: externalImport.version,
+              });
+            }
+          }
         } else {
           if (isPresentationalComponent(externalImport, sourceFile)) {
             nonCdsComponentTotalCount++;
@@ -83,9 +105,11 @@ export async function run(): Promise<void> {
 
     // log all component stats to Datadog
     logAllComponentStats(cdsComponentStats, nonCdsComponentStats, inputs.projectName);
+    logIllustrationStats(illustrationStatsArr, inputs.projectName);
 
     console.log(`Total CDS Components: ${cdsComponentTotalCount}`);
     console.log(`Total Non-CDS Components: ${nonCdsComponentTotalCount}`);
+    console.log(`Unique Illustration Usages: ${illustrationStatsArr.length}`);
     console.log(
       `Percent CDS: ${(
         (cdsComponentTotalCount / (cdsComponentTotalCount + nonCdsComponentTotalCount)) *

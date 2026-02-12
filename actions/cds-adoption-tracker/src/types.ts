@@ -24,3 +24,11 @@ export type ComponentImportStat = {
   importPath: string;
   version: string;
 };
+
+export type IllustrationStats = {
+  componentType: string;
+  illustrationName: string;
+  timesUsed: number;
+  importPath: string;
+  version: string;
+};

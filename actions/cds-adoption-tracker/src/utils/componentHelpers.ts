@@ -65,7 +65,10 @@ export function isPresentationalComponent(
   const attributes: Array<{ name: string; value: string }> = [];
 
   // ignore internal dependencies
-  if (importStat.importPath.startsWith('@cbhq/')) {
+  if (
+    importStat.importPath.startsWith('@cbhq/') ||
+    importStat.importPath.startsWith('@coinbase/')
+  ) {
     return false;
   }
 
@@ -104,4 +107,70 @@ export function isPresentationalComponent(
     }
   });
   return attributes.length > 0;
+}
+
+const illustrationComponents = [
+  'HeroSquare',
+  'SpotSquare',
+  'Pictogram',
+  'SpotRectangle',
+  'SpotIcon',
+];
+
+/**
+ * Returns the `name` prop values for CDS illustration components.
+ * If the import is not an illustration component, returns an empty array.
+ */
+export function getIllustrationNames(
+  importStat: ComponentImportStat,
+  sourceFile: SourceFile,
+): string[] {
+  if (!illustrationComponents.includes(importStat.name)) {
+    return [];
+  }
+
+  const names: string[] = [];
+
+  sourceFile.forEachDescendant((node) => {
+    let attributesLike: JsxAttributeLike[] = [];
+
+    if (node.getKind() === SyntaxKind.JsxElement) {
+      const jsxElement = node.asKind(SyntaxKind.JsxElement);
+      const openingElement = jsxElement?.getOpeningElement();
+
+      if (
+        openingElement?.getTagNameNode().getText() === importStat.name ||
+        openingElement?.getTagNameNode().getText() === importStat.alias
+      ) {
+        attributesLike = openingElement?.getAttributes() ?? [];
+      }
+    } else if (node.getKind() === SyntaxKind.JsxSelfClosingElement) {
+      const jsxElement = node.asKind(SyntaxKind.JsxSelfClosingElement);
+
+      if (
+        jsxElement?.getTagNameNode().getText() === importStat.name ||
+        jsxElement?.getTagNameNode().getText() === importStat.alias
+      ) {
+        attributesLike = jsxElement?.getAttributes() ?? [];
+      }
+    }
+
+    for (const attribute of attributesLike) {
+      if (attribute.getKind() === SyntaxKind.JsxAttribute) {
+        const jsxAttribute = attribute.asKindOrThrow(SyntaxKind.JsxAttribute);
+
+        if (jsxAttribute.getNameNode().getText() === 'name') {
+          const initializer = jsxAttribute.getInitializer();
+          if (initializer) {
+            const value = initializer.getText().replace(/['"{}]/g, '');
+            if (value) {
+              names.push(value);
+            }
+          }
+        }
+      }
+    }
+  });
+
+  return names;
 }
