@@ -121,7 +121,7 @@ export async function run(): Promise<void> {
 
     // allow time for batched metrics to send
     await new Promise((resolve) => {
-      setTimeout(resolve, 4000);
+      setTimeout(resolve, 10000);
     });
   } catch (error) {
     // don't fail the PR on errors
