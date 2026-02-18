@@ -88,7 +88,7 @@ function setupBeforeExit() {
 export function setupAnalytics() {
   const analyticsErrors = setupBeforeExit();
   init({
-    batchMetricsThreshold: 1,
+    batchMetricsThreshold: 30,
     headers: { Origin: 'https://www.coinbase.com' },
     isProd: true, // using non-prod API does not work in GHA runners
     platform: PlatformName.server,
