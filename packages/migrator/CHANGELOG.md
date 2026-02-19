@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.51 (2/19/2026 PST)
+
+#### 🚀 Updates
+
+- Add transform to update scope.
+
 ## 0.2.50 (1/26/2026 PST)
 
 #### 🐞 Fixes
