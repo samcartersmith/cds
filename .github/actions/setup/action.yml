@@ -11,6 +11,11 @@ inputs:
     required: false
     default: 'false'
     type: boolean
+  yarn-install-retries:
+    description: 'Number of attempts for yarn install (default 1, no retries). Use 2+ to retry flaky native addon builds.'
+    required: false
+    default: '1'
+    type: string
 
 runs:
   using: composite
@@ -48,7 +53,22 @@ runs:
 
     - name: Install dependencies
       if: ${{ inputs.yarn-install == 'true' }}
-      run: yarn --immutable
+      run: |
+        retries=${{ inputs.yarn-install-retries }}
+        attempt=1
+        while true; do
+          if yarn --immutable; then
+            break
+          fi
+          if [ "$attempt" -ge "$retries" ]; then
+            echo "yarn --immutable failed after $retries attempt(s)"
+            exit 1
+          fi
+          wait_seconds=$((60 * attempt))
+          echo "yarn --immutable failed (attempt $attempt/$retries), retrying in ${wait_seconds} seconds..."
+          sleep "$wait_seconds"
+          attempt=$((attempt + 1))
+        done
       shell: bash
 
     - name: Set base and head

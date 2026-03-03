@@ -33,6 +33,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
@@ -74,6 +75,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
@@ -115,6 +117,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
@@ -156,6 +159,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
@@ -197,6 +201,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
@@ -238,6 +243,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
@@ -279,6 +285,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
@@ -320,6 +327,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
@@ -361,6 +369,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           yarn-install: 'true'
+          yarn-install-retries: '5'
 
       - name: Read Config Service
         uses: infra/cb-action-config-service@master
