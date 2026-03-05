@@ -6,6 +6,7 @@ dist
 temp
 
 # Local env variables
+.env
 .env.local
 
 # OS ignores
