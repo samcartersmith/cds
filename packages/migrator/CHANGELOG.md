@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.52 (3/10/2026 PST)
+
+#### 🚀 Updates
+
+- Add reverse scope change script.
+
 ## 0.2.51 (2/19/2026 PST)
 
 #### 🚀 Updates

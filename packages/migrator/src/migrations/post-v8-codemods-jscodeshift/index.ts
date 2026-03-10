@@ -3,6 +3,7 @@ import type { API, FileInfo, Options } from 'jscodeshift';
 import listcellSpacingVariant from './transforms/listcell-spacing-variant';
 import pressableOpacityToPressable from './transforms/pressable-opacity-to-pressable';
 import scopeCbhqToCoinbase from './transforms/scope-cbhq-to-coinbase';
+import scopeCoinbaseToCbhq from './transforms/scope-coinbase-to-cbhq';
 
 type TransformFunction = (file: FileInfo, api: API, options: Options) => string | undefined;
 
@@ -10,6 +11,7 @@ const codemodMap: Record<string, TransformFunction> = {
   listcellSpacingVariant: (file, api) => listcellSpacingVariant(file, api),
   pressableOpacityToPressable: (file, api) => pressableOpacityToPressable(file, api),
   scopeCbhqToCoinbase: (file, api) => scopeCbhqToCoinbase(file, api),
+  scopeCoinbaseToCbhq: (file, api) => scopeCoinbaseToCbhq(file, api),
 };
 
 export default function mainTransform(file: FileInfo, api: API, options: Options) {
@@ -37,7 +39,6 @@ export default function mainTransform(file: FileInfo, api: API, options: Options
   const transformsToRun: TransformFunction[] = [
     codemodMap.listcellSpacingVariant,
     codemodMap.pressableOpacityToPressable,
-    codemodMap.scopeCbhqToCoinbase,
   ];
   console.log(`INFO [${file.path}]: Running post-v8 codemods (${transformsToRun.length}).`);
 
