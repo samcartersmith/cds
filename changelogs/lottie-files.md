@@ -1,6 +1,6 @@
 # @cbhq/cds-lottie-files
 
-> [NPM registry](https://registry-npm.cbhq.net/-/web/detail/@cbhq/cds-lottie-files)
+> [NPM registry](https://npm-proxy.cbhq.net/-/web/detail/@cbhq/cds-lottie-files)
 
 All notable changes to this project will be documented in this file.
 

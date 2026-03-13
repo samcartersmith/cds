@@ -1,6 +1,6 @@
 # @cbhq/cds-utils
 
-> [NPM registry](https://registry-npm.cbhq.net/-/web/detail/@cbhq/cds-utils)
+> [NPM registry](https://npm-proxy.cbhq.net/-/web/detail/@cbhq/cds-utils)
 
 All notable changes to this project will be documented in this file.
 

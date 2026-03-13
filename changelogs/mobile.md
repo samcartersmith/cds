@@ -1,6 +1,6 @@
 # @cbhq/cds-mobile
 
-> [NPM registry](https://registry-npm.cbhq.net/-/web/detail/@cbhq/cds-mobile)
+> [NPM registry](https://npm-proxy.cbhq.net/-/web/detail/@cbhq/cds-mobile)
 
 All notable changes to this project will be documented in this file!
 

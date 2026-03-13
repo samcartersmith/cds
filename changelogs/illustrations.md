@@ -1,6 +1,6 @@
 # @cbhq/cds-illustrations
 
-> [NPM registry](https://registry-npm.cbhq.net/-/web/detail/@cbhq/cds-illustrations)
+> [NPM registry](https://npm-proxy.cbhq.net/-/web/detail/@cbhq/cds-illustrations)
 
 All notable changes to this project will be documented in this file.
 
