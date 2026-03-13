@@ -142,6 +142,12 @@ export const routes = [
         .default,
   },
   {
+    key: 'ChartAccessibility',
+    getComponent: () =>
+      require('@coinbase/cds-mobile-visualization/chart/__stories__/ChartAccessibility.stories')
+        .default,
+  },
+  {
     key: 'ChartTransitions',
     getComponent: () =>
       require('@coinbase/cds-mobile-visualization/chart/__stories__/ChartTransitions.stories')
@@ -266,6 +272,10 @@ export const routes = [
     key: 'DrawerTop',
     getComponent: () =>
       require('@coinbase/cds-mobile/overlays/__stories__/DrawerTop.stories').default,
+  },
+  {
+    key: 'Fallback',
+    getComponent: () => require('@coinbase/cds-mobile/layout/__stories__/Fallback.stories').default,
   },
   {
     key: 'FloatingAssetCard',
