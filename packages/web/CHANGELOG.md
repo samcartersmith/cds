@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+#### 🐞 Fixes
+
+- Refresh Checkbox component with 4px corner radius. [[#477](https://github.com/coinbase/cds/pull/477)]
+
 #### 📘 Misc
 
 - Deprecate SegmentedControl. [[#493](https://github.com/coinbase/cds/pull/493)]
