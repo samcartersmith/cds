@@ -8,7 +8,9 @@ import { MetricType } from '@cbhq/client-analytics';
 
 import {
   transformActionsComponentData,
+  transformActionsComponentDataCumulative,
   transformActionsTeamData,
+  transformActionsTeamDataCumulative,
   transformUsageComponentData,
   transformUsageFileData,
 } from '../transformers';
@@ -470,6 +472,423 @@ describe('transformers', () => {
 
       expect(metrics).toHaveLength(0);
       expect(draftsOmitted).toBe(0);
+    });
+  });
+
+  describe('transformActionsTeamDataCumulative', () => {
+    const multiWeekTeamData: LibraryAnalyticsComponentActionsByTeam[] = [
+      {
+        team_name: 'Design Team',
+        workspace_name: 'Main Workspace',
+        week: '2024-11-03',
+        insertions: 20,
+        detachments: 2,
+      },
+      {
+        team_name: 'Design Team',
+        workspace_name: 'Main Workspace',
+        week: '2024-11-10',
+        insertions: 22,
+        detachments: 3,
+      },
+      {
+        team_name: 'Engineering Team',
+        workspace_name: 'Main Workspace',
+        week: '2024-11-03',
+        insertions: 10,
+        detachments: 1,
+      },
+      {
+        team_name: 'Engineering Team',
+        workspace_name: 'Main Workspace',
+        week: '2024-11-10',
+        insertions: 18,
+        detachments: 2,
+      },
+      {
+        team_name: '<Drafts>',
+        workspace_name: 'Main Workspace',
+        week: '2024-11-10',
+        insertions: 5,
+        detachments: 0,
+      },
+    ];
+
+    it('should aggregate insertions and detachments across all weeks per team', () => {
+      const { metrics, draftsOmitted } = transformActionsTeamDataCumulative(
+        multiWeekTeamData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      // 2 teams × 2 metrics (insertion + detachment) = 4 total; drafts excluded
+      expect(metrics).toHaveLength(4);
+      expect(draftsOmitted).toBe(1);
+
+      const designInsertionMetric = metrics.find(
+        (m) => m.tags.figma_team === 'Design Team' && m.tags.action_type === 'insertion',
+      );
+      const designDetachmentMetric = metrics.find(
+        (m) => m.tags.figma_team === 'Design Team' && m.tags.action_type === 'detachment',
+      );
+      const engInsertionMetric = metrics.find(
+        (m) => m.tags.figma_team === 'Engineering Team' && m.tags.action_type === 'insertion',
+      );
+
+      expect(designInsertionMetric?.value).toBe(42); // 20 + 22
+      expect(designDetachmentMetric?.value).toBe(5); // 2 + 3
+      expect(engInsertionMetric?.value).toBe(28); // 10 + 18
+    });
+
+    it('should include the period tag on all emitted metrics', () => {
+      const { metrics } = transformActionsTeamDataCumulative(
+        multiWeekTeamData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'qtd',
+      );
+
+      expect(metrics.every((m) => m.tags.period === 'qtd')).toBe(true);
+    });
+
+    it('should use mtd period tag when specified', () => {
+      const { metrics } = transformActionsTeamDataCumulative(
+        multiWeekTeamData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      expect(metrics.every((m) => m.tags.period === 'mtd')).toBe(true);
+    });
+
+    it('should use the figma_lib.actions.team metric name', () => {
+      const { metrics } = transformActionsTeamDataCumulative(
+        multiWeekTeamData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      expect(metrics.every((m) => m.metricName === 'figma_lib.actions.team')).toBe(true);
+    });
+
+    it('should filter out draft entries', () => {
+      const { metrics, draftsOmitted } = transformActionsTeamDataCumulative(
+        multiWeekTeamData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      expect(draftsOmitted).toBe(1);
+      expect(metrics.every((m) => m.tags.figma_team !== '<Drafts>')).toBe(true);
+    });
+
+    it('should return empty metrics for empty input', () => {
+      const { metrics, draftsOmitted } = transformActionsTeamDataCumulative(
+        [],
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      expect(metrics).toHaveLength(0);
+      expect(draftsOmitted).toBe(0);
+    });
+
+    it('should only include rows within the quarter when pre-filtered by quarter start date', () => {
+      // Rows spanning Q3 and Q4 2026.  In production, main.ts fetches with
+      // start_date=quarterStart so the API already excludes prior quarters,
+      // but we verify the contract here explicitly: after the caller filters
+      // to rows whose `week` >= quarter start, the transformer totals only
+      // reflect in-quarter data.
+      const crossQuarterData: LibraryAnalyticsComponentActionsByTeam[] = [
+        // Q3 2026 rows — should be excluded from Q4 QTD
+        {
+          team_name: 'Design Team',
+          workspace_name: 'Main Workspace',
+          week: '2026-07-05',
+          insertions: 100,
+          detachments: 10,
+        },
+        {
+          team_name: 'Design Team',
+          workspace_name: 'Main Workspace',
+          week: '2026-09-27',
+          insertions: 50,
+          detachments: 5,
+        },
+        // Q4 2026 rows — should be included in Q4 QTD
+        {
+          team_name: 'Design Team',
+          workspace_name: 'Main Workspace',
+          week: '2026-10-04',
+          insertions: 20,
+          detachments: 2,
+        },
+        {
+          team_name: 'Design Team',
+          workspace_name: 'Main Workspace',
+          week: '2026-10-11',
+          insertions: 15,
+          detachments: 1,
+        },
+      ];
+
+      // Simulate the filter applied in main.ts before calling this transformer:
+      //   qtdActionsTeamRows.filter((row) => row.week >= quarterStartISO)
+      const q4StartISO = '2026-10-01';
+      const q4Rows = crossQuarterData.filter((row) => row.week >= q4StartISO);
+
+      const { metrics } = transformActionsTeamDataCumulative(
+        q4Rows,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'qtd',
+      );
+
+      const insertionMetric = metrics.find(
+        (m) => m.tags.figma_team === 'Design Team' && m.tags.action_type === 'insertion',
+      );
+      const detachmentMetric = metrics.find(
+        (m) => m.tags.figma_team === 'Design Team' && m.tags.action_type === 'detachment',
+      );
+
+      // Only Q4 weeks (10-04 and 10-11) should be counted — not Q3 (150 insertions, 15 detachments)
+      expect(insertionMetric?.value).toBe(35); // 20 + 15
+      expect(detachmentMetric?.value).toBe(3); // 2 + 1
+    });
+  });
+
+  describe('transformActionsComponentDataCumulative', () => {
+    const multiWeekComponentData: LibraryAnalyticsComponentActionsByAsset[] = [
+      // Week 1
+      {
+        component_key: 'comp-1',
+        component_name: 'Button',
+        component_set_name: undefined,
+        week: '2024-11-03',
+        insertions: 40,
+        detachments: 4,
+      },
+      {
+        component_key: 'comp-2',
+        component_name: 'Primary',
+        component_set_name: 'Button',
+        week: '2024-11-03',
+        insertions: 20,
+        detachments: 2,
+      },
+      // Week 2
+      {
+        component_key: 'comp-1',
+        component_name: 'Button',
+        component_set_name: undefined,
+        week: '2024-11-10',
+        insertions: 60,
+        detachments: 6,
+      },
+      {
+        component_key: 'comp-2',
+        component_name: 'Primary',
+        component_set_name: 'Button',
+        week: '2024-11-10',
+        insertions: 30,
+        detachments: 3,
+      },
+      // Different component across two weeks
+      {
+        component_key: 'comp-3',
+        component_name: 'Input',
+        component_set_name: undefined,
+        week: '2024-11-03',
+        insertions: 10,
+        detachments: 1,
+      },
+      {
+        component_key: 'comp-3',
+        component_name: 'Input',
+        component_set_name: undefined,
+        week: '2024-11-10',
+        insertions: 15,
+        detachments: 1,
+      },
+    ];
+
+    it('should aggregate insertions and detachments across all weeks and variants per component', () => {
+      const metrics = transformActionsComponentDataCumulative(
+        multiWeekComponentData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      // 2 unique component names (Button, Input) × 2 action types = 4 metrics
+      expect(metrics).toHaveLength(4);
+
+      const buttonInsertionMetric = metrics.find(
+        (m) => m.tags.component_name === 'Button' && m.tags.action_type === 'insertion',
+      );
+      const buttonDetachmentMetric = metrics.find(
+        (m) => m.tags.component_name === 'Button' && m.tags.action_type === 'detachment',
+      );
+      const inputInsertionMetric = metrics.find(
+        (m) => m.tags.component_name === 'Input' && m.tags.action_type === 'insertion',
+      );
+
+      // Button: (40+20) week1 + (60+30) week2 = 60 + 90 = 150 insertions
+      expect(buttonInsertionMetric?.value).toBe(150);
+      // Button: (4+2) + (6+3) = 15 detachments
+      expect(buttonDetachmentMetric?.value).toBe(15);
+      // Input: 10 + 15 = 25 insertions
+      expect(inputInsertionMetric?.value).toBe(25);
+    });
+
+    it('should include the period tag on all emitted metrics', () => {
+      const metrics = transformActionsComponentDataCumulative(
+        multiWeekComponentData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'qtd',
+      );
+
+      expect(metrics.every((m) => m.tags.period === 'qtd')).toBe(true);
+    });
+
+    it('should use mtd period tag when specified', () => {
+      const metrics = transformActionsComponentDataCumulative(
+        multiWeekComponentData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      expect(metrics.every((m) => m.tags.period === 'mtd')).toBe(true);
+    });
+
+    it('should use the figma_lib.actions.component metric name', () => {
+      const metrics = transformActionsComponentDataCumulative(
+        multiWeekComponentData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      expect(metrics.every((m) => m.metricName === 'figma_lib.actions.component')).toBe(true);
+    });
+
+    it('should aggregate component variants under the component set name', () => {
+      const variantData: LibraryAnalyticsComponentActionsByAsset[] = [
+        {
+          component_key: 'comp-a',
+          component_name: 'Large',
+          component_set_name: 'Button',
+          week: '2024-11-03',
+          insertions: 10,
+          detachments: 1,
+        },
+        {
+          component_key: 'comp-b',
+          component_name: 'Small',
+          component_set_name: 'Button',
+          week: '2024-11-10',
+          insertions: 5,
+          detachments: 0,
+        },
+      ];
+
+      const metrics = transformActionsComponentDataCumulative(
+        variantData,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      // Both variants map to 'Button'; expect 1 insertion metric + 1 detachment metric
+      expect(metrics).toHaveLength(2);
+
+      const insertionMetric = metrics.find((m) => m.tags.action_type === 'insertion');
+      expect(insertionMetric?.tags.component_name).toBe('Button');
+      expect(insertionMetric?.value).toBe(15); // 10 + 5
+    });
+
+    it('should return empty metrics for empty input', () => {
+      const metrics = transformActionsComponentDataCumulative(
+        [],
+        mockLibraryFileKey,
+        mockLibraryName,
+        'mtd',
+      );
+
+      expect(metrics).toHaveLength(0);
+    });
+
+    it('should only include rows within the quarter when pre-filtered by quarter start date', () => {
+      // Rows spanning Q3 and Q4 2026.  The caller (main.ts) filters to rows
+      // whose `week` >= quarter start before passing them to this transformer.
+      // This test verifies that the totals reflect only the in-quarter rows.
+      const crossQuarterData: LibraryAnalyticsComponentActionsByAsset[] = [
+        // Q3 2026 rows — should be excluded from Q4 QTD
+        {
+          component_key: 'comp-1',
+          component_name: 'Button',
+          component_set_name: undefined,
+          week: '2026-07-06',
+          insertions: 80,
+          detachments: 8,
+        },
+        {
+          component_key: 'comp-1',
+          component_name: 'Button',
+          component_set_name: undefined,
+          week: '2026-09-28',
+          insertions: 40,
+          detachments: 4,
+        },
+        // Q4 2026 rows — should be included in Q4 QTD
+        {
+          component_key: 'comp-1',
+          component_name: 'Button',
+          component_set_name: undefined,
+          week: '2026-10-04',
+          insertions: 25,
+          detachments: 2,
+        },
+        {
+          component_key: 'comp-2',
+          component_name: 'Primary',
+          component_set_name: 'Button',
+          week: '2026-10-11',
+          insertions: 10,
+          detachments: 1,
+        },
+      ];
+
+      // Simulate the filter applied in main.ts before calling this transformer:
+      //   qtdActionsComponentRows.filter((row) => row.week >= quarterStartISO)
+      const q4StartISO = '2026-10-01';
+      const q4Rows = crossQuarterData.filter((row) => row.week >= q4StartISO);
+
+      const metrics = transformActionsComponentDataCumulative(
+        q4Rows,
+        mockLibraryFileKey,
+        mockLibraryName,
+        'qtd',
+      );
+
+      const insertionMetric = metrics.find(
+        (m) => m.tags.component_name === 'Button' && m.tags.action_type === 'insertion',
+      );
+      const detachmentMetric = metrics.find(
+        (m) => m.tags.component_name === 'Button' && m.tags.action_type === 'detachment',
+      );
+
+      // Only Q4 weeks (10-04 and 10-11) should be counted — not Q3 (120 insertions, 12 detachments).
+      // Both Q4 rows map to 'Button' (standalone + variant), so they are aggregated together.
+      expect(insertionMetric?.value).toBe(35); // 25 + 10
+      expect(detachmentMetric?.value).toBe(3); // 2 + 1
     });
   });
 });

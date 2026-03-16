@@ -13,10 +13,13 @@ import {
   fetchAllComponentActions,
   fetchAllComponentUsages,
 } from './data';
+import { getCurrentDateString, getMonthStartISODate, getQuarterStartDate } from './date-utils';
 import { logger } from './logger';
 import {
   transformActionsComponentData,
+  transformActionsComponentDataCumulative,
   transformActionsTeamData,
+  transformActionsTeamDataCumulative,
   transformUsageComponentData,
   transformUsageFileData,
 } from './transformers';
@@ -56,15 +59,6 @@ function validateEnvironment(): {
 }
 
 /**
- * Get current date string for Figma API
- * The Figma API automatically rounds the date back to the start of the week (Sunday)
- * @returns Date string that Figma API will use to determine the week
- */
-function getCurrentDateString(): string {
-  return new Date().toDateString();
-}
-
-/**
  * Fetch all Figma data and transform into metrics
  * @param libraryFileKey - The Figma library file key
  * @param libraryName - The library name for tagging metrics
@@ -79,8 +73,15 @@ async function fetchAndFormatMetrics(
   // Figma API will automatically round down to the previous Sunday from the given start_date.
   const startDate = getCurrentDateString();
 
+  // Quarter start date for fetching all weekly action rows since the beginning of the quarter.
+  // From the QTD data we derive MTD by filtering rows whose `week` field falls within the current month.
+  const quarterStartDate = getQuarterStartDate();
+  const monthStartISO = getMonthStartISODate();
+
   logger.verbose(`\nDate Information:`);
   logger.verbose(`  Start Date: ${startDate} (Figma API will round to start of week)`);
+  logger.verbose(`  Quarter Start Date: ${quarterStartDate} (for QTD cumulative metrics)`);
+  logger.verbose(`  Month Start (ISO): ${monthStartISO} (for MTD cumulative metrics)`);
 
   logger.log('Starting parallel data fetching from Figma API...\n');
 
@@ -99,43 +100,84 @@ async function fetchAndFormatMetrics(
   const isUsagesByFile = (row: ComponentUsagesRow): row is UsagesByFileRow =>
     'file_name' in row && !('component_key' in row);
 
-  // Fetch all data in parallel
-  const [actionsTeamRows, actionsComponentRows, usageComponentRows, usageFileRows] =
-    await Promise.all([
-      // Fetch component actions grouped by team
-      fetchAllComponentActions(libraryFileKey, {
-        group_by: 'team',
-        start_date: startDate,
-      }).then((rows) => {
-        logger.verbose(`✓ Fetched ${rows.length} component actions rows (grouped by team)`);
-        return rows.filter(isActionsByTeam);
-      }),
+  // Fetch all data in parallel — including QTD action rows for cumulative metrics
+  const [
+    actionsTeamRows,
+    actionsComponentRows,
+    usageComponentRows,
+    usageFileRows,
+    qtdActionsTeamRows,
+    qtdActionsComponentRows,
+  ] = await Promise.all([
+    // Fetch component actions grouped by team (current week)
+    fetchAllComponentActions(libraryFileKey, {
+      group_by: 'team',
+      start_date: startDate,
+    }).then((rows) => {
+      logger.verbose(`✓ Fetched ${rows.length} component actions rows (grouped by team)`);
+      return rows.filter(isActionsByTeam);
+    }),
 
-      // Fetch component actions grouped by component
-      fetchAllComponentActions(libraryFileKey, {
-        group_by: 'component',
-        start_date: startDate,
-      }).then((rows) => {
-        logger.verbose(`✓ Fetched ${rows.length} component actions rows (grouped by component)`);
-        return rows.filter(isActionsByComponent);
-      }),
+    // Fetch component actions grouped by component (current week)
+    fetchAllComponentActions(libraryFileKey, {
+      group_by: 'component',
+      start_date: startDate,
+    }).then((rows) => {
+      logger.verbose(`✓ Fetched ${rows.length} component actions rows (grouped by component)`);
+      return rows.filter(isActionsByComponent);
+    }),
 
-      // Fetch component usages grouped by component
-      fetchAllComponentUsages(libraryFileKey, {
-        group_by: 'component',
-      }).then((rows) => {
-        logger.verbose(`✓ Fetched ${rows.length} component usage rows (grouped by component)`);
-        return rows.filter(isUsagesByComponent);
-      }),
+    // Fetch component usages grouped by component
+    fetchAllComponentUsages(libraryFileKey, {
+      group_by: 'component',
+    }).then((rows) => {
+      logger.verbose(`✓ Fetched ${rows.length} component usage rows (grouped by component)`);
+      return rows.filter(isUsagesByComponent);
+    }),
 
-      // Fetch component usages grouped by file
-      fetchAllComponentUsages(libraryFileKey, {
-        group_by: 'file',
-      }).then((rows) => {
-        logger.verbose(`✓ Fetched ${rows.length} component usage rows (grouped by file)`);
-        return rows.filter(isUsagesByFile);
-      }),
-    ]);
+    // Fetch component usages grouped by file
+    fetchAllComponentUsages(libraryFileKey, {
+      group_by: 'file',
+    }).then((rows) => {
+      logger.verbose(`✓ Fetched ${rows.length} component usage rows (grouped by file)`);
+      return rows.filter(isUsagesByFile);
+    }),
+
+    // Fetch component actions grouped by team since the start of the quarter (for QTD/MTD cumulative metrics)
+    fetchAllComponentActions(libraryFileKey, {
+      group_by: 'team',
+      start_date: quarterStartDate,
+    }).then((rows) => {
+      logger.verbose(
+        `✓ Fetched ${rows.length} QTD component actions rows (grouped by team, since ${quarterStartDate})`,
+      );
+      return rows.filter(isActionsByTeam);
+    }),
+
+    // Fetch component actions grouped by component since the start of the quarter (for QTD/MTD cumulative metrics)
+    fetchAllComponentActions(libraryFileKey, {
+      group_by: 'component',
+      start_date: quarterStartDate,
+    }).then((rows) => {
+      logger.verbose(
+        `✓ Fetched ${rows.length} QTD component actions rows (grouped by component, since ${quarterStartDate})`,
+      );
+      return rows.filter(isActionsByComponent);
+    }),
+  ]);
+
+  // Derive MTD rows from QTD data by filtering to only weeks within the current month.
+  // The `week` field is an ISO date string (YYYY-MM-DD) for the Sunday that starts the week,
+  // so a simple lexicographic comparison against the month start ISO date is sufficient.
+  const mtdActionsTeamRows = qtdActionsTeamRows.filter((row) => row.week >= monthStartISO);
+  const mtdActionsComponentRows = qtdActionsComponentRows.filter(
+    (row) => row.week >= monthStartISO,
+  );
+
+  logger.verbose(`  MTD team action rows (week >= ${monthStartISO}): ${mtdActionsTeamRows.length}`);
+  logger.verbose(
+    `  MTD component action rows (week >= ${monthStartISO}): ${mtdActionsComponentRows.length}`,
+  );
 
   logger.log('\n=== Figma Data Fetching Complete ===\n');
 
@@ -153,10 +195,46 @@ async function fetchAndFormatMetrics(
   );
   const usageFileResult = transformUsageFileData(usageFileRows, libraryFileKey, libraryName);
 
+  // Transform cumulative MTD and QTD metrics
+  const mtdActionsTeamResult = transformActionsTeamDataCumulative(
+    mtdActionsTeamRows,
+    libraryFileKey,
+    libraryName,
+    'mtd',
+  );
+  const qtdActionsTeamResult = transformActionsTeamDataCumulative(
+    qtdActionsTeamRows,
+    libraryFileKey,
+    libraryName,
+    'qtd',
+  );
+  const mtdActionsComponentMetrics = transformActionsComponentDataCumulative(
+    mtdActionsComponentRows,
+    libraryFileKey,
+    libraryName,
+    'mtd',
+  );
+  const qtdActionsComponentMetrics = transformActionsComponentDataCumulative(
+    qtdActionsComponentRows,
+    libraryFileKey,
+    libraryName,
+    'qtd',
+  );
+
   // Log draft filtering results
   if (actionsTeamResult.draftsOmitted > 0) {
     logger.verbose(
       `  Omitted ${actionsTeamResult.draftsOmitted} draft team action rows from metrics`,
+    );
+  }
+  if (mtdActionsTeamResult.draftsOmitted > 0) {
+    logger.verbose(
+      `  Omitted ${mtdActionsTeamResult.draftsOmitted} draft team action rows from MTD metrics`,
+    );
+  }
+  if (qtdActionsTeamResult.draftsOmitted > 0) {
+    logger.verbose(
+      `  Omitted ${qtdActionsTeamResult.draftsOmitted} draft team action rows from QTD metrics`,
     );
   }
   if (usageFileResult.draftsOmitted > 0) {
@@ -169,27 +247,63 @@ async function fetchAndFormatMetrics(
     ...actionsComponentMetrics,
     ...usageComponentMetrics,
     ...usageFileResult.metrics,
+    ...mtdActionsTeamResult.metrics,
+    ...qtdActionsTeamResult.metrics,
+    ...mtdActionsComponentMetrics,
+    ...qtdActionsComponentMetrics,
   ];
 
   logger.log(`Total metrics to be submitted: ${allMetrics.length}\n`);
 
   // Display summary statistics
   logger.log('Summary by Metric Type:');
-  logger.log(`  figma_lib.actions.team: ${actionsTeamResult.metrics.length} metrics`);
-  logger.log(`  figma_lib.actions.component: ${actionsComponentMetrics.length} metrics`);
+  logger.log(`  figma_lib.actions.team (weekly):    ${actionsTeamResult.metrics.length} metrics`);
+  logger.log(
+    `  figma_lib.actions.team (mtd):       ${mtdActionsTeamResult.metrics.length} metrics`,
+  );
+  logger.log(
+    `  figma_lib.actions.team (qtd):       ${qtdActionsTeamResult.metrics.length} metrics`,
+  );
+  logger.log(`  figma_lib.actions.component (weekly): ${actionsComponentMetrics.length} metrics`);
+  logger.log(
+    `  figma_lib.actions.component (mtd):    ${mtdActionsComponentMetrics.length} metrics`,
+  );
+  logger.log(
+    `  figma_lib.actions.component (qtd):    ${qtdActionsComponentMetrics.length} metrics`,
+  );
   logger.log(`  figma_lib.usage.component: ${usageComponentMetrics.length} metrics`);
   logger.log(`  figma_lib.usage.file: ${usageFileResult.metrics.length} metrics`);
 
   // Display sample metrics for verification
   logger.verbose('\n=== Sample Metrics (first 3 from each type) ===\n');
 
-  logger.verbose('Sample Team Actions:');
+  logger.verbose('Sample Team Actions (weekly):');
   actionsTeamResult.metrics.slice(0, 3).forEach((metric, index) => {
     logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
   });
 
-  logger.verbose('\nSample Component Actions:');
+  logger.verbose('\nSample Team Actions (MTD cumulative):');
+  mtdActionsTeamResult.metrics.slice(0, 3).forEach((metric, index) => {
+    logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
+  });
+
+  logger.verbose('\nSample Team Actions (QTD cumulative):');
+  qtdActionsTeamResult.metrics.slice(0, 3).forEach((metric, index) => {
+    logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
+  });
+
+  logger.verbose('\nSample Component Actions (weekly):');
   actionsComponentMetrics.slice(0, 3).forEach((metric, index) => {
+    logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
+  });
+
+  logger.verbose('\nSample Component Actions (MTD cumulative):');
+  mtdActionsComponentMetrics.slice(0, 3).forEach((metric, index) => {
+    logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
+  });
+
+  logger.verbose('\nSample Component Actions (QTD cumulative):');
+  qtdActionsComponentMetrics.slice(0, 3).forEach((metric, index) => {
     logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
   });
 
