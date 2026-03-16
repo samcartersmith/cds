@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 8.53.0 (3/13/2026 PST)
 
 #### 🐞 Fixes
 
