@@ -19,6 +19,10 @@ import {
 export default {
   title: 'Components/Alpha/Combobox',
   component: Combobox,
+  parameters: {
+    // Due to the InputChips rendered inside the Select control, there's an a11y violation.
+    a11y: { test: 'off' },
+  },
 };
 
 const fruitOptions: SelectOption[] = [
@@ -261,6 +265,122 @@ export const LongPlaceholder = () => {
         placeholder="This is a very long placeholder text that should test how the component handles extensive placeholder content"
         type="multi"
         value={value}
+      />
+    </VStack>
+  );
+};
+
+export const Alignments = () => {
+  const [singleValue, setSingleValue] = useState<string | null>('apple');
+  const { value: multiValue, onChange: multiOnChange } = useMultiSelect({
+    initialValue: ['apple', 'banana'],
+  });
+
+  return (
+    <VStack gap={4}>
+      <Combobox
+        label="Default align - start"
+        onChange={setSingleValue}
+        options={singleFruitOptions}
+        placeholder="Search and select fruits..."
+        value={singleValue}
+      />
+      <Combobox
+        align="center"
+        label="Center align"
+        onChange={setSingleValue}
+        options={singleFruitOptions}
+        placeholder="Search and select fruits..."
+        value={singleValue}
+      />
+      <Combobox
+        align="end"
+        label="End align"
+        onChange={setSingleValue}
+        options={singleFruitOptions}
+        placeholder="Search and select fruits..."
+        value={singleValue}
+      />
+      <Combobox
+        compact
+        label="Compact align - start"
+        onChange={setSingleValue}
+        options={singleFruitOptions}
+        placeholder="Search and select fruits..."
+        value={singleValue}
+      />
+      <Combobox
+        compact
+        align="center"
+        label="Compact align - center"
+        onChange={setSingleValue}
+        options={singleFruitOptions}
+        placeholder="Search and select fruits..."
+        value={singleValue}
+      />
+      <Combobox
+        compact
+        align="end"
+        label="Compact align - end"
+        onChange={setSingleValue}
+        options={singleFruitOptions}
+        placeholder="Search and select fruits..."
+        value={singleValue}
+      />
+      <Combobox
+        label="Default align - start"
+        onChange={multiOnChange}
+        options={fruitOptions}
+        placeholder="Empty value"
+        type="multi"
+        value={multiValue}
+      />
+      <Combobox
+        align="center"
+        label="Center align"
+        onChange={multiOnChange}
+        options={fruitOptions}
+        placeholder="Empty value"
+        type="multi"
+        value={multiValue}
+      />
+      <Combobox
+        align="end"
+        label="End align"
+        onChange={multiOnChange}
+        options={fruitOptions}
+        placeholder="Empty value"
+        type="multi"
+        value={multiValue}
+      />
+      <Combobox
+        compact
+        label="Compact align - start"
+        onChange={multiOnChange}
+        options={fruitOptions}
+        placeholder="Empty value"
+        type="multi"
+        value={multiValue}
+      />
+      <Combobox
+        compact
+        align="center"
+        label="Compact align - center"
+        onChange={multiOnChange}
+        options={fruitOptions}
+        placeholder="Empty value"
+        type="multi"
+        value={multiValue}
+      />
+      <Combobox
+        compact
+        align="end"
+        label="Compact align - end"
+        onChange={multiOnChange}
+        options={fruitOptions}
+        placeholder="Empty value"
+        type="multi"
+        value={multiValue}
       />
     </VStack>
   );
@@ -666,7 +786,7 @@ export const RemoveOptionLabel = () => {
         label="Custom remove label"
         onChange={onChange}
         options={fruitOptions}
-        placeholder="Custom accessibility..."
+        placeholder="Custom remove label"
         removeSelectedOptionAccessibilityLabel="Delete"
         type="multi"
         value={value}
@@ -681,8 +801,9 @@ export const AccessibilityLabel = () => {
   return (
     <VStack gap={4}>
       <Combobox
-        accessibilityLabel="Fruit selection combobox"
-        label="Accessible combobox"
+        accessibilityLabel="Custom dropdown accessibility label"
+        controlAccessibilityLabel="Custom control accessibility label"
+        label="Custom accessibility label"
         onChange={onChange}
         options={fruitOptions}
         placeholder="Has accessibility label..."

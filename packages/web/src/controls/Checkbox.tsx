@@ -39,19 +39,22 @@ const checkboxCss = css`
   }
 `;
 
-export type CheckboxProps<T extends string> = ControlBaseProps<T> & {
-  /** Sets the checked/active color of the control.
+export type CheckboxBaseProps<CheckboxValue extends string> = ControlBaseProps<CheckboxValue> & {
+  /**
+   * Sets the checked/active color of the checkbox.
    * @default fgInverse
    */
   controlColor?: ThemeVars.Color;
   /**
-   * Optional.Sets the border width of the control.
+   * Sets the border width of the checkbox.
    * @default 100
    */
   borderWidth?: ThemeVars.BorderWidth;
 };
 
-const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
+export type CheckboxProps<CheckboxValue extends string> = CheckboxBaseProps<CheckboxValue>;
+
+const CheckboxWithRef = forwardRef(function CheckboxWithRef<CheckboxValue extends string>(
   {
     children,
     checked,
@@ -61,8 +64,9 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
     borderColor = checked || indeterminate ? 'bgPrimary' : 'bgLineHeavy',
     borderRadius = 100,
     borderWidth = 100,
+    elevation,
     ...props
-  }: CheckboxProps<T>,
+  }: CheckboxProps<CheckboxValue>,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) {
   const filled = checked || indeterminate;
@@ -94,8 +98,8 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
       ref={ref}
       aria-label={props.accessibilityLabel}
       borderRadius={borderRadius}
-      borderWidth={borderWidth}
       checked={checked}
+      elevation={elevation}
       label={children}
       type="checkbox"
       {...props}
@@ -126,8 +130,8 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
       </Box>
     </Control>
   );
-}) as <T extends string>(
-  props: CheckboxProps<T> & { ref?: React.Ref<HTMLInputElement> },
+}) as <CheckboxValue extends string>(
+  props: CheckboxProps<CheckboxValue> & { ref?: React.Ref<HTMLInputElement> },
 ) => React.ReactElement;
 
 export const Checkbox = memo(CheckboxWithRef) as typeof CheckboxWithRef &
