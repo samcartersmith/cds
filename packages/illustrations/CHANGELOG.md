@@ -8,6 +8,81 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 4.33.0 (3/11/2026 PST)
+
+#### 🚀 Updates
+
+- Feat: Publish illustrations 2026-03-11. [[#495](https://github.com/coinbase/cds/pull/495)]
+
+##### ⭐️ Added (1)
+
+###### Pictogram (1)
+
+- download
+
+## 4.32.0 (3/3/2026 PST)
+
+#### 🚀 Updates
+
+- Feat: Publish illustrations 2026-03-03. [[#466](https://github.com/coinbase/cds/pull/466)]
+
+##### ⭐️ Added (4)
+
+###### Pictogram (2)
+
+- pieChartWithArrow
+- pieChartWithArrowBlue
+
+###### SpotSquare (2)
+
+- pieChartWithArrow
+- pieChartWithArrowBlue
+
+## 4.31.0 (2/3/2026 PST)
+
+#### 🚀 Updates
+
+- Feat: Publish illustrations 2026/02/03. [[#364](https://github.com/coinbase/cds/pull/364)]
+
+##### ⭐️ Added (1)
+
+###### Pictogram (1)
+
+- arrowsUpDown
+
+##### ⭐️ Updated (1)
+
+###### Pictogram (1)
+
+- baseCheckSmall
+
+## 4.30.1 (2/3/2026 PST)
+
+This is an artificial version bump with no new change.
+
+## 4.30.0 (1/29/2026 PST)
+
+##### ⭐️ Added (4)
+
+###### Pictogram (1)
+
+- commodities
+
+###### HeroSquare (2)
+
+- test
+- borrowCoinsBtc
+
+###### SpotSquare (1)
+
+- goldSilverFutures
+
+##### ⭐️ Updated (1)
+
+###### SpotSquare (1)
+
+- cryptoEconomyArrows
+
 ## 4.29.0 (12/5/2025 PST)
 
 #### 🚀 Updates
