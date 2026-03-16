@@ -8,11 +8,11 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
-## Unreleased
+## 8.53.0 (3/16/2026 PST)
 
-#### 📘 Misc
+#### 🐞 Fixes
 
-- Internal: update figma code connect config and some mapping files. [[#304](https://github.com/coinbase/cds/pull/304)]
+- Refresh Checkbox component with 4px corner radius. [[#477](https://github.com/coinbase/cds/pull/477)]
 
 ## 8.38.0 (1/14/2026 PST)
 
