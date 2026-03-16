@@ -86,6 +86,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/apyInterest-5.js').content,
     dark: () => require('../svgJs/dark/apyInterest-5.js').content,
   },
+  arrowsUpDown: {
+    light: () => require('../svgJs/light/arrowsUpDown-0.js').content,
+    dark: () => require('../svgJs/dark/arrowsUpDown-0.js').content,
+  },
   assetEncryption: {
     light: () => require('../svgJs/light/assetEncryption-5.js').content,
     dark: () => require('../svgJs/dark/assetEncryption-5.js').content,
@@ -547,8 +551,8 @@ const svgJsMap = {
     dark: () => require('../svgJs/dark/baseChatBubbleHeart-1.js').content,
   },
   baseCheckSmall: {
-    light: () => require('../svgJs/light/baseCheckSmall-0.js').content,
-    dark: () => require('../svgJs/dark/baseCheckSmall-0.js').content,
+    light: () => require('../svgJs/light/baseCheckSmall-1.js').content,
+    dark: () => require('../svgJs/dark/baseCheckSmall-1.js').content,
   },
   baseCoinCryptoSmall: {
     light: () => require('../svgJs/light/baseCoinCryptoSmall-0.js').content,
@@ -982,6 +986,10 @@ const svgJsMap = {
     light: () => require('../svgJs/light/commerceNavigation-6.js').content,
     dark: () => require('../svgJs/dark/commerceNavigation-6.js').content,
   },
+  commodities: {
+    light: () => require('../svgJs/light/commodities-0.js').content,
+    dark: () => require('../svgJs/dark/commodities-0.js').content,
+  },
   completeQuiz: {
     light: () => require('../svgJs/light/completeQuiz-5.js').content,
     dark: () => require('../svgJs/dark/completeQuiz-5.js').content,
@@ -1101,6 +1109,10 @@ const svgJsMap = {
   done: {
     light: () => require('../svgJs/light/done-4.js').content,
     dark: () => require('../svgJs/dark/done-4.js').content,
+  },
+  download: {
+    light: () => require('../svgJs/light/download-0.js').content,
+    dark: () => require('../svgJs/dark/download-0.js').content,
   },
   driversLicense: {
     light: () => require('../svgJs/light/driversLicense-3.js').content,
@@ -1565,6 +1577,14 @@ const svgJsMap = {
   pieChartData: {
     light: () => require('../svgJs/light/pieChartData-0.js').content,
     dark: () => require('../svgJs/dark/pieChartData-0.js').content,
+  },
+  pieChartWithArrow: {
+    light: () => require('../svgJs/light/pieChartWithArrow-0.js').content,
+    dark: () => require('../svgJs/dark/pieChartWithArrow-0.js').content,
+  },
+  pieChartWithArrowBlue: {
+    light: () => require('../svgJs/light/pieChartWithArrowBlue-0.js').content,
+    dark: () => require('../svgJs/dark/pieChartWithArrowBlue-0.js').content,
   },
   pizza: {
     light: () => require('../svgJs/light/pizza-3.js').content,
