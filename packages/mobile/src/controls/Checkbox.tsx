@@ -96,6 +96,7 @@ const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
     accessibilityLabel,
     accessibilityHint,
     accessible = true,
+    borderRadius = 100,
     ...props
   }: CheckboxProps<T>,
   ref: React.ForwardedRef<View>,
@@ -115,6 +116,7 @@ const CheckboxWithRef = forwardRef(function Checkbox<T extends string>(
       accessibilityLabel={accessibilityLabelValue}
       accessibilityRole="checkbox"
       accessible={accessible}
+      borderRadius={borderRadius}
       hitSlop={5}
       label={children}
       {...props}

@@ -59,7 +59,7 @@ const CheckboxWithRef = forwardRef(function CheckboxWithRef<T extends string>(
     controlColor = 'fgInverse',
     background = checked || indeterminate ? 'bgPrimary' : 'bg',
     borderColor = checked || indeterminate ? 'bgPrimary' : 'bgLineHeavy',
-    borderRadius,
+    borderRadius = 100,
     borderWidth = 100,
     ...props
   }: CheckboxProps<T>,
