@@ -4,7 +4,12 @@
     font-size: var(--fontSize-title2);
     font-weight: var(--fontWeight-title2);
     line-height: var(--lineHeight-title2);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
+    margin-top: var(--space-2);
+  }
+
+  & h2:first-child {
+    margin-top: 0;
   }
 
   & h3 {
@@ -45,6 +50,7 @@
     font-weight: var(--fontWeight-body);
     line-height: var(--lineHeight-body);
     margin-bottom: var(--space-3);
+    margin-top: var(--space-1);
   }
 
   & ul {

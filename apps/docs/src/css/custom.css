@@ -124,6 +124,30 @@ a:focus-visible {
   text-decoration: none;
 }
 
+/* Clear and visible focus indicators for all interactive elements (WCAG 2.4.7) */
+#__docusaurus button:focus-visible,
+#__docusaurus [role='button']:focus-visible,
+#__docusaurus [role='tab']:focus-visible,
+#__docusaurus [role='menuitem']:focus-visible,
+#__docusaurus input:focus-visible,
+#__docusaurus select:focus-visible,
+#__docusaurus textarea:focus-visible,
+#__docusaurus [tabindex='0']:focus-visible,
+#__docusaurus a:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Accordion headers, buttons, and other CDS interactive elements */
+#__docusaurus .cds-Interactable:focus-visible,
+#__docusaurus .cds-Pressable:focus-visible,
+#__docusaurus .cds-Button:focus-visible,
+#__docusaurus .cds-IconButton:focus-visible,
+#__docusaurus .cds-Cell:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
 table {
   width: 100%;
   display: table;
