@@ -249,24 +249,22 @@ export function transformUsageComponentData(
 }
 
 /**
- * Transform component actions data grouped by team into cumulative metric data (MTD or QTD).
- * Aggregates insertions and detachments across all weekly rows, emitting a single metric per
- * team that represents the cumulative total for the given period.
+ * Transform component actions data grouped by team into a single global cumulative metric
+ * for the given period (MTD or QTD). Sums insertions and detachments across ALL teams
+ * (excluding Drafts), emitting exactly one metric per action type.
  *
- * Metric: figma_lib.actions.team
- * Tags: figma_team, library_key, library_name, action_type, period
+ * Metric: figma_lib.actions.cumulative
+ * Tags: library_key, library_name, action_type, period
  */
-export function transformActionsTeamDataCumulative(
+export function transformActionsCumulative(
   rows: ActionsByTeamRow[],
   libraryFileKey: string,
   libraryName: string,
   period: 'mtd' | 'qtd',
 ): { metrics: MetricData[]; draftsOmitted: number } {
-  const metrics: MetricData[] = [];
+  let totalInsertions = 0;
+  let totalDetachments = 0;
   let draftsOmitted = 0;
-
-  const teamInsertions = new Map<string, number>();
-  const teamDetachments = new Map<string, number>();
 
   for (const row of rows) {
     if (row.team_name === '<Drafts>') {
@@ -274,106 +272,36 @@ export function transformActionsTeamDataCumulative(
       continue;
     }
 
-    teamInsertions.set(row.team_name, (teamInsertions.get(row.team_name) ?? 0) + row.insertions);
-    teamDetachments.set(row.team_name, (teamDetachments.get(row.team_name) ?? 0) + row.detachments);
+    totalInsertions += row.insertions;
+    totalDetachments += row.detachments;
   }
 
-  teamInsertions.forEach((insertions, teamName) => {
-    metrics.push({
-      metricName: 'figma_lib.actions.team',
+  const metrics: MetricData[] = [
+    {
+      metricName: 'figma_lib.actions.cumulative',
       metricType: MetricType.gauge,
-      value: insertions,
+      value: totalInsertions,
       tags: {
-        figma_team: teamName,
         library_key: libraryFileKey,
         library_name: libraryName,
         action_type: 'insertion',
         period,
       },
-    });
-  });
-
-  teamDetachments.forEach((detachments, teamName) => {
-    metrics.push({
-      metricName: 'figma_lib.actions.team',
+    },
+    {
+      metricName: 'figma_lib.actions.cumulative',
       metricType: MetricType.gauge,
-      value: detachments,
+      value: totalDetachments,
       tags: {
-        figma_team: teamName,
         library_key: libraryFileKey,
         library_name: libraryName,
         action_type: 'detachment',
         period,
       },
-    });
-  });
+    },
+  ];
 
   return { metrics, draftsOmitted };
-}
-
-/**
- * Transform component actions data grouped by component into cumulative metric data (MTD or QTD).
- * Aggregates insertions and detachments across all weekly rows (and all variants), emitting a
- * single metric per component that represents the cumulative total for the given period.
- *
- * Metric: figma_lib.actions.component
- * Tags: component_name, library_key, library_name, action_type, period
- */
-export function transformActionsComponentDataCumulative(
-  rows: ActionsByComponentRow[],
-  libraryFileKey: string,
-  libraryName: string,
-  period: 'mtd' | 'qtd',
-): MetricData[] {
-  const metrics: MetricData[] = [];
-
-  const totalComponentInsertions = new Map<string, number>();
-  const totalComponentDetachments = new Map<string, number>();
-
-  for (const row of rows) {
-    const componentName = row.component_set_name ?? row.component_name;
-
-    totalComponentInsertions.set(
-      componentName,
-      (totalComponentInsertions.get(componentName) ?? 0) + row.insertions,
-    );
-    totalComponentDetachments.set(
-      componentName,
-      (totalComponentDetachments.get(componentName) ?? 0) + row.detachments,
-    );
-  }
-
-  totalComponentInsertions.forEach((insertions, componentName) => {
-    metrics.push({
-      metricName: 'figma_lib.actions.component',
-      metricType: MetricType.gauge,
-      value: insertions,
-      tags: {
-        component_name: componentName,
-        library_key: libraryFileKey,
-        library_name: libraryName,
-        action_type: 'insertion',
-        period,
-      },
-    });
-  });
-
-  totalComponentDetachments.forEach((detachments, componentName) => {
-    metrics.push({
-      metricName: 'figma_lib.actions.component',
-      metricType: MetricType.gauge,
-      value: detachments,
-      tags: {
-        component_name: componentName,
-        library_key: libraryFileKey,
-        library_name: libraryName,
-        action_type: 'detachment',
-        period,
-      },
-    });
-  });
-
-  return metrics;
 }
 
 /**

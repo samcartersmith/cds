@@ -17,9 +17,8 @@ import { getCurrentDateString, getMonthStartISODate, getQuarterStartDate } from 
 import { logger } from './logger';
 import {
   transformActionsComponentData,
-  transformActionsComponentDataCumulative,
+  transformActionsCumulative,
   transformActionsTeamData,
-  transformActionsTeamDataCumulative,
   transformUsageComponentData,
   transformUsageFileData,
 } from './transformers';
@@ -100,14 +99,13 @@ async function fetchAndFormatMetrics(
   const isUsagesByFile = (row: ComponentUsagesRow): row is UsagesByFileRow =>
     'file_name' in row && !('component_key' in row);
 
-  // Fetch all data in parallel — including QTD action rows for cumulative metrics
+  // Fetch all data in parallel — including QTD team action rows for cumulative metrics
   const [
     actionsTeamRows,
     actionsComponentRows,
     usageComponentRows,
     usageFileRows,
     qtdActionsTeamRows,
-    qtdActionsComponentRows,
   ] = await Promise.all([
     // Fetch component actions grouped by team (current week)
     fetchAllComponentActions(libraryFileKey, {
@@ -153,31 +151,14 @@ async function fetchAndFormatMetrics(
       );
       return rows.filter(isActionsByTeam);
     }),
-
-    // Fetch component actions grouped by component since the start of the quarter (for QTD/MTD cumulative metrics)
-    fetchAllComponentActions(libraryFileKey, {
-      group_by: 'component',
-      start_date: quarterStartDate,
-    }).then((rows) => {
-      logger.verbose(
-        `✓ Fetched ${rows.length} QTD component actions rows (grouped by component, since ${quarterStartDate})`,
-      );
-      return rows.filter(isActionsByComponent);
-    }),
   ]);
 
   // Derive MTD rows from QTD data by filtering to only weeks within the current month.
   // The `week` field is an ISO date string (YYYY-MM-DD) for the Sunday that starts the week,
   // so a simple lexicographic comparison against the month start ISO date is sufficient.
   const mtdActionsTeamRows = qtdActionsTeamRows.filter((row) => row.week >= monthStartISO);
-  const mtdActionsComponentRows = qtdActionsComponentRows.filter(
-    (row) => row.week >= monthStartISO,
-  );
 
   logger.verbose(`  MTD team action rows (week >= ${monthStartISO}): ${mtdActionsTeamRows.length}`);
-  logger.verbose(
-    `  MTD component action rows (week >= ${monthStartISO}): ${mtdActionsComponentRows.length}`,
-  );
 
   logger.log('\n=== Figma Data Fetching Complete ===\n');
 
@@ -195,27 +176,15 @@ async function fetchAndFormatMetrics(
   );
   const usageFileResult = transformUsageFileData(usageFileRows, libraryFileKey, libraryName);
 
-  // Transform cumulative MTD and QTD metrics
-  const mtdActionsTeamResult = transformActionsTeamDataCumulative(
+  // Transform cumulative MTD and QTD metrics — single global totals across all teams
+  const mtdCumulativeResult = transformActionsCumulative(
     mtdActionsTeamRows,
     libraryFileKey,
     libraryName,
     'mtd',
   );
-  const qtdActionsTeamResult = transformActionsTeamDataCumulative(
+  const qtdCumulativeResult = transformActionsCumulative(
     qtdActionsTeamRows,
-    libraryFileKey,
-    libraryName,
-    'qtd',
-  );
-  const mtdActionsComponentMetrics = transformActionsComponentDataCumulative(
-    mtdActionsComponentRows,
-    libraryFileKey,
-    libraryName,
-    'mtd',
-  );
-  const qtdActionsComponentMetrics = transformActionsComponentDataCumulative(
-    qtdActionsComponentRows,
     libraryFileKey,
     libraryName,
     'qtd',
@@ -227,14 +196,14 @@ async function fetchAndFormatMetrics(
       `  Omitted ${actionsTeamResult.draftsOmitted} draft team action rows from metrics`,
     );
   }
-  if (mtdActionsTeamResult.draftsOmitted > 0) {
+  if (mtdCumulativeResult.draftsOmitted > 0) {
     logger.verbose(
-      `  Omitted ${mtdActionsTeamResult.draftsOmitted} draft team action rows from MTD metrics`,
+      `  Omitted ${mtdCumulativeResult.draftsOmitted} draft team action rows from MTD cumulative metrics`,
     );
   }
-  if (qtdActionsTeamResult.draftsOmitted > 0) {
+  if (qtdCumulativeResult.draftsOmitted > 0) {
     logger.verbose(
-      `  Omitted ${qtdActionsTeamResult.draftsOmitted} draft team action rows from QTD metrics`,
+      `  Omitted ${qtdCumulativeResult.draftsOmitted} draft team action rows from QTD cumulative metrics`,
     );
   }
   if (usageFileResult.draftsOmitted > 0) {
@@ -247,32 +216,24 @@ async function fetchAndFormatMetrics(
     ...actionsComponentMetrics,
     ...usageComponentMetrics,
     ...usageFileResult.metrics,
-    ...mtdActionsTeamResult.metrics,
-    ...qtdActionsTeamResult.metrics,
-    ...mtdActionsComponentMetrics,
-    ...qtdActionsComponentMetrics,
+    ...mtdCumulativeResult.metrics,
+    ...qtdCumulativeResult.metrics,
   ];
 
   logger.log(`Total metrics to be submitted: ${allMetrics.length}\n`);
 
   // Display summary statistics
   logger.log('Summary by Metric Type:');
-  logger.log(`  figma_lib.actions.team (weekly):    ${actionsTeamResult.metrics.length} metrics`);
-  logger.log(
-    `  figma_lib.actions.team (mtd):       ${mtdActionsTeamResult.metrics.length} metrics`,
-  );
-  logger.log(
-    `  figma_lib.actions.team (qtd):       ${qtdActionsTeamResult.metrics.length} metrics`,
-  );
+  logger.log(`  figma_lib.actions.team (weekly):      ${actionsTeamResult.metrics.length} metrics`);
   logger.log(`  figma_lib.actions.component (weekly): ${actionsComponentMetrics.length} metrics`);
   logger.log(
-    `  figma_lib.actions.component (mtd):    ${mtdActionsComponentMetrics.length} metrics`,
+    `  figma_lib.actions.cumulative (mtd):   ${mtdCumulativeResult.metrics.length} metrics`,
   );
   logger.log(
-    `  figma_lib.actions.component (qtd):    ${qtdActionsComponentMetrics.length} metrics`,
+    `  figma_lib.actions.cumulative (qtd):   ${qtdCumulativeResult.metrics.length} metrics`,
   );
-  logger.log(`  figma_lib.usage.component: ${usageComponentMetrics.length} metrics`);
-  logger.log(`  figma_lib.usage.file: ${usageFileResult.metrics.length} metrics`);
+  logger.log(`  figma_lib.usage.component:            ${usageComponentMetrics.length} metrics`);
+  logger.log(`  figma_lib.usage.file:                 ${usageFileResult.metrics.length} metrics`);
 
   // Display sample metrics for verification
   logger.verbose('\n=== Sample Metrics (first 3 from each type) ===\n');
@@ -282,28 +243,18 @@ async function fetchAndFormatMetrics(
     logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
   });
 
-  logger.verbose('\nSample Team Actions (MTD cumulative):');
-  mtdActionsTeamResult.metrics.slice(0, 3).forEach((metric, index) => {
-    logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
-  });
-
-  logger.verbose('\nSample Team Actions (QTD cumulative):');
-  qtdActionsTeamResult.metrics.slice(0, 3).forEach((metric, index) => {
-    logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
-  });
-
   logger.verbose('\nSample Component Actions (weekly):');
   actionsComponentMetrics.slice(0, 3).forEach((metric, index) => {
     logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
   });
 
-  logger.verbose('\nSample Component Actions (MTD cumulative):');
-  mtdActionsComponentMetrics.slice(0, 3).forEach((metric, index) => {
+  logger.verbose('\nSample Cumulative Actions (MTD):');
+  mtdCumulativeResult.metrics.forEach((metric, index) => {
     logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
   });
 
-  logger.verbose('\nSample Component Actions (QTD cumulative):');
-  qtdActionsComponentMetrics.slice(0, 3).forEach((metric, index) => {
+  logger.verbose('\nSample Cumulative Actions (QTD):');
+  qtdCumulativeResult.metrics.forEach((metric, index) => {
     logger.verbose(`  ${index + 1}. ${JSON.stringify(metric, null, 2)}`);
   });
 
