@@ -27,16 +27,20 @@
   },
   "resolutions": {
     "@testing-library/user-event@^14.0.4": "patch:@testing-library/user-event@npm:14.0.4#.yarn/patches/@testing-library-user-event-npm-14.0.4-109d618170",
+    "depcheck@^1.4.7": "patch:depcheck@npm:1.4.7#.yarn/patches/depcheck-npm-1.4.7-6cb3b67aed.patch",
     "framer-motion@^10.18.0": "patch:framer-motion@npm:10.18.0#.yarn/patches/framer-motion-npm-10.18.0-ae9ea02138",
     "react-helmet-async": "^2.0.5",
     "elliptic": "^6.6.0",
+    "minimatch": "10.2.4",
     "socks": "^2.8.0"
   },
   "resolutionComments": {
     "@testing-library/user-event@^14.0.4": "Create subpath export for types. (https://github.cbhq.net/frontend/cds/pull/497)",
+    "depcheck@^1.4.7": "Named minimatch export for compatibility with minimatch@10 (security resolution)",
     "framer-motion@^10.18.0": "Export missing types",
     "react-helmet-async": "Working around Nx graph resolution issue",
     "elliptic": "VM remediation: upgrade from 6.5.4 to ^6.6.0",
+    "minimatch": "VM remediation: pin to 10.2.4 for security",
     "socks": "VM remediation: upgrade from 2.6.2 to ^2.8.0 to replace vulnerable ip package with ip-address"
   },
   "workspaces": [
