@@ -32,7 +32,11 @@
     "react-helmet-async": "^2.0.5",
     "elliptic": "^6.6.0",
     "minimatch": "10.2.4",
-    "socks": "^2.8.0"
+    "socks": "^2.8.0",
+    "ajv@^8.0.0": "8.18.0",
+    "ajv@^8.0.1": "8.18.0",
+    "ajv@^8.6.3": "8.18.0",
+    "ajv@^8.9.0": "8.18.0"
   },
   "resolutionComments": {
     "@testing-library/user-event@^14.0.4": "Create subpath export for types. (https://github.cbhq.net/frontend/cds/pull/497)",
@@ -41,7 +45,11 @@
     "react-helmet-async": "Working around Nx graph resolution issue",
     "elliptic": "VM remediation: upgrade from 6.5.4 to ^6.6.0",
     "minimatch": "VM remediation: pin to 10.2.4 for security",
-    "socks": "VM remediation: upgrade from 2.6.2 to ^2.8.0 to replace vulnerable ip package with ip-address"
+    "socks": "VM remediation: upgrade from 2.6.2 to ^2.8.0 to replace vulnerable ip package with ip-address",
+    "ajv@^8.0.0": "Security: force-upgrade ajv to 8.18.0 to fix known vulnerabilities (CVE-2025-69873) (VM Agent)",
+    "ajv@^8.0.1": "Security: force-upgrade ajv to 8.18.0 to fix known vulnerabilities (CVE-2025-69873) (VM Agent)",
+    "ajv@^8.6.3": "Security: force-upgrade ajv to 8.18.0 to fix known vulnerabilities (CVE-2025-69873) (VM Agent)",
+    "ajv@^8.9.0": "Security: force-upgrade ajv to 8.18.0 to fix known vulnerabilities (CVE-2025-69873) (VM Agent)"
   },
   "workspaces": [
     "actions/*",
