@@ -36,6 +36,14 @@ yarn add @cbhq/cds-fonts
    import '@cbhq/cds-web/globalStyles';
    ```
 
+4. **Apply the font styles to your app**
+
+Using the CSS custom properties listed below, apply the needed font styles to the root of your app's HTML
+
+```html
+<body style={{ fontFamily: 'var(--cds-font-sans)' }}>
+```
+
 ### CSS Custom Properties
 
 Once imported, the following CSS custom properties are available:
