@@ -9,6 +9,7 @@ Sync CDS from github.com to the internal mirror so that `@cbhq`-scoped npm packa
 
 ## Environment Requirements
 
+- **Coinbase VPN** (full tunnel preferred) — verify you are connected before starting; `github.cbhq.net` and the internal npm registry are not reachable without it.
 - **Node.js >= 21.2.0** (the script uses `import.meta.dirname` which is not available in earlier versions). The repo `.nvmrc` pins 20.9.0 for general development, so you must invoke the sync script with a newer Node binary, e.g. `~/.nvm/versions/node/v22.22.1/bin/node -e "import('./cds-repo-sync.mjs')"`.
 - `git-filter-repo` must be installed via Homebrew. The script expects it at `/opt/homebrew/bin/git-filter-repo`.
 - A **GitHub MCP server** configured with access to `github.cbhq.net` (preferred for searching previous sync PRs and creating the new PR). Falls back to `gh` CLI authenticated for `github.cbhq.net` if MCP is unavailable.
