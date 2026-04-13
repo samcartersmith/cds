@@ -15,6 +15,7 @@ When a PR is merged to master, we should run tracker on affected files
 ### List of executors
 
 - [A11y Executor README](./A11y_Executor_README.md)
+- [ESLint CDS Executor README](./ESLint_CDS_Executor_README.md)
 
 # How to deploy the package to Artifactory
 

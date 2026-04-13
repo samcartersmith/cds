@@ -4,6 +4,11 @@
       "implementation": "./cjs/executors/audit-a11y/impl.js",
       "schema": "./cjs/executors/audit-a11y/schema.json",
       "description": "Runs an a11y audit on the project"
+    },
+    "audit-cds-eslint-plugin": {
+      "implementation": "./cjs/executors/audit-cds-eslint-plugin/impl.js",
+      "schema": "./cjs/executors/audit-cds-eslint-plugin/schema.json",
+      "description": "Collects CDS ESLint plugin violation metrics and reports them via client-analytics"
     }
   }
 }

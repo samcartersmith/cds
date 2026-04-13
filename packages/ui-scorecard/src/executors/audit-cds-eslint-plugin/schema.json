@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "cli": "nx",
+  "required": [
+    "eslintOutputFile",
+    "projectName",
+    "repositoryName"
+  ],
+  "properties": {
+    "eslintOutputFile": {
+      "type": "string",
+      "description": "Path to the ESLint JSON output file."
+    },
+    "projectName": {
+      "type": "string",
+      "description": "Snake-cased project name passed to @cbhq/client-analytics init()."
+    },
+    "repositoryName": {
+      "type": "string",
+      "description": "Consumer repository name used as a metric tag."
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "web",
+        "ios",
+        "android",
+        "server"
+      ],
+      "description": "Analytics platform identifier passed to @cbhq/client-analytics init().",
+      "default": "server"
+    },
+    "sendEventsToProd": {
+      "type": "boolean",
+      "description": "Send metrics to the production analytics endpoint.",
+      "default": true
+    },
+    "verbose": {
+      "type": "boolean",
+      "description": "Enable verbose/debug logging.",
+      "default": false
+    }
+  }
+}

@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 <!-- template-start -->
 
+## 0.2.9 (4/7/2026 PST)
+
+#### 🚀 Updates
+
+- Add new executor for running CDS eslint metrics. [[#4253](https://github.cbhq.net/frontend/cds/pull/4253)]
+
 ## 0.2.8 (7/8/2025 PST)
 
 #### 🐞 Fixes
