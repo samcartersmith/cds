@@ -54,7 +54,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the CDS Core Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
@@ -96,7 +96,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Base Component Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
@@ -138,7 +138,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Advanced Product Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
@@ -180,7 +180,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Insto Product Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
@@ -222,7 +222,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Retail Product Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
@@ -264,7 +264,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Product Foundations Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
@@ -306,7 +306,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Developer Platform Product Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
@@ -348,7 +348,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the CDP 2.0 Components Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
@@ -390,7 +390,7 @@ jobs:
         if: failure() && github.event_name == 'schedule'
         uses: infra/cb-action-slack-send@master
         with:
-          channel: '#design-systems-eng-team'
+          channel: '#ui-systems-alerts'
           message: |
             🔴 [Run ID: ${{ github.run_id }}] Figma Library Metrics collection failed for the Business Product Library
             Check the latest runs here: https://github.cbhq.net/frontend/cds/actions/workflows/figma-library-metrics.yml
