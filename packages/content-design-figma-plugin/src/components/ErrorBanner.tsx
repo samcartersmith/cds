@@ -6,13 +6,7 @@ interface ErrorBannerProps {
 export default function ErrorBanner({ message, onDismiss }: ErrorBannerProps) {
   return (
     <div className="flex items-start gap-2 px-3 py-2.5 bg-red-500/10 border border-red-500/30 rounded-lg animate-fade-in">
-      <svg
-        className="shrink-0 mt-0.5"
-        width="12"
-        height="12"
-        viewBox="0 0 14 14"
-        fill="none"
-      >
+      <svg className="shrink-0 mt-0.5" width="12" height="12" viewBox="0 0 14 14" fill="none">
         <circle cx="7" cy="7" r="6" stroke="#f87171" strokeWidth="1.2" />
         <path d="M7 4v3M7 9.5v.5" stroke="#f87171" strokeWidth="1.5" strokeLinecap="round" />
       </svg>

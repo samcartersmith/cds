@@ -1,4 +1,4 @@
-export type EvaluationMode = "full" | "cds" | "content" | "a11y";
+export type EvaluationMode = 'full' | 'cds' | 'content' | 'a11y';
 
 export interface TextLayerPayload {
   id: string;

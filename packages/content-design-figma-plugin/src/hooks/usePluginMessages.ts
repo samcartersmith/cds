@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import type { Dispatch, MutableRefObject, SetStateAction } from "react";
+import { useEffect } from 'react';
+import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
 import type {
   AppScreen,
   ChatMessage,
@@ -10,8 +10,8 @@ import type {
   ReportSegment,
   SavedChatSession,
   Suggestion,
-} from "../types";
-import type { ReportReplaceOp } from "./useReplaceState";
+} from '../types';
+import type { ReportReplaceOp } from './useReplaceState';
 
 interface UsePluginMessagesParams {
   screen: AppScreen;
@@ -38,13 +38,15 @@ interface UsePluginMessagesParams {
   messagesRef: MutableRefObject<ChatMessage[]>;
   reportItemsRef: MutableRefObject<ReportItem[]>;
   focusFindingSuppressSelectionResetRef: MutableRefObject<boolean>;
-  revertPayloadByFindingIdRef: MutableRefObject<Record<string, { layerId: string; originalText: string }>>;
+  revertPayloadByFindingIdRef: MutableRefObject<
+    Record<string, { layerId: string; originalText: string }>
+  >;
   replaceOperationRef: MutableRefObject<ReportReplaceOp>;
   lastReportFindingIdRef: MutableRefObject<string | null>;
   patchSelectionText: (
     sel: MultiScreenSelection,
     nodeId: string,
-    newText: string
+    newText: string,
   ) => MultiScreenSelection;
 }
 
@@ -84,26 +86,28 @@ export function usePluginMessages({
       if (!msg?.type) return;
 
       switch (msg.type) {
-        case "INIT": {
+        case 'INIT': {
           setApiKey(msg.apiKey);
           setEvaluationMode(msg.evaluationMode ?? null);
           setSelection(msg.selection);
           setSavedChats(Array.isArray(msg.chatHistory) ? msg.chatHistory : []);
-          setCurrentFileName(typeof msg.fileName === "string" && msg.fileName.length > 0 ? msg.fileName : null);
+          setCurrentFileName(
+            typeof msg.fileName === 'string' && msg.fileName.length > 0 ? msg.fileName : null,
+          );
           setIsReportContextStale(false);
           if (msg.selection?.activeLayerId) {
             setActiveLayerId(msg.selection.activeLayerId);
           }
           if (!msg.apiKey) {
-            setScreen("api-key");
+            setScreen('api-key');
           } else {
             // Always start at L1 (evaluation picker) on new plugin open.
-            setScreen("evaluation");
+            setScreen('evaluation');
           }
           break;
         }
 
-        case "SELECTION_CHANGED": {
+        case 'SELECTION_CHANGED': {
           const skipReportReset = focusFindingSuppressSelectionResetRef.current;
           focusFindingSuppressSelectionResetRef.current = false;
 
@@ -138,26 +142,27 @@ export function usePluginMessages({
           if (msg.selection?.activeLayerId) {
             setActiveLayerId(msg.selection.activeLayerId);
           } else {
-            setActiveLayerId("");
+            setActiveLayerId('');
           }
 
-          if (screen === "chat" || screen === "no-selection") {
+          if (screen === 'chat' || screen === 'no-selection') {
             if (msg.selection) {
-              setScreen("chat");
+              setScreen('chat');
             } else {
-              const keepThread = messagesRef.current.length > 0 || reportItemsRef.current.length > 0;
-              setScreen(keepThread ? "chat" : "no-selection");
+              const keepThread =
+                messagesRef.current.length > 0 || reportItemsRef.current.length > 0;
+              setScreen(keepThread ? 'chat' : 'no-selection');
             }
           }
           break;
         }
 
-        case "FOCUS_NODE_ABORTED": {
+        case 'FOCUS_NODE_ABORTED': {
           focusFindingSuppressSelectionResetRef.current = false;
           break;
         }
 
-        case "REPLACE_SUCCESS": {
+        case 'REPLACE_SUCCESS': {
           setReplaceLoading(false);
           setReplaceSuccess(true);
           setReplacedLayerId(msg.nodeId);
@@ -168,13 +173,15 @@ export function usePluginMessages({
           replaceOperationRef.current = null;
           lastReportFindingIdRef.current = null;
 
-          if (op === "report-revert" && findingId) {
+          if (op === 'report-revert' && findingId) {
             setReportFixSuccessWasRevert(true);
             setAppliedFindingIds((prev) => prev.filter((id) => id !== findingId));
             delete revertPayloadByFindingIdRef.current[findingId];
-          } else if (op === "report-apply" && findingId) {
+          } else if (op === 'report-apply' && findingId) {
             setReportFixSuccessWasRevert(false);
-            setAppliedFindingIds((prev) => (prev.includes(findingId) ? prev : [...prev, findingId]));
+            setAppliedFindingIds((prev) =>
+              prev.includes(findingId) ? prev : [...prev, findingId],
+            );
           } else {
             setReportFixSuccessWasRevert(false);
           }
@@ -186,12 +193,12 @@ export function usePluginMessages({
           break;
         }
 
-        case "REPLACE_ERROR": {
+        case 'REPLACE_ERROR': {
           setReplaceLoading(false);
           setReplaceError(msg.error);
           const op = replaceOperationRef.current;
           const findingId = lastReportFindingIdRef.current;
-          if (op === "report-apply" && findingId) {
+          if (op === 'report-apply' && findingId) {
             delete revertPayloadByFindingIdRef.current[findingId];
           }
           replaceOperationRef.current = null;
@@ -199,35 +206,35 @@ export function usePluginMessages({
           break;
         }
 
-        case "API_KEY_SAVED": {
-          setScreen((prev) => (prev === "api-key" ? "evaluation" : prev));
+        case 'API_KEY_SAVED': {
+          setScreen((prev) => (prev === 'api-key' ? 'evaluation' : prev));
           break;
         }
 
-        case "API_KEY_CLEARED": {
+        case 'API_KEY_CLEARED': {
           setApiKey(null);
           setEvaluationMode(null);
           setSavedChats([]);
           setCurrentFileName(null);
           setIsReportContextStale(false);
-          setScreen("api-key");
+          setScreen('api-key');
           break;
         }
 
-        case "EVALUATION_MODE_SAVED": {
+        case 'EVALUATION_MODE_SAVED': {
           setEvaluationMode(msg.mode);
           break;
         }
 
-        case "EVALUATION_MODE_CLEARED": {
+        case 'EVALUATION_MODE_CLEARED': {
           setEvaluationMode(null);
           break;
         }
       }
     };
 
-    window.addEventListener("message", handler);
-    return () => window.removeEventListener("message", handler);
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
   }, [
     focusFindingSuppressSelectionResetRef,
     isReportMode,

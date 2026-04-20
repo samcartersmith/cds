@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 interface ApiKeyPromptProps {
   onSave: (key: string) => void;
@@ -8,20 +8,20 @@ interface ApiKeyPromptProps {
 
 export default function ApiKeyPrompt({
   onSave,
-  initialValue = "",
-  saveLabel = "Save & continue",
+  initialValue = '',
+  saveLabel = 'Save & continue',
 }: ApiKeyPromptProps) {
   const [value, setValue] = useState(initialValue);
   const [showKey, setShowKey] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const handleSave = () => {
     const trimmed = value.trim();
     if (trimmed.length < 8) {
-      setError("Key looks too short — double-check it");
+      setError('Key looks too short — double-check it');
       return;
     }
-    setError("");
+    setError('');
     onSave(trimmed);
   };
 
@@ -31,15 +31,7 @@ export default function ApiKeyPrompt({
       <div className="flex justify-center mb-5">
         <div className="w-12 h-12 rounded-2xl bg-figma-purple-dim border border-figma-purple/20 flex items-center justify-center">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <rect
-              x="3"
-              y="11"
-              width="18"
-              height="11"
-              rx="2"
-              stroke="#578BFA"
-              strokeWidth="1.5"
-            />
+            <rect x="3" y="11" width="18" height="11" rx="2" stroke="#578BFA" strokeWidth="1.5" />
             <path
               d="M7 11V7a5 5 0 0 1 10 0v4"
               stroke="#578BFA"
@@ -56,12 +48,12 @@ export default function ApiKeyPrompt({
         Connect to LLM Gateway
       </h2>
       <p className="text-[11px] text-figma-muted text-center leading-relaxed mb-3">
-        Enter your Coinbase LLM Gateway key. It's saved locally in Figma via{" "}
-        <code className="text-figma-purple text-[10px]">clientStorage</code> and
-        never shared outside this plugin.
+        Enter your Coinbase LLM Gateway key. It's saved locally in Figma via{' '}
+        <code className="text-figma-purple text-[10px]">clientStorage</code> and never shared
+        outside this plugin.
       </p>
       <p className="text-[11px] text-figma-muted text-center leading-relaxed mb-6">
-        You can create or copy your key from{" "}
+        You can create or copy your key from{' '}
         <a
           href="https://cbgpt.zero.coinbase-corp.com/api-keys"
           target="_blank"
@@ -88,24 +80,20 @@ export default function ApiKeyPrompt({
 
       {/* Input */}
       <div className="flex flex-col gap-1.5 mb-3">
-        <label className="text-[11px] font-medium text-figma-muted">
-          API Key
-        </label>
+        <label className="text-[11px] font-medium text-figma-muted">API Key</label>
         <div
           className={`flex items-center bg-figma-surface border rounded-lg px-3 py-2.5 gap-2 transition-colors ${
-            error
-              ? "border-red-500/60"
-              : "border-figma-border focus-within:border-figma-purple/60"
+            error ? 'border-red-500/60' : 'border-figma-border focus-within:border-figma-purple/60'
           }`}
         >
           <input
-            type={showKey ? "text" : "password"}
+            type={showKey ? 'text' : 'password'}
             value={value}
             onChange={(e) => {
               setValue(e.target.value);
-              setError("");
+              setError('');
             }}
-            onKeyDown={(e) => e.key === "Enter" && handleSave()}
+            onKeyDown={(e) => e.key === 'Enter' && handleSave()}
             placeholder="Paste your gateway key…"
             className="flex-1 bg-transparent text-[12px] text-figma-text placeholder:text-figma-muted font-mono"
             autoComplete="off"
@@ -115,7 +103,7 @@ export default function ApiKeyPrompt({
             type="button"
             onClick={() => setShowKey((v) => !v)}
             className="text-figma-muted hover:text-figma-text transition-colors"
-            title={showKey ? "Hide" : "Show"}
+            title={showKey ? 'Hide' : 'Show'}
           >
             {showKey ? (
               <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
@@ -125,7 +113,15 @@ export default function ApiKeyPrompt({
                   strokeWidth="1.5"
                 />
                 <circle cx="10" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="3" y1="3" x2="17" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <line
+                  x1="3"
+                  y1="3"
+                  x2="17"
+                  y2="17"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
               </svg>
             ) : (
               <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
@@ -149,8 +145,8 @@ export default function ApiKeyPrompt({
         disabled={!value.trim()}
         className={`w-full py-2.5 rounded-lg text-[12px] font-semibold transition-all duration-150 ${
           value.trim()
-            ? "bg-figma-purple hover:bg-figma-purple-hover text-white"
-            : "bg-figma-surface border border-figma-border text-figma-muted cursor-not-allowed"
+            ? 'bg-figma-purple hover:bg-figma-purple-hover text-white'
+            : 'bg-figma-surface border border-figma-border text-figma-muted cursor-not-allowed'
         }`}
       >
         {saveLabel}
@@ -159,9 +155,9 @@ export default function ApiKeyPrompt({
       {/* Footer note */}
       <div className="mt-auto pt-6 text-center">
         <p className="text-[10px] text-figma-muted leading-relaxed">
-          Key is stored via{" "}
-          <code className="text-figma-purple text-[10px]">figma.clientStorage</code>
-          {" "}— scoped to this plugin, this Figma account.
+          Key is stored via{' '}
+          <code className="text-figma-purple text-[10px]">figma.clientStorage</code> — scoped to
+          this plugin, this Figma account.
         </p>
       </div>
     </div>

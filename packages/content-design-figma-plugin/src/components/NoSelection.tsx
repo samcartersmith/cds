@@ -3,33 +3,9 @@ export default function NoSelection() {
     <div className="flex flex-col items-center justify-center flex-1 px-6 py-8 animate-fade-in">
       <div className="w-12 h-12 rounded-2xl bg-figma-elevated border border-figma-border flex items-center justify-center mb-4">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <rect
-            x="3"
-            y="3"
-            width="7"
-            height="7"
-            rx="1"
-            stroke="#666"
-            strokeWidth="1.5"
-          />
-          <rect
-            x="14"
-            y="3"
-            width="7"
-            height="7"
-            rx="1"
-            stroke="#666"
-            strokeWidth="1.5"
-          />
-          <rect
-            x="3"
-            y="14"
-            width="7"
-            height="7"
-            rx="1"
-            stroke="#666"
-            strokeWidth="1.5"
-          />
+          <rect x="3" y="3" width="7" height="7" rx="1" stroke="#666" strokeWidth="1.5" />
+          <rect x="14" y="3" width="7" height="7" rx="1" stroke="#666" strokeWidth="1.5" />
+          <rect x="3" y="14" width="7" height="7" rx="1" stroke="#666" strokeWidth="1.5" />
           {/* Cursor pointing to the last box */}
           <path
             d="M16 16l5 5M16 16v4M16 16h4"

@@ -1,15 +1,18 @@
 interface ThinkingIndicatorProps {
-  agentUiMode: "suggestions" | "report" | "chat";
+  agentUiMode: 'suggestions' | 'report' | 'chat';
   analyzingScreens: boolean;
 }
 
-export default function ThinkingIndicator({ agentUiMode, analyzingScreens }: ThinkingIndicatorProps) {
+export default function ThinkingIndicator({
+  agentUiMode,
+  analyzingScreens,
+}: ThinkingIndicatorProps) {
   const label =
-    agentUiMode === "suggestions"
-      ? "Generating suggestions..."
+    agentUiMode === 'suggestions'
+      ? 'Generating suggestions...'
       : analyzingScreens
-        ? "Analyzing screens..."
-        : "Thinking...";
+      ? 'Analyzing screens...'
+      : 'Thinking...';
 
   return (
     <div className="flex items-center gap-2 px-3 py-2.5 bg-figma-surface rounded-lg animate-fade-in w-fit">

@@ -24,55 +24,48 @@
  * Development (vite dev) is unaffected — index.html keeps its full HTML structure.
  */
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
+import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const distDir  = resolve(__dirname, "../dist");
-const inputPath  = resolve(distDir, "index.html");
-const outputPath = resolve(distDir, "ui.html");
+const distDir = resolve(__dirname, '../dist');
+const inputPath = resolve(distDir, 'index.html');
+const outputPath = resolve(distDir, 'ui.html');
 
 if (!existsSync(inputPath)) {
-  console.error("❌  dist/index.html not found — run `vite build` first");
+  console.error('❌  dist/index.html not found — run `vite build` first');
   process.exit(1);
 }
 
-let html = readFileSync(inputPath, "utf-8");
+let html = readFileSync(inputPath, 'utf-8');
 
 // ── 1. Collect inlined CSS ────────────────────────────────────────────────────
 const cssBlocks = [];
-html = html.replace(
-  /<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"[^>]*\/?>/g,
-  (_, href) => {
-    const filePath = resolve(distDir, href.replace(/^\//, ""));
-    if (!existsSync(filePath)) {
-      console.warn(`⚠  Stylesheet not found, skipping: ${href}`);
-      return "";
-    }
-    cssBlocks.push(readFileSync(filePath, "utf-8"));
-    return "";
+html = html.replace(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"[^>]*\/?>/g, (_, href) => {
+  const filePath = resolve(distDir, href.replace(/^\//, ''));
+  if (!existsSync(filePath)) {
+    console.warn(`⚠  Stylesheet not found, skipping: ${href}`);
+    return '';
   }
-);
+  cssBlocks.push(readFileSync(filePath, 'utf-8'));
+  return '';
+});
 
 // ── 2. Collect inlined JS ─────────────────────────────────────────────────────
 // Escape </script> → <\/script>: prevents the HTML parser from closing our
 // <script> tag prematurely if the bundle contains that literal string.
 const scriptBlocks = [];
-html = html.replace(
-  /<script([^>]*?)src="([^"]+)"([^>]*?)><\/script>/g,
-  (_, _before, src) => {
-    const filePath = resolve(distDir, src.replace(/^\//, ""));
-    if (!existsSync(filePath)) {
-      console.warn(`⚠  Script not found, skipping: ${src}`);
-      return "";
-    }
-    const js = readFileSync(filePath, "utf-8")
-      .replace(/<\/script>/gi, "<\\/script>");
-    scriptBlocks.push(js);
-    return "";
+html = html.replace(/<script([^>]*?)src="([^"]+)"([^>]*?)><\/script>/g, (_, _before, src) => {
+  const filePath = resolve(distDir, src.replace(/^\//, ''));
+  if (!existsSync(filePath)) {
+    console.warn(`⚠  Script not found, skipping: ${src}`);
+    return '';
   }
-);
+  const js = readFileSync(filePath, 'utf-8').replace(/<\/script>/gi, '<\\/script>');
+  scriptBlocks.push(js);
+  return '';
+});
 
 // ── 3. Build preamble ─────────────────────────────────────────────────────────
 const PREAMBLE_JS = [
@@ -92,7 +85,7 @@ const PREAMBLE_JS = [
   //   instead of a blank/white screen.
   `window.onerror=function(msg,src,line,col){var b=document.body||document.documentElement;if(!b)return false;b.style.cssText='margin:0;padding:16px;background:#b91c1c;color:#fff;font:13px/1.5 monospace;word-break:break-all;';b.innerHTML='<b>Plugin error</b><br><br>'+String(msg)+'<br><br>'+String(src)+':'+line+':'+col;return false;};`,
   `window.onunhandledrejection=function(e){window.onerror(e.reason&&(e.reason.message||e.reason)||'Unhandled rejection','promise',0,0);};`,
-].join("\n");
+].join('\n');
 
 // ── 4. Assemble MINIMAL HTML fragment ─────────────────────────────────────────
 // No <!doctype>, <html>, <head>, or <body> tags.
@@ -101,7 +94,7 @@ const PREAMBLE_JS = [
 const parts = [];
 
 if (cssBlocks.length > 0) {
-  parts.push(`<style>\n${cssBlocks.join("\n")}\n</style>`);
+  parts.push(`<style>\n${cssBlocks.join('\n')}\n</style>`);
 }
 
 parts.push('<div id="root"></div>');
@@ -111,7 +104,9 @@ for (const js of scriptBlocks) {
   parts.push(`<script>\n${js}\n</script>`);
 }
 
-const output = parts.join("\n");
+const output = parts.join('\n');
 writeFileSync(outputPath, output);
 const sizeKb = Math.round(readFileSync(outputPath).length / 1024);
-console.log(`✓  dist/ui.html written (${sizeKb} KB, minimal fragment, onmessage cleared, scripts escaped)`);
+console.log(
+  `✓  dist/ui.html written (${sizeKb} KB, minimal fragment, onmessage cleared, scripts escaped)`,
+);

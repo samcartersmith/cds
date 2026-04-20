@@ -1,6 +1,6 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState } from 'react';
 
-export type ReportReplaceOp = "report-apply" | "report-revert" | "suggestion" | null;
+export type ReportReplaceOp = 'report-apply' | 'report-revert' | 'suggestion' | null;
 
 export function useReplaceState() {
   const [replaceLoading, setReplaceLoading] = useState(false);
@@ -9,7 +9,9 @@ export function useReplaceState() {
   const [replacedLayerId, setReplacedLayerId] = useState<string | null>(null);
   const [reportFixSuccessWasRevert, setReportFixSuccessWasRevert] = useState(false);
 
-  const revertPayloadByFindingIdRef = useRef<Record<string, { layerId: string; originalText: string }>>({});
+  const revertPayloadByFindingIdRef = useRef<
+    Record<string, { layerId: string; originalText: string }>
+  >({});
   const replaceOperationRef = useRef<ReportReplaceOp>(null);
   const lastReportFindingIdRef = useRef<string | null>(null);
 

@@ -9,7 +9,7 @@ interface PluginHeaderProps {
 }
 
 export default function PluginHeader({
-  title = "CDS Design Quality Evaluator",
+  title = 'CDS Design Quality Evaluator',
   showSettings,
   onSettingsClick,
   showBack,
@@ -45,7 +45,10 @@ export default function PluginHeader({
           />
         </svg>
       </div>
-      <span className="text-[13px] font-semibold text-figma-text tracking-tight min-w-0 truncate" title={title}>
+      <span
+        className="text-[13px] font-semibold text-figma-text tracking-tight min-w-0 truncate"
+        title={title}
+      >
         {title}
       </span>
       <div className="ml-auto flex items-center gap-1 shrink-0">

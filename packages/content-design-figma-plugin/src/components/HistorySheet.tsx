@@ -1,17 +1,17 @@
-import type { SavedChatSession } from "../types";
-import { getAgentForEvaluationMode } from "../agents/registry";
+import type { SavedChatSession } from '../types';
+import { getAgentForEvaluationMode } from '../agents/registry';
 
 function formatTime(savedAt: number): string {
   try {
     const d = new Date(savedAt);
     return d.toLocaleString(undefined, {
-      month: "short",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit",
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
     });
   } catch {
-    return "";
+    return '';
   }
 }
 
@@ -22,17 +22,19 @@ interface HistorySheetProps {
   onSelect: (entry: SavedChatSession) => void;
 }
 
-const MODE_BADGE_CLASS: Record<SavedChatSession["evaluationMode"], string> = {
-  full: "bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/30",
-  cds: "bg-sky-500/15 text-sky-300 border border-sky-500/30",
-  content: "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30",
-  a11y: "bg-amber-500/15 text-amber-300 border border-amber-500/30",
+const MODE_BADGE_CLASS: Record<SavedChatSession['evaluationMode'], string> = {
+  full: 'bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-500/30',
+  cds: 'bg-sky-500/15 text-sky-300 border border-sky-500/30',
+  content: 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30',
+  a11y: 'bg-amber-500/15 text-amber-300 border border-amber-500/30',
 };
 
-function groupByFileName(entries: SavedChatSession[]): Array<{ fileName: string; items: SavedChatSession[] }> {
+function groupByFileName(
+  entries: SavedChatSession[],
+): Array<{ fileName: string; items: SavedChatSession[] }> {
   const groups = new Map<string, SavedChatSession[]>();
   for (const entry of entries) {
-    const key = entry.fileName?.trim() || "Unknown file";
+    const key = entry.fileName?.trim() || 'Unknown file';
     const list = groups.get(key) ?? [];
     list.push(entry);
     groups.set(key, list);
@@ -103,12 +105,18 @@ export default function HistorySheet({ open, entries, onClose, onSelect }: Histo
                           </p>
                           <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
                             <span
-                              className={`text-[9px] font-medium px-1.5 py-0.5 rounded ${MODE_BADGE_CLASS[entry.evaluationMode]}`}
+                              className={`text-[9px] font-medium px-1.5 py-0.5 rounded ${
+                                MODE_BADGE_CLASS[entry.evaluationMode]
+                              }`}
                             >
                               {agent.label}
                             </span>
-                            <span className="text-[9px] text-figma-muted">{entry.selectionLabel}</span>
-                            <span className="text-[9px] text-figma-muted ml-auto">{formatTime(entry.savedAt)}</span>
+                            <span className="text-[9px] text-figma-muted">
+                              {entry.selectionLabel}
+                            </span>
+                            <span className="text-[9px] text-figma-muted ml-auto">
+                              {formatTime(entry.savedAt)}
+                            </span>
                           </div>
                         </button>
                       </li>

@@ -176,7 +176,7 @@
     "yargs": "^17.5.1"
   },
   "engines": {
-    "node": "^20.0.0"
+    "node": "^22.0.0"
   },
   "packageManager": "yarn@4.7.0"
 }

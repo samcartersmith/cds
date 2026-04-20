@@ -1,5 +1,5 @@
-import type { EvaluationMode } from "../types";
-import { AGENTS } from "../agents/registry";
+import type { EvaluationMode } from '../types';
+import { AGENTS } from '../agents/registry';
 
 interface EvaluationModeScreenProps {
   onSelect: (mode: EvaluationMode) => void;

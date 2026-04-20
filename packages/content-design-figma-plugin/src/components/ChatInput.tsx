@@ -1,26 +1,26 @@
-import { useState, useRef } from "react";
-import type { KeyboardEvent } from "react";
-import type { EvaluationMode } from "../types";
+import { useState, useRef } from 'react';
+import type { KeyboardEvent } from 'react';
+import type { EvaluationMode } from '../types';
 
 const QUICK_PROMPTS_BY_MODE: Record<EvaluationMode, string[]> = {
-  content: ["Make it shorter", "More friendly tone", "More formal", "Add urgency"],
+  content: ['Make it shorter', 'More friendly tone', 'More formal', 'Add urgency'],
   cds: [
-    "Check labels and terminology against CDS",
-    "Find inconsistent wording patterns",
-    "List top CDS compliance fixes",
-    "Suggest replacement copy for CDS issues",
+    'Check labels and terminology against CDS',
+    'Find inconsistent wording patterns',
+    'List top CDS compliance fixes',
+    'Suggest replacement copy for CDS issues',
   ],
   a11y: [
-    "Find ambiguous link or button text",
-    "Check for directional language issues",
-    "Highlight clarity issues for screen readers",
-    "Give highest-impact accessibility copy fixes",
+    'Find ambiguous link or button text',
+    'Check for directional language issues',
+    'Highlight clarity issues for screen readers',
+    'Give highest-impact accessibility copy fixes',
   ],
   full: [
-    "Run a full review and rank top issues",
-    "Give me blocker and high-priority fixes first",
-    "Summarize top copy risks and improvements",
-    "Re-evaluate everything with strict standards",
+    'Run a full review and rank top issues',
+    'Give me blocker and high-priority fixes first',
+    'Summarize top copy risks and improvements',
+    'Re-evaluate everything with strict standards',
   ],
 };
 
@@ -36,23 +36,23 @@ export default function ChatInput({
   onSend,
   disabled,
   evaluationMode = null,
-  placeholder = "Describe what you want…",
+  placeholder = 'Describe what you want…',
 }: ChatInputProps) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleSend = () => {
     const trimmed = value.trim();
     if (!trimmed || disabled) return;
     onSend(trimmed);
-    setValue("");
+    setValue('');
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = 'auto';
     }
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();
     }
@@ -61,8 +61,8 @@ export default function ChatInput({
   const handleInput = () => {
     const el = textareaRef.current;
     if (!el) return;
-    el.style.height = "auto";
-    el.style.height = Math.min(el.scrollHeight, 96) + "px";
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 96) + 'px';
   };
 
   const quickPrompts = evaluationMode ? QUICK_PROMPTS_BY_MODE[evaluationMode] : [];
@@ -91,14 +91,12 @@ export default function ChatInput({
         </div>
       )}
 
-      <div
-        className={`flex items-end gap-2 px-3 pb-3 ${showQuickPrompts ? "pt-1" : "pt-2.5"}`}
-      >
+      <div className={`flex items-end gap-2 px-3 pb-3 ${showQuickPrompts ? 'pt-1' : 'pt-2.5'}`}>
         <div
           className={`flex-1 flex items-end bg-figma-surface border rounded-xl px-3 py-2.5 transition-colors ${
             disabled
-              ? "border-figma-border opacity-60"
-              : "border-figma-border focus-within:border-figma-purple/60"
+              ? 'border-figma-border opacity-60'
+              : 'border-figma-border focus-within:border-figma-purple/60'
           }`}
         >
           <textarea
@@ -121,8 +119,8 @@ export default function ChatInput({
           disabled={!value.trim() || disabled}
           className={`shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-150 ${
             value.trim() && !disabled
-              ? "bg-figma-purple hover:bg-figma-purple-hover shadow-[0_0_12px_#578BFA40] text-white"
-              : "bg-figma-surface border border-figma-border opacity-50 cursor-not-allowed text-[#8A919E]"
+              ? 'bg-figma-purple hover:bg-figma-purple-hover shadow-[0_0_12px_#578BFA40] text-white'
+              : 'bg-figma-surface border border-figma-border opacity-50 cursor-not-allowed text-[#8A919E]'
           }`}
         >
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none">

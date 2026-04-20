@@ -1,0 +1,38 @@
+{
+  "name": "content-design-figma-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/content-design-figma-plugin/src",
+  "projectType": "library",
+  "targets": {
+    "dev": {
+      "command": "npm run dev",
+      "options": {
+        "cwd": "packages/content-design-figma-plugin"
+      }
+    },
+    "build": {
+      "command": "npm run build",
+      "options": {
+        "cwd": "packages/content-design-figma-plugin"
+      }
+    },
+    "build:watch": {
+      "command": "npm run build:watch",
+      "options": {
+        "cwd": "packages/content-design-figma-plugin"
+      }
+    },
+    "format": {
+      "executor": "@cbhq/mono-tasks:format"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "typecheck": {
+      "command": "tsc --build --pretty --verbose",
+      "options": {
+        "cwd": "packages/content-design-figma-plugin"
+      }
+    }
+  }
+}

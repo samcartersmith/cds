@@ -1,4 +1,4 @@
-import type { EvaluationMode, MultiScreenSelection, TextLayerPayload } from "./shared/pluginTypes";
+import type { EvaluationMode, MultiScreenSelection, TextLayerPayload } from './shared/pluginTypes';
 
 export type { EvaluationMode, MultiScreenSelection, TextLayerPayload };
 
@@ -14,41 +14,41 @@ export interface SelectionPayload {
 
 export type PluginMessage =
   | {
-      type: "INIT";
+      type: 'INIT';
       apiKey: string | null;
       evaluationMode: EvaluationMode | null;
       selection: MultiScreenSelection | null;
       chatHistory: SavedChatSession[];
       fileName?: string;
     }
-  | { type: "SELECTION_CHANGED"; selection: MultiScreenSelection | null }
+  | { type: 'SELECTION_CHANGED'; selection: MultiScreenSelection | null }
   /** Sent when FOCUS_NODE could not select a canvas node (clears suppress-ref in UI) */
-  | { type: "FOCUS_NODE_ABORTED" }
-  | { type: "REPLACE_SUCCESS"; nodeId: string; newText: string }
-  | { type: "REPLACE_ERROR"; error: string }
-  | { type: "API_KEY_SAVED" }
-  | { type: "API_KEY_CLEARED" }
-  | { type: "EVALUATION_MODE_SAVED"; mode: EvaluationMode }
-  | { type: "EVALUATION_MODE_CLEARED" };
+  | { type: 'FOCUS_NODE_ABORTED' }
+  | { type: 'REPLACE_SUCCESS'; nodeId: string; newText: string }
+  | { type: 'REPLACE_ERROR'; error: string }
+  | { type: 'API_KEY_SAVED' }
+  | { type: 'API_KEY_CLEARED' }
+  | { type: 'EVALUATION_MODE_SAVED'; mode: EvaluationMode }
+  | { type: 'EVALUATION_MODE_CLEARED' };
 
 // ─── UI → Plugin messages ─────────────────────────────────────────────────────
 
 export type UIMessage =
-  | { type: "UI_READY" }
-  | { type: "FOCUS_NODE"; nodeId: string }
-  | { type: "REPLACE"; nodeId: string; newText: string }
-  | { type: "SAVE_API_KEY"; key: string }
-  | { type: "CLEAR_API_KEY" }
-  | { type: "SAVE_EVALUATION_MODE"; mode: EvaluationMode }
-  | { type: "CLEAR_EVALUATION_MODE" }
-  | { type: "SAVE_CHAT_HISTORY"; entries: SavedChatSession[] }
-  | { type: "RESIZE"; width: number; height: number }
-  | { type: "CLOSE" };
+  | { type: 'UI_READY' }
+  | { type: 'FOCUS_NODE'; nodeId: string }
+  | { type: 'REPLACE'; nodeId: string; newText: string }
+  | { type: 'SAVE_API_KEY'; key: string }
+  | { type: 'CLEAR_API_KEY' }
+  | { type: 'SAVE_EVALUATION_MODE'; mode: EvaluationMode }
+  | { type: 'CLEAR_EVALUATION_MODE' }
+  | { type: 'SAVE_CHAT_HISTORY'; entries: SavedChatSession[] }
+  | { type: 'RESIZE'; width: number; height: number }
+  | { type: 'CLOSE' };
 
 // ─── Chat / suggestions / report ───────────────────────────────────────────────
 
 export interface ChatMessage {
-  role: "user" | "assistant";
+  role: 'user' | 'assistant';
   text: string;
   /** Unix ms when the message was added to the thread */
   sentAt?: number;
@@ -61,10 +61,10 @@ export interface Suggestion {
   tone: string;
 }
 
-export type ReportSeverity = "low" | "medium" | "high" | "blocker";
+export type ReportSeverity = 'low' | 'medium' | 'high' | 'blocker';
 
 /** Buckets for full evaluation; CDS- and a11y-only modes omit this */
-export type ReportFindingCategory = "cds" | "a11y" | "content";
+export type ReportFindingCategory = 'cds' | 'a11y' | 'content';
 
 export interface ReportItem {
   id: string;
@@ -116,10 +116,4 @@ export interface SavedChatSession {
 
 // ─── App state ────────────────────────────────────────────────────────────────
 
-export type AppScreen =
-  | "loading"
-  | "api-key"
-  | "settings"
-  | "evaluation"
-  | "no-selection"
-  | "chat";
+export type AppScreen = 'loading' | 'api-key' | 'settings' | 'evaluation' | 'no-selection' | 'chat';

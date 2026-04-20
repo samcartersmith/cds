@@ -1,4 +1,4 @@
-import { Component, type ReactNode } from "react";
+import { Component, type ReactNode } from 'react';
 
 interface AppErrorBoundaryProps {
   children: ReactNode;
@@ -8,7 +8,10 @@ interface AppErrorBoundaryState {
   hasError: boolean;
 }
 
-export default class AppErrorBoundary extends Component<AppErrorBoundaryProps, AppErrorBoundaryState> {
+export default class AppErrorBoundary extends Component<
+  AppErrorBoundaryProps,
+  AppErrorBoundaryState
+> {
   state: AppErrorBoundaryState = { hasError: false };
 
   static getDerivedStateFromError(): AppErrorBoundaryState {
@@ -17,7 +20,7 @@ export default class AppErrorBoundary extends Component<AppErrorBoundaryProps, A
 
   override componentDidCatch(error: Error) {
     // Keep this lightweight; plugin UIs need a clear fallback instead of crashing blank.
-    console.error("Plugin UI crashed", error);
+    console.error('Plugin UI crashed', error);
   }
 
   private handleReload = () => {

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import type {
   AppScreen,
   ChatMessage,
@@ -9,56 +9,56 @@ import type {
   SavedChatSession,
   Suggestion,
   UIMessage,
-} from "./types";
-import { runAgentCompletion } from "./lib/ai";
-import { getAgentForEvaluationMode } from "./agents/registry";
+} from './types';
+import { runAgentCompletion } from './lib/ai';
+import { getAgentForEvaluationMode } from './agents/registry';
 import {
   buildSavedSession,
   formatSelectionLabel,
   upsertSavedChats,
-} from "./lib/chatHistoryStorage";
+} from './lib/chatHistoryStorage';
 import {
   flattenReportItems,
   newReportSegment,
   reportSegmentsFromSavedSession,
-} from "./lib/reportSegments";
+} from './lib/reportSegments';
 
-import SelectionContextBar from "./components/SelectionContextBar";
-import ChatTimeline from "./components/ChatTimeline";
-import SuggestionCards from "./components/SuggestionCards";
-import ReportPanel from "./components/ReportPanel";
-import ChatInput from "./components/ChatInput";
-import ReplaceButton from "./components/ReplaceButton";
-import ApiKeyPrompt from "./components/ApiKeyPrompt";
-import NoSelection from "./components/NoSelection";
-import EvaluationModeScreen from "./components/EvaluationModeScreen";
-import HistorySheet from "./components/HistorySheet";
-import PluginHeader from "./components/PluginHeader";
-import EmptyState from "./components/EmptyState";
-import ResizeHandle from "./components/ResizeHandle";
-import ThinkingIndicator from "./components/ThinkingIndicator";
-import ErrorBanner from "./components/ErrorBanner";
-import { usePluginMessages } from "./hooks/usePluginMessages";
-import { useReplaceState } from "./hooks/useReplaceState";
-import { normalizeOrBuildSummary } from "./lib/qualityScore";
+import SelectionContextBar from './components/SelectionContextBar';
+import ChatTimeline from './components/ChatTimeline';
+import SuggestionCards from './components/SuggestionCards';
+import ReportPanel from './components/ReportPanel';
+import ChatInput from './components/ChatInput';
+import ReplaceButton from './components/ReplaceButton';
+import ApiKeyPrompt from './components/ApiKeyPrompt';
+import NoSelection from './components/NoSelection';
+import EvaluationModeScreen from './components/EvaluationModeScreen';
+import HistorySheet from './components/HistorySheet';
+import PluginHeader from './components/PluginHeader';
+import EmptyState from './components/EmptyState';
+import ResizeHandle from './components/ResizeHandle';
+import ThinkingIndicator from './components/ThinkingIndicator';
+import ErrorBanner from './components/ErrorBanner';
+import { usePluginMessages } from './hooks/usePluginMessages';
+import { useReplaceState } from './hooks/useReplaceState';
+import { normalizeOrBuildSummary } from './lib/qualityScore';
 
-const DEV_CHAT_HISTORY_LS = "figma_plugin_chat_history_v1";
+const DEV_CHAT_HISTORY_LS = 'figma_plugin_chat_history_v1';
 
 function postToPlugin(msg: UIMessage) {
-  parent.postMessage({ pluginMessage: msg }, "*");
+  parent.postMessage({ pluginMessage: msg }, '*');
 }
 
 function patchSelectionText(
   sel: MultiScreenSelection,
   nodeId: string,
-  newText: string
+  newText: string,
 ): MultiScreenSelection {
   return {
     ...sel,
     screens: sel.screens.map((screen) => ({
       ...screen,
       layers: screen.layers.map((layer) =>
-        layer.id === nodeId ? { ...layer, characters: newText } : layer
+        layer.id === nodeId ? { ...layer, characters: newText } : layer,
       ),
     })),
   };
@@ -77,28 +77,28 @@ function getLayerCharacters(sel: MultiScreenSelection | null, nodeId: string): s
 const MOCK_SELECTION: MultiScreenSelection = {
   screens: [
     {
-      id: "screen-mock-1",
-      name: "Hero",
+      id: 'screen-mock-1',
+      name: 'Hero',
       layers: [
         {
-          id: "mock-node-1",
-          name: "Hero / CTA",
-          characters: "Confirm your email to get started with your free trial.",
+          id: 'mock-node-1',
+          name: 'Hero / CTA',
+          characters: 'Confirm your email to get started with your free trial.',
           hasMissingFont: false,
         },
       ],
     },
   ],
-  activeLayerId: "mock-node-1",
+  activeLayerId: 'mock-node-1',
   totalTextLayers: 1,
 };
 
 export default function App() {
-  const [screen, setScreen] = useState<AppScreen>("loading");
+  const [screen, setScreen] = useState<AppScreen>('loading');
   const [apiKey, setApiKey] = useState<string | null>(null);
   const [evaluationMode, setEvaluationMode] = useState<EvaluationMode | null>(null);
   const [selection, setSelection] = useState<MultiScreenSelection | null>(null);
-  const [activeLayerId, setActiveLayerId] = useState<string>("");
+  const [activeLayerId, setActiveLayerId] = useState<string>('');
   const [currentFileName, setCurrentFileName] = useState<string | null>(null);
 
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -159,11 +159,11 @@ export default function App() {
       if (!(el instanceof Element)) return;
       const root = chatScrollRef.current;
       if (!root?.contains(el)) return;
-      if (el.closest("[data-finding-card]")) return;
+      if (el.closest('[data-finding-card]')) return;
       setSelectedReportItemId(null);
     };
-    document.addEventListener("pointerdown", onPointerDown);
-    return () => document.removeEventListener("pointerdown", onPointerDown);
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => document.removeEventListener('pointerdown', onPointerDown);
   }, [selectedReportItemId]);
 
   const [savedChats, setSavedChats] = useState<SavedChatSession[]>([]);
@@ -171,7 +171,7 @@ export default function App() {
   const [fixedOpen, setFixedOpen] = useState(false);
 
   const agentUiMode =
-    evaluationMode != null ? getAgentForEvaluationMode(evaluationMode).uiMode : "suggestions";
+    evaluationMode != null ? getAgentForEvaluationMode(evaluationMode).uiMode : 'suggestions';
   const fixedItems = useMemo(() => {
     if (appliedFindingIds.length === 0) return [] as typeof reportItems;
     const appliedSet = new Set(appliedFindingIds);
@@ -188,12 +188,12 @@ export default function App() {
   }, [appliedFindingIds, reportItems]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, suggestions, reportSegments, isThinking]);
 
   usePluginMessages({
     screen,
-    isReportMode: agentUiMode === "report",
+    isReportMode: agentUiMode === 'report',
     setApiKey,
     setEvaluationMode,
     setSelection,
@@ -223,15 +223,15 @@ export default function App() {
   });
 
   useEffect(() => {
-    if (isInsideFigma) postToPlugin({ type: "UI_READY" });
+    if (isInsideFigma) postToPlugin({ type: 'UI_READY' });
   }, [isInsideFigma]);
 
   useEffect(() => {
     if (window.parent === window) {
       setSelection(MOCK_SELECTION);
-      setCurrentFileName("Local preview");
+      setCurrentFileName('Local preview');
       setEvaluationMode(null);
-      setScreen("evaluation");
+      setScreen('evaluation');
       try {
         const raw = localStorage.getItem(DEV_CHAT_HISTORY_LS);
         if (raw) {
@@ -249,29 +249,29 @@ export default function App() {
   const handleSaveApiKey = useCallback(
     (key: string) => {
       setApiKey(key);
-      if (screen === "settings") {
-        setScreen(screenBeforeSettingsRef.current ?? "evaluation");
+      if (screen === 'settings') {
+        setScreen(screenBeforeSettingsRef.current ?? 'evaluation');
         screenBeforeSettingsRef.current = null;
       }
       if (isInsideFigma) {
-        postToPlugin({ type: "SAVE_API_KEY", key });
+        postToPlugin({ type: 'SAVE_API_KEY', key });
       } else {
-        if (screen !== "settings") {
-          setScreen("evaluation");
+        if (screen !== 'settings') {
+          setScreen('evaluation');
         }
       }
     },
-    [isInsideFigma, screen]
+    [isInsideFigma, screen],
   );
 
   const handleOpenSettings = useCallback(() => {
     screenBeforeSettingsRef.current = screen;
     setHistoryOpen(false);
-    setScreen("settings");
+    setScreen('settings');
   }, [screen]);
 
   const handleBackFromSettings = useCallback(() => {
-    setScreen(screenBeforeSettingsRef.current ?? "evaluation");
+    setScreen(screenBeforeSettingsRef.current ?? 'evaluation');
     screenBeforeSettingsRef.current = null;
   }, []);
 
@@ -279,11 +279,11 @@ export default function App() {
     (nodeId: string) => {
       if (isInsideFigma) {
         focusFindingSuppressSelectionResetRef.current = true;
-        postToPlugin({ type: "FOCUS_NODE", nodeId });
+        postToPlugin({ type: 'FOCUS_NODE', nodeId });
       }
       setActiveLayerId(nodeId);
     },
-    [isInsideFigma]
+    [isInsideFigma],
   );
 
   const persistSessionSnapshot = useCallback(
@@ -307,7 +307,7 @@ export default function App() {
       setSavedChats((prev) => {
         const next = upsertSavedChats(prev, session);
         if (isInsideFigma) {
-          postToPlugin({ type: "SAVE_CHAT_HISTORY", entries: next });
+          postToPlugin({ type: 'SAVE_CHAT_HISTORY', entries: next });
         } else {
           try {
             localStorage.setItem(DEV_CHAT_HISTORY_LS, JSON.stringify(next));
@@ -318,7 +318,7 @@ export default function App() {
         return next;
       });
     },
-    [currentFileName, evaluationMode, selection, isInsideFigma]
+    [currentFileName, evaluationMode, selection, isInsideFigma],
   );
 
   const handleSelectEvaluationMode = useCallback(
@@ -342,13 +342,13 @@ export default function App() {
       setEvaluationMode(mode);
       setAiError(null);
       if (isInsideFigma) {
-        postToPlugin({ type: "SAVE_EVALUATION_MODE", mode });
+        postToPlugin({ type: 'SAVE_EVALUATION_MODE', mode });
       }
       setScreen(
-        selection || messages.length > 0 || reportSegments.length > 0 ? "chat" : "no-selection"
+        selection || messages.length > 0 || reportSegments.length > 0 ? 'chat' : 'no-selection',
       );
     },
-    [isInsideFigma, messages.length, reportSegments.length, selection, revertPayloadByFindingIdRef]
+    [isInsideFigma, messages.length, reportSegments.length, selection, revertPayloadByFindingIdRef],
   );
 
   const handleSend = useCallback(
@@ -360,7 +360,7 @@ export default function App() {
       if (!hasCanvas && !allowWithoutSelection) return;
 
       const now = Date.now();
-      const userMsg: ChatMessage = { role: "user", text: prompt, sentAt: now };
+      const userMsg: ChatMessage = { role: 'user', text: prompt, sentAt: now };
       const messagesAfterUser = [...messages, userMsg];
       setMessages((prev) => [...prev, userMsg]);
       setAiError(null);
@@ -370,15 +370,14 @@ export default function App() {
       setIsThinking(true);
 
       const selectionForApi = hasCanvas ? selection : null;
-      const activeForApi =
-        hasCanvas && selection ? activeLayerId || selection.activeLayerId : "";
+      const activeForApi = hasCanvas && selection ? activeLayerId || selection.activeLayerId : '';
 
       const useDevMock = !apiKey || !isInsideFigma;
       if (useDevMock) {
         await new Promise((r) => setTimeout(r, 1200));
         const agent = getAgentForEvaluationMode(evaluationMode);
-        if (agent.uiMode === "suggestions") {
-          const { getMockSuggestions } = await import("./mockData");
+        if (agent.uiMode === 'suggestions') {
+          const { getMockSuggestions } = await import('./mockData');
           const sug = getMockSuggestions(prompt);
           setSuggestions(sug);
           persistSessionSnapshot({
@@ -388,8 +387,8 @@ export default function App() {
           });
         } else if (reportSegments.length > 0) {
           const assistantMsg: ChatMessage = {
-            role: "assistant",
-            text: "This is a mock reply about your findings. Use a gateway API key in Figma for real answers.",
+            role: 'assistant',
+            text: 'This is a mock reply about your findings. Use a gateway API key in Figma for real answers.',
             sentAt: Date.now(),
           };
           const withAssistant = [...messagesAfterUser, assistantMsg];
@@ -400,10 +399,10 @@ export default function App() {
             reportSegments,
           });
         } else {
-          const { getMockReportItems } = await import("./mockData");
+          const { getMockReportItems } = await import('./mockData');
           const rep = getMockReportItems();
           const summary: FullEvaluationSummary | undefined =
-            evaluationMode === "full" ? normalizeOrBuildSummary(undefined, rep) : undefined;
+            evaluationMode === 'full' ? normalizeOrBuildSummary(undefined, rep) : undefined;
           const seg = newReportSegment(messagesAfterUser.length - 1, rep, summary);
           const nextSegs = [seg];
           setReportSegments(nextSegs);
@@ -428,9 +427,9 @@ export default function App() {
           activeForApi,
           prompt,
           messages,
-          agentUiMode === "report" ? reportItems : undefined
+          agentUiMode === 'report' ? reportItems : undefined,
         );
-        if (result.kind === "suggestions") {
+        if (result.kind === 'suggestions') {
           setSuggestions(result.suggestions);
           setSelectedId(null);
           persistSessionSnapshot({
@@ -438,9 +437,9 @@ export default function App() {
             suggestions: result.suggestions,
             reportSegments: [],
           });
-        } else if (result.kind === "chat") {
+        } else if (result.kind === 'chat') {
           const assistantMsg: ChatMessage = {
-            role: "assistant",
+            role: 'assistant',
             text: result.text,
             sentAt: Date.now(),
           };
@@ -466,9 +465,7 @@ export default function App() {
           });
         }
       } catch (err) {
-        setAiError(
-          err instanceof Error ? err.message : "Something went wrong. Please try again."
-        );
+        setAiError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
       } finally {
         setIsThinking(false);
       }
@@ -487,11 +484,11 @@ export default function App() {
       reportSegments,
       revertPayloadByFindingIdRef,
       selection,
-    ]
+    ],
   );
 
   const handleRevertFix = useCallback(() => {
-    if (agentUiMode !== "report") return;
+    if (agentUiMode !== 'report') return;
     const fid = selectedReportItemId;
     if (!fid || !selection) return;
     const payload = revertPayloadByFindingIdRef.current[fid];
@@ -499,12 +496,12 @@ export default function App() {
 
     setReplaceError(null);
     setReplaceLoading(true);
-    replaceOperationRef.current = "report-revert";
+    replaceOperationRef.current = 'report-revert';
     lastReportFindingIdRef.current = fid;
 
     if (isInsideFigma) {
       postToPlugin({
-        type: "REPLACE",
+        type: 'REPLACE',
         nodeId: payload.layerId,
         newText: payload.originalText,
       });
@@ -515,7 +512,7 @@ export default function App() {
         setReportFixSuccessWasRevert(true);
         setReplacedLayerId(payload.layerId);
         setSelection((prev) =>
-          prev ? patchSelectionText(prev, payload.layerId, payload.originalText) : prev
+          prev ? patchSelectionText(prev, payload.layerId, payload.originalText) : prev,
         );
         setAppliedFindingIds((prev) => prev.filter((id) => id !== fid));
         delete revertPayloadByFindingIdRef.current[fid];
@@ -543,11 +540,11 @@ export default function App() {
   ]);
 
   const handleReplace = useCallback(() => {
-    if (agentUiMode === "report") {
+    if (agentUiMode === 'report') {
       const finding = reportItems.find((r) => r.id === selectedReportItemId);
       const nodeId = finding?.layerId;
       const newText = finding?.proposedText;
-      if (!finding || !nodeId || newText == null || newText === "" || !selection) return;
+      if (!finding || !nodeId || newText == null || newText === '' || !selection) return;
 
       const originalText = getLayerCharacters(selection, nodeId);
       if (originalText === undefined) return;
@@ -555,11 +552,11 @@ export default function App() {
       setReplaceError(null);
       setReplaceLoading(true);
       revertPayloadByFindingIdRef.current[finding.id] = { layerId: nodeId, originalText };
-      replaceOperationRef.current = "report-apply";
+      replaceOperationRef.current = 'report-apply';
       lastReportFindingIdRef.current = finding.id;
 
       if (isInsideFigma) {
-        postToPlugin({ type: "REPLACE", nodeId, newText });
+        postToPlugin({ type: 'REPLACE', nodeId, newText });
       } else {
         setTimeout(() => {
           setReplaceLoading(false);
@@ -568,7 +565,7 @@ export default function App() {
           setReplacedLayerId(nodeId);
           setSelection((prev) => (prev ? patchSelectionText(prev, nodeId, newText) : prev));
           setAppliedFindingIds((prev) =>
-            prev.includes(finding.id) ? prev : [...prev, finding.id]
+            prev.includes(finding.id) ? prev : [...prev, finding.id],
           );
           replaceOperationRef.current = null;
           lastReportFindingIdRef.current = null;
@@ -587,11 +584,11 @@ export default function App() {
 
     setReplaceError(null);
     setReplaceLoading(true);
-    replaceOperationRef.current = "suggestion";
+    replaceOperationRef.current = 'suggestion';
     lastReportFindingIdRef.current = null;
 
     if (isInsideFigma) {
-      postToPlugin({ type: "REPLACE", nodeId: targetId, newText: chosen.text });
+      postToPlugin({ type: 'REPLACE', nodeId: targetId, newText: chosen.text });
     } else {
       setTimeout(() => {
         setReplaceLoading(false);
@@ -625,11 +622,7 @@ export default function App() {
   ]);
 
   const handleBackToEvaluation = useCallback(() => {
-    if (
-      sessionIdRef.current &&
-      evaluationMode &&
-      messages.length > 0
-    ) {
+    if (sessionIdRef.current && evaluationMode && messages.length > 0) {
       persistSessionSnapshot({ messages, suggestions, reportSegments });
     }
     evaluationModeBeforeMenuRef.current = evaluationMode;
@@ -639,9 +632,9 @@ export default function App() {
     setReplacedLayerId(null);
     setIsReportContextStale(false);
     setEvaluationMode(null);
-    setScreen("evaluation");
+    setScreen('evaluation');
     if (isInsideFigma) {
-      postToPlugin({ type: "CLEAR_EVALUATION_MODE" });
+      postToPlugin({ type: 'CLEAR_EVALUATION_MODE' });
     }
   }, [
     evaluationMode,
@@ -675,27 +668,29 @@ export default function App() {
       setIsReportContextStale(false);
       setHistoryOpen(false);
       if (isInsideFigma) {
-        postToPlugin({ type: "SAVE_EVALUATION_MODE", mode: entry.evaluationMode });
+        postToPlugin({ type: 'SAVE_EVALUATION_MODE', mode: entry.evaluationMode });
       }
       setScreen(
-        selection ||
-          entry.messages.length > 0 ||
-          restoredSegs.length > 0
-          ? "chat"
-          : "no-selection"
+        selection || entry.messages.length > 0 || restoredSegs.length > 0 ? 'chat' : 'no-selection',
       );
     },
-    [isInsideFigma, revertPayloadByFindingIdRef, selection, setReplaceError, setReplaceSuccess, setReplacedLayerId]
+    [
+      isInsideFigma,
+      revertPayloadByFindingIdRef,
+      selection,
+      setReplaceError,
+      setReplaceSuccess,
+      setReplacedLayerId,
+    ],
   );
 
   const selectedSuggestion = suggestions.find((s) => s.id === selectedId) ?? null;
 
-  const selectedReportFinding =
-    reportItems.find((r) => r.id === selectedReportItemId) ?? null;
+  const selectedReportFinding = reportItems.find((r) => r.id === selectedReportItemId) ?? null;
   const canApplyReportFix = Boolean(
     selectedReportFinding?.layerId &&
       selectedReportFinding.proposedText != null &&
-      String(selectedReportFinding.proposedText).trim().length > 0
+      String(selectedReportFinding.proposedText).trim().length > 0,
   );
   const selectedFindingApplied =
     selectedReportItemId != null && appliedFindingIds.includes(selectedReportItemId);
@@ -703,19 +698,19 @@ export default function App() {
     selectedReportItemId != null
       ? revertPayloadByFindingIdRef.current[selectedReportItemId]
       : undefined;
-  const reportFixMode: "apply" | "revert" | "revert_unavailable" = selectedFindingApplied
+  const reportFixMode: 'apply' | 'revert' | 'revert_unavailable' = selectedFindingApplied
     ? selectedRevertPayload
-      ? "revert"
-      : "revert_unavailable"
-    : "apply";
+      ? 'revert'
+      : 'revert_unavailable'
+    : 'apply';
 
   const showBackToEvaluation =
-    evaluationMode != null && (screen === "chat" || screen === "no-selection");
+    evaluationMode != null && (screen === 'chat' || screen === 'no-selection');
 
   const chatPlaceholder =
-    evaluationMode === "content"
-      ? "Ask for a rewrite, tone change, shorter version…"
-      : "Ask for a review, list what to check, or request a full pass…";
+    evaluationMode === 'content'
+      ? 'Ask for a rewrite, tone change, shorter version…'
+      : 'Ask for a review, list what to check, or request a full pass…';
 
   const handleResizeMouseDown = useCallback(
     (e: React.MouseEvent) => {
@@ -729,21 +724,21 @@ export default function App() {
       const onMouseMove = (mv: MouseEvent) => {
         const newW = Math.max(280, Math.min(800, startW + (mv.clientX - startX)));
         const newH = Math.max(380, Math.min(900, startH + (mv.clientY - startY)));
-        postToPlugin({ type: "RESIZE", width: Math.round(newW), height: Math.round(newH) });
+        postToPlugin({ type: 'RESIZE', width: Math.round(newW), height: Math.round(newH) });
       };
 
       const onMouseUp = () => {
-        window.removeEventListener("mousemove", onMouseMove);
-        window.removeEventListener("mouseup", onMouseUp);
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('mouseup', onMouseUp);
       };
 
-      window.addEventListener("mousemove", onMouseMove);
-      window.addEventListener("mouseup", onMouseUp);
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
     },
-    [isInsideFigma]
+    [isInsideFigma],
   );
 
-  if (screen === "loading") {
+  if (screen === 'loading') {
     return (
       <div className="relative flex items-center justify-center h-screen bg-figma-bg">
         <div className="flex gap-1">
@@ -760,7 +755,7 @@ export default function App() {
     );
   }
 
-  if (screen === "api-key") {
+  if (screen === 'api-key') {
     return (
       <div className="relative flex flex-col h-screen bg-figma-bg text-figma-text">
         <PluginHeader showSettings={false} onSettingsClick={() => {}} />
@@ -770,7 +765,7 @@ export default function App() {
     );
   }
 
-  if (screen === "settings") {
+  if (screen === 'settings') {
     return (
       <div className="relative flex flex-col h-screen bg-figma-bg text-figma-text">
         <PluginHeader
@@ -780,7 +775,7 @@ export default function App() {
           showBack
           onBack={handleBackFromSettings}
         />
-        <ApiKeyPrompt onSave={handleSaveApiKey} initialValue={apiKey ?? ""} saveLabel="Save key" />
+        <ApiKeyPrompt onSave={handleSaveApiKey} initialValue={apiKey ?? ''} saveLabel="Save key" />
         <ResizeHandle onMouseDown={handleResizeMouseDown} />
       </div>
     );
@@ -788,7 +783,7 @@ export default function App() {
 
   const showHistoryNav = !!apiKey || savedChats.length > 0;
 
-  if (screen === "evaluation") {
+  if (screen === 'evaluation') {
     return (
       <div className="relative flex flex-col h-screen bg-figma-bg text-figma-text select-none overflow-hidden">
         <PluginHeader
@@ -817,7 +812,7 @@ export default function App() {
         title={
           evaluationMode != null
             ? getAgentForEvaluationMode(evaluationMode).label
-            : "CDS Design Quality Evaluator"
+            : 'CDS Design Quality Evaluator'
         }
         showSettings
         onSettingsClick={handleOpenSettings}
@@ -827,7 +822,7 @@ export default function App() {
         onHistoryClick={() => setHistoryOpen(true)}
       />
 
-      {screen === "no-selection" && messages.length === 0 && reportItems.length === 0 ? (
+      {screen === 'no-selection' && messages.length === 0 && reportItems.length === 0 ? (
         <NoSelection />
       ) : (
         <>
@@ -836,9 +831,10 @@ export default function App() {
               Select frame(s) in Figma to add live screen text to the next review.
             </div>
           )}
-          {agentUiMode === "report" && isReportContextStale && (
+          {agentUiMode === 'report' && isReportContextStale && (
             <div className="shrink-0 px-4 py-2 text-[10px] text-amber-300 border-b border-amber-500/20 bg-amber-500/10">
-              Selection changed. Current findings are from the previous selection. Ask for a new review to refresh.
+              Selection changed. Current findings are from the previous selection. Ask for a new
+              review to refresh.
             </div>
           )}
 
@@ -861,7 +857,7 @@ export default function App() {
 
             <ChatTimeline
               messages={messages}
-              reportSegments={agentUiMode === "report" ? reportSegments : []}
+              reportSegments={agentUiMode === 'report' ? reportSegments : []}
               renderReportSegment={(segment) => (
                 <ReportPanel
                   items={segment.items}
@@ -875,7 +871,7 @@ export default function App() {
               )}
             />
 
-            {agentUiMode === "report" && fixedItems.length > 0 && (
+            {agentUiMode === 'report' && fixedItems.length > 0 && (
               <div className="rounded-lg border border-figma-border bg-figma-surface/70">
                 <button
                   type="button"
@@ -885,7 +881,7 @@ export default function App() {
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-figma-muted">
                     Fixed ({fixedItems.length})
                   </span>
-                  <span className="text-[12px] text-figma-muted">{fixedOpen ? "−" : "+"}</span>
+                  <span className="text-[12px] text-figma-muted">{fixedOpen ? '−' : '+'}</span>
                 </button>
                 {fixedOpen && (
                   <ul className="px-3 pb-3 flex flex-col gap-2">
@@ -896,12 +892,14 @@ export default function App() {
                           onClick={() => setSelectedReportItemId(item.id)}
                           className={`w-full rounded border px-2.5 py-2 text-left transition-colors ${
                             selectedReportItemId === item.id
-                              ? "border-[#14ae5c]/60 bg-[#14ae5c]/10"
-                              : "border-figma-border bg-figma-elevated/60 hover:border-[#14ae5c]/40"
+                              ? 'border-[#14ae5c]/60 bg-[#14ae5c]/10'
+                              : 'border-figma-border bg-figma-elevated/60 hover:border-[#14ae5c]/40'
                           }`}
                         >
                           <p className="text-[11px] font-medium text-figma-text">{item.title}</p>
-                          <p className="text-[10px] text-figma-muted line-clamp-2 mt-0.5">{item.detail}</p>
+                          <p className="text-[10px] text-figma-muted line-clamp-2 mt-0.5">
+                            {item.detail}
+                          </p>
                         </button>
                       </li>
                     ))}
@@ -914,7 +912,7 @@ export default function App() {
               <ThinkingIndicator
                 agentUiMode={agentUiMode}
                 analyzingScreens={
-                  agentUiMode === "report" &&
+                  agentUiMode === 'report' &&
                   selection != null &&
                   selection.totalTextLayers > 0 &&
                   reportItems.length === 0
@@ -926,7 +924,7 @@ export default function App() {
               <ErrorBanner message={aiError} onDismiss={() => setAiError(null)} />
             )}
 
-            {agentUiMode === "suggestions" && suggestions.length > 0 && (
+            {agentUiMode === 'suggestions' && suggestions.length > 0 && (
               <SuggestionCards
                 suggestions={suggestions}
                 selectedId={selectedId}
@@ -937,7 +935,7 @@ export default function App() {
             <div ref={bottomRef} />
           </div>
 
-          {agentUiMode === "suggestions" && suggestions.length > 0 && (
+          {agentUiMode === 'suggestions' && suggestions.length > 0 && (
             <ReplaceButton
               disabled={!selectedSuggestion || replaceLoading || isThinking}
               loading={replaceLoading}
@@ -949,22 +947,20 @@ export default function App() {
             />
           )}
 
-          {agentUiMode === "report" &&
-            reportItems.length > 0 &&
-            selectedReportItemId != null && (
+          {agentUiMode === 'report' && reportItems.length > 0 && selectedReportItemId != null && (
             <ReplaceButton
               disabled={
                 isThinking ||
-                (reportFixMode === "apply"
+                (reportFixMode === 'apply'
                   ? !canApplyReportFix || replaceLoading
-                  : reportFixMode === "revert"
+                  : reportFixMode === 'revert'
                   ? replaceLoading
                   : true)
               }
               loading={replaceLoading}
               success={replaceSuccess}
               error={replaceError}
-              onReplace={reportFixMode === "revert" ? handleRevertFix : handleReplace}
+              onReplace={reportFixMode === 'revert' ? handleRevertFix : handleReplace}
               onDismissError={() => setReplaceError(null)}
               variant="fix"
               fixMode={reportFixMode}

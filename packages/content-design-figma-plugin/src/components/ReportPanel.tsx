@@ -1,4 +1,9 @@
-import type { FullEvaluationSummary, ReportFindingCategory, ReportItem, ReportSeverity } from "../types";
+import type {
+  FullEvaluationSummary,
+  ReportFindingCategory,
+  ReportItem,
+  ReportSeverity,
+} from '../types';
 
 interface ReportPanelProps {
   items: ReportItem[];
@@ -13,12 +18,12 @@ interface ReportPanelProps {
   onFocusLayer?: (layerId: string) => void;
 }
 
-const CATEGORY_ORDER: ReportFindingCategory[] = ["cds", "a11y", "content"];
+const CATEGORY_ORDER: ReportFindingCategory[] = ['cds', 'a11y', 'content'];
 
 const CATEGORY_LABEL: Record<ReportFindingCategory, string> = {
-  cds: "CDS usage",
-  a11y: "Accessibility",
-  content: "Content",
+  cds: 'CDS usage',
+  a11y: 'Accessibility',
+  content: 'Content',
 };
 
 const SEVERITY_ORDER: Record<ReportSeverity, number> = {
@@ -29,17 +34,15 @@ const SEVERITY_ORDER: Record<ReportSeverity, number> = {
 };
 
 const SEVERITY_BADGE_CLASS: Record<ReportSeverity, string> = {
-  low: "text-sky-300 bg-sky-500/10 border-sky-500/30",
-  medium: "text-amber-300 bg-amber-500/10 border-amber-500/30",
-  high: "text-orange-300 bg-orange-500/10 border-orange-500/30",
-  blocker: "text-red-300 bg-red-500/10 border-red-500/30",
+  low: 'text-sky-300 bg-sky-500/10 border-sky-500/30',
+  medium: 'text-amber-300 bg-amber-500/10 border-amber-500/30',
+  high: 'text-orange-300 bg-orange-500/10 border-orange-500/30',
+  blocker: 'text-red-300 bg-red-500/10 border-red-500/30',
 };
 
 function canApplyFixFromItem(item: ReportItem): boolean {
   return Boolean(
-    item.layerId &&
-      item.proposedText != null &&
-      String(item.proposedText).trim().length > 0
+    item.layerId && item.proposedText != null && String(item.proposedText).trim().length > 0,
   );
 }
 
@@ -129,18 +132,18 @@ function FindingRow({
   const canSelect = fixAvailable || isApplied;
 
   const baseClass =
-    item.severity === "high" || item.severity === "blocker"
-      ? "border-amber-500/35 bg-amber-500/5"
-      : "border-figma-border bg-figma-surface";
+    item.severity === 'high' || item.severity === 'blocker'
+      ? 'border-amber-500/35 bg-amber-500/5'
+      : 'border-figma-border bg-figma-surface';
 
   const outlineClass =
     isApplied && isSelected
-      ? "ring-2 ring-white/75 border-white/90 bg-white/[0.09] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+      ? 'ring-2 ring-white/75 border-white/90 bg-white/[0.09] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]'
       : isApplied
-      ? "ring-2 ring-[#14ae5c]/55 border-[#14ae5c]/50 bg-[#14ae5c]/[0.07]"
+      ? 'ring-2 ring-[#14ae5c]/55 border-[#14ae5c]/50 bg-[#14ae5c]/[0.07]'
       : isSelected
-      ? "ring-1 ring-figma-purple/50 border-figma-purple/40"
-      : "";
+      ? 'ring-1 ring-figma-purple/50 border-figma-purple/40'
+      : '';
 
   const toggleSelection = () => {
     if (!canSelect) return;
@@ -150,16 +153,14 @@ function FindingRow({
   const inner = (
     <div className="flex gap-2.5 items-start min-w-0">
       <div className="pt-0.5 shrink-0">
-        <FindingCheck
-          isSelected={isSelected}
-          isApplied={isApplied}
-          fixAvailable={fixAvailable}
-        />
+        <FindingCheck isSelected={isSelected} isApplied={isApplied} fixAvailable={fixAvailable} />
       </div>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1.5 mb-1">
           <span
-            className={`inline-flex items-center rounded border px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${SEVERITY_BADGE_CLASS[item.severity]}`}
+            className={`inline-flex items-center rounded border px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${
+              SEVERITY_BADGE_CLASS[item.severity]
+            }`}
           >
             {item.severity}
           </span>
@@ -198,7 +199,10 @@ function FindingRow({
           </p>
         )}
         {item.layerId && (
-          <p className="text-[9px] text-figma-muted/80 font-mono mt-1.5 truncate" title={item.layerId}>
+          <p
+            className="text-[9px] text-figma-muted/80 font-mono mt-1.5 truncate"
+            title={item.layerId}
+          >
             Layer: {item.layerId.slice(0, 12)}…
           </p>
         )}
@@ -222,17 +226,21 @@ function FindingRow({
     <li className="list-none">
       <div
         data-finding-card
-        role={canSelect ? "button" : undefined}
+        role={canSelect ? 'button' : undefined}
         tabIndex={canSelect ? 0 : -1}
         onClick={canSelect ? toggleSelection : undefined}
         onKeyDown={(e) => {
           if (!canSelect) return;
-          if (e.key === "Enter" || e.key === " ") {
+          if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             toggleSelection();
           }
         }}
-        className={`w-full rounded-lg border px-3 py-2.5 text-left transition-colors ${canSelect ? "cursor-pointer hover:border-figma-purple/30 hover:bg-figma-purple/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#578BFA]" : "cursor-default"} ${baseClass} ${outlineClass}`}
+        className={`w-full rounded-lg border px-3 py-2.5 text-left transition-colors ${
+          canSelect
+            ? 'cursor-pointer hover:border-figma-purple/30 hover:bg-figma-purple/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#578BFA]'
+            : 'cursor-default'
+        } ${baseClass} ${outlineClass}`}
         aria-pressed={canSelect ? isSelected : undefined}
         aria-label={
           !canSelect
@@ -361,7 +369,9 @@ export default function ReportPanel({
         if (!group || group.length === 0) return null;
         return (
           <div key={cat} className="flex flex-col gap-2">
-            <p className="text-[10px] font-semibold text-figma-text px-0.5">{CATEGORY_LABEL[cat]}</p>
+            <p className="text-[10px] font-semibold text-figma-text px-0.5">
+              {CATEGORY_LABEL[cat]}
+            </p>
             <ul className="flex flex-col gap-2">
               {sortFindings(group).map((item) => (
                 <FindingRow

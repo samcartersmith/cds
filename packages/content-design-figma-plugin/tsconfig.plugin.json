@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["ES2017"],
+    "lib": [
+      "ES2017"
+    ],
     "module": "CommonJS",
     "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
-    "types": ["@figma/plugin-typings"]
+    "types": [
+      "@figma/plugin-typings"
+    ]
   },
-  "include": ["src/code.ts"]
+  "include": [
+    "src/code.ts"
+  ]
 }

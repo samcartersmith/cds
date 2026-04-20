@@ -1,15 +1,15 @@
-import { Fragment, type ReactNode } from "react";
-import type { ChatMessage, ReportSegment } from "../types";
+import { Fragment, type ReactNode } from 'react';
+import type { ChatMessage, ReportSegment } from '../types';
 
 function formatChatTime(sentAt?: number): string {
-  if (sentAt == null) return "";
+  if (sentAt == null) return '';
   try {
     return new Intl.DateTimeFormat(undefined, {
-      hour: "numeric",
-      minute: "2-digit",
+      hour: 'numeric',
+      minute: '2-digit',
     }).format(sentAt);
   } catch {
-    return "";
+    return '';
   }
 }
 
@@ -17,20 +17,18 @@ function MessageBubble({ msg }: { msg: ChatMessage }) {
   const time = formatChatTime(msg.sentAt);
   return (
     <div
-      className={`flex animate-fade-in ${
-        msg.role === "user" ? "justify-end" : "justify-start"
-      }`}
+      className={`flex animate-fade-in ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
     >
       <div
         className={`flex flex-col gap-0.5 max-w-[85%] ${
-          msg.role === "user" ? "items-end" : "items-start"
+          msg.role === 'user' ? 'items-end' : 'items-start'
         }`}
       >
         <div
           className={`px-3 py-2 rounded-lg text-[12px] leading-relaxed ${
-            msg.role === "user"
-              ? "bg-figma-purple text-white rounded-br-sm"
-              : "bg-figma-surface text-figma-text rounded-bl-sm border border-figma-border"
+            msg.role === 'user'
+              ? 'bg-figma-purple text-white rounded-br-sm'
+              : 'bg-figma-surface text-figma-text rounded-bl-sm border border-figma-border'
           }`}
         >
           {msg.text}

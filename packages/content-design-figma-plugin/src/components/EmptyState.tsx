@@ -1,21 +1,21 @@
-import type { EvaluationMode } from "../types";
+import type { EvaluationMode } from '../types';
 
 interface EmptyStateProps {
   evaluationMode: EvaluationMode | null;
-  agentUiMode: "suggestions" | "report" | "chat";
+  agentUiMode: 'suggestions' | 'report' | 'chat';
 }
 
 export default function EmptyState({ evaluationMode, agentUiMode }: EmptyStateProps) {
   const modeLabel =
-    evaluationMode === "full"
-      ? "Full evaluation"
-      : evaluationMode === "cds"
-        ? "CDS compliance"
-        : evaluationMode === "a11y"
-          ? "Accessibility"
-          : evaluationMode === "content"
-            ? "Content"
-            : "Assistant";
+    evaluationMode === 'full'
+      ? 'Full evaluation'
+      : evaluationMode === 'cds'
+      ? 'CDS compliance'
+      : evaluationMode === 'a11y'
+      ? 'Accessibility'
+      : evaluationMode === 'content'
+      ? 'Content'
+      : 'Assistant';
 
   return (
     <div className="flex flex-col items-center justify-center flex-1 gap-3 py-8 animate-fade-in">
@@ -34,9 +34,9 @@ export default function EmptyState({ evaluationMode, agentUiMode }: EmptyStatePr
       <div className="text-center">
         <p className="text-[12px] font-medium text-figma-text mb-1">{modeLabel}</p>
         <p className="text-[11px] text-figma-muted leading-relaxed max-w-[200px]">
-          {agentUiMode === "suggestions"
-            ? "Ask for a rewrite, shorter copy, a different tone, or anything else."
-            : "Describe what you want reviewed or ask for a full pass on the selected screens."}
+          {agentUiMode === 'suggestions'
+            ? 'Ask for a rewrite, shorter copy, a different tone, or anything else.'
+            : 'Describe what you want reviewed or ask for a full pass on the selected screens.'}
         </p>
       </div>
     </div>

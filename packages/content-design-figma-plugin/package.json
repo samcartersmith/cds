@@ -13,6 +13,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cbhq/cds-fonts": "workspace:^",
+    "@cbhq/cds-icons": "^5.15.0",
+    "@cbhq/cds-web": "^8.66.0",
+    "framer-motion": "^10",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },

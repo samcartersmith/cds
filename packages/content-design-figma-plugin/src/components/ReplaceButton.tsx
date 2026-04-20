@@ -6,9 +6,9 @@ interface ReplaceButtonProps {
   onReplace: () => void;
   onDismissError: () => void;
   /** "replace" = content suggestions; "fix" = report finding */
-  variant?: "replace" | "fix";
+  variant?: 'replace' | 'fix';
   /** Report finding: apply vs revert vs applied from history without snapshot */
-  fixMode?: "apply" | "revert" | "revert_unavailable";
+  fixMode?: 'apply' | 'revert' | 'revert_unavailable';
   /** When true, success line shows "Reverted" instead of "Layer updated" */
   fixSuccessWasRevert?: boolean;
 }
@@ -20,34 +20,32 @@ export default function ReplaceButton({
   error,
   onReplace,
   onDismissError,
-  variant = "replace",
-  fixMode = "apply",
+  variant = 'replace',
+  fixMode = 'apply',
   fixSuccessWasRevert = false,
 }: ReplaceButtonProps) {
-  const isFix = variant === "fix";
+  const isFix = variant === 'fix';
   const primaryLabel =
-    isFix && fixMode === "revert"
-      ? "Revert fix"
-      : isFix && fixMode === "revert_unavailable"
-      ? "Revert fix"
+    isFix && fixMode === 'revert'
+      ? 'Revert fix'
+      : isFix && fixMode === 'revert_unavailable'
+      ? 'Revert fix'
       : isFix
-      ? "Apply fix"
-      : "Replace content";
-  const loadingLabel =
-    isFix && fixMode === "revert" ? "Reverting…" : "Applying…";
-  const successLabel =
-    isFix && fixSuccessWasRevert ? "Reverted" : "Layer updated";
+      ? 'Apply fix'
+      : 'Replace content';
+  const loadingLabel = isFix && fixMode === 'revert' ? 'Reverting…' : 'Applying…';
+  const successLabel = isFix && fixSuccessWasRevert ? 'Reverted' : 'Layer updated';
   const helperWhenReady =
-    isFix && fixMode === "revert"
-      ? "Restores the text from before this fix"
-      : isFix && fixMode === "apply"
+    isFix && fixMode === 'revert'
+      ? 'Restores the text from before this fix'
+      : isFix && fixMode === 'apply'
       ? "Will replace text on the selected finding's layer"
-      : "Will overwrite the selected text layer";
+      : 'Will overwrite the selected text layer';
   const helperWhenDisabled = isFix
-    ? fixMode === "apply"
-      ? "Choose a finding that has both a layer and suggested replacement text (see card hints)"
-      : fixMode === "revert_unavailable"
-      ? "Revert only works for fixes applied in this session"
+    ? fixMode === 'apply'
+      ? 'Choose a finding that has both a layer and suggested replacement text (see card hints)'
+      : fixMode === 'revert_unavailable'
+      ? 'Revert only works for fixes applied in this session'
       : null
     : null;
 
@@ -77,14 +75,14 @@ export default function ReplaceButton({
         disabled={disabled}
         className={`w-full py-2.5 rounded-lg text-[12px] font-semibold transition-all duration-200 ${
           success
-            ? "bg-figma-green text-white shadow-[0_0_16px_#14ae5c40]"
+            ? 'bg-figma-green text-white shadow-[0_0_16px_#14ae5c40]'
             : loading
-            ? "bg-figma-purple/70 text-white cursor-not-allowed"
+            ? 'bg-figma-purple/70 text-white cursor-not-allowed'
             : disabled
-            ? "bg-figma-surface border border-figma-border text-figma-muted cursor-not-allowed"
-            : fixMode === "revert"
-            ? "bg-amber-600/90 hover:bg-amber-600 text-white shadow-[0_0_12px_rgba(217,119,6,0.25)] active:scale-[0.98]"
-            : "bg-figma-purple hover:bg-figma-purple-hover text-white shadow-[0_0_16px_#578BFA30] active:scale-[0.98]"
+            ? 'bg-figma-surface border border-figma-border text-figma-muted cursor-not-allowed'
+            : fixMode === 'revert'
+            ? 'bg-amber-600/90 hover:bg-amber-600 text-white shadow-[0_0_12px_rgba(217,119,6,0.25)] active:scale-[0.98]'
+            : 'bg-figma-purple hover:bg-figma-purple-hover text-white shadow-[0_0_16px_#578BFA30] active:scale-[0.98]'
         }`}
       >
         <span className="flex items-center justify-center gap-2">
@@ -111,7 +109,7 @@ export default function ReplaceButton({
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                 <path
                   d="M9 1H13V5M13 1L8 6M5 3H2C1.45 3 1 3.45 1 4V12C1 12.55 1.45 13 2 13H10C10.55 13 11 12.55 11 12V9"
-                  stroke={disabled ? "#666" : "white"}
+                  stroke={disabled ? '#666' : 'white'}
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
