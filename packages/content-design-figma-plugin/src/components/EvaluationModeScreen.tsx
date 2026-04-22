@@ -9,9 +9,9 @@ export default function EvaluationModeScreen({ onSelect }: EvaluationModeScreenP
   return (
     <div className="flex flex-col flex-1 px-4 py-4 gap-3 min-h-0 overflow-y-auto">
       <div className="mb-1">
-        <p className="text-[13px] font-semibold text-figma-text">Choose evaluation scope</p>
+        <p className="text-[13px] font-semibold text-figma-text">What do you want to review?</p>
         <p className="text-[11px] text-figma-muted leading-relaxed mt-1">
-          Full review covers CDS, content, and accessibility. Or focus on one area.
+          Pick a scope to get started. Full review covers everything in one pass.
         </p>
       </div>
 

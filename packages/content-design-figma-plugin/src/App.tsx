@@ -5,6 +5,7 @@ import type {
   EvaluationMode,
   FullEvaluationSummary,
   MultiScreenSelection,
+  RepeatReviewCheckResult,
   ReportSegment,
   SavedChatSession,
   Suggestion,
@@ -107,8 +108,16 @@ export default function App() {
   const reportItems = useMemo(() => flattenReportItems(reportSegments), [reportSegments]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedReportItemId, setSelectedReportItemId] = useState<string | null>(null);
-  /** Finding ids whose proposed fix has been applied (green check state) */
+  /** Finding ids whose proposed suggestion has been applied */
   const [appliedFindingIds, setAppliedFindingIds] = useState<string[]>([]);
+  /** Finding ids that have been dismissed in the report panel */
+  const [dismissedFindingIds, setDismissedFindingIds] = useState<string[]>([]);
+  /** Suggestion ids that have been dismissed in suggestions mode */
+  const [dismissedSuggestionIds, setDismissedSuggestionIds] = useState<string[]>([]);
+  /** Pending repeat review check result — drives the already-reviewed interstitial */
+  const [repeatReviewResult, setRepeatReviewResult] = useState<RepeatReviewCheckResult | null>(null);
+  /** Prompt stored while waiting for a CHECK_REPEAT_REVIEW response */
+  const pendingReviewPromptRef = useRef<string | null>(null);
 
   const [isThinking, setIsThinking] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
@@ -170,7 +179,7 @@ export default function App() {
 
   const [savedChats, setSavedChats] = useState<SavedChatSession[]>([]);
   const [historyOpen, setHistoryOpen] = useState(false);
-  const [fixedOpen, setFixedOpen] = useState(false);
+  const [appliedOpen, setAppliedOpen] = useState(false);
 
   /** Abort any in-flight AI request and unblock the UI immediately. */
   const cancelAiRequest = useCallback(() => {
@@ -224,6 +233,7 @@ export default function App() {
     setReplaceError,
     setReplacedLayerId,
     setReportFixSuccessWasRevert,
+    setRepeatReviewResult,
     messagesRef,
     reportItemsRef,
     focusFindingSuppressSelectionResetRef,
@@ -231,6 +241,7 @@ export default function App() {
     revertPayloadByFindingIdRef,
     replaceOperationRef,
     lastReportFindingIdRef,
+    pendingReviewPromptRef,
     patchSelectionText,
   });
 
@@ -288,15 +299,29 @@ export default function App() {
   }, []);
 
   const handleFocusReportLayer = useCallback(
-    (nodeId: string) => {
+    (nodeId: string, frameId?: string) => {
       if (isInsideFigma) {
         focusFindingSuppressSelectionResetRef.current = true;
-        postToPlugin({ type: 'FOCUS_NODE', nodeId });
+        postToPlugin({ type: 'FOCUS_NODE', nodeId, ...(frameId ? { frameId } : {}) });
       }
       setActiveLayerId(nodeId);
     },
     [isInsideFigma],
   );
+
+  const handleDismissFinding = useCallback((id: string) => {
+    setDismissedFindingIds((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
+    );
+    if (selectedReportItemId === id) setSelectedReportItemId(null);
+  }, [selectedReportItemId]);
+
+  const handleDismissSuggestion = useCallback((id: string) => {
+    setDismissedSuggestionIds((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
+    );
+    if (selectedId === id) setSelectedId(null);
+  }, [selectedId]);
 
   const persistSessionSnapshot = useCallback(
     (payload: {
@@ -340,16 +365,20 @@ export default function App() {
       const sameModeReturn = returnMode !== null && mode === returnMode;
 
       if (!sameModeReturn) {
-        cancelAiRequest();
-        sessionIdRef.current = `s-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
-        setMessages([]);
-        setSuggestions([]);
-        setReportSegments([]);
-        setIsReportContextStale(false);
-        setAppliedFindingIds([]);
-        revertPayloadByFindingIdRef.current = {};
-        setSelectedId(null);
-        setSelectedReportItemId(null);
+      cancelAiRequest();
+      sessionIdRef.current = `s-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+      setMessages([]);
+      setSuggestions([]);
+      setReportSegments([]);
+      setIsReportContextStale(false);
+      setAppliedFindingIds([]);
+      setDismissedFindingIds([]);
+      setDismissedSuggestionIds([]);
+      revertPayloadByFindingIdRef.current = {};
+      setSelectedId(null);
+      setSelectedReportItemId(null);
+      setRepeatReviewResult(null);
+      pendingReviewPromptRef.current = null;
       }
 
       setEvaluationMode(mode);
@@ -475,6 +504,7 @@ export default function App() {
           setReportSegments(nextSegs);
           setIsReportContextStale(false);
           setAppliedFindingIds([]);
+          setDismissedFindingIds([]);
           revertPayloadByFindingIdRef.current = {};
           setSelectedReportItemId(null);
           persistSessionSnapshot({
@@ -482,6 +512,11 @@ export default function App() {
             suggestions: [],
             reportSegments: nextSegs,
           });
+          // Snapshot frame content hashes so we can detect repeat reviews
+          if (isInsideFigma && selection && evaluationMode) {
+            const frameIds = selection.screens.map((s) => s.id);
+            postToPlugin({ type: 'SAVE_REVIEW_SNAPSHOT', scope: evaluationMode, frameIds });
+          }
         }
       } catch (err) {
         // AbortError means the request was intentionally cancelled (node/mode switch) — don't show an error
@@ -560,6 +595,50 @@ export default function App() {
     setReplacedLayerId,
     setReportFixSuccessWasRevert,
   ]);
+
+  const handleApplyAll = useCallback(() => {
+    if (agentUiMode !== 'report') return;
+    const toApply = reportItems.filter(
+      (item) =>
+        Boolean(item.layerId) &&
+        item.proposedText != null &&
+        String(item.proposedText).trim().length > 0 &&
+        !appliedFindingIds.includes(item.id) &&
+        !dismissedFindingIds.includes(item.id),
+    );
+    if (toApply.length === 0) return;
+    for (const item of toApply) {
+      if (!item.layerId || item.proposedText == null) continue;
+      const originalText = getLayerCharacters(selection, item.layerId);
+      if (originalText !== undefined) {
+        revertPayloadByFindingIdRef.current[item.id] = {
+          layerId: item.layerId,
+          originalText,
+        };
+      }
+      if (isInsideFigma) {
+        postToPlugin({ type: 'REPLACE', nodeId: item.layerId, newText: item.proposedText });
+      }
+      setAppliedFindingIds((prev) => (prev.includes(item.id) ? prev : [...prev, item.id]));
+    }
+  }, [agentUiMode, appliedFindingIds, dismissedFindingIds, isInsideFigma, reportItems, revertPayloadByFindingIdRef, selection]);
+
+  const handleUndoAll = useCallback(() => {
+    if (agentUiMode !== 'report') return;
+    const toRevert = appliedFindingIds.filter(
+      (fid) => revertPayloadByFindingIdRef.current[fid] != null,
+    );
+    if (toRevert.length === 0) return;
+    for (const fid of toRevert) {
+      const payload = revertPayloadByFindingIdRef.current[fid];
+      if (!payload) continue;
+      if (isInsideFigma) {
+        postToPlugin({ type: 'REPLACE', nodeId: payload.layerId, newText: payload.originalText });
+      }
+      setAppliedFindingIds((prev) => prev.filter((id) => id !== fid));
+      delete revertPayloadByFindingIdRef.current[fid];
+    }
+  }, [agentUiMode, appliedFindingIds, isInsideFigma, revertPayloadByFindingIdRef]);
 
   const handleReplace = useCallback(() => {
     if (agentUiMode === 'report') {
@@ -680,6 +759,8 @@ export default function App() {
       const restoredSegs = reportSegmentsFromSavedSession(entry);
       setReportSegments(restoredSegs);
       setAppliedFindingIds([]);
+      setDismissedFindingIds([]);
+      setDismissedSuggestionIds([]);
       revertPayloadByFindingIdRef.current = {};
       setSelectedId(null);
       setSelectedReportItemId(null);
@@ -688,6 +769,8 @@ export default function App() {
       setReplaceSuccess(false);
       setReplacedLayerId(null);
       setIsReportContextStale(false);
+      setRepeatReviewResult(null);
+      pendingReviewPromptRef.current = null;
       setHistoryOpen(false);
       if (isInsideFigma) {
         postToPlugin({ type: 'SAVE_EVALUATION_MODE', mode: entry.evaluationMode });
@@ -834,7 +917,7 @@ export default function App() {
         title={
           evaluationMode != null
             ? getAgentForEvaluationMode(evaluationMode).label
-            : 'CDS Design Quality Evaluator'
+            : 'CDS Review'
         }
         showSettings
         onSettingsClick={handleOpenSettings}
@@ -854,9 +937,11 @@ export default function App() {
             </div>
           )}
           {isReportContextStale && (
-            <div className="shrink-0 px-4 py-2 text-[10px] text-amber-300 border-b border-amber-500/20 bg-amber-500/10">
-              Selection changed. Current findings are from the previous selection. Ask for a new
-              review to refresh.
+            <div className="shrink-0 px-4 py-2 border-b border-figma-border bg-figma-elevated/40">
+              <p className="text-[11px] font-medium text-figma-text">Different frame selected</p>
+              <p className="text-[10px] text-figma-muted mt-0.5">
+                Suggestions are from the previous selection. Ask for a new review to refresh.
+              </p>
             </div>
           )}
 
@@ -877,17 +962,72 @@ export default function App() {
               <EmptyState evaluationMode={evaluationMode} agentUiMode={agentUiMode} />
             )}
 
+            {/* Repeat review interstitial */}
+            {repeatReviewResult?.showInterstitial && (
+              <div className="rounded-lg border border-figma-border bg-figma-elevated px-4 py-3">
+                <p className="text-[12px] font-semibold text-figma-text mb-1">
+                  Already reviewed
+                </p>
+                <p className="text-[11px] text-figma-muted leading-relaxed mb-3">
+                  These screens haven't changed since the last review
+                  {repeatReviewResult.lastReviewedAt
+                    ? ` (${new Date(repeatReviewResult.lastReviewedAt).toLocaleString()})`
+                    : ''}
+                  .
+                </p>
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const prompt = pendingReviewPromptRef.current;
+                      setRepeatReviewResult(null);
+                      pendingReviewPromptRef.current = null;
+                      if (prompt) handleSend(prompt);
+                    }}
+                    className="text-[11px] font-medium px-3 py-1.5 rounded-lg bg-figma-purple text-white hover:bg-figma-purple-hover transition-colors"
+                  >
+                    Review anyway
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setRepeatReviewResult(null);
+                      pendingReviewPromptRef.current = null;
+                    }}
+                    className="text-[11px] font-medium px-3 py-1.5 rounded-lg border border-figma-border text-figma-muted hover:text-figma-text transition-colors"
+                  >
+                    Skip
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Partial skip banner */}
+            {repeatReviewResult != null &&
+              !repeatReviewResult.showInterstitial &&
+              repeatReviewResult.partialSkip &&
+              repeatReviewResult.skippedCount > 0 && (
+                <div className="rounded-lg border border-figma-border bg-figma-elevated/40 px-3 py-2">
+                  <p className="text-[10px] text-figma-muted">
+                    {repeatReviewResult.skippedCount} of {repeatReviewResult.totalCount} screen
+                    {repeatReviewResult.totalCount !== 1 ? 's' : ''} already reviewed — evaluating
+                    the rest
+                  </p>
+                </div>
+              )}
+
             <ChatTimeline
               messages={messages}
               reportSegments={reportSegments}
               renderReportSegment={(segment) => (
                 <ReportPanel
                   items={segment.items}
-                  summary={segment.summary}
                   selectedId={selectedReportItemId}
                   appliedIds={appliedFindingIds}
+                  dismissedIds={dismissedFindingIds}
                   hideApplied
                   onSelect={setSelectedReportItemId}
+                  onDismiss={handleDismissFinding}
                   onFocusLayer={handleFocusReportLayer}
                 />
               )}
@@ -897,18 +1037,18 @@ export default function App() {
               <div className="rounded-lg border border-figma-border bg-figma-surface/70">
                 <button
                   type="button"
-                  onClick={() => setFixedOpen((v) => !v)}
+                  onClick={() => setAppliedOpen((v) => !v)}
                   className="w-full flex items-center justify-between px-3 py-2 text-left"
                 >
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-figma-muted">
-                    Fixed ({fixedItems.length})
+                    Applied ({fixedItems.length})
                   </span>
-                  <span className="text-[12px] text-figma-muted">{fixedOpen ? '−' : '+'}</span>
+                  <span className="text-[12px] text-figma-muted">{appliedOpen ? '−' : '+'}</span>
                 </button>
-                {fixedOpen && (
+                {appliedOpen && (
                   <ul className="px-3 pb-3 flex flex-col gap-2">
                     {fixedItems.map((item) => (
-                      <li key={`fixed-${item.id}`}>
+                      <li key={`applied-${item.id}`}>
                         <button
                           type="button"
                           onClick={() => setSelectedReportItemId(item.id)}
@@ -951,6 +1091,13 @@ export default function App() {
                 suggestions={suggestions}
                 selectedId={selectedId}
                 onSelect={setSelectedId}
+                onDismiss={handleDismissSuggestion}
+                dismissedIds={dismissedSuggestionIds}
+                currentText={
+                  selection
+                    ? getLayerCharacters(selection, activeLayerId || selection.activeLayerId)
+                    : undefined
+                }
               />
             )}
 
@@ -987,6 +1134,9 @@ export default function App() {
               variant="fix"
               fixMode={reportFixMode}
               fixSuccessWasRevert={reportFixSuccessWasRevert}
+              onApplyAll={handleApplyAll}
+              onUndoAll={appliedFindingIds.length > 0 ? handleUndoAll : undefined}
+              showBatchActions
             />
           )}
 

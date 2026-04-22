@@ -9,8 +9,30 @@ interface ReplaceButtonProps {
   variant?: 'replace' | 'fix';
   /** Report finding: apply vs revert vs applied from history without snapshot */
   fixMode?: 'apply' | 'revert' | 'revert_unavailable';
-  /** When true, success line shows "Reverted" instead of "Layer updated" */
+  /** When true, success line shows "Done" (same regardless of direction) */
   fixSuccessWasRevert?: boolean;
+  /** Apply all / Undo all batch actions */
+  onApplyAll?: () => void;
+  onUndoAll?: () => void;
+  showBatchActions?: boolean;
+}
+
+function CheckIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+      <path
+        d="M2 7L5.5 10.5L12 3.5"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function SpinnerIcon() {
+  return <span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />;
 }
 
 export default function ReplaceButton({
@@ -22,32 +44,14 @@ export default function ReplaceButton({
   onDismissError,
   variant = 'replace',
   fixMode = 'apply',
-  fixSuccessWasRevert = false,
+  onApplyAll,
+  onUndoAll,
+  showBatchActions = false,
 }: ReplaceButtonProps) {
-  const isFix = variant === 'fix';
-  const primaryLabel =
-    isFix && fixMode === 'revert'
-      ? 'Revert fix'
-      : isFix && fixMode === 'revert_unavailable'
-      ? 'Revert fix'
-      : isFix
-      ? 'Apply fix'
-      : 'Replace content';
-  const loadingLabel = isFix && fixMode === 'revert' ? 'Reverting…' : 'Applying…';
-  const successLabel = isFix && fixSuccessWasRevert ? 'Reverted' : 'Layer updated';
-  const helperWhenReady =
-    isFix && fixMode === 'revert'
-      ? 'Restores the text from before this fix'
-      : isFix && fixMode === 'apply'
-      ? "Will replace text on the selected finding's layer"
-      : 'Will overwrite the selected text layer';
-  const helperWhenDisabled = isFix
-    ? fixMode === 'apply'
-      ? 'Choose a finding that has both a layer and suggested replacement text (see card hints)'
-      : fixMode === 'revert_unavailable'
-      ? 'Revert only works for fixes applied in this session'
-      : null
-    : null;
+  const isRevert = fixMode === 'revert';
+
+  const primaryLabel = isRevert ? 'Undo' : 'Apply suggestion';
+  const loadingLabel = isRevert ? 'Undoing…' : 'Applying…';
 
   return (
     <div className="shrink-0 px-3 py-2 border-t border-figma-border bg-figma-bg animate-slide-up">
@@ -70,68 +74,69 @@ export default function ReplaceButton({
         </div>
       )}
 
-      <button
-        onClick={onReplace}
-        disabled={disabled}
-        className={`w-full py-2.5 rounded-lg text-[12px] font-semibold transition-all duration-200 ${
-          success
-            ? 'bg-figma-green text-white shadow-[0_0_16px_#14ae5c40]'
-            : loading
-            ? 'bg-figma-purple/70 text-white cursor-not-allowed'
-            : disabled
-            ? 'bg-figma-surface border border-figma-border text-figma-muted cursor-not-allowed'
-            : fixMode === 'revert'
-            ? 'bg-amber-600/90 hover:bg-amber-600 text-white shadow-[0_0_12px_rgba(217,119,6,0.25)] active:scale-[0.98]'
-            : 'bg-figma-purple hover:bg-figma-purple-hover text-white shadow-[0_0_16px_#578BFA30] active:scale-[0.98]'
-        }`}
-      >
-        <span className="flex items-center justify-center gap-2">
-          {success ? (
-            <>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                <path
-                  d="M2 7L5.5 10.5L12 3.5"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              {successLabel}
-            </>
-          ) : loading ? (
-            <>
-              <span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              {loadingLabel}
-            </>
-          ) : (
-            <>
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                <path
-                  d="M9 1H13V5M13 1L8 6M5 3H2C1.45 3 1 3.45 1 4V12C1 12.55 1.45 13 2 13H10C10.55 13 11 12.55 11 12V9"
-                  stroke={disabled ? '#666' : 'white'}
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              {primaryLabel}
-            </>
-          )}
-        </span>
-      </button>
+      <div className="flex gap-2">
+        <button
+          onClick={onReplace}
+          disabled={disabled}
+          className={`flex-1 py-2.5 rounded-lg text-[12px] font-semibold transition-all duration-200 ${
+            success
+              ? 'bg-figma-green text-white shadow-[0_0_16px_#14ae5c40]'
+              : loading
+              ? 'bg-figma-purple/70 text-white cursor-not-allowed'
+              : disabled
+              ? 'bg-figma-surface border border-figma-border text-figma-muted cursor-not-allowed'
+              : isRevert
+              ? 'bg-figma-elevated border border-figma-border text-figma-text hover:border-figma-border/80 active:scale-[0.98]'
+              : 'bg-figma-purple hover:bg-figma-purple-hover text-white shadow-[0_0_16px_#578BFA30] active:scale-[0.98]'
+          }`}
+        >
+          <span className="flex items-center justify-center gap-2">
+            {success ? (
+              <>
+                <CheckIcon />
+                Done
+              </>
+            ) : loading ? (
+              <>
+                <SpinnerIcon />
+                {loadingLabel}
+              </>
+            ) : (
+              <>
+                {!isRevert && <CheckIcon />}
+                {primaryLabel}
+              </>
+            )}
+          </span>
+        </button>
 
-      {!success && !loading && (
-        <p className="text-center text-[10px] text-figma-muted mt-1.5">
-          {isFix
-            ? disabled
-              ? helperWhenDisabled
-              : helperWhenReady
-            : !disabled
-            ? helperWhenReady
-            : null}
-        </p>
-      )}
+        {showBatchActions && (
+          <div className="flex gap-1">
+            {onApplyAll && (
+              <button
+                type="button"
+                onClick={onApplyAll}
+                disabled={loading}
+                className="px-2.5 py-2 rounded-lg text-[11px] font-medium bg-figma-surface border border-figma-border text-figma-text hover:border-figma-purple/40 hover:text-figma-purple transition-colors disabled:opacity-40"
+                title="Apply all suggestions"
+              >
+                Apply all
+              </button>
+            )}
+            {onUndoAll && (
+              <button
+                type="button"
+                onClick={onUndoAll}
+                disabled={loading}
+                className="px-2.5 py-2 rounded-lg text-[11px] font-medium bg-figma-surface border border-figma-border text-figma-muted hover:border-figma-border/80 transition-colors disabled:opacity-40"
+                title="Undo all applied suggestions"
+              >
+                Undo all
+              </button>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

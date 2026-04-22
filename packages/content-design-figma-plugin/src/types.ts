@@ -21,19 +21,44 @@ export type PluginMessage =
   | { type: 'API_KEY_SAVED' }
   | { type: 'API_KEY_CLEARED' }
   | { type: 'EVALUATION_MODE_SAVED'; mode: EvaluationMode }
-  | { type: 'EVALUATION_MODE_CLEARED' };
+  | { type: 'EVALUATION_MODE_CLEARED' }
+  | {
+      type: 'REPEAT_REVIEW_CHECK';
+      showInterstitial: boolean;
+      lastReviewedAt: string | null;
+      totalFrameCount: number;
+      frameIdsToEvaluate: string[];
+      partialSkip: boolean;
+      evaluatedCount: number;
+      totalCount: number;
+      skippedCount: number;
+    }
+  | {
+      type: 'REPLACE_SELECTION_TARGET';
+      isSingleText: boolean;
+      nodeId?: string;
+      frameId?: string | null;
+    };
 
 // ─── UI → Plugin messages ─────────────────────────────────────────────────────
 
 export type UIMessage =
   | { type: 'UI_READY' }
-  | { type: 'FOCUS_NODE'; nodeId: string }
-  | { type: 'REPLACE'; nodeId: string; newText: string }
+  | { type: 'FOCUS_NODE'; nodeId: string; frameId?: string }
+  | { type: 'REPLACE'; nodeId: string; newText: string; frameId?: string }
+  | { type: 'GET_REPLACE_SELECTION_TARGET' }
   | { type: 'SAVE_API_KEY'; key: string }
   | { type: 'CLEAR_API_KEY' }
   | { type: 'SAVE_EVALUATION_MODE'; mode: EvaluationMode }
   | { type: 'CLEAR_EVALUATION_MODE' }
   | { type: 'SAVE_CHAT_HISTORY'; entries: SavedChatSession[] }
+  | { type: 'SAVE_REVIEW_SNAPSHOT'; scope: string; frameIds: string[] }
+  | {
+      type: 'CHECK_REPEAT_REVIEW';
+      scope: string;
+      frameIds: string[];
+      ignoreStoredHashes?: boolean;
+    }
   | { type: 'RESIZE'; width: number; height: number }
   | { type: 'CLOSE' };
 
@@ -65,14 +90,18 @@ export interface ReportItem {
   priority: number;
   title: string;
   detail: string;
+  /** The original text this finding refers to (as returned by the AI) */
+  original?: string;
   layerId?: string;
-  /** Full replacement copy for the layer when applying a fix (use with layerId) */
+  /** Full replacement copy for the layer when applying a suggestion (use with layerId) */
   proposedText?: string;
   /** Set for full evaluation so findings can be grouped in the UI */
   category?: ReportFindingCategory;
+  /** Rule reference, e.g. "capitalization.sentence-case" */
+  rule?: string;
 }
 
-/** Quality signal shown for full evaluation runs */
+/** Quality signal shown for full evaluation runs — retained for type compatibility */
 export interface FullEvaluationSummary {
   /** Overall quality score where 5 is best */
   score: number;
@@ -104,6 +133,19 @@ export interface SavedChatSession {
   /** When present, defines chronological placement of findings in the transcript */
   reportSegments?: ReportSegment[];
   selectionLabel: string;
+}
+
+// ─── Repeat review interstitial ───────────────────────────────────────────────
+
+export interface RepeatReviewCheckResult {
+  showInterstitial: boolean;
+  lastReviewedAt: string | null;
+  totalFrameCount: number;
+  frameIdsToEvaluate: string[];
+  partialSkip: boolean;
+  evaluatedCount: number;
+  totalCount: number;
+  skippedCount: number;
 }
 
 // ─── App state ────────────────────────────────────────────────────────────────

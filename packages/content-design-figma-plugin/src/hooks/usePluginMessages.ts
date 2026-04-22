@@ -6,6 +6,7 @@ import type {
   EvaluationMode,
   MultiScreenSelection,
   PluginMessage,
+  RepeatReviewCheckResult,
   ReportItem,
   ReportSegment,
   SavedChatSession,
@@ -35,6 +36,7 @@ interface UsePluginMessagesParams {
   setReplaceError: Dispatch<SetStateAction<string | null>>;
   setReplacedLayerId: Dispatch<SetStateAction<string | null>>;
   setReportFixSuccessWasRevert: Dispatch<SetStateAction<boolean>>;
+  setRepeatReviewResult: Dispatch<SetStateAction<RepeatReviewCheckResult | null>>;
   messagesRef: MutableRefObject<ChatMessage[]>;
   reportItemsRef: MutableRefObject<ReportItem[]>;
   focusFindingSuppressSelectionResetRef: MutableRefObject<boolean>;
@@ -44,6 +46,7 @@ interface UsePluginMessagesParams {
   >;
   replaceOperationRef: MutableRefObject<ReportReplaceOp>;
   lastReportFindingIdRef: MutableRefObject<string | null>;
+  pendingReviewPromptRef: MutableRefObject<string | null>;
   patchSelectionText: (
     sel: MultiScreenSelection,
     nodeId: string,
@@ -73,6 +76,7 @@ export function usePluginMessages({
   setReplaceError,
   setReplacedLayerId,
   setReportFixSuccessWasRevert,
+  setRepeatReviewResult,
   messagesRef,
   reportItemsRef,
   focusFindingSuppressSelectionResetRef,
@@ -80,6 +84,7 @@ export function usePluginMessages({
   revertPayloadByFindingIdRef,
   replaceOperationRef,
   lastReportFindingIdRef,
+  pendingReviewPromptRef,
   patchSelectionText,
 }: UsePluginMessagesParams) {
   useEffect(() => {
@@ -233,6 +238,30 @@ export function usePluginMessages({
           setEvaluationMode(null);
           break;
         }
+
+        case 'REPEAT_REVIEW_CHECK': {
+          const result: RepeatReviewCheckResult = {
+            showInterstitial: msg.showInterstitial,
+            lastReviewedAt: msg.lastReviewedAt,
+            totalFrameCount: msg.totalFrameCount,
+            frameIdsToEvaluate: msg.frameIdsToEvaluate,
+            partialSkip: msg.partialSkip,
+            evaluatedCount: msg.evaluatedCount,
+            totalCount: msg.totalCount,
+            skippedCount: msg.skippedCount,
+          };
+          setRepeatReviewResult(result);
+          break;
+        }
+
+        case 'REPLACE_SELECTION_TARGET': {
+          // The target is handled directly in the suggestions replace flow.
+          // We store a flag on the pendingReviewPromptRef to ensure the prompt isn't lost.
+          if (!msg.isSingleText) {
+            pendingReviewPromptRef.current = null;
+          }
+          break;
+        }
       }
     };
 
@@ -245,6 +274,7 @@ export function usePluginMessages({
     lastReportFindingIdRef,
     messagesRef,
     patchSelectionText,
+    pendingReviewPromptRef,
     replaceOperationRef,
     reportItemsRef,
     revertPayloadByFindingIdRef,
@@ -259,6 +289,7 @@ export function usePluginMessages({
     setReplaceLoading,
     setReplaceSuccess,
     setReplacedLayerId,
+    setRepeatReviewResult,
     setReportFixSuccessWasRevert,
     setReportSegments,
     setSavedChats,

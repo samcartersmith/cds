@@ -1,3 +1,5 @@
+import { CDS_REVIEW_PLUGIN_VERSION } from '../constants';
+
 interface PluginHeaderProps {
   title?: string;
   showSettings: boolean;
@@ -9,7 +11,7 @@ interface PluginHeaderProps {
 }
 
 export default function PluginHeader({
-  title = 'CDS Design Quality Evaluator',
+  title = 'CDS Review',
   showSettings,
   onSettingsClick,
   showBack,
@@ -23,7 +25,7 @@ export default function PluginHeader({
         <button
           type="button"
           onClick={onBack}
-          title="Choose review type"
+          title="Back"
           className="shrink-0 -ml-1 p-1 rounded text-[#8A919E] hover:text-white hover:bg-figma-elevated transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
@@ -53,7 +55,7 @@ export default function PluginHeader({
       </span>
       <div className="ml-auto flex items-center gap-1 shrink-0">
         <span className="text-[10px] font-medium text-figma-purple bg-figma-purple-dim px-1.5 py-0.5 rounded">
-          BETA
+          {CDS_REVIEW_PLUGIN_VERSION}
         </span>
         {showHistory && onHistoryClick && (
           <button
@@ -77,7 +79,7 @@ export default function PluginHeader({
           <button
             type="button"
             onClick={onSettingsClick}
-            title="Change API key"
+            title="Settings"
             className="text-[#8A919E] hover:text-white transition-colors p-0.5 rounded"
           >
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
