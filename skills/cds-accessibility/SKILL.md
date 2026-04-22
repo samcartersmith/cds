@@ -8,7 +8,7 @@ description: |
   technology behavior, and verifying usage against official CDS documentation—not generic web ARIA tutorials.
   Use this skill when implementing or reviewing CDS UI for screen reader, keyboard, and labeled control
   requirements. Ground in current CDS component docs per the cds-docs skill (MCP or curl; see skill body)—and
-  [https://cds.cbhq.net/](https://cds.cbhq.net/) for human-readable browsing when helpful.
+  [https://cds.coinbase.com/](https://cds.coinbase.com/) for human-readable browsing when helpful.
 license: Apache-2.0
 metadata:
   author: [design-system@coinbase.com](mailto:design-system@coinbase.com)
@@ -31,8 +31,8 @@ Use this skill to **consume CDS components accessibly**: apply **documented** pr
 
 ## Prerequisites
 
-- **cds-docs (required):** You can follow [**cds-docs**](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs) to load **current** official CDS component documentation. Choose **web** or **mobile**, start from the **route index** (`list-cds-routes` with MCP, or the same index via `curl` to `https://cds.coinbase.com/llms/{web|mobile}/routes.txt`), then fetch the `.txt` pages you need for props and a11y examples. **CDS MCP** with `get-cds-doc` / `list-cds-routes` is the **preferred first step** when available (same as **`cds-code`**). **If MCP is unavailable or errors,** use **`curl -fsSL`**, per cds-docs, against `https://cds.coinbase.com/llms/<route>`, where `<route>` comes from the index.
-- **cds.cbhq.net (recommended):** [cds.cbhq.net](https://cds.cbhq.net/) for browsing and deep links when you need **human** context alongside the `llms` / MCP sources.
+- **cds-docs (required):** You can follow [**cds-docs**](https://skills..net/skill/frontend/cds-public/cds-docs) to load **current** official CDS component documentation. Choose **web** or **mobile**, start from the **route index** (`list-cds-routes` with MCP, or the same index via `curl` to `https://cds.coinbase.com/llms/{web|mobile}/routes.txt`), then fetch the `.txt` pages you need for props and a11y examples. **CDS MCP** with `get-cds-doc` / `list-cds-routes` is the **preferred first step** when available (same as **`cds-code`**). **If MCP is unavailable or errors,** use **`curl -fsSL`**, per cds-docs, against `https://cds.coinbase.com/llms/<route>`, where `<route>` comes from the index.
+- **cds.coinbase.com (recommended):** [cds.coinbase.com](https://cds.coinbase.com/) for browsing and deep links when you need **human** context alongside the `llms` / MCP sources.
 - For full CDS UI build steps (package discovery, styling, theming, visual check), use the **`cds-code`** skill; run its session setup when you are also building or refactoring screens.
 
 ## Success criteria
@@ -44,8 +44,8 @@ For a given change, **this skill is complete** when all three dimensions below a
 - Every **interactive** or **name-bearing** CDS control in the change has props set **as required or recommended** in the current **official CDS component doc** (per **cds-docs** and **`get-cds-doc`** or the equivalent `curl` fetch) for that **platform** (do not mix **web** and **React Native** patterns).
 - **Form, validation, errors, and live regions** follow the **documented** association and feedback patterns for the CDS form components in use, not a generic or off-repo pattern.
 - **Icons, images, and media** follow CDS doc guidance for **decorative vs meaningful** content and any `alt` / `accessibilityLabel` (or equivalent) requirements.
-- If the change includes a **focus-managed** CDS component (see **Part 1, Step 5**; examples: **Modal**, **Tray**, **Tooltip**, or any component whose doc defines focus APIs), **open/close/Tab/restore** behavior matches the **official** **CDS** doc (per [cds-docs](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs)) and any examples you used (e.g. [Modal](https://cds.cbhq.net/components/overlay/Modal/)); if there are no such components, this bullet does not apply.
-- If the change includes **CDS `Text`** (or equivalent typography) for **titles, headings, or body/label copy**, **`as` (web)** and **`accessibilityRole` (RN)** match **content intent** and the [Text (typography) doc](https://cds.cbhq.net/components/typography/Text/); do **not** use **heading** semantics on **non-heading** `font` styles when that would **misrepresent** structure (per the **Text** web/mobile doc from **cds-docs**). If `Text` is not in the change, this bullet does not apply.
+- If the change includes a **focus-managed** CDS component (see **Part 1, Step 5**; examples: **Modal**, **Tray**, **Tooltip**, or any component whose doc defines focus APIs), **open/close/Tab/restore** behavior matches the **official** **CDS** doc (per [cds-docs](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs)) and any examples you used (e.g. [Modal](https://cds.coinbase.com/components/overlay/Modal/)); if there are no such components, this bullet does not apply.
+- If the change includes **CDS `Text`** (or equivalent typography) for **titles, headings, or body/label copy**, **`as` (web)** and **`accessibilityRole` (RN)** match **content intent** and the [Text (typography) doc](https://cds.coinbase.com/components/typography/Text/); do **not** use **heading** semantics on **non-heading** `font` styles when that would **misrepresent** structure (per the **Text** web/mobile doc from **cds-docs**). If `Text` is not in the change, this bullet does not apply.
 
 ### 2. Component selection (confident and documented)
 
@@ -55,7 +55,7 @@ For a given change, **this skill is complete** when all three dimensions below a
 
 ### 3. Documentation engagement (read and applied)
 
-- For **each** CDS component in the change, **current** official documentation was loaded **per [cds-docs](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs)**: **prefer** **`list-cds-routes`** and **`get-cds-doc`** (CDS MCP) when available; if MCP is unavailable or fails, use **`curl -fsSL`** to `https://cds.coinbase.com/llms/...` from the route index, per cds-docs. Include **cross-linked** routes the doc points to (e.g. `FormField`, `Modal` composition) when they affect your feature. Use [cds.cbhq.net](https://cds.cbhq.net/) for extra context when needed.
+- For **each** CDS component in the change, **current** official documentation was loaded **per [cds-docs](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs)**: **prefer** **`list-cds-routes`** and **`get-cds-doc`** (CDS MCP) when available; if MCP is unavailable or fails, use **`curl -fsSL`** to `https://cds.coinbase.com/llms/...` from the route index, per cds-docs. Include **cross-linked** routes the doc points to (e.g. `FormField`, `Modal` composition) when they affect your feature. Use [cds.cbhq.net](https://cds.coinbase.com/) for extra context when needed.
 - The implementation is explainable in terms of **specific** doc material—prop table, examples, a11y or platform notes—not only “it looks right” visually.
 - If the doc or your team’s process requires a **device or manual** check (e.g. VoiceOver, TalkBack), that expectation is **acknowledged** as satisfied, or **explicitly** still pending with a clear reason.
 
@@ -198,7 +198,7 @@ These patterns are **not** a substitute for reading each component’s doc. They
 
 ### CDS resources
 
-- **Site:** [cds.cbhq.net](https://cds.cbhq.net/) for browsing and deep links alongside [cds-docs](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs) and the **`llms`** fetches.
+- **Site:** [cds.cbhq.net](https://cds.coinbase.com/) for browsing and deep links alongside [cds-docs](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs) and the **`llms`** fetches.
 - **Text (typography):** [cds.cbhq.net/components/typography/Text/](https://cds.cbhq.net/components/typography/Text/) (**`as`**, `font`, heading semantics on web; **`accessibilityRole`** on React Native per the **Text** **web** and **mobile** **official** docs in [cds-docs](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs).)
 - **cds-docs (how to load CDS .txt for any component, including a11y):** Follow [cds-docs](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs). **Order:** (1) **CDS MCP**—`list-cds-routes` with `platform: "web" | "mobile"`, then **`get-cds-doc`** with a route from the index (case-sensitive, paths end in **.txt**). (2) If MCP is not configured, fails, or returns errors, **`curl -fsSL 'https://cds.coinbase.com/llms/<route>'`**: start from the [web](https://cds.coinbase.com/llms/web/routes.txt) or [mobile](https://cds.coinbase.com/llms/mobile/routes.txt) index; **map component → route** from the index only, then fetch the pages you need. Whether you use **MCP** or **`curl`** is an implementation detail (see cds-docs).
 
