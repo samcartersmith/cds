@@ -9,11 +9,11 @@ import {
 } from 'react-native';
 import { animateProgressBaseSpec } from '@coinbase/cds-common/animation/progress';
 import type { ThemeVars } from '@coinbase/cds-common/core/theme';
-import { usePreviousValues } from '@coinbase/cds-common/hooks/usePreviousValues';
 import type { SharedAccessibilityProps, SharedProps, Weight } from '@coinbase/cds-common/types';
-import { useProgressSize } from '@coinbase/cds-common/visualizations/useProgressSize';
+import { getProgressSize } from '@coinbase/cds-common/visualizations/getProgressSize';
 
 import { convertMotionConfig } from '../animation/convertMotionConfig';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { useTheme } from '../hooks/useTheme';
 import { Box, HStack } from '../layout';
 import type { HintMotionBaseProps } from '../motion/types';
@@ -22,7 +22,7 @@ export type ProgressBaseProps = SharedProps &
   Pick<HintMotionBaseProps, 'disableAnimateOnMount'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
     /** Number between 0-1 representing the progress percentage */
-    progress: number;
+    progress?: number;
     /** Toggle used to change thickness of progress visualization
      * @default normal
      * */
@@ -47,140 +47,121 @@ export type ProgressBaseProps = SharedProps &
   };
 
 export type ProgressBarProps = ProgressBaseProps & {
-  /**
-   * Custom styles for the progress bar root.
-   */
   style?: StyleProp<ViewStyle>;
-  /**
-   * Custom styles for the progress bar.
-   */
+  /** Custom styles for individual elements of the ProgressBar component */
   styles?: {
-    /**
-     * Custom styles for the progress bar root.
-     */
+    /** Root element */
     root?: StyleProp<ViewStyle>;
-    /**
-     * Custom styles for the progress bar.
-     */
+    /** Progress fill element */
     progress?: StyleProp<ViewStyle>;
   };
 };
 
 export const ProgressBar = memo(
-  forwardRef(
-    (
-      {
-        weight = 'normal',
-        progress,
-        color = 'bgPrimary',
-        disabled,
-        disableAnimateOnMount,
-        testID,
-        accessibilityLabel,
+  forwardRef((_props: ProgressBarProps, forwardedRef: React.ForwardedRef<View>) => {
+    const mergedProps = useComponentConfig('ProgressBar', _props);
+    const {
+      weight = 'normal',
+      progress = 0,
+      color = 'bgPrimary',
+      disabled,
+      disableAnimateOnMount,
+      testID,
+      accessibilityLabel,
+      style,
+      styles,
+      onAnimationEnd,
+      onAnimationStart,
+    } = mergedProps;
+    const theme = useTheme();
+    const height = getProgressSize(weight);
+
+    const animatedProgress = useRef(new Animated.Value(disableAnimateOnMount ? progress : 0));
+
+    const [trackWidth, setTrackWidth] = useState<number>(-1);
+    useEffect(() => {
+      if (trackWidth > -1) {
+        onAnimationStart?.();
+
+        Animated.timing(
+          animatedProgress.current,
+          convertMotionConfig({
+            toValue: progress,
+            ...animateProgressBaseSpec,
+            useNativeDriver: true,
+          }),
+        )?.start(({ finished }) => {
+          if (finished) onAnimationEnd?.();
+        });
+      }
+    }, [progress, trackWidth, onAnimationEnd, onAnimationStart]);
+
+    const handleLayout = useCallback((event: LayoutChangeEvent) => {
+      setTrackWidth(event.nativeEvent.layout.width);
+    }, []);
+
+    const trackStyle = useMemo(() => {
+      const justifyContent = I18nManager.isRTL ? ('flex-end' as const) : ('flex-start' as const);
+      return [
+        {
+          borderRadius: 200,
+          backgroundColor: theme.color.bgLine,
+          height,
+          overflow: 'hidden' as const,
+          alignItems: 'center' as const,
+          justifyContent,
+        },
         style,
-        styles,
-        onAnimationEnd,
-        onAnimationStart,
-      }: ProgressBarProps,
-      forwardedRef: React.ForwardedRef<View>,
-    ) => {
-      const theme = useTheme();
-      const height = useProgressSize(weight);
+        styles?.root,
+      ];
+    }, [style, styles?.root, theme.color.bgLine, height]);
 
-      const { getPreviousValue: getPreviousPercent, addPreviousValue: addPreviousPercent } =
-        usePreviousValues<number>([disableAnimateOnMount ? progress : 0]);
+    const progressStyle = useMemo(
+      () => [
+        {
+          opacity: trackWidth > -1 ? 1 : 0,
+          transform: [
+            {
+              translateX: animatedProgress.current.interpolate({
+                inputRange: [0, 1],
+                outputRange: I18nManager.isRTL ? [trackWidth, 0] : [-trackWidth, 0],
+              }),
+            },
+          ],
+        },
+        styles?.progress,
+      ],
+      [trackWidth, styles?.progress],
+    );
 
-      addPreviousPercent(progress);
-      const previousPercent = getPreviousPercent() ?? 0;
-
-      const animatedProgress = useRef(new Animated.Value(previousPercent));
-
-      const [innerWidth, setInnerWidth] = useState<number>(-1);
-
-      useEffect(() => {
-        if (innerWidth > -1) {
-          onAnimationStart?.();
-
-          Animated.timing(
-            animatedProgress.current,
-            convertMotionConfig({
-              toValue: progress,
-              ...animateProgressBaseSpec,
-              useNativeDriver: true,
-            }),
-          )?.start(({ finished }) => {
-            if (finished) onAnimationEnd?.();
-          });
-        }
-      }, [progress, animatedProgress, innerWidth, onAnimationStart, onAnimationEnd]);
-
-      const handleLayout = useCallback((event: LayoutChangeEvent) => {
-        setInnerWidth(event.nativeEvent.layout.width);
-      }, []);
-
-      const rootStyle = useMemo(() => {
-        const justifyContent = I18nManager.isRTL ? ('flex-end' as const) : ('flex-start' as const);
-        return [
-          {
-            borderRadius: 200,
-            backgroundColor: theme.color.bgLine,
-            height,
-            overflow: 'hidden' as const,
-            alignItems: 'center' as const,
-            justifyContent,
-          },
-          style,
-          styles?.root,
-        ];
-      }, [style, styles?.root, theme.color.bgLine, height]);
-
-      const progressStyle = useMemo(
-        () => [
-          {
-            opacity: innerWidth > -1 ? 1 : 0,
-            transform: [
-              {
-                translateX: animatedProgress.current.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: I18nManager.isRTL ? [innerWidth, 0] : [innerWidth * -1, 0],
-                }),
-              },
-            ],
-          },
-          styles?.progress,
-        ],
-        [innerWidth, styles?.progress],
-      );
-
-      return (
-        <HStack
-          ref={forwardedRef}
-          accessible
-          accessibilityLabel={accessibilityLabel}
-          accessibilityRole="progressbar"
-          accessibilityValue={{ min: 0, max: 100, now: Math.round(progress * 100) }}
-          alignItems="center"
-          flexGrow={1}
+    return (
+      <HStack
+        ref={forwardedRef}
+        accessible
+        accessibilityLabel={accessibilityLabel}
+        accessibilityRole="progressbar"
+        accessibilityValue={{ min: 0, max: 100, now: Math.round(progress * 100) }}
+        alignItems="center"
+        flexGrow={1}
+        flexShrink={0}
+        onLayout={handleLayout}
+        style={trackStyle}
+        testID={testID}
+      >
+        <Box
+          animated
+          alignItems="flex-start"
+          background={!disabled ? color : 'bgLineHeavy'}
+          borderRadius={200}
+          flexGrow={0}
           flexShrink={0}
-          onLayout={handleLayout}
-          style={rootStyle}
-          testID={testID}
-        >
-          <Box
-            animated
-            alignItems="flex-start"
-            borderRadius={200}
-            dangerouslySetBackground={!disabled ? theme.color[color] : theme.color.bgLineHeavy}
-            flexGrow={0}
-            flexShrink={0}
-            height="100%"
-            justifyContent="center"
-            style={progressStyle}
-            testID="cds-progress-bar"
-            width="100%"
-          />
-        </HStack>
-      );
-    },
-  ),
+          height="100%"
+          justifyContent="center"
+          style={progressStyle}
+          testID="cds-progress-bar"
+          width="100%"
+        />
+      </HStack>
+    );
+  }),
 );

@@ -44,6 +44,34 @@ export type UpsellCardBaseProps = SharedProps &
 
 export type UpsellCardProps = UpsellCardBaseProps;
 
+/**
+ * @deprecated Use `MessagingCard` with `type="upsell"` instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v9
+ *
+ * Migration guide:
+ * ```tsx
+ * // Before
+ * <UpsellCard
+ *   title="Title"
+ *   description="Description"
+ *   media={<RemoteImage ... />}
+ *   action="Get Started"
+ *   onActionPress={handleAction}
+ *   onDismissPress={handleDismiss}
+ * />
+ *
+ * // After
+ * <MessagingCard
+ *   type="upsell"
+ *   title="Title"
+ *   description="Description"
+ *   media={<RemoteImage ... />}
+ *   actions={<Button compact variant="secondary">Get Started</Button>}
+ *   onDismiss={handleDismiss}
+ *   mediaPlacement="end"
+ * />
+ * ```
+ */
 export const UpsellCard = memo(
   ({
     title,

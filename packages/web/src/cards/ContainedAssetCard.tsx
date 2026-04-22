@@ -65,6 +65,34 @@ const focusRingCss = css`
   }
 `;
 
+/**
+ * @deprecated Use `MediaCard` instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v9
+ *
+ * Migration guide:
+ * ```tsx
+ * // Before
+ * <ContainedAssetCard
+ *   header={<Avatar ... />}
+ *   title="Asset Title"
+ *   subtitle="Subtitle"
+ *   description="Description"
+ *   size="l"
+ * >
+ *   <RemoteImage ... />
+ * </ContainedAssetCard>
+ *
+ * // After
+ * <MediaCard
+ *   thumbnail={<Avatar ... />}
+ *   title="Asset Title"
+ *   subtitle="Subtitle"
+ *   description="Description"
+ *   media={<RemoteImage ... />}
+ *   mediaPlacement="end"
+ * />
+ * ```
+ */
 export const ContainedAssetCard = ({
   header,
   title,

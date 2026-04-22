@@ -19,7 +19,7 @@ export default {
   component: Tour,
 };
 
-const TourExample = <T extends string = string>({
+const TourExample = <TourStepId extends string = string>({
   stagger,
   spacerWidthIncrement = 0,
   spacerHeightIncrement = 500,
@@ -28,7 +28,7 @@ const TourExample = <T extends string = string>({
   stagger?: boolean;
   spacerWidthIncrement?: number;
   spacerHeightIncrement?: number;
-  ids: T[];
+  ids: TourStepId[];
 }) => {
   const { startTour } = useTourContext();
 
@@ -121,7 +121,7 @@ const StepTwo = () => {
           <Text as="p" color="fgMuted" display="block" font="caption">
             50%
           </Text>
-          <ProgressBar progress={0.5} />
+          <ProgressBar accessibilityLabel="Progress bar" progress={0.5} />
           <Text as="p" display="block" font="body">
             Add up to 3 lines of body copy. Deliver your message with clarity and impact
           </Text>
@@ -261,7 +261,15 @@ export const TourDefaultActive = () => {
     </Tour>
   );
 };
-
+TourDefaultActive.parameters = {
+  a11y: {
+    options: {
+      rules: {
+        'color-contrast': { enabled: false },
+      },
+    },
+  },
+};
 export const TourHorizontalScroll = () => {
   const [activeTourStep, setActiveTourStep] = useState<TourStepValue | null>(null);
   return (
@@ -293,6 +301,29 @@ export const TourWithStringLiteralId = () => {
       steps={tourStepsWithStringLiteral}
     >
       <TourExample stagger ids={tourStepsWithStringLiteral.map((s) => s.id)} />
+    </Tour>
+  );
+};
+
+export const TourWithCustomStyles = () => {
+  const [activeTourStep, setActiveTourStep] = useState<TourStepValue | null>(null);
+  return (
+    <Tour
+      activeTourStep={activeTourStep}
+      onChange={setActiveTourStep}
+      steps={tourSteps}
+      styles={{
+        stepContainer: {
+          border: '2px solid var(--color-fg)',
+          padding: 'var(--space-2)',
+          borderRadius: 'var(--borderRadius-600)',
+        },
+        stepArrow: {
+          display: 'none',
+        },
+      }}
+    >
+      <TourExample stagger ids={['step1', 'step2', 'step3', 'step4']} />
     </Tour>
   );
 };

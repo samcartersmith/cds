@@ -58,12 +58,13 @@ export const DefaultSelectControlComponent = memo(
         startNode,
         endNode: customEndNode,
         compact,
+        align = 'start',
+        font = 'body',
         bordered = true,
         borderWidth = bordered ? 100 : 0,
         focusedBorderWidth = bordered ? undefined : 200,
         maxSelectedOptionsToShow = 3,
         accessibilityLabel,
-        accessibilityHint,
         hiddenSelectedOptionsLabel = 'more',
         removeSelectedOptionAccessibilityLabel = 'Remove',
         style,
@@ -125,6 +126,37 @@ export const DefaultSelectControlComponent = memo(
         return map;
       }, [options]);
 
+      const singleValueContent = useMemo(() => {
+        const option = !isMultiSelect ? optionsMap.get(value as SelectOptionValue) : undefined;
+        const label = option?.label ?? option?.description ?? option?.value ?? placeholder;
+        return hasValue ? label : placeholder;
+      }, [hasValue, isMultiSelect, optionsMap, placeholder, value]);
+
+      const computedControlAccessibilityLabel = useMemo(() => {
+        // For multi-select, set the label to the content of each selected value and the hidden selected options label
+        if (isMultiSelect) {
+          const selectedValues = (value as SelectOptionValue[])
+            .map((v) => {
+              const option = optionsMap.get(v);
+              return option?.label ?? option?.description ?? option?.value ?? v;
+            })
+            .slice(0, maxSelectedOptionsToShow)
+            .join(', ');
+          return `${accessibilityLabel}, ${(value as SelectOptionValue[]).length > 0 ? selectedValues : (placeholder ?? '')}${(value as SelectOptionValue[]).length > maxSelectedOptionsToShow ? ', ' + hiddenSelectedOptionsLabel : ''}`;
+        }
+        // If value is React node, fallback to only using passed in accessibility label
+        return `${accessibilityLabel ?? ''}${typeof singleValueContent === 'string' ? ', ' + singleValueContent : ''}`;
+      }, [
+        accessibilityLabel,
+        hiddenSelectedOptionsLabel,
+        isMultiSelect,
+        maxSelectedOptionsToShow,
+        optionsMap,
+        placeholder,
+        singleValueContent,
+        value,
+      ]);
+
       // Prop value doesn't have default value because it affects the color of the
       // animated caret
       const focusedVariant = useInputVariant(!!open, variant ?? 'foregroundMuted');
@@ -175,6 +207,11 @@ export const DefaultSelectControlComponent = memo(
         [compact, disabled, label, labelVariant, setOpen, styles?.controlLabelNode],
       );
 
+      const valueAlignment = useMemo(
+        () => (align === 'end' ? 'flex-end' : align === 'center' ? 'center' : 'flex-start'),
+        [align],
+      );
+
       const valueNode = useMemo(() => {
         if (hasValue && isMultiSelect) {
           const valuesToShow =
@@ -185,7 +222,14 @@ export const DefaultSelectControlComponent = memo(
             .map((value) => optionsMap.get(value))
             .filter((option): option is SelectOption<SelectOptionValue> => option !== undefined);
           return (
-            <HStack flexWrap="wrap" gap={1}>
+            <HStack
+              flexShrink={1}
+              flexWrap="wrap"
+              gap={1}
+              justifyContent={valueAlignment}
+              maxWidth="100%"
+              minWidth={0}
+            >
               {optionsToShow.map((option) => {
                 const accessibilityLabel =
                   typeof option.label === 'string'
@@ -220,24 +264,24 @@ export const DefaultSelectControlComponent = memo(
           );
         }
 
-        const option = !isMultiSelect ? optionsMap.get(value as SelectOptionValue) : undefined;
-        const label = option?.label ?? option?.description ?? option?.value ?? placeholder;
-        const content = hasValue ? label : placeholder;
-        return typeof content === 'string' ? (
-          <Text color={hasValue ? 'fg' : 'fgMuted'} ellipsize="tail" font="body" textAlign="left">
-            {content}
+        return typeof singleValueContent === 'string' ? (
+          <Text align={align} color={hasValue ? 'fg' : 'fgMuted'} ellipsize="tail" font={font}>
+            {singleValueContent}
           </Text>
         ) : (
-          content
+          singleValueContent
         );
       }, [
         hasValue,
         isMultiSelect,
-        optionsMap,
-        placeholder,
+        singleValueContent,
+        font,
+        align,
         value,
         maxSelectedOptionsToShow,
+        valueAlignment,
         hiddenSelectedOptionsLabel,
+        optionsMap,
         removeSelectedOptionAccessibilityLabel,
         disabled,
         onChange,
@@ -247,8 +291,7 @@ export const DefaultSelectControlComponent = memo(
         () => (
           <TouchableOpacity
             ref={ref}
-            accessibilityHint={accessibilityHint}
-            accessibilityLabel={accessibilityLabel}
+            accessibilityLabel={computedControlAccessibilityLabel}
             accessibilityRole="button"
             disabled={disabled}
             onPress={() => setOpen((s) => !s)}
@@ -257,7 +300,9 @@ export const DefaultSelectControlComponent = memo(
           >
             <HStack
               alignItems="center"
+              flexShrink={1}
               justifyContent="space-between"
+              maxWidth="100%"
               minHeight={
                 labelVariant === 'inside'
                   ? LABEL_VARIANT_INSIDE_HEIGHT
@@ -268,7 +313,14 @@ export const DefaultSelectControlComponent = memo(
               paddingStart={startNode ? 0 : 2}
               paddingY={labelVariant === 'inside' ? 0 : compact ? 1 : 1.5}
             >
-              <HStack alignItems="center" flexGrow={1}>
+              <HStack
+                alignItems="center"
+                flexBasis={0}
+                flexGrow={1}
+                flexShrink={1}
+                maxWidth="100%"
+                minWidth={0}
+              >
                 {!!startNode && (
                   <HStack alignItems="center" paddingX={2} style={styles?.controlStartNode}>
                     {startNode}
@@ -280,8 +332,10 @@ export const DefaultSelectControlComponent = memo(
                   </HStack>
                 ) : null}
                 <VStack
-                  justifyContent="center"
-                  maxWidth={startNode ? '70%' : '85%'}
+                  alignItems={valueAlignment}
+                  flexGrow={1}
+                  flexShrink={1}
+                  minWidth={0}
                   style={styles?.controlValueNode}
                 >
                   {valueNode}
@@ -293,8 +347,7 @@ export const DefaultSelectControlComponent = memo(
         ),
         [
           ref,
-          accessibilityHint,
-          accessibilityLabel,
+          computedControlAccessibilityLabel,
           disabled,
           styles?.controlInputNode,
           styles?.controlStartNode,
@@ -305,6 +358,7 @@ export const DefaultSelectControlComponent = memo(
           startNode,
           shouldShowCompactLabel,
           labelNode,
+          valueAlignment,
           valueNode,
           contentNode,
           setOpen,
@@ -313,7 +367,11 @@ export const DefaultSelectControlComponent = memo(
 
       const endNode = useMemo(
         () => (
-          <Pressable disabled={disabled} onPress={() => setOpen((s) => !s)}>
+          <Pressable
+            accessible={customEndNode ? true : false}
+            disabled={disabled}
+            onPress={() => setOpen((s) => !s)}
+          >
             <HStack
               alignItems="center"
               flexGrow={1}

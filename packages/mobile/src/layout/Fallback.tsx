@@ -1,12 +1,13 @@
 // Simplified version of https://github.com/tomzaku/react-native-shimmer-placeholder/blob/master/lib/ShimmerPlaceholder.js
 import React, { memo, useEffect, useMemo, useRef } from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
+import { Animated, StyleSheet, Text, View } from 'react-native';
 import type { DimensionValue, ViewStyle } from 'react-native';
 import type { UseFallbackShapeOptions } from '@coinbase/cds-common/hooks/useFallbackShape';
 import { useFallbackShape } from '@coinbase/cds-common/hooks/useFallbackShape';
 import type { Shape } from '@coinbase/cds-common/types/Shape';
 
 import { LinearGradient } from '../gradients/LinearGradient';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { useTheme } from '../hooks/useTheme';
 import { fallbackShimmer } from '../styles/fallbackShimmer';
 
@@ -31,14 +32,17 @@ export type FallbackBaseProps = {
 
 export type FallbackProps = Omit<BoxProps, 'borderRadius' | 'height' | 'width'> & FallbackBaseProps;
 
-export const Fallback = memo(function Fallback({
-  height,
-  shape = 'rectangle',
-  width: baseWidth,
-  disableRandomRectWidth,
-  rectWidthVariant,
-  ...props
-}: FallbackProps) {
+export const Fallback = memo((_props: FallbackProps) => {
+  const mergedProps = useComponentConfig('Fallback', _props);
+  const {
+    height,
+    shape = 'rectangle',
+    width: baseWidth,
+    disableRandomRectWidth,
+    rectWidthVariant,
+    accessibilityLabel = 'Loading',
+    ...props
+  } = mergedProps;
   const fallbackShapeOptions = useMemo(
     (): UseFallbackShapeOptions => ({
       disableRandomRectWidth,
@@ -94,8 +98,9 @@ export const Fallback = memo(function Fallback({
   );
 
   return (
-    <Box width={width} {...props}>
-      <View style={containerStyle}>
+    <Box position="relative" width={width} {...props}>
+      {accessibilityLabel && <Text style={styles.visuallyHidden}>{accessibilityLabel}</Text>}
+      <View aria-hidden style={containerStyle}>
         <Animated.View
           style={[
             styles.child,
@@ -131,5 +136,12 @@ const gradLocations = [0.3, 0.5, 0.7];
 const styles = StyleSheet.create({
   child: {
     flex: 1,
+  },
+  visuallyHidden: {
+    position: 'absolute',
+    width: 1,
+    height: 1,
+    margin: -1,
+    overflow: 'hidden',
   },
 });

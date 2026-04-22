@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
-import { Grid } from '@coinbase/cds-web/layout';
 import { Divider } from '@coinbase/cds-web/layout/Divider';
-import { HStack } from '@coinbase/cds-web/layout/HStack';
 import { VStack } from '@coinbase/cds-web/layout/VStack';
-import { Link } from '@coinbase/cds-web/typography/Link';
 import { Text } from '@coinbase/cds-web/typography/Text';
-import DocusaurusLink from '@docusaurus/Link';
-import { LLMDocButtons } from '@site/src/components/page/LLMDocButton';
+import {
+  type Metadata,
+  MetadataDependencies,
+  MetadataLinks,
+  MetadataRelatedComponents,
+} from '@site/src/components/page/Metadata';
 import { usePlatformContext } from '@site/src/utils/PlatformContext';
 import CodeBlock from '@theme/CodeBlock';
 
@@ -14,43 +15,15 @@ import { useDocsTheme } from '../../../theme/Layout/Provider/UnifiedThemeContext
 
 import styles from './styles.module.css';
 
-type RelatedComponent = {
-  /** The URL that the related component links to */
-  url: string;
-  /** The display label for the related component */
-  label: string;
-};
-
-type Dependency = {
-  /** The name of the dependency package */
-  name: string;
-  /** Optional version requirement */
-  version?: string;
-  /** Optional URL to the package */
-  url?: string;
-};
-
-type MetadataType = {
-  import: string;
-  source: string;
-  changelog?: string;
-  storybook?: string;
-  figma?: string;
-  description?: string;
-  relatedComponents?: RelatedComponent[];
-  /** Dependencies required by this component */
-  dependencies?: Dependency[];
-};
-
-type ComponentHeaderProps = {
+type ContentHeaderProps = {
   /** The title of the component */
   title: string;
   /** Optional description of the component */
   description?: string;
   /** Metadata for web platform */
-  webMetadata?: MetadataType;
+  webMetadata?: Metadata;
   /** Metadata for mobile platform */
-  mobileMetadata?: MetadataType;
+  mobileMetadata?: Metadata;
   /**
    * Banner to display at the top of the header.
    * Can be either a React node or image URL string.
@@ -63,19 +36,14 @@ type ComponentHeaderProps = {
    * Will be shown instead of banner when in dark mode.
    */
   bannerDark?: React.ReactNode;
+  /**
+   * Height of the banner container in pixels.
+   * @default 200
+   */
+  bannerHeight?: number;
+  /** Hide the "View as Markdown" and "Copy for LLM" links */
+  hideLlmLinks?: boolean;
 };
-
-type MetadataItemProps = {
-  label: string;
-  children: React.ReactNode;
-};
-
-const MetadataItem = ({ label, children }: MetadataItemProps) => (
-  <>
-    <Text font="label1">{label}</Text>
-    {children}
-  </>
-);
 
 export const ContentHeader = memo(
   ({
@@ -85,7 +53,9 @@ export const ContentHeader = memo(
     mobileMetadata,
     banner,
     bannerDark,
-  }: ComponentHeaderProps) => {
+    bannerHeight = 200,
+    hideLlmLinks,
+  }: ContentHeaderProps) => {
     const { platform } = usePlatformContext();
     const { colorScheme } = useDocsTheme();
 
@@ -103,12 +73,11 @@ export const ContentHeader = memo(
     } = activeMetadata ?? {};
 
     const descriptionText = activeMetadata?.description ?? description;
-    const hasMetadataItems = importText || changelog || source || storybook || figma;
 
     return (
       <VStack background="bgAlternate" borderRadius={600} overflow="hidden" width="100%">
         {activeBanner && (
-          <VStack display={{ base: 'flex', phone: 'none' }} height={200} width="100%">
+          <VStack display={{ base: 'flex', phone: 'none' }} height={bannerHeight} width="100%">
             {typeof activeBanner === 'string' ? (
               <img
                 alt={`${title} banner`}
@@ -120,132 +89,38 @@ export const ContentHeader = memo(
             )}
           </VStack>
         )}
-        <VStack gap={4} padding={4} paddingTop={4}>
+        <VStack gap={2} padding={{ base: 4, phone: 2 }}>
           <VStack gap={3}>
             <Text font="display2">{title}</Text>
             {descriptionText && <Text font="title4">{descriptionText}</Text>}
           </VStack>
-          {hasMetadataItems && (
-            <Grid
-              alignItems="center"
-              columnGap={2}
-              columns={2}
-              gridTemplateColumns="100px 1fr"
-              rowGap={1.5}
-            >
-              {importText && (
-                <MetadataItem label="Import">
-                  <CodeBlock className={styles.importText} language="tsx">
-                    {importText}
-                  </CodeBlock>
-                </MetadataItem>
-              )}
-              {changelog && (
-                <MetadataItem label="Changelog">
-                  <Text font="body">
-                    <Link as={DocusaurusLink} target="_blank" to={changelog}>
-                      View changelog
-                    </Link>
-                  </Text>
-                </MetadataItem>
-              )}
-              {source && (
-                <MetadataItem label="Source">
-                  <Text font="body">
-                    <Link as={DocusaurusLink} target="_blank" to={source}>
-                      View source code
-                    </Link>
-                  </Text>
-                </MetadataItem>
-              )}
-              {storybook && (
-                <MetadataItem label="Storybook">
-                  <Text font="body">
-                    <Link as={DocusaurusLink} target="_blank" to={storybook}>
-                      View Storybook
-                    </Link>
-                  </Text>
-                </MetadataItem>
-              )}
-              {figma && (
-                <MetadataItem label="Figma">
-                  <Text font="body">
-                    <Link as={DocusaurusLink} target="_blank" to={figma}>
-                      View Figma (internal only)
-                    </Link>
-                  </Text>
-                </MetadataItem>
-              )}
-            </Grid>
+          {importText && (
+            <CodeBlock className={styles.importText} language="tsx">
+              {importText}
+            </CodeBlock>
           )}
+          <MetadataLinks
+            changelog={changelog}
+            figma={figma}
+            hideLlmLinks={hideLlmLinks}
+            source={source}
+            storybook={storybook}
+          />
         </VStack>
 
         {dependencies && dependencies.length > 0 && (
           <>
             <Divider />
-            <VStack gap={1} padding={4}>
-              <Text font="label1">Peer dependencies</Text>
-              <HStack
-                as="ul"
-                flexWrap="wrap"
-                margin={0}
-                padding={0}
-                style={{
-                  listStyleType: 'none',
-                }}
-              >
-                {dependencies.map((dependency, index) => (
-                  <li key={dependency.name}>
-                    <Text font="label2" style={{ whiteSpace: 'pre-wrap' }}>
-                      {dependency.url ? (
-                        <Link as={DocusaurusLink} target="_blank" to={dependency.url}>
-                          {dependency.name}
-                        </Link>
-                      ) : (
-                        dependency.name
-                      )}
-                      {dependency.version && <span>{`@${dependency.version}`}</span>}
-                      {index < dependencies.length - 1 && ', '}
-                    </Text>
-                  </li>
-                ))}
-              </HStack>
-            </VStack>
+            <MetadataDependencies dependencies={dependencies} />
           </>
         )}
 
         {relatedComponents && relatedComponents.length > 0 && (
           <>
             <Divider />
-            <VStack gap={1} padding={4}>
-              <Text font="label1">Related components</Text>
-              <HStack
-                as="ul"
-                flexWrap="wrap"
-                margin={0}
-                padding={0}
-                style={{
-                  listStyleType: 'none',
-                }}
-              >
-                {relatedComponents.map((component, index) => (
-                  <li key={component.url}>
-                    <Text font="label2" style={{ whiteSpace: 'pre-wrap' }}>
-                      <Link as={DocusaurusLink} to={component.url}>
-                        {component.label}
-                      </Link>
-                      {index < relatedComponents.length - 1 && ', '}
-                    </Text>
-                  </li>
-                ))}
-              </HStack>
-            </VStack>
+            <MetadataRelatedComponents relatedComponents={relatedComponents} />
           </>
         )}
-        <Divider />
-        <HStack paddingX={{ base: 4, phone: 2 }} paddingY={2}>
-          <LLMDocButtons />
-        </HStack>
       </VStack>
     );
   },

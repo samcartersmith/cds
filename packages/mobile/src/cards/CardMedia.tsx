@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import {
   defaultMediaDimension,
   defaultMediaSize,
@@ -11,9 +11,12 @@ import type {
 } from '@coinbase/cds-common/types';
 
 import { Pictogram, SpotSquare } from '../illustrations';
+import { getSource, RemoteImage } from '../media/RemoteImage';
 
-import { CardRemoteImage } from './CardRemoteImage';
-
+/**
+ * @deprecated Use SpotSquare when `type` is "spotSquare", Pictogram when `type` is "pictogram", or RemoteImage when `type` is "image". This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
+ */
 export type CardMediaProps = CommonCardMediaProps;
 
 const imageProps: Record<CardMediaPlacement, CardMediaImageSizeObject> = {
@@ -28,6 +31,10 @@ const imageProps: Record<CardMediaPlacement, CardMediaImageSizeObject> = {
   end: defaultMediaSize,
 };
 
+/**
+ * @deprecated Use SpotSquare when `type` is "spotSquare", Pictogram when `type` is "pictogram", or RemoteImage when `type` is "image". This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
+ */
 export const CardMedia = memo(function CardMedia({ placement = 'end', ...props }: CardMediaProps) {
   switch (props.type) {
     case 'spotSquare':
@@ -50,9 +57,10 @@ export const CardMedia = memo(function CardMedia({ placement = 'end', ...props }
       );
     case 'image':
       return (
-        <CardRemoteImage
+        <RemoteImage
           alt={props.alt ?? ''}
-          src={props.src}
+          resizeMode="cover"
+          source={getSource(props.src)}
           testID={props.testID}
           {...imageProps[placement]}
         />

@@ -1,9 +1,10 @@
 import { memo, useId, useMemo } from 'react';
+import { m as motion } from 'framer-motion';
 
 import { useCartesianChartContext } from '../ChartProvider';
-import type { Series } from '../utils';
-import { defaultAxisId } from '../utils';
+import { getStackGroups, instantTransition } from '../utils';
 
+import type { BarSeries } from './BarStack';
 import type { BarStackGroupProps } from './BarStackGroup';
 import { BarStackGroup } from './BarStackGroup';
 
@@ -28,7 +29,8 @@ export type BarPlotBaseProps = Pick<
   seriesIds?: string[];
 };
 
-export type BarPlotProps = BarPlotBaseProps & Pick<BarStackGroupProps, 'transition'>;
+export type BarPlotProps = BarPlotBaseProps &
+  Pick<BarStackGroupProps, 'transitions' | 'transition'>;
 
 /**
  * BarPlot component that handles multiple series with proper stacking coordination.
@@ -50,12 +52,13 @@ export const BarPlot = memo<BarPlotProps>(
     stackGap,
     barMinSize,
     stackMinSize,
+    transitions,
     transition,
   }) => {
-    const { series: allSeries, drawingArea } = useCartesianChartContext();
+    const { animate, series: allSeries, drawingArea } = useCartesianChartContext();
     const clipPathId = useId();
 
-    const targetSeries = useMemo(() => {
+    const targetSeries: BarSeries[] = useMemo(() => {
       // Then filter by seriesIds if provided
       if (seriesIds !== undefined) {
         return allSeries.filter((s: any) => seriesIds.includes(s.id));
@@ -64,51 +67,34 @@ export const BarPlot = memo<BarPlotProps>(
       return allSeries;
     }, [allSeries, seriesIds]);
 
-    const stackGroups = useMemo(() => {
-      const groups = new Map<
-        string,
-        {
-          stackId: string;
-          series: Series[];
-          yAxisId?: string;
-        }
-      >();
+    const stackGroups = useMemo(() => getStackGroups(targetSeries), [targetSeries]);
 
-      // Group series into stacks based on stackId + yAxisId combination
-      targetSeries.forEach((series) => {
-        const yAxisId = series.yAxisId ?? defaultAxisId;
-        const stackId = series.stackId || `individual-${series.id}`;
-        const stackKey = `${stackId}:${yAxisId}`;
+    if (!drawingArea) return;
 
-        if (!groups.has(stackKey)) {
-          groups.set(stackKey, {
-            stackId: stackKey,
-            series: [],
-            yAxisId: series.yAxisId,
-          });
-        }
-
-        const group = groups.get(stackKey)!;
-        group.series.push(series);
-      });
-
-      return Array.from(groups.values());
-    }, [targetSeries]);
-
-    if (!drawingArea) {
-      return null;
-    }
+    // Clip path animation for bar is just for chart size changes, not for
+    // enter transition. One caveat, bar update transitions are staggered
+    // but clip path is not, so some bars could be clipped in rare cases
 
     return (
       <>
         <defs>
           <clipPath id={clipPathId}>
-            <rect
-              height={drawingArea.height}
-              width={drawingArea.width}
-              x={drawingArea.x}
-              y={drawingArea.y}
-            />
+            {animate ? (
+              <motion.rect
+                height={drawingArea.height}
+                transition={transitions?.update ?? instantTransition}
+                width={drawingArea.width}
+                x={drawingArea.x}
+                y={drawingArea.y}
+              />
+            ) : (
+              <rect
+                height={drawingArea.height}
+                width={drawingArea.width}
+                x={drawingArea.x}
+                y={drawingArea.y}
+              />
+            )}
           </clipPath>
         </defs>
         <g clipPath={`url(#${clipPathId})`}>
@@ -130,6 +116,8 @@ export const BarPlot = memo<BarPlotProps>(
               strokeWidth={defaultStrokeWidth}
               totalStacks={stackGroups.length}
               transition={transition}
+              transitions={transitions}
+              xAxisId={group.xAxisId}
               yAxisId={group.yAxisId}
             />
           ))}

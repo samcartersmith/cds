@@ -7,7 +7,8 @@ import { Checkbox, type CheckboxProps } from './Checkbox';
 import { ControlGroup } from './ControlGroup';
 
 /**
- * @deprecated CheckboxGroup is deprecated. Use ControlGroup with accessibilityRole="combobox" instead.
+ * @deprecated CheckboxGroup is deprecated. Use ControlGroup with accessibilityRole="combobox" instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v8
  *
  * @example
  * // Instead of:
@@ -24,25 +25,30 @@ import { ControlGroup } from './ControlGroup';
  *   onChange={(value) => onChange(value)}
  * />
  */
-export type CheckboxGroupBaseProps<T extends string | number> = Omit<ViewProps, 'children'> &
+export type CheckboxGroupBaseProps<CheckboxValue extends string | number> = Omit<
+  ViewProps,
+  'children'
+> &
   SharedProps & {
     /** Checkbox elements that are part of the checkbox group. */
     children: React.ReactElement[];
     /** Set a label summary for the group of checkboxes. */
     label?: React.ReactNode;
     /** Checkbox options that are checked. */
-    selectedValues: Set<T>;
+    selectedValues: Set<CheckboxValue>;
     /** Handle change events when user tap on the checkboxes */
-    onChange?: (value?: T) => void;
+    onChange?: (value?: CheckboxValue) => void;
   };
 
 /**
- * @deprecated CheckboxGroup is deprecated. Use ControlGroup with accessibilityRole="combobox" instead.
+ * @deprecated CheckboxGroup is deprecated. Use ControlGroup with accessibilityRole="combobox" instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v8
  */
-export type CheckboxGroupProps<T extends string> = CheckboxGroupBaseProps<T>;
+export type CheckboxGroupProps<CheckboxValue extends string> =
+  CheckboxGroupBaseProps<CheckboxValue>;
 
 // Follows behavior describe in https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html
-const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends string>(
+const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<CheckboxValue extends string>(
   {
     children,
     label,
@@ -51,7 +57,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     selectedValues,
     testID,
     ...restProps
-  }: CheckboxGroupProps<T>,
+  }: CheckboxGroupProps<CheckboxValue>,
   ref: React.ForwardedRef<View>,
 ) {
   if (isDevelopment()) {
@@ -67,7 +73,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   // Convert children to ControlGroup options format
   const controlGroupOptions = useMemo(() => {
     return Children.map(children, (child) => {
-      if (!isValidElement<CheckboxProps<T>>(child)) {
+      if (!isValidElement<CheckboxProps<CheckboxValue>>(child)) {
         return null;
       }
 
@@ -78,7 +84,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
       }
 
       return {
-        value: value as T,
+        value: value as CheckboxValue,
         children: checkboxChildren,
         ...childProps,
       };
@@ -89,7 +95,7 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
   const selectedValuesArray = Array.from(selectedValues);
 
   // Handle onChange signature conversion
-  const handleChange = (value: T | undefined) => {
+  const handleChange = (value: CheckboxValue | undefined) => {
     if (onChange) {
       onChange(value);
     }
@@ -111,13 +117,14 @@ const CheckboxGroupWithRef = forwardRef(function CheckboxGroupWithRef<T extends 
     />
   );
   // Make forwardRef result function stay generic function type
-}) as <T extends string>(
-  props: CheckboxGroupProps<T> & { ref?: React.Ref<View> },
+}) as <CheckboxValue extends string>(
+  props: CheckboxGroupProps<CheckboxValue> & { ref?: React.Ref<View> },
 ) => React.ReactElement;
 
 // Make memoized function stay generic function type
 /**
- * @deprecated CheckboxGroup is deprecated. Use ControlGroup with accessibilityRole="combobox" instead.
+ * @deprecated CheckboxGroup is deprecated. Use ControlGroup with accessibilityRole="combobox" instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v8
  */
 export const CheckboxGroup = memo(CheckboxGroupWithRef) as typeof CheckboxGroupWithRef &
   React.MemoExoticComponent<typeof CheckboxGroupWithRef>;

@@ -1,25 +1,19 @@
 import React, { forwardRef, memo, useMemo } from 'react';
 import { transparentVariants, variants } from '@coinbase/cds-common/tokens/button';
-import type { IconButtonVariant, IconName } from '@coinbase/cds-common/types';
+import type { IconButtonVariant, IconName, IconSize } from '@coinbase/cds-common/types';
 import { css } from '@linaria/core';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { cx } from '../cx';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { useTheme } from '../hooks/useTheme';
 import { Icon } from '../icons/Icon';
-import { Spinner } from '../loaders/Spinner';
 import { Pressable, type PressableBaseProps } from '../system/Pressable';
+import { ProgressCircle } from '../visualizations/ProgressCircle';
 
-import { type ButtonBaseProps, spinnerHeight } from './Button';
+import { type ButtonBaseProps } from './Button';
 
 const COMPONENT_STATIC_CLASSNAME = 'cds-IconButton';
-
-const baseSpinnerCss = css`
-  border: 2px solid;
-  border-top-color: var(--color-transparent);
-  border-right-color: var(--color-transparent);
-  border-left-color: var(--color-transparent);
-`;
 
 export const iconButtonDefaultElement = 'button';
 
@@ -30,6 +24,11 @@ export type IconButtonBaseProps = Polymorphic.ExtendableProps<
   Pick<ButtonBaseProps, 'disabled' | 'transparent' | 'compact' | 'flush'> & {
     /** Name of the icon, as defined in Figma. */
     name: IconName;
+    /**
+     * Size for the icon rendered inside the button.
+     * @default compact ? 's' : 'm'
+     */
+    iconSize?: IconSize;
     /** Whether the icon is active */
     active?: boolean;
     /**
@@ -67,7 +66,11 @@ const flushEndCss = css`
 export const IconButton: IconButtonComponent = memo(
   forwardRef<React.ReactElement<IconButtonBaseProps>, IconButtonBaseProps>(
     <AsComponent extends React.ElementType>(
-      {
+      _props: IconButtonProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const mergedProps = useComponentConfig('IconButton', _props);
+      const {
         as,
         variant = 'secondary',
         transparent,
@@ -84,28 +87,19 @@ export const IconButton: IconButtonComponent = memo(
         width = compact ? 40 : 56,
         className,
         name,
+        iconSize = compact ? 's' : 'm',
         active,
         flush,
         loading,
+        progressCircleSize,
         accessibilityLabel,
         accessibilityHint,
         ...props
-      }: IconButtonProps<AsComponent>,
-      ref?: Polymorphic.Ref<AsComponent>,
-    ) => {
+      } = mergedProps;
       const Component = (as ?? iconButtonDefaultElement) satisfies React.ElementType;
       const theme = useTheme();
 
-      const iconSize = compact ? 's' : 'm';
       const iconSizeValue = theme.iconSize[iconSize];
-
-      const spinnerSizeStyles = useMemo(
-        () => ({
-          width: iconSizeValue,
-          height: iconSizeValue,
-        }),
-        [iconSizeValue],
-      );
 
       const variantMap = transparent ? transparentVariants : variants;
       const variantStyle = variantMap[variant];
@@ -145,12 +139,13 @@ export const IconButton: IconButtonComponent = memo(
           {...props}
         >
           {loading ? (
-            <Spinner
-              className={baseSpinnerCss}
+            <ProgressCircle
+              indeterminate
+              accessibilityLabel="Loading"
               color="currentColor"
-              size={spinnerHeight}
-              style={spinnerSizeStyles}
-              testID={props.testID ? `${props.testID}-spinner` : undefined}
+              size={progressCircleSize ?? iconSizeValue}
+              testID={props.testID ? `${props.testID}-progress-circle` : undefined}
+              weight="thin"
             />
           ) : (
             <Icon active={active} color="currentColor" name={name} size={iconSize} />

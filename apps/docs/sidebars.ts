@@ -24,6 +24,7 @@ const sidebars: SidebarsConfig = {
         'getting-started/templates/templates',
         // 'getting-started/api-overview/api-overview',
         'getting-started/theming/theming',
+        'getting-started/colors',
         'getting-started/styling/styling',
         'getting-started/playground',
         'getting-started/ai-overview',
@@ -205,6 +206,11 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
+              id: 'components/inputs/SegmentedControl/segmentedControl',
+              label: 'SegmentedControl (Deprecated)',
+            },
+            {
+              type: 'doc',
               id: 'components/inputs/SelectChipAlpha/selectChipAlpha',
               label: 'SelectChip (Alpha)',
             },
@@ -306,7 +312,7 @@ const sidebars: SidebarsConfig = {
             {
               type: 'doc',
               id: 'components/cards/ContainedAssetCard/containedAssetCard',
-              label: 'ContainedAssetCard',
+              label: 'ContainedAssetCard (Deprecated)',
             },
             {
               type: 'doc',
@@ -330,18 +336,33 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'doc',
+              id: 'components/cards/DataCard/dataCard',
+              label: 'DataCard',
+            },
+            {
+              type: 'doc',
               id: 'components/cards/FloatingAssetCard/floatingAssetCard',
-              label: 'FloatingAssetCard',
+              label: 'FloatingAssetCard (Deprecated)',
+            },
+            {
+              type: 'doc',
+              id: 'components/cards/MediaCard/mediaCard',
+              label: 'MediaCard',
+            },
+            {
+              type: 'doc',
+              id: 'components/cards/MessagingCard/messagingCard',
+              label: 'MessagingCard',
             },
             {
               type: 'doc',
               id: 'components/cards/NudgeCard/nudgeCard',
-              label: 'NudgeCard',
+              label: 'NudgeCard (Deprecated)',
             },
             {
               type: 'doc',
               id: 'components/cards/UpsellCard/upsellCard',
-              label: 'UpsellCard',
+              label: 'UpsellCard (Deprecated)',
             },
           ],
         },
@@ -463,6 +484,11 @@ const sidebars: SidebarsConfig = {
               type: 'doc',
               id: 'components/overlay/Overlay/overlay',
               label: 'Overlay',
+            },
+            {
+              type: 'doc',
+              id: 'components/overlay/PopoverPanel/popoverPanel',
+              label: 'PopoverPanel',
             },
             {
               type: 'doc',
@@ -592,76 +618,86 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Graphs',
+          label: 'Charts',
           items: [
             {
               type: 'doc',
-              id: 'components/graphs/AreaChart/areaChart',
+              id: 'components/charts/AreaChart/areaChart',
               label: 'AreaChart',
             },
             {
               type: 'doc',
-              id: 'components/graphs/BarChart/barChart',
+              id: 'components/charts/BarChart/barChart',
               label: 'BarChart',
             },
             {
               type: 'doc',
-              id: 'components/graphs/CartesianChart/cartesianChart',
+              id: 'components/charts/PercentageBarChart/percentageBarChart',
+              label: 'PercentageBarChart',
+            },
+            {
+              type: 'doc',
+              id: 'components/charts/CartesianChart/cartesianChart',
               label: 'CartesianChart',
             },
             {
               type: 'doc',
-              id: 'components/graphs/LineChart/lineChart',
+              id: 'components/charts/Legend/legend',
+              label: 'Legend',
+            },
+            {
+              type: 'doc',
+              id: 'components/charts/LineChart/lineChart',
               label: 'LineChart',
             },
             {
               type: 'doc',
-              id: 'components/graphs/ReferenceLine/referenceLine',
+              id: 'components/charts/ReferenceLine/referenceLine',
               label: 'ReferenceLine',
             },
             {
               type: 'doc',
-              id: 'components/graphs/PeriodSelector/periodSelector',
+              id: 'components/charts/PeriodSelector/periodSelector',
               label: 'PeriodSelector',
             },
             {
               type: 'doc',
-              id: 'components/graphs/Point/point',
+              id: 'components/charts/Point/point',
               label: 'Point',
             },
             {
               type: 'doc',
-              id: 'components/graphs/Scrubber/scrubber',
+              id: 'components/charts/Scrubber/scrubber',
               label: 'Scrubber',
             },
             {
               type: 'doc',
-              id: 'components/graphs/Sparkline/sparkline',
+              id: 'components/charts/Sparkline/sparkline',
               label: 'Sparkline (Deprecated)',
             },
             {
               type: 'doc',
-              id: 'components/graphs/SparklineGradient/sparklineGradient',
+              id: 'components/charts/SparklineGradient/sparklineGradient',
               label: 'SparklineGradient (Deprecated)',
             },
             {
               type: 'doc',
-              id: 'components/graphs/SparklineInteractive/sparklineInteractive',
+              id: 'components/charts/SparklineInteractive/sparklineInteractive',
               label: 'SparklineInteractive (Deprecated)',
             },
             {
               type: 'doc',
-              id: 'components/graphs/SparklineInteractiveHeader/sparklineInteractiveHeader',
+              id: 'components/charts/SparklineInteractiveHeader/sparklineInteractiveHeader',
               label: 'SparklineInteractiveHeader (Deprecated)',
             },
             {
               type: 'doc',
-              id: 'components/graphs/XAxis/xAxis',
+              id: 'components/charts/XAxis/xAxis',
               label: 'XAxis',
             },
             {
               type: 'doc',
-              id: 'components/graphs/YAxis/yAxis',
+              id: 'components/charts/YAxis/yAxis',
               label: 'YAxis',
             },
           ],
@@ -802,43 +838,41 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Guides',
-    //   customProps: {
-    //     icon: 'application',
-    //     kbar: {
-    //       description: 'Guides for using CDS',
-    //     },
-    //   },
-    //   items: [
-    //     // {
-    //     //   type: 'doc',
-    //     //   id: 'guides/polymorphic-components',
-    //     //   label: 'Polymorphic Components',
-    //     // },
-    //     // {
-    //     //   type: 'doc',
-    //     //   id: 'guides/integrate-with-build-tools',
-    //     //   label: 'Integrate with Build Tools',
-    //     // },
-    //     // {
-    //     //   type: 'doc',
-    //     //   id: 'guides/build-new-components',
-    //     //   label: 'Build New Components',
-    //     // },
-    //     // {
-    //     //   type: 'doc',
-    //     //   id: 'guides/contribute-guidelines',
-    //     //   label: 'Contribute Guidelines',
-    //     // },
-    //     // {
-    //     //   type: 'doc',
-    //     //   id: 'guides/advanced-customization',
-    //     //   label: 'Advanced Customization',
-    //     // },
-    //   ],
-    // },
+    {
+      type: 'category',
+      label: 'Guides',
+      customProps: {
+        icon: 'application',
+        kbar: {
+          description: 'Guides for using CDS',
+        },
+      },
+      items: [
+        {
+          type: 'doc',
+          id: 'guides/v8-migration-guide',
+          label: 'v8 Migration Guide',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Extras',
+      customProps: {
+        icon: 'sparkle',
+        kbar: {
+          icon: 'sparkle',
+          description: 'Extra tools and resources',
+        },
+      },
+      items: [
+        {
+          type: 'doc',
+          id: 'extras/color-pairing-tool',
+          label: 'Color Pairing Tool',
+        },
+      ],
+    },
     {
       type: 'category',
       label: `Changelogs`,

@@ -1,10 +1,21 @@
+import { Animated, StyleSheet } from 'react-native';
+import { focusedInputBorderWidth } from '@coinbase/cds-common/tokens/input';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { defaultTheme } from '../../themes/defaultTheme';
 import { Text } from '../../typography/Text';
 import { DefaultThemeProvider } from '../../utils/testHelpers';
 import { TextInput } from '../TextInput';
 
 describe('TextInput', () => {
+  const getFocusedBorderOverlayStyle = () => {
+    const focusedBorderOverlay = screen
+      .UNSAFE_getAllByType(Animated.View)
+      .find((view) => StyleSheet.flatten(view.props.style)?.position === 'absolute');
+
+    return focusedBorderOverlay ? StyleSheet.flatten(focusedBorderOverlay.props.style) : undefined;
+  };
+
   it('passes a11y', () => {
     const testID = 'textinput-id';
     render(
@@ -57,6 +68,24 @@ describe('TextInput', () => {
       </DefaultThemeProvider>,
     );
     expect(screen.getByTestId(testID).props.value).toBe(value);
+  });
+
+  it('passes font to native input', () => {
+    const testID = 'textinput-id';
+    render(
+      <DefaultThemeProvider>
+        <TextInput font="label1" testID={testID} />
+      </DefaultThemeProvider>,
+    );
+
+    const flattenedStyle = StyleSheet.flatten(screen.getByTestId(testID).props.style);
+    expect(flattenedStyle).toEqual(
+      expect.objectContaining({
+        fontSize: defaultTheme.fontSize.label1,
+        minHeight: defaultTheme.lineHeight.label1,
+        fontWeight: defaultTheme.fontWeight.label1,
+      }),
+    );
   });
 
   it('renders a label', () => {
@@ -268,6 +297,45 @@ describe('TextInput', () => {
     expect(onBlur).toHaveBeenCalledTimes(1);
   });
 
+  it('keeps focused border width at 0 by default when bordered is false', () => {
+    const testID = 'input-testid';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          bordered={false}
+          testID={testID}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    fireEvent(screen.getByTestId(testID), 'focus');
+    const focusedBorderOverlayStyle = getFocusedBorderOverlayStyle();
+    expect(focusedBorderOverlayStyle).toEqual(expect.objectContaining({ borderWidth: 0 }));
+  });
+
+  it('applies focusedBorderWidth when bordered is false', () => {
+    const testID = 'input-testid';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          bordered={false}
+          focusedBorderWidth={200}
+          testID={testID}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    fireEvent(screen.getByTestId(testID), 'focus');
+    const focusedBorderOverlayStyle = getFocusedBorderOverlayStyle();
+    expect(focusedBorderOverlayStyle).toEqual(
+      expect.objectContaining({ borderWidth: focusedInputBorderWidth }),
+    );
+  });
+
   it('renders label outside by default', () => {
     const labelTestID = 'label-test';
     render(
@@ -327,6 +395,156 @@ describe('TextInput', () => {
     expect(startNode).toHaveTextContent('Compact Label');
 
     expect(screen.getByText('Compact Label')).toBeTruthy();
+  });
+
+  it('renders labelNode without compact', () => {
+    const labelTestID = 'custom-label';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          labelNode={<Text testID={labelTestID}>Custom Label Node</Text>}
+          placeholder="Enter text"
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const customLabel = screen.getByTestId(labelTestID);
+    expect(customLabel).toBeTruthy();
+    expect(customLabel).toHaveTextContent('Custom Label Node');
+  });
+
+  it('labelNode takes precedence over label without compact', () => {
+    const labelTestID = 'custom-label';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Regular Label"
+          labelNode={<Text testID={labelTestID}>Custom Label Node</Text>}
+          placeholder="Enter text"
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const customLabel = screen.getByTestId(labelTestID);
+    expect(customLabel).toBeTruthy();
+    expect(customLabel).toHaveTextContent('Custom Label Node');
+    expect(screen.queryByText('Regular Label')).toBeFalsy();
+  });
+
+  it('renders labelNode when compact is true', () => {
+    const startTestID = 'start-test';
+    const labelTestID = 'custom-label';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          labelNode={<Text testID={labelTestID}>Custom Label Node</Text>}
+          testIDMap={{
+            start: startTestID,
+          }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const startNode = screen.getByTestId(startTestID);
+    const customLabel = screen.getByTestId(labelTestID);
+    expect(startNode).toBeTruthy();
+    expect(customLabel).toBeTruthy();
+    expect(customLabel).toHaveTextContent('Custom Label Node');
+  });
+
+  it('renders labelNode with labelVariant inside', () => {
+    const labelTestID = 'custom-label';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          labelNode={<Text testID={labelTestID}>Custom Inside Label</Text>}
+          labelVariant="inside"
+          placeholder="Enter text"
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const customLabel = screen.getByTestId(labelTestID);
+    expect(customLabel).toBeTruthy();
+    expect(customLabel).toHaveTextContent('Custom Inside Label');
+  });
+
+  it('labelNode takes precedence over label with labelVariant inside', () => {
+    const labelTestID = 'custom-label';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Regular Label"
+          labelNode={<Text testID={labelTestID}>Custom Inside Label</Text>}
+          labelVariant="inside"
+          placeholder="Enter text"
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const customLabel = screen.getByTestId(labelTestID);
+    expect(customLabel).toBeTruthy();
+    expect(customLabel).toHaveTextContent('Custom Inside Label');
+    expect(screen.queryByText('Regular Label')).toBeFalsy();
+  });
+
+  it('renders labelNode with labelVariant inside and start content', () => {
+    const labelTestID = 'custom-label';
+    const startTestID = 'start-content';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          labelNode={<Text testID={labelTestID}>Custom Inside Label</Text>}
+          labelVariant="inside"
+          placeholder="Enter text"
+          start={<Text testID={startTestID}>Start</Text>}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const customLabel = screen.getByTestId(labelTestID);
+    const startContent = screen.getByTestId(startTestID);
+    expect(customLabel).toBeTruthy();
+    expect(startContent).toBeTruthy();
+  });
+
+  it('labelNode takes precedence over label when compact is true', () => {
+    const startTestID = 'start-test';
+    const labelTestID = 'custom-label';
+    render(
+      <DefaultThemeProvider>
+        <TextInput
+          compact
+          accessibilityHint="Text input field"
+          accessibilityLabel="Text input field"
+          label="Regular Label"
+          labelNode={<Text testID={labelTestID}>Custom Label Node</Text>}
+          testIDMap={{
+            start: startTestID,
+          }}
+        />
+      </DefaultThemeProvider>,
+    );
+
+    const startNode = screen.getByTestId(startTestID);
+    const customLabel = screen.getByTestId(labelTestID);
+    expect(startNode).toBeTruthy();
+    expect(customLabel).toBeTruthy();
+    expect(customLabel).toHaveTextContent('Custom Label Node');
+    expect(screen.queryByText('Regular Label')).toBeFalsy();
   });
 
   it('positions label correctly with inside variant and start content', () => {

@@ -1,9 +1,13 @@
+import * as React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
+import type { MotionValue } from 'framer-motion';
 
-import { defaultTransition, usePathTransition } from '../transition';
+import { defaultTransition, getTransition, usePathTransition } from '../transition';
 
 // Mock framer-motion
 jest.mock('framer-motion', () => {
+  const React = require('react');
+
   const mockMotionValue = (initial: any) => {
     let value = initial;
     const listeners: Array<(v: any) => void> = [];
@@ -24,17 +28,18 @@ jest.mock('framer-motion', () => {
   };
 
   return {
-    useMotionValue: jest.fn((initial) => mockMotionValue(initial)),
-    useTransform: jest.fn((source, transformer) => {
-      const result = mockMotionValue(transformer(source.get()));
-      source.onChange((v: any) => {
-        result.set(transformer(v));
-      });
-      return result;
+    useMotionValue: jest.fn((initial) => {
+      const motionValueRef = React.useRef(null as ReturnType<typeof mockMotionValue> | null);
+      if (motionValueRef.current === null) {
+        motionValueRef.current = mockMotionValue(initial);
+      }
+      return motionValueRef.current;
     }),
-    animate: jest.fn((value, target, config) => {
-      // Immediately set to target for testing
-      value.set(target);
+    animate: jest.fn((_from, _to, config) => {
+      // Simulate instant completion: call onUpdate with final value, then onComplete
+      if (config?.onUpdate) {
+        config.onUpdate(_to);
+      }
       if (config?.onComplete) {
         config.onComplete();
       }
@@ -86,6 +91,16 @@ describe('accessory transition constants', () => {
   });
 });
 
+describe('getTransition', () => {
+  it('should return null when animate is false', () => {
+    expect(getTransition(defaultTransition, false, defaultTransition)).toBeNull();
+  });
+
+  it('should return null when value is null', () => {
+    expect(getTransition(null, true, defaultTransition)).toBeNull();
+  });
+});
+
 describe('usePathTransition', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -132,6 +147,83 @@ describe('usePathTransition', () => {
     expect(result.current.get()).toBeDefined();
   });
 
+  it('preserves motion value identity across rerenders with the same currentPath', () => {
+    const currentPath = 'M0,0L10,10';
+
+    const { result, rerender } = renderHook(() =>
+      usePathTransition({
+        currentPath,
+      }),
+    );
+
+    const first = result.current;
+    rerender();
+    expect(result.current).toBe(first);
+  });
+
+  it('supports React Strict Mode when currentPath changes', () => {
+    const Strict = (props: { path: string; children?: React.ReactNode }) =>
+      React.createElement(React.StrictMode, null, props.children);
+
+    const { result, rerender } = renderHook<{ path: string }, MotionValue<string>>(
+      ({ path }) => usePathTransition({ currentPath: path }),
+      {
+        wrapper: Strict,
+        initialProps: { path: 'M0,0L10,10' },
+      },
+    );
+
+    rerender({ path: 'M0,0L20,20' });
+
+    expect(result.current.get()).toBe('M0,0L20,20');
+  });
+
+  it('starts the next interpolation from the current motion value when a transition is interrupted', () => {
+    const { animate } = require('framer-motion');
+    const { interpolatePath } = require('d3-interpolate-path');
+
+    animate
+      .mockImplementationOnce(
+        (_from: unknown, _to: unknown, config: { onUpdate?: (t: number) => void }) => {
+          if (config?.onUpdate) {
+            config.onUpdate(0.49);
+          }
+          return { cancel: jest.fn(), stop: jest.fn() };
+        },
+      )
+      .mockImplementationOnce(
+        (
+          _from: unknown,
+          _to: unknown,
+          config: { onUpdate?: (t: number) => void; onComplete?: () => void },
+        ) => {
+          if (config?.onUpdate) {
+            config.onUpdate(1);
+          }
+          if (config?.onComplete) {
+            config.onComplete();
+          }
+          return { cancel: jest.fn(), stop: jest.fn() };
+        },
+      );
+
+    const path1 = 'M0,0L10,10';
+    const path2 = 'M0,0L20,20';
+    const path3 = 'M0,0L30,30';
+
+    const { rerender } = renderHook(({ path }) => usePathTransition({ currentPath: path }), {
+      initialProps: { path: path1 },
+    });
+
+    interpolatePath.mockClear();
+    rerender({ path: path2 });
+    expect(interpolatePath).toHaveBeenCalledWith(path1, path2);
+
+    interpolatePath.mockClear();
+    rerender({ path: path3 });
+    expect(interpolatePath).toHaveBeenCalledWith(path1, path3);
+  });
+
   it('should handle path updates', () => {
     const { useMotionValue, animate } = require('framer-motion');
     const { result, rerender } = renderHook(
@@ -167,7 +259,7 @@ describe('usePathTransition', () => {
     const { result } = renderHook(() =>
       usePathTransition({
         currentPath,
-        transition,
+        transitions: { update: transition },
       }),
     );
 
@@ -178,7 +270,7 @@ describe('usePathTransition', () => {
       ({ path }) =>
         usePathTransition({
           currentPath: path,
-          transition,
+          transitions: { update: transition },
         }),
       {
         initialProps: { path: currentPath },
@@ -236,12 +328,58 @@ describe('usePathTransition', () => {
     expect(interpolatePath).toHaveBeenCalled();
   });
 
-  it('should cancel ongoing animation when path changes', () => {
+  it('should short-circuit interpolation when update transition is null', () => {
+    const { interpolatePath } = require('d3-interpolate-path');
+    const nextPath = 'M0,0L30,30';
+
+    const { result, rerender } = renderHook(
+      ({ path }) =>
+        usePathTransition({
+          currentPath: path,
+          transitions: { update: null },
+        }),
+      {
+        initialProps: { path: 'M0,0L10,10' },
+      },
+    );
+
+    interpolatePath.mockClear();
+    rerender({ path: nextPath });
+
+    expect(interpolatePath).not.toHaveBeenCalled();
+    expect(result.current.get()).toBe(nextPath);
+  });
+
+  it('should short-circuit interpolation when enter transition is null', () => {
+    const { interpolatePath } = require('d3-interpolate-path');
+    const initialPath = 'M0,0L10,10';
+    const nextPath = 'M0,0L30,30';
+
+    const { result, rerender } = renderHook(
+      ({ path }) =>
+        usePathTransition({
+          currentPath: path,
+          initialPath,
+          transitions: { enter: null, update: defaultTransition },
+        }),
+      {
+        initialProps: { path: initialPath },
+      },
+    );
+
+    interpolatePath.mockClear();
+    rerender({ path: nextPath });
+
+    expect(interpolatePath).not.toHaveBeenCalled();
+    expect(result.current.get()).toBe(nextPath);
+  });
+
+  it('should stop ongoing animation when path changes', () => {
     const { animate } = require('framer-motion');
-    const cancelMock = jest.fn();
+    const stopMock = jest.fn();
     animate.mockReturnValue({
-      cancel: cancelMock,
-      stop: jest.fn(),
+      cancel: jest.fn(),
+      stop: stopMock,
     });
 
     const { rerender } = renderHook(
@@ -257,10 +395,10 @@ describe('usePathTransition', () => {
     // Trigger first animation
     rerender({ path: 'M0,0L20,20' });
 
-    // Trigger second animation (should cancel first)
+    // Trigger second animation (should stop first)
     rerender({ path: 'M0,0L30,30' });
 
-    expect(cancelMock).toHaveBeenCalled();
+    expect(stopMock).toHaveBeenCalled();
   });
 
   it('should handle smooth interruption of ongoing animation', () => {
@@ -291,12 +429,58 @@ describe('usePathTransition', () => {
     expect(animate.mock.calls.length).toBeGreaterThan(animateCallCount);
   });
 
+  it('does not stop active animation when only transition object identity changes', () => {
+    const { animate } = require('framer-motion');
+    const stopMock = jest.fn();
+    animate.mockImplementation((_from: any, _to: any, config: any) => {
+      if (config?.onUpdate) {
+        config.onUpdate(0.5);
+      }
+      return {
+        cancel: jest.fn(),
+        stop: stopMock,
+      };
+    });
+
+    const { rerender } = renderHook(
+      ({ path, transitionConfig }) =>
+        usePathTransition({
+          currentPath: path,
+          transitions: {
+            update: transitionConfig,
+          },
+        }),
+      {
+        initialProps: {
+          path: 'M0,0L10,10',
+          transitionConfig: { type: 'spring' as const, stiffness: 300, damping: 30 },
+        },
+      },
+    );
+
+    // Start an animation to path2
+    rerender({
+      path: 'M0,0L20,20',
+      transitionConfig: { type: 'spring' as const, stiffness: 300, damping: 30 },
+    });
+    const animateCallCount = animate.mock.calls.length;
+
+    // Same path target, new transition object identity
+    rerender({
+      path: 'M0,0L20,20',
+      transitionConfig: { type: 'spring' as const, stiffness: 300, damping: 30 },
+    });
+
+    expect(animate.mock.calls.length).toBe(animateCallCount);
+    expect(stopMock).not.toHaveBeenCalled();
+  });
+
   it('should cleanup animation on unmount', () => {
     const { animate } = require('framer-motion');
-    const cancelMock = jest.fn();
+    const stopMock = jest.fn();
     animate.mockReturnValue({
-      cancel: cancelMock,
-      stop: jest.fn(),
+      cancel: jest.fn(),
+      stop: stopMock,
     });
 
     const { unmount, rerender } = renderHook(
@@ -312,13 +496,13 @@ describe('usePathTransition', () => {
     // Trigger animation
     rerender({ path: 'M0,0L20,20' });
 
-    // Unmount should cancel animation
+    // Unmount should stop animation
     unmount();
 
-    expect(cancelMock).toHaveBeenCalled();
+    expect(stopMock).toHaveBeenCalled();
   });
 
-  it('should maintain previous path reference across renders', () => {
+  it('supports multiple consecutive path updates', () => {
     const path1 = 'M0,0L10,10';
     const path2 = 'M0,0L20,20';
     const path3 = 'M0,0L30,30';
@@ -344,12 +528,14 @@ describe('usePathTransition', () => {
     expect(result.current).toBeDefined();
   });
 
-  it('should update previousPathRef onComplete', () => {
+  it('supports a new path transition after animation onComplete', () => {
     const { animate } = require('framer-motion');
     let onCompleteCallback: (() => void) | undefined;
 
-    animate.mockImplementation((value: any, target: any, config: any) => {
-      value.set(target);
+    animate.mockImplementation((_from: any, _to: any, config: any) => {
+      if (config?.onUpdate) {
+        config.onUpdate(_to);
+      }
       onCompleteCallback = config?.onComplete;
       return {
         cancel: jest.fn(),
@@ -375,7 +561,7 @@ describe('usePathTransition', () => {
       onCompleteCallback();
     }
 
-    // Should be able to handle another path change
+    // Motion value already reflects the target path; another change should start a new transition
     rerender({ path: 'M0,0L30,30' });
 
     expect(animate).toHaveBeenCalled();

@@ -3,6 +3,7 @@ module.exports = {
   storybook: {
     // Useful for isolating Percy diffs when running from the command line
     exclude: [
+      'Accessibility',
       'Core Components/AccessibilityAnnouncer',
       'Interactive/Table',
       'Interactive/TabNavigation',
@@ -17,7 +18,9 @@ module.exports = {
       'Components/SparklineInteractive: Fallback Positive',
       'Components/LottieStatusAnimation: Default',
       'Components/Loaders/MaterialSpinner: Material Spinner Default',
-      'Components/Chart/LineChart: Transitions',
+      'Components/Chart/CartesianChart: Transitions',
+      // Visreg tested in other story, this is for manual testing
+      'Components/Chart/CartesianChart: Advanced',
     ],
     include: [
       // 'Core Components/SparklineInteractive:*',

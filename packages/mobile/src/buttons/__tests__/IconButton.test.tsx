@@ -1,3 +1,4 @@
+import { Text } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { debounce } from '../../utils/debounce';
@@ -95,24 +96,39 @@ describe('IconButton', () => {
     expect(screen.getByTestId('test-test-id')).toBeTruthy();
   });
 
-  it('does not render ActivityIndicator when not loading', () => {
+  it('does not render ProgressCircle when not loading', () => {
     render(
       <DefaultThemeProvider>
         <IconButton name={name} testID="icon-button" />
       </DefaultThemeProvider>,
     );
 
-    expect(screen.queryByTestId('icon-button-activity-indicator')).toBeNull();
+    expect(screen.queryByTestId('icon-button-progress-circle')).toBeNull();
   });
 
-  it('renders ActivityIndicator when loading', () => {
+  it('renders ProgressCircle when loading', () => {
     render(
       <DefaultThemeProvider>
         <IconButton loading name={name} testID="icon-button" />
       </DefaultThemeProvider>,
     );
 
-    expect(screen.getByTestId('icon-button-activity-indicator')).toBeTruthy();
+    expect(screen.getByTestId('icon-button-progress-circle')).toBeTruthy();
+  });
+
+  it('renders Icon with overridden iconSize', () => {
+    const { UNSAFE_getAllByType } = render(
+      <DefaultThemeProvider>
+        <>
+          <IconButton accessibilityLabel="extra-small icon" iconSize="xs" name={name} />
+          <IconButton accessibilityLabel="medium icon" iconSize="m" name={name} />
+        </>
+      </DefaultThemeProvider>,
+    );
+
+    const [xsIcon, mediumIcon] = UNSAFE_getAllByType(Text);
+
+    expect(xsIcon.props.style[0].fontSize).toBeLessThan(mediumIcon.props.style[0].fontSize);
   });
 
   it('handles loading state without accessibility label', () => {

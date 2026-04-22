@@ -15,10 +15,14 @@ import { Pressable } from '../system/Pressable';
 import { TabIndicator } from './TabIndicator';
 import { TabLabel } from './TabLabel';
 
-export type TabProps<T extends string | undefined = string> = SharedProps &
+/**
+ * @deprecated Use Tabs instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
+ */
+export type TabProps<TabId extends string | undefined = string> = SharedProps &
   Partial<Pick<DotCountBaseProps, 'max' | 'count'>> & {
     /** The id should be a meaningful and useful identifier like "watchlist" or "forSale" */
-    id: T;
+    id: TabId;
     /** Define a label for this Tab */
     label: React.ReactNode;
     /** See the Tabs TDD to understand which variant should be used.
@@ -30,11 +34,15 @@ export type TabProps<T extends string | undefined = string> = SharedProps &
     /** Full length accessibility label when the child text is not descriptive enough. */
     accessibilityLabel?: string;
     /** Callback to fire when pressed */
-    onPress?: (id: T) => void;
+    onPress?: (id: TabId) => void;
     /** Render a custom Component for the Tab */
     Component?: (props: CustomTabProps) => React.ReactNode;
   };
 
+/**
+ * @deprecated Use Tabs instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
+ */
 export type CustomTabProps = Pick<TabProps, 'id'> & {
   /**
    * @default false
@@ -45,17 +53,21 @@ export type CustomTabProps = Pick<TabProps, 'id'> & {
   label?: React.ReactNode;
 };
 
-export type TabNavigationBaseProps<T extends string | undefined = string> = BoxBaseProps &
+/**
+ * @deprecated Use Tabs instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
+ */
+export type TabNavigationBaseProps<TabId extends string | undefined = string> = BoxBaseProps &
   Pick<SharedAccessibilityProps, 'accessibilityLabel' | 'accessibilityLabelledBy'> &
   Pick<TabProps, 'variant' | 'Component'> & {
     /** The active tabId
      *  @default tabs[0].id
      */
-    value?: T;
+    value?: TabId;
     /** Children should be TabLabels. If you only have one child, don't use tabs 🤪 */
-    tabs: TabProps<T>[];
+    tabs: TabProps<TabId>[];
     /** Use the onChange handler to deal with any side effects, ie event tracking or showing a tooltip */
-    onChange: ((tabId: T) => void) | React.Dispatch<React.SetStateAction<T>>;
+    onChange: ((tabId: TabId) => void) | React.Dispatch<React.SetStateAction<TabId>>;
     /** This should always match the background color of the parent container
      * @default: 'bg'
      */
@@ -88,10 +100,15 @@ export type TabNavigationBaseProps<T extends string | undefined = string> = BoxB
     id?: string;
   };
 
-export type TabNavigationProps<T extends string | undefined = string> = TabNavigationBaseProps<T>;
+/**
+ * @deprecated Use Tabs instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
+ */
+export type TabNavigationProps<TabId extends string | undefined = string> =
+  TabNavigationBaseProps<TabId>;
 
-type TabNavigationFC = <T extends string | undefined = string>(
-  props: TabNavigationProps<T> & { ref?: React.ForwardedRef<View> },
+type TabNavigationFC = <TabId extends string | undefined = string>(
+  props: TabNavigationProps<TabId> & { ref?: React.ForwardedRef<View> },
 ) => React.ReactElement;
 
 const TabNavigationComponent = memo(
@@ -252,7 +269,8 @@ const TabNavigationComponent = memo(
 /**
  * TabNavigation renders a horizontal, tab-based navigation bar.
  * This component has a opinionated default style, but allows for customization through custom Component props.
- * @deprecated Use `Tabs` instead.
+ * @deprecated Use `Tabs` instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v9
  */
 export const TabNavigation = TabNavigationComponent as TabNavigationFC;
 

@@ -1,6 +1,8 @@
 import React, { forwardRef, memo, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { View } from 'react-native';
 
+import { useComponentConfig } from '../../hooks/useComponentConfig';
+
 import { DefaultSelectAllOption } from './DefaultSelectAllOption';
 import { DefaultSelectControl } from './DefaultSelectControl';
 import { DefaultSelectDropdown } from './DefaultSelectDropdown';
@@ -48,7 +50,11 @@ export { isSelectOptionGroup };
 const SelectBase = memo(
   forwardRef(
     <Type extends SelectType = 'single', SelectOptionValue extends string = string>(
-      {
+      _props: SelectProps<Type, SelectOptionValue>,
+      ref: React.Ref<SelectRef>,
+    ) => {
+      const mergedProps = useComponentConfig('Select', _props);
+      const {
         value,
         type = 'single' as Type,
         options,
@@ -62,7 +68,7 @@ const SelectBase = memo(
         compact,
         label,
         labelVariant,
-        accessibilityLabel = type === 'multi' ? 'Multi select control' : undefined,
+        accessibilityLabel = typeof label === 'string' ? label : 'Select control',
         accessibilityHint,
         accessibilityRoles = defaultAccessibilityRoles,
         selectAllLabel,
@@ -79,6 +85,8 @@ const SelectBase = memo(
         accessory,
         media,
         end,
+        align,
+        font,
         bordered = true,
         SelectOptionComponent = DefaultSelectOption,
         SelectAllOptionComponent = DefaultSelectAllOption,
@@ -90,9 +98,7 @@ const SelectBase = memo(
         styles,
         testID,
         ...props
-      }: SelectProps<Type, SelectOptionValue>,
-      ref: React.Ref<SelectRef>,
-    ) => {
+      } = mergedProps;
       const [openInternal, setOpenInternal] = useState(defaultOpen ?? false);
       const open = openProp ?? openInternal;
       const setOpen = setOpenProp ?? setOpenInternal;
@@ -171,11 +177,13 @@ const SelectBase = memo(
           <SelectControlComponent
             accessibilityHint={accessibilityHint}
             accessibilityLabel={accessibilityLabel}
+            align={align}
             blendStyles={styles?.controlBlendStyles}
             bordered={bordered}
             compact={compact}
             disabled={disabled}
             endNode={endNode}
+            font={font}
             helperText={helperText}
             hiddenSelectedOptionsLabel={hiddenSelectedOptionsLabel}
             label={label}

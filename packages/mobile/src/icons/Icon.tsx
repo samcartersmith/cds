@@ -19,6 +19,7 @@ import type {
 import { glyphMap } from '@coinbase/cds-icons/glyphMap';
 import { isDevelopment } from '@coinbase/cds-utils';
 
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { useTheme } from '../hooks/useTheme';
 import { Box } from '../layout/Box';
 
@@ -53,8 +54,11 @@ export type IconBaseProps = SharedProps &
   };
 
 export type IconProps = IconBaseProps & {
+  /** Custom styles for individual elements of the Icon component */
   styles?: {
+    /** Outer Box wrapper element */
     root?: StyleProp<ViewStyle>;
+    /** Inner icon glyph Text element */
     icon?: StyleProp<TextStyle>;
   };
 };
@@ -65,27 +69,29 @@ const getIconSourceSize = (iconSize: number): IconSourcePixelSize => {
   return 24;
 };
 
-export const Icon = memo(function Icon({
-  accessibilityLabel,
-  accessibilityHint,
-  animated = false,
-  color = 'fgPrimary',
-  dangerouslySetColor,
-  style,
-  styles,
-  fallback = null,
-  name,
-  size = 'm',
-  testID,
-  padding,
-  paddingX,
-  paddingY,
-  paddingTop,
-  paddingEnd,
-  paddingBottom,
-  paddingStart,
-  active,
-}: IconProps) {
+export const Icon = memo((_props: IconProps) => {
+  const mergedProps = useComponentConfig('Icon', _props);
+  const {
+    accessibilityLabel,
+    accessibilityHint,
+    animated = false,
+    color = 'fgPrimary',
+    dangerouslySetColor,
+    style,
+    styles,
+    fallback = null,
+    name,
+    size = 'm',
+    testID,
+    padding,
+    paddingX,
+    paddingY,
+    paddingTop,
+    paddingEnd,
+    paddingBottom,
+    paddingStart,
+    active,
+  } = mergedProps;
   const TextComponent = animated ? Animated.Text : Text;
   const theme = useTheme();
   const { fontScale } = useWindowDimensions();

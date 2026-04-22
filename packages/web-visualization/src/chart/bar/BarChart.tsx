@@ -7,16 +7,26 @@ import {
   type CartesianChartProps,
 } from '../CartesianChart';
 import {
-  type AxisConfigProps,
-  defaultChartInset,
+  type CartesianAxisConfigProps,
   defaultStackId,
-  getChartInset,
   type Series,
+  withBaselineDomain,
 } from '../utils';
 
 import { BarPlot, type BarPlotProps } from './BarPlot';
+import type { BarSeries } from './BarStack';
 
-export type BarChartBaseProps = Omit<CartesianChartBaseProps, 'xAxis' | 'yAxis' | 'series'> &
+export type BarChartBaseProps = Omit<
+  CartesianChartBaseProps,
+  | 'xAxis'
+  | 'yAxis'
+  | 'series'
+  | 'borderRadius'
+  | 'borderTopLeftRadius'
+  | 'borderTopRightRadius'
+  | 'borderBottomLeftRadius'
+  | 'borderBottomRightRadius'
+> &
   Pick<
     BarPlotProps,
     | 'barPadding'
@@ -30,12 +40,14 @@ export type BarChartBaseProps = Omit<CartesianChartBaseProps, 'xAxis' | 'yAxis' 
     | 'stackGap'
     | 'barMinSize'
     | 'stackMinSize'
+    | 'transitions'
     | 'transition'
   > & {
     /**
      * Configuration objects that define how to visualize the data.
+     * Each series can optionally define its own BarComponent.
      */
-    series?: Array<Series>;
+    series?: Array<BarSeries>;
     /**
      * Whether to stack the areas on top of each other.
      * When true, each series builds cumulative values on top of the previous series.
@@ -58,23 +70,33 @@ export type BarChartBaseProps = Omit<CartesianChartBaseProps, 'xAxis' | 'yAxis' 
      * Accepts axis config and axis props.
      * To show the axis, set `showXAxis` to true.
      */
-    xAxis?: Partial<AxisConfigProps> & XAxisProps;
+    xAxis?: Partial<CartesianAxisConfigProps> & XAxisProps;
     /**
      * Configuration for y-axis.
      * Accepts axis config and axis props.
      * To show the axis, set `showYAxis` to true.
      */
-    yAxis?: Partial<AxisConfigProps> & YAxisProps;
+    yAxis?: Partial<CartesianAxisConfigProps> & YAxisProps;
   };
 
 export type BarChartProps = BarChartBaseProps &
-  Omit<CartesianChartProps, 'xAxis' | 'yAxis' | 'series'>;
+  Omit<
+    CartesianChartProps,
+    | 'xAxis'
+    | 'yAxis'
+    | 'series'
+    | 'borderRadius'
+    | 'borderTopLeftRadius'
+    | 'borderTopRightRadius'
+    | 'borderBottomLeftRadius'
+    | 'borderBottomRightRadius'
+  >;
 
 export const BarChart = memo(
   forwardRef<SVGSVGElement, BarChartProps>(
     (
       {
-        series,
+        series: seriesProp,
         stacked,
         showXAxis,
         showYAxis,
@@ -93,22 +115,21 @@ export const BarChart = memo(
         stackGap,
         barMinSize,
         stackMinSize,
+        transitions,
         transition,
         ...chartProps
       },
       ref,
     ) => {
-      const calculatedInset = useMemo(() => getChartInset(inset, defaultChartInset), [inset]);
+      const series: Array<BarSeries> | undefined = useMemo(() => {
+        if (!stacked || !seriesProp) return seriesProp;
+        return seriesProp.map((s) => ({ ...s, stackId: s.stackId ?? defaultStackId }));
+      }, [seriesProp, stacked]);
 
-      const transformedSeries = useMemo(() => {
-        if (!stacked || !series) return series;
-        return series.map((s) => ({ ...s, stackId: s.stackId ?? defaultStackId }));
-      }, [series, stacked]);
-
-      // Unlike other charts with custom props per series, we do not need to pick out
-      // the props from each series that shouldn't be passed to CartesianChart
-      const seriesToRender = transformedSeries ?? series;
-      const seriesIds = seriesToRender?.map((s) => s.id);
+      const seriesIds = useMemo(() => series?.map((s) => s.id), [series]);
+      const isHorizontalLayout = chartProps.layout === 'horizontal';
+      const defaultXScaleType = isHorizontalLayout ? 'linear' : 'band';
+      const defaultYScaleType = isHorizontalLayout ? 'band' : 'linear';
 
       // Split axis props into config props for Chart and visual props for axis components
       const {
@@ -118,6 +139,8 @@ export const BarChart = memo(
         domain: xDomain,
         domainLimit: xDomainLimit,
         range: xRange,
+        baseline: xBaseline,
+        id: xAxisId,
         ...xAxisVisualProps
       } = xAxis || {};
       const {
@@ -127,50 +150,70 @@ export const BarChart = memo(
         domain: yDomain,
         domainLimit: yDomainLimit,
         range: yRange,
+        baseline: yBaseline,
         id: yAxisId,
         ...yAxisVisualProps
       } = yAxis || {};
+      const valueAxisBaseline = isHorizontalLayout ? xBaseline : yBaseline;
 
-      const xAxisConfig: Partial<AxisConfigProps> = {
-        scaleType: xScaleType ?? 'band',
-        data: xData,
-        categoryPadding: xCategoryPadding,
-        domain: xDomain,
-        domainLimit: xDomainLimit,
-        range: xRange,
-      };
+      const xAxisConfig = useMemo<Partial<CartesianAxisConfigProps>>(
+        () => ({
+          scaleType: xScaleType ?? defaultXScaleType,
+          data: xData,
+          categoryPadding: xCategoryPadding,
+          domain: isHorizontalLayout ? withBaselineDomain(xDomain, valueAxisBaseline) : xDomain,
+          domainLimit: xDomainLimit,
+          range: xRange,
+          baseline: xBaseline,
+        }),
+        [
+          xScaleType,
+          xData,
+          xCategoryPadding,
+          xDomain,
+          isHorizontalLayout,
+          xDomainLimit,
+          xRange,
+          xBaseline,
+          valueAxisBaseline,
+          defaultXScaleType,
+        ],
+      );
 
-      const hasNegativeValues = useMemo(() => {
-        if (!series) return false;
-        return series.some((s) =>
-          s.data?.some(
-            (value: number | null | [number, number]) =>
-              (typeof value === 'number' && value < 0) ||
-              (Array.isArray(value) && value.some((v) => typeof v === 'number' && v < 0)),
-          ),
-        );
-      }, [series]);
-
-      // Set default min domain to 0 for area chart, but only if there are no negative values
-      const yAxisConfig: Partial<AxisConfigProps> = {
-        scaleType: yScaleType,
-        data: yData,
-        categoryPadding: yCategoryPadding,
-        domain: hasNegativeValues ? yDomain : { min: 0, ...yDomain },
-        domainLimit: yDomainLimit,
-        range: yRange,
-      };
+      const yAxisConfig = useMemo<Partial<CartesianAxisConfigProps>>(
+        () => ({
+          scaleType: yScaleType ?? defaultYScaleType,
+          data: yData,
+          categoryPadding: yCategoryPadding,
+          domain: !isHorizontalLayout ? withBaselineDomain(yDomain, valueAxisBaseline) : yDomain,
+          domainLimit: yDomainLimit,
+          range: yRange,
+          baseline: yBaseline,
+        }),
+        [
+          yScaleType,
+          yData,
+          yCategoryPadding,
+          yDomain,
+          isHorizontalLayout,
+          yDomainLimit,
+          yRange,
+          yBaseline,
+          valueAxisBaseline,
+          defaultYScaleType,
+        ],
+      );
 
       return (
         <CartesianChart
           {...chartProps}
           ref={ref}
-          inset={calculatedInset}
-          series={seriesToRender}
+          inset={inset}
+          series={series}
           xAxis={xAxisConfig}
           yAxis={yAxisConfig}
         >
-          {showXAxis && <XAxis {...xAxisVisualProps} />}
+          {showXAxis && <XAxis axisId={xAxisId} {...xAxisVisualProps} />}
           {showYAxis && <YAxis axisId={yAxisId} {...yAxisVisualProps} />}
           <BarPlot
             BarComponent={BarComponent}
@@ -186,6 +229,7 @@ export const BarChart = memo(
             stroke={stroke}
             strokeWidth={strokeWidth}
             transition={transition}
+            transitions={transitions}
           />
           {children}
         </CartesianChart>

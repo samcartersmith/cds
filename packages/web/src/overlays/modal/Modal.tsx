@@ -18,11 +18,12 @@ import { m as motion } from 'framer-motion';
 
 import { cx } from '../../cx';
 import { useA11yLabels } from '../../hooks/useA11yLabels';
+import { useComponentConfig } from '../../hooks/useComponentConfig';
 import { Box } from '../../layout';
 import { VStack } from '../../layout/VStack';
 import { useMotionProps } from '../../motion/useMotionProps';
 import { media } from '../../styles/media';
-import { FocusTrap } from '../FocusTrap';
+import { FocusTrap, type FocusTrapProps } from '../FocusTrap';
 
 import type { ModalWrapperProps } from './ModalWrapper';
 import { ModalWrapper } from './ModalWrapper';
@@ -78,7 +79,11 @@ type ModalChildrenRenderProps = { closeModal: () => void };
 export type ModalBaseProps = SharedProps &
   ModalContextValue &
   Pick<PositionStyles, 'zIndex'> &
-  Omit<ModalWrapperProps, 'onOverlayPress'> & {
+  Omit<ModalWrapperProps, 'onOverlayPress'> &
+  Pick<
+    FocusTrapProps,
+    'disableFocusTrap' | 'focusTabIndexElements' | 'disableArrowKeyNavigation'
+  > & {
     /** Component to render as the Modal content */
     children?: React.ReactNode | React.FC<ModalChildrenRenderProps>;
     /**
@@ -96,18 +101,6 @@ export type ModalBaseProps = SharedProps &
      */
     dangerouslySetPosition?: Position;
     /**
-     * Set disableFocusTrap to disable keyboard listeners responsible for focus trap behavior
-     * This can be useful for scenarios like Yubikey 2fa
-     * @default false
-     */
-    disableFocusTrap?: boolean;
-    /**
-     * Allow any element with `tabIndex` attribute to be focusable in FocusTrap, rather than only focusing specific interactive element types like button.
-     * This can be useful when having long content in a Modal.
-     * @default false
-     */
-    focusTabIndexElements?: boolean;
-    /**
      * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
      *
      * WARNING: If you disable this, you need to ensure that focus is restored properly so it doesn't end up on the body
@@ -121,116 +114,115 @@ export type ModalProps = ModalBaseProps;
 export type ModalRefBaseProps = Pick<ModalBaseProps, 'onRequestClose'>;
 
 export const Modal = memo(
-  forwardRef<ModalRefBaseProps, ModalProps>(
-    (
-      {
-        children,
-        visible = false,
-        onRequestClose,
-        disableOverlayPress = false,
-        disablePortal = false,
-        disableFocusTrap,
-        accessibilityLabelledBy,
-        accessibilityLabel,
-        focusTabIndexElements = false,
-        restoreFocusOnUnmount = true,
-        width,
-        dangerouslyDisableResponsiveness = false,
-        dangerouslySetPosition,
-        shouldCloseOnEscPress = true,
+  forwardRef<ModalRefBaseProps, ModalProps>((_props, ref) => {
+    const mergedProps = useComponentConfig('Modal', _props);
+    const {
+      children,
+      visible = false,
+      onRequestClose,
+      disableOverlayPress = false,
+      disablePortal = false,
+      disableFocusTrap,
+      accessibilityLabelledBy,
+      accessibilityLabel,
+      focusTabIndexElements = false,
+      restoreFocusOnUnmount = true,
+      disableArrowKeyNavigation,
+      width,
+      dangerouslyDisableResponsiveness = false,
+      dangerouslySetPosition,
+      shouldCloseOnEscPress = true,
+      hideCloseButton,
+      hideDividers,
+      maxWidth,
+      ...props
+    } = mergedProps;
+    const defaultWidth = dangerouslyDisableResponsiveness ? modalMaxWidth : defaultWidthStyle;
+    const defaultMaxWidth = dangerouslyDisableResponsiveness ? undefined : defaultMaxWidthStyle;
+    const { labelledBySource, labelledBy, label } = useA11yLabels({
+      accessibilityLabelledBy,
+      accessibilityLabel,
+    });
+
+    const motionProps = useMotionProps({
+      enterConfigs: [animateInOpacityConfig, animateInScaleConfig],
+      exitConfigs: [animateOutOpacityConfig, animateOutScaleConfig],
+      exit: 'exit',
+    });
+
+    const handleClose = useCallback(() => {
+      onRequestClose?.();
+    }, [onRequestClose]);
+
+    useImperativeHandle(
+      ref,
+      () => ({
+        onRequestClose: handleClose,
+      }),
+      [handleClose],
+    );
+
+    const modalData = useMemo(
+      () => ({
+        visible,
+        onRequestClose: handleClose,
+        accessibilityLabelledBy: labelledBySource,
         hideCloseButton,
         hideDividers,
-        maxWidth,
-        ...props
-      },
-      ref,
-    ) => {
-      const defaultWidth = dangerouslyDisableResponsiveness ? modalMaxWidth : defaultWidthStyle;
-      const defaultMaxWidth = dangerouslyDisableResponsiveness ? undefined : defaultMaxWidthStyle;
-      const { labelledBySource, labelledBy, label } = useA11yLabels({
-        accessibilityLabelledBy,
-        accessibilityLabel,
-      });
+      }),
+      [visible, handleClose, labelledBySource, hideCloseButton, hideDividers],
+    );
 
-      const motionProps = useMotionProps({
-        enterConfigs: [animateInOpacityConfig, animateInScaleConfig],
-        exitConfigs: [animateOutOpacityConfig, animateOutScaleConfig],
-        exit: 'exit',
-      });
+    // TODO: remove render props as we no longer need the method to close modal
+    const renderChildrenProps = useMemo(() => ({ closeModal: handleClose }), [handleClose]);
 
-      const handleClose = useCallback(() => {
-        onRequestClose?.();
-      }, [onRequestClose]);
+    const dialogStyles = useMemo<React.CSSProperties>(
+      () => ({ position: dangerouslySetPosition }),
+      [dangerouslySetPosition],
+    );
 
-      useImperativeHandle(
-        ref,
-        () => ({
-          onRequestClose: handleClose,
-        }),
-        [handleClose],
-      );
-
-      const modalData = useMemo(
-        () => ({
-          visible,
-          onRequestClose: handleClose,
-          accessibilityLabelledBy: labelledBySource,
-          hideCloseButton,
-          hideDividers,
-        }),
-        [visible, handleClose, labelledBySource, hideCloseButton, hideDividers],
-      );
-
-      // TODO: remove render props as we no longer need the method to close modal
-      const renderChildrenProps = useMemo(() => ({ closeModal: handleClose }), [handleClose]);
-
-      const dialogStyles = useMemo<React.CSSProperties>(
-        () => ({ position: dangerouslySetPosition }),
-        [dangerouslySetPosition],
-      );
-
-      return (
-        <OverlayContentContext.Provider value={overlayContentContextValue}>
-          <ModalWrapper
-            accessibilityLabel={label}
-            accessibilityLabelledBy={labelledBy}
-            dangerouslyDisableResponsiveness={dangerouslyDisableResponsiveness}
-            disableOverlayPress={disableOverlayPress}
-            disablePortal={disablePortal}
-            onOverlayPress={handleClose}
-            visible={visible}
-            {...props}
+    return (
+      <OverlayContentContext.Provider value={overlayContentContextValue}>
+        <ModalWrapper
+          accessibilityLabel={label}
+          accessibilityLabelledBy={labelledBy}
+          dangerouslyDisableResponsiveness={dangerouslyDisableResponsiveness}
+          disableOverlayPress={disableOverlayPress}
+          disablePortal={disablePortal}
+          onOverlayPress={handleClose}
+          visible={visible}
+          {...props}
+        >
+          <MotionBox
+            {...motionProps}
+            className={cx(baseCss, !dangerouslyDisableResponsiveness && modalResponsiveCss)}
+            maxWidth={maxWidth ?? defaultMaxWidth}
+            style={dialogStyles}
+            testID="modal-dialog-motion"
+            width={width ?? defaultWidth}
           >
-            <MotionBox
-              {...motionProps}
-              className={cx(baseCss, !dangerouslyDisableResponsiveness && modalResponsiveCss)}
-              maxWidth={maxWidth ?? defaultMaxWidth}
-              style={dialogStyles}
-              testID="modal-dialog-motion"
-              width={width ?? defaultWidth}
+            <FocusTrap
+              disableArrowKeyNavigation={disableArrowKeyNavigation}
+              disableFocusTrap={disableFocusTrap}
+              focusTabIndexElements={focusTabIndexElements}
+              onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
+              restoreFocusOnUnmount={restoreFocusOnUnmount}
             >
-              <FocusTrap
-                disableFocusTrap={disableFocusTrap}
-                focusTabIndexElements={focusTabIndexElements}
-                onEscPress={shouldCloseOnEscPress ? handleClose : undefined}
-                restoreFocusOnUnmount={restoreFocusOnUnmount}
+              <VStack
+                borderRadius={200}
+                className={cx(!dangerouslyDisableResponsiveness && modalDialogResponsiveCss)}
+                elevation={2}
+                overflow="hidden"
+                width="100%"
               >
-                <VStack
-                  borderRadius={200}
-                  className={cx(!dangerouslyDisableResponsiveness && modalDialogResponsiveCss)}
-                  elevation={2}
-                  overflow="hidden"
-                  width="100%"
-                >
-                  <ModalContext.Provider value={modalData}>
-                    {typeof children === 'function' ? children(renderChildrenProps) : children}
-                  </ModalContext.Provider>
-                </VStack>
-              </FocusTrap>
-            </MotionBox>
-          </ModalWrapper>
-        </OverlayContentContext.Provider>
-      );
-    },
-  ),
+                <ModalContext.Provider value={modalData}>
+                  {typeof children === 'function' ? children(renderChildrenProps) : children}
+                </ModalContext.Provider>
+              </VStack>
+            </FocusTrap>
+          </MotionBox>
+        </ModalWrapper>
+      </OverlayContentContext.Provider>
+    );
+  }),
 );

@@ -49,16 +49,18 @@ export const GradientArea = memo<GradientAreaProps>(
     gradient: gradientProp,
     peakOpacity = 0.3,
     baselineOpacity = 0,
-    baseline,
+    xAxisId,
     yAxisId,
     animate,
+    transitions,
     transition,
     ...pathProps
   }) => {
-    const { getYAxis } = useCartesianChartContext();
+    const { layout, getXAxis, getYAxis } = useCartesianChartContext();
     const theme = useTheme();
 
-    const yAxisConfig = getYAxis(yAxisId);
+    const valueAxisConfig = layout !== 'horizontal' ? getYAxis(yAxisId) : getXAxis(xAxisId);
+    const gradientAxis = layout !== 'horizontal' ? 'y' : 'x';
 
     const fill = useMemo(
       () => fillProp ?? theme.color.fgPrimary,
@@ -67,11 +69,18 @@ export const GradientArea = memo<GradientAreaProps>(
 
     const gradient = useMemo(() => {
       if (gradientProp) return gradientProp;
-      if (!yAxisConfig) return;
+      if (!valueAxisConfig) return;
 
-      const baselineValue = getBaseline(yAxisConfig.domain, baseline);
-      return createGradient(yAxisConfig.domain, baselineValue, fill, peakOpacity, baselineOpacity);
-    }, [gradientProp, yAxisConfig, fill, baseline, peakOpacity, baselineOpacity]);
+      const baselineValue = getBaseline(valueAxisConfig.domain, valueAxisConfig.baseline);
+      return createGradient(
+        valueAxisConfig.domain,
+        baselineValue,
+        fill,
+        peakOpacity,
+        baselineOpacity,
+        gradientAxis,
+      );
+    }, [gradientProp, valueAxisConfig, fill, peakOpacity, baselineOpacity, gradientAxis]);
 
     return (
       <Path
@@ -80,9 +89,18 @@ export const GradientArea = memo<GradientAreaProps>(
         fill={fill}
         fillOpacity={fillOpacity}
         transition={transition}
+        transitions={transitions}
         {...pathProps}
       >
-        {gradient && <Gradient gradient={gradient} yAxisId={yAxisId} />}
+        {gradient && (
+          <Gradient
+            animate={animate}
+            gradient={gradient}
+            transition={transitions?.update ?? transition}
+            xAxisId={xAxisId}
+            yAxisId={yAxisId}
+          />
+        )}
       </Path>
     );
   },

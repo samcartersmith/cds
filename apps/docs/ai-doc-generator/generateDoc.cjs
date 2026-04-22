@@ -69,6 +69,41 @@ const getMetadata = (dirPath, platform) => {
 };
 
 /**
+ * Check if a component supports multiple platforms
+ */
+const isMultiPlatform = (dirPath) => {
+  const hasWebMetadata = fs.existsSync(path.join(dirPath, 'webMetadata.json'));
+  const hasMobileMetadata = fs.existsSync(path.join(dirPath, 'mobileMetadata.json'));
+  return hasWebMetadata && hasMobileMetadata;
+};
+
+/**
+ * Generate the docs site URL for a component/guide
+ * @param {string} docPath - Path to the doc directory
+ * @param {string} platform - 'web' or 'mobile'
+ * @param {string} docsDir - Base docs directory
+ * @returns {string} - Full URL to the live docs
+ */
+const generateDocsUrl = (docPath, platform, docsDir) => {
+  const BASE_URL = 'https://cds.coinbase.com';
+  const relativePath = path.relative(docsDir, docPath);
+
+  // Remove .mdx extension if present (for standalone files) and convert to URL path
+  const urlPath = relativePath
+    .replace(/\.mdx$/, '')
+    .split(path.sep)
+    .join('/');
+  let url = `${BASE_URL}/${urlPath}/`;
+
+  // Add platform query param for mobile multi-platform docs
+  if (platform === 'mobile' && isMultiPlatform(docPath)) {
+    url += '?platform=mobile';
+  }
+
+  return url;
+};
+
+/**
  * Get props table content for components
  * @param {string} dirPath - Component directory
  * @param {string} platform - 'web' or 'mobile'
@@ -106,6 +141,45 @@ const getPropsTable = (dirPath, platform, docgenPath) => {
 };
 
 /**
+ * Get styles table content for components
+ * @param {string} dirPath - Component directory
+ * @param {string} platform - 'web' or 'mobile'
+ * @param {string} docgenPath - Path to docgen output
+ * @returns {string|null} - Styles table markdown or null
+ */
+const getStylesTable = (dirPath, platform, docgenPath) => {
+  const stylesFile = path.join(dirPath, `_${platform}Styles.mdx`);
+  if (!fs.existsSync(stylesFile)) {
+    return null;
+  }
+
+  try {
+    const stylesContent = fs.readFileSync(stylesFile, 'utf-8');
+    const matchResult = stylesContent.match(
+      new RegExp(`${platform}StylesData from ':docgen/(.*)'`),
+    );
+
+    if (!matchResult) {
+      return null;
+    }
+
+    const [, dirtyPath] = matchResult[0].split(':docgen/');
+    const cleanPath = dirtyPath.slice(0, -1);
+    const stylesDataFile = path.join(docgenPath, `${cleanPath}.js`);
+
+    if (!fs.existsSync(stylesDataFile)) {
+      return null;
+    }
+
+    const stylesData = require(stylesDataFile);
+    return generateStylesTableMarkdown(stylesData);
+  } catch (error) {
+    console.error(`Error reading styles table: ${error.message}`);
+    return null;
+  }
+};
+
+/**
  * Generate props table markdown from docgen data
  */
 const generatePropsTableMarkdown = (propsData, docgenPath) => {
@@ -119,6 +193,35 @@ const generatePropsTableMarkdown = (propsData, docgenPath) => {
     const descriptionStr = description || '-';
     const requiredStr = required ? 'Yes' : 'No';
     return [`\`${name}\``, `\`${typeStr}\``, requiredStr, `\`${defaultStr}\``, descriptionStr];
+  });
+
+  const escapeString = (str) =>
+    str.replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/\n/g, ' ');
+  const headerRow = `| ${headers.join(' | ')} |\n`;
+  const separatorRow = `| ${headers.map(() => '---').join(' | ')} |\n`;
+  const dataRows = rows
+    .map((row) => `| ${row.map((v) => escapeString(v)).join(' | ')} |\n`)
+    .join('');
+
+  return `${headerRow}${separatorRow}${dataRows}`;
+};
+
+/**
+ * Generate styles table markdown from docgen data
+ */
+const generateStylesTableMarkdown = (stylesData) => {
+  const selectors = stylesData?.selectors || [];
+
+  if (selectors.length === 0) {
+    return null;
+  }
+
+  const headers = ['Selector', 'Static class name', 'Description'];
+  const rows = selectors.map((selector) => {
+    const { selector: name = '', className = '', description = '' } = selector;
+    const classNameStr = className || '-';
+    const descriptionStr = description || '-';
+    return [`\`${name}\``, classNameStr ? `\`${classNameStr}\`` : '-', descriptionStr];
   });
 
   const escapeString = (str) =>
@@ -165,7 +268,12 @@ const generateDoc = (platform, docPath, options = {}) => {
 
   // Handle standalone files (e.g., introduction.mdx, playground.mdx)
   if (!fs.statSync(docPath).isDirectory()) {
-    return fs.readFileSync(docPath, 'utf-8');
+    const docsDir = path.resolve(__dirname, '../docs');
+    const content = fs.readFileSync(docPath, 'utf-8');
+    const docsUrl = generateDocsUrl(docPath, platform, docsDir);
+
+    // Add live docs URL at the top
+    return `**📖 Live documentation:** ${docsUrl}\n\n${content}`;
   }
 
   // For directories, check what type of doc this is by what files exist
@@ -177,8 +285,15 @@ const generateDoc = (platform, docPath, options = {}) => {
     return null;
   }
 
+  // Get the docs directory for URL generation
+  const docsDir = path.resolve(__dirname, '../docs');
+
   // Build the document sections
   let content = `# ${name}\n\n`;
+
+  // Add live docs URL
+  const docsUrl = generateDocsUrl(docPath, platform, docsDir);
+  content += `**📖 Live documentation:** ${docsUrl}\n\n`;
 
   if (metadata.description) {
     content += `${metadata.description}\n\n`;
@@ -213,6 +328,12 @@ const generateDoc = (platform, docPath, options = {}) => {
     const propsTable = getPropsTable(docPath, platform, docgenPath);
     if (propsTable) {
       content += `## Props\n\n${propsTable}\n\n`;
+    }
+
+    // Try to find and add styles table (for components with style selectors)
+    const stylesTable = getStylesTable(docPath, platform, docgenPath);
+    if (stylesTable) {
+      content += `## Styles\n\n${stylesTable}\n\n`;
     }
   }
 

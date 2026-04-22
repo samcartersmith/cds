@@ -3,6 +3,10 @@ import type React from 'react';
 import type { View } from 'react-native';
 import { type Coords, type Placement } from '@floating-ui/react-dom';
 
+/**
+ * @deprecated Import from `@coinbase/cds-web` or `@coinbase/cds-mobile` instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
+ */
 export type TourStepArrowComponentProps = {
   /* The `@floating-ui` `arrow` coordinates and offsets https://floating-ui.com/docs/arrow#data */
   arrow?: Partial<Coords> & {
@@ -15,7 +19,8 @@ export type TourStepArrowComponentProps = {
 };
 
 /**
- * The TourStepArrowComponent must forwardRef onto the underlying element for `@floating-ui` to correctly position the element.
+ * @deprecated Import from `@coinbase/cds-web` or `@coinbase/cds-mobile` instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
  */
 export type TourStepArrowComponent = React.ForwardRefExoticComponent<
   TourStepArrowComponentProps & { ref?: React.Ref<any> }
@@ -23,20 +28,17 @@ export type TourStepArrowComponent = React.ForwardRefExoticComponent<
 
 export type TourStepComponent = React.FC<Omit<TourStepValue, 'Component'>>;
 
-/**
- * Web only.
- */
 export type TourScrollOptions = {
   behavior?: ScrollBehavior;
   marginX?: number;
   marginY?: number;
 };
 
-export type TourStepValue<T extends string = string> = {
+export type TourStepValue<TourStepId extends string = string> = {
   /**
    * The tour step id.
    */
-  id: T;
+  id: TourStepId;
   /**
    * The Component to render for this tour step.
    */
@@ -78,7 +80,9 @@ export type TourStepValue<T extends string = string> = {
    */
   tourMaskBorderRadius?: string | number;
   /**
-   * Add styles to the TourStepArrowComponent for this tour step.
+   * Add styles to the TourStepArrowComponent for this tour step. Use `styles.arrow` instead.
+   * @deprecated Use Tour's `styles.stepArrow` prop instead. This will be removed in a future major release.
+   * @deprecationExpectedRemoval v10
    */
   arrowStyle?: Record<string, string | number>;
   /**
@@ -91,24 +95,27 @@ export type TourStepValue<T extends string = string> = {
   scrollOptions?: TourScrollOptions;
 };
 
-export type TourOptions<T extends string = string> = {
+export type TourOptions<TourStepId extends string = string> = {
   /* The array of tour steps data.  */
-  steps: TourStepValue<T>[];
+  steps: TourStepValue<TourStepId>[];
   /* The value of the currently active tour step. */
-  activeTourStep: TourStepValue<T> | null;
+  activeTourStep: TourStepValue<TourStepId> | null;
   /* Set the value of the currently active tour step. */
-  onChange: (tourStep: TourStepValue<T> | null) => void;
+  onChange: (tourStep: TourStepValue<TourStepId> | null) => void;
 };
 
-export type TourApi<T extends string = string> = Omit<TourOptions<T>, 'onChange'> & {
+export type TourApi<TourStepId extends string = string> = Omit<
+  TourOptions<TourStepId>,
+  'onChange'
+> & {
   /* The target element of the currently active tour step. */
   activeTourStepTarget: HTMLElement | View | null;
   /* Set the target element of the currently active tour step. */
   setActiveTourStepTarget: (target: HTMLElement | View | null) => void;
   /* Jumps to a specified step of the tour. */
-  setActiveTourStep: (tourStepId: T | null) => void;
+  setActiveTourStep: (tourStepId: TourStepId | null) => void;
   /* Starts the tour; can optionally start at a specified step ID. */
-  startTour: (tourStepId?: T) => void;
+  startTour: (tourStepId?: TourStepId) => void;
   /* Stops the tour. */
   stopTour: () => void;
   /* Moves to the next step in the tour. */
@@ -117,15 +124,18 @@ export type TourApi<T extends string = string> = Omit<TourOptions<T>, 'onChange'
   goPreviousTourStep: () => void;
 };
 
-/** A controlled hook for managing tour state, such as the currently active tour step. */
-export const useTour = <T extends string = string>({
+/**
+ * A controlled hook for managing tour state, such as the currently active tour step.
+ * @see {@link https://linear.app/coinbase/issue/CDS-1878 CDS-1878} for planned refactor to make this API platform agnostic.
+ */
+export const useTour = <TourStepId extends string = string>({
   steps,
   activeTourStep,
   onChange,
-}: TourOptions<T>): TourApi<T> => {
+}: TourOptions<TourStepId>): TourApi<TourStepId> => {
   const [activeTourStepTarget, setActiveTourStepTarget] = useState<HTMLElement | View | null>(null);
   const startTour = useCallback(
-    async (tourStepId?: T | null) => {
+    async (tourStepId?: TourStepId | null) => {
       if (typeof tourStepId === 'undefined') return onChange(steps[0]);
       let newActiveTourStep = null;
       if (typeof tourStepId === 'string') {
@@ -145,7 +155,7 @@ export const useTour = <T extends string = string>({
   );
 
   const setActiveTourStep = useCallback(
-    async (tourStepId: T | null) => startTour(tourStepId),
+    async (tourStepId: TourStepId | null) => startTour(tourStepId),
     [startTour],
   );
 
@@ -158,7 +168,8 @@ export const useTour = <T extends string = string>({
 
   const goNextTourStep = useCallback(async () => {
     // If no active step, or active step is the last step, or there are 0 - 1 steps, do nothing
-    if (!activeTourStep || activeTourStep.id === steps.at(-1)?.id || steps.length < 2) return;
+    if (!activeTourStep || activeTourStep.id === steps[steps.length - 1]?.id || steps.length < 2)
+      return;
     const activeStepIndex = steps.findIndex((step) => step.id === activeTourStep.id);
     // Find next step that isn't disabled
     for (let i = activeStepIndex + 1; i < steps.length; i++) {

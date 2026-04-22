@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useRef } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { NativeInput } from '../../controls/NativeInput';
 import { HStack } from '../../layout';
@@ -25,8 +25,11 @@ export const DefaultComboboxControl = memo(
     open,
     setOpen,
     compact,
+    align,
     searchText,
     onSearch,
+    font = 'body',
+    accessibilityLabel,
     ...props
   }: ComboboxControlProps<Type, SelectOptionValue>) => {
     const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -54,12 +57,24 @@ export const DefaultComboboxControl = memo(
       [setOpen],
     );
 
+    const computedAccessibilityLabel = useMemo(() => {
+      let label = accessibilityLabel;
+      if (!hasValue && typeof placeholder === 'string') {
+        label = `${label}, ${placeholder}`;
+      }
+      return label;
+    }, [hasValue, accessibilityLabel, placeholder]);
+
     return (
       <SelectControlComponent
         ref={controlRef.current?.refs.setReference}
+        accessibilityLabel={computedAccessibilityLabel}
+        align={align}
         compact={compact}
+        font={font}
         open={open}
         options={options}
+        role="combobox"
         setOpen={setOpen}
         value={value}
         {...props}
@@ -68,6 +83,7 @@ export const DefaultComboboxControl = memo(
             <HStack flexGrow={1} flexWrap="wrap" width="100%">
               <NativeInput
                 ref={searchInputRef}
+                font={font}
                 onChange={handleSearchChange}
                 onClick={handleSearchClick}
                 onKeyDown={(event) => {
@@ -83,15 +99,15 @@ export const DefaultComboboxControl = memo(
                 }}
                 placeholder={typeof placeholder === 'string' ? placeholder : undefined}
                 style={{
-                  paddingLeft: 0,
-                  paddingRight: 0,
-                  height: hasValue ? 24 : compact ? 40 : 48,
+                  padding: 0,
+                  height: !hasValue ? (compact ? 40 : 48) : undefined,
                   minWidth: 0,
                   flexGrow: 1,
                   width: '100%',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   whiteSpace: 'nowrap',
+                  textAlign: align,
                 }}
                 tabIndex={0}
                 value={searchText}
@@ -104,9 +120,10 @@ export const DefaultComboboxControl = memo(
                   as="p"
                   color="fgMuted"
                   display="block"
-                  font="body"
+                  font={font}
                   overflow="truncate"
                   paddingY={0}
+                  textAlign={align}
                 >
                   {placeholder}
                 </Text>
@@ -114,7 +131,6 @@ export const DefaultComboboxControl = memo(
             </>
           )
         }
-        placeholder={null}
         styles={{
           ...props.styles,
           controlEndNode: {

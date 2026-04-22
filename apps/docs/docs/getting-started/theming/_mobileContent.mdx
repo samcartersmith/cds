@@ -318,7 +318,7 @@ You can extend the theme by adding custom theme variables. In this example we'll
 
 Start by overriding interfaces in the `ThemeVarsExtended` namespace to add new theme variables. Only the key names are used, the `void` type is just a necessary placeholder.
 
-```jsx
+```tsx
 declare module '@coinbase/cds-common/core/theme' {
   export namespace ThemeVarsExtended {
     export interface Color {
@@ -331,6 +331,107 @@ declare module '@coinbase/cds-common/core/theme' {
 This adds `myCustomColor` to `ThemeVars.Color` - which enforces that this variable must be defined in your theme to satisfy the `ThemeConfig` type, and allows this variable name to be passed to the `StyleProps` API anywhere that theme colors are accepted.
 
 Now that `myCustomColor` is defined in your theme the `useTheme` hook will include it in the return value.
+
+</MDXArticle>
+</MDXSection>
+
+<MDXSection>
+<MDXArticle>
+## ComponentConfigProvider component
+
+`ComponentConfigProvider` lets you set component-level default BaseProps for all matching component instances in its subtree. It should be used sparingly and you should avoid frequent updates.
+
+This is **not recommended for most use cases**. In most cases, passing props directly to components is clearer and more efficient.
+
+Also, it is not recommended to nest `ComponentConfigProvider`. If you nest `ComponentConfigProvider`, it will not inherit the parent provider's config. It will only use its own config.
+
+Use `ComponentConfigProvider` when you need to set defaults across many instances of a component (for example, changing the default `borderRadius` of all `Button` components) and you do not want to change theme tokens.
+
+```tsx
+import { Button } from '@coinbase/cds-mobile/buttons/Button';
+import { ComponentConfigProvider } from '@coinbase/cds-mobile/system/ComponentConfigProvider';
+
+const App = () => (
+  <ComponentConfigProvider value={{ Button: { borderRadius: 200 } }}>
+    <Button>Primary action</Button>
+    <Button variant="secondary">Secondary action</Button>
+  </ComponentConfigProvider>
+);
+```
+
+Property values being set for an individual component instance will override the default values set on the provider.
+
+```tsx
+<VStack gap={4}>
+  <ComponentConfigProvider value={{ Button: { borderRadius: 200 } }}>
+    <VStack gap={2}>
+      <Text font="label1">ComponentConfigProvider with custom default borderRadius</Text>
+      <HStack gap={2}>
+        <Button>Default button</Button>
+        <Button variant="secondary" borderRadius={0}>
+          Square button
+        </Button>
+      </HStack>
+    </VStack>
+  </ComponentConfigProvider>
+  <VStack gap={2}>
+    <Text font="label1">Default Button</Text>
+    <HStack gap={2}>
+      <Button>Default button</Button>
+      <Button variant="secondary" borderRadius={0}>
+        Square button
+      </Button>
+    </HStack>
+  </VStack>
+</VStack>
+```
+
+### Function-based defaults
+
+`ComponentConfigProvider` can also accept a function to compute defaults from incoming component props.
+
+When using function-based defaults, keep both the resolver and provider `value` stable with `useCallback` and `useMemo` to reduce avoidable work during rerenders.
+
+```tsx
+import { useCallback, useMemo } from 'react';
+import type { ComponentConfig } from '@coinbase/cds-mobile/core/componentConfig';
+import { Button } from '@coinbase/cds-mobile/buttons/Button';
+import { ComponentConfigProvider } from '@coinbase/cds-mobile/system/ComponentConfigProvider';
+
+const compactButtonDefaults = {
+  borderRadius: 200,
+  height: 24,
+  font: 'label1',
+} as const;
+
+const regularButtonDefaults = {
+  borderRadius: 200,
+  height: 32,
+  font: 'headline',
+} as const;
+
+const App = () => {
+  const buttonConfig = useCallback(
+    (props: { compact?: boolean }) =>
+      props.compact ? compactButtonDefaults : regularButtonDefaults,
+    [],
+  );
+
+  const componentConfig = useMemo<ComponentConfig>(
+    () => ({
+      Button: buttonConfig,
+    }),
+    [buttonConfig],
+  );
+
+  return (
+    <ComponentConfigProvider value={componentConfig}>
+      <Button>Default</Button>
+      <Button compact>Compact</Button>
+    </ComponentConfigProvider>
+  );
+};
+```
 
 </MDXArticle>
 </MDXSection>

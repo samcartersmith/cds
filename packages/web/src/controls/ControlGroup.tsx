@@ -4,7 +4,8 @@ import { isDevelopment } from '@coinbase/cds-utils';
 import { css } from '@linaria/core';
 
 import { cx } from '../cx';
-import { Box, type BoxProps } from '../layout';
+import { useComponentConfig } from '../hooks/useComponentConfig';
+import { Box, type BoxBaseProps, type BoxProps } from '../layout';
 import { Text } from '../typography';
 
 // Styles for container reset
@@ -17,19 +18,19 @@ const containerCss = css`
 
 export type ControlGroupOption<P> = Omit<P, 'onChange' | 'checked' | 'value'>;
 
-export type ControlGroupProps<T extends string, P extends { value?: T }> = Omit<
-  BoxProps<'div'>,
-  'children' | 'onChange' | 'as'
-> &
+export type ControlGroupBaseProps<
+  ControlValue extends string = string,
+  ControlComponentProps extends { value?: ControlValue } = { value?: ControlValue },
+> = Omit<BoxBaseProps, 'children' | 'onChange'> &
   SharedProps & {
     /** The control component to render for each option. */
-    ControlComponent: React.ComponentType<P>;
+    ControlComponent: React.ComponentType<ControlComponentProps>;
     /** Control options for the group. */
-    options: (ControlGroupOption<P> & { value: T })[];
+    options: (ControlGroupOption<ControlComponentProps> & { value: ControlValue })[];
     /** Set a label for the group. */
     label?: React.ReactNode;
     /** Current selected value(s). Use a string for single-select (e.g., RadioGroup) and an array of strings for multi-select (e.g., CheckboxGroup). */
-    value: T | T[];
+    value: ControlValue | ControlValue[];
     /** Handle change events. */
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     /** The role for the group. Use 'radiogroup' for radio buttons, 'group' for other controls. */
@@ -40,11 +41,21 @@ export type ControlGroupProps<T extends string, P extends { value?: T }> = Omit<
     name?: string;
   };
 
+export type ControlGroupProps<
+  ControlValue extends string,
+  ControlComponentProps extends { value?: ControlValue },
+> = ControlGroupBaseProps<ControlValue, ControlComponentProps> &
+  Omit<BoxProps<'div'>, 'children' | 'onChange' | 'as'>;
+
 const ControlGroupWithRef = forwardRef(function ControlGroup<
-  T extends string,
-  P extends { value?: T },
+  ControlValue extends string,
+  ControlComponentProps extends { value?: ControlValue },
 >(
-  {
+  _props: ControlGroupProps<ControlValue, ControlComponentProps>,
+  ref: React.ForwardedRef<HTMLDivElement>,
+) {
+  const mergedProps = useComponentConfig('ControlGroup', _props);
+  const {
     ControlComponent: ControlComponent,
     options,
     label,
@@ -57,9 +68,7 @@ const ControlGroupWithRef = forwardRef(function ControlGroup<
     name,
     role = 'group',
     ...restProps
-  }: ControlGroupProps<T, P>,
-  ref: React.ForwardedRef<HTMLDivElement>,
-) {
+  } = mergedProps;
   const generatedId = useId();
   const labelId = `${generatedId}-label`;
 
@@ -107,14 +116,14 @@ const ControlGroupWithRef = forwardRef(function ControlGroup<
             onChange={onChange}
             testID={testID ? `${testID}-${optionValue}` : undefined}
             value={optionValue}
-            {...(optionProps as P)}
+            {...(optionProps as ControlComponentProps)}
           />
         );
       })}
     </Box>
   );
-}) as <T extends string, P extends { value?: T }>(
-  props: ControlGroupProps<T, P> & {
+}) as <ControlValue extends string, ControlComponentProps extends { value?: ControlValue }>(
+  props: ControlGroupProps<ControlValue, ControlComponentProps> & {
     ref?: React.Ref<HTMLDivElement>;
   },
 ) => React.ReactElement;

@@ -11,12 +11,11 @@ import type { ThemeVars } from '@coinbase/cds-common/core/theme';
 import { useMergeRefs } from '@coinbase/cds-common/hooks/useMergeRefs';
 import { usePrefixedId } from '@coinbase/cds-common/hooks/usePrefixedId';
 import type { InputVariant, SharedInputProps } from '@coinbase/cds-common/types/InputBaseProps';
-import type { SharedAccessibilityProps } from '@coinbase/cds-common/types/SharedAccessibilityProps';
-import type { SharedProps } from '@coinbase/cds-common/types/SharedProps';
-import type { TextAlignProps } from '@coinbase/cds-common/types/TextBaseProps';
 import { css } from '@linaria/core';
 
 import { cx } from '../cx';
+import { useComponentConfig } from '../hooks/useComponentConfig';
+import { Box } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { Text } from '../typography/Text';
 
@@ -25,7 +24,7 @@ import { HelperText } from './HelperText';
 import { InputLabel } from './InputLabel';
 import type { InputStackBaseProps } from './InputStack';
 import { InputStack } from './InputStack';
-import { NativeInput } from './NativeInput';
+import { NativeInput, type NativeInputBaseProps, type NativeInputProps } from './NativeInput';
 
 /**
  * In normal circumstances, padding horizontal should be 2 (16px).
@@ -69,62 +68,7 @@ const insideLabelCssStartCss = css`
   padding-inline-start: var(--space-0_5);
 `;
 
-export type TextInputBaseProps = {
-  /**
-   * Callback fired when pressed/clicked
-   */
-  onClick?: React.MouseEventHandler;
-  /**
-   * Customize the element which the input area will be rendered as. Adds ability to render the input area
-   * as a `<textarea />`, `<input />` etc...
-   * By default, the input area will be rendered as an `<input />`.
-   * @danger Use this at your own risk, and don't use unless ABSOLUTELY NECESSARY. You may see weird UI when focusing etc..
-   * Our default input handles all of the UI/Accessibility needs for your out of the box, but inputNode will not include
-   * those.
-   * */
-  inputNode?: React.ReactElement;
-  /**
-   * Adds border to input
-   * @default true
-   */
-  bordered?: boolean;
-  /**
-   * Aligns text inside input and helperText
-   * @default start
-   */
-  align?: TextAlignProps['align'];
-  /**
-   * Adds suffix text to the end of input
-   */
-  suffix?: string;
-  /** Adds content to the start of the inner input. Refer to diagram for location of startNode in InputStack component */
-  start?: React.ReactNode;
-  /** Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component */
-  end?: React.ReactNode;
-  /**
-   * Add ability to test individual parts of the input
-   */
-  testIDMap?: {
-    start?: string;
-    end?: string;
-    label?: string;
-    helperText?: string;
-  };
-  /**
-   * Accessibility label for helper text error icon when variant='negative'
-   * @default 'error'
-   */
-  helperTextErrorIconAccessibilityLabel?: string;
-  /**
-   * React node to render label. Takes precedence over `label`.
-   * @note if both labelNode and label are provided, label will still be used as accessibility label for the input if no accessibilityLabel is provided.
-   */
-  labelNode?: React.ReactNode;
-} & SharedProps &
-  Pick<
-    SharedAccessibilityProps,
-    'accessibilityLabel' | 'accessibilityLabelledBy' | 'accessibilityHint'
-  > &
+export type TextInputBaseProps = NativeInputBaseProps &
   SharedInputProps &
   Pick<
     InputStackBaseProps,
@@ -136,10 +80,57 @@ export type TextInputBaseProps = {
     | 'enableColorSurge'
     | 'labelVariant'
     | 'inputBackground'
-  > &
-  Omit<React.InputHTMLAttributes<HTMLInputElement>, 'width' | 'className'>;
+  > & {
+    /**
+     * Customize the element which the input area will be rendered as. Adds ability to render the input area
+     * as a `<textarea />`, `<input />` etc...
+     * By default, the input area will be rendered as an `<input />`.
+     * @danger Use this at your own risk, and don't use unless ABSOLUTELY NECESSARY. You may see weird UI when focusing etc..
+     * Our default input handles all of the UI/Accessibility needs for your out of the box, but inputNode will not include
+     * those.
+     * */
+    inputNode?: React.ReactElement;
+    /**
+     * Adds border to input.
+     * When set to `false`, focus border styling is disabled by default.
+     * @default true
+     */
+    bordered?: boolean;
+    /**
+     * Additional border width when focused.
+     * Set this when `bordered={false}` to opt into a focus border style.
+     */
+    focusedBorderWidth?: InputStackBaseProps['focusedBorderWidth'];
+    /**
+     * Adds suffix text to the end of input
+     */
+    suffix?: string;
+    /** Adds content to the start of the inner input. Refer to diagram for location of startNode in InputStack component */
+    start?: React.ReactNode;
+    /** Adds content to the end of the inner input. Refer to diagram for location of endNode in InputStack component */
+    end?: React.ReactNode;
+    /**
+     * Add ability to test individual parts of the input
+     */
+    testIDMap?: {
+      start?: string;
+      end?: string;
+      label?: string;
+      helperText?: string;
+    };
+    /**
+     * Accessibility label for helper text error icon when variant='negative'
+     * @default 'error'
+     */
+    helperTextErrorIconAccessibilityLabel?: string;
+    /**
+     * React node to render label. Takes precedence over `label`.
+     * @note if both labelNode and label are provided, label will still be used as accessibility label for the input if no accessibilityLabel is provided.
+     */
+    labelNode?: React.ReactNode;
+  };
 
-export type TextInputProps = TextInputBaseProps;
+export type TextInputProps = TextInputBaseProps & NativeInputProps;
 
 const useInputVariant = (focused: boolean, variant: InputVariant) => {
   return useMemo(
@@ -158,8 +149,9 @@ const variantColorMap: Record<InputVariant, ThemeVars.Color> = {
 };
 
 export const TextInput = memo(
-  forwardRef(function TextInput(
-    {
+  forwardRef(function TextInput(_props: TextInputProps, ref: React.ForwardedRef<HTMLInputElement>) {
+    const mergedProps = useComponentConfig('TextInput', _props);
+    const {
       label,
       accessibilityLabel,
       helperText = '',
@@ -171,6 +163,7 @@ export const TextInput = memo(
       width = '100%',
       disabled = false,
       align = 'start',
+      font = 'body',
       compact = false,
       suffix = '',
       onFocus,
@@ -179,15 +172,14 @@ export const TextInput = memo(
       height,
       inputNode,
       bordered = true,
+      focusedBorderWidth,
       enableColorSurge = false,
       helperTextErrorIconAccessibilityLabel = 'error',
       labelVariant = 'outside',
       labelNode,
       inputBackground,
-      ...htmlInputElmProps
-    }: TextInputProps,
-    ref: React.ForwardedRef<HTMLInputElement>,
-  ) {
+      ...nativeInputRestProps
+    } = mergedProps;
     const [focused, setFocused] = useState(false);
     const focusedVariant = useInputVariant(focused, variant);
     const internalRef = useRef<HTMLInputElement>();
@@ -202,20 +194,28 @@ export const TextInput = memo(
       'cds-textinput-label',
     ]);
 
+    // Native browser behavior adjusts the value of numeric inputs when the user is focused on the input
+    // and scrolls the page. This prevents that behavior so accidental values changes don't occur.
+    const preventWheelScroll = useCallback((event: WheelEvent) => {
+      event.preventDefault();
+    }, []);
+
     const handleOnFocus = useCallback(
       (e: React.FocusEvent<HTMLInputElement>) => {
         setFocused(true);
         onFocus?.(e);
+        internalRef.current?.addEventListener('wheel', preventWheelScroll);
       },
-      [onFocus],
+      [onFocus, internalRef, preventWheelScroll],
     );
 
     const handleOnBlur = useCallback(
       (e: React.FocusEvent<HTMLInputElement>) => {
         onBlur?.(e);
         setFocused(false);
+        internalRef.current?.removeEventListener('wheel', preventWheelScroll);
       },
-      [onBlur],
+      [onBlur, preventWheelScroll],
     );
 
     const handleNodePress = useCallback(() => {
@@ -225,11 +225,13 @@ export const TextInput = memo(
 
     // Define a distinct read-only style to differentiate it from the disabled style.
     const readOnlyInputBackground = useMemo(() => {
-      if (!disabled && htmlInputElmProps.readOnly) {
+      if (!disabled && nativeInputRestProps.readOnly) {
         return 'bgSecondary';
       }
       return undefined;
-    }, [disabled, htmlInputElmProps.readOnly]);
+    }, [disabled, nativeInputRestProps.readOnly]);
+
+    const hasLabel = useMemo(() => !!label || !!labelNode, [label, labelNode]);
 
     const inputElement = useMemo(() => {
       /** Ensures that the renderedInput has the blurring, focusing, disabled features */
@@ -258,14 +260,15 @@ export const TextInput = memo(
           compact={compact}
           containerSpacing={nativeInputContainerCss}
           data-compact={compact}
-          data-labelvariant={compact || !label ? 'outside' : labelVariant}
+          data-labelvariant={compact || !hasLabel ? 'outside' : labelVariant}
           data-start={!!start || compact}
           disabled={disabled}
+          font={font}
           id={shouldSetLabelId ? labelId : undefined}
           onBlur={handleOnBlur}
           onFocus={handleOnFocus}
           testID={testID}
-          {...htmlInputElmProps}
+          {...nativeInputRestProps}
         />
       );
     }, [
@@ -275,7 +278,9 @@ export const TextInput = memo(
       helperTextId,
       accessibilityLabel,
       label,
+      hasLabel,
       align,
+      font,
       variant,
       compact,
       labelVariant,
@@ -286,7 +291,7 @@ export const TextInput = memo(
       handleOnBlur,
       handleOnFocus,
       testID,
-      htmlInputElmProps,
+      nativeInputRestProps,
     ]);
 
     return (
@@ -294,9 +299,7 @@ export const TextInput = memo(
         <InputStack
           borderRadius={borderRadius}
           borderWidth={bordered ? 100 : 0}
-          // If bordered is true, we want disableFocusedStyle = false
-          // If bordered is false, we want disableFocusedStyle = true
-          disableFocusedStyle={!bordered}
+          disableFocusedStyle={!bordered && typeof focusedBorderWidth === 'undefined'}
           disabled={disabled}
           enableColorSurge={enableColorSurge}
           endNode={
@@ -319,6 +322,7 @@ export const TextInput = memo(
             )
           }
           focused={focused}
+          focusedBorderWidth={focusedBorderWidth}
           height={height}
           helperTextNode={
             !!helperText &&
@@ -342,21 +346,34 @@ export const TextInput = memo(
           inputNode={inputElement}
           labelNode={
             !compact &&
-            (labelNode
-              ? labelNode
-              : !!label && (
-                  <InputLabel
-                    background={labelVariant === 'inside' ? readOnlyInputBackground : undefined}
-                    className={cx(
-                      labelVariant === 'inside' && insideLabelCss,
-                      labelVariant === 'inside' && !!start && insideLabelCssStartCss,
-                    )}
-                    htmlFor={shouldSetLabelId ? labelId : undefined}
-                    testID={testIDMap?.label ?? ''}
-                  >
-                    {label}
-                  </InputLabel>
-                ))
+            (labelNode ? (
+              labelVariant === 'inside' ? (
+                <Box
+                  background={readOnlyInputBackground}
+                  paddingEnd={2}
+                  paddingStart={start ? 0.5 : 2}
+                  paddingTop={1}
+                >
+                  {labelNode}
+                </Box>
+              ) : (
+                labelNode
+              )
+            ) : (
+              !!label && (
+                <InputLabel
+                  background={labelVariant === 'inside' ? readOnlyInputBackground : undefined}
+                  className={cx(
+                    labelVariant === 'inside' && insideLabelCss,
+                    labelVariant === 'inside' && !!start && insideLabelCssStartCss,
+                  )}
+                  htmlFor={shouldSetLabelId ? labelId : undefined}
+                  testID={testIDMap?.label ?? ''}
+                >
+                  {label}
+                </InputLabel>
+              )
+            ))
           }
           labelVariant={labelVariant}
           startNode={
@@ -367,13 +384,17 @@ export const TextInput = memo(
                 gap={2}
                 justifyContent="center"
                 onClick={handleNodePress}
+                paddingStart={compact && hasLabel ? 2 : undefined}
                 testID={testIDMap?.start ?? ''}
               >
-                {compact && !!label && (
-                  <InputLabel htmlFor={shouldSetLabelId ? labelId : undefined} paddingStart={2}>
-                    {label}
-                  </InputLabel>
-                )}
+                {compact &&
+                  (labelNode
+                    ? labelNode
+                    : !!label && (
+                        <InputLabel htmlFor={shouldSetLabelId ? labelId : undefined}>
+                          {label}
+                        </InputLabel>
+                      ))}
                 {!!start && <>{start}</>}
               </HStack>
             )

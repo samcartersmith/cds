@@ -3,32 +3,43 @@ import type { View } from 'react-native';
 import type { SharedProps } from '@coinbase/cds-common';
 import { isDevelopment } from '@coinbase/cds-utils';
 
-import { Group, type GroupProps } from '../layout';
+import { useComponentConfig } from '../hooks/useComponentConfig';
+import { type BoxBaseProps, Group, type GroupBaseProps, type GroupProps } from '../layout';
 
-export type ControlGroupOption<P> = Omit<P, 'onChange' | 'checked' | 'value'>;
+export type ControlGroupOption<ControlComponentProps> = Omit<
+  ControlComponentProps,
+  'onChange' | 'checked' | 'value'
+>;
 
-export type ControlGroupProps<T extends string, P extends { value?: T }> = Omit<
-  GroupProps,
-  'children' | 'onChange'
-> &
+export type ControlGroupBaseProps<
+  ControlValue extends string = string,
+  ControlComponentProps extends { value?: ControlValue } = { value?: ControlValue },
+> = Omit<GroupBaseProps<BoxBaseProps>, 'children' | 'onChange'> &
   SharedProps & {
     /** The control component to render for each option. */
-    ControlComponent: React.ComponentType<P>;
+    ControlComponent: React.ComponentType<ControlComponentProps>;
     /** Control options for the group. */
-    options: (ControlGroupOption<P> & { value: T })[];
+    options: (ControlGroupOption<ControlComponentProps> & { value: ControlValue })[];
     /** Set a label for the group. */
     label?: React.ReactNode;
     /** Current selected value(s). Use a string for single-select (e.g., RadioGroup) and an array of strings for multi-select (e.g., CheckboxGroup). */
-    value: T | T[];
+    value: ControlValue | ControlValue[];
     /** Handle change events. */
-    onChange?: (value: T | undefined, checked?: boolean) => void;
+    onChange?: (value: ControlValue | undefined, checked?: boolean) => void;
   };
 
+export type ControlGroupProps<
+  ControlValue extends string,
+  ControlComponentProps extends { value?: ControlValue },
+> = ControlGroupBaseProps<ControlValue, ControlComponentProps> &
+  Omit<GroupProps, 'children' | 'onChange'>;
+
 const ControlGroupWithRef = forwardRef(function ControlGroup<
-  T extends string,
-  P extends { value?: T },
->(
-  {
+  ControlValue extends string,
+  ControlComponentProps extends { value?: ControlValue },
+>(_props: ControlGroupProps<ControlValue, ControlComponentProps>, ref: React.ForwardedRef<View>) {
+  const mergedProps = useComponentConfig('ControlGroup', _props);
+  const {
     ControlComponent,
     options,
     label,
@@ -40,9 +51,7 @@ const ControlGroupWithRef = forwardRef(function ControlGroup<
     gap = 2,
     role = 'group',
     ...restProps
-  }: ControlGroupProps<T, P>,
-  ref: React.ForwardedRef<View>,
-) {
+  } = mergedProps;
   if (isDevelopment() && !label && !ariaLabelledby && !ariaLabel) {
     console.warn('Please specify a label or aria-labelledby for the ControlGroup.');
   }
@@ -71,14 +80,17 @@ const ControlGroupWithRef = forwardRef(function ControlGroup<
             onChange={onChange}
             testID={testID ? `${testID}-${optionValue}` : undefined}
             value={optionValue}
-            {...(optionProps as P)}
+            {...(optionProps as ControlComponentProps)}
           />
         );
       })}
     </Group>
   );
-}) as unknown as <T extends string, P extends { value?: T }>(
-  props: ControlGroupProps<T, P> & { ref?: React.Ref<View> },
+}) as unknown as <
+  ControlValue extends string,
+  ControlComponentProps extends { value?: ControlValue },
+>(
+  props: ControlGroupProps<ControlValue, ControlComponentProps> & { ref?: React.Ref<View> },
 ) => React.ReactElement;
 
 export const ControlGroup = memo(ControlGroupWithRef) as typeof ControlGroupWithRef &

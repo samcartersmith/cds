@@ -9,9 +9,9 @@ import {
   isValidBounds,
   type Series,
 } from './chart';
+import type { CartesianChartLayout } from './context';
 import { getPointOnScale } from './point';
 import {
-  type CategoricalScale,
   type ChartAxisScaleType,
   type ChartScaleFunction,
   getCategoricalScale,
@@ -71,7 +71,8 @@ export type AxisConfig = {
    */
   range: AxisBounds;
   /**
-   * Data for the axis
+   * Data for the axis.
+   * @note only used by the category axis.
    */
   data?: string[] | number[];
   /**
@@ -88,10 +89,22 @@ export type AxisConfig = {
   domainLimit: 'nice' | 'strict';
 };
 
+export type CartesianAxisConfig = AxisConfig & {
+  /**
+   * Baseline value used as the origin for numeric series on this axis.
+   * Only applies when this axis is the value axis for the current chart layout.
+   * - Non-stacked numeric series render from `[baseline, value]`.
+   * - Multi-series stacks are normalized around this baseline before stacking.
+   *
+   * @default 0 for value axes, undefined for category axes
+   */
+  baseline?: number;
+};
+
 /**
  * Axis configuration without computed bounds (used for input)
  */
-export type AxisConfigProps = Omit<AxisConfig, 'domain' | 'range'> & {
+export type CartesianAxisConfigProps = Omit<CartesianAxisConfig, 'domain' | 'range'> & {
   /**
    * Unique identifier for this axis.
    */
@@ -120,6 +133,36 @@ export type AxisConfigProps = Omit<AxisConfig, 'domain' | 'range'> & {
   range?: Partial<AxisBounds> | ((bounds: AxisBounds) => AxisBounds);
 };
 
+const includeBaselineInBounds = (bounds: AxisBounds, baseline: number): AxisBounds => {
+  if (baseline < bounds.min) return { ...bounds, min: baseline };
+  if (baseline > bounds.max) return { ...bounds, max: baseline };
+  return bounds;
+};
+
+export const withBaselineDomain = (
+  domain: CartesianAxisConfigProps['domain'],
+  baseline: number = 0,
+): CartesianAxisConfigProps['domain'] => {
+  if (typeof domain === 'function') return domain;
+  if (domain?.min !== undefined && domain?.max !== undefined) return domain;
+
+  const hasExplicitMin = domain?.min !== undefined;
+  const hasExplicitMax = domain?.max !== undefined;
+
+  return (bounds: AxisBounds): AxisBounds => {
+    const resolvedBounds: AxisBounds = {
+      min: hasExplicitMin ? (domain?.min as number) : bounds.min,
+      max: hasExplicitMax ? (domain?.max as number) : bounds.max,
+    };
+    const baselineAdjustedBounds = includeBaselineInBounds(resolvedBounds, baseline);
+
+    return {
+      min: hasExplicitMin ? resolvedBounds.min : baselineAdjustedBounds.min,
+      max: hasExplicitMax ? resolvedBounds.max : baselineAdjustedBounds.max,
+    };
+  };
+};
+
 /**
  * Gets a D3 scale based on the axis configuration.
  * Handles both numeric (linear/log) and categorical (band) scales.
@@ -127,27 +170,42 @@ export type AxisConfigProps = Omit<AxisConfig, 'domain' | 'range'> & {
  * For numeric scales, the domain limit controls whether bounds are "nice" (human-friendly)
  * or "strict" (exact min/max). Range can be customized using function-based configuration.
  *
+ * Range inversion is determined by axis role (category vs value) and layout:
+ * - Vertical layout: Y axis (value) is inverted for SVG coordinate system
+ * - Horizontal layout: Y axis (category) is inverted (first category at top)
+ *
  * @param params - Scale parameters
  * @returns The D3 scale function
  * @throws An Error if bounds are invalid
  */
-export const getAxisScale = ({
+export const getCartesianAxisScale = ({
   config,
   type,
   range,
   dataDomain,
+  layout = 'vertical',
 }: {
-  config?: AxisConfig;
+  config?: CartesianAxisConfig;
   type: 'x' | 'y';
   range: AxisBounds;
   dataDomain: AxisBounds;
+  layout?: CartesianChartLayout;
 }): ChartScaleFunction => {
   const scaleType = config?.scaleType ?? 'linear';
 
   let adjustedRange = range;
 
-  // Invert range for Y axis for SVG coordinate system
-  if (type === 'y') {
+  // Determine if this axis needs range inversion for SVG coordinate system.
+  // SVG Y coordinates increase downward, so we need to invert for value axes
+  // where we want higher values at the top.
+  //
+  // For vertical layout: Y axis is the value axis → invert (higher values at top)
+  // For horizontal layout: Y axis is the category axis → don't invert (first category at top is natural)
+  // X axis never needs inversion (left-to-right is natural for both layouts)
+
+  const shouldInvertRange = type === 'y' && layout !== 'horizontal';
+
+  if (shouldInvertRange) {
     adjustedRange = { min: adjustedRange.max, max: adjustedRange.min };
   }
 
@@ -162,7 +220,7 @@ export const getAxisScale = ({
 
   if (!isValidBounds(adjustedDomain))
     throw new Error(
-      'Invalid domain bounds. See https://cds.coinbase.com/http://localhost:3000/components/graphs/XAxis/#domain',
+      'Invalid domain bounds. See https://cds.coinbase.com/components/charts/XAxis/#domain',
     );
 
   if (scaleType === 'band') {
@@ -197,11 +255,16 @@ export const getAxisScale = ({
  */
 export const getAxisConfig = (
   type: 'x' | 'y',
-  axes: Partial<AxisConfigProps> | Partial<AxisConfigProps>[] | undefined,
+  axes: Partial<CartesianAxisConfigProps> | Partial<CartesianAxisConfigProps>[] | undefined,
   defaultId: string = defaultAxisId,
   defaultScaleType: ChartAxisScaleType = defaultAxisScaleType,
-): AxisConfigProps[] => {
+): CartesianAxisConfigProps[] => {
   const defaultDomainLimit = type === 'x' ? 'strict' : 'nice';
+  const axisName = type === 'x' ? 'x-axis' : 'y-axis';
+  const axisDocUrl =
+    type === 'x'
+      ? 'https://cds.coinbase.com/components/charts/XAxis'
+      : 'https://cds.coinbase.com/components/charts/YAxis';
   if (!axes) {
     return [{ id: defaultId, scaleType: defaultScaleType, domainLimit: defaultDomainLimit }];
   }
@@ -211,21 +274,37 @@ export const getAxisConfig = (
     // forces id to be defined on every input config when there are multiple axes
     if (axesLength > 1 && axes.some(({ id }) => id === undefined)) {
       throw new Error(
-        'When defining multiple axes, each must have a unique id. See https://cds.coinbase.com/components/graphs/YAxis/#multiple-y-axes.',
+        `When defining multiple ${axisName}, each must have a unique id. See ${axisDocUrl}.`,
       );
+    }
+
+    if (axesLength > 1) {
+      const ids = axes.map(({ id }) => id).filter((id): id is string => id !== undefined);
+      if (new Set(ids).size !== ids.length) {
+        throw new Error(
+          `When defining multiple ${axisName}, each must have a unique id. See ${axisDocUrl}.`,
+        );
+      }
     }
 
     return axes.map(({ id, ...axis }) => ({
       // defaults the axis id if only a single axis is provided
-      id: axesLength > 1 ? (id ?? defaultAxisId) : (id as string),
+      id: axesLength > 1 ? (id ?? defaultAxisId) : (id ?? defaultId),
       scaleType: defaultScaleType,
       domainLimit: defaultDomainLimit,
       ...axis,
-    }));
+    })) as CartesianAxisConfigProps[];
   }
 
   // Single axis config
-  return [{ id: defaultId, scaleType: defaultScaleType, domainLimit: defaultDomainLimit, ...axes }];
+  return [
+    {
+      id: defaultId,
+      scaleType: defaultScaleType,
+      domainLimit: defaultDomainLimit,
+      ...axes,
+    } as CartesianAxisConfigProps,
+  ];
 };
 
 /**
@@ -235,12 +314,14 @@ export const getAxisConfig = (
  * @param axisParam - The axis configuration
  * @param series - Array of series objects (for stacking support)
  * @param axisType - Whether this is an 'x' or 'y' axis
+ * @param layout - Chart layout ('horizontal' or 'vertical')
  * @returns The calculated axis bounds
  */
-export const getAxisDomain = (
-  axisParam: AxisConfigProps,
+export const getCartesianAxisDomain = (
+  axisParam: CartesianAxisConfigProps,
   series: Series[],
   axisType: 'x' | 'y',
+  layout: CartesianChartLayout = 'vertical',
 ): AxisBounds => {
   let dataDomain: AxisBounds | null = null;
   if (axisParam.data && Array.isArray(axisParam.data) && axisParam.data.length > 0) {
@@ -264,7 +345,18 @@ export const getAxisDomain = (
   }
 
   // Calculate domain from series data
-  const seriesDomain = axisType === 'x' ? getChartDomain(series) : getChartRange(series);
+  // In vertical layout: X is category (index), Y is value (value)
+  // In horizontal layout: Y is category (index), X is value (value)
+  const isCategoryAxis =
+    (layout !== 'horizontal' && axisType === 'x') || (layout === 'horizontal' && axisType === 'y');
+  const seriesDomain = isCategoryAxis
+    ? getChartDomain(series)
+    : getChartRange(
+        series,
+        layout,
+        axisType === 'x' ? [axisParam] : [],
+        axisType === 'y' ? [axisParam] : [],
+      );
 
   // If data sets the domain, use that instead of the series domain
   const preferredDataDomain = dataDomain ?? seriesDomain;
@@ -290,7 +382,6 @@ export const getAxisDomain = (
     finalDomain = preferredDataDomain;
   }
 
-  // Ensure we always return valid bounds with no undefined values
   return {
     min: finalDomain.min ?? 0,
     max: finalDomain.max ?? 0,
@@ -307,7 +398,7 @@ export const getAxisDomain = (
  * @returns The calculated axis range bounds
  */
 export const getAxisRange = (
-  axisParam: AxisConfigProps,
+  axisParam: CartesianAxisConfigProps,
   chartRect: Rect,
   axisType: 'x' | 'y',
 ): AxisBounds => {

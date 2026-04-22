@@ -2,9 +2,26 @@ import { isSharedValue } from 'react-native-reanimated';
 import type { AnimatedProp } from '@shopify/react-native-skia';
 import { stack as d3Stack, stackOffsetDiverging, stackOrderNone } from 'd3-shape';
 
+import { type CartesianAxisConfigProps, defaultAxisId } from './axis';
+import type { CartesianChartLayout } from './context';
 import type { GradientDefinition } from './gradient';
 
 export const defaultStackId = 'DEFAULT_STACK_ID';
+
+/**
+ * Shape variants available for legend items.
+ */
+export type LegendShapeVariant = 'circle' | 'square' | 'squircle' | 'pill';
+
+/**
+ * Shape for legend items. Can be a preset variant or a custom ReactNode.
+ */
+export type LegendShape = LegendShapeVariant | React.ReactNode;
+
+/**
+ * Position of the legend relative to the chart.
+ */
+export type LegendPosition = 'top' | 'bottom' | 'left' | 'right';
 
 export type AxisBounds = {
   min: number;
@@ -49,8 +66,15 @@ export type Series = {
    */
   gradient?: GradientDefinition;
   /**
+   * Id of the x-axis this series uses.
+   * Defaults to defaultAxisId if not specified.
+   * @note Only used for axis selection when layout is 'horizontal'. Vertical layout uses a single x-axis.
+   */
+  xAxisId?: string;
+  /**
    * Id of the y-axis this series uses.
    * Defaults to defaultAxisId if not specified.
+   * @note Only used for axis selection when layout is 'vertical'. Horizontal layout supports a single y-axis.
    */
   yAxisId?: string;
   /**
@@ -59,6 +83,12 @@ export type Series = {
    * If not specified, the series will not be stacked.
    */
   stackId?: string;
+  /**
+   * Shape of the legend item for this series.
+   * Can be a preset shape variant or a custom ReactNode.
+   * @default 'circle'
+   */
+  legendShape?: LegendShape;
 };
 
 /**
@@ -92,15 +122,34 @@ export const getChartDomain = (
 };
 
 /**
- * Creates a composite stack key that includes both stack ID and y-axis ID.
- * This ensures series with different y-scales don't get stacked together.
+ * Creates a composite stack key that includes stack ID and axis IDs.
+ * This ensures series with different scales don't get stacked together.
  */
 const createStackKey = (series: Series): string | undefined => {
   if (series.stackId === undefined) return undefined;
 
-  // Include y-axis ID to prevent cross-scale stacking
+  // Include axis IDs to prevent cross-scale stacking
+  const xAxisId = series.xAxisId || 'default';
   const yAxisId = series.yAxisId || 'default';
-  return `${series.stackId}:${yAxisId}`;
+  return `${series.stackId}:${xAxisId}:${yAxisId}`;
+};
+
+/**
+ * Get the baseline for a series on the value axis for a series (stacking and plain numeric points).
+ * @returns The baseline for the series on the value axis, or `0` if none.
+ */
+const getValueAxisBaselineForSeries = (
+  layout: CartesianChartLayout,
+  series: Series,
+  xAxisConfigs: CartesianAxisConfigProps[],
+  yAxisConfigs: CartesianAxisConfigProps[],
+): number => {
+  if (layout === 'horizontal') {
+    const seriesAxisId = series.xAxisId ?? defaultAxisId;
+    return xAxisConfigs.find((a) => a.id === seriesAxisId)?.baseline ?? 0;
+  }
+  const seriesAxisId = series.yAxisId ?? defaultAxisId;
+  return yAxisConfigs.find((a) => a.id === seriesAxisId)?.baseline ?? 0;
 };
 
 /**
@@ -108,15 +157,37 @@ const createStackKey = (series: Series): string | undefined => {
  * Returns a map of series ID to transformed [baseline, value] tuples.
  *
  * @param series - Array of series with potential stack properties
+ * @param layout - When set with axis configs, value-axis baselines are resolved for stacking
  * @returns Map of series ID to stacked data arrays
  */
 export const getStackedSeriesData = (
   series: Series[],
+  layout: CartesianChartLayout,
+  xAxisConfigs: CartesianAxisConfigProps[],
+  yAxisConfigs: CartesianAxisConfigProps[],
 ): Map<string, Array<[number, number] | null>> => {
   const stackedDataMap = new Map<string, Array<[number, number] | null>>();
 
   const numericStackGroups = new Map<string, typeof series>();
   const individualSeries: typeof series = [];
+
+  const normalizeSeriesData = (seriesItem: Series): Array<[number, number] | null> | undefined => {
+    if (!seriesItem.data) return;
+
+    const baseline = getValueAxisBaselineForSeries(layout, seriesItem, xAxisConfigs, yAxisConfigs);
+
+    return seriesItem.data.map((val) => {
+      if (val === null) return null;
+
+      if (Array.isArray(val)) {
+        return val as [number, number];
+      }
+
+      if (typeof val === 'number') return [baseline, val];
+
+      return null;
+    });
+  };
 
   series.forEach((s) => {
     const stackKey = createStackKey(s);
@@ -133,29 +204,28 @@ export const getStackedSeriesData = (
   });
 
   individualSeries.forEach((s) => {
-    if (!s.data) return;
-
-    const normalizedData: Array<[number, number] | null> = s.data.map((val) => {
-      if (val === null) return null;
-
-      if (Array.isArray(val)) {
-        return val as [number, number];
-      }
-
-      if (typeof val === 'number') {
-        return [0, val];
-      }
-
-      return null;
-    });
-
+    const normalizedData = normalizeSeriesData(s);
+    if (!normalizedData) return;
     stackedDataMap.set(s.id, normalizedData);
   });
 
-  numericStackGroups.forEach((groupSeries, stackKey) => {
+  numericStackGroups.forEach((groupSeries) => {
+    // A lone series with stackId should still behave like a non-stacked series.
+    if (groupSeries.length < 2) {
+      groupSeries.forEach((singleSeries) => {
+        const normalizedData = normalizeSeriesData(singleSeries);
+        if (!normalizedData) return;
+        stackedDataMap.set(singleSeries.id, normalizedData);
+      });
+      return;
+    }
+
     const maxLength = Math.max(...groupSeries.map((s) => s.data?.length || 0));
 
     if (maxLength === 0) return;
+
+    const first = groupSeries[0];
+    const groupBaseline = getValueAxisBaselineForSeries(layout, first, xAxisConfigs, yAxisConfigs);
 
     const dataset: Array<Record<string, number>> = new Array(maxLength)
       .fill(undefined)
@@ -163,7 +233,8 @@ export const getStackedSeriesData = (
         const row: Record<string, number> = {};
         for (const s of groupSeries) {
           const val = s.data?.[i];
-          const num = typeof val === 'number' ? val : 0;
+          // Stack around baseline by translating values into baseline-relative deltas.
+          const num = typeof val === 'number' ? val - groupBaseline : 0;
           row[s.id] = num;
         }
         return row;
@@ -178,8 +249,8 @@ export const getStackedSeriesData = (
     stackedSeries.forEach((layer, layerIndex) => {
       const seriesId = keys[layerIndex];
       const stackedData: Array<[number, number] | null> = layer.map(([bottom, top]) => [
-        bottom,
-        top,
+        bottom + groupBaseline,
+        top + groupBaseline,
       ]);
       stackedDataMap.set(seriesId, stackedData);
     });
@@ -206,7 +277,7 @@ export const getLineData = (
   if (Array.isArray(firstNonNull)) {
     return data.map((d) => {
       if (d === null) return null;
-      if (Array.isArray(d)) return d.at(-1) ?? null;
+      if (Array.isArray(d)) return d[d.length - 1] ?? null;
       return d as number;
     });
   }
@@ -222,6 +293,9 @@ export const getLineData = (
  */
 export const getChartRange = (
   series: Series[],
+  layout: CartesianChartLayout,
+  xAxisConfigs: CartesianAxisConfigProps[],
+  yAxisConfigs: CartesianAxisConfigProps[],
   min?: number,
   max?: number,
 ): Partial<AxisBounds> => {
@@ -253,11 +327,11 @@ export const getChartRange = (
 
   if (hasStacks) {
     // Get stacked data using the shared function
-    const stackedDataMap = getStackedSeriesData(series);
+    const stackedDataMap = getStackedSeriesData(series, layout, xAxisConfigs, yAxisConfigs);
 
     // Find the extreme values from the stacked data
-    let stackedMax = 0;
-    let stackedMin = 0;
+    let stackedMax = -Infinity;
+    let stackedMin = Infinity;
 
     stackedDataMap.forEach((stackedData) => {
       stackedData.forEach((point) => {
@@ -270,8 +344,8 @@ export const getChartRange = (
     });
 
     // Don't add padding - let D3's nice() function handle axis padding
-    if (range.min === undefined) range.min = Math.min(0, stackedMin);
-    if (range.max === undefined) range.max = Math.max(0, stackedMax);
+    if (range.min === undefined) range.min = stackedMin === Infinity ? 0 : stackedMin;
+    if (range.max === undefined) range.max = stackedMax === -Infinity ? 0 : stackedMax;
   } else {
     // No stacking, calculate range from raw values
     const allValues: number[] = [];
@@ -308,12 +382,26 @@ export type ChartInset = {
   right: number;
 };
 
-export const defaultChartInset: ChartInset = {
+export const defaultVerticalLayoutChartInset: ChartInset = {
   top: 32,
   left: 16,
   bottom: 16,
   right: 16,
 };
+
+export const defaultHorizontalLayoutChartInset: ChartInset = {
+  top: 16,
+  left: 16,
+  bottom: 16,
+  right: 48,
+};
+
+/**
+ * @deprecated Use `defaultVerticalLayoutChartInset` for vertical layout charts or. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v4
+ * `defaultHorizontalLayoutChartInset` for horizontal layout charts.
+ */
+export const defaultChartInset: ChartInset = defaultVerticalLayoutChartInset;
 
 /**
  * Normalize padding to include all sides with a value.

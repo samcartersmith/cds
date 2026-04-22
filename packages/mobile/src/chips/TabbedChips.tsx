@@ -4,13 +4,18 @@ import type { View } from 'react-native';
 import { useTabsContext } from '@coinbase/cds-common/tabs/TabsContext';
 import type { TabValue } from '@coinbase/cds-common/tabs/useTabs';
 
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { useHorizontalScrollToTarget } from '../hooks/useHorizontalScrollToTarget';
 import { Box, OverflowGradient } from '../layout';
 import { type TabNavigationBaseProps, Tabs } from '../tabs';
 
 import { MediaChip } from './MediaChip';
 
-const TabComponent = <T extends string = string>({ label = '', id, ...tabProps }: TabValue<T>) => {
+const TabComponent = <TabId extends string = string>({
+  label = '',
+  id,
+  ...tabProps
+}: TabValue<TabId>) => {
   const { activeTab, updateActiveTab } = useTabsContext();
   const isActive = useMemo(() => activeTab?.id === id, [activeTab, id]);
   const handleClick = useCallback(() => updateActiveTab(id), [id, updateActiveTab]);
@@ -30,33 +35,35 @@ const TabsActiveIndicatorComponent = () => {
   return null;
 };
 
-export type TabbedChipsBaseProps<T extends string = string> = Omit<
-  TabNavigationBaseProps<T>,
+export type TabbedChipsBaseProps<TabId extends string = string> = Omit<
+  TabNavigationBaseProps<TabId>,
   'variant'
 >;
 
-export type TabbedChipsProps<T extends string = string> = TabbedChipsBaseProps<T>;
+export type TabbedChipsProps<TabId extends string = string> = TabbedChipsBaseProps<TabId>;
 
-type TabbedChipsFC = <T extends string = string>(
-  props: TabbedChipsProps<T> & { ref?: React.ForwardedRef<View> },
+type TabbedChipsFC = <TabId extends string = string>(
+  props: TabbedChipsProps<TabId> & { ref?: React.ForwardedRef<View> },
 ) => React.ReactElement;
 
 const TabbedChipsComponent = memo(
-  forwardRef(function TabbedChips<T extends string = string>(
-    {
+  forwardRef(function TabbedChips<TabId extends string = string>(
+    _props: TabbedChipsProps<TabId>,
+    ref: React.ForwardedRef<View>,
+  ) {
+    const mergedProps = useComponentConfig('TabbedChips', _props);
+    const {
       tabs,
       value = tabs[0].id,
       testID = 'tabbed-chips',
       onChange,
       Component = TabComponent,
       ...props
-    }: TabbedChipsProps<T>,
-    ref: React.ForwardedRef<View>,
-  ) {
+    } = mergedProps;
     const activeTab = useMemo(() => tabs.find((tab) => tab.id === value), [tabs, value]);
     const [scrollTarget, setScrollTarget] = useState<View | null>(null);
     const handleChange = useCallback(
-      (tabValue: TabValue<T> | null) => {
+      (tabValue: TabValue<TabId> | null) => {
         if (tabValue) onChange?.(tabValue.id);
       },
       [onChange],
@@ -108,6 +115,7 @@ const TabbedChipsComponent = memo(
 TabbedChipsComponent.displayName = 'TabbedChips';
 
 /**
- * @deprecated Use `TabbedChips(Alpha)` instead.
+ * @deprecated Use `TabbedChips(Alpha)` instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v9
  */
 export const TabbedChips = TabbedChipsComponent as TabbedChipsFC;

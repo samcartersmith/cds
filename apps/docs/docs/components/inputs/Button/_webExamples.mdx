@@ -59,7 +59,36 @@ Use transparent buttons for supplementary actions with lower prominence. The con
 
 ### Loading
 
-Use the `loading` prop to indicate an action is in progress. The button becomes non-interactive and displays a spinner while preserving its width.
+Use the `loading` prop to indicate an action is in progress. The button becomes non-interactive and displays a loading indicator (indeterminate [ProgressCircle](/components/feedback/ProgressCircle)) while preserving its width.
+
+#### Loading by variant
+
+Loading works with all variants and transparent. The label is hidden and the progress circle is shown in the button’s accent color.
+
+```jsx live
+<HStack gap={2} flexWrap="wrap" alignItems="center">
+  <Button loading>Primary</Button>
+  <Button loading variant="secondary">
+    Secondary
+  </Button>
+  <Button loading variant="tertiary">
+    Tertiary
+  </Button>
+  <Button loading variant="negative">
+    Negative
+  </Button>
+  <Button loading transparent variant="secondary">
+    Transparent
+  </Button>
+  <Button loading compact>
+    Compact
+  </Button>
+</HStack>
+```
+
+#### Interactive loading
+
+Toggle loading state to see the transition. Use for async actions like save or submit.
 
 ```jsx live
 function LoadingExample() {
@@ -127,6 +156,25 @@ Use `block` to make the button expand to fill its container width.
   </Button>
   <Button onClick={console.log} variant="secondary" block>
     Another full width
+  </Button>
+</VStack>
+```
+
+## Typography
+
+Button forwards text-related font props to the internal `Text` label, so you can customize typography without rendering a custom child.
+
+```jsx live
+<VStack alignItems="flex-start" gap={2}>
+  <Button onClick={console.log}>Default (headline)</Button>
+  <Button font="body" onClick={console.log}>
+    Body font
+  </Button>
+  <Button font="title3" onClick={console.log}>
+    Title3 font
+  </Button>
+  <Button fontSize="title3" fontWeight="body" onClick={console.log}>
+    Custom fontSize + fontWeight
   </Button>
 </VStack>
 ```

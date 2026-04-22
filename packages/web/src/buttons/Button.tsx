@@ -10,19 +10,24 @@ import { css } from '@linaria/core';
 
 import type { Polymorphic } from '../core/polymorphism';
 import { cx } from '../cx';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { Icon } from '../icons/Icon';
-import { Spinner } from '../loaders/Spinner';
 import { Pressable, type PressableBaseProps } from '../system/Pressable';
 import { Text } from '../typography/Text';
+import { ProgressCircle } from '../visualizations';
 
 const COMPONENT_STATIC_CLASSNAME = 'cds-Button';
 
+const DEFAULT_MIN_WIDTH = 100;
+
+/** @deprecated Use progressCircleSize instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v10
+ */
 export const spinnerHeight = 2.5;
 
+const defaultProgressCircleSize = 24;
+
 const baseCss = css`
-  min-width: 100px;
-  padding-inline-start: var(--space-4);
-  padding-inline-end: var(--space-4);
   text-decoration: none;
   display: inline-flex;
   text-align: center;
@@ -30,7 +35,6 @@ const baseCss = css`
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  margin: 0;
   position: relative;
   white-space: nowrap;
   appearance: none;
@@ -44,12 +48,6 @@ const blockCss = css`
   width: 100%;
   max-width: 100%;
   white-space: normal;
-`;
-
-const compactCss = css`
-  min-width: auto;
-  padding-inline-start: var(--space-2);
-  padding-inline-end: var(--space-2);
 `;
 
 const spinnerContainerCss = css`
@@ -112,15 +110,6 @@ const flushEndCss = css`
   margin-inline-end: calc(var(--space-2) * -1);
 `;
 
-const spinnerStyle = {
-  width: '24px',
-  height: '24px',
-  border: '2px solid',
-  borderTopColor: 'var(--color-transparent)',
-  borderRightColor: 'var(--color-transparent)',
-  borderLeftColor: 'var(--color-transparent)',
-};
-
 export const buttonDefaultElement = 'button';
 
 export type ButtonDefaultElement = typeof buttonDefaultElement;
@@ -138,6 +127,10 @@ export type ButtonBaseProps = Polymorphic.ExtendableProps<
       disabled?: boolean;
       /** Mark the button as loading and display a spinner. */
       loading?: boolean;
+      /** Size of the loading progress circle in px.
+       * @default 24
+       */
+      progressCircleSize?: number;
       /** Mark the background and border as transparent until interacted with. */
       transparent?: boolean;
       /** Change to block and expand to 100% of parent width. */
@@ -175,10 +168,8 @@ export type ButtonBaseProps = Polymorphic.ExtendableProps<
     }
 >;
 
-export type ButtonProps<AsComponent extends React.ElementType> = Polymorphic.Props<
-  AsComponent,
-  ButtonBaseProps
->;
+export type ButtonProps<AsComponent extends React.ElementType = ButtonDefaultElement> =
+  Polymorphic.Props<AsComponent, ButtonBaseProps>;
 
 type ButtonComponent = (<AsComponent extends React.ElementType = ButtonDefaultElement>(
   props: ButtonProps<AsComponent>,
@@ -188,10 +179,15 @@ type ButtonComponent = (<AsComponent extends React.ElementType = ButtonDefaultEl
 export const Button: ButtonComponent = memo(
   forwardRef<React.ReactElement<ButtonBaseProps>, ButtonBaseProps>(
     <AsComponent extends React.ElementType>(
-      {
+      _props: ButtonProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const mergedProps = useComponentConfig('Button', _props);
+      const {
         as,
         variant = 'primary',
         loading,
+        progressCircleSize = defaultProgressCircleSize,
         transparent,
         block,
         compact,
@@ -205,6 +201,11 @@ export const Button: ButtonComponent = memo(
         flush,
         noScaleOnPress,
         numberOfLines,
+        font = 'headline',
+        fontFamily,
+        fontSize,
+        fontWeight,
+        lineHeight,
         background,
         color,
         className,
@@ -214,10 +215,12 @@ export const Button: ButtonComponent = memo(
         borderWidth = 100,
         borderRadius = compact ? 700 : 900,
         accessibilityLabel,
+        padding,
+        paddingX = padding ?? (compact ? 2 : 4),
+        margin = 0,
+        minWidth = compact ? 'auto' : DEFAULT_MIN_WIDTH,
         ...props
-      }: ButtonProps<AsComponent>,
-      ref?: Polymorphic.Ref<AsComponent>,
-    ) => {
+      } = mergedProps;
       const Component = (as ?? buttonDefaultElement) satisfies React.ElementType;
       const iconSize = compact ? 's' : 'm';
       const hasIcon = Boolean(startIcon ?? endIcon);
@@ -241,7 +244,6 @@ export const Button: ButtonComponent = memo(
           className={cx(
             COMPONENT_STATIC_CLASSNAME,
             baseCss,
-            compact && compactCss,
             numberOfLines && unsetNoWrapCss,
             hasIcon && iconCss,
             block && blockCss,
@@ -258,7 +260,11 @@ export const Button: ButtonComponent = memo(
           data-variant={variant}
           height={height}
           loading={loading}
+          margin={margin}
+          minWidth={minWidth}
           noScaleOnPress={noScaleOnPress}
+          padding={padding}
+          paddingX={paddingX}
           transparentWhileInactive={transparent}
           {...props}
         >
@@ -278,13 +284,23 @@ export const Button: ButtonComponent = memo(
           <span className={middleNodeCss}>
             {loading && (
               <span className={spinnerContainerCss}>
-                <Spinner color="currentColor" size={spinnerHeight} style={spinnerStyle} />
+                <ProgressCircle
+                  indeterminate
+                  accessibilityLabel="Loading"
+                  color="currentColor"
+                  size={progressCircleSize}
+                  weight="thin"
+                />
               </span>
             )}
             <Text
               color="currentColor"
               display="inline"
-              font="headline"
+              font={font}
+              fontFamily={fontFamily}
+              fontSize={fontSize}
+              fontWeight={fontWeight}
+              lineHeight={lineHeight}
               numberOfLines={numberOfLines}
             >
               <span className={cx(loading && hiddenCss)}>{children}</span>

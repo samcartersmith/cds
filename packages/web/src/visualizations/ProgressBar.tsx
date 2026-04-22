@@ -1,13 +1,13 @@
 import React, { forwardRef, memo } from 'react';
 import { animateProgressBaseSpec } from '@coinbase/cds-common/animation/progress';
 import type { ThemeVars } from '@coinbase/cds-common/core/theme';
-import { usePreviousValues } from '@coinbase/cds-common/hooks/usePreviousValues';
 import type { SharedAccessibilityProps, SharedProps, Weight } from '@coinbase/cds-common/types';
-import { useProgressSize } from '@coinbase/cds-common/visualizations/useProgressSize';
+import { getProgressSize } from '@coinbase/cds-common/visualizations/getProgressSize';
 import { css } from '@linaria/core';
 import { m as motion } from 'framer-motion';
 
 import { cx } from '../cx';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { Box, HStack } from '../layout';
 import type { HintMotionBaseProps } from '../motion/types';
 import { useMotionProps } from '../motion/useMotionProps';
@@ -17,7 +17,7 @@ export type ProgressBaseProps = SharedProps &
   Pick<HintMotionBaseProps, 'disableAnimateOnMount'> &
   Pick<SharedAccessibilityProps, 'accessibilityLabel'> & {
     /** Number between 0-1 representing the progress percentage */
-    progress: number;
+    progress?: number;
     /** Toggle used to change thickness of progress visualization
      * @default normal
      * */
@@ -42,38 +42,20 @@ export type ProgressBaseProps = SharedProps &
   };
 
 export type ProgressBarProps = ProgressBaseProps & {
-  /**
-   * Custom styles for the progress bar root.
-   */
   style?: React.CSSProperties;
-  /**
-   * Custom class name for the progress bar root.
-   */
   className?: string;
-  /**
-   * Custom styles for the progress bar.
-   */
+  /** Custom styles for individual elements of the ProgressBar component */
   styles?: {
-    /**
-     * Custom styles for the progress bar root.
-     */
+    /** Root element */
     root?: React.CSSProperties;
-    /**
-     * Custom styles for the progress.
-     */
+    /** Progress fill element */
     progress?: React.CSSProperties;
   };
-  /**
-   * Custom class names for the progress bar.
-   */
+  /** Custom class names for individual elements of the ProgressBar component */
   classNames?: {
-    /**
-     * Class name for the progress bar root.
-     */
+    /** Root element */
     root?: string;
-    /**
-     * Class name for the progress.
-     */
+    /** Progress fill element */
     progress?: string;
   };
 };
@@ -85,88 +67,82 @@ const boxCss = css`
 `;
 
 export const ProgressBar = memo(
-  forwardRef(
-    (
-      {
-        weight = 'normal',
-        progress,
-        color = 'bgPrimary',
-        disabled,
-        disableAnimateOnMount,
-        testID,
-        accessibilityLabel,
-        style,
-        styles,
-        className,
-        classNames,
-        onAnimationEnd,
-        onAnimationStart,
-      }: ProgressBarProps,
-      forwardedRef: React.ForwardedRef<HTMLDivElement>,
-    ) => {
-      const height = useProgressSize(weight);
+  forwardRef((_props: ProgressBarProps, forwardedRef: React.ForwardedRef<HTMLDivElement>) => {
+    const mergedProps = useComponentConfig('ProgressBar', _props);
+    const {
+      weight = 'normal',
+      progress = 0,
+      color = 'bgPrimary',
+      disabled,
+      disableAnimateOnMount,
+      testID,
+      accessibilityLabel,
+      style,
+      styles,
+      className,
+      classNames,
+      onAnimationEnd,
+      onAnimationStart,
+    } = mergedProps;
+    const height = getProgressSize(weight);
 
-      const { getPreviousValue: getPreviousPercent, addPreviousValue: addPreviousPercent } =
-        usePreviousValues<number>([disableAnimateOnMount ? progress : 0]);
+    // start position of the progress bar on mount
+    const initialTranslateX = isRtl() ? 100 : -100;
 
-      addPreviousPercent(progress);
-      const previousPercent = getPreviousPercent() ?? 0;
-      const translateXStart = isRtl() ? 100 - previousPercent * 100 : -100 + previousPercent * 100;
-      const translateXEnd = isRtl() ? 100 - progress * 100 : -100 + progress * 100;
+    const translateX = isRtl() ? 100 - progress * 100 : -100 + progress * 100;
 
-      const motionProps = useMotionProps({
-        style: {
-          originX: isRtl() ? 'right' : 'left',
-        },
-        animate: {
-          x: [`${translateXStart}%`, `${translateXEnd}%`],
-          opacity: 1,
-        },
-        transition: animateProgressBaseSpec,
-        initial: !progress ? false : { x: `${translateXStart}%` }, // skip initial animation if no progress
-      });
+    const motionProps = useMotionProps({
+      style: {
+        originX: isRtl() ? 'right' : 'left',
+      },
+      animate: {
+        x: `${translateX}%`,
+        opacity: 1,
+      },
+      transition: animateProgressBaseSpec,
+      initial: !progress || disableAnimateOnMount ? false : { x: `${initialTranslateX}%` }, // skip initial animation if no progress or disableAnimateOnMount is true
+    });
 
-      return (
-        <HStack
-          ref={forwardedRef}
-          accessibilityLabel={accessibilityLabel}
+    return (
+      <HStack
+        ref={forwardedRef}
+        accessibilityLabel={accessibilityLabel}
+        alignItems="center"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={progress * 100}
+        background="bgLine"
+        borderRadius={200}
+        className={cx(boxCss, className, classNames?.root)}
+        flexGrow={1}
+        flexShrink={0}
+        height={height}
+        justifyContent={isRtl() ? 'flex-end' : 'flex-start'}
+        overflow="hidden"
+        role="progressbar"
+        style={{ ...style, ...styles?.root }}
+        testID={testID}
+      >
+        <MotionBox
           alignItems="center"
-          aria-valuemax={100}
-          aria-valuemin={0}
-          aria-valuenow={progress * 100}
-          background="bgLine"
+          animate={motionProps.animate}
+          background={disabled ? 'bgLineHeavy' : color}
           borderRadius={200}
-          className={cx(boxCss, className, classNames?.root)}
-          flexGrow={1}
+          className={classNames?.progress}
+          flexGrow={0}
           flexShrink={0}
-          height={height}
-          justifyContent={isRtl() ? 'flex-end' : 'flex-start'}
-          overflow="hidden"
-          role="progressbar"
-          style={{ ...style, ...styles?.root }}
-          testID={testID}
-        >
-          <MotionBox
-            alignItems="center"
-            animate={motionProps.animate}
-            background={disabled ? 'bgLineHeavy' : color}
-            borderRadius={200}
-            className={classNames?.progress}
-            flexGrow={0}
-            flexShrink={0}
-            height="100%"
-            initial={motionProps.initial}
-            justifyContent="flex-start"
-            onAnimationComplete={onAnimationEnd}
-            onAnimationStart={onAnimationStart}
-            opacity={disableAnimateOnMount ? 1 : 0}
-            style={{ ...motionProps.style, ...styles?.progress }}
-            testID="cds-progress-bar"
-            transition={motionProps.transition}
-            width="100%"
-          />
-        </HStack>
-      );
-    },
-  ),
+          height="100%"
+          initial={motionProps.initial}
+          justifyContent="flex-start"
+          onAnimationComplete={onAnimationEnd}
+          onAnimationStart={onAnimationStart}
+          opacity={disableAnimateOnMount ? 1 : 0}
+          style={{ ...motionProps.style, ...styles?.progress }}
+          testID="cds-progress-bar"
+          transition={motionProps.transition}
+          width="100%"
+        />
+      </HStack>
+    );
+  }),
 );

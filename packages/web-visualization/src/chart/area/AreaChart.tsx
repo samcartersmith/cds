@@ -8,11 +8,10 @@ import {
 } from '../CartesianChart';
 import { Line, type LineProps } from '../line/Line';
 import {
-  type AxisConfigProps,
-  defaultChartInset,
+  type CartesianAxisConfigProps,
   defaultStackId,
-  getChartInset,
   type Series,
+  withBaselineDomain,
 } from '../utils';
 
 import { Area, type AreaProps } from './Area';
@@ -21,7 +20,14 @@ export type AreaSeries = Series &
   Partial<
     Pick<
       AreaProps,
-      'AreaComponent' | 'curve' | 'fillOpacity' | 'type' | 'fill' | 'connectNulls' | 'transition'
+      | 'AreaComponent'
+      | 'curve'
+      | 'fillOpacity'
+      | 'type'
+      | 'fill'
+      | 'connectNulls'
+      | 'transitions'
+      | 'transition'
     >
   > &
   Partial<Pick<LineProps, 'LineComponent' | 'strokeWidth' | 'stroke' | 'opacity'>> & {
@@ -36,7 +42,13 @@ export type AreaSeries = Series &
 export type AreaChartBaseProps = Omit<CartesianChartBaseProps, 'xAxis' | 'yAxis' | 'series'> &
   Pick<
     AreaProps,
-    'AreaComponent' | 'curve' | 'fillOpacity' | 'type' | 'connectNulls' | 'transition'
+    | 'AreaComponent'
+    | 'curve'
+    | 'fillOpacity'
+    | 'type'
+    | 'connectNulls'
+    | 'transitions'
+    | 'transition'
   > &
   Pick<LineProps, 'LineComponent' | 'strokeWidth'> & {
     /**
@@ -76,13 +88,13 @@ export type AreaChartBaseProps = Omit<CartesianChartBaseProps, 'xAxis' | 'yAxis'
      * Accepts axis config and axis props.
      * To show the axis, set `showXAxis` to true.
      */
-    xAxis?: Partial<AxisConfigProps> & XAxisProps;
+    xAxis?: Partial<CartesianAxisConfigProps> & XAxisProps;
     /**
      * Configuration for y-axis.
      * Accepts axis config and axis props.
      * To show the axis, set `showYAxis` to true.
      */
-    yAxis?: Partial<AxisConfigProps> & YAxisProps;
+    yAxis?: Partial<CartesianAxisConfigProps> & YAxisProps;
   };
 
 export type AreaChartProps = AreaChartBaseProps &
@@ -99,6 +111,7 @@ export const AreaChart = memo(
         fillOpacity,
         type,
         connectNulls,
+        transitions,
         transition,
         LineComponent,
         strokeWidth,
@@ -114,8 +127,6 @@ export const AreaChart = memo(
       },
       ref,
     ) => {
-      const calculatedInset = useMemo(() => getChartInset(inset, defaultChartInset), [inset]);
-
       // Convert AreaSeries to Series for Chart context
       const chartSeries = useMemo(() => {
         return series?.map(
@@ -124,9 +135,11 @@ export const AreaChart = memo(
             data: s.data,
             label: s.label,
             color: s.color,
+            xAxisId: s.xAxisId,
             yAxisId: s.yAxisId,
             stackId: s.stackId,
             gradient: s.gradient,
+            legendShape: s.legendShape,
           }),
         );
       }, [series]);
@@ -146,6 +159,8 @@ export const AreaChart = memo(
         domain: xDomain,
         domainLimit: xDomainLimit,
         range: xRange,
+        baseline: xBaseline,
+        id: xAxisId,
         ...xAxisVisualProps
       } = xAxis || {};
       const {
@@ -155,50 +170,43 @@ export const AreaChart = memo(
         domain: yDomain,
         domainLimit: yDomainLimit,
         range: yRange,
+        baseline: yBaseline,
         id: yAxisId,
         ...yAxisVisualProps
       } = yAxis || {};
+      const isHorizontalLayout = chartProps.layout === 'horizontal';
+      const valueAxisBaseline = isHorizontalLayout ? xBaseline : yBaseline;
 
-      const xAxisConfig: Partial<AxisConfigProps> = {
+      const xAxisConfig: Partial<CartesianAxisConfigProps> = {
         scaleType: xScaleType,
         data: xData,
         categoryPadding: xCategoryPadding,
-        domain: xDomain,
+        domain: isHorizontalLayout ? withBaselineDomain(xDomain, valueAxisBaseline) : xDomain,
         domainLimit: xDomainLimit,
         range: xRange,
+        baseline: xBaseline,
       };
 
-      const hasNegativeValues = useMemo(() => {
-        if (!series) return false;
-        return series.some((s) =>
-          s.data?.some(
-            (value: number | null | [number, number]) =>
-              (typeof value === 'number' && value < 0) ||
-              (Array.isArray(value) && value.some((v) => typeof v === 'number' && v < 0)),
-          ),
-        );
-      }, [series]);
-
-      // Set default min domain to 0 for area chart, but only if there are no negative values
-      const yAxisConfig: Partial<AxisConfigProps> = {
+      const yAxisConfig: Partial<CartesianAxisConfigProps> = {
         scaleType: yScaleType,
         data: yData,
         categoryPadding: yCategoryPadding,
-        domain: hasNegativeValues ? yDomain : { min: 0, ...yDomain },
+        domain: !isHorizontalLayout ? withBaselineDomain(yDomain, valueAxisBaseline) : yDomain,
         domainLimit: yDomainLimit,
         range: yRange,
+        baseline: yBaseline,
       };
 
       return (
         <CartesianChart
           {...chartProps}
           ref={ref}
-          inset={calculatedInset}
+          inset={inset}
           series={seriesToRender}
           xAxis={xAxisConfig}
           yAxis={yAxisConfig}
         >
-          {showXAxis && <XAxis {...xAxisVisualProps} />}
+          {showXAxis && <XAxis axisId={xAxisId} {...xAxisVisualProps} />}
           {showYAxis && <YAxis axisId={yAxisId} {...yAxisVisualProps} />}
           {series?.map(
             ({
@@ -210,7 +218,7 @@ export const AreaChart = memo(
               opacity,
               LineComponent,
               stackId,
-              transition: seriesTransition,
+              legendShape,
               ...areaPropsFromSeries
             }) => (
               <Area
@@ -220,7 +228,8 @@ export const AreaChart = memo(
                 curve={curve}
                 fillOpacity={fillOpacity}
                 seriesId={id}
-                transition={seriesTransition ?? transition}
+                transition={transition}
+                transitions={transitions}
                 type={type}
                 {...areaPropsFromSeries}
               />
@@ -237,9 +246,8 @@ export const AreaChart = memo(
                 fill,
                 fillOpacity,
                 stackId,
+                legendShape,
                 type, // Area type (don't pass to Line)
-                lineType: seriesLineType,
-                transition: seriesTransition,
                 ...otherPropsFromSeries
               }) => {
                 return (
@@ -250,8 +258,9 @@ export const AreaChart = memo(
                     curve={curve}
                     seriesId={id}
                     strokeWidth={strokeWidth}
-                    transition={seriesTransition ?? transition}
-                    type={seriesLineType ?? lineType}
+                    transition={transition}
+                    transitions={transitions}
+                    type={lineType}
                     {...otherPropsFromSeries}
                   />
                 );

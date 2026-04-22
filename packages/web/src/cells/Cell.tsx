@@ -6,6 +6,7 @@ import { css } from '@linaria/core';
 import type { Polymorphic } from '../core/polymorphism';
 import { cx } from '../cx';
 import { useCellSpacing } from '../hooks/useCellSpacing';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { Box, type BoxBaseProps } from '../layout/Box';
 import { HStack } from '../layout/HStack';
 import { VStack } from '../layout/VStack';
@@ -77,7 +78,8 @@ export type CellBaseProps = Polymorphic.ExtendableProps<
   BoxBaseProps,
   Pick<PressableProps<'a'>, 'href' | 'target'> & {
     /**
-     * @deprecated Use `classNames.contentContainer` instead. `contentClassName` will be removed in a future major release.
+     * @deprecated Use `classNames.contentContainer` instead. This will be removed in a future major release.
+     * @deprecationExpectedRemoval v9
      */
     contentClassName?: string;
     /** Key down handler for keyboard interaction. */
@@ -98,7 +100,8 @@ export type CellBaseProps = Polymorphic.ExtendableProps<
      */
     end?: React.ReactNode;
     /**
-     * @deprecated Use `end` instead. `detail` will be removed in a future major release.
+     * @deprecated Use `end` instead. This will be removed in a future major release.
+     * @deprecationExpectedRemoval v9
      */
     detail?: React.ReactNode;
     /** Middle content between main content and detail. */
@@ -106,7 +109,8 @@ export type CellBaseProps = Polymorphic.ExtendableProps<
     /** Media rendered at the start of the cell (icon, avatar, image, etc). */
     media?: React.ReactElement;
     /**
-     * @deprecated Use `shouldTruncate` instead. `shouldOverflow` will be removed in a future release.
+     * @deprecated Use `shouldTruncate` instead. This will be removed in a future major release.
+     * @deprecationExpectedRemoval v9
      */
     shouldOverflow?: boolean;
     /**
@@ -116,7 +120,8 @@ export type CellBaseProps = Polymorphic.ExtendableProps<
      */
     shouldTruncate?: boolean;
     /**
-     * @deprecated Use `styles.end` instead. `detailWidth` will be removed in a future major release.
+     * @deprecated Use `styles.end` instead. This will be removed in a future major release.
+     * @deprecationExpectedRemoval v9
      */
     detailWidth?: number | string;
     /** Is the cell disabled? Will apply opacity and disable interaction. */
@@ -131,34 +136,50 @@ export type CellBaseProps = Polymorphic.ExtendableProps<
     innerSpacing?: CellSpacing;
     /** The content to display below the main cell content */
     bottomContent?: React.ReactNode;
-    /** Styles for the components */
+    /** Custom styles for individual elements of the Cell component */
     styles?: {
+      /** Root element */
       root?: React.CSSProperties;
+      /** Content container element */
       contentContainer?: React.CSSProperties;
+      /** Top content element */
       topContent?: React.CSSProperties;
+      /** Bottom content element */
       bottomContent?: React.CSSProperties;
+      /** Pressable wrapper element */
       pressable?: React.CSSProperties;
+      /** Media element */
       media?: React.CSSProperties;
-      /** Wrapper around `children` inside the top content row (controls flex behavior). */
+      /** Children container wrapper, controls flex behavior */
       childrenContainer?: React.CSSProperties;
+      /** Intermediary element */
       intermediary?: React.CSSProperties;
-      /** Applied to the container of detail or action */
+      /** End element (detail or action container) */
       end?: React.CSSProperties;
+      /** Accessory element */
       accessory?: React.CSSProperties;
     };
-    /** Class names for the components */
+    /** Custom class names for individual elements of the Cell component */
     classNames?: {
+      /** Root element */
       root?: string;
+      /** Content container element */
       contentContainer?: string;
+      /** Top content element */
       topContent?: string;
+      /** Bottom content element */
       bottomContent?: string;
+      /** Pressable wrapper element */
       pressable?: string;
+      /** Media element */
       media?: string;
-      /** Wrapper around `children` inside the top content row (controls flex behavior). */
+      /** Children container wrapper, controls flex behavior */
       childrenContainer?: string;
+      /** Intermediary element */
       intermediary?: string;
-      /** Applied to the container of detail or action */
+      /** End element (detail or action container) */
       end?: string;
+      /** Accessory element */
       accessory?: string;
     };
   }
@@ -177,7 +198,11 @@ type CellComponent = (<AsComponent extends React.ElementType = CellDefaultElemen
 export const Cell: CellComponent = memo(
   forwardRef<React.ReactElement<CellBaseProps>, CellBaseProps>(
     <AsComponent extends React.ElementType>(
-      {
+      _props: CellProps<AsComponent>,
+      ref?: Polymorphic.Ref<AsComponent>,
+    ) => {
+      const mergedProps = useComponentConfig('Cell', _props);
+      const {
         as,
         accessory,
         accessoryNode,
@@ -225,9 +250,7 @@ export const Cell: CellComponent = memo(
         bottomContent: bottom,
         background = 'bgAlternate',
         ...props
-      }: CellProps<AsComponent>,
-      ref?: Polymorphic.Ref<AsComponent>,
-    ) => {
+      } = mergedProps;
       const Component = (as ?? cellDefaultElement) satisfies React.ElementType;
 
       const { inner: innerSpacing, outer: outerSpacing } = useCellSpacing({

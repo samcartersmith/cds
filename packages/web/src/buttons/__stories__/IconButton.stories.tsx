@@ -74,6 +74,15 @@ export const Default = () => (
       <IconButton accessibilityLabel={accessibilityLabel} compact={false} name={iconName} />
     </VStack>
     <VStack gap={2}>
+      <Text font="title3">Icon Sizes</Text>
+      <HStack alignItems="center" gap={4}>
+        <IconButton accessibilityLabel="Extra small icon" iconSize="xs" name={iconName} />
+        <IconButton accessibilityLabel="Small icon" iconSize="s" name={iconName} />
+        <IconButton accessibilityLabel="Medium icon" iconSize="m" name={iconName} />
+        <IconButton accessibilityLabel="Large icon" compact={false} iconSize="l" name={iconName} />
+      </HStack>
+    </VStack>
+    <VStack gap={2}>
       <Text font="title3">Custom Style</Text>
       <IconButton
         accessibilityLabel={accessibilityLabel}
@@ -93,6 +102,12 @@ export const Default = () => (
     </VStack>
     <VStack gap={2}>
       <Text font="title3">Variants Loading</Text>
+      {variants.map((variant, index) => (
+        <HStack key={index} alignItems="center" gap={4}>
+          {variant.component({ accessibilityLabel, loading: true, compact: false })}
+          <Text font="body">{variant.title}</Text>
+        </HStack>
+      ))}
       {variants.map((variant, index) => (
         <HStack key={index} alignItems="center" gap={4}>
           {variant.component({ accessibilityLabel, loading: true })}

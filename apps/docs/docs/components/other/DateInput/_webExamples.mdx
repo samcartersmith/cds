@@ -250,6 +250,47 @@ function Example() {
 }
 ```
 
+### Borderless
+
+For borderless DateInput usage, prefer adding a focus border with `focusedBorderWidth`.
+If you need a fully borderless input (including focus), use that pattern with a TypeAhead
+composition.
+
+```jsx live
+function Example() {
+  const [defaultBorderlessDate, setDefaultBorderlessDate] = useState(null);
+  const [defaultBorderlessError, setDefaultBorderlessError] = useState(null);
+  const [focusBorderDate, setFocusBorderDate] = useState(null);
+  const [focusBorderError, setFocusBorderError] = useState(null);
+
+  return (
+    <VStack gap={3}>
+      <DateInput
+        bordered={false}
+        date={defaultBorderlessDate}
+        error={defaultBorderlessError}
+        helperText="Default borderless behavior with no focus border."
+        invalidDateError="Please enter a valid date"
+        label="Borderless date input"
+        onChangeDate={setDefaultBorderlessDate}
+        onErrorDate={setDefaultBorderlessError}
+      />
+      <DateInput
+        bordered={false}
+        date={focusBorderDate}
+        error={focusBorderError}
+        focusedBorderWidth={200}
+        helperText="Set focusedBorderWidth to opt into a focus border."
+        invalidDateError="Please enter a valid date"
+        label="Borderless date input with focus border"
+        onChangeDate={setFocusBorderDate}
+        onErrorDate={setFocusBorderError}
+      />
+    </VStack>
+  );
+}
+```
+
 ### Helper text
 
 ```jsx live
@@ -273,7 +314,7 @@ function Example() {
 
 ### Label
 
-If you need to render a custom label (e.g. a label with a tooltip), you can use the `labelNode` prop.
+You can pass a ReactNode to `labelNode` to render a custom label. If you want to include a tooltip, ensure the touch target is at least 24x24 for accessibility compliance.
 
 ```jsx live
 function Example() {
@@ -282,23 +323,22 @@ function Example() {
 
   return (
     <DateInput
-      id="birthdate-tooltip"
+      accessibilityLabel="Birthdate"
       date={date}
       error={error}
+      id="birthdate-tooltip"
+      invalidDateError="Please enter a valid date"
+      labelNode={
+        <HStack alignItems="center">
+          <InputLabel htmlFor="birthdate-tooltip">Birthdate</InputLabel>
+          {/* Add padding to ensure 24x24 tooltip tap target for a11y compliance */}
+          <Tooltip content="This will be visible to other users.">
+            <Icon active color="fg" name="info" padding={0.75} size="xs" tabIndex={0} />
+          </Tooltip>
+        </HStack>
+      }
       onChangeDate={setDate}
       onErrorDate={setError}
-      label="Birthdate"
-      labelNode={
-        <InputLabel htmlFor="birthdate-tooltip">
-          <HStack alignItems="center" gap={1}>
-            Birthdate
-            <Tooltip content="This will be visible to other users.">
-              <Icon active color="fg" name="info" size="xs" tabIndex={0} />
-            </Tooltip>
-          </HStack>
-        </InputLabel>
-      }
-      invalidDateError="Please enter a valid date"
     />
   );
 }

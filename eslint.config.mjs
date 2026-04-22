@@ -2,7 +2,6 @@ import globals from 'globals';
 import * as tseslint from 'typescript-eslint';
 import eslintJs from '@eslint/js';
 import eslintImport from 'eslint-plugin-import';
-import eslintSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import eslintReact from 'eslint-plugin-react';
 import eslintReactHooks from 'eslint-plugin-react-hooks';
 import eslintReactPerf from 'eslint-plugin-react-perf';
@@ -14,6 +13,8 @@ import eslintReactNativeA11y from 'eslint-plugin-react-native-a11y';
 import eslintReactNative from 'eslint-plugin-react-native';
 import eslintCodegen from 'eslint-plugin-codegen';
 import internalPlugin from '@coinbase/eslint-plugin-internal';
+import eslintSimpleImportSort from 'eslint-plugin-simple-import-sort';
+import cds from '@coinbase/eslint-plugin-cds';
 
 const ignores = [
   '*.md',
@@ -36,7 +37,6 @@ const ignores = [
   '**/getAffectedRoutes.mjs',
   '**/getBuildInfo.mjs',
   'apps/mobile-app/prebuilds',
-  'apps/mobile-app/prebuilds',
   // within their NX project, these files are not included by the Typescript config
   // when linting with TS types (e.g. internal/safely-spread-props) this will raise an error
   'packages/web/optimize-css.ts',
@@ -48,6 +48,8 @@ const ignores = [
 
 // These rules apply to all files
 const sharedRules = {
+  'internal/no-object-rest-spread-in-worklet': 'error',
+  'internal/deprecated-jsdoc-has-removal-version': 'error',
   'import/default': 'off',
   'import/extensions': 'off',
   'import/named': 'off',
@@ -164,6 +166,12 @@ const typescriptRules = {
   '@typescript-eslint/no-unsafe-function-type': 'error',
   '@typescript-eslint/no-unused-vars': 'off',
   '@typescript-eslint/prefer-namespace-keyword': 'off',
+  '@coinbase/cds/control-has-associated-label-extended': 'warn',
+  '@coinbase/cds/has-valid-accessibility-descriptors-extended': 'warn',
+  '@coinbase/cds/web-tooltip-interactive-content': 'warn',
+  '@coinbase/cds/web-chart-scrubbing-accessibility': 'warn',
+  '@coinbase/cds/mobile-chart-scrubbing-accessibility': 'warn',
+  '@coinbase/cds/no-v7-imports': 'warn',
 };
 
 // These rules only apply to test files
@@ -180,12 +188,14 @@ const testRules = {
 
 // These plugins apply to all files
 const sharedPlugins = {
+  internal: internalPlugin,
   'simple-import-sort': eslintSimpleImportSort,
 };
 
 // These plugins only apply to TS/TSX files
 const typescriptPlugins = {
   codegen: eslintCodegen,
+  '@coinbase/cds': cds,
 };
 
 // These plugins only apply to React Native files
@@ -265,7 +275,6 @@ export default tseslint.config(
     ignores: [
       'packages/illustrations/src/__generated__/**',
       'packages/ui-mobile-playground/**',
-      'packages/ui-mobile-visreg/**',
       'packages/**/__stories__/**',
       'packages/**/__tests__/**',
       'packages/**/__mocks__/**',
@@ -309,6 +318,10 @@ export default tseslint.config(
   {
     files: ['**/*.figma.tsx'],
     extends: [internalPlugin.configs.figmaConnectRules],
+  },
+  {
+    files: ['**/*.mdx'],
+    processor: internalPlugin.processors.mdx,
   },
   {
     files: ['**/*.test.{ts,tsx}', '**/__tests__/**', '**/setup.js'],

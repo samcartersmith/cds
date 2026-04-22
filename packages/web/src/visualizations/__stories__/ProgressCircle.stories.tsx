@@ -23,11 +23,68 @@ export const Default = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <HStack gap={2}>
-          <ProgressCircle progress={calculateProgress(0)} size={100} />
+          <ProgressCircle
+            accessibilityLabel="Progress circle"
+            progress={calculateProgress(0)}
+            size={100}
+          />
           <ProgressCircle
             accessibilityLabel="Custom accessibility label for progress circle"
             progress={calculateProgress(0.2)}
             size={100}
+          />
+        </HStack>
+      )}
+    </ProgressContainerWithButtons>
+  );
+};
+
+export const Indeterminate = () => {
+  return (
+    <ProgressContainerWithButtons>
+      {({ calculateProgress }) => (
+        <HStack gap={2}>
+          <ProgressCircle
+            indeterminate
+            accessibilityLabel="Loading"
+            color="bgPositive"
+            contentNode={<Text>Positive</Text>}
+            progress={calculateProgress(0.75)}
+            size={100}
+          />
+          <ProgressCircle
+            indeterminate
+            accessibilityLabel="Loading"
+            progress={calculateProgress(0.75)}
+            size={100}
+          />
+          <ProgressCircle
+            indeterminate
+            accessibilityLabel="Loading"
+            progress={calculateProgress(0.75)}
+            size={100}
+            weight="thin"
+          />
+          <ProgressCircle
+            indeterminate
+            accessibilityLabel="Loading"
+            progress={calculateProgress(0.75)}
+            size={100}
+            weight="normal"
+          />
+          <ProgressCircle
+            indeterminate
+            accessibilityLabel="Loading"
+            progress={calculateProgress(0.75)}
+            size={100}
+            weight="semiheavy"
+          />
+          <ProgressCircle
+            indeterminate
+            accessibilityLabel="Loading"
+            progress={calculateProgress(0.75)}
+            size={100}
+            weight="heavy"
           />
         </HStack>
       )}
@@ -40,8 +97,18 @@ export const Heavy = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <HStack gap={2}>
-          <ProgressCircle progress={calculateProgress(0)} size={100} weight="heavy" />
-          <ProgressCircle progress={calculateProgress(0.2)} size={100} weight="heavy" />
+          <ProgressCircle
+            accessibilityLabel="Progress circle"
+            progress={calculateProgress(0)}
+            size={100}
+            weight="heavy"
+          />
+          <ProgressCircle
+            accessibilityLabel="Progress circle"
+            progress={calculateProgress(0.2)}
+            size={100}
+            weight="heavy"
+          />
         </HStack>
       )}
     </ProgressContainerWithButtons>
@@ -53,8 +120,18 @@ export const NoText = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <HStack gap={2}>
-          <ProgressCircle hideContent progress={calculateProgress(0)} size={100} />
-          <ProgressCircle hideContent progress={calculateProgress(0.2)} size={100} />
+          <ProgressCircle
+            hideContent
+            accessibilityLabel="Progress circle"
+            progress={calculateProgress(0)}
+            size={100}
+          />
+          <ProgressCircle
+            hideContent
+            accessibilityLabel="Progress circle"
+            progress={calculateProgress(0.2)}
+            size={100}
+          />
         </HStack>
       )}
     </ProgressContainerWithButtons>
@@ -64,10 +141,10 @@ export const NoText = () => {
 export const Disabled = () => {
   return (
     <HStack gap={2}>
-      <ProgressCircle disabled progress={0} size={100} />
-      <ProgressCircle disabled progress={0.2} size={100} />
-      <ProgressCircle disabled progress={0.6} size={100} />
-      <ProgressCircle disabled progress={1} size={100} />
+      <ProgressCircle disabled accessibilityLabel="Progress circle" progress={0} size={100} />
+      <ProgressCircle disabled accessibilityLabel="Progress circle" progress={0.2} size={100} />
+      <ProgressCircle disabled accessibilityLabel="Progress circle" progress={0.6} size={100} />
+      <ProgressCircle disabled accessibilityLabel="Progress circle" progress={1} size={100} />
     </HStack>
   );
 };
@@ -75,11 +152,32 @@ export const Disabled = () => {
 export const Colors = () => {
   return (
     <HStack gap={2}>
-      <ProgressCircle color="bgPositive" progress={0.5} size={100} />
-      <ProgressCircle color="bgNegative" progress={0.5} size={100} />
-      <ProgressCircle color="bgPrimary" progress={0.5} size={100} />
-      <ProgressCircle color="fg" progress={0.5} size={100} />
-      <ProgressCircle disabled color="fg" progress={0.5} size={100} />
+      <ProgressCircle
+        accessibilityLabel="Progress circle"
+        color="bgPositive"
+        progress={0.5}
+        size={100}
+      />
+      <ProgressCircle
+        accessibilityLabel="Progress circle"
+        color="bgNegative"
+        progress={0.5}
+        size={100}
+      />
+      <ProgressCircle
+        accessibilityLabel="Progress circle"
+        color="bgPrimary"
+        progress={0.5}
+        size={100}
+      />
+      <ProgressCircle accessibilityLabel="Progress circle" color="fg" progress={0.5} size={100} />
+      <ProgressCircle
+        disabled
+        accessibilityLabel="Progress circle"
+        color="fg"
+        progress={0.5}
+        size={100}
+      />
     </HStack>
   );
 };
@@ -104,6 +202,7 @@ export const AnimationCallbacks = () => {
         {({ calculateProgress }) => (
           <HStack gap={2}>
             <ProgressCircle
+              accessibilityLabel="Progress circle"
               onAnimationEnd={handleAnimationEnd}
               onAnimationStart={handleAnimationStart}
               progress={calculateProgress(0.2)}
@@ -123,19 +222,25 @@ export const FillParent = () => {
       {({ calculateProgress }) => (
         <HStack flexWrap="wrap" gap={2}>
           <div style={{ height: '300px', width: '300px' }}>
-            <ProgressCircle progress={calculateProgress(0)} />
+            <ProgressCircle accessibilityLabel="Progress circle" progress={calculateProgress(0)} />
           </div>
           <div style={{ height: '200px', width: '200px' }}>
-            <ProgressCircle progress={calculateProgress(0.3)} />
+            <ProgressCircle
+              accessibilityLabel="Progress circle"
+              progress={calculateProgress(0.3)}
+            />
           </div>
           <div style={{ height: '100px', width: '100px' }}>
-            <ProgressCircle progress={calculateProgress(0.66)} />
+            <ProgressCircle
+              accessibilityLabel="Progress circle"
+              progress={calculateProgress(0.66)}
+            />
           </div>
           <div style={{ height: '75px', width: '75px' }}>
-            <ProgressCircle progress={calculateProgress(1)} />
+            <ProgressCircle accessibilityLabel="Progress circle" progress={calculateProgress(1)} />
           </div>
           <div style={{ height: '10vw', width: '10vw' }}>
-            <ProgressCircle progress={calculateProgress(1)} />
+            <ProgressCircle accessibilityLabel="Progress circle" progress={calculateProgress(1)} />
           </div>
         </HStack>
       )}
@@ -150,6 +255,7 @@ export const CustomTextColor = () => {
       {({ calculateProgress }) => (
         <HStack gap={2}>
           <ProgressCircle
+            accessibilityLabel="Progress circle"
             color="fgPrimary"
             contentNode={
               <DefaultProgressCircleContent color="fgPrimary" progress={calculateProgress(0.2)} />
@@ -158,6 +264,7 @@ export const CustomTextColor = () => {
             size={100}
           />
           <ProgressCircle
+            accessibilityLabel="Progress circle"
             color="fgPositive"
             contentNode={
               <DefaultProgressCircleContent color="fgPositive" progress={calculateProgress(0.2)} />
@@ -181,6 +288,7 @@ export const WithAsset = () => {
     <VStack gap={2}>
       <HStack gap={2}>
         <ProgressCircle
+          accessibilityLabel="Progress circle"
           contentNode={
             <Box height="100%" padding={0.25} width="100%">
               <RemoteImage
@@ -201,6 +309,7 @@ export const WithAsset = () => {
           weight="thin"
         />
         <ProgressCircle
+          accessibilityLabel="Progress circle"
           contentNode={
             <Box height="100%" padding={0.25} width="100%">
               <RemoteImage
@@ -221,6 +330,7 @@ export const WithAsset = () => {
           weight="thin"
         />
         <ProgressCircle
+          accessibilityLabel="Progress circle"
           contentNode={
             <Box height="100%" padding={0.25} width="100%">
               <RemoteImage
@@ -241,6 +351,7 @@ export const WithAsset = () => {
           weight="thin"
         />
         <ProgressCircle
+          accessibilityLabel="Progress circle"
           contentNode={
             <Box height="100%" padding={0.25} width="100%">
               <RemoteImage
@@ -261,6 +372,7 @@ export const WithAsset = () => {
           weight="thin"
         />
         <ProgressCircle
+          accessibilityLabel="Progress circle"
           contentNode={
             <Box padding={0.25}>
               <RemoteImage
@@ -287,6 +399,7 @@ export const WithAsset = () => {
           .map((avatarSize) => (
             <ProgressCircle
               key={`${avatarSize}-progress-circle`}
+              accessibilityLabel="Progress circle"
               classNames={{
                 progress: progressCss,
               }}
@@ -321,6 +434,7 @@ export const CustomStyles = () => {
     <VStack gap={2}>
       <HStack gap={2}>
         <ProgressCircle
+          accessibilityLabel="Progress circle"
           contentNode={
             <Text color={disabled ? 'fgMuted' : 'fgPrimary'} font="title1">
               40%
@@ -337,6 +451,7 @@ export const CustomStyles = () => {
           weight="semiheavy"
         />
         <ProgressCircle
+          accessibilityLabel="Progress circle"
           color="fgPositive"
           contentNode={
             <Icon
@@ -365,8 +480,18 @@ export const Thin = () => {
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
         <HStack gap={2}>
-          <ProgressCircle progress={calculateProgress(0)} size={100} weight="thin" />
-          <ProgressCircle progress={calculateProgress(0.2)} size={100} weight="thin" />
+          <ProgressCircle
+            accessibilityLabel="Progress circle"
+            progress={calculateProgress(0)}
+            size={100}
+            weight="thin"
+          />
+          <ProgressCircle
+            accessibilityLabel="Progress circle"
+            progress={calculateProgress(0.2)}
+            size={100}
+            weight="thin"
+          />
         </HStack>
       )}
     </ProgressContainerWithButtons>
@@ -377,7 +502,12 @@ export const DisableAnimateOnMount = () => {
   return (
     <ProgressContainerWithButtons>
       {({ calculateProgress }) => (
-        <ProgressCircle disableAnimateOnMount progress={calculateProgress(0.8)} size={100} />
+        <ProgressCircle
+          disableAnimateOnMount
+          accessibilityLabel="Progress circle"
+          progress={calculateProgress(0.8)}
+          size={100}
+        />
       )}
     </ProgressContainerWithButtons>
   );

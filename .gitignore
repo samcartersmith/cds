@@ -147,8 +147,7 @@ npm-debug.*
 web-build/
 ios
 android
-# percy screenshots. defined in ui-mobile-visreg
-artifacts/playground-screenshots 
+
 # failed detox test screenshots
 apps/mobile-app/artifacts
 apps/mobile-app/prebuilds/android-*
@@ -176,6 +175,8 @@ cds-biweekly-update.md
 missing-files.json
 barrel-files.md
 base-props.json
+component-peer-dependencies.md
+component-peer-dependencies.json
 
 # temp directory created when running podium scripts. this gets deleted after the script is done, but for the sake of your sanity, let's not track it
 **/.podium/

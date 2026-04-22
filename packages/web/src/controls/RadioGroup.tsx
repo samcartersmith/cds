@@ -13,7 +13,8 @@ import { useHandleRadioSelect } from './useHandleRadioSelect';
 export { Radio, type RadioProps, useHandleRadioSelect };
 
 /**
- * @deprecated RadioGroup is deprecated. Use ControlGroup with role="radiogroup" instead.
+ * @deprecated RadioGroup is deprecated. Use ControlGroup with role="radiogroup" instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v6
  *
  * @example
  * // Instead of:
@@ -29,7 +30,7 @@ export { Radio, type RadioProps, useHandleRadioSelect };
  *   name="radio"
  * />
  */
-export type RadioGroupBaseProps<T extends string> = FilteredHTMLAttributes<
+export type RadioGroupBaseProps<RadioValue extends string> = FilteredHTMLAttributes<
   React.HTMLAttributes<HTMLDivElement>,
   'onChange' | 'color'
 > &
@@ -40,15 +41,15 @@ export type RadioGroupBaseProps<T extends string> = FilteredHTMLAttributes<
      * Multiple choice options for the radio group. The object key represents
      * the radio input value and the object value represents the radio option label.
      */
-    options: Record<T, string | React.ReactNode>;
+    options: Record<RadioValue, string | React.ReactNode>;
     /** Set a label summary for the group of radios. */
     label?: React.ReactNode;
     /** Currently selected value. */
-    value?: T;
+    value?: RadioValue;
     /** Field name of the multiple choice radio group. */
     name: string;
     /** Handle change event when pressing on a radio option. */
-    onChange?: (value: T) => void;
+    onChange?: (value: RadioValue) => void;
     /** Sets the checked/active color of each control in the group.
      * @default bgPrimary
      */
@@ -56,11 +57,12 @@ export type RadioGroupBaseProps<T extends string> = FilteredHTMLAttributes<
   };
 
 /**
- * @deprecated RadioGroup is deprecated. Use ControlGroup with role="radiogroup" instead.
+ * @deprecated RadioGroup is deprecated. Use ControlGroup with role="radiogroup" instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v8
  */
-export type RadioGroupProps<T extends string> = RadioGroupBaseProps<T>;
+export type RadioGroupProps<RadioValue extends string> = RadioGroupBaseProps<RadioValue>;
 
-const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
+const RadioGroupWithRef = forwardRef(function RadioGroup<RadioValue extends string>(
   {
     label,
     value,
@@ -71,19 +73,19 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
     controlColor = 'bgPrimary',
     role = 'radiogroup',
     ...props
-  }: RadioGroupProps<T>,
+  }: RadioGroupProps<RadioValue>,
   ref: React.ForwardedRef<HTMLDivElement>,
 ) {
   if (isDevelopment()) {
     console.warn('RadioGroup is deprecated. Use ControlGroup with role="radiogroup" instead.');
   }
 
-  const handleSelect = useHandleRadioSelect<T>(onChange);
+  const handleSelect = useHandleRadioSelect<RadioValue>(onChange);
 
   // Convert Record<T, string | React.ReactNode> to ControlGroup options format
   const controlGroupOptions = Object.entries<string | React.ReactNode>(options).map(
     ([optionValue, optionLabel]) => ({
-      value: optionValue as T,
+      value: optionValue as RadioValue,
       children: optionLabel,
       id: `${name}-${optionValue}`,
       controlColor,
@@ -108,12 +110,13 @@ const RadioGroupWithRef = forwardRef(function RadioGroup<T extends string>(
       {...props}
     />
   );
-}) as <T extends string>(
-  props: RadioGroupProps<T> & { ref?: React.Ref<HTMLInputElement> },
+}) as <RadioValue extends string>(
+  props: RadioGroupProps<RadioValue> & { ref?: React.Ref<HTMLInputElement> },
 ) => React.ReactElement;
 
 /**
- * @deprecated RadioGroup is deprecated. Use ControlGroup with role="radiogroup" instead.
+ * @deprecated RadioGroup is deprecated. Use ControlGroup with role="radiogroup" instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v6
  */
 export const RadioGroup = memo(RadioGroupWithRef) as typeof RadioGroupWithRef &
   React.MemoExoticComponent<typeof RadioGroupWithRef>;

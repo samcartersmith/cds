@@ -1,72 +1,205 @@
-### Basic usage
+Tabs manages which tab is active and positions the animated indicator. For the common **underline** pattern, pass **`TabsActiveIndicatorComponent={DefaultTabsActiveIndicator}`** and rely on the default **`TabComponent` (`DefaultTab`)**. Use a custom **`TabComponent`** when you need layout or content beyond what `DefaultTab` provides. For **pill / segmented** controls, use [SegmentedTabs](/components/navigation/SegmentedTabs/) instead.
 
-```tsx
-const tabs = [
-  { id: 'tab1', label: 'Tab 1' },
-  { id: 'tab2', label: 'Tab 2' },
-  { id: 'tab3', label: 'Tab 3' },
-];
+## Basics
 
-const TabComponent = ({ id, label, disabled }) => {
-  const { activeTab, updateActiveTab } = useTabsContext();
-  const isActive = activeTab?.id === id;
+Out of the box, **`Tabs`** uses **`DefaultTab`** for each row (headline text, optional [DotCount](/components/other/DotCount/) via `count` / `max` on each tab) and **`DefaultTabsActiveIndicator`** for the animated underline. **`activeBackground`** sets the **underline color** (it is forwarded to the indicator as its `background` token).
+
+```jsx
+function Example() {
+  const tabs = [
+    { id: 'tab1', label: 'Tab 1' },
+    { id: 'tab2', label: 'Tab 2' },
+    { id: 'tab3', label: 'Tab 3' },
+  ];
+  const [activeTab, setActiveTab] = useState(tabs[0]);
   return (
-    <Pressable
-      onPress={() => updateActiveTab(id)}
-      disabled={disabled}
-      accessibilityLabel={label}
-      accessibilityRole="tab"
-      accessibilityState={{ selected: isActive, disabled }}
-    >
-      <TabLabel id={id} active={isActive}>
-        {label}
-      </TabLabel>
-    </Pressable>
+    <Tabs
+      accessibilityLabel="Example tabs"
+      activeBackground="bgPrimary"
+      activeTab={activeTab}
+      background="bg"
+      gap={4}
+      onChange={setActiveTab}
+      // default value; can be omitted.
+      TabComponent={DefaultTab}
+      tabs={tabs}
+      // default value; can be omitted.
+      TabsActiveIndicatorComponent={DefaultTabsActiveIndicator}
+    />
   );
-};
-
-<Tabs
-  tabs={tabs}
-  activeTab={tabs[0]}
-  onChange={() => {}}
-  TabComponent={TabComponent}
-  TabsActiveIndicatorComponent={TabsIndicator}
-/>;
+}
 ```
 
-### Custom Tab Component
+You can omit `TabComponent` explicitly: **`Tabs`** defaults it to **`DefaultTab`**.
 
-```tsx
-const tabs = [
-  { id: 'home', label: 'Home', icon: '🏠' },
-  { id: 'profile', label: 'Profile', icon: '👤' },
-  { id: 'settings', label: 'Settings', icon: '⚙️' },
-];
+### No initial selection
 
-const CustomTab = ({ id, label, icon, disabled }) => {
-  const { activeTab, updateActiveTab } = useTabsContext();
-  const isActive = activeTab?.id === id;
+```jsx
+function Example() {
+  const tabs = [
+    { id: 'tab1', label: 'Tab 1' },
+    { id: 'tab2', label: 'Tab 2' },
+    { id: 'tab3', label: 'Tab 3' },
+  ];
+  const [activeTab, setActiveTab] = useState(null);
   return (
-    <Pressable
-      onPress={() => updateActiveTab(id)}
-      disabled={disabled}
-      accessibilityLabel={label}
-      accessibilityRole="tab"
-      accessibilityState={{ selected: isActive, disabled }}
-    >
-      <TabLabel id={id} active={isActive}>
-        {label}
-        {icon}
-      </TabLabel>
-    </Pressable>
+    <Tabs
+      accessibilityLabel="Example tabs"
+      activeBackground="bgPrimary"
+      activeTab={activeTab}
+      background="bg"
+      gap={4}
+      onChange={setActiveTab}
+      tabs={tabs}
+    />
   );
-};
-
-<Tabs
-  tabs={tabs}
-  activeTab={tabs[0]}
-  onChange={() => {}}
-  TabComponent={CustomTab}
-  TabsActiveIndicatorComponent={TabsIndicator}
-/>;
+}
 ```
+
+### Dot counts
+
+```jsx
+function Example() {
+  const tabs = [
+    { id: 'inbox', label: 'Inbox', count: 3, max: 99 },
+    { id: 'sent', label: 'Sent' },
+  ];
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+  return (
+    <Tabs
+      accessibilityLabel="Mail folders"
+      activeBackground="bgPrimary"
+      activeTab={activeTab}
+      background="bg"
+      gap={4}
+      onChange={setActiveTab}
+      tabs={tabs}
+    />
+  );
+}
+```
+
+### Disabled
+
+```jsx
+function Example() {
+  const tabs = [
+    { id: 'tab1', label: 'Tab 1' },
+    { id: 'tab2', label: 'Tab 2', disabled: true },
+    { id: 'tab3', label: 'Tab 3' },
+  ];
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+  return (
+    <Tabs
+      accessibilityLabel="Example tabs"
+      activeBackground="bgPrimary"
+      activeTab={activeTab}
+      background="bg"
+      gap={4}
+      onChange={setActiveTab}
+      tabs={tabs}
+    />
+  );
+}
+```
+
+## Custom `TabComponent`
+
+Use **`useTabsContext`** with your own **`Pressable`** and **`Text`** for labels (and a custom **`TabsActiveIndicatorComponent`** if needed) when you need more control than `DefaultTab`.
+
+```jsx
+function Example() {
+  const tabs = [
+    { id: 'tab1', label: 'Tab 1' },
+    { id: 'tab2', label: 'Tab 2' },
+    { id: 'tab3', label: 'Tab 3' },
+  ];
+
+  const TabComponent = useCallback(({ id, label, disabled }) => {
+    const { activeTab, updateActiveTab } = useTabsContext();
+    const isActive = activeTab?.id === id;
+    return (
+      <Pressable
+        onPress={() => updateActiveTab(id)}
+        disabled={disabled}
+        accessibilityRole="tab"
+        accessibilityState={{ selected: isActive, disabled }}
+      >
+        <Text font="headline" color={isActive ? 'fgPositive' : 'fg'}>
+          {label}
+        </Text>
+      </Pressable>
+    );
+  }, []);
+
+  const ActiveIndicator = useCallback(
+    (props) => <TabsActiveIndicator {...props} background="bgPrimary" bottom={0} height={2} />,
+    [],
+  );
+
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+  return (
+    <Tabs
+      gap={4}
+      tabs={tabs}
+      activeTab={activeTab}
+      onChange={setActiveTab}
+      TabComponent={TabComponent}
+      TabsActiveIndicatorComponent={ActiveIndicator}
+    />
+  );
+}
+```
+
+### Custom label content
+
+```jsx
+function Example() {
+  const tabs = [
+    { id: 'home', label: 'Home', icon: 'home' },
+    { id: 'profile', label: 'Profile', icon: 'user' },
+    { id: 'settings', label: 'Settings', icon: 'settings' },
+  ];
+
+  const CustomTab = useCallback(({ id, label, icon, disabled }) => {
+    const { activeTab, updateActiveTab } = useTabsContext();
+    const isActive = activeTab?.id === id;
+    return (
+      <Pressable
+        onPress={() => updateActiveTab(id)}
+        disabled={disabled}
+        accessibilityRole="tab"
+        accessibilityState={{ selected: isActive, disabled }}
+      >
+        <HStack gap={1} alignItems="center">
+          <Icon name={icon} size="s" color={isActive ? 'fgPrimary' : 'fgMuted'} />
+          <Text font="headline" color={isActive ? 'fgPrimary' : 'fg'}>
+            {label}
+          </Text>
+        </HStack>
+      </Pressable>
+    );
+  }, []);
+
+  const ActiveIndicator = useCallback(
+    (props) => <TabsActiveIndicator {...props} background="bgPrimary" bottom={0} height={2} />,
+    [],
+  );
+
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+  return (
+    <Tabs
+      gap={4}
+      tabs={tabs}
+      activeTab={activeTab}
+      onChange={setActiveTab}
+      TabComponent={CustomTab}
+      TabsActiveIndicatorComponent={ActiveIndicator}
+    />
+  );
+}
+```
+
+## Accessibility
+
+Set **`accessibilityLabel`** on **`Tabs`**. **`DefaultTab`** wires `accessibilityRole="tab"` and selection state; keep tab panels in sync in your screen content.

@@ -233,6 +233,20 @@ const InputScreen = () => {
           placeholder="ex. Bitcoin"
         />
       </Example>
+      <Example inline title="TextInput start icon">
+        <MockTextInput
+          helperText="Search for assets here"
+          label="Search"
+          placeholder="ex. Bitcoin"
+          start={<InputIconButton transparent name="search" />}
+        />
+        <MockTextInput
+          helperText="Search for assets here"
+          label="Search"
+          placeholder="ex. Bitcoin"
+          start={<InputIconButton transparent name="search" />}
+        />
+      </Example>
       <Example inline title="TextInput start/end Node">
         <MockTextInput
           end={
@@ -369,8 +383,20 @@ const InputScreen = () => {
       <Example inline title="TextInput Custom Background">
         <MockTextInput label="Username" placeholder="john.doe@coinbase.com" style={customStyle} />
       </Example>
-      <Example inline title="TextInput without border">
-        <MockTextInput bordered={false} label="Username" placeholder="john.doe@coinbase.com" />
+      <Example inline title="TextInput borderless variants">
+        <MockTextInput
+          bordered={false}
+          helperText="Default borderless behavior with no focus border."
+          label="Username"
+          placeholder="john.doe@coinbase.com"
+        />
+        <MockTextInput
+          bordered={false}
+          focusedBorderWidth={200}
+          helperText="Set focusedBorderWidth to opt into a focus border."
+          label="Username with focus border"
+          placeholder="john.doe@coinbase.com"
+        />
       </Example>
       <Example inline title="Read-Only TextInput">
         <MockTextInput readOnly label="Read-Only" placeholder="Placeholder" value="Some text" />
@@ -455,18 +481,61 @@ const InputScreen = () => {
           variant="negative"
         />
       </Example>
-      <Example inline title="TextInput with labelNode">
+      <Example inline title="TextInput with custom label">
         <MockTextInput
-          label="Display name"
+          accessibilityLabel="Display name"
           labelNode={
-            <HStack alignItems="center" gap={1}>
+            <HStack alignItems="center">
               <InputLabel>Display name</InputLabel>
               <Tooltip content="This will be visible to other users.">
-                <Icon active color="fg" name="info" size="xs" />
+                <Icon active color="fg" name="info" padding={0.75} size="xs" />
               </Tooltip>
             </HStack>
           }
           placeholder="Satoshi Nakamoto"
+        />
+        <MockCompactTextInput
+          accessibilityLabel="Amount"
+          labelNode={
+            <HStack alignItems="center" gap={0.5}>
+              <InputLabel>Amount</InputLabel>
+              <Text color="fgNegative" font="label1">
+                *
+              </Text>
+            </HStack>
+          }
+          placeholder="0.00"
+          suffix="USD"
+        />
+        <MockCompactTextInput
+          accessibilityLabel="Search"
+          labelNode={
+            <VStack justifyContent="center">
+              <InputLabel>Search</InputLabel>
+            </VStack>
+          }
+          placeholder="Search..."
+          start={<InputIconButton transparent name="search" />}
+        />
+        <MockTextInput
+          accessibilityLabel="Bio"
+          labelNode={
+            <HStack alignItems="center" gap={1}>
+              <InputLabel paddingY={0}>Bio</InputLabel>
+              <Text color="fgMuted" font="legal">
+                (optional)
+              </Text>
+            </HStack>
+          }
+          labelVariant="inside"
+          placeholder="Tell us about yourself"
+        />
+        <MockTextInput
+          accessibilityLabel="Notes"
+          labelNode={<InputLabel paddingY={0}>Notes</InputLabel>}
+          labelVariant="inside"
+          placeholder="Add a note"
+          start={<InputIcon name="pencil" />}
         />
       </Example>
     </ExampleScreen>

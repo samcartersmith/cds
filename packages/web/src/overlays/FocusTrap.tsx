@@ -1,12 +1,13 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import type { ReactElement, RefObject } from 'react';
+import { useMergeRefs } from '@coinbase/cds-common/hooks/useMergeRefs';
 import { FOCUSABLE_ELEMENTS } from '@coinbase/cds-common/tokens/overlays';
 import { debounce } from '@coinbase/cds-common/utils/debounce';
 
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { getBrowserGlobals } from '../utils/browser';
 
-export type FocusTrapProps = {
-  children: ReactElement;
+export type FocusTrapBaseProps = {
   onEscPress?: () => void;
   /**
    * Use for editable Search Input components to ensure focus is correctly applied
@@ -17,35 +18,38 @@ export type FocusTrapProps = {
    */
   disableFocusTrap?: boolean;
   /**
+   * If `true`, the focus trap will not automatically shift focus to itself when it opens, and
+   * replace it to the last focused element when it closes.
+   */
+  disableAutoFocus?: boolean;
+  /**
+   * If `true`, the focus trap will not allow arrow key navigation.
+   */
+  disableArrowKeyNavigation?: boolean;
+  /**
+   * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
+   */
+  restoreFocusOnUnmount?: boolean;
+  /**
    * If `true`, the focus trap will include the trigger in the focus trap.
    */
   includeTriggerInFocusTrap?: boolean;
   /**
-   * If `true`, the focus trap will not automatically shift focus to itself when it opens, and
-   * replace it to the last focused element when it closes.
-   * @default false
-   */
-  disableAutoFocus?: boolean;
-  /**
-   * If `true`, the focus trap will restore focus to the previously focused element when it unmounts.
-   * @default false
-   */
-  restoreFocusOnUnmount?: boolean;
-  /**
    * If `true`, the focus trap will respect negative `tabIndex` values, removing them from the list of focusable elements.
-   * @default false
    */
   respectNegativeTabIndex?: boolean;
   /**
    * If `true`, the focus trap will include all elements with `tabIndex` values in the list of focusable elements.
-   * @default false
    */
   focusTabIndexElements?: boolean;
   /**
    * The amount of time in milliseconds to wait before auto-focusing the first focusable element.
-   * @default undefined
    */
   autoFocusDelay?: number;
+};
+
+export type FocusTrapProps = FocusTrapBaseProps & {
+  children: ReactElement & { ref?: React.Ref<HTMLElement> };
 };
 
 const DEBOUNCE_MS = 50;
@@ -80,18 +84,21 @@ const ALPHABET_KEYS = [
 ];
 const FOCUSABLE_ELEMENTS_INCLUDING_TABINDEX = `${FOCUSABLE_ELEMENTS}, [tabindex]`;
 
-export const FocusTrap = memo(function FocusTrap({
-  children,
-  onEscPress,
-  disableTypeFocus,
-  disableFocusTrap,
-  includeTriggerInFocusTrap,
-  disableAutoFocus,
-  respectNegativeTabIndex,
-  focusTabIndexElements,
-  autoFocusDelay,
-  restoreFocusOnUnmount,
-}: FocusTrapProps) {
+export const FocusTrap = memo((_props: FocusTrapProps) => {
+  const mergedProps = useComponentConfig('FocusTrap', _props);
+  const {
+    children,
+    onEscPress,
+    disableTypeFocus,
+    disableFocusTrap,
+    disableAutoFocus,
+    disableArrowKeyNavigation,
+    includeTriggerInFocusTrap,
+    respectNegativeTabIndex,
+    focusTabIndexElements,
+    autoFocusDelay,
+    restoreFocusOnUnmount,
+  } = mergedProps;
   const isFocused = useRef(false);
   const childrenRef = useRef<HTMLElement>(null);
   const previouslyFocusedElement = useRef<HTMLElement | null>(null);
@@ -133,10 +140,15 @@ export const FocusTrap = memo(function FocusTrap({
   // trap focus for accessibility
   const handleKeyboardNavigation = useCallback(
     (event: KeyboardEvent, element: RefObject<HTMLElement>['current']) => {
+      if (event.defaultPrevented) return;
       const document = getBrowserGlobals()?.document;
       const activeElement = document?.activeElement as HTMLElement;
 
       if (!element || !document) return;
+
+      if (disableArrowKeyNavigation && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+        return;
+      }
 
       let focusableElements = Array.from(
         element.querySelectorAll(
@@ -170,7 +182,7 @@ export const FocusTrap = memo(function FocusTrap({
         : undefined;
 
       const secondElementIsMenuItemOrOption =
-        secondElement.role === 'menuitem' || secondElement.role === 'option';
+        secondElement?.role === 'menuitem' || secondElement?.role === 'option';
 
       // bring focus inside modal
       if (
@@ -239,7 +251,7 @@ export const FocusTrap = memo(function FocusTrap({
           (event.key === 'ArrowDown' &&
             (activeElementIsMenuItemOrOption || secondElementIsMenuItemOrOption))
         ) {
-          secondElement.focus();
+          secondElement?.focus();
         }
       };
 
@@ -263,7 +275,7 @@ export const FocusTrap = memo(function FocusTrap({
         event.preventDefault();
 
         const elementWithMatchingFirstLetter = focusableElements.find((el: Element) => {
-          const textContentFirstLetter = el.textContent?.at(0)?.toLowerCase();
+          const textContentFirstLetter = el.textContent?.[0]?.toLowerCase();
           const eventKeyLowerCase = event.key.toLowerCase();
 
           return textContentFirstLetter === eventKeyLowerCase;
@@ -300,7 +312,13 @@ export const FocusTrap = memo(function FocusTrap({
         focusPrevElement();
       }
     },
-    [focusTabIndexElements, disableTypeFocus, respectNegativeTabIndex, includeTriggerInFocusTrap],
+    [
+      focusTabIndexElements,
+      disableTypeFocus,
+      disableArrowKeyNavigation,
+      respectNegativeTabIndex,
+      includeTriggerInFocusTrap,
+    ],
   );
 
   const handleKeyDown = useCallback(
@@ -363,9 +381,11 @@ export const FocusTrap = memo(function FocusTrap({
   // only works for single child
   const onlyChild = React.Children.only(children);
 
+  const mergedRef = useMergeRefs(childrenRef, children?.ref);
+
   if (!onlyChild) {
     return <>{children}</>;
   }
 
-  return React.cloneElement(children, { ref: childrenRef });
+  return React.cloneElement(children, { ref: mergedRef });
 });

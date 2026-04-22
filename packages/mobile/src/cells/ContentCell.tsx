@@ -11,13 +11,15 @@ import { CellAccessory, type CellAccessoryType } from './CellAccessory';
 import { condensedInnerSpacing, condensedOuterSpacing } from './ListCell';
 
 /**
- * @deprecated this component will be removed in a future version. Use ListCell instead.
+ * @deprecated Use ListCell instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v9
  */
 export type ContentCellBaseProps = {
   /** Accessory to display at the end of the cell. */
   accessory?: CellAccessoryType;
   /**
-   * @deprecated Use `spacingVariant="compact"` instead. `compact` will be removed in a future major release.
+   * @deprecated Use `spacingVariant="compact"` instead. This will be removed in a future major release.
+   * @deprecationExpectedRemoval v9
    */
   compact?: boolean;
   /**
@@ -72,20 +74,29 @@ export type ContentCellBaseProps = {
    * When provided, `styles.title` is not applied.
    */
   titleNode?: React.ReactNode;
-  /**
-   * Styles for the default subcomponents. Ignored when the corresponding `xxNode` prop is used.
-   */
+  /** Styles for subcomponents, ignored when the corresponding `xxNode` prop is used */
   styles?: {
+    /** Root element */
     root?: StyleProp<ViewStyle>;
+    /** Media element */
     media?: StyleProp<ViewStyle>;
+    /** Accessory element */
     accessory?: StyleProp<ViewStyle>;
+    /** Content container element */
     contentContainer?: StyleProp<ViewStyle>;
+    /** Pressable wrapper element */
     pressable?: StyleProp<ViewStyle>;
+    /** Main content element */
     mainContent?: StyleProp<ViewStyle>;
+    /** Title text element */
     title?: StyleProp<TextStyle>;
+    /** Subtitle text element */
     subtitle?: StyleProp<TextStyle>;
+    /** Meta container element */
     metaContainer?: StyleProp<ViewStyle>;
+    /** Meta text element */
     meta?: StyleProp<TextStyle>;
+    /** Description text element */
     description?: StyleProp<TextStyle>;
   };
 };
@@ -112,7 +123,8 @@ function generateAccessibilityLabels(
 }
 
 /**
- * @deprecated this component will be removed in a future version. Use ListCell instead.
+ * @deprecated Use ListCell instead. This will be removed in a future major release.
+ * @deprecationExpectedRemoval v9
  */
 export const ContentCell = memo(function ContentCell({
   accessory,

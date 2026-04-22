@@ -7,6 +7,7 @@ import { isDevelopment } from '@coinbase/cds-utils';
 import { css } from '@linaria/core';
 
 import { cx } from '../cx';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { Box } from '../layout/Box';
 import { Interactable, type InteractableBaseProps } from '../system/Interactable';
 import type { FilteredHTMLAttributes } from '../types';
@@ -54,7 +55,7 @@ const interactableCss = css`
   }
 `;
 
-export type ControlBaseProps<T extends string> = FilteredHTMLAttributes<
+export type ControlBaseProps<ControlValue extends string> = FilteredHTMLAttributes<
   React.InputHTMLAttributes<HTMLInputElement>,
   'value' | 'color'
 > &
@@ -62,7 +63,7 @@ export type ControlBaseProps<T extends string> = FilteredHTMLAttributes<
   Partial<
     Pick<
       InteractableBaseProps,
-      'background' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'color'
+      'background' | 'borderColor' | 'borderRadius' | 'borderWidth' | 'color' | 'elevation'
     >
   > & {
     /** Label for the control option. */
@@ -74,7 +75,7 @@ export type ControlBaseProps<T extends string> = FilteredHTMLAttributes<
     /** Set the control to ready-only. Similar effect as disabled. */
     readOnly?: boolean;
     /** Value of the option. Useful for multiple choice. */
-    value?: T;
+    value?: ControlValue;
     /** Accessibility label describing the element. */
     accessibilityLabel?: string;
     /** Enable indeterminate state. Useful when you want to indicate that sub-items of a control are partially filled. */
@@ -85,13 +86,17 @@ export type ControlBaseProps<T extends string> = FilteredHTMLAttributes<
     labelStyle?: React.CSSProperties;
   };
 
-export type ControlProps<T extends string> = ControlBaseProps<T> & {
+export type ControlProps<ControlValue extends string> = ControlBaseProps<ControlValue> & {
   label?: React.ReactNode;
   children: React.ReactNode;
 };
 
-const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
-  {
+const ControlWithRef = forwardRef(function ControlWithRef<ControlValue extends string>(
+  _props: ControlProps<ControlValue>,
+  ref: React.ForwardedRef<HTMLInputElement>,
+) {
+  const mergedProps = useComponentConfig('Control', _props);
+  const {
     type,
     checked,
     disabled,
@@ -107,13 +112,12 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
     borderRadius,
     borderWidth,
     color = checked || indeterminate ? 'fg' : 'fgMuted',
+    elevation,
     testID,
     iconStyle,
     labelStyle,
     ...htmlProps
-  }: ControlProps<T>,
-  ref: React.ForwardedRef<HTMLInputElement>,
-) {
+  } = mergedProps;
   if (isDevelopment() && !children && !ariaLabelledby) {
     console.warn(
       `Please provide an aria label for the control component ${value} either through the children or aria-labelledby prop.`,
@@ -138,6 +142,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
         borderWidth={borderWidth}
         className={interactableCss}
         disabled={disabled || readOnly}
+        elevation={elevation}
         style={iconStyle}
         testID={testID ? `${testID}-parent` : undefined}
       >
@@ -169,6 +174,7 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
       checked,
       children,
       disabled,
+      elevation,
       htmlProps,
       iconStyle,
       inputId,
@@ -210,8 +216,8 @@ const ControlWithRef = forwardRef(function ControlWithRef<T extends string>(
 
   // If no label is provided, consumer should wrap the checkbox with <label> or provide a value for the aria-labelledby prop.
   return controlElement;
-}) as <T extends string>(
-  props: ControlProps<T> & { ref?: React.Ref<HTMLInputElement> },
+}) as <ControlValue extends string>(
+  props: ControlProps<ControlValue> & { ref?: React.Ref<HTMLInputElement> },
 ) => React.ReactElement;
 
 export const Control = memo(ControlWithRef) as typeof ControlWithRef &

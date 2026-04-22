@@ -1,5 +1,6 @@
-import React, { cloneElement, useCallback, useMemo, useRef } from 'react';
+import React, { cloneElement, memo, useCallback, useMemo, useRef } from 'react';
 
+import { useComponentConfig } from '../../hooks/useComponentConfig';
 import { Popover } from '../popover/Popover';
 
 import { TooltipContent } from './TooltipContent';
@@ -11,27 +12,32 @@ const preventMouseDown = (event: React.MouseEvent) => {
   event.stopPropagation();
 };
 
-export const Tooltip = ({
-  children,
-  content,
-  elevation,
-  placement = 'top',
-  gap = 1,
-  disablePortal,
-  testID,
-  zIndex,
-  tooltipId: tooltipIdDefault,
-  visible,
-  invertColorScheme = true,
-  disableFocusTrap,
-  disableAutoFocus,
-  disableTypeFocus,
-  focusTabIndexElements,
-  respectNegativeTabIndex,
-  autoFocusDelay = 20,
-}: TooltipProps) => {
+export const Tooltip = memo((_props: TooltipProps) => {
+  const mergedProps = useComponentConfig('Tooltip', _props);
+  const {
+    children,
+    content,
+    elevation,
+    placement = 'top',
+    gap = 1,
+    testID,
+    zIndex,
+    tooltipId: tooltipIdDefault,
+    visible,
+    hasInteractiveContent,
+    invertColorScheme = true,
+    disableAutoFocus = hasInteractiveContent,
+    disableFocusTrap = hasInteractiveContent,
+    disablePortal = hasInteractiveContent,
+    disableTypeFocus,
+    focusTabIndexElements,
+    respectNegativeTabIndex,
+    autoFocusDelay = 20,
+    openDelay,
+    closeDelay,
+  } = mergedProps;
   const { isOpen, handleOnMouseEnter, handleOnMouseLeave, handleOnFocus, handleOnBlur, tooltipId } =
-    useTooltipState(tooltipIdDefault);
+    useTooltipState(tooltipIdDefault, openDelay, closeDelay);
   const tooltipContentRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseEnter = useCallback(
@@ -47,9 +53,10 @@ export const Tooltip = ({
   );
 
   const clonedChild = useMemo(() => {
-    return cloneElement(children, {
-      'aria-describedby': tooltipId,
-    });
+    // Use aria-describedby to associate the tooltip (role="tooltip") with the trigger.
+    // This preserves the trigger's own accessible name (e.g. button text) while the tooltip
+    // provides supplemental description, per the ARIA tooltip pattern.
+    return cloneElement(children, { 'aria-describedby': tooltipId });
   }, [children, tooltipId]);
 
   const contentPosition = useMemo(
@@ -60,6 +67,18 @@ export const Tooltip = ({
   );
 
   const isVisible = useMemo(() => visible !== false && isOpen, [visible, isOpen]);
+
+  const handleBlur = useCallback(
+    (event?: React.FocusEvent) => {
+      const relatedTarget = event?.relatedTarget as Node | null;
+      const currentTarget = event?.currentTarget as Node | null;
+      if (relatedTarget && currentTarget?.contains(relatedTarget)) {
+        return;
+      }
+      handleOnBlur();
+    },
+    [handleOnBlur],
+  );
 
   return (
     <Popover
@@ -83,7 +102,7 @@ export const Tooltip = ({
       disableTypeFocus={disableTypeFocus}
       focusTabIndexElements={focusTabIndexElements}
       invertColorScheme={invertColorScheme}
-      onBlur={handleOnBlur}
+      onBlur={handleBlur}
       onFocus={handleOnFocus}
       onMouseDown={preventMouseDown}
       onMouseEnter={handleMouseEnter}
@@ -94,4 +113,4 @@ export const Tooltip = ({
       {clonedChild}
     </Popover>
   );
-};
+});

@@ -1,4 +1,10 @@
-import { formatAxisTick, getAxisTicksData } from '../axis';
+import {
+  formatAxisTick,
+  getAxisTicksData,
+  getCartesianAxisDomain,
+  getCartesianAxisScale,
+  withBaselineDomain,
+} from '../axis';
 import {
   type CategoricalScale,
   getCategoricalScale,
@@ -489,6 +495,69 @@ describe('getAxisTicksData', () => {
   });
 });
 
+describe('getCartesianAxisDomain', () => {
+  const series = [
+    { id: 's1', data: [10, 20, 30] },
+    { id: 's2', data: [5, 15, 25] },
+  ];
+
+  it('does not apply baseline adjustments by default', () => {
+    const domain = getCartesianAxisDomain(
+      { id: 'y', scaleType: 'linear', domainLimit: 'strict', baseline: 30 },
+      [{ id: 's1', data: [-100, -50] }],
+      'y',
+      'vertical',
+    );
+    expect(domain).toEqual({ min: -100, max: -50 });
+  });
+});
+
+describe('withBaselineDomain', () => {
+  it('extends max when baseline is above computed bounds', () => {
+    const domain = withBaselineDomain(undefined, 30);
+    expect(typeof domain).toBe('function');
+    if (typeof domain !== 'function') throw new Error('Expected function domain');
+
+    expect(domain({ min: -100, max: -50 })).toEqual({ min: -100, max: 30 });
+  });
+
+  it('extends min when baseline is below computed bounds', () => {
+    const domain = withBaselineDomain(undefined, 0);
+    expect(typeof domain).toBe('function');
+    if (typeof domain !== 'function') throw new Error('Expected function domain');
+
+    expect(domain({ min: 25, max: 80 })).toEqual({ min: 0, max: 80 });
+  });
+
+  it('does not change bounds when baseline is already in range', () => {
+    const domain = withBaselineDomain(undefined, 30);
+    expect(typeof domain).toBe('function');
+    if (typeof domain !== 'function') throw new Error('Expected function domain');
+
+    expect(domain({ min: 20, max: 55 })).toEqual({ min: 20, max: 55 });
+  });
+
+  it('preserves explicit max while extending only implicit side', () => {
+    const domain = withBaselineDomain({ max: -50 }, 30);
+    expect(typeof domain).toBe('function');
+    if (typeof domain !== 'function') throw new Error('Expected function domain');
+
+    expect(domain({ min: -100, max: -80 })).toEqual({ min: -100, max: -50 });
+  });
+
+  it('preserves fully explicit bounds', () => {
+    expect(withBaselineDomain({ min: -100, max: -50 }, 30)).toEqual({
+      min: -100,
+      max: -50,
+    });
+  });
+
+  it('preserves function domain identity', () => {
+    const domainFn = (bounds: { min: number; max: number }) => bounds;
+    expect(withBaselineDomain(domainFn, 30)).toBe(domainFn);
+  });
+});
+
 describe('formatAxisTick', () => {
   it('should use custom formatter when provided', () => {
     const formatter = (value: number) => `$${value}`;
@@ -509,5 +578,60 @@ describe('formatAxisTick', () => {
   it('should handle null/undefined values', () => {
     expect(formatAxisTick(null)).toBe(null);
     expect(formatAxisTick(undefined)).toBe(undefined);
+  });
+});
+
+describe('cartesian layout helpers', () => {
+  it('should invert y-axis range only for vertical layout', () => {
+    const verticalScale = getCartesianAxisScale({
+      type: 'y',
+      range: { min: 0, max: 100 },
+      dataDomain: { min: 0, max: 10 },
+      layout: 'vertical',
+    });
+    const horizontalScale = getCartesianAxisScale({
+      type: 'y',
+      range: { min: 0, max: 100 },
+      dataDomain: { min: 0, max: 10 },
+      layout: 'horizontal',
+    });
+
+    expect(verticalScale(0)).toBe(100);
+    expect(verticalScale(10)).toBe(0);
+    expect(horizontalScale(0)).toBe(0);
+    expect(horizontalScale(10)).toBe(100);
+  });
+
+  it('should treat y-axis as category axis in horizontal layout', () => {
+    const domain = getCartesianAxisDomain(
+      {
+        id: 'DEFAULT_AXIS_ID',
+        scaleType: 'band',
+        domainLimit: 'strict',
+      },
+      [{ id: 'series1', data: [10, 20, 30] }],
+      'y',
+      'horizontal',
+    );
+
+    expect(domain).toEqual({ min: 0, max: 2 });
+  });
+
+  it('should compute horizontal x-axis domain from provided series', () => {
+    const domain = getCartesianAxisDomain(
+      {
+        id: 'left',
+        scaleType: 'linear',
+        domainLimit: 'strict',
+      },
+      [
+        { id: 'series1', data: [1, 2, 3], xAxisId: 'left' },
+        { id: 'series2', data: [100, 200, 300], xAxisId: 'right' },
+      ],
+      'x',
+      'horizontal',
+    );
+
+    expect(domain).toEqual({ min: 1, max: 300 });
   });
 });

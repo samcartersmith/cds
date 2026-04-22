@@ -20,6 +20,7 @@ import { m as motion } from 'framer-motion';
 
 import { NewAnimatePresence } from '../animation/NewAnimatePresence';
 import { cx } from '../cx';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { useTheme } from '../hooks/useTheme';
 import { useMotionProps } from '../motion/useMotionProps';
 import { Text } from '../typography/Text';
@@ -78,52 +79,31 @@ export type DotCountBaseProps = SharedProps &
   };
 
 export type DotCountProps = DotCountBaseProps & {
-  /**
-   * Custom class name for the root element.
-   */
   className?: string;
-  /**
-   * Custom styles for the root element.
-   */
   style?: React.CSSProperties;
-  /**
-   * Custom class names for the component.
-   */
+  /** Custom class names for individual elements of the DotCount component */
   classNames?: {
-    /**
-     * Custom class name for the root element.
-     */
+    /** Root element */
     root?: string;
-    /**
-     * Custom class name for the container element.
-     */
+    /** Container element */
     container?: string;
-    /**
-     * Custom class name for the text element.
-     */
+    /** Text element */
     text?: string;
   };
-  /**
-   * Custom styles for the component.
-   */
+  /** Custom styles for individual elements of the DotCount component */
   styles?: {
-    /**
-     * Custom styles for the root element.
-     */
+    /** Root element */
     root?: React.CSSProperties;
-    /**
-     * Custom styles for the container element.
-     */
+    /** Container element */
     container?: React.CSSProperties;
-    /**
-     * Custom styles for the text element.
-     */
+    /** Text element */
     text?: React.CSSProperties;
   };
 };
 
-export const DotCount = memo(
-  ({
+export const DotCount = memo((_props: DotCountProps) => {
+  const mergedProps = useComponentConfig('DotCount', _props);
+  const {
     children,
     pin,
     variant = 'negative',
@@ -137,66 +117,65 @@ export const DotCount = memo(
     style,
     styles,
     ...props
-  }: DotCountProps) => {
-    const { color } = useTheme();
-    const pinStyles = getTransform(pin, overlap);
+  } = mergedProps;
+  const { color } = useTheme();
+  const pinStyles = getTransform(pin, overlap);
 
-    const containerStyles = useMemo(() => {
-      const variantColor = variantColorMap[variant];
-      return {
-        backgroundColor: color[variantColor],
-        borderColor: color.bgSecondary,
-        ...pinStyles,
-        ...styles?.container,
-      };
-    }, [color, pinStyles, styles?.container, variant]);
+  const containerStyles = useMemo(() => {
+    const variantColor = variantColorMap[variant];
+    return {
+      backgroundColor: color[variantColor],
+      borderColor: color.bgSecondary,
+      ...pinStyles,
+      ...styles?.container,
+    };
+  }, [color, pinStyles, styles?.container, variant]);
 
-    const motionProps = useMotionProps({
-      enterConfigs: [dotOpacityEnterConfig, dotScaleEnterConfig],
-      exitConfigs: [dotOpacityExitConfig, dotScaleExitConfig],
-      exit: 'exit',
-    });
+  const motionProps = useMotionProps({
+    enterConfigs: [dotOpacityEnterConfig, dotScaleEnterConfig],
+    exitConfigs: [dotOpacityExitConfig, dotScaleExitConfig],
+    exit: 'exit',
+  });
 
-    const rootStyles = useMemo(
-      () => ({
-        ...style,
-        ...styles?.root,
-      }),
-      [styles?.root, style],
-    );
+  const rootStyles = useMemo(
+    () => ({
+      ...style,
+      ...styles?.root,
+    }),
+    [styles?.root, style],
+  );
 
-    return (
-      <div
-        aria-label={accessibilityLabel}
-        className={cx(baseCss, className, classNames?.root)}
-        data-testid={testID}
-        style={rootStyles}
-        {...props}
-      >
-        {children}
-        <NewAnimatePresence>
-          {count > 0 && (
-            <motion.div
-              {...motionProps}
-              className={cx(dotCountContentCss, classNames?.container)}
-              data-testid="dotcount-container"
-              style={containerStyles}
+  return (
+    <div
+      aria-label={accessibilityLabel}
+      className={cx(baseCss, className, classNames?.root)}
+      data-testid={testID}
+      style={rootStyles}
+      {...props}
+    >
+      {children}
+      <NewAnimatePresence>
+        {count > 0 && (
+          <motion.div
+            {...motionProps}
+            className={cx(dotCountContentCss, classNames?.container)}
+            data-testid="dotcount-container"
+            style={containerStyles}
+          >
+            <Text
+              as="p"
+              className={classNames?.text}
+              color="fgInverse"
+              display="block"
+              font="caption"
+              style={styles?.text}
+              textAlign="center"
             >
-              <Text
-                as="p"
-                className={classNames?.text}
-                color="fgInverse"
-                display="block"
-                font="caption"
-                style={styles?.text}
-                textAlign="center"
-              >
-                {parseDotCountMaxOverflow(count, max)}
-              </Text>
-            </motion.div>
-          )}
-        </NewAnimatePresence>
-      </div>
-    );
-  },
-);
+              {parseDotCountMaxOverflow(count, max)}
+            </Text>
+          </motion.div>
+        )}
+      </NewAnimatePresence>
+    </div>
+  );
+});

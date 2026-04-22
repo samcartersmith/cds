@@ -13,6 +13,7 @@ import { KeyboardAvoidingView, Platform, type TextInput, View } from 'react-nati
 import Fuse from 'fuse.js';
 
 import { Button } from '../../buttons/Button';
+import { useComponentConfig } from '../../hooks/useComponentConfig';
 import { Box } from '../../layout';
 import { StickyFooter } from '../../sticky-footer/StickyFooter';
 import { DefaultSelectControl } from '../select/DefaultSelectControl';
@@ -66,7 +67,7 @@ export type ComboboxControlProps<
   Type extends SelectType = 'single',
   SelectOptionValue extends string = string,
 > = SelectControlProps<Type, SelectOptionValue> &
-  Pick<ComboboxBaseProps<Type, SelectOptionValue>, 'hideSearchInput'> & {
+  Pick<ComboboxBaseProps<Type, SelectOptionValue>, 'hideSearchInput' | 'font'> & {
     /** Search text value */
     searchText: string;
     /** Search text change handler */
@@ -166,7 +167,11 @@ const ComboboxControlContextAdapter = memo(
 const ComboboxBase = memo(
   forwardRef(
     <Type extends SelectType = 'single', SelectOptionValue extends string = string>(
-      {
+      _props: ComboboxProps<Type, SelectOptionValue>,
+      ref: React.Ref<ComboboxRef>,
+    ) => {
+      const mergedProps = useComponentConfig('Combobox', _props);
+      const {
         type = 'single' as Type,
         value,
         onChange,
@@ -179,7 +184,8 @@ const ComboboxBase = memo(
         variant,
         startNode,
         endNode,
-        accessibilityLabel = 'Combobox control',
+        align,
+        accessibilityLabel = typeof label === 'string' ? label : 'Combobox control',
         defaultOpen,
         searchText: searchTextProp,
         onSearch: onSearchProp,
@@ -190,10 +196,9 @@ const ComboboxBase = memo(
         ComboboxControlComponent = DefaultComboboxControl,
         SelectDropdownComponent = DefaultSelectDropdown,
         hideSearchInput,
+        font,
         ...props
-      }: ComboboxProps<Type, SelectOptionValue>,
-      ref: React.Ref<ComboboxRef>,
-    ) => {
+      } = mergedProps;
       const [searchTextInternal, setSearchTextInternal] = useState(defaultSearchText);
       const searchText = searchTextProp ?? searchTextInternal;
       const setSearchText = onSearchProp ?? setSearchTextInternal;
@@ -260,11 +265,12 @@ const ComboboxBase = memo(
               ComboboxControlComponent={ComboboxControlComponent}
               SelectControlComponent={SelectControlComponent}
               controlRef={controlRef}
+              font={font}
               searchInputRef={searchInputRef}
             />
           );
         },
-        [ComboboxControlComponent, SelectControlComponent, searchInputRef],
+        [ComboboxControlComponent, SelectControlComponent, font, searchInputRef],
       );
 
       const ComboboxDropdown = useCallback(
@@ -273,7 +279,7 @@ const ComboboxBase = memo(
             label={label}
             minHeight={500}
             {...props}
-            footer={
+            footer={({ handleClose }) => (
               <KeyboardAvoidingView
                 behavior="padding"
                 keyboardVerticalOffset={Platform.OS === 'ios' ? 86 : 0}
@@ -284,25 +290,28 @@ const ComboboxBase = memo(
                   }
                 >
                   <StickyFooter
-                    background="bg"
+                    background="bgElevation2"
                     elevation={2}
                     style={{ shadowOffset: { width: 0, height: -32 }, shadowOpacity: 0.05 }}
                   >
-                    <Button compact onPress={() => setOpen(false)}>
+                    <Button compact onPress={handleClose}>
                       {closeButtonLabel}
                     </Button>
                   </StickyFooter>
                 </View>
               </KeyboardAvoidingView>
-            }
+            )}
             header={
               <Box paddingX={3}>
                 <ComboboxControl
+                  accessibilityLabel={accessibilityLabel}
+                  align={align}
                   endNode={endNode}
                   placeholder={placeholder}
                   startNode={startNode}
                   variant={variant}
                   {...props}
+                  font={font}
                   label={null}
                   styles={undefined}
                 />
@@ -314,12 +323,14 @@ const ComboboxBase = memo(
         [
           ComboboxControl,
           SelectDropdownComponent,
+          accessibilityLabel,
+          align,
           closeButtonLabel,
           endNode,
+          font,
           handleTrayVisibilityChange,
           label,
           placeholder,
-          setOpen,
           startNode,
           variant,
         ],
@@ -339,6 +350,7 @@ const ComboboxBase = memo(
             SelectControlComponent={ComboboxControl}
             SelectDropdownComponent={ComboboxDropdown}
             accessibilityLabel={accessibilityLabel}
+            align={align}
             defaultOpen={defaultOpen}
             disabled={disabled}
             endNode={endNode}

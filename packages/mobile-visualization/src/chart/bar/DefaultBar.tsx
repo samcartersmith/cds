@@ -3,7 +3,14 @@ import { useTheme } from '@coinbase/cds-mobile/hooks/useTheme';
 
 import { useCartesianChartContext } from '../ChartProvider';
 import { Path } from '../Path';
-import { getBarPath } from '../utils';
+import {
+  defaultBarEnterOpacityTransition,
+  defaultBarEnterTransition,
+  getBarPath,
+  withStaggerDelayTransition,
+} from '../utils';
+import { type BarTransition, getNormalizedStagger } from '../utils/bar';
+import { defaultTransition, getTransition } from '../utils/transition';
 
 import type { BarComponentProps } from './Bar';
 
@@ -18,7 +25,7 @@ export const DefaultBar = memo<DefaultBarProps>(
     y,
     width,
     height,
-    borderRadius,
+    borderRadius = 4,
     roundTop,
     roundBottom,
     d,
@@ -26,61 +33,117 @@ export const DefaultBar = memo<DefaultBarProps>(
     fillOpacity = 1,
     stroke,
     strokeWidth,
-    originY,
+    origin,
+    minSize = 1,
+    transitions,
     transition,
   }) => {
-    const { animate } = useCartesianChartContext();
+    const { animate, drawingArea, layout } = useCartesianChartContext();
     const theme = useTheme();
 
     const defaultFill = fill || theme.color.fgPrimary;
 
-    const targetPath = useMemo(() => {
-      const effectiveBorderRadius = borderRadius ?? 0;
-      const effectiveRoundTop = roundTop ?? true;
-      const effectiveRoundBottom = roundBottom ?? true;
+    const normalizedStagger = useMemo(
+      () => getNormalizedStagger(layout, x, y, drawingArea),
+      [layout, x, y, drawingArea],
+    );
 
-      return (
-        d ||
-        getBarPath(
-          x,
-          y,
-          width,
-          height,
-          effectiveBorderRadius,
-          effectiveRoundTop,
-          effectiveRoundBottom,
-        )
+    const enterTransition = useMemo(
+      () =>
+        getTransition(
+          transitions?.enter,
+          animate,
+          defaultBarEnterTransition,
+        ) as BarTransition | null,
+      [transitions?.enter, animate],
+    );
+    const enterTransitionWithStagger = useMemo(
+      () => withStaggerDelayTransition(enterTransition, normalizedStagger),
+      [enterTransition, normalizedStagger],
+    );
+    const enterOpacityTransition = useMemo(() => {
+      if (transitions?.enterOpacity === undefined && enterTransition === null) return null;
+
+      const enterOpacityTransition: BarTransition | null = getTransition(
+        transitions?.enterOpacity,
+        animate,
+        defaultBarEnterOpacityTransition,
       );
-    }, [x, y, width, height, borderRadius, roundTop, roundBottom, d]);
+
+      if (!enterOpacityTransition) return null;
+
+      return {
+        ...enterOpacityTransition,
+        delay: enterOpacityTransition.delay ?? enterTransition?.delay,
+        staggerDelay: enterOpacityTransition.staggerDelay ?? enterTransition?.staggerDelay,
+      };
+    }, [transitions?.enterOpacity, animate, enterTransition]);
+    const enterOpacityTransitionWithStagger = useMemo(
+      () => withStaggerDelayTransition(enterOpacityTransition, normalizedStagger),
+      [enterOpacityTransition, normalizedStagger],
+    );
+    const updateTransition = useMemo(
+      () =>
+        withStaggerDelayTransition(
+          getTransition(
+            transitions?.update !== undefined ? transitions.update : transition,
+            animate,
+            defaultTransition,
+          ),
+          normalizedStagger,
+        ),
+      [transitions?.update, transition, animate, normalizedStagger],
+    );
 
     const initialPath = useMemo(() => {
-      const effectiveBorderRadius = borderRadius ?? 0;
-      const effectiveRoundTop = roundTop ?? true;
-      const effectiveRoundBottom = roundBottom ?? true;
-      const baselineY = originY ?? y + height;
+      if (!animate) return;
+      const isHorizontalLayout = layout === 'horizontal';
+      const baseline = origin ?? (isHorizontalLayout ? x : y + height);
+
+      const initialX = isHorizontalLayout ? baseline : x;
+      const initialY = isHorizontalLayout ? y : baseline;
+      const initialWidth = isHorizontalLayout ? minSize : width;
+      const initialHeight = isHorizontalLayout ? height : minSize;
 
       return getBarPath(
-        x,
-        baselineY,
-        width,
-        1,
-        effectiveBorderRadius,
-        effectiveRoundTop,
-        effectiveRoundBottom,
+        initialX,
+        initialY,
+        initialWidth,
+        initialHeight,
+        borderRadius,
+        !!roundTop,
+        !!roundBottom,
+        layout,
       );
-    }, [x, originY, y, height, width, borderRadius, roundTop, roundBottom]);
+    }, [
+      animate,
+      layout,
+      x,
+      y,
+      origin,
+      width,
+      height,
+      borderRadius,
+      roundTop,
+      roundBottom,
+      minSize,
+    ]);
 
     return (
       <Path
         animate={animate}
         clipPath={null}
-        d={targetPath}
+        d={d}
         fill={stroke ? 'none' : defaultFill}
         fillOpacity={fillOpacity}
         initialPath={initialPath}
         stroke={stroke}
         strokeWidth={strokeWidth}
-        transition={transition}
+        transitions={{
+          enter: enterTransitionWithStagger,
+          enterOpacity: enterOpacityTransitionWithStagger,
+          update: updateTransition,
+        }}
       />
     );
   },

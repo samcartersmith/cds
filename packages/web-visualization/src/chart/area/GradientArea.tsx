@@ -50,25 +50,34 @@ export const GradientArea = memo<GradientAreaProps>(
     fillOpacity = 1,
     peakOpacity = 0.3,
     baselineOpacity = 0,
-    baseline,
+    xAxisId,
     yAxisId,
     gradient: gradientProp,
     animate,
+    transitions,
     transition,
     ...pathProps
   }) => {
-    const { getYAxis } = useCartesianChartContext();
+    const { layout, getXAxis, getYAxis } = useCartesianChartContext();
     const patternId = useId();
 
-    const yAxisConfig = getYAxis(yAxisId);
+    const valueAxisConfig = layout !== 'horizontal' ? getYAxis(yAxisId) : getXAxis(xAxisId);
+    const gradientAxis = layout !== 'horizontal' ? 'y' : 'x';
 
     const gradient = useMemo(() => {
       if (gradientProp) return gradientProp;
-      if (!yAxisConfig) return;
+      if (!valueAxisConfig) return;
 
-      const baselineValue = getBaseline(yAxisConfig.domain, baseline);
-      return createGradient(yAxisConfig.domain, baselineValue, fill, peakOpacity, baselineOpacity);
-    }, [gradientProp, yAxisConfig, fill, baseline, peakOpacity, baselineOpacity]);
+      const baselineValue = getBaseline(valueAxisConfig.domain, valueAxisConfig.baseline);
+      return createGradient(
+        valueAxisConfig.domain,
+        baselineValue,
+        fill,
+        peakOpacity,
+        baselineOpacity,
+        gradientAxis,
+      );
+    }, [gradientProp, valueAxisConfig, fill, peakOpacity, baselineOpacity, gradientAxis]);
 
     return (
       <>
@@ -78,7 +87,8 @@ export const GradientArea = memo<GradientAreaProps>(
               animate={animate}
               gradient={gradient}
               id={patternId}
-              transition={transition}
+              transition={transitions?.update ?? transition}
+              xAxisId={xAxisId}
               yAxisId={yAxisId}
             />
           </defs>
@@ -89,6 +99,7 @@ export const GradientArea = memo<GradientAreaProps>(
           fill={gradient ? `url(#${patternId})` : fill}
           fillOpacity={fillOpacity}
           transition={transition}
+          transitions={transitions}
           {...pathProps}
         />
       </>

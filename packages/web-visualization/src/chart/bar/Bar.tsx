@@ -1,79 +1,87 @@
 import React, { memo, useMemo } from 'react';
 import type { SVGProps } from 'react';
+import type { Rect } from '@coinbase/cds-common';
 import type { Transition } from 'framer-motion';
 
-import { getBarPath } from '../utils';
+import { useCartesianChartContext } from '../ChartProvider';
+import { type BarTransition, getBarPath } from '../utils';
 
 import { DefaultBar } from './';
 
-export type BarBaseProps = {
-  /**
-   * X coordinate of the bar (left edge).
-   */
-  x: number;
-  /**
-   * Y coordinate of the bar (top edge).
-   */
-  y: number;
-  /**
-   * Width of the bar.
-   */
-  width: number;
-  /**
-   * Height of the bar.
-   */
-  height: number;
+export type BarBaseProps = Rect & {
   /**
    * Border radius for the bar.
    * @default 4
    */
   borderRadius?: number;
-  /**
-   * Whether to round the top of the bar.
-   */
+  /** Whether to round the top of the bar. */
   roundTop?: boolean;
-  /**
-   * Whether to round the bottom of the bar.
-   */
+  /** Whether to round the bottom of the bar. */
   roundBottom?: boolean;
-  /**
-   * Y coordinate of the baseline/origin for animations.
-   * Used to calculate initial animation state.
-   */
-  originY?: number;
-  /**
-   * The x-axis data value for this bar.
-   */
-  dataX?: number | string;
-  /**
-   * The y-axis data value for this bar.
-   */
+  /** Origin of the bar. */
+  origin?: number;
+  /** The x-axis data value for this bar. */
+  dataX?: number | [number, number] | null;
+  /** The y-axis data value for this bar. */
   dataY?: number | [number, number] | null;
-  /**
-   * Fill color for the bar.
-   */
+  /** The ID of the series this bar belongs to. */
+  seriesId?: string;
+  /** Fill color for the bar. */
   fill?: string;
-  /**
-   * Fill opacity for the bar.
-   */
+  /** Fill opacity for the bar. */
   fillOpacity?: number;
-  /**
-   * Stroke color for the bar outline.
-   */
+  /** Stroke color for the bar outline. */
   stroke?: string;
-  /**
-   * Stroke width for the bar outline.
-   */
+  /** Stroke width for the bar outline. */
   strokeWidth?: number;
-  /**
-   * Component to render the bar.
-   */
+  /** Component to render the bar. */
   BarComponent?: BarComponent;
+  /** Minimum bar size in pixels. When set, bars shorter than this value are expanded. */
+  minSize?: number;
 };
 
 export type BarProps = BarBaseProps & {
   /**
-   * Transition configuration for animation.
+   * Transition configuration for enter and update animations.
+   * @note Disable an animation by passing in null.
+   *
+   * @default transitions = {{
+   *   enter: { type: 'spring', stiffness: 900, damping: 120, mass: 4, staggerDelay: 0.25 },
+   *   enterOpacity: { type: 'tween', duration: 0.2 },
+   *   update: { type: 'spring', stiffness: 900, damping: 120, mass: 4 }
+   * }}
+   *
+   * @example
+   * // Custom staggered enter and spring update
+   * transitions={{ enter: { type: 'tween', duration: 0.5, staggerDelay: 0.3 }, update: { type: 'spring', damping: 20 } }}
+   *
+   * @example
+   * // Disable enter animation
+   * transitions={{ enter: null }}
+   */
+  transitions?: {
+    /**
+     * Transition for the initial enter/reveal animation.
+     * Set to `null` to disable.
+     */
+    enter?: BarTransition | null;
+    /**
+     * Transition for the initial enter opacity animation.
+     * Uses a default subtle fade when undefined (unless `enter` is disabled).
+     * @note falls back to `enter` timing offsets (`delay` and `staggerDelay`) when not provided.
+     * Set to `null` to disable enter opacity animation. Automatically set to null if enter transition is disabled.
+     */
+    enterOpacity?: BarTransition | null;
+    /**
+     * Transition for subsequent data update animations.
+     * Set to `null` to disable.
+     */
+    update?: BarTransition | null;
+  };
+  /**
+   * Transition for updates.
+   * @deprecated Use `transitions.update` instead. This will be removed in a future major release.
+   * @deprecationExpectedRemoval v4
    */
   transition?: Transition;
 };
@@ -105,9 +113,10 @@ export const Bar = memo<BarProps>(
     y,
     width,
     height,
-    originY,
+    origin: originProp,
     dataX,
     dataY,
+    seriesId,
     BarComponent = DefaultBar,
     fill = 'var(--color-fgPrimary)',
     fillOpacity = 1,
@@ -116,17 +125,22 @@ export const Bar = memo<BarProps>(
     borderRadius = 4,
     roundTop = true,
     roundBottom = true,
+    minSize,
+    transitions,
     transition,
   }) => {
+    const { layout } = useCartesianChartContext();
+
     const barPath = useMemo(() => {
-      return getBarPath(x, y, width, height, borderRadius, roundTop, roundBottom);
-    }, [x, y, width, height, borderRadius, roundTop, roundBottom]);
+      return getBarPath(x, y, width, height, borderRadius, !!roundTop, !!roundBottom, layout);
+    }, [x, y, width, height, borderRadius, roundTop, roundBottom, layout]);
 
-    const effectiveOriginY = originY ?? y + height;
+    const origin = useMemo(
+      () => originProp ?? (layout === 'horizontal' ? x : y + height),
+      [originProp, layout, x, y, height],
+    );
 
-    if (!barPath) {
-      return null;
-    }
+    if (!barPath) return;
 
     return (
       <BarComponent
@@ -137,12 +151,15 @@ export const Bar = memo<BarProps>(
         fill={fill}
         fillOpacity={fillOpacity}
         height={height}
-        originY={effectiveOriginY}
+        minSize={minSize}
+        origin={origin}
         roundBottom={roundBottom}
         roundTop={roundTop}
+        seriesId={seriesId}
         stroke={stroke}
         strokeWidth={strokeWidth}
         transition={transition}
+        transitions={transitions}
         width={width}
         x={x}
         y={y}

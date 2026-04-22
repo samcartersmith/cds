@@ -2,7 +2,16 @@ import { memo, useId, useMemo } from 'react';
 import { m as motion } from 'framer-motion';
 
 import { useCartesianChartContext } from '../ChartProvider';
-import { getBarPath } from '../utils';
+import {
+  defaultBarEnterTransition,
+  defaultTransition,
+  getBarPath,
+  getNormalizedStagger,
+  getStackInitialClipRect,
+  getTransition,
+  withStaggerDelayTransition,
+} from '../utils';
+import { usePathTransition } from '../utils/transition';
 
 import type { BarStackComponentProps } from './BarStack';
 
@@ -32,34 +41,73 @@ export const DefaultBarStack = memo<DefaultBarStackProps>(
     borderRadius = 4,
     roundTop = true,
     roundBottom = true,
-    yOrigin,
+    origin,
+    transitions,
     transition,
   }) => {
-    const { animate } = useCartesianChartContext();
+    const { animate, drawingArea, layout } = useCartesianChartContext();
     const clipPathId = useId();
 
+    const normalizedStagger = useMemo(
+      () => getNormalizedStagger(layout, x, y, drawingArea),
+      [layout, x, y, drawingArea],
+    );
+
+    const enterTransition = useMemo(
+      () =>
+        withStaggerDelayTransition(
+          getTransition(transitions?.enter, animate, defaultBarEnterTransition),
+          normalizedStagger,
+        ),
+      [transitions?.enter, animate, normalizedStagger],
+    );
+    const updateTransition = useMemo(
+      () =>
+        withStaggerDelayTransition(
+          getTransition(
+            transitions?.update !== undefined ? transitions.update : transition,
+            animate,
+            defaultTransition,
+          ),
+          normalizedStagger,
+        ),
+      [transitions?.update, transition, animate, normalizedStagger],
+    );
+
     const clipPathData = useMemo(() => {
-      return getBarPath(x, y, width, height, borderRadius, roundTop, roundBottom);
-    }, [x, y, width, height, borderRadius, roundTop, roundBottom]);
+      return getBarPath(x, y, width, height, borderRadius, roundTop, roundBottom, layout);
+    }, [x, y, width, height, borderRadius, roundTop, roundBottom, layout]);
 
     const initialClipPathData = useMemo(() => {
-      if (!animate) return undefined;
-      return getBarPath(x, yOrigin ?? y + height, width, 1, borderRadius, roundTop, roundBottom);
-    }, [animate, x, yOrigin, y, height, width, borderRadius, roundTop, roundBottom]);
+      if (!animate) return;
+      const initialClipRect = getStackInitialClipRect({ x, y, width, height }, layout, origin);
+
+      return getBarPath(
+        initialClipRect.x,
+        initialClipRect.y,
+        initialClipRect.width,
+        initialClipRect.height,
+        borderRadius,
+        roundTop,
+        roundBottom,
+        layout,
+      );
+    }, [animate, layout, x, y, height, width, borderRadius, roundTop, roundBottom, origin]);
+
+    const animatedClipPath = usePathTransition({
+      currentPath: clipPathData,
+      initialPath: initialClipPathData,
+      transitions: {
+        enter: enterTransition,
+        update: updateTransition,
+      },
+    });
 
     return (
       <>
         <defs>
           <clipPath id={clipPathId}>
-            {animate ? (
-              <motion.path
-                animate={{ d: clipPathData }}
-                initial={{ d: initialClipPathData }}
-                transition={transition}
-              />
-            ) : (
-              <path d={clipPathData} />
-            )}
+            <motion.path d={animatedClipPath} />
           </clipPath>
         </defs>
         <g className={className} clipPath={`url(#${clipPathId})`} style={style}>

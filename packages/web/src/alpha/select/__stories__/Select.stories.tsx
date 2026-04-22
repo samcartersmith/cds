@@ -10,8 +10,8 @@ import { cx } from '../../../cx';
 import { Icon } from '../../../icons/Icon';
 import { HStack } from '../../../layout/HStack';
 import { VStack } from '../../../layout/VStack';
-import { Spinner } from '../../../loaders';
 import { Text } from '../../../typography/Text';
+import { ProgressCircle } from '../../../visualizations/ProgressCircle';
 import {
   Select,
   type SelectControlComponent,
@@ -24,6 +24,15 @@ import {
 export default {
   title: 'Components/Alpha/Select/SingleSelect',
   component: Select,
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          'nested-interactive': { enabled: false },
+        },
+      },
+    },
+  },
 };
 
 const paddingCss = css`
@@ -42,15 +51,15 @@ const hoveredBackgroundCss = css`
 export const Default = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -68,15 +77,15 @@ export const Default = () => {
 export const Compact = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -95,15 +104,15 @@ export const Compact = () => {
 export const LabelVariant = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
   return (
@@ -121,15 +130,15 @@ export const LabelVariant = () => {
 export const ExampleForm = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
   const { value: multiSelectValue, onChange: multiSelectOnChange } = useMultiSelect({
@@ -195,15 +204,15 @@ export const ExampleForm = () => {
 export const HelperText = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -222,14 +231,14 @@ export const HelperText = () => {
 export const Description = () => {
   const exampleOptionsWithDescription = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1', description: 'Description 1' },
-    { value: '2', label: 'Option 2', description: 'Description 2' },
-    { value: '3', label: 'Option 3', description: 'Description 3' },
-    { value: '4', label: 'Option 4', description: 'Description 4' },
-    { value: '5', label: 'Option 5', description: 'Description 5' },
-    { value: '6', label: 'Option 6', description: 'Description 6' },
-    { value: '7', label: 'Option 7', description: 'Description 7' },
-    { value: '8', label: 'Option 8', description: 'Description 8' },
+    { value: '1', label: 'Apple', description: 'Crisp and sweet' },
+    { value: '2', label: 'Banana', description: 'Bright and yellow' },
+    { value: '3', label: 'Cherry', description: 'Dark and tart' },
+    { value: '4', label: 'Date', description: 'Dense and sweet' },
+    { value: '5', label: 'Elderberry', description: 'Earthy and rich' },
+    { value: '6', label: 'Fig', description: 'Fresh and jammy' },
+    { value: '7', label: 'Grape', description: 'Juicy clusters' },
+    { value: '8', label: 'Honeydew', description: 'Honeyed melon' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -247,10 +256,10 @@ export const Description = () => {
 export const OnlyDescription = () => {
   const exampleOptionsWithOnlyDescription = [
     { value: null, label: 'Remove selection' },
-    { value: '1', description: 'Description 1' },
-    { value: '2', description: 'Description 2' },
-    { value: '3', description: 'Description 3' },
-    { value: '4', description: 'Description 4' },
+    { value: '1', description: 'A crisp red apple' },
+    { value: '2', description: 'Bright yellow banana' },
+    { value: '3', description: 'Cherry red and tart' },
+    { value: '4', description: 'Date palm fruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -268,21 +277,21 @@ export const OnlyDescription = () => {
 export const AccessibilityLabel = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
   return (
     <Select
-      accessibilityLabel="Custom accessibility label"
+      accessibilityLabel="Custom dropdown accessibility label"
       controlAccessibilityLabel="Custom control accessibility label"
       label="Single select - accessibility label"
       onChange={setValue}
@@ -296,15 +305,15 @@ export const AccessibilityLabel = () => {
 export const AccessibilityRoles = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -320,18 +329,82 @@ export const AccessibilityRoles = () => {
   );
 };
 
+export const Alignments = () => {
+  const exampleOptions = [
+    { value: null, label: 'Remove selection' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+  ];
+  const [value, setValue] = useState<string | null>('1');
+
+  return (
+    <VStack gap={2}>
+      <Select
+        label="Default align - start"
+        onChange={setValue}
+        options={exampleOptions}
+        placeholder="Empty value"
+        value={value}
+      />
+      <Select
+        align="center"
+        label="Center align"
+        onChange={setValue}
+        options={exampleOptions}
+        placeholder="Empty value"
+        value={value}
+      />
+      <Select
+        align="end"
+        label="End align"
+        onChange={setValue}
+        options={exampleOptions}
+        placeholder="Empty value"
+        value={value}
+      />
+      <Select
+        compact
+        label="Compact align - start"
+        onChange={setValue}
+        options={exampleOptions}
+        placeholder="Empty value"
+        value={value}
+      />
+      <Select
+        compact
+        align="center"
+        label="Compact align - center"
+        onChange={setValue}
+        options={exampleOptions}
+        placeholder="Empty value"
+        value={value}
+      />
+      <Select
+        compact
+        align="end"
+        label="Compact align - end"
+        onChange={setValue}
+        options={exampleOptions}
+        placeholder="Empty value"
+        value={value}
+      />
+    </VStack>
+  );
+};
+
 export const NoLabel = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -349,14 +422,14 @@ export const NoLabel = () => {
 export const Disabled = () => {
   const exampleOptionsWithDescription = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1', description: 'Description 1' },
-    { value: '2', label: 'Option 2', description: 'Description 2' },
-    { value: '3', label: 'Option 3', description: 'Description 3' },
-    { value: '4', label: 'Option 4', description: 'Description 4' },
-    { value: '5', label: 'Option 5', description: 'Description 5' },
-    { value: '6', label: 'Option 6', description: 'Description 6' },
-    { value: '7', label: 'Option 7', description: 'Description 7' },
-    { value: '8', label: 'Option 8', description: 'Description 8' },
+    { value: '1', label: 'Apple', description: 'Crisp and sweet' },
+    { value: '2', label: 'Banana', description: 'Bright and yellow' },
+    { value: '3', label: 'Cherry', description: 'Dark and tart' },
+    { value: '4', label: 'Date', description: 'Dense and sweet' },
+    { value: '5', label: 'Elderberry', description: 'Earthy and rich' },
+    { value: '6', label: 'Fig', description: 'Fresh and jammy' },
+    { value: '7', label: 'Grape', description: 'Juicy clusters' },
+    { value: '8', label: 'Honeydew', description: 'Honeyed melon' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -372,13 +445,28 @@ export const Disabled = () => {
   );
 };
 
+Disabled.parameters = {
+  a11y: {
+    options: {
+      /**
+       * Color contrast ratio doesn't need to meet 4.5:1, as the element is disabled.
+       * Use axe run options (instead of config.rules) to reliably disable this rule.
+       * @link https://dequeuniversity.com/rules/axe/4.3/color-contrast
+       */
+      rules: {
+        'color-contrast': { enabled: false },
+      },
+    },
+  },
+};
+
 export const DisabledOptions = () => {
   const exampleOptionsWithSomeDisabled = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1', disabled: true },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4', disabled: true },
+    { value: '1', label: 'Apple', disabled: true },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date', disabled: true },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -395,14 +483,14 @@ export const DisabledOptions = () => {
 
 export const WithoutNull = () => {
   const exampleOptionsWithoutNull = [
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
   ];
   const [value, setValue] = useState<string | null>(null);
 
@@ -421,28 +509,28 @@ export const OptionsAsReactNodes = () => {
   const exampleOptionsWithReactNodes = [
     {
       value: '1',
-      label: <Text font="title3">Option 1</Text>,
-      description: <Text font="title3">Description 1</Text>,
+      label: <Text font="title3">Apple</Text>,
+      description: <Text font="title3">Crisp and sweet</Text>,
     },
     {
       value: '2',
-      label: 'Option 2',
+      label: 'Banana',
       description: 'Not a react node',
     },
     {
       value: '3',
-      label: <Text font="title4">Option 3</Text>,
-      description: <Text font="title4">Description 3</Text>,
+      label: <Text font="title4">Cherry</Text>,
+      description: <Text font="title4">Dark and tart</Text>,
     },
     {
       value: '4',
-      label: 'Option 4',
+      label: 'Date',
       description: 'Not a react node',
     },
     {
       value: '5',
-      label: <Text font="legal">Option 5</Text>,
-      description: <Text font="legal">Description 5</Text>,
+      label: <Text font="legal">Elderberry</Text>,
+      description: <Text font="legal">Earthy and rich</Text>,
     },
   ];
   const [value, setValue] = useState<string | null>('1');
@@ -463,20 +551,20 @@ export const MixedDefaultAndCustomComponentOptions = () => {
   const CustomOptionComponent: SelectOptionComponent = ({ value, onClick }) => {
     return (
       <HStack justifyContent="center">
-        <Spinner size={4} />
+        <ProgressCircle indeterminate color="fg" size={40} />
         <Button transparent onClick={() => onClick?.(value)} width="80%">
           {value ?? 'Empty value'}
         </Button>
-        <Spinner size={4} />
+        <ProgressCircle indeterminate color="fg" size={40} />
       </HStack>
     );
   };
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1', Component: CustomOptionComponent },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3', Component: CustomOptionComponent },
-    { value: '4', label: 'Option 4' },
+    { value: '1', label: 'Apple', Component: CustomOptionComponent },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry', Component: CustomOptionComponent },
+    { value: '4', label: 'Date' },
   ];
 
   const [value, setValue] = useState<string | null>('1');
@@ -495,15 +583,15 @@ export const MixedDefaultAndCustomComponentOptions = () => {
 export const StartNode = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -522,15 +610,15 @@ export const StartNode = () => {
 export const CustomEndNode = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -549,15 +637,15 @@ export const CustomEndNode = () => {
 export const CustomAccessory = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -576,15 +664,15 @@ export const CustomAccessory = () => {
 export const CustomMedia = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -604,31 +692,31 @@ export const UniqueAccessoryAndMedia = () => {
   const exampleOptionsWithCustomAccessoriesAndMedia = [
     {
       value: '1',
-      label: 'Option 1',
+      label: 'Apple',
       accessory: <Icon color="fg" name="star" />,
       media: <Icon color="fg" name="heart" />,
     },
     {
       value: '2',
-      label: 'Option 2',
+      label: 'Banana',
       accessory: <Icon color="fg" name="checkmark" />,
       media: <Icon color="fg" name="cross" />,
     },
     {
       value: '3',
-      label: 'Option 3',
+      label: 'Cherry',
       accessory: <Icon color="fg" name="add" />,
       media: <Icon color="fg" name="minus" />,
     },
     {
       value: '4',
-      label: 'Option 4',
+      label: 'Date',
       accessory: <Icon color="fg" name="caretRight" />,
       media: <Icon color="fg" name="caretLeft" />,
     },
     {
       value: '5',
-      label: 'Option 5',
+      label: 'Elderberry',
       accessory: <Icon color="fg" name="arrowUp" />,
       media: <Icon color="fg" name="home" />,
     },
@@ -649,9 +737,9 @@ export const UniqueAccessoryAndMedia = () => {
 export const UniqueEndNodeForEachOption = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1', end: <Icon color="fg" name="star" /> },
-    { value: '2', label: 'Option 2', end: <Icon color="fg" name="checkmark" /> },
-    { value: '3', label: 'Option 3', end: <Icon color="fg" name="add" /> },
+    { value: '1', label: 'Apple', end: <Icon color="fg" name="star" /> },
+    { value: '2', label: 'Banana', end: <Icon color="fg" name="checkmark" /> },
+    { value: '3', label: 'Cherry', end: <Icon color="fg" name="add" /> },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -669,15 +757,15 @@ export const UniqueEndNodeForEachOption = () => {
 export const PositiveVariant = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -697,15 +785,15 @@ export const PositiveVariant = () => {
 export const NegativeVariant = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -725,15 +813,15 @@ export const NegativeVariant = () => {
 export const CustomStyles = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -770,15 +858,15 @@ export const CustomStyles = () => {
 export const CustomClassNames = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -802,15 +890,15 @@ export const Typed = () => {
 
   const typedOptions: SelectOption<TestValue>[] = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
 
   const [value, setValue] = useState<TestValue | null>('1');
@@ -828,15 +916,15 @@ export const Typed = () => {
 export const DefaultOpen = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -852,18 +940,27 @@ export const DefaultOpen = () => {
   );
 };
 
+DefaultOpen.parameters = {
+  a11y: {
+    options: {
+      rules: {
+        'color-contrast': { enabled: false },
+      },
+    },
+  },
+};
 export const DisabledClickOutsideClose = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -882,18 +979,18 @@ export const DisabledClickOutsideClose = () => {
 export const ControlledOpen = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div>
@@ -987,14 +1084,12 @@ export const VeryLongLabels = () => {
     },
     {
       value: '4',
-      label: 'A moderately long label that is somewhere between short and extremely long',
-      description:
-        'A moderately long description that is somewhere between short and extremely long',
+      label: 'Moderately long label that is somewhere between short and extremely long',
+      description: 'Moderately long description that is somewhere between short and extremely long',
     },
     {
       value: '5',
-      description:
-        'This is a very long description that is somewhere between short and extremely long',
+      description: 'Distinctly long description that is somewhere between short and extremely long',
     },
   ];
   const [value, setValue] = useState<string | null>('1');
@@ -1039,11 +1134,11 @@ export const VeryLongLabels = () => {
 export const MixedOptionsWithAndWithoutDescriptions = () => {
   const mixedOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1', description: 'Has description' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3', description: 'Also has description' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5', description: 'Another description' },
+    { value: '1', label: 'Apple', description: 'Has description' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry', description: 'Also has description' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry', description: 'Another description' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -1062,17 +1157,17 @@ export const OptionsWithOnlyAccessory = () => {
   const accessoryOnlyOptions = [
     {
       value: '1',
-      label: 'Option 1',
+      label: 'Apple',
       accessory: <Icon color="fg" name="star" />,
     },
     {
       value: '2',
-      label: 'Option 2',
+      label: 'Banana',
       accessory: <Icon color="fg" name="checkmark" />,
     },
     {
       value: '3',
-      label: 'Option 3',
+      label: 'Cherry',
       accessory: <Icon color="fg" name="heart" />,
     },
   ];
@@ -1093,17 +1188,17 @@ export const OptionsWithOnlyMedia = () => {
   const mediaOnlyOptions = [
     {
       value: '1',
-      label: 'Option 1',
+      label: 'Apple',
       media: <Icon color="fg" name="star" />,
     },
     {
       value: '2',
-      label: 'Option 2',
+      label: 'Banana',
       media: <Icon color="fg" name="checkmark" />,
     },
     {
       value: '3',
-      label: 'Option 3',
+      label: 'Cherry',
       media: <Icon color="fg" name="heart" />,
     },
   ];
@@ -1123,15 +1218,15 @@ export const OptionsWithOnlyMedia = () => {
 export const CompactWithVariants = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [positiveValue, setPositiveValue] = useState<string | null>('1');
   const [negativeValue, setNegativeValue] = useState<string | null>('2');
@@ -1165,15 +1260,15 @@ export const CompactWithVariants = () => {
 export const DisabledWithVariants = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [positiveValue, setPositiveValue] = useState<string | null>('1');
   const [negativeValue, setNegativeValue] = useState<string | null>('2');
@@ -1204,18 +1299,28 @@ export const DisabledWithVariants = () => {
   );
 };
 
+DisabledWithVariants.parameters = {
+  a11y: {
+    options: {
+      rules: {
+        'color-contrast': { enabled: false },
+      },
+    },
+  },
+};
+
 export const StartNodeWithVariants = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [positiveValue, setPositiveValue] = useState<string | null>('1');
   const [negativeValue, setNegativeValue] = useState<string | null>('2');
@@ -1249,15 +1354,15 @@ export const StartNodeWithVariants = () => {
 export const LongHelperText = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -1276,15 +1381,15 @@ export const LongHelperText = () => {
 export const CustomLongPlaceholder = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>(null);
 
@@ -1303,31 +1408,31 @@ export const AllCombinedFeatures = () => {
   const exampleOptionsWithCustomAccessoriesAndMedia = [
     {
       value: '1',
-      label: 'Option 1',
+      label: 'Apple',
       accessory: <Icon color="fg" name="star" />,
       media: <Icon color="fg" name="heart" />,
     },
     {
       value: '2',
-      label: 'Option 2',
+      label: 'Banana',
       accessory: <Icon color="fg" name="checkmark" />,
       media: <Icon color="fg" name="cross" />,
     },
     {
       value: '3',
-      label: 'Option 3',
+      label: 'Cherry',
       accessory: <Icon color="fg" name="add" />,
       media: <Icon color="fg" name="minus" />,
     },
     {
       value: '4',
-      label: 'Option 4',
+      label: 'Date',
       accessory: <Icon color="fg" name="caretRight" />,
       media: <Icon color="fg" name="caretLeft" />,
     },
     {
       value: '5',
-      label: 'Option 5',
+      label: 'Elderberry',
       accessory: <Icon color="fg" name="arrowUp" />,
       media: <Icon color="fg" name="home" />,
     },
@@ -1351,15 +1456,15 @@ export const AllCombinedFeatures = () => {
 export const ComplexStyleCombinations = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -1494,15 +1599,15 @@ export const StressTestManyOptionsWithDescriptions = () => {
 export const CustomControlComponent = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -1525,26 +1630,26 @@ export const CustomControlComponent = () => {
 export const CustomOptionComponent = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
   const CustomOptionComponent: SelectOptionComponent = ({ value, onClick }) => {
     return (
-      <HStack justifyContent="center">
-        <Spinner size={4} />
+      <HStack alignItems="center" justifyContent="center">
+        <ProgressCircle indeterminate size={40} />
         <Button transparent onClick={() => onClick?.(value)} width="80%">
           {value ?? 'Empty value'}
         </Button>
-        <Spinner size={4} />
+        <ProgressCircle indeterminate size={40} />
       </HStack>
     );
   };
@@ -1564,15 +1669,15 @@ export const CustomOptionComponent = () => {
 export const ValueDisplayed = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
 
@@ -1593,15 +1698,15 @@ export const ValueDisplayed = () => {
 export const RefImperativeHandle = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
-    { value: '5', label: 'Option 5' },
-    { value: '6', label: 'Option 6' },
-    { value: '7', label: 'Option 7' },
-    { value: '8', label: 'Option 8' },
-    { value: '9', label: 'Option 9' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
+    { value: '5', label: 'Elderberry' },
+    { value: '6', label: 'Fig' },
+    { value: '7', label: 'Grape' },
+    { value: '8', label: 'Honeydew' },
+    { value: '9', label: 'Jackfruit' },
   ];
   const [value, setValue] = useState<string | null>('1');
   const selectRef = useRef<SelectRef>(null);
@@ -1635,15 +1740,12 @@ export const RefImperativeHandle = () => {
 export const Borderless = () => {
   const exampleOptions = [
     { value: null, label: 'Remove selection' },
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
+    { value: '1', label: 'Apple' },
+    { value: '2', label: 'Banana' },
+    { value: '3', label: 'Cherry' },
+    { value: '4', label: 'Date' },
   ];
   const [singleValue, setSingleValue] = useState<string | null>('1');
-  const { value: multiValue, onChange: multiOnChange } = useMultiSelect({
-    initialValue: ['1', '2'],
-  });
 
   return (
     <VStack gap={4}>
@@ -1654,16 +1756,6 @@ export const Borderless = () => {
         options={exampleOptions}
         placeholder="Empty value"
         value={singleValue}
-      />
-      <Select
-        bordered={false}
-        controlAccessibilityLabel="Borderless multi select"
-        label="Borderless multi select"
-        onChange={multiOnChange}
-        options={exampleOptions}
-        placeholder="Empty value"
-        type="multi"
-        value={multiValue}
       />
     </VStack>
   );

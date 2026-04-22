@@ -1,7 +1,7 @@
 import React, { Children, isValidElement, useMemo } from 'react';
+import { shapeBorderRadius } from '@coinbase/cds-common/tokens/borderRadius';
 import type {
   AvatarSize,
-  MarginProps,
   NegativeSpace,
   Shape,
   SharedAccessibilityProps,
@@ -10,6 +10,7 @@ import type {
 import { css, type LinariaClassName } from '@linaria/core';
 
 import { cx } from '../cx';
+import { useComponentConfig } from '../hooks/useComponentConfig';
 import { useTheme } from '../hooks/useTheme';
 import { Box, type BoxDefaultElement, type BoxProps } from '../layout/Box';
 import { Text } from '../typography/Text';
@@ -45,16 +46,16 @@ const borderRadiusCss: Record<Shape, LinariaClassName> = {
     border-radius: 100%;
   `,
   square: css`
-    border-radius: 4px;
+    border-radius: ${shapeBorderRadius.square}px;
   `,
   hexagon: css`
-    border-radius: 0;
+    border-radius: ${shapeBorderRadius.hexagon}px;
   `,
   squircle: css`
-    border-radius: 8px;
+    border-radius: ${shapeBorderRadius.squircle}px;
   `,
   rectangle: css`
-    border-radius: 0;
+    border-radius: ${shapeBorderRadius.rectangle}px;
   `,
 };
 
@@ -66,16 +67,18 @@ const excessContainerCss = css`
   box-sizing: content-box;
 `;
 
-export const RemoteImageGroup = ({
-  children,
-  size = 'm',
-  max = 4,
-  shape = 'circle',
-  testID,
-  borderWidth,
-  borderColor = borderWidth ? 'bg' : undefined,
-  ...props
-}: RemoteImageGroupProps) => {
+export const RemoteImageGroup = (_props: RemoteImageGroupProps) => {
+  const mergedProps = useComponentConfig('RemoteImageGroup', _props);
+  const {
+    children,
+    size = 'm',
+    max = 4,
+    shape = 'circle',
+    testID,
+    borderWidth,
+    borderColor = borderWidth ? 'bg' : undefined,
+    ...props
+  } = mergedProps;
   const { avatarSize } = useTheme();
 
   const sizeAsNumber = typeof size === 'number' ? size : avatarSize[size];
@@ -139,7 +142,7 @@ export const RemoteImageGroup = ({
       {excess > 0 && (
         <Box
           alignItems="center"
-          background="bgOverlay"
+          background="bgSecondary"
           borderColor={borderColor}
           borderWidth={borderWidth}
           className={cx(excessContainerCss, borderRadiusCss[shape])}
