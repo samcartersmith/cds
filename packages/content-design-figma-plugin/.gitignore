@@ -1,0 +1,6 @@
+# Build output
+dist/
+
+# Un-ignore src/lib/ — the root .gitignore has a blanket `lib/` rule that
+# would otherwise exclude this package's source library folder.
+!src/lib/
