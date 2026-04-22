@@ -1,6 +1,6 @@
 # cds-accessibility
 
-Teaches your AI agent to use **Coinbase Design System (CDS)** components in an **accessible** way: **documented** props (for example `accessibilityLabel` and `accessibilityState` on React Native, and `aria-*` / `as` / `role` patterns on web **as the CDS web API supports**), and **choosing CDS components** whose official docs cover the right assistive-technology behavior. Grounding is [**cds-docs**](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs) (prefer **CDS MCP** `list-cds-routes` / `get-cds-doc` when available; if MCP is unavailable or fails, use **`curl`** to `https://cds.coinbase.com/llms/...` per cds-docs) and [cds.cbhq.net](https://cds.cbhq.net/)—not a generic ARIA or WCAG tutorial that ignores CDS.
+Teaches your AI agent to use **Coinbase Design System (CDS)** components in an **accessible** way: **documented** props (for example `accessibilityLabel` and `accessibilityState` on React Native, and `aria-*` / `as` / `role` patterns on web **as the CDS web API supports**), and **choosing CDS components** whose official docs cover the right assistive-technology behavior. Grounding is [**cds-docs**](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs) (prefer **CDS MCP** `list-cds-routes` / `get-cds-doc` when available; if MCP is unavailable or fails, use **`curl`** to `https://cds.coinbase.com/llms/...` per cds-docs) and [cds.coinbase.com](https://cds.coinbase.com/)—not a generic ARIA or WCAG tutorial that ignores CDS.
 
 ## What it does
 
@@ -55,4 +55,4 @@ Install via your organization’s skill registry. To add **cds-docs** in the sam
 
 - [**cds-docs**](https://skills.cbhq.net/skill/frontend/cds-public/cds-docs) – how to load CDS **.txt** (MCP and curl).
 - **`cds-code`** in the same registry – CDS-first **building** and **visual** verification.
-- [https://cds.cbhq.net/](https://cds.cbhq.net/) – official CDS documentation.
+- [https://cds.coinbase.com/](https://cds.coinbase.com/) – official CDS documentation.
