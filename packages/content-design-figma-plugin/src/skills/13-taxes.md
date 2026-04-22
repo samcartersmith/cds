@@ -17,15 +17,15 @@
 
 When these formal terms appear alone without explanation, suggest adding a plain-language gloss or using the preferred phrasing:
 
-| Formal term | Preferred phrasing | Notes |
-|---|---|---|
-| Capital gains | Your crypto profits (or losses) | Use the plain version in headlines, body. Formal OK in footnotes/legal |
-| Capital losses | Your crypto losses | Same |
-| Realized gain/loss | When you sell crypto for a profit/loss | |
-| Unrealized gain/loss | If your crypto's value goes up (or down) while you hold it | |
-| Taxable event | An activity that triggers taxes (like selling or converting crypto) | Define on first use |
-| Disposition / disposing | Selling, trading, or otherwise getting rid of your crypto | Avoid "disposing" in UI |
-| Ordinary income | Income taxed at your regular rate | |
+| Formal term             | Preferred phrasing                                                  | Notes                                                                  |
+| ----------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Capital gains           | Your crypto profits (or losses)                                     | Use the plain version in headlines, body. Formal OK in footnotes/legal |
+| Capital losses          | Your crypto losses                                                  | Same                                                                   |
+| Realized gain/loss      | When you sell crypto for a profit/loss                              |                                                                        |
+| Unrealized gain/loss    | If your crypto's value goes up (or down) while you hold it          |                                                                        |
+| Taxable event           | An activity that triggers taxes (like selling or converting crypto) | Define on first use                                                    |
+| Disposition / disposing | Selling, trading, or otherwise getting rid of your crypto           | Avoid "disposing" in UI                                                |
+| Ordinary income         | Income taxed at your regular rate                                   |                                                                        |
 
 ### Terms you MUST use as-is — do NOT flag these
 

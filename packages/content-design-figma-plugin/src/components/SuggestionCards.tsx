@@ -73,11 +73,7 @@ export default function SuggestionCards({
 
               {/* Content */}
               <div className="flex-1 min-w-0">
-                <p
-                  className={`text-[12px] leading-relaxed mb-1.5 ${
-                    isSelected ? 'text-figma-text' : 'text-figma-text'
-                  }`}
-                >
+                <p className="text-[12px] leading-relaxed mb-1.5 text-figma-text">
                   {s.text}
                 </p>
                 <div className="flex items-center gap-1.5">

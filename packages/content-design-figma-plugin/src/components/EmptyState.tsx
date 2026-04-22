@@ -1,8 +1,9 @@
 import type { EvaluationMode } from '../types';
+import type { AgentUiMode } from '../agents/registry';
 
 interface EmptyStateProps {
   evaluationMode: EvaluationMode | null;
-  agentUiMode: 'suggestions' | 'report' | 'chat';
+  agentUiMode: AgentUiMode;
 }
 
 export default function EmptyState({ evaluationMode, agentUiMode }: EmptyStateProps) {

@@ -5,6 +5,7 @@
 If a headline matches ANY of the following patterns, DO NOT generate any finding or suggestion for it. Skip it completely. Do not evaluate it. Move on to the next string.
 
 Protected patterns:
+
 - Starts with "We couldn't"
 - Starts with "We can't"
 - Starts with "We're unable"

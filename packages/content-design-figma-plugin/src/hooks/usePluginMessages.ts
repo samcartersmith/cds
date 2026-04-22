@@ -38,6 +38,7 @@ interface UsePluginMessagesParams {
   messagesRef: MutableRefObject<ChatMessage[]>;
   reportItemsRef: MutableRefObject<ReportItem[]>;
   focusFindingSuppressSelectionResetRef: MutableRefObject<boolean>;
+  cancelAiRequest: () => void;
   revertPayloadByFindingIdRef: MutableRefObject<
     Record<string, { layerId: string; originalText: string }>
   >;
@@ -75,6 +76,7 @@ export function usePluginMessages({
   messagesRef,
   reportItemsRef,
   focusFindingSuppressSelectionResetRef,
+  cancelAiRequest,
   revertPayloadByFindingIdRef,
   replaceOperationRef,
   lastReportFindingIdRef,
@@ -110,6 +112,7 @@ export function usePluginMessages({
         case 'SELECTION_CHANGED': {
           const skipReportReset = focusFindingSuppressSelectionResetRef.current;
           focusFindingSuppressSelectionResetRef.current = false;
+          cancelAiRequest();
 
           setSelection(msg.selection);
           if (!skipReportReset) {
@@ -236,6 +239,7 @@ export function usePluginMessages({
     window.addEventListener('message', handler);
     return () => window.removeEventListener('message', handler);
   }, [
+    cancelAiRequest,
     focusFindingSuppressSelectionResetRef,
     isReportMode,
     lastReportFindingIdRef,

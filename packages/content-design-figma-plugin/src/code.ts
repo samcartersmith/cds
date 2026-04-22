@@ -30,33 +30,28 @@ function isScreenRoot(node: SceneNode): boolean {
   return SCREEN_ROOT_TYPES.includes(node.type);
 }
 
-/** True if this node and every SceneNode ancestor up to the page are visible in the canvas. */
-function isSceneNodeVisible(node: SceneNode): boolean {
-  let current: BaseNode | null = node;
-  while (current) {
-    if (current.type === 'PAGE' || current.type === 'DOCUMENT') break;
-    if ('visible' in current && !(current as SceneNode).visible) {
-      return false;
-    }
-    current = current.parent;
-  }
-  return true;
-}
+/**
+ * Accumulator-based DFS that tracks visibility on the way down, avoiding
+ * per-node parent-chain walks and intermediate array allocations.
+ *
+ * `parentVisible` carries the cumulative visibility state from ancestors so
+ * invisible subtrees are pruned without re-walking the parent chain for each
+ * text node.
+ */
+function collectTextNodes(node: SceneNode, out: TextNode[], parentVisible = true): void {
+  const nodeVisible = parentVisible && (!('visible' in node) || node.visible);
+  if (!nodeVisible) return;
 
-function collectTextNodes(node: SceneNode): TextNode[] {
-  const out: TextNode[] = [];
   if (node.type === 'TEXT') {
-    const t = node as TextNode;
-    if (isSceneNodeVisible(t)) {
-      out.push(t);
-    }
+    out.push(node as TextNode);
+    return; // text nodes have no children
   }
+
   if ('children' in node && node.children) {
     for (const child of node.children) {
-      out.push(...collectTextNodes(child));
+      collectTextNodes(child, out, nodeVisible);
     }
   }
-  return out;
 }
 
 function textLayerPayload(node: TextNode): TextLayerPayload {
@@ -88,7 +83,11 @@ function buildMultiScreenSelection(): MultiScreenSelection | null {
 
     if (scene.type === 'TEXT') {
       const t = scene as TextNode;
-      if (isSceneNodeVisible(t)) {
+      // Directly-selected text nodes are included as-is — use collectTextNodes
+      // with a single-node accumulator so visibility tracking stays consistent.
+      const out: TextNode[] = [];
+      collectTextNodes(t, out);
+      if (out.length > 0) {
         screens.push({
           id: t.id,
           name: t.name || 'Text',
@@ -99,7 +98,8 @@ function buildMultiScreenSelection(): MultiScreenSelection | null {
     }
 
     if (isScreenRoot(scene)) {
-      const texts = collectTextNodes(scene);
+      const texts: TextNode[] = [];
+      collectTextNodes(scene, texts);
       const screen = buildScreenFromNode(scene, texts);
       if (screen) screens.push(screen);
     }

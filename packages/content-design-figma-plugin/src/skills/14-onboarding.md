@@ -13,13 +13,15 @@ When a headline relates to sending a verification code to a user, it MUST follow
 "Enter the code we [sent/emailed/texted] you"
 
 Choose the verb based on the delivery method:
+
 - Email: "Enter the code we emailed you"
-- SMS/text: "Enter the code we texted you"  
+- SMS/text: "Enter the code we texted you"
 - Generic/unknown: "Enter the code we sent you"
 
 If a headline is about a verification code and does NOT follow this pattern, flag it as an error and propose the correct pattern as the replacement.
 
 Examples of WRONG headlines and their corrections:
+
 - ❌ "We sent you a code" → ✅ "Enter the code we sent you"
 - ❌ "We sent you an email" → ✅ "Enter the code we emailed you"
 - ❌ "Check your email for a code" → ✅ "Enter the code we emailed you"
@@ -29,6 +31,7 @@ Examples of WRONG headlines and their corrections:
 - ❌ "We emailed you a code" → ✅ "Enter the code we emailed you"
 
 The proposedText MUST be one of these three exact strings:
+
 1. "Enter the code we sent you"
 2. "Enter the code we emailed you"
 3. "Enter the code we texted you"

@@ -2,14 +2,6 @@ import type { EvaluationMode, MultiScreenSelection, TextLayerPayload } from './s
 
 export type { EvaluationMode, MultiScreenSelection, TextLayerPayload };
 
-/** @deprecated Legacy single-layer shape — use MultiScreenSelection */
-export interface SelectionPayload {
-  id: string;
-  name: string;
-  characters: string;
-  hasMissingFont: boolean;
-}
-
 // ─── Plugin → UI messages ─────────────────────────────────────────────────────
 
 export type PluginMessage =

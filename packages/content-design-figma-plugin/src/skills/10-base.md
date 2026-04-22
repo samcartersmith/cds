@@ -22,20 +22,20 @@ Base uses **sentence case** for:
 
 ## Vocabulary — OVERRIDES general vocabulary
 
-| Use in Base | Instead of |
-|---|---|
-| coin | token, cryptocurrency, crypto (as noun for individual assets) |
-| collectible | NFT |
-| app / onchain app | dapp |
-| create | mint (for new NFTs) |
-| collect | mint (for existing NFTs) |
-| earn | DeFi |
-| onchain | web3 |
-| trade | (when exchanging one coin for another) |
-| sign in / create account | Connect wallet |
-| the new Base experience | upgrade (confusing/misleading per research) |
-| pay | send (when via QR, tap, or card) |
-| send | pay (when to user-inputted address/ENS) |
+| Use in Base              | Instead of                                                    |
+| ------------------------ | ------------------------------------------------------------- |
+| coin                     | token, cryptocurrency, crypto (as noun for individual assets) |
+| collectible              | NFT                                                           |
+| app / onchain app        | dapp                                                          |
+| create                   | mint (for new NFTs)                                           |
+| collect                  | mint (for existing NFTs)                                      |
+| earn                     | DeFi                                                          |
+| onchain                  | web3                                                          |
+| trade                    | (when exchanging one coin for another)                        |
+| sign in / create account | Connect wallet                                                |
+| the new Base experience  | upgrade (confusing/misleading per research)                   |
+| pay                      | send (when via QR, tap, or card)                              |
+| send                     | pay (when to user-inputted address/ENS)                       |
 
 ## Tone
 

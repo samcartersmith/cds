@@ -118,6 +118,8 @@ export default function App() {
   /** Main chat transcript scroll area; finding deselect only applies to clicks inside this region */
   const chatScrollRef = useRef<HTMLDivElement>(null);
   const sessionIdRef = useRef<string | null>(null);
+  /** Tracks the AbortController for the current in-flight AI request so it can be cancelled on node/mode switch */
+  const aiAbortControllerRef = useRef<AbortController | null>(null);
   /** Set when navigating to the evaluation menu via Back; used to restore chat if user re-picks the same mode */
   const evaluationModeBeforeMenuRef = useRef<EvaluationMode | null>(null);
   /** Set before FOCUS_NODE so the next SELECTION_CHANGED does not wipe report/suggestions */
@@ -170,6 +172,15 @@ export default function App() {
   const [historyOpen, setHistoryOpen] = useState(false);
   const [fixedOpen, setFixedOpen] = useState(false);
 
+  /** Abort any in-flight AI request and unblock the UI immediately. */
+  const cancelAiRequest = useCallback(() => {
+    if (aiAbortControllerRef.current) {
+      aiAbortControllerRef.current.abort();
+      aiAbortControllerRef.current = null;
+    }
+    setIsThinking(false);
+  }, []);
+
   const agentUiMode =
     evaluationMode != null ? getAgentForEvaluationMode(evaluationMode).uiMode : 'suggestions';
   const fixedItems = useMemo(() => {
@@ -216,6 +227,7 @@ export default function App() {
     messagesRef,
     reportItemsRef,
     focusFindingSuppressSelectionResetRef,
+    cancelAiRequest,
     revertPayloadByFindingIdRef,
     replaceOperationRef,
     lastReportFindingIdRef,
@@ -328,6 +340,7 @@ export default function App() {
       const sameModeReturn = returnMode !== null && mode === returnMode;
 
       if (!sameModeReturn) {
+        cancelAiRequest();
         sessionIdRef.current = `s-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
         setMessages([]);
         setSuggestions([]);
@@ -358,6 +371,11 @@ export default function App() {
       const hasCanvas = selection != null && selection.totalTextLayers > 0;
       const allowWithoutSelection = messages.length > 0 || reportSegments.length > 0;
       if (!hasCanvas && !allowWithoutSelection) return;
+
+      // Cancel any previous in-flight request before starting a new one
+      cancelAiRequest();
+      const abortController = new AbortController();
+      aiAbortControllerRef.current = abortController;
 
       const now = Date.now();
       const userMsg: ChatMessage = { role: 'user', text: prompt, sentAt: now };
@@ -427,7 +445,8 @@ export default function App() {
           activeForApi,
           prompt,
           messages,
-          agentUiMode === 'report' ? reportItems : undefined,
+          reportItems.length > 0 ? reportItems : undefined,
+          abortController.signal,
         );
         if (result.kind === 'suggestions') {
           setSuggestions(result.suggestions);
@@ -465,8 +484,11 @@ export default function App() {
           });
         }
       } catch (err) {
+        // AbortError means the request was intentionally cancelled (node/mode switch) — don't show an error
+        if (err instanceof Error && err.name === 'AbortError') return;
         setAiError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
       } finally {
+        aiAbortControllerRef.current = null;
         setIsThinking(false);
       }
     },
@@ -831,7 +853,7 @@ export default function App() {
               Select frame(s) in Figma to add live screen text to the next review.
             </div>
           )}
-          {agentUiMode === 'report' && isReportContextStale && (
+          {isReportContextStale && (
             <div className="shrink-0 px-4 py-2 text-[10px] text-amber-300 border-b border-amber-500/20 bg-amber-500/10">
               Selection changed. Current findings are from the previous selection. Ask for a new
               review to refresh.
@@ -857,7 +879,7 @@ export default function App() {
 
             <ChatTimeline
               messages={messages}
-              reportSegments={agentUiMode === 'report' ? reportSegments : []}
+              reportSegments={reportSegments}
               renderReportSegment={(segment) => (
                 <ReportPanel
                   items={segment.items}
@@ -871,7 +893,7 @@ export default function App() {
               )}
             />
 
-            {agentUiMode === 'report' && fixedItems.length > 0 && (
+            {fixedItems.length > 0 && (
               <div className="rounded-lg border border-figma-border bg-figma-surface/70">
                 <button
                   type="button"
@@ -947,7 +969,7 @@ export default function App() {
             />
           )}
 
-          {agentUiMode === 'report' && reportItems.length > 0 && selectedReportItemId != null && (
+          {reportItems.length > 0 && selectedReportItemId != null && (
             <ReplaceButton
               disabled={
                 isThinking ||
