@@ -1,12 +1,8 @@
 # Coinbase Design System
 
-<p align="center">
-  <img src="apps/docs/static/img/docusaurus-social-card.jpg" alt="Coinbase Design System">
-</p>
-
 Welcome to the Coinbase Design System (CDS)!
 
-Please visit our website https://cds.coinbase.com for the latest documentation.
+Please visit our website [https://cds.coinbase.com](https://cds.coinbase.com) for the latest documentation.
 
 ## Setup
 
@@ -17,7 +13,7 @@ git clone git@github.com:coinbase/cds.git
 cd cds
 ```
 
-2. **Use the correct Node.js version**
+1. **Use the correct Node.js version**
 
 We suggest [nvm](https://github.com/nvm-sh/nvm/tree/master) to manage Node.js versions. If you have it installed, you can use these commands to set our current Node.js version.
 
@@ -27,7 +23,7 @@ nvm use
 corepack enable
 ```
 
-3. **Install dependencies**
+1. **Install dependencies**
 
 ```sh
 yarn install
